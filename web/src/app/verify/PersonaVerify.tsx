@@ -89,7 +89,7 @@ export default function PersonaVerify({
   return (
     <div className="card feature">
       <Script
-        src="https://cdn.withpersona.com/dist/persona-v5.js"
+        src="https://cdn.withpersona.com/dist/persona-v5.1.2.js"
         strategy="lazyOnload"
         onLoad={() => setSdkReady(true)}
       />

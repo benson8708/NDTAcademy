@@ -10,14 +10,20 @@ import { getIdentityStatus } from "@/lib/identity";
 export const metadata: Metadata = { title: "Verify Your Identity", robots: { index: false } };
 export const dynamic = "force-dynamic";
 
-export default async function VerifyPage() {
+export default async function VerifyPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ recheck?: string; next?: string }>;
+}) {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect("/login?next=/verify");
 
+  const { recheck } = await searchParams;
   const identity = await getIdentityStatus(supabase, user.id);
+  const examRecheck = recheck === "exam";
 
   return (
     <>
@@ -25,19 +31,18 @@ export default async function VerifyPage() {
       <main>
         <section className="page-hero on-dark">
           <div className="wrap">
-            <span className="kicker">Identity Verification</span>
-            <h1>Verify who you are. Once.</h1>
+            <span className="kicker">{examRecheck ? "Exam Check-In" : "Identity Verification"}</span>
+            <h1>{examRecheck ? "Confirm it's you before the exam" : "Verify who you are"}</h1>
             <p className="lede">
-              Your training record and certificates are only worth something if they&apos;re
-              provably yours. Before coursework or exams, we verify your identity with a
-              government ID and a selfie — it takes about two minutes, and your assigned
-              Level III relies on it when signing off your record.
+              {examRecheck
+                ? "Every exam session starts with a fresh identity check-in — the same government ID + selfie flow, completed within minutes of sitting the exam. It's what makes your scores and certificates defensible."
+                : "Your training record and certificates are only worth something if they're provably yours. We verify your identity with a government ID and a selfie before coursework — and re-verify before every exam."}
             </p>
           </div>
         </section>
         <section className="block" style={{ minHeight: "50vh" }}>
           <div className="wrap" style={{ maxWidth: 640 }}>
-            {identity.verified ? (
+            {identity.verified && !examRecheck ? (
               <div className="card feature" style={{ borderTopColor: "var(--green)" }}>
                 <span className="code" style={{ color: "var(--green)" }}>Verified</span>
                 <h3>Your identity is verified</h3>

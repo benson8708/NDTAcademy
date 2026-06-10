@@ -5,7 +5,7 @@
 // certificates directly.
 import { createClient as createServiceClient } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/server";
-import { getIdentityStatus } from "@/lib/identity";
+import { getIdentityStatus, hasFreshVerification, EXAM_CHECK_WINDOW_MIN } from "@/lib/identity";
 import { courseBySlug, levelLessonIds, fmtHours } from "@/lib/curriculum";
 
 export interface FinalizeResult {
@@ -25,6 +25,14 @@ export async function finalizeLevel(courseSlug: string, levelKey: string): Promi
   const identity = await getIdentityStatus(supabase, user.id);
   if (!identity.verified) {
     return { certificateIssued: false, reason: "Identity verification is required before a certificate can be issued." };
+  }
+  // The credential is issued against a FRESH check — same person, right now.
+  const fresh = await hasFreshVerification(supabase, user.id, EXAM_CHECK_WINDOW_MIN);
+  if (!fresh) {
+    return {
+      certificateIssued: false,
+      reason: `A fresh identity check-in (within ${EXAM_CHECK_WINDOW_MIN} minutes) is required to issue your certificate — verify and claim again.`,
+    };
   }
 
   const course = courseBySlug(courseSlug);

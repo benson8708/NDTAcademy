@@ -17,6 +17,32 @@ export interface IdentityStatus {
   inquiryId: string | null;
 }
 
+/**
+ * Exams require a FRESH identity check-in, not just a historical one — the
+ * person sitting the exam must be re-verified within this window (minutes).
+ */
+export const EXAM_CHECK_WINDOW_MIN = Number(process.env.IDENTITY_EXAM_WINDOW_MIN ?? 15);
+
+/**
+ * True when the user completed a passing identity check within the last
+ * `windowMin` minutes — the clearance required to sit an exam.
+ */
+export async function hasFreshVerification(
+  supabase: SupabaseClient,
+  userId: string,
+  windowMin: number = EXAM_CHECK_WINDOW_MIN,
+): Promise<boolean> {
+  const since = new Date(Date.now() - windowMin * 60_000).toISOString();
+  const { data } = await supabase
+    .from("identity_checks")
+    .select("id")
+    .eq("user_id", userId)
+    .eq("verified", true)
+    .gte("created_at", since)
+    .limit(1);
+  return !!data?.length;
+}
+
 export async function getIdentityStatus(
   supabase: SupabaseClient,
   userId: string,
@@ -99,6 +125,23 @@ export async function completeInquiry(
     },
     { onConflict: "user_id" },
   );
+  // Append-only audit trail — each exam session ties back to one of these.
+  // Skip duplicate rows for the same inquiry+status (recovery-path re-checks).
+  const { data: existingCheck } = await svc
+    .from("identity_checks")
+    .select("id")
+    .eq("user_id", userId)
+    .eq("inquiry_id", inquiry.id)
+    .eq("status", status)
+    .limit(1);
+  if (!existingCheck?.length) {
+    await svc.from("identity_checks").insert({
+      user_id: userId,
+      inquiry_id: inquiry.id,
+      status,
+      verified,
+    });
+  }
 
   return { verified, status, inquiryId: inquiry.id };
 }

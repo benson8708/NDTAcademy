@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import QuizRunner from "@/components/lesson/QuizRunner";
 import ClaimCertificate from "./ClaimCertificate";
 import { createClient } from "@/lib/supabase/server";
-import { getIdentityStatus } from "@/lib/identity";
+import { getIdentityStatus, hasFreshVerification, EXAM_CHECK_WINDOW_MIN } from "@/lib/identity";
 import { courseBySlug, fmtHours, levelLessonIds } from "@/lib/curriculum";
 import { drawRandom, loadFinalPool } from "@/lib/vtContent";
 
@@ -30,6 +30,10 @@ export default async function FinalExamPage({
   // Identity proofing required before any certification exam.
   const identity = await getIdentityStatus(supabase, user.id);
   if (!identity.verified) redirect(`/verify?next=/learn/${slug}/exam/${levelKey}`);
+  // Exams require a FRESH check-in: the person sitting the exam re-verifies
+  // within the last {EXAM_CHECK_WINDOW_MIN} minutes — not a one-time badge.
+  const fresh = await hasFreshVerification(supabase, user.id, EXAM_CHECK_WINDOW_MIN);
+  if (!fresh) redirect(`/verify?next=/learn/${slug}/exam/${levelKey}&recheck=exam`);
 
   const pool = await loadFinalPool(course.id, level);
   const questions = drawRandom(pool, level.finalExam.questions);
