@@ -197,13 +197,14 @@ certification exam**, tying the training record to a real person for Level III s
   (403); `finalizeLevel` refuses certificates for unverified students.
 - **Env**: `PERSONA_API_KEY` (server), `NEXT_PUBLIC_PERSONA_TEMPLATE_ID`,
   `NEXT_PUBLIC_PERSONA_ENVIRONMENT` (`sandbox` now — switch to `production` + a live key at launch).
-- **Per-exam re-verification (June 10, later)**: verification is NOT a one-time badge. Every module
-  quiz and level final requires a **fresh identity check-in** completed within the last
+- **Final-exam re-verification (June 10, later)**: verification is NOT a one-time badge. Every
+  **level final (certification exam)** requires a **fresh identity check-in** completed within the last
   `IDENTITY_EXAM_WINDOW_MIN` minutes (default 15; code default, env-overridable), and certificate
   issuance (`finalizeLevel`) requires the same freshness. Each check is an append-only row in
-  `identity_checks` — the audit trail tying every exam session to a specific Persona inquiry.
-  Verified live: stale check → exam redirects to the "Exam Check-In" recheck flow; fresh check →
-  exam loads; backdating the check past the window re-locks the final.
+  `identity_checks` — the audit trail tying every final-exam session to a specific Persona inquiry.
+  Module quizzes and lessons need only the baseline verification. Verified live: stale check →
+  final redirects to "Exam Check-In" while quizzes still load; fresh check → final loads;
+  backdating past the window re-locks the final.
 - **Production hardening TODO**: subscribe to Persona webhooks (inquiry.approved/declined) instead
   of relying on completion callbacks. In production consider a lighter Persona "selfie
   reverification" template for exam check-ins (cheaper per-inquiry than full GovID+selfie; wire it

@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuizRunner from "@/components/lesson/QuizRunner";
 import { createClient } from "@/lib/supabase/server";
-import { getIdentityStatus, hasFreshVerification, EXAM_CHECK_WINDOW_MIN } from "@/lib/identity";
+import { getIdentityStatus } from "@/lib/identity";
 import { courseBySlug } from "@/lib/curriculum";
 import { drawRandom, loadModuleQuiz } from "@/lib/vtContent";
 
@@ -46,10 +46,6 @@ export default async function ModuleQuizPage({
   // Identity proofing required before any assessment.
   const identity = await getIdentityStatus(supabase, user.id);
   if (!identity.verified) redirect(`/verify?next=/learn/${slug}/quiz/${moduleId}`);
-  // Exams require a FRESH check-in: the person sitting the exam re-verifies
-  // within the last {EXAM_CHECK_WINDOW_MIN} minutes — not a one-time badge.
-  const fresh = await hasFreshVerification(supabase, user.id, EXAM_CHECK_WINDOW_MIN);
-  if (!fresh) redirect(`/verify?next=/learn/${slug}/quiz/${moduleId}&recheck=exam`);
 
   const quiz = await loadModuleQuiz(course.id, moduleId);
   const questions = quiz ? drawRandom(quiz.questions, questionCount) : [];
