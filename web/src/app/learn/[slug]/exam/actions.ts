@@ -5,6 +5,7 @@
 // certificates directly.
 import { createClient as createServiceClient } from "@supabase/supabase-js";
 import { createClient } from "@/lib/supabase/server";
+import { getIdentityStatus } from "@/lib/identity";
 import { courseBySlug, levelLessonIds, fmtHours } from "@/lib/curriculum";
 
 export interface FinalizeResult {
@@ -19,6 +20,12 @@ export async function finalizeLevel(courseSlug: string, levelKey: string): Promi
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return { certificateIssued: false, reason: "Not signed in." };
+
+  // Certificates are only issued to identity-verified students.
+  const identity = await getIdentityStatus(supabase, user.id);
+  if (!identity.verified) {
+    return { certificateIssued: false, reason: "Identity verification is required before a certificate can be issued." };
+  }
 
   const course = courseBySlug(courseSlug);
   const level = course?.levels.find((l) => `${course.id}-${l.level}` === levelKey);

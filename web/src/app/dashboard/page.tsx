@@ -3,6 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import Header from "@/components/Header";
 import { createClient } from "@/lib/supabase/server";
+import { getIdentityStatus } from "@/lib/identity";
 import { COURSES, courseById, courseLessonIds, fmtHours, slugForCourse } from "@/lib/curriculum";
 import { isFreeBeta } from "@/lib/stripe/server";
 import { fmtUsd } from "@/lib/stripe/catalog";
@@ -31,6 +32,7 @@ export default async function StudentDashboard({
   } = await supabase.auth.getUser();
   if (!user) redirect("/login?next=/dashboard");
   const { billing } = await searchParams;
+  const identity = await getIdentityStatus(supabase, user.id);
 
   const [
     { data: profile },
@@ -146,6 +148,17 @@ export default async function StudentDashboard({
             </form>
           </div>
 
+          {!identity.verified && (
+            <div className="panel" style={{ borderLeft: "3px solid var(--amber)" }}>
+              <div className="panel-body" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
+                <span>
+                  <strong>Identity verification required</strong> — a one-time government ID + selfie
+                  check unlocks coursework, exams, and certificates.
+                </span>
+                <Link className="btn btn-primary btn-sm" href="/verify">Verify Now</Link>
+              </div>
+            </div>
+          )}
           {billing && BILLING_NOTICE[billing] && (
             <div className="panel">
               <div className="panel-body">{BILLING_NOTICE[billing]}</div>

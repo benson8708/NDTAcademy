@@ -182,6 +182,25 @@ Rebuilt around brand recognition and the launch offer, verified in the browser:
   (VT fully accessible; UT correctly showed the $349 paywall). End the promo with
   `FREE_COURSES=""` + rebuild.
 
+## Identity verification (Persona) — June 10
+
+Students must verify identity (government ID + selfie) **before any coursework and before any
+certification exam**, tying the training record to a real person for Level III sign-off:
+
+- **Flow**: `/verify` hosts Persona's embedded widget (sandbox template "KYC: GovID + Selfie",
+  `itmpl_AGEXVkFkbHP4zKJCXSRLrpejyfp163`). On completion the widget reports an inquiry id; the
+  SERVER re-fetches it from Persona's API, requires `reference-id == user.id`, and records the
+  outcome in `identity_verifications` with the service role (clients cannot write their own row).
+  A "Check My Status" recovery path looks the inquiry up by reference-id.
+- **Gates** (all verified live): course pages render a verification interstitial; lesson, module
+  quiz, and final-exam routes redirect to `/verify?next=…`; the heartbeat API refuses time logging
+  (403); `finalizeLevel` refuses certificates for unverified students.
+- **Env**: `PERSONA_API_KEY` (server), `NEXT_PUBLIC_PERSONA_TEMPLATE_ID`,
+  `NEXT_PUBLIC_PERSONA_ENVIRONMENT` (`sandbox` now — switch to `production` + a live key at launch).
+- **Production hardening TODO**: subscribe to Persona webhooks (inquiry.approved/declined) instead
+  of relying on completion callbacks, and decide a re-verification cadence per your written practice.
+  Existing test accounts predate the gate and are unverified except Nina (sandbox-approved).
+
 ## Known gaps / next phases (see PLAN.md)
 
 - Stripe go-live: mint fresh test API key + run bootstrap (above), test a real card → then live key,

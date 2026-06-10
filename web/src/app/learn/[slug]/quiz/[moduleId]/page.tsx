@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuizRunner from "@/components/lesson/QuizRunner";
 import { createClient } from "@/lib/supabase/server";
+import { getIdentityStatus } from "@/lib/identity";
 import { courseBySlug } from "@/lib/curriculum";
 import { drawRandom, loadModuleQuiz } from "@/lib/vtContent";
 
@@ -41,6 +42,10 @@ export default async function ModuleQuizPage({
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect(`/login?next=/learn/${slug}/quiz/${moduleId}`);
+
+  // Identity proofing required before any assessment.
+  const identity = await getIdentityStatus(supabase, user.id);
+  if (!identity.verified) redirect(`/verify?next=/learn/${slug}/quiz/${moduleId}`);
 
   const quiz = await loadModuleQuiz(course.id, moduleId);
   const questions = quiz ? drawRandom(quiz.questions, questionCount) : [];

@@ -7,6 +7,7 @@ import CurriculumBrowser from "./CurriculumBrowser";
 import { createClient } from "@/lib/supabase/server";
 import { courseBySlug, courseLessonIds, fmtHours, courseLessonStats, levelLessonIds } from "@/lib/curriculum";
 import { getCourseAccess } from "@/lib/billing/access";
+import { getIdentityStatus } from "@/lib/identity";
 import { retrieveAndFulfillSession } from "@/lib/billing/fulfill";
 import { isStripeConfigured } from "@/lib/stripe/server";
 import { courseCatalogItem, fmtUsd } from "@/lib/stripe/catalog";
@@ -51,6 +52,44 @@ export default async function LearnCoursePage({
   }
 
   const access = await getCourseAccess(supabase, user.id, course.id);
+
+  // Identity proofing: required before any coursework, regardless of payment.
+  const identity = await getIdentityStatus(supabase, user.id);
+  if (access.ok && !identity.verified) {
+    return (
+      <>
+        <Header />
+        <main>
+          <section className="course-head on-dark">
+            <div className="wrap">
+              <span className="kicker">{course.code} · Identity Verification Required</span>
+              <h1>{course.name}</h1>
+              <div className="cp">Built to {course.cp105}</div>
+            </div>
+          </section>
+          <section className="block" style={{ minHeight: "40vh" }}>
+            <div className="wrap" style={{ maxWidth: 640 }}>
+              <div className="card feature" style={{ borderTopColor: "var(--amber)" }}>
+                <span className="code" style={{ color: "#B27516" }}>One-time step</span>
+                <h3>Verify your identity to start training</h3>
+                <p>
+                  Your formal training hours and certificates are tied to a verified identity —
+                  it&apos;s what makes the record auditable and lets your assigned Level III sign
+                  off on it. A government ID and a selfie, about two minutes, once.
+                </p>
+                <p style={{ marginTop: 16 }}>
+                  <Link className="btn btn-primary" href={`/verify?next=/learn/${slug}`}>
+                    Verify My Identity
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </>
+    );
+  }
 
   if (!access.ok) {
     const item = courseCatalogItem(course.id);

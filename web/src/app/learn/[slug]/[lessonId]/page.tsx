@@ -13,6 +13,7 @@ import CompleteButton from "./CompleteButton";
 import { createClient } from "@/lib/supabase/server";
 import { courseBySlug, findLesson, flatLessons, levelLessonIds } from "@/lib/curriculum";
 import { getCourseAccess } from "@/lib/billing/access";
+import { getIdentityStatus } from "@/lib/identity";
 import { loadLessonContent, lessonHeroUrl, lessonVideoUrl } from "@/lib/vtContent";
 
 export const metadata: Metadata = { robots: { index: false } };
@@ -58,6 +59,10 @@ export default async function LessonPage({
   // Paywall: deep links can't bypass the course page's entitlement check.
   const access = await getCourseAccess(supabase, user.id, course.id);
   if (!access.ok) redirect(`/learn/${slug}`);
+
+  // Identity proofing required before any coursework.
+  const identity = await getIdentityStatus(supabase, user.id);
+  if (!identity.verified) redirect(`/verify?next=/learn/${slug}/${lessonId}`);
 
   const content = await loadLessonContent(course.id, lessonId);
 

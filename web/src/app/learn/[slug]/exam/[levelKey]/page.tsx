@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import QuizRunner from "@/components/lesson/QuizRunner";
 import ClaimCertificate from "./ClaimCertificate";
 import { createClient } from "@/lib/supabase/server";
+import { getIdentityStatus } from "@/lib/identity";
 import { courseBySlug, fmtHours, levelLessonIds } from "@/lib/curriculum";
 import { drawRandom, loadFinalPool } from "@/lib/vtContent";
 
@@ -25,6 +26,10 @@ export default async function FinalExamPage({
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) redirect(`/login?next=/learn/${slug}/exam/${levelKey}`);
+
+  // Identity proofing required before any certification exam.
+  const identity = await getIdentityStatus(supabase, user.id);
+  if (!identity.verified) redirect(`/verify?next=/learn/${slug}/exam/${levelKey}`);
 
   const pool = await loadFinalPool(course.id, level);
   const questions = drawRandom(pool, level.finalExam.questions);

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { courseById } from "@/lib/curriculum";
+import { getIdentityStatus } from "@/lib/identity";
 import { getCourseAccess } from "@/lib/billing/access";
 
 /**
@@ -15,6 +16,12 @@ export async function POST(request: Request) {
     data: { user },
   } = await supabase.auth.getUser();
   if (!user) return NextResponse.json({ error: "unauthenticated" }, { status: 401 });
+
+  // Training time only accrues for identity-verified students.
+  const identity = await getIdentityStatus(supabase, user.id);
+  if (!identity.verified) {
+    return NextResponse.json({ error: "identity verification required" }, { status: 403 });
+  }
 
   let body: { courseId?: string; lessonId?: string; seconds?: number };
   try {
