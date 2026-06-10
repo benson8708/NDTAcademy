@@ -1,0 +1,78 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arrAm2" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#F2A33C"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="450" fill="#0A2342"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#E8F1FB">Optical Fibers and Bundles</text>
+
+  <!-- single fiber, longitudinal section -->
+  <rect x="80" y="108" width="480" height="84" fill="#5A6B7E" fill-opacity="0.35"/>
+  <rect x="80" y="128" width="480" height="44" fill="#E8F1FB" fill-opacity="0.22" stroke="#E8F1FB" stroke-width="1.5"/>
+
+  <!-- zigzag TIR ray -->
+  <polyline points="80,150 140,131 220,169 300,131 380,169 460,131 530,162" fill="none" stroke="#F2A33C" stroke-width="2.5"/>
+  <line x1="530" y1="162" x2="558" y2="152" stroke="#F2A33C" stroke-width="2.5" marker-end="url(#arrAm2)"/>
+
+  <!-- acceptance cone -->
+  <line x1="28" y1="118" x2="80" y2="150" stroke="#1B82E8" stroke-width="2" stroke-dasharray="5 4"/>
+  <line x1="28" y1="182" x2="80" y2="150" stroke="#1B82E8" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="30" y="98" font-size="16" fill="#1B82E8">acceptance cone (numerical aperture)</text>
+
+  <!-- labels -->
+  <text x="572" y="124" font-size="16" fill="#E8F1FB">cladding — lower index n2</text>
+  <text x="572" y="154" font-size="16" fill="#E8F1FB">core — higher index n1</text>
+  <text x="572" y="186" font-size="16" fill="#E8F1FB">fiber ~10–30 µm dia.</text>
+  <text x="320" y="218" text-anchor="middle" font-size="16" font-weight="bold" fill="#F2A33C">total internal reflection at every bounce</text>
+
+  <!-- bottom: bundles -->
+  <text x="220" y="262" text-anchor="middle" font-size="18" font-weight="bold" fill="#E8F1FB">Coherent (image) bundle</text>
+  <text x="585" y="262" text-anchor="middle" font-size="18" font-weight="bold" fill="#E8F1FB">Incoherent (light) bundle</text>
+
+  <!-- coherent: two faces with matching pattern -->
+  <circle cx="140" cy="340" r="48" fill="none" stroke="#E8F1FB" stroke-width="2"/>
+  <circle cx="300" cy="340" r="48" fill="none" stroke="#E8F1FB" stroke-width="2"/>
+  <!-- grid dots, entry face -->
+  <g fill="#5A6B7E">
+    <circle cx="122" cy="322" r="4"/><circle cx="140" cy="322" r="4"/><circle cx="158" cy="322" r="4"/>
+    <circle cx="158" cy="340" r="4"/><circle cx="140" cy="358" r="4"/><circle cx="158" cy="358" r="4"/>
+  </g>
+  <g fill="#F2A33C">
+    <circle cx="122" cy="340" r="4"/><circle cx="140" cy="340" r="4"/><circle cx="122" cy="358" r="4"/>
+  </g>
+  <!-- grid dots, exit face: SAME positions -->
+  <g fill="#5A6B7E">
+    <circle cx="282" cy="322" r="4"/><circle cx="300" cy="322" r="4"/><circle cx="318" cy="322" r="4"/>
+    <circle cx="318" cy="340" r="4"/><circle cx="300" cy="358" r="4"/><circle cx="318" cy="358" r="4"/>
+  </g>
+  <g fill="#F2A33C">
+    <circle cx="282" cy="340" r="4"/><circle cx="300" cy="340" r="4"/><circle cx="282" cy="358" r="4"/>
+  </g>
+  <!-- alignment lines -->
+  <line x1="126" y1="340" x2="278" y2="340" stroke="#1B82E8" stroke-width="1" stroke-dasharray="3 4"/>
+  <line x1="126" y1="358" x2="278" y2="358" stroke="#1B82E8" stroke-width="1" stroke-dasharray="3 4"/>
+  <text x="220" y="412" text-anchor="middle" font-size="16" fill="#E8F1FB">same position both ends → image survives</text>
+
+  <!-- incoherent: scrambled -->
+  <circle cx="505" cy="340" r="48" fill="none" stroke="#E8F1FB" stroke-width="2"/>
+  <circle cx="665" cy="340" r="48" fill="none" stroke="#E8F1FB" stroke-width="2"/>
+  <g fill="#5A6B7E">
+    <circle cx="487" cy="322" r="4"/><circle cx="505" cy="322" r="4"/><circle cx="523" cy="322" r="4"/>
+    <circle cx="523" cy="340" r="4"/><circle cx="505" cy="358" r="4"/><circle cx="523" cy="358" r="4"/>
+  </g>
+  <g fill="#F2A33C">
+    <circle cx="487" cy="340" r="4"/><circle cx="505" cy="340" r="4"/><circle cx="487" cy="358" r="4"/>
+  </g>
+  <g fill="#5A6B7E">
+    <circle cx="647" cy="340" r="4"/><circle cx="665" cy="322" r="4"/><circle cx="683" cy="358" r="4"/>
+    <circle cx="647" cy="322" r="4"/><circle cx="665" cy="358" r="4"/><circle cx="683" cy="322" r="4"/>
+  </g>
+  <g fill="#F2A33C">
+    <circle cx="683" cy="340" r="4"/><circle cx="665" cy="340" r="4"/><circle cx="647" cy="358" r="4"/>
+  </g>
+  <text x="585" y="412" text-anchor="middle" font-size="16" fill="#E8F1FB">scrambled → carries light only</text>
+
+  <text x="400" y="442" text-anchor="middle" font-size="16" font-weight="bold" fill="#D14343">a broken fiber shows as a fixed black dot in the image</text>
+</svg>

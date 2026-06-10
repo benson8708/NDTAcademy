@@ -1,0 +1,20 @@
+{
+  "_comment": "Single source of truth for Stripe products/prices. Amounts are USD cents — PLACEHOLDER launch pricing, edit freely then re-run `node scripts/stripe-bootstrap.mjs` (it migrates lookup keys to new prices). lookup_key is how the app finds prices at checkout; never reuse a key for a different item.",
+  "currency": "usd",
+  "courses": {
+    "ut": { "lookupKey": "ndta_course_ut", "name": "Ultrasonic Testing (UT) Training — Levels I & II", "amount": 34900 },
+    "rt": { "lookupKey": "ndta_course_rt", "name": "Radiographic Testing (RT) Training — Levels I & II", "amount": 34900 },
+    "mt": { "lookupKey": "ndta_course_mt", "name": "Magnetic Particle Testing (MT) Training — Levels I & II", "amount": 24900 },
+    "pt": { "lookupKey": "ndta_course_pt", "name": "Liquid Penetrant Testing (PT) Training — Levels I & II", "amount": 24900 },
+    "et": { "lookupKey": "ndta_course_et", "name": "Eddy Current Testing (ET) Training — Levels I & II", "amount": 34900 },
+    "vt": { "lookupKey": "ndta_course_vt", "name": "Visual Testing (VT) Training — Levels I & II", "amount": 14900 },
+    "basic": { "lookupKey": "ndta_course_basic", "name": "NDT Basic (Level III Prep) Training", "amount": 29900 },
+    "rad": { "lookupKey": "ndta_course_rad", "name": "Radiation Safety Training", "amount": 29900 }
+  },
+  "seat": {
+    "lookupKey": "ndta_seat",
+    "name": "NDT Academy Company Seat",
+    "description": "One roster seat for your organization. Each seated technician gets access to the full course catalog with tracked formal training hours.",
+    "amount": 49900
+  }
+}

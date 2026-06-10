@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course — NDT Academy</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/course.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="NDT Academy"></a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="courses.html" class="active">Courses</a>
+      <a href="exams.html">Practice Exams</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="btn btn-primary btn-sm">Sign In</a>
+    </nav>
+  </div>
+</header>
+
+<!-- course header -->
+<section class="course-head on-dark">
+  <div class="wrap">
+    <span class="kicker" id="c-code"></span>
+    <h1 id="c-name"></h1>
+    <div class="cp" id="c-cp"></div>
+    <div class="hours-strip" id="c-hours"></div>
+  </div>
+</section>
+
+<section class="block tight">
+  <div class="wrap">
+    <div class="proto-note">CURRICULUM PROTOTYPE — every lesson, hour total, and CP-105 topic is final structure; video, narration, diagram, and interactive media are placeholders awaiting production. Progress saves in your browser.</div>
+
+    <!-- curriculum overview -->
+    <div id="view-curriculum">
+      <div class="level-tabs" id="level-tabs"></div>
+      <div class="level-meta">
+        <p class="desc" id="level-desc"></p>
+        <div class="level-progress">
+          <div class="lbl"><span>Progress</span><span id="prog-text"></span></div>
+          <div class="progress"><div id="prog-bar"></div></div>
+        </div>
+      </div>
+      <div id="modules"></div>
+    </div>
+
+    <!-- lesson player -->
+    <div id="view-lesson" style="display:none">
+      <div class="player-layout">
+        <aside class="player-side" id="player-side"></aside>
+        <div class="lesson-main" id="lesson-main"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom" style="border-top:0; padding-top:0">
+      <span>© 2026 NDT Academy · NDTAcademy.com</span>
+      <span>Formal training evidence only — employer certification requirements apply</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+<script src="js/course.js"></script>
+</body>
+</html>

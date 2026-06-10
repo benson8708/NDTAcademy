@@ -1,0 +1,74 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="38" text-anchor="middle" font-size="24" font-weight="bold" fill="#0A2342">Inherent Discontinuities: Ingot to Wrought Product</text>
+
+  <defs>
+    <marker id="arrAmber" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#F2A33C"/>
+    </marker>
+  </defs>
+
+  <!-- Ingot body -->
+  <path d="M95,85 L225,85 L245,400 L75,400 Z" fill="#E8F1FB" stroke="#0A2342" stroke-width="3"/>
+  <!-- Pipe (funnel shrinkage cavity at top center) -->
+  <path d="M140,87 L180,87 L166,170 L154,170 Z" fill="#D14343"/>
+  <!-- Segregation band (last to freeze) -->
+  <rect x="143" y="185" width="34" height="85" fill="#F2A33C" fill-opacity="0.4" stroke="#F2A33C" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <!-- Gas porosity (right of band) -->
+  <circle cx="196" cy="238" r="5" fill="#FFFFFF" stroke="#1B82E8" stroke-width="2"/>
+  <circle cx="208" cy="258" r="4" fill="#FFFFFF" stroke="#1B82E8" stroke-width="2"/>
+  <circle cx="194" cy="275" r="4.5" fill="#FFFFFF" stroke="#1B82E8" stroke-width="2"/>
+  <circle cx="210" cy="284" r="3.5" fill="#FFFFFF" stroke="#1B82E8" stroke-width="2"/>
+  <!-- Nonmetallic inclusions -->
+  <ellipse cx="150" cy="322" rx="9" ry="3.5" fill="#5A6B7E"/>
+  <ellipse cx="185" cy="336" rx="8" ry="3" fill="#5A6B7E"/>
+  <ellipse cx="125" cy="345" rx="7" ry="3" fill="#5A6B7E"/>
+  <ellipse cx="163" cy="360" rx="10" ry="3.5" fill="#5A6B7E"/>
+  <ellipse cx="203" cy="352" rx="7" ry="3" fill="#5A6B7E"/>
+  <text x="160" y="424" text-anchor="middle" font-size="17" font-weight="bold" fill="#0A2342">INGOT (as solidified)</text>
+
+  <!-- Ingot feature labels -->
+  <text x="265" y="120" font-size="16" fill="#0A2342">Pipe - funnel cavity</text>
+  <line x1="262" y1="115" x2="172" y2="120" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="265" y="208" font-size="16" fill="#0A2342">Segregation zone</text>
+  <line x1="262" y1="203" x2="180" y2="215" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="265" y="258" font-size="16" fill="#0A2342">Gas porosity</text>
+  <line x1="262" y1="253" x2="216" y2="253" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="265" y="348" font-size="16" fill="#0A2342">Nonmetallic inclusions</text>
+  <line x1="262" y1="343" x2="212" y2="340" stroke="#5A6B7E" stroke-width="1.5"/>
+
+  <!-- Rolling arrow -->
+  <line x1="445" y1="238" x2="505" y2="238" stroke="#F2A33C" stroke-width="5" marker-end="url(#arrAmber)"/>
+  <text x="475" y="220" text-anchor="middle" font-size="17" font-weight="bold" fill="#F2A33C">ROLLING</text>
+
+  <!-- Rolled plate (side view, thickness exaggerated) -->
+  <rect x="520" y="210" width="240" height="55" fill="#E8F1FB" stroke="#0A2342" stroke-width="3"/>
+  <!-- Stringers (upper and lower rows) -->
+  <g stroke="#5A6B7E" stroke-width="2">
+    <line x1="540" y1="223" x2="558" y2="223"/>
+    <line x1="572" y1="223" x2="586" y2="223"/>
+    <line x1="602" y1="223" x2="622" y2="223"/>
+    <line x1="642" y1="223" x2="654" y2="223"/>
+    <line x1="672" y1="223" x2="692" y2="223"/>
+    <line x1="552" y1="252" x2="568" y2="252"/>
+    <line x1="584" y1="252" x2="602" y2="252"/>
+    <line x1="620" y1="252" x2="636" y2="252"/>
+    <line x1="656" y1="252" x2="676" y2="252"/>
+    <line x1="694" y1="252" x2="708" y2="252"/>
+  </g>
+  <!-- Lamination at mid-thickness -->
+  <line x1="530" y1="237" x2="750" y2="237" stroke="#D14343" stroke-width="3" stroke-dasharray="10 5"/>
+  <!-- Seam at the surface -->
+  <line x1="700" y1="210" x2="700" y2="221" stroke="#D14343" stroke-width="2.5"/>
+  <text x="640" y="288" text-anchor="middle" font-size="17" font-weight="bold" fill="#0A2342">PLATE (after rolling)</text>
+
+  <!-- Legend for plate features -->
+  <line x1="470" y1="316" x2="505" y2="316" stroke="#D14343" stroke-width="3" stroke-dasharray="10 5"/>
+  <text x="515" y="321" font-size="16" fill="#0A2342">Lamination (from pipe and porosity)</text>
+  <line x1="470" y1="348" x2="505" y2="348" stroke="#5A6B7E" stroke-width="2.5"/>
+  <text x="515" y="353" font-size="16" fill="#0A2342">Stringers (elongated inclusions)</text>
+  <line x1="470" y1="380" x2="505" y2="380" stroke="#D14343" stroke-width="2.5"/>
+  <text x="515" y="385" font-size="16" fill="#0A2342">Seam (tight line at the surface)</text>
+
+  <text x="470" y="430" text-anchor="middle" font-size="16" fill="#5A6B7E">Rolling turns ingot discontinuities into planar, directional ones.</text>
+</svg>

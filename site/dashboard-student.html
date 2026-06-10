@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard — NDT Academy</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dash-body">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="NDT Academy"></a>
+    <nav class="main-nav">
+      <span style="font-family:var(--mono); font-size:.78rem; color:var(--text-soft)">J. Martinez · Student</span>
+      <a href="login.html" class="btn btn-ghost btn-sm">Sign Out</a>
+    </nav>
+  </div>
+</header>
+
+<div class="dash-layout">
+  <aside class="dash-side">
+    <div class="side-label">Learn</div>
+    <a href="#" class="active">Overview</a>
+    <a href="#">My Courses</a>
+    <a href="#">Practice Exams</a>
+    <div class="side-label">Records</div>
+    <a href="#">Training Hours</a>
+    <a href="#">Certificates</a>
+    <a href="#">Exam History</a>
+  </aside>
+
+  <main class="dash-main">
+    <div class="proto-note">PROTOTYPE WITH SAMPLE DATA — live version pulls from Supabase per signed-in student.</div>
+    <h1>Welcome back, Jordan</h1>
+    <p class="dash-sub">UT Level II is 68% complete. 11.5 formal training hours remain for SNT-TC-1A recommended hours.</p>
+
+    <div class="kpis">
+      <div class="kpi"><div class="lbl">Training hours logged</div><div class="num">62.5</div><div class="delta up">+4.0 this week</div></div>
+      <div class="kpi"><div class="lbl">Courses in progress</div><div class="num">2</div></div>
+      <div class="kpi"><div class="lbl">Avg practice score</div><div class="num">84%</div><div class="delta up">+6 pts vs last month</div></div>
+      <div class="kpi"><div class="lbl">Certificates earned</div><div class="num">3</div></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><h3>My Courses</h3><a class="btn btn-primary btn-sm" href="#">Resume UT Level II</a></div>
+      <div class="panel-body" style="padding:0">
+        <table class="data">
+          <thead><tr><th>Course</th><th>Level</th><th>Progress</th><th>Hours logged</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ultrasonic Testing</strong></td><td>II</td><td><div class="bar"><i style="width:68%"></i></div></td><td>27.0 / 40</td><td><span class="badge info">In progress</span></td></tr>
+            <tr><td><strong>Radiation Safety</strong></td><td>—</td><td><div class="bar warn"><i style="width:35%"></i></div></td><td>7.0 / 20</td><td><span class="badge info">In progress</span></td></tr>
+            <tr><td><strong>Magnetic Particle</strong></td><td>II</td><td><div class="bar good"><i style="width:100%"></i></div></td><td>20.0 / 20</td><td><span class="badge ok">Complete</span></td></tr>
+            <tr><td><strong>Liquid Penetrant</strong></td><td>II</td><td><div class="bar good"><i style="width:100%"></i></div></td><td>16.0 / 16</td><td><span class="badge ok">Complete</span></td></tr>
+            <tr><td><strong>Visual Testing</strong></td><td>I</td><td><div class="bar good"><i style="width:100%"></i></div></td><td>8.0 / 8</td><td><span class="badge ok">Complete</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid cols-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Recent Exam Attempts</h3></div>
+        <div class="panel-body" style="padding:0">
+          <table class="data">
+            <thead><tr><th>Exam</th><th>Date</th><th>Score</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>UT II — Module 6 Quiz</td><td>Jun 7</td><td>88%</td><td><span class="badge ok">Pass</span></td></tr>
+              <tr><td>UT II — Practice (50q)</td><td>Jun 5</td><td>82%</td><td><span class="badge ok">Pass</span></td></tr>
+              <tr><td>UT II — Practice (50q)</td><td>Jun 2</td><td>74%</td><td><span class="badge bad">Below 80%</span></td></tr>
+              <tr><td>Rad Safety — Module 2 Quiz</td><td>May 29</td><td>90%</td><td><span class="badge ok">Pass</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Certificates</h3></div>
+        <div class="panel-body" style="padding:0">
+          <table class="data">
+            <thead><tr><th>Certificate</th><th>Issued</th><th>Hours</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>MT Level II — Formal Training</td><td>Apr 18, 2026</td><td>20.0</td><td><a href="#">PDF</a></td></tr>
+              <tr><td>PT Level II — Formal Training</td><td>Mar 2, 2026</td><td>16.0</td><td><a href="#">PDF</a></td></tr>
+              <tr><td>VT Level I — Formal Training</td><td>Jan 21, 2026</td><td>8.0</td><td><a href="#">PDF</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/site.js"></script>
+</body>
+</html>

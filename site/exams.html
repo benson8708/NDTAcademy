@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practice Exams — NDT Academy</title>
+<meta name="description" content="Free NDT practice exams: 5,000+ questions in Ultrasonic, Radiographic, Magnetic Particle, Liquid Penetrant, and Eddy Current testing for Levels I–III.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="NDT Academy"></a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="exams.html" class="active">Practice Exams</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="btn btn-primary btn-sm">Sign In</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero on-dark">
+  <div class="wrap">
+    <span class="kicker">Practice Exam Engine</span>
+    <h1>Test Yourself</h1>
+    <p class="lede">5,011 questions across five methods and three levels. Pick your setup, beat the clock, review every answer.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+
+    <!-- SETUP -->
+    <div id="setup" class="exam-setup">
+      <div class="field">
+        <label>Method</label>
+        <div class="option-row" id="pick-method">
+          <button class="pick sel" data-v="UT">UT<small>Ultrasonic</small></button>
+          <button class="pick" data-v="RT">RT<small>Radiographic</small></button>
+          <button class="pick" data-v="MPI">MT<small>Mag Particle</small></button>
+          <button class="pick" data-v="LPI">PT<small>Penetrant</small></button>
+          <button class="pick" data-v="ECT">ET<small>Eddy Current</small></button>
+        </div>
+      </div>
+      <div class="field">
+        <label>Level</label>
+        <div class="option-row" id="pick-level">
+          <button class="pick sel" data-v="1">Level I</button>
+          <button class="pick" data-v="2">Level II</button>
+          <button class="pick" data-v="3">Level III</button>
+        </div>
+      </div>
+      <div class="field">
+        <label>Questions</label>
+        <div class="option-row" id="pick-count">
+          <button class="pick" data-v="10">10<small>Quick drill</small></button>
+          <button class="pick sel" data-v="25">25<small>Standard</small></button>
+          <button class="pick" data-v="50">50<small>Full length</small></button>
+        </div>
+      </div>
+      <div class="field">
+        <label>Timer</label>
+        <div class="option-row" id="pick-timer">
+          <button class="pick sel" data-v="0">Off<small>Untimed</small></button>
+          <button class="pick" data-v="60">60s<small>per question</small></button>
+          <button class="pick" data-v="90">90s<small>per question</small></button>
+        </div>
+      </div>
+      <p style="margin:24px 0">
+        <button class="btn btn-primary" id="start">Start Exam</button>
+      </p>
+      <p class="lede" style="font-size:.95rem">Questions are drawn at random from the bank each time, so every attempt is different. Passing threshold shown at 80%.</p>
+    </div>
+
+    <!-- EXAM -->
+    <div id="exam" class="exam-shell" style="display:none">
+      <div class="exam-top">
+        <span id="exam-label"></span>
+        <span id="exam-counter"></span>
+        <span class="exam-timer" id="exam-timer"></span>
+      </div>
+      <div class="progress"><div id="exam-progress"></div></div>
+      <div class="q-card">
+        <div class="q-text" id="q-text"></div>
+        <div class="answers" id="answers"></div>
+      </div>
+      <div class="exam-nav">
+        <button class="btn btn-ghost" id="quit">Quit</button>
+        <button class="btn btn-primary" id="next" disabled>Next Question</button>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="results" class="exam-shell" style="display:none">
+      <div class="q-card">
+        <div class="score-ring" id="ring"><div><span class="pct" id="r-pct"></span><span class="frac" id="r-frac"></span></div></div>
+        <div class="verdict" id="r-verdict"></div>
+        <div id="review"></div>
+      </div>
+      <div class="exam-nav">
+        <button class="btn btn-ghost" id="again-setup">Change Setup</button>
+        <button class="btn btn-primary" id="again">Retake (New Questions)</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom" style="border-top:0; padding-top:0">
+      <span>© 2026 NDT Academy · NDTAcademy.com</span>
+      <span>Practice exams are study aids, not certification exams</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+<script src="js/exam.js"></script>
+</body>
+</html>

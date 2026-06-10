@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — NDT Academy</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dash-body">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="NDT Academy"></a>
+    <nav class="main-nav">
+      <span style="font-family:var(--mono); font-size:.78rem; color:var(--text-soft)">Mike · Platform Admin</span>
+      <a href="login.html" class="btn btn-ghost btn-sm">Sign Out</a>
+    </nav>
+  </div>
+</header>
+
+<div class="dash-layout">
+  <aside class="dash-side">
+    <div class="side-label">Platform</div>
+    <a href="#" class="active">Overview</a>
+    <a href="#">Companies</a>
+    <a href="#">Students</a>
+    <a href="#">Billing</a>
+    <div class="side-label">Content</div>
+    <a href="#">Course Builder</a>
+    <a href="#">Question Banks</a>
+    <a href="#">Standards Library</a>
+    <a href="#">Certificates</a>
+  </aside>
+
+  <main class="dash-main">
+    <div class="proto-note">PROTOTYPE WITH SAMPLE DATA — live version is the Supabase-backed control panel for all content, customers, and records.</div>
+    <h1>Platform Overview</h1>
+    <p class="dash-sub">3 courses awaiting Level III review · 1 standards version update pending.</p>
+
+    <div class="kpis">
+      <div class="kpi"><div class="lbl">Active students</div><div class="num">142</div><div class="delta up">+11 this month</div></div>
+      <div class="kpi"><div class="lbl">Company accounts</div><div class="num">9</div><div class="delta up">+1</div></div>
+      <div class="kpi"><div class="lbl">MRR</div><div class="num">$6,840</div><div class="delta up">+8.2%</div></div>
+      <div class="kpi"><div class="lbl">Certificates issued</div><div class="num">214</div></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><h3>Course Builder</h3><button class="btn btn-primary btn-sm">+ New Course</button></div>
+      <div class="panel-body" style="padding:0">
+        <table class="data">
+          <thead><tr><th>Course</th><th>Version</th><th>Modules</th><th>Standards mapping</th><th>Level III review</th><th></th></tr></thead>
+          <tbody>
+            <tr><td><strong>UT Level I</strong></td><td>v2.1</td><td>12</td><td>CP-105 2024 · SNT-TC-1A 2024</td><td><span class="badge ok">Approved</span></td><td><a href="#">Edit</a></td></tr>
+            <tr><td><strong>UT Level II</strong></td><td>v2.0</td><td>14</td><td>CP-105 2024 · SNT-TC-1A 2024 · NAS410 R6</td><td><span class="badge ok">Approved</span></td><td><a href="#">Edit</a></td></tr>
+            <tr><td><strong>MT Level I–II</strong></td><td>v1.4</td><td>9</td><td>CP-105 2024 · SNT-TC-1A 2024</td><td><span class="badge ok">Approved</span></td><td><a href="#">Edit</a></td></tr>
+            <tr><td><strong>PT Level I–II</strong></td><td>v1.3</td><td>8</td><td>CP-105 2024 · SNT-TC-1A 2024</td><td><span class="badge warn">In review</span></td><td><a href="#">Edit</a></td></tr>
+            <tr><td><strong>ET Level I</strong></td><td>v0.9</td><td>10</td><td>CP-105 2024 — mapping draft</td><td><span class="badge warn">In review</span></td><td><a href="#">Edit</a></td></tr>
+            <tr><td><strong>RT Level I + Rad Safety</strong></td><td>v0.7</td><td>11 + 4</td><td>CP-105 2024 · jurisdiction disclaimers separate</td><td><span class="badge warn">In review</span></td><td><a href="#">Edit</a></td></tr>
+            <tr><td><strong>VT Level I</strong></td><td>v1.0</td><td>6</td><td>CP-105 2024 · SNT-TC-1A 2024</td><td><span class="badge ok">Approved</span></td><td><a href="#">Edit</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid cols-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Question Banks</h3><button class="btn btn-ghost btn-sm">Manage</button></div>
+        <div class="panel-body" style="padding:0">
+          <table class="data">
+            <thead><tr><th>Bank</th><th>Questions</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>UT — Levels 1–3</td><td>1,007</td><td><span class="badge warn">Generic rewrite pending</span></td></tr>
+              <tr><td>RT — Levels 1–3</td><td>1,001</td><td><span class="badge warn">Generic rewrite pending</span></td></tr>
+              <tr><td>MT — Levels 1–3</td><td>1,001</td><td><span class="badge warn">Generic rewrite pending</span></td></tr>
+              <tr><td>PT — Levels 1–3</td><td>1,001</td><td><span class="badge warn">Generic rewrite pending</span></td></tr>
+              <tr><td>ET — Levels 1–3</td><td>1,001</td><td><span class="badge warn">Generic rewrite pending</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Standards Library (versioned)</h3><button class="btn btn-ghost btn-sm">+ Add Version</button></div>
+        <div class="panel-body" style="padding:0">
+          <table class="data">
+            <thead><tr><th>Standard</th><th>Version</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>ASNT CP-105</td><td>2024</td><td><span class="badge ok">Current</span></td></tr>
+              <tr><td>ASNT SNT-TC-1A</td><td>2024</td><td><span class="badge ok">Current</span></td></tr>
+              <tr><td>AIA NAS410</td><td>Rev 6</td><td><span class="badge info">Mapping update pending</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head"><h3>Companies</h3><button class="btn btn-ghost btn-sm">View All</button></div>
+      <div class="panel-body" style="padding:0">
+        <table class="data">
+          <thead><tr><th>Company</th><th>Seats</th><th>Students</th><th>Plan</th><th>Renewal</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Acme Inspection Services</strong></td><td>10</td><td>8</td><td>Team Annual</td><td>Jan 2027</td><td><span class="badge ok">Active</span></td></tr>
+            <tr><td><strong>Gulf Coast NDE</strong></td><td>25</td><td>22</td><td>Team Annual</td><td>Sep 2026</td><td><span class="badge ok">Active</span></td></tr>
+            <tr><td><strong>Skyline MRO</strong></td><td>5</td><td>5</td><td>Team Monthly</td><td>—</td><td><span class="badge warn">Payment retry</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/site.js"></script>
+</body>
+</html>

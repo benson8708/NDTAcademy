@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Standards Compliance — NDT Academy</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/course.css">
+<style>
+  .comp-table td, .comp-table th { vertical-align: middle; }
+  .pct-pill { font-family: var(--display); font-weight:700; font-size:1.2rem; }
+  .pct-pill.full { color: var(--green); }
+  .pct-pill.partial { color: var(--amber); }
+  .method-note { font-size:.85rem; color:var(--text-soft); margin-top:6px; }
+  details.matrix { border-top:1px solid var(--line); }
+  details.matrix summary { cursor:pointer; padding:12px 22px; font-family:var(--mono); font-size:.74rem; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); }
+  details.matrix table { margin: 0 0 14px; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="NDT Academy"></a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="exams.html">Practice Exams</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="btn btn-primary btn-sm">Sign In</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero on-dark">
+  <div class="wrap">
+    <span class="kicker">Standards Traceability</span>
+    <h1>Compliance Report</h1>
+    <p class="lede">Machine-verified evidence that every course covers its ANSI/ASNT CP-105-2024 topical outline and meets the governing formal training hours from SNT-TC-1A 2024 and NAS410.</p>
+  </div>
+</section>
+
+<section class="block tight">
+  <div class="wrap">
+    <div class="proto-note" id="gen-note">Loading…</div>
+    <div id="report"></div>
+
+    <div class="panel">
+      <div class="panel-head"><h3>Methodology &amp; Limits</h3></div>
+      <div class="panel-body">
+        <p style="margin-bottom:10px"><strong>Coverage (CP-105):</strong> <span id="m-cov"></span></p>
+        <p style="margin-bottom:10px"><strong>Hours (SNT-TC-1A / NAS410):</strong> <span id="m-hrs"></span></p>
+        <p style="margin-bottom:10px"><strong>Design vs. delivery:</strong> This report verifies <em>course design</em>. Delivered training hours are enforced at run time by active-engagement time tracking (idle/hidden-tab pauses) and certificate gating: a certificate is only issued when logged time, lesson completion, knowledge checks, and the final exam all meet requirements.</p>
+        <p><strong>Authority:</strong> Automated traceability supports — but does not replace — review and approval of each course by a qualified Level III, and verification of NAS410 figures against the purchased Rev 6 standard text. SNT-TC-1A figures were extracted from the licensed SNT-TC-1A 2024 document (Table 6.3.1A).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom" style="border-top:0; padding-top:0">
+      <span>© 2026 NDT Academy · NDTAcademy.com</span>
+      <span>Formal training evidence only — employer certification requirements apply</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  function render(R) {
+    $('gen-note').textContent = `COMPLIANCE SNAPSHOT — generated ${R.generated} by tools/verify_compliance.py from the OCR'd CP-105-2024 outlines and the course curriculum data. Regenerate after any curriculum change.`;
+    $('m-cov').textContent = R.methodology.coverage;
+    $('m-hrs').textContent = R.methodology.hours;
+    $('report').innerHTML = R.courses.map(c => {
+      const pct = c.coveragePct == null ? '—' : c.coveragePct + '%';
+      const full = c.unmatchedCount === 0;
+      return `
+      <div class="panel">
+        <div class="panel-head">
+          <h3>${esc(c.code)} — ${esc(c.name)}</h3>
+          <span class="pct-pill ${full ? 'full' : 'partial'}">${pct} outline coverage</span>
+        </div>
+        <div class="panel-body" style="padding-bottom:8px">
+          <table class="data comp-table">
+            <thead><tr><th>Level</th><th>SNT-TC-1A 2024</th><th>NAS410</th><th>Governing</th><th>Course design</th><th>Margin</th><th>Status</th></tr></thead>
+            <tbody>
+            ${c.hours.map(h => `<tr>
+              <td><strong>${esc(String(h.level))}</strong></td>
+              <td>${h.snt != null ? h.snt + ' h' : '—'}</td>
+              <td>${h.nas != null ? h.nas + ' h' : '—'}</td>
+              <td>${h.governing != null ? '<strong>' + h.governing + ' h</strong>' : '—'}</td>
+              <td>${h.designedHours} h (${h.designedMinutes} min)</td>
+              <td>${h.marginMinutes != null ? '+' + h.marginMinutes + ' min' : '—'}</td>
+              <td><span class="badge ${h.meets ? 'ok' : 'bad'}">${h.meets ? 'Meets' : 'FAILS'}</span></td>
+            </tr>`).join('')}
+            </tbody>
+          </table>
+          <p class="method-note">CP-105 outline items parsed: ${c.outlineItems} · traced to lessons: ${c.matched} · awaiting review: ${c.unmatchedCount}${c.excludedAdvanced ? ' · excluded from scope: ' + esc(c.excludedAdvanced) : ''}</p>
+          ${c.futureTechniques && c.futureTechniques.length ? `<p class="method-note">Future technique buildouts: ${c.futureTechniques.map(esc).join('; ')}</p>` : ''}
+        </div>
+        ${c.reviewQueue.length ? `
+        <details class="matrix"><summary>Level III review queue (${c.reviewQueue.length})</summary>
+          <div class="panel-body" style="padding-top:0">
+          <table class="data"><thead><tr><th>Outline item</th><th>Text</th><th>Best match</th></tr></thead><tbody>
+          ${c.reviewQueue.map(u => `<tr><td>${esc(u.num)}</td><td>${esc(u.text)}</td><td>${u.lessonTitle ? esc(u.lessonTitle) + ' (' + u.match + ')' : '—'}</td></tr>`).join('')}
+          </tbody></table></div>
+        </details>` : ''}
+      </div>`;
+    }).join('');
+  }
+  fetch('data/compliance.json').then(r => { if (!r.ok) throw 0; return r.json(); }).then(render).catch(() => {
+    const s = document.createElement('script');
+    s.src = 'data/compliance.js';
+    s.onload = () => render((window.NDTA_DATA || {})['compliance']);
+    s.onerror = () => $('gen-note').textContent = 'Could not load compliance data.';
+    document.head.appendChild(s);
+  });
+})();
+</script>
+</body>
+</html>

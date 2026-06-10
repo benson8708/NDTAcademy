@@ -1,0 +1,174 @@
+{
+  "lessonId": "vt2-2-1",
+  "title": "Fundamentals of Light and Light Sources",
+  "narrationScript": "Visual testing lives or dies on light. Every indication you have ever caught — a crack, a pit, an undercut toe — you caught because the light coming off that spot was different from the light coming off the metal around it. So before we talk about gauges or acceptance criteria, we need to understand what light is, where it comes from, and why the source you choose changes what you can see. Light is electromagnetic radiation the human eye can detect. The visible band runs from roughly three hundred eighty nanometers at the violet end to about seven hundred forty nanometers at the red end. Shorter than that is ultraviolet. Longer is infrared. Both are invisible, and both show up around inspection work, so remember the boundaries. Inside the visible band, wavelength is color. Around four hundred fifty nanometers looks blue. Around five hundred fifty-five nanometers looks green, and that number matters, because that is where the light-adapted eye is most sensitive. Light meters are filtered to weight their readings the same way, so a calibrated meter sees the world roughly the way your eye does. A few quantities will follow you through this whole module. Luminous flux, measured in lumens, is the total visible light a source puts out. Illuminance, measured in lux or footcandles, is how much of that light lands on a surface. One footcandle is about ten point seven six lux. Luminance is the light a surface sends back toward your eye, and it is the only thing you actually see. Keep those three separate and the rest of lighting theory gets easy. Now, sources. Every light you will ever carry belongs to one of two families. Incandescent radiators make light with heat. Luminescent radiators make light without depending on high temperature. An incandescent lamp pushes current through a tungsten filament until it glows at white heat, somewhere around twenty-seven hundred to three thousand kelvin. Because the emission is thermal, the spectrum is smooth and continuous, every color present, so color rendering is essentially perfect. The price is efficiency. Most of the energy leaves as infrared heat, not visible light. The quartz halogen lamp is the improved version. A halogen gas fill returns evaporated tungsten to the filament, so the filament can run hotter. You get whiter light, more output, and longer life, but the envelope gets extremely hot, and that heat is a real consideration around solvents, coatings, and confined spaces. Luminescent sources work differently. A fluorescent tube strikes an electric arc through low-pressure mercury vapor. The arc mostly makes ultraviolet, which you cannot see. A phosphor coating inside the tube absorbs that ultraviolet and re-emits it as visible light. The result is a cool-running, diffuse source, good for even shop lighting, though older magnetic ballasts can flicker, and color quality depends on the phosphor blend. High-intensity discharge lamps run an arc at high pressure inside a small arc tube. Mercury vapor, metal halide, high-pressure sodium. They put out enormous amounts of light, which is why they hang over fabrication yards and tank farms. But they need several minutes to warm up, and if power blinks, a hot lamp has to cool before it restrikes. Color rendering ranges from decent with metal halide to terrible with sodium, which is nearly a single yellow wavelength. You cannot judge color under it. The light-emitting diode is now the default inspection source. Current crossing a semiconductor junction releases photons directly. Most white LEDs are a blue-emitting chip under a yellow phosphor. They are efficient, rugged, instant on, cool in the beam, and they come in intrinsically safe ratings for hazardous atmospheres. Pay attention to one specification, the color rendering index. For color-critical work, choose a lamp with a CRI of ninety or better. Lasers are the special case. Stimulated emission produces light of a single wavelength, in phase, and collimated into a tight beam that stays tight over distance. That makes a laser useless for lighting an area and excellent for projecting reference lines, checking alignment, and structured-light measurement. Respect the class rating, and never look into the beam. So when you reach for a light, think it through. How much light does the surface need? Does the task involve color? Is the atmosphere hazardous? Does the lamp run hot? Will it survive a drop from the scaffold? The physics decides. Now you know the physics.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Light Is the Inspection Medium",
+      "body": "Visual testing detects one thing: differences in the light reaching your eye. Before you can manage lighting, you need to know what light is. Light is electromagnetic radiation that the human eye can detect — the visible band, running from roughly 380 nanometers at the violet end to about 740 nm at the red end. Just below 380 nm lies ultraviolet; just beyond 740 nm lies infrared. Both are invisible, and both show up around inspection work — UV from welding arcs and some discharge lamps, IR as heat from incandescent sources.\n\nWithin the visible band, wavelength is color. The light-adapted (photopic) eye is not equally sensitive across that band: sensitivity peaks near 555 nm, in the green, and falls off steeply toward both the violet and red ends. Calibrated light meters are filtered to mimic that response curve, which is why a meter reading in lux tracks what your eye experiences rather than the raw energy a lamp radiates."
+    },
+    {
+      "type": "text",
+      "heading": "The Quantities on Your Meter",
+      "body": "Four photometric quantities run through every lighting requirement you will ever read.\n\n- **Luminous flux** (lumens, lm) — the total visible light a source emits in all directions. It is the headline number on a lamp's packaging.\n- **Luminous intensity** (candela, cd) — flux concentrated into a direction. A focused flashlight has high intensity from modest flux.\n- **Illuminance** (lux, lx; or footcandles, fc) — flux landing on a surface. This is what procedures specify and what your light meter reads. One footcandle is about 10.76 lux, so 50 fc ≈ 500 lx and 100 fc ≈ 1000 lx.\n- **Luminance** (candela per square meter) — light leaving a surface toward your eye. It is the only quantity you actually see, and it drives contrast, which we cover later in this module.\n\nWhen light meets a surface it can be reflected, absorbed, or transmitted, and at a boundary it refracts — bends — per Snell's law. Light travels about 300,000 kilometers per second; wavelength sets both color and photon energy, which rises as wavelength shortens. That is why ultraviolet, not red light, causes fluorescence and sunburn. Keep flux, intensity, illuminance, and luminance straight and every lighting spec becomes readable."
+    },
+    {
+      "type": "figure",
+      "figureId": "vt2-2-1-fig-a",
+      "caption": "The visible band spans roughly 380–740 nm; photopic eye sensitivity — and light-meter weighting — peaks near 555 nm in the green."
+    },
+    {
+      "type": "text",
+      "heading": "Incandescent Radiators",
+      "body": "An incandescent radiator makes light with heat. Pass current through a tungsten filament and resistance heats it to roughly 2700–3000 kelvin, hot enough to glow white. Because the emission is thermal, the spectrum is continuous — every visible wavelength is present — so color rendering is essentially perfect, with a color rendering index (CRI) near 100. Anything that glows from temperature behaves this way: a filament, red-hot steel coming out of a furnace, the sun.\n\nThe cost is efficiency. Most of the input energy leaves as infrared, not visible light; a standard incandescent lamp delivers only about 10–18 lumens per watt, and the envelope and reflector run hot. The quartz-halogen lamp improves on this: a halogen gas fill scavenges evaporated tungsten and redeposits it on the filament, allowing a hotter filament — about 3000–3300 K — for whiter light, somewhat better efficacy, and longer life inside a compact quartz envelope. The trade-offs matter in the field: hot housings near solvents, coatings, or your forearm in a confined space; fragile filaments that fail with shock and vibration; and output and color that sag noticeably when supply voltage drops. Incandescent sources still appear on job sites, but they are heat engines first and lamps second."
+    },
+    {
+      "type": "text",
+      "heading": "Luminescent Radiators: Fluorescent and HID",
+      "body": "A luminescent radiator emits light without depending on incandescence — electrons are excited and release photons directly, so the lamp runs far cooler than a filament.\n\nThe **fluorescent lamp** strikes a low-pressure arc through mercury vapor. The arc emits mostly ultraviolet, centered near 254 nm, which you cannot see. A phosphor coating on the inside of the tube absorbs that UV and re-emits it as visible light; the phosphor blend sets both the color temperature and the CRI. Because the tube is a large, low-luminance surface, the light is diffuse and gentle on the eyes — good general shop lighting. Watch for flicker on older magnetic ballasts, which fatigues the eye and can strobe rotating machinery, and remember that tubes contain mercury and dim in cold air.\n\n**High-intensity discharge (HID)** lamps — mercury vapor, metal halide, and high-pressure sodium — run an arc at high pressure inside a small arc tube. They generate the enormous lumen packages that light fabrication yards, tank farms, and high bays. Two field realities: they need several minutes to reach full output, and after even a brief power interruption a hot lamp must cool before it restrikes, leaving you dark for minutes. Color rendering ranges from reasonable (metal halide) to dreadful (high-pressure sodium, whose nearly monochromatic 589 nm yellow makes color judgment impossible)."
+    },
+    {
+      "type": "figure",
+      "figureId": "vt2-2-1-fig-b",
+      "caption": "Four ways to make light — a heated filament, a mercury arc exciting a phosphor, a high-pressure arc tube, and a semiconductor junction — plus the laser's collimated beam."
+    },
+    {
+      "type": "text",
+      "heading": "LEDs and Lasers",
+      "body": "The **light-emitting diode** is now the default inspection source. Current crossing a semiconductor junction releases photons directly — electroluminescence. Most white LEDs pair a blue-emitting chip with a yellow phosphor; the mix reads as white. The practical advantages stack up: efficacy of roughly 100–200 lumens per watt, instant full output, a cool beam, solid-state ruggedness that shrugs off drops and vibration, tens of thousands of hours of life, and battery-friendly low-voltage operation. Intrinsically safe rated LED flashlights and headlamps are widely available for vessels and hazardous atmospheres. Two cautions: CRI is a purchasing decision — specify CRI 80 or better for general work and 90+ when judging colors — and cheap drivers can introduce flicker you will feel before you see.\n\nThe **laser** is the special case among luminescent sources. Stimulated emission produces light that is monochromatic (one wavelength), coherent (in phase), and collimated (a tight beam that stays tight). Those properties make lasers useless for lighting an area and superb for projecting straight reference lines, checking alignment and flatness, and powering structured-light and laser-line measurement systems on borescopes and scanners. Treat every laser by its class rating: never look into the beam or its specular reflection, and keep beams off other people's eyes on a busy site."
+    },
+    {
+      "type": "table",
+      "caption": "Field comparison of common inspection light sources.",
+      "headers": ["Source", "How it makes light", "Typical efficacy", "Color rendering", "Field notes"],
+      "rows": [
+        ["Tungsten incandescent", "Filament heated white-hot (thermal)", "≈ 10–18 lm/W", "Excellent (CRI ≈ 100)", "Hot, fragile filament, short life; warm color"],
+        ["Quartz halogen", "Hotter filament + halogen cycle", "≈ 15–25 lm/W", "Excellent (CRI ≈ 100)", "Whiter light; very hot envelope — keep off solvents and skin"],
+        ["Fluorescent", "Mercury arc UV excites a phosphor", "≈ 50–100 lm/W", "Fair to good (phosphor-dependent)", "Diffuse, cool; flicker possible on magnetic ballasts"],
+        ["HID (metal halide / sodium)", "High-pressure arc in a small tube", "≈ 65–140 lm/W", "Good (MH) to very poor (HPS)", "Huge output for yards; minutes to warm up and restrike"],
+        ["White LED", "Junction electroluminescence + phosphor", "≈ 100–200 lm/W", "Selectable — buy CRI ≥ 80 (90+ for color work)", "Rugged, instant-on, cool beam; intrinsically safe models"],
+        ["Laser", "Stimulated emission", "n/a — beam, not area light", "Single wavelength", "Reference lines and measurement only; eye hazard by class"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Choosing the Source — a 60-Second Checklist",
+      "body": "- **Illuminance**: can it deliver the procedure minimum at the surface, verified with a calibrated meter — not catalog lumens?\n- **Color**: judging tint, corrosion product, or coating color? Demand high CRI (90+). Never under sodium light.\n- **Atmosphere**: permit-required or flammable? Intrinsically safe rated, low-voltage — usually LED.\n- **Heat**: halogen housings near solvents, coatings, or skin are a hazard.\n- **Power events**: HID warm-up and restrike take minutes — carry a portable backup.\n- **Abuse**: solid-state sources survive the drops and vibration that kill filaments."
+    }
+  ],
+  "figures": [
+    { "id": "vt2-2-1-fig-a", "title": "The Visible Spectrum and the Eye's Response", "file": "vt2-2-1-fig-a.svg" },
+    { "id": "vt2-2-1-fig-b", "title": "How Light Sources Make Light", "file": "vt2-2-1-fig-b.svg" }
+  ],
+  "interactive": {
+    "type": "scenario",
+    "title": "Pick the Right Light",
+    "intro": "Four jobs, one lighting cart. For each examination, choose the source a Level II should reach for — and know why the others stay on the cart.",
+    "steps": [
+      {
+        "prompt": "Direct VT of fillet welds inside a carbon-steel tank that previously held flammable solvent. The space is ventilated and gas-tested, but the permit still requires equipment rated for the atmosphere. Your light?",
+        "options": [
+          "500 W quartz-halogen work light on a stand",
+          "Intrinsically safe rated LED flashlight and headlamp",
+          "HID floodlight aimed in through the manway"
+        ],
+        "correct": 1,
+        "feedback": "In a permit space you match equipment to the atmosphere rating. A sealed, cool-running, low-voltage intrinsically safe LED meets the permit. A halogen envelope runs hundreds of degrees hot and its glass and switching are ignition risks; an HID blasted through the manway throws glare and hard shadows, not usable task light."
+      },
+      {
+        "prompt": "You must judge purge quality by the heat-tint colors on a stainless weld — straw, blue, purple bands. Which source?",
+        "options": [
+          "High-pressure sodium shop light overhead",
+          "White LED inspection lamp with CRI 90 or better",
+          "Any lamp, as long as the meter reads 1000 lx at the surface"
+        ],
+        "correct": 1,
+        "feedback": "Color judgment needs a full-spectrum source with high color rendering. Sodium light is nearly single-wavelength yellow — tint bands simply vanish under it. And illuminance alone is not enough: 1000 lx of poor-CRI light still cannot render the colors you are paid to judge."
+      },
+      {
+        "prompt": "General night lighting for a fabrication yard where crews move material and you make walk-around gross checks before detailed VT. Best fit?",
+        "options": [
+          "Metal-halide (HID) tower lights for the area, plus your portable lamp for direct VT",
+          "A single handheld LED penlight for everything",
+          "A laser line projector swept across the yard"
+        ],
+        "correct": 0,
+        "feedback": "HID delivers the huge lumen packages area lighting needs, with workable color rendering from metal halide. Plan around warm-up and restrike — minutes, not seconds — and never substitute area light for a verified task light at the examination surface."
+      },
+      {
+        "prompt": "You suspect a subtle buckle along 6 meters of shell plate and want a straight visual reference across it. What do you grab?",
+        "options": [
+          "A laser line projector set up along the plate",
+          "A second halogen flood for more brightness",
+          "A fluorescent drop light laid against the plate"
+        ],
+        "correct": 0,
+        "feedback": "A laser's collimated, monochromatic beam stays a tight straight line over distance — a perfect straightness reference. More flood light changes nothing about geometry. Mind the laser class rating and keep the beam away from eyes."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "Visible light occupies which approximate wavelength band, and where is the light-adapted eye most sensitive?",
+      "options": [
+        "About 380–740 nm, with peak sensitivity near 555 nm in the green",
+        "About 100–380 nm, with peak sensitivity in the ultraviolet",
+        "About 740–1100 nm, with peak sensitivity in the infrared",
+        "About 380–740 nm, with peak sensitivity at the deep red end"
+      ],
+      "correct": 0,
+      "explanation": "The visible band runs from roughly 380 nm (violet) to about 740 nm (red), and photopic sensitivity peaks near 555 nm — the same weighting built into calibrated light meters."
+    },
+    {
+      "question": "What is the defining difference between incandescent and luminescent radiators?",
+      "options": [
+        "Incandescent sources emit only infrared; luminescent sources emit only visible light",
+        "Incandescent sources glow because they are hot; luminescent sources emit light from excited electrons without depending on high temperature",
+        "Incandescent sources are always brighter than luminescent sources",
+        "Luminescent sources cannot operate from battery power"
+      ],
+      "correct": 1,
+      "explanation": "Incandescence is thermal radiation from a hot body, giving a continuous spectrum; luminescence releases photons from excited electrons — arcs, phosphors, semiconductor junctions — without white-hot temperatures."
+    },
+    {
+      "question": "In a fluorescent tube, most of the visible light is produced by:",
+      "options": [
+        "The mercury arc, which emits white light directly",
+        "The heated electrodes glowing at each end of the tube",
+        "The phosphor coating, which absorbs the arc's ultraviolet and re-emits it as visible light",
+        "The glass envelope heating up during operation"
+      ],
+      "correct": 2,
+      "explanation": "The low-pressure mercury arc emits mostly invisible UV near 254 nm; the phosphor coating converts that UV to visible light, and the phosphor blend sets the lamp's color quality."
+    },
+    {
+      "question": "Why is a high-pressure sodium yard light a poor source for judging heat-tint colors on a stainless weld?",
+      "options": [
+        "Its output is too dim to reach 500 lx at any distance",
+        "Its nearly monochromatic yellow output gives very poor color rendering, so tint colors cannot be judged",
+        "It emits dangerous levels of ultraviolet at the surface",
+        "It cannot operate outdoors in cold weather"
+      ],
+      "correct": 1,
+      "explanation": "High-pressure sodium emits almost all of its light near a single yellow wavelength around 589 nm; with no full spectrum to reflect, straw and blue tint bands cannot be distinguished."
+    },
+    {
+      "question": "Which property of laser light makes it ideal for projecting a straightness reference but useless as area lighting?",
+      "options": [
+        "Its high color rendering index",
+        "Its broad, continuous spectrum",
+        "Its collimated, single-wavelength beam that stays narrow over distance",
+        "Its high infrared heat output"
+      ],
+      "correct": 2,
+      "explanation": "Stimulated emission yields a monochromatic, coherent, collimated beam — it holds a tight straight line over meters, which is exactly what a reference line needs and exactly what area illumination does not."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, VT Level II Topical Outline §3.1–3.2.2",
+    "Codes such as ASME BPVC Section V, Article 9 (lighting for direct visual examination, cited generically)",
+    "General photometric definitions per illumination engineering practice (original wording)"
+  ]
+}

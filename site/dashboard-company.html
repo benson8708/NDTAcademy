@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Company Dashboard — NDT Academy</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dash-body">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="NDT Academy"></a>
+    <nav class="main-nav">
+      <span style="font-family:var(--mono); font-size:.78rem; color:var(--text-soft)">Acme Inspection Services · Company Admin</span>
+      <a href="login.html" class="btn btn-ghost btn-sm">Sign Out</a>
+    </nav>
+  </div>
+</header>
+
+<div class="dash-layout">
+  <aside class="dash-side">
+    <div class="side-label">Team</div>
+    <a href="#" class="active">Overview</a>
+    <a href="#">Technicians</a>
+    <a href="#">Seats &amp; Billing</a>
+    <div class="side-label">Compliance</div>
+    <a href="#">Training Records</a>
+    <a href="#">Certificates</a>
+    <a href="#">Audit Export</a>
+  </aside>
+
+  <main class="dash-main">
+    <div class="proto-note">PROTOTYPE WITH SAMPLE DATA — live version scopes to your company via Supabase row-level security.</div>
+    <h1>Acme Inspection Services</h1>
+    <p class="dash-sub">8 of 10 seats in use · 2 technicians have certificates ready to download.</p>
+
+    <div class="kpis">
+      <div class="kpi"><div class="lbl">Seats used</div><div class="num">8 / 10</div><div class="delta">2 available</div></div>
+      <div class="kpi"><div class="lbl">Active technicians</div><div class="num">8</div></div>
+      <div class="kpi"><div class="lbl">Avg course progress</div><div class="num">71%</div><div class="delta up">+9% this month</div></div>
+      <div class="kpi"><div class="lbl">Certificates issued</div><div class="num">14</div><div class="delta up">2 new</div></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h3>Technician Roster</h3>
+        <div style="display:flex; gap:10px">
+          <button class="btn btn-ghost btn-sm">Export Training Records</button>
+          <button class="btn btn-primary btn-sm">+ Invite Technician</button>
+        </div>
+      </div>
+      <div class="panel-body" style="padding:0">
+        <table class="data">
+          <thead><tr><th>Technician</th><th>Course</th><th>Progress</th><th>Hours</th><th>Last active</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><strong>J. Martinez</strong></td><td>UT Level II</td><td><div class="bar"><i style="width:68%"></i></div></td><td>27.0 / 40</td><td>Today</td><td><span class="badge info">On track</span></td></tr>
+            <tr><td><strong>S. Chen</strong></td><td>RT Level I + Rad Safety</td><td><div class="bar"><i style="width:54%"></i></div></td><td>21.5 / 40</td><td>Yesterday</td><td><span class="badge info">On track</span></td></tr>
+            <tr><td><strong>D. Okafor</strong></td><td>MT Level II</td><td><div class="bar good"><i style="width:100%"></i></div></td><td>20.0 / 20</td><td>Jun 6</td><td><span class="badge ok">Cert ready</span></td></tr>
+            <tr><td><strong>R. Patel</strong></td><td>PT Level II</td><td><div class="bar good"><i style="width:100%"></i></div></td><td>16.0 / 16</td><td>Jun 5</td><td><span class="badge ok">Cert ready</span></td></tr>
+            <tr><td><strong>K. Walsh</strong></td><td>ET Level I</td><td><div class="bar warn"><i style="width:22%"></i></div></td><td>9.0 / 40</td><td>May 22</td><td><span class="badge warn">Stalled 18 days</span></td></tr>
+            <tr><td><strong>M. Reyes</strong></td><td>UT Level I</td><td><div class="bar"><i style="width:45%"></i></div></td><td>18.0 / 40</td><td>Jun 8</td><td><span class="badge info">On track</span></td></tr>
+            <tr><td><strong>T. Nguyen</strong></td><td>VT Level I</td><td><div class="bar"><i style="width:75%"></i></div></td><td>6.0 / 8</td><td>Today</td><td><span class="badge info">On track</span></td></tr>
+            <tr><td><strong>A. Brooks</strong></td><td>RT Level II</td><td><div class="bar"><i style="width:38%"></i></div></td><td>15.0 / 40</td><td>Jun 7</td><td><span class="badge info">On track</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid cols-2">
+      <div class="panel">
+        <div class="panel-head"><h3>Training-Hour Ledger (June)</h3></div>
+        <div class="panel-body" style="padding:0">
+          <table class="data">
+            <thead><tr><th>Date</th><th>Technician</th><th>Module</th><th>Hours</th></tr></thead>
+            <tbody>
+              <tr><td>Jun 9</td><td>J. Martinez</td><td>UT II — Angle Beam Calibration</td><td>1.5</td></tr>
+              <tr><td>Jun 9</td><td>T. Nguyen</td><td>VT I — Borescope Technique</td><td>1.0</td></tr>
+              <tr><td>Jun 8</td><td>M. Reyes</td><td>UT I — Transducer Fundamentals</td><td>2.0</td></tr>
+              <tr><td>Jun 7</td><td>A. Brooks</td><td>RT II — Exposure Technique</td><td>1.5</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><h3>Recent Certificates</h3></div>
+        <div class="panel-body" style="padding:0">
+          <table class="data">
+            <thead><tr><th>Technician</th><th>Certificate</th><th>Issued</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>D. Okafor</td><td>MT Level II — Formal Training</td><td>Jun 6, 2026</td><td><a href="#">PDF</a></td></tr>
+              <tr><td>R. Patel</td><td>PT Level II — Formal Training</td><td>Jun 5, 2026</td><td><a href="#">PDF</a></td></tr>
+              <tr><td>J. Martinez</td><td>MT Level II — Formal Training</td><td>Apr 18, 2026</td><td><a href="#">PDF</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="js/site.js"></script>
+</body>
+</html>

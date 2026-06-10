@@ -1,0 +1,180 @@
+{
+  "lessonId": "vt2-3-1",
+  "title": "Optics Fundamentals: Transmission, Refraction, Prisms, and Lenses",
+  "narrationScript": "Everything we do in visual testing depends on light traveling from the test surface to your eye or to a camera sensor. At Level One you learned what light is. Now we dig into how it behaves when it passes through glass, water, prisms, and lenses, because that behavior is the working principle behind every magnifier, borescope, and video probe you will carry into the field. Start with transmission. When light enters a solid or liquid medium, three things can happen. Some of it passes through, some is absorbed and turned into heat, and some is scattered off its path. A material that passes light cleanly, like good optical glass, is transparent. A material that passes light but scrambles the image, like frosted glass or cloudy water, is translucent. A material that passes essentially nothing is opaque. Inspection optics live or die on losses. Every time light crosses an uncoated boundary between air and glass, roughly four percent of it reflects away. Stack up a dozen lens surfaces in a cheap instrument and you can lose a third of your light and fill the image with ghost reflections. That is why quality optics carry anti reflection coatings. Liquids matter too. When you inspect through water or oil, turbidity, color, and films on the viewing window all steal light and contrast. Now refraction. Light travels at different speeds in different media. It is fastest in a vacuum, very nearly as fast in air, about one quarter slower in water, and roughly a third slower in glass. When a ray crosses a boundary between two media at an angle, the speed change makes it bend. Entering a denser, slower medium, the ray bends toward the normal, which is the imaginary reference line perpendicular to the surface. Leaving into a faster medium, it bends away from the normal. Snell's law pins this down. The index of the first medium times the sine of the incident angle equals the index of the second medium times the sine of the refracted angle. You will not solve it every day, but you must own the idea. Refraction is why a pin gauge looks bent in a beaker of water, why a flaw under a water film is not where it appears to be, and why a lens works at all. There is a special case you must know. When light traveling inside a dense medium reaches the boundary with a less dense medium at a shallow enough grazing angle, it cannot get out. Past a value called the critical angle, the boundary acts like a perfect mirror, and all of the light reflects back inside. That is total internal reflection. It traps light inside optical fibers and lets prisms redirect light with almost no loss. Every glass has its own refractive index. Air is essentially one. Water is about one point three three. Fused silica is about one point four six. Common crown glass is about one point five two. Dense flint glass runs around one point six five, and sapphire, used for scratch resistant scope windows, is about one point seven six. The higher the index, the harder the bend. One complication. The index of any glass shifts slightly with wavelength, so blue light bends more than red. That is dispersion. It is how a prism fans white light into a spectrum, and it is why a simple lens smears color fringes around sharp edges, a flaw called chromatic aberration. Designers cure it by cementing a crown glass element to a flint glass element to make an achromatic doublet. Prisms put these effects to work. A triangular prism deviates a ray toward its base and spreads its colors. A right angle prism is more useful to us. Light entering one face strikes the long internal face beyond the critical angle and reflects totally, turning the beam exactly ninety degrees with almost no loss. Scope makers mount tiny prisms in the tip to create side viewing and angled viewing instruments. Finally, lenses. A converging lens is thicker in the middle. It refracts parallel rays to a focal point, and the lens to point distance is the focal length. Hold a converging lens closer to a surface than its focal length and you see an upright, magnified virtual image. That is your inspection magnifier. Its approximate power is two hundred fifty millimeters divided by the focal length, so a fifty millimeter lens gives about five power. A diverging lens is thinner in the middle and spreads rays apart as if they came from a virtual focus behind the lens. Designers use diverging elements to widen fields of view and tame aberrations. Master these few behaviors and every instrument in this module becomes obvious, because they are all just glass arranged to bend light on purpose.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Transmission Through Solids and Liquids",
+      "body": "Visual testing starts with light making a round trip: from a source, to the surface, and back through whatever media sit between the surface and your eye or camera. When light enters any solid or liquid, three things happen in some proportion: **transmission** (it passes through), **absorption** (it converts to heat), and **scattering** (it bounces off its path). The mix determines whether a material is *transparent* (clear optical glass, clean water), *translucent* (frosted glass, turbid water — light gets through but the image is destroyed), or *opaque*.\n\nFor inspection optics, the practical issues are losses and image degradation:\n\n- At every uncoated air-to-glass surface, roughly 4% of the light reflects away. A multi-element instrument can have 10–20 surfaces, so uncoated optics can waste a third or more of the light and create ghost images. Anti-reflection coatings cut each surface loss to under 1%.\n- Absorption in long glass paths and fibers dims the image; longer fiberscopes deliver visibly less light.\n- In liquids, suspended solids scatter light (turbidity), dissolved species tint it, and films of oil or biological growth on windows kill contrast. Underwater viewing adds another twist: water absorbs red light strongly, so colors shift blue-green with distance.\n\nKeep windows, lenses, and the medium clean, and budget for light losses — a dim, low-contrast image hides discontinuities."
+    },
+    {
+      "type": "figure",
+      "figureId": "vt2-3-1-fig-a",
+      "caption": "Refraction at an air-to-glass boundary per Snell's law, and total internal reflection when light inside the denser medium exceeds the critical angle."
+    },
+    {
+      "type": "text",
+      "heading": "Refraction and Snell's Law",
+      "body": "Light travels at different speeds in different media — fastest in vacuum, essentially the same in air, about 25% slower in water, about a third slower in crown glass. When a ray crosses a boundary between two media at an angle, the speed change bends it. That bending is **refraction**, and Snell's law quantifies it:\n\n**n1 × sin θ1 = n2 × sin θ2**\n\nwhere n is each medium's refractive index and both angles are measured from the **normal** — the line perpendicular to the surface at the point of entry. Two rules of thumb follow:\n\n- Entering a *denser* (higher-index) medium, the ray bends **toward** the normal.\n- Entering a *less dense* medium, it bends **away** from the normal.\n\nWork an example: light strikes glass (n = 1.52) from air at 45°. Then sin θ2 = sin 45° ÷ 1.52 = 0.465, so θ2 ≈ 27.7° — the ray straightens up inside the glass.\n\nNow reverse the trip. Light leaving a dense medium bends away from the normal — and past a limiting incidence called the **critical angle** (about 41° for glass-to-air, about 49° for water-to-air), it cannot exit at all. The boundary becomes a perfect mirror and 100% of the light reflects back inside: **total internal reflection (TIR)**. TIR is the working principle of optical fibers and reflecting prisms, and it is more efficient than any metal mirror coating.\n\nRefraction also explains everyday inspection traps: a flaw viewed through water or a thick sight glass appears displaced and shallower than it really is."
+    },
+    {
+      "type": "text",
+      "heading": "Refractive Indexes of Glasses — and Dispersion",
+      "body": "The refractive index n is the ratio of light's speed in vacuum to its speed in the material. Values worth carrying in your head:\n\n- Vacuum: 1.0000 — and air at 1.0003 is treated as 1\n- Water: 1.33\n- Fused silica: 1.46\n- Borosilicate and crown glasses: about 1.52\n- Flint (dense optical) glasses: about 1.60–1.72\n- Sapphire, used for scratch-resistant scope windows: 1.76\n- Diamond: 2.42\n\nHigher index means light travels slower in the material and bends more strongly at its surfaces — which is why high-index glasses make compact, strongly curved optics possible, and why a thick sapphire window slightly shifts the apparent position of whatever you view through it.\n\nA single index per glass is a simplification. The index actually varies with wavelength: every glass bends short-wavelength blue light more than long-wavelength red. This is **dispersion**, and it has two faces. In a prism it is useful — it fans white light into a spectrum. In a lens it is a defect: each color focuses at a slightly different distance, smearing colored fringes around high-contrast edges (**chromatic aberration**). The classic cure is the **achromatic doublet** — a converging crown-glass element cemented to a diverging flint-glass element whose dispersions cancel. Quality magnifiers and borescope objectives use achromats; bargain optics show you the fringes."
+    },
+    {
+      "type": "figure",
+      "figureId": "vt2-3-1-fig-b",
+      "caption": "A refracting prism deviates light toward its base and disperses colors, while a right-angle prism turns the beam 90° by total internal reflection."
+    },
+    {
+      "type": "text",
+      "heading": "How Prisms Change the Direction of Light",
+      "body": "A prism is just shaped glass, but the shaping is everything.\n\nA **triangular (refracting) prism** refracts light at both faces. The combined effect always **deviates the ray toward the prism's base**, and because of dispersion the deviation is larger for blue than for red — so a white beam exits as a fan of color. Refracting wedges built on this principle steer beams in optical instruments.\n\nA **right-angle (reflecting) prism** exploits total internal reflection instead. Light enters one short face, strikes the internal hypotenuse at 45° — beyond glass's roughly 41° critical angle — and reflects totally, leaving through the other face turned exactly 90°. No mirror coating is needed, losses are minimal, and the reflecting surface can never tarnish or peel the way a metal mirror can. Stack two reflections (Porro prism) and you fold the path 180°; a Dove prism rotates the image.\n\nThis matters to you because **prisms and small mirrors in scope tips create the direction of view**: a side-view borescope is a forward scope with a TIR prism mounted ahead of the objective. The same physics explains why a chipped or cracked prism scatters light and washes out the image — inspect your inspection tools."
+    },
+    {
+      "type": "figure",
+      "figureId": "vt2-3-1-fig-c",
+      "caption": "A converging lens focuses parallel rays to a focal point, while a diverging lens spreads them as if from a virtual focus."
+    },
+    {
+      "type": "text",
+      "heading": "How Lenses Focus and Disperse Light",
+      "body": "A lens is a refracting surface wrapped into a circle, and its behavior follows from where the glass is thicker.\n\nA **converging (positive) lens** — thicker at the center — bends parallel rays inward to meet at the **focal point**; the lens-to-point distance is the **focal length, f**. Short focal length means a strong lens. Converging lenses form two kinds of images:\n\n- Object farther away than f → a **real, inverted image** that can be projected onto a sensor or relayed down a borescope tube. This is what objective lenses do.\n- Object closer than f → an **upright, magnified virtual image**. This is your inspection magnifier. Approximate magnifying power = **250 mm ÷ f**, based on the eye's 250 mm comfortable viewing distance: a 50 mm lens gives about 5×, a 25 mm lens about 10×.\n\nA **diverging (negative) lens** — thinner at the center — spreads parallel rays apart as if they radiated from a virtual focal point on the entry side. Diverging elements widen fields of view (wide-angle borescope tips work this way) and pair with converging elements to correct aberrations.\n\nTwo field realities to remember: the **power versus field-of-view trade-off** — the stronger the magnifier, the smaller the patch you see and the shorter the working distance — and **dispersion in lenses**, where single elements focus each color at a different distance until a corrected doublet fixes it. Both drive how designers combine lenses into trains, the subject of the next lesson."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Four behaviors run every VT instrument",
+      "body": "- **Transmission with losses** — about 4% reflects at every uncoated glass surface; coatings and cleanliness preserve light and contrast.\n- **Refraction** — Snell's law; rays bend toward the normal entering denser media, away leaving them.\n- **Total internal reflection** — beyond the critical angle, an internal glass boundary becomes a perfect mirror; this powers fibers and reflecting prisms.\n- **Focusing** — converging lenses magnify (power ≈ 250 ÷ f in mm); diverging lenses spread light and widen views.\n\nEvery magnifier, borescope, fiberscope, and video probe in this module is a combination of these four effects."
+    }
+  ],
+  "figures": [
+    {
+      "id": "vt2-3-1-fig-a",
+      "title": "Refraction and Total Internal Reflection at a Boundary",
+      "file": "vt2-3-1-fig-a.svg"
+    },
+    {
+      "id": "vt2-3-1-fig-b",
+      "title": "How Prisms Change the Direction of Light",
+      "file": "vt2-3-1-fig-b.svg"
+    },
+    {
+      "id": "vt2-3-1-fig-c",
+      "title": "Converging and Diverging Lenses",
+      "file": "vt2-3-1-fig-c.svg"
+    }
+  ],
+  "interactive": {
+    "type": "sort",
+    "title": "Which Optical Effect Is Doing the Work?",
+    "intro": "Classify each inspection situation by the optical effect that makes it happen: refraction, total internal reflection, or dispersion.",
+    "buckets": ["Refraction", "Total internal reflection", "Dispersion"],
+    "items": [
+      {
+        "label": "A 10× magnifier forms an enlarged image of a weld toe",
+        "bucket": 0,
+        "why": "A magnifier is a converging lens used inside its focal length — it refracts rays to create an upright, magnified virtual image."
+      },
+      {
+        "label": "Light stays trapped inside a fiberscope fiber for three meters",
+        "bucket": 1,
+        "why": "Rays strike the core-to-cladding boundary beyond the critical angle, so the boundary reflects them totally at every bounce."
+      },
+      {
+        "label": "A right-angle prism turns the view 90° in a side-view borescope tip",
+        "bucket": 1,
+        "why": "Light hits the internal hypotenuse at 45°, beyond glass's ~41° critical angle, and reflects totally — no mirror coating needed."
+      },
+      {
+        "label": "A pin gauge appears bent where it enters a beaker of water",
+        "bucket": 0,
+        "why": "Rays from the submerged portion bend at the water-to-air boundary, displacing the apparent position — classic refraction."
+      },
+      {
+        "label": "White light spreads into a rainbow fan after a triangular prism",
+        "bucket": 2,
+        "why": "The glass's refractive index varies with wavelength, so blue bends more than red and the colors separate — dispersion."
+      },
+      {
+        "label": "Color fringes appear around sharp edges through a bargain single-lens loupe",
+        "bucket": 2,
+        "why": "Chromatic aberration: dispersion makes each color focus at a different distance in an uncorrected lens."
+      },
+      {
+        "label": "A borescope objective focuses the scene into a small real image",
+        "bucket": 0,
+        "why": "An objective is a converging lens system — refraction bends rays from the scene to form a real, inverted image for the relay train."
+      },
+      {
+        "label": "A flaw under a water film looks shallower than it really is",
+        "bucket": 0,
+        "why": "Apparent-depth shift comes from refraction at the water surface — rays bend away from the normal as they exit into air."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "Light passes from air into a glass window at a 45° angle of incidence. What happens to the ray as it enters the glass?",
+      "options": [
+        "It bends away from the normal and speeds up",
+        "It bends toward the normal and slows down",
+        "It continues in a straight line but loses intensity",
+        "It reverses direction by total internal reflection"
+      ],
+      "correct": 1,
+      "explanation": "Glass has a higher refractive index than air, so light slows down and Snell's law bends the ray toward the normal. TIR can only happen traveling from a denser medium toward a less dense one."
+    },
+    {
+      "question": "Total internal reflection can occur only when light is traveling…",
+      "options": [
+        "From a low-index medium into a high-index medium, at any angle",
+        "Exactly perpendicular to the boundary between two media",
+        "Inside a high-index medium toward a lower-index medium, at an angle beyond the critical angle",
+        "Through a vacuum"
+      ],
+      "correct": 2,
+      "explanation": "TIR requires the dense-to-rare direction and an incidence angle greater than the critical angle; only then does the boundary reflect 100% of the light back inside."
+    },
+    {
+      "question": "Compared with crown glass (n = 1.52), a flint glass with n = 1.72 will…",
+      "options": [
+        "Bend a given ray more strongly, because light travels more slowly in it",
+        "Bend the ray less strongly",
+        "Transmit light faster than crown glass",
+        "Eliminate chromatic aberration by itself"
+      ],
+      "correct": 0,
+      "explanation": "A higher index means slower light and stronger bending at each surface. Flint's higher dispersion is exactly why it is paired with crown glass in an achromatic doublet — alone it corrects nothing."
+    },
+    {
+      "question": "A side-view borescope tip turns the line of sight 90° with almost no light loss. Which element and principle accomplish this?",
+      "options": [
+        "A diverging lens using dispersion",
+        "A coated metal mirror using absorption",
+        "A converging lens using refraction",
+        "A right-angle prism using total internal reflection"
+      ],
+      "correct": 3,
+      "explanation": "Light strikes the prism's internal hypotenuse at 45°, beyond the ~41° critical angle for glass, so it reflects totally and exits turned exactly 90° — more efficient and durable than a metal mirror."
+    },
+    {
+      "question": "An inspection magnifier has a focal length of 50 mm. Its approximate magnifying power is…",
+      "options": [
+        "2×",
+        "5×",
+        "10×",
+        "20×"
+      ],
+      "correct": 1,
+      "explanation": "Magnifier power ≈ 250 mm ÷ focal length, so 250 ÷ 50 = 5×. A 25 mm focal length would give the common 10× loupe."
+    }
+  ],
+  "references": [
+    "CP-105-2024 VT Topical Outline §5.1–5.5 (Level II)",
+    "ASME Section V, Article 9 — visual examination practice (generic reference)",
+    "Typical manufacturer optical data for inspection magnifiers and scope windows"
+  ]
+}

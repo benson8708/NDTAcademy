@@ -1,0 +1,55 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrFlow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#1B82E8"/>
+    </marker>
+    <marker id="arrGrey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5A6B7E"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <g font-family="Arial, sans-serif">
+    <text x="400" y="34" font-size="23" font-weight="bold" fill="#0A2342" text-anchor="middle">What In-Service Damage Looks Like in Cross-Section</text>
+
+    <!-- Panel 1: pitting -->
+    <rect x="25" y="55" width="360" height="185" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1.5"/>
+    <text x="45" y="82" font-size="18" font-weight="bold" fill="#0A2342">PITTING</text>
+    <rect x="45" y="140" width="320" height="70" fill="#D9E0E8" stroke="#5A6B7E" stroke-width="1.5"/>
+    <path d="M124 140 L127 150 Q118 162 130 170 Q142 162 133 150 L136 140 Z" fill="#FFFFFF" stroke="#D14343" stroke-width="1.5"/>
+    <path d="M245 140 L248 152 Q236 168 250 178 Q264 168 252 152 L255 140 Z" fill="#FFFFFF" stroke="#D14343" stroke-width="1.5"/>
+    <text x="45" y="230" font-size="16" fill="#5A6B7E">Depth can exceed width — use a pit gauge</text>
+
+    <!-- Panel 2: uniform corrosion -->
+    <rect x="415" y="55" width="360" height="185" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1.5"/>
+    <text x="435" y="82" font-size="18" font-weight="bold" fill="#0A2342">UNIFORM CORROSION</text>
+    <line x1="435" y1="128" x2="755" y2="128" stroke="#5A6B7E" stroke-width="1.5" stroke-dasharray="7 5"/>
+    <path d="M435 150 Q470 143 505 151 Q540 158 575 149 Q610 143 645 153 Q680 158 715 149 Q735 146 755 151 L755 210 L435 210 Z" fill="#D9E0E8" stroke="#D14343" stroke-width="1.5"/>
+    <line x1="447" y1="130" x2="447" y2="147" stroke="#5A6B7E" stroke-width="1.5" marker-start="url(#arrGrey)" marker-end="url(#arrGrey)"/>
+    <text x="435" y="230" font-size="16" fill="#5A6B7E">Even thinning vs. original surface (dashed)</text>
+
+    <!-- Panel 3: erosion at an elbow -->
+    <rect x="25" y="250" width="360" height="185" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1.5"/>
+    <text x="45" y="277" font-size="18" font-weight="bold" fill="#0A2342">EROSION AT AN ELBOW</text>
+    <path d="M85 425 L85 330 Q85 265 150 265 L330 265" fill="none" stroke="#5A6B7E" stroke-width="3"/>
+    <path d="M150 425 L150 395 Q150 330 215 330 L330 330" fill="none" stroke="#5A6B7E" stroke-width="3"/>
+    <path d="M85 330 Q85 265 150 265" fill="none" stroke="#D14343" stroke-width="6" stroke-dasharray="10 6"/>
+    <path d="M117 415 L117 355 Q117 298 175 298 L295 298" fill="none" stroke="#1B82E8" stroke-width="2.5" marker-end="url(#arrFlow)"/>
+    <text x="117" y="404" font-size="16" fill="#1B82E8" text-anchor="middle">flow</text>
+    <text x="195" y="395" font-size="16" fill="#5A6B7E">Wall loss at outer radius and</text>
+    <text x="195" y="415" font-size="16" fill="#5A6B7E">downstream of throttling</text>
+
+    <!-- Panel 4: SCC -->
+    <rect x="415" y="250" width="360" height="185" fill="#FFFFFF" stroke="#D9E0E8" stroke-width="1.5"/>
+    <text x="435" y="277" font-size="18" font-weight="bold" fill="#0A2342">STRESS-CORROSION CRACKING</text>
+    <rect x="435" y="330" width="320" height="80" fill="#D9E0E8" stroke="#5A6B7E" stroke-width="1.5"/>
+    <path d="M560 330 L555 355 L562 380" fill="none" stroke="#D14343" stroke-width="1.8"/>
+    <path d="M555 355 L543 372" fill="none" stroke="#D14343" stroke-width="1.5"/>
+    <path d="M555 355 L566 366 L576 378" fill="none" stroke="#D14343" stroke-width="1.5"/>
+    <path d="M562 380 L552 398" fill="none" stroke="#D14343" stroke-width="1.5"/>
+    <path d="M562 380 L572 394" fill="none" stroke="#D14343" stroke-width="1.5"/>
+    <line x1="505" y1="315" x2="465" y2="315" stroke="#5A6B7E" stroke-width="2" marker-end="url(#arrGrey)"/>
+    <line x1="615" y1="315" x2="655" y2="315" stroke="#5A6B7E" stroke-width="2" marker-end="url(#arrGrey)"/>
+    <text x="560" y="320" font-size="16" fill="#5A6B7E" text-anchor="middle">tensile stress</text>
+    <text x="435" y="428" font-size="16" fill="#5A6B7E">Tight, branched — confirm under magnification</text>
+  </g>
+</svg>

@@ -1,0 +1,982 @@
+window.NDTA_DATA=window.NDTA_DATA||{};window.NDTA_DATA['curriculum-basic']={
+  "id": "basic",
+  "code": "BASIC",
+  "name": "NDT Basic (Level III Prep)",
+  "cp105": "ANSI/ASNT CP-105-2024 Basic Examination Topical Outlines",
+  "hours": {
+    "snt_tc_1a": { "l1": null, "l2": null },
+    "nas410": { "l1": null, "l2": null },
+    "directToL2": null
+  },
+  "futureTechniques": [],
+  "levels": [
+    {
+      "level": "Basic",
+      "targetHours": 40,
+      "description": "Preparation for the ASNT NDT Level III Basic examination per the CP-105-2024 Basic topical outline: personnel qualification and certification programs (SNT-TC-1A, ANSI/ASNT CP-189, and the ASNT NDT Level III program), general familiarity with the 11 NDT methods, and general knowledge of materials, fabrication, and product technology.",
+      "finalExam": { "questions": 50, "passingScore": 80, "bank": null, "bankLevel": null, "status": "placeholder" },
+      "modules": [
+        {
+          "id": "basic-1",
+          "title": "Personnel Qualification and Certification Programs",
+          "cpSection": "Basic 1.0",
+          "hours": 5.0,
+          "lessons": [
+            {
+              "id": "basic-1-1",
+              "title": "SNT-TC-1A: Scope, Qualification Levels, and Written Practice",
+              "minutes": 75,
+              "objectives": [
+                "Describe the scope, definitions, and recommended nature of SNT-TC-1A",
+                "Differentiate the levels of qualification and the role of the employer's written practice",
+                "Summarize education, training, and experience recommendations for initial qualification and training programs"
+              ],
+              "topics": [
+                "1.1 Recommended Practice No. SNT-TC-1A",
+                "1.1.1 Scope",
+                "1.1.2 Definitions",
+                "1.1.3 Nondestructive testing methods",
+                "1.1.4 Levels of qualification",
+                "1.1.5 Written practice",
+                "1.1.6 Education, training, and experience for initial qualification",
+                "1.1.7 Training programs"
+              ],
+              "media": [
+                { "type": "video", "title": "SNT-TC-1A: A Recommended Practice, Not a Standard", "duration": "14:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Qualification Levels and Written Practice Relationship", "status": "placeholder" },
+                { "type": "reference", "title": "SNT-TC-1A Section Map Study Sheet", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-1-2",
+              "title": "SNT-TC-1A: Examinations, Certification, and Maintaining Certification",
+              "minutes": 75,
+              "objectives": [
+                "Describe SNT-TC-1A examination types, administration, and composite grading",
+                "Explain certification, technical performance evaluation, and interrupted service provisions",
+                "Summarize recertification, termination, reinstatement, and referenced publications"
+              ],
+              "topics": [
+                "1.1.8 Examinations",
+                "1.1.9 Certification",
+                "1.1.10 Technical performance evaluation",
+                "1.1.11 Interrupted service",
+                "1.1.12 Recertification",
+                "1.1.13 Termination",
+                "1.1.14 Reinstatement",
+                "1.1.15 Referenced publications"
+              ],
+              "media": [
+                { "type": "video", "title": "From Exam to Certification Under SNT-TC-1A", "duration": "12:00", "status": "placeholder" },
+                { "type": "interactive", "title": "Composite Grade Calculator Practice", "status": "placeholder" },
+                { "type": "reference", "title": "Certification Lifecycle Timeline", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-1-3",
+              "title": "ANSI/ASNT CP-189: The Employer-Based Standard",
+              "minutes": 75,
+              "objectives": [
+                "Contrast CP-189 as a standard with SNT-TC-1A as a recommended practice",
+                "Describe CP-189 qualification levels, qualification requirements, and examinations",
+                "Explain expiration, suspension, revocation, reinstatement, recertification, and records requirements"
+              ],
+              "topics": [
+                "1.2 ASNT Standard ANSI/ASNT CP-189",
+                "1.2.1 Scope",
+                "1.2.2 Definitions",
+                "1.2.3 Levels of qualification",
+                "1.2.4 Qualification requirements",
+                "1.2.5 Qualification and certification",
+                "1.2.6 Examinations",
+                "1.2.7 Expiration, suspension, revocation, and reinstatement of employer certification",
+                "1.2.8 Employer recertification",
+                "1.2.9 Records",
+                "1.2.10 Referenced publications"
+              ],
+              "media": [
+                { "type": "video", "title": "CP-189 vs. SNT-TC-1A: Shall vs. Should", "duration": "14:00", "status": "placeholder" },
+                { "type": "diagram", "title": "CP-189 Roles: NDT Personnel, Instructor, Examiner", "status": "placeholder" },
+                { "type": "interactive", "title": "Requirement Sort: CP-189 or SNT-TC-1A?", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-1-4",
+              "title": "The ASNT NDT Level III Certification Program",
+              "minutes": 75,
+              "objectives": [
+                "Describe the scope, definitions, and outcomes of the ASNT NDT Level III certification program",
+                "State eligibility requirements for examination and the structure of qualification examinations",
+                "Explain examination results, certification, validity, and recertification provisions"
+              ],
+              "topics": [
+                "1.3 NDT Level III certification program",
+                "1.3.1 Scope",
+                "1.3.2 Definitions",
+                "1.3.3 Certification outcome",
+                "1.3.4 Eligibility for examination",
+                "1.3.5 Qualification examinations",
+                "1.3.6 Examinations results",
+                "1.3.7 Certification",
+                "1.3.8 Validity",
+                "1.3.9 Recertification"
+              ],
+              "media": [
+                { "type": "video", "title": "Inside the ASNT NDT Level III Program", "duration": "12:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Eligibility Pathways by Education and Experience", "status": "placeholder" },
+                { "type": "reference", "title": "Level III Program Requirements Summary", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            }
+          ],
+          "moduleQuiz": { "questions": 10, "passingScore": 80, "status": "placeholder" }
+        },
+        {
+          "id": "basic-2",
+          "title": "NDT Methods Familiarity: Acoustic Emission and Electromagnetic Testing",
+          "cpSection": "Basic 2.1-2.2",
+          "hours": 5.0,
+          "lessons": [
+            {
+              "id": "basic-2-1",
+              "title": "Acoustic Emission Testing: Fundamentals and Sources",
+              "minutes": 75,
+              "objectives": [
+                "Explain the principles and theory of acoustic emission testing",
+                "Identify sources of acoustic emissions in stressed structures",
+                "Describe AE equipment and materials at a familiarity level"
+              ],
+              "topics": [
+                "2.1 Acoustic emission testing (AE)",
+                "2.1.1 Fundamentals",
+                "2.1.1.1 Principles/theory of AE",
+                "2.1.1.2 Sources of acoustic emissions",
+                "2.1.1.3 Equipment and material"
+              ],
+              "media": [
+                { "type": "video", "title": "Acoustic Emission: Listening to Materials Under Stress", "duration": "12:00", "status": "placeholder" },
+                { "type": "diagram", "title": "AE Source-to-Sensor Signal Path", "status": "placeholder" },
+                { "type": "narration", "title": "The Kaiser Effect and AE Source Mechanisms", "duration": "8:00", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-2-2",
+              "title": "Acoustic Emission: Technique Selection, Instrumentation, and Evaluation",
+              "minutes": 75,
+              "objectives": [
+                "Describe proper selection of AE technique including instrumentation and signal processing",
+                "Identify cable types, signal conditioning, signal detection, and noise discrimination considerations",
+                "Summarize interpretation and evaluation of AE test results"
+              ],
+              "topics": [
+                "2.1.2 Proper selection of acoustic emission technique",
+                "2.1.2.1 Instrumentation and signal processing",
+                "2.1.2.2 Cables (types)",
+                "2.1.2.3 Signal conditioning",
+                "2.1.2.4 Signal detection",
+                "2.1.2.5 Noise discrimination",
+                "2.1.2.6 Electronic technique",
+                "2.1.2.7 Attenuation materials",
+                "2.1.2.8 Data-filtering techniques",
+                "2.1.3 Interpretation and evaluation of test results"
+              ],
+              "media": [
+                { "type": "video", "title": "AE Instrumentation Chain and Noise Discrimination", "duration": "12:00", "status": "placeholder" },
+                { "type": "diagram", "title": "AE Signal Processing Block Diagram", "status": "placeholder" },
+                { "type": "interactive", "title": "Filter the Noise: AE Data Screening Exercise", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-2-3",
+              "title": "Electromagnetic Testing: Sensors, Equipment, and Reference Standards",
+              "minutes": 75,
+              "objectives": [
+                "Describe ET sensors and basic types of equipment and readout",
+                "Explain the role of reference standards in electromagnetic testing",
+                "Summarize eddy current principles at a familiarity level"
+              ],
+              "topics": [
+                "2.2 Electromagnetic testing (ET)",
+                "2.2.1 Sensors",
+                "2.2.2 Basic types of equipment, types of readout",
+                "2.2.3 Reference standards"
+              ],
+              "media": [
+                { "type": "video", "title": "Eddy Currents and Electromagnetic Testing Basics", "duration": "12:00", "status": "placeholder" },
+                { "type": "diagram", "title": "ET Probe Types and Impedance Plane Display", "status": "placeholder" },
+                { "type": "simulation", "title": "Scan a Reference Standard with an ET Probe", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-2-4",
+              "title": "Electromagnetic Testing: Applications and Interpretation",
+              "minutes": 75,
+              "objectives": [
+                "Describe ET applications including flaw detection, sorting, thickness gauging, and process control",
+                "Interpret representative ET test results at a familiarity level",
+                "Match ET applications to appropriate techniques"
+              ],
+              "topics": [
+                "2.2.4 Applications and test result interpretation",
+                "2.2.4.1 Flaw detection",
+                "2.2.4.2 Conductivity and permeability sorting",
+                "2.2.4.3 Thickness gauging",
+                "2.2.4.4 Process control"
+              ],
+              "media": [
+                { "type": "video", "title": "Where ET Shines: Four Application Families", "duration": "10:00", "status": "placeholder" },
+                { "type": "interactive", "title": "Match the ET Application to the Signal", "status": "placeholder" },
+                { "type": "reference", "title": "ET Applications Summary Table", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            }
+          ],
+          "moduleQuiz": { "questions": 10, "passingScore": 80, "status": "placeholder" }
+        },
+        {
+          "id": "basic-3",
+          "title": "NDT Methods Familiarity: Leak Testing and Liquid Penetrant Testing",
+          "cpSection": "Basic 2.3-2.4",
+          "hours": 5.0,
+          "lessons": [
+            {
+              "id": "basic-3-1",
+              "title": "Leak Testing Fundamentals and Techniques",
+              "minutes": 75,
+              "objectives": [
+                "Describe bubble, pressure, halogen detector, and mass spectrometer leak testing fundamentals",
+                "Explain LT procedures and techniques including system factors and relative sensitivity",
+                "Differentiate evacuated and pressurized system techniques including ambient and tracer fluids, leak locating, and standardization"
+              ],
+              "topics": [
+                "2.3 Leak testing (LT)",
+                "2.3.1 Fundamentals",
+                "2.3.1.1 Bubble leak testing",
+                "2.3.1.2 Pressure leak testing",
+                "2.3.1.3 Halogen detector leak testing",
+                "2.3.1.4 Mass spectrometer leak testing",
+                "2.3.2 LT procedures and techniques",
+                "2.3.2.1 System factors",
+                "2.3.2.2 Relative sensitivity",
+                "2.3.2.3 Evacuated systems",
+                "2.3.2.4 Pressurized systems - ambient fluids, tracer fluids",
+                "2.3.2.5 Locating leaks",
+                "2.3.2.6 Standardization"
+              ],
+              "media": [
+                { "type": "video", "title": "Four Ways to Find a Leak", "duration": "14:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Leak Testing Sensitivity Ladder", "status": "placeholder" },
+                { "type": "interactive", "title": "Choose the LT Technique for the Required Sensitivity", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-3-2",
+              "title": "Leak Testing: Interpretation, Safety, Equipment, and Applications",
+              "minutes": 75,
+              "objectives": [
+                "Summarize LT test result interpretation and essentials of safety",
+                "Identify LT test equipment at a familiarity level",
+                "Describe LT applications from piping and pressure vessels to hermetic seals and electronic components"
+              ],
+              "topics": [
+                "2.3.3 Test result interpretation",
+                "2.3.4 Essentials of safety",
+                "2.3.5 Test equipment",
+                "2.3.6 Applications",
+                "2.3.6.1 Piping and pressure vessels",
+                "2.3.6.2 Evacuated systems",
+                "2.3.6.3 Low-pressure fluid containment vessels, pipes, and tubing",
+                "2.3.6.4 Hermetic seals",
+                "2.3.6.5 Electrical and electronic components"
+              ],
+              "media": [
+                { "type": "video", "title": "Leak Testing Applications Across Industry", "duration": "10:00", "status": "placeholder" },
+                { "type": "reference", "title": "LT Safety Essentials Checklist", "status": "placeholder" },
+                { "type": "diagram", "title": "Mass Spectrometer Leak Detector Schematic", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-3-3",
+              "title": "Liquid Penetrant Testing: Fundamentals and Processes",
+              "minutes": 75,
+              "objectives": [
+                "Explain the interaction of penetrants and discontinuity openings",
+                "Describe fluorescence, contrast, and the major penetrant processes",
+                "Identify PT test equipment and systems factors"
+              ],
+              "topics": [
+                "2.4 Liquid penetrant testing (PT)",
+                "2.4.1 Fundamentals",
+                "2.4.1.1 Interaction of penetrants and discontinuity openings",
+                "2.4.1.2 Fluorescence and contrast",
+                "2.4.2.1 Penetrant processes",
+                "2.4.2.2 Test equipment and systems factors"
+              ],
+              "media": [
+                { "type": "video", "title": "Capillary Action: How Penetrant Testing Works", "duration": "12:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Penetrant Process Flowcharts: Water-Washable to Post-Emulsifiable", "status": "placeholder" },
+                { "type": "simulation", "title": "Run a Penetrant Process Step by Step", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-3-4",
+              "title": "Liquid Penetrant Testing: Interpretation and Applications",
+              "minutes": 75,
+              "objectives": [
+                "Interpret PT test results and discontinuity indications at a familiarity level",
+                "Describe PT applications including castings, welds, wrought metals, machined parts, leaks, and field inspections"
+              ],
+              "topics": [
+                "2.4.2.3 Test result interpretation, discontinuity indications",
+                "2.4.2.4 Applications",
+                "2.4.2.4.1 Castings",
+                "2.4.2.4.2 Welds",
+                "2.4.2.4.3 Wrought metals",
+                "2.4.2.4.4 Machined parts",
+                "2.4.2.4.5 Leaks",
+                "2.4.2.4.6 Field inspections"
+              ],
+              "media": [
+                { "type": "video", "title": "Reading Penetrant Indications", "duration": "10:00", "status": "placeholder" },
+                { "type": "interactive", "title": "Relevant or Nonrelevant? PT Indication Practice", "status": "placeholder" },
+                { "type": "reference", "title": "PT Application Examples Gallery", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            }
+          ],
+          "moduleQuiz": { "questions": 10, "passingScore": 80, "status": "placeholder" }
+        },
+        {
+          "id": "basic-4",
+          "title": "NDT Methods Familiarity: Magnetic Particle and Magnetic Flux Leakage Testing",
+          "cpSection": "Basic 2.5, 2.11",
+          "hours": 5.0,
+          "lessons": [
+            {
+              "id": "basic-4-1",
+              "title": "Magnetic Particle Testing: Fundamentals",
+              "minutes": 75,
+              "objectives": [
+                "Explain magnetic field principles relevant to MT",
+                "Describe magnetization by means of electric current",
+                "Explain demagnetization and when it is required"
+              ],
+              "topics": [
+                "2.5 Magnetic particle testing (MT)",
+                "2.5.1 Fundamentals",
+                "2.5.1.1 Magnetic field principles",
+                "2.5.1.2 Magnetization by means of electric current",
+                "2.5.1.3 Demagnetization"
+              ],
+              "media": [
+                { "type": "video", "title": "Magnetic Fields and Flux Leakage at a Crack", "duration": "12:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Circular vs. Longitudinal Magnetization", "status": "placeholder" },
+                { "type": "interactive", "title": "Orient the Field to Find the Crack", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-4-2",
+              "title": "Magnetic Particle Testing: Equipment, Interpretation, and Applications",
+              "minutes": 75,
+              "objectives": [
+                "Identify basic types of MT equipment and inspection materials",
+                "Interpret MT test results and discontinuity indications at a familiarity level",
+                "Describe MT applications including welds, castings, wrought metals, machined parts, and field applications"
+              ],
+              "topics": [
+                "2.5.2 MT",
+                "2.5.2.1 Basic types of equipment and inspection materials",
+                "2.5.2.2 Test results interpretation, discontinuity indications",
+                "2.5.2.3 Applications",
+                "2.5.2.3.1 Welds",
+                "2.5.2.3.2 Castings",
+                "2.5.2.3.3 Wrought metals",
+                "2.5.2.3.4 Machined parts",
+                "2.5.2.3.5 Field applications"
+              ],
+              "media": [
+                { "type": "video", "title": "Yokes, Benches, and Particles: MT Equipment Tour", "duration": "12:00", "status": "placeholder" },
+                { "type": "interactive", "title": "Classify the MT Indication", "status": "placeholder" },
+                { "type": "reference", "title": "MT Applications Summary Table", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-4-3",
+              "title": "Magnetic Flux Leakage Testing: Fundamentals",
+              "minutes": 75,
+              "objectives": [
+                "Explain magnetic field principles and magnetization by electric current as applied to MFL",
+                "Describe the flux leakage phenomenon and how sensors detect it",
+                "Identify basic MFL equipment, inspection materials, and the discontinuity types MFL finds"
+              ],
+              "topics": [
+                "2.11 Magnetic flux leakage testing (MFL)",
+                "2.11.1 Fundamentals",
+                "2.11.1.1 Magnetic field principles",
+                "2.11.1.2 Magnetization by means of electric current",
+                "2.11.1.3 Flux leakage",
+                "2.11.2 MFL",
+                "2.11.2.1 Basic types of equipment and inspection materials",
+                "2.11.2.2 Types of discontinuities found by MFL",
+                "2.11.2.3 Sensors used in MFL"
+              ],
+              "media": [
+                { "type": "video", "title": "MFL: Magnetic Particle's Electronic Cousin", "duration": "12:00", "status": "placeholder" },
+                { "type": "diagram", "title": "MFL Sensor Response Over a Wall-Loss Defect", "status": "placeholder" },
+                { "type": "narration", "title": "Hall Effect and Coil Sensors in MFL", "duration": "8:00", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-4-4",
+              "title": "Magnetic Flux Leakage: Applications",
+              "minutes": 75,
+              "objectives": [
+                "Describe MFL wire rope inspection",
+                "Describe MFL pipe body inspection",
+                "Describe MFL tank floor and steel plate inspection"
+              ],
+              "topics": [
+                "2.11.3 Applications",
+                "2.11.3.1 Wire rope inspection",
+                "2.11.3.2 Pipe body inspection",
+                "2.11.3.3 Tank floor/steel plate inspection"
+              ],
+              "media": [
+                { "type": "video", "title": "MFL in the Field: Wire Rope, Pipe, and Tank Floors", "duration": "12:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Tank Floor Scanner Coverage Pattern", "status": "placeholder" },
+                { "type": "interactive", "title": "Pick the MFL Tool for the Asset", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            }
+          ],
+          "moduleQuiz": { "questions": 10, "passingScore": 80, "status": "placeholder" }
+        },
+        {
+          "id": "basic-5",
+          "title": "NDT Methods Familiarity: Radiographic and Neutron Radiographic Testing",
+          "cpSection": "Basic 2.6-2.7",
+          "hours": 5.0,
+          "lessons": [
+            {
+              "id": "basic-5-1",
+              "title": "Radiographic Testing: Fundamentals and Safety Essentials",
+              "minutes": 75,
+              "objectives": [
+                "Describe RT sources and imaging and nonimaging detectors",
+                "Explain the nature of penetrating radiation and its interactions with matter",
+                "Summarize essentials of radiation safety for RT"
+              ],
+              "topics": [
+                "2.7 Radiographic testing (RT)",
+                "2.7.1 Fundamentals",
+                "2.7.1.1 Sources",
+                "2.7.1.2 Detectors",
+                "2.7.1.2.1 Imaging",
+                "2.7.1.2.2 Nonimaging",
+                "2.7.1.3 Nature of penetrating radiation and interactions with matter",
+                "2.7.1.4 Essentials of safety"
+              ],
+              "media": [
+                { "type": "video", "title": "X-rays, Gamma Rays, and How Radiographs Form", "duration": "14:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Radiation Interactions with Matter", "status": "placeholder" },
+                { "type": "reference", "title": "RT Safety Essentials Overview", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-5-2",
+              "title": "Radiographic Testing: Imaging, Interpretation, and Applications",
+              "minutes": 75,
+              "objectives": [
+                "Describe basic imaging considerations and system factors (source/test object/detector interactions)",
+                "Interpret representative radiographic discontinuity indications at a familiarity level",
+                "Identify RT applications including castings, welds, assemblies, electronic components, and field inspections"
+              ],
+              "topics": [
+                "2.7.2 RT",
+                "2.7.2.1 Basic imaging considerations",
+                "2.7.2.2 Test result interpretation, discontinuity indications",
+                "2.7.2.3 Systems factors (source/test object/detector interactions)",
+                "2.7.2.4 Applications",
+                "2.7.2.4.1 Castings",
+                "2.7.2.4.2 Welds",
+                "2.7.2.4.3 Assemblies",
+                "2.7.2.4.4 Electronic components",
+                "2.7.2.4.5 Field inspections"
+              ],
+              "media": [
+                { "type": "video", "title": "Reading a Radiograph: Density, Contrast, Definition", "duration": "12:00", "status": "placeholder" },
+                { "type": "interactive", "title": "Spot the Discontinuity on the Radiograph", "status": "placeholder" },
+                { "type": "diagram", "title": "Geometric Unsharpness and Source-Object-Detector Setup", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-5-3",
+              "title": "Neutron Radiographic Testing: Fundamentals",
+              "minutes": 75,
+              "objectives": [
+                "Describe NR sources including isotopic and neutron sources",
+                "Differentiate imaging and nonimaging neutron detectors",
+                "Explain the nature of neutron radiation interactions with matter and essentials of safety"
+              ],
+              "topics": [
+                "2.6 Neutron radiographic testing (NR)",
+                "2.6.1 Fundamentals",
+                "2.6.1.1 Sources",
+                "2.6.1.1.1 Isotopic",
+                "2.6.1.1.2 Neutron",
+                "2.6.1.2 Detectors",
+                "2.6.1.2.1 Imaging",
+                "2.6.1.2.2 Nonimaging",
+                "2.6.1.3 Nature of penetrating radiation and interactions with matter",
+                "2.6.1.4 Essentials of safety"
+              ],
+              "media": [
+                { "type": "video", "title": "Neutron Radiography: Seeing What X-rays Miss", "duration": "12:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Neutron vs. X-ray Attenuation by Element", "status": "placeholder" },
+                { "type": "narration", "title": "Neutron Sources and Detection Basics", "duration": "8:00", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-5-4",
+              "title": "Neutron Radiography: Imaging, Interpretation, and Applications",
+              "minutes": 75,
+              "objectives": [
+                "Describe NR basic imaging considerations and systems factors",
+                "Interpret representative NR discontinuity indications at a familiarity level",
+                "Identify NR applications including explosives, assembled and bonded components, corrosion detection, and nonmetallic materials"
+              ],
+              "topics": [
+                "2.6.2 NR",
+                "2.6.2.1 Basic imaging considerations",
+                "2.6.2.2 Test result interpretation, discontinuity indications",
+                "2.6.2.3 Systems factors (source/test object/detector interactions)",
+                "2.6.2.4 Applications",
+                "2.6.2.4.1 Explosives and pyrotechnic devices",
+                "2.6.2.4.2 Assembled components",
+                "2.6.2.4.3 Bonded components",
+                "2.6.2.4.4 Corrosion detection",
+                "2.6.2.4.5 Nonmetallic materials"
+              ],
+              "media": [
+                { "type": "video", "title": "Where Neutron Radiography Earns Its Keep", "duration": "10:00", "status": "placeholder" },
+                { "type": "interactive", "title": "X-ray or Neutron? Choose the Imaging Method", "status": "placeholder" },
+                { "type": "reference", "title": "NR Applications Summary Table", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            }
+          ],
+          "moduleQuiz": { "questions": 10, "passingScore": 80, "status": "placeholder" }
+        },
+        {
+          "id": "basic-6",
+          "title": "NDT Methods Familiarity: Ultrasonic and Thermal/Infrared Testing",
+          "cpSection": "Basic 2.8-2.9",
+          "hours": 5.0,
+          "lessons": [
+            {
+              "id": "basic-6-1",
+              "title": "Ultrasonic Testing: Wave Propagation and Transducers",
+              "minutes": 75,
+              "objectives": [
+                "Describe sound fields and wave travel modes in materials",
+                "Explain refraction, reflection, scattering, and attenuation of ultrasound",
+                "Describe transducers and sound beam coupling"
+              ],
+              "topics": [
+                "2.9 Ultrasonic testing (UT)",
+                "2.9.1 Fundamentals",
+                "2.9.1.1 Wave propagation",
+                "2.9.1.1.1 Sound fields",
+                "2.9.1.1.2 Wave travel modes",
+                "2.9.1.1.3 Refraction, reflection, scattering, and attenuation",
+                "2.9.1.2 Transducers and sound beam coupling"
+              ],
+              "media": [
+                { "type": "video", "title": "Sound in Solids: UT Wave Fundamentals", "duration": "14:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Longitudinal vs. Shear Waves and Snell's Law", "status": "placeholder" },
+                { "type": "simulation", "title": "Beam Path Visualizer: Angle Beam in a Weld", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-6-2",
+              "title": "Ultrasonic Testing: Equipment, Standards, Interpretation, and Applications",
+              "minutes": 75,
+              "objectives": [
+                "Identify basic types of UT equipment and reference standards",
+                "Interpret representative UT discontinuity indications and system factors at a familiarity level",
+                "Describe UT applications including flaw detection, thickness measurement, bond evaluation, process control, castings, and weldments"
+              ],
+              "topics": [
+                "2.9.2.1 Basic types of equipment",
+                "2.9.2.2 Reference standards",
+                "2.9.2.3 Test result interpretation, discontinuity indications",
+                "2.9.2.4 System factors",
+                "2.9.2.5 Applications",
+                "2.9.2.5.1 Flaw detection and evaluation",
+                "2.9.2.5.2 Thickness measurement",
+                "2.9.2.5.3 Bond evaluation",
+                "2.9.2.5.4 Process control",
+                "2.9.2.5.5 Castings",
+                "2.9.2.5.6 Weldments"
+              ],
+              "media": [
+                { "type": "video", "title": "A-Scan to Application: UT Equipment and Uses", "duration": "12:00", "status": "placeholder" },
+                { "type": "interactive", "title": "Read the A-Scan: Locate the Reflector", "status": "placeholder" },
+                { "type": "reference", "title": "Common UT Reference Standards Guide", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-6-3",
+              "title": "Thermal/Infrared Testing: Fundamentals and Equipment",
+              "minutes": 75,
+              "objectives": [
+                "Explain principles and theory of infrared testing and temperature measurement",
+                "Describe proper selection of IR technique",
+                "Identify IR equipment from contact indicators to thermal imagers"
+              ],
+              "topics": [
+                "2.8 Thermal/infrared testing (IR)",
+                "2.8.1 Fundamentals",
+                "2.8.1.1 Principles and theory of IR",
+                "2.8.1.2 Temperature measurement principles",
+                "2.8.1.3 Proper selection of IR technique",
+                "2.8.2 Equipment/materials",
+                "2.8.2.1 Temperature measurement equipment",
+                "2.8.2.2 Heat flux indicators",
+                "2.8.2.3 Noncontact devices",
+                "2.8.2.4 Contact temperature indicators",
+                "2.8.2.5 Noncontact pyrometers",
+                "2.8.2.6 Line scanners",
+                "2.8.2.7 Thermal imaging"
+              ],
+              "media": [
+                { "type": "video", "title": "Heat as a Signal: IR Testing Fundamentals", "duration": "14:00", "status": "placeholder" },
+                { "type": "diagram", "title": "IR Equipment Spectrum: Contact to Thermal Imaging", "status": "placeholder" },
+                { "type": "narration", "title": "Emissivity and Why It Matters", "duration": "8:00", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-6-4",
+              "title": "Thermal/Infrared Testing: Applications and Evaluation",
+              "minutes": 75,
+              "objectives": [
+                "Describe exothermic/endothermic, friction, fluid flow, thermal resistance, and thermal capacitance investigations",
+                "Summarize interpretation and evaluation of IR results at a familiarity level"
+              ],
+              "topics": [
+                "2.8.3 Applications",
+                "2.8.3.1 Exothermic or endothermic investigations",
+                "2.8.3.2 Friction investigations",
+                "2.8.3.3 Fluid flow investigations",
+                "2.8.3.4 Thermal resistance investigations",
+                "2.8.3.5 Thermal capacitance investigations",
+                "2.8.4 Interpretation and evaluation"
+              ],
+              "media": [
+                { "type": "video", "title": "Thermography Applications: Five Investigation Types", "duration": "12:00", "status": "placeholder" },
+                { "type": "interactive", "title": "Interpret the Thermogram", "status": "placeholder" },
+                { "type": "reference", "title": "IR Application Examples Gallery", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            }
+          ],
+          "moduleQuiz": { "questions": 10, "passingScore": 80, "status": "placeholder" }
+        },
+        {
+          "id": "basic-7",
+          "title": "NDT Methods Familiarity: Visual Testing",
+          "cpSection": "Basic 2.10",
+          "hours": 3.0,
+          "lessons": [
+            {
+              "id": "basic-7-1",
+              "title": "Visual Testing: Principles, Technique Selection, and Equipment",
+              "minutes": 60,
+              "objectives": [
+                "Explain principles and theory of visual testing",
+                "Describe selection of the correct visual technique",
+                "Identify VT equipment and materials at a familiarity level"
+              ],
+              "topics": [
+                "2.10 Visual testing (VT)",
+                "2.10.1 Fundamentals",
+                "2.10.1.1 Principles and theory of VT",
+                "2.10.1.2 Selection of correct visual technique",
+                "2.10.1.3 Equipment and materials"
+              ],
+              "media": [
+                { "type": "video", "title": "Visual Testing Essentials for the Level III Candidate", "duration": "12:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Direct vs. Remote VT Technique Selection Tree", "status": "placeholder" },
+                { "type": "reference", "title": "VT Equipment Quick Reference", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-7-2",
+              "title": "Visual Testing: Specific Applications",
+              "minutes": 60,
+              "objectives": [
+                "Describe VT applications for metal joining processes, pressure vessels, pumps, and valves",
+                "Describe VT applications for bolting, castings, forgings, extrusions, and microcircuits"
+              ],
+              "topics": [
+                "2.10.2 Specific applications",
+                "2.10.2.1 Metal joining processes",
+                "2.10.2.2 Pressure vessels",
+                "2.10.2.3 Pumps",
+                "2.10.2.4 Valves",
+                "2.10.2.5 Bolting",
+                "2.10.2.6 Castings",
+                "2.10.2.7 Forgings",
+                "2.10.2.8 Extrusions",
+                "2.10.2.9 Microcircuits"
+              ],
+              "media": [
+                { "type": "video", "title": "VT Application Walkthrough: Welds to Microcircuits", "duration": "12:00", "status": "placeholder" },
+                { "type": "interactive", "title": "Match the VT Setup to the Component", "status": "placeholder" },
+                { "type": "diagram", "title": "Inspection Access Points on Common Components", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-7-3",
+              "title": "Visual Testing: Interpretation and Evaluation",
+              "minutes": 60,
+              "objectives": [
+                "Summarize the role of codes and standards in VT interpretation and evaluation",
+                "Explain how environmental factors influence VT evaluation"
+              ],
+              "topics": [
+                "2.10.3 Interpretation and evaluation",
+                "2.10.3.1 Codes and standards",
+                "2.10.3.2 Environmental factors"
+              ],
+              "media": [
+                { "type": "video", "title": "Evaluating Visual Indications Against Codes", "duration": "10:00", "status": "placeholder" },
+                { "type": "reference", "title": "Common VT Acceptance Criteria Sources", "status": "placeholder" },
+                { "type": "interactive", "title": "Accept or Reject: Apply the Criteria", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            }
+          ],
+          "moduleQuiz": { "questions": 10, "passingScore": 80, "status": "placeholder" }
+        },
+        {
+          "id": "basic-8",
+          "title": "Fundamentals of Material Technology",
+          "cpSection": "Basic 3.1",
+          "hours": 3.5,
+          "lessons": [
+            {
+              "id": "basic-8-1",
+              "title": "Properties of Materials",
+              "minutes": 75,
+              "objectives": [
+                "Describe strength and elastic properties of engineering materials",
+                "Describe physical properties relevant to NDT method selection",
+                "Summarize common material properties testing approaches"
+              ],
+              "topics": [
+                "3.1 Fundamentals of material technology",
+                "3.1.1 Properties of materials",
+                "3.1.1.1 Strength and elastic properties",
+                "3.1.1.2 Physical properties",
+                "3.1.1.3 Material properties testing"
+              ],
+              "media": [
+                { "type": "video", "title": "Material Properties Every Level III Must Know", "duration": "14:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Stress-Strain Curve Annotated", "status": "placeholder" },
+                { "type": "interactive", "title": "Property Match: Material vs. Behavior", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-8-2",
+              "title": "Origin of Discontinuities and Failure Modes",
+              "minutes": 75,
+              "objectives": [
+                "Distinguish inherent, process-induced, and service-induced discontinuities",
+                "Describe failure modes in metallic and nonmetallic materials",
+                "Relate discontinuity origin to the manufacturing or service stage where it forms"
+              ],
+              "topics": [
+                "3.1.2 Origin of discontinuities and failure modes",
+                "3.1.2.1 Inherent discontinuities",
+                "3.1.2.2 Process-induced discontinuities",
+                "3.1.2.3 Service-induced discontinuities",
+                "3.1.2.4 Failures in metallic materials",
+                "3.1.2.5 Failures in nonmetallic materials"
+              ],
+              "media": [
+                { "type": "video", "title": "From Ingot to In-Service: Where Discontinuities Begin", "duration": "14:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Discontinuity Origin Timeline", "status": "placeholder" },
+                { "type": "interactive", "title": "Trace the Failure: Identify the Mode", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-8-3",
+              "title": "Statistical Nature of Detecting and Characterizing Discontinuities",
+              "minutes": 60,
+              "objectives": [
+                "Explain why discontinuity detection is statistical rather than absolute",
+                "Describe probability of detection concepts at a familiarity level"
+              ],
+              "topics": [
+                "3.1.3 Statistical nature of detecting and characterizing discontinuities"
+              ],
+              "media": [
+                { "type": "video", "title": "Probability of Detection: Why 100% Is a Myth", "duration": "12:00", "status": "placeholder" },
+                { "type": "interactive", "title": "POD Curve Explorer", "status": "placeholder" },
+                { "type": "reference", "title": "Detection Statistics Key Concepts", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            }
+          ],
+          "moduleQuiz": { "questions": 10, "passingScore": 80, "status": "placeholder" }
+        },
+        {
+          "id": "basic-9",
+          "title": "Fundamentals of Fabrication and Product Technology",
+          "cpSection": "Basic 3.2",
+          "hours": 5.0,
+          "lessons": [
+            {
+              "id": "basic-9-1",
+              "title": "Raw Materials, Primary Metals, and Castings",
+              "minutes": 75,
+              "objectives": [
+                "Describe raw materials processing and metal ingot production",
+                "Differentiate wrought primary metal products",
+                "Compare green sand, metal molded, and investment casting processes"
+              ],
+              "topics": [
+                "3.2 Fundamentals of fabrication and product technology",
+                "3.2.1 Raw materials processing",
+                "3.2.2 Metals processing",
+                "3.2.2.1 Primary metals",
+                "3.2.2.1.1 Metal ingot production",
+                "3.2.2.1.2 Wrought primary metals",
+                "3.2.2.2 Castings",
+                "3.2.2.2.1 Green sand molded",
+                "3.2.2.2.2 Metal molded",
+                "3.2.2.2.3 Investment molded"
+              ],
+              "media": [
+                { "type": "video", "title": "From Ore to Ingot to Product", "duration": "14:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Casting Process Comparison Chart", "status": "placeholder" },
+                { "type": "narration", "title": "Why Casting Method Determines Discontinuity Type", "duration": "8:00", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-9-2",
+              "title": "Welding, Brazing, Soldering, and Machining",
+              "minutes": 75,
+              "objectives": [
+                "Describe common welding processes, hard-surfacing, and solid-state welding",
+                "Differentiate brazing and soldering from welding",
+                "Summarize machining and material removal processes: turning, boring, drilling, milling, grinding, electrochemical, and chemical"
+              ],
+              "topics": [
+                "3.2.2.3 Welding",
+                "3.2.2.3.1 Common processes",
+                "3.2.2.3.2 Hard-surfacing",
+                "3.2.2.3.3 Solid-state",
+                "3.2.2.4 Brazing",
+                "3.2.2.5 Soldering",
+                "3.2.2.6 Machining and material removal",
+                "3.2.2.6.1 Turning, boring, and drilling",
+                "3.2.2.6.2 Milling",
+                "3.2.2.6.3 Grinding",
+                "3.2.2.6.4 Electrochemical",
+                "3.2.2.6.5 Chemical"
+              ],
+              "media": [
+                { "type": "video", "title": "Joining and Cutting: Welding Through Chemical Machining", "duration": "14:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Weld Joint Zones: Base Metal, HAZ, Fusion Zone", "status": "placeholder" },
+                { "type": "interactive", "title": "Name That Process: Joining and Machining", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-9-3",
+              "title": "Forming, Powdered Metals, Heat Treatment, Surface Finishing, and Adhesive Joining",
+              "minutes": 75,
+              "objectives": [
+                "Compare cold-working and hot-working forming processes",
+                "Describe powdered metal processes and heat treatment",
+                "Summarize surface finishing and corrosion protection including shot peening, grit blasting, painting, plating, chemical conversion coatings, and adhesive joining"
+              ],
+              "topics": [
+                "3.2.2.7 Forming",
+                "3.2.2.7.1 Cold-working processes",
+                "3.2.2.7.2 Hot-working processes",
+                "3.2.2.8 Powdered metal processes",
+                "3.2.2.9 Heat treatment",
+                "3.2.2.10 Surface finishing and corrosion protection",
+                "3.2.2.10.1 Shot peening and grit blasting",
+                "3.2.2.10.2 Painting",
+                "3.2.2.10.3 Plating",
+                "3.2.2.10.4 Chemical conversion coatings",
+                "3.2.2.11 Adhesive joining"
+              ],
+              "media": [
+                { "type": "video", "title": "Shaping and Protecting Metal Products", "duration": "14:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Heat Treatment Cycles and Microstructure Effects", "status": "placeholder" },
+                { "type": "reference", "title": "Surface Finishing Processes Summary Table", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            },
+            {
+              "id": "basic-9-4",
+              "title": "Nonmetals, Composites, and Dimensional Metrology",
+              "minutes": 75,
+              "objectives": [
+                "Describe nonmetals and composite materials processing, process control, and fabrication",
+                "Explain adhesive joining of nonmetallic and composite structures",
+                "Summarize dimensional metrology: fundamental units and standards, gauging, and interferometry"
+              ],
+              "topics": [
+                "3.2.3 Nonmetals and composite materials processing",
+                "3.2.3.1 Basic materials processing and process control",
+                "3.2.3.2 Nonmetals and composites fabrication",
+                "3.2.3.3 Adhesive joining",
+                "3.2.4 Dimensional metrology",
+                "3.2.4.1 Fundamental units and standards",
+                "3.2.4.2 Gauging",
+                "3.2.4.3 Interferometry"
+              ],
+              "media": [
+                { "type": "video", "title": "Composites and Precision Measurement", "duration": "14:00", "status": "placeholder" },
+                { "type": "diagram", "title": "Composite Layup and Cure Process Flow", "status": "placeholder" },
+                { "type": "interactive", "title": "Metrology Tools: Match Instrument to Tolerance", "status": "placeholder" }
+              ],
+              "check": { "type": "knowledge-check", "questions": 5, "status": "placeholder" }
+            }
+          ],
+          "moduleQuiz": { "questions": 10, "passingScore": 80, "status": "placeholder" }
+        }
+      ]
+    }
+  ]
+}
+;

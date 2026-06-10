@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — NDT Academy</title>
+<meta name="description" content="Contact NDT Academy about enrollment, company training programs, or certification questions.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/logo.png" alt="NDT Academy"></a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="exams.html">Practice Exams</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="login.html" class="btn btn-primary btn-sm">Sign In</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero on-dark">
+  <div class="wrap">
+    <span class="kicker">Contact</span>
+    <h1>Let's talk training</h1>
+    <p class="lede">Enrollment questions, company programs, or certification path advice — send a note and we'll get back to you.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="grid cols-2">
+      <div>
+        <!-- TODO: Replace action URL with your Formspree endpoint (free at formspree.io)
+             or remove action/method and enable Netlify Forms by adding data-netlify="true" -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="field"><label for="name">Name</label><input id="name" name="name" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" required></div>
+          <div class="field"><label for="company">Company (optional)</label><input id="company" name="company"></div>
+          <div class="field">
+            <label for="topic">I'm interested in</label>
+            <select id="topic" name="topic">
+              <option>Individual enrollment</option>
+              <option>Company / team training</option>
+              <option>20-week training program</option>
+              <option>Level III services</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field"><label for="msg">Message</label><textarea id="msg" name="message" rows="5" required></textarea></div>
+          <button class="btn btn-primary" type="submit">Send Message</button>
+        </form>
+      </div>
+      <div class="grid" style="align-content:start">
+        <div class="card feature"><span class="code">Email</span><h3>Direct</h3><p><!-- TODO: confirm public contact email --><a href="mailto:info@ndtacademy.com">info@ndtacademy.com</a></p></div>
+        <div class="card feature"><span class="code">Companies</span><h3>Team Training</h3><p>Tell us how many technicians and which methods, and we'll quote seat-based pricing with a company dashboard for tracking.</p></div>
+        <div class="card feature"><span class="code">Response</span><h3>Within 1 business day</h3><p>We answer every inquiry, usually same day.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom" style="border-top:0; padding-top:0">
+      <span>© 2026 NDT Academy · NDTAcademy.com</span>
+      <span>Training aligned to ASNT SNT-TC-1A</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/site.js"></script>
+</body>
+</html>

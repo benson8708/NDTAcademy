@@ -1,0 +1,133 @@
+{
+  "lessonId": "vt2-3-2",
+  "title": "Lens Trains, Fiber Optics, and Digital Technology",
+  "narrationScript": "In the last lesson we covered how single pieces of glass bend light. Real instruments chain dozens of pieces together, and this lesson is about those chains. We follow the image down a rigid borescope lens train, through a flexible fiber bundle, and finally onto a silicon sensor that turns light into numbers. Start with the lens train. A rigid borescope has to form an image at the far end of a narrow tube and deliver it to your eye perhaps half a meter away. One lens cannot do that, so designers use a train. The objective lens at the tip forms a small, inverted real image of the scene. Behind it, pairs of relay lenses pick that image up and hand it along the tube, forming it again and again, like a bucket brigade. Field lenses at each image plane keep the light funneled into the next relay instead of spraying into the tube wall. At your end, the eyepiece magnifies the final image so your eye can use it. Every glass surface in that chain steals a little light, which is why anti reflection coatings matter so much. The classic design used thin lenses separated by long air gaps. The modern Hopkins rod lens design reverses that. Most of the path is glass rod with thin air gaps. For the same tube diameter, rod lenses pass several times more light and deliver a sharper, higher contrast image. If you have ever compared a crisp modern rigid scope against a dim old one, that is what changed. Next, fiber optics. Draw glass into a hair thin strand and total internal reflection will trap light inside it. Each fiber has a core of higher index glass wrapped in a cladding of lower index glass. Light entering within the acceptance cone strikes the core to cladding boundary beyond the critical angle and bounces, thousands of times per meter, until it exits the far end. One fiber carries light, not an image. To carry an image you need a bundle, and you need it coherent. In a coherent bundle the fibers occupy the same relative positions at both ends, so each fiber acts like one pixel and the picture survives the trip. In an incoherent bundle the fibers are scrambled. Cheap to make, useless for images, and perfect for illumination light guides. Fiber count sets resolution. A fiberscope image has that honeycomb texture because you are literally looking at the mosaic of fiber ends. And when a fiber breaks somewhere down the bundle, its pixel goes permanently black. A scattering of black dots across a fiberscope view means broken fibers, and enough of them is grounds to pull the scope from service. Now digitization. Modern instruments replace the eye with a photoelectric device, something that converts light into electrical signal. Photodiodes do it in your light meter. Photomultiplier tubes do it in laboratory instruments. In cameras, the workhorses are the charge coupled device, or CCD, and its successor, the CMOS sensor. Both divide the image area into a grid of photosites. Photons knock electrons loose, charge accumulates in proportion to brightness, and readout circuitry converts each photosite's charge into a number. An analog to digital converter assigns each pixel a brightness value. Eight bits gives two hundred fifty six levels per channel, and a mosaic of tiny color filters over the pixels lets the processor rebuild full color from a single chip. Once the image is numbers, it can be stored, transmitted, enhanced, and measured without degrading. Between the lens and the sensor, and after the sensor, the signal gets conditioned. Optical filtering happens in glass. Polarizing filters cut glare off shiny or wet surfaces. Color filters stretch contrast, and an infrared cut filter keeps invisible light from washing out the sensor. Signal processing happens in the electronics. Gain brightens dim scenes at the cost of noise. White balance corrects color casts from different light sources. Edge enhancement sharpens and noise reduction smooths. Use these tools, but respect them. Processing can manufacture artifacts and can erase fine real detail, so know what your system is doing before you call or clear an indication. Finally, the bigger video picture. Analog video standards have given way to digital high definition systems, and recording is now just file storage with no loss when copied. Cameras ride on pan and tilt mounts, crawlers, and robotic arms, taking the image where no inspector can go. The same sensor technology also scales down to microscopes, where stereo and digital instruments give the laboratory a close look at fracture faces and small indications. From here on, every instrument we study is some combination of this lesson. Lenses gather the image. Glass, fiber, or wire moves it. Silicon records it.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Lens Trains: Handing an Image Down a Tube",
+      "body": "A single lens cannot deliver a usable image from the far end of a 500 mm tube to your eye. Rigid scopes solve this with a **lens train**:\n\n- The **objective lens** at the distal tip forms a small, inverted real image of the scene.\n- **Relay lens pairs** re-image it again and again down the tube — a bucket brigade for light.\n- **Field lenses** at each intermediate image plane bend the ray bundle back toward the axis so the next relay catches all of it.\n- The **eyepiece** magnifies the final image for the eye, or a coupler focuses it onto a camera.\n\nEvery air-glass surface reflects away light — roughly 4% if uncoated — and a train can contain dozens of surfaces. Multi-layer anti-reflection coatings are not a luxury; they are the difference between a bright image and a dim, ghost-filled one.\n\nThe classic train used thin achromatic doublets separated by long air spaces. The **Hopkins rod-lens** design inverts the proportions: long glass rods with thin air gaps. For the same tube diameter the optical apertures can be larger, so rod-lens scopes transmit several times more light with visibly better resolution, contrast, and color — the dominant design in quality rigid borescopes today. The train also manages orientation: each relay inverts the image, so designers choose the relay count (or add prisms) to present the scene right-way-up."
+    },
+    {
+      "type": "figure",
+      "figureId": "vt2-3-2-fig-a",
+      "caption": "A rigid borescope relays the objective's image down the tube to the eyepiece, and Hopkins rod-lens relays transmit far more light than classic thin-lens trains."
+    },
+    {
+      "type": "text",
+      "heading": "Fiber Optics and Fiber Bundles",
+      "body": "Draw optical glass into a strand 10–30 µm in diameter and total internal reflection turns it into a light pipe. Each fiber is a **core** of higher-index glass inside a **cladding** of lower-index glass. Rays entering within the fiber's **acceptance cone** — set by its numerical aperture — strike the core/cladding boundary beyond the critical angle and reflect totally, thousands of bounces per meter with minimal loss. The cladding also stops light from leaking between touching fibers.\n\nOne fiber transmits *light*, not an image: its output is a single brightness value, like one pixel. Bundles therefore come in two families:\n\n- **Coherent (image) bundles** — fibers are precisely aligned so each occupies the same relative position at both ends. Project an image onto one face and it reappears, fiber by fiber, at the other. This is the heart of the fiberscope; imaging bundles use very fine fibers (~10 µm) packed 10,000 to 50,000 or more.\n- **Incoherent (light-guide) bundles** — fibers randomly arranged. Far cheaper, useless for images, and exactly right for piping illumination from a light source to a scope tip.\n\nTwo consequences follow directly. **Resolution equals fiber count**: the image has a honeycomb structure because you are viewing the mosaic of fiber ends, and detail finer than one fiber cannot be resolved. **Broken fibers appear as permanent black dots**: bend a bundle tighter than its minimum radius or crush it, and dots accumulate. Written practices commonly limit the number and clustering of dead fibers before the scope is rejected for use."
+    },
+    {
+      "type": "figure",
+      "figureId": "vt2-3-2-fig-b",
+      "caption": "Total internal reflection guides light along each fiber, and only a coherent bundle — fibers aligned identically at both ends — can carry an image."
+    },
+    {
+      "type": "text",
+      "heading": "Digitization: Photoelectric Devices, CCDs, and CMOS",
+      "body": "**Photoelectric devices** convert light into electrical signal: the photodiode in your light meter, phototubes and photomultipliers in laboratory instruments, and the imaging sensors in every video borescope. Digitization is what made modern remote VT possible — once an image is numbers, it can be transmitted any distance, stored, enhanced, and measured without degradation.\n\nA **charge-coupled device (CCD)** divides its surface into a grid of photosites. During exposure, photons free electrons, and each site accumulates charge in proportion to the light falling on it. Readout shifts the charge packets across the chip — a fire-bucket line — to an output amplifier that converts charge to voltage. A **CMOS** (active-pixel) sensor instead places an amplifier at every photosite and reads pixels by address; modern CMOS dominates new equipment because it is cheaper, faster, and lower-power, with inspection-grade image quality now equal to CCD.\n\nDigitizing involves three ideas:\n\n- **Sampling** — the pixel grid (640×480 VGA up to 1920×1080 HD and beyond) sets spatial resolution.\n- **Quantization (bit depth)** — an analog-to-digital converter assigns each pixel a brightness number; 8 bits = 256 levels per channel.\n- **Color reconstruction** — a mosaic of red, green, and blue microfilters (the Bayer pattern) over the pixels lets the processor interpolate full color from one chip.\n\nSensor scale matters: a chip a few millimeters across, mounted at the probe tip, is what makes the video borescope possible at all."
+    },
+    {
+      "type": "figure",
+      "figureId": "vt2-3-2-fig-c",
+      "caption": "The video imaging chain: tip optics and filters form the image on a sensor, an A/D converter turns charge into numbers, and the processor delivers it to display and storage."
+    },
+    {
+      "type": "text",
+      "heading": "Optical Filtering and Signal Processing",
+      "body": "**Optical filtering** conditions light in glass, before the sensor:\n\n- **Polarizing filters** cut specular glare from machined or wet surfaces, recovering detail hidden inside reflections.\n- **Color (contrast) filters** lighten or darken chosen colors — a red filter darkens blue-green backgrounds so rust-colored indications pop.\n- **IR-cut and UV filters** block invisible wavelengths that sensors see but eyes do not, preventing washed-out or false-color images.\n- **Neutral-density filters** reduce overall intensity without changing color, taming hot spots.\n\n**Signal processing** conditions the image after the sensor: gain (electronic brightening — adds noise), white balance (corrects color casts from different light sources), gamma, edge enhancement, noise reduction, and digital zoom (which crops and interpolates pixels — unlike optical zoom, it adds no new detail).\n\nTreat processing as a tool with teeth. Edge enhancement can draw halos that mimic or mask a crack edge; aggressive noise reduction can smear away fine porosity; heavy compression discards detail permanently. Know which functions are active, use the settings your procedure qualifies, and when an indication is borderline, examine it with enhancement off as well as on. Codes expect the *demonstrated* resolution of the system — typically verified on a resolution target or a fine line or wire — at the settings and distance you actually use."
+    },
+    {
+      "type": "text",
+      "heading": "Video Technologies, Robotic Systems, and Microscopy",
+      "body": "**Video technologies** have moved from analog composite standards (NTSC and PAL — limited lines, noise-prone, quality lost with every copy) to fully digital chains: HD 1280×720 and 1920×1080 sensors, digital interfaces, flat-panel displays, and file-based recording that copies without loss. For documentation, record at the highest native resolution available, and store stills in lossless or low-compression formats when the images must support measurement.\n\n**Video systems on robotics** carry the camera where no person can go: pan-tilt-zoom heads on masts and booms scan tank and vessel interiors; cameras ride pipe crawlers, drones, and remotely operated vehicles. The inspector's craft does not change — lighting, viewing angle, standoff, coverage — it is simply exercised through a joystick instead of a wrist. Deployment systems get full treatment in lesson vt2-3-4.\n\n**Microscopy** sits at the opposite end of the scale. Stereo (binocular) microscopes at 5×–50× give a true three-dimensional view for laboratory examination of fracture faces, weld micro-features, and small parts. Measuring microscopes add calibrated stages and reticles for dimensioning. Digital microscopes replace the eyepiece with a sensor and display, allowing annotated, stored images at magnifications into the hundreds. The optics are the same physics as your 10× loupe — objectives, refraction, illumination — scaled up in precision, and the camera behind them is the same silicon you just studied."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "The image chain is only as good as its weakest link",
+      "body": "Objective optics → relay path (lenses, fibers, or wire) → sensor → processing → display: every VT image crosses this whole chain. Before calling or clearing indications, verify the chain end-to-end — view a resolution target or a known fine detail at the working distance, lighting, and settings you will actually use, and record that verification."
+    }
+  ],
+  "figures": [
+    {
+      "id": "vt2-3-2-fig-a",
+      "title": "Rigid Borescope Lens Train and Rod-Lens Relays",
+      "file": "vt2-3-2-fig-a.svg"
+    },
+    {
+      "id": "vt2-3-2-fig-b",
+      "title": "Optical Fibers, Coherent and Incoherent Bundles",
+      "file": "vt2-3-2-fig-b.svg"
+    },
+    {
+      "id": "vt2-3-2-fig-c",
+      "title": "Video Borescope Imaging Chain",
+      "file": "vt2-3-2-fig-c.svg"
+    }
+  ],
+  "interactive": null,
+  "checkQuestions": [
+    {
+      "question": "In a fiberscope, the image bundle must be coherent. What does coherent mean here?",
+      "options": [
+        "The fibers carry laser light",
+        "The fibers occupy the same relative positions at both ends of the bundle",
+        "All fibers have exactly the same length",
+        "The bundle is sealed against moisture"
+      ],
+      "correct": 1,
+      "explanation": "Each fiber acts as one pixel, so the picture survives only if every fiber ends up in the same relative position at both faces. A scrambled (incoherent) bundle can carry light but not an image."
+    },
+    {
+      "question": "A fiberscope image shows a growing scattering of fixed black dots. The most likely cause is…",
+      "options": [
+        "A dirty eyepiece lens",
+        "Low light-source output",
+        "Broken fibers in the coherent image bundle",
+        "An excessive gain setting"
+      ],
+      "correct": 2,
+      "explanation": "A broken fiber stops transmitting and its pixel goes permanently black. Dirt or low light would dim or blur the whole image rather than create fixed dark dots."
+    },
+    {
+      "question": "What does a CCD or CMOS image sensor fundamentally do?",
+      "options": [
+        "Converts the light striking each photosite into electrical charge that is read out as numbers",
+        "Optically amplifies dim light before it reaches the eyepiece",
+        "Filters out infrared light",
+        "Mechanically scans the scene with a moving slit"
+      ],
+      "correct": 0,
+      "explanation": "Photons free electrons at each photosite; the accumulated charge is proportional to brightness and is converted to a digital value per pixel. That photoelectric conversion is the heart of digitization."
+    },
+    {
+      "question": "Compared with a conventional thin-lens relay train, a Hopkins rod-lens train in the same diameter tube provides…",
+      "options": [
+        "Lower light transmission but a wider field of view",
+        "Several times more light transmission and a sharper, higher-contrast image",
+        "A flexible insertion tube",
+        "Color imaging without a Bayer filter"
+      ],
+      "correct": 1,
+      "explanation": "Replacing long air paths with glass rods allows larger optical apertures in the same tube, so rod-lens scopes are markedly brighter and sharper. Flexibility and color handling have nothing to do with the relay design."
+    },
+    {
+      "question": "Glare from a wet, machined surface is hiding detail in a video image. The best optical fix is…",
+      "options": [
+        "Increase electronic gain",
+        "Apply edge enhancement",
+        "Use digital zoom",
+        "Add a polarizing filter"
+      ],
+      "correct": 3,
+      "explanation": "Specular glare is polarized, so a polarizing filter can suppress it before the sensor ever sees it. Gain, enhancement, and digital zoom are signal processing — they amplify the glare along with everything else."
+    }
+  ],
+  "references": [
+    "CP-105-2024 VT Topical Outline §5.6–5.8, §2.5, §2.6.2, §2.6.4, §2.7 (Level II)",
+    "ASME Section V, Article 9 — remote visual examination and resolution demonstration (generic reference)",
+    "Typical manufacturer specifications for rod-lens borescopes and imaging fiber bundles"
+  ]
+}

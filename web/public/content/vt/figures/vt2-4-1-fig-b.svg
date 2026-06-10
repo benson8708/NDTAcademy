@@ -1,0 +1,64 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#0A2342">Casting Discontinuities: What Forms Where</text>
+
+  <defs>
+    <marker id="arrAmberB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#F2A33C"/>
+    </marker>
+  </defs>
+
+  <!-- Casting cross-section: heavy block + riser + thin wall -->
+  <path d="M120,360 L120,190 L200,190 L200,140 L185,140 L185,95 Q185,82 198,82 L257,82 Q270,82 270,95 L270,140 L255,140 L255,190 L330,190 L330,280 L680,280 L680,330 L330,330 L330,360 Z"
+        fill="#E8F1FB" stroke="#0A2342" stroke-width="3"/>
+
+  <!-- Gate channel with metal-flow arrow -->
+  <rect x="55" y="325" width="65" height="30" fill="#E8F1FB" stroke="#0A2342" stroke-width="2.5"/>
+  <line x1="62" y1="340" x2="106" y2="340" stroke="#F2A33C" stroke-width="4" marker-end="url(#arrAmberB)"/>
+  <text x="55" y="378" font-size="16" fill="#0A2342">Gate - metal enters here</text>
+
+  <!-- Shrinkage cavity under the riser (jagged, dendritic) -->
+  <polygon points="210,218 220,206 228,216 240,210 243,224 236,232 244,240 228,242 218,250 212,236 202,230"
+           fill="#FFFFFF" stroke="#D14343" stroke-width="2.5"/>
+
+  <!-- Hot tear at the section-thickness change (ragged, branched) -->
+  <polyline points="332,282 322,296 330,310 318,326" fill="none" stroke="#D14343" stroke-width="2.5"/>
+  <polyline points="322,296 310,302" fill="none" stroke="#D14343" stroke-width="2"/>
+
+  <!-- Gas porosity near the cope (top) surface of the thin wall -->
+  <circle cx="470" cy="293" r="4" fill="#FFFFFF" stroke="#1B82E8" stroke-width="2"/>
+  <circle cx="488" cy="297" r="5" fill="#FFFFFF" stroke="#1B82E8" stroke-width="2"/>
+  <circle cx="505" cy="291" r="3.5" fill="#FFFFFF" stroke="#1B82E8" stroke-width="2"/>
+  <circle cx="522" cy="298" r="4.5" fill="#FFFFFF" stroke="#1B82E8" stroke-width="2"/>
+  <circle cx="540" cy="292" r="4" fill="#FFFFFF" stroke="#1B82E8" stroke-width="2"/>
+
+  <!-- Cold shut far from the gate (smooth, curved, rounded) -->
+  <path d="M600,302 Q620,314 642,304 Q652,300 658,304" fill="none" stroke="#D14343" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Sand inclusion -->
+  <ellipse cx="190" cy="332" rx="16" ry="9" fill="#5A6B7E" fill-opacity="0.55"/>
+  <circle cx="184" cy="330" r="1.8" fill="#0A2342"/>
+  <circle cx="193" cy="335" r="1.8" fill="#0A2342"/>
+  <circle cx="198" cy="329" r="1.8" fill="#0A2342"/>
+
+  <!-- Labels -->
+  <text x="300" y="98" font-size="16" fill="#0A2342">Riser - feeds the casting</text>
+  <line x1="296" y1="93" x2="266" y2="100" stroke="#5A6B7E" stroke-width="1.5"/>
+
+  <text x="360" y="152" font-size="16" fill="#0A2342">Shrinkage - jagged, last to freeze, under the riser</text>
+  <line x1="356" y1="157" x2="240" y2="218" stroke="#5A6B7E" stroke-width="1.5"/>
+
+  <text x="390" y="228" font-size="16" fill="#0A2342">Hot tear - ragged, at the section change</text>
+  <line x1="386" y1="233" x2="330" y2="295" stroke="#5A6B7E" stroke-width="1.5"/>
+
+  <text x="470" y="262" font-size="16" fill="#0A2342">Gas porosity - smooth and round</text>
+  <line x1="500" y1="267" x2="495" y2="287" stroke="#5A6B7E" stroke-width="1.5"/>
+
+  <text x="760" y="368" text-anchor="end" font-size="16" fill="#0A2342">Cold shut - smooth, curved, far from the gate</text>
+  <line x1="640" y1="352" x2="628" y2="310" stroke="#5A6B7E" stroke-width="1.5"/>
+
+  <text x="280" y="398" font-size="16" fill="#0A2342">Sand inclusion</text>
+  <line x1="300" y1="388" x2="200" y2="342" stroke="#5A6B7E" stroke-width="1.5"/>
+
+  <text x="400" y="434" text-anchor="middle" font-size="16" fill="#5A6B7E">Smooth and rounded = liquid-metal events. Ragged and branched = torn while solidifying.</text>
+</svg>

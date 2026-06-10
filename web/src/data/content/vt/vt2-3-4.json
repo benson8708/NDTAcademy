@@ -1,0 +1,134 @@
+{
+  "lessonId": "vt2-3-4",
+  "title": "Video Borescope Measurement Techniques and Specialized Systems",
+  "narrationScript": "A video borescope finds an indication ten meters inside a pipe. Now someone asks the only question that matters. How big is it. This lesson covers how we measure remotely, and the specialized camera systems that carry the lens into pipes, drains, and open water. First, understand why remote measurement is hard. Through any scope, magnification changes with distance. Move the tip closer and everything grows. So the image alone tells you nothing about size until you add a reference or a measuring system, and every technique in this lesson is just a different way of adding one. The comparison technique is the oldest. Put something of known size in the scene, in the same plane and at the same distance as the indication, and ratio off it. The reference can be a wire or ball placed in the part, or an existing feature with a known dimension, like a fastener head or a tube land. Comparison is quick and needs no special tip, but it is the least accurate method, and the error explodes if the reference sits closer to or farther from the lens than the flaw, because the two are magnified differently. Some processors offer an on screen version where you calibrate cursor spacing at a known distance first. The shadow technique uses a special tip that projects a shadow line into the scene at an angle. Geometry does the rest. The closer the surface, the nearer one side of the screen the shadow falls, so the shadow position tells the system the tip to target distance. Once distance is known, the system can scale anything you measure in that plane. Lay the shadow across the indication, place the cursors, read the number. It is accurate when the shadow lands properly on a reasonably flat surface, and it gives depth clues for free, because the shadow kinks wherever the surface steps. The stereo technique borrows your own depth perception. A stereo tip views the scene through two small lenses a known distance apart, capturing left and right images. The processor matches your cursor points in both views and triangulates each point's position in three dimensions. From a few points it delivers length, point to line, depth below a reference plane, area, and multi segment measurements along a curve. Accuracy depends on a sharp, well lit image, careful cursor placement, and above all a short tip to target distance. Modern systems show a point cloud so you can confirm the measurement landed on the surface you intended and not on a reflection. Laser based methods project structured light. The simplest tips paint laser dots or parallel lines of known spacing into the scene to give scale. The most capable systems project a striped phase pattern and compute a full three dimensional map of the surface, tens of thousands of points, from which the software extracts depth profiles, areas, and volumes. For a corrosion pit or a dent, a profile slice through the deepest point is exactly the answer a fitness for service engineer wants. Whatever the technique, prove it before you trust it. Measure a verification block of known dimensions before and after the job, at a similar distance, and record the result. Now the carriers. A push tube camera is a camera head on a semi rigid rod that you push by hand down small piping and drains, typically fifty to one hundred fifty millimeter lines. A counter on the reel logs how far you have pushed, and a sonde in the head transmits a signal so a locator above ground can find the camera and mark dig points. A pipe crawler is a motorized tractor that carries a pan tilt zoom camera and high output lights down larger lines, roughly one hundred fifty millimeters and up, with a tether for power, control, and video, plus an encoder for distance. Crawlers are often the only practical way to examine long buried pipe. Subsea remote cameras ride remotely operated vehicles or drop frames in pressure rated housings, with powerful lights, because water eats light, red first, which is why everything looks blue green at depth. A common subsea trick is two parallel lasers a known distance apart projected onto the target, giving instant scale in every frame. Three aids round out the kit. Surface comparators are tactile and visual reference standards held beside the surface to judge roughness or anchor profile against a calibrated sample. Chemical aids include cleaners and macro etchants that reveal weld heat affected zones and grain structure, used only with approval, because the wrong chemical attacks the alloy. And photography is your record. Put a scale in the frame, light the surface the way you inspected it, shoot square to the surface, and tie every image to the part, location, procedure, and date. A measurement nobody can trace is a number nobody can use.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Why Remote Measurement Is Different",
+      "body": "Through any scope, **magnification varies with tip-to-target distance** — move 20% closer and features appear about 20% larger. There is no fixed scale, no ruler against the surface, and usually no way to judge standoff by eye. Every remote measurement technique is therefore a scheme for re-establishing scale at the indication, and each makes assumptions you must respect.\n\nGround rules that apply to all of them:\n\n- **Calibrate and verify.** Measurement tips are matched and calibrated to a specific probe and processor. Verify the system on a target or block of known dimensions before and after measuring, at a comparable distance, and record the result.\n- **Get close and square.** Accuracy improves dramatically at short standoff, and steep viewing angles foreshorten lengths.\n- **Measure in the right plane.** A length measured across a surface tilted to the optical axis reads wrong unless the technique accounts for three-dimensional geometry.\n- **Document the basis.** Report which technique and tip, the verification performed, and attach the measurement image. An unverifiable number is worthless at evaluation time."
+    },
+    {
+      "type": "figure",
+      "figureId": "vt2-3-4-fig-a",
+      "caption": "Four ways to restore scale to a remote image: a known reference in the scene, a projected shadow that encodes distance, stereo triangulation, and laser structured light."
+    },
+    {
+      "type": "text",
+      "heading": "Comparison and Shadow Techniques",
+      "body": "**Comparison technique.** Place a reference of known size in the scene and ratio the indication against it. References include wires, drill shanks, or balls introduced into the part, or existing features of known dimension — a fastener head, a tube land, a machined groove. On-screen versions calibrate cursor spacing at a known distance, then compare. Comparison is fast, cheap, and works with any scope — and it is the **least accurate** option. The controlling requirement: the reference must lie **in the same plane and at the same tip-to-target distance** as the indication. Because magnification varies with distance, a reference 20% closer than the flaw reads about 20% oversize. Expect errors of ±10–25% in honest field conditions; use comparison for screening, not for tight accept/reject calls.\n\n**Shadow technique.** A special measurement tip projects a **shadow line** into the scene at a fixed angle to the optical axis. The shadow's position in the image encodes tip-to-target distance — the closer the surface, the farther toward one side the shadow falls. Knowing distance, the processor scales cursor measurements made in that plane. Technique: position the tip so the shadow falls **across the indication**, place cursors, read the result. The shadow also reveals topography — it kinks at steps and bends over contours, giving qualitative depth information. Limits: it wants a reasonably flat surface viewed near-perpendicular at short standoff, and accuracy collapses if the shadow lands beside the indication instead of on it. Under good conditions, accuracy within a few percent is attainable."
+    },
+    {
+      "type": "text",
+      "heading": "Stereo and Laser-Based Techniques",
+      "body": "**Stereo technique.** A stereo tip views the scene through two lenses with a small, precisely known separation, producing left and right images with **parallax**: near points shift more between the views than far points. You place matching cursors on the same feature in both images — modern systems auto-match — and the processor triangulates each point in three dimensions. From a handful of points it computes point-to-point length, point-to-line, **depth or height relative to a reference plane**, area, and multi-segment length along a curve. Accuracy depends on image sharpness, lighting, cursor placement, and above all **standoff** — the best work happens within roughly 5–25 mm of the target. Point-cloud views let you confirm the cursors sit on the intended surface rather than on a reflection or edge artifact.\n\n**Laser-based measurement.** Structured light replaces passive viewing:\n\n- **Laser dot or parallel-line projection** paints known geometry into the scene — for example, two parallel beams a fixed distance apart — giving instant scale in any image. Simple and common, especially subsea.\n- **Three-dimensional phase / structured-light tips** project striped patterns and compute a dense **point cloud** of the surface — tens of thousands of measured points. Software then extracts depth profiles through a pit's deepest point, dent area, missing-material volume, and clearance dimensions.\n\nFor corrosion and mechanical damage evaluated under fitness-for-service rules, a profile or point-cloud measurement answers the engineer's real question — *how deep, over what area* — far better than a single length number."
+    },
+    {
+      "type": "table",
+      "caption": "Choosing a remote measurement technique.",
+      "headers": ["Technique", "How scale is established", "Strengths", "Watch-outs"],
+      "rows": [
+        ["Comparison", "Known-size reference in the same plane and at the same distance as the indication", "Works with any scope; fast; no special tip", "Least accurate; error grows whenever reference distance differs from flaw distance"],
+        ["Shadow", "Projected shadow position encodes tip-to-target distance", "Good accuracy at short standoff; shadow kinks reveal steps and depth", "Shadow must fall across the indication; wants flat, near-perpendicular surfaces"],
+        ["Stereo", "Triangulation from two offset views (parallax)", "3-D points: length, depth, area, multi-segment; no contact", "Needs sharp image, careful cursor placement, short standoff"],
+        ["Laser / structured light", "Projected pattern of known geometry or full 3-D phase scan", "Dense point cloud; depth profiles, area, volume", "Highest cost; shiny or wet surfaces can defeat the projected pattern"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Specialized Inspection Systems",
+      "body": "**Push-tube cameras.** A camera head with LED lighting rides a semi-rigid rod pushed by hand down small-bore piping and drains — typically 50–150 mm lines, with runs to about 60 m. A **distance counter** on the reel logs insertion length, and a **sonde** (locator beacon) in the head lets a surface receiver pinpoint the camera's position and depth, so excavation or repair points can be marked. Self-leveling heads keep the image upright.\n\n**Pipe crawler camera systems.** For lines roughly 150 mm and larger: a motorized wheeled or tracked **tractor** carries a pan-tilt-zoom camera and high-output lighting, tethered to a surface control unit through a cable supplying power, control, and video. Encoders log distance, inclinometers record slope, and some crawlers add laser profilers or sonar for dimensioning. Crawler CCTV surveys are often the *only* practical examination of long buried sewer, water, and process lines.\n\n**Subsea remote camera systems.** Cameras in **pressure-rated housings** ride remotely operated vehicles, drop frames, or diver helmets to examine offshore structures, ship hulls, intakes, and dams. Water absorbs light strongly — **red wavelengths disappear within a few meters**, shifting scenes blue-green — so powerful artificial lighting and white-balance correction are mandatory, and turbidity pushes you to short standoff. The standard scaling trick: **two parallel lasers at a known spacing** projected onto the target put a dimensional reference in every frame."
+    },
+    {
+      "type": "figure",
+      "figureId": "vt2-3-4-fig-b",
+      "caption": "Specialized camera carriers: a push-tube camera with counter and sonde for small lines, a tethered pan-tilt-zoom crawler for large pipe, and a subsea ROV camera using parallel scaling lasers."
+    },
+    {
+      "type": "text",
+      "heading": "Surface Comparators, Chemical Aids, and Photography",
+      "body": "**Surface comparators.** Physical reference standards held beside or against the surface to judge texture by eye and fingernail: machined **roughness comparator blocks** with stepped Ra patches for machined finishes, **anchor-profile comparators** for blast-cleaned surfaces before coating, and weld-surface replicas. They turn 'looks rough' into a comparison against a calibrated artifact — record which comparator and which grade you matched.\n\n**Chemical aids.** Chemistry extends what the eye can see: solvents and detergents for pre-cleaning (a dirty surface is an uninspected surface); **macro-etchants** applied per an approved practice to reveal weld fusion lines, heat-affected zones, and grain flow on prepared surfaces; and anti-fog and wetting agents for lenses and windows. Two cautions: use only chemicals **approved for the alloy** — chloride- or sulfur-bearing products can attack stainless steels and nickel alloys — and clean or neutralize after etching to prevent staining and corrosion.\n\n**Photography.** The record often outlives the access, so make images that stand alone:\n\n- Include a **dimensional scale or reference** in the indication's plane, plus a location marker such as a datum or weld number.\n- Light it the way you examined it — raking light for relief — and avoid flash glare on shiny surfaces; set white balance to the actual source.\n- Shoot perpendicular to the surface for measurable images; capture an overview plus close-ups.\n- Tie each image to **part, location, procedure, date, and examiner**. Traceability turns a picture into a record."
+    },
+    {
+      "type": "callout",
+      "variant": "standard",
+      "title": "Codes expect demonstrated measurement accuracy",
+      "body": "Before remote measurements are used for acceptance, written practices and codes such as ASME Section V generally expect the system's capability to be **demonstrated** — verified on targets or blocks of known size, at representative tip-to-target distances — and that verification documented alongside the results. Build it into the job: verify before, verify after, and re-verify any time the measurement tip takes a knock."
+    }
+  ],
+  "figures": [
+    {
+      "id": "vt2-3-4-fig-a",
+      "title": "Remote Measurement Techniques: Comparison, Shadow, Stereo, Laser",
+      "file": "vt2-3-4-fig-a.svg"
+    },
+    {
+      "id": "vt2-3-4-fig-b",
+      "title": "Push-Tube, Pipe Crawler, and Subsea Camera Systems",
+      "file": "vt2-3-4-fig-b.svg"
+    }
+  ],
+  "interactive": null,
+  "checkQuestions": [
+    {
+      "question": "The single most important requirement when sizing an indication by the comparison technique is…",
+      "options": [
+        "Using a laser reference",
+        "Placing the known-size reference in the same plane and at the same tip-to-target distance as the indication",
+        "Using maximum digital zoom",
+        "Using a retro direction-of-view tip"
+      ],
+      "correct": 1,
+      "explanation": "Magnification changes with distance, so a reference nearer or farther than the indication is magnified differently and the ratio lies. Same plane, same distance is the whole game."
+    },
+    {
+      "question": "In the shadow measurement technique, the system determines tip-to-target distance from…",
+      "options": [
+        "The brightness of the image",
+        "The articulation angle of the tip",
+        "The position of the projected shadow within the image",
+        "The fiber count of the bundle"
+      ],
+      "correct": 2,
+      "explanation": "The shadow is projected at a fixed angle to the optical axis, so where it falls in the view is a direct function of distance — once distance is known, on-screen dimensions can be scaled."
+    },
+    {
+      "question": "Stereo measurement computes three-dimensional point positions using…",
+      "options": [
+        "Parallax between two views captured through lenses a known distance apart",
+        "The time of flight of light pulses",
+        "Distortion of a projected shadow",
+        "Pixel brightness gradients"
+      ],
+      "correct": 0,
+      "explanation": "Near features shift more than far features between the left and right views; with the lens separation known, triangulation converts that parallax into 3-D coordinates for each matched point."
+    },
+    {
+      "question": "A fitness-for-service review needs the depth profile across a field of corrosion pits inside a vessel nozzle. The best-suited technique is…",
+      "options": [
+        "Comparison against a wire reference",
+        "A simple shadow line reading",
+        "Three-dimensional phase / structured-light scanning",
+        "Unscaled photography"
+      ],
+      "correct": 2,
+      "explanation": "Structured-light tips compute a dense point cloud, from which software extracts profiles through the deepest points, areas, and volumes — exactly the data a depth-profile evaluation needs."
+    },
+    {
+      "question": "A 100 mm drain line, 40 m long, must be examined and a damaged spot located for excavation. The right system is…",
+      "options": [
+        "A rigid borescope",
+        "A push-tube camera with distance counter and sonde",
+        "A stereo-tip videoprobe",
+        "A subsea ROV camera"
+      ],
+      "correct": 1,
+      "explanation": "Push cameras are built for small-bore lines over long runs; the counter logs distance and the sonde lets a surface locator pinpoint the spot to dig. A 100 mm line is below crawler territory."
+    }
+  ],
+  "references": [
+    "CP-105-2024 VT Topical Outline §6.5–6.6, §2.10–2.12 (Level II)",
+    "ASME Section V, Article 9 — remote examination and measurement demonstration (generic reference)",
+    "Typical manufacturer calibration and verification instructions for measurement tips"
+  ]
+}
