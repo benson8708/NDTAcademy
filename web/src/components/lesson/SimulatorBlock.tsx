@@ -18,7 +18,7 @@ export interface Simulator {
 
 const SCOPE_R = 110; // px radius of the scope viewport
 
-export default function SimulatorBlock({ sim, courseId = "vt" }: { sim: Simulator; courseId?: string }) {
+export default function SimulatorBlock({ sim, courseId = "vt", onComplete }: { sim: Simulator; courseId?: string; onComplete?: () => void }) {
   return (
     <div className="interactive-block sim-block">
       <div className="ib-head">
@@ -27,7 +27,7 @@ export default function SimulatorBlock({ sim, courseId = "vt" }: { sim: Simulato
       </div>
       <div className="ib-body">
         <p className="ib-intro">{sim.intro}</p>
-        {sim.type === "borescope" ? <Borescope sim={sim} courseId={courseId} /> : <Lighting sim={sim} courseId={courseId} />}
+        {sim.type === "borescope" ? <Borescope sim={sim} courseId={courseId} onComplete={onComplete} /> : <Lighting sim={sim} courseId={courseId} onComplete={onComplete} />}
       </div>
     </div>
   );
@@ -61,7 +61,7 @@ function Indication({ t, visible, found, onClick }: {
   );
 }
 
-function Borescope({ sim, courseId }: { sim: Simulator; courseId: string }) {
+function Borescope({ sim, courseId, onComplete }: { sim: Simulator; courseId: string; onComplete?: () => void }) {
   const stageRef = useRef<HTMLDivElement | null>(null);
   const [pos, setPos] = useState<{ x: number; y: number } | null>(null);
   const [stage, setStage] = useState<{ w: number; h: number }>({ w: 0, h: 0 });
@@ -114,7 +114,11 @@ function Borescope({ sim, courseId }: { sim: Simulator; courseId: string }) {
                   visible
                   found={found.has(i)}
                   onClick={() => {
-                    setFound((prev) => new Set(prev).add(i));
+                    setFound((prev) => {
+                      const nx = new Set(prev).add(i);
+                      if (nx.size === sim.targets.length) onComplete?.();
+                      return nx;
+                    });
                     setMessage(`✓ ${t.label}: ${t.feedback}`);
                   }}
                 />
@@ -135,7 +139,7 @@ function Borescope({ sim, courseId }: { sim: Simulator; courseId: string }) {
   );
 }
 
-function Lighting({ sim, courseId }: { sim: Simulator; courseId: string }) {
+function Lighting({ sim, courseId, onComplete }: { sim: Simulator; courseId: string; onComplete?: () => void }) {
   const [lux, setLux] = useState(150);
   const [found, setFound] = useState<Set<number>>(new Set());
   const min = sim.minLux ?? 1000;
@@ -170,7 +174,11 @@ function Lighting({ sim, courseId }: { sim: Simulator; courseId: string }) {
             t={t}
             visible={visible}
             found={found.has(i)}
-            onClick={() => visible && setFound((prev) => new Set(prev).add(i))}
+            onClick={() => visible && setFound((prev) => {
+              const nx = new Set(prev).add(i);
+              if (nx.size === sim.targets.length) onComplete?.();
+              return nx;
+            })}
           />
         ))}
       </div>

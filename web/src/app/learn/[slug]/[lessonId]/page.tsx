@@ -4,17 +4,19 @@ import { notFound, redirect } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeartbeatTracker from "@/components/HeartbeatTracker";
-import LessonContentView from "@/components/lesson/LessonContentView";
-import NarrationPlayer from "@/components/lesson/NarrationPlayer";
-import InteractiveBlock from "@/components/lesson/InteractiveBlock";
-import KnowledgeCheck from "@/components/lesson/KnowledgeCheck";
-import SimulatorBlock from "@/components/lesson/SimulatorBlock";
+import LessonPlayer from "@/components/lesson/LessonPlayer";
 import CompleteButton from "./CompleteButton";
 import { createClient } from "@/lib/supabase/server";
 import { courseBySlug, findLesson, flatLessons, levelLessonIds } from "@/lib/curriculum";
 import { getCourseAccess } from "@/lib/billing/access";
 import { getIdentityStatus } from "@/lib/identity";
-import { loadLessonContent, lessonHeroUrl, lessonVideoUrl } from "@/lib/vtContent";
+import {
+  loadLessonContent,
+  lessonHeroUrl,
+  lessonVideoUrl,
+  lessonExplainers,
+} from "@/lib/vtContent";
+import { buildSteps } from "@/lib/lessonSteps";
 
 export const metadata: Metadata = { robots: { index: false } };
 
@@ -94,6 +96,18 @@ export default async function LessonPage({
   const next = flatIdx < flat.length - 1 ? flat[flatIdx + 1].lesson : null;
   const figureFileById = Object.fromEntries((content?.figures ?? []).map((f) => [f.id, f.file]));
 
+  // Build the full-screen player's step sequence server-side.
+  const steps = content
+    ? buildSteps({
+        lesson,
+        content,
+        heroUrl: lessonHeroUrl(course.id, lessonId),
+        videoUrl: lessonVideoUrl(course.id, lessonId),
+        explainers: lessonExplainers(course.id, lessonId),
+        figureBase: `/content/${course.id}/figures`,
+      })
+    : null;
+
   return (
     <>
       <Header />
@@ -132,45 +146,24 @@ export default async function LessonPage({
                 <div className="lesson-stats">
                   {lesson.minutes} minutes of formal training · counts toward {level.targetHours} h requirement
                 </div>
-                <div className="objectives">
-                  <h4>Learning objectives</h4>
-                  <ul>
-                    {lesson.objectives.map((o) => <li key={o}>{o}</li>)}
-                  </ul>
-                </div>
 
-                {content ? (
+                {content && steps ? (
                   <>
-                    {(() => {
-                      const video = lessonVideoUrl(course.id, lessonId);
-                      const hero = lessonHeroUrl(course.id, lessonId);
-                      return (
-                        <>
-                          {video ? (
-                            <div className="lesson-video">
-                              <div className="lv-head">
-                                <span className="mtag video">video</span>
-                                <span className="t">Watch: {lesson.title}</span>
-                              </div>
-                              <video controls preload="metadata" poster={hero ?? undefined} src={video} />
-                            </div>
-                          ) : (
-                            hero && (
-                              <div className="lesson-hero">
-                                {/* eslint-disable-next-line @next/next/no-img-element */}
-                                <img src={hero} alt={lesson.title} />
-                              </div>
-                            )
-                          )}
-                        </>
-                      );
-                    })()}
-                    <NarrationPlayer courseId={course.id} lessonId={lessonId} script={content.narrationScript} />
-                    <LessonContentView courseId={course.id} sections={content.sections} figures={content.figures} />
-                    {content.interactive && (
-                      <InteractiveBlock courseId={course.id} interactive={content.interactive} figureFileById={figureFileById} />
-                    )}
-                    {content.simulator && <SimulatorBlock sim={content.simulator} courseId={course.id} />}
+                    <LessonPlayer
+                      steps={steps}
+                      lessonId={lessonId}
+                      courseId={course.id}
+                      courseSlug={slug}
+                      nextLessonId={next?.id ?? null}
+                      alreadyPassed={checkPassed}
+                      figureFileById={figureFileById}
+                    />
+                    <div className="objectives">
+                      <h4>Learning objectives</h4>
+                      <ul>
+                        {lesson.objectives.map((o) => <li key={o}>{o}</li>)}
+                      </ul>
+                    </div>
                     <div className="topics-panel">
                       <h4>CP-105 topics covered in this lesson</h4>
                       <ul>
@@ -185,14 +178,15 @@ export default async function LessonPage({
                         </ul>
                       </div>
                     )}
-                    <KnowledgeCheck
-                      lessonId={lessonId}
-                      questions={content.checkQuestions}
-                      alreadyPassed={checkPassed}
-                    />
                   </>
                 ) : (
                   <>
+                    <div className="objectives">
+                      <h4>Learning objectives</h4>
+                      <ul>
+                        {lesson.objectives.map((o) => <li key={o}>{o}</li>)}
+                      </ul>
+                    </div>
                     {lesson.media.map((m, idx) => (
                       <div key={idx} className="media-block">
                         <div className="mb-head">
@@ -241,7 +235,7 @@ export default async function LessonPage({
                     lessonId={lesson.id}
                     initialDone={done.has(lesson.id)}
                     locked={completionLocked}
-                    lockReason="Pass the knowledge check to mark this lesson complete"
+                    lockReason="Pass the lesson's knowledge check to mark it complete"
                   />
                   {next ? (
                     <Link className="btn btn-primary" href={`/learn/${slug}/${next.id}`}>Next Lesson</Link>

@@ -120,6 +120,25 @@ export function lessonVideoUrl(courseId: string, lessonId: string): string | nul
   }
 }
 
+/**
+ * AI-explainer videos for a lesson, from the Knowlify upload manifest
+ * (explainers.json: lessonId -> [{uuid,url,title,afterSection}]). Missing
+ * manifest or lesson entry just means no explainer steps.
+ */
+export function lessonExplainers(
+  courseId: string,
+  lessonId: string,
+): { uuid: string; url: string; title: string; afterSection: number }[] {
+  try {
+    const manifest = JSON.parse(
+      readFileSync(path.join(contentDir(courseId), "explainers.json"), "utf8"),
+    ) as Record<string, { uuid: string; url: string; title: string; afterSection: number }[]>;
+    return manifest[lessonId] ?? [];
+  } catch {
+    return [];
+  }
+}
+
 /** Which lessons in a level have authored content (for progress/QA surfaces). */
 export async function authoredLessonIds(courseId: string, level: CourseLevel): Promise<Set<string>> {
   const ids = levelLessonIds(level);

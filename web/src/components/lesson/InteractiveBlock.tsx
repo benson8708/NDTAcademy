@@ -2,17 +2,19 @@
 // In-lesson exercises. Four variants cover the curriculum's interactive
 // placeholders: decision scenarios, find-the-indication hotspots on a figure,
 // classification sorting, and the illumination calculator.
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Interactive } from "@/lib/vtContent";
 
 export default function InteractiveBlock({
   courseId,
   interactive,
   figureFileById,
+  onComplete,
 }: {
   courseId: string;
   interactive: Interactive;
   figureFileById: Record<string, string>;
+  onComplete?: () => void;
 }) {
   return (
     <div className="interactive-block">
@@ -22,18 +24,18 @@ export default function InteractiveBlock({
       </div>
       <div className="ib-body">
         <p className="ib-intro">{interactive.intro}</p>
-        {interactive.type === "scenario" && <Scenario data={interactive} />}
+        {interactive.type === "scenario" && <Scenario data={interactive} onComplete={onComplete} />}
         {interactive.type === "hotspot" && (
-          <Hotspot courseId={courseId} data={interactive} file={figureFileById[interactive.figureId]} />
+          <Hotspot courseId={courseId} data={interactive} file={figureFileById[interactive.figureId]} onComplete={onComplete} />
         )}
-        {interactive.type === "sort" && <Sort data={interactive} />}
-        {interactive.type === "calculator" && <LightingCalculator />}
+        {interactive.type === "sort" && <Sort data={interactive} onComplete={onComplete} />}
+        {interactive.type === "calculator" && <LightingCalculator onComplete={onComplete} />}
       </div>
     </div>
   );
 }
 
-function Scenario({ data }: { data: Extract<Interactive, { type: "scenario" }> }) {
+function Scenario({ data, onComplete }: { data: Extract<Interactive, { type: "scenario" }>; onComplete?: () => void }) {
   const [step, setStep] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
   const done = step >= data.steps.length;
@@ -64,7 +66,7 @@ function Scenario({ data }: { data: Extract<Interactive, { type: "scenario" }> }
         <div className="ib-feedback">
           <strong>{picked === s.correct ? "Right call." : "Not quite."}</strong> {s.feedback}
           <div style={{ marginTop: 10 }}>
-            <button className="btn btn-primary btn-sm" onClick={() => { setStep(step + 1); setPicked(null); }}>
+            <button className="btn btn-primary btn-sm" onClick={() => { if (step + 1 >= data.steps.length) onComplete?.(); setStep(step + 1); setPicked(null); }}>
               {step + 1 === data.steps.length ? "Finish" : "Next Step"}
             </button>
           </div>
@@ -74,7 +76,7 @@ function Scenario({ data }: { data: Extract<Interactive, { type: "scenario" }> }
   );
 }
 
-function Hotspot({ courseId, data, file }: { courseId: string; data: Extract<Interactive, { type: "hotspot" }>; file?: string }) {
+function Hotspot({ courseId, data, file, onComplete }: { courseId: string; data: Extract<Interactive, { type: "hotspot" }>; file?: string; onComplete?: () => void }) {
   const [found, setFound] = useState<Set<number>>(new Set());
   const [message, setMessage] = useState<string | null>(null);
   const targets = data.regions.filter((r) => r.isTarget).length;
@@ -97,7 +99,12 @@ function Hotspot({ courseId, data, file }: { courseId: string; data: Extract<Int
             }}
             aria-label={r.label}
             onClick={() => {
-              setFound((prev) => new Set(prev).add(i));
+              setFound((prev) => {
+                const nx = new Set(prev).add(i);
+                const hit = data.regions.filter((rr, ii) => rr.isTarget && nx.has(ii)).length;
+                if (hit === data.regions.filter((rr) => rr.isTarget).length) onComplete?.();
+                return nx;
+              });
               setMessage(`${r.isTarget ? "✓" : "✗"} ${r.label}: ${r.feedback}`);
             }}
           />
@@ -112,7 +119,7 @@ function Hotspot({ courseId, data, file }: { courseId: string; data: Extract<Int
   );
 }
 
-function Sort({ data }: { data: Extract<Interactive, { type: "sort" }> }) {
+function Sort({ data, onComplete }: { data: Extract<Interactive, { type: "sort" }>; onComplete?: () => void }) {
   const [assigned, setAssigned] = useState<Record<number, number>>({});
   const [revealed, setRevealed] = useState(false);
   const allAssigned = data.items.every((_, i) => assigned[i] !== undefined);
@@ -143,7 +150,7 @@ function Sort({ data }: { data: Extract<Interactive, { type: "sort" }> }) {
         </div>
       ))}
       {!revealed ? (
-        <button className="btn btn-primary btn-sm" style={{ marginTop: 12 }} disabled={!allAssigned} onClick={() => setRevealed(true)}>
+        <button className="btn btn-primary btn-sm" style={{ marginTop: 12 }} disabled={!allAssigned} onClick={() => { setRevealed(true); onComplete?.(); }}>
           Check Answers
         </button>
       ) : (
@@ -155,12 +162,13 @@ function Sort({ data }: { data: Extract<Interactive, { type: "sort" }> }) {
   );
 }
 
-function LightingCalculator() {
+function LightingCalculator({ onComplete }: { onComplete?: () => void }) {
   const [reading, setReading] = useState(50);
   const [unit, setUnit] = useState<"fc" | "lux">("fc");
   const [requirement, setRequirement] = useState(1000);
   const lux = useMemo(() => (unit === "fc" ? reading * 10.7639 : reading), [reading, unit]);
   const passes = lux >= requirement;
+  useEffect(() => { if (passes && reading !== 50) onComplete?.(); }, [passes, reading, onComplete]);
   return (
     <div>
       <div className="grid cols-3" style={{ gap: 12 }}>
