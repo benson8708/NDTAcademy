@@ -1,6 +1,6 @@
 # NDTAcademy.com
 
-Online NDT training platform — Next.js (App Router) + Supabase. Competes with WorldSpec by pairing
+Repo: https://github.com/benson8708/NDTAcademy · Online NDT training platform — Next.js (App Router) + Supabase. Competes with WorldSpec by pairing
 self-paced, CP-105-traceable method training with **audit-ready formal training records**
 (active-engagement hour tracking, SNT-TC-1A 2024 / NAS410 hour mapping, exportable company records).
 
