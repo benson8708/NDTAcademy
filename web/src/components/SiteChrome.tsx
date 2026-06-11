@@ -47,18 +47,43 @@ export function RevealInit() {
  * session exists.
  */
 export function AuthButton() {
-  const [signedIn, setSignedIn] = useState(false);
+  const [name, setName] = useState<string | null>(null);
   useEffect(() => {
     const supabase = createClient();
-    supabase.auth.getUser().then(({ data }) => setSignedIn(!!data.user));
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) =>
-      setSignedIn(!!session?.user),
-    );
-    return () => sub.subscription.unsubscribe();
+    let active = true;
+    // Fetch the friendly name OUTSIDE the auth-state callback — calling awaited
+    // supabase methods inside onAuthStateChange deadlocks supabase-js.
+    const enrich = async (user: { id: string; email?: string }) => {
+      let display = user.email?.split("@")[0] || "Account";
+      try {
+        const { data: prof } = await supabase
+          .from("profiles").select("full_name").eq("id", user.id).single();
+        if (prof?.full_name?.trim()) display = prof.full_name.trim();
+      } catch { /* keep email-based fallback */ }
+      if (active) setName(display);
+    };
+    supabase.auth.getUser().then(({ data }) => {
+      if (!active) return;
+      if (data.user) enrich(data.user); else setName(null);
+    });
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+      // synchronous only — no supabase calls here
+      if (!session?.user) setName(null);
+      else setName((n) => n || session.user.email?.split("@")[0] || "Account");
+    });
+    return () => { active = false; sub.subscription.unsubscribe(); };
   }, []);
-  return signedIn ? (
-    <a href="/dashboard" className="btn btn-primary btn-sm">Dashboard</a>
-  ) : (
-    <a href="/login" className="btn btn-primary btn-sm">Sign In</a>
-  );
+  if (name) {
+    return (
+      <span className="nav-user">
+        <a href="/dashboard" className="nav-user-name" title="Go to your dashboard">
+          <span className="nav-user-dot" aria-hidden="true" />{name}
+        </a>
+        <form action="/auth/signout" method="post">
+          <button type="submit" className="btn btn-ghost btn-sm nav-logout">Log out</button>
+        </form>
+      </span>
+    );
+  }
+  return <a href="/login" className="btn btn-primary btn-sm">Sign In</a>;
 }

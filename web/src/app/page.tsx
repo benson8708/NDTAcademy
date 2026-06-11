@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { redirect } from "next/navigation";
+import { createClient } from "@/lib/supabase/server";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JsonLd from "@/components/JsonLd";
@@ -51,7 +53,12 @@ const FAQS = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  // Logged-in students land on their dashboard, not the marketing page.
+  const supabase = await createClient();
+  const { data: { user } } = await supabase.auth.getUser();
+  if (user) redirect("/dashboard");
+
   const methods = COURSES.filter((c) => ["ut", "rt", "mt", "pt", "et", "vt"].includes(c.id));
   return (
     <>
