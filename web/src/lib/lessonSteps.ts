@@ -48,7 +48,14 @@ export function buildSteps(opts: {
     dwellSec: 8,
   });
 
-  if (videoUrl) {
+  // The AI explainer is the lesson's lead video — a full glassmorphism overview
+  // of the lesson. It replaces the old slideshow teaching video; we only fall
+  // back to that legacy video when no explainer has been produced for a lesson.
+  if (explainers.length > 0) {
+    for (const e of explainers) {
+      steps.push({ kind: "explainer", title: e.title, src: e.url });
+    }
+  } else if (videoUrl) {
     steps.push({ kind: "video", title: `Watch: ${content.title}`, src: videoUrl, poster: heroUrl });
   }
 
@@ -56,18 +63,9 @@ export function buildSteps(opts: {
   // every screen is one focused idea, not a wall.
   const sections = content.sections;
   const used = new Set<number>();
-  const explainerAfter = new Map<number, ExplainerEntry[]>();
-  for (const e of explainers) {
-    const list = explainerAfter.get(e.afterSection) ?? [];
-    list.push(e);
-    explainerAfter.set(e.afterSection, list);
-  }
-
-  const pushExplainers = (idx: number) => {
-    for (const e of explainerAfter.get(idx) ?? []) {
-      steps.push({ kind: "explainer", title: e.title, src: e.url });
-    }
-  };
+  // Explainers now lead the lesson (above), so they are no longer spliced
+  // mid-lesson by section anchor.
+  const pushExplainers = (_idx: number) => {};
 
   for (let i = 0; i < sections.length; i++) {
     if (used.has(i)) {
