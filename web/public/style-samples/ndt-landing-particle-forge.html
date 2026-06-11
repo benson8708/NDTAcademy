@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NDTAcademy.com — Forge Your Future in NDT</title>
+<meta name="description" content="Advance your career as a Nondestructive Testing technician. VT Level I & II — completely free for a limited time.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+<style>
+  :root{
+    --navy:#0B1F3A; --deep:#08152b; --blue:#1E66F5; --cyan:#5fe0ff; --ink:#E8F0F8;
+    --ink-dim:rgba(232,240,248,.68); --ink-faint:rgba(232,240,248,.45);
+    --card:rgba(20,44,84,.42); --line:rgba(95,224,255,.16);
+    --disp:'Unbounded',sans-serif; --body:'Outfit',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body); color:var(--ink); background:var(--deep);
+    background:
+      radial-gradient(1200px 700px at 75% -10%, rgba(30,102,245,.22), transparent 60%),
+      radial-gradient(900px 600px at 10% 110%, rgba(95,224,255,.07), transparent 55%),
+      linear-gradient(180deg,#08152b 0%,#0B1F3A 55%,#08152b 100%);
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--blue);color:#fff}
+  a{color:inherit;text-decoration:none}
+  section{scroll-margin-top:84px}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 5vw;transition:background .35s,box-shadow .35s,padding .35s;
+  }
+  nav.scrolled{background:rgba(8,21,43,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    box-shadow:0 1px 0 rgba(95,224,255,.12),0 12px 40px rgba(0,0,0,.35);padding:12px 5vw}
+  .wordmark{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:.02em;display:flex;align-items:center;gap:10px}
+  .wordmark .dot{width:14px;height:14px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,var(--cyan),var(--blue));
+    box-shadow:0 0 14px rgba(95,224,255,.8);animation:pulse 2.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 8px rgba(95,224,255,.6)}50%{box-shadow:0 0 20px rgba(95,224,255,1)}}
+  .wordmark em{font-style:normal;color:var(--cyan)}
+  .navlinks{display:flex;gap:30px;font-weight:500;font-size:15px;color:var(--ink-dim)}
+  .navlinks a{position:relative;transition:color .25s}
+  .navlinks a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;border-radius:2px;
+    background:linear-gradient(90deg,var(--cyan),var(--blue));transition:width .3s}
+  .navlinks a:hover{color:var(--ink)} .navlinks a:hover::after{width:100%}
+  .nav-cta{display:flex;align-items:center;gap:12px}
+  .btn-signin{font-weight:600;font-size:14.5px;padding:10px 22px;border-radius:999px;border:1.5px solid rgba(95,224,255,.4);
+    color:var(--ink);transition:.25s;background:rgba(95,224,255,.04)}
+  .btn-signin:hover{border-color:var(--cyan);background:rgba(95,224,255,.12);transform:translateY(-1px)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  #stage{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .hero-fallback{position:absolute;inset:0;z-index:0;opacity:.7;pointer-events:none;
+    background:
+      radial-gradient(420px 420px at 72% 46%, rgba(95,224,255,.16), transparent 65%),
+      radial-gradient(640px 520px at 78% 55%, rgba(30,102,245,.20), transparent 70%);}
+  .hero-inner{position:relative;z-index:2;width:100%;padding:120px 6vw 80px;pointer-events:none}
+  .hero-inner a,.hero-inner .chip{pointer-events:auto}
+  .hero-copy{max-width:640px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:13.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--cyan);border:1px solid var(--line);border-radius:999px;
+    padding:9px 18px;background:rgba(95,224,255,.06);backdrop-filter:blur(6px);
+    animation:chipIn .8s cubic-bezier(.2,1.6,.4,1) .1s backwards}
+  .eyebrow .spark{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);
+    animation:pulse 1.8s ease-in-out infinite}
+  h1{font-family:var(--disp);font-weight:800;font-size:clamp(40px,5.4vw,76px);line-height:1.04;
+    letter-spacing:-.01em;margin:26px 0 22px;text-wrap:balance}
+  h1 .k{display:inline-block;animation:kIn .85s cubic-bezier(.2,1.5,.35,1) backwards;
+    animation-delay:calc(var(--i)*.04s + .25s);transition:transform .3s,color .3s;cursor:default}
+  h1 .k:hover{transform:translateY(-9px) rotate(-5deg);color:var(--cyan)}
+  @keyframes kIn{0%{opacity:0;transform:translateY(70px) rotate(9deg) scale(.6)}
+    70%{opacity:1;transform:translateY(-7px) rotate(-2deg) scale(1.04)}100%{opacity:1;transform:none}}
+  .grad{background:linear-gradient(92deg,var(--cyan) 10%,var(--blue) 90%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hero-sub{font-size:clamp(16px,1.35vw,19px);line-height:1.65;color:var(--ink-dim);max-width:560px;
+    animation:fadeUp .9s ease .75s backwards}
+  .hero-sub strong{color:var(--ink);font-weight:600}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px;animation:fadeUp .9s ease .9s backwards}
+  .btn-primary{position:relative;overflow:hidden;font-family:var(--body);font-weight:700;font-size:16.5px;
+    color:#fff;padding:17px 34px;border-radius:999px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;
+    background:linear-gradient(95deg,var(--blue),#3f8bff 60%,var(--cyan));background-size:160% 100%;
+    box-shadow:0 8px 32px rgba(30,102,245,.45),0 0 0 1px rgba(95,224,255,.25) inset;
+    transition:transform .25s cubic-bezier(.2,1.6,.4,1),box-shadow .3s,background-position .4s}
+  .btn-primary:hover{transform:translateY(-3px) scale(1.03);background-position:90% 0;
+    box-shadow:0 14px 44px rgba(30,102,245,.65),0 0 0 1px rgba(95,224,255,.4) inset}
+  .btn-primary::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;
+    background:linear-gradient(105deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .5s}
+  .btn-primary:hover::after{left:130%}
+  .btn-primary .arr{transition:transform .25s}
+  .btn-primary:hover .arr{transform:translateX(4px)}
+  .btn-ghost{font-weight:600;font-size:16px;color:var(--ink);padding:16px 30px;border-radius:999px;
+    border:1.5px solid rgba(95,224,255,.35);background:rgba(11,31,58,.4);backdrop-filter:blur(8px);
+    display:inline-flex;align-items:center;gap:10px;transition:.25s}
+  .btn-ghost:hover{border-color:var(--cyan);background:rgba(95,224,255,.1);transform:translateY(-3px)}
+  .btn-ghost .play{width:10px;height:12px;background:var(--cyan);
+    clip-path:polygon(0 0,100% 50%,0 100%);transition:transform .25s}
+  .btn-ghost:hover .play{transform:scale(1.25)}
+  .chip-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:38px}
+  .chip{font-size:13.5px;font-weight:600;color:var(--ink-dim);padding:9px 17px;border-radius:999px;
+    border:1px solid var(--line);background:rgba(20,44,84,.45);backdrop-filter:blur(6px);
+    display:inline-flex;align-items:center;gap:8px;transition:.25s;
+    animation:chipIn .7s cubic-bezier(.2,1.8,.4,1) backwards}
+  .chip:nth-child(1){animation-delay:1.05s}.chip:nth-child(2){animation-delay:1.18s}
+  .chip:nth-child(3){animation-delay:1.31s}.chip:nth-child(4){animation-delay:1.44s}
+  .chip:hover{transform:translateY(-4px) rotate(-1deg);border-color:rgba(95,224,255,.5);color:var(--ink)}
+  .chip i{width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));flex:none}
+  @keyframes chipIn{0%{opacity:0;transform:translateY(26px) scale(.7)}
+    65%{opacity:1;transform:translateY(-5px) scale(1.06)}100%{opacity:1;transform:none}}
+
+  /* morph shape label */
+  .shape-hud{position:absolute;z-index:3;right:6vw;bottom:13vh;display:flex;flex-direction:column;align-items:center;gap:14px;
+    animation:fadeUp 1s ease 1.4s backwards}
+  .shape-label{font-family:var(--disp);font-weight:500;font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--cyan);padding:10px 22px;border-radius:999px;border:1px solid var(--line);
+    background:rgba(8,21,43,.6);backdrop-filter:blur(10px);min-width:240px;text-align:center;transition:opacity .3s}
+  .shape-label.swap{opacity:0}
+  .shape-dots{display:flex;gap:10px}
+  .sdot{width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(95,224,255,.5);background:transparent;
+    cursor:pointer;padding:0;transition:.3s}
+  .sdot:hover{transform:scale(1.35)}
+  .sdot.on{background:var(--cyan);box-shadow:0 0 12px var(--cyan);border-color:var(--cyan)}
+  .scroll-hint{position:absolute;z-index:3;left:50%;bottom:26px;transform:translateX(-50%);
+    color:var(--ink-faint);font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
+    display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeUp 1s ease 1.8s backwards}
+  .scroll-hint::after{content:'';width:1.5px;height:34px;background:linear-gradient(180deg,var(--cyan),transparent);
+    animation:drip 1.6s ease-in-out infinite}
+  @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}
+    51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  /* ---------- SHARED SECTION BITS ---------- */
+  .wrap{max-width:1180px;margin:0 auto;padding:0 5vw}
+  .sec{padding:110px 0}
+  .sec-eyebrow{font-weight:700;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);
+    display:flex;align-items:center;gap:14px}
+  .sec-eyebrow::before{content:'';width:34px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--cyan),var(--blue))}
+  h2{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3.2vw,44px);line-height:1.18;margin:18px 0 16px;
+    letter-spacing:-.01em;text-wrap:balance}
+  .sec-sub{color:var(--ink-dim);font-size:17.5px;line-height:1.7;max-width:640px}
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- STORY ---------- */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:54px}
+  .card{position:relative;border-radius:24px;padding:34px 28px 30px;background:var(--card);
+    border:1px solid var(--line);overflow:hidden;transition:transform .35s cubic-bezier(.2,1.4,.4,1),box-shadow .35s,border-color .35s}
+  .card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+    background:linear-gradient(90deg,var(--cyan),var(--blue));opacity:.55;transition:opacity .3s}
+  .card:hover{transform:translateY(-8px) rotate(-.4deg);border-color:rgba(95,224,255,.4);
+    box-shadow:0 24px 60px rgba(4,10,24,.6)}
+  .card:hover::before{opacity:1}
+  .card .num{font-family:var(--disp);font-weight:800;font-size:15px;color:var(--cyan);opacity:.9;
+    display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:14px;
+    background:rgba(95,224,255,.08);border:1px solid var(--line);margin-bottom:20px;transition:transform .3s}
+  .card:hover .num{transform:rotate(-8deg) scale(1.1)}
+  .card h3{font-family:var(--disp);font-weight:700;font-size:19px;margin-bottom:12px;line-height:1.3}
+  .card p{color:var(--ink-dim);font-size:15.5px;line-height:1.65}
+  .card p strong{color:var(--ink);font-weight:600}
+
+  /* ---------- VIDEO ---------- */
+  .video-sec{position:relative}
+  .video-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .vframe{position:relative;margin-top:48px;border-radius:28px;padding:10px;
+    background:linear-gradient(135deg,rgba(95,224,255,.45),rgba(30,102,245,.15) 40%,rgba(30,102,245,.55));
+    box-shadow:0 30px 90px rgba(4,10,24,.7),0 0 80px rgba(30,102,245,.18);
+    transition:transform .45s cubic-bezier(.2,1.2,.4,1),box-shadow .45s}
+  .vframe:hover{transform:translateY(-6px) scale(1.005);box-shadow:0 40px 110px rgba(4,10,24,.8),0 0 110px rgba(30,102,245,.3)}
+  .vframe .vinner{position:relative;border-radius:20px;overflow:hidden;background:#04101f}
+  .vframe video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+  .vbar{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;background:linear-gradient(180deg,transparent,rgba(4,12,26,.85))}
+  .vlive{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--cyan)}
+  .vlive i{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);
+    animation:pulse 1.6s infinite}
+  .btn-sound{font-family:var(--body);font-weight:600;font-size:13.5px;color:var(--ink);cursor:pointer;
+    padding:9px 18px;border-radius:999px;border:1px solid rgba(95,224,255,.45);background:rgba(8,21,43,.7);
+    backdrop-filter:blur(8px);transition:.25s;display:inline-flex;gap:8px;align-items:center}
+  .btn-sound:hover{background:rgba(95,224,255,.15);transform:scale(1.05)}
+  .btn-sound .sicon{width:0;height:0;border:6px solid transparent;border-left:9px solid var(--cyan);border-right:0;
+    margin-right:-2px;transition:.25s}
+  .btn-sound.live .sicon{border-left-color:#7dffb0}
+  .vcaption{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;align-items:center}
+  .vcaption .cap{color:var(--ink-faint);font-size:14.5px;margin-right:8px}
+
+  /* ---------- STATS ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .stat{border-radius:24px;padding:34px 26px;text-align:center;background:var(--card);border:1px solid var(--line);
+    transition:transform .35s cubic-bezier(.2,1.5,.4,1),border-color .3s,background .3s;cursor:default}
+  .stat:hover{transform:translateY(-7px) scale(1.025);border-color:rgba(95,224,255,.45);background:rgba(24,52,98,.55)}
+  .stat .big{font-family:var(--disp);font-weight:800;font-size:clamp(30px,3vw,42px);
+    background:linear-gradient(110deg,var(--cyan),var(--blue));-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;line-height:1.1}
+  .stat .lbl{margin-top:10px;color:var(--ink-dim);font-size:14.5px;font-weight:500;line-height:1.45}
+
+  /* ---------- FINAL CTA ---------- */
+  .band{position:relative;overflow:hidden;border-radius:36px;padding:84px 8vw;text-align:center;
+    background:
+      radial-gradient(700px 320px at 50% -40%, rgba(95,224,255,.28), transparent 70%),
+      linear-gradient(135deg,#10306b,#1E66F5 60%,#0e3fae);
+    border:1px solid rgba(95,224,255,.3);box-shadow:0 40px 100px rgba(4,10,24,.7)}
+  .band::before{content:'';position:absolute;inset:0;opacity:.5;pointer-events:none;
+    background-image:radial-gradient(rgba(232,240,248,.35) 1px,transparent 1.5px);background-size:26px 26px;
+    mask-image:radial-gradient(closest-side at 50% 40%,#000,transparent)}
+  .band h2{font-size:clamp(30px,4vw,54px);margin:0 0 14px}
+  .band p{color:rgba(232,240,248,.85);font-size:18px;line-height:1.65;max-width:580px;margin:0 auto 36px}
+  .band .btn-primary{background:linear-gradient(95deg,#fff,#dff5ff);color:var(--navy);font-size:17.5px;padding:19px 42px;
+    box-shadow:0 14px 44px rgba(4,10,24,.45)}
+  .band .btn-primary:hover{box-shadow:0 20px 60px rgba(4,10,24,.6)}
+  .band .micro{margin-top:20px;font-size:13.5px;color:rgba(232,240,248,.6);letter-spacing:.04em}
+
+  footer{padding:54px 5vw 44px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    color:var(--ink-faint);font-size:14px;border-top:1px solid rgba(95,224,255,.08);margin-top:40px}
+  footer .navlinks{font-size:14px}
+
+  @media (max-width:920px){
+    .navlinks{display:none}
+    .cards,.stats{grid-template-columns:1fr 1fr}
+    .shape-hud{right:50%;transform:translateX(50%);bottom:9vh}
+    .hero-inner{padding-top:140px}
+  }
+  @media (max-width:560px){.cards,.stats{grid-template-columns:1fr}}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+    .reveal{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="wordmark" href="#top">
+    <span class="dot"></span>NDTAcademy<em>.com</em>
+  </a>
+  <div class="navlinks">
+    <a href="#future">Why Now</a>
+    <a href="#watch">Watch</a>
+    <a href="#methods">Methods</a>
+  </div>
+  <div class="nav-cta">
+    <a class="btn-signin" href="/signin">Sign In</a>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-fallback"></div>
+  <canvas id="stage"></canvas>
+
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="spark"></span>VT Level I &amp; II — completely free for a limited time</span>
+      <h1><span data-kinetic>Forge your</span> <span class="grad" data-kinetic>future</span> <span data-kinetic>in NDT.</span></h1>
+      <p class="hero-sub">Inspectors keep <strong>aircraft flying</strong>, <strong>pipelines safe</strong>, and <strong>bridges standing</strong>. Advance your career as a Nondestructive Testing technician — take the first step today.</p>
+      <div class="cta-row">
+        <a class="btn-primary" id="ctaMain" href="/signup">Start Free VT Certification <span class="arr">→</span></a>
+        <a class="btn-ghost" href="#watch"><span class="play"></span>Watch: The Future of NDT</a>
+      </div>
+      <div class="chip-row">
+        <span class="chip"><i></i>SNT-TC-1A 2024</span>
+        <span class="chip"><i></i>NAS410</span>
+        <span class="chip"><i></i>ASNT Level III oversight</span>
+        <span class="chip"><i></i>8 hrs to first certificate</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="shape-hud">
+    <div class="shape-label" id="shapeLabel">Ultrasonic A-scan</div>
+    <div class="shape-dots" id="shapeDots">
+      <button class="sdot on" aria-label="A-scan"></button>
+      <button class="sdot" aria-label="Pipe cross-section"></button>
+      <button class="sdot" aria-label="Certification seal"></button>
+      <button class="sdot" aria-label="NDT"></button>
+    </div>
+  </div>
+
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<!-- ============ WHY NOW ============ -->
+<section class="sec" id="future">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-eyebrow">Why now</div>
+      <h2>Aging infrastructure and a new generation of aerospace need <span class="grad">certified eyes</span>.</h2>
+      <p class="sec-sub">Nondestructive Testing is how the modern world stays trustworthy. The hardware is evolving fast — the people who can certify it are the bottleneck. That's your opening.</p>
+    </div>
+    <div class="cards">
+      <div class="card reveal" style="transition-delay:.05s">
+        <span class="num">01</span>
+        <h3>The world runs on inspection</h3>
+        <p>Every aircraft, pipeline, and bridge you trusted today was signed off by an NDT technician. This is a career where <strong>your eyes hold things together</strong> — literally.</p>
+      </div>
+      <div class="card reveal" style="transition-delay:.15s">
+        <span class="num">02</span>
+        <h3>The timing is real</h3>
+        <p>Aging infrastructure needs re-inspection. New aerospace needs first inspection. <strong>The work is here — the certified workforce isn't.</strong> Get certified while the door is wide open.</p>
+      </div>
+      <div class="card reveal" style="transition-delay:.25s">
+        <span class="num">03</span>
+        <h3>Learn under Level IIIs</h3>
+        <p>Founded by two multi-certified <strong>ASNT Level IIIs</strong> — every student gets Level III oversight. Training structured to <strong>SNT-TC-1A 2024</strong> and <strong>NAS410</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIDEO ============ -->
+<section class="sec video-sec" id="watch">
+  <div class="wrap">
+    <div class="video-head reveal">
+      <div>
+        <div class="sec-eyebrow">See a real lesson</div>
+        <h2>The future of NDT <span class="grad">looks like this</span>.</h2>
+        <p class="sec-sub">This isn't a stock-footage promo — it's an actual lesson from our free VT Level I course, playing live. Narrated, tracked, audit-ready.</p>
+      </div>
+    </div>
+    <div class="vframe reveal" style="transition-delay:.1s">
+      <div class="vinner">
+        <video id="lessonVid" src="https://vamjeecpssxhzeyiqqsc.supabase.co/storage/v1/object/public/vt-media/demo/modern-vt1-1-1-v5.mp4"
+               muted loop autoplay playsinline preload="metadata"></video>
+        <div class="vbar">
+          <span class="vlive"><i></i>Live course preview</span>
+          <button class="btn-sound" id="soundBtn"><span class="sicon"></span><span id="soundTxt">Sound on</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="vcaption reveal" style="transition-delay:.2s">
+      <span class="cap">From VT Level I, Lesson 1 —</span>
+      <span class="chip"><i></i>Narrated lessons</span>
+      <span class="chip"><i></i>Progress tracked</span>
+      <span class="chip"><i></i>Audit-ready records</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="sec" id="methods">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:48px">
+      <div class="sec-eyebrow">The fast path</div>
+      <h2>From zero to <span class="grad">certificate-holder</span>, the modern way.</h2>
+    </div>
+    <div class="stats">
+      <div class="stat reveal" style="transition-delay:.0s"><div class="big">6</div><div class="lbl">NDT methods on the platform</div></div>
+      <div class="stat reveal" style="transition-delay:.1s"><div class="big">I–III</div><div class="lbl">Certification paths, Level III oversight</div></div>
+      <div class="stat reveal" style="transition-delay:.2s"><div class="big">8 hrs</div><div class="lbl">Formal training to your first certificate — tracked, narrated, audit-ready</div></div>
+      <div class="stat reveal" style="transition-delay:.3s"><div class="big">Free</div><div class="lbl">VT Level I &amp; II — for a limited time</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="sec" id="start" style="padding-top:40px">
+  <div class="wrap">
+    <div class="band reveal">
+      <h2>Take the first step.</h2>
+      <p>8 formal training hours to your first certificate. Tracked, narrated, audit-ready — and VT Level I &amp; II are completely free for a limited time.</p>
+      <a class="btn-primary" href="/signup">Start Free VT Certification <span class="arr">→</span></a>
+      <div class="micro">Structured to SNT-TC-1A 2024 &amp; NAS410 · Every student gets ASNT Level III oversight</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a class="wordmark" href="#top" style="font-size:15px"><span class="dot" style="width:11px;height:11px"></span>NDTAcademy<em>.com</em></a>
+  <div class="navlinks" style="display:flex">
+    <a href="#future">Why Now</a><a href="#watch">Watch</a><a href="/signup">Start Free</a>
+  </div>
+  <span>Founded by two multi-certified ASNT Level IIIs.</span>
+</footer>
+
+<script>
+/* ---------- page micro-interactions (no module needed) ---------- */
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 30), {passive:true});
+
+/* kinetic headline: split into letters */
+document.querySelectorAll('[data-kinetic]').forEach(el => {
+  const words = el.textContent.split(' '); el.textContent = '';
+  let i = window.__kIdx || 0;
+  words.forEach((word, wi) => {
+    const w = document.createElement('span');
+    w.style.cssText = 'display:inline-block;white-space:nowrap';
+    for (const ch of word) {
+      const s = document.createElement('span');
+      s.className = 'k'; s.style.setProperty('--i', i++); s.textContent = ch;
+      w.appendChild(s);
+    }
+    el.appendChild(w);
+    if (wi < words.length - 1) el.appendChild(document.createTextNode(' '));
+  });
+  window.__kIdx = i;
+});
+
+/* reveal on scroll */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), {threshold:.18});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* video sound toggle */
+const vid = document.getElementById('lessonVid'), sBtn = document.getElementById('soundBtn');
+sBtn.addEventListener('click', () => {
+  vid.muted = !vid.muted;
+  if (!vid.muted) vid.play();
+  document.getElementById('soundTxt').textContent = vid.muted ? 'Sound on' : 'Sound off';
+  sBtn.classList.toggle('live', !vid.muted);
+});
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+
+const COUNT = 14000;
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const canvas = document.getElementById('stage');
+
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({canvas, antialias:false, alpha:true, powerPreference:'high-performance'});
+} catch(e) {
+  document.querySelector('.hero-fallback').style.opacity = '1';
+  throw e;
+}
+renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(50, 1, .1, 100);
+camera.position.set(0, 0, 16);
+
+/* ---- world-space sizing of the morph stage ---- */
+let visH = 2 * 16 * Math.tan(THREE.MathUtils.degToRad(25)), visW = visH;
+const CENTER = new THREE.Vector3(5.2, 0.35, 0);
+function resize() {
+  const w = innerWidth, h = innerHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h; camera.updateProjectionMatrix();
+  visW = visH * camera.aspect;
+  CENTER.x = w > 920 ? 5.2 : 0;   // centered shapes on small screens
+}
+addEventListener('resize', resize); resize();
+
+/* ---- sample point clouds from canvas-drawn shapes ---- */
+const SW = 560, SH = 360, SCALE = 11.4 / SW;
+const sc = document.createElement('canvas'); sc.width = SW; sc.height = SH;
+const sx = sc.getContext('2d', {willReadFrequently:true});
+
+function sample(drawFn) {
+  sx.clearRect(0, 0, SW, SH);
+  sx.fillStyle = sx.strokeStyle = '#fff';
+  sx.lineCap = sx.lineJoin = 'round';
+  sx.setLineDash([]);
+  sx.globalCompositeOperation = 'source-over';
+  drawFn(sx, SW, SH);
+  const data = sx.getImageData(0, 0, SW, SH).data;
+  const px = [];
+  for (let y = 0; y < SH; y++) for (let x = 0; x < SW; x++)
+    if (data[(y * SW + x) * 4 + 3] > 110) px.push(x, y);
+  const out = new Float32Array(COUNT * 3);
+  const n = px.length / 2;
+  for (let i = 0; i < COUNT; i++) {
+    const j = (Math.random() * n) | 0;
+    out[i*3]   = (px[j*2]   - SW/2 + (Math.random()-.5)*1.6) * SCALE;
+    out[i*3+1] = -(px[j*2+1] - SH/2 + (Math.random()-.5)*1.6) * SCALE;
+    out[i*3+2] = (Math.random()-.5) * .55;
+  }
+  return out;
+}
+
+/* shape 1: ultrasonic A-scan */
+const aScan = sample((c, w, h) => {
+  const base = h - 64;
+  c.lineWidth = 11;
+  c.beginPath(); c.moveTo(26, base); c.lineTo(w-26, base); c.stroke(); // baseline
+  c.lineWidth = 15;
+  c.beginPath(); c.moveTo(26, base);
+  c.lineTo(64, base); c.lineTo(80, 48); c.lineTo(96, base);            // initial pulse
+  c.lineTo(150, base); c.lineTo(160, base-26); c.lineTo(172, base);    // grass
+  c.lineTo(238, base); c.lineTo(258, 150); c.lineTo(278, base);        // defect echo
+  c.lineTo(330, base); c.lineTo(342, base-20); c.lineTo(354, base);
+  c.lineTo(412, base); c.lineTo(434, 84); c.lineTo(456, base);         // backwall echo
+  c.lineTo(w-26, base); c.stroke();
+  c.setLineDash([18, 14]); c.lineWidth = 8;                            // flaw gate
+  c.beginPath(); c.moveTo(214, 188); c.lineTo(310, 188); c.stroke();
+});
+
+/* shape 2: pipe cross-section with a flaw notch */
+const pipe = sample((c, w, h) => {
+  const cx = w/2, cy = h/2;
+  c.lineWidth = 48;
+  c.beginPath(); c.arc(cx, cy, 116, 0, Math.PI*2); c.stroke();         // pipe wall
+  c.globalCompositeOperation = 'destination-out';                       // the flaw
+  c.beginPath(); c.arc(cx + 116*Math.cos(-.7), cy + 116*Math.sin(-.7), 26, 0, Math.PI*2); c.fill();
+  c.globalCompositeOperation = 'source-over';
+  c.lineWidth = 9; c.setLineDash([2, 20]);                              // centerline ticks
+  c.beginPath(); c.arc(cx, cy, 62, 0, Math.PI*2); c.stroke();
+  c.setLineDash([]); c.lineWidth = 12;                                  // compass ticks
+  [[0,-1],[0,1],[-1,0],[1,0]].forEach(([dx,dy]) => {
+    c.beginPath(); c.moveTo(cx+dx*152, cy+dy*152); c.lineTo(cx+dx*172, cy+dy*172); c.stroke();
+  });
+});
+
+/* shape 3: certification seal + check */
+const seal = sample((c, w, h) => {
+  const cx = w/2, cy = h/2 - 14;
+  c.setLineDash([24, 15]); c.lineWidth = 17;
+  c.beginPath(); c.arc(cx, cy, 122, 0, Math.PI*2); c.stroke();          // rosette edge
+  c.setLineDash([]); c.lineWidth = 7;
+  c.beginPath(); c.arc(cx, cy, 92, 0, Math.PI*2); c.stroke();           // inner ring
+  c.lineWidth = 30;                                                      // the check
+  c.beginPath(); c.moveTo(cx-50, cy+6); c.lineTo(cx-12, cy+46); c.lineTo(cx+58, cy-44); c.stroke();
+  c.lineWidth = 24;                                                      // ribbons
+  c.beginPath(); c.moveTo(cx-30, cy+118); c.lineTo(cx-52, cy+162); c.stroke();
+  c.beginPath(); c.moveTo(cx+30, cy+118); c.lineTo(cx+52, cy+162); c.stroke();
+});
+
+/* shape 4: the letters NDT */
+const ndt = sample((c, w, h) => {
+  c.font = '900 196px "Arial Black", Arial, sans-serif';
+  c.textAlign = 'center'; c.textBaseline = 'middle';
+  c.fillText('NDT', w/2, h/2 + 8);
+  c.lineWidth = 10; c.strokeText('NDT', w/2, h/2 + 8);
+});
+
+const shapes = [aScan, pipe, seal, ndt];
+const labels = ['Ultrasonic A-scan', 'Pipe cross-section', 'Certified. Sealed.', 'This is NDT'];
+
+/* ---- particle system: GPU morph via aFrom/aTo + uProgress ---- */
+const geo = new THREE.BufferGeometry();
+const aFrom = new THREE.BufferAttribute(shapes[0].slice(), 3);
+const aTo   = new THREE.BufferAttribute(shapes[1].slice(), 3);
+const aRand = new THREE.BufferAttribute(new Float32Array(COUNT * 3), 3);
+for (let i = 0; i < COUNT * 3; i++) aRand.array[i] = Math.random();
+geo.setAttribute('position', aFrom);   // alias so three computes bounds
+geo.setAttribute('aFrom', aFrom);
+geo.setAttribute('aTo', aTo);
+geo.setAttribute('aRand', aRand);
+geo.boundingSphere = new THREE.Sphere(new THREE.Vector3(), 50);
+
+const uni = {
+  uTime:    {value: 0},
+  uProgress:{value: 0},
+  uMouse:   {value: new THREE.Vector3(999, 999, 0)},
+  uCenter:  {value: CENTER},
+  uPR:      {value: Math.min(devicePixelRatio, 1.5)},
+  uSize:    {value: 2.05},
+  uColA:    {value: new THREE.Color('#5fe0ff')},
+  uColB:    {value: new THREE.Color('#1E66F5')},
+};
+
+const mat = new THREE.ShaderMaterial({
+  uniforms: uni,
+  transparent: true,
+  depthWrite: false,
+  blending: THREE.AdditiveBlending,
+  vertexShader: /* glsl */`
+    attribute vec3 aFrom; attribute vec3 aTo; attribute vec3 aRand;
+    uniform float uTime, uProgress, uPR, uSize;
+    uniform vec3 uMouse, uCenter;
+    varying float vMix; varying float vTw;
+    void main(){
+      float t = smoothstep(0.0, 1.0, clamp((uProgress - aRand.x * 0.28) / 0.72, 0.0, 1.0));
+      vec3 pos = mix(aFrom, aTo, t) + uCenter;
+      float burst = sin(t * 3.14159);                       // scatter mid-flight
+      pos.x += burst * sin(aRand.y * 6.2832 + uTime * 2.0) * 1.1;
+      pos.y += burst * cos(aRand.z * 6.2832 + uTime * 2.0) * 1.1;
+      pos.z += burst * (aRand.z - 0.5) * 2.4;
+      pos.x += sin(uTime * 0.7 + aRand.x * 6.2832) * 0.05;  // idle breathing
+      pos.y += cos(uTime * 0.8 + aRand.y * 6.2832) * 0.05;
+      vec2 dm = pos.xy - uMouse.xy;                          // cursor repulsion
+      float dist = length(dm);
+      float force = smoothstep(2.4, 0.0, dist);
+      pos.xy += normalize(dm + 0.0001) * force * (1.0 + aRand.y * 0.6);
+      vec4 mv = modelViewMatrix * vec4(pos, 1.0);
+      gl_Position = projectionMatrix * mv;
+      gl_PointSize = uSize * (0.55 + aRand.y) * uPR * (16.0 / -mv.z) * (1.0 + burst * 0.8 + force * 1.2);
+      vMix = aRand.z;
+      vTw = 0.5 + 0.5 * sin(uTime * 2.4 + aRand.x * 50.0);
+    }`,
+  fragmentShader: /* glsl */`
+    uniform vec3 uColA, uColB;
+    varying float vMix; varying float vTw;
+    void main(){
+      vec2 uv = gl_PointCoord - 0.5;
+      float d = length(uv);
+      float a = smoothstep(0.5, 0.06, d);
+      if (a < 0.01) discard;
+      vec3 col = mix(uColA, uColB, vMix);
+      col += (1.0 - smoothstep(0.0, 0.16, d)) * 0.65;       // hot white core
+      gl_FragColor = vec4(col, a * (0.62 + 0.38 * vTw));
+    }`,
+});
+scene.add(new THREE.Points(geo, mat));
+
+/* ambient dust across the whole hero */
+const dustGeo = new THREE.BufferGeometry();
+const dustPos = new Float32Array(500 * 3);
+for (let i = 0; i < 500; i++) {
+  dustPos[i*3] = (Math.random()-.5) * 34;
+  dustPos[i*3+1] = (Math.random()-.5) * 17;
+  dustPos[i*3+2] = (Math.random()-.5) * 8 - 2;
+}
+dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
+const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({
+  color: 0x1E66F5, size: .07, transparent: true, opacity: .55,
+  blending: THREE.AdditiveBlending, depthWrite: false,
+}));
+scene.add(dust);
+
+/* ---- morph engine ---- */
+const HOLD = 2.6, MORPH = 1.8;
+let cur = 0, nxt = 1, phase = 'hold', pt = 0;
+const labelEl = document.getElementById('shapeLabel');
+const dots = [...document.querySelectorAll('.sdot')];
+
+function setLabel(i) {
+  labelEl.classList.add('swap');
+  setTimeout(() => { labelEl.textContent = labels[i]; labelEl.classList.remove('swap'); }, 250);
+  dots.forEach((d, k) => d.classList.toggle('on', k === i));
+}
+function beginMorph(target) {
+  aTo.array.set(shapes[target]); aTo.needsUpdate = true;
+  nxt = target; phase = 'morph'; pt = 0;
+  setLabel(target);
+}
+function endMorph() {
+  aFrom.array.set(shapes[nxt]); aFrom.needsUpdate = true;
+  uni.uProgress.value = 0;
+  cur = nxt; phase = 'hold'; pt = 0;
+}
+dots.forEach((d, k) => d.addEventListener('click', () => {
+  if (k === cur && phase === 'hold') return;
+  if (phase === 'morph') endMorph();
+  if (k !== cur) beginMorph(k);
+}));
+
+/* ---- cursor → world plane ---- */
+const mouseTarget = new THREE.Vector3(999, 999, 0);
+addEventListener('pointermove', e => {
+  const nx = (e.clientX / innerWidth) * 2 - 1;
+  const ny = -(e.clientY / innerHeight) * 2 + 1;
+  mouseTarget.set(nx * visW / 2, ny * visH / 2, 0);
+});
+addEventListener('pointerleave', () => mouseTarget.set(999, 999, 0));
+
+/* ---- render loop ---- */
+const clock = new THREE.Clock();
+let raf = null, hidden = false;
+
+function frame() {
+  raf = requestAnimationFrame(frame);
+  const dt = Math.min(clock.getDelta(), .05);
+  uni.uTime.value += dt;
+  pt += dt;
+  if (phase === 'hold' && pt >= HOLD) beginMorph((cur + 1) % shapes.length);
+  else if (phase === 'morph') {
+    uni.uProgress.value = Math.min(pt / MORPH, 1);
+    if (pt >= MORPH) endMorph();
+  }
+  uni.uMouse.value.lerp(mouseTarget, .12);
+  dust.rotation.y += dt * .008;
+  dust.position.y = Math.sin(uni.uTime.value * .3) * .25;
+  camera.position.x += ((uni.uMouse.value.x === 999 ? 0 : uni.uMouse.value.x * .025) - camera.position.x) * .04;
+  camera.position.y += ((uni.uMouse.value.y === 999 ? 0 : uni.uMouse.value.y * .02) - camera.position.y) * .04;
+  camera.lookAt(0, 0, 0);
+  renderer.render(scene, camera);
+}
+
+if (reduced) {
+  // static frame: settle on the NDT lettering, no animation
+  aFrom.array.set(shapes[3]); aFrom.needsUpdate = true;
+  uni.uProgress.value = 0; uni.uTime.value = 1.2;
+  setLabel(3);
+  renderer.render(scene, camera);
+  addEventListener('resize', () => renderer.render(scene, camera));
+} else {
+  frame();
+  document.addEventListener('visibilitychange', () => {
+    hidden = document.hidden;
+    if (hidden && raf) { cancelAnimationFrame(raf); raf = null; clock.stop(); }
+    else if (!hidden && !raf) { clock.start(); frame(); }
+  });
+}
+</script>
+</body>
+</html>

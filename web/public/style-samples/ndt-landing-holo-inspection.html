@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NDTAcademy.com — Inspect the Future. Certify Yours.</title>
+<meta name="description" content="Advance your career as a Nondestructive Testing technician. VT Level I & II — completely free for a limited time. Level III oversight on every course." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+<style>
+  :root{
+    --navy:#0B1F3A;
+    --navy-deep:#08152b;
+    --ink:#060d1c;
+    --blue:#1E66F5;
+    --cyan:#5fe0ff;
+    --paper:#E8F0F8;
+    --paper-dim:rgba(232,240,248,.62);
+    --glass:rgba(13,28,54,.55);
+    --glass-edge:rgba(95,224,255,.16);
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --disp:'Barlow Condensed',sans-serif;
+    --body:'Barlow',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:var(--body);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:rgba(95,224,255,.32);color:#fff}
+
+  /* ====================== NAV ====================== */
+  nav{
+    position:fixed;inset:0 0 auto 0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px clamp(20px,4vw,56px);
+    transition:background .35s,border-color .35s,backdrop-filter .35s;
+    border-bottom:1px solid transparent;
+  }
+  nav.scrolled{
+    background:rgba(6,13,28,.72);
+    backdrop-filter:blur(16px) saturate(1.4);
+    -webkit-backdrop-filter:blur(16px) saturate(1.4);
+    border-bottom-color:rgba(95,224,255,.12);
+  }
+  .wordmark{
+    font-family:var(--disp);font-weight:700;font-size:24px;letter-spacing:.04em;
+    text-transform:uppercase;text-decoration:none;color:var(--paper);
+    display:flex;align-items:center;gap:10px;
+  }
+  .wordmark .tag{
+    font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;
+    color:var(--ink);background:linear-gradient(135deg,var(--cyan),var(--blue));
+    padding:4px 7px;border-radius:5px;
+  }
+  .wordmark em{font-style:normal;color:var(--cyan)}
+  .nav-links{display:flex;align-items:center;gap:clamp(14px,2.4vw,34px)}
+  .nav-links a.link{
+    font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--paper-dim);text-decoration:none;position:relative;padding:6px 2px;
+    transition:color .25s;
+  }
+  .nav-links a.link::after{
+    content:"";position:absolute;left:0;bottom:0;height:1px;width:0;
+    background:var(--cyan);transition:width .3s cubic-bezier(.2,.9,.3,1);
+  }
+  .nav-links a.link:hover{color:var(--cyan)}
+  .nav-links a.link:hover::after{width:100%}
+  .btn-signin{
+    font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--paper);text-decoration:none;
+    border:1px solid rgba(95,224,255,.35);border-radius:10px;padding:10px 20px;
+    background:rgba(95,224,255,.05);
+    transition:background .25s,box-shadow .25s,border-color .25s,transform .2s;
+  }
+  .btn-signin:hover{
+    background:rgba(95,224,255,.14);border-color:var(--cyan);
+    box-shadow:0 0 24px rgba(95,224,255,.25);transform:translateY(-1px);
+  }
+  @media(max-width:840px){ .nav-links a.link{display:none} }
+
+  /* ====================== HERO ====================== */
+  .hero{
+    position:relative;min-height:100vh;
+    display:flex;align-items:center;
+    background:
+      radial-gradient(1100px 700px at 78% 30%, rgba(30,102,245,.22), transparent 62%),
+      radial-gradient(900px 600px at 15% 85%, rgba(11,31,58,.9), transparent 70%),
+      linear-gradient(180deg,#08152b 0%, #060d1c 100%);
+    overflow:hidden;
+  }
+  #scene{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:1}
+  .hero-scrim{
+    position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(100deg, rgba(6,13,28,.88) 0%, rgba(6,13,28,.55) 34%, rgba(6,13,28,0) 60%);
+  }
+  .hero-scanlines{
+    position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.5;
+    background:repeating-linear-gradient(180deg, rgba(95,224,255,.025) 0 1px, transparent 1px 4px);
+    mix-blend-mode:screen;
+  }
+  .hero-inner{
+    position:relative;z-index:4;width:100%;
+    padding:140px clamp(20px,4vw,56px) 110px;
+    max-width:1480px;margin:0 auto;
+  }
+  .hero-copy{max-width:680px}
+  .kicker{
+    font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.18em;
+    color:var(--cyan);text-transform:uppercase;
+    display:inline-flex;align-items:center;gap:10px;
+    margin-bottom:26px;
+  }
+  .kicker .dot{
+    width:7px;height:7px;border-radius:50%;background:var(--cyan);
+    box-shadow:0 0 10px var(--cyan);animation:blink 1.8s ease-in-out infinite;
+  }
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+  h1{
+    font-family:var(--disp);font-weight:700;text-transform:uppercase;
+    font-size:clamp(58px,8.2vw,116px);line-height:.92;letter-spacing:.005em;
+    text-shadow:0 4px 40px rgba(6,13,28,.8);
+  }
+  h1 .glow{
+    background:linear-gradient(92deg,var(--cyan) 0%, var(--blue) 90%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 26px rgba(95,224,255,.35));
+  }
+  .hero-sub{
+    margin:26px 0 36px;max-width:560px;
+    font-size:clamp(16px,1.3vw,19px);line-height:1.65;color:var(--paper-dim);
+  }
+  .hero-sub strong{color:var(--paper);font-weight:600}
+  .cta-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .btn{
+    font-family:var(--mono);font-weight:700;font-size:14px;letter-spacing:.06em;
+    text-decoration:none;border-radius:12px;padding:18px 30px;
+    display:inline-flex;align-items:center;gap:12px;
+    transition:transform .22s cubic-bezier(.2,.9,.3,1.4),box-shadow .25s,background .25s,border-color .25s;
+    position:relative;overflow:hidden;cursor:pointer;
+  }
+  .btn-primary{
+    color:#04101f;
+    background:linear-gradient(98deg,var(--cyan) 0%, #38a4ff 55%, var(--blue) 120%);
+    box-shadow:0 8px 36px rgba(30,102,245,.45), 0 0 0 1px rgba(95,224,255,.5) inset;
+  }
+  .btn-primary::after{
+    content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+    transform:skewX(-22deg);transition:left .55s ease;
+  }
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 48px rgba(95,224,255,.5), 0 0 0 1px rgba(255,255,255,.6) inset}
+  .btn-primary:hover::after{left:130%}
+  .btn-ghost{
+    color:var(--paper);border:1px solid rgba(95,224,255,.32);
+    background:rgba(13,28,54,.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  }
+  .btn-ghost:hover{
+    transform:translateY(-3px);border-color:var(--cyan);
+    background:rgba(95,224,255,.1);box-shadow:0 10px 36px rgba(95,224,255,.22);
+  }
+  .btn-ghost .tri{color:var(--cyan);font-size:11px}
+  .hero-micro{
+    margin-top:22px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;
+    color:rgba(232,240,248,.42);text-transform:uppercase;
+  }
+  .method-chips{display:flex;gap:8px;margin-top:30px;flex-wrap:wrap}
+  .chip{
+    font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;
+    color:rgba(232,240,248,.55);
+    border:1px solid rgba(95,224,255,.18);border-radius:7px;padding:7px 12px;
+    background:rgba(13,28,54,.4);
+    transition:color .25s,border-color .25s,box-shadow .25s,transform .2s;cursor:default;
+  }
+  .chip:hover{
+    color:var(--cyan);border-color:rgba(95,224,255,.55);
+    box-shadow:0 0 18px rgba(95,224,255,.22);transform:translateY(-2px);
+  }
+  .chip.free{color:#04101f;background:linear-gradient(135deg,var(--cyan),#38a4ff);border-color:transparent;font-weight:700}
+
+  /* HUD glass panels */
+  .hud{
+    position:absolute;z-index:4;
+    font-family:var(--mono);font-size:11.5px;line-height:1.85;letter-spacing:.05em;
+    color:rgba(232,240,248,.78);
+    background:linear-gradient(165deg, rgba(16,34,64,.62), rgba(8,21,43,.5));
+    border:1px solid var(--glass-edge);border-radius:14px;
+    padding:14px 18px;min-width:228px;
+    backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);
+    box-shadow:0 18px 50px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.02) inset;
+    transition:border-color .3s, box-shadow .3s;
+    will-change:transform;
+  }
+  .hud.ping{border-color:rgba(95,224,255,.6);box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 30px rgba(95,224,255,.25)}
+  .hud-title{
+    display:flex;justify-content:space-between;align-items:center;gap:18px;
+    font-size:10px;font-weight:700;letter-spacing:.22em;color:var(--cyan);
+    border-bottom:1px solid rgba(95,224,255,.14);padding-bottom:8px;margin-bottom:8px;
+  }
+  .hud-live{display:inline-flex;align-items:center;gap:6px;color:#7dffa9;font-weight:500}
+  .hud-live i{width:6px;height:6px;border-radius:50%;background:#7dffa9;box-shadow:0 0 8px #7dffa9;animation:blink 1.4s infinite}
+  .hud-row{display:flex;justify-content:space-between;gap:24px}
+  .hud-row b{font-weight:500;color:var(--cyan)}
+  .hud-row .warn{color:#ffd27d}
+  #hudA{top:17%;right:4.5%}
+  #hudB{bottom:21%;right:11%}
+  @media(max-width:1180px){ #hudB{display:none} }
+  @media(max-width:900px){ #hudA{display:none} }
+
+  .scroll-cue{
+    position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:4;
+    font-family:var(--mono);font-size:10px;letter-spacing:.3em;color:rgba(232,240,248,.4);
+    text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px;
+  }
+  .scroll-cue .line{width:1px;height:42px;background:linear-gradient(180deg,var(--cyan),transparent);animation:drip 2.2s ease-in-out infinite}
+  @keyframes drip{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  /* ====================== SECTION SHELL ====================== */
+  section{position:relative}
+  .shell{max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+  .sec-kicker{
+    font-family:var(--mono);font-size:12px;letter-spacing:.22em;color:var(--cyan);
+    text-transform:uppercase;margin-bottom:16px;display:block;
+  }
+  h2{
+    font-family:var(--disp);font-weight:700;text-transform:uppercase;
+    font-size:clamp(42px,4.6vw,68px);line-height:.95;letter-spacing:.005em;
+  }
+  .sec-lead{margin-top:18px;max-width:620px;font-size:17.5px;line-height:1.7;color:var(--paper-dim)}
+
+  /* ====================== WHY NOW ====================== */
+  #why{
+    padding:130px 0 120px;
+    background:
+      radial-gradient(800px 480px at 8% 0%, rgba(30,102,245,.1), transparent 65%),
+      linear-gradient(180deg,#060d1c, #08152b 60%, #060d1c);
+  }
+  #why::before{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+    background:
+      linear-gradient(90deg, rgba(95,224,255,.035) 1px, transparent 1px) 0 0/120px 100%,
+      linear-gradient(0deg, rgba(95,224,255,.025) 1px, transparent 1px) 0 0/100% 120px;
+    mask-image:radial-gradient(900px 600px at 50% 30%, #000, transparent 80%);
+    -webkit-mask-image:radial-gradient(900px 600px at 50% 30%, #000, transparent 80%);
+  }
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:64px}
+  @media(max-width:980px){.why-grid{grid-template-columns:1fr}}
+  .card{
+    position:relative;border-radius:18px;padding:30px 28px 32px;
+    background:linear-gradient(168deg, rgba(16,34,64,.6), rgba(8,21,43,.45));
+    border:1px solid var(--glass-edge);
+    backdrop-filter:blur(16px) saturate(1.3);-webkit-backdrop-filter:blur(16px) saturate(1.3);
+    box-shadow:0 24px 60px rgba(0,0,0,.35);
+    transition:transform .35s cubic-bezier(.2,.9,.3,1),border-color .35s,box-shadow .35s;
+    transform-style:preserve-3d;
+  }
+  .card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(95,224,255,.45);
+    box-shadow:0 30px 70px rgba(0,0,0,.5), 0 0 40px rgba(95,224,255,.12);
+  }
+  .card::before{
+    content:"";position:absolute;top:0;left:24px;right:24px;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(95,224,255,.6),transparent);
+    opacity:0;transition:opacity .35s;
+  }
+  .card:hover::before{opacity:1}
+  .card-num{
+    font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--cyan);
+    display:flex;align-items:center;gap:12px;margin-bottom:22px;
+  }
+  .card-num::after{content:"";flex:1;height:1px;background:rgba(95,224,255,.18)}
+  .card-icon{
+    width:46px;height:46px;border-radius:12px;margin-bottom:20px;
+    display:grid;place-items:center;
+    background:rgba(95,224,255,.08);border:1px solid rgba(95,224,255,.22);
+    color:var(--cyan);
+  }
+  .card h3{
+    font-family:var(--disp);font-weight:600;text-transform:uppercase;
+    font-size:27px;letter-spacing:.02em;margin-bottom:12px;
+  }
+  .card p{font-size:15.5px;line-height:1.7;color:var(--paper-dim)}
+  .card p strong{color:var(--paper);font-weight:600}
+
+  /* ====================== VIDEO ====================== */
+  #video{
+    padding:120px 0 130px;
+    background:
+      radial-gradient(1000px 600px at 85% 20%, rgba(30,102,245,.14), transparent 60%),
+      #060d1c;
+  }
+  .video-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:48px}
+  .video-frame{
+    position:relative;border-radius:20px;
+    background:rgba(8,21,43,.7);
+    border:1px solid rgba(95,224,255,.2);
+    box-shadow:0 40px 110px rgba(0,0,0,.6), 0 0 80px rgba(30,102,245,.14);
+    padding:14px;
+  }
+  .video-frame::before,.video-frame::after,
+  .video-stage::before,.video-stage::after{
+    content:"";position:absolute;width:26px;height:26px;z-index:5;
+    border-color:var(--cyan);border-style:solid;pointer-events:none;
+    filter:drop-shadow(0 0 6px rgba(95,224,255,.7));
+  }
+  .video-frame::before{top:-6px;left:-6px;border-width:2px 0 0 2px}
+  .video-frame::after{top:-6px;right:-6px;border-width:2px 2px 0 0}
+  .video-stage::before{bottom:-6px;left:-6px;border-width:0 0 2px 2px}
+  .video-stage::after{bottom:-6px;right:-6px;border-width:0 2px 2px 0}
+  .video-stage{position:absolute;inset:0;pointer-events:none}
+  .video-frame video{
+    display:block;width:100%;border-radius:10px;aspect-ratio:16/9;
+    object-fit:cover;background:radial-gradient(600px 300px at 50% 40%, #0d2347, #060d1c);
+  }
+  .video-bar{
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+    padding:14px 8px 2px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(232,240,248,.5);
+  }
+  .video-bar .rec{display:inline-flex;align-items:center;gap:8px;color:var(--cyan)}
+  .video-bar .rec i{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:blink 1.6s infinite}
+  .sound-toggle{
+    position:absolute;right:30px;top:30px;z-index:6;
+    font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--paper);background:rgba(6,13,28,.72);border:1px solid rgba(95,224,255,.4);
+    border-radius:9px;padding:10px 16px;cursor:pointer;
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    transition:background .25s,box-shadow .25s,transform .2s;
+  }
+  .sound-toggle:hover{background:rgba(95,224,255,.18);box-shadow:0 0 22px rgba(95,224,255,.3);transform:translateY(-1px)}
+
+  /* ====================== STATS ====================== */
+  #stats{
+    padding:110px 0 120px;
+    background:linear-gradient(180deg,#060d1c, #08152b 55%, #060d1c);
+  }
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:58px}
+  @media(max-width:1080px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.stat-grid{grid-template-columns:1fr}}
+  .stat{
+    border-radius:18px;padding:30px 26px 28px;position:relative;overflow:hidden;
+    background:linear-gradient(168deg, rgba(16,34,64,.55), rgba(8,21,43,.42));
+    border:1px solid var(--glass-edge);
+    backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    transition:transform .3s,border-color .3s,box-shadow .3s;
+  }
+  .stat:hover{transform:translateY(-6px);border-color:rgba(95,224,255,.45);box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 36px rgba(95,224,255,.12)}
+  .stat .big{
+    font-family:var(--disp);font-weight:700;font-size:64px;line-height:1;
+    background:linear-gradient(135deg,#fff 20%, var(--cyan) 110%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .stat .label{
+    font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--cyan);margin:14px 0 10px;
+  }
+  .stat p{font-size:14px;line-height:1.6;color:var(--paper-dim)}
+  .stat::after{
+    content:"";position:absolute;right:-30px;top:-30px;width:110px;height:110px;border-radius:50%;
+    background:radial-gradient(circle, rgba(95,224,255,.14), transparent 70%);
+    transition:opacity .3s;opacity:0;
+  }
+  .stat:hover::after{opacity:1}
+  .stat::before{
+    content:"";position:absolute;top:0;left:22px;right:22px;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(95,224,255,.4),transparent);
+  }
+
+  /* ====================== FINAL CTA ====================== */
+  #start{
+    padding:140px 0 150px;text-align:center;position:relative;overflow:hidden;
+    background:
+      radial-gradient(900px 520px at 50% 115%, rgba(30,102,245,.42), transparent 72%),
+      radial-gradient(700px 420px at 50% -10%, rgba(95,224,255,.08), transparent 65%),
+      #060d1c;
+  }
+  #start::after{
+    content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
+    background:
+      linear-gradient(90deg, rgba(95,224,255,.04) 1px, transparent 1px) 0 0/110px 100%,
+      linear-gradient(0deg, rgba(95,224,255,.03) 1px, transparent 1px) 0 0/100% 110px;
+    mask-image:radial-gradient(760px 480px at 50% 60%, #000, transparent 78%);
+    -webkit-mask-image:radial-gradient(760px 480px at 50% 60%, #000, transparent 78%);
+  }
+  #start .shell{position:relative;z-index:1}
+  #start::before{
+    content:"";position:absolute;left:50%;top:0;transform:translateX(-50%);
+    width:min(720px,80vw);height:1px;
+    background:linear-gradient(90deg,transparent,rgba(95,224,255,.5),transparent);
+  }
+  #start h2{font-size:clamp(54px,6.5vw,96px)}
+  #start .sec-lead{margin:22px auto 44px;max-width:640px}
+  .cta-center{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+  .final-micro{
+    margin-top:26px;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:rgba(232,240,248,.4);
+  }
+
+  footer{
+    border-top:1px solid rgba(95,224,255,.1);
+    padding:34px clamp(20px,4vw,56px);
+    display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;
+    font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:rgba(232,240,248,.38);
+    background:#050b18;
+  }
+  footer a{color:rgba(232,240,248,.55);text-decoration:none;transition:color .25s}
+  footer a:hover{color:var(--cyan)}
+
+  /* reveal-on-scroll */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.3,1),transform .8s cubic-bezier(.2,.7,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .kicker .dot,.hud-live i,.video-bar .rec i,.scroll-cue .line{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="wordmark" href="/"><span class="tag">NDT</span>NDT<em>Academy</em>.com</a>
+  <div class="nav-links">
+    <a class="link" href="#why">Why Now</a>
+    <a class="link" href="#video">Watch</a>
+    <a class="link" href="#stats">The Numbers</a>
+    <a class="link" href="#start">Get Certified</a>
+    <a class="btn-signin" href="/login">Sign In</a>
+  </div>
+</nav>
+
+<!-- ====================== HERO ====================== -->
+<header class="hero" id="hero">
+  <canvas id="scene"></canvas>
+  <div class="hero-scrim"></div>
+  <div class="hero-scanlines"></div>
+
+  <div class="hud" id="hudA" aria-hidden="true">
+    <div class="hud-title">SCAN TELEMETRY <span class="hud-live"><i></i>LIVE</span></div>
+    <div class="hud-row"><span>RING POS</span><b id="hud-pos">0.00 m</b></div>
+    <div class="hud-row"><span>SWEEP VEL</span><b id="hud-vel">140 mm/s</b></div>
+    <div class="hud-row"><span>SIGNAL</span><b id="hud-snr">98.2%</b></div>
+  </div>
+  <div class="hud" id="hudB" aria-hidden="true">
+    <div class="hud-title">WELD 04-A — GIRTH</div>
+    <div class="hud-row"><span>INDICATIONS</span><b id="hud-ind">00</b></div>
+    <div class="hud-row"><span>DISPOSITION</span><b class="warn">REVIEW</b></div>
+    <div class="hud-row"><span>METHOD</span><b>VT → PT</b></div>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="kicker"><span class="dot"></span>LIVE SCAN · GIRTH WELD 04-A · VT MODULE ACTIVE</span>
+      <h1>Inspect the future.<br /><span class="glow">Certify yours.</span></h1>
+      <p class="hero-sub">
+        Inspectors keep aircraft flying, pipelines safe, and bridges standing.
+        Advance your career as a Nondestructive Testing technician —
+        <strong>VT Level I &amp; II are completely free for a limited time.</strong>
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/signup">Start Free VT Certification <span>→</span></a>
+        <a class="btn btn-ghost" href="#video" id="watch-cta"><span class="tri">▶</span> Watch: The Future of NDT</a>
+      </div>
+      <p class="hero-micro">8 formal training hours to your first certificate · No prerequisites · Level III oversight</p>
+      <div class="method-chips" aria-label="NDT methods">
+        <span class="chip free">VT · FREE</span><span class="chip">PT</span><span class="chip">MT</span>
+        <span class="chip">UT</span><span class="chip">RT</span><span class="chip">ET</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span>Begin sweep</span><span class="line"></span></div>
+</header>
+
+<!-- ====================== WHY NOW ====================== -->
+<section id="why">
+  <div class="shell">
+    <span class="sec-kicker reveal">// WHY NOW</span>
+    <h2 class="reveal">The world runs on<br />certified eyes.</h2>
+    <p class="sec-lead reveal d1">
+      Aging infrastructure and a new generation of aerospace need certified eyes.
+      The work is everywhere — the credential is the gate. NDTAcademy gets you through it.
+    </p>
+    <div class="why-grid">
+      <div class="card reveal d1">
+        <div class="card-num">01 / THE MISSION</div>
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>
+        </div>
+        <h3>Critical work</h3>
+        <p><strong>Inspectors keep aircraft flying, pipelines safe, and bridges standing.</strong> Nondestructive Testing is how the modern world stays airworthy, pressurized, and upright.</p>
+      </div>
+      <div class="card reveal d2">
+        <div class="card-num">02 / THE STANDARD</div>
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3 8-10V5l-8-3-8 3v7c0 7 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>A real standard</h3>
+        <p>Training structured to <strong>SNT-TC-1A 2024 and NAS410</strong> — the documents employers actually audit against. Every hour tracked, narrated, audit-ready.</p>
+      </div>
+      <div class="card reveal d3">
+        <div class="card-num">03 / THE OVERSIGHT</div>
+        <div class="card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Level III oversight</h3>
+        <p>Founded by <strong>two multi-certified ASNT Level IIIs</strong> — every student gets Level III oversight, from your first lesson to your certificate.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== VIDEO ====================== -->
+<section id="video">
+  <div class="shell">
+    <div class="video-head">
+      <div>
+        <span class="sec-kicker reveal">// FIELD FOOTAGE</span>
+        <h2 class="reveal">Watch: the future of NDT</h2>
+      </div>
+      <p class="sec-lead reveal d1" style="max-width:420px;margin-top:0">
+        A lesson straight from the live VT course player — narrated, structured,
+        and built the way technicians actually learn.
+      </p>
+    </div>
+    <div class="video-frame reveal d1">
+      <div class="video-stage"></div>
+      <video id="demo-video" muted loop playsinline preload="metadata" autoplay
+        src="https://vamjeecpssxhzeyiqqsc.supabase.co/storage/v1/object/public/vt-media/demo/modern-vt1-1-1-v5.mp4"></video>
+      <button class="sound-toggle" id="sound-toggle" type="button">🔇 Sound Off</button>
+      <div class="video-bar">
+        <span class="rec"><i></i>VT 1.1 — Introduction to Visual Testing</span>
+        <span>Recorded from the live course player</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== STATS ====================== -->
+<section id="stats">
+  <div class="shell">
+    <span class="sec-kicker reveal">// THE NUMBERS</span>
+    <h2 class="reveal">Calibrated for your career.</h2>
+    <div class="stat-grid">
+      <div class="stat reveal"><div class="big">6</div><div class="label">NDT Methods</div><p>VT · PT · MT · UT · RT · ET — one platform, every major method on your path.</p></div>
+      <div class="stat reveal d1"><div class="big">I–III</div><div class="label">Certification Paths</div><p>Structured to SNT-TC-1A 2024 and NAS410, from first hour to Level III.</p></div>
+      <div class="stat reveal d2"><div class="big">8 hrs</div><div class="label">To First Certificate</div><p>8 formal training hours to your first certificate. Tracked, narrated, audit-ready.</p></div>
+      <div class="stat reveal d3"><div class="big">Free</div><div class="label">VT Level I &amp; II</div><p>Completely free for a limited time. No payment, no prerequisites — take the first step.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== FINAL CTA ====================== -->
+<section id="start">
+  <div class="shell">
+    <span class="sec-kicker reveal">// TRANSMISSION ENDS — YOURS BEGINS</span>
+    <h2 class="reveal">Take the first step.</h2>
+    <p class="sec-lead reveal d1">
+      Your first certification is free. Level III oversight is included.
+      The future of NDT needs certified eyes — be a pair of them.
+    </p>
+    <div class="cta-center reveal d2">
+      <a class="btn btn-primary" href="/signup">Start Free VT Certification <span>→</span></a>
+      <a class="btn btn-ghost" href="/login">Sign In</a>
+    </div>
+    <p class="final-micro reveal d3">VT Level I &amp; II · Free for a limited time · SNT-TC-1A 2024 / NAS410</p>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 NDTAcademy.com — Founded by two multi-certified ASNT Level IIIs.</span>
+  <span><a href="/signup">Start free</a> · <a href="/login">Sign in</a> · <a href="#video">Watch the demo</a></span>
+</footer>
+
+<script type="module">
+import * as THREE from 'three';
+
+/* ============ setup ============ */
+const canvas = document.getElementById('scene');
+const hero = document.getElementById('hero');
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+let renderer, scene, camera, pipeGroup, scanGroup, scanGlow, weldGlow, particles;
+let defects = [], holoRings = [];
+let scanX = -5, prevScanX = -5, indications = 0;
+let mouseX = 0, mouseY = 0, camX = 0, camY = 0;
+let running = true, heroVisible = true;
+const clock = new THREE.Clock();
+
+function glowTexture(ring = false) {
+  const c = document.createElement('canvas');
+  c.width = c.height = 128;
+  const g = c.getContext('2d');
+  if (ring) {
+    g.strokeStyle = 'rgba(255,255,255,1)';
+    g.lineWidth = 6;
+    g.beginPath(); g.arc(64, 64, 46, 0, Math.PI * 2); g.stroke();
+    g.strokeStyle = 'rgba(255,255,255,.35)';
+    g.lineWidth = 14;
+    g.beginPath(); g.arc(64, 64, 46, 0, Math.PI * 2); g.stroke();
+  } else {
+    const grad = g.createRadialGradient(64, 64, 0, 64, 64, 64);
+    grad.addColorStop(0, 'rgba(255,255,255,1)');
+    grad.addColorStop(0.25, 'rgba(255,255,255,.45)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    g.fillStyle = grad;
+    g.fillRect(0, 0, 128, 128);
+  }
+  const t = new THREE.CanvasTexture(c);
+  return t;
+}
+const TEX_GLOW = glowTexture(false);
+const TEX_RING = glowTexture(true);
+
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+
+  scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x08152b, 0.05);
+
+  camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
+  camera.position.set(0, 0.9, 9.4);
+
+  /* lights — r160 physical units */
+  scene.add(new THREE.HemisphereLight(0x3a5b8c, 0x05080f, 0.9));
+  const key = new THREE.DirectionalLight(0xbfd8ff, 2.2);
+  key.position.set(-4, 6, 5);
+  scene.add(key);
+  const cyanP = new THREE.PointLight(0x5fe0ff, 60, 0, 2);
+  cyanP.position.set(4.5, 2.4, 3.5);
+  scene.add(cyanP);
+  const blueP = new THREE.PointLight(0x1E66F5, 50, 0, 2);
+  blueP.position.set(-2, -2.5, -3);
+  scene.add(blueP);
+  const cursorLight = new THREE.PointLight(0x5fe0ff, 0, 7, 2);
+  cursorLight.position.set(2, 1, 2.6);
+  scene.add(cursorLight);
+
+  /* ============ pipe group ============ */
+  pipeGroup = new THREE.Group();
+  pipeGroup.position.set(2.35, -0.62, 0);
+  pipeGroup.rotation.z = -0.10;
+  scene.add(pipeGroup);
+
+  const steel = new THREE.MeshStandardMaterial({ color: 0x33445e, metalness: 0.85, roughness: 0.32 });
+  const pipe = new THREE.Mesh(new THREE.CylinderGeometry(1, 1, 15, 56, 1, false), steel);
+  pipe.rotation.z = Math.PI / 2;
+  pipeGroup.add(pipe);
+
+  /* girth weld bead */
+  const weldMat = new THREE.MeshStandardMaterial({
+    color: 0x9db8da, metalness: 0.6, roughness: 0.45,
+    emissive: 0x1E66F5, emissiveIntensity: 0.55
+  });
+  const weld = new THREE.Mesh(new THREE.TorusGeometry(1.012, 0.075, 14, 64), weldMat);
+  weld.rotation.y = Math.PI / 2;
+  pipeGroup.add(weld);
+  /* weld halo */
+  weldGlow = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: TEX_GLOW, color: 0x3fa8ff, transparent: true, opacity: 0.4,
+    blending: THREE.AdditiveBlending, depthWrite: false
+  }));
+  weldGlow.scale.set(2.8, 2.8, 1);
+  pipeGroup.add(weldGlow);
+
+  /* coupling rings near pipe ends */
+  for (const cx of [-4.6, 4.6]) {
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(1.04, 0.07, 12, 48),
+      new THREE.MeshStandardMaterial({ color: 0x22344f, metalness: 0.9, roughness: 0.4 }));
+    ring.rotation.y = Math.PI / 2;
+    ring.position.x = cx;
+    pipeGroup.add(ring);
+  }
+
+  /* ============ scan ring ============ */
+  scanGroup = new THREE.Group();
+  const scanRing = new THREE.Mesh(new THREE.TorusGeometry(1.3, 0.016, 8, 72),
+    new THREE.MeshBasicMaterial({ color: 0x5fe0ff, transparent: true, opacity: 0.95, blending: THREE.AdditiveBlending, depthWrite: false }));
+  scanRing.rotation.y = Math.PI / 2;
+  scanGroup.add(scanRing);
+  const scanRing2 = new THREE.Mesh(new THREE.TorusGeometry(1.42, 0.006, 8, 72),
+    new THREE.MeshBasicMaterial({ color: 0x5fe0ff, transparent: true, opacity: 0.35, blending: THREE.AdditiveBlending, depthWrite: false }));
+  scanRing2.rotation.y = Math.PI / 2;
+  scanGroup.add(scanRing2);
+  /* light wall */
+  const wall = new THREE.Mesh(new THREE.CylinderGeometry(1.26, 1.26, 0.14, 56, 1, true),
+    new THREE.MeshBasicMaterial({ color: 0x5fe0ff, transparent: true, opacity: 0.14, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide }));
+  wall.rotation.z = Math.PI / 2;
+  scanGroup.add(wall);
+  scanGlow = new THREE.Sprite(new THREE.SpriteMaterial({
+    map: TEX_GLOW, color: 0x5fe0ff, transparent: true, opacity: 0.3,
+    blending: THREE.AdditiveBlending, depthWrite: false
+  }));
+  scanGlow.scale.set(4.2, 4.2, 1);
+  scanGroup.add(scanGlow);
+  const scanLight = new THREE.PointLight(0x5fe0ff, 26, 6, 2);
+  scanGroup.add(scanLight);
+  pipeGroup.add(scanGroup);
+
+  /* ============ defect markers ============ */
+  const defectDefs = [
+    { x: -2.7, a: 0.85 }, { x: -0.7, a: 2.45 }, { x: 1.45, a: 5.6 }, { x: 3.45, a: 1.45 }
+  ];
+  for (const d of defectDefs) {
+    const g = new THREE.Group();
+    g.position.set(d.x, Math.cos(d.a) * 1.0, Math.sin(d.a) * 1.0);
+    const dot = new THREE.Mesh(new THREE.SphereGeometry(0.045, 12, 12),
+      new THREE.MeshBasicMaterial({ color: 0x9ff0ff }));
+    g.add(dot);
+    const halo = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: TEX_GLOW, color: 0x5fe0ff, transparent: true, opacity: 0.55,
+      blending: THREE.AdditiveBlending, depthWrite: false
+    }));
+    halo.scale.set(0.5, 0.5, 1);
+    g.add(halo);
+    const ping = new THREE.Sprite(new THREE.SpriteMaterial({
+      map: TEX_RING, color: 0x5fe0ff, transparent: true, opacity: 0,
+      blending: THREE.AdditiveBlending, depthWrite: false
+    }));
+    ping.scale.set(0.3, 0.3, 1);
+    g.add(ping);
+    pipeGroup.add(g);
+    defects.push({ ...d, group: g, dot, halo, ping, pingT: 99 });
+  }
+
+  /* ============ particle dust ============ */
+  {
+    const N = 550;
+    const pos = new Float32Array(N * 3);
+    for (let i = 0; i < N; i++) {
+      pos[i * 3] = (Math.random() - 0.5) * 26;
+      pos[i * 3 + 1] = (Math.random() - 0.5) * 12;
+      pos[i * 3 + 2] = (Math.random() - 0.5) * 12 - 1;
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    particles = new THREE.Points(geo, new THREE.PointsMaterial({
+      color: 0x9fd8ff, size: 0.05, transparent: true, opacity: 0.65,
+      blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true
+    }));
+    scene.add(particles);
+  }
+
+  /* ============ holo orbit rings ============ */
+  for (const [r, tilt, op] of [[3.1, 0.5, 0.14], [3.7, -0.35, 0.09]]) {
+    const hr = new THREE.Mesh(new THREE.TorusGeometry(r, 0.005, 6, 110),
+      new THREE.MeshBasicMaterial({ color: 0x5fe0ff, transparent: true, opacity: op, blending: THREE.AdditiveBlending, depthWrite: false }));
+    hr.rotation.x = Math.PI / 2 + tilt;
+    hr.position.copy(pipeGroup.position);
+    scene.add(hr);
+    holoRings.push(hr);
+  }
+
+  /* ============ floor grid ============ */
+  const grid = new THREE.GridHelper(46, 46, 0x1E66F5, 0x12345f);
+  grid.position.y = -2.9;
+  grid.material.transparent = true;
+  grid.material.opacity = 0.22;
+  scene.add(grid);
+
+} catch (e) {
+  console.error('WebGL init failed:', e);
+  canvas.style.display = 'none';
+}
+
+/* ============ sizing ============ */
+function resize() {
+  if (!renderer) return;
+  const w = hero.clientWidth, h = hero.clientHeight;
+  renderer.setSize(w, h, false);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+}
+resize();
+window.addEventListener('resize', resize);
+
+/* ============ HUD ============ */
+const hudPos = document.getElementById('hud-pos');
+const hudVel = document.getElementById('hud-vel');
+const hudSnr = document.getElementById('hud-snr');
+const hudInd = document.getElementById('hud-ind');
+const hudB = document.getElementById('hudB');
+let hudClock = 0;
+
+/* ============ interaction ============ */
+window.addEventListener('pointermove', (e) => {
+  mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+  mouseY = (e.clientY / window.innerHeight) * 2 - 1;
+  /* HUD parallax */
+  const a = document.getElementById('hudA'), b = document.getElementById('hudB');
+  if (a) a.style.transform = `translate(${mouseX * -10}px, ${mouseY * -7}px)`;
+  if (b) b.style.transform = `translate(${mouseX * -16}px, ${mouseY * -11}px)`;
+});
+
+/* ============ render loop ============ */
+function frame() {
+  const dt = Math.min(clock.getDelta(), 0.05);
+  const t = clock.elapsedTime;
+
+  /* scan ring sweep: eased ping-pong (frozen mid-weld for reduced motion) */
+  const cyc = (t * 0.16) % 2;
+  if (!reduceMotion) {
+    const k = cyc < 1 ? cyc : 2 - cyc;
+    const eased = k * k * (3 - 2 * k);
+    prevScanX = scanX;
+    scanX = -5 + eased * 10;
+  }
+  if (scanGroup) {
+    scanGroup.position.x = scanX;
+    scanGlow.material.opacity = 0.24 + Math.sin(t * 6) * 0.06;
+  }
+
+  /* defect pings */
+  for (const d of defects) {
+    if ((prevScanX - d.x) * (scanX - d.x) < 0) {
+      d.pingT = 0;
+      indications++;
+      if (hudInd) hudInd.textContent = String(Math.min(indications, 99)).padStart(2, '0');
+      if (hudB) { hudB.classList.add('ping'); setTimeout(() => hudB.classList.remove('ping'), 600); }
+    }
+    d.pingT += dt;
+    const p = d.pingT;
+    if (p < 1) {
+      d.ping.material.opacity = 0.9 * (1 - p);
+      const s = 0.3 + p * 2.3;
+      d.ping.scale.set(s, s, 1);
+      d.halo.material.opacity = 0.55 + (1 - p) * 0.45;
+    } else {
+      d.ping.material.opacity = 0;
+      d.halo.material.opacity = 0.45 + Math.sin(t * 2.4 + d.x) * 0.12;
+    }
+    /* cursor proximity highlight */
+    const wx = mouseX * 7 + 2.35;
+    const near = Math.max(0, 1 - Math.abs(wx - (d.x + 2.35)) / 2.2);
+    d.halo.scale.setScalar(0.5 + near * 0.35);
+  }
+
+  /* weld pulse */
+  if (weldGlow) weldGlow.material.opacity = 0.26 + Math.sin(t * 1.7) * 0.08;
+
+  /* pipe drift + holo rings */
+  if (pipeGroup) pipeGroup.rotation.y = Math.sin(t * 0.1) * 0.05;
+  holoRings.forEach((hr, i) => { hr.rotation.z += dt * (i ? -0.05 : 0.07); });
+
+  /* particles drift */
+  if (particles) {
+    particles.rotation.y = t * 0.012;
+    particles.position.y = Math.sin(t * 0.2) * 0.25;
+  }
+
+  /* camera: mouse parallax + scroll drift */
+  const sc = Math.min(window.scrollY, 900) / 900;
+  camX += ((mouseX * 0.55) - camX) * 0.04;
+  camY += ((-mouseY * 0.35) - camY) * 0.04;
+  camera.position.x = camX;
+  camera.position.y = 0.9 + camY - sc * 1.4;
+  camera.position.z = 9.4 + sc * 1.2;
+  camera.lookAt(1.9, -0.25 - sc * 0.5, 0);
+
+  /* cursor light */
+  const cl = scene.children.find(c => c.isPointLight && c.distance === 7);
+  if (cl) {
+    cl.intensity = 14;
+    cl.position.set(mouseX * 6 + 2.35, -mouseY * 2.6 - 0.3, 2.4);
+  }
+
+  /* HUD update ~12 Hz */
+  hudClock += dt;
+  if (hudClock > 0.085) {
+    hudClock = 0;
+    if (hudPos) hudPos.textContent = ((scanX + 5) * 0.7).toFixed(2) + ' m';
+    if (hudVel) hudVel.textContent = Math.round(120 + Math.abs(Math.cos(cyc * Math.PI)) * 60) + ' mm/s';
+    if (hudSnr) hudSnr.textContent = (97.4 + Math.sin(t * 2.1) * 0.9).toFixed(1) + '%';
+  }
+
+  renderer.render(scene, camera);
+}
+
+function loop() {
+  if (!running || !renderer) return;
+  if (heroVisible) frame();
+  requestAnimationFrame(loop);
+}
+
+if (renderer) {
+  if (reduceMotion) {
+    /* static frame: park the scan ring just past the weld, light one ping */
+    clock.getDelta();
+    scanX = 0.55; prevScanX = 0.55;
+    if (defects[2]) defects[2].pingT = 0.25;
+    if (hudInd) hudInd.textContent = '03';
+    frame();
+  } else {
+    loop();
+  }
+}
+
+document.addEventListener('visibilitychange', () => {
+  running = !document.hidden;
+  if (running && !reduceMotion) { clock.getDelta(); loop(); }
+});
+
+/* pause rendering when hero is off-screen */
+new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; }, { threshold: 0.02 })
+  .observe(hero);
+
+/* ============ nav scroll state ============ */
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
+window.addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+/* ============ reveal on scroll ============ */
+const io = new IntersectionObserver((entries) => {
+  for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}, { threshold: 0.18 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+/* if reduced motion, reveal all instantly (CSS already handles, belt and suspenders) */
+if (reduceMotion) document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+
+/* ============ card tilt micro-interaction ============ */
+if (!reduceMotion) {
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('pointermove', (e) => {
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      card.style.transform = `translateY(-8px) rotateX(${py * -5}deg) rotateY(${px * 6}deg)`;
+    });
+    card.addEventListener('pointerleave', () => { card.style.transform = ''; });
+  });
+}
+
+/* ============ video sound toggle ============ */
+const video = document.getElementById('demo-video');
+const soundBtn = document.getElementById('sound-toggle');
+soundBtn.addEventListener('click', () => {
+  video.muted = !video.muted;
+  if (!video.muted) video.play().catch(() => {});
+  soundBtn.textContent = video.muted ? '🔇 Sound Off' : '🔊 Sound On';
+});
+/* make sure autoplay actually started; if blocked, show a play affordance */
+video.play().catch(() => {
+  soundBtn.textContent = '▶ Play Lesson';
+  soundBtn.addEventListener('click', () => video.play().catch(() => {}), { once: true });
+});
+</script>
+</body>
+</html>

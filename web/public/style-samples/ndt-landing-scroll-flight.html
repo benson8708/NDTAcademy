@@ -1,0 +1,1153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NDTAcademy — Inspect the Future | Free VT Certification</title>
+<meta name="description" content="A flight through the world that needs certified NDT inspectors. Start your free VT certification at NDTAcademy.com.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep:#08152b;
+    --navy:#0B1F3A;
+    --blue:#1E66F5;
+    --cyan:#5fe0ff;
+    --ink:#E8F0F8;
+    --muted:rgba(232,240,248,.64);
+    --hairline:rgba(95,224,255,.16);
+    --glass:rgba(11,31,58,.58);
+    --font-display:'Unbounded', sans-serif;
+    --font-body:'Schibsted Grotesk', sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{
+    background:var(--deep);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:17px;
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--cyan);color:var(--deep)}
+  ::-webkit-scrollbar{width:10px}
+  ::-webkit-scrollbar-track{background:var(--deep)}
+  ::-webkit-scrollbar-thumb{background:#16335c;border-radius:6px}
+  ::-webkit-scrollbar-thumb:hover{background:var(--blue)}
+
+  /* ---------- backdrop layers ---------- */
+  .bg-fallback{
+    position:fixed;inset:0;z-index:0;
+    background:
+      radial-gradient(1100px 700px at 72% 18%, rgba(30,102,245,.20), transparent 62%),
+      radial-gradient(900px 700px at 18% 85%, rgba(95,224,255,.07), transparent 60%),
+      linear-gradient(180deg,#0B1F3A 0%, #08152b 45%, #050d1c 100%);
+  }
+  canvas#scene{position:fixed;inset:0;z-index:1;display:block;width:100%;height:100%}
+  body.no-webgl canvas#scene{display:none}
+  .vignette{
+    position:fixed;inset:0;z-index:2;pointer-events:none;
+    background:
+      radial-gradient(130% 90% at 50% 42%, transparent 52%, rgba(4,10,21,.55) 100%),
+      linear-gradient(180deg, rgba(4,10,21,.5) 0%, transparent 14%, transparent 86%, rgba(4,10,21,.55) 100%);
+  }
+  .grain{
+    position:fixed;inset:0;z-index:2;pointer-events:none;opacity:.06;mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- nav ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 36px;
+    transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+  }
+  nav.scrolled{
+    background:rgba(6,14,28,.78);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    box-shadow:0 1px 0 var(--hairline);
+    padding:12px 36px;
+  }
+  .wordmark{
+    font-family:var(--font-display);font-weight:700;font-size:15px;letter-spacing:.02em;
+    color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px;
+  }
+  .wordmark .mark{
+    width:26px;height:26px;border-radius:8px;flex:0 0 auto;
+    background:linear-gradient(135deg,var(--blue),#3b82ff 60%,var(--cyan));
+    box-shadow:0 0 18px rgba(30,102,245,.55);
+    display:grid;place-items:center;
+  }
+  .wordmark .mark svg{width:14px;height:14px}
+  .wordmark em{font-style:normal;color:var(--cyan)}
+  .nav-right{display:flex;align-items:center;gap:26px}
+  .nav-link{
+    font-family:var(--font-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--muted);text-decoration:none;position:relative;padding:4px 0;
+  }
+  .nav-link::after{
+    content:"";position:absolute;left:0;bottom:0;height:1px;width:0;
+    background:var(--cyan);transition:width .3s cubic-bezier(.2,.8,.2,1);
+  }
+  .nav-link:hover{color:var(--cyan)}
+  .nav-link:hover::after{width:100%}
+  .btn-signin{
+    font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink);text-decoration:none;
+    border:1px solid rgba(95,224,255,.35);border-radius:999px;padding:9px 20px;
+    transition:all .25s ease;background:rgba(95,224,255,.04);
+  }
+  .btn-signin:hover{background:rgba(95,224,255,.14);border-color:var(--cyan);box-shadow:0 0 24px rgba(95,224,255,.25)}
+
+  /* ---------- waypoint rail ---------- */
+  .rail{
+    position:fixed;right:28px;top:50%;transform:translateY(-50%);z-index:40;
+    display:flex;flex-direction:column;gap:0;align-items:flex-end;
+  }
+  .rail .seg{width:1px;height:34px;background:rgba(95,224,255,.18);margin-right:5px}
+  .rail button{
+    display:flex;align-items:center;gap:10px;background:none;border:none;cursor:pointer;
+    font-family:var(--font-mono);font-size:9px;letter-spacing:.22em;color:rgba(232,240,248,.38);
+    padding:2px 0;transition:color .25s ease;
+  }
+  .rail button .dot{
+    width:9px;height:9px;border-radius:50%;border:1px solid rgba(95,224,255,.4);
+    background:transparent;transition:all .3s ease;flex:0 0 auto;
+  }
+  .rail button:hover{color:var(--cyan)}
+  .rail button.active{color:var(--cyan)}
+  .rail button.active .dot{background:var(--cyan);box-shadow:0 0 12px var(--cyan);border-color:var(--cyan)}
+
+  /* ---------- HUD ---------- */
+  .hud{
+    position:fixed;left:32px;bottom:28px;z-index:40;pointer-events:none;
+    font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;color:rgba(95,224,255,.66);
+    line-height:1.9;text-transform:uppercase;
+  }
+  .hud .bar{display:inline-block;width:90px;height:3px;background:rgba(95,224,255,.14);border-radius:2px;vertical-align:middle;margin-left:8px;overflow:hidden}
+  .hud .bar i{display:block;height:100%;width:0%;background:var(--cyan);border-radius:2px;box-shadow:0 0 8px var(--cyan)}
+
+  /* ---------- sticky CTA pill ---------- */
+  .cta-pill{
+    position:fixed;left:50%;bottom:26px;transform:translateX(-50%);z-index:60;
+    display:flex;align-items:center;gap:12px;text-decoration:none;
+    background:linear-gradient(135deg,var(--blue),#2f78ff);
+    color:#fff;border-radius:999px;padding:13px 26px 13px 20px;
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;
+    box-shadow:0 10px 40px rgba(30,102,245,.5), inset 0 1px 0 rgba(255,255,255,.25);
+    transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease;
+    white-space:nowrap;
+  }
+  .cta-pill:hover{transform:translateX(-50%) translateY(-3px);box-shadow:0 16px 56px rgba(30,102,245,.65), inset 0 1px 0 rgba(255,255,255,.3)}
+  .cta-pill .pulse{
+    width:8px;height:8px;border-radius:50%;background:var(--cyan);flex:0 0 auto;
+    box-shadow:0 0 0 0 rgba(95,224,255,.7);animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(95,224,255,.7)}
+    70%{box-shadow:0 0 0 9px rgba(95,224,255,0)}
+    100%{box-shadow:0 0 0 0 rgba(95,224,255,0)}
+  }
+  .cta-pill .arr{transition:transform .25s ease}
+  .cta-pill:hover .arr{transform:translateX(4px)}
+  @media (prefers-reduced-motion: reduce){ .cta-pill .pulse{animation:none} }
+
+  main{position:relative;z-index:3}
+
+  /* ---------- hero ---------- */
+  .hero{height:100vh;height:100svh;display:flex;align-items:center;position:relative}
+  .hero-inner{padding:0 7vw;max-width:1500px;width:100%}
+  .hero .badge{
+    display:inline-flex;align-items:center;gap:9px;
+    font-family:var(--font-mono);font-size:10.5px;letter-spacing:.22em;color:var(--cyan);
+    border:1px solid rgba(95,224,255,.3);border-radius:999px;padding:8px 16px;
+    background:rgba(95,224,255,.05);margin-bottom:30px;
+    animation:rise .9s .1s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .hero .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+  .hero h1{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(46px, 7.2vw, 104px);line-height:1.02;letter-spacing:-.01em;
+    text-transform:uppercase;max-width:11ch;
+    text-shadow:0 6px 60px rgba(4,10,21,.8);
+    animation:rise .9s .22s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .hero h1 .grad{
+    background:linear-gradient(92deg,var(--cyan) 10%, #8ab8ff 55%, var(--blue) 95%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 28px rgba(95,224,255,.3));
+  }
+  .hero p.sub{
+    max-width:560px;margin-top:26px;font-size:18.5px;color:var(--muted);
+    animation:rise .9s .34s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .hero p.sub strong{color:var(--ink);font-weight:500}
+  .hero .ctas{display:flex;gap:16px;align-items:center;margin-top:38px;flex-wrap:wrap;animation:rise .9s .46s cubic-bezier(.2,.8,.2,1) both}
+  .hero .free-line{
+    margin-top:16px;font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;
+    color:rgba(95,224,255,.6);text-transform:uppercase;
+    animation:rise .9s .56s cubic-bezier(.2,.8,.2,1) both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion: reduce){ .hero *{animation:none !important} }
+
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;text-decoration:none;cursor:pointer;
+    font-family:var(--font-body);font-weight:700;font-size:16px;
+    border-radius:14px;padding:17px 30px;transition:all .25s cubic-bezier(.2,.8,.2,1);
+    position:relative;overflow:hidden;
+  }
+  .btn-primary{
+    color:#fff;background:linear-gradient(135deg,var(--blue) 0%, #3b82ff 100%);
+    box-shadow:0 10px 36px rgba(30,102,245,.45), inset 0 1px 0 rgba(255,255,255,.25);
+  }
+  .btn-primary::after{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(120px 60px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.28), transparent 70%);
+    opacity:0;transition:opacity .25s ease;
+  }
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 52px rgba(30,102,245,.6), inset 0 1px 0 rgba(255,255,255,.3)}
+  .btn-primary:hover::after{opacity:1}
+  .btn-ghost{
+    color:var(--ink);border:1px solid rgba(95,224,255,.32);background:rgba(11,31,58,.4);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  }
+  .btn-ghost:hover{border-color:var(--cyan);background:rgba(95,224,255,.1);transform:translateY(-3px);box-shadow:0 12px 36px rgba(95,224,255,.18)}
+  .btn .arr{transition:transform .25s ease}
+  .btn:hover .arr{transform:translateX(4px)}
+
+  .scroll-cue{
+    position:absolute;bottom:30px;right:7vw;display:flex;align-items:center;gap:14px;
+    font-family:var(--font-mono);font-size:10px;letter-spacing:.26em;color:rgba(95,224,255,.55);
+    text-transform:uppercase;
+  }
+  .scroll-cue .line{width:54px;height:1px;background:rgba(95,224,255,.3);position:relative;overflow:hidden}
+  .scroll-cue .line::after{
+    content:"";position:absolute;left:-30%;top:0;height:100%;width:30%;background:var(--cyan);
+    animation:slide 1.8s ease-in-out infinite;
+  }
+  @keyframes slide{to{left:110%}}
+  @media (prefers-reduced-motion: reduce){ .scroll-cue .line::after{animation:none} }
+
+  /* ---------- waypoint sections ---------- */
+  .wp{height:175vh;position:relative}
+  .wp .pin{
+    position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;
+    padding:0 7vw;
+  }
+  .wp[data-side="right"] .pin{justify-content:flex-end}
+  .card{
+    width:min(460px, 86vw);
+    background:linear-gradient(165deg, rgba(11,31,58,.78), rgba(8,21,43,.55));
+    border:1px solid var(--hairline);
+    border-radius:20px;padding:36px 38px 30px;
+    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    box-shadow:0 30px 80px rgba(3,8,18,.55), inset 0 1px 0 rgba(95,224,255,.12);
+    will-change:transform,opacity;
+    transition:border-color .3s ease;
+  }
+  .card:hover{border-color:rgba(95,224,255,.4)}
+  .card .card-top{
+    display:flex;justify-content:space-between;font-family:var(--font-mono);
+    font-size:10px;letter-spacing:.22em;color:var(--cyan);text-transform:uppercase;
+    padding-bottom:16px;margin-bottom:20px;border-bottom:1px dashed rgba(95,224,255,.22);
+  }
+  .card h2{
+    font-family:var(--font-display);font-weight:700;font-size:clamp(30px,3.4vw,44px);
+    text-transform:uppercase;letter-spacing:.01em;line-height:1.05;margin-bottom:14px;
+  }
+  .card h2 .tick{color:var(--cyan)}
+  .card p{color:var(--muted);font-size:16.5px}
+  .card p strong{color:var(--ink);font-weight:500}
+  .card .card-foot{
+    margin-top:22px;padding-top:16px;border-top:1px dashed rgba(95,224,255,.22);
+    font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;color:rgba(95,224,255,.6);
+    display:flex;align-items:center;gap:8px;text-transform:uppercase;
+  }
+  .card .card-foot::before{content:"▸";color:var(--cyan)}
+
+  /* ---------- convergence ---------- */
+  .converge{height:165vh;position:relative}
+  .converge .pin{
+    position:sticky;top:0;height:100vh;height:100svh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    padding:0 6vw;
+  }
+  .converge-content{position:relative}
+  .converge-content::before{
+    content:"";position:absolute;inset:-12% -18%;z-index:-1;border-radius:50%;
+    background:radial-gradient(closest-side, rgba(4,10,21,.6), rgba(4,10,21,.35) 55%, transparent 75%);
+  }
+  .converge .kick{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.3em;color:var(--cyan);
+    text-transform:uppercase;margin-bottom:24px;
+  }
+  .converge .kick .sep{color:rgba(232,240,248,.3);margin:0 10px}
+  .converge h2{
+    font-family:var(--font-display);font-weight:800;text-transform:uppercase;
+    font-size:clamp(34px,5.4vw,76px);line-height:1.06;max-width:18ch;
+    text-shadow:0 8px 70px rgba(4,10,21,.85);
+  }
+  .converge h2 em{
+    font-style:normal;
+    background:linear-gradient(92deg,var(--cyan), #8ab8ff);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .converge p{margin-top:22px;color:var(--muted);font-size:19px;max-width:46ch}
+  .converge .ctas{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;justify-content:center}
+
+  /* ---------- solid content sections ---------- */
+  .solid{
+    position:relative;
+    background:linear-gradient(180deg, rgba(6,14,28,.9), rgba(5,11,23,.96));
+    border-top:1px solid var(--hairline);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  }
+  .wrap{max-width:1200px;margin:0 auto;padding:110px 6vw}
+  .eyebrow{
+    font-family:var(--font-mono);font-size:11px;letter-spacing:.28em;color:var(--cyan);
+    text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:22px;
+  }
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--cyan)}
+  h3.sec-title{
+    font-family:var(--font-display);font-weight:700;text-transform:uppercase;
+    font-size:clamp(30px,4vw,54px);line-height:1.08;letter-spacing:.005em;
+  }
+
+  /* story */
+  .story-grid{display:grid;grid-template-columns:1fr 1.25fr;gap:70px;align-items:start}
+  .story-left{position:sticky;top:120px}
+  .story-left p{margin-top:20px;color:var(--muted);font-size:18px;max-width:38ch}
+  .story-item{
+    border-top:1px solid rgba(95,224,255,.14);padding:30px 4px;
+    display:grid;grid-template-columns:64px 1fr;gap:22px;align-items:start;
+    transition:background .3s ease, padding-left .3s ease;border-radius:10px;
+  }
+  .story-item:last-of-type{border-bottom:1px solid rgba(95,224,255,.14)}
+  .story-item:hover{background:rgba(95,224,255,.045);padding-left:14px}
+  .story-item .num{
+    font-family:var(--font-display);font-weight:700;font-size:24px;color:transparent;
+    -webkit-text-stroke:1px rgba(95,224,255,.65);line-height:1.3;
+  }
+  .story-item h4{font-family:var(--font-display);font-weight:500;font-size:18px;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+  .story-item p{color:var(--muted);font-size:16px}
+  .oversight{
+    margin-top:36px;border:1px solid rgba(95,224,255,.25);border-radius:16px;padding:26px 28px;
+    background:linear-gradient(135deg, rgba(30,102,245,.14), rgba(95,224,255,.05));
+    display:flex;gap:18px;align-items:flex-start;
+  }
+  .oversight .glyph{
+    flex:0 0 auto;width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+    background:rgba(95,224,255,.12);border:1px solid rgba(95,224,255,.3);
+  }
+  .oversight .glyph svg{width:20px;height:20px;stroke:var(--cyan)}
+  .oversight h5{font-family:var(--font-mono);font-size:11px;letter-spacing:.2em;color:var(--cyan);text-transform:uppercase;margin-bottom:6px}
+  .oversight p{color:var(--muted);font-size:15.5px}
+  .oversight p strong{color:var(--ink);font-weight:500}
+
+  /* video */
+  .video-sec .wrap{text-align:center}
+  .video-sec .sec-title em{font-style:normal;color:var(--cyan)}
+  .video-sec .lede{margin:18px auto 46px;color:var(--muted);max-width:52ch;font-size:18px}
+  .tv{
+    position:relative;max-width:960px;margin:0 auto;border-radius:18px;
+    background:#04101f;
+    box-shadow:0 40px 120px rgba(3,8,18,.7), 0 0 0 1px rgba(95,224,255,.14), 0 0 90px rgba(30,102,245,.18);
+    overflow:hidden;
+  }
+  .tv video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#04101f}
+  .tv .corner{position:absolute;width:26px;height:26px;border:2px solid var(--cyan);z-index:3;transition:all .35s cubic-bezier(.2,.8,.2,1);opacity:.85}
+  .tv .c-tl{top:14px;left:14px;border-right:none;border-bottom:none}
+  .tv .c-tr{top:14px;right:14px;border-left:none;border-bottom:none}
+  .tv .c-bl{bottom:14px;left:14px;border-right:none;border-top:none}
+  .tv .c-br{bottom:14px;right:14px;border-left:none;border-top:none}
+  .tv:hover .c-tl{top:8px;left:8px}.tv:hover .c-tr{top:8px;right:8px}
+  .tv:hover .c-bl{bottom:8px;left:8px}.tv:hover .c-br{bottom:8px;right:8px}
+  .tv .rec{
+    position:absolute;top:22px;left:54px;z-index:3;display:flex;align-items:center;gap:8px;
+    font-family:var(--font-mono);font-size:10px;letter-spacing:.2em;color:var(--cyan);text-transform:uppercase;
+    text-shadow:0 1px 8px rgba(4,10,21,.9);
+  }
+  .tv .rec::before{content:"";width:8px;height:8px;border-radius:50%;background:#ff5470;box-shadow:0 0 10px #ff5470;animation:blink 1.4s steps(2) infinite}
+  @keyframes blink{50%{opacity:.25}}
+  @media (prefers-reduced-motion: reduce){ .tv .rec::before{animation:none} }
+  .tv .scan{
+    position:absolute;left:0;right:0;height:2px;z-index:2;top:0;opacity:.4;pointer-events:none;
+    background:linear-gradient(90deg,transparent,var(--cyan),transparent);
+    animation:scan 5s linear infinite;
+  }
+  @keyframes scan{from{top:0}to{top:100%}}
+  @media (prefers-reduced-motion: reduce){ .tv .scan{animation:none;top:40%} }
+  .tv .sound{
+    position:absolute;bottom:20px;right:54px;z-index:4;cursor:pointer;
+    font-family:var(--font-mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink);background:rgba(6,14,28,.72);border:1px solid rgba(95,224,255,.35);
+    border-radius:999px;padding:9px 18px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    transition:all .25s ease;
+  }
+  .tv .sound:hover{border-color:var(--cyan);background:rgba(95,224,255,.14)}
+  .video-sec .caption{
+    margin-top:22px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.2em;
+    color:rgba(232,240,248,.42);text-transform:uppercase;
+  }
+
+  /* stats */
+  .stats .wrap{padding-top:90px;padding-bottom:90px}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
+  .tile{
+    border:1px solid var(--hairline);border-radius:18px;padding:30px 26px;
+    background:linear-gradient(170deg, rgba(11,31,58,.6), rgba(8,21,43,.3));
+    position:relative;overflow:hidden;
+    transition:transform .3s cubic-bezier(.2,.8,.2,1), border-color .3s ease, box-shadow .3s ease;
+  }
+  .tile::after{
+    content:"";position:absolute;inset:0;opacity:0;transition:opacity .3s ease;
+    background:radial-gradient(220px 140px at var(--mx,50%) var(--my,0%), rgba(95,224,255,.12), transparent 70%);
+    pointer-events:none;
+  }
+  .tile:hover{transform:translateY(-6px);border-color:rgba(95,224,255,.45);box-shadow:0 24px 60px rgba(3,8,18,.5)}
+  .tile:hover::after{opacity:1}
+  .tile .big{
+    font-family:var(--font-display);font-weight:800;font-size:clamp(34px,3.6vw,52px);
+    line-height:1;color:var(--cyan);text-shadow:0 0 36px rgba(95,224,255,.35);
+  }
+  .tile .lbl{margin-top:14px;color:var(--muted);font-size:15px;line-height:1.45}
+  .tile .lbl strong{color:var(--ink);font-weight:500}
+  .tile .idx{
+    position:absolute;top:18px;right:20px;font-family:var(--font-mono);font-size:9px;
+    letter-spacing:.2em;color:rgba(95,224,255,.4);
+  }
+
+  /* final CTA */
+  .final{border-top:1px solid var(--hairline);position:relative;overflow:hidden}
+  .final::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(800px 420px at 50% 115%, rgba(30,102,245,.3), transparent 65%);
+  }
+  .final .wrap{text-align:center;padding-top:130px;padding-bottom:130px;position:relative}
+  .final .eyebrow{justify-content:center}
+  .final .eyebrow::after{content:"";width:34px;height:1px;background:var(--cyan)}
+  .final h3{
+    font-family:var(--font-display);font-weight:800;text-transform:uppercase;
+    font-size:clamp(38px,6vw,84px);line-height:1.04;
+  }
+  .final h3 em{
+    font-style:normal;
+    background:linear-gradient(92deg,var(--cyan),#8ab8ff 60%,var(--blue));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .final p{margin:24px auto 0;color:var(--muted);font-size:19px;max-width:52ch}
+  .final .ctas{display:flex;gap:16px;justify-content:center;margin-top:44px;flex-wrap:wrap}
+  .final .fine{
+    margin-top:30px;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.18em;
+    color:rgba(95,224,255,.55);text-transform:uppercase;
+  }
+
+  footer{
+    border-top:1px solid rgba(95,224,255,.1);background:#040b18;position:relative;
+  }
+  footer .wrap{
+    padding:36px 6vw 110px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
+  }
+  footer .fm{font-family:var(--font-mono);font-size:10px;letter-spacing:.16em;color:rgba(232,240,248,.4);text-transform:uppercase}
+  footer .wordmark{font-size:13px}
+
+  @media (max-width: 900px){
+    .rail,.hud{display:none}
+    nav{padding:14px 20px}
+    .nav-link{display:none}
+    .hero-inner{padding:0 6vw}
+    .wp .pin{padding:0 6vw;justify-content:center !important}
+    .story-grid{grid-template-columns:1fr;gap:40px}
+    .story-left{position:static}
+    .stat-grid{grid-template-columns:repeat(2,1fr)}
+    .tv .rec{left:46px}
+    .scroll-cue{display:none}
+    .cta-pill{padding:12px 18px;font-size:11px}
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-fallback"></div>
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<nav id="nav">
+  <a class="wordmark" href="/">
+    <span class="mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v6m0 6v6M3 12h6m6 0h6"/><circle cx="12" cy="12" r="3.2"/></svg>
+    </span>
+    <span>NDT<em>Academy</em>.com</span>
+  </a>
+  <div class="nav-right">
+    <a class="nav-link" href="#story">Why Now</a>
+    <a class="nav-link" href="#video">Watch</a>
+    <a class="nav-link" href="#cta">Certify</a>
+    <a class="btn-signin" href="/signin">Sign In</a>
+  </div>
+</nav>
+
+<aside class="rail" id="rail" aria-label="Flight waypoints">
+  <button data-target="top"><span>Takeoff</span><span class="dot"></span></button>
+  <div class="seg"></div>
+  <button data-target="wp-aircraft"><span>Aircraft</span><span class="dot"></span></button>
+  <div class="seg"></div>
+  <button data-target="wp-energy"><span>Energy</span><span class="dot"></span></button>
+  <div class="seg"></div>
+  <button data-target="wp-infra"><span>Infra</span><span class="dot"></span></button>
+  <div class="seg"></div>
+  <button data-target="converge"><span>Certify</span><span class="dot"></span></button>
+</aside>
+
+<div class="hud" id="hud" aria-hidden="true">
+  <div>NDT-01 · FLIGHT IN PROGRESS</div>
+  <div>WPT <span id="hud-wpt">00/04</span> — <span id="hud-name">TAKEOFF</span></div>
+  <div>DIST TO CERT <span class="bar"><i id="hud-bar"></i></span></div>
+</div>
+
+<a class="cta-pill" href="/signup">
+  <span class="pulse"></span>
+  <span>Start Free VT Certification</span>
+  <span class="arr">→</span>
+</a>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <span class="badge">VT Level I &amp; II — Free for a limited time</span>
+      <h1>Inspect <span class="grad">the future.</span></h1>
+      <p class="sub">
+        <strong>Inspectors keep aircraft flying, pipelines safe, and bridges standing.</strong>
+        This is a flight through the world that needs you. Advance your career as a
+        Nondestructive Testing technician — your seat is ready.
+      </p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="/signup">Start Free VT Certification <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="#video">Watch: The Future of NDT</a>
+      </div>
+      <div class="free-line">No cost. No catch. 8 formal training hours to your first certificate.</div>
+    </div>
+    <div class="scroll-cue"><span>Scroll to take off</span><span class="line"></span></div>
+  </section>
+
+  <!-- WAYPOINT 01 — AIRCRAFT -->
+  <section class="wp" id="wp-aircraft" data-side="left">
+    <div class="pin">
+      <article class="card">
+        <div class="card-top"><span>WPT 01 / 03</span><span>Aerospace</span></div>
+        <h2><span class="tick">▸</span> Aircraft</h2>
+        <p>
+          A new generation of aerospace needs <strong>certified eyes</strong>.
+          Every engine, every airframe, every rivet gets inspected before it
+          ever leaves the ground — by a technician with a certificate that says
+          they're qualified to look.
+        </p>
+        <div class="card-foot">Every engine. Every airframe. Every flight.</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- WAYPOINT 02 — ENERGY -->
+  <section class="wp" id="wp-energy" data-side="right">
+    <div class="pin">
+      <article class="card">
+        <div class="card-top"><span>WPT 02 / 03</span><span>Energy</span></div>
+        <h2><span class="tick">▸</span> Pipelines</h2>
+        <p>
+          A nation's energy moves through steel. <strong>Certified inspectors keep
+          pipelines safe</strong> — weld by weld, scan by scan — long before a flaw
+          becomes a failure. Somebody signs that report. It could be you.
+        </p>
+        <div class="card-foot">Weld by weld. Scan by scan.</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- WAYPOINT 03 — INFRASTRUCTURE -->
+  <section class="wp" id="wp-infra" data-side="left">
+    <div class="pin">
+      <article class="card">
+        <div class="card-top"><span>WPT 03 / 03</span><span>Infrastructure</span></div>
+        <h2><span class="tick">▸</span> Bridges</h2>
+        <p>
+          <strong>Aging infrastructure needs certified eyes.</strong> Bridges stand
+          because someone verified every chord, every connection, every weld —
+          and put their certification number next to the result.
+        </p>
+        <div class="card-foot">Every chord. Every connection.</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONVERGENCE -->
+  <section class="converge" id="converge">
+    <div class="pin">
+      <div class="converge-content">
+        <div class="kick">Aircraft <span class="sep">·</span> Energy <span class="sep">·</span> Infrastructure</div>
+        <h2>They all need <em>certified inspectors.</em></h2>
+        <p>That's the job. NDTAcademy gets you certified for it — starting today, for free.</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="/signup">Start Free VT Certification <span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#story">Why now?</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY / WHY NOW -->
+  <section class="solid" id="story">
+    <div class="wrap">
+      <div class="story-grid">
+        <div class="story-left">
+          <div class="eyebrow">Flight briefing — Why now</div>
+          <h3 class="sec-title">The moment is now.</h3>
+          <p>
+            The world you just flew through doesn't inspect itself. The path from
+            zero to certified technician has never been shorter — or cheaper.
+          </p>
+        </div>
+        <div class="story-right">
+          <div class="story-item">
+            <div class="num">01</div>
+            <div>
+              <h4>The work is everywhere</h4>
+              <p>Inspectors keep aircraft flying, pipelines safe, and bridges standing. Wherever something can't be allowed to fail, an NDT technician is on the clock.</p>
+            </div>
+          </div>
+          <div class="story-item">
+            <div class="num">02</div>
+            <div>
+              <h4>The demand is real</h4>
+              <p>Aging infrastructure and a new generation of aerospace need certified eyes — and certifications are the gate. Take the first step now.</p>
+            </div>
+          </div>
+          <div class="story-item">
+            <div class="num">03</div>
+            <div>
+              <h4>The door is open</h4>
+              <p>VT Level I &amp; II — completely free for a limited time. 8 formal training hours to your first certificate. Tracked, narrated, audit-ready.</p>
+            </div>
+          </div>
+          <div class="oversight">
+            <span class="glyph">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+            </span>
+            <div>
+              <h5>Level III oversight, standard</h5>
+              <p><strong>Founded by two multi-certified ASNT Level IIIs</strong> — every student gets Level III oversight. Structured to SNT-TC-1A 2024 and NAS410.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="solid video-sec" id="video">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content:center">Onboard footage</div>
+      <h3 class="sec-title">Watch: <em>the future of NDT</em></h3>
+      <p class="lede">
+        Real footage from our free VT course — narrated, tracked, audit-ready.
+        This is what your first 8 formal training hours actually look like.
+      </p>
+      <div class="tv">
+        <span class="corner c-tl"></span><span class="corner c-tr"></span>
+        <span class="corner c-bl"></span><span class="corner c-br"></span>
+        <span class="rec">VT-1.1 · Modern Visual Testing</span>
+        <span class="scan"></span>
+        <video id="course-video" muted loop playsinline autoplay preload="metadata"
+          src="https://vamjeecpssxhzeyiqqsc.supabase.co/storage/v1/object/public/vt-media/demo/modern-vt1-1-1-v5.mp4"></video>
+        <button class="sound" id="sound-toggle">🔇 Sound off</button>
+      </div>
+      <div class="caption">Module 1.1 — actual course player output · Titan narration · progress tracked to the minute</div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="solid stats" id="stats">
+    <div class="wrap">
+      <div class="eyebrow">Instrument panel</div>
+      <h3 class="sec-title">Cleared for departure.</h3>
+      <div class="stat-grid">
+        <div class="tile">
+          <span class="idx">T-01</span>
+          <div class="big">6</div>
+          <div class="lbl"><strong>NDT methods</strong> on the flight plan — VT first, then PT, MT, UT, RT and more.</div>
+        </div>
+        <div class="tile">
+          <span class="idx">T-02</span>
+          <div class="big">I–III</div>
+          <div class="lbl"><strong>Certification paths</strong> structured to SNT-TC-1A 2024 and NAS410.</div>
+        </div>
+        <div class="tile">
+          <span class="idx">T-03</span>
+          <div class="big">$0</div>
+          <div class="lbl"><strong>VT Level I &amp; II</strong> — completely free for a limited time.</div>
+        </div>
+        <div class="tile">
+          <span class="idx">T-04</span>
+          <div class="big">8<small style="font-size:.45em"> hrs</small></div>
+          <div class="lbl"><strong>Formal training hours</strong> to your first certificate. Tracked, narrated, audit-ready.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="solid final" id="cta">
+    <div class="wrap">
+      <div class="eyebrow">Final waypoint</div>
+      <h3>Take the <em>first step.</em></h3>
+      <p>
+        Advance your career as a Nondestructive Testing technician.
+        Your first certification is free — and the flight starts now.
+      </p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="/signup">Start Free VT Certification <span class="arr">→</span></a>
+        <a class="btn btn-ghost" href="/signin">Sign In</a>
+      </div>
+      <div class="fine">Founded by two multi-certified ASNT Level IIIs · every student gets Level III oversight</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <a class="wordmark" href="/">
+        <span class="mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v6m0 6v6M3 12h6m6 0h6"/><circle cx="12" cy="12" r="3.2"/></svg>
+        </span>
+        <span>NDT<em>Academy</em>.com</span>
+      </a>
+      <span class="fm">Structured to SNT-TC-1A 2024 · NAS410</span>
+      <span class="fm">© 2026 NDTAcademy</span>
+    </div>
+  </footer>
+
+</main>
+
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const canvas = document.getElementById('scene');
+
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
+} catch (e) {
+  document.body.classList.add('no-webgl');
+}
+
+if (renderer) {
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x08152b);
+  scene.fog = new THREE.Fog(0x08152b, 30, 300);
+
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 600);
+
+  /* ---------- fresnel-glow material ---------- */
+  function fresnelMat(color, intensity = 1.5, base = 0.10) {
+    return new THREE.ShaderMaterial({
+      uniforms: THREE.UniformsUtils.merge([
+        THREE.UniformsLib.fog,
+        { uColor: { value: new THREE.Color(color) }, uIntensity: { value: intensity }, uBase: { value: base } }
+      ]),
+      vertexShader: `
+        varying vec3 vN; varying vec3 vV;
+        #include <fog_pars_vertex>
+        void main(){
+          vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+          vN = normalize(normalMatrix * normal);
+          vV = normalize(-mvPosition.xyz);
+          gl_Position = projectionMatrix * mvPosition;
+          #include <fog_vertex>
+        }`,
+      fragmentShader: `
+        uniform vec3 uColor; uniform float uIntensity; uniform float uBase;
+        varying vec3 vN; varying vec3 vV;
+        #include <fog_pars_fragment>
+        void main(){
+          float fr = pow(1.0 - abs(dot(normalize(vN), normalize(vV))), 1.7);
+          vec3 col = uColor * (uBase + fr * uIntensity);
+          gl_FragColor = vec4(col, 1.0);
+          #include <fog_fragment>
+        }`,
+      fog: true,
+      side: THREE.DoubleSide
+    });
+  }
+
+  const CYAN = 0x5fe0ff, BLUE = 0x1E66F5, ICE = 0xbfdcff;
+  const matCyan = fresnelMat(CYAN, 1.9, 0.14);
+  const matBlue = fresnelMat(BLUE, 2.4, 0.22);
+  const matIce  = fresnelMat(ICE, 1.6, 0.12);
+  const matPipe = fresnelMat(BLUE, 2.0, 0.06); // dark body, glowing rim
+
+  /* ---------- waypoint 1: jet engine intake ---------- */
+  const engine = new THREE.Group();
+  engine.position.set(0, 0, -60);
+
+  engine.add(new THREE.Mesh(new THREE.TorusGeometry(13, 1.5, 10, 56), matCyan));
+  const rim = new THREE.Mesh(new THREE.TorusGeometry(10.6, 0.4, 8, 48), matBlue);
+  engine.add(rim);
+  const stator = new THREE.Mesh(new THREE.TorusGeometry(13, 0.55, 8, 48), matBlue);
+  stator.position.z = -3.6;
+  engine.add(stator);
+
+  const cone = new THREE.Mesh(new THREE.ConeGeometry(2.1, 5, 14), matIce);
+  cone.rotation.x = Math.PI / 2;
+  cone.position.z = 2.0;
+  engine.add(cone);
+
+  const blades = new THREE.Group();
+  const bladeGeo = new THREE.BoxGeometry(1.0, 7.6, 0.22);
+  for (let i = 0; i < 14; i++) {
+    const b = new THREE.Mesh(bladeGeo, matBlue);
+    const pivot = new THREE.Group();
+    b.position.y = 5.9;        // blade spans radius ~2.1 → ~9.7
+    b.rotation.y = 0.55;       // twist
+    pivot.add(b);
+    pivot.rotation.z = (i / 14) * Math.PI * 2;
+    blades.add(pivot);
+  }
+  blades.position.z = 0.4;
+  engine.add(blades);
+  const hub = new THREE.Mesh(new THREE.TorusGeometry(2.8, 0.3, 8, 28), matCyan);
+  hub.position.z = 0.8;
+  engine.add(hub);
+  scene.add(engine);
+
+  /* ---------- waypoint 2: pipeline ---------- */
+  const pipeline = new THREE.Group();
+  const pipeGeo = new THREE.CylinderGeometry(2.6, 2.6, 160, 18, 1, true);
+  const pipe = new THREE.Mesh(pipeGeo, matPipe);
+  pipe.rotation.x = Math.PI / 2;
+  pipe.position.set(6, -5, -185);
+  pipeline.add(pipe);
+
+  const pipe2 = new THREE.Mesh(new THREE.CylinderGeometry(1.1, 1.1, 160, 10, 1, true), matPipe);
+  pipe2.rotation.x = Math.PI / 2;
+  pipe2.position.set(11.5, -6.4, -185);
+  pipeline.add(pipe2);
+
+  const weldGeo = new THREE.TorusGeometry(2.78, 0.14, 8, 28);
+  const welds = [];
+  for (let i = 0; i < 10; i++) {
+    const w = new THREE.Mesh(weldGeo, matCyan);
+    w.position.set(6, -5, -118 - i * 15);
+    welds.push(w);
+    pipeline.add(w);
+  }
+  const supGeo = new THREE.BoxGeometry(0.7, 4.6, 0.7);
+  for (let i = 0; i < 6; i++) {
+    const s = new THREE.Mesh(supGeo, matBlue);
+    s.position.set(6, -8, -125 - i * 28);
+    pipeline.add(s);
+  }
+  scene.add(pipeline);
+
+  /* ---------- waypoint 3: truss bridge ---------- */
+  function bar(a, b, r = 0.3) {
+    const from = new THREE.Vector3(...a), to = new THREE.Vector3(...b);
+    const dir = new THREE.Vector3().subVectors(to, from);
+    const len = dir.length();
+    const g = new THREE.BoxGeometry(r * 2, len, r * 2);
+    const mid = new THREE.Vector3().addVectors(from, to).multiplyScalar(0.5);
+    const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.normalize());
+    g.applyMatrix4(new THREE.Matrix4().compose(mid, q, new THREE.Vector3(1, 1, 1)));
+    return g;
+  }
+  const W = 8, yB = -6, yT = 8, z0 = -298, dz = 12, N = 11;
+  const structBars = [], chordBars = [];
+  for (let i = 0; i <= N; i++) {
+    const z = z0 - i * dz;
+    structBars.push(bar([-W, yB, z], [-W, yT, z]));
+    structBars.push(bar([ W, yB, z], [ W, yT, z]));
+    structBars.push(bar([-W, yT, z], [ W, yT, z], 0.26));
+    structBars.push(bar([-W, yB, z], [ W, yB, z], 0.26));
+    if (i < N) {
+      const flip = i % 2 === 0 ? 1 : -1;
+      structBars.push(bar([-W, flip > 0 ? yB : yT, z], [-W, flip > 0 ? yT : yB, z - dz], 0.2));
+      structBars.push(bar([ W, flip > 0 ? yB : yT, z], [ W, flip > 0 ? yT : yB, z - dz], 0.2));
+    }
+  }
+  const zEnd = z0 - N * dz;
+  chordBars.push(bar([-W, yT, z0], [-W, yT, zEnd], 0.42));
+  chordBars.push(bar([ W, yT, z0], [ W, yT, zEnd], 0.42));
+  chordBars.push(bar([-W, yB, z0], [-W, yB, zEnd], 0.42));
+  chordBars.push(bar([ W, yB, z0], [ W, yB, zEnd], 0.42));
+  scene.add(new THREE.Mesh(mergeGeometries(structBars), matBlue));
+  scene.add(new THREE.Mesh(mergeGeometries(chordBars), matCyan));
+
+  /* ---------- final beacon: certification seal ---------- */
+  const beacon = new THREE.Group();
+  beacon.position.set(0, 2.5, -470);
+  const core = new THREE.Mesh(new THREE.IcosahedronGeometry(2.6, 0),
+    new THREE.MeshBasicMaterial({ color: 0xeaf6ff, fog: true }));
+  beacon.add(core);
+  beacon.add(new THREE.Mesh(new THREE.IcosahedronGeometry(4.4, 1), matCyan));
+  const ringA = new THREE.Mesh(new THREE.TorusGeometry(7, 0.18, 8, 48), matCyan);
+  const ringB = new THREE.Mesh(new THREE.TorusGeometry(8.6, 0.12, 8, 48), matBlue);
+  ringA.rotation.x = Math.PI / 2.6;
+  ringB.rotation.x = -Math.PI / 3.2; ringB.rotation.y = 0.6;
+  beacon.add(ringA, ringB);
+  const beam = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.35, 0.35, 70, 8, 1, true),
+    new THREE.MeshBasicMaterial({ color: CYAN, transparent: true, opacity: 0.07, blending: THREE.AdditiveBlending, depthWrite: false, fog: false })
+  );
+  beacon.add(beam);
+  scene.add(beacon);
+
+  /* ---------- ground grid ---------- */
+  const grid = new THREE.GridHelper(900, 90, 0x1a3a66, 0x10243f);
+  grid.position.set(0, -10.5, -200);
+  scene.add(grid);
+
+  /* ---------- starfield / dust ---------- */
+  const starN = 750;
+  const sPos = new Float32Array(starN * 3), sCol = new Float32Array(starN * 3);
+  const palette = [new THREE.Color(CYAN), new THREE.Color(ICE), new THREE.Color(BLUE), new THREE.Color(0xE8F0F8)];
+  for (let i = 0; i < starN; i++) {
+    sPos[i * 3]     = (Math.random() - 0.5) * 260;
+    sPos[i * 3 + 1] = Math.random() * 110 - 30;
+    sPos[i * 3 + 2] = 60 - Math.random() * 600;
+    const c = palette[(Math.random() * palette.length) | 0];
+    sCol[i * 3] = c.r; sCol[i * 3 + 1] = c.g; sCol[i * 3 + 2] = c.b;
+  }
+  const starGeo = new THREE.BufferGeometry();
+  starGeo.setAttribute('position', new THREE.BufferAttribute(sPos, 3));
+  starGeo.setAttribute('color', new THREE.BufferAttribute(sCol, 3));
+  scene.add(new THREE.Points(starGeo, new THREE.PointsMaterial({
+    size: 1.6, sizeAttenuation: false, vertexColors: true, transparent: true, opacity: 0.8
+  })));
+
+  /* ---------- flight path keyframes ---------- */
+  const KF = [
+    { t: 0.00, p: [0, 1.0, 6],      l: [-9.5, 0, -60] },
+    { t: 0.13, p: [0, 1.6, -14],    l: [0, 0.5, -62] },
+    { t: 0.25, p: [0, 3.2, -42],    l: [0, 0.4, -66] },
+    { t: 0.34, p: [0, 2.0, -82],    l: [4, -3.5, -145] },
+    { t: 0.46, p: [1.2, -2.4, -150],l: [7, -5.6, -205] },
+    { t: 0.57, p: [1.6, -1.4, -236],l: [0, 0.8, -306] },
+    { t: 0.69, p: [0, 0.8, -332],   l: [0, 0.8, -402] },
+    { t: 0.80, p: [0, 1.4, -408],   l: [0, 2.4, -470] },
+    { t: 0.90, p: [-7, 4.2, -438],  l: [0, 2.5, -470] },
+    { t: 1.00, p: [-13.5, 6.5, -452], l: [1.5, 2.5, -470] },
+  ];
+  const _p = new THREE.Vector3(), _l = new THREE.Vector3();
+  function samplePath(t, outP, outL) {
+    t = Math.min(1, Math.max(0, t));
+    let i = 0;
+    while (i < KF.length - 2 && t > KF[i + 1].t) i++;
+    const a = KF[i], b = KF[i + 1];
+    let u = (t - a.t) / (b.t - a.t);
+    u = Math.min(1, Math.max(0, u));
+    u = u * u * (3 - 2 * u); // smoothstep — settle at each waypoint
+    outP.set(
+      a.p[0] + (b.p[0] - a.p[0]) * u,
+      a.p[1] + (b.p[1] - a.p[1]) * u,
+      a.p[2] + (b.p[2] - a.p[2]) * u
+    );
+    outL.set(
+      a.l[0] + (b.l[0] - a.l[0]) * u,
+      a.l[1] + (b.l[1] - a.l[1]) * u,
+      a.l[2] + (b.l[2] - a.l[2]) * u
+    );
+  }
+
+  /* ---------- flight-corridor gate rings ---------- */
+  const gateGeo = new THREE.TorusGeometry(5, 0.09, 6, 30);
+  const gateMat = new THREE.MeshBasicMaterial({ color: CYAN, transparent: true, opacity: 0.24, blending: THREE.AdditiveBlending, depthWrite: false, fog: true });
+  const _ahead = new THREE.Vector3();
+  for (let t = 0.20; t <= 0.78; t += 0.045) {
+    samplePath(t, _p, _l);
+    samplePath(t + 0.02, _ahead, _l);
+    if (Math.abs(_p.z - (-60)) < 16) continue; // keep the engine ring clean
+    const gate = new THREE.Mesh(gateGeo, gateMat);
+    gate.position.copy(_p);
+    gate.lookAt(_ahead);
+    scene.add(gate);
+  }
+
+  /* ---------- scroll → flight ---------- */
+  let flightEndPx = 1;
+  function measure() { flightEndPx = Math.max(1, document.getElementById('story').offsetTop - window.innerHeight); }
+  measure();
+
+  let targetT = 0, smoothT = 0;
+  let mouseX = 0, mouseY = 0, smX = 0, smY = 0;
+  window.addEventListener('scroll', () => { targetT = Math.min(1, window.scrollY / flightEndPx); }, { passive: true });
+  window.addEventListener('mousemove', (e) => {
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+  }, { passive: true });
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    measure();
+  });
+
+  /* ---------- UI sync (cards, rail, hud, nav) ---------- */
+  const nav = document.getElementById('nav');
+  const heroInner = document.querySelector('.hero-inner');
+  const wpSections = [...document.querySelectorAll('.wp')];
+  const convergeSec = document.getElementById('converge');
+  const convergeContent = document.querySelector('.converge-content');
+  const railBtns = [...document.querySelectorAll('.rail button')];
+  const hudWpt = document.getElementById('hud-wpt');
+  const hudName = document.getElementById('hud-name');
+  const hudBar = document.getElementById('hud-bar');
+  const WPT_NAMES = ['TAKEOFF', 'AIRCRAFT', 'ENERGY', 'INFRA', 'CERTIFY'];
+
+  function sectionProgress(sec) {
+    const r = sec.getBoundingClientRect();
+    const span = r.height - window.innerHeight;
+    return span <= 0 ? 0 : Math.min(1, Math.max(0, -r.top / span));
+  }
+  function panelFade(el, p) {
+    const inn = Math.min(1, p / 0.18);
+    const out = 1 - Math.min(1, Math.max(0, (p - 0.82) / 0.18));
+    const o = Math.min(inn, out);
+    el.style.opacity = o.toFixed(3);
+    el.style.transform = `translateY(${((1 - inn) * 46 - (1 - out) * 46).toFixed(1)}px)`;
+  }
+
+  function updateUI() {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 40);
+    if (heroInner) {
+      const f = Math.min(1, y / (window.innerHeight * 0.55));
+      heroInner.style.opacity = (1 - f).toFixed(3);
+      heroInner.style.transform = `translateY(${(-f * 60).toFixed(1)}px)`;
+      heroInner.style.pointerEvents = f > 0.9 ? 'none' : '';
+    }
+    wpSections.forEach(sec => panelFade(sec.querySelector('.card'), sectionProgress(sec)));
+    if (convergeContent) panelFade(convergeContent, sectionProgress(convergeSec));
+
+    // rail + hud
+    let active = 0;
+    const marks = ['top', 'wp-aircraft', 'wp-energy', 'wp-infra', 'converge'];
+    marks.forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (el && y >= el.offsetTop - window.innerHeight * 0.45) active = i;
+    });
+    railBtns.forEach((b, i) => b.classList.toggle('active', i === active));
+    const pct = Math.round(Math.min(1, y / flightEndPx) * 100);
+    hudWpt.textContent = `0${active}/04`;
+    hudName.textContent = WPT_NAMES[active];
+    hudBar.style.width = pct + '%';
+  }
+
+  railBtns.forEach(b => b.addEventListener('click', () => {
+    const el = document.getElementById(b.dataset.target);
+    if (el) el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+  }));
+
+  /* ---------- render loop ---------- */
+  const clock = new THREE.Clock();
+  let rafId = null, running = false;
+
+  function renderFrame(dt, time) {
+    smoothT += (targetT - smoothT) * Math.min(1, dt * 5);
+    smX += (mouseX - smX) * Math.min(1, dt * 3);
+    smY += (mouseY - smY) * Math.min(1, dt * 3);
+
+    samplePath(smoothT, _p, _l);
+    camera.position.set(
+      _p.x + smX * 0.8 + Math.sin(time * 0.5) * 0.35,
+      _p.y - smY * 0.5 + Math.sin(time * 0.8) * 0.22,
+      _p.z
+    );
+    _l.x += smX * 2.2; _l.y -= smY * 1.2;
+    camera.lookAt(_l);
+
+    blades.rotation.z = time * 1.15;
+    cone.rotation.y = time * 1.15;
+    ringA.rotation.z = time * 0.4;
+    ringB.rotation.z = -time * 0.3;
+    beacon.rotation.y = time * 0.25;
+    const pulse = 1 + Math.sin(time * 2.4) * 0.12;
+    core.scale.setScalar(pulse);
+    welds.forEach((w, i) => { w.scale.setScalar(1 + Math.sin(time * 3 + i * 1.7) * 0.05); });
+
+    renderer.render(scene, camera);
+  }
+
+  function loop() {
+    rafId = requestAnimationFrame(loop);
+    const dt = Math.min(clock.getDelta(), 0.1);
+    renderFrame(dt, clock.elapsedTime);
+    updateUI();
+  }
+  function start() { if (!running) { running = true; clock.getDelta(); loop(); } }
+  function stop() { running = false; if (rafId) cancelAnimationFrame(rafId); rafId = null; }
+
+  if (reduceMotion) {
+    // static frame, re-rendered (not animated) on scroll so content stays in sync
+    targetT = Math.min(1, window.scrollY / flightEndPx);
+    smoothT = targetT;
+    renderFrame(0, 0);
+    updateUI();
+    window.addEventListener('scroll', () => {
+      targetT = Math.min(1, window.scrollY / flightEndPx);
+      smoothT = targetT;
+      renderFrame(0, 0);
+      updateUI();
+    }, { passive: true });
+  } else {
+    start();
+    document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
+  }
+
+  updateUI();
+} else {
+  document.body.classList.add('no-webgl');
+}
+
+/* ---------- non-3D interactions ---------- */
+// pointer-tracked sheen on primary buttons + tiles
+document.querySelectorAll('.btn-primary, .tile').forEach(el => {
+  el.addEventListener('pointermove', e => {
+    const r = el.getBoundingClientRect();
+    el.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+    el.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+  });
+});
+
+// video sound toggle
+const vid = document.getElementById('course-video');
+const soundBtn = document.getElementById('sound-toggle');
+if (vid && soundBtn) {
+  soundBtn.addEventListener('click', () => {
+    vid.muted = !vid.muted;
+    if (!vid.muted) vid.play().catch(() => {});
+    soundBtn.textContent = vid.muted ? '🔇 Sound off' : '🔊 Sound on';
+  });
+  // pause the loop when far off-screen
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => { en.isIntersecting ? vid.play().catch(() => {}) : vid.pause(); });
+  }, { threshold: 0.1 });
+  io.observe(vid);
+}
+</script>
+</body>
+</html>
