@@ -139,6 +139,20 @@ export function lessonExplainers(
   }
 }
 
+/**
+ * Pre-rendered slide-narration audio (Titan voice), content-addressed:
+ * slide-audio.json maps a stable text hash -> Supabase URL. The lesson player
+ * derives the same hash per slide and plays the matching clip, gating Continue
+ * on its end. Missing manifest -> player falls back to the browser voice.
+ */
+export function slideAudioManifest(courseId: string): Record<string, string> {
+  try {
+    return JSON.parse(readFileSync(path.join(contentDir(courseId), "slide-audio.json"), "utf8")) as Record<string, string>;
+  } catch {
+    return {};
+  }
+}
+
 /** Which lessons in a level have authored content (for progress/QA surfaces). */
 export async function authoredLessonIds(courseId: string, level: CourseLevel): Promise<Set<string>> {
   const ids = levelLessonIds(level);

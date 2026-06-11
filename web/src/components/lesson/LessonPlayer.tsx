@@ -11,6 +11,7 @@ import { MarkdownLite } from "@/lib/markdownLite";
 import InteractiveBlock from "@/components/lesson/InteractiveBlock";
 import SimulatorBlock from "@/components/lesson/SimulatorBlock";
 import type { Step } from "@/lib/lessonSteps";
+import { narrationText, narrationKey } from "@/lib/slideNarration";
 
 const PASS_PCT = 80;
 
@@ -22,6 +23,7 @@ export default function LessonPlayer({
   nextLessonId,
   alreadyPassed,
   figureFileById,
+  slideAudio,
 }: {
   steps: Step[];
   lessonId: string;
@@ -30,6 +32,7 @@ export default function LessonPlayer({
   nextLessonId: string | null;
   alreadyPassed: boolean;
   figureFileById: Record<string, string>;
+  slideAudio?: Record<string, string>;
 }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -42,7 +45,16 @@ export default function LessonPlayer({
   const [answers, setAnswers] = useState<Record<number, number>>({});
   const [xpPop, setXpPop] = useState<string | null>(null);
   const [recorded, setRecorded] = useState(false);
+  const [muted, setMuted] = useState(false);
+  const [narrating, setNarrating] = useState(false);
   const stepStarted = useRef<number>(0);
+  const voiceRef = useRef<SpeechSynthesisVoice | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const speechOn = typeof window !== "undefined" && "speechSynthesis" in window;
+  const audioFor = useCallback(
+    (s: Step) => { const k = narrationKey(s); return k ? slideAudio?.[k] ?? null : null; },
+    [slideAudio],
+  );
 
   const step = steps[idx];
   const questionSteps = useMemo(() => steps.filter((s) => s.kind === "question").length, [steps]);
@@ -62,34 +74,126 @@ export default function LessonPlayer({
     setTimeout(() => setXpPop(null), 1400);
   }, []);
 
+  // ----- voiceover (browser speech synthesis) -----
+  useEffect(() => {
+    try { setMuted(localStorage.getItem("lp-muted") === "1"); } catch {}
+  }, []);
+  useEffect(() => {
+    if (!speechOn) return;
+    const pick = () => {
+      const vs = window.speechSynthesis.getVoices();
+      voiceRef.current =
+        vs.find((v) => /Google US English/i.test(v.name)) ||
+        vs.find((v) => v.lang === "en-US" && /natural|neural|premium|enhanced/i.test(v.name)) ||
+        vs.find((v) => v.lang === "en-US") ||
+        vs.find((v) => v.lang?.startsWith("en")) ||
+        vs[0] ||
+        null;
+    };
+    pick();
+    window.speechSynthesis.onvoiceschanged = pick;
+    return () => { try { window.speechSynthesis.onvoiceschanged = null; } catch {} };
+  }, [speechOn]);
+
+  const cancelSpeech = useCallback(() => {
+    try { window.speechSynthesis.cancel(); } catch {}
+    if (audioRef.current) {
+      try { audioRef.current.pause(); } catch {}
+      audioRef.current.onended = null;
+      audioRef.current.onerror = null;
+      audioRef.current = null;
+    }
+    setNarrating(false);
+  }, []);
+  // Play the slide's pre-rendered Titan audio; fall back to browser speech on error/block.
+  const playTitan = useCallback((url: string, text: string, onDone: () => void) => {
+    try {
+      const a = new Audio(url);
+      a.preload = "auto";
+      if (muted) a.muted = true;
+      audioRef.current = a;
+      let fired = false;
+      const fin = () => { if (!fired) { fired = true; setNarrating(false); onDone(); } };
+      a.onended = fin;
+      a.onerror = () => { a.onended = null; setNarrating(false); speak(text, onDone); };
+      setNarrating(true);
+      a.play().catch(() => { a.onended = null; setNarrating(false); speak(text, onDone); });
+    } catch { setNarrating(false); speak(text, onDone); }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [muted]);
+  const speak = useCallback((text: string, onDone: () => void) => {
+    if (!speechOn || !text) { onDone(); return; }
+    try {
+      window.speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      if (voiceRef.current) u.voice = voiceRef.current;
+      u.rate = 0.98; u.pitch = 1;
+      let fired = false;
+      const fin = () => { if (!fired) { fired = true; setNarrating(false); onDone(); } };
+      u.onend = fin; u.onerror = fin;
+      setNarrating(true);
+      window.speechSynthesis.speak(u);
+    } catch { setNarrating(false); onDone(); }
+  }, [speechOn]);
+  const toggleMute = () => setMuted((m) => {
+    const nv = !m;
+    try { localStorage.setItem("lp-muted", nv ? "1" : "0"); } catch {}
+    if (nv) cancelSpeech();
+    return nv;
+  });
+
+  // cancel any speech when the player closes / unmounts
+  useEffect(() => { if (!open) cancelSpeech(); }, [open, cancelSpeech]);
+  useEffect(() => () => { try { window.speechSynthesis?.cancel(); } catch {} }, []);
+
   // ----- per-step gate management -----
   useEffect(() => {
     if (!open) return;
     stepStarted.current = Date.now();
-    const dwell =
-      step.kind === "intro" || step.kind === "concept" || step.kind === "table" || step.kind === "quizIntro"
-        ? step.dwellSec
-        : 0;
-    if (dwell > 0) {
+    const textGated =
+      step.kind === "intro" || step.kind === "concept" || step.kind === "table" || step.kind === "quizIntro";
+    const text = narrationText(step);
+
+    if (textGated) {
       setUnlocked(false);
+      // Narrate the slide; Continue unlocks when the voiceover finishes.
+      // Prefer the pre-rendered Titan audio; fall back to the browser voice.
+      const url = (!muted && text) ? audioFor(step) : null;
+      if (url && text) {
+        const safety = setTimeout(() => setUnlocked(true), 180000); // unlock if 'ended' never fires
+        playTitan(url, text, () => { setUnlocked(true); clearTimeout(safety); });
+        return () => { cancelSpeech(); clearTimeout(safety); };
+      }
+      if (speechOn && !muted && text) {
+        const estMs = Math.min(Math.max((text.length / 14) * 1000, 4000), 90000) + 6000;
+        const safety = setTimeout(() => setUnlocked(true), estMs); // unlock if onend never fires
+        speak(text, () => { setUnlocked(true); clearTimeout(safety); });
+        return () => { cancelSpeech(); clearTimeout(safety); };
+      }
+      // fallback (muted or no audio/speech support): silent reading-time dwell
+      const dwell = step.dwellSec;
       setDwellLeft(dwell);
       const t = setInterval(() => {
         const left = Math.ceil(dwell - (Date.now() - stepStarted.current) / 1000);
         setDwellLeft(Math.max(left, 0));
-        if (left <= 0) {
-          setUnlocked(true);
-          clearInterval(t);
-        }
+        if (left <= 0) { setUnlocked(true); clearInterval(t); }
       }, 250);
       return () => clearInterval(t);
     }
+
     if (step.kind === "results") {
       setUnlocked(true);
-      return;
+    } else {
+      // video / explainer / interactive / simulator / question lock until done
+      setUnlocked(false);
     }
-    // video / explainer / interactive / simulator / question lock until done
-    setUnlocked(false);
-  }, [idx, open, step]);
+    // questions are read aloud too (gate stays answer-based)
+    if (step.kind === "question" && !muted && text) {
+      const url = audioFor(step);
+      if (url) { playTitan(url, text, () => {}); return () => cancelSpeech(); }
+      if (speechOn) { speak(text, () => {}); return () => cancelSpeech(); }
+    }
+  }, [idx, open, step, muted, speechOn, speak, cancelSpeech, audioFor, playTitan]);
 
   // keyboard navigation
   useEffect(() => {
@@ -188,6 +292,27 @@ export default function LessonPlayer({
         <button className="lp-exit" onClick={() => setOpen(false)} aria-label="Exit lesson">✕ Exit</button>
         <div className="lp-progress"><div style={{ width: `${progressPct}%` }} /></div>
         <div className="lp-meta">
+          {speechOn && (
+            <>
+              <button
+                className="lp-exit"
+                onClick={() => {
+                  const t = narrationText(step); if (!t) return;
+                  const url = audioFor(step);
+                  if (url) playTitan(url, t, () => setUnlocked(true));
+                  else speak(t, () => setUnlocked(true));
+                }}
+                aria-label="Replay narration"
+                title="Replay narration"
+              >↻ Replay</button>
+              <button
+                className="lp-exit"
+                onClick={toggleMute}
+                aria-label={muted ? "Unmute narration" : "Mute narration"}
+                title={muted ? "Unmute narration" : "Mute narration"}
+              >{muted ? "🔇" : "🔊"}</button>
+            </>
+          )}
           <span className="lp-step">{idx + 1} / {steps.length}</span>
           <span className="lp-xp">⚡ {xp} XP</span>
         </div>
@@ -348,7 +473,9 @@ export default function LessonPlayer({
                   ? "Complete to continue"
                   : step.kind === "question"
                     ? "Answer to continue"
-                    : `Continue in ${dwellLeft}s`}
+                    : !muted && (audioFor(step) || speechOn)
+                      ? "Narration playing…"
+                      : `Continue in ${dwellLeft}s`}
           </button>
         </div>
       )}

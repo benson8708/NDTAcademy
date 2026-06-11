@@ -15,6 +15,7 @@ import {
   lessonHeroUrl,
   lessonVideoUrl,
   lessonExplainers,
+  slideAudioManifest,
 } from "@/lib/vtContent";
 import { buildSteps } from "@/lib/lessonSteps";
 
@@ -157,6 +158,7 @@ export default async function LessonPage({
                       nextLessonId={next?.id ?? null}
                       alreadyPassed={checkPassed}
                       figureFileById={figureFileById}
+                      slideAudio={slideAudioManifest(course.id)}
                     />
                     <div className="objectives">
                       <h4>Learning objectives</h4>
