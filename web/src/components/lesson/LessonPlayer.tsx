@@ -363,6 +363,16 @@ function GatedVideo({
   const ref = useRef<HTMLVideoElement | null>(null);
   const maxPlayed = useRef(0);
   const [done, setDone] = useState(false);
+  const [blocked, setBlocked] = useState(false);
+
+  // Autoplay when the step opens. The learner reached here via a click
+  // ("Start Lesson" / "Continue"), so playing with sound is allowed in-session;
+  // if the browser still blocks it, surface a tap-to-play prompt.
+  useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    v.play().then(() => setBlocked(false)).catch(() => setBlocked(true));
+  }, [src]);
 
   return (
     <div className="lp-slide lp-video">
@@ -370,11 +380,13 @@ function GatedVideo({
       <div className="lp-video-frame">
         <video
           ref={ref}
+          autoPlay
           controls
           controlsList="nodownload"
           playsInline
           poster={poster ?? undefined}
           src={src}
+          onPlay={() => setBlocked(false)}
           onRateChange={(e) => {
             // pacing gate: speed-watching would undercut logged training time
             const v = e.currentTarget;
@@ -396,7 +408,13 @@ function GatedVideo({
           onEnded={() => { if (!done) { setDone(true); onWatched(); } }}
         />
       </div>
-      <p className="lp-hint">{done ? "✓ Watched — continue when ready" : "Watch the full video to unlock the next step (skipping ahead is disabled)"}</p>
+      <p className="lp-hint">
+        {done
+          ? "✓ Watched — continue when ready"
+          : blocked
+            ? "▶ Tap the video to start — watch it fully to unlock the next step"
+            : "Watch the full video to unlock the next step (skipping ahead is disabled)"}
+      </p>
     </div>
   );
 }
