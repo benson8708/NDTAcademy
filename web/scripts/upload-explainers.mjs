@@ -32,6 +32,14 @@ const BUCKET = "vt-media";
 if (!existsSync(dropDir)) mkdirSync(dropDir, { recursive: true });
 const plan = JSON.parse(readFileSync(planPath, "utf8"));
 const planById = new Map(plan.items.map((it) => [it.lessonId, it]));
+// Authored specs (media-src/specs) take precedence for title + anchor.
+const specsDir = join(webRoot, "media-src", "specs");
+const specMeta = (id) => {
+  const p = join(specsDir, `${id}.json`);
+  if (!existsSync(p)) return null;
+  const s = JSON.parse(readFileSync(p, "utf8"));
+  return { title: s.displayTitle, afterSection: s.anchorAfterSection };
+};
 
 const api = (path, init = {}) =>
   fetch(`${URL_BASE}${path}`, { ...init, headers: { Authorization: `Bearer ${SERVICE}`, apikey: SERVICE, ...(init.headers ?? {}) } });
@@ -57,8 +65,8 @@ if (!files.length) {
 let up = 0, skipped = 0, failed = 0;
 for (const f of files) {
   const lessonId = f.replace(/\.mp4$/, "");
-  const plan = planById.get(lessonId);
-  if (!plan) { console.log(`! ${f}: no plan entry for "${lessonId}" — filename must be a lessonId; skipping`); failed++; continue; }
+  const plan = specMeta(lessonId) ?? planById.get(lessonId);
+  if (!plan) { console.log(`! ${f}: no spec or plan entry for "${lessonId}" — filename must be a lessonId; skipping`); failed++; continue; }
   if (manifest[lessonId] && !force) { skipped++; continue; }
   const body = readFileSync(join(dropDir, f));
   process.stdout.write(`upload ${f} (${Math.round(body.length / 1048576)} MB)… `);
