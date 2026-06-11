@@ -1,0 +1,138 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="isqGlowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="isqGlowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="isqSteel" x1="0" y1="148" x2="0" y2="192" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".35" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="isqConeGrad" x1="120" y1="0" x2="560" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bdf4ff" stop-opacity=".5"/>
+      <stop offset=".12" stop-color="#8feaff" stop-opacity=".32"/>
+      <stop offset=".4" stop-color="#5fe0ff" stop-opacity=".18"/>
+      <stop offset=".8" stop-color="#5fe0ff" stop-opacity=".09"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".04"/>
+    </linearGradient>
+    <radialGradient id="isqHotNear">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset=".4" stop-color="#c2f3ff" stop-opacity=".75"/>
+      <stop offset=".75" stop-color="#5fe0ff" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#2b86ff" stop-opacity=".12"/>
+    </radialGradient>
+    <radialGradient id="isqHotFar">
+      <stop offset="0" stop-color="#aeeeff" stop-opacity=".38"/>
+      <stop offset=".55" stop-color="#5fe0ff" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#2b86ff" stop-opacity=".05"/>
+    </radialGradient>
+    <linearGradient id="isqScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== static caption ===== -->
+  <text x="24" y="36" font-size="11" fill="#9fe6ff" opacity=".6">ILLUMINANCE vs DISTANCE</text>
+
+  <!-- ===== distance axis (static baseline + origin) ===== -->
+  <g stroke="#8fb6e0" fill="none">
+    <path d="M120 274 H550" stroke-width="1" opacity=".35"/>
+    <path d="M120 269 V279" stroke-width="1.5" opacity=".5"/>
+  </g>
+  <text x="120" y="293" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".55">0</text>
+
+  <!-- ===== ghost target frames (default-state composition) ===== -->
+  <g stroke="#8fb6e0" opacity=".22" fill="none" stroke-width="1">
+    <rect x="255" y="130" width="80" height="80" rx="3"/>
+    <rect x="390" y="90" width="160" height="160" rx="3"/>
+    <path d="M470 90 V250 M390 170 H550" opacity=".6"/>
+  </g>
+
+  <!-- ===== handheld inspection flashlight (isqLamp, visible from 0s) ===== -->
+  <g id="isqLamp">
+    <rect x="20" y="156" width="9" height="28" rx="2.5" fill="url(#isqSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="44" y="151" width="12" height="6" rx="2" fill="#0e2848" stroke="#8fb6e0" stroke-width="1"/>
+    <rect x="29" y="158" width="48" height="24" rx="3" fill="url(#isqSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".3">
+      <line x1="35" y1="161" x2="35" y2="179"/><line x1="41" y1="161" x2="41" y2="179"/>
+      <line x1="47" y1="161" x2="47" y2="179"/><line x1="53" y1="161" x2="53" y2="179"/>
+      <line x1="59" y1="161" x2="59" y2="179"/><line x1="65" y1="161" x2="65" y2="179"/>
+      <line x1="71" y1="161" x2="71" y2="179"/>
+    </g>
+    <path d="M77 159 L88 162 L88 178 L77 181 Z" fill="url(#isqSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M88 162 L98 158 L113 151 L113 189 L98 182 L88 178 Z" fill="url(#isqSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="113" y="149" width="6" height="42" rx="2" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+    <ellipse cx="119" cy="170" rx="2.2" ry="17" fill="#123a66" stroke="#8fb6e0" stroke-width="1"/>
+  </g>
+
+  <!-- ===== torch power-on: lit lens + source glow (fade) ===== -->
+  <g id="isqTorch" opacity="0">
+    <ellipse cx="119" cy="170" rx="2.2" ry="17" fill="#5fe0ff" opacity=".85" filter="url(#isqGlowR)"/>
+    <circle cx="121" cy="170" r="13" fill="#5fe0ff" opacity=".3" filter="url(#isqGlowC)"/>
+    <circle cx="121" cy="170" r="6" fill="#eaffff" opacity=".9" filter="url(#isqGlowC)"/>
+  </g>
+
+  <!-- ===== beam cone (fade) ===== -->
+  <g id="isqCone" opacity="0">
+    <path d="M120 170 L560 69.4 L560 270.6 Z" fill="url(#isqConeGrad)"/>
+    <path d="M120 170 L560 69.4 M120 170 L560 270.6" stroke="#5fe0ff" stroke-width="1.5" opacity=".55" fill="none"/>
+  </g>
+
+  <!-- ===== 8 rays: same lumens through both targets (draw, sweeps top to bottom) ===== -->
+  <path id="isqRays" d="M123 170 L545 85 M123 170 L545 109.3 M123 170 L545 133.6 M123 170 L545 157.9 M123 170 L545 182.1 M123 170 L545 206.4 M123 170 L545 230.7 M123 170 L545 255" fill="none" stroke="#7fd8ff" stroke-width="1.2" stroke-opacity=".75" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== NEAR target: unit square + bright disc at d (fade) ===== -->
+  <g id="isqNearPlane" opacity="0">
+    <rect x="255" y="130" width="80" height="80" rx="3" fill="#7fd8ff" fill-opacity=".06" stroke="#8fb6e0" stroke-width="1.5"/>
+    <circle cx="295" cy="170" r="40" fill="url(#isqHotNear)"/>
+    <circle cx="295" cy="170" r="40" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".8" filter="url(#isqGlowR)"/>
+    <text x="258" y="124" font-size="11" fill="#9fe6ff" opacity=".85">A</text>
+  </g>
+  <g id="isqNearLux" opacity="0">
+    <path d="M295 212 V220" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="295" y="234" text-anchor="middle" font-size="12" fill="#9fe6ff">1 m &#183; 1,000 lx</text>
+  </g>
+  <g id="isqNear" opacity="0">
+    <path d="M295 269 V279" stroke="#5fe0ff" stroke-width="1.5" opacity=".7" fill="none"/>
+    <text x="295" y="293" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".8">d</text>
+  </g>
+
+  <!-- ===== FAR target: 2x2 grid of unit squares + dim disc at 2d (fade) ===== -->
+  <g id="isqFarPlane" opacity="0">
+    <rect x="390" y="90" width="160" height="160" rx="3" fill="#7fd8ff" fill-opacity=".05" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M470 90 V250 M390 170 H550" stroke="#8fb6e0" stroke-width="1" opacity=".55" fill="none"/>
+    <circle cx="470" cy="170" r="80" fill="url(#isqHotFar)"/>
+    <circle cx="470" cy="170" r="80" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".4"/>
+    <text x="394" y="84" font-size="11" fill="#9fe6ff" opacity=".85">4A</text>
+  </g>
+  <g id="isqFarLux" opacity="0">
+    <rect x="412" y="227" width="116" height="18" rx="4" fill="#08152b" opacity=".62"/>
+    <text x="470" y="240.5" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".9">2 m &#183; 250 lx</text>
+  </g>
+  <g id="isqFar" opacity="0">
+    <path d="M470 269 V279" stroke="#5fe0ff" stroke-width="1.5" opacity=".7" fill="none"/>
+    <text x="470" y="293" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".8">2d</text>
+  </g>
+
+  <!-- ===== formula chip (fade) ===== -->
+  <g id="isqFormula" opacity="0">
+    <rect x="252" y="20" width="96" height="28" rx="8" fill="#5fe0ff" fill-opacity=".08" stroke="#8fb6e0" stroke-width="1" opacity=".95"/>
+    <text x="300" y="39" text-anchor="middle" font-size="13" fill="#9fe6ff">E = I / d&#178;</text>
+  </g>
+
+  <!-- ===== quarter-lux callout (fade) ===== -->
+  <g id="isqQuarter" opacity="0">
+    <text x="470" y="62" text-anchor="middle" font-size="12" fill="#ffc24b">AREA &#215;4 &#8594; LUX &#247; 4</text>
+    <path d="M470 68 V86" stroke="#ffc24b" stroke-width="1" opacity=".5" fill="none"/>
+  </g>
+
+  <!-- ===== scan group ===== -->
+  <g id="isqscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#isqScanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#isqGlowC)" opacity=".9"/>
+  </g>
+</svg>

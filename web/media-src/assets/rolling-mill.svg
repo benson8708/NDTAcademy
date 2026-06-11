@@ -1,0 +1,161 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="rmglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="rmglowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="rmsteel" x1="0" y1="161" x2="0" y2="259" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".35" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="rmsteelE" x1="0" y1="263" x2="0" y2="307" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2d5a87"/><stop offset=".4" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <radialGradient id="rmroll" cx=".38" cy=".32" r=".85">
+      <stop offset="0" stop-color="#4a7eb2"/><stop offset=".5" stop-color="#1c4068"/><stop offset="1" stop-color="#0b2240"/>
+    </radialGradient>
+    <radialGradient id="rmheat" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ff9b4b" stop-opacity=".4"/><stop offset="1" stop-color="#ff9b4b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rmscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== STOCK: ingot/billet entering left, wedging through bite, plate exiting right ===== -->
+  <path d="M98 161 L252 167 A52 52 0 0 0 300 199 L572 199 L572 221 L300 221 A52 52 0 0 0 252 253 L98 259
+           C90 247 106 235 98 223 C90 211 106 199 98 187 C90 175 104 171 98 161 Z" fill="url(#rmsteel)"/>
+  <!-- hot deformation glow at the bite -->
+  <ellipse cx="300" cy="210" rx="55" ry="26" fill="url(#rmheat)" opacity=".8"/>
+  <!-- rolling texture -->
+  <g stroke="#8fb6e0" stroke-width="1" fill="none">
+    <path d="M108 186 L242 188" opacity=".2"/>
+    <path d="M108 232 L244 234" opacity=".2"/>
+    <path d="M310 204 L560 204" opacity=".16"/>
+  </g>
+  <!-- bright edges -->
+  <g stroke="#8fb6e0" fill="none">
+    <path d="M98 161 L252 167" stroke-width="2"/>
+    <path d="M252 167 A52 52 0 0 0 300 199" stroke-width="1.5" opacity=".8"/>
+    <path d="M300 199 L572 199" stroke-width="2"/>
+    <path d="M572 199 L572 221" stroke-width="1.5" opacity=".6"/>
+    <path d="M300 221 L572 221" stroke-width="2"/>
+    <path d="M300 221 A52 52 0 0 0 252 253" stroke-width="1.5" opacity=".8"/>
+    <path d="M252 253 L98 259" stroke-width="2"/>
+    <path d="M98 259 C90 247 106 235 98 223 C90 211 106 199 98 187 C90 175 104 171 98 161" stroke-width="1.5" opacity=".7"/>
+  </g>
+
+  <!-- ===== TWO-HIGH MILL ROLLS ===== -->
+  <g>
+    <circle cx="300" cy="147" r="52" fill="url(#rmroll)" stroke="#8fb6e0" stroke-width="2"/>
+    <circle cx="300" cy="147" r="10" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M294 147 H306 M300 141 V153" stroke="#8fb6e0" stroke-width="1" opacity=".5"/>
+    <circle cx="300" cy="273" r="52" fill="url(#rmroll)" stroke="#8fb6e0" stroke-width="2"/>
+    <circle cx="300" cy="273" r="10" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M294 273 H306 M300 267 V279" stroke="#8fb6e0" stroke-width="1" opacity=".5"/>
+  </g>
+
+  <!-- ===== base annotation: rolling direction ===== -->
+  <g opacity=".75">
+    <path d="M390 86 L470 86" stroke="#9fe6ff" stroke-width="1.5" fill="none"/>
+    <path d="M470 81.5 L479 86 L470 90.5 Z" fill="#9fe6ff"/>
+    <text x="382" y="90" text-anchor="end" font-size="11" fill="#9fe6ff">ROLLING DIRECTION</text>
+  </g>
+
+  <!-- ===== SURFACE DEFECT on incoming billet (draw) ===== -->
+  <path id="rmDefect" d="M117 162.2 L133 162.6 M121 162 L126 168 L123 173 L129 179 M126 168 L132 166"
+        fill="none" stroke="#ff6b6b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"
+        pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#rmglowR)"/>
+  <circle id="rmDefectPing" cx="124" cy="164" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#rmglowR)"/>
+  <g id="rmDefectLbl" font-size="11" opacity="0">
+    <text x="58" y="118" fill="#ff6b6b" opacity=".9">SURFACE DEFECT</text>
+    <path d="M110 122 L122 158" stroke="#ff6b6b" stroke-width="1" opacity=".5" fill="none"/>
+  </g>
+
+  <!-- ===== PIPE (shrinkage cavity hanging from top center of ingot) ===== -->
+  <g id="rmPipe" opacity="0">
+    <path d="M186 165.5 L214 166.6 L201 199 Q200 202 199 199 Z" fill="#08152b" stroke="#5fe0ff" stroke-width="1.3" stroke-linejoin="round" filter="url(#rmglowR)"/>
+    <path d="M191 169 L200 192" stroke="#7fd8ff" stroke-width="1" opacity=".45" fill="none"/>
+    <text x="220" y="130" font-size="11" fill="#9fe6ff" opacity=".9">PIPE</text>
+    <path d="M222 134 L206 162" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+  </g>
+
+  <!-- ===== CENTERLINE SEGREGATION band + inclusion specks ===== -->
+  <g id="rmSegregation" opacity="0">
+    <rect x="106" y="206.5" width="142" height="7" fill="#5fe0ff" opacity=".12"/>
+    <path d="M106 207 L248 207 M106 213 L248 213" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="4 4" opacity=".7" fill="none"/>
+    <g fill="#ffc24b">
+      <circle cx="138" cy="209.5" r="1.8"/><circle cx="162" cy="211.5" r="1.8"/>
+      <circle cx="187" cy="208.5" r="1.8"/><circle cx="228" cy="210.5" r="1.8"/>
+    </g>
+    <text x="84" y="214" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".9">SEGREGATION</text>
+    <path d="M86 210.5 L104 210" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+  </g>
+
+  <!-- ===== ROLLING ACTION: counter-rotation arcs + flow arrow through the bite ===== -->
+  <g id="rmFlowArrow" opacity="0">
+    <path d="M320 112.4 A40 40 0 0 0 280 112.4" fill="none" stroke="#5fe0ff" stroke-width="2.2" filter="url(#rmglowR)"/>
+    <path d="M273.1 116.4 L282.3 116.3 L277.8 108.5 Z" fill="#5fe0ff"/>
+    <path d="M320 307.6 A40 40 0 0 1 280 307.6" fill="none" stroke="#5fe0ff" stroke-width="2.2" filter="url(#rmglowR)"/>
+    <path d="M273.1 303.6 L282.3 303.7 L277.8 311.5 Z" fill="#5fe0ff"/>
+    <path d="M254 210 L318 210" stroke="#5fe0ff" stroke-width="2.5" filter="url(#rmglowR)" fill="none"/>
+    <path d="M318 204 L331 210 L318 216 Z" fill="#5fe0ff"/>
+  </g>
+
+  <!-- ===== SEAM: tight straight longitudinal hairline on exiting plate surface (draw) ===== -->
+  <path id="rmSeam" d="M303 198.4 L566 198.4" fill="none" stroke="#ff6b6b" stroke-width="1.6" stroke-linecap="round"
+        pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#rmglowR)"/>
+  <circle id="rmSeamPing" cx="420" cy="198.6" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#rmglowR)"/>
+  <g id="rmSeamLbl" font-size="11" opacity="0">
+    <text x="390" y="162" text-anchor="middle" fill="#ff6b6b" opacity=".9">SEAM</text>
+    <path d="M390 166 L387 194" stroke="#ff6b6b" stroke-width="1" opacity=".5" fill="none"/>
+  </g>
+
+  <!-- ===== LAMINATIONS at mid-thickness (draw) ===== -->
+  <path id="rmLamination" d="M308 210 L568 210 M392 213.5 L520 213.5" fill="none" stroke="#5fe0ff" stroke-width="1.5" stroke-linecap="round"
+        pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#rmglowR)"/>
+  <g id="rmLamLbl" font-size="11" opacity="0">
+    <text x="404" y="247" text-anchor="middle" fill="#9fe6ff" opacity=".9">LAMINATIONS</text>
+    <path d="M404 238 L410 213" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+  </g>
+
+  <!-- ===== EDGE CALLOUT: magnified plate cut edge showing lamination parting line ===== -->
+  <g id="rmEdgeCallout" opacity="0">
+    <ellipse cx="571" cy="210" rx="5" ry="13" fill="none" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="3 2" opacity=".9"/>
+    <path d="M566 224 L532 259" stroke="#5fe0ff" stroke-width="1" opacity=".6" fill="none"/>
+    <circle cx="503" cy="285" r="36" fill="#0c2238" opacity=".92" stroke="#5fe0ff" stroke-width="1.5"/>
+    <rect x="487" y="263" width="32" height="44" fill="url(#rmsteelE)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M490 268 L516 268 M490 300 L516 300" stroke="#8fb6e0" stroke-width="1" opacity=".25" fill="none"/>
+    <path d="M487 284.5 L494 284.5 L497 282.5 L504 286.5 L511 284 L519 284.8" fill="none" stroke="#08152b" stroke-width="3.5"/>
+    <path d="M487 284.5 L494 284.5 L497 282.5 L504 286.5 L511 284 L519 284.8" fill="none" stroke="#5fe0ff" stroke-width="1.6" filter="url(#rmglowR)"/>
+    <text x="503" y="334" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".9">CHECK PLATE EDGES</text>
+  </g>
+
+  <!-- ===== GRAZING LIGHT: low-angle rays skimming the plate, glint + shadow at the seam ===== -->
+  <g id="rmLight" opacity="0">
+    <circle cx="560" cy="136" r="3.5" fill="#ffc24b" filter="url(#rmglowR)"/>
+    <path d="M553 129 L549 125 M560 127 L560 121 M567 129 L571 125" stroke="#ffc24b" stroke-width="1.2" opacity=".8" fill="none"/>
+    <g stroke="#ffc24b" stroke-width="1.4" stroke-linecap="round" opacity=".8" fill="none">
+      <path d="M552 132 L336 183"/>
+      <path d="M555 141 L348 191"/>
+      <path d="M558 150 L368 197.5"/>
+    </g>
+    <path d="M348 191 L358 190.5 L351 184 Z" fill="#ffc24b" opacity=".9"/>
+    <path d="M374 198.4 L388 198.4" stroke="#ffc24b" stroke-width="2.8" stroke-linecap="round" filter="url(#rmglowR)"/>
+    <path d="M361 200 L373 200" stroke="#08152b" stroke-width="2.2" stroke-linecap="round" opacity=".9"/>
+    <text x="584" y="124" text-anchor="end" font-size="11" fill="#ffc24b" opacity=".9">GRAZING LIGHT</text>
+  </g>
+
+  <!-- ===== caption ===== -->
+  <text x="28" y="331" font-size="12" fill="#9fe6ff" opacity=".65">HOT ROLLING — TWO-HIGH MILL</text>
+
+  <!-- ===== scan group ===== -->
+  <g id="rmscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#rmscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#rmglowC)" opacity=".9"/>
+  </g>
+</svg>

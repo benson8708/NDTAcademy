@@ -1,0 +1,117 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="ffglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ffglowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="ffsteel" x1="0" y1="130" x2="0" y2="290" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".35" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="fftongue" x1="0" y1="146" x2="0" y2="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3d6f9e"/><stop offset="1" stop-color="#1b3e66"/>
+    </linearGradient>
+    <linearGradient id="ffdie" x1="0" y1="40" x2="0" y2="130" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0e2848" stop-opacity=".85"/><stop offset="1" stop-color="#14304f" stop-opacity=".55"/>
+    </linearGradient>
+    <linearGradient id="ffscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+    <clipPath id="ffdieClip">
+      <path d="M46 40 H520 V130 H472 Q462 130 458 126 L454 124 H200 Q180 124 176 106 L173 96 Q168 78 146 78 H46 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- ===== UPPER DIE (lifted, outline + tool-steel hatch) ===== -->
+  <path d="M46 40 H520 V130 H472 Q462 130 458 126 L454 124 H200 Q180 124 176 106 L173 96 Q168 78 146 78 H46 Z" fill="url(#ffdie)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <g clip-path="url(#ffdieClip)" stroke="#8fb6e0" stroke-width="1" opacity=".1">
+    <line x1="20" y1="140" x2="140" y2="20"/>
+    <line x1="80" y1="140" x2="200" y2="20"/>
+    <line x1="140" y1="140" x2="260" y2="20"/>
+    <line x1="200" y1="140" x2="320" y2="20"/>
+    <line x1="260" y1="140" x2="380" y2="20"/>
+    <line x1="320" y1="140" x2="440" y2="20"/>
+    <line x1="380" y1="140" x2="500" y2="20"/>
+    <line x1="440" y1="140" x2="560" y2="20"/>
+  </g>
+  <text x="74" y="64" font-size="12" fill="#9fe6ff" opacity=".8">UPPER DIE</text>
+  <!-- press direction arrow -->
+  <g stroke="#5fe0ff" fill="none" filter="url(#ffglowR)">
+    <path d="M300 12 V30" stroke-width="2"/>
+    <path d="M292 28 L300 38 L308 28 Z" fill="#5fe0ff" stroke="none"/>
+  </g>
+
+  <!-- ===== FORGED PART cross-section ===== -->
+  <path d="M62 132 H146 Q168 132 173 150 L176 160 Q180 178 200 178 H466 Q476 179 479 184 H540 Q549 184 549 191 Q549 198 540 198 H481 Q473 198 471 206 V280 Q471 288 461 288 H72 Q62 288 62 278 Z" fill="url(#ffsteel)" stroke="#8fb6e0" stroke-width="1.8"/>
+  <!-- grain flow lines (follow forged contour, run out through flash) -->
+  <g fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".2">
+    <path d="M70 142 H144 Q165 142 170 158 L173 168 Q177 188 199 188 H462 Q472 188.5 476 191 H538"/>
+    <path d="M70 156 H140 Q162 158 169 176 Q176 200 204 206 H440 Q458 206 464 212 Q470 218 470 226"/>
+    <path d="M70 202 H126 Q164 204 186 230 Q204 250 250 252 H396 Q428 252 446 260"/>
+    <path d="M70 230 H104 Q150 234 190 262 Q220 276 290 276 H398 Q424 276 434 280"/>
+  </g>
+  <!-- parting line extension + flash label -->
+  <path d="M553 191 H592" stroke="#7fd8ff" stroke-width="1" stroke-dasharray="4 3" opacity=".5" fill="none"/>
+  <text x="510" y="175" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".8">FLASH</text>
+
+  <!-- ===== ffFold: tongue of surface metal folding over, unfused interface ===== -->
+  <g id="ffFold" opacity="0">
+    <!-- dark unfused air void beneath the overhanging flap -->
+    <path d="M206 178 C208 168 216 157.5 235 157.5 C251 158.5 261 169 265.5 176 L266 178 Z" fill="#08152b" opacity=".92"/>
+    <!-- flap of surface metal rolling over to the right (sheet ~9px thick) -->
+    <path d="M194 178 C194 162 202 150 219 147 C237 144 252 150 260 160 C265 166 269 171 270.5 174 Q270 177 266 176.5 C261 168 252 159.5 236 158.5 C219 158 209.5 168.5 207.5 174.5 C206.8 176.3 206.3 177.2 206 178 Z" fill="url(#fftongue)" stroke="#8fb6e0" stroke-width="1.5" stroke-linejoin="round"/>
+    <!-- thin unfused contact seam at the pressed-in tip -->
+    <path d="M271.5 172 Q266 176.8 254 177.7" fill="none" stroke="#ff9b4b" stroke-width="1.8" stroke-linecap="round" filter="url(#ffglowR)"/>
+    <path d="M252 178 H212" fill="none" stroke="#ff9b4b" stroke-width="1.2" stroke-dasharray="3 3" opacity=".6"/>
+    <!-- fold-over motion arrow -->
+    <path d="M198 140 C213 126 246 125 261 138" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#ffglowR)"/>
+    <path d="M264 142 L251 139.5 L258.5 130.5 Z" fill="#5fe0ff"/>
+  </g>
+  <circle id="ffFoldPing" cx="267" cy="175" r="6" fill="none" stroke="#ff9b4b" stroke-width="2" opacity="0" filter="url(#ffglowR)"/>
+  <g id="ffFoldLbl" font-size="12" opacity="0">
+    <path d="M216 182 L180 222" stroke="#ff9b4b" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="168" y="236" text-anchor="middle" fill="#ff9b4b" opacity=".9">FOLDED OVER</text>
+  </g>
+
+  <!-- ===== ffLapLine: finished lap — smooth shallow curving line (draw-on) ===== -->
+  <path id="ffLapLine" d="M412 178 C396 180.5 376 184.5 358 188.5 C346 191 337 194.5 331 200" fill="none" stroke="#ff6b6b" stroke-width="2.6" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#ffglowR)"/>
+  <circle id="ffLapPing" cx="412" cy="178" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#ffglowR)"/>
+  <g id="ffLapLip" opacity="0">
+    <path d="M407 177.2 L417 177.2 L415 181 Q412 183.4 409 180.8 Z" fill="#08152b"/>
+    <path d="M396 178 Q403 172.8 410 176.4 M414 176.4 Q421 172.8 428 178" fill="none" stroke="#8fb6e0" stroke-width="1.8" stroke-linecap="round" opacity=".95"/>
+  </g>
+  <g id="ffLapLbl" font-size="12" opacity="0">
+    <path d="M331 200 L308 222" stroke="#ff6b6b" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="300" y="236" text-anchor="middle" fill="#ff6b6b" opacity=".9">LAP — NOT FUSED</text>
+  </g>
+
+  <!-- ===== ffAngle: shallow-angle indicator ===== -->
+  <g id="ffAngle" opacity="0">
+    <path d="M412 178 H354" fill="none" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="5 4" opacity=".85"/>
+    <path d="M376 178 Q370 182.5 376.5 186.3" fill="none" stroke="#5fe0ff" stroke-width="1.5"/>
+    <path d="M358 165 L372 177" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="346" y="161" text-anchor="middle" font-size="11.5" fill="#9fe6ff">SHALLOW ANGLE</text>
+  </g>
+
+  <!-- ===== ffSpots: typical lap addresses ===== -->
+  <g id="ffSpots" opacity="0">
+    <circle cx="173" cy="150" r="16" fill="none" stroke="#ffc24b" stroke-width="1.4" stroke-dasharray="4 3" opacity=".9"/>
+    <circle cx="474" cy="191" r="16" fill="none" stroke="#ffc24b" stroke-width="1.4" stroke-dasharray="4 3" opacity=".9"/>
+    <text x="560" y="326" text-anchor="end" font-size="12" fill="#ffc24b" opacity=".85">LAP SITES: FLASH LINE · CORNERS</text>
+  </g>
+  <circle id="ffSpotPing1" cx="173" cy="150" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#ffglowR)"/>
+  <circle id="ffSpotPing2" cx="474" cy="191" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#ffglowR)"/>
+
+  <!-- caption -->
+  <text x="40" y="326" font-size="12" fill="#9fe6ff" opacity=".7">FORGED CROSS-SECTION</text>
+
+  <!-- ===== scan group ===== -->
+  <g id="ffscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#ffscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#ffglowC)" opacity=".9"/>
+  </g>
+</svg>

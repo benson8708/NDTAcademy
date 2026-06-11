@@ -1,0 +1,104 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="vcglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="vcglowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="vccardBody" x1="0" y1="34" x2="0" y2="292" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#17345c"/><stop offset=".5" stop-color="#102b4e"/><stop offset="1" stop-color="#0d2342"/>
+    </linearGradient>
+    <linearGradient id="vcheadBody" x1="460" y1="64" x2="560" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1b3c66"/><stop offset=".6" stop-color="#14304f"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="vcheadFadeGrad" x1="0" y1="220" x2="0" y2="266" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <mask id="vcheadFade">
+      <rect x="440" y="40" width="160" height="180" fill="#fff"/>
+      <rect x="440" y="220" width="160" height="46" fill="url(#vcheadFadeGrad)"/>
+    </mask>
+  </defs>
+
+  <!-- ===== NEAR-VISION READING CARD (Jaeger-style) — frame visible by default ===== -->
+  <rect x="42" y="34" width="300" height="258" rx="10" fill="url(#vccardBody)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <path d="M54 40 H330" stroke="#7fd8ff" stroke-width="1" opacity=".18" fill="none"/>
+  <text x="192" y="58" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85" letter-spacing="2">NEAR VISION TEST CARD</text>
+  <path d="M62 68 H322" stroke="#8fb6e0" stroke-width="1" opacity=".35" fill="none"/>
+  <path d="M62 256 H322" stroke="#8fb6e0" stroke-width="1" opacity=".35" fill="none"/>
+  <text x="192" y="274" text-anchor="middle" font-size="7.5" fill="#9fe6ff" opacity=".55" letter-spacing="1.5">HOLD CARD AT THE DISTANCE STATED</text>
+
+  <!-- graduated text block + J labels (reveal: vcCard) -->
+  <g id="vcCard" opacity="0">
+    <g font-size="10" fill="#9fe6ff" opacity=".9">
+      <text x="62" y="96">J-10</text>
+      <text x="62" y="126">J-7</text>
+      <text x="62" y="152">J-5</text>
+      <text x="62" y="176">J-3</text>
+      <text x="62" y="198">J-2</text>
+      <text x="62" y="218">J-1</text>
+    </g>
+    <g font-family="Georgia, 'Times New Roman', serif" fill="#d7e9ff">
+      <text x="100" y="96" font-size="18">Inspect the weld</text>
+      <text x="100" y="126" font-size="14">before final acceptance</text>
+      <text x="100" y="152" font-size="11">record each indication found</text>
+      <text x="100" y="176" font-size="8.5">the surface must be clean and well lighted</text>
+      <text x="100" y="198" font-size="6.5">near vision shall be verified annually in at least one eye</text>
+      <text x="100" y="218" font-size="5.2">corrected vision is acceptable when documented in the written practice</text>
+    </g>
+  </g>
+
+  <!-- glowing highlight on the J-2 fine-print line (reveal: vcSmallestLine) -->
+  <g id="vcSmallestLine" opacity="0">
+    <rect x="92" y="187.5" width="242" height="15" rx="3" fill="#5fe0ff" opacity=".1"/>
+    <rect x="92" y="187.5" width="242" height="15" rx="3" fill="none" stroke="#5fe0ff" stroke-width="1.6" filter="url(#vcglowS)"/>
+  </g>
+  <circle id="vcPing" cx="334" cy="195" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#vcglowS)"/>
+
+  <!-- ===== INSPECTOR HEAD PROFILE (facing the card) — visible by default ===== -->
+  <g mask="url(#vcheadFade)">
+  <path d="M508 64
+           C478 68 466 92 468 112
+           C469 121 472 124 470 130
+           C467 138 462 144 460 149
+           C459 152 461 154 466 154.5
+           C471 155 473 156 472.5 160
+           C472 164 469 166 470.5 170
+           C472 173.5 476 173 475.5 178
+           C475 182 470 185 472 190
+           C474 195.5 482 198 492 200
+           C504 202.5 512 208 518 220
+           L526 262 L558 262 L558 130
+           C558 92 540 66 508 64 Z"
+        fill="url(#vcheadBody)" stroke="#8fb6e0" stroke-width="2" stroke-linejoin="round"/>
+  <!-- brow -->
+  <path d="M474 126 Q484 120 496 123" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".7"/>
+  <!-- eye -->
+  <path d="M478 138 Q488 131 502 136 Q491 146 478 138 Z" fill="#0a1c33" stroke="#7fd8ff" stroke-width="1.2"/>
+  <circle cx="489" cy="137.5" r="3.4" fill="#5fe0ff" filter="url(#vcglowS)"/>
+  <circle cx="489" cy="137.5" r="1.2" fill="#0a1c33"/>
+  <!-- ear hint -->
+  <path d="M530 142 Q540 138 540 150 Q540 162 528 162" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".5"/>
+  </g>
+
+  <!-- sight cone from eye to the graduated text block (default visible — scene reads complete) -->
+  <g fill="none" stroke="#5fe0ff" stroke-dasharray="5 5">
+    <path d="M480 134 L342 82" stroke-width="1" opacity=".22"/>
+    <path d="M480 142 L342 210" stroke-width="1" opacity=".22"/>
+    <path d="M478 138 L342 142" stroke-width="1.2" opacity=".38"/>
+  </g>
+
+  <!-- ===== STATED DISTANCE dimension (reveals: vcDistLine draw + vcDistance fade) ===== -->
+  <path id="vcDistLine" d="M348 240 H482" fill="none" stroke="#5fe0ff" stroke-width="1.4"
+        pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="vcDistance" opacity="0">
+    <path d="M342 226 V254" stroke="#5fe0ff" stroke-width="1" opacity=".55" fill="none"/>
+    <path d="M488 208 V254" stroke="#5fe0ff" stroke-width="1" opacity=".55" stroke-dasharray="3 4" fill="none"/>
+    <path d="M348 240 L357 236.6 L357 243.4 Z" fill="#5fe0ff"/>
+    <path d="M482 240 L473 236.6 L473 243.4 Z" fill="#5fe0ff"/>
+    <text x="415" y="230" text-anchor="middle" font-size="12" fill="#9fe6ff" letter-spacing="1">STATED DISTANCE</text>
+  </g>
+</svg>

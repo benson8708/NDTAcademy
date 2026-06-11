@@ -1,0 +1,183 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="eaglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="eaglowR" x="-90%" y="-90%" width="280%" height="280%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- vitreous body / globe interior -->
+    <radialGradient id="eavit" cx="44%" cy="40%" r="74%" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1d4470"/>
+      <stop offset=".55" stop-color="#14304f"/>
+      <stop offset="1" stop-color="#0e2848"/>
+    </radialGradient>
+    <!-- sclera (outer coat) sheen -->
+    <linearGradient id="easclera" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2c5a8a"/>
+      <stop offset=".5" stop-color="#1b3e66"/>
+      <stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <!-- crystalline lens body (biconvex glass) -->
+    <linearGradient id="ealensFill" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".5"/>
+      <stop offset=".5" stop-color="#bfeeff" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".5"/>
+    </linearGradient>
+    <!-- cornea dome glass -->
+    <linearGradient id="eacorneaFill" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".06"/>
+    </linearGradient>
+    <!-- retina warm sensor lining -->
+    <linearGradient id="earetinaFill" gradientUnits="userSpaceOnUse" x1="360" y1="110" x2="420" y2="230">
+      <stop offset="0" stop-color="#ff9b4b" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#ff9b4b" stop-opacity=".6"/>
+    </linearGradient>
+    <linearGradient id="eascanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".28"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===================== EYEBALL GLOBE (always visible base) =====================
+       Sphere center ~(292,170); outer sclera radius 118 -> rear pole x~410, front opening x~250.
+       Anterior pole truncated where the cornea bulges forward (left). -->
+  <!-- sclera outer coat -->
+  <path d="M250 54
+           A118 118 0 1 1 250 286
+           A64 90 0 0 1 250 54 Z"
+        fill="url(#easclera)" stroke="#8fb6e0" stroke-width="2"/>
+  <!-- vitreous interior -->
+  <path d="M257 66
+           A106 106 0 1 1 257 274
+           A54 80 0 0 1 257 66 Z"
+        fill="url(#eavit)" stroke="#1d4470" stroke-width="1"/>
+  <!-- posterior inner-wall sheen -->
+  <path d="M300 64 A106 106 0 0 1 300 276"
+        fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".22"/>
+  <!-- optic axis datum (cornea apex -> posterior pole / fovea) -->
+  <line x1="150" y1="170" x2="404" y2="170" stroke="#5fe0ff" stroke-width="1" opacity=".22" stroke-dasharray="5 5"/>
+
+  <!-- ===================== RETINA (rear sensor wall) =====================
+       Inner vitreous radius ~102 about center (292,170); posterior pole ~(394,170).
+       Retina hugs the posterior inner wall, stopping near the ora serrata up/down front. -->
+  <g id="eaRetina" opacity="0">
+    <!-- warm photoreceptor lining -->
+    <path d="M338 84 A102 102 0 0 1 338 256"
+          fill="none" stroke="url(#earetinaFill)" stroke-width="12" stroke-linecap="round" opacity=".9"/>
+    <path d="M338 84 A102 102 0 0 1 338 256"
+          fill="none" stroke="#ff9b4b" stroke-width="2.4" stroke-linecap="round" opacity=".95" filter="url(#eaglowR)"/>
+    <!-- FOVEA: central pit on the posterior pole, on the optic axis -->
+    <path d="M388 162 Q396 170 388 178" fill="none" stroke="#ffc24b" stroke-width="2.6" stroke-linecap="round" filter="url(#eaglowR)"/>
+    <circle cx="392" cy="170" r="3.6" fill="#ffc24b" opacity=".95"/>
+    <circle cx="392" cy="170" r="9" fill="none" stroke="#ffc24b" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+  </g>
+
+  <!-- ===================== CRYSTALLINE LENS + CILIARY MUSCLE =====================
+       Biconvex lens centered ~x=272, just behind the iris diaphragm. -->
+  <g id="eaLens" opacity="0">
+    <!-- zonular fibres / suspensory ligament: lens equator to ciliary body on wall -->
+    <g stroke="#8fb6e0" stroke-width="1.3" opacity=".7">
+      <path d="M272 142 L256 126" fill="none"/>
+      <path d="M273 147 L259 134" fill="none"/>
+      <path d="M272 198 L256 214" fill="none"/>
+      <path d="M273 193 L259 206" fill="none"/>
+    </g>
+    <!-- ciliary muscle bodies at the anchor points (on the inner wall) -->
+    <ellipse cx="252" cy="123" rx="6" ry="4" fill="#1E66F5" stroke="#8fb6e0" stroke-width="1.2" transform="rotate(-34 252 123)"/>
+    <ellipse cx="252" cy="217" rx="6" ry="4" fill="#1E66F5" stroke="#8fb6e0" stroke-width="1.2" transform="rotate(34 252 217)"/>
+    <!-- CRYSTALLINE LENS: biconvex, symmetric -->
+    <path d="M272 140
+             Q292 170 272 200
+             Q252 170 272 140 Z"
+          fill="url(#ealensFill)" stroke="#7fd8ff" stroke-width="2"/>
+    <path d="M272 140 Q292 170 272 200" fill="none" stroke="#5fe0ff" stroke-width="1.3" opacity=".85" filter="url(#eaglowC)"/>
+    <path d="M272 140 Q252 170 272 200" fill="none" stroke="#5fe0ff" stroke-width="1.3" opacity=".85" filter="url(#eaglowC)"/>
+    <!-- internal refraction sheen -->
+    <path d="M272 150 Q281 170 272 190" fill="none" stroke="#cdeeff" stroke-width="1" opacity=".5"/>
+    <!-- focused ray crossing lens center toward the fovea -->
+    <path d="M268 170 L390 170" stroke="#5fe0ff" stroke-width="1" opacity=".4" stroke-dasharray="4 4"/>
+  </g>
+
+  <!-- ===================== CORNEA + IRIS + PUPIL + LIGHT =====================
+       Cornea: transparent dome bulging forward (left), steeper than sclera, apex ~x=200.
+       Iris: vertical diaphragm at the anterior opening (x~250) with a central pupil gap. -->
+  <g id="eaCornea" opacity="0">
+    <!-- incoming parallel light rays from the left, converging at the cornea face -->
+    <g stroke="#5fe0ff" stroke-width="2" fill="none" stroke-linecap="round" opacity=".9" filter="url(#eaglowC)">
+      <path d="M104 140 L188 156" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+      <path d="M104 170 L196 170" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+      <path d="M104 200 L188 184" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    </g>
+    <!-- arrowheads -->
+    <g fill="#5fe0ff" opacity=".9">
+      <path d="M188 156 L179 153 L182 160 Z"/>
+      <path d="M196 170 L187 167 L187 173 Z"/>
+      <path d="M188 184 L182 180 L179 187 Z"/>
+    </g>
+    <!-- aqueous-filled anterior chamber between cornea and iris/lens -->
+    <path d="M250 116 Q200 170 250 224 L250 116 Z" fill="#5fe0ff" opacity=".07"/>
+    <!-- CORNEA dome: convex transparent front window -->
+    <path d="M250 116 Q198 170 250 224" fill="url(#eacorneaFill)" stroke="#7fd8ff" stroke-width="2" opacity=".95"/>
+    <path d="M250 116 Q198 170 250 224" fill="none" stroke="#5fe0ff" stroke-width="1.4" opacity=".8" filter="url(#eaglowC)"/>
+    <!-- IRIS diaphragm: two leaves on the anterior opening, pupil gap between -->
+    <path d="M250 117 L252 152" fill="none" stroke="#3f9bff" stroke-width="6" stroke-linecap="round"/>
+    <path d="M250 223 L252 188" fill="none" stroke="#3f9bff" stroke-width="6" stroke-linecap="round"/>
+    <path d="M250 117 L252 152" fill="none" stroke="#7fd8ff" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>
+    <path d="M250 223 L252 188" fill="none" stroke="#7fd8ff" stroke-width="1.3" stroke-linecap="round" opacity=".7"/>
+    <!-- PUPIL aperture (the gap between the iris leaves) -->
+    <path d="M251 153 L251 187" stroke="#06152b" stroke-width="4" stroke-linecap="round"/>
+    <!-- pupil rim highlight -->
+    <path d="M251 153 L251 187" stroke="#5fe0ff" stroke-width="1" stroke-linecap="round" opacity=".35"/>
+  </g>
+
+  <!-- ===================== OPTIC NERVE (rear exit) =====================
+       Optic disc on inner posterior wall ~(382,206), below the fovea.
+       Nerve trunk exits down-right through the sclera. -->
+  <g id="eaOpticNerve" opacity="0">
+    <!-- optic disc (blind spot) on the rear inner wall -->
+    <ellipse cx="382" cy="206" rx="7" ry="12" fill="#1E66F5" stroke="#7fd8ff" stroke-width="1.5" transform="rotate(24 382 206)"/>
+    <!-- nerve trunk exiting through the sclera toward back-right -->
+    <path d="M390 198
+             C418 210 442 222 472 246
+             L462 266
+             C434 248 410 236 386 226 Z"
+          fill="url(#easclera)" stroke="#8fb6e0" stroke-width="2"/>
+    <!-- nerve fibre strands -->
+    <g stroke="#7fd8ff" stroke-width="1" fill="none" opacity=".55">
+      <path d="M392 206 C420 217 444 229 468 252"/>
+      <path d="M389 214 C416 224 440 236 462 258"/>
+    </g>
+    <path d="M390 198 C418 210 442 222 472 246" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".5" filter="url(#eaglowC)"/>
+  </g>
+
+  <!-- ===================== CALLOUT LABELS ===================== -->
+  <g id="eaCorneaLbl" opacity="0" font-size="12" fill="#9fe6ff">
+    <path d="M214 138 L182 78" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="178" y="72" text-anchor="end">CORNEA</text>
+  </g>
+  <g id="eaLensLbl" opacity="0" font-size="12" fill="#9fe6ff">
+    <path d="M280 142 L300 86" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="304" y="80" text-anchor="middle">LENS</text>
+  </g>
+  <g id="eaRetinaLbl" opacity="0" font-size="12" fill="#ffc24b">
+    <path d="M396 166 L470 98" stroke="#ff9b4b" stroke-width="1" opacity=".55" fill="none"/>
+    <text x="474" y="94" fill="#ffc24b">RETINA · FOVEA</text>
+  </g>
+  <g id="eaOpticNerveLbl" opacity="0" font-size="12" fill="#9fe6ff">
+    <path d="M468 256 L518 290" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="522" y="294" text-anchor="end">OPTIC NERVE</text>
+  </g>
+
+  <!-- static panel caption -->
+  <text x="40" y="326" font-size="12" fill="#9fe6ff" opacity=".7">HUMAN EYE — SENSOR // RETINA</text>
+
+  <!-- ===================== SCAN GROUP ===================== -->
+  <g id="eascanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#eascanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#eaglowC)" opacity=".9"/>
+  </g>
+</svg>

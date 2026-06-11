@@ -1,0 +1,129 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="apipeShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1f3a"/>
+      <stop offset="14%" stop-color="#14304f"/>
+      <stop offset="38%" stop-color="#2c5a8a"/>
+      <stop offset="52%" stop-color="#356699"/>
+      <stop offset="66%" stop-color="#1d4470"/>
+      <stop offset="100%" stop-color="#081a30"/>
+    </linearGradient>
+    <linearGradient id="aweldFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1E66F5"/>
+      <stop offset="40%" stop-color="#2b86ff"/>
+      <stop offset="60%" stop-color="#2b86ff"/>
+      <stop offset="100%" stop-color="#1a55cc"/>
+    </linearGradient>
+    <linearGradient id="aleftFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="12%" stop-color="#fff" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="1"/>
+    </linearGradient>
+    <mask id="afadeMask">
+      <rect x="0" y="0" width="600" height="340" fill="url(#aleftFade)"/>
+    </mask>
+    <filter id="aglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="aglowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ======== PIPE BODY (cylinder, side view) ======== -->
+  <g mask="url(#afadeMask)">
+    <!-- main shell: left end cut arc, right end meets the end-cap ellipse -->
+    <path d="M30,110 A13,60 0 0 1 30,230 L556,230 A13,60 0 0 0 556,110 Z"
+          fill="url(#apipeShade)" stroke="none"/>
+    <!-- subtle longitudinal texture lines -->
+    <g stroke="#8fb6e0" stroke-width="1" opacity="0.10">
+      <line x1="34" y1="132" x2="566" y2="132"/>
+      <line x1="36" y1="170" x2="568" y2="170"/>
+      <line x1="34" y1="206" x2="566" y2="206"/>
+    </g>
+    <!-- top + bottom edges -->
+    <path d="M30,110 L556,110" stroke="#8fb6e0" stroke-width="1.8" fill="none"/>
+    <path d="M30,230 L556,230" stroke="#8fb6e0" stroke-width="1.8" fill="none"/>
+    <!-- left cut arc edge -->
+    <path d="M30,110 A13,60 0 0 1 30,230" stroke="#8fb6e0" stroke-width="1.4" fill="none" opacity="0.7"/>
+    <!-- cyan rim highlight along top edge -->
+    <line x1="40" y1="112" x2="552" y2="112" stroke="#5fe0ff" stroke-width="2" opacity="1" filter="url(#aglowC)"/>
+    <line x1="40" y1="116" x2="552" y2="116" stroke="#7fd8ff" stroke-width="1" opacity="0.35"/>
+    <line x1="40" y1="226.5" x2="552" y2="226.5" stroke="#5fe0ff" stroke-width="1" opacity="0.3"/>
+  </g>
+
+  <!-- right end cap: visible ellipse face so it reads as a cylinder -->
+  <ellipse cx="556" cy="170" rx="13" ry="60" fill="#0b2342" stroke="#8fb6e0" stroke-width="1.6"/>
+  <ellipse cx="556" cy="170" rx="7.5" ry="51" fill="#06152b" stroke="#5fe0ff" stroke-width="1" opacity="0.85"/>
+
+  <!-- ======== GIRTH WELD (cap proud of surface) ======== -->
+  <g>
+    <!-- faint heat-affected zone tint flanking the weld -->
+    <rect x="277" y="110.8" width="13" height="118.4" fill="#3f9bff" opacity="0.10"/>
+    <rect x="310" y="110.8" width="13" height="118.4" fill="#3f9bff" opacity="0.10"/>
+    <!-- weld cap body: slightly convex sides, proud 4px above/below pipe -->
+    <path d="M291,106 Q287,170 291,234 L309,234 Q313,170 309,106 Z"
+          fill="url(#aweldFill)" stroke="#7fd8ff" stroke-width="1.2"/>
+    <!-- stacked ripple crescents (weld bead texture) -->
+    <g stroke="#c8e6ff" stroke-width="1.6" fill="none" opacity="0.95">
+      <path d="M291.6,112 Q300,118 308.4,112"/>
+      <path d="M290.9,124 Q300,130 309.1,124"/>
+      <path d="M290.3,136 Q300,142 309.7,136"/>
+      <path d="M289.8,148 Q300,154 310.2,148"/>
+      <path d="M289.5,160 Q300,166 310.5,160"/>
+      <path d="M289.5,172 Q300,178 310.5,172"/>
+      <path d="M289.7,184 Q300,190 310.3,184"/>
+      <path d="M290.1,196 Q300,202 309.9,196"/>
+      <path d="M290.6,208 Q300,214 309.4,208"/>
+      <path d="M291.2,220 Q300,226 308.8,220"/>
+      <path d="M291.7,230 Q300,235 308.3,230"/>
+    </g>
+    <!-- darker ripple shadows for depth -->
+    <g stroke="#0d3d96" stroke-width="1.6" fill="none" opacity="0.85">
+      <path d="M291.2,118 Q300,124 308.8,118"/>
+      <path d="M290.5,142 Q300,148 309.5,142"/>
+      <path d="M289.6,166 Q300,172 310.4,166"/>
+      <path d="M289.9,190 Q300,196 310.1,190"/>
+      <path d="M290.8,214 Q300,220 309.2,214"/>
+    </g>
+    <!-- cyan glow along weld toes -->
+    <path d="M291,106 Q287,170 291,234" stroke="#5fe0ff" stroke-width="1.8" fill="none" opacity="0.95" filter="url(#aglowC)"/>
+    <path d="M309,106 Q313,170 309,234" stroke="#5fe0ff" stroke-width="1.8" fill="none" opacity="0.95" filter="url(#aglowC)"/>
+  </g>
+
+  <!-- ======== SURFACE CRACK at weld toe ======== -->
+  <g id="aflaw" filter="url(#aglowR)">
+    <polyline points="311.5,150 320,154 326,148 332,156 337,152"
+              fill="none" stroke="#ff6b6b" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+    <polyline points="320,154 324,160" fill="none" stroke="#ff6b6b" stroke-width="1.6" stroke-linecap="round" opacity="0.9"/>
+  </g>
+
+  <!-- ======== LABEL + datum garnish ======== -->
+  <g font-family="JetBrains Mono, monospace" fill="#9fe6ff">
+    <text x="300" y="66" font-size="12" text-anchor="middle" letter-spacing="1">GIRTH WELD // DN200</text>
+    <line x1="300" y1="72" x2="300" y2="100" stroke="#5fe0ff" stroke-width="1" opacity="0.5" stroke-dasharray="3 3"/>
+  </g>
+  <!-- datum ticks below pipe -->
+  <g stroke="#8fb6e0" opacity="0.45" stroke-width="1">
+    <line x1="100" y1="252" x2="100" y2="259"/>
+    <line x1="200" y1="252" x2="200" y2="259"/>
+    <line x1="300" y1="252" x2="300" y2="261"/>
+    <line x1="400" y1="252" x2="400" y2="259"/>
+    <line x1="500" y1="252" x2="500" y2="259"/>
+    <line x1="100" y1="255.5" x2="500" y2="255.5" opacity="0.5"/>
+  </g>
+  <text x="300" y="278" font-family="JetBrains Mono, monospace" font-size="11" fill="#9fe6ff" text-anchor="middle" opacity="0.6">WELD DATUM 0+000</text>
+
+  <!-- ======== SCAN LINE (animatable) ======== -->
+  <g id="ascanG" transform="translate(60,0)">
+    <rect x="-8" y="40" width="16" height="260" fill="#5fe0ff" opacity="0.10"/>
+    <line x1="0" y1="40" x2="0" y2="300" stroke="#5fe0ff" stroke-width="2" filter="url(#aglowC)"/>
+    <line x1="-5" y1="40" x2="5" y2="40" stroke="#5fe0ff" stroke-width="2"/>
+    <line x1="-5" y1="300" x2="5" y2="300" stroke="#5fe0ff" stroke-width="2"/>
+  </g>
+
+  <!-- ======== DETECTION PULSE (animatable) ======== -->
+  <circle id="aping" cx="315" cy="150" r="6" fill="none" stroke="#ff6b6b" stroke-width="2.5" opacity="0"/>
+</svg>

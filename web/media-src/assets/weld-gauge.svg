@@ -1,0 +1,144 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="wgglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="wgglowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="wgsteelP" x1="0" y1="244" x2="0" y2="306" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#28547f"/><stop offset=".4" stop-color="#14304f"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="wgsteelG" x1="0" y1="92" x2="0" y2="244" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2e6094"/><stop offset=".5" stop-color="#1b3e66"/><stop offset="1" stop-color="#16365a"/>
+    </linearGradient>
+    <linearGradient id="wgweldM" x1="0" y1="230" x2="0" y2="306" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3f9bff"/><stop offset=".5" stop-color="#2b86ff"/><stop offset="1" stop-color="#1E66F5"/>
+    </linearGradient>
+    <linearGradient id="wgscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== BASE METAL + V-GROOVE BUTT WELD (cross-section, visible from beat start) ===== -->
+  <g id="wgWeld">
+    <path d="M36 244 H564 V306 H36 Z" fill="url(#wgsteelP)"/>
+    <!-- rolling texture -->
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".18">
+      <path d="M42 258 H128 M268 258 H558"/>
+      <path d="M42 274 H148 M224 274 H558"/>
+      <path d="M42 292 H156 M216 292 H558"/>
+    </g>
+    <!-- HAZ tint bands flanking fusion lines -->
+    <path d="M146 244 L178 306 L170 306 L136 244 Z" fill="#2b86ff" opacity=".38"/>
+    <path d="M136 244 L170 306 L162 306 L126 244 Z" fill="#2b86ff" opacity=".15"/>
+    <path d="M226 244 L194 306 L202 306 L236 244 Z" fill="#2b86ff" opacity=".38"/>
+    <path d="M236 244 L202 306 L210 306 L246 244 Z" fill="#2b86ff" opacity=".15"/>
+    <!-- weld metal: V-groove fill + cap, root bead -->
+    <path d="M146 244 C156 229 216 229 226 244 L194 306 L178 306 Z" fill="url(#wgweldM)"/>
+    <path d="M178 306 Q186 312.5 194 306 Z" fill="#1E66F5"/>
+    <!-- pass boundaries (concave up): dark etch seam + bright line -->
+    <g fill="none" stroke="#0e2848" stroke-width="2.4" opacity=".55">
+      <path d="M157 263 Q186 272 215 263"/>
+      <path d="M167 283 Q186 291 205 283"/>
+    </g>
+    <g fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".8">
+      <path d="M157 263 Q186 272 215 263"/>
+      <path d="M167 283 Q186 291 205 283"/>
+    </g>
+    <!-- fusion lines -->
+    <g fill="none" stroke="#0e2848" stroke-width="2.2" opacity=".5">
+      <path d="M146 244 L178 306"/><path d="M226 244 L194 306"/>
+    </g>
+    <g fill="none" stroke="#7fd8ff" stroke-width="1.1" opacity=".7">
+      <path d="M146 244 L178 306"/><path d="M226 244 L194 306"/>
+    </g>
+    <!-- cap ripples + glow outline -->
+    <g fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".5">
+      <path d="M156 242 Q186 230 216 242"/>
+      <path d="M168 240.5 Q186 234 204 240.5"/>
+    </g>
+    <path d="M146 244 C156 229 216 229 226 244" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#wgglowC)" opacity=".85"/>
+    <path d="M178 306 Q186 312.5 194 306" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".6"/>
+    <!-- undercut groove melted into base metal at the right toe -->
+    <path d="M226 244 Q233 246 236 251 Q239.5 258 244 252.5 Q250 245.8 258 244 Z" fill="#08152b"/>
+    <path d="M226 244 Q233 246 236 251 Q239.5 258 244 252.5 Q250 245.8 258 244" fill="none" stroke="#ff9b4b" stroke-width="1.6" stroke-linecap="round" filter="url(#wgglowR)" opacity=".95"/>
+    <!-- plate top surface + edges -->
+    <path d="M36 244 H146 M258 244 H564" stroke="#8fb6e0" stroke-width="2" fill="none"/>
+    <path d="M36 244 V306 M564 244 V306 M36 306 H178 M194 306 H564" stroke="#8fb6e0" stroke-width="1.5" opacity=".45" fill="none"/>
+  </g>
+
+  <!-- detection ping on the undercut -->
+  <circle id="wgPing" cx="240" cy="252" r="6" fill="none" stroke="#ff9b4b" stroke-width="2" opacity="0" filter="url(#wgglowR)"/>
+
+  <!-- ===== BRIDGE CAM WELD GAUGE (reveal ~2-4s) ===== -->
+  <g id="wgGauge" opacity="0">
+    <!-- bridge frame: two feet straddling the weld, arched underside -->
+    <path d="M84 244 L84 208 L344 208 L344 244 L320 244 L320 224 L108 224 L108 244 Z" fill="url(#wgsteelG)" stroke="#8fb6e0" stroke-width="1.5" stroke-linejoin="round"/>
+    <!-- upright body carrying the cam + scale -->
+    <rect x="250" y="92" width="84" height="122" rx="10" fill="url(#wgsteelG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <!-- rotating cam disc behind needle -->
+    <circle cx="292" cy="156" r="27" fill="#14304f" opacity=".8"/>
+    <circle cx="292" cy="156" r="27" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+    <!-- curved graduated scale: 0-3 mm, 0.1 mm per minor tick -->
+    <g transform="translate(20,-4)">
+      <path d="M233.9 138.0 A 44 44 0 0 1 310.1 138.0" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".8"/>
+      <path d="M235.5 135.4 L239.7 138.2 M237.3 132.9 L241.3 136.0 M239.3 130.6 L243.0 133.9 M241.4 128.3 L244.9 131.9 M243.7 126.3 L246.9 130.1 M246.1 124.4 L249.1 128.4 M248.7 122.7 L251.3 126.9 M251.3 121.2 L253.7 125.6 M254.1 119.8 L256.1 124.4 M259.9 117.7 L261.3 122.5 M262.9 117.0 L263.9 121.9 M265.9 116.4 L266.6 121.4 M268.9 116.1 L269.3 121.1 M272.0 116.0 L272.0 121.0 M275.1 116.1 L274.7 121.1 M278.1 116.4 L277.4 121.4 M281.1 117.0 L280.1 121.9 M284.1 117.7 L282.7 122.5 M289.9 119.8 L287.9 124.4 M292.7 121.2 L290.3 125.6 M295.3 122.7 L292.7 126.9 M297.9 124.4 L294.9 128.4 M300.3 126.3 L297.1 130.1 M302.6 128.3 L299.1 131.9 M304.7 130.6 L301.0 133.9 M306.7 132.9 L302.7 136.0 M308.5 135.4 L304.3 138.2" stroke="#8fb6e0" stroke-width="1" opacity=".6" fill="none"/>
+      <path d="M233.9 138.0 L241.7 142.5 M257.0 118.7 L260.0 127.1 M287.0 118.7 L284.0 127.1 M310.1 138.0 L302.3 142.5" stroke="#9fe6ff" stroke-width="1.6" fill="none"/>
+      <g font-size="11" fill="#9fe6ff" text-anchor="middle">
+        <text x="246" y="151">0</text>
+        <text x="298" y="151">3</text>
+      </g>
+      <!-- pointer needle on the scale (reads 0.8) -->
+      <path d="M272 160 L254.2 126.4" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" filter="url(#wgglowR)"/>
+    </g>
+    <!-- cam finger dropped into the undercut groove -->
+    <path d="M295.5 157.9 L288.5 154.1 L238 256 Z" fill="#1b3e66" stroke="#8fb6e0" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M241.5 249 L238 256" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" filter="url(#wgglowR)"/>
+    <!-- pivot boss -->
+    <circle cx="292" cy="156" r="7" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+    <circle cx="292" cy="156" r="2.4" fill="#8fb6e0"/>
+    <!-- readout -->
+    <text x="305" y="203" font-size="13" fill="#9fe6ff" text-anchor="middle">0.8 mm</text>
+    <text x="296" y="84" font-size="11" fill="#9fe6ff" opacity=".85" text-anchor="middle">BRIDGE CAM GAUGE</text>
+  </g>
+
+  <!-- ===== ACCEPTANCE LIMIT CALLOUT (reveal ~4-6s) ===== -->
+  <g id="wgLimit" opacity="0">
+    <path d="M258 244 H284 M250 258 H284" stroke="#5fe0ff" stroke-width="1" opacity=".6" fill="none"/>
+    <path d="M278 230 V244 M278 272 V258" stroke="#5fe0ff" stroke-width="1.2" fill="none"/>
+    <path d="M278 244 L274.8 237.5 L281.2 237.5 Z" fill="#5fe0ff"/>
+    <path d="M278 258 L274.8 264.5 L281.2 264.5 Z" fill="#5fe0ff"/>
+    <path d="M278 272 L286 283" stroke="#ffc24b" stroke-width="1" opacity=".55" fill="none"/>
+    <text x="290" y="291" font-size="12" fill="#ffc24b">1 mm MAX</text>
+  </g>
+
+  <!-- ===== RESOLUTION INSET: fine scale vs whole-mm rule (reveal ~6-8.5s) ===== -->
+  <g id="wgScale" opacity="0">
+    <rect x="442" y="92" width="146" height="140" rx="12" fill="#78aaff" fill-opacity=".06" stroke="#8fb6e0" stroke-width="1" opacity=".9" stroke-opacity=".4"/>
+    <text x="515" y="112" font-size="11" fill="#9fe6ff" text-anchor="middle" opacity=".85">RESOLUTION</text>
+    <!-- fine gauge scale: 0.1 mm graduations -->
+    <path d="M454 140 H548" stroke="#5fe0ff" stroke-width="1.4" fill="none"/>
+    <path d="M454.0 140 V131 M457.1 140 V135.5 M460.3 140 V135.5 M463.4 140 V135.5 M466.5 140 V135.5 M469.7 140 V135.5 M472.8 140 V135.5 M475.9 140 V135.5 M479.1 140 V135.5 M482.2 140 V135.5 M485.3 140 V131 M488.5 140 V135.5 M491.6 140 V135.5 M494.7 140 V135.5 M497.9 140 V135.5 M501.0 140 V135.5 M504.1 140 V135.5 M507.3 140 V135.5 M510.4 140 V135.5 M513.5 140 V135.5 M516.7 140 V131 M519.8 140 V135.5 M522.9 140 V135.5 M526.1 140 V135.5 M529.2 140 V135.5 M532.3 140 V135.5 M535.5 140 V135.5 M538.6 140 V135.5 M541.7 140 V135.5 M544.9 140 V135.5 M548.0 140 V131" stroke="#5fe0ff" stroke-width="1" fill="none"/>
+    <text x="454" y="157" font-size="11" fill="#9fe6ff">GAUGE · 0.1 mm</text>
+    <!-- coarse steel rule: whole-mm graduations only -->
+    <path d="M454 192 H548" stroke="#8fb6e0" stroke-width="1.4" fill="none"/>
+    <path d="M454.0 192 V183 M485.3 192 V183 M516.7 192 V183 M548.0 192 V183" stroke="#8fb6e0" stroke-width="1.4" fill="none"/>
+    <text x="454" y="209" font-size="11" fill="#9fe6ff" opacity=".8">RULE · 1 mm</text>
+  </g>
+  <!-- verdict marks (draw-on) -->
+  <path id="wgCheck" d="M556 135 L563 143 L576 127" fill="none" stroke="#5fe0ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#wgglowR)"/>
+  <path id="wgX" d="M558 182 L574 198 M574 182 L558 198" fill="none" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#wgglowR)"/>
+
+  <!-- caption -->
+  <text x="36" y="326" font-size="12" fill="#9fe6ff" opacity=".7">UNDERCUT DEPTH — BRIDGE CAM GAUGE</text>
+
+  <!-- ===== scan group ===== -->
+  <g id="wgscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#wgscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#wgglowC)" opacity=".9"/>
+  </g>
+</svg>

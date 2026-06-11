@@ -1,0 +1,150 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="mgpGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="mgpGlowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="mgpSteel" x1="0" y1="130" x2="0" y2="255" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".35" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="mgpLensG" x1="0" y1="142" x2="0" y2="238" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9fe6ff" stop-opacity=".34"/>
+      <stop offset=".5" stop-color="#5fe0ff" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#9fe6ff" stop-opacity=".3"/>
+    </linearGradient>
+    <linearGradient id="mgpScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+    <clipPath id="mgpZoomClip"><circle cx="540" cy="80" r="30"/></clipPath>
+  </defs>
+
+  <!-- ===== OPTICAL AXIS (base scene) ===== -->
+  <line x1="46" y1="190" x2="480" y2="190" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="6 6" opacity=".42"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".3">
+    <line x1="130" y1="186" x2="130" y2="194"/>
+    <line x1="180" y1="186" x2="180" y2="194"/>
+    <line x1="230" y1="186" x2="230" y2="194"/>
+    <line x1="280" y1="186" x2="280" y2="194"/>
+    <line x1="330" y1="186" x2="330" y2="194"/>
+    <line x1="380" y1="186" x2="380" y2="194"/>
+  </g>
+  <!-- station guide lines where the eye and lens will appear (always visible) -->
+  <g stroke="#8fb6e0" stroke-width="1" stroke-dasharray="3 5" opacity=".22">
+    <line x1="74" y1="152" x2="74" y2="228"/>
+    <line x1="400" y1="146" x2="400" y2="234"/>
+  </g>
+  <!-- focal-point reticle at the crack (always visible) -->
+  <g stroke="#5fe0ff" stroke-width="1.4" opacity=".8" fill="none">
+    <line x1="486" y1="167" x2="486" y2="175"/>
+    <line x1="486" y1="207" x2="486" y2="215"/>
+    <line x1="462" y1="191" x2="470" y2="191"/>
+    <line x1="502" y1="191" x2="510" y2="191"/>
+  </g>
+
+  <!-- ===== STEEL COUPON (test piece, viewed edge-on; inspected face = left edge) ===== -->
+  <rect x="480" y="130" width="86" height="125" fill="url(#mgpSteel)"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".18">
+    <line x1="492" y1="136" x2="492" y2="249"/>
+    <line x1="506" y1="136" x2="506" y2="249"/>
+    <line x1="522" y1="136" x2="522" y2="249"/>
+    <line x1="540" y1="136" x2="540" y2="249"/>
+    <line x1="556" y1="136" x2="556" y2="249"/>
+  </g>
+  <g fill="none">
+    <path d="M480 130 V255" stroke="#8fb6e0" stroke-width="2"/>
+    <path d="M480 130 H566 M480 255 H566" stroke="#8fb6e0" stroke-width="1.5" opacity=".5"/>
+    <path d="M566 130 V255" stroke="#8fb6e0" stroke-width="1.5" opacity=".4"/>
+  </g>
+  <text x="523" y="271" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".7">SPECIMEN</text>
+
+  <!-- tiny surface-breaking crack at the focal point (always visible) -->
+  <path d="M480 183 l5 4 l-2 4 l6 3 l-3 4 l5 3 M489 194 l4 -3" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#mgpGlowR)"/>
+
+  <!-- ===== EYE + 250 mm NEAR-POINT BRACKET ===== -->
+  <g id="mgpEye" opacity="0">
+    <!-- eyeball in profile, looking right -->
+    <circle cx="74" cy="190" r="28" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <!-- cornea bulge -->
+    <path d="M94 171 Q128 190 94 209" fill="#5fe0ff" fill-opacity=".12" stroke="#7fd8ff" stroke-width="1.5"/>
+    <!-- crystalline lens -->
+    <ellipse cx="90" cy="190" rx="4.5" ry="10" fill="#5fe0ff" fill-opacity=".12" stroke="#8fb6e0" stroke-width="1" opacity=".6"/>
+    <!-- iris + pupil -->
+    <path d="M96 176 Q102 190 96 204" fill="none" stroke="#5fe0ff" stroke-width="1.4" opacity=".85"/>
+    <ellipse cx="98" cy="190" rx="2.4" ry="5.5" fill="#5fe0ff" filter="url(#mgpGlowR)"/>
+    <!-- eyelids -->
+    <path d="M50 170 Q72 152 100 168" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".55"/>
+    <path d="M52 211 Q74 226 99 213" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".55"/>
+    <!-- 250 mm near-point dimension bracket -->
+    <g stroke="#5fe0ff" fill="none">
+      <path d="M74 232 V276" opacity=".55" stroke-width="1"/>
+      <path d="M480 259 V276" opacity=".55" stroke-width="1"/>
+      <path d="M74 268 H480" stroke-width="1.2"/>
+      <path d="M74 268 L83 264.8 L83 271.2 Z" fill="#5fe0ff" stroke="none"/>
+      <path d="M480 268 L471 264.8 L471 271.2 Z" fill="#5fe0ff" stroke="none"/>
+    </g>
+    <text x="277" y="287" text-anchor="middle" font-size="12" fill="#9fe6ff">250 mm — NEAR POINT</text>
+  </g>
+
+  <!-- ===== LENS + DETAIL VIEW + f BRACKET ===== -->
+  <g id="mgpLens" opacity="0">
+    <!-- biconvex lens cross-section -->
+    <path d="M400 142 C411 160 414 174 414 190 C414 206 411 220 400 238 C389 220 386 206 386 190 C386 174 389 160 400 142 Z"
+          fill="url(#mgpLensG)" stroke="#7fd8ff" stroke-width="1.6" filter="url(#mgpGlow)"/>
+    <path d="M396 156 C390 170 389 182 390 196" fill="none" stroke="#dff4ff" stroke-width="1.2" opacity=".5"/>
+    <!-- holder rims at lens vertices -->
+    <rect x="396" y="135" width="8" height="8" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1"/>
+    <rect x="396" y="237" width="8" height="8" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1"/>
+    <!-- focal-length dimension bracket -->
+    <g stroke="#5fe0ff" fill="none">
+      <path d="M400 134 V112" opacity=".55" stroke-width="1"/>
+      <path d="M480 126 V112" opacity=".55" stroke-width="1"/>
+      <path d="M400 116 H480" stroke-width="1.2"/>
+      <path d="M400 116 L409 112.8 L409 119.2 Z" fill="#5fe0ff" stroke="none"/>
+      <path d="M480 116 L471 112.8 L471 119.2 Z" fill="#5fe0ff" stroke="none"/>
+    </g>
+    <text x="440" y="106" text-anchor="middle" font-size="11" fill="#9fe6ff">f = FOCAL LENGTH</text>
+    <!-- magnified crack detail (technical detail circle) -->
+    <circle cx="486" cy="191" r="13" fill="none" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="4 3" opacity=".8"/>
+    <line x1="477" y1="182" x2="526" y2="107" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="4 3" opacity=".55"/>
+    <circle cx="540" cy="80" r="30" fill="#08152b" fill-opacity=".72"/>
+    <g clip-path="url(#mgpZoomClip)">
+      <rect x="528" y="48" width="44" height="64" fill="#1b3e66"/>
+      <line x1="540" y1="50" x2="540" y2="110" stroke="#8fb6e0" stroke-width="1" opacity=".2"/>
+      <line x1="554" y1="50" x2="554" y2="110" stroke="#8fb6e0" stroke-width="1" opacity=".2"/>
+      <line x1="528" y1="50" x2="528" y2="110" stroke="#8fb6e0" stroke-width="1.6" opacity=".8"/>
+      <path d="M528 58 l12.5 10 l-5 10 l15 7.5 l-7.5 10 l12.5 7.5 M550.5 85.5 l10 -7.5" fill="none" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#mgpGlowR)"/>
+    </g>
+    <circle cx="540" cy="80" r="30" fill="none" stroke="#5fe0ff" stroke-width="1.5" filter="url(#mgpGlowR)"/>
+  </g>
+
+  <!-- ===== LIGHT RAYS crack -> lens -> eye (draw-on) ===== -->
+  <path id="mgpRays" d="M480 188 L402 154 L108 186 M480 192 L402 226 L108 194" fill="none" stroke="#5fe0ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity=".85" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#mgpGlowR)"/>
+  <circle id="mgpPing" cx="486" cy="191" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#mgpGlowR)"/>
+
+  <!-- ===== FORMULA PANEL ===== -->
+  <g id="mgpFormula" opacity="0">
+    <rect x="36" y="30" width="180" height="42" rx="10" fill="#0e2848" fill-opacity=".88" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="36" y="38" width="3" height="26" rx="1.5" fill="#5fe0ff"/>
+    <text x="128" y="56" text-anchor="middle" font-size="13"><tspan fill="#5fe0ff">POWER</tspan><tspan fill="#9fe6ff"> ≈ 250 mm / f</tspan></text>
+  </g>
+
+  <!-- ===== EXAMPLE CALLOUT ===== -->
+  <g id="mgpExample" opacity="0">
+    <rect x="232" y="30" width="118" height="42" rx="10" fill="#14304f" fill-opacity=".7" stroke="#5fe0ff" stroke-width="1.2"/>
+    <text x="291" y="56" text-anchor="middle" font-size="13"><tspan fill="#9fe6ff">50 mm</tspan><tspan fill="#8fb6e0"> → </tspan><tspan fill="#5fe0ff" font-weight="bold">5X</tspan></text>
+  </g>
+
+  <!-- ===== title ===== -->
+  <text x="36" y="326" font-size="11" fill="#9fe6ff" opacity=".65">SIMPLE MAGNIFIER — OPTICAL POWER</text>
+
+  <!-- ===== scan group ===== -->
+  <g id="mgpscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#mgpScanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#mgpGlow)" opacity=".9"/>
+  </g>
+</svg>

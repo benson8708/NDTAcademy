@@ -1,0 +1,82 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="fcGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fcGlowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="fcFaceGrad" gradientUnits="userSpaceOnUse" cx="284" cy="57" r="245">
+      <stop offset="0" stop-color="#356394"/>
+      <stop offset=".22" stop-color="#22497a"/>
+      <stop offset=".55" stop-color="#163457"/>
+      <stop offset="1" stop-color="#0c2440"/>
+    </radialGradient>
+    <linearGradient id="fcSheen" gradientUnits="userSpaceOnUse" x1="220" y1="60" x2="360" y2="280">
+      <stop offset="0" stop-color="#9fd2ff" stop-opacity=".14"/>
+      <stop offset=".45" stop-color="#9fd2ff" stop-opacity=".03"/>
+      <stop offset="1" stop-color="#9fd2ff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="fcHatch" patternUnits="userSpaceOnUse" width="9" height="9">
+      <path d="M0 9 L9 0" stroke="#ff9b4b" stroke-width="1" opacity=".3" fill="none"/>
+      <path d="M0 0 L9 9" stroke="#ff9b4b" stroke-width="1" opacity=".14" fill="none"/>
+    </pattern>
+    <clipPath id="fcClipFace"><path d="M283 33.1 L283 56 L317 56 L317 33.1 A128 128 0 1 1 283 33.1 Z"/></clipPath>
+    <linearGradient id="fcscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== STATIC BASE: shaft fracture face, keyway notch at top ===== -->
+  <path d="M283 33.1 L283 56 L317 56 L317 33.1 A128 128 0 1 1 283 33.1 Z" fill="url(#fcFaceGrad)"/>
+  <path d="M283 33.1 L283 56 L317 56 L317 33.1 A128 128 0 1 1 283 33.1 Z" fill="url(#fcSheen)"/>
+  <!-- subtle fracture-surface speckle -->
+  <g fill="#8fb6e0" clip-path="url(#fcClipFace)"><circle cx="272.6" cy="191.4" r="1.5" opacity="0.22"/><circle cx="219.1" cy="177.6" r="0.8" opacity="0.11"/><circle cx="266.3" cy="211.1" r="1.4" opacity="0.12"/><circle cx="414.8" cy="176.8" r="1.2" opacity="0.12"/><circle cx="281.1" cy="154.8" r="1.2" opacity="0.22"/><circle cx="364.9" cy="84.8" r="0.9" opacity="0.14"/><circle cx="352.1" cy="250.7" r="1.2" opacity="0.19"/><circle cx="273" cy="209.3" r="1.4" opacity="0.22"/><circle cx="364.2" cy="74.6" r="1.4" opacity="0.19"/><circle cx="312.5" cy="244.7" r="1" opacity="0.10"/><circle cx="361.9" cy="171" r="0.9" opacity="0.18"/><circle cx="376.6" cy="138.5" r="1.5" opacity="0.22"/><circle cx="369" cy="140" r="0.9" opacity="0.13"/><circle cx="317.7" cy="210.8" r="1.3" opacity="0.21"/><circle cx="344.3" cy="90.5" r="1.3" opacity="0.20"/><circle cx="383.3" cy="209.1" r="1.5" opacity="0.19"/><circle cx="300.1" cy="77.7" r="0.9" opacity="0.19"/><circle cx="247.2" cy="252.5" r="1.6" opacity="0.15"/><circle cx="205.7" cy="227.2" r="1.4" opacity="0.12"/><circle cx="332.3" cy="193.1" r="1.5" opacity="0.20"/><circle cx="365.7" cy="246" r="1.6" opacity="0.18"/><circle cx="248" cy="231.2" r="0.8" opacity="0.10"/><circle cx="394.3" cy="142.6" r="1.2" opacity="0.21"/><circle cx="198.4" cy="204.9" r="1.4" opacity="0.13"/><circle cx="299.3" cy="224.4" r="0.9" opacity="0.17"/><circle cx="295.5" cy="236.9" r="0.8" opacity="0.21"/><circle cx="251.1" cy="224" r="1.2" opacity="0.21"/><circle cx="199.9" cy="214.5" r="1.2" opacity="0.16"/><circle cx="283.9" cy="157.6" r="1.1" opacity="0.12"/><circle cx="406.3" cy="162.6" r="0.9" opacity="0.16"/><circle cx="286.2" cy="72.3" r="1" opacity="0.16"/><circle cx="200.9" cy="124" r="0.8" opacity="0.17"/><circle cx="300.6" cy="222.6" r="1.4" opacity="0.16"/><circle cx="204" cy="120.8" r="1.5" opacity="0.15"/><circle cx="235.7" cy="105" r="1.2" opacity="0.18"/><circle cx="217" cy="185.6" r="1.1" opacity="0.21"/><circle cx="265.1" cy="54.2" r="1.5" opacity="0.13"/><circle cx="192.4" cy="117.8" r="1.5" opacity="0.12"/><circle cx="357.1" cy="214.8" r="0.8" opacity="0.13"/><circle cx="387.3" cy="203.2" r="1.4" opacity="0.21"/><circle cx="356.9" cy="243.1" r="1.3" opacity="0.12"/><circle cx="386.7" cy="81.4" r="0.9" opacity="0.21"/><circle cx="233.3" cy="209.6" r="1.6" opacity="0.20"/><circle cx="341.3" cy="226.4" r="1.2" opacity="0.14"/><circle cx="322.5" cy="223.3" r="1.3" opacity="0.10"/><circle cx="225.5" cy="133.7" r="0.7" opacity="0.14"/><circle cx="239.4" cy="100.2" r="0.8" opacity="0.22"/><circle cx="328" cy="46.1" r="0.8" opacity="0.13"/><circle cx="401.8" cy="185.9" r="0.9" opacity="0.12"/><circle cx="199.7" cy="213.3" r="1.4" opacity="0.13"/><circle cx="367.4" cy="252" r="1.2" opacity="0.18"/><circle cx="324.2" cy="175.2" r="1.3" opacity="0.15"/><circle cx="403.5" cy="210.7" r="1.3" opacity="0.20"/><circle cx="395.2" cy="215.3" r="0.8" opacity="0.20"/><circle cx="233.6" cy="179.8" r="1.2" opacity="0.21"/><circle cx="295.2" cy="202.5" r="1.2" opacity="0.13"/><circle cx="336.9" cy="190.4" r="0.7" opacity="0.12"/><circle cx="275" cy="220.8" r="1.4" opacity="0.13"/><circle cx="249.8" cy="160" r="1" opacity="0.10"/><circle cx="300" cy="174.7" r="1.4" opacity="0.17"/><circle cx="330.4" cy="236.1" r="1.5" opacity="0.11"/><circle cx="332.8" cy="89" r="1.1" opacity="0.20"/><circle cx="233.7" cy="212.7" r="1.3" opacity="0.22"/><circle cx="240.3" cy="250.7" r="1.3" opacity="0.18"/><circle cx="242.1" cy="199.5" r="0.7" opacity="0.12"/><circle cx="392.5" cy="204" r="0.9" opacity="0.12"/><circle cx="394.1" cy="215.3" r="1.5" opacity="0.18"/><circle cx="288.3" cy="217.4" r="1" opacity="0.16"/><circle cx="343.6" cy="226.4" r="0.9" opacity="0.22"/><circle cx="386.7" cy="144.9" r="0.9" opacity="0.22"/></g>
+  <!-- machined outer rim (chamfer ring) -->
+  <circle cx="300" cy="160" r="121.5" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".32" clip-path="url(#fcClipFace)"/>
+  <circle cx="300" cy="160" r="124.8" fill="none" stroke="#0a1f3a" stroke-width="3.4" opacity=".5" clip-path="url(#fcClipFace)"/>
+  <!-- specular highlight along upper-left inner rim -->
+  <path d="M204.6 240 A124.5 124.5 0 0 1 267.8 39.7" fill="none" stroke="#bfe2ff" stroke-width="2.4" opacity=".22" clip-path="url(#fcClipFace)"/>
+  <!-- face outline + keyway walls -->
+  <path d="M283 33.1 L283 56 L317 56 L317 33.1 A128 128 0 1 1 283 33.1 Z" fill="none" stroke="#8fb6e0" stroke-width="2"/>
+  <!-- keyway inner shading so the notch reads as a machined slot -->
+  <path d="M283 33.1 L283 56 L317 56 L317 33.1" fill="none" stroke="#0a1f3a" stroke-width="4" opacity=".55" transform="translate(1.6,-1.6)"/>
+  <text x="20" y="26" font-size="12" fill="#9fe6ff" opacity=".65">FRACTURE FACE — KEYED SHAFT</text>
+
+  <!-- ===== REVEAL 1: crack origin at keyway inside corner ===== -->
+  <g id="fcOrigin" opacity="0">
+    <circle cx="284" cy="57" r="3.2" fill="#ff6b6b" filter="url(#fcGlowS)"/>
+    <circle cx="284" cy="57" r="7.5" fill="none" stroke="#ff6b6b" stroke-width="1.2" opacity=".75"/>
+    <path d="M218 48 L276 54.5" stroke="#ff6b6b" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="214" y="51" text-anchor="end" font-size="12" fill="#ff6b6b">ORIGIN</text>
+  </g>
+  <circle id="fcOriginPing" cx="284" cy="57" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#fcGlowS)"/>
+
+  <!-- ===== REVEAL 2: beach marks (draw-on, inner to outer) ===== -->
+  <path id="fcBeachMarks" d="M305.8 54.4 A22 22 0 1 1 262.1 55.4 M323.6 51.3 A40 40 0 1 1 244 55 M345.6 49.6 A62 62 0 0 1 222.9 67.4 M370 55.2 A86 86 0 0 1 202.7 84.9 M394.7 73.9 A112 112 0 0 1 188.3 115.2 M413.8 103.9 A138 138 0 0 1 183.1 151.2 M423.4 139.5 A162 162 0 0 1 176.4 178.1" fill="none" stroke="#7fd8ff" stroke-width="1.4" stroke-opacity=".9" stroke-linecap="round" clip-path="url(#fcClipFace)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="fcBmLbl" opacity="0">
+    <path d="M438 79 L394 92" stroke="#5fe0ff" stroke-width="1" opacity=".55" fill="none"/>
+    <text x="442" y="83" font-size="12" fill="#9fe6ff">BEACH MARKS</text>
+  </g>
+
+  <!-- ===== REVEAL 3: final fracture zone (rough, crystalline) ===== -->
+  <g id="fcFinalZone" opacity="0">
+    <g clip-path="url(#fcClipFace)">
+      <path d="M431.2 132 L422.8 149.9 L416.3 170.4 L405.9 189.5 L385.4 197.6 L366.5 205.8 L352.2 224.2 L327.5 215 L310.7 233.4 L289.3 225.1 L269.6 222 L250.2 218.6 L230.2 216.7 L207.8 217.5 L195.4 197.7 L174.8 191.8 L98.7 242.3 L203 306.2 L325 315.8 L438 269 L517.4 175.9 Z" fill="#ff9b4b" opacity=".12"/>
+      <path d="M431.2 132 L422.8 149.9 L416.3 170.4 L405.9 189.5 L385.4 197.6 L366.5 205.8 L352.2 224.2 L327.5 215 L310.7 233.4 L289.3 225.1 L269.6 222 L250.2 218.6 L230.2 216.7 L207.8 217.5 L195.4 197.7 L174.8 191.8 L98.7 242.3 L203 306.2 L325 315.8 L438 269 L517.4 175.9 Z" fill="url(#fcHatch)"/>
+      <path d="M278.5 256.2 L270.6 259.1 L273.7 250.9 Z M331.2 248.6 L337.6 242.2 L338.7 250.4 Z M394.4 231.6 L392.4 238.7 L386.7 231.9 Z M245.2 243.7 L237.2 244.8 L239.8 237.7 Z M251 263.2 L258.2 258.7 L259.3 266.2 Z M265.7 237.8 L272.5 243.1 L266 247.7 Z M349.1 257.9 L352.1 253.2 L354.8 258.1 Z M234.5 242.2 L236.4 237 L241.7 241.8 Z M305.2 271 L304.2 280.7 L296.7 275 Z M404.7 209.3 L400.9 203.7 L407 202.7 Z M353.4 245.4 L361.2 252.2 L351.4 255 Z M230.1 251.3 L223.5 251 L226.3 244.1 Z M394.8 214.9 L388.2 218.2 L388.9 211.1 Z M344.5 227.4 L354.5 227.4 L348.9 235.7 Z" fill="#ffb27b" opacity=".3"/>
+      <path d="M431.2 132 L422.8 149.9 L416.3 170.4 L405.9 189.5 L385.4 197.6 L366.5 205.8 L352.2 224.2 L327.5 215 L310.7 233.4 L289.3 225.1 L269.6 222 L250.2 218.6 L230.2 216.7 L207.8 217.5 L195.4 197.7 L174.8 191.8" fill="none" stroke="#ff9b4b" stroke-width="1.6" stroke-linejoin="round" opacity=".9" filter="url(#fcGlowS)"/>
+    </g>
+    <path d="M442 268 L392 243" stroke="#ff9b4b" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="446" y="272" font-size="12" fill="#ff9b4b">FINAL FRACTURE</text>
+  </g>
+
+  <!-- ===== scan group ===== -->
+  <g id="fcscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#fcscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#fcGlow)" opacity=".9"/>
+  </g>
+</svg>

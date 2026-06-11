@@ -1,0 +1,151 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="scpGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="scpGlowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="scpSteel" x1="0" y1="88" x2="0" y2="238" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1d4067"/><stop offset=".4" stop-color="#14304f"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="scpScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+    <pattern id="scpHatch" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="7" stroke="#ffc24b" stroke-width="1.6" opacity=".58"/>
+    </pattern>
+  </defs>
+
+  <!-- ===== BASE PLATES (top view, rolled steel) ===== -->
+  <g id="scpPlate">
+    <rect x="42" y="88" width="240" height="150" rx="3" fill="url(#scpSteel)" stroke="#8fb6e0" stroke-width="1.8"/>
+    <rect x="318" y="88" width="240" height="150" rx="3" fill="url(#scpSteel)" stroke="#8fb6e0" stroke-width="1.8"/>
+    <!-- mill / rolling texture -->
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".13">
+      <line x1="48" y1="106" x2="276" y2="106"/><line x1="48" y1="128" x2="276" y2="128"/>
+      <line x1="48" y1="150" x2="276" y2="150"/><line x1="48" y1="172" x2="276" y2="172"/>
+      <line x1="48" y1="194" x2="276" y2="194"/><line x1="48" y1="216" x2="276" y2="216"/>
+      <line x1="324" y1="106" x2="552" y2="106"/><line x1="324" y1="128" x2="552" y2="128"/>
+      <line x1="324" y1="150" x2="552" y2="150"/><line x1="324" y1="172" x2="552" y2="172"/>
+      <line x1="324" y1="194" x2="552" y2="194"/><line x1="324" y1="216" x2="552" y2="216"/>
+    </g>
+    <!-- top inner highlight -->
+    <line x1="45" y1="91.5" x2="279" y2="91.5" stroke="#8fb6e0" stroke-width="1" opacity=".35"/>
+    <line x1="321" y1="91.5" x2="555" y2="91.5" stroke="#8fb6e0" stroke-width="1" opacity=".35"/>
+    <!-- corner index ticks -->
+    <g stroke="#8fb6e0" stroke-width="1.5" opacity=".4" fill="none">
+      <path d="M50 102 V96 H56"/><path d="M274 96 H268 M274 96 V102"/>
+      <path d="M50 224 V230 H56"/><path d="M274 230 H268 M274 230 V224"/>
+      <path d="M326 102 V96 H332"/><path d="M550 96 H544 M550 96 V102"/>
+      <path d="M326 224 V230 H332"/><path d="M550 230 H544 M550 230 V224"/>
+    </g>
+  </g>
+  <!-- planned raster route guide (static, etched procedure) -->
+  <path d="M352 112 H519 Q536 112 536 129 Q536 146 519 146 H353 Q336 146 336 163 Q336 180 353 180 H519 Q536 180 536 197 Q536 214 519 214 H360"
+    fill="none" stroke="#7fd8ff" stroke-width="1.2" stroke-dasharray="4 4" opacity=".22"/>
+
+  <!-- panel headers -->
+  <text x="162" y="78" text-anchor="middle" font-size="12" fill="#ff9b4b" opacity=".92" letter-spacing="1">WANDERING</text>
+  <text x="438" y="78" text-anchor="middle" font-size="12" fill="#5fe0ff" opacity=".92" letter-spacing="1">RASTER SCAN</text>
+  <text x="300" y="167" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".5">VS</text>
+
+  <!-- eye start dots (static, both panels) -->
+  <circle cx="60" cy="108" r="3" fill="#ff9b4b" opacity=".9"/>
+  <circle cx="352" cy="112" r="3" fill="#7fd8ff" opacity=".9"/>
+
+  <!-- ===== LEFT: wandering eye-path (draw-on) ===== -->
+  <path id="scpRandomPath"
+    d="M60 108 C 98 94, 148 96, 178 114 C 204 130, 186 148, 158 144 C 128 140, 96 128, 84 148 C 74 166, 112 182, 152 174 C 190 167, 218 182, 244 170 C 264 160, 258 140, 238 134 C 224 130, 214 142, 220 152"
+    fill="none" stroke="#ff9b4b" stroke-width="2.4" stroke-linecap="round"
+    pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#scpGlowR)"/>
+  <path id="scpWanderArrow" d="M0 0 L-9 -4.5 L-9 4.5 Z" transform="translate(224,158) rotate(59)" fill="#ff9b4b" opacity="0"/>
+
+  <!-- ===== LEFT: unseen gaps (hatched regions the path never crosses) ===== -->
+  <g id="scpGaps" opacity="0">
+    <g>
+      <rect x="218" y="94" width="52" height="30" rx="5" fill="#ffc24b" opacity=".07"/>
+      <rect x="218" y="94" width="52" height="30" rx="5" fill="url(#scpHatch)"/>
+      <rect x="218" y="94" width="52" height="30" rx="5" fill="none" stroke="#ffc24b" stroke-width="1.2" stroke-dasharray="4 3" opacity=".8"/>
+    </g>
+    <g>
+      <rect x="54" y="192" width="64" height="38" rx="5" fill="#ffc24b" opacity=".07"/>
+      <rect x="54" y="192" width="64" height="38" rx="5" fill="url(#scpHatch)"/>
+      <rect x="54" y="192" width="64" height="38" rx="5" fill="none" stroke="#ffc24b" stroke-width="1.2" stroke-dasharray="4 3" opacity=".8"/>
+      <!-- missed crack hiding inside the gap -->
+      <path d="M76 202 L84 209 L80 215 L90 221 L86 227" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#scpGlowR)"/>
+    </g>
+    <g>
+      <rect x="156" y="200" width="76" height="26" rx="5" fill="#ffc24b" opacity=".07"/>
+      <rect x="156" y="200" width="76" height="26" rx="5" fill="url(#scpHatch)"/>
+      <rect x="156" y="200" width="76" height="26" rx="5" fill="none" stroke="#ffc24b" stroke-width="1.2" stroke-dasharray="4 3" opacity=".8"/>
+      <!-- missed pore -->
+      <circle cx="208" cy="213" r="3.4" fill="#ffc24b"/><circle cx="208" cy="213" r="1.6" fill="#7a4d10"/>
+    </g>
+  </g>
+  <circle id="scpGapPing" cx="84" cy="214" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#scpGlowR)"/>
+  <g id="scpGapsLbl" font-size="12" opacity="0">
+    <path d="M194 228 L176 252" stroke="#ffc24b" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="162" y="266" text-anchor="middle" fill="#ffc24b" opacity=".9">MISSED AREAS</text>
+  </g>
+
+  <!-- ===== RIGHT: raster passes (overlapping field-of-view bands) ===== -->
+  <g id="scpRaster">
+    <g id="scpPass1" opacity="0">
+      <rect x="330" y="90" width="216" height="44" rx="22" fill="#5fe0ff" opacity=".09"/>
+      <rect x="330" y="90" width="216" height="44" rx="22" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".4"/>
+    </g>
+    <g id="scpPass2" opacity="0">
+      <rect x="330" y="124" width="216" height="44" rx="22" fill="#5fe0ff" opacity=".09"/>
+      <rect x="330" y="124" width="216" height="44" rx="22" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".4"/>
+    </g>
+    <g id="scpPass3" opacity="0">
+      <rect x="330" y="158" width="216" height="44" rx="22" fill="#5fe0ff" opacity=".09"/>
+      <rect x="330" y="158" width="216" height="44" rx="22" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".4"/>
+    </g>
+    <g id="scpPass4" opacity="0">
+      <rect x="330" y="192" width="216" height="44" rx="22" fill="#5fe0ff" opacity=".09"/>
+      <rect x="330" y="192" width="216" height="44" rx="22" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".4"/>
+    </g>
+    <!-- boustrophedon route (draw-on) -->
+    <path id="scpRoute"
+      d="M352 112 H519 Q536 112 536 129 Q536 146 519 146 H353 Q336 146 336 163 Q336 180 353 180 H519 Q536 180 536 197 Q536 214 519 214 H360"
+      fill="none" stroke="#7fd8ff" stroke-width="2" stroke-linecap="round"
+      pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#scpGlowR)"/>
+  </g>
+
+  <!-- overlap strip shared by pass 2 and pass 3 -->
+  <g id="scpOverlap" opacity="0">
+    <rect x="332" y="158" width="212" height="10" fill="#5fe0ff" opacity=".32"/>
+    <line x1="332" y1="158" x2="544" y2="158" stroke="#9fe6ff" stroke-width="1" stroke-dasharray="3 3" opacity=".8"/>
+    <line x1="332" y1="168" x2="544" y2="168" stroke="#9fe6ff" stroke-width="1" stroke-dasharray="3 3" opacity=".8"/>
+  </g>
+  <g id="scpOverlapLbl" font-size="12" opacity="0">
+    <path d="M366 170 L360 250" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="360" y="266" text-anchor="middle" fill="#5fe0ff" opacity=".92">OVERLAP</text>
+  </g>
+
+  <!-- slow field-of-view spot on pass 4 (right-to-left), ghost trail showing pace -->
+  <g id="scpFovSpot" opacity="0">
+    <circle cx="480" cy="214" r="22" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".18"/>
+    <circle cx="459" cy="214" r="22" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".32"/>
+    <circle cx="438" cy="214" r="22" fill="#5fe0ff" opacity=".12"/>
+    <circle cx="438" cy="214" r="22" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#scpGlow)"/>
+    <line x1="431" y1="214" x2="445" y2="214" stroke="#9fe6ff" stroke-width="1" opacity=".7"/>
+    <line x1="438" y1="207" x2="438" y2="221" stroke="#9fe6ff" stroke-width="1" opacity=".7"/>
+    <path d="M404 214 L416 208 L416 220 Z" fill="#7fd8ff"/>
+  </g>
+  <g id="scpFovLbl" font-size="12" opacity="0">
+    <path d="M452 232 L474 250" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="482" y="266" text-anchor="middle" fill="#9fe6ff" opacity=".9">FIELD OF VIEW &#183; SLOW</text>
+  </g>
+
+  <!-- ===== scan group ===== -->
+  <g id="scpscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#scpScanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#scpGlow)" opacity=".9"/>
+  </g>
+</svg>

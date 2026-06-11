@@ -1,0 +1,160 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="brglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="brglowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="brsteel" x1="0" y1="88" x2="0" y2="256" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c5b8a"/><stop offset=".4" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <pattern id="brhatch" width="11" height="11" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="11" stroke="#8fb6e0" stroke-width="1" opacity=".15"/>
+    </pattern>
+    <linearGradient id="brconeG" x1="505" y1="0" x2="566" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffc24b" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#ffc24b" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="brscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== STEEL BLOCK CROSS-SECTION with straight gun-drilled bore ===== -->
+  <!-- top slab -->
+  <path d="M148 88 H578 V138 H156 L148 130 Z" fill="url(#brsteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <path d="M148 88 H578 V138 H156 L148 130 Z" fill="url(#brhatch)"/>
+  <!-- bottom slab -->
+  <path d="M156 206 H578 V256 H148 V214 Z" fill="url(#brsteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <path d="M156 206 H578 V256 H148 V214 Z" fill="url(#brhatch)"/>
+  <!-- bore void -->
+  <path d="M148 130 L156 138 H578 V206 H156 L148 214 Z" fill="#071226"/>
+  <rect x="156" y="138" width="422" height="6" fill="#03080f" opacity=".7"/>
+  <rect x="156" y="200" width="422" height="6" fill="#03080f" opacity=".7"/>
+  <!-- machining centerline (dash-dot convention) -->
+  <line x1="118" y1="172" x2="592" y2="172" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="14 4 3 4" opacity=".35"/>
+
+  <!-- depth reference ticks on upper bore wall -->
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".35">
+    <line x1="250" y1="138" x2="250" y2="146"/>
+    <line x1="350" y1="138" x2="350" y2="146"/>
+    <line x1="450" y1="138" x2="450" y2="146"/>
+  </g>
+  <!-- raised burr on bottom bore wall (inspection target) -->
+  <path d="M527 206 L532.5 196 L537 201.5 L542.5 194 L548 206 Z" fill="#ffc24b" stroke="#b97f1f" stroke-width="1" opacity=".95" filter="url(#brglowR)"/>
+
+  <!-- ===== REVEAL: straight passage emphasis (draw) ===== -->
+  <path id="brBore" d="M156 138 H578 M156 206 H578 M148 130 L156 138 M148 214 L156 206" fill="none" stroke="#5fe0ff" stroke-width="2.4" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#brglowC)"/>
+  <g id="brBoreLbl" opacity="0">
+    <text x="576" y="78" text-anchor="end" font-size="12" fill="#9fe6ff" opacity=".9">GUN-DRILLED PASSAGE — STRAIGHT AXIS</text>
+    <path d="M540 82 L540 134" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <path d="M540 134 L537 128.6 L543 128.6 Z" fill="#5fe0ff" opacity=".7"/>
+  </g>
+
+  <!-- ===== REVEAL: rigid borescope (cutaway) ===== -->
+  <g id="brScope" opacity="0">
+    <!-- eyecup flange -->
+    <rect x="26" y="146" width="12" height="52" rx="4" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <ellipse cx="29.5" cy="172" rx="2.4" ry="13" fill="#7fd8ff" opacity=".4"/>
+    <!-- ocular barrel -->
+    <rect x="37" y="156" width="19" height="32" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <!-- knurled focus ring -->
+    <rect x="56" y="152" width="16" height="40" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".5">
+      <line x1="60" y1="154" x2="60" y2="190"/><line x1="64" y1="154" x2="64" y2="190"/><line x1="68" y1="154" x2="68" y2="190"/>
+    </g>
+    <!-- body cone -->
+    <path d="M72 152 H92 L112 161 V183 L92 192 H72 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <!-- light-guide post (illumination feed) -->
+    <rect x="79" y="120" width="12" height="34" rx="2" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+    <rect x="77" y="114" width="16" height="8" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <line x1="85" y1="122" x2="85" y2="152" stroke="#ff9b4b" stroke-width="2" opacity=".55"/>
+    <!-- stainless tube (cutaway) -->
+    <rect x="112" y="161" width="383" height="22" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+    <!-- illumination fiber sheath (annulus, runs full length) -->
+    <rect x="114" y="164.2" width="381" height="2.2" fill="#ff9b4b" opacity=".5"/>
+    <rect x="114" y="177.6" width="381" height="2.2" fill="#ff9b4b" opacity=".5"/>
+    <!-- central optical channel -->
+    <rect x="114" y="166.8" width="381" height="10.4" fill="#08152b"/>
+    <!-- relay lens train: 5 achromat pairs (static glass, lit later) -->
+    <g fill="#1E66F5" fill-opacity=".55" stroke="#8fb6e0" stroke-width="1">
+      <ellipse cx="154" cy="172" rx="2.4" ry="5"/><ellipse cx="162" cy="172" rx="2.4" ry="5"/>
+      <ellipse cx="224" cy="172" rx="2.4" ry="5"/><ellipse cx="232" cy="172" rx="2.4" ry="5"/>
+      <ellipse cx="294" cy="172" rx="2.4" ry="5"/><ellipse cx="302" cy="172" rx="2.4" ry="5"/>
+      <ellipse cx="364" cy="172" rx="2.4" ry="5"/><ellipse cx="372" cy="172" rx="2.4" ry="5"/>
+      <ellipse cx="434" cy="172" rx="2.4" ry="5"/><ellipse cx="442" cy="172" rx="2.4" ry="5"/>
+    </g>
+    <!-- distal tip: objective lens behind sapphire window -->
+    <rect x="495" y="161" width="9" height="22" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <rect x="503.5" y="165" width="3" height="14" rx="1" fill="#7fd8ff" opacity=".9"/>
+    <ellipse cx="498.5" cy="172" rx="2.2" ry="5" fill="#1E66F5" stroke="#8fb6e0" stroke-width="1"/>
+    <circle cx="505" cy="162.8" r="1.6" fill="#ffc24b"/>
+    <circle cx="505" cy="181.2" r="1.6" fill="#ffc24b"/>
+    <!-- tube top highlight -->
+    <line x1="114" y1="162.4" x2="494" y2="162.4" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+  </g>
+  <g id="brScopeLbl" opacity="0">
+    <text x="36" y="283" font-size="12" fill="#9fe6ff" opacity=".9">RIGID BORESCOPE</text>
+    <path d="M44 198 L52 270" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+  </g>
+
+  <!-- ===== REVEAL: tip illumination ===== -->
+  <g id="brLight" opacity="0">
+    <path d="M505 165 L566 140 L566 204 L505 179 Z" fill="url(#brconeG)"/>
+    <circle cx="506" cy="172" r="3" fill="#ffc24b" opacity=".9" filter="url(#brglowR)"/>
+    <rect x="114" y="164.2" width="381" height="2.2" fill="#ffc24b" opacity=".55" filter="url(#brglowR)"/>
+    <rect x="114" y="177.6" width="381" height="2.2" fill="#ffc24b" opacity=".55" filter="url(#brglowR)"/>
+  </g>
+  <circle id="brPing" cx="539.5" cy="202" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#brglowR)"/>
+
+  <!-- ===== REVEAL: relay lenses light up tip-to-eyepiece ===== -->
+  <g id="brGlow1" opacity="0" filter="url(#brglowR)">
+    <ellipse cx="434" cy="172" rx="2.4" ry="5" fill="#5fe0ff" opacity=".9"/><ellipse cx="442" cy="172" rx="2.4" ry="5" fill="#5fe0ff" opacity=".9"/>
+  </g>
+  <g id="brGlow2" opacity="0" filter="url(#brglowR)">
+    <ellipse cx="364" cy="172" rx="2.4" ry="5" fill="#5fe0ff" opacity=".9"/><ellipse cx="372" cy="172" rx="2.4" ry="5" fill="#5fe0ff" opacity=".9"/>
+  </g>
+  <g id="brGlow3" opacity="0" filter="url(#brglowR)">
+    <ellipse cx="294" cy="172" rx="2.4" ry="5" fill="#5fe0ff" opacity=".9"/><ellipse cx="302" cy="172" rx="2.4" ry="5" fill="#5fe0ff" opacity=".9"/>
+  </g>
+  <g id="brGlow4" opacity="0" filter="url(#brglowR)">
+    <ellipse cx="224" cy="172" rx="2.4" ry="5" fill="#5fe0ff" opacity=".9"/><ellipse cx="232" cy="172" rx="2.4" ry="5" fill="#5fe0ff" opacity=".9"/>
+  </g>
+  <g id="brGlow5" opacity="0" filter="url(#brglowR)">
+    <ellipse cx="154" cy="172" rx="2.4" ry="5" fill="#5fe0ff" opacity=".9"/><ellipse cx="162" cy="172" rx="2.4" ry="5" fill="#5fe0ff" opacity=".9"/>
+  </g>
+  <!-- image rays threading the glass, tip to eyepiece (cross at relays) -->
+  <path id="brRayA" d="M504 172 L438 167.4 L368 176.6 L298 167.4 L228 176.6 L158 167.4 L96 172 L38 172" fill="none" stroke="#5fe0ff" stroke-width="1.5" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#brglowR)"/>
+  <path id="brRayB" d="M504 172 L438 176.6 L368 167.4 L298 176.6 L228 167.4 L158 176.6 L96 172 L38 172" fill="none" stroke="#5fe0ff" stroke-width="1.5" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#brglowR)"/>
+  <g id="brRelayLbl" opacity="0">
+    <text x="320" y="154" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".9">RELAY LENS TRAIN — PRECISION GLASS</text>
+    <text x="484" y="200" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".85">OBJECTIVE</text>
+    <path d="M486 196 L499 180" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+  </g>
+
+  <!-- ===== REVEAL: eyepiece glow + crisp image inset ===== -->
+  <g id="brEyepiece" opacity="0">
+    <rect x="25" y="143" width="50" height="58" rx="6" fill="none" stroke="#5fe0ff" stroke-width="1.6" filter="url(#brglowC)" opacity=".9"/>
+    <ellipse cx="29.5" cy="172" rx="2.2" ry="13" fill="#5fe0ff" opacity=".85" filter="url(#brglowR)"/>
+    <path d="M42 146 L80 90" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <!-- what the inspector sees: crisp magnified burr on the bore wall -->
+    <circle cx="97" cy="58" r="34" fill="#08152b" stroke="#5fe0ff" stroke-width="1.5" filter="url(#brglowC)"/>
+    <g stroke="#5fe0ff" stroke-width=".8" opacity=".45">
+      <line x1="67" y1="58" x2="127" y2="58"/>
+      <line x1="97" y1="28" x2="97" y2="88"/>
+    </g>
+    <line x1="71" y1="74" x2="123" y2="74" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M80 74 L86 60 L93 68 L100 56 L108 74 Z" fill="#ffc24b" stroke="#b97f1f" stroke-width="1"/>
+    <text x="97" y="106" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".9">FINEST DETAIL</text>
+  </g>
+
+  <!-- ===== scan group ===== -->
+  <g id="brscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#brscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#brglowC)" opacity=".9"/>
+  </g>
+</svg>

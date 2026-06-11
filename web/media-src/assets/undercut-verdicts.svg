@@ -1,0 +1,113 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="uvGlowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="uvGlowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="uvSteel" gradientUnits="userSpaceOnUse" x1="0" y1="30" x2="0" y2="62">
+      <stop offset="0" stop-color="#3a6f9f"/><stop offset=".4" stop-color="#224a74"/><stop offset="1" stop-color="#122e51"/>
+    </linearGradient>
+    <linearGradient id="uvWeld" gradientUnits="userSpaceOnUse" x1="0" y1="8" x2="0" y2="62">
+      <stop offset="0" stop-color="#3f9bff"/><stop offset=".45" stop-color="#2b86ff"/><stop offset="1" stop-color="#1E66F5"/>
+    </linearGradient>
+    <linearGradient id="uvScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+
+    <!-- ===== MASTER WELD-TOE CROSS-SECTION (190x62 local) — instanced 3x pixel-for-pixel ===== -->
+    <g id="uvToeProfile">
+      <!-- base metal plate (right of fusion line) -->
+      <path d="M95 30 L190 30 L190 62 L60 62 Z" fill="url(#uvSteel)"/>
+      <!-- rolling texture -->
+      <g stroke="#8fb6e0" stroke-width="1" opacity=".26">
+        <line x1="92" y1="40" x2="186" y2="40"/>
+        <line x1="84" y1="48" x2="186" y2="48"/>
+        <line x1="76" y1="56" x2="186" y2="56"/>
+      </g>
+      <!-- HAZ bands flanking fusion line + etch boundary -->
+      <path d="M95 30 L60 62 L73 62 L106 30 Z" fill="#2b86ff" opacity=".38"/>
+      <path d="M106 30 L73 62 L84 62 L115 30 Z" fill="#2b86ff" opacity=".15"/>
+      <path d="M115 30 L84 62" fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".28" stroke-dasharray="4 4"/>
+      <!-- weld metal: cap reinforcement above surface + wedge below -->
+      <path d="M0 10 C40 10 75 18 95 30 L60 62 L0 62 Z" fill="url(#uvWeld)"/>
+      <!-- cap ripples -->
+      <g fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".45">
+        <path d="M0 17 C32 16.5 62 23 82 32"/>
+        <path d="M0 24 C26 23.5 50 28 66 36"/>
+      </g>
+      <!-- fusion line: dark etch seam + bright line -->
+      <path d="M95 30 L60 62" fill="none" stroke="#0e2848" stroke-width="2.4" opacity=".5"/>
+      <path d="M95 30 L60 62" fill="none" stroke="#7fd8ff" stroke-width="1.1" opacity=".75"/>
+      <!-- cap face outline (glowing bead surface) -->
+      <path d="M0 10 C40 10 75 18 95 30" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#uvGlowC)" opacity=".9"/>
+      <!-- UNDERCUT: groove melted into base metal at the toe (unfilled notch, not a crack) -->
+      <path d="M95 30 Q99 30.5 103 34.2 Q108 37.8 113 34.9 Q118 31.2 122 30 Z" fill="#08152b"/>
+      <path d="M95 30 Q99 30.5 103 34.2 Q108 37.8 113 34.9 Q118 31.2 122 30" fill="none" stroke="#ff9b4b" stroke-width="1.6" stroke-linecap="round" filter="url(#uvGlowR)" opacity=".9"/>
+      <!-- plate top surface edge resumes after groove -->
+      <path d="M122 30 H190" fill="none" stroke="#8fb6e0" stroke-width="2"/>
+      <!-- section cut edges -->
+      <g stroke="#8fb6e0" fill="none">
+        <path d="M0 10 V62" stroke-width="1.5" opacity=".3"/>
+        <path d="M190 30 V62" stroke-width="1.5" opacity=".3"/>
+        <path d="M0 62 H190" stroke-width="1.5" opacity=".35"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- ===== TOP: hero weld-toe section (always visible base scene) ===== -->
+  <use href="#uvToeProfile" transform="translate(205,22)"/>
+  <text x="40" y="34" font-size="11" fill="#9fe6ff" opacity=".65">WELD TOE — SECTION VIEW</text>
+
+  <!-- undercut highlight ring + SAME UNDERCUT label -->
+  <g id="uvUndercut" opacity="0">
+    <path d="M300 52 Q304 52.5 308 56.2 Q313 59.8 318 56.9 Q323 53.2 327 52" fill="none" stroke="#ff9b4b" stroke-width="2.2" stroke-linecap="round" filter="url(#uvGlowR)"/>
+    <ellipse cx="313" cy="55" rx="22" ry="12" fill="none" stroke="#ff9b4b" stroke-width="1.3" stroke-dasharray="5 4" opacity=".9"/>
+    <path d="M334 49 L426 40" stroke="#ff9b4b" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="430" y="44" font-size="12" fill="#ff9b4b" opacity=".95">SAME UNDERCUT</text>
+  </g>
+  <circle id="uvPing" cx="313" cy="55" r="6" fill="none" stroke="#ff9b4b" stroke-width="2" opacity="0" filter="url(#uvGlowR)"/>
+
+  <!-- ===== connectors fanning down to the two jobs (draw-on) ===== -->
+  <path id="uvSplit" d="M313 84 C313 114 162 110 162 148 M313 84 C313 114 438 110 438 148" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".65" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ghost frames so default state reads as a composed diagram -->
+  <g fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".18" stroke-dasharray="6 5">
+    <rect x="38" y="150" width="248" height="148" rx="12"/>
+    <rect x="314" y="150" width="248" height="148" rx="12"/>
+  </g>
+
+  <!-- ===== two job panels (empty, labeled) ===== -->
+  <g id="uvPanels" opacity="0">
+    <rect x="38" y="150" width="248" height="148" rx="12" fill="#0e2848" fill-opacity=".55" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="314" y="150" width="248" height="148" rx="12" fill="#0e2848" fill-opacity=".55" stroke="#8fb6e0" stroke-width="1.5"/>
+    <text x="162" y="172" text-anchor="middle" font-size="12" fill="#9fe6ff">JOB A · CODE A</text>
+    <text x="438" y="172" text-anchor="middle" font-size="12" fill="#9fe6ff">JOB B · STRICTER CODE</text>
+    <path d="M54 181 H270" stroke="#8fb6e0" stroke-width="1" opacity=".35"/>
+    <path d="M330 181 H546" stroke="#8fb6e0" stroke-width="1" opacity=".35"/>
+  </g>
+
+  <!-- ===== LEFT: identical profile + ACCEPTABLE ===== -->
+  <g id="uvAccept" opacity="0">
+    <use href="#uvToeProfile" transform="translate(67,192)"/>
+    <path d="M106 278 L114 286 L130 270" fill="none" stroke="#5fe0ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" filter="url(#uvGlowR)"/>
+    <text x="140" y="285" font-size="13" fill="#5fe0ff">ACCEPTABLE</text>
+  </g>
+
+  <!-- ===== RIGHT: identical profile + REJECTABLE ===== -->
+  <g id="uvReject" opacity="0">
+    <use href="#uvToeProfile" transform="translate(343,192)"/>
+    <path d="M382 271 L398 287 M398 271 L382 287" fill="none" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round" filter="url(#uvGlowR)"/>
+    <text x="416" y="285" font-size="13" fill="#ff6b6b">REJECTABLE</text>
+  </g>
+
+  <!-- ===== scan group ===== -->
+  <g id="uvscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#uvScanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#uvGlowC)" opacity=".9"/>
+  </g>
+</svg>

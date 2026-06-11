@@ -1,0 +1,185 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="dtglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="dtglowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="dtsteel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".35" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="dtingot" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd27f"/><stop offset=".2" stop-color="#ff9b4b"/>
+      <stop offset=".48" stop-color="#a14e35"/><stop offset=".75" stop-color="#3c3760"/>
+      <stop offset="1" stop-color="#1b3e66"/>
+    </linearGradient>
+    <linearGradient id="dtpipe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a1f3a"/><stop offset=".18" stop-color="#1b3e66"/>
+      <stop offset=".45" stop-color="#3a6da3"/><stop offset=".55" stop-color="#3a6da3"/>
+      <stop offset=".85" stop-color="#16335a"/><stop offset="1" stop-color="#091a30"/>
+    </linearGradient>
+    <linearGradient id="dtscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== STATIC: stage zone plates + index chips + base track ===== -->
+  <g>
+    <rect x="35" y="52" width="158" height="196" rx="10" fill="#5fe0ff" opacity=".04"/>
+    <rect x="35" y="52" width="158" height="196" rx="10" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".18"/>
+    <rect x="203" y="52" width="200" height="196" rx="10" fill="#5fe0ff" opacity=".04"/>
+    <rect x="203" y="52" width="200" height="196" rx="10" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".18"/>
+    <rect x="413" y="52" width="160" height="196" rx="10" fill="#5fe0ff" opacity=".04"/>
+    <rect x="413" y="52" width="160" height="196" rx="10" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".18"/>
+    <text x="45" y="241" font-size="11" fill="#9fe6ff" opacity=".45">01</text>
+    <text x="213" y="241" font-size="11" fill="#9fe6ff" opacity=".45">02</text>
+    <text x="423" y="241" font-size="11" fill="#9fe6ff" opacity=".45">03</text>
+    <g stroke="#7fd8ff" stroke-width="1.2" opacity=".3" fill="none">
+      <path d="M41 58 h8 M41 58 v8 M187 58 h-8 M187 58 v8"/>
+      <path d="M209 58 h8 M209 58 v8 M397 58 h-8 M397 58 v8"/>
+      <path d="M419 58 h8 M419 58 v8 M567 58 h-8 M567 58 v8"/>
+    </g>
+    <line x1="35" y1="292" x2="573" y2="292" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="2 6" opacity=".22"/>
+    <circle cx="114" cy="292" r="2" fill="#8fb6e0" opacity=".3"/>
+    <circle cx="303" cy="292" r="2" fill="#8fb6e0" opacity=".3"/>
+    <circle cx="493" cy="292" r="2" fill="#8fb6e0" opacity=".3"/>
+    <text x="573" y="312" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".5">TIME</text>
+  </g>
+
+  <!-- ===== TIMELINE AXIS (draw-on) ===== -->
+  <path id="dtAxis" d="M35 286 V298 M35 292 H560 M550 286 L562 292 L550 298" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" filter="url(#dtglowC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== STAGE 1: INHERENT (melt) ===== -->
+  <g id="dtMeltStage" opacity="0">
+    <text x="114" y="71" text-anchor="middle" font-size="12" letter-spacing="3" fill="#9fe6ff">INHERENT</text>
+    <!-- pouring ladle (tilted) -->
+    <g transform="rotate(34 88 98)">
+      <path d="M72 84 L106 84 L100 114 L78 114 Z" fill="url(#dtsteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+      <path d="M106 84 L113 80 L107 90 Z" fill="#1b3e66" stroke="#8fb6e0" stroke-width="1.2"/>
+      <ellipse cx="89" cy="87.5" rx="13" ry="3.2" fill="#ff9b4b" filter="url(#dtglowR)"/>
+    </g>
+    <!-- molten stream + splash -->
+    <path d="M113 96 C119 110 125 126 128 148" fill="none" stroke="#ff9b4b" stroke-width="6" opacity=".3" stroke-linecap="round"/>
+    <path d="M113 96 C119 110 125 126 128 148" fill="none" stroke="#ffc24b" stroke-width="2.5" stroke-linecap="round" filter="url(#dtglowR)"/>
+    <path d="M122 150 q-3 -4 -1 -7 M134 150 q3 -4 1 -7" fill="none" stroke="#ffc24b" stroke-width="1" opacity=".7"/>
+    <!-- ingot mold with cutaway -->
+    <path d="M96 150 L167 150 L175 230 L88 230 Z" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M105 157 L158 157 L165 223 L98 223 Z" fill="url(#dtingot)"/>
+    <ellipse cx="131.5" cy="158.5" rx="26" ry="3" fill="#ffd27f" opacity=".85" filter="url(#dtglowR)"/>
+    <!-- shrinkage pipe cavity (branched) -->
+    <path d="M124 160 L139 160 L135 176 L138 186 L134.5 184 L132.5 196 L130.5 184 L127 187 L129.5 176 Z" fill="#08152b" stroke="#ff9b4b" stroke-width="1" opacity=".95"/>
+    <path d="M132.5 196 L128.5 203 M132.5 196 L136.5 204 M136.5 204 L139.5 201" fill="none" stroke="#08152b" stroke-width="2" stroke-linecap="round"/>
+    <!-- gas porosity (rounded voids) -->
+    <g>
+      <circle cx="112" cy="202" r="3" fill="#ffc24b"/><circle cx="112" cy="202" r="1.8" fill="none" stroke="#b97f1f" stroke-width="1.2"/>
+      <circle cx="123" cy="210" r="2.4" fill="#ffc24b"/><circle cx="123" cy="210" r="1.4" fill="none" stroke="#b97f1f" stroke-width="1"/>
+      <circle cx="139" cy="200" r="2.7" fill="#ffc24b"/><circle cx="139" cy="200" r="1.6" fill="none" stroke="#b97f1f" stroke-width="1.1"/>
+      <circle cx="149" cy="211" r="2.2" fill="#ffc24b"/><circle cx="149" cy="211" r="1.3" fill="none" stroke="#b97f1f" stroke-width="1"/>
+    </g>
+    <!-- inclusions (dark angular specks) -->
+    <g fill="#0b1830" stroke="#9fb8d8" stroke-width=".6" opacity=".95">
+      <path d="M115 183 L120 182 L119 186.5 L114.5 186 Z"/>
+      <path d="M131 213 L135.5 211.5 L136 215.5 L132 216.5 Z"/>
+      <path d="M146 188 L150.5 187 L151 191 L146.5 191.5 Z"/>
+    </g>
+    <circle cx="114" cy="292" r="4.5" fill="#0e2848" stroke="#5fe0ff" stroke-width="1.6" filter="url(#dtglowR)"/>
+  </g>
+  <g id="dtMeltTags" opacity="0" font-size="11" fill="#9fe6ff" text-anchor="middle">
+    <text x="114" y="263">POROSITY / INCLUSIONS</text>
+    <text x="114" y="277">SHRINKAGE</text>
+  </g>
+
+  <!-- ===== STAGE 2: PROCESSING (rolling mill + weld) ===== -->
+  <g id="dtProcessStage" opacity="0">
+    <text x="303" y="71" text-anchor="middle" font-size="12" letter-spacing="2" fill="#9fe6ff">PROCESSING</text>
+    <!-- billet/strip through rolls: thick entry, thin exit -->
+    <path d="M208 141 L238 141 Q250 148 262 148 L310 148 L310 164 L262 164 Q250 164 238 171 L208 171 Z" fill="url(#dtsteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M212 156 H224" stroke="#7fd8ff" stroke-width="1.5" opacity=".75" fill="none"/>
+    <path d="M231 156 L223 152.5 L223 159.5 Z" fill="#7fd8ff" opacity=".75"/>
+    <!-- rolls -->
+    <circle cx="253" cy="124" r="22" fill="url(#dtsteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <circle cx="253" cy="124" r="4" fill="#0e2848" stroke="#8fb6e0" stroke-width="1"/>
+    <circle cx="253" cy="188" r="22" fill="url(#dtsteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <circle cx="253" cy="188" r="4" fill="#0e2848" stroke="#8fb6e0" stroke-width="1"/>
+    <!-- counter-rotation arrows -->
+    <path d="M266 104 A27 27 0 0 0 242 102" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".7"/>
+    <path d="M242 102 L250 99.5 L248 106.5 Z" fill="#5fe0ff" opacity=".7"/>
+    <path d="M266 208 A27 27 0 0 1 242 210" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".7"/>
+    <path d="M242 210 L250 212.5 L248 205.5 Z" fill="#5fe0ff" opacity=".7"/>
+    <!-- lap: folded-over surface tab + seam -->
+    <path d="M270 148 L284 148 L281 144.5 L272 145.5 Z" fill="#ffc24b" opacity=".9" stroke="#b97f1f" stroke-width=".7"/>
+    <path d="M284 148 L273 152" fill="none" stroke="#ffc24b" stroke-width="1.3" stroke-linecap="round" filter="url(#dtglowR)"/>
+    <!-- burst: internal rupture -->
+    <path d="M294 156.5 L297 153.5 L300 157.5 L303 153.8 L306 157 L308 154.5" fill="none" stroke="#ff6b6b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#dtglowR)"/>
+    <!-- weld station: V-groove plates, partial fill, torch, arc -->
+    <path d="M322 206 L352 206 L358.5 232 L322 232 Z" fill="url(#dtsteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M368 206 L398 206 L398 232 L361.5 232 Z" fill="url(#dtsteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M354.75 217 Q360 213.5 365.25 217 L361.5 232 Q360 233.5 358.5 232 Z" fill="#2b86ff"/>
+    <path d="M354.75 217 Q360 213.5 365.25 217" fill="none" stroke="#7fd8ff" stroke-width="1.2" opacity=".9"/>
+    <g>
+      <path d="M368 158 L382 163 L368 204 L357 200 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+      <path d="M368 204 L357 200 L361 211 Z" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+      <path d="M361 211 L360.3 215" stroke="#e8f4ff" stroke-width="1.6" fill="none"/>
+      <path d="M375 160 C381 150 390 146 398 146" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".6"/>
+    </g>
+    <circle cx="360" cy="212.8" r="3" fill="#7fd8ff" filter="url(#dtglowC)" opacity=".95"/>
+    <!-- weld crack: draw-on -->
+    <path id="dtWeldCrack" d="M360 217 L358.8 221.5 L361.5 225.5 L360 230" fill="none" stroke="#ff6b6b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#dtglowR)"/>
+    <circle cx="303" cy="292" r="4.5" fill="#0e2848" stroke="#5fe0ff" stroke-width="1.6" filter="url(#dtglowR)"/>
+  </g>
+  <g id="dtProcessTags" opacity="0" font-size="11" fill="#9fe6ff" text-anchor="middle">
+    <text x="303" y="263">LAPS / BURSTS</text>
+    <text x="303" y="277">WELD CRACKS</text>
+  </g>
+
+  <!-- ===== STAGE 3: SERVICE-INDUCED (flanged pipe) ===== -->
+  <g id="dtServiceStage" opacity="0">
+    <text x="493" y="71" text-anchor="middle" font-size="12" letter-spacing="1" fill="#9fe6ff">SERVICE-INDUCED</text>
+    <!-- pipe run -->
+    <rect x="457" y="138" width="109" height="28" fill="url(#dtpipe)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <ellipse cx="566" cy="152" rx="4.5" ry="14" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+    <!-- corrosion pitting on pipe top surface -->
+    <g>
+      <path d="M505 137.2 L512 137.2 L512 138.7 Q508.5 143 505 138.7 Z" fill="#08152b"/>
+      <path d="M517 137.2 L526 137.2 L526 138.7 Q523 143.6 520 142.8 Q518 142 517 138.7 Z" fill="#08152b"/>
+      <path d="M531 137.2 L538 137.2 L538 138.7 Q534.5 142.6 531 138.7 Z" fill="#08152b"/>
+      <path d="M505 138.7 Q508.5 142.6 512 138.7 M517 138.7 Q518 142 520 142.4 Q523 143.2 526 138.7 M531 138.7 Q534.5 142.2 538 138.7" fill="none" stroke="#ff8585" stroke-width="1.4" stroke-linecap="round" opacity=".85" filter="url(#dtglowR)"/>
+      <ellipse cx="521" cy="147" rx="9" ry="2.6" fill="#ff8585" opacity=".12"/>
+    </g>
+    <!-- cyclic load arrows (push-pull) -->
+    <g stroke="#7fd8ff" stroke-width="1.6" opacity=".85" fill="none">
+      <path d="M532 121 H558"/>
+      <path d="M566 129 H540"/>
+    </g>
+    <path d="M566 121 L558 117.8 L558 124.2 Z" fill="#7fd8ff" opacity=".85"/>
+    <path d="M532 129 L540 125.8 L540 132.2 Z" fill="#7fd8ff" opacity=".85"/>
+    <!-- bolted flange (face-on) -->
+    <circle cx="457" cy="152" r="36" fill="url(#dtsteel)" stroke="#8fb6e0" stroke-width="2"/>
+    <circle cx="457" cy="152" r="17" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".45"/>
+    <circle cx="457" cy="152" r="11.5" fill="#08152b" stroke="#8fb6e0" stroke-width="1.2"/>
+    <g fill="#08152b" stroke="#8fb6e0" stroke-width="1">
+      <circle cx="474.7" cy="169.7" r="4.5"/>
+      <circle cx="439.3" cy="169.7" r="4.5"/>
+      <circle cx="439.3" cy="134.3" r="4.5"/>
+      <circle cx="474.7" cy="134.3" r="4.5"/>
+    </g>
+    <!-- fatigue crack from bolt hole: draw-on -->
+    <path id="dtFatigueCrack" d="M471.4 172.6 L466.5 174.5 L464.8 178.6 L459.5 180.2 L457 184 M464.8 178.6 L462 175.4" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#dtglowR)"/>
+    <circle id="dtFatiguePing" cx="471.4" cy="172.6" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#dtglowR)"/>
+    <circle cx="493" cy="292" r="4.5" fill="#0e2848" stroke="#5fe0ff" stroke-width="1.6" filter="url(#dtglowR)"/>
+  </g>
+  <g id="dtServiceTags" opacity="0" font-size="11" fill="#9fe6ff" text-anchor="middle">
+    <text x="493" y="263">FATIGUE CRACKS</text>
+    <text x="493" y="277">CORROSION</text>
+  </g>
+
+  <!-- ===== scan group ===== -->
+  <g id="dtscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#dtscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#dtglowC)" opacity=".9"/>
+  </g>
+</svg>

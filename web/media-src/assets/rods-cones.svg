@@ -1,0 +1,152 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="rcglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="rcglowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- cone (cluster) fill under the central spike -->
+    <linearGradient id="rcconeFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffc24b" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#ffc24b" stop-opacity="0"/>
+    </linearGradient>
+    <!-- rod (periphery) fill under the twin humps -->
+    <linearGradient id="rcrodFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rcconeStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff9b4b"/>
+      <stop offset="1" stop-color="#ffc24b"/>
+    </linearGradient>
+    <linearGradient id="rcrodStroke" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7fd8ff"/>
+      <stop offset="1" stop-color="#5fe0ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===================================================================
+       PHOTORECEPTOR DENSITY vs. RETINAL ECCENTRICITY
+       Plot frame: x 70..560 ; y 64(top/high) .. 268(bottom/zero).
+       Fovea (0 deg) at x=315. Temporal edge left, nasal edge right.
+       Blind spot (optic disc) ~15 deg nasal -> x=405..423 gap.
+       =================================================================== -->
+
+  <!-- ===== ALWAYS-ON STAGE: faint plot frame so default isn't empty ===== -->
+  <g stroke="#8fb6e0" stroke-width="1.5" fill="none" opacity=".13">
+    <path d="M70 64 V268 H560"/>
+  </g>
+
+  <!-- ===== AXES + GRID + TICKS (revealed: "the retina carries two sensors") ===== -->
+  <g id="rcAxes" opacity="0">
+    <!-- faint grid -->
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".12">
+      <line x1="70" y1="110" x2="560" y2="110"/>
+      <line x1="70" y1="156" x2="560" y2="156"/>
+      <line x1="70" y1="202" x2="560" y2="202"/>
+      <line x1="192" y1="64" x2="192" y2="268"/>
+      <line x1="438" y1="64" x2="438" y2="268"/>
+    </g>
+    <!-- fovea centre datum (0 deg) -->
+    <line x1="315" y1="64" x2="315" y2="268" stroke="#5fe0ff" stroke-width="1" opacity=".28" stroke-dasharray="5 5"/>
+    <!-- axis lines -->
+    <g stroke="#8fb6e0" stroke-width="2" fill="none">
+      <path d="M70 64 V268"/>
+      <path d="M70 268 H560"/>
+    </g>
+    <!-- y-axis arrow (density increases up) -->
+    <path d="M70 64 L66 74 L74 74 Z" fill="#8fb6e0"/>
+    <!-- x ticks: temporal 60, 40, 20 | 0 | 20, 40, 60 nasal -->
+    <g stroke="#8fb6e0" stroke-width="1.5">
+      <line x1="131" y1="268" x2="131" y2="273"/>
+      <line x1="192" y1="268" x2="192" y2="273"/>
+      <line x1="254" y1="268" x2="254" y2="273"/>
+      <line x1="315" y1="268" x2="315" y2="273"/>
+      <line x1="376" y1="268" x2="376" y2="273"/>
+      <line x1="438" y1="268" x2="438" y2="273"/>
+      <line x1="499" y1="268" x2="499" y2="273"/>
+    </g>
+    <g font-size="11" fill="#9fe6ff" text-anchor="middle" opacity=".85">
+      <text x="131" y="286">40</text>
+      <text x="192" y="286">20</text>
+      <text x="315" y="286">0</text>
+      <text x="438" y="286">20</text>
+      <text x="499" y="286">40</text>
+    </g>
+    <!-- x-axis title -->
+    <text x="315" y="304" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".8">ECCENTRICITY FROM FOVEA (DEGREES)</text>
+    <!-- y-axis title (rotated) -->
+    <text x="0" y="0" transform="translate(56,166) rotate(-90)" text-anchor="middle" font-size="10.5" fill="#9fe6ff" opacity=".8">RECEPTOR DENSITY / mm²</text>
+    <!-- temporal / nasal field tags -->
+    <text x="100" y="78" text-anchor="middle" font-size="10" fill="#7fd8ff" opacity=".55">TEMPORAL</text>
+    <text x="528" y="78" text-anchor="middle" font-size="10" fill="#7fd8ff" opacity=".55">NASAL</text>
+  </g>
+
+  <!-- ===== RODS: area fill under twin peripheral humps (with blind-spot gap) ===== -->
+  <path id="rcRodFill" opacity="0" fill="url(#rcrodFill)" stroke="none"
+        d="M70 268
+           L70 150 C100 116 132 112 162 120 C198 130 228 196 270 248 L300 268
+           M330 268 C355 230 372 178 396 150 C402 142 408 140 414 142
+           L414 268 Z
+           M423 142 C430 142 440 152 452 168 C480 206 516 244 560 262 L560 268 Z"/>
+
+  <!-- ===== RODS curve (draw-on): "rods cover the periphery, out toward the edges" =====
+       Twin broad humps peaking ~18-20 deg either side of fovea, dipping to ~zero at the
+       foveal pit, and broken by the blind-spot gap on the nasal side. -->
+  <path id="rcRods" d="M70 150 C100 116 132 112 162 120 C198 130 228 196 270 248 C284 262 298 268 309 268"
+        fill="none" stroke="url(#rcrodStroke)" stroke-width="3" stroke-linecap="round"
+        filter="url(#rcglowC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <path id="rcRods2" d="M321 268 C338 268 358 232 372 200 C382 178 390 156 414 142"
+        fill="none" stroke="url(#rcrodStroke)" stroke-width="3" stroke-linecap="round"
+        filter="url(#rcglowC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <path id="rcRods3" d="M423 142 C440 150 456 174 474 196 C500 228 528 250 560 260"
+        fill="none" stroke="url(#rcrodStroke)" stroke-width="3" stroke-linecap="round"
+        filter="url(#rcglowC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== CONES: area fill under the sharp central spike ===== -->
+  <path id="rcConeFill" opacity="0" fill="url(#rcconeFill)" stroke="none"
+        d="M291 268 C305 262 311 110 315 96 C319 110 325 262 339 268 Z"/>
+
+  <!-- ===== CONES curve (draw-on): "cones cluster in a tiny central pit, the fovea" =====
+       A single tall narrow spike centred exactly on the fovea datum (x=315). -->
+  <path id="rcCones" d="M285 268 C302 264 310 118 315 96 C320 118 328 264 345 268"
+        fill="none" stroke="url(#rcconeStroke)" stroke-width="3" stroke-linecap="round"
+        filter="url(#rcglowC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== FOVEA marker: the tiny central pit at the cone peak ===== -->
+  <g id="rcFovea" opacity="0">
+    <circle cx="315" cy="96" r="4" fill="#ffc24b" filter="url(#rcglowR)"/>
+    <circle cx="315" cy="96" r="9" fill="none" stroke="#ffc24b" stroke-width="1.2" stroke-dasharray="3 3" opacity=".7"/>
+    <text x="315" y="80" text-anchor="middle" font-size="11" fill="#ffc24b" opacity=".95">FOVEA</text>
+  </g>
+
+  <!-- ===== BLIND SPOT marker: optic disc gap (no receptors) ~15 deg nasal ===== -->
+  <g id="rcBlind" opacity="0">
+    <rect x="414" y="142" width="9" height="126" fill="#08152b" opacity=".55"/>
+    <line x1="414" y1="142" x2="414" y2="268" stroke="#8fb6e0" stroke-width="1" opacity=".4" stroke-dasharray="3 4"/>
+    <line x1="423" y1="142" x2="423" y2="268" stroke="#8fb6e0" stroke-width="1" opacity=".4" stroke-dasharray="3 4"/>
+    <text x="418" y="258" text-anchor="middle" font-size="9.5" fill="#9fe6ff" opacity=".7" transform="rotate(-90 418 258)">BLIND SPOT</text>
+  </g>
+
+  <!-- ===== CONE label / leader (cluster at the centre) ===== -->
+  <g id="rcConeLbl" opacity="0" font-size="12">
+    <path d="M311 112 L250 104" stroke="#ff9b4b" stroke-width="1" opacity=".55" fill="none"/>
+    <circle cx="242" cy="103" r="3.4" fill="#ffc24b"/>
+    <text x="234" y="107" text-anchor="end" fill="#ffc24b" opacity=".95">CONES</text>
+    <text x="234" y="121" text-anchor="end" font-size="9.5" fill="#ff9b4b" opacity=".7">colour · acuity</text>
+  </g>
+
+  <!-- ===== ROD label / leader (broad periphery) ===== -->
+  <g id="rcRodLbl" opacity="0" font-size="12">
+    <path d="M474 196 L508 156" stroke="#5fe0ff" stroke-width="1" opacity=".55" fill="none"/>
+    <circle cx="512" cy="153" r="3.4" fill="#5fe0ff"/>
+    <text x="520" y="148" fill="#5fe0ff" opacity=".95">RODS</text>
+    <text x="520" y="162" font-size="9.5" fill="#7fd8ff" opacity=".7">low-light · motion</text>
+  </g>
+
+  <!-- ===== static panel caption ===== -->
+  <text x="40" y="330" font-size="12" fill="#9fe6ff" opacity=".7">RETINA — ROD &amp; CONE DISTRIBUTION</text>
+</svg>

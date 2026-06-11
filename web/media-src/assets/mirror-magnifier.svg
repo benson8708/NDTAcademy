@@ -1,0 +1,203 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="mmglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="mmglowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="mmbench" gradientUnits="userSpaceOnUse" x1="0" y1="222" x2="0" y2="300">
+      <stop offset="0" stop-color="#2a527e"/><stop offset=".4" stop-color="#173a61"/><stop offset="1" stop-color="#0d2444"/>
+    </linearGradient>
+    <linearGradient id="mmsteel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a6390"/><stop offset=".45" stop-color="#1b3e66"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="mmsteelH" gradientUnits="userSpaceOnUse" x1="396" y1="0" x2="484" y2="0">
+      <stop offset="0" stop-color="#16365c"/><stop offset=".22" stop-color="#3a6a9c"/><stop offset=".5" stop-color="#1b4068"/><stop offset="1" stop-color="#0b1f3a"/>
+    </linearGradient>
+    <linearGradient id="mmrim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2c5781"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <radialGradient id="mmball" cx=".35" cy=".3" r=".9">
+      <stop offset="0" stop-color="#5a8ab8"/><stop offset="1" stop-color="#16365c"/>
+    </radialGradient>
+    <radialGradient id="mmglass" cx=".38" cy=".32" r="1">
+      <stop offset="0" stop-color="#b9e2ff"/><stop offset=".45" stop-color="#5fa8e8"/><stop offset="1" stop-color="#16406e"/>
+    </radialGradient>
+    <radialGradient id="mmlensTop" cx=".4" cy=".35" r="1">
+      <stop offset="0" stop-color="#9fd4ff"/><stop offset="1" stop-color="#1b4068"/>
+    </radialGradient>
+    <linearGradient id="mmcone" gradientUnits="userSpaceOnUse" x1="0" y1="140" x2="0" y2="268">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".3"/><stop offset="1" stop-color="#5fe0ff" stop-opacity=".03"/>
+    </linearGradient>
+    <linearGradient id="mmcone2" gradientUnits="userSpaceOnUse" x1="0" y1="199" x2="0" y2="262">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".16"/><stop offset="1" stop-color="#5fe0ff" stop-opacity=".02"/>
+    </linearGradient>
+    <radialGradient id="mmpool">
+      <stop offset="0" stop-color="#bff1ff" stop-opacity=".6"/><stop offset=".5" stop-color="#5fe0ff" stop-opacity=".28"/><stop offset="1" stop-color="#5fe0ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mmscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/><stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+    <clipPath id="mmglassClip"><ellipse cx="0" cy="0" rx="28" ry="16.5"/></clipPath>
+  </defs>
+
+  <!-- ===== BRUSHED METAL BENCH (slight 3/4 perspective) ===== -->
+  <path d="M88 222 L530 222 L582 300 L38 300 Z" fill="url(#mmbench)"/>
+  <!-- brushed texture following perspective -->
+  <g stroke="#8fb6e0" stroke-width="1" fill="none">
+    <line x1="82" y1="232" x2="537" y2="232" opacity=".13"/>
+    <line x1="75" y1="243" x2="544" y2="243" opacity=".17"/>
+    <line x1="68" y1="254" x2="551" y2="254" opacity=".12"/>
+    <line x1="60" y1="265" x2="559" y2="265" opacity=".16"/>
+    <line x1="53" y1="276" x2="566" y2="276" opacity=".12"/>
+    <line x1="46" y1="287" x2="573" y2="287" opacity=".15"/>
+    <line x1="41" y1="295" x2="579" y2="295" opacity=".12"/>
+    <line x1="130" y1="237" x2="268" y2="237" opacity=".24"/>
+    <line x1="330" y1="248" x2="474" y2="248" opacity=".22"/>
+    <line x1="96" y1="281" x2="212" y2="281" opacity=".2"/>
+    <line x1="452" y1="290" x2="556" y2="290" opacity=".2"/>
+    <path d="M150 259 l64 3" opacity=".14"/>
+    <path d="M520 236 l34 5" opacity=".14"/>
+  </g>
+  <!-- bench edges -->
+  <line x1="88" y1="222" x2="530" y2="222" stroke="#5fe0ff" stroke-width="1.2" opacity=".5" filter="url(#mmglowR)"/>
+  <line x1="88" y1="222" x2="38" y2="300" stroke="#8fb6e0" stroke-width="1.2" opacity=".45"/>
+  <line x1="530" y1="222" x2="582" y2="300" stroke="#8fb6e0" stroke-width="1.2" opacity=".45"/>
+  <!-- bench front face (slab thickness) -->
+  <path d="M38 300 L582 300 L582 314 L38 314 Z" fill="#0a1c33"/>
+  <line x1="38" y1="300" x2="582" y2="300" stroke="#8fb6e0" stroke-width="1.8" opacity=".85"/>
+  <line x1="38" y1="313" x2="582" y2="313" stroke="#8fb6e0" stroke-width="1" opacity=".25"/>
+  <!-- socket screws on slab face -->
+  <g stroke="#8fb6e0" stroke-width=".8" opacity=".55">
+    <circle cx="86" cy="307" r="3" fill="#0e2848"/><line x1="84" y1="305" x2="88" y2="309"/>
+    <circle cx="310" cy="307" r="3" fill="#0e2848"/><line x1="308" y1="305" x2="312" y2="309"/>
+    <circle cx="534" cy="307" r="3" fill="#0e2848"/><line x1="532" y1="305" x2="536" y2="309"/>
+  </g>
+
+  <!-- ===== FINE SURFACE CRACK on bench, scribed inspection mark (static, under loupe position) ===== -->
+  <ellipse cx="441" cy="269" rx="50" ry="10.5" fill="none" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="5 4" opacity=".5"/>
+  <g stroke="#ff6b6b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M406 266 l11 -2.5 l8 3.5 l10 -4 l9 2.5 l8 -3 l9 1.5 l7 -2" opacity=".75"/>
+    <path d="M447 263.5 l6 5 l7 2" opacity=".5" stroke-width="1.2"/>
+  </g>
+
+  <!-- ===== STATIC SHADOW-BOARD OUTLINES (tool-control silhouettes, fill on reveal) ===== -->
+  <g stroke="#5fe0ff" fill="none" opacity=".8">
+    <path d="M101 281 L222 158" stroke-width="1" stroke-dasharray="4 4" opacity=".3"/>
+    <g transform="translate(285,124) rotate(-18)">
+      <ellipse cx="0" cy="0" rx="43" ry="27.5" stroke-width="1" stroke-dasharray="5 4" opacity=".35"/>
+    </g>
+    <rect x="390" y="80" width="100" height="132" rx="10" stroke-width="1" stroke-dasharray="5 4" opacity=".3"/>
+  </g>
+
+  <!-- ===== mmGlow : LED light cone + pool on bench (reveal) ===== -->
+  <g id="mmGlow" opacity="0">
+    <path d="M273 150 L310 138 L356 264 L244 264 Z" fill="url(#mmcone)"/>
+    <ellipse cx="300" cy="267" rx="62" ry="12" fill="url(#mmpool)"/>
+    <ellipse cx="300" cy="267" rx="30" ry="6" fill="#bff1ff" opacity=".18"/>
+  </g>
+
+  <!-- ===== mmMirror : telescoping inspection mirror, swivel ball, LED-ring head (reveal) ===== -->
+  <g id="mmMirror" opacity="0">
+    <!-- soft contact shadow on bench -->
+    <ellipse cx="148" cy="288" rx="56" ry="6" fill="#04101f" opacity=".3"/>
+    <!-- handle + telescoping shaft (rotated along its axis) -->
+    <g transform="translate(96,290) rotate(-47)">
+      <rect x="0" y="-8" width="64" height="16" rx="7" fill="url(#mmsteel)" stroke="#8fb6e0" stroke-width="1.2"/>
+      <g stroke="#0a1f3a" stroke-width="1" opacity=".7">
+        <line x1="10" y1="-7" x2="10" y2="7"/><line x1="16" y1="-7" x2="16" y2="7"/>
+        <line x1="22" y1="-7" x2="22" y2="7"/><line x1="28" y1="-7" x2="28" y2="7"/>
+        <line x1="34" y1="-7" x2="34" y2="7"/><line x1="40" y1="-7" x2="40" y2="7"/>
+        <line x1="46" y1="-7" x2="46" y2="7"/><line x1="52" y1="-7" x2="52" y2="7"/>
+      </g>
+      <rect x="14" y="-14.5" width="34" height="5" rx="2.5" fill="#1b3e66" stroke="#8fb6e0" stroke-width="1" opacity=".9"/>
+      <rect x="64" y="-7" width="6" height="14" rx="1.5" fill="#2c5781" stroke="#8fb6e0" stroke-width="1"/>
+      <rect x="70" y="-5.5" width="44" height="11" rx="2" fill="url(#mmsteel)" stroke="#8fb6e0" stroke-width="1"/>
+      <rect x="114" y="-5.5" width="5" height="11" rx="1.5" fill="#2c5781" stroke="#8fb6e0" stroke-width="1"/>
+      <rect x="119" y="-4" width="38" height="8" rx="2" fill="url(#mmsteel)" stroke="#8fb6e0" stroke-width="1"/>
+      <rect x="157" y="-4.5" width="5" height="9" rx="1.5" fill="#2c5781" stroke="#8fb6e0" stroke-width="1"/>
+      <rect x="162" y="-3" width="30" height="6" rx="1.5" fill="url(#mmsteel)" stroke="#8fb6e0" stroke-width="1"/>
+    </g>
+    <!-- swivel ball joint + stem to head -->
+    <path d="M230 147 L254 132" stroke="#16365c" stroke-width="7" stroke-linecap="round" fill="none"/>
+    <path d="M229 145.5 L252 131" stroke="#6f9cc9" stroke-width="1.2" opacity=".55" fill="none"/>
+    <circle cx="230" cy="147" r="7.5" fill="url(#mmball)" stroke="#8fb6e0" stroke-width="1.2"/>
+    <!-- round mirror head, 3/4 view, LED ring -->
+    <g transform="translate(285,124) rotate(-18)">
+      <ellipse cx="3" cy="3" rx="42" ry="27" fill="#0c2440" stroke="#8fb6e0" stroke-width="1" opacity=".9"/>
+      <ellipse cx="0" cy="0" rx="40" ry="25" fill="url(#mmrim)" stroke="#8fb6e0" stroke-width="1.5"/>
+      <ellipse cx="0" cy="0" rx="35" ry="21" fill="none" stroke="#123a63" stroke-width="3"/>
+      <g fill="#5fe0ff" filter="url(#mmglowR)">
+        <circle cx="35" cy="0" r="2"/><circle cx="30.3" cy="10.5" r="2"/><circle cx="17.5" cy="18.2" r="2"/>
+        <circle cx="0" cy="21" r="2"/><circle cx="-17.5" cy="18.2" r="2"/><circle cx="-30.3" cy="10.5" r="2"/>
+        <circle cx="-35" cy="0" r="2"/><circle cx="-30.3" cy="-10.5" r="2"/><circle cx="-17.5" cy="-18.2" r="2"/>
+        <circle cx="0" cy="-21" r="2"/><circle cx="17.5" cy="-18.2" r="2"/><circle cx="30.3" cy="-10.5" r="2"/>
+      </g>
+      <ellipse cx="0" cy="0" rx="28" ry="16.5" fill="url(#mmglass)" stroke="#7fd8ff" stroke-width=".8" opacity=".95"/>
+      <g clip-path="url(#mmglassClip)" stroke="#cfeaff" fill="none">
+        <path d="M-20 10 L4 -12" stroke-width="2.5" opacity=".35"/>
+        <path d="M-11 14 L12 -7" stroke-width="1.2" opacity=".3"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- ===== mmLoupe : 10x triplet loupe over the crack (reveal) ===== -->
+  <g id="mmLoupe" opacity="0">
+    <!-- view cone onto the marked crack -->
+    <path d="M414 199 L466 199 L494 262 L388 262 Z" fill="url(#mmcone2)"/>
+    <!-- barrel wall -->
+    <path d="M396 96 L396 186 Q440 208 484 186 L484 96 Q440 118 396 96 Z" fill="url(#mmsteelH)"/>
+    <line x1="396" y1="96" x2="396" y2="186" stroke="#8fb6e0" stroke-width="1.5"/>
+    <line x1="484" y1="96" x2="484" y2="186" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M396 186 Q440 208 484 186" fill="none" stroke="#8fb6e0" stroke-width="1.5"/>
+    <!-- objective lens glint at bottom -->
+    <path d="M404 187 Q440 204 476 187" fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".5"/>
+    <ellipse cx="440" cy="200" rx="20" ry="4" fill="#5fe0ff" opacity=".14"/>
+    <!-- knurled grip band -->
+    <path d="M396 104 Q440 126 484 104 L484 115 Q440 137 396 115 Z" fill="#16365c" stroke="#8fb6e0" stroke-width=".8" opacity=".95"/>
+    <g stroke="#0a1f3a" stroke-width="1" opacity=".65">
+      <line x1="404" y1="109" x2="404" y2="119"/><line x1="412" y1="112" x2="412" y2="122"/>
+      <line x1="420" y1="114" x2="420" y2="124"/><line x1="428" y1="115.5" x2="428" y2="125.5"/>
+      <line x1="436" y1="116.3" x2="436" y2="126.3"/><line x1="444" y1="116.3" x2="444" y2="126.3"/>
+      <line x1="452" y1="115.5" x2="452" y2="125.5"/><line x1="460" y1="114" x2="460" y2="124"/>
+      <line x1="468" y1="112" x2="468" y2="122"/><line x1="476" y1="109" x2="476" y2="119"/>
+    </g>
+    <!-- eye lens (top) -->
+    <ellipse cx="440" cy="96" rx="44" ry="11" fill="#0d2444" stroke="#8fb6e0" stroke-width="1.5"/>
+    <ellipse cx="440" cy="96" rx="32" ry="7.5" fill="url(#mmlensTop)" stroke="#7fd8ff" stroke-width=".8" opacity=".95"/>
+    <path d="M418 94 Q436 89 452 92" fill="none" stroke="#cfeaff" stroke-width="1.5" opacity=".5"/>
+    <!-- cutaway window: stacked triplet lens elements -->
+    <rect x="413" y="132" width="54" height="36" rx="5" fill="#08152b" opacity=".88"/>
+    <rect x="413" y="132" width="54" height="36" rx="5" fill="none" stroke="#8fb6e0" stroke-width="1.2"/>
+    <path d="M419 143 Q440 130 461 143 L461 152 Q440 162 419 152 Z" fill="#7fd8ff" opacity=".18"/>
+    <path d="M419 143 Q440 130 461 143 L461 152 Q440 162 419 152 Z" fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".85"/>
+    <path d="M419 146 Q440 141 461 146" fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".55"/>
+    <path d="M419 149 Q440 154 461 149" fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".55"/>
+    <line x1="440" y1="134" x2="440" y2="166" stroke="#5fe0ff" stroke-width=".8" stroke-dasharray="2 3" opacity=".4"/>
+    <!-- 10X etched on barrel -->
+    <text x="440" y="181" text-anchor="middle" font-size="12" letter-spacing="1" fill="#9fe6ff" opacity=".9">10X</text>
+  </g>
+
+  <!-- ===== mmFocus : reticle brackets around the loupe (reveal: "this video is about the magnifier") ===== -->
+  <g id="mmFocus" opacity="0" stroke="#5fe0ff" stroke-width="1.6" fill="none" filter="url(#mmglowR)">
+    <path d="M382 92 L382 74 L400 74"/>
+    <path d="M480 74 L498 74 L498 92"/>
+    <path d="M498 200 L498 218 L480 218"/>
+    <path d="M400 218 L382 218 L382 200"/>
+  </g>
+
+  <!-- ===== mmXglow : highlight on the 10X power marking (reveal: "the one number") ===== -->
+  <g id="mmXglow" opacity="0">
+    <rect x="423" y="170" width="34" height="15" rx="4" fill="none" stroke="#5fe0ff" stroke-width="1.5" filter="url(#mmglowR)"/>
+    <text x="440" y="181" text-anchor="middle" font-size="12" letter-spacing="1" fill="#dff6ff">10X</text>
+  </g>
+
+  <!-- ===== scan group ===== -->
+  <g id="mmscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#mmscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#mmglowC)" opacity=".9"/>
+  </g>
+</svg>

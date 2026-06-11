@@ -1,0 +1,175 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="fbglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fbglowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="fbsteel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".35" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <radialGradient id="fbfaceBg" cx=".42" cy=".4" r=".75">
+      <stop offset="0" stop-color="#0d2547"/><stop offset="1" stop-color="#071226"/>
+    </radialGradient>
+    <linearGradient id="fbscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ================= FIBERSCOPE BODY (proximal end, upper-left) ================= -->
+  <!-- articulation control wheels (behind body) -->
+  <g>
+    <circle cx="86" cy="55" r="13" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+    <circle cx="86" cy="55" r="9.5" fill="none" stroke="#5fe0ff" stroke-width="1.6" stroke-dasharray="2 3" opacity=".55"/>
+    <circle cx="105" cy="62" r="9" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+    <circle cx="105" cy="62" r="6" fill="none" stroke="#5fe0ff" stroke-width="1.4" stroke-dasharray="1.6 2.4" opacity=".55"/>
+  </g>
+  <!-- light-guide cable hint -->
+  <path d="M46 92 C42 114 26 122 6 125" fill="none" stroke="#2b86ff" stroke-width="3.5" opacity=".4" stroke-linecap="round"/>
+  <path d="M46 92 C42 114 26 122 6 125" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".3" stroke-linecap="round"/>
+  <!-- eyepiece body -->
+  <rect x="30" y="58" width="84" height="36" rx="9" fill="url(#fbsteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="40" y="65" width="11" height="22" rx="3" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".45"/>
+  <!-- eyecup -->
+  <rect x="15" y="63" width="17" height="26" rx="5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+  <ellipse cx="20" cy="76" rx="2.4" ry="8" fill="#5fe0ff" opacity=".55"/>
+
+  <!-- ================= INSERTION TUBE (S-bend) ================= -->
+  <g id="fbTube" fill="none">
+    <path d="M114 76 C170 70 210 94 205 134 C200 170 158 178 146 208 C140 224 146 238 158 246" stroke="#8fb6e0" stroke-width="13" opacity=".85" stroke-linecap="round"/>
+    <path d="M114 76 C170 70 210 94 205 134 C200 170 158 178 146 208 C140 224 146 238 158 246" stroke="#14304f" stroke-width="10" stroke-linecap="round"/>
+    <path d="M114 76 C170 70 210 94 205 134 C200 170 158 178 146 208 C140 224 146 238 158 246" stroke="#8fb6e0" stroke-width="10.5" stroke-dasharray="1.8 8" opacity=".22"/>
+    <path d="M114 76 C170 70 210 94 205 134 C200 170 158 178 146 208 C140 224 146 238 158 246" transform="translate(0,-2.6)" stroke="#7fd8ff" stroke-width="1.2" opacity=".3"/>
+  </g>
+  <!-- distal tip: objective lens + 2 light-guide outlets -->
+  <circle cx="159" cy="247" r="7.5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+  <circle cx="160" cy="248" r="2.7" fill="#0a1f3a" stroke="#5fe0ff" stroke-width="1.2"/>
+  <circle cx="155.5" cy="250.5" r="1.6" fill="#7fd8ff" opacity=".85"/>
+  <circle cx="162.5" cy="243" r="1.6" fill="#7fd8ff" opacity=".85"/>
+  <!-- tip illumination + lens glint (reveals with "traps light") -->
+  <g id="fbTip" opacity="0">
+    <path d="M158 247 L144 263 L206 263 Z" fill="#5fe0ff" opacity=".2"/>
+    <path d="M158 247 L152 263 L180 263 Z" fill="#7fd8ff" opacity=".16"/>
+    <ellipse cx="175" cy="264" rx="30" ry="4.5" fill="#7fd8ff" opacity=".24"/>
+    <circle cx="160" cy="248" r="2.7" fill="none" stroke="#5fe0ff" stroke-width="1.6" filter="url(#fbglowR)"/>
+    <circle cx="155.5" cy="250.5" r="1.9" fill="#aef0ff" filter="url(#fbglowR)"/>
+    <circle cx="162.5" cy="243" r="1.9" fill="#aef0ff" filter="url(#fbglowR)"/>
+  </g>
+
+  <!-- ================= PART SURFACE w/ CRACK (lower-left) ================= -->
+  <path d="M60 262 L208 262 L216 290 L52 290 Z" fill="url(#fbsteel)"/>
+  <path d="M60 262 H208" stroke="#8fb6e0" stroke-width="2" fill="none"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".2">
+    <path d="M62 270 H211" fill="none"/><path d="M58 280 H214" fill="none"/>
+  </g>
+  <path d="M156 263 L165 268 L172 264 L181 270 L188 265 L196 271" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#fbglowR)" opacity=".9"/>
+
+  <!-- ================= MAGNIFIED SINGLE-FIBER CUTAWAY (center) ================= -->
+  <!-- magnifier callout from tube -->
+  <circle cx="203" cy="128" r="6" fill="none" stroke="#5fe0ff" stroke-width="1.4" opacity=".75"/>
+  <g stroke="#5fe0ff" stroke-width="1" stroke-dasharray="3 3" opacity=".4" fill="none">
+    <path d="M208 124 L228 96"/><path d="M208 132 L228 178"/>
+  </g>
+  <rect x="228" y="86" width="162" height="100" rx="10" fill="#5fe0ff" fill-opacity=".04" stroke="#8fb6e0" stroke-width="1" opacity=".95" stroke-opacity=".35"/>
+  <!-- fiber: cladding sheath + bright core, bending toward exit face -->
+  <g fill="none">
+    <path d="M238 118 H316 Q346 118 354 138 Q361 155 384 160" stroke="#8fb6e0" stroke-width="30" opacity=".3" stroke-linecap="butt"/>
+    <path d="M238 118 H316 Q346 118 354 138 Q361 155 384 160" stroke="#0e2848" stroke-width="28" stroke-linecap="butt"/>
+    <path d="M238 118 H316 Q346 118 354 138 Q361 155 384 160" stroke="#1E66F5" stroke-width="14" stroke-linecap="butt"/>
+    <path d="M238 118 H316 Q346 118 354 138 Q361 155 384 160" stroke="#3f9bff" stroke-width="7" opacity=".55" stroke-linecap="butt"/>
+  </g>
+  <!-- TIR ray: straight section (draws on "total internal reflection") -->
+  <path id="fbRay" d="M240 116 L252 111.5 L264 124.5 L276 111.5 L288 124.5 L300 111.5 L312 124.5 L316 121" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#fbglowR)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <!-- TIR ray: continues around the bend -->
+  <path id="fbBend" d="M316 121 L328 112 L340 125 L350 130 L356 144 L363 147 L370 158 L382 160" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#fbglowR)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <!-- core/cladding boundary highlight + labels -->
+  <g id="fbBoundary" opacity="0">
+    <path d="M240 111 H316" stroke="#7fd8ff" stroke-width="1.2" stroke-dasharray="4 3" opacity=".85" fill="none"/>
+    <path d="M240 125 H316" stroke="#7fd8ff" stroke-width="1.2" stroke-dasharray="4 3" opacity=".85" fill="none"/>
+    <text x="244" y="99" font-size="11" fill="#9fe6ff">CORE</text>
+    <path d="M262 102 L272 113" stroke="#5fe0ff" stroke-width="1" opacity=".6" fill="none"/>
+    <text x="244" y="178" font-size="11" fill="#9fe6ff">CLADDING</text>
+    <path d="M270 169 L280 130" stroke="#5fe0ff" stroke-width="1" opacity=".6" fill="none"/>
+    <circle cx="280" cy="129.5" r="1.6" fill="#5fe0ff" opacity=".85"/>
+    <circle cx="272" cy="113.5" r="1.6" fill="#5fe0ff" opacity=".85"/>
+  </g>
+
+  <!-- ================= ENTRY FACE (small inset above tip) ================= -->
+  <g stroke="#5fe0ff" stroke-width="1" stroke-dasharray="3 3" opacity=".35" fill="none">
+    <path d="M167 243 L268 224"/><path d="M165 251 L269 241"/>
+  </g>
+  <circle cx="300" cy="232" r="32" fill="url(#fbfaceBg)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <circle cx="300" cy="232" r="27.5" fill="none" stroke="#2b86ff" stroke-width="1" opacity=".5"/>
+  <g fill="#2b86ff" opacity=".42"><circle cx="293.4" cy="209.2" r="2.1"/><circle cx="300" cy="209.2" r="2.1"/><circle cx="306.6" cy="209.2" r="2.1"/><circle cx="283.5" cy="214.9" r="2.1"/><circle cx="290.1" cy="214.9" r="2.1"/><circle cx="296.7" cy="214.9" r="2.1"/><circle cx="303.3" cy="214.9" r="2.1"/><circle cx="309.9" cy="214.9" r="2.1"/><circle cx="316.5" cy="214.9" r="2.1"/><circle cx="280.2" cy="220.6" r="2.1"/><circle cx="286.8" cy="220.6" r="2.1"/><circle cx="293.4" cy="220.6" r="2.1"/><circle cx="300" cy="220.6" r="2.1"/><circle cx="306.6" cy="220.6" r="2.1"/><circle cx="313.2" cy="220.6" r="2.1"/><circle cx="319.8" cy="220.6" r="2.1"/><circle cx="276.9" cy="226.3" r="2.1"/><circle cx="283.5" cy="226.3" r="2.1"/><circle cx="290.1" cy="226.3" r="2.1"/><circle cx="296.7" cy="226.3" r="2.1"/><circle cx="303.3" cy="226.3" r="2.1"/><circle cx="309.9" cy="226.3" r="2.1"/><circle cx="316.5" cy="226.3" r="2.1"/><circle cx="323.1" cy="226.3" r="2.1"/><circle cx="280.2" cy="232" r="2.1"/><circle cx="286.8" cy="232" r="2.1"/><circle cx="293.4" cy="232" r="2.1"/><circle cx="300" cy="232" r="2.1"/><circle cx="306.6" cy="232" r="2.1"/><circle cx="313.2" cy="232" r="2.1"/><circle cx="319.8" cy="232" r="2.1"/><circle cx="276.9" cy="237.7" r="2.1"/><circle cx="283.5" cy="237.7" r="2.1"/><circle cx="290.1" cy="237.7" r="2.1"/><circle cx="296.7" cy="237.7" r="2.1"/><circle cx="303.3" cy="237.7" r="2.1"/><circle cx="309.9" cy="237.7" r="2.1"/><circle cx="316.5" cy="237.7" r="2.1"/><circle cx="323.1" cy="237.7" r="2.1"/><circle cx="280.2" cy="243.4" r="2.1"/><circle cx="286.8" cy="243.4" r="2.1"/><circle cx="293.4" cy="243.4" r="2.1"/><circle cx="300" cy="243.4" r="2.1"/><circle cx="306.6" cy="243.4" r="2.1"/><circle cx="313.2" cy="243.4" r="2.1"/><circle cx="319.8" cy="243.4" r="2.1"/><circle cx="283.5" cy="249.1" r="2.1"/><circle cx="290.1" cy="249.1" r="2.1"/><circle cx="296.7" cy="249.1" r="2.1"/><circle cx="303.3" cy="249.1" r="2.1"/><circle cx="309.9" cy="249.1" r="2.1"/><circle cx="316.5" cy="249.1" r="2.1"/><circle cx="293.4" cy="254.8" r="2.1"/><circle cx="300" cy="254.8" r="2.1"/><circle cx="306.6" cy="254.8" r="2.1"/></g>
+  <g fill="#ff6b6b" opacity=".9"><circle cx="293.4" cy="209.2" r="2.1"/><circle cx="290.1" cy="214.9" r="2.1"/><circle cx="293.4" cy="220.6" r="2.1"/><circle cx="290.1" cy="226.3" r="2.1"/><circle cx="293.4" cy="232" r="2.1"/><circle cx="290.1" cy="237.7" r="2.1"/><circle cx="293.4" cy="243.4" r="2.1"/><circle cx="290.1" cy="249.1" r="2.1"/></g>
+  <text x="300" y="282" font-size="11" fill="#9fe6ff" opacity=".75" text-anchor="middle">ENTRY FACE</text>
+
+  <!-- bundle sheath hint between faces -->
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".2" fill="none">
+    <path d="M326 214 C365 192 388 168 398 148"/>
+    <path d="M322 252 C368 260 408 252 432 234"/>
+  </g>
+
+  <!-- ================= EXIT FACE (big, right) ================= -->
+  <circle cx="478" cy="176" r="86" fill="url(#fbfaceBg)" stroke="#8fb6e0" stroke-width="2"/>
+  <circle cx="478" cy="176" r="78" fill="none" stroke="#2b86ff" stroke-width="1" opacity=".5"/>
+  <g fill="#1E66F5" opacity=".3"><circle cx="450.5" cy="109.5" r="4.3"/><circle cx="461.5" cy="109.5" r="4.3"/><circle cx="472.5" cy="109.5" r="4.3"/><circle cx="483.5" cy="109.5" r="4.3"/><circle cx="494.5" cy="109.5" r="4.3"/><circle cx="505.5" cy="109.5" r="4.3"/><circle cx="434" cy="119" r="4.3"/><circle cx="445" cy="119" r="4.3"/><circle cx="456" cy="119" r="4.3"/><circle cx="467" cy="119" r="4.3"/><circle cx="478" cy="119" r="4.3"/><circle cx="489" cy="119" r="4.3"/><circle cx="500" cy="119" r="4.3"/><circle cx="511" cy="119" r="4.3"/><circle cx="522" cy="119" r="4.3"/><circle cx="428.5" cy="128.5" r="4.3"/><circle cx="439.5" cy="128.5" r="4.3"/><circle cx="450.5" cy="128.5" r="4.3"/><circle cx="461.5" cy="128.5" r="4.3"/><circle cx="472.5" cy="128.5" r="4.3"/><circle cx="483.5" cy="128.5" r="4.3"/><circle cx="494.5" cy="128.5" r="4.3"/><circle cx="505.5" cy="128.5" r="4.3"/><circle cx="516.5" cy="128.5" r="4.3"/><circle cx="527.5" cy="128.5" r="4.3"/><circle cx="423" cy="138" r="4.3"/><circle cx="434" cy="138" r="4.3"/><circle cx="445" cy="138" r="4.3"/><circle cx="456" cy="138" r="4.3"/><circle cx="467" cy="138" r="4.3"/><circle cx="478" cy="138" r="4.3"/><circle cx="489" cy="138" r="4.3"/><circle cx="500" cy="138" r="4.3"/><circle cx="511" cy="138" r="4.3"/><circle cx="522" cy="138" r="4.3"/><circle cx="533" cy="138" r="4.3"/><circle cx="417.5" cy="147.5" r="4.3"/><circle cx="428.5" cy="147.5" r="4.3"/><circle cx="439.5" cy="147.5" r="4.3"/><circle cx="450.5" cy="147.5" r="4.3"/><circle cx="461.5" cy="147.5" r="4.3"/><circle cx="472.5" cy="147.5" r="4.3"/><circle cx="483.5" cy="147.5" r="4.3"/><circle cx="494.5" cy="147.5" r="4.3"/><circle cx="505.5" cy="147.5" r="4.3"/><circle cx="516.5" cy="147.5" r="4.3"/><circle cx="527.5" cy="147.5" r="4.3"/><circle cx="538.5" cy="147.5" r="4.3"/><circle cx="412" cy="157" r="4.3"/><circle cx="423" cy="157" r="4.3"/><circle cx="434" cy="157" r="4.3"/><circle cx="445" cy="157" r="4.3"/><circle cx="456" cy="157" r="4.3"/><circle cx="467" cy="157" r="4.3"/><circle cx="478" cy="157" r="4.3"/><circle cx="489" cy="157" r="4.3"/><circle cx="500" cy="157" r="4.3"/><circle cx="511" cy="157" r="4.3"/><circle cx="522" cy="157" r="4.3"/><circle cx="533" cy="157" r="4.3"/><circle cx="544" cy="157" r="4.3"/><circle cx="406.5" cy="166.5" r="4.3"/><circle cx="417.5" cy="166.5" r="4.3"/><circle cx="428.5" cy="166.5" r="4.3"/><circle cx="439.5" cy="166.5" r="4.3"/><circle cx="450.5" cy="166.5" r="4.3"/><circle cx="461.5" cy="166.5" r="4.3"/><circle cx="472.5" cy="166.5" r="4.3"/><circle cx="483.5" cy="166.5" r="4.3"/><circle cx="494.5" cy="166.5" r="4.3"/><circle cx="505.5" cy="166.5" r="4.3"/><circle cx="516.5" cy="166.5" r="4.3"/><circle cx="527.5" cy="166.5" r="4.3"/><circle cx="538.5" cy="166.5" r="4.3"/><circle cx="549.5" cy="166.5" r="4.3"/><circle cx="412" cy="176" r="4.3"/><circle cx="423" cy="176" r="4.3"/><circle cx="434" cy="176" r="4.3"/><circle cx="445" cy="176" r="4.3"/><circle cx="456" cy="176" r="4.3"/><circle cx="467" cy="176" r="4.3"/><circle cx="478" cy="176" r="4.3"/><circle cx="489" cy="176" r="4.3"/><circle cx="500" cy="176" r="4.3"/><circle cx="511" cy="176" r="4.3"/><circle cx="522" cy="176" r="4.3"/><circle cx="533" cy="176" r="4.3"/><circle cx="544" cy="176" r="4.3"/><circle cx="406.5" cy="185.5" r="4.3"/><circle cx="417.5" cy="185.5" r="4.3"/><circle cx="428.5" cy="185.5" r="4.3"/><circle cx="439.5" cy="185.5" r="4.3"/><circle cx="450.5" cy="185.5" r="4.3"/><circle cx="461.5" cy="185.5" r="4.3"/><circle cx="472.5" cy="185.5" r="4.3"/><circle cx="483.5" cy="185.5" r="4.3"/><circle cx="494.5" cy="185.5" r="4.3"/><circle cx="505.5" cy="185.5" r="4.3"/><circle cx="516.5" cy="185.5" r="4.3"/><circle cx="527.5" cy="185.5" r="4.3"/><circle cx="538.5" cy="185.5" r="4.3"/><circle cx="549.5" cy="185.5" r="4.3"/><circle cx="412" cy="195" r="4.3"/><circle cx="423" cy="195" r="4.3"/><circle cx="434" cy="195" r="4.3"/><circle cx="445" cy="195" r="4.3"/><circle cx="456" cy="195" r="4.3"/><circle cx="467" cy="195" r="4.3"/><circle cx="478" cy="195" r="4.3"/><circle cx="489" cy="195" r="4.3"/><circle cx="500" cy="195" r="4.3"/><circle cx="511" cy="195" r="4.3"/><circle cx="522" cy="195" r="4.3"/><circle cx="533" cy="195" r="4.3"/><circle cx="544" cy="195" r="4.3"/><circle cx="417.5" cy="204.5" r="4.3"/><circle cx="428.5" cy="204.5" r="4.3"/><circle cx="439.5" cy="204.5" r="4.3"/><circle cx="450.5" cy="204.5" r="4.3"/><circle cx="461.5" cy="204.5" r="4.3"/><circle cx="472.5" cy="204.5" r="4.3"/><circle cx="483.5" cy="204.5" r="4.3"/><circle cx="494.5" cy="204.5" r="4.3"/><circle cx="505.5" cy="204.5" r="4.3"/><circle cx="516.5" cy="204.5" r="4.3"/><circle cx="527.5" cy="204.5" r="4.3"/><circle cx="538.5" cy="204.5" r="4.3"/><circle cx="423" cy="214" r="4.3"/><circle cx="434" cy="214" r="4.3"/><circle cx="445" cy="214" r="4.3"/><circle cx="456" cy="214" r="4.3"/><circle cx="467" cy="214" r="4.3"/><circle cx="478" cy="214" r="4.3"/><circle cx="489" cy="214" r="4.3"/><circle cx="500" cy="214" r="4.3"/><circle cx="511" cy="214" r="4.3"/><circle cx="522" cy="214" r="4.3"/><circle cx="533" cy="214" r="4.3"/><circle cx="428.5" cy="223.5" r="4.3"/><circle cx="439.5" cy="223.5" r="4.3"/><circle cx="450.5" cy="223.5" r="4.3"/><circle cx="461.5" cy="223.5" r="4.3"/><circle cx="472.5" cy="223.5" r="4.3"/><circle cx="483.5" cy="223.5" r="4.3"/><circle cx="494.5" cy="223.5" r="4.3"/><circle cx="505.5" cy="223.5" r="4.3"/><circle cx="516.5" cy="223.5" r="4.3"/><circle cx="527.5" cy="223.5" r="4.3"/><circle cx="434" cy="233" r="4.3"/><circle cx="445" cy="233" r="4.3"/><circle cx="456" cy="233" r="4.3"/><circle cx="467" cy="233" r="4.3"/><circle cx="478" cy="233" r="4.3"/><circle cx="489" cy="233" r="4.3"/><circle cx="500" cy="233" r="4.3"/><circle cx="511" cy="233" r="4.3"/><circle cx="522" cy="233" r="4.3"/><circle cx="450.5" cy="242.5" r="4.3"/><circle cx="461.5" cy="242.5" r="4.3"/><circle cx="472.5" cy="242.5" r="4.3"/><circle cx="483.5" cy="242.5" r="4.3"/><circle cx="494.5" cy="242.5" r="4.3"/><circle cx="505.5" cy="242.5" r="4.3"/></g>
+  <text x="478" y="280" font-size="11" fill="#9fe6ff" opacity=".75" text-anchor="middle">EXIT FACE</text>
+
+  <!-- image appears dot-by-dot: bright mosaic + dotted crack picture -->
+  <g id="fbFace" opacity="0">
+    <g fill="#2b86ff" opacity=".5"><circle cx="450.5" cy="109.5" r="4.3"/><circle cx="461.5" cy="109.5" r="4.3"/><circle cx="472.5" cy="109.5" r="4.3"/><circle cx="483.5" cy="109.5" r="4.3"/><circle cx="494.5" cy="109.5" r="4.3"/><circle cx="505.5" cy="109.5" r="4.3"/><circle cx="434" cy="119" r="4.3"/><circle cx="445" cy="119" r="4.3"/><circle cx="456" cy="119" r="4.3"/><circle cx="467" cy="119" r="4.3"/><circle cx="478" cy="119" r="4.3"/><circle cx="489" cy="119" r="4.3"/><circle cx="500" cy="119" r="4.3"/><circle cx="511" cy="119" r="4.3"/><circle cx="522" cy="119" r="4.3"/><circle cx="428.5" cy="128.5" r="4.3"/><circle cx="439.5" cy="128.5" r="4.3"/><circle cx="450.5" cy="128.5" r="4.3"/><circle cx="461.5" cy="128.5" r="4.3"/><circle cx="472.5" cy="128.5" r="4.3"/><circle cx="483.5" cy="128.5" r="4.3"/><circle cx="494.5" cy="128.5" r="4.3"/><circle cx="505.5" cy="128.5" r="4.3"/><circle cx="516.5" cy="128.5" r="4.3"/><circle cx="527.5" cy="128.5" r="4.3"/><circle cx="423" cy="138" r="4.3"/><circle cx="434" cy="138" r="4.3"/><circle cx="445" cy="138" r="4.3"/><circle cx="456" cy="138" r="4.3"/><circle cx="467" cy="138" r="4.3"/><circle cx="478" cy="138" r="4.3"/><circle cx="489" cy="138" r="4.3"/><circle cx="500" cy="138" r="4.3"/><circle cx="511" cy="138" r="4.3"/><circle cx="522" cy="138" r="4.3"/><circle cx="533" cy="138" r="4.3"/><circle cx="417.5" cy="147.5" r="4.3"/><circle cx="428.5" cy="147.5" r="4.3"/><circle cx="439.5" cy="147.5" r="4.3"/><circle cx="450.5" cy="147.5" r="4.3"/><circle cx="461.5" cy="147.5" r="4.3"/><circle cx="472.5" cy="147.5" r="4.3"/><circle cx="483.5" cy="147.5" r="4.3"/><circle cx="494.5" cy="147.5" r="4.3"/><circle cx="505.5" cy="147.5" r="4.3"/><circle cx="516.5" cy="147.5" r="4.3"/><circle cx="527.5" cy="147.5" r="4.3"/><circle cx="538.5" cy="147.5" r="4.3"/><circle cx="412" cy="157" r="4.3"/><circle cx="423" cy="157" r="4.3"/><circle cx="434" cy="157" r="4.3"/><circle cx="445" cy="157" r="4.3"/><circle cx="456" cy="157" r="4.3"/><circle cx="467" cy="157" r="4.3"/><circle cx="478" cy="157" r="4.3"/><circle cx="489" cy="157" r="4.3"/><circle cx="500" cy="157" r="4.3"/><circle cx="511" cy="157" r="4.3"/><circle cx="522" cy="157" r="4.3"/><circle cx="533" cy="157" r="4.3"/><circle cx="544" cy="157" r="4.3"/><circle cx="406.5" cy="166.5" r="4.3"/><circle cx="417.5" cy="166.5" r="4.3"/><circle cx="428.5" cy="166.5" r="4.3"/><circle cx="439.5" cy="166.5" r="4.3"/><circle cx="450.5" cy="166.5" r="4.3"/><circle cx="461.5" cy="166.5" r="4.3"/><circle cx="472.5" cy="166.5" r="4.3"/><circle cx="483.5" cy="166.5" r="4.3"/><circle cx="494.5" cy="166.5" r="4.3"/><circle cx="505.5" cy="166.5" r="4.3"/><circle cx="516.5" cy="166.5" r="4.3"/><circle cx="527.5" cy="166.5" r="4.3"/><circle cx="538.5" cy="166.5" r="4.3"/><circle cx="549.5" cy="166.5" r="4.3"/><circle cx="412" cy="176" r="4.3"/><circle cx="423" cy="176" r="4.3"/><circle cx="434" cy="176" r="4.3"/><circle cx="445" cy="176" r="4.3"/><circle cx="456" cy="176" r="4.3"/><circle cx="467" cy="176" r="4.3"/><circle cx="478" cy="176" r="4.3"/><circle cx="489" cy="176" r="4.3"/><circle cx="500" cy="176" r="4.3"/><circle cx="511" cy="176" r="4.3"/><circle cx="522" cy="176" r="4.3"/><circle cx="533" cy="176" r="4.3"/><circle cx="544" cy="176" r="4.3"/><circle cx="406.5" cy="185.5" r="4.3"/><circle cx="417.5" cy="185.5" r="4.3"/><circle cx="428.5" cy="185.5" r="4.3"/><circle cx="439.5" cy="185.5" r="4.3"/><circle cx="450.5" cy="185.5" r="4.3"/><circle cx="461.5" cy="185.5" r="4.3"/><circle cx="472.5" cy="185.5" r="4.3"/><circle cx="483.5" cy="185.5" r="4.3"/><circle cx="494.5" cy="185.5" r="4.3"/><circle cx="505.5" cy="185.5" r="4.3"/><circle cx="516.5" cy="185.5" r="4.3"/><circle cx="527.5" cy="185.5" r="4.3"/><circle cx="538.5" cy="185.5" r="4.3"/><circle cx="549.5" cy="185.5" r="4.3"/><circle cx="412" cy="195" r="4.3"/><circle cx="423" cy="195" r="4.3"/><circle cx="434" cy="195" r="4.3"/><circle cx="445" cy="195" r="4.3"/><circle cx="456" cy="195" r="4.3"/><circle cx="467" cy="195" r="4.3"/><circle cx="478" cy="195" r="4.3"/><circle cx="489" cy="195" r="4.3"/><circle cx="500" cy="195" r="4.3"/><circle cx="511" cy="195" r="4.3"/><circle cx="522" cy="195" r="4.3"/><circle cx="533" cy="195" r="4.3"/><circle cx="544" cy="195" r="4.3"/><circle cx="417.5" cy="204.5" r="4.3"/><circle cx="428.5" cy="204.5" r="4.3"/><circle cx="439.5" cy="204.5" r="4.3"/><circle cx="450.5" cy="204.5" r="4.3"/><circle cx="461.5" cy="204.5" r="4.3"/><circle cx="472.5" cy="204.5" r="4.3"/><circle cx="483.5" cy="204.5" r="4.3"/><circle cx="494.5" cy="204.5" r="4.3"/><circle cx="505.5" cy="204.5" r="4.3"/><circle cx="516.5" cy="204.5" r="4.3"/><circle cx="527.5" cy="204.5" r="4.3"/><circle cx="538.5" cy="204.5" r="4.3"/><circle cx="423" cy="214" r="4.3"/><circle cx="434" cy="214" r="4.3"/><circle cx="445" cy="214" r="4.3"/><circle cx="456" cy="214" r="4.3"/><circle cx="467" cy="214" r="4.3"/><circle cx="478" cy="214" r="4.3"/><circle cx="489" cy="214" r="4.3"/><circle cx="500" cy="214" r="4.3"/><circle cx="511" cy="214" r="4.3"/><circle cx="522" cy="214" r="4.3"/><circle cx="533" cy="214" r="4.3"/><circle cx="428.5" cy="223.5" r="4.3"/><circle cx="439.5" cy="223.5" r="4.3"/><circle cx="450.5" cy="223.5" r="4.3"/><circle cx="461.5" cy="223.5" r="4.3"/><circle cx="472.5" cy="223.5" r="4.3"/><circle cx="483.5" cy="223.5" r="4.3"/><circle cx="494.5" cy="223.5" r="4.3"/><circle cx="505.5" cy="223.5" r="4.3"/><circle cx="516.5" cy="223.5" r="4.3"/><circle cx="527.5" cy="223.5" r="4.3"/><circle cx="434" cy="233" r="4.3"/><circle cx="445" cy="233" r="4.3"/><circle cx="456" cy="233" r="4.3"/><circle cx="467" cy="233" r="4.3"/><circle cx="478" cy="233" r="4.3"/><circle cx="489" cy="233" r="4.3"/><circle cx="500" cy="233" r="4.3"/><circle cx="511" cy="233" r="4.3"/><circle cx="522" cy="233" r="4.3"/><circle cx="450.5" cy="242.5" r="4.3"/><circle cx="461.5" cy="242.5" r="4.3"/><circle cx="472.5" cy="242.5" r="4.3"/><circle cx="483.5" cy="242.5" r="4.3"/><circle cx="494.5" cy="242.5" r="4.3"/><circle cx="505.5" cy="242.5" r="4.3"/></g>
+    <g fill="#ff6b6b"><circle cx="456" cy="119" r="4.3"/><circle cx="467" cy="119" r="4.3"/><circle cx="450.5" cy="128.5" r="4.3"/><circle cx="461.5" cy="128.5" r="4.3"/><circle cx="456" cy="138" r="4.3"/><circle cx="450.5" cy="147.5" r="4.3"/><circle cx="456" cy="157" r="4.3"/><circle cx="450.5" cy="166.5" r="4.3"/><circle cx="461.5" cy="166.5" r="4.3"/><circle cx="445" cy="176" r="4.3"/><circle cx="456" cy="176" r="4.3"/><circle cx="450.5" cy="185.5" r="4.3"/><circle cx="445" cy="195" r="4.3"/><circle cx="450.5" cy="204.5" r="4.3"/><circle cx="445" cy="214" r="4.3"/><circle cx="456" cy="214" r="4.3"/><circle cx="439.5" cy="223.5" r="4.3"/><circle cx="450.5" cy="223.5" r="4.3"/><circle cx="445" cy="233" r="4.3"/></g>
+  </g>
+
+  <!-- color-coded position mapping: same spot on both ends (lines stop at the ferrule rim) -->
+  <g id="fbMap" opacity="0" fill="none">
+    <path d="M308 216 C340 198 370 172 398 148" stroke="#ffc24b" stroke-width="1.3" opacity=".6"/>
+    <path d="M316 242 C355 235 378 218 396 198" stroke="#7fd8ff" stroke-width="1.3" opacity=".6"/>
+    <path d="M300 250 C340 260 385 252 417 235" stroke="#ff9b4b" stroke-width="1.3" opacity=".6"/>
+    <circle cx="308" cy="216" r="3.2" fill="#ffc24b" stroke="none"/>
+    <circle cx="316" cy="242" r="3.2" fill="#7fd8ff" stroke="none"/>
+    <circle cx="300" cy="250" r="3.2" fill="#ff9b4b" stroke="none"/>
+    <circle cx="500" cy="138" r="6.5" stroke="#ffc24b" stroke-width="1.8"/>
+    <circle cx="516.5" cy="204.5" r="6.5" stroke="#7fd8ff" stroke-width="1.8"/>
+    <circle cx="472.5" cy="223.5" r="6.5" stroke="#ff9b4b" stroke-width="1.8"/>
+  </g>
+
+  <!-- one fiber -> one dot -->
+  <g id="fbOneDot" opacity="0">
+    <path d="M238 118 H316 Q346 118 354 138 Q361 155 384 160" fill="none" stroke="#5fe0ff" stroke-width="16" opacity=".18"/>
+    <path d="M386 160 L445.5 149.5" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="4 3" opacity=".75" fill="none"/>
+    <circle cx="450.5" cy="147.5" r="4.3" fill="#5fe0ff" filter="url(#fbglowR)"/>
+    <circle cx="450.5" cy="147.5" r="8.5" fill="none" stroke="#5fe0ff" stroke-width="1.4" opacity=".9"/>
+  </g>
+  <circle id="fbPing" cx="450.5" cy="147.5" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#fbglowR)"/>
+  <g id="fbPixel" opacity="0">
+    <text x="478" y="78" font-size="11" fill="#9fe6ff" text-anchor="middle">1 FIBER = 1 PIXEL</text>
+    <path d="M466 82 L453.5 138.5" stroke="#9fe6ff" stroke-width="1" stroke-dasharray="3 3" opacity=".5" fill="none"/>
+  </g>
+
+  <!-- dead fibers: permanent black dots -->
+  <g id="fbDeadFiber" opacity="0">
+    <circle cx="434" cy="214" r="4.3" fill="#04101f"/>
+    <circle cx="500" cy="233" r="4.3" fill="#04101f"/>
+  </g>
+
+  <!-- snapped fiber mid-bundle -> solid black exit cell -->
+  <g id="fbBreak" opacity="0">
+    <circle cx="294" cy="222" r="3.2" fill="#9fb4cc"/>
+    <path d="M294 222 C330 212 352 206 372 200" fill="none" stroke="#9fb4cc" stroke-width="1.3" opacity=".6"/>
+    <path d="M371 196 L378 203 L373 205 L381 212" fill="none" stroke="#ff6b6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#fbglowR)"/>
+    <circle cx="527.5" cy="166.5" r="4.3" fill="#04101f"/>
+    <circle cx="527.5" cy="166.5" r="7" fill="none" stroke="#ff6b6b" stroke-width="1.4" opacity=".85"/>
+  </g>
+
+  <!-- ================= scan group ================= -->
+  <g id="fbscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#fbscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#fbglowC)" opacity=".9"/>
+  </g>
+</svg>

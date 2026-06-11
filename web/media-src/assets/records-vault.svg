@@ -1,0 +1,178 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="rvglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="rvglowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="rvplateG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e4775"/>
+      <stop offset=".35" stop-color="#14304f"/>
+      <stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="rvscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <text x="36" y="32" font-size="12" fill="#9fe6ff" opacity=".7">ELECTRONIC VT RECORD — IMAGE LIFECYCLE</text>
+
+  <!-- ===== GHOST SCAFFOLD (always visible: schematic awaiting data) ===== -->
+  <g id="rvGhost">
+    <g fill="none" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="5 4" opacity=".3">
+      <rect x="34" y="80" width="122" height="166" rx="10"/>
+      <rect x="196" y="66" width="132" height="186" rx="14"/>
+      <rect x="419" y="58" width="166" height="100" rx="10"/>
+      <rect x="419" y="200" width="166" height="86" rx="10"/>
+    </g>
+    <g fill="none" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="3 5" opacity=".28">
+      <path d="M158 150 H192"/>
+      <path d="M330 130 C372 130 382 112 421 112"/>
+      <path d="M330 210 C372 210 382 232 421 232"/>
+    </g>
+    <g font-size="10" fill="#9fe6ff" opacity=".55">
+      <text x="36" y="74">01 CAPTURE</text>
+      <text x="198" y="60">02 ORIGINAL</text>
+      <text x="421" y="52">03 COPY + LOG</text>
+      <text x="421" y="194">04 RETENTION</text>
+    </g>
+  </g>
+
+  <!-- ===== STAGE 1 : CAPTURE (camera) ===== -->
+  <g id="rvCapture" opacity="0">
+    <path d="M74 100 L79 87 H105 L110 100 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <rect x="50" y="92" width="16" height="7" rx="3" fill="#14304f" stroke="#8fb6e0" stroke-width="1"/>
+    <circle cx="126" cy="98" r="5" fill="#14304f" stroke="#8fb6e0" stroke-width="1"/>
+    <path d="M126 94.5 V97" stroke="#9fe6ff" stroke-width="1.2"/>
+    <rect x="44" y="100" width="96" height="60" rx="8" fill="url(#rvplateG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M56 104 V156" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+    <circle cx="94" cy="130" r="21" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+    <circle cx="94" cy="130" r="13.5" fill="#08152b" stroke="#5fe0ff" stroke-width="1.2" opacity=".9"/>
+    <circle cx="94" cy="130" r="6" fill="#0b1d36" stroke="#5fe0ff" stroke-width="1" opacity=".7"/>
+    <path d="M85 123 a12 12 0 0 1 9 -4" stroke="#7fd8ff" stroke-width="1.5" fill="none" opacity=".8" stroke-linecap="round"/>
+  </g>
+
+  <!-- ===== STAGE 1b : RESOLUTION + COMPRESSION BADGES ===== -->
+  <g id="rvBadges" opacity="0">
+    <rect x="42" y="180" width="46" height="42" rx="5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+    <g stroke="#5fe0ff" stroke-width=".7" opacity=".6" fill="none">
+      <path d="M49.5 183 V219 M57 183 V219 M64.5 183 V219 M72 183 V219 M79.5 183 V219"/>
+      <path d="M44.5 189 H85.5 M44.5 197 H85.5 M44.5 205 H85.5 M44.5 213 H85.5"/>
+    </g>
+    <text x="65" y="236" font-size="10" fill="#9fe6ff" text-anchor="middle" opacity=".9">HI-RES</text>
+    <rect x="96" y="180" width="46" height="42" rx="5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+    <g fill="#ffc24b">
+      <rect x="99" y="184" width="12" height="11" opacity=".42"/>
+      <rect x="111" y="184" width="13" height="11" opacity=".2"/>
+      <rect x="124" y="184" width="14" height="11" opacity=".34"/>
+      <rect x="99" y="195" width="12" height="12" opacity=".16"/>
+      <rect x="111" y="195" width="13" height="12" opacity=".38"/>
+      <rect x="124" y="195" width="14" height="12" opacity=".22"/>
+      <rect x="99" y="207" width="12" height="12" opacity=".3"/>
+      <rect x="111" y="207" width="13" height="12" opacity=".18"/>
+      <rect x="124" y="207" width="14" height="12" opacity=".36"/>
+    </g>
+    <path d="M99 219 L139 184" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round" filter="url(#rvglowR)"/>
+    <text x="119" y="236" font-size="10" fill="#9fe6ff" text-anchor="middle" opacity=".9">LOW-COMP</text>
+  </g>
+
+  <!-- ===== FLOW ARROW 1 : capture -> original ===== -->
+  <path id="rvArrow1" d="M152 150 H190 M182 144 L190 150 L182 156" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#rvglowR)"/>
+
+  <!-- ===== STAGE 2 : VAULTED ORIGINAL (centerpiece) ===== -->
+  <g id="rvOriginal" opacity="0">
+    <rect x="186" y="98" width="11" height="24" rx="2.5" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <rect x="186" y="196" width="11" height="24" rx="2.5" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <rect x="196" y="66" width="132" height="186" rx="14" fill="url(#rvplateG)" stroke="#8fb6e0" stroke-width="2"/>
+    <rect x="207" y="77" width="110" height="164" rx="10" fill="#0c2340" stroke="#8fb6e0" stroke-width="1.2" stroke-opacity=".6"/>
+    <g fill="#14304f" stroke="#8fb6e0" stroke-width="1" opacity=".85">
+      <rect x="312" y="118" width="10" height="7" rx="2"/>
+      <rect x="312" y="148" width="10" height="7" rx="2"/>
+      <rect x="312" y="178" width="10" height="7" rx="2"/>
+    </g>
+    <g fill="#8fb6e0" opacity=".55">
+      <circle cx="216" cy="86" r="2.2"/><circle cx="308" cy="86" r="2.2"/>
+      <circle cx="216" cy="232" r="2.2"/><circle cx="308" cy="232" r="2.2"/>
+    </g>
+    <path d="M235 94 H278 L294 110 V167 Q294 172 289 172 H235 Q230 172 230 167 V99 Q230 94 235 94 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M278 94 V110 H294 Z" fill="#1e4775" stroke="#8fb6e0" stroke-width="1"/>
+    <rect x="238" y="114" width="48" height="32" rx="2" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".7"/>
+    <circle cx="247" cy="123" r="3" fill="#5fe0ff" opacity=".8"/>
+    <path d="M240 144 L252 130 L260 138 L268 128 L284 144" fill="none" stroke="#5fe0ff" stroke-width="1.3" opacity=".8"/>
+    <text x="262" y="163" font-size="11" fill="#9fe6ff" text-anchor="middle">ORIGINAL</text>
+    <path d="M252 204 V196 a10 10 0 0 1 20 0 V204" fill="none" stroke="#5fe0ff" stroke-width="3" stroke-linecap="round" filter="url(#rvglowR)"/>
+    <rect x="244" y="204" width="36" height="28" rx="5" fill="#14304f" stroke="#5fe0ff" stroke-width="1.8" filter="url(#rvglowR)"/>
+    <circle cx="262" cy="215" r="3.5" fill="#9fe6ff"/>
+    <rect x="260.4" y="217" width="3.2" height="7" rx="1.6" fill="#9fe6ff"/>
+  </g>
+  <circle id="rvLockPing" cx="262" cy="218" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#rvglowR)"/>
+
+  <!-- ===== WRITE-PROTECT SHIELD ===== -->
+  <g id="rvShield" opacity="0">
+    <path d="M330 60 L349 68 V84 Q349 102 330 110 Q311 102 311 84 V68 Z" fill="#0e2848" stroke="#5fe0ff" stroke-width="1.8" filter="url(#rvglowR)"/>
+    <path d="M327 89 L336.5 79.5" stroke="#9fe6ff" stroke-width="4" stroke-linecap="butt"/>
+    <path d="M322.5 93.5 L328.4 90.4 L325.6 87.6 Z" fill="#ffc24b"/>
+    <path d="M336.5 79.5 L339 77" stroke="#ff9b4b" stroke-width="4" stroke-linecap="round"/>
+    <path d="M320 74 L341 96" stroke="#ff6b6b" stroke-width="2.6" stroke-linecap="round" filter="url(#rvglowR)"/>
+  </g>
+
+  <!-- ===== FLOW ARROW 2 : original -> copy ===== -->
+  <path id="rvArrow2" d="M330 130 C372 130 382 112 421 112 M413 106 L421 112 L413 118" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#rvglowR)"/>
+
+  <!-- ===== STAGE 3 : ENHANCED COPY ===== -->
+  <g id="rvCopy" opacity="0">
+    <rect x="425" y="64" width="62" height="76" rx="5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1" opacity=".55"/>
+    <path d="M442 76 H483 L499 92 V147 Q499 152 494 152 H442 Q437 152 437 147 V81 Q437 76 442 76 Z" fill="url(#rvplateG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M483 76 V92 H499 Z" fill="#1e4775" stroke="#8fb6e0" stroke-width="1"/>
+    <rect x="444" y="96" width="46" height="24" rx="2" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".7"/>
+    <circle cx="452" cy="103" r="2.5" fill="#5fe0ff" opacity=".8"/>
+    <path d="M446 118 L456 106 L463 113 L470 104 L488 118" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".8"/>
+    <text x="468" y="133" font-size="11" fill="#9fe6ff" text-anchor="middle">COPY</text>
+    <circle cx="450" cy="141" r="3.2" fill="none" stroke="#ffc24b" stroke-width="1.2"/>
+    <path d="M450 135.5 V133.8 M450 146.5 V148.2 M444.8 141 H443 M455.2 141 H457 M446.3 137.3 l-1.3 -1.3 M453.7 137.3 l1.3 -1.3 M446.3 144.7 l-1.3 1.3 M453.7 144.7 l1.3 1.3" stroke="#ffc24b" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    <path d="M462 141 H493" stroke="#8fb6e0" stroke-width="1.5" opacity=".5" fill="none"/>
+    <path d="M462 141 H483" stroke="#5fe0ff" stroke-width="2" fill="none"/>
+    <circle cx="483" cy="141" r="3.6" fill="#5fe0ff"/>
+  </g>
+
+  <!-- ===== STAGE 3b : ADJUSTMENT LOG ===== -->
+  <g id="rvLog" opacity="0">
+    <path d="M499 110 H515" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="3 3" opacity=".6" fill="none"/>
+    <rect x="517" y="70" width="62" height="82" rx="4" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+    <path d="M517 89 H579" stroke="#8fb6e0" stroke-width="1" opacity=".4" fill="none"/>
+    <text x="548" y="83" font-size="10" fill="#9fe6ff" text-anchor="middle">ADJ LOG</text>
+    <text x="524" y="105" font-size="10" fill="#ffc24b">+1 EV</text>
+    <path d="M560 100 l4 4 l8 -9" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M524 116 H572" stroke="#8fb6e0" stroke-width="1" opacity=".35" fill="none"/>
+    <text x="524" y="131" font-size="9" fill="#9fe6ff" opacity=".7">INIT/DATE</text>
+    <path d="M524 141 H572" stroke="#8fb6e0" stroke-width="1" opacity=".35" fill="none"/>
+  </g>
+
+  <!-- ===== FLOW ARROW 3 : original -> retention ===== -->
+  <path id="rvArrow3" d="M330 210 C372 210 382 232 421 232 M413 226 L421 232 L413 238" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#rvglowR)"/>
+
+  <!-- ===== STAGE 4 : RETENTION (archive box + clock) ===== -->
+  <g id="rvRetention" opacity="0">
+    <rect x="426" y="208" width="94" height="16" rx="3" fill="url(#rvplateG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="431" y="224" width="84" height="50" rx="3" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="459" y="238" width="28" height="10" rx="5" fill="#08152b" stroke="#8fb6e0" stroke-width="1" opacity=".8"/>
+    <rect x="445" y="254" width="56" height="14" rx="3" fill="#5fe0ff" fill-opacity=".1" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".55"/>
+    <text x="473" y="264.5" font-size="10" fill="#9fe6ff" text-anchor="middle">PER CODE</text>
+    <circle cx="550" cy="240" r="21" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M550 221.5 V226 M550 254 V258.5 M531.5 240 H536 M564 240 H568.5" stroke="#8fb6e0" stroke-width="1.2" opacity=".7" fill="none"/>
+    <path d="M550 240 V228" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M550 240 L559 245" stroke="#5fe0ff" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+    <circle cx="550" cy="240" r="1.8" fill="#5fe0ff"/>
+    <circle cx="550" cy="240" r="26" fill="none" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="4 4" opacity=".45"/>
+  </g>
+
+  <!-- ===== scan group ===== -->
+  <g id="rvscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#rvscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#rvglowC)" opacity=".9"/>
+  </g>
+</svg>

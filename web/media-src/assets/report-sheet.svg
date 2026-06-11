@@ -1,0 +1,134 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="rsGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="rsGlowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="rsSheetG" x1="0" y1="12" x2="0" y2="328" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16345a"/><stop offset=".45" stop-color="#0f2848"/><stop offset="1" stop-color="#0b2140"/>
+    </linearGradient>
+    <linearGradient id="rsHeadG" x1="24" y1="0" x2="576" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1E66F5" stop-opacity=".34"/>
+      <stop offset=".55" stop-color="#1E66F5" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".10"/>
+    </linearGradient>
+    <linearGradient id="rsScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+    <path id="rsStampArc" d="M 472 276 A 26 26 0 0 1 524 276" fill="none"/>
+  </defs>
+
+  <!-- ===== SHEET BODY ===== -->
+  <rect x="24" y="12" width="552" height="316" rx="10" fill="url(#rsSheetG)" stroke="#8fb6e0" stroke-width="1.5"/>
+
+  <!-- ===== HEADER BAND ===== -->
+  <path d="M24.75 52 V22.75 Q24.75 12.75 34.75 12.75 H565.25 Q575.25 12.75 575.25 22.75 V52 Z" fill="url(#rsHeadG)"/>
+  <line x1="24.75" y1="52" x2="575.25" y2="52" stroke="#5fe0ff" stroke-width="1" opacity=".55"/>
+  <rect x="34" y="22" width="4" height="20" fill="#5fe0ff" opacity=".9" filter="url(#rsGlowS)"/>
+  <text x="46" y="38.5" font-size="15" font-weight="600" letter-spacing="2.5" fill="#dff3ff">VISUAL EXAMINATION REPORT</text>
+  <text x="556" y="32" text-anchor="end" font-size="10" fill="#9fe6ff" opacity=".9">REPORT VT-2031</text>
+  <text x="556" y="45" text-anchor="end" font-size="9" fill="#9fe6ff" opacity=".55">PAGE 1 / 1</text>
+
+  <!-- ===== IDENT FIELDS ===== -->
+  <g font-size="9" letter-spacing="1.5" fill="#9fe6ff" opacity=".7">
+    <text x="44" y="66">PART NO</text>
+    <text x="232" y="66">PROCEDURE</text>
+    <text x="424" y="66">DATE</text>
+  </g>
+  <g font-size="11.5" fill="#dff3ff">
+    <text x="44" y="80">VALVE BODY 7745-A2</text>
+    <text x="232" y="80">NDT-VT-7 REV C</text>
+    <text x="424" y="80">2026-06-10</text>
+  </g>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".3">
+    <line x1="220" y1="56" x2="220" y2="84"/>
+    <line x1="412" y1="56" x2="412" y2="84"/>
+  </g>
+  <line x1="24.75" y1="88" x2="575.25" y2="88" stroke="#8fb6e0" stroke-width="1" opacity=".35"/>
+
+  <!-- ===== FINDINGS TABLE ===== -->
+  <rect x="40" y="96" width="520" height="104" fill="#081a30" opacity=".55"/>
+  <rect x="40" y="96" width="520" height="20" fill="#1E66F5" opacity=".22"/>
+  <g font-size="10" letter-spacing="1" fill="#9fe6ff">
+    <text x="48" y="110">LOCATION</text>
+    <text x="176" y="110">OBSERVATION</text>
+    <text x="338" y="110">TERM</text>
+    <text x="508" y="110" text-anchor="middle">DISPOSITION</text>
+  </g>
+  <g stroke="#8fb6e0" fill="none">
+    <rect x="40" y="96" width="520" height="104" stroke-width="1.2" opacity=".55"/>
+    <line x1="40" y1="116" x2="560" y2="116" stroke-width="1" opacity=".55"/>
+    <line x1="40" y1="144" x2="560" y2="144" stroke-width="1" opacity=".28"/>
+    <line x1="40" y1="172" x2="560" y2="172" stroke-width="1" opacity=".28"/>
+    <line x1="168" y1="96" x2="168" y2="200" stroke-width="1" opacity=".3"/>
+    <line x1="330" y1="96" x2="330" y2="200" stroke-width="1" opacity=".3"/>
+    <line x1="456" y1="96" x2="456" y2="200" stroke-width="1" opacity=".3"/>
+  </g>
+
+  <!-- term column emphasis (three words / legal weight) -->
+  <rect id="rsTermGlow" x="333" y="118" width="120" height="80" rx="4" fill="#5fe0ff" fill-opacity=".06" stroke="#7fd8ff" stroke-width="1.2" stroke-dasharray="5 4" opacity="0"/>
+
+  <!-- rows -->
+  <g id="rsRows">
+    <g id="rsRow1" opacity="0">
+      <text x="48" y="134" font-size="11" fill="#cfe8ff">WELD W-12 / TOE</text>
+      <text x="176" y="134" font-size="11" fill="#cfe8ff">LINEAR IND 4.5 mm</text>
+      <text x="338" y="134" font-size="12" font-weight="600" fill="#7fd8ff">INDICATION</text>
+      <rect x="474" y="121" width="68" height="17" rx="8.5" fill="#ffc24b" fill-opacity=".1" stroke="#ffc24b" stroke-width="1" opacity=".9"/>
+      <text x="508" y="133.5" text-anchor="middle" font-size="10.5" fill="#ffc24b">EVALUATE</text>
+    </g>
+    <g id="rsRow2" opacity="0">
+      <text x="48" y="162" font-size="11" fill="#cfe8ff">SEAM B-2 / HAZ</text>
+      <text x="176" y="162" font-size="11" fill="#cfe8ff">POROSITY &#216;0.8 mm</text>
+      <text x="338" y="162" font-size="12" font-weight="600" fill="#ffc24b">DISCONTINUITY</text>
+      <rect x="474" y="149" width="68" height="17" rx="8.5" fill="#5fe0ff" fill-opacity=".1" stroke="#5fe0ff" stroke-width="1" opacity=".9"/>
+      <text x="508" y="161.5" text-anchor="middle" font-size="10.5" fill="#5fe0ff">ACCEPT</text>
+    </g>
+    <g id="rsRow3" opacity="0">
+      <text x="48" y="190" font-size="11" fill="#cfe8ff">NOZZLE N-3</text>
+      <text x="176" y="190" font-size="11" fill="#cfe8ff">CRACK L 12 mm</text>
+      <text x="338" y="190" font-size="12" font-weight="600" fill="#ff6b6b">DEFECT</text>
+      <rect x="474" y="177" width="68" height="17" rx="8.5" fill="#ff6b6b" fill-opacity=".1" stroke="#ff6b6b" stroke-width="1" opacity=".9"/>
+      <text x="508" y="189.5" text-anchor="middle" font-size="10.5" fill="#ff6b6b">REJECT</text>
+    </g>
+  </g>
+
+  <!-- glowing word slot on row 1 TERM cell -->
+  <rect id="rsWordSlot" x="334" y="119.5" width="116" height="21" rx="4" fill="#5fe0ff" fill-opacity=".12" stroke="#5fe0ff" stroke-width="1.5" filter="url(#rsGlow)" opacity="0"/>
+  <circle id="rsPing" cx="434" cy="130" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#rsGlowS)"/>
+
+  <!-- ===== ACCEPTANCE CRITERIA LINE ===== -->
+  <rect x="40" y="208" width="3" height="13" fill="#5fe0ff" opacity=".85"/>
+  <text x="50" y="218.5" font-size="11" fill="#9fe6ff">ACCEPTANCE CRITERIA: AWS D1.1 TABLE 6.1 / QPS-204 REV C</text>
+  <line x1="40" y1="230" x2="560" y2="230" stroke="#8fb6e0" stroke-width="1" opacity=".35"/>
+
+  <!-- ===== SIGNATURE + STAMP BLOCK ===== -->
+  <path id="rsSign" d="M50 300 C54 278 65 275 62 291 C60 303 71 297 80 291 C88 286 86 300 97 294 C105 289 104 298 115 292 C123 287 124 296 135 290 C145 285 146 293 159 289 C171 285 177 291 191 288 C201 286 207 289 217 287 M70 299 L152 282" fill="none" stroke="#7fd8ff" stroke-width="1.8" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#rsGlowS)"/>
+  <line x1="44" y1="303" x2="250" y2="303" stroke="#8fb6e0" stroke-width="1" opacity=".6"/>
+  <text x="44" y="318" font-size="10" fill="#9fe6ff" opacity=".75">EXAMINER / VT LEVEL II</text>
+
+  <text x="284" y="296" font-size="11.5" fill="#dff3ff">2026-06-10</text>
+  <line x1="280" y1="303" x2="392" y2="303" stroke="#8fb6e0" stroke-width="1" opacity=".6"/>
+  <text x="284" y="318" font-size="10" fill="#9fe6ff" opacity=".75">DATE</text>
+
+  <g id="rsStamp" opacity="0" transform="rotate(-8 498 276)">
+    <circle cx="498" cy="276" r="33" fill="#5fe0ff" fill-opacity=".06" stroke="#5fe0ff" stroke-width="2" filter="url(#rsGlow)"/>
+    <circle cx="498" cy="276" r="22.5" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".75"/>
+    <text font-size="6.5" letter-spacing="2" fill="#9fe6ff" opacity=".9"><textPath href="#rsStampArc" startOffset="50%" text-anchor="middle">* CERTIFIED *</textPath></text>
+    <text x="498" y="274" text-anchor="middle" font-size="13" font-weight="600" letter-spacing="1" fill="#9fe6ff">VT-2</text>
+    <text x="498" y="287" text-anchor="middle" font-size="7.5" fill="#9fe6ff" opacity=".85">NAS 410</text>
+  </g>
+
+  <text x="556" y="323" text-anchor="end" font-size="8" fill="#9fe6ff" opacity=".45">FORM NDT-VT-08 REV D</text>
+
+  <!-- ===== scan group ===== -->
+  <g id="rsscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#rsScanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#rsGlow)" opacity=".9"/>
+  </g>
+</svg>

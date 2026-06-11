@@ -1,0 +1,140 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="tbGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="tbGlowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="tbGlowV" filterUnits="userSpaceOnUse" x="138" y="48" width="294" height="240">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="tbGlowM" filterUnits="userSpaceOnUse" x="288" y="214" width="28" height="70">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="tbSteel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".4" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="tbAccept" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".30"/>
+      <stop offset=".5" stop-color="#1E66F5" stop-opacity=".15"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".26"/>
+    </linearGradient>
+    <linearGradient id="tbHazeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffc24b" stop-opacity="0"/>
+      <stop offset=".06" stop-color="#ffc24b" stop-opacity=".26"/>
+      <stop offset=".5" stop-color="#ffc24b" stop-opacity=".32"/>
+      <stop offset=".94" stop-color="#ffc24b" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#ffc24b" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="tbHatch" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="7" stroke="#ff6b6b" stroke-width="1.6" opacity=".5"/>
+    </pattern>
+  </defs>
+
+  <!-- ===== STATIC BASE: alignment guides + empty band strip + two steel rule bars ===== -->
+  <g stroke="#8fb6e0" stroke-width="1" stroke-dasharray="3 6" opacity=".18" fill="none">
+    <line x1="150" y1="120" x2="150" y2="276"/>
+    <line x1="420" y1="120" x2="420" y2="276"/>
+  </g>
+  <rect x="70" y="66" width="405" height="48" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".22"/>
+  <g opacity=".6">
+    <text x="285" y="44" text-anchor="middle" font-size="12" fill="#9fe6ff">TOLERANCE BAND</text>
+    <path d="M150 51 H420 M150 51 V57 M420 51 V57" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".6"/>
+  </g>
+
+  <!-- coarse rule body -->
+  <g>
+    <rect x="60" y="156" width="400" height="34" rx="3" fill="url(#tbSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <line x1="64" y1="161" x2="456" y2="161" stroke="#8fb6e0" stroke-width="1" opacity=".25"/>
+    <line x1="130" y1="156" x2="130" y2="176" stroke="#8fb6e0" stroke-width="2"/>
+    <line x1="388" y1="156" x2="388" y2="176" stroke="#8fb6e0" stroke-width="2"/>
+    <text x="130" y="187" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".8">0</text>
+    <text x="388" y="187" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".8">1</text>
+    <text x="72" y="184" font-size="10" fill="#9fe6ff" opacity=".55">COARSE</text>
+  </g>
+
+  <!-- fine rule body -->
+  <g>
+    <rect x="60" y="234" width="400" height="34" rx="3" fill="url(#tbSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <line x1="64" y1="239" x2="456" y2="239" stroke="#8fb6e0" stroke-width="1" opacity=".25"/>
+    <g stroke="#8fb6e0" stroke-width="1.2">
+      <line x1="69" y1="234" x2="69" y2="245"/><line x1="96" y1="234" x2="96" y2="245"/>
+      <line x1="123" y1="234" x2="123" y2="245"/><line x1="177" y1="234" x2="177" y2="245"/>
+      <line x1="204" y1="234" x2="204" y2="245"/><line x1="231" y1="234" x2="231" y2="245"/>
+      <line x1="258" y1="234" x2="258" y2="245"/><line x1="312" y1="234" x2="312" y2="245"/>
+      <line x1="339" y1="234" x2="339" y2="245"/><line x1="366" y1="234" x2="366" y2="245"/>
+      <line x1="393" y1="234" x2="393" y2="245"/><line x1="447" y1="234" x2="447" y2="245"/>
+    </g>
+    <g stroke="#8fb6e0" stroke-width="2">
+      <line x1="150" y1="234" x2="150" y2="252"/>
+      <line x1="285" y1="234" x2="285" y2="252"/>
+      <line x1="420" y1="234" x2="420" y2="252"/>
+    </g>
+    <text x="150" y="264" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".8">0</text>
+    <text x="285" y="264" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".8">5</text>
+    <text x="420" y="264" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".8">10</text>
+    <text x="72" y="262" font-size="10" fill="#9fe6ff" opacity=".55">FINE</text>
+  </g>
+
+  <!-- ===== REVEAL 1: tolerance band ===== -->
+  <g id="tbBand" opacity="0">
+    <rect x="150" y="66" width="270" height="48" fill="url(#tbAccept)"/>
+    <rect x="70" y="66" width="80" height="48" fill="url(#tbHatch)" opacity=".35"/>
+    <rect x="420" y="66" width="55" height="48" fill="url(#tbHatch)" opacity=".35"/>
+    <line x1="150" y1="60" x2="150" y2="120" stroke="#5fe0ff" stroke-width="2" filter="url(#tbGlowV)"/>
+    <line x1="420" y1="60" x2="420" y2="120" stroke="#5fe0ff" stroke-width="2" filter="url(#tbGlowV)"/>
+    <line x1="150" y1="120" x2="150" y2="276" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="4 5" opacity=".35"/>
+    <line x1="420" y1="120" x2="420" y2="276" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="4 5" opacity=".35"/>
+    <text x="142" y="131" text-anchor="end" font-size="11" fill="#9fe6ff">LO LIMIT</text>
+    <text x="428" y="131" font-size="11" fill="#9fe6ff">HI LIMIT</text>
+    <text x="285" y="94" text-anchor="middle" font-size="13" fill="#9fe6ff" letter-spacing="3">ACCEPT</text>
+    <text x="110" y="93" text-anchor="middle" font-size="10" fill="#ff6b6b" opacity=".6">REJECT</text>
+    <text x="447" y="93" text-anchor="middle" font-size="10" fill="#ff6b6b" opacity=".6">REJECT</text>
+  </g>
+
+  <!-- ===== REVEAL 2: coarse tool emphasis ===== -->
+  <g id="tbCoarse" opacity="0">
+    <text x="130" y="150" font-size="11" fill="#9fe6ff">1 DIVISION ≈ WHOLE BAND</text>
+    <path d="M130 198 H388 M130 198 V193 M388 198 V193" fill="none" stroke="#ffc24b" stroke-width="1.2" opacity=".65"/>
+    <line x1="130" y1="156" x2="130" y2="176" stroke="#ffc24b" stroke-width="2" opacity=".9"/>
+    <line x1="388" y1="156" x2="388" y2="176" stroke="#ffc24b" stroke-width="2" opacity=".9"/>
+  </g>
+
+  <!-- uncertainty haze straddling both limits -->
+  <g id="tbHaze" opacity="0">
+    <rect x="132" y="150" width="336" height="46" fill="url(#tbHazeGrad)"/>
+    <line x1="302" y1="150" x2="302" y2="196" stroke="#ffc24b" stroke-width="1.6" stroke-dasharray="3 3" opacity=".8"/>
+  </g>
+
+  <!-- dim '?' verdict chip -->
+  <g id="tbMaybe" opacity="0">
+    <rect x="492" y="152" width="68" height="42" rx="8" fill="#ffc24b" fill-opacity=".07" stroke="#ffc24b" stroke-width="1.5" stroke-opacity=".5"/>
+    <text x="526" y="181" text-anchor="middle" font-size="20" fill="#ffc24b" opacity=".7">?</text>
+  </g>
+
+  <!-- ===== REVEAL 3: fine tool emphasis ===== -->
+  <g id="tbFine" opacity="0">
+    <text x="150" y="228" font-size="11" fill="#9fe6ff">10 DIVISIONS ACROSS THE SAME BAND</text>
+    <rect x="150" y="234" width="270" height="34" fill="#5fe0ff" opacity=".06"/>
+    <g stroke="#5fe0ff" stroke-width="2" opacity=".9">
+      <line x1="150" y1="234" x2="150" y2="252"/>
+      <line x1="285" y1="234" x2="285" y2="252"/>
+      <line x1="420" y1="234" x2="420" y2="252"/>
+    </g>
+  </g>
+
+  <!-- sharp cyan measurement needle (draw-on) -->
+  <path id="tbMarker" d="M302 231 L302 274" fill="none" stroke="#5fe0ff" stroke-width="3" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#tbGlowM)"/>
+  <circle id="tbPing" cx="302" cy="251" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#tbGlowS)"/>
+
+  <!-- bright check verdict chip -->
+  <g id="tbVerdict" opacity="0">
+    <rect x="492" y="230" width="68" height="42" rx="8" fill="#5fe0ff" fill-opacity=".12" stroke="#5fe0ff" stroke-width="1.8" filter="url(#tbGlowS)"/>
+    <path d="M512 251 l9 9 l19 -20" fill="none" stroke="#5fe0ff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#tbGlowS)"/>
+  </g>
+</svg>

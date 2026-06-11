@@ -1,0 +1,90 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="slglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="slglowW" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="slglass" x1="0" y1="118" x2="0" y2="208" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".18"/>
+      <stop offset=".45" stop-color="#2b86ff" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#1E66F5" stop-opacity=".20"/>
+    </linearGradient>
+    <linearGradient id="slscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== MEDIA: air / glass slab / air (static, visible from 0s) ===== -->
+  <rect x="0" y="0" width="600" height="118" fill="#5fe0ff" opacity=".02"/>
+  <rect x="0" y="118" width="600" height="90" fill="url(#slglass)"/>
+  <!-- internal glass streaks -->
+  <g stroke="#ffffff" stroke-width="1" opacity=".06">
+    <line x1="60" y1="206" x2="146" y2="120"/>
+    <line x1="96" y1="206" x2="182" y2="120"/>
+    <line x1="420" y1="206" x2="506" y2="120"/>
+    <line x1="448" y1="206" x2="534" y2="120"/>
+  </g>
+  <!-- slab boundary surfaces -->
+  <line x1="0" y1="118" x2="600" y2="118" stroke="#8fb6e0" stroke-width="1.8" opacity=".9" filter="url(#slglowC)"/>
+  <line x1="0" y1="208" x2="600" y2="208" stroke="#8fb6e0" stroke-width="1.8" opacity=".9" filter="url(#slglowC)"/>
+  <line x1="0" y1="121.5" x2="600" y2="121.5" stroke="#ffffff" stroke-width="1" opacity=".12"/>
+  <line x1="0" y1="204.5" x2="600" y2="204.5" stroke="#ffffff" stroke-width="1" opacity=".07"/>
+
+  <!-- medium labels -->
+  <text x="24" y="46" font-size="12" letter-spacing="1.5" fill="#9fe6ff">AIR &#183; n = 1.00</text>
+  <text x="24" y="172" font-size="12" letter-spacing="1.5" fill="#9fe6ff">GLASS &#183; n = 1.52</text>
+  <text x="24" y="240" font-size="12" letter-spacing="1.5" fill="#9fe6ff" opacity=".85">AIR</text>
+
+  <!-- ===== REVEAL: normals at entry + exit ===== -->
+  <g id="slNormal" opacity="0">
+    <line x1="250" y1="50" x2="250" y2="186" stroke="#8fb6e0" stroke-width="1.2" stroke-dasharray="5 5" opacity=".8"/>
+    <line x1="297" y1="176" x2="297" y2="278" stroke="#8fb6e0" stroke-width="1.2" stroke-dasharray="5 5" opacity=".8"/>
+    <text x="250" y="42" font-size="11" letter-spacing="1" fill="#8fb6e0" text-anchor="middle" opacity=".9">NORMAL</text>
+  </g>
+
+  <!-- ===== REVEAL: incident ray, 45 deg from normal (draw) ===== -->
+  <path id="slIncident" d="M165 33 L250 118" fill="none" stroke="#ffc24b" stroke-width="2.5" stroke-linecap="round" filter="url(#slglowW)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- theta1 arc + label + incident arrowhead -->
+  <g id="slTheta1" opacity="0">
+    <path d="M250 84 A34 34 0 0 0 226 94" fill="none" stroke="#5fe0ff" stroke-width="1.5" filter="url(#slglowC)"/>
+    <polygon points="212.3,80.3 200.7,75.1 207.1,68.7" fill="#ffc24b"/>
+    <text x="260" y="80" font-size="12" fill="#9fe6ff">&#952;&#8321; = 45&#176;</text>
+  </g>
+
+  <!-- ===== REVEAL: refracted ray inside glass, ~28 deg (draw) ===== -->
+  <path id="slRefracted" d="M250 118 L297 208" fill="none" stroke="#ffc24b" stroke-width="2.5" stroke-linecap="round" filter="url(#slglowW)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- theta2 arc + label + refracted arrowhead -->
+  <g id="slTheta2" opacity="0">
+    <path d="M250 170 A52 52 0 0 0 274 164" fill="none" stroke="#5fe0ff" stroke-width="1.5" filter="url(#slglowC)"/>
+    <polygon points="286.5,188.0 277.0,179.5 285.0,175.3" fill="#ffc24b"/>
+    <text x="288" y="166" font-size="12" fill="#9fe6ff">&#952;&#8322; &#8776; 28&#176;</text>
+  </g>
+
+  <!-- ===== REVEAL: exit ray, bends away back to 45 deg (draw) ===== -->
+  <path id="slExit" d="M297 208 L377 288" fill="none" stroke="#ffc24b" stroke-width="2.5" stroke-linecap="round" filter="url(#slglowW)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- exit 45 deg arc + label + exit arrowhead -->
+  <g id="slTheta3" opacity="0">
+    <path d="M297 238 A30 30 0 0 0 318 229" fill="none" stroke="#5fe0ff" stroke-width="1.5" filter="url(#slglowC)"/>
+    <polygon points="351.4,262.4 339.8,257.2 346.2,250.8" fill="#ffc24b"/>
+    <text x="306" y="252" font-size="12" fill="#9fe6ff">45&#176;</text>
+  </g>
+
+  <!-- ===== REVEAL: un-deviated ghost line showing lateral offset ===== -->
+  <g id="slOffset" opacity="0">
+    <line x1="262" y1="130" x2="395" y2="263" stroke="#8fb6e0" stroke-width="1.2" stroke-dasharray="5 5" opacity=".55"/>
+  </g>
+
+  <!-- ===== SCAN ===== -->
+  <g id="slscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#slscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#slglowC)" opacity=".9"/>
+  </g>
+</svg>

@@ -1,0 +1,185 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="dsglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="dsglowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="dsplateG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1e4775"/>
+      <stop offset=".35" stop-color="#14304f"/>
+      <stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="dsfrontG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1a3c64"/>
+      <stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="dstopG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f6396"/>
+      <stop offset="1" stop-color="#1c4a77"/>
+    </linearGradient>
+    <linearGradient id="dsscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+    <linearGradient id="dsscanVFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".28"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== GHOST SCAFFOLD (always visible: default state reads as schematic awaiting data) ===== -->
+  <g id="dsGhost" fill="none" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="5 4" opacity=".3">
+    <rect x="76"  y="58"  width="276" height="31" rx="6"/>
+    <rect x="83"  y="99"  width="262" height="31" rx="6"/>
+    <rect x="90"  y="140" width="248" height="31" rx="6"/>
+    <rect x="97"  y="181" width="234" height="31" rx="6"/>
+    <rect x="104" y="222" width="220" height="31" rx="6"/>
+    <line x1="58" y1="62" x2="58" y2="240" stroke-dasharray="3 5" opacity=".55"/>
+  </g>
+
+  <!-- ===== PLATE 1 : LAW / REGULATION ===== -->
+  <g id="dsLaw" opacity="0">
+    <rect x="76" y="58" width="276" height="31" rx="6" fill="url(#dsplateG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="77" y="59.5" width="4" height="28" rx="2" fill="#9fe6ff" opacity=".85"/>
+    <path d="M86 61 H344" stroke="#cfe8ff" stroke-width="1" opacity=".15" fill="none"/>
+    <!-- scales of justice glyph -->
+    <g stroke="#9fe6ff" stroke-width="1.2" fill="none" opacity=".95">
+      <path d="M96 64 V82"/>
+      <path d="M88 67 H104"/>
+      <circle cx="96" cy="62.8" r="1.5"/>
+      <path d="M88 67 L84 74 M88 67 L92 74"/>
+      <path d="M83.5 74 Q88 79.5 92.5 74"/>
+      <path d="M104 67 L100 74 M104 67 L108 74"/>
+      <path d="M99.5 74 Q104 79.5 108.5 74"/>
+      <path d="M91 82 H101"/>
+    </g>
+    <text x="116" y="77.5" font-size="12" fill="#9fe6ff">LAW / REGULATION</text>
+    <rect x="298" y="66.5" width="46" height="14" rx="3" fill="#5fe0ff" fill-opacity=".1" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".55"/>
+    <text x="321" y="77" font-size="10" fill="#9fe6ff" text-anchor="middle" opacity=".9">14 CFR</text>
+  </g>
+
+  <!-- ===== PLATE 2 : CODE ===== -->
+  <g id="dsCode" opacity="0">
+    <path d="M207 91 L214 97 L221 91" stroke="#5fe0ff" stroke-width="2" fill="none" opacity=".85" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="83" y="99" width="262" height="31" rx="6" fill="url(#dsplateG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="84" y="100.5" width="4" height="28" rx="2" fill="#5fe0ff" opacity=".85"/>
+    <path d="M93 102 H337" stroke="#cfe8ff" stroke-width="1" opacity=".15" fill="none"/>
+    <text x="99" y="118.5" font-size="12" fill="#9fe6ff">CODE</text>
+    <rect x="273" y="107.5" width="64" height="14" rx="3" fill="#5fe0ff" fill-opacity=".1" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".55"/>
+    <text x="305" y="118" font-size="10" fill="#9fe6ff" text-anchor="middle" opacity=".9">ASME BPVC</text>
+  </g>
+
+  <!-- ===== PLATE 3 : STANDARD ===== -->
+  <g id="dsStandard" opacity="0">
+    <path d="M207 132 L214 138 L221 132" stroke="#5fe0ff" stroke-width="2" fill="none" opacity=".85" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="90" y="140" width="248" height="31" rx="6" fill="url(#dsplateG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="91" y="141.5" width="4" height="28" rx="2" fill="#3f9bff" opacity=".95"/>
+    <path d="M100 143 H330" stroke="#cfe8ff" stroke-width="1" opacity=".15" fill="none"/>
+    <text x="106" y="159.5" font-size="12" fill="#9fe6ff">STANDARD</text>
+    <rect x="218" y="148.5" width="112" height="14" rx="3" fill="#5fe0ff" fill-opacity=".1" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".55"/>
+    <text x="274" y="159" font-size="10" fill="#9fe6ff" text-anchor="middle" opacity=".9">AWS D1.1 / EN ISO</text>
+  </g>
+
+  <!-- ===== PLATE 4 : SPECIFICATION ===== -->
+  <g id="dsSpec" opacity="0">
+    <path d="M207 173 L214 179 L221 173" stroke="#5fe0ff" stroke-width="2" fill="none" opacity=".85" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="97" y="181" width="234" height="31" rx="6" fill="url(#dsplateG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="98" y="182.5" width="4" height="28" rx="2" fill="#2b86ff" opacity=".95"/>
+    <path d="M107 184 H323" stroke="#cfe8ff" stroke-width="1" opacity=".15" fill="none"/>
+    <text x="111" y="200.5" font-size="12" fill="#9fe6ff">SPECIFICATION</text>
+    <rect x="235" y="189.5" width="88" height="14" rx="3" fill="#5fe0ff" fill-opacity=".1" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".55"/>
+    <text x="279" y="200" font-size="10" fill="#9fe6ff" text-anchor="middle" opacity=".9">CONTRACT / PO</text>
+  </g>
+
+  <!-- ===== PLATE 5 : PROCEDURE ===== -->
+  <g id="dsProcedure" opacity="0">
+    <path d="M207 214 L214 220 L221 214" stroke="#5fe0ff" stroke-width="2" fill="none" opacity=".85" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="104" y="222" width="220" height="31" rx="6" fill="url(#dsplateG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="105" y="223.5" width="4" height="28" rx="2" fill="#1E66F5" opacity="1"/>
+    <path d="M114 225 H316" stroke="#cfe8ff" stroke-width="1" opacity=".15" fill="none"/>
+    <!-- clipboard glyph -->
+    <g stroke="#9fe6ff" stroke-width="1.2" fill="none" opacity=".95">
+      <rect x="113" y="229" width="15" height="18" rx="2"/>
+      <rect x="117.5" y="226.5" width="6" height="5" rx="1" fill="#14304f"/>
+      <path d="M116.5 235.5 H124.5"/>
+      <path d="M116.5 239.5 H122.5"/>
+      <path d="M116.5 243.5 l2.2 2.2 l4.2 -4.6"/>
+    </g>
+    <text x="134" y="241.5" font-size="12" fill="#9fe6ff">PROCEDURE</text>
+    <rect x="210" y="230.5" width="106" height="14" rx="3" fill="#5fe0ff" fill-opacity=".1" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".55"/>
+    <text x="263" y="241" font-size="10" fill="#9fe6ff" text-anchor="middle" opacity=".9">EMPLOYER VT PROC</text>
+    <!-- tie to the physical controlled-doc set at right -->
+    <path d="M328 237 H362" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="4 3" opacity=".5" fill="none"/>
+  </g>
+
+  <!-- ===== FLOW-DOWN ARROW (draw-on shaft) ===== -->
+  <path id="dsFlowShaft" d="M58 62 L58 240 M45 226 L58 241 L71 226" fill="none" stroke="#5fe0ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#dsglowC)"/>
+
+  <!-- ===== FLOW labels + crossed-out up-arrow ===== -->
+  <g id="dsFlowArrow" opacity="0">
+    <text transform="rotate(-90 42 151)" x="42" y="151" text-anchor="middle" font-size="12" letter-spacing="2" fill="#9fe6ff">REQUIREMENTS</text>
+    <g stroke="#ff6b6b" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M32 273 V257 M25.5 263.5 L32 256 L38.5 263.5" stroke-width="2.4" opacity=".95"/>
+      <path d="M21 276 L43 252" stroke-width="2" filter="url(#dsglowR)"/>
+    </g>
+    <text x="48" y="268.5" font-size="11" fill="#ff6b6b" opacity=".9">NEVER UP</text>
+  </g>
+
+  <!-- ===== CONTROLLED DOCUMENT SET (always visible — title-panel anchor) ===== -->
+  <g id="dsStack">
+    <!-- soft holo base under the stack -->
+    <ellipse cx="467" cy="249" rx="115" ry="9" fill="#5fe0ff" opacity=".07"/>
+    <path d="M362 249 H572" stroke="#5fe0ff" stroke-width="1" opacity=".22" fill="none"/>
+    <!-- bottom doc: VT PROCEDURE -->
+    <g>
+      <path d="M368 216 L546 216 L566 204 L388 204 Z" fill="url(#dstopG)" stroke="#8fb6e0" stroke-width="1.2"/>
+      <path d="M546 216 L566 204 L566 230 L546 242 Z" fill="#0b2240" stroke="#8fb6e0" stroke-width="1.2"/>
+      <rect x="368" y="216" width="178" height="26" rx="2" fill="url(#dsfrontG)" stroke="#8fb6e0" stroke-width="1.5"/>
+      <text x="380" y="233" font-size="12" fill="#9fe6ff">VT PROCEDURE</text>
+      <rect x="496" y="222.5" width="44" height="13" rx="3" fill="#5fe0ff" fill-opacity=".1" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".5"/>
+      <text x="518" y="232.5" font-size="10" fill="#9fe6ff" text-anchor="middle" opacity=".9">REV 12</text>
+    </g>
+    <!-- middle doc: QUALITY MANUAL -->
+    <g>
+      <path d="M374 186 L540 186 L560 174 L394 174 Z" fill="url(#dstopG)" stroke="#8fb6e0" stroke-width="1.2"/>
+      <path d="M540 186 L560 174 L560 200 L540 212 Z" fill="#0b2240" stroke="#8fb6e0" stroke-width="1.2"/>
+      <rect x="374" y="186" width="166" height="26" rx="2" fill="url(#dsfrontG)" stroke="#8fb6e0" stroke-width="1.5"/>
+      <text x="386" y="203" font-size="12" fill="#9fe6ff">QUALITY MANUAL</text>
+      <rect x="498" y="192.5" width="38" height="13" rx="3" fill="#5fe0ff" fill-opacity=".1" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".5"/>
+      <text x="517" y="202.5" font-size="10" fill="#9fe6ff" text-anchor="middle" opacity=".9">REV 7</text>
+    </g>
+    <!-- top doc: PURCHASE ORDER -->
+    <g>
+      <path d="M380 156 L534 156 L554 144 L400 144 Z" fill="url(#dstopG)" stroke="#8fb6e0" stroke-width="1.2"/>
+      <path d="M534 156 L554 144 L554 170 L534 182 Z" fill="#0b2240" stroke="#8fb6e0" stroke-width="1.2"/>
+      <rect x="380" y="156" width="154" height="26" rx="2" fill="url(#dsfrontG)" stroke="#8fb6e0" stroke-width="1.5"/>
+      <!-- document ruling on the top face -->
+      <g stroke="#7fd8ff" stroke-width="1" opacity=".35" fill="none">
+        <path d="M412 150 H496"/>
+        <path d="M420 147.5 H504"/>
+      </g>
+      <text x="390" y="173" font-size="12" fill="#9fe6ff">PURCHASE ORDER</text>
+    </g>
+    <!-- revision chip on the top document (player pulses this on a loop) -->
+    <g id="dsRevTag">
+      <rect x="498" y="141" width="44" height="14" rx="3" fill="#5fe0ff" fill-opacity=".16" stroke="#5fe0ff" stroke-width="1.2" filter="url(#dsglowR)"/>
+      <text x="520" y="151.5" font-size="10" fill="#9fe6ff" text-anchor="middle">REV C</text>
+    </g>
+    <!-- horizontal verify scan-line on the stack face (player sweeps this on a loop) -->
+    <g id="dsScanLine">
+      <rect x="364" y="158" width="204" height="18" fill="url(#dsscanVFade)"/>
+      <line x1="364" y1="176" x2="568" y2="176" stroke="#5fe0ff" stroke-width="1.8" filter="url(#dsglowC)" opacity=".85"/>
+    </g>
+    <text x="462" y="266" font-size="11" fill="#9fe6ff" opacity=".7" text-anchor="middle">EMPLOYER DOCUMENT SET</text>
+  </g>
+
+  <!-- ===== scan group ===== -->
+  <g id="dsscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#dsscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#dsglowC)" opacity=".9"/>
+  </g>
+</svg>

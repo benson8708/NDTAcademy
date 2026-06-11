@@ -1,0 +1,136 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="rkglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="rkglowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="rkblurS" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6"/>
+    </filter>
+    <filter id="rkblurB" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+    </filter>
+    <linearGradient id="rksteelTop" gradientUnits="userSpaceOnUse" x1="0" y1="190" x2="0" y2="214">
+      <stop offset="0" stop-color="#38648f"/><stop offset="1" stop-color="#1c3f67"/>
+    </linearGradient>
+    <linearGradient id="rksteelFace" gradientUnits="userSpaceOnUse" x1="0" y1="212" x2="0" y2="252">
+      <stop offset="0" stop-color="#1b3a5c"/><stop offset="1" stop-color="#0c2444"/>
+    </linearGradient>
+    <linearGradient id="rkfloodGrad" gradientUnits="userSpaceOnUse" x1="0" y1="104" x2="0" y2="198">
+      <stop offset="0" stop-color="#7fd8ff" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#7fd8ff" stop-opacity=".05"/>
+    </linearGradient>
+    <linearGradient id="rkrakeGrad" gradientUnits="userSpaceOnUse" x1="352" y1="176" x2="575" y2="205">
+      <stop offset="0" stop-color="#7fd8ff" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#7fd8ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rkscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== column headers + divider ===== -->
+  <text x="162" y="34" text-anchor="middle" font-size="13" letter-spacing="3" fill="#9fe6ff" opacity=".9">FLOOD</text>
+  <text x="458" y="34" text-anchor="middle" font-size="13" letter-spacing="3" fill="#9fe6ff" opacity=".9">RAKING</text>
+  <line x1="300" y1="44" x2="300" y2="296" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="4 6" opacity=".25"/>
+
+  <!-- ===== LEFT PLATE (oblique slab) ===== -->
+  <g id="rkPlates">
+    <path d="M62 190 L284 190 L262 212 L40 212 Z" fill="url(#rksteelTop)"/>
+    <path d="M40 212 L262 212 L262 252 L40 252 Z" fill="url(#rksteelFace)"/>
+    <path d="M262 212 L284 190 L284 230 L262 252 Z" fill="#0e2848"/>
+    <!-- rolling marks -->
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".14">
+      <line x1="70" y1="193.5" x2="276" y2="193.5"/>
+      <line x1="52" y1="208.5" x2="252" y2="208.5"/>
+      <line x1="46" y1="224" x2="256" y2="224"/>
+      <line x1="46" y1="238" x2="256" y2="238"/>
+    </g>
+    <!-- edges -->
+    <path d="M40 212 L262 212" stroke="#8fb6e0" stroke-width="2" fill="none"/>
+    <path d="M62 190 L284 190 L262 212 M40 212 L62 190 M262 212 L262 252 L40 252 L40 212 M284 190 L284 230 L262 252" stroke="#8fb6e0" stroke-width="1.5" opacity=".5" fill="none"/>
+    <!-- shallow tight crack (default: modest contrast) -->
+    <path id="rkCrackL" d="M112 206 L126 203 L134 205 L146 201 L157 202 L171 198 L180 199 L193 196 M146 201 L143 196" fill="none" stroke="#071527" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+
+    <!-- ===== RIGHT PLATE (identical, +296) ===== -->
+    <path d="M358 190 L580 190 L558 212 L336 212 Z" fill="url(#rksteelTop)"/>
+    <path d="M336 212 L558 212 L558 252 L336 252 Z" fill="url(#rksteelFace)"/>
+    <path d="M558 212 L580 190 L580 230 L558 252 Z" fill="#0e2848"/>
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".14">
+      <line x1="366" y1="193.5" x2="572" y2="193.5"/>
+      <line x1="348" y1="208.5" x2="548" y2="208.5"/>
+      <line x1="342" y1="224" x2="552" y2="224"/>
+      <line x1="342" y1="238" x2="552" y2="238"/>
+    </g>
+    <path d="M336 212 L558 212" stroke="#8fb6e0" stroke-width="2" fill="none"/>
+    <path d="M358 190 L580 190 L558 212 M336 212 L358 190 M558 212 L558 252 L336 252 L336 212 M580 190 L580 230 L558 252" stroke="#8fb6e0" stroke-width="1.5" opacity=".5" fill="none"/>
+    <path id="rkCrackR" d="M408 206 L422 203 L430 205 L442 201 L453 202 L467 198 L476 199 L489 196 M442 201 L439 196" fill="none" stroke="#071527" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity=".8"/>
+  </g>
+
+  <!-- ===== ping: "watch this shallow crack" ===== -->
+  <circle id="rkCrackPing" cx="150" cy="201" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#rkglowR)"/>
+
+  <!-- ===== FLOOD LAMP: overhead, wide flat cone straight down ===== -->
+  <g id="rkFloodLamp" opacity="0">
+    <line x1="152" y1="40" x2="152" y2="52" stroke="#8fb6e0" stroke-width="1.5" opacity=".7"/>
+    <rect x="143" y="52" width="18" height="34" rx="3" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <line x1="146.5" y1="58" x2="157.5" y2="58" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+    <line x1="146.5" y1="64" x2="157.5" y2="64" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+    <path d="M141 86 L163 86 L168 102 L136 102 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <ellipse cx="152" cy="103.5" rx="15" ry="3" fill="#7fd8ff" filter="url(#rkglowC)" opacity=".95"/>
+    <path d="M139 106 L165 106 L258 196 L52 196 Z" fill="url(#rkfloodGrad)"/>
+    <ellipse cx="152" cy="199" rx="103" ry="10" fill="#bfe6ff" opacity=".15"/>
+  </g>
+
+  <!-- ===== flood wash: crack contrast collapses ===== -->
+  <g id="rkFloodFade" opacity="0">
+    <path d="M62 190 L284 190 L262 212 L40 212 Z" fill="#d6ecff" opacity=".28"/>
+    <path d="M112 206 L126 203 L134 205 L146 201 L157 202 L171 198 L180 199 L193 196 M146 201 L143 196" fill="none" stroke="url(#rksteelTop)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+    <text x="162" y="272" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".75">NO SHADOW</text>
+  </g>
+
+  <!-- ===== RAKING LAMP: low, beam skims at 15 deg ===== -->
+  <g id="rkRakeLamp" opacity="0">
+    <g transform="translate(6 0) rotate(15 350 176)">
+      <rect x="300" y="168.5" width="38" height="15" rx="3" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+      <line x1="306" y1="172" x2="306" y2="180" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+      <line x1="312" y1="172" x2="312" y2="180" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+      <path d="M338 167 L350 163 L350 189 L338 185 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+      <ellipse cx="350.5" cy="176" rx="2.6" ry="12.5" fill="#7fd8ff" filter="url(#rkglowC)" opacity=".95"/>
+    </g>
+    <path d="M358 170 L575 199 L505 212 L358 182 Z" fill="url(#rkrakeGrad)"/>
+  </g>
+
+  <!-- ===== beam ray (draw-on, aimed at the crack) ===== -->
+  <path id="rkRakeBeam" d="M359 176 L446 201" fill="none" stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#rkglowR)"/>
+
+  <!-- ===== 15 deg annotation (vertex at lamp head, reference parallel to surface) ===== -->
+  <g id="rkAngle" opacity="0">
+    <line x1="358" y1="176" x2="446" y2="176" stroke="#9fe6ff" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>
+    <path d="M404 176 A46 46 0 0 1 402.2 188.6" fill="none" stroke="#9fe6ff" stroke-width="1.4"/>
+    <text x="424" y="189" text-anchor="middle" font-size="12" fill="#9fe6ff">15&#176;</text>
+  </g>
+
+  <!-- ===== shadow snap: long dark band + bright lit lip ===== -->
+  <g id="rkShadow" opacity="0">
+    <path d="M427 210 L441 207 L449 209 L461 205 L472 206 L486 202 L495 203 L516 199.5" fill="none" stroke="#050e1d" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity=".4" filter="url(#rkblurB)"/>
+    <path d="M424 209 L438 206 L446 208 L458 204 L469 205 L483 201 L492 202 L508 199" fill="none" stroke="#050e1d" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" opacity=".85" filter="url(#rkblurS)"/>
+    <path d="M408 206 L422 203 L430 205 L442 201 L453 202 L467 198 L476 199 L489 196" transform="translate(-5,-5)" fill="none" stroke="#cfeaff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity=".22" filter="url(#rkblurS)"/>
+    <path d="M408 206 L422 203 L430 205 L442 201 L453 202 L467 198 L476 199 L489 196 M442 201 L439 196" fill="none" stroke="#020b18" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M408 206 L422 203 L430 205 L442 201 L453 202 L467 198 L476 199 L489 196" transform="translate(-2.4,-2.9)" fill="none" stroke="#f2faff" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity=".85" filter="url(#rkglowR)"/>
+    <path d="M497 203 L516 258" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="517" y="272" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85">SHADOW</text>
+  </g>
+  <circle id="rkShadowPing" cx="446" cy="201" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#rkglowR)"/>
+
+  <!-- ===== scan group ===== -->
+  <g id="rkscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#rkscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#rkglowC)" opacity=".9"/>
+  </g>
+</svg>

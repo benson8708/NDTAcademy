@@ -1,0 +1,158 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="cdsGlowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cdsGlowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="cdsSteel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".35" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="cdsChargeFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#1E66F5" stop-opacity=".5"/>
+    </linearGradient>
+    <linearGradient id="cdsCone" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".03"/>
+    </linearGradient>
+    <linearGradient id="cdsScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+    <pattern id="cdsCell" patternUnits="userSpaceOnUse" x="110" y="118" width="20" height="15">
+      <path d="M20 0 H0 V15" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".55"/>
+      <circle cx="10" cy="7.5" r="2.4" fill="#5fe0ff" opacity=".22"/>
+    </pattern>
+  </defs>
+
+  <!-- ===== LIGHT: objective lens + converging rays (static) ===== -->
+  <path d="M56 126 Q72 168 56 210 Q40 168 56 126 Z" fill="#5fe0ff" opacity=".1"/>
+  <path d="M56 126 Q72 168 56 210 Q40 168 56 126 Z" fill="none" stroke="#8fb6e0" stroke-width="1.5"/>
+  <path d="M53 140 Q60 168 53 196" fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".4"/>
+  <polygon points="58,128 178,134 200,147 58,208" fill="url(#cdsCone)"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M6 132 L58 132 L176 137" stroke="#5fe0ff" stroke-width="1.6" opacity=".85" filter="url(#cdsGlowR)"/>
+    <path d="M6 152 L60 152 L178 139" stroke="#5fe0ff" stroke-width="1.6" opacity=".8" filter="url(#cdsGlowR)"/>
+    <path d="M6 186 L60 186 L196 143" stroke="#5fe0ff" stroke-width="1.2" opacity=".3"/>
+    <path d="M6 204 L58 204 L198 145" stroke="#5fe0ff" stroke-width="1.2" opacity=".26"/>
+  </g>
+
+  <!-- ===== SENSOR CHIP: package + die (static) ===== -->
+  <rect x="94" y="100" width="192" height="130" rx="8" fill="url(#cdsSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <g fill="#8fb6e0" opacity=".45">
+    <rect x="97" y="118" width="5" height="7"/><rect x="97" y="136" width="5" height="7"/><rect x="97" y="154" width="5" height="7"/>
+    <rect x="97" y="172" width="5" height="7"/><rect x="97" y="190" width="5" height="7"/><rect x="97" y="208" width="5" height="7"/>
+    <rect x="278" y="118" width="5" height="7"/><rect x="278" y="136" width="5" height="7"/><rect x="278" y="154" width="5" height="7"/>
+    <rect x="278" y="172" width="5" height="7"/><rect x="278" y="190" width="5" height="7"/><rect x="278" y="208" width="5" height="7"/>
+  </g>
+  <rect x="106" y="112" width="168" height="106" rx="3" fill="#0e2848" stroke="#8fb6e0" stroke-width="1" opacity=".95"/>
+  <!-- faint base grid so the die never looks blank pre-reveal -->
+  <rect x="110" y="118" width="160" height="90" fill="url(#cdsCell)" opacity=".25"/>
+  <rect x="110" y="118" width="160" height="90" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".3"/>
+
+  <!-- photosite grid resolving (reveal: fade) -->
+  <g id="cdsGrid" opacity="0">
+    <rect x="110" y="118" width="160" height="90" fill="url(#cdsCell)"/>
+    <rect x="110" y="118" width="160" height="90" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".7"/>
+    <path d="M190 231 V218" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="190" y="246" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".9">PHOTOSITES</text>
+  </g>
+
+  <!-- highlighted bright/dim cell pair where rays land (static) + zoom guides -->
+  <rect x="170" y="133" width="20" height="15" fill="#5fe0ff" opacity=".3"/>
+  <rect x="190" y="133" width="20" height="15" fill="#5fe0ff" opacity=".1"/>
+  <rect x="170" y="133" width="40" height="15" fill="none" stroke="#5fe0ff" stroke-width="1.2" filter="url(#cdsGlowR)" opacity=".9"/>
+  <g stroke="#7fd8ff" stroke-width="1" stroke-dasharray="4 3" opacity=".35" fill="none">
+    <path d="M210 133 L308 84"/>
+    <path d="M210 148 L308 256"/>
+  </g>
+
+  <!-- ===== ZOOM INSET: two photosite wells in a silicon slab ===== -->
+  <rect x="308" y="84" width="124" height="172" rx="10" fill="#0e2848" opacity=".55"/>
+  <rect x="308" y="84" width="124" height="172" rx="10" fill="none" stroke="#8fb6e0" stroke-width="1.5"/>
+  <!-- silicon substrate -->
+  <rect x="316" y="152" width="108" height="86" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2" opacity=".9"/>
+  <text x="370" y="202" text-anchor="middle" font-size="9.5" fill="#9fe6ff" opacity=".5">Si</text>
+  <!-- wells cut into the slab -->
+  <rect x="324" y="152" width="38" height="80" fill="#0a1d36"/>
+  <rect x="378" y="152" width="38" height="80" fill="#0a1d36"/>
+  <path d="M324 152 V232 H362 V152" fill="none" stroke="#8fb6e0" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M378 152 V232 H416 V152" fill="none" stroke="#8fb6e0" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- photons striking the wells (reveal: draw) -->
+  <path id="cdsPhoton" d="M331 100 q4 7 0 14 q-4 7 0 14 q4 7 0 14 M327 142 L331 149 L335 142 M343 100 q4 7 0 14 q-4 7 0 14 q4 7 0 14 M339 142 L343 149 L347 142 M355 100 q4 7 0 14 q-4 7 0 14 q4 7 0 14 M351 142 L355 149 L359 142" fill="none" stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#cdsGlowR)"/>
+  <path id="cdsPhotonDim" d="M397 100 q4 7 0 14 q-4 7 0 14 q4 7 0 14 M393 142 L397 149 L401 142" fill="none" stroke="#5fe0ff" stroke-opacity=".5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#cdsGlowR)"/>
+  <g id="cdsPhotonLbl" opacity="0">
+    <text x="343" y="95" text-anchor="middle" font-size="9.5" fill="#9fe6ff" opacity=".85">BRIGHT</text>
+    <text x="397" y="95" text-anchor="middle" font-size="9.5" fill="#9fe6ff" opacity=".5">DIM</text>
+  </g>
+
+  <!-- freed electrons (reveal: fade) -->
+  <g id="cdsElectron" opacity="0">
+    <g fill="#7fd8ff" filter="url(#cdsGlowR)">
+      <circle cx="337" cy="168" r="2.4"/><circle cx="351" cy="172" r="2.4"/>
+      <circle cx="332" cy="222" r="2.4"/><circle cx="343" cy="219" r="2.4"/><circle cx="354" cy="224" r="2.4"/>
+      <circle cx="397" cy="205" r="2.4" opacity=".75"/><circle cx="396" cy="223" r="2.4" opacity=".75"/><circle cx="406" cy="221" r="2.4" opacity=".75"/>
+    </g>
+    <text x="364" y="148" font-size="9.5" fill="#9fe6ff">e&#8315;</text>
+    <path d="M364 151 L355 168" stroke="#7fd8ff" stroke-width="1" opacity=".55" fill="none"/>
+  </g>
+  <circle id="cdsPing" cx="343" cy="156" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#cdsGlowR)"/>
+
+  <!-- charge bars filling with brightness (reveal: fade) -->
+  <g id="cdsCharge" opacity="0">
+    <rect x="326" y="176" width="34" height="54" fill="url(#cdsChargeFill)"/>
+    <path d="M326 176 H360" stroke="#5fe0ff" stroke-width="1.5" fill="none" filter="url(#cdsGlowR)"/>
+    <rect x="380" y="214" width="34" height="16" fill="url(#cdsChargeFill)"/>
+    <path d="M380 214 H414" stroke="#5fe0ff" stroke-width="1.5" fill="none" filter="url(#cdsGlowR)" opacity=".7"/>
+    <text x="370" y="250" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".9">CHARGE</text>
+  </g>
+
+  <!-- ===== A/D CONVERTER (static block) ===== -->
+  <line x1="434" y1="168" x2="448" y2="168" stroke="#8fb6e0" stroke-width="1.5"/>
+  <polygon points="456,168 448,164 448,172" fill="#8fb6e0"/>
+  <rect x="458" y="134" width="104" height="64" rx="8" fill="url(#cdsSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <g fill="none" stroke="#7fd8ff" stroke-width="1.5" opacity=".8">
+    <path d="M468 152 q6 -9 12 0 q6 9 12 0"/>
+    <path d="M498 148 l8 0 m-3 -3 l3 3 l-3 3" stroke-width="1.2"/>
+    <path d="M512 156 h7 v-4 h7 v-4 h7 v-4"/>
+  </g>
+  <text x="510" y="178" text-anchor="middle" font-size="16" fill="#9fe6ff">A/D</text>
+  <text x="510" y="192" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".7">0&#8211;255</text>
+
+  <!-- A/D activates + value stream (reveal: fade) -->
+  <g id="cdsADC" opacity="0">
+    <rect x="458" y="134" width="104" height="64" rx="8" fill="none" stroke="#5fe0ff" stroke-width="2" filter="url(#cdsGlowC)" opacity=".9"/>
+    <line x1="434" y1="168" x2="448" y2="168" stroke="#5fe0ff" stroke-width="2" filter="url(#cdsGlowR)"/>
+    <polygon points="456,168 448,164 448,172" fill="#5fe0ff"/>
+    <text x="510" y="218" text-anchor="middle" font-size="11" fill="#9fe6ff">212 047 128</text>
+    <text x="510" y="234" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".75">064 255 091</text>
+  </g>
+
+  <!-- per-pixel numbers populate the grid (reveal: fade) -->
+  <g id="cdsNums" font-size="9.5" text-anchor="middle" opacity="0">
+    <text x="180" y="144" fill="#5fe0ff">212</text>
+    <text x="200" y="144" fill="#9fe6ff">047</text>
+    <text x="140" y="129" fill="#9fe6ff">128</text>
+    <text x="240" y="144" fill="#9fe6ff">090</text>
+    <text x="120" y="174" fill="#9fe6ff">033</text>
+    <text x="240" y="159" fill="#9fe6ff">176</text>
+    <text x="160" y="189" fill="#9fe6ff">064</text>
+    <text x="220" y="189" fill="#9fe6ff">201</text>
+    <text x="140" y="204" fill="#9fe6ff">145</text>
+    <text x="260" y="174" fill="#9fe6ff">255</text>
+  </g>
+
+  <!-- caption -->
+  <text x="30" y="330" font-size="11" fill="#9fe6ff" opacity=".6">IMAGE SENSOR: PHOTON &#8594; CHARGE &#8594; NUMBER</text>
+
+  <!-- ===== scan group ===== -->
+  <g id="cdsscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#cdsScanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#cdsGlowC)" opacity=".9"/>
+  </g>
+</svg>
