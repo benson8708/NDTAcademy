@@ -161,7 +161,10 @@ def fleet_design():
             if a["name"] not in briefs:
                 briefs[a["name"]] = {"prefix": "".join(w[0] for w in a["name"].split("-"))[:4],
                                      "lessons": [req["lessonId"]], "brief": a["brief"]}
-    have = {os.path.basename(f)[:-4] for f in glob.glob(f"{W}/media-src/assets/*.svg")}
+    # an asset is only "designed" when BOTH the SVG and its reveal manifest
+    # exist — agents killed mid-write leave orphan SVGs that must be redone
+    have = {os.path.basename(f)[:-4] for f in glob.glob(f"{W}/media-src/assets/*.svg")
+            if os.path.exists(f[:-4] + ".json")}
     todo = [{"name": n, **v} for n, v in sorted(briefs.items()) if n not in have]
     # prefix collisions with existing assets are the designers' problem only if
     # ids clash inside one video; per-asset uniqueness of NEW prefixes is enough
