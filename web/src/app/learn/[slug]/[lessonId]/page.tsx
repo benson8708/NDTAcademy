@@ -16,6 +16,7 @@ import {
   lessonVideoUrl,
   lessonExplainers,
   slideAudioManifest,
+  trainersManifest,
 } from "@/lib/vtContent";
 import { buildSteps } from "@/lib/lessonSteps";
 
@@ -106,6 +107,7 @@ export default async function LessonPage({
         videoUrl: lessonVideoUrl(course.id, lessonId),
         explainers: lessonExplainers(course.id, lessonId),
         figureBase: `/content/${course.id}/figures`,
+        trainer: (trainersManifest(course.id)[lessonId] as Record<string, unknown> | undefined) ?? null,
       })
     : null;
 

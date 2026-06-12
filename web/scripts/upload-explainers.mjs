@@ -18,7 +18,9 @@ const here = dirname(fileURLToPath(import.meta.url));
 const webRoot = join(here, "..");
 const dropDir = join(webRoot, "media-build", "explainer-drop");
 const planPath = join(webRoot, "media-build", "explainer-plan.json");
-const manifestPath = join(webRoot, "src", "data", "content", "vt", "explainers.json");
+const cIdx = process.argv.indexOf("--course");
+const COURSE = cIdx > -1 ? process.argv[cIdx + 1] : "vt";
+const manifestPath = join(webRoot, "src", "data", "content", COURSE, "explainers.json");
 
 const env = (name) => {
   if (process.env[name]) return process.env[name];
@@ -30,7 +32,7 @@ const SERVICE = env("SUPABASE_SERVICE_ROLE_KEY");
 const BUCKET = "vt-media";
 
 if (!existsSync(dropDir)) mkdirSync(dropDir, { recursive: true });
-const plan = JSON.parse(readFileSync(planPath, "utf8"));
+const plan = existsSync(planPath) && COURSE === "vt" ? JSON.parse(readFileSync(planPath, "utf8")) : { items: [] };
 const planById = new Map(plan.items.map((it) => [it.lessonId, it]));
 // Authored specs (media-src/specs) take precedence for title + anchor.
 const specsDir = join(webRoot, "media-src", "specs");
@@ -56,7 +58,9 @@ const api = (path, init = {}) =>
 
 const force = process.argv.includes("--force");
 const manifest = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, "utf8")) : {};
-const files = readdirSync(dropDir).filter((f) => f.endsWith(".mp4"));
+const curric = JSON.parse(readFileSync(join(webRoot, "src", "data", "curriculum", `${COURSE}.json`), "utf8"));
+const courseLessonIds = new Set(curric.levels.flatMap((L) => L.modules.flatMap((m) => m.lessons.map((l) => l.id))));
+const files = readdirSync(dropDir).filter((f) => f.endsWith(".mp4") && courseLessonIds.has(f.replace(/\.mp4$/, "")));
 if (!files.length) {
   console.log(`No MP4s in ${dropDir}.\nExport from Knowlify, save as <lessonId>.mp4 (see scripts/explainer-export-guide.txt), then re-run.`);
   process.exit(0);

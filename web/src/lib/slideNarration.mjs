@@ -29,6 +29,10 @@ export function narrationText(step) {
       return `Knowledge check. ${step.questionCount} questions, ${step.passPct} percent to pass.`;
     case "question":
       return step.question.question;
+    case "trainer": {
+      const c = step.config || {};
+      return [c.title, c.intro].filter(Boolean).join(". ");
+    }
     default:
       return null;
   }

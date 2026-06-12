@@ -77,9 +77,11 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const probe = (f) => parseFloat(execFileSync("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", f]).toString().trim());
 
 // gather unique (key,text) across selected lessons
+const lessonIdSet = new Set([...objectivesById.keys()]);
 const lessonFiles = readdirSync(contentDir)
-  .filter((f) => /^vt[12]-.*\.json$/.test(f) && !f.startsWith("quiz-"))
+  .filter((f) => f.endsWith(".json"))
   .map((f) => f.replace(".json", ""))
+  .filter((id) => lessonIdSet.has(id))
   .filter((id) => !ONLY || ONLY.includes(id))
   .sort();
 

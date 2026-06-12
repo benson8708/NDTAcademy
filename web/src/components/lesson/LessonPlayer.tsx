@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { MarkdownLite } from "@/lib/markdownLite";
 import InteractiveBlock from "@/components/lesson/InteractiveBlock";
+import Trainer3D from "@/components/trainer3d/Trainer3D";
+import type { TrainerConfig } from "@/components/trainer3d/contract";
 import SimulatorBlock from "@/components/lesson/SimulatorBlock";
 import type { Step } from "@/lib/lessonSteps";
 import { narrationText, narrationKey } from "@/lib/slideNarration";
@@ -187,8 +189,8 @@ export default function LessonPlayer({
       // video / explainer / interactive / simulator / question lock until done
       setUnlocked(false);
     }
-    // questions are read aloud too (gate stays answer-based)
-    if (step.kind === "question" && !muted && text) {
+    // questions + trainer intros are read aloud too (gates stay action-based)
+    if ((step.kind === "question" || step.kind === "trainer") && !muted && text) {
       const url = audioFor(step);
       if (url) { playTitan(url, text, () => {}); return () => cancelSpeech(); }
       if (speechOn) { speak(text, () => {}); return () => cancelSpeech(); }
@@ -383,6 +385,15 @@ export default function LessonPlayer({
           </div>
         )}
 
+        {step.kind === "trainer" && (
+          <div className="lp-slide lp-wide">
+            <Trainer3D
+              config={step.config as unknown as TrainerConfig}
+              onComplete={() => { setUnlocked(true); award(30, "3-D task complete"); }}
+            />
+          </div>
+        )}
+
         {step.kind === "interactive" && (
           <div className="lp-slide lp-wide">
             <InteractiveBlock
@@ -469,7 +480,7 @@ export default function LessonPlayer({
               ? idx === steps.length - 2 ? "Finish" : "Continue →"
               : step.kind === "video" || step.kind === "explainer"
                 ? "Watch to continue"
-                : step.kind === "interactive" || step.kind === "simulator"
+                : step.kind === "interactive" || step.kind === "simulator" || step.kind === "trainer"
                   ? "Complete to continue"
                   : step.kind === "question"
                     ? "Answer to continue"

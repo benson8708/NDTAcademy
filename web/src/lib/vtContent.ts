@@ -153,6 +153,18 @@ export function slideAudioManifest(courseId: string): Record<string, string> {
   }
 }
 
+/**
+ * Per-lesson 3-D trainer configs (trainers.json: lessonId -> TrainerConfig).
+ * Missing manifest/entry -> no trainer step for that lesson.
+ */
+export function trainersManifest(courseId: string): Record<string, unknown> {
+  try {
+    return JSON.parse(readFileSync(path.join(contentDir(courseId), "trainers.json"), "utf8")) as Record<string, unknown>;
+  } catch {
+    return {};
+  }
+}
+
 /** Which lessons in a level have authored content (for progress/QA surfaces). */
 export async function authoredLessonIds(courseId: string, level: CourseLevel): Promise<Set<string>> {
   const ids = levelLessonIds(level);

@@ -15,6 +15,7 @@ export type Step =
   | { kind: "concept"; heading: string; body: string; figure: { src: string; caption: string } | null; callout: { variant: string; title: string; body: string } | null; dwellSec: number }
   | { kind: "table"; caption: string; headers: string[]; rows: string[][]; dwellSec: number }
   | { kind: "interactive"; interactive: Interactive }
+  | { kind: "trainer"; config: Record<string, unknown> }
   | { kind: "simulator"; simulator: Simulator }
   | { kind: "quizIntro"; questionCount: number; passPct: number; dwellSec: number }
   | { kind: "question"; question: QuizQuestion; index: number; total: number }
@@ -34,8 +35,9 @@ export function buildSteps(opts: {
   videoUrl: string | null;
   explainers: ExplainerEntry[];
   figureBase: string; // e.g. /content/vt/figures
+  trainer?: Record<string, unknown> | null;
 }): Step[] {
-  const { lesson, content, heroUrl, videoUrl, explainers, figureBase } = opts;
+  const { lesson, content, heroUrl, videoUrl, explainers, figureBase, trainer } = opts;
   const steps: Step[] = [];
   const figureById = new Map(content.figures.map((f) => [f.id, f]));
 
@@ -125,6 +127,7 @@ export function buildSteps(opts: {
     pushExplainers(i);
   }
 
+  if (trainer) steps.push({ kind: "trainer", config: trainer });
   if (content.interactive) steps.push({ kind: "interactive", interactive: content.interactive });
   if (content.simulator) steps.push({ kind: "simulator", simulator: content.simulator });
 

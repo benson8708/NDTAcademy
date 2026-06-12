@@ -997,3 +997,21 @@ table.hours tr:last-child td { border-bottom: 0; }
   .hero .wrap { padding: 64px 24px 72px; }
   .dash-main { padding: 22px 16px; }
 }
+
+/* 3-D trainer step (gated hands-on task in the lesson player) */
+.t3d { width: min(1080px, 94vw); margin: 0 auto; }
+.t3d-head h3 { color: #eaf4ff; font-size: 1.6rem; margin: 6px 0 4px; }
+.t3d-head p { color: #a9c6e8; margin: 0 0 14px; }
+.t3d-stage { position: relative; height: clamp(340px, 52vh, 520px); border-radius: 16px; overflow: hidden;
+  background: rgba(120,170,255,.06); border: 1px solid rgba(150,200,255,.22);
+  box-shadow: 0 8px 40px rgba(0,10,30,.45); }
+.t3d-error { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  color: #ffb054; font-size: .95rem; padding: 20px; text-align: center; }
+.t3d-tasks { list-style: none; display: flex; flex-wrap: wrap; gap: 10px 22px; margin: 14px 0 0; padding: 0; }
+.t3d-tasks li { display: flex; align-items: center; gap: 8px; color: #bcd6f5; font-size: .95rem; }
+.t3d-tasks li.done { color: #7fe0b2; }
+.t3d-check { width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center;
+  justify-content: center; border: 1px solid rgba(150,200,255,.4); font-size: .8rem; }
+.t3d-tasks li.done .t3d-check { background: rgba(40,180,120,.25); border-color: rgba(127,224,178,.7); }
+.t3d-hint { color: #9BC4FF; font-style: normal; }
+.t3d-donebanner { margin-top: 12px; color: #7fe0b2; font-weight: 600; }
