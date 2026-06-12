@@ -7,14 +7,16 @@
 <meta name="description" content="Advance your career as a Nondestructive Testing technician. VT Level I & II — completely free for a limited time.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
 <style>
   :root{
     --navy:#0B1F3A; --deep:#08152b; --blue:#1E66F5; --cyan:#5fe0ff; --ink:#E8F0F8;
     --ink-dim:rgba(232,240,248,.68); --ink-faint:rgba(232,240,248,.45);
     --card:rgba(20,44,84,.42); --line:rgba(95,224,255,.16); --red:#ff4d5e;
-    --disp:'Unbounded',sans-serif; --body:'Outfit',sans-serif;
+    --disp:'Clash Display','Sora',sans-serif; --body:'Manrope',sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -41,7 +43,7 @@
   }
   nav.scrolled{background:rgba(8,21,43,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
     box-shadow:0 1px 0 rgba(95,224,255,.12),0 12px 40px rgba(0,0,0,.35);padding:12px 5vw}
-  .wordmark{font-family:var(--disp);font-weight:700;font-size:17px;letter-spacing:.02em;display:flex;align-items:center;gap:10px}
+  .wordmark{font-family:var(--disp);font-weight:600;font-size:19px;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
   .wordmark .dot{width:14px;height:14px;border-radius:50%;
     background:radial-gradient(circle at 35% 30%,var(--cyan),var(--blue));
     box-shadow:0 0 14px rgba(95,224,255,.8);animation:pulse 2.6s ease-in-out infinite}
@@ -72,8 +74,8 @@
     animation:chipIn .8s cubic-bezier(.2,1.6,.4,1) .1s backwards}
   .eyebrow .spark{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);
     animation:pulse 1.8s ease-in-out infinite}
-  h1{font-family:var(--disp);font-weight:800;font-size:clamp(29px,3.7vw,52px);line-height:1.1;
-    letter-spacing:-.01em;margin:26px 0 22px;text-wrap:balance}
+  h1{font-family:var(--disp);font-weight:700;font-size:clamp(34px,4.5vw,64px);line-height:1.06;
+    letter-spacing:-.015em;margin:26px 0 22px;text-wrap:balance}
   h1 .k{display:inline-block;animation:kIn .85s cubic-bezier(.2,1.5,.35,1) backwards;
     animation-delay:calc(var(--i)*.022s + .25s);transition:transform .3s,color .3s;cursor:default}
   h1 .k:hover{transform:translateY(-9px) rotate(-5deg);color:var(--cyan)}
@@ -135,20 +137,28 @@
     51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
   /* ---------- DEFECT GAME UI ---------- */
-  .def-chip{position:fixed;z-index:55;top:86px;right:5vw;font-family:var(--disp);font-weight:700;font-size:12px;
-    letter-spacing:.18em;color:var(--ink);padding:11px 20px;border-radius:999px;border:1px solid rgba(255,77,94,.55);
+  .def-wrap{position:fixed;z-index:55;top:86px;right:5vw;display:flex;flex-direction:column;align-items:flex-end;gap:7px;
+    transition:opacity .6s}
+  .def-wrap[hidden]{display:none}
+  .def-chip{font-family:var(--disp);font-weight:600;font-size:12.5px;
+    letter-spacing:.16em;color:var(--ink);padding:11px 20px;border-radius:999px;border:1px solid rgba(255,77,94,.55);
     background:rgba(28,10,20,.72);backdrop-filter:blur(10px);box-shadow:0 0 24px rgba(255,77,94,.25);
     display:flex;align-items:center;gap:10px;transition:opacity .4s,transform .4s}
   .def-chip b{color:var(--red)}
   .def-chip .ddot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red);animation:pulse 1.4s infinite}
-  .def-chip[hidden]{display:none}
   .def-chip.pop{animation:chipIn .5s cubic-bezier(.2,1.8,.4,1)}
-  .hint-chip{position:fixed;z-index:55;font-size:13.5px;font-weight:600;color:var(--ink);
-    padding:10px 18px;border-radius:14px;border:1px solid rgba(255,77,94,.45);background:rgba(8,21,43,.85);
-    backdrop-filter:blur(8px);pointer-events:none;transition:opacity .5s;white-space:nowrap}
-  .hint-chip::before{content:'';position:absolute;left:-5px;top:50%;width:9px;height:9px;transform:translateY(-50%) rotate(45deg);
-    background:rgba(8,21,43,.85);border-left:1px solid rgba(255,77,94,.45);border-bottom:1px solid rgba(255,77,94,.45)}
-  .hint-chip[hidden]{display:none}
+  .def-hint{font-size:12px;font-weight:500;letter-spacing:.08em;color:rgba(232,240,248,.34);padding-right:10px;
+    transition:opacity .5s}
+  .def-hint.gone{opacity:0}
+  .def-ring{position:fixed;z-index:54;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;
+    border:1.5px solid rgba(255,77,94,.7);box-shadow:0 0 22px rgba(255,77,94,.35),inset 0 0 16px rgba(255,77,94,.16);
+    pointer-events:none;opacity:0;transform:scale(.65);transition:opacity .25s,transform .3s cubic-bezier(.2,1.5,.4,1)}
+  .def-ring.on{opacity:1;transform:scale(1)}
+  .btn-snd{width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(95,224,255,.35);background:rgba(95,224,255,.05);
+    color:var(--ink);font-size:15px;line-height:1;cursor:pointer;transition:.25s;
+    display:inline-flex;align-items:center;justify-content:center;padding:0}
+  .btn-snd:hover{border-color:var(--cyan);background:rgba(95,224,255,.12);transform:translateY(-1px)}
+  .btn-snd.off{opacity:.5}
   .toast{position:fixed;z-index:60;left:50%;bottom:34px;transform:translateX(-50%) translateY(10px);
     max-width:min(92vw,560px);text-align:center;font-size:15.5px;font-weight:600;line-height:1.5;color:var(--ink);
     padding:16px 26px;border-radius:18px;border:1px solid rgba(95,224,255,.4);background:rgba(8,21,43,.92);
@@ -168,8 +178,8 @@
   .sec-eyebrow{font-weight:700;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);
     display:flex;align-items:center;gap:14px}
   .sec-eyebrow::before{content:'';width:34px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--cyan),var(--blue))}
-  h2{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3.2vw,44px);line-height:1.18;margin:18px 0 16px;
-    letter-spacing:-.01em;text-wrap:balance}
+  h2{font-family:var(--disp);font-weight:600;font-size:clamp(30px,3.9vw,52px);line-height:1.12;margin:18px 0 16px;
+    letter-spacing:-.012em;text-wrap:balance}
   .sec-sub{color:var(--ink-dim);font-size:17.5px;line-height:1.7;max-width:640px}
   .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,1,.3,1)}
   .reveal.in{opacity:1;transform:none}
@@ -229,7 +239,7 @@
   .stat{border-radius:24px;padding:34px 26px;text-align:center;background:var(--card);border:1px solid var(--line);
     transition:transform .35s cubic-bezier(.2,1.5,.4,1),border-color .3s,background .3s;cursor:default}
   .stat:hover{transform:translateY(-7px) scale(1.025);border-color:rgba(95,224,255,.45);background:rgba(24,52,98,.55)}
-  .stat .big{font-family:var(--disp);font-weight:800;font-size:clamp(30px,3vw,42px);
+  .stat .big{font-family:var(--disp);font-weight:700;font-size:clamp(32px,3.2vw,46px);
     background:linear-gradient(110deg,var(--cyan),var(--blue));-webkit-background-clip:text;background-clip:text;
     -webkit-text-fill-color:transparent;line-height:1.1}
   .stat .lbl{margin-top:10px;color:var(--ink-dim);font-size:14.5px;font-weight:500;line-height:1.45}
@@ -243,7 +253,7 @@
   .band::before{content:'';position:absolute;inset:0;opacity:.4;pointer-events:none;
     background-image:radial-gradient(rgba(232,240,248,.35) 1px,transparent 1.5px);background-size:26px 26px;
     mask-image:radial-gradient(closest-side at 50% 40%,#000,transparent)}
-  .band h2{font-size:clamp(30px,4vw,54px);margin:0 0 14px}
+  .band h2{font-size:clamp(34px,4.6vw,62px);margin:0 0 14px}
   .band p{color:rgba(232,240,248,.85);font-size:18px;line-height:1.65;max-width:580px;margin:0 auto 36px}
   .band .btn-primary{background:linear-gradient(95deg,#fff,#dff5ff);color:var(--navy);font-size:17.5px;padding:19px 42px;
     box-shadow:0 14px 44px rgba(4,10,24,.45)}
@@ -262,9 +272,17 @@
     .shape-hud{right:50%;transform:translateX(50%);bottom:7vh}
     .shape-label{min-width:230px;font-size:13px}
     .hero-inner{padding-top:130px}
-    .def-chip{top:auto;bottom:90px;right:4vw}
+    .def-wrap{top:auto;bottom:148px;right:4vw}
   }
-  @media (max-width:560px){.stats{grid-template-columns:1fr}}
+  @media (max-width:560px){
+    .stats{grid-template-columns:1fr}
+    nav{padding:14px 4vw}
+    .wordmark{font-size:15.5px;gap:7px}
+    .wordmark .dot{width:11px;height:11px}
+    .btn-signin{padding:9px 16px;font-size:13px;white-space:nowrap}
+    .btn-snd{width:33px;height:33px;font-size:13px}
+    .nav-cta{gap:8px}
+  }
 
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto}
@@ -286,6 +304,7 @@
     <a href="#methods">Methods</a>
   </div>
   <div class="nav-cta">
+    <button class="btn-snd" id="sndToggle" aria-label="Toggle sound effects" title="Sound effects">&#128266;</button>
     <a class="btn-signin" href="/signin">Sign In</a>
   </div>
 </nav>
@@ -293,8 +312,11 @@
 <canvas id="stage" aria-hidden="true"></canvas>
 
 <!-- defect mini-game UI -->
-<div class="def-chip" id="defChip" hidden><span class="ddot"></span>DEFECTS FOUND <b id="defCount">0/3</b></div>
-<div class="hint-chip" id="hintChip" hidden>psst — see that crack? tap it</div>
+<div class="def-wrap" id="defWrap" hidden>
+  <div class="def-chip" id="defChip"><span class="ddot"></span>DEFECTS FOUND <b id="defCount">0/3</b></div>
+  <div class="def-hint" id="defHint">click the red cracks</div>
+</div>
+<div class="def-ring" id="defRing"></div>
 <div class="toast" id="toast"></div>
 
 <!-- ============ HERO ============ -->
@@ -529,6 +551,57 @@ function blade(c, cx, cy, ang, len, w0, w1){              // tapered quad from (
   c.closePath(); c.fill();
 }
 
+/* ---- roller-coaster track centerline (canvas px), shared by the
+       silhouette drawing AND the live particle car-train ---- */
+const coasterRaw = (() => {
+  const p = [], lerp = (a,b,u)=>a+(b-a)*u;
+  for (let k = 0; k <= 40; k++){ const u = k/40;                       // big lift hill, left
+    p.push(8 + u*168, lerp(266,248,u) - 112*Math.sin(Math.PI*u)); }
+  for (let k = 1; k <= 8; k++){ const u = k/8;                          // dip into the loop
+    p.push(lerp(176,217,u), lerp(248,234,u)); }
+  const lcx = 252, lcy = 158, lr = 72;                                  // the loop (slightly >360°)
+  const aIn = Math.atan2(234-lcy, 217-lcx), aOut = Math.atan2(234-lcy, (252+35)-lcx) - Math.PI*2;
+  for (let k = 1; k <= 78; k++){ const a = aIn + (aOut-aIn)*(k/78);
+    p.push(lcx + Math.cos(a)*lr, lcy + Math.sin(a)*lr); }
+  for (let k = 1; k <= 6; k++){ const u = k/6;                          // exit ramp
+    p.push(lerp(287,312,u), lerp(234,247,u)); }
+  for (let k = 1; k <= 32; k++){ const u = k/32;                        // second hill, right
+    p.push(lerp(312,474,u), lerp(247,266,u) - 58*Math.sin(Math.PI*u)); }
+  return p;
+})();
+function coasterNormal(i){                                  // unit normal at raw point i (canvas)
+  const n = coasterRaw.length/2, j = Math.min(n-2, Math.max(0, i));
+  const dx = coasterRaw[(j+1)*2] - coasterRaw[j*2], dy = coasterRaw[(j+1)*2+1] - coasterRaw[j*2+1];
+  const m = Math.hypot(dx, dy) || 1;
+  return [-dy/m, dx/m];
+}
+function strokeTrack(c, off, lw){                           // rail at normal offset `off`
+  c.lineWidth = lw; c.beginPath();
+  for (let i = 0; i < coasterRaw.length/2; i++){
+    const [nx, ny] = off ? coasterNormal(i) : [0,0];
+    const x = coasterRaw[i*2] + nx*off, y = coasterRaw[i*2+1] + ny*off;
+    i ? c.lineTo(x, y) : c.moveTo(x, y);
+  }
+  c.stroke();
+}
+/* uniform-arc-length resample (for constant-speed train travel) */
+function resampleTrack(raw, N){
+  const n = raw.length/2, cum = new Float32Array(n);
+  for (let i = 1; i < n; i++)
+    cum[i] = cum[i-1] + Math.hypot(raw[i*2]-raw[i*2-2], raw[i*2+1]-raw[i*2-1]);
+  const L = cum[n-1], out = new Float32Array(N*2);
+  let j = 0;
+  for (let k = 0; k < N; k++){
+    const s = k/(N-1)*L;
+    while (j < n-2 && cum[j+1] < s) j++;
+    const seg = cum[j+1]-cum[j] || 1, u = (s-cum[j])/seg;
+    out[k*2]   = raw[j*2]   + (raw[j*2+2]-raw[j*2])*u;
+    out[k*2+1] = raw[j*2+1] + (raw[j*2+3]-raw[j*2+1])*u;
+  }
+  return {pts: out, len: L, n: N};
+}
+const coasterTrack = resampleTrack(coasterRaw, 256);
+
 const SHAPES = [
 /* 0 — WELD BEAD ON PLATE (side profile) */
 { name:'Weld bead', cap:'⚡ WELDS', accentFrac:.10, defect:{x:252, y:160},
@@ -571,14 +644,18 @@ const SHAPES = [
     c.beginPath(); c.moveTo(262, 90); c.lineTo(262, 146); c.stroke();   // weld seam ring
     c.beginPath(); c.moveTo(338, 196); c.lineTo(388, 196); c.stroke();  // weld seam ring
   }},
-/* 2 — WIND TURBINE */
+/* 2 — WIND TURBINE (blades are live-rotated particles; sampling skips them) */
 { name:'Wind turbine', cap:'🌬 WIND TURBINES', accentFrac:.05,
-  draw(c){
+  draw(c){                                                          // full silhouette (montage)
+    const hx = 240, hy = 124;
+    this.drawStatic(c);
+    [90, 210, 330].forEach(a => blade(c, hx, hy, (a-90)*Math.PI/180 - Math.PI/2, 96, 7, 2.5));
+  },
+  drawStatic(c){                                                    // sampled part (no blades)
     const hx = 240, hy = 124;
     c.beginPath(); c.moveTo(228, 282); c.lineTo(252, 282);          // tapered tower
     c.lineTo(245, 138); c.lineTo(235, 138); c.closePath(); c.fill();
     c.fillRect(220, 110, 44, 26);                                   // nacelle
-    [90, 210, 330].forEach(a => blade(c, hx, hy, (a-90)*Math.PI/180 - Math.PI/2, 96, 7, 2.5));
     c.beginPath(); c.arc(hx, hy, 11, 0, 7); c.fill();               // hub
     c.fillRect(150, 282, 180, 8);                                   // ground
   },
@@ -637,32 +714,33 @@ const SHAPES = [
         c.fillRect(140 + x*29, 172 - r*26, 25, 22);
   },
   accent(c){ c.fillRect(70, 236, 360, 7); }},                       // waterline stripe
-/* 6 — ROLLER COASTER LOOP */
-{ name:'Coaster loop', cap:'🎢 ROLLER COASTERS', accentFrac:.08,
+/* 6 — ROLLER COASTER: lift hill + loop + second hill, struts, live train */
+{ name:'Roller coaster', cap:'🎢 ROLLER COASTERS', accentFrac:.07,
   draw(c){
-    const cx = 248, cy = 148, r1 = 92, r2 = 76;
-    c.lineWidth = 8;
-    c.beginPath(); c.arc(cx, cy, r1, 0, 7); c.stroke();             // outer rail
-    c.beginPath(); c.arc(cx, cy, r2, 0, 7); c.stroke();             // inner rail
-    c.lineWidth = 5;
-    for (let a = 0; a < 24; a++){                                   // cross ties
-      const t = a/24*Math.PI*2;
-      c.beginPath(); c.moveTo(cx+Math.cos(t)*(r2-2), cy+Math.sin(t)*(r2-2));
-      c.lineTo(cx+Math.cos(t)*(r1+2), cy+Math.sin(t)*(r1+2)); c.stroke();
+    strokeTrack(c, 0, 7);                                           // main rail
+    strokeTrack(c, 7, 3.5);                                         // lower rail
+    c.lineWidth = 3;                                                // cross ties
+    c.beginPath();
+    for (let i = 2; i < coasterRaw.length/2 - 2; i += 4){
+      const [nx, ny] = coasterNormal(i);
+      c.moveTo(coasterRaw[i*2] - nx*1, coasterRaw[i*2+1] - ny*1);
+      c.lineTo(coasterRaw[i*2] + nx*9, coasterRaw[i*2+1] + ny*9);
     }
-    c.lineWidth = 10;                                               // entry/exit track
-    c.beginPath(); c.moveTo(18, 252); c.quadraticCurveTo(150, 252, 230, 240); c.stroke();
-    c.beginPath(); c.moveTo(266, 240); c.quadraticCurveTo(350, 252, 462, 252); c.stroke();
-    c.lineWidth = 8;                                                // support struts
-    c.beginPath(); c.moveTo(176, 188); c.lineTo(146, 256); c.stroke();
-    c.beginPath(); c.moveTo(320, 188); c.lineTo(350, 256); c.stroke();
-    c.beginPath(); c.moveTo(146, 256); c.lineTo(350, 256); c.stroke();
-  },
-  accent(c){                                                        // the train climbing the loop
-    [[-.42,0],[-.62,0],[-.82,0]].forEach(([a]) => {
-      const t = a*Math.PI, x = 248+Math.cos(t)*84, y = 148+Math.sin(t)*84;
-      c.beginPath(); c.arc(x, y, 8, 0, 7); c.fill();
+    c.stroke();
+    c.lineWidth = 5;                                                // support struts -> ground
+    [[46,189],[88,146],[132,167],[350,213],[394,199],[438,225]].forEach(([x,y]) => {
+      c.beginPath(); c.moveTo(x, y+5); c.lineTo(x, 283); c.stroke();
     });
+    c.beginPath(); c.moveTo(196, 205); c.lineTo(174, 283); c.stroke();  // loop legs
+    c.beginPath(); c.moveTo(308, 205); c.lineTo(330, 283); c.stroke();
+    c.lineWidth = 6;                                                // ground line
+    c.beginPath(); c.moveTo(6, 283); c.lineTo(474, 283); c.stroke();
+  },
+  accent(c){                                                        // static train (montage only;
+    for (let j = 0; j < 3; j++){                                    //  live one is animated)
+      const k = 26 - j*5, x = coasterTrack.pts[k*2], y = coasterTrack.pts[k*2+1];
+      c.beginPath(); c.arc(x, y-8, 7, 0, 7); c.fill();
+    }
   }},
 /* 7 — ROCKET */
 { name:'Rocket', cap:'🚀 ROCKETS', accentFrac:.10,
@@ -708,21 +786,31 @@ const SHAPES = [
     c.fillText('NDT', SW/2, SH/2 + 6);
     c.lineWidth = 8; c.strokeText('NDT', SW/2, SH/2 + 6);
   }},
-/* 10 — CERTIFICATE SEAL + CHECK (finale, not in hero cycle) */
-{ name:'Certificate seal', cap:'CERTIFIED', accentFrac:.06,
+/* 10 — DIPLOMA: landscape certificate sheet + ribbon rosette (finale, not in hero cycle) */
+{ name:'Diploma', cap:'CERTIFIED', accentFrac:.10,
   draw(c){
-    const cx = 240, cy = 138;
-    c.setLineDash([22, 14]); c.lineWidth = 16;
-    c.beginPath(); c.arc(cx, cy, 108, 0, 7); c.stroke();            // rosette edge
-    c.setLineDash([]); c.lineWidth = 7;
-    c.beginPath(); c.arc(cx, cy, 82, 0, 7); c.stroke();             // inner ring
-    c.lineWidth = 27;                                               // the check
-    c.beginPath(); c.moveTo(cx-44, cy+4); c.lineTo(cx-10, cy+40); c.lineTo(cx+52, cy-38); c.stroke();
-    c.lineWidth = 22;                                               // ribbons
-    c.beginPath(); c.moveTo(cx-28, cy+104); c.lineTo(cx-50, cy+152); c.stroke();
-    c.beginPath(); c.moveTo(cx+28, cy+104); c.lineTo(cx+52, cy+152); c.stroke();
+    c.lineWidth = 10; c.strokeRect(62, 44, 356, 216);               // sheet
+    c.lineWidth = 3;  c.strokeRect(80, 62, 320, 180);               // inner frame
+    c.fillRect(138, 86, 204, 15);                                   // title bar
+    c.fillRect(118, 124, 244, 8);                                   // text lines
+    c.fillRect(132, 146, 216, 8);
+    c.fillRect(150, 168, 180, 8);
+    c.fillRect(102, 216, 100, 5);                                   // signature rule
+    c.setLineDash([10, 7]); c.lineWidth = 10;
+    c.beginPath(); c.arc(338, 204, 29, 0, 7); c.stroke();           // rosette edge
+    c.setLineDash([]);
+    c.beginPath(); c.arc(338, 204, 13, 0, 7); c.fill();             // rosette center
+    c.lineWidth = 11;                                               // ribbon tails
+    c.beginPath(); c.moveTo(328, 230); c.lineTo(315, 268); c.stroke();
+    c.beginPath(); c.moveTo(348, 230); c.lineTo(361, 268); c.stroke();
   },
-  accent(c){ c.lineWidth = 4; c.beginPath(); c.arc(240, 138, 94, 0, 7); c.stroke(); }},
+  accent(c){
+    c.lineWidth = 4;                                                // signature squiggle
+    c.beginPath(); c.moveTo(106, 210); c.quadraticCurveTo(124, 194, 138, 208);
+    c.quadraticCurveTo(152, 220, 172, 202); c.stroke();
+    c.lineWidth = 6;                                                // check in the rosette
+    c.beginPath(); c.moveTo(329, 203); c.lineTo(336, 211); c.lineTo(349, 195); c.stroke();
+  }},
 /* 11 — ARROW (points right, at the CTA button) */
 { name:'Arrow', cap:'', accentFrac:0,
   draw(c){
@@ -733,7 +821,7 @@ const SHAPES = [
 const HERO_CYCLE = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const SEAL = 10, ARROW = 11;
 const DEFECT_SHAPES = [0, 1, 3];        // weld, pipe, airliner carry the 3 hidden cracks
-const DEF_N = 16, DEF_TOTAL = 48;       // 3 groups x 16 particles, reserved tail indices
+const DEF_N = 36, DEF_TOTAL = 108;      // 3 groups x 36 particles, reserved tail indices
 
 /* ---- sampling: filled pixels -> evenly-strided point cloud ---- */
 function samplePixels(drawFn){
@@ -748,14 +836,40 @@ function samplePixels(drawFn){
 }
 const colA = new THREE.Color('#5fe0ff'), colB = new THREE.Color('#1E66F5'), tmpC = new THREE.Color();
 const RED = new THREE.Color('#ff5563'), GREEN = new THREE.Color('#7dffb0');
-const crackOff = [];                                       // jagged crack offsets (world units)
+const REDHOT = new THREE.Color('#ff6671').multiplyScalar(1.8); // hover-revealed crack: blooms hot red
+const crackOff = [];                                       // jagged crack offsets, idle (world units)
 for (let k = 0; k < DEF_N; k++){
   const t = k/(DEF_N-1);
   crackOff.push((t*18-9 + (k%3-1)*1.5) * SC, ((k%2 ? 2.8 : -2.8) + Math.sin(t*9)*2) * SC);
 }
+/* hover state: particles TIGHTEN into this sharp lightning-crack glyph.
+   Points are sampled evenly ALONG jagged polylines so the crack reads as
+   a connected fracture, not scattered sparks. */
+function samplePolyline(verts, n, out, off){
+  const m = verts.length/2, cum = [0];
+  for (let i = 1; i < m; i++)
+    cum[i] = cum[i-1] + Math.hypot(verts[i*2]-verts[i*2-2], verts[i*2+1]-verts[i*2-1]);
+  const L = cum[m-1];
+  for (let k = 0; k < n; k++){
+    const s = k/(n-1)*L; let j = 0;
+    while (j < m-2 && cum[j+1] < s) j++;
+    const u = (s - cum[j]) / ((cum[j+1]-cum[j]) || 1);
+    out[(off+k)*2]   = verts[j*2]   + (verts[j*2+2]-verts[j*2])*u;
+    out[(off+k)*2+1] = verts[j*2+1] + (verts[j*2+3]-verts[j*2+1])*u;
+  }
+}
+const crackTightPx = new Float32Array(DEF_N*2);
+samplePolyline([-32,0, -24,6, -17,-5, -9,3, -2,-6, 5,5, 12,-3, 20,6, 32,-2], 24, crackTightPx, 0);  // main fracture
+samplePolyline([-6,-3, -13,-11, -21,-17], 6, crackTightPx, 24);                                     // upper branch
+samplePolyline([4,3, 12,11, 19,18], 6, crackTightPx, 30);                                           // lower branch
+const crackTight = new Float32Array(DEF_N*2);
+for (let k = 0; k < DEF_N; k++){
+  crackTight[k*2]   =  crackTightPx[k*2]   * SC * 1.25;
+  crackTight[k*2+1] = -crackTightPx[k*2+1] * SC * 1.25;
+}
 function buildShape(def, gi){
-  const pts = samplePixels(def.draw);
-  const acc = def.accent ? samplePixels(def.accent) : [];
+  const pts = samplePixels(c => (def.drawStatic || def.draw).call(def, c));
+  const acc = def.accent ? samplePixels(c => def.accent(c)) : [];
   const usable = COUNT - DEF_TOTAL;
   const accN = acc.length ? Math.min(Math.round(COUNT * def.accentFrac), usable >> 2) : 0;
   const mainN = usable - accN;
@@ -809,6 +923,113 @@ SHAPES.forEach((s, i) => buildShape(s, i));
 }
 
 /* ================================================================
+   LIVE SHAPE ANIMATIONS — turbine blades rotate, bridge cars drive,
+   coaster train rides. All indices + hub-relative coords precomputed;
+   per-frame work is a tiny TL overwrite (no allocations).
+   ================================================================ */
+const USABLE = COUNT - DEF_TOTAL;
+function mainCountOf(def){
+  const accN = def.accent ? Math.min(Math.round(COUNT * def.accentFrac), USABLE >> 2) : 0;
+  return USABLE - accN;
+}
+const WARM = new THREE.Color('#ffb054').multiplyScalar(1.55); // hot amber pop for cars/train
+const cl2w = (x, y) => [(x - SW/2) * SC, -(y - SH/2) * SC]; // canvas px -> formation-local
+
+/* --- turbine: blades as hub-relative particles, rotated per frame --- */
+const HUB_LX = 0, HUB_LY = -(124 - SH/2) * SC;              // hub local coords
+const TURB_OMEGA = -0.5;                                    // rad/s (clockwise, ~12.5 s/rev)
+let tbN = 0, tbIdx, tbX0, tbY0;
+{
+  const def = SHAPES[2], mN = mainCountOf(def);
+  tbN = (mN * .34) | 0;                                     // ~1/3 of particles form the blades
+  tbIdx = new Uint32Array(tbN); tbX0 = new Float32Array(tbN); tbY0 = new Float32Array(tbN);
+  const step = mN / tbN, perBlade = Math.ceil(tbN / 3);
+  const baseAng = [Math.PI/2, Math.PI/2 + 2.0944, Math.PI/2 - 2.0944];
+  for (let k = 0; k < tbN; k++){
+    const i = Math.min(mN - 1, (k * step) | 0);
+    tbIdx[k] = i;
+    const b = k % 3, u = ((k / 3) | 0) / perBlade;          // 0..1 along the blade
+    const d = 14 + u * 97;                                  // radial dist (px)
+    const halfW = 7 - 4.5 * u;                              // taper 7 -> 2.5 px
+    const p = (Math.random() - .5) * 2 * halfW;
+    const r = Math.hypot(d, p) * SC, a = baseAng[b] + Math.atan2(p, d);
+    tbX0[k] = Math.cos(a) * r; tbY0[k] = Math.sin(a) * r;
+    def.targets[i*3] = HUB_LX + tbX0[k];                    // bake t=0 pose into targets
+    def.targets[i*3+1] = HUB_LY + tbY0[k];
+  }
+}
+function animTurbine(t, A){
+  const ang = t * TURB_OMEGA, ca = Math.cos(ang), sa = Math.sin(ang);
+  for (let k = 0; k < tbN; k++){
+    const i3 = tbIdx[k] * 3;
+    A[i3]   = HUB_LX + tbX0[k]*ca - tbY0[k]*sa;
+    A[i3+1] = HUB_LY + tbX0[k]*sa + tbY0[k]*ca;
+  }
+}
+
+/* --- bridge: 4 little particle cars crossing the deck, looping --- */
+const CAR_N = 4, CAR_P = 9;
+const carIdx = new Uint32Array(CAR_N * CAR_P);
+const carShape = [-9,-2, -4,-8, 4,-8, 9,-2, -6,1, 0,0, 6,1, 0,-4, -1,-8];  // px offsets (canvas, y down)
+const carSpd = [.115, .145, .095, .13], carPh = [0, .31, .55, .78];
+const CAR_Y = 199, CAR_X0 = 36, CAR_SPAN = 408;
+{
+  const def = SHAPES[4], mN = mainCountOf(def), step = mN / (CAR_N * CAR_P);
+  for (let k = 0; k < CAR_N * CAR_P; k++){
+    const i = Math.min(mN - 1, ((k + .5) * step) | 0);
+    carIdx[k] = i;
+    def.colors[i*3] = WARM.r; def.colors[i*3+1] = WARM.g; def.colors[i*3+2] = WARM.b;
+    const u = carPh[(k / CAR_P) | 0], p = (k % CAR_P);
+    const [lx, ly] = cl2w(CAR_X0 + u*CAR_SPAN + carShape[p*2], CAR_Y + carShape[p*2+1]);
+    def.targets[i*3] = lx; def.targets[i*3+1] = ly; def.targets[i*3+2] = .3;
+  }
+}
+function animCars(t, A){
+  for (let c = 0; c < CAR_N; c++){
+    const u = (t * carSpd[c] + carPh[c]) % 1;
+    const cx = CAR_X0 + u * CAR_SPAN;
+    for (let p = 0; p < CAR_P; p++){
+      const i3 = carIdx[c*CAR_P + p] * 3;
+      A[i3]   = (cx + carShape[p*2] - SW/2) * SC;
+      A[i3+1] = -(CAR_Y + carShape[p*2+1] - SH/2) * SC;
+      A[i3+2] = .3;
+    }
+  }
+}
+
+/* --- coaster: 3-car particle train riding the track path --- */
+const TRN_C = 3, TRN_P = 6, TRN_GAP = 24, TRN_SPEED = 95;   // px arc-gap, px/s
+const trnIdx = new Uint32Array(TRN_C * TRN_P);
+const trnAlong = [-6, 0, 6], trnPerp = [-4, -9];            // 3 x 2 grid per car (above rail)
+{
+  const def = SHAPES[6], mN = mainCountOf(def), step = mN / (TRN_C * TRN_P);
+  for (let k = 0; k < TRN_C * TRN_P; k++){
+    const i = Math.min(mN - 1, ((k + .5) * step) | 0);
+    trnIdx[k] = i;
+    def.colors[i*3] = WARM.r; def.colors[i*3+1] = WARM.g; def.colors[i*3+2] = WARM.b;
+  }
+}
+function animTrain(t, A){
+  const {pts, len, n} = coasterTrack;
+  for (let c = 0; c < TRN_C; c++){
+    const s = (((t * TRN_SPEED - c * TRN_GAP) % len) + len) % len;
+    const f = s / len * (n - 1), i0 = Math.min(n - 2, f | 0), fu = f - i0;
+    const x = pts[i0*2] + (pts[i0*2+2] - pts[i0*2]) * fu;
+    const y = pts[i0*2+1] + (pts[i0*2+3] - pts[i0*2+1]) * fu;
+    let tx = pts[i0*2+2] - pts[i0*2], ty = pts[i0*2+3] - pts[i0*2+1];
+    const m = Math.hypot(tx, ty) || 1; tx /= m; ty /= m;
+    const nx = -ty, ny = tx;                                // canvas normal (below track)
+    for (let p = 0; p < TRN_P; p++){
+      const al = trnAlong[p % 3], pe = trnPerp[(p / 3) | 0];
+      const cxp = x + tx*al + nx*pe, cyp = y + ty*al + ny*pe;
+      const i3 = trnIdx[c*TRN_P + p] * 3;
+      A[i3] = (cxp - SW/2) * SC; A[i3+1] = -(cyp - SH/2) * SC; A[i3+2] = .35;
+    }
+  }
+}
+animTrain(0, SHAPES[6].targets);                            // bake t=0 pose so the morph lands on it
+
+/* ================================================================
    PARTICLE SYSTEM — one Points, CPU-simulated targets
    ================================================================ */
 const geo = new THREE.BufferGeometry();
@@ -824,6 +1045,9 @@ for (let i = 0; i < COUNT; i++){
   SZ[i] = .6 + R4[i*4]*1.35;
   P[i*3] = (Math.random()-.5)*visW*1.4; P[i*3+1] = (Math.random()-.5)*visH*1.4; P[i*3+2] = (Math.random()-.5)*4;
 }
+for (let i = COUNT - DEF_TOTAL; i < COUNT; i++) SZ[i] = 2.1 + R4[i*4]*.9;   // defect cracks read bigger
+for (let k = 0; k < CAR_N*CAR_P; k++) SZ[carIdx[k]] = 1.8 + (k % 3)*.35;    // bridge cars pop
+for (let k = 0; k < TRN_C*TRN_P; k++) SZ[trnIdx[k]] = 1.8 + (k % 3)*.35;    // coaster train pops
 const posAttr = new THREE.BufferAttribute(P, 3);  posAttr.setUsage(THREE.DynamicDrawUsage);
 const colAttr = new THREE.BufferAttribute(CL, 3); colAttr.setUsage(THREE.DynamicDrawUsage);
 geo.setAttribute('position', posAttr);
@@ -910,6 +1134,113 @@ for (let i = 0; i < COUNT; i++){
 }
 
 /* ================================================================
+   SOUND — synthesized, whisper-quiet, gesture-gated (autoplay safe).
+   Filtered-noise swooshes on morphs/ignite, 2-note chime on defect
+   found, soft pop on the finale. Master gain hard-capped at 0.055.
+   Disabled entirely under prefers-reduced-motion.
+   ================================================================ */
+const SND = (() => {
+  const sndBtn = document.getElementById('sndToggle');
+  if (reduced){
+    if (sndBtn) sndBtn.style.display = 'none';
+    return {init(){}, swoosh(){}, chime(){}, pop(){}, toggle(){},
+      get created(){ return false; }, get enabled(){ return false; }, get masterGain(){ return 0; }};
+  }
+  let ctx = null, master = null, noiseBuf = null, lastSwoosh = -9;
+  let enabled = localStorage.getItem('forgeSound') !== 'off';
+  const MASTER = .055;                                       // ≤ .06, per the brief
+  function paintBtn(){
+    if (!sndBtn) return;
+    sndBtn.innerHTML = enabled ? '&#128266;' : '&#128263;';
+    sndBtn.classList.toggle('off', !enabled);
+  }
+  paintBtn();
+  function init(){
+    if (ctx) return;
+    try { ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e){ return; }
+    master = ctx.createGain();
+    master.gain.value = enabled ? MASTER : 0;
+    master.connect(ctx.destination);
+    const len = (ctx.sampleRate * 1.2) | 0;
+    noiseBuf = ctx.createBuffer(1, len, ctx.sampleRate);
+    const d = noiseBuf.getChannelData(0);
+    for (let i = 0; i < len; i++) d[i] = Math.random()*2 - 1;
+    if (ctx.state === 'suspended') ctx.resume();
+  }
+  const ready = () => ctx && enabled && !document.hidden;
+  function swoosh(strong){
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    if (now - lastSwoosh < .25) return;                      // never machine-gun
+    lastSwoosh = now;
+    const src = ctx.createBufferSource(); src.buffer = noiseBuf;
+    src.playbackRate.value = .75 + Math.random()*.5;
+    const bp = ctx.createBiquadFilter(); bp.type = 'bandpass';
+    const f0 = 200 + Math.random()*150;
+    bp.frequency.setValueAtTime(f0, now);
+    bp.frequency.exponentialRampToValueAtTime((strong ? 1500 : 900) + Math.random()*350, now + .26);
+    bp.frequency.exponentialRampToValueAtTime(f0*1.5, now + .62);
+    bp.Q.value = 1.1 + Math.random()*.6;
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0, now);
+    g.gain.linearRampToValueAtTime(strong ? .8 : .5, now + .09);
+    g.gain.exponentialRampToValueAtTime(.001, now + .55 + Math.random()*.2);
+    src.connect(bp); bp.connect(g); g.connect(master);
+    src.start(now); src.stop(now + .9);
+  }
+  function chime(){
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    [784, 1175].forEach((f, i) => {                          // G5 -> D6, soft fifth
+      const o = ctx.createOscillator(); o.type = 'sine';
+      o.frequency.value = f * (1 + (Math.random()-.5)*.012);
+      const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 2600;
+      const g = ctx.createGain(); const t0 = now + i*.13;
+      g.gain.setValueAtTime(0, t0);
+      g.gain.linearRampToValueAtTime(.45, t0 + .02);
+      g.gain.exponentialRampToValueAtTime(.001, t0 + .7);
+      o.connect(lp); lp.connect(g); g.connect(master);
+      o.start(t0); o.stop(t0 + .8);
+    });
+  }
+  function pop(){
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    const src = ctx.createBufferSource(); src.buffer = noiseBuf;
+    const lp = ctx.createBiquadFilter(); lp.type = 'lowpass';
+    lp.frequency.setValueAtTime(900 + Math.random()*250, now);
+    lp.frequency.exponentialRampToValueAtTime(140, now + .32);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(.85, now);
+    g.gain.exponentialRampToValueAtTime(.001, now + .4);
+    src.connect(lp); lp.connect(g); g.connect(master);
+    src.start(now); src.stop(now + .45);
+    const o = ctx.createOscillator(); o.type = 'sine';       // low thump under the noise
+    o.frequency.setValueAtTime(150 * (1 + (Math.random()-.5)*.1), now);
+    o.frequency.exponentialRampToValueAtTime(52, now + .28);
+    const og = ctx.createGain();
+    og.gain.setValueAtTime(.6, now);
+    og.gain.exponentialRampToValueAtTime(.001, now + .32);
+    o.connect(og); og.connect(master);
+    o.start(now); o.stop(now + .35);
+  }
+  function toggle(){
+    enabled = !enabled;
+    localStorage.setItem('forgeSound', enabled ? 'on' : 'off');
+    if (master) master.gain.value = enabled ? MASTER : 0;
+    paintBtn();
+  }
+  addEventListener('pointerdown', init, {passive:true});     // gesture-gated: silent until then
+  addEventListener('keydown', init);
+  if (sndBtn) sndBtn.addEventListener('click', () => { init(); toggle(); });
+  return {init, swoosh, chime, pop, toggle,
+    get created(){ return !!ctx; },
+    get enabled(){ return enabled; },
+    get masterGain(){ return master ? master.gain.value : 0; }};
+})();
+window.__forgeAudio = SND;
+
+/* ================================================================
    CHOREOGRAPHY — modes, formations, scroll logic
    ================================================================ */
 const MODE = {HERO:0, STREAM:1, STORY:2, RING:3, STATS:4, SEAL:5, ARROW:6, FIREWORK:7};
@@ -936,9 +1267,11 @@ const els = {
   band: document.getElementById('band'),
   bandCopy: document.getElementById('bandCopy'),
   bandBtn: document.getElementById('bandBtn'),
+  defWrap: document.getElementById('defWrap'),
   defChip: document.getElementById('defChip'),
   defCount: document.getElementById('defCount'),
-  hint: document.getElementById('hintChip'),
+  defHint: document.getElementById('defHint'),
+  defRing: document.getElementById('defRing'),
   toast: document.getElementById('toast'),
 };
 
@@ -946,11 +1279,13 @@ function setLabel(txt){
   els.label.classList.add('swap');
   setTimeout(() => { els.label.textContent = txt; els.label.classList.remove('swap'); }, 220);
 }
+let curShapeIdx = -1, curDef = null;                        // which silhouette is formed right now
 function writeFormation(def, scale, ox, oy, kick){
   TL.set(def.targets); CT.set(def.colors);
+  curShapeIdx = SHAPES.indexOf(def); curDef = def;
   const usable = COUNT - DEF_TOTAL;
   for (let g = 0; g < 3; g++){                              // recolor found defects green
-    if (def.defect && DEFECT_SHAPES[g] === SHAPES.indexOf(def) && found[g]){
+    if (def.defect && DEFECT_SHAPES[g] === curShapeIdx && found[g]){
       const base = usable + g*DEF_N;
       for (let k = 0; k < DEF_N; k++){
         CT[(base+k)*3] = GREEN.r; CT[(base+k)*3+1] = GREEN.g; CT[(base+k)*3+2] = GREEN.b;
@@ -958,8 +1293,11 @@ function writeFormation(def, scale, ox, oy, kick){
     }
   }
   fsT = scale; foxT = ox; foyT = oy;
-  if (kick) for (let i = 0; i < COUNT; i += 2){
-    V[i*3] += (R4[i*4]-.5)*7; V[i*3+1] += (R4[i*4+1]-.5)*7; V[i*3+2] += (R4[i*4+2]-.5)*3;
+  if (kick){
+    for (let i = 0; i < COUNT; i += 2){
+      V[i*3] += (R4[i*4]-.5)*7; V[i*3+1] += (R4[i*4+1]-.5)*7; V[i*3+2] += (R4[i*4+2]-.5)*3;
+    }
+    SND.swoosh(false);                                      // subtle morph swoosh
   }
 }
 function heroTransform(){
@@ -994,36 +1332,61 @@ function impulse(wx, wy, n, spd, up){                       // confetti / celebr
 let mx = 999, my = 999, mxT = 999, myT = 999, pointerDirty = false;
 addEventListener('pointermove', e => {
   mxT = worldX(e.clientX); myT = worldY(e.clientY); pointerDirty = true;
-  checkDefectHit(e.clientX, e.clientY, 30);
+  updateDefectHover(e.clientX, e.clientY);                  // hover only REVEALS
 }, {passive:true});
-addEventListener('pointerleave', () => { mxT = 999; myT = 999; });
+addEventListener('pointerleave', () => { mxT = 999; myT = 999; setHover(-1); });
 addEventListener('pointerdown', e => {
   addShock(worldX(e.clientX), worldY(e.clientY));
-  checkDefectHit(e.clientX, e.clientY, 44);
+  tryClickDefect(e.clientX, e.clientY);                     // click is what COUNTS
   heroIdle = 0;
 });
 
-/* ---------- DEFECT MINI-GAME ---------- */
-let heroIdle = 0, hintShown = false;
+/* ---------- DEFECT MINI-GAME ----------
+   Hover within reach: that defect's particles tighten into a bright
+   jagged crack glyph + a glow ring (reveal). Only a click/tap on the
+   revealed crack registers it as found. */
+let heroIdle = 0, defWrapShown = false, hoverDefect = -1, glintClock = 3.2;
+const HOVER_R = 72, CLICK_R = 58;
+const _v3 = new THREE.Vector3();
 function defectScreenPos(g){
   const def = SHAPES[DEFECT_SHAPES[g]];
   if (!def.defectLocal) return null;
-  const v = new THREE.Vector3(def.defectLocal.x*fs + fox, def.defectLocal.y*fs + foy, .4);
-  v.project(camera);
-  return {x: (v.x*.5+.5)*W, y: (1-(v.y*.5+.5))*H};
+  _v3.set(def.defectLocal.x*fs + fox, def.defectLocal.y*fs + foy, .4);
+  _v3.project(camera);
+  return {x: (_v3.x*.5+.5)*W, y: (1-(_v3.y*.5+.5))*H};
 }
 function activeDefect(){
   if (mode !== MODE.HERO) return -1;
   const g = DEFECT_SHAPES.indexOf(HERO_CYCLE[heroIdx]);
   return (g >= 0 && !found[g]) ? g : -1;
 }
-function checkDefectHit(cx, cy, radius){
+function setHover(h){
+  if (h === hoverDefect) return;
+  if (hoverDefect >= 0 && curDef){                          // un-tighten: restore baked crack + colors
+    const b3 = ((COUNT - DEF_TOTAL) + hoverDefect*DEF_N) * 3;
+    for (let k = 0; k < DEF_N*3; k++){
+      TL[b3+k] = curDef.targets[b3+k]; CT[b3+k] = curDef.colors[b3+k];
+    }
+  }
+  hoverDefect = h;
+  els.defRing.classList.toggle('on', h >= 0);
+}
+function updateDefectHover(cx, cy){
+  const g = activeDefect();
+  let h = -1;
+  if (g >= 0){
+    const sp = defectScreenPos(g);
+    if (sp){ const dx = cx - sp.x, dy = cy - sp.y; if (dx*dx + dy*dy < HOVER_R*HOVER_R) h = g; }
+  }
+  setHover(h);
+}
+function tryClickDefect(cx, cy){
   const g = activeDefect();
   if (g < 0) return;
   const sp = defectScreenPos(g);
   if (!sp) return;
   const dx = cx - sp.x, dy = cy - sp.y;
-  if (dx*dx + dy*dy < radius*radius) pingDefect(g);
+  if (dx*dx + dy*dy < CLICK_R*CLICK_R) pingDefect(g);
 }
 function spawnPing(x, y, good){
   const p = document.createElement('div');
@@ -1034,19 +1397,21 @@ function spawnPing(x, y, good){
 }
 function pingDefect(g){
   if (found[g]) return;
+  if (hoverDefect === g) setHover(-1);                      // release the reveal first
   found[g] = true; foundCount++;
   const sp = defectScreenPos(g);
   if (sp){ spawnPing(sp.x, sp.y, true); addShock(worldX(sp.x), worldY(sp.y), 30); }
-  els.defChip.hidden = false; els.defChip.classList.remove('pop'); void els.defChip.offsetWidth;
+  els.defWrap.hidden = false; defWrapShown = true;
+  els.defChip.classList.remove('pop'); void els.defChip.offsetWidth;
   els.defChip.classList.add('pop');
   els.defCount.textContent = foundCount + '/3';
-  els.hint.hidden = true;
-  const def = SHAPES[DEFECT_SHAPES[g]];                     // recolor live
-  const base = (COUNT - DEF_TOTAL) + g*DEF_N;
+  const base = (COUNT - DEF_TOTAL) + g*DEF_N;               // recolor live
   for (let k = 0; k < DEF_N; k++){
     CT[(base+k)*3] = GREEN.r; CT[(base+k)*3+1] = GREEN.g; CT[(base+k)*3+2] = GREEN.b;
   }
+  SND.chime();
   if (foundCount >= 3){
+    els.defHint.classList.add('gone');
     impulse(0, 0, 6000, 9, true);
     showToast(`You're a natural inspector. <a href="/signup">VT certification is free right now →</a>`, 12000);
   } else {
@@ -1152,6 +1517,7 @@ function pickMode(){
     fireworkDone = true; fireworkT = 1.7;
     impulse(0, 0, COUNT, 13, false);
     uni.uStreak.value = 1;
+    SND.pop();
     showToast(`You inspect every corner. We like that. — <a href="/signup">Start free</a>`, 8000);
     return;
   }
@@ -1185,10 +1551,14 @@ function applyMode(m, sub){
     els.cards.forEach((c, i) => c.classList.toggle('live', i === sub));
   } else if (m === MODE.STREAM){
     CT.set(streamCols); fsT = 1; foxT = 0; foyT = 0; fs = 1; fox = 0; foy = 0;
+    curShapeIdx = -1; curDef = null;
+    SND.swoosh(true);                                       // scroll-ignite whoosh
   } else if (m === MODE.RING){
     CT.set(ringCols); fsT = 1; foxT = 0; foyT = 0; fs = 1; fox = 0; foy = 0;
+    curShapeIdx = -1; curDef = null;
   } else if (m === MODE.STATS){
     CT.set(statCols); fsT = 1; foxT = 0; foyT = 0; fs = 1; fox = 0; foy = 0;
+    curShapeIdx = -1; curDef = null;
   } else if (m === MODE.SEAL){
     writeFormation(SHAPES[SEAL], Math.min(1.4, visH*.52/6.6), 0, 0, true);
     for (let i = 0; i < COUNT; i += 3){                      // tangential kick -> spiral in
@@ -1203,8 +1573,8 @@ function applyMode(m, sub){
   }
 }
 
-/* hero shape auto-cycle (HOLD + travel ≈ 3.5 s) */
-const HOLD = 3.5;
+/* hero shape auto-cycle (HOLD + travel ≈ 7 s — unhurried per owner) */
+const HOLD = 7.0;
 function heroCycle(dt){
   heroT += dt;
   if (heroT >= HOLD){
@@ -1269,8 +1639,41 @@ function frame(){
     foyT = worldY(r.top + r.height/2);
   }
 
-  /* formation transform smoothing */
-  const fk = Math.min(1, dt*4.2);
+  /* live silhouette animations: turbine blades / bridge cars / coaster train */
+  if (curShapeIdx === 2) animTurbine(t, TL);
+  else if (curShapeIdx === 4) animCars(t, TL);
+  else if (curShapeIdx === 6) animTrain(t, TL);
+
+  /* defect reveal: hovered crack tightens into the sharp glyph + glows */
+  let hovBase = COUNT + 1, hovEnd = COUNT + 1;
+  if (hoverDefect >= 0 && activeDefect() !== hoverDefect) setHover(-1);
+  if (hoverDefect >= 0){
+    const dl = SHAPES[DEFECT_SHAPES[hoverDefect]].defectLocal;
+    hovBase = (COUNT - DEF_TOTAL) + hoverDefect*DEF_N; hovEnd = hovBase + DEF_N;
+    for (let k = 0; k < DEF_N; k++){
+      const j = (hovBase + k)*3;
+      TL[j] = dl.x + crackTight[k*2]; TL[j+1] = dl.y + crackTight[k*2+1]; TL[j+2] = .5;
+      CT[j] = REDHOT.r; CT[j+1] = REDHOT.g; CT[j+2] = REDHOT.b;
+    }
+    const sp = defectScreenPos(hoverDefect);
+    if (sp){ els.defRing.style.left = sp.x + 'px'; els.defRing.style.top = sp.y + 'px'; }
+  } else {
+    /* occasional faint red glint on the live defect (the understated hint) */
+    const g = activeDefect();
+    if (g >= 0){
+      glintClock -= dt;
+      if (glintClock <= 0) glintClock = 5 + Math.random()*2.5;
+      const pulse = glintClock < .9 ? Math.sin((0.9 - glintClock)/.9 * Math.PI) * .55 : 0;
+      const base = (COUNT - DEF_TOTAL) + g*DEF_N;
+      for (let k = 0; k < DEF_N; k++){
+        const j = (base + k)*3;
+        CT[j] = RED.r + pulse; CT[j+1] = RED.g + pulse*.5; CT[j+2] = RED.b + pulse*.5;
+      }
+    }
+  }
+
+  /* formation transform smoothing (a touch slower = silkier morphs) */
+  const fk = Math.min(1, dt*3.4);
   fs += (fsT - fs)*fk; fox += (foxT - fox)*fk; foy += (foyT - foy)*fk;
 
   /* exclusion rects per mode */
@@ -1291,8 +1694,9 @@ function frame(){
   for (let s = 0; s < 5; s++) if (shocks[s*4+3] > 0 && shocks[s*4+2] < 1.3) shocks[s*4+2] += dt;
 
   /* ---------- integrate (the only hot loop) ---------- */
-  const seekS = (mode === MODE.STREAM ? 11 : mode === MODE.FIREWORK ? 0 : 13) * dt;
+  const seekS = (mode === MODE.STREAM ? 11 : mode === MODE.HERO ? 8.5 : 13) * dt;  // hero: longer, silkier ease
   const seek = fireworkT > 0 ? 0 : seekS;
+  const hovSeek = 30 * dt;                                   // revealed crack snaps tight fast
   const damp = Math.exp(-(fireworkT > 0 ? 1.6 : 4.4) * dt);
   const noiseA = (mode === MODE.STREAM ? 2.4 : mode === MODE.HERO ? .55 : .8) * dt;
   const grav = fireworkT > 0 ? 7.5*dt : 0;
@@ -1300,21 +1704,25 @@ function frame(){
   const colK = Math.min(1, dt*2.6);
   for (let i = 0; i < COUNT; i++){
     const i3 = i*3, i4 = i*4;
+    const isHov = i >= hovBase && i < hovEnd;                // hovered defect particles
     let px = P[i3], py = P[i3+1], pz = P[i3+2];
     let vx = V[i3], vy = V[i3+1], vz = V[i3+2];
     const txx = TL[i3]*fs + fox, tyy = TL[i3+1]*fs + foy, tzz = TL[i3+2]*fs;
-    vx += (txx - px)*seek; vy += (tyy - py)*seek; vz += (tzz - pz)*seek;
-    vx += Math.sin(t*1.2 + R4[i4+3]*6.28 + py*.5) * noiseA;
-    vy += Math.cos(t*1.4 + R4[i4]*6.28 + px*.45) * noiseA;
+    const sk = isHov ? hovSeek : seek;
+    vx += (txx - px)*sk; vy += (tyy - py)*sk; vz += (tzz - pz)*sk;
+    if (!isHov){
+      vx += Math.sin(t*1.2 + R4[i4+3]*6.28 + py*.5) * noiseA;
+      vy += Math.cos(t*1.4 + R4[i4]*6.28 + px*.45) * noiseA;
+    }
     vy -= grav;
-    if (mActive){
+    if (mActive && !isHov){                                  // cursor never scatters the reveal
       const dx = px - mx, dy = py - my, d2 = dx*dx + dy*dy;
       if (d2 < 5.3 && d2 > 1e-5){
         const d = Math.sqrt(d2), f = (1 - d/2.3);
         if (f > 0){ const g = f*f*34*dt/d; vx += dx*g; vy += dy*g; }
       }
     }
-    for (let s = 0; s < 5; s++){
+    if (!isHov) for (let s = 0; s < 5; s++){
       const age = shocks[s*4+2];
       if (shocks[s*4+3] <= 0 || age >= 1.3) continue;
       const dx = px - shocks[s*4], dy = py - shocks[s*4+1];
@@ -1332,15 +1740,12 @@ function frame(){
   }
   posAttr.needsUpdate = true; colAttr.needsUpdate = true;
 
-  /* hero idle hint for the defect game */
-  if (mode === MODE.HERO && foundCount < 3){
+  /* subtle game prompt: counter chip + low-key hint fade in after a beat,
+     anchored off-canvas-center (never covers the particles) */
+  if (!defWrapShown && mode === MODE.HERO && foundCount < 3){
     heroIdle += dt;
-    const g = activeDefect();
-    if (heroIdle > 8 && g >= 0){
-      const sp = defectScreenPos(g);
-      if (sp){ els.hint.style.left = (sp.x + 22) + 'px'; els.hint.style.top = (sp.y - 18) + 'px'; els.hint.hidden = false; hintShown = true; }
-    } else if (g < 0 && hintShown) els.hint.hidden = true;
-  } else els.hint.hidden = true;
+    if (heroIdle > 4){ els.defWrap.hidden = false; defWrapShown = true; }
+  }
 
   /* camera sway only matters in hero (keeps DOM-aligned modes exact) */
   const swayAmp = mode === MODE.HERO ? 1 : 0;
@@ -1355,15 +1760,26 @@ function frame(){
 
 /* ---------- debug hook (kept in production, harmless) ---------- */
 window.__forgeDebug = {
-  get state(){ return {mode, heroShape: HERO_CYCLE[heroIdx], heroIdx, storyIdx, found: [...found], foundCount, count: COUNT, fireworkDone}; },
+  get state(){ return {mode, heroShape: HERO_CYCLE[heroIdx], heroIdx, storyIdx, found: [...found], foundCount,
+    hoverDefect, hold: HOLD, curShapeIdx, count: COUNT, fireworkDone}; },
   get defectScreenPositions(){
     return [0,1,2].map(g => {
       const sp = defectScreenPos(g) || {x:-1, y:-1};
       return {g, shape: DEFECT_SHAPES[g], x: sp.x, y: sp.y, found: found[g], active: activeDefect() === g};
     });
   },
-  ping: pingDefect,
+  ping: pingDefect,                                          // counts (the click action)
+  hover: g => setHover(g),                                   // reveals only (never counts)
   setHeroShape: i => { heroT = 0; setHeroShape(i, true); },
+  get carXs(){                                               // bridge car screen x's (movement proof)
+    const t = uni.uTime.value;
+    return carSpd.map((sp, c) => {
+      const u = (t*sp + carPh[c]) % 1;
+      return Math.round(((CAR_X0 + u*CAR_SPAN - SW/2)*SC*fs + fox)/px2w() + W/2);
+    });
+  },
+  get trainArc(){ return Math.round((uni.uTime.value*TRN_SPEED) % coasterTrack.len); },
+  get turbineDeg(){ return Math.round((uni.uTime.value*TURB_OMEGA*180/Math.PI) % 360); },
   montage(){
     const COLS = 3, ROWS = 4, CW = SW, CH = SH + 44;
     const m = document.createElement('canvas'); m.width = COLS*CW; m.height = ROWS*CH;
@@ -1380,7 +1796,7 @@ window.__forgeDebug = {
         g.fillStyle = '#ff4d5e';
         g.beginPath(); g.arc(def.defect.x, def.defect.y, 5, 0, 7); g.fill();
       }
-      g.fillStyle = '#5fe0ff'; g.font = '600 19px Outfit, sans-serif'; g.textAlign = 'center'; g.setLineDash([]);
+      g.fillStyle = '#5fe0ff'; g.font = '600 19px Manrope, sans-serif'; g.textAlign = 'center'; g.setLineDash([]);
       g.fillText(`${i}: ${def.name}`, CW/2, SH + 30);
       g.restore();
     });
