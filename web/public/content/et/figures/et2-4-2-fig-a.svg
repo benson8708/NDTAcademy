@@ -1,0 +1,67 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Signal-to-Noise Ratio: The 3:1 Working Floor</text>
+
+  <!-- ============ PANEL 1: BEFORE ============ -->
+  <text x="60" y="60" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">BEFORE COUNTERMEASURES — the flaw barely clears the grass</text>
+  <rect x="60" y="70" width="690" height="142" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+  <!-- division gridlines (1 division = 25 px) -->
+  <g stroke="#9BC4FF" stroke-width="1" opacity="0.5">
+    <line x1="61" y1="100" x2="749" y2="100"/>
+    <line x1="61" y1="125" x2="749" y2="125"/>
+    <line x1="61" y1="175" x2="749" y2="175"/>
+    <line x1="61" y1="200" x2="749" y2="200"/>
+  </g>
+  <line x1="61" y1="150" x2="749" y2="150" stroke="#0B1F3A" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+  <!-- noise band ±1 division -->
+  <rect x="61" y="125" width="688" height="50" fill="#9BC4FF" fill-opacity="0.25"/>
+  <!-- noisy trace with flaw peak at x≈568 -->
+  <polyline fill="none" stroke="#1E66F5" stroke-width="2" points="70,152 84,138 98,160 112,131 126,166 140,143 154,127 168,158 182,170 196,140 210,128 224,155 238,169 252,146 266,130 280,161 294,172 308,148 322,133 336,157 350,168 364,139 378,126 392,152 406,171 420,144 434,129 448,159 462,173 476,147 490,132 504,162 518,150 532,138 546,144 556,120 562,86 568,75 574,98 580,140 588,168 602,151 616,131 630,164 644,172 658,142 672,128 686,156 700,170 714,145 728,133 740,151"/>
+  <!-- signal amplitude arrow: 3 divisions -->
+  <line x1="575" y1="75" x2="690" y2="75" stroke="#0B1F3A" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="650" y1="78" x2="650" y2="147" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="650,75 644,85 656,85" fill="#0B1F3A"/>
+  <polygon points="650,150 644,140 656,140" fill="#0B1F3A"/>
+  <rect x="658" y="98" width="86" height="36" fill="#FFFFFF" opacity="0.9"/>
+  <text x="662" y="112" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">signal:</text>
+  <text x="662" y="130" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">3 divisions</text>
+  <!-- noise band arrow ±1 division -->
+  <line x1="95" y1="128" x2="95" y2="172" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="95,125 89,135 101,135" fill="#0B1F3A"/>
+  <polygon points="95,175 89,165 101,165" fill="#0B1F3A"/>
+  <rect x="68" y="182" width="150" height="20" fill="#FFFFFF" opacity="0.9"/>
+  <text x="72" y="197" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">noise: ±1 division</text>
+  <rect x="478" y="80" width="264" height="20" fill="#FFFFFF" opacity="0.9"/>
+  <text x="740" y="95" text-anchor="end" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">SNR = 3:1 — minimum working level</text>
+
+  <!-- ============ PANEL 2: AFTER ============ -->
+  <text x="60" y="240" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">AFTER SATURATION, SHIELDING, GROUNDING — same flaw, same gain</text>
+  <rect x="60" y="250" width="690" height="142" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+  <g stroke="#9BC4FF" stroke-width="1" opacity="0.5">
+    <line x1="61" y1="280" x2="749" y2="280"/>
+    <line x1="61" y1="305" x2="749" y2="305"/>
+    <line x1="61" y1="355" x2="749" y2="355"/>
+    <line x1="61" y1="380" x2="749" y2="380"/>
+  </g>
+  <line x1="61" y1="330" x2="749" y2="330" stroke="#0B1F3A" stroke-width="1" stroke-dasharray="4 4" opacity="0.6"/>
+  <!-- small residual noise band -->
+  <rect x="61" y="322" width="688" height="16" fill="#9BC4FF" fill-opacity="0.25"/>
+  <!-- quiet trace with same flaw peak -->
+  <polyline fill="none" stroke="#1E66F5" stroke-width="2" points="70,331 90,336 110,326 130,334 150,323 170,332 190,337 210,327 230,333 250,324 270,335 290,329 310,322 330,334 350,337 370,328 390,323 410,332 430,336 450,326 470,331 490,337 510,324 530,330 546,328 556,300 562,265 568,255 574,278 580,318 596,334 616,326 636,333 656,323 676,336 696,328 716,332 740,330"/>
+  <line x1="575" y1="255" x2="690" y2="255" stroke="#0B1F3A" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="650" y1="258" x2="650" y2="327" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="650,255 644,265 656,265" fill="#0B1F3A"/>
+  <polygon points="650,330 644,320 656,320" fill="#0B1F3A"/>
+  <rect x="658" y="278" width="86" height="36" fill="#FFFFFF" opacity="0.9"/>
+  <text x="662" y="292" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">signal: still</text>
+  <text x="662" y="310" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">3 divisions</text>
+  <rect x="68" y="344" width="172" height="20" fill="#FFFFFF" opacity="0.9"/>
+  <text x="72" y="359" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">noise: ±0.3 division</text>
+  <rect x="500" y="260" width="242" height="20" fill="#FFFFFF" opacity="0.9"/>
+  <text x="740" y="275" text-anchor="end" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">SNR ≈ 10:1 — evaluation territory</text>
+
+  <!-- ============ NOTE ============ -->
+  <rect x="60" y="412" width="690" height="72" rx="8" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="405" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">Gain raises signal and grass together — amplification can never improve SNR.</text>
+  <text x="405" y="464" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">Win the ratio at the source — saturate, shield, ground — then verify 3:1 on the reference standard.</text>
+</svg>

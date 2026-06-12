@@ -1,0 +1,81 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arwE21aB" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9BC4FF"/>
+    </marker>
+    <marker id="arwE21aW" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#FFFFFF"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">The Eddy Current Signal Chain</text>
+
+  <!-- LEFT: physical scene -->
+  <text x="190" y="88" text-anchor="middle" font-size="14" fill="#FFFFFF">AC drive · frequency f</text>
+  <rect x="158" y="96" width="64" height="34" rx="6" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <path d="M168,113 q8,-12 16,0 q8,12 16,0" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="174" y1="130" x2="164" y2="183" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="206" y1="130" x2="216" y2="183" stroke="#9BC4FF" stroke-width="1.5"/>
+
+  <!-- coil winding cross-sections -->
+  <rect x="150" y="185" width="28" height="58" rx="4" fill="#1E66F5" stroke="#9BC4FF" stroke-width="2"/>
+  <rect x="202" y="185" width="28" height="58" rx="4" fill="#1E66F5" stroke="#9BC4FF" stroke-width="2"/>
+  <line x1="159" y1="185" x2="159" y2="243" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="169" y1="185" x2="169" y2="243" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="211" y1="185" x2="211" y2="243" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="221" y1="185" x2="221" y2="243" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="190" y1="172" x2="190" y2="288" stroke="#9BC4FF" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="240" y="176" font-size="14" fill="#FFFFFF">test coil</text>
+
+  <!-- primary field into the part -->
+  <path d="M164,250 C158,272 158,290 163,310" fill="none" stroke="#9BC4FF" stroke-width="2.5" marker-end="url(#arwE21aB)"/>
+  <path d="M190,254 L190,312" fill="none" stroke="#9BC4FF" stroke-width="2.5" marker-end="url(#arwE21aB)"/>
+  <path d="M216,250 C222,272 222,290 217,310" fill="none" stroke="#9BC4FF" stroke-width="2.5" marker-end="url(#arwE21aB)"/>
+  <text x="150" y="278" text-anchor="end" font-size="14" fill="#9BC4FF">primary field</text>
+
+  <!-- secondary field opposing, dashed up -->
+  <path d="M118,298 C110,268 112,238 124,212" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arwE21aW)"/>
+  <path d="M262,298 C270,268 268,238 256,212" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arwE21aW)"/>
+  <text x="110" y="202" text-anchor="end" font-size="14" fill="#FFFFFF">secondary field</text>
+  <text x="110" y="219" text-anchor="end" font-size="14" fill="#FFFFFF">opposes (Lenz)</text>
+
+  <!-- conductive part -->
+  <rect x="45" y="295" width="290" height="150" fill="#1E66F5" fill-opacity="0.10" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="45" y1="295" x2="335" y2="295" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="55" y="313" font-size="13" fill="#9BC4FF">conductive part</text>
+
+  <!-- eddy current loops fading with depth -->
+  <ellipse cx="190" cy="332" rx="78" ry="13" fill="none" stroke="#9BC4FF" stroke-width="3.5" stroke-opacity="1"/>
+  <ellipse cx="190" cy="364" rx="60" ry="11" fill="none" stroke="#9BC4FF" stroke-width="3" stroke-opacity="0.55"/>
+  <ellipse cx="190" cy="396" rx="42" ry="9" fill="none" stroke="#9BC4FF" stroke-width="2.5" stroke-opacity="0.30"/>
+  <text x="190" y="424" text-anchor="middle" font-size="13" fill="#9BC4FF">eddy currents mirror the coil</text>
+  <text x="190" y="440" text-anchor="middle" font-size="13" fill="#9BC4FF">and fade with depth</text>
+
+  <!-- RIGHT: the five-link chain -->
+  <rect x="400" y="78" width="360" height="56" rx="10" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="418" y="102" font-size="15" font-weight="bold" fill="#FFFFFF">1 · Alternating current in the coil</text>
+  <text x="418" y="122" font-size="13" fill="#9BC4FF">your two controls: drive level and frequency f</text>
+  <line x1="580" y1="136" x2="580" y2="154" stroke="#9BC4FF" stroke-width="2.5" marker-end="url(#arwE21aB)"/>
+
+  <rect x="400" y="158" width="360" height="56" rx="10" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="418" y="182" font-size="15" font-weight="bold" fill="#FFFFFF">2 · Alternating primary magnetic field</text>
+  <text x="418" y="202" font-size="13" fill="#9BC4FF">Oersted–Ampère: field strength tracks ampere-turns</text>
+  <line x1="580" y1="216" x2="580" y2="234" stroke="#9BC4FF" stroke-width="2.5" marker-end="url(#arwE21aB)"/>
+
+  <rect x="400" y="238" width="360" height="56" rx="10" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="418" y="262" font-size="15" font-weight="bold" fill="#FFFFFF">3 · Eddy currents induced in the part</text>
+  <text x="418" y="282" font-size="13" fill="#9BC4FF">Faraday: EMF follows the rate of change of flux</text>
+  <line x1="580" y1="296" x2="580" y2="314" stroke="#9BC4FF" stroke-width="2.5" marker-end="url(#arwE21aB)"/>
+
+  <rect x="400" y="318" width="360" height="56" rx="10" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="418" y="342" font-size="15" font-weight="bold" fill="#FFFFFF">4 · Secondary field opposes the primary</text>
+  <text x="418" y="362" font-size="13" fill="#9BC4FF">Lenz's law — the part pushes back every cycle</text>
+  <line x1="580" y1="376" x2="580" y2="394" stroke="#9BC4FF" stroke-width="2.5" marker-end="url(#arwE21aB)"/>
+
+  <rect x="400" y="398" width="360" height="56" rx="10" fill="#1E66F5" fill-opacity="0.30" stroke="#9BC4FF" stroke-width="2"/>
+  <text x="418" y="422" font-size="15" font-weight="bold" fill="#FFFFFF">5 · Coil impedance changes — the display</text>
+  <text x="418" y="442" font-size="13" fill="#9BC4FF">the only link any instrument can measure</text>
+
+  <text x="400" y="486" text-anchor="middle" font-size="15" fill="#9BC4FF">Every indication on every display is link 5 — Level II work is walking it back up the chain.</text>
+</svg>

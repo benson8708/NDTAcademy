@@ -1,0 +1,184 @@
+{
+ "lessonId": "et2-6-3",
+ "title": "Differentiation and Filtering",
+ "narrationScript": "The amplifier raised the coil's microvolt signals, and the phase detector split them into impedance-plane components. This lesson covers the stage that decides what actually reaches the display: filtering and differentiation. The key insight is that the filter controls, marked in hertz, act on the demodulated signal — and that signal's frequency content is set by probe motion, not by the test frequency. A flaw crossing the coil's field produces a transient whose frequencies scale directly with scan speed: double the speed, double the band. The low-pass filter strips carrier ripple and electronic noise; set its corner too low and the flaw signal shrinks and smears. The high-pass filter erases temperature drift, gradual lift-off, and slow dimensional trends; set it too high and flaw signals attenuate and distort — and gradual wall thinning disappears entirely. Differentiation responds only to rate of change, producing bipolar signals that demand steady probe speed. The governing rule: a filter setting is only meaningful at a stated scan speed, so standardize at production speed and re-verify whenever it changes.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Last Gate Before the Display",
+   "body": "This module has walked the signal chain of an eddy current instrument. The amplifier (§7.1) raised the coil's microvolt-level impedance changes to a workable level. The phase detector (§7.2) compared the amplified signal against the oscillator's reference and split it into two demodulated components — horizontal and vertical on the impedance plane. Between the detector and the display sits one more stage, and it decides what you actually get to see: **filtering and differentiation**.\n\nUnderstand what the detector hands this stage. Demodulation strips away the **carrier** — the test frequency itself. What remains is a pair of slowly varying voltages whose frequency content comes from **probe-to-part motion**: DC to a few kilohertz, no matter whether the test frequency is 10 kHz or 2 MHz. Product detection also leaves behind ripple at **twice the test frequency**, and the first, non-negotiable job of low-pass filtering is to remove that residue — at a 200 kHz test frequency the ripple sits at 400 kHz, a thousand times above any flaw signal, so it goes quietly.\n\nThis is why the filter controls on the front panel read in single- and double-digit **hertz** while the frequency dial reads in kilohertz or megahertz. They live in different domains: the test frequency sets how eddy currents behave *in the part*; the filter settings shape what probe *motion* writes on the display. Both demodulated components are filtered identically, which preserves the impedance-plane phase angle — provided the signal sits comfortably inside the passband."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-6-3-fig-a",
+   "caption": "The instrument's signal chain: the front-panel filters act on the demodulated, motion-domain signal — after amplification and phase detection, ahead of the display and alarm."
+  },
+  {
+   "type": "text",
+   "heading": "Every Flaw Signal Has a Frequency",
+   "body": "A crack does not announce itself with a frequency — the **scan** gives it one. As the probe's sensing field, with effective width *w*, sweeps over a discontinuity at scan speed *v*, the demodulated output draws a transient lasting roughly **τ ≈ w/v**. The energy of that transient concentrates from near DC up to roughly **1/τ**. That single relationship is the whole basis of filter selection.\n\nPut numbers on it. A pencil probe whose field acts over about 2 mm, hand-scanned at 50 mm/s, produces a flaw transient of about 40 ms — energy concentrated below roughly **25 Hz**. Creep along at 5 mm/s and the same crack speaks at around **2.5 Hz**. Mount a similar coil in a bolt-hole rotary scanner at 1,500 RPM — surface speed near 470 mm/s around a 6 mm hole — and the crack's signal compresses to about 4 ms, with content out to roughly **240 Hz**. Same crack, three different frequencies, set entirely by relative motion. The law to carry: **flaw-signal frequency scales directly with scan speed — double the speed, double the band.**\n\nNow place the neighbors. Drift — temperature, gradual lift-off, slow dimensional or conductivity trends — crawls along below about 1 Hz. Broadband electronic noise extends beyond the kilohertz range. The flaw band sits between them, and that separation is what makes filtering work at all: build a **band-pass window** around the flaw band — a high-pass corner below it, a low-pass corner above it — and both neighbors die while the flaw survives."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-6-3-fig-b",
+   "caption": "A band-pass window built from a 10 Hz high-pass corner and a 300 Hz low-pass corner. The same crack lands inside or below the window depending only on scan speed."
+  },
+  {
+   "type": "text",
+   "heading": "Low-Pass: Smoothing Without Smearing",
+   "body": "A **low-pass (LP) filter** passes frequencies below its corner (cutoff) and attenuates everything above. In the eddy current instrument it has two jobs. Deep in its stopband it removes the demodulation ripple at twice the test frequency. Near its corner it sets the display's smoothness: broadband electronic noise, interference spikes, and the high-frequency 'grass' that high gain drags onto the trace all live above the flaw band, and pulling the LP corner down clips them off. The result is the calm, readable signal you want feeding the display and any alarm gate.\n\nThe trade is response speed. Set the corner **too low for the scan speed** and the filter starts eating the flaw signal itself: peak amplitude drops, the sharp transient rounds off and smears wide, two close-spaced flaws blur into one, and signals near the corner pick up phase shift that bends their impedance-plane angle. A flaw signal at 25 Hz passes a 300 Hz corner untouched; speed the scan up tenfold — an automated system, a faster rotary — and that same signal now lives at 250 Hz, pressed against the corner and visibly attenuated.\n\nThe setting discipline is mechanical: place the corner above the **highest** flaw-signal frequency that the procedure's **maximum** scan speed can produce, with margin — then prove it. Scan the reference standard at production speed with the filter in and confirm the reference discontinuity's amplitude and phase match its open-filter response. If the amplitude fell, the corner is sitting in the signal band: raise it."
+  },
+  {
+   "type": "text",
+   "heading": "High-Pass: Erasing Drift — and Its Price",
+   "body": "A **high-pass (HP) filter** passes frequencies above its corner and blocks DC and slow variation. Everything that plagues a long scan — thermal drift in coil and part, gradual lift-off change from probe wear or operator fatigue, slow dimensional and conductivity gradients, balance creep — lives below about 1 Hz, so even a low corner sweeps the baseline clean. The dot stays parked at null between flaws, which buys real gain headroom: with drift removed, you can run the amplification this module started with far harder before anything saturates.\n\nNow pay the bill, because HP filtering takes three things with it:\n\n- **Static response.** A parked probe reads nothing — every steady signal decays to zero. Conductivity sorting, static lift-off checks, and spot thickness readings need the filter out (DC coupling).\n- **Slow flaws.** Gradual wall thinning stretched over a long length of tube changes the signal as slowly as drift does — and the filter cannot tell the difference. Tubing procedures pair the filtered channel with an **absolute, DC-coupled channel** for exactly this reason.\n- **Slow scans.** The flaw band rides on scan speed. Slow down to 'look closely' at an indication and you drag its frequency below the corner — the signal shrinks as you stare at it. HP filtering demands **steady probe motion**.\n\nSet the corner too high and it bites healthy flaw signals: amplitude drops and the response distorts toward a bipolar shape with rotated phase — poison for tube analysis that reads flaw depth from phase angle."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-6-3-fig-c",
+   "caption": "One scan, four filter states: low-pass removes the noise, high-pass removes the drift, and the band-pass combination delivers the flaw alone to the display and alarm gate."
+  },
+  {
+   "type": "text",
+   "heading": "Differentiation: Rate of Change as the Signal",
+   "body": "Push the high-pass idea to its limit and you get **differentiation**: an output proportional not to the signal but to its **rate of change** (dV/dt). A simple RC high-pass section whose corner sits far above the signal band behaves as exactly this circuit — differentiation and high-pass filtering are one family, which is why the outline treats them as a single topic.\n\nEddy current systems differentiate in two places. **Spatially**, with a differential coil pair: two coils wound in opposition compare adjacent regions of the part, so any condition common to both — temperature, gradual dimension change, slow wall variation — cancels before it ever becomes a signal. **Electronically**, with a differentiator or aggressive HP filter acting on the demodulated signal from an absolute probe. Both arrangements answer only to *change*, and a sharp flaw entering the field is the fastest change there is.\n\nDifferentiation rewrites the signal's signature. An absolute probe's single-lobe response becomes a **bipolar** pair — up as the flaw enters, down as it leaves — and the impedance-plane trace becomes the looping, figure-eight pattern you learned to read on differential probes. Two consequences follow. Amplitude now reports **how fast** the signal changed, so it depends on scan speed as much as on the flaw — amplitude-based acceptance is meaningless without speed control. And long, gradual conditions are not merely attenuated; they are functionally invisible. Differentiation buys a rock-stable baseline and superb sensitivity to abrupt flaws — and it pays with everything slow."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "A filter setting is a scan-speed setting",
+   "body": "Every corner frequency in your setup is only meaningful at a stated scan speed, because the flaw band it must bracket moves with that speed. So the rule is absolute: **standardize with the reference standard moving at production speed**, production filters in — the ASTM eddy current tube practices (E243, E309, E426, E571) require exactly this — and **re-standardize whenever scan speed changes**. Double the rotary RPM? Both corners must roughly double, then the response gets proven again on the standard. Hand scanning with filters in? Your wrist is now an instrument setting: hold the speed your standardization used."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-6-3-fig-a",
+   "title": "Where filtering lives in the instrument chain",
+   "file": "et2-6-3-fig-a.svg"
+  },
+  {
+   "id": "et2-6-3-fig-b",
+   "title": "The band-pass window and scan speed",
+   "file": "et2-6-3-fig-b.svg"
+  },
+  {
+   "id": "et2-6-3-fig-c",
+   "title": "Effect of low-pass, high-pass, and band-pass filtering on one scan",
+   "file": "et2-6-3-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Set the Corners: Filter Calls in the Field",
+  "intro": "Four setups, four filter decisions. Two facts solve nearly everything: the flaw band scales directly with scan speed, and a filter setting only earns trust when the reference standard is scanned at production speed with the filters in.",
+  "steps": [
+   {
+    "prompt": "A bolt-hole rotary scanner was standardized at 1,500 RPM with band-pass filters bracketing the crack response. Production doubles the speed to 3,000 RPM. What happened to the crack signal, and what must you do?",
+    "options": [
+     "Nothing changed — rotational speed does not affect the signal, so the setup stands",
+     "Its frequency content doubled — scale both filter corners up and re-standardize on the reference standard at 3,000 RPM",
+     "Its frequency content halved — lower both corners and re-standardize",
+     "Only the test frequency needs to change — double it at the oscillator"
+    ],
+    "correct": 1,
+    "feedback": "Flaw-signal frequency scales directly with scan speed: at double the RPM, a crack signal near 240 Hz becomes one near 480 Hz, pressed into the old low-pass corner. Scale the window up and prove the response again at the new speed. The test frequency — which controls eddy current behavior in the part — has nothing to do with it."
+   },
+   {
+    "prompt": "Hand-scanning an aluminum doubler with the high-pass filter in, you spot a small indication and slow way down to examine it. The signal shrinks toward nothing as you slow. Why?",
+    "options": [
+     "The probe is overheating under sustained use",
+     "Lift-off increased as you slowed down",
+     "Slowing the scan dropped the signal's frequency below the high-pass corner — the filter is eating it",
+     "The flaw is closing under thermal expansion"
+    ],
+    "correct": 2,
+    "feedback": "With HP filtering in, the flaw band rides on your wrist. At creep speed the transient stretches out, its frequency falls below the corner, and the filter treats it exactly like drift. Re-scan at the standardized speed — or take the filter out before examining slowly."
+   },
+   {
+    "prompt": "An in-service tube inspection ran only a differential bobbin channel with aggressive high-pass filtering. A leak later develops in a region of long, gradual wall thinning that the inspection passed. The most likely explanation?",
+    "options": [
+     "Gradual thinning changes the signal as slowly as drift — the differential, high-pass channel removed it; an absolute, DC-coupled channel was needed",
+     "The test frequency was too high to penetrate the tube wall",
+     "The thinning was too smooth to disturb eddy currents at all",
+     "The low-pass corner was set too high"
+    ],
+    "correct": 0,
+    "feedback": "Differentiation and HP filtering answer only to change. A condition stretched over a long length produces a near-DC signal indistinguishable from drift, so the filtered channel erases it — even though an absolute channel would show it plainly. This is why tubing procedures pair the differential channel with an absolute one."
+   },
+   {
+    "prompt": "At high gain, the impedance-plane display carries constant high-frequency grass, though the reference notch still stands clear of it. The cleanest fix?",
+    "options": [
+     "Add more gain so the notch grows faster than the grass",
+     "Raise the high-pass corner until the grass disappears",
+     "Slow the scan so the grass smooths out",
+     "Bring the low-pass corner down toward the flaw band, then re-scan the reference standard at production speed to confirm the notch response survived"
+    ],
+    "correct": 3,
+    "feedback": "Broadband electronic noise lives above the flaw band — low-pass territory. Gain raises grass and signal together; the HP corner attacks the wrong end of the spectrum; and slowing the scan moves the flaw band down without touching electronic noise. Lower the LP corner, then prove the notch at production speed."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "The high-pass and low-pass filter settings on an eddy current instrument's front panel act on:",
+   "options": [
+    "The oscillator output, before it reaches the test coil",
+    "The demodulated signal after phase detection, whose frequency content is set by probe motion",
+    "The eddy currents circulating in the part",
+    "The display refresh rate"
+   ],
+   "correct": 1,
+   "explanation": "Demodulation removes the carrier; what remains is a motion-domain signal spanning DC to a few kilohertz. The hertz-marked filter controls shape that signal — the test frequency, which governs the eddy currents in the part, is set separately at the oscillator."
+  },
+  {
+   "question": "A surface scan at 50 mm/s produces a crack signal with energy concentrated below about 25 Hz. The scan speed is doubled to 100 mm/s. The crack signal's energy is now concentrated below about:",
+   "options": [
+    "50 Hz",
+    "12.5 Hz",
+    "25 Hz — speed does not change it",
+    "400 kHz"
+   ],
+   "correct": 0,
+   "explanation": "The transient lasts τ ≈ w/v, and its frequency content extends to roughly 1/τ — directly proportional to scan speed. Doubling the speed doubles the band to about 50 Hz. (400 kHz is demodulation ripple at twice a 200 kHz test frequency — a different domain entirely.)"
+  },
+  {
+   "question": "A high-pass filter corner set too high relative to the scan speed will:",
+   "options": [
+    "Remove electronic noise from the display",
+    "Increase the amplitude of all flaw signals",
+    "Attenuate flaw signals and distort their shape and phase — and signals from slow scans may vanish entirely",
+    "Have no effect as long as the test frequency is correct"
+   ],
+   "correct": 2,
+   "explanation": "When the corner intrudes into the flaw band, the filter eats signal: amplitude drops, the response distorts toward a bipolar shape, and phase rotates — corrupting phase-based depth analysis. Electronic noise sits above the flaw band; removing it is the low-pass filter’s job."
+  },
+  {
+   "question": "Which condition is MOST likely to be missed on a channel using heavy high-pass filtering or differentiation?",
+   "options": [
+    "A tight fatigue crack at the edge of a fastener hole",
+    "A sharp through-wall pit in a heat-exchanger tube",
+    "A short transverse crack passing under a rotating probe",
+    "Gradual wall thinning extending over a long length of tube"
+   ],
+   "correct": 3,
+   "explanation": "Differentiated and high-pass-filtered channels answer only to rate of change. Abrupt flaws produce fast transients and survive; a slow change spread over a long length is indistinguishable from drift and is removed. Catching it takes an absolute, DC-coupled channel."
+  },
+  {
+   "question": "During setup you lower the low-pass corner until the display noise disappears. Scanning the reference standard at production speed, the EDM notch amplitude has dropped 40% from its open-filter value. The correct conclusion is:",
+   "options": [
+    "The notch has worn and the standard must be replaced",
+    "The corner now sits inside the flaw-signal band — raise it until the notch response is restored, accepting some noise back",
+    "The gain has drifted and should be increased 40%",
+    "The high-pass filter is set too low"
+   ],
+   "correct": 1,
+   "explanation": "A low-pass corner pulled into the flaw band attenuates and smears the very signal the test exists to find. The verification scan at production speed exists to catch exactly this: restore the corner above the flaw band and rebalance noise against response."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level II Principles Course §7.0/7.3 (instrument design considerations — differentiation and filtering)",
+  "ASNT Recommended Practice No. SNT-TC-1A (2024), Personnel Qualification and Certification in Nondestructive Testing",
+  "ASTM E243, Standard Practice for Electromagnetic (Eddy Current) Examination of Copper and Copper-Alloy Tubes (system standardization at production examination speed)",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations, Section C: Electromagnetic Testing (signal, noise, and filter-related definitions)"
+ ]
+}

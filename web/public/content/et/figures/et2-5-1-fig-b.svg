@@ -1,0 +1,97 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Fill Factor on the Normalized Impedance Plane</text>
+
+  <!-- axes -->
+  <line x1="120" y1="45" x2="120" y2="440" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="120,38 114,50 126,50" fill="#0B1F3A"/>
+  <line x1="120" y1="440" x2="545" y2="440" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="553,440 541,434 541,446" fill="#0B1F3A"/>
+
+  <!-- y ticks -->
+  <g stroke="#0B1F3A" stroke-width="1.5">
+    <line x1="114" y1="440" x2="120" y2="440"/>
+    <line x1="114" y1="364" x2="120" y2="364"/>
+    <line x1="114" y1="288" x2="120" y2="288"/>
+    <line x1="114" y1="212" x2="120" y2="212"/>
+    <line x1="114" y1="136" x2="120" y2="136"/>
+    <line x1="114" y1="60" x2="120" y2="60"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#0B1F3A" text-anchor="end">
+    <text x="108" y="444">0</text>
+    <text x="108" y="368">0.2</text>
+    <text x="108" y="292">0.4</text>
+    <text x="108" y="216">0.6</text>
+    <text x="108" y="140">0.8</text>
+    <text x="108" y="64">1.0</text>
+  </g>
+
+  <!-- x ticks -->
+  <g stroke="#0B1F3A" stroke-width="1.5">
+    <line x1="120" y1="440" x2="120" y2="446"/>
+    <line x1="200" y1="440" x2="200" y2="446"/>
+    <line x1="280" y1="440" x2="280" y2="446"/>
+    <line x1="360" y1="440" x2="360" y2="446"/>
+    <line x1="440" y1="440" x2="440" y2="446"/>
+    <line x1="520" y1="440" x2="520" y2="446"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#0B1F3A" text-anchor="middle">
+    <text x="120" y="462">0</text>
+    <text x="200" y="462">0.1</text>
+    <text x="280" y="462">0.2</text>
+    <text x="360" y="462">0.3</text>
+    <text x="440" y="462">0.4</text>
+    <text x="520" y="462">0.5</text>
+  </g>
+
+  <!-- axis titles -->
+  <text transform="rotate(-90 40 250)" x="40" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">normalized reactance  ωL / ωL₀</text>
+  <text x="340" y="487" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">normalized resistance  (R − R₀) / ωL₀</text>
+
+  <!-- impedance curves: eta = 1.0 master path; 0.7 and 0.4 are the same curve shrunk toward the air point (120,60) -->
+  <path d="M 120 60 C 220 72, 330 110, 400 170 C 455 217, 440 270, 390 305 C 330 345, 230 380, 120 440" fill="none" stroke="#0B1F3A" stroke-width="3"/>
+  <path d="M 120 60 C 220 72, 330 110, 400 170 C 455 217, 440 270, 390 305 C 330 345, 230 380, 120 440" fill="none" stroke="#1E66F5" stroke-width="4.3" transform="translate(36,18) scale(0.7)"/>
+  <path d="M 120 60 C 220 72, 330 110, 400 170 C 455 217, 440 270, 390 305 C 330 345, 230 380, 120 440" fill="none" stroke="#1E66F5" stroke-width="7.5" opacity="0.5" transform="translate(72,36) scale(0.4)"/>
+
+  <!-- curve labels (placed on the open lower legs) -->
+  <text x="262" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">η = 1.0</text>
+  <text x="205" y="312" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">η = 0.7</text>
+  <text x="182" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">η = 0.4</text>
+
+  <!-- fill-factor (diameter) line: straight toward the air point -->
+  <line x1="120" y1="60" x2="480" y2="237" stroke="#1E66F5" stroke-width="2.5" stroke-dasharray="8 6"/>
+  <text x="470" y="268" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">fill-factor / diameter line —</text>
+  <text x="470" y="286" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">straight toward the air point</text>
+
+  <!-- operating points at one test frequency -->
+  <circle cx="431" cy="213" r="5.5" fill="#1E66F5" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="338" cy="167" r="5.5" fill="#1E66F5" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="244" cy="121" r="5.5" fill="#1E66F5" stroke="#FFFFFF" stroke-width="2"/>
+
+  <!-- air point -->
+  <circle cx="120" cy="60" r="6" fill="#0B1F3A"/>
+  <text x="134" y="52" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">air point (0, 1) — empty coil, η = 0</text>
+
+  <!-- conductivity direction along the eta=1 curve (lower branch) -->
+  <line x1="388" y1="308" x2="346" y2="337" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="338,343 351,341 344,331" fill="#0B1F3A"/>
+  <text x="402" y="328" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">conductivity / frequency —</text>
+  <text x="402" y="346" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">moves along the curve</text>
+
+  <!-- note box -->
+  <rect x="562" y="88" width="226" height="168" rx="8" fill="#9BC4FF" fill-opacity="0.15" stroke="#0B1F3A" stroke-width="1.5"/>
+  <g font-family="Arial, sans-serif" font-size="13.5" fill="#0B1F3A">
+    <text x="575" y="112">Nonferromagnetic bar in an</text>
+    <text x="575" y="132">encircling coil:</text>
+    <text x="575" y="156" font-weight="bold">Z(η) = (1 − η)·Zair + η·Zpart</text>
+    <text x="575" y="180">Every curve is the η = 1 curve</text>
+    <text x="575" y="200">shrunk toward the air point —</text>
+    <text x="575" y="220">the feed-through analogue</text>
+    <text x="575" y="240">of lift-off.</text>
+  </g>
+
+  <!-- dots legend -->
+  <circle cx="575" cy="318" r="5.5" fill="#1E66F5" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="590" y="323" font-family="Arial, sans-serif" font-size="13.5" fill="#0B1F3A">operating points at the</text>
+  <text x="590" y="341" font-family="Arial, sans-serif" font-size="13.5" fill="#0B1F3A">same test frequency</text>
+</svg>

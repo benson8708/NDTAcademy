@@ -1,0 +1,70 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">Frequency Selects the Depth — Same Joint, Two Tests</text>
+
+  <line x1="400" y1="60" x2="400" y2="420" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.3"/>
+
+  <!-- ============ LEFT PANEL: HIGH FREQUENCY ============ -->
+  <text x="215" y="80" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">High frequency — 500 kHz</text>
+  <text x="215" y="100" text-anchor="middle" font-size="14" fill="#9BC4FF">7075-T6 (32 %IACS): δ ≈ 0.17 mm · 3δ ≈ 0.5 mm</text>
+
+  <!-- probe -->
+  <rect x="193" y="106" width="44" height="44" rx="4" fill="#1E66F5" stroke="#9BC4FF" stroke-width="2"/>
+  <text x="186" y="133" text-anchor="end" font-size="14" fill="#FFFFFF">probe</text>
+
+  <!-- two skins -->
+  <rect x="60" y="150" width="310" height="110" fill="#1E66F5" fill-opacity="0.12" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="60" y="266" width="310" height="110" fill="#1E66F5" fill-opacity="0.12" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="66" y="252" font-size="14" fill="#9BC4FF">skin 1 — 2 mm</text>
+  <text x="66" y="368" font-size="14" fill="#9BC4FF">skin 2 — 2 mm</text>
+
+  <!-- shallow current zone under probe (3δ ≈ 0.5 mm ≈ 28 px) -->
+  <rect x="140" y="150" width="150" height="8" fill="#1E66F5" fill-opacity="0.9"/>
+  <rect x="140" y="158" width="150" height="7" fill="#1E66F5" fill-opacity="0.55"/>
+  <rect x="140" y="165" width="150" height="7" fill="#1E66F5" fill-opacity="0.3"/>
+  <rect x="140" y="172" width="150" height="6" fill="#1E66F5" fill-opacity="0.14"/>
+
+  <!-- 3-delta line -->
+  <line x1="60" y1="178" x2="370" y2="178" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <text x="366" y="198" text-anchor="end" font-size="14" fill="#FFFFFF">3δ ≈ 0.5 mm — currents end here</text>
+
+  <!-- second-layer crack (missed) -->
+  <polyline points="213,266 217,273 212,279 217,285" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-opacity="0.35"/>
+  <line x1="234" y1="297" x2="219" y2="287" stroke="#9BC4FF" stroke-width="1.5" stroke-opacity="0.6"/>
+  <text x="366" y="306" text-anchor="end" font-size="14" fill="#9BC4FF">2nd-layer crack —</text>
+  <text x="366" y="323" text-anchor="end" font-size="14" fill="#9BC4FF">invisible (far below 3δ)</text>
+
+  <!-- ============ RIGHT PANEL: LOW FREQUENCY ============ -->
+  <text x="585" y="80" text-anchor="middle" font-size="18" font-weight="bold" fill="#FFFFFF">Low frequency — 5 kHz</text>
+  <text x="585" y="100" text-anchor="middle" font-size="14" fill="#9BC4FF">7075-T6 (32 %IACS): δ ≈ 1.65 mm · 3δ ≈ 5 mm</text>
+
+  <!-- probe -->
+  <rect x="563" y="106" width="44" height="44" rx="4" fill="#1E66F5" stroke="#9BC4FF" stroke-width="2"/>
+  <text x="556" y="133" text-anchor="end" font-size="14" fill="#FFFFFF">probe</text>
+
+  <!-- two skins -->
+  <rect x="430" y="150" width="310" height="110" fill="#1E66F5" fill-opacity="0.12" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="430" y="266" width="310" height="110" fill="#1E66F5" fill-opacity="0.12" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="436" y="252" font-size="14" fill="#9BC4FF">skin 1 — 2 mm</text>
+  <text x="436" y="368" font-size="14" fill="#9BC4FF">skin 2 — 2 mm</text>
+
+  <!-- deep current zone: fills skin 1 and reaches through skin 2 -->
+  <rect x="510" y="150" width="150" height="55" fill="#1E66F5" fill-opacity="0.75"/>
+  <rect x="510" y="205" width="150" height="55" fill="#1E66F5" fill-opacity="0.45"/>
+  <rect x="510" y="266" width="150" height="55" fill="#1E66F5" fill-opacity="0.28"/>
+  <rect x="510" y="321" width="150" height="55" fill="#1E66F5" fill-opacity="0.14"/>
+
+  <!-- 1-delta line (1.65 mm ≈ 91 px) -->
+  <line x1="430" y1="241" x2="740" y2="241" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <text x="736" y="236" text-anchor="end" font-size="14" fill="#FFFFFF">1δ ≈ 1.65 mm</text>
+
+  <!-- second-layer crack (detected) -->
+  <polyline points="583,266 587,273 582,279 587,285" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <line x1="604" y1="297" x2="589" y2="287" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="736" y="306" text-anchor="end" font-size="14" font-weight="bold" fill="#FFFFFF">2nd-layer crack —</text>
+  <text x="736" y="323" text-anchor="end" font-size="14" font-weight="bold" fill="#FFFFFF">DETECTED (within 3δ)</text>
+
+  <!-- bottom rule -->
+  <rect x="90" y="430" width="620" height="42" rx="8" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="400" y="457" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">δ ∝ 1/√f:  frequency ÷ 4 → depth × 2   ·   frequency × 4 → depth ÷ 2</text>
+</svg>

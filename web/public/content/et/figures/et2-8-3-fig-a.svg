@@ -1,0 +1,103 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Phase-to-Depth: Signal Angle Becomes % Through-Wall</text>
+
+  <defs>
+    <marker id="arrN" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L8,4.5 L0,9 Z" fill="#0B1F3A"/>
+    </marker>
+    <marker id="arrB" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+      <path d="M0,0 L6,3.5 L0,7 Z" fill="#1E66F5"/>
+    </marker>
+  </defs>
+
+  <!-- LEFT: impedance-plane display -->
+  <rect x="40" y="66" width="310" height="310" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="52" y1="221" x2="338" y2="221" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="195" y1="78" x2="195" y2="364" stroke="#9BC4FF" stroke-width="1.5"/>
+
+  <!-- probe-motion squiggle on horizontal axis -->
+  <path d="M 86 221 q 8 -7 16 0 q 8 7 16 0 q 8 -7 16 0 q 8 7 16 0" fill="none" stroke="#9BC4FF" stroke-width="2.5"/>
+
+  <!-- through-wall hole lobe at 40 deg -->
+  <path d="M 195 221 C 225 200 260 168 281 148 C 270 178 230 205 195 221 Z" fill="none" stroke="#0B1F3A" stroke-width="3"/>
+  <line x1="195" y1="221" x2="157" y2="253" stroke="#0B1F3A" stroke-width="3"/>
+  <path d="M 245 221 Q 246 200 233 189" fill="none" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="252" y="200" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">40°</text>
+  <text x="276" y="132" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">100% TW hole</text>
+  <text x="276" y="150" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">set to 40°</text>
+
+  <!-- 20% OD FBH lobe near 160 deg -->
+  <path d="M 195 221 C 160 206 120 191 88 182 C 130 201 165 212 195 221 Z" fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <path d="M 245 221 A 50 50 0 0 0 148 204" fill="none" stroke="#1E66F5" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="166" y="152" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">≈160°</text>
+  <text x="48" y="168" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">20% OD FBH</text>
+
+  <rect x="85" y="348" width="220" height="17" fill="#FFFFFF" opacity="0.9"/>
+  <text x="195" y="361" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">probe motion — rotated flat (0°)</text>
+
+  <text x="195" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">ID-origin: 0–40°  ·  OD-origin: 40° → ≈160°</text>
+  <text x="195" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">differential bobbin · prime frequency</text>
+
+  <!-- RIGHT: calibration curve -->
+  <text x="615" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">Phase-to-depth calibration curve</text>
+
+  <line x1="470" y1="430" x2="770" y2="430" stroke="#0B1F3A" stroke-width="2" marker-end="url(#arrN)"/>
+  <line x1="470" y1="430" x2="470" y2="95" stroke="#0B1F3A" stroke-width="2" marker-end="url(#arrN)"/>
+  <text x="620" y="478" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">signal phase angle (degrees)</text>
+  <text x="432" y="265" transform="rotate(-90 432 265)" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">flaw depth (% through-wall)</text>
+
+  <!-- x ticks -->
+  <line x1="470" y1="430" x2="470" y2="436" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="470" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0</text>
+  <line x1="532" y1="430" x2="532" y2="436" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="532" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">40</text>
+  <line x1="610" y1="430" x2="610" y2="436" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="610" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">90</text>
+  <line x1="719" y1="430" x2="719" y2="436" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="719" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">160</text>
+
+  <!-- y ticks -->
+  <line x1="464" y1="368" x2="470" y2="368" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="458" y="372" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">20</text>
+  <line x1="464" y1="306" x2="470" y2="306" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="458" y="310" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">40</text>
+  <line x1="464" y1="244" x2="470" y2="244" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="458" y="248" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">60</text>
+  <line x1="464" y1="182" x2="470" y2="182" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="458" y="186" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">80</text>
+  <line x1="464" y1="120" x2="470" y2="120" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="458" y="124" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">100</text>
+
+  <!-- OD branch -->
+  <path d="M 532 120 C 545 140 558 162 571 182 C 590 204 608 224 626 244 C 642 265 657 285 672 306 C 688 327 704 347 719 368" fill="none" stroke="#0B1F3A" stroke-width="3"/>
+  <path d="M 719 368 L 737 400" stroke="#0B1F3A" stroke-width="2" stroke-dasharray="5 4"/>
+
+  <!-- ID branch -->
+  <path d="M 532 120 L 524 182 L 517 244 L 509 306 L 501 368 L 493 399" fill="none" stroke="#1E66F5" stroke-width="3" stroke-dasharray="6 4"/>
+
+  <!-- calibration points -->
+  <rect x="527" y="115" width="10" height="10" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <rect x="566" y="177" width="10" height="10" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <rect x="621" y="239" width="10" height="10" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <rect x="667" y="301" width="10" height="10" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <rect x="714" y="363" width="10" height="10" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+
+  <text x="498" y="108" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">100% · 40°</text>
+  <text x="581" y="176" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">80% · 65°</text>
+  <text x="636" y="238" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">60% · 100°</text>
+  <text x="682" y="300" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">40% · 130°</text>
+  <text x="672" y="392" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">20% · 160°</text>
+
+  <!-- branch legend -->
+  <line x1="560" y1="146" x2="588" y2="146" stroke="#0B1F3A" stroke-width="3"/>
+  <text x="596" y="151" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">OD branch — ≈120° spread</text>
+  <line x1="560" y1="170" x2="588" y2="170" stroke="#1E66F5" stroke-width="3" stroke-dasharray="6 4"/>
+  <text x="596" y="175" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">ID branch — crowded in 0–40°</text>
+
+  <!-- worked read: 100 deg -> 60% TW -->
+  <line x1="626" y1="430" x2="626" y2="244" stroke="#1E66F5" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="626" y1="244" x2="470" y2="244" stroke="#1E66F5" stroke-width="2" stroke-dasharray="6 4"/>
+  <rect x="474" y="224" width="112" height="17" fill="#FFFFFF" opacity="0.9"/>
+  <text x="478" y="238" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">100° → ≈60% TW</text>
+</svg>

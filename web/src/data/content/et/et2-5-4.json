@@ -1,0 +1,187 @@
+{
+ "lessonId": "et2-5-4",
+ "title": "AC Field Strength Effects on Eddy Current Testing",
+ "narrationScript": "Your instrument gives you two ways to make a signal bigger. Gain amplifies whatever the coil already produced. Drive raises the AC field strength that creates the signal in the first place. On nonmagnetic alloys the system is linear: field strength tracks coil current, eddy current density tracks field strength, and every signal grows in proportion. Double the drive and signals rise six decibels, while the normalized impedance point, the phase relationships, and the depth of penetration stay put. That is why you raise drive, not gain, when the instrument's own noise is the problem. Ferromagnetic parts break the rules. Permeability changes with field strength, so a strong AC field sweeps a fat minor hysteresis loop every cycle. Amplitude stops tracking drive, the waveform distorts into odd harmonics, the third above all, permeability noise grows, and a standardization done at one drive level is invalid at another. Keep ferromagnetic work at low field strength, saturate when the job allows, record the drive setting, and re-standardize after any change.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Probe Drive: The Second Knob on Link One",
+   "body": "In the theory review you rebuilt the five-link signal chain, and link one — alternating current in the coil — carries the only two controls you truly own: **frequency** and **drive**. Frequency has had whole lessons to itself. This lesson is about the other knob.\n\nDrive sets the **AC field strength**: the alternating magnetic field intensity H that the coil applies to the part, measured in **amperes per meter** (the older unit, the oersted, is about 80 A/m). For any coil, H scales with the **ampere-turns** — the turns are wound into the probe and fixed, so the excitation current the instrument pushes through the coil is your field-strength control. Instruments express it as **probe drive**, usually a few preset excitation voltages — many portables offer three steps spanning roughly 2 to 12 V.\n\nPlace it in the chain. Drive sets the field; coupling — lift-off for surface probes, fill factor for encircling and bobbin coils — decides how much of that field links the part; the linked field induces the eddy currents. The last two lessons covered the part's side of the field-strength story: permeability variations make noise, and saturation suppresses them. Topic 6.3 asks the remaining question — what does the strength of the AC field itself do to the test? The answer splits cleanly on one property: whether the part is magnetic."
+  },
+  {
+   "type": "text",
+   "heading": "Linear Territory: Nonmagnetic Conductors",
+   "body": "On aluminum, titanium, or austenitic stainless steel, conductivity and permeability are **constants of the material** — no field strength an eddy current instrument can produce will change them. The system is **linear**, and linearity buys three guarantees.\n\n**Amplitude is proportional to drive.** Double the excitation current and the primary field doubles; eddy current density doubles **at every depth**; the secondary field and every flaw signal double with it — a clean **+6 dB per doubling** of drive.\n\n**Everything that is a ratio stays parked.** Impedance is volts per ampere, so it cannot care how many amperes you sent: the **normalized impedance point does not move**, the conductivity curve stays valid at any drive, the lift-off direction holds, and phase lag still accumulates at about 57° per standard depth. Above all, **δ does not change** — δ = 1/√(π·f·μ·σ) contains frequency, permeability, and conductivity, and no field-strength term. Raising drive makes *more* current everywhere; it does not push current *deeper*.\n\n**Drive beats gain against electronic noise.** The receiver's own noise is fixed; drive grows the signal *before* that noise is added, while gain amplifies signal and noise together. Material noise is the opposite case — conductivity scatter scales with drive exactly like the flaw signal, so that ratio never improves.\n\nThe practical ceilings: receiver **overload** — clipped, flat-topped signals at high drive plus high gain — and **coil self-heating**, which rises with the square of the current and drifts your null, fastest in small pencil probes."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-5-4-fig-a",
+   "caption": "Left: in a linear material, flaw-signal amplitude tracks probe drive exactly — +6 dB per doubling — climbing over a fixed electronic noise floor. Right: the normalized impedance point, phase relationships, and standard depth of penetration are ratios of the linear system and do not move with drive."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Drive or gain? Diagnose the noise first",
+   "body": "**Electronic hash** — visible with the probe in air, grows with gain: raise drive and pull gain back, because the signal grows before the instrument's fixed noise is added. **Material noise** — conductivity scatter and permeability bands that move with the part: drive changes nothing, since it scales noise and signal together; attack it with frequency, filtering, mixing, or saturation. Either way, **drive is a standardization variable** — change it and every amplitude threshold you set is void until you re-standardize."
+  },
+  {
+   "type": "text",
+   "heading": "Ferromagnetic Parts: The B–H Curve Joins the Circuit",
+   "body": "In a ferromagnetic part, permeability is not a constant — it is a **function of field strength**, read off the B–H curve. At very low H, magnetization proceeds by reversible domain-wall bowing: the **initial (Rayleigh) region**, where relative permeability holds near its initial value μᵢ — commonly on the order of 50 to 300 for structural steels. Push harder and the walls jump irreversibly (the Barkhausen effect): the steep mid-region, where permeability climbs toward a maximum often ten times or more the initial value. Past the knee, the domains are largely aligned and the incremental permeability collapses toward 1 as the material approaches saturation.\n\nAn AC drive does not sit at one point on this curve — it **sweeps a minor hysteresis loop around the operating point every cycle**, and what the coil feels is that loop's average slope: the **incremental permeability**. Drive level now decides which physics you get:\n\n- **Low drive:** a small, lens-shaped minor loop confined to the initial region. Incremental permeability is nearly constant through the cycle — the response is quasi-linear and repeatable. This is where unsaturated ferromagnetic eddy current work is supposed to live.\n- **High drive:** the loop fattens and sweeps up into the steep region. Permeability now varies *within each cycle* — the part answers the peak of the sine wave differently than the zero crossings — and the clean proportionality of the nonmagnetic case is gone."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-5-4-fig-b",
+   "caption": "Left: an AC drive sweeps a minor hysteresis loop each cycle — small and lens-shaped at low drive, fat and reaching into the steep region at high drive. Right: at high drive a clean sinusoidal H returns a peaked, distorted coil signal built of odd harmonics, with the third dominant."
+  },
+  {
+   "type": "text",
+   "heading": "The Symptoms of Excessive Drive",
+   "body": "When the AC field strength is too high for a magnetic material, the damage shows up five ways — learn them as diagnostics:\n\n- **Harmonic distortion.** A sinusoidal H driven through a curved, hysteretic B–H characteristic returns a non-sinusoidal flux — flattened B peaks, a peaked induced voltage. Because the loop is symmetric, the distortion lands on **odd harmonics, the third above all**; even harmonics appear only when a DC bias or residual magnetization breaks the symmetry. Comparator-type sorting instruments exploit exactly this, reading harmonic content to separate alloy and hardness classes — a fundamental-frequency flaw detector just inherits it as distortion.\n- **Amplitude stops tracking drive.** The +6 dB-per-doubling rule fails, so a standardization performed at one drive level is **invalid at any other** — alarm gates and reporting thresholds included.\n- **Signals change shape and phase, not just size.** The field check is simple: bump the drive one step. In linear material only the size changes; if phase or shape moves with drive, you are operating nonlinearly.\n- **Permeability noise grows.** A wider H swing samples a wider band of the B–H curve, so point-to-point differences in magnetic state — heat-affected zones, cold work, residual stress — answer louder. The cure for permeability noise is saturation, never more AC drive.\n- **Penetration shifts with drive.** At very high field strength the incremental permeability near the surface falls — a partial **self-saturation** by the AC field itself. Since δ = 1/√(π·f·μ·σ), a falling μ deepens penetration, and the phase-to-depth relationship you standardized quietly moves."
+  },
+  {
+   "type": "table",
+   "caption": "What raising AC field strength changes — and does not change — by material class.",
+   "headers": ["Effect of raising drive", "Nonmagnetic conductor (linear)", "Unsaturated ferromagnetic part"],
+   "rows": [
+    ["Eddy current density", "Rises in proportion — double drive, double density", "Rises, but not proportionally — μ changes with H"],
+    ["Flaw signal amplitude", "Proportional: +6 dB per doubling of drive", "Nonlinear — size, shape, and phase can all change"],
+    ["Normalized impedance point", "Does not move", "Moves as the incremental permeability changes"],
+    ["Standard depth of penetration δ", "Unchanged — no field-strength term in δ", "Shifts — high fields lower incremental μ (partial self-saturation)"],
+    ["Signal waveform", "Stays sinusoidal", "Odd harmonics grow — third harmonic dominant"],
+    ["Signal-to-noise ratio", "Improves against fixed electronic noise; material noise scales with the signal", "Permeability noise grows with the field swing — more drive can make it worse"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Setting Drive Like a Level II",
+   "body": "The sequence is short, and it starts with metallurgy, not menus.\n\n**Classify the material.** Nonmagnetic or ferromagnetic — every drive decision branches there.\n\n**Nonmagnetic work:** use the highest drive that keeps the channel clean. Step the drive up until the reference response sits comfortably above the electronic noise, then verify two things at standardization: no clipping — flat-topped or distorted lobes on the largest reference signal mean the receiver is overloading — and a stable null after the probe has warmed up. Small pencil probes earn a caution: heating rises with the square of the drive current, and a drifting null on a high-resolution scan is usually a hot coil, not a bad part. Do the fine amplitude scaling with gain.\n\n**Unsaturated ferromagnetic work:** invert the logic — use the **lowest** drive that resolves the reference discontinuity, keeping the cycle inside the initial-permeability region where the response stays repeatable. If signal-to-noise is poor, the fix is saturation, frequency, or filtering — not a bigger field.\n\n**Saturated tube work (ASTM E309 territory):** DC saturation flattens the operating point so the tube answers almost like a nonmagnetic conductor — but keep the AC swing modest. With marginal saturation, a large drive swings the material back into the steep region on half of every cycle, and the permeability noise returns.\n\n**Document and defend.** Drive is an essential variable of the technique: record it, standardize at it, and re-standardize after **any** change — with everything tested since the last valid check open to re-examination if the response moved."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-5-4-fig-a",
+   "title": "Drive level in the linear regime",
+   "file": "et2-5-4-fig-a.svg"
+  },
+  {
+   "id": "et2-5-4-fig-b",
+   "title": "Minor hysteresis loops and harmonic distortion",
+   "file": "et2-5-4-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Drive-Level Calls: Four Bench Situations",
+  "intro": "Four drive-level decisions from real inspections. Decide what the physics demands before you click — and remember which noise you are fighting and which material class you are on.",
+  "steps": [
+   {
+    "prompt": "Titanium fitting, 200 kHz surface scan. Drive is at its lowest step, gain is nearly maxed, and a fuzzy baseline hash — present even with the probe in air — almost buries the response from the 0.5 mm EDM notch standard. Best move?",
+    "options": [
+     "Add the last 4 dB of available gain",
+     "Raise probe drive and pull the gain back",
+     "Drop the test frequency to penetrate deeper",
+     "Accept the margin — titanium is always noisy"
+    ],
+    "correct": 1,
+    "feedback": "Hash that exists with the probe in air is the instrument's own electronic noise, and it is fixed. Drive grows the signal before that noise is added, so SNR improves; gain lifts hash and signal together. Titanium is nonmagnetic — high drive costs you nothing but heat."
+   },
+   {
+    "prompt": "On an unsaturated 4130 steel weldment you bump drive up one step to chase a weak indication — and now the signals have changed phase and shape, not just size, and amplitudes no longer track the drive change. Diagnosis?",
+    "options": [
+     "The probe is failing — replace it",
+     "Lift-off variation from the weld crown",
+     "The higher field pushed the steel beyond the initial-permeability region — the response is nonlinear; reduce drive and re-standardize",
+     "The test frequency is too high for the material"
+    ],
+    "correct": 2,
+    "feedback": "In a linear test, changing drive changes only signal size. Shape and phase moving with drive is the signature of nonlinearity: the minor hysteresis loop is sweeping the steep part of the B–H curve, so incremental permeability varies within each cycle. Drop the drive back into the low-field region and re-standardize."
+   },
+   {
+    "prompt": "High-resolution scan with a small pencil probe at maximum drive. For the first several minutes the null point drifts steadily across the screen, then settles. Cause?",
+    "options": [
+     "Coil self-heating — I²R loss at high drive warms the winding and shifts its resistance; reduce drive and let the probe warm up before standardizing",
+     "The part is magnetized and needs demagnetization",
+     "The battery is sagging under load",
+     "An intermittent cable fault"
+    ],
+    "correct": 0,
+    "feedback": "Dissipation in the winding rises with the square of the drive current, and a small coil has little thermal mass — its resistance climbs as it warms, dragging the null. Reduce drive, allow a warm-up period, and re-null before standardizing. A cable fault or magnetized part gives erratic jumps, not a smooth one-way drift."
+   },
+   {
+    "prompt": "Ferromagnetic condenser tubing under DC saturation still shows banded permeability noise. A colleague suggests cranking the AC drive 'to punch through the noise.' Your call?",
+    "options": [
+     "Agree — more drive raises signal-to-noise in every material",
+     "Disagree — raise the frequency instead; noise always falls with frequency",
+     "Disagree — reduce the fill factor to weaken the coupling",
+     "Disagree — verify and increase the saturation; raising AC drive widens the B–H swing and makes permeability response worse, not better"
+    ],
+    "correct": 3,
+    "feedback": "Banded noise under saturation means the saturation is marginal. A bigger AC swing pulls the tube wall back into the steep permeability region on part of every cycle — amplifying exactly the noise you are fighting. Fix the bias field first; keep the AC swing modest (the working logic of ASTM E309)."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "While testing a nonmagnetic aluminum part, the probe drive is doubled. The eddy current density and the standard depth of penetration respectively:",
+   "options": [
+    "both double",
+    "density doubles; the standard depth of penetration is unchanged",
+    "density is unchanged; the depth of penetration doubles",
+    "both remain unchanged"
+   ],
+   "correct": 1,
+   "explanation": "In a linear (nonmagnetic) material, eddy current density is proportional to the applied field strength, so it doubles at every depth. But δ = 1/√(π·f·μ·σ) contains no field-strength term — more drive makes more current everywhere; it does not push current deeper."
+  },
+  {
+   "question": "A technician inspecting a 7075 aluminum panel switches probe drive from low to high. On the normalized impedance plane, the coil's operating point:",
+   "options": [
+    "moves along the conductivity curve away from the air point",
+    "moves toward the air point as the coupling weakens",
+    "rotates by the additional phase lag of the stronger field",
+    "does not move — normalized impedance is independent of excitation amplitude in a linear material"
+   ],
+   "correct": 3,
+   "explanation": "Impedance is a ratio of voltage to current, so in a linear system it cannot depend on how large the excitation is. Drive scales signal amplitude (+6 dB per doubling); the plane position, lift-off direction, and phase relationships all stay parked — that is why conductivity curves drawn once are valid at any drive."
+  },
+  {
+   "question": "Excessive AC field strength on an unsaturated carbon steel part distorts the coil signal. The distortion appears chiefly as:",
+   "options": [
+    "odd harmonics of the test frequency, with the third harmonic dominant",
+    "even harmonics of the test frequency, with the second dominant",
+    "subharmonics at one-half the test frequency",
+    "broadband noise with no harmonic structure"
+   ],
+   "correct": 0,
+   "explanation": "A sinusoidal H swept around a symmetric, curved hysteresis loop returns a flattened flux waveform and a peaked induced voltage built of odd harmonics — the third above all. Even harmonics appear only when a DC bias or residual magnetization breaks the loop's symmetry."
+  },
+  {
+   "question": "When testing ferromagnetic material without magnetic saturation, the drive level should be kept low primarily because:",
+   "options": [
+    "high drive overheats the test part",
+    "high drive increases sensitivity to lift-off",
+    "a low field keeps the cycle in the initial-permeability (Rayleigh) region, where incremental permeability is nearly constant and the response stays quasi-linear and repeatable",
+    "a low field eliminates the skin effect"
+   ],
+   "correct": 2,
+   "explanation": "Permeability is a function of field strength. A small minor hysteresis loop confined to the initial region keeps incremental permeability — and therefore the coil's response — nearly constant. A large swing sweeps the steep region of the B–H curve, making amplitude, phase, and noise all drive-dependent."
+  },
+  {
+   "question": "Midway through an aluminum fastener-hole survey you raise the probe drive one step to lift a weak signal. Before continuing the inspection you must:",
+   "options": [
+    "do nothing further — drive does not affect signal amplitude",
+    "re-standardize on the reference standard, because every amplitude-based setting was established at the old drive level",
+    "demagnetize the part",
+    "recalculate the standard depth of penetration for the new drive"
+   ],
+   "correct": 1,
+   "explanation": "Drive is a standardization variable: raising it one step grows every amplitude — signals and alarm thresholds no longer correspond. Re-standardize before testing on. Depth of penetration needs no recalculation in aluminum, because δ has no field-strength term."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level II Principles Course §6.0–6.3 (field strength and its selection; effect of AC field strength on eddy current testing)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing method — Level II training topic basis",
+  "ASTM E309, Standard Practice for Eddy Current Examination of Steel Tubular Products Using Magnetic Saturation",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations, Section C: Electromagnetic Testing"
+ ]
+}

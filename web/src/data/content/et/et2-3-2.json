@@ -1,0 +1,227 @@
+{
+ "lessonId": "et2-3-2",
+ "title": "SNR in Eddy Current Testing",
+ "narrationScript": "Lesson two of the signal-to-noise module brings the ratio onto your screen. In eddy current testing, most noise is not electronic hiss \u2014 it is genuine impedance response from variables you did not ask about: probe wobble and lift-off, rough surfaces, conductivity scatter, permeability variation in steel, edges, deposits, and nearby structure. Because that noise is a real coil response, it carries phase as well as amplitude, and the impedance plane becomes your first discrimination tool. Rotate the display so lift-off runs horizontal, and a surface crack breaks upward, clear of the wobble band. Measure signal-to-noise peak-to-peak, in the same channel, at the same settings \u2014 flaw response against baseline noise from a representative free span. Most procedures demand at least three to one on the smallest required flaw before inspection begins, and gain cannot buy it, because amplification raises signal and noise together. When the ratio is marginal, fix the setup \u2014 never the threshold.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Detection Is a Ratio, Not an Amplitude",
+   "body": "The previous lesson defined signal-to-noise ratio in general terms. Now make it specific to this method: in eddy current testing, **detection is decided by a ratio, not by raw amplitude**. A discontinuity is reliably detectable only when its response stands clearly above everything else the coil reports \u2014 and the coil reports everything: coupling changes, material scatter, geometry, interference.\n\n- **SNR** = response of the discontinuity of interest \u00f7 response of everything you are not looking for, both measured **peak-to-peak, in the same channel, at the same instrument settings**.\n- Written procedures set a floor on that ratio before inspection may begin \u2014 **3:1 is the common minimum**, demonstrated on the smallest discontinuity the test must find, using the reference standard at standardization.\n- **Gain cannot buy SNR.** Eddy current noise enters through the coil together with the signal, so the amplifier raises both in exactly the same proportion. A 2:1 ratio at 60 dB of gain is still 2:1 at 80 dB \u2014 just bigger on the screen.\n\nThe instrument's job is to make responses visible. Your job at Level II is to make sure what is visible is *separable* \u2014 and separability is set by physics and setup choices, never by the gain knob."
+  },
+  {
+   "type": "text",
+   "heading": "ET Noise Is Mostly Real Impedance Response",
+   "body": "Eddy current noise differs from noise in most other methods in one important way: **most of it is genuine coil response** \u2014 true impedance changes produced by test variables you do not care about. The coil is not malfunctioning; it is answering questions you did not ask. The recurring sources:\n\n- **Lift-off variation and probe wobble** \u2014 every change in coupling distance is a large, legitimate impedance excursion, and hand scanning makes it continuous.\n- **Surface roughness, scale, and uneven paint** \u2014 micro lift-off plus near-surface conductivity change; worse at higher test frequencies, where the current density crowds the surface.\n- **Conductivity scatter** \u2014 alloy segregation, local cold work, and uneven heat treatment shift conductivity from point to point.\n- **Permeability variation** \u2014 in ferromagnetic parts, local permeability changes produce responses that can dwarf flaw signals entirely; this is why steel tubing is examined under magnetic saturation and why unsaturated carbon steel is so hostile to ET.\n- **Geometry** \u2014 edges, fillets, thickness changes, dents and ovality in tubing, and adjacent fasteners or support structures all intercept the coil's field.\n- **Electrical interference** \u2014 welding machines, variable-frequency drives, and power wiring inject truly random spikes and hash.\n\nOnly the last source is random. Everything above it is **coherent**: it has repeatable amplitude *and phase*. That is the lever the impedance plane lets you pull."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-3-2-fig-a",
+   "caption": "Same flaw, same noise amplitude. On the left, the setup gives wide phase separation between lift-off noise and the crack response; on the right, the separation has collapsed and no gain setting can recover the flaw."
+  },
+  {
+   "type": "text",
+   "heading": "Reading SNR on the Impedance Plane",
+   "body": "Because coherent noise has a direction on the impedance plane, the display itself is your first discrimination tool. Standard surface-scanning practice:\n\n1. **Balance** on representative material, then **rotate the display** so the lift-off trace runs horizontally.\n2. Scan the reference notch. A surface crack now **breaks upward** at a distinctly different angle \u2014 a crack diverts the eddy currents, while lift-off changes the coupling. Different mechanisms, different phase.\n3. Set the alarm gate, or measure amplitude, in the **vertical channel**. Probe wobble spends most of its energy horizontally and largely drops out; the crack's vertical component survives.\n\nTwo consequences worth internalizing:\n\n- The SNR that matters is the **channel SNR**: vertical flaw amplitude against vertical noise amplitude. Careless rotation leaks wobble into the vertical channel and silently destroys the ratio you demonstrated at setup.\n- **Phase separation is the real currency.** When frequency or probe choice squeezes the angle between the flaw vector and the noise direction, amplitude separation collapses with it \u2014 a flaw 'louder' than the noise can still be undetectable if it shouts in the same direction.\n\nMeasure honestly: capture the noise while rocking and sliding the probe the way production scanning actually will, not while holding it frozen on a polished spot."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "The 3:1 floor is a standardization gate",
+   "body": "Demonstrate SNR before you inspect \u2014 on the reference standard, at the final instrument settings. Scan the smallest discontinuity the procedure requires you to detect and record its peak-to-peak response; then scan flaw-free reference material with realistic probe handling and record the noise. If the ratio does not meet the procedure minimum \u2014 **commonly 3:1** \u2014 the setup is invalid. Fix something real: frequency, probe, filtering, fixturing, surface preparation, magnetic saturation. Raising the gain changes nothing, and lowering the alarm threshold to 'catch' the notch simply converts noise into false calls. Record both values in the standardization record."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-3-2-fig-b",
+   "caption": "Working the numbers on a strip chart: noise measured peak-to-peak over a representative free span (0.6 div), flaw signal 2.4 div peak-to-peak \u2014 SNR 4:1, clearing the common 3:1 floor."
+  },
+  {
+   "type": "text",
+   "heading": "Strip Charts and Tube Data: Measuring the Ratio",
+   "body": "In-service tube examination \u2014 condenser and heat-exchanger work of the kind ASTM E690 governs \u2014 shows SNR at its most explicit. A differential bobbin probe pulled through a tube writes a strip chart whose **baseline is the noise**: probe motion in the tube, normal wall and dimension variation, residual deposits. Discrete indications rise out of that baseline.\n\nThe measurement discipline:\n\n- **Measure S** as the peak-to-peak amplitude of the indication, in the channel you evaluate.\n- **Measure N** as the peak-to-peak baseline over a **representative free span** \u2014 away from the tubesheet and support plates, on tubing typical of the bundle. Picking the quietest stretch of the cleanest tube inflates every SNR you quote afterward.\n- Judge the ratio against the **smallest flaw the procedure makes reportable**, not against the biggest signal of the day.\n\nTwo tube-specific traps:\n\n- **Structures are coherent noise too.** Support plates and the tubesheet produce large, repeatable responses at known locations on the tube map. They are not flaw calls \u2014 but they mask flaws hiding within them. Suppressing them by multifrequency mixing belongs to the next lesson.\n- **Speed is part of the setup.** Band-pass filters are tuned to the signal frequencies a flaw produces at the qualified probe speed. Pull faster or slower and the flaw's energy slides out of the passband \u2014 S drops while the baseline barely moves, and the SNR you demonstrated at standardization quietly evaporates."
+  },
+  {
+   "type": "table",
+   "caption": "Field conditions that degrade SNR in eddy current testing, the mechanism behind each, and what each looks like on the display.",
+   "headers": [
+    "Condition",
+    "Noise mechanism",
+    "Typical display signature",
+    "Effect on the test"
+   ],
+   "rows": [
+    [
+     "Probe wobble / lift-off variation",
+     "Coupling distance changes \u2014 a large, real impedance excursion",
+     "Excursions along the lift-off (horizontal) direction; baseline jitter on strip charts",
+     "Raises N; leaks into the flaw channel if display rotation is sloppy"
+    ],
+    [
+     "Rough, scaled, or unevenly painted surface",
+     "Micro lift-off plus near-surface conductivity variation",
+     "High-rate hash along the lift-off direction",
+     "Raises N \u2014 and worsens as test frequency rises"
+    ],
+    [
+     "Unsaturated ferromagnetic material",
+     "Local permeability variation swamps the conductivity response",
+     "Large erratic excursions that dwarf notch signals",
+     "Can make the test unusable \u2014 magnetically saturate or change method"
+    ],
+    [
+     "Edge, fillet, or thickness change nearby",
+     "Part geometry intercepts the coil's field",
+     "Strong coherent signal as the probe approaches the feature",
+     "Masks flaws near the feature; control with guides, templates, and scan layout"
+    ],
+    [
+     "Deposits and debris in tubing (copper, magnetite)",
+     "Conductive or magnetic material adds its own response",
+     "Baseline drift and spikes unrelated to wall condition",
+     "False calls and masked pits in tube examination"
+    ],
+    [
+     "Electrical interference (welders, VFDs, power wiring)",
+     "Radiated and conducted EMI enters the cable and electronics",
+     "Random spikes and fuzz at any phase angle",
+     "Raises N at all phases \u2014 phase discrimination cannot reject it"
+    ],
+    [
+     "Scan or pull speed off the qualified value",
+     "Flaw signal frequency content slides out of the band-pass filters",
+     "Flaw signals shrink and distort while the baseline looks normal",
+     "S drops while N stays \u2014 SNR falls with no visible warning"
+    ]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Marginal SNR: How a Level II Responds",
+   "body": "SNR connects directly to the statistics of detection. As the ratio falls, the **probability of detection** for the smallest reportable flaw falls with it, and the alarm threshold becomes a forced trade: set it low and noise crosses it constantly \u2014 false calls that cost re-inspection time and erode operator vigilance; set it high and real flaws ride beneath it. Below roughly 3:1, eddy current detection stops being dependable no matter how alert the operator is.\n\nWhen the data looks marginal, respond like an evaluator:\n\n- **Re-verify standardization.** Re-scan the reference standard and confirm the notch response and the noise level have not drifted since setup.\n- **Diagnose the noise by its behavior.** Rock the probe \u2014 if the excursion tracks your hand, it is lift-off and wobble. Watch the phase of the hash: coherent sources hold a direction; interference scatters at every angle. Note whether the 'noise' lives only near edges, supports, or one patch of material.\n- **Change something legitimate.** Surface preparation, probe fit, fixturing, scan speed back to the qualified value \u2014 or escalate to the frequency, filtering, and mixing tools of the next lesson.\n- **Never normalize the problem away.** Raising the threshold beyond procedure limits, or adding smoothing the procedure does not permit, manufactures SNR on the screen while the physical ratio \u2014 and your detection capability \u2014 stays exactly where it was."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-3-2-fig-a",
+   "title": "Noise has direction: phase separation on the impedance plane",
+   "file": "et2-3-2-fig-a.svg"
+  },
+  {
+   "id": "et2-3-2-fig-b",
+   "title": "Measuring SNR on a strip chart",
+   "file": "et2-3-2-fig-b.svg"
+  },
+  {
+   "id": "et2-3-2-fig-c",
+   "title": "Evaluation exercise: four features on one tube",
+   "file": "et2-3-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Call It: Four Features on One Strip Chart",
+  "intro": "A differential bobbin probe was pulled through one condenser tube. The tube map shows a support plate at the shaded band, baseline noise is about 0.3 divisions peak-to-peak, and the procedure requires evaluation of any free-span indication exceeding three times the noise. Click the ONE feature you would work up as a possible flaw.",
+  "figureId": "et2-3-2-fig-c",
+  "regions": [
+   {
+    "x": 108,
+    "y": 205,
+    "w": 145,
+    "h": 110,
+    "label": "Feature A \u2014 slow baseline shift over a long span",
+    "isTarget": false,
+    "feedback": "Not this one. Feature A is a gradual baseline shift spread over a long length of tube \u2014 the signature of deposit buildup, slow wall variation, or drift, not a discrete discontinuity. It belongs in your notes about tube condition, but it is not the sharp, local response a pit or crack produces."
+   },
+   {
+    "x": 322,
+    "y": 115,
+    "w": 96,
+    "h": 300,
+    "label": "Feature B \u2014 large response at the mapped support plate",
+    "isTarget": false,
+    "feedback": "This is the support plate the tube map told you to expect \u2014 a large, repeatable response from known structure, not a flaw call. But treat it with respect: structure signals mask flaws hiding within them, which is exactly why multifrequency mixing exists. That tool arrives in the next lesson."
+   },
+   {
+    "x": 518,
+    "y": 192,
+    "w": 90,
+    "h": 185,
+    "label": "Feature C \u2014 sharp, local signal in free span",
+    "isTarget": true,
+    "feedback": "Correct. A sharp, local indication in free span, roughly ten times the baseline noise \u2014 far above the 3:1 evaluation floor, and not explained by any structure on the tube map. This is the signal you work up: measure its peak-to-peak amplitude and phase angle against the reference standard responses and evaluate it to the acceptance criteria."
+   },
+   {
+    "x": 618,
+    "y": 245,
+    "w": 130,
+    "h": 80,
+    "label": "Feature D \u2014 quiet free-span baseline",
+    "isTarget": false,
+    "feedback": "That is the baseline itself \u2014 probe motion and normal wall variation in clean free span. It is not an indication; it is your N. Measuring it here, on representative tubing away from structures, is exactly how the noise term of the SNR is established."
+   }
+  ],
+  "coordH": 500
+ },
+ "checkQuestions": [
+  {
+   "question": "A surface-probe setup shows a reference-notch response of 1.6 divisions peak-to-peak and baseline noise of 0.8 divisions peak-to-peak. You add 6 dB of gain. What is the result?",
+   "options": [
+    "The notch response doubles while the noise stays fixed, so SNR improves to 4:1",
+    "The noise is suppressed and the display becomes cleaner at the same signal level",
+    "Signal and noise both double \u2014 SNR is still 2:1, and the setup still fails a 3:1 requirement",
+    "SNR drops, because gain amplifies noise more than signal"
+   ],
+   "correct": 2,
+   "explanation": "Eddy current noise enters through the coil together with the signal, so amplification raises both in the same proportion \u2014 6 dB doubles each of them. Gain changes the size of the picture, not the ratio inside it; the fix must come from frequency, probe, filtering, fixturing, or surface condition."
+  },
+  {
+   "question": "Why is the impedance plane such an effective tool against most eddy current noise?",
+   "options": [
+    "Most ET noise is a coherent impedance response with a repeatable phase direction, so it can be separated from flaw signals by angle",
+    "The impedance plane automatically removes all signals below the alarm threshold",
+    "Most ET noise is random, and random signals cancel themselves on an impedance-plane display",
+    "The impedance plane shows only the magnitude of impedance, which contains no noise"
+   ],
+   "correct": 0,
+   "explanation": "Lift-off, wobble, geometry, and material variation are genuine coil responses, so each holds a characteristic direction on the impedance plane. Rotate lift-off horizontal and gate the vertical channel, and most coupling noise drops out. Random electrical interference is the exception \u2014 it appears at every phase angle and cannot be rejected by direction."
+  },
+  {
+   "question": "At standardization, the smallest required reference notch reads 0.9 divisions peak-to-peak and noise with realistic probe handling reads 0.45 divisions peak-to-peak. The procedure requires 3:1. The correct action is to:",
+   "options": [
+    "Proceed \u2014 2:1 is acceptable because the notch is still clearly visible",
+    "Raise the gain until the notch reads three times the original noise value",
+    "Lower the alarm threshold so the notch reliably triggers it, then inspect",
+    "Stop \u2014 the setup is invalid; change a real variable such as frequency, probe, filtering, or fixturing and re-demonstrate the ratio"
+   ],
+   "correct": 3,
+   "explanation": "The demonstrated ratio is 0.9 \u00f7 0.45 = 2:1, below the required floor, so inspection may not begin. Gain raises signal and noise together, and lowering the threshold just converts noise into false calls \u2014 only a real change to the setup physics can restore the ratio, and it must be re-demonstrated on the reference standard."
+  },
+  {
+   "question": "With the display rotated so lift-off runs horizontal, why does evaluating the vertical channel improve the working SNR for surface cracks?",
+   "options": [
+    "Vertical deflections are always larger than horizontal ones",
+    "Probe wobble and lift-off spend most of their energy in the horizontal direction, so the vertical channel keeps the crack response while rejecting most coupling noise",
+    "The vertical channel is wired to a higher-gain amplifier than the horizontal channel",
+    "Cracks produce no horizontal component, so nothing at all is lost"
+   ],
+   "correct": 1,
+   "explanation": "A crack responds at a distinctly different phase angle than lift-off, so once lift-off is rotated horizontal the crack signal breaks upward. Gating the vertical component rejects most wobble noise while keeping most of the crack response \u2014 the channels share the same amplification, and cracks do retain some horizontal component, which is why careful rotation matters."
+  },
+  {
+   "question": "When computing SNR from a bobbin-probe strip chart of a heat-exchanger tube, the noise value N should be measured:",
+   "options": [
+    "Across the support-plate response, since that is the largest signal on the chart",
+    "On the quietest tube in the bundle, to show the instrument's best capability",
+    "Peak-to-peak over a representative free-span length of typical tubing, away from the tubesheet and supports",
+    "As the average amplitude of the flaw signals found during the previous outage"
+   ],
+   "correct": 2,
+   "explanation": "N must represent the baseline the flaw signal actually has to climb above: typical tubing, free span, normal probe motion. Support-plate responses are known structure signals, not baseline noise, and choosing the quietest tube inflates every SNR quoted afterward."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level II Principles Course \u00a73.2 (signal-to-noise ratio: relationship to eddy current testing)",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (definitions of signal, noise, and signal-to-noise ratio)",
+  "ASTM E690, Standard Practice for In Situ Electromagnetic (Eddy Current) Examination of Nonmagnetic Heat Exchanger Tubes",
+  "ASTM E309, Standard Practice for Eddy Current Examination of Steel Tubular Products Using Magnetic Saturation"
+ ]
+}

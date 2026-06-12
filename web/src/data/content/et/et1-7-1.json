@@ -1,0 +1,204 @@
+{
+ "lessonId": "et1-7-1",
+ "title": "Meters and Impedance Plane Displays",
+ "narrationScript": "Every eddy current instrument ends in a readout, the place where an impedance change becomes a decision. Meters give you one number. A calibrated meter reads directly in engineering units, like percent IACS for conductivity or mils of coating thickness, and it is verified against reference standards of known value. An uncalibrated meter reads in arbitrary divisions that mean nothing until you anchor them to a reference standard response. It is a comparator, built for go, no-go decisions. The impedance plane display adds a second dimension. The direction the dot moves, its phase angle, tells you which variable changed. The distance it moves, its amplitude, tells you how much. Lift-off is rotated horizontal during setup, so defect signals break away at their own angles and stand out. Analog instruments drew this with a flying dot on a cathode-ray tube. Digital instruments sample the same signal and add freeze, storage, recall, on-screen alarm gates, and recording. They also sample at a finite rate, so respect the scan speed in your written instruction.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Readout Is Where the Test Becomes a Decision",
+   "body": "An eddy current test is a chain: the coil senses an impedance change, the instrument amplifies and processes that change, and the **readout mechanism** presents the result so a person \u2014 or a machine \u2014 can act on it. Everything upstream can be perfect, but if the display cannot show the difference between a crack and a wobbling probe, or the operator cannot read what it shows, the test fails at the last step.\n\nThis module covers the readout families you will meet:\n\n- **Meters** \u2014 a single number, on a needle or a digital display.\n- **Impedance plane displays** \u2014 a two-dimensional picture of the signal, analog or digital.\n- **Production hardware** \u2014 recorders, alarms and lights, numerical readouts, markers, sorting gates, and cutoff systems, covered in the next two lessons.\n\nThis lesson takes the first two. One Level I point before we start: your written instruction specifies which readout to use and how to set it up. Your job is to standardize it on the reference standard and recognize valid responses \u2014 selecting or changing the display format is a technique decision made above your certification level."
+  },
+  {
+   "type": "text",
+   "heading": "Meter Readouts: Calibrated or Uncalibrated",
+   "body": "A meter collapses the eddy current signal to **one number** \u2014 needle deflection on an analog movement, or digits on a small display. To make that single number trustworthy, meter instruments use internal phase discrimination: circuitry set up so the reading responds strongly to the variable of interest and only weakly to nuisance variables such as lift-off.\n\nThat number comes in two grades:\n\n- **Calibrated meters** read directly in **engineering units**. A conductivity meter reads **% IACS**; a coating-thickness meter reads **mils or micrometers**. The scale is established and verified against **reference standards of known value** \u2014 conductivity checks commonly use two standards that bracket the expected reading. The number itself is reportable: 38 % IACS means 38 % IACS.\n- **Uncalibrated meters** read in **arbitrary divisions** \u2014 typically 0 to 100, with no units. The reading means nothing by itself; it gains meaning only by **comparison**. Setup fixes the response from artificial discontinuities in a reference standard, usually with an alarm threshold, and every part is then judged against that response. This is a comparator \u2014 a go/no-go tool.\n\nBoth grades demand standardization before use and at the intervals your written instruction requires. The difference is what the number means afterward: a measurement, or a comparison."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-7-1-fig-a",
+   "caption": "Two meter faces. The calibrated conductivity meter's reading is a measurement in % IACS; the uncalibrated comparator's 78 divisions mean nothing until anchored to a reference-standard response and its alarm threshold."
+  },
+  {
+   "type": "text",
+   "heading": "The Impedance Plane: Amplitude and Phase Together",
+   "body": "A meter tells you *how much* the signal changed. The **impedance plane display** also tells you *which way* \u2014 and that second dimension is what separates a defect from a nuisance variable.\n\nThe screen is an X-Y plot of the coil's impedance. The **dot** marks the operating point: the horizontal axis carries the **resistive (R) component** of the signal, the vertical axis the **reactive (XL) component**. When anything under the probe changes \u2014 lift-off, conductivity, a crack \u2014 the dot moves and draws a trace:\n\n- **Direction (phase angle)** identifies the variable. Each test variable drives the dot along its own characteristic path.\n- **Distance (amplitude)** scales with the size of the change.\n\nSetup makes that readable. You **balance (null)** the probe on defect-free reference material, placing the dot at a chosen spot, then **rotate** the display so the lift-off response runs **horizontally**. From then on, probe wobble and paint thickness slide the dot along the horizontal, while a crack breaks away at a visibly different angle. How well lift-off and defect signals separate in phase depends on the test frequency \u2014 that choice belongs to the qualified procedure, and you verify the separation on the reference standard at every standardization."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-7-1-fig-b",
+   "caption": "A surface-probe presentation on aluminum skin with lift-off rotated horizontal: the crack signal departs the null at a distinct phase angle and rises into the alarm gate positioned in its path."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Read the plane in two questions",
+   "body": "**Which direction did the dot move?** Phase angle names the variable \u2014 lift-off runs along its set direction, and defects break away at their own angles. **How far did it move?** Amplitude scales with severity. Every signal you report is judged on both, by comparison with the responses your reference standard produced at standardization."
+  },
+  {
+   "type": "text",
+   "heading": "Analog Displays: The Flying Dot",
+   "body": "The original impedance plane instruments drew the dot with a **cathode-ray tube (CRT)**. The two signal components drive the tube's deflection plates \u2014 one horizontal, one vertical \u2014 so the electron beam becomes a **flying dot** that moves in real time as the probe scans. The glowing phosphor holds a brief trail behind the dot, and that **persistence** is what turns motion into a visible trace; storage CRTs could hold a pattern on screen for study.\n\nWhat analog gives you: a continuous, live presentation \u2014 nothing sampled, nothing left out \u2014 with the smooth response experienced operators learn to read at a glance. What it costs you:\n\n- **No memory.** Recording a signal meant photographing the screen.\n- **Drift.** Tube circuits wander with warm-up and temperature, so frequent re-balancing and re-standardization are routine.\n- **Knobs only.** Rotation and per-axis gain are set with analog controls \u2014 easy to bump, hard to reproduce exactly.\n- **Bulk.** CRTs are heavy and fragile for field work.\n\nYou will still meet analog instruments in service, and every digital screen you use deliberately imitates one."
+  },
+  {
+   "type": "text",
+   "heading": "Digital Displays: Freeze, Store, Gate, and Record",
+   "body": "A digital instrument **samples** the same two signal components with an analog-to-digital converter and draws the dot on an LCD. The presentation is the same impedance plane \u2014 what changes is what you can do with it:\n\n- **Freeze and hold** a signal on screen for evaluation or a second opinion.\n- **Store and recall** signals and complete instrument setups, so a standardized technique returns at the press of a button.\n- **Adjustable persistence** \u2014 choose how long the trace lingers.\n- **On-screen alarm gates** \u2014 box or sector regions you position where defect signals will travel; a signal entering the gate trips a light or horn.\n- **Recording** \u2014 signal data can be saved for later review, an auditable record that meters and CRTs never offered.\n\nOne caution comes with sampling: a digital instrument captures the signal at a finite rate. Scan faster than your written instruction allows and the instrument may catch only a fragment of a defect's trace \u2014 lower displayed amplitude, possibly missing the alarm gate entirely. The scan-speed limit in the instruction is part of the technique. Respect it."
+  },
+  {
+   "type": "table",
+   "caption": "Display format comparison \u2014 the qualified procedure selects the readout; this is the reasoning behind the choice.",
+   "headers": [
+    "Readout",
+    "What you see",
+    "Strong fit",
+    "Key limitation"
+   ],
+   "rows": [
+    [
+     "Uncalibrated meter",
+     "Deflection in arbitrary 0\u2013100 divisions",
+     "Go/no-go crack and sorting checks against a set threshold",
+     "Reading is meaningless without its reference-standard setup"
+    ],
+    [
+     "Calibrated meter",
+     "Direct engineering units (% IACS, mils)",
+     "Conductivity verification; coating-thickness surveys",
+     "One number \u2014 phase information is discarded"
+    ],
+    [
+     "Analog impedance plane (CRT)",
+     "Live flying dot with phosphor persistence",
+     "Manual surface scanning; legacy installed instruments",
+     "No storage or recall; drift demands frequent re-balancing"
+    ],
+    [
+     "Digital impedance plane",
+     "Sampled dot and trace with gates, freeze, storage",
+     "Aerospace surface work; tubing exams needing records",
+     "Finite sample rate caps allowable scan speed"
+    ]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-7-1-fig-a",
+   "title": "Calibrated and uncalibrated meter readouts",
+   "file": "et1-7-1-fig-a.svg"
+  },
+  {
+   "id": "et1-7-1-fig-b",
+   "title": "Reading an impedance plane display",
+   "file": "et1-7-1-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Which Trace Is the Crack?",
+  "intro": "You are inspecting a wing-skin fastener row with a surface probe at 200 kHz. During standardization you nulled the probe on the reference standard and rotated lift-off horizontal. Mid-scan, the screen shows the pattern in the figure. Click the indication you must report as a possible crack.",
+  "figureId": "et1-7-1-fig-b",
+  "regions": [
+   {
+    "x": 95,
+    "y": 302,
+    "w": 130,
+    "h": 56,
+    "label": "Horizontal trace running left from the null",
+    "isTarget": false,
+    "feedback": "That is lift-off \u2014 the response you rotated horizontal during standardization. Probe wobble, paint thickness, and slight tilt all drive the dot along this line. It is a nuisance variable, not a defect."
+   },
+   {
+    "x": 230,
+    "y": 302,
+    "w": 62,
+    "h": 56,
+    "label": "Bright stationary dot",
+    "isTarget": false,
+    "feedback": "That is the balance (null) point \u2014 the coil's operating point on defect-free material. The dot resting here means nothing has changed under the probe."
+   },
+   {
+    "x": 325,
+    "y": 130,
+    "w": 125,
+    "h": 125,
+    "label": "Trace breaking upward at a distinct angle",
+    "isTarget": true,
+    "feedback": "Correct. The signal departs the lift-off direction at a clearly different phase angle, and its amplitude stands well clear of the noise \u2014 the classic surface-crack response. Re-scan to confirm it repeats, then mark the location and report it per your written instruction."
+   },
+   {
+    "x": 455,
+    "y": 95,
+    "w": 95,
+    "h": 62,
+    "label": "Dashed box on the screen",
+    "isTarget": false,
+    "feedback": "That dashed box is the alarm gate \u2014 an instrument feature you position where defect signals will travel, so a signal entering it trips a light or horn. It is part of the display setup, not a signal."
+   }
+  ],
+  "coordH": 500
+ },
+ "checkQuestions": [
+  {
+   "question": "A conductivity meter reads directly in % IACS and is verified against conductivity standards of known value before use. This readout is best described as:",
+   "options": [
+    "an uncalibrated comparator",
+    "an impedance plane display",
+    "a calibrated meter",
+    "an alarm gate"
+   ],
+   "correct": 2,
+   "explanation": "A calibrated meter's scale is in engineering units and is established against reference standards of known value, so the reading itself is a reportable measurement. An uncalibrated meter's divisions carry no units and mean nothing without a comparison setup."
+  },
+  {
+   "question": "The 0\u2013100 division reading on an uncalibrated crack-detector meter becomes meaningful only when:",
+   "options": [
+    "it is compared with the response set on artificial discontinuities in a reference standard",
+    "the divisions are converted mathematically to ohms",
+    "the instrument has warmed up for thirty minutes",
+    "the test frequency is raised above 1 MHz"
+   ],
+   "correct": 0,
+   "explanation": "Uncalibrated readouts are comparators: setup fixes the response from known artificial discontinuities, usually with an alarm threshold, and every part is judged against that response. Without the reference setup, the number carries no information."
+  },
+  {
+   "question": "During setup, the lift-off response is rotated to run horizontally across the impedance plane display because:",
+   "options": [
+    "the horizontal axis is the only axis the instrument calibrates",
+    "defect signals then break away from the lift-off direction at distinct phase angles, making them easy to recognize",
+    "rotation suppresses electrical noise generated in the coil",
+    "vertical deflection is reserved for conductivity readings"
+   ],
+   "correct": 1,
+   "explanation": "Rotation does not change the signal content \u2014 it orients the display so the dominant nuisance variable (lift-off and probe wobble) runs flat. Crack and thinning signals then stand out at their own characteristic angles instead of hiding in probe-handling motion."
+  },
+  {
+   "question": "Which capability distinguishes a digital impedance plane instrument from a classic analog CRT display?",
+   "options": [
+    "it presents both the amplitude and the phase angle of a signal",
+    "its dot position responds to changes in coil impedance",
+    "it must be standardized on a reference standard before use",
+    "it can freeze, store, and recall signals and trip on-screen alarm gates"
+   ],
+   "correct": 3,
+   "explanation": "Both display types plot the same two-dimensional signal, and both require standardization. Freeze, storage, recall, recording, and software alarm gates are what digitizing the signal adds \u2014 an analog CRT held nothing but its brief phosphor trail."
+  },
+  {
+   "question": "A paint ridge produces a meter deflection equal to the deflection from a known crack. An inspector using an impedance plane display on the same spot avoids the false call because:",
+   "options": [
+    "adding gain separates paint signals from crack signals",
+    "the signal's phase direction matches the lift-off response rather than a crack response",
+    "lift-off variations produce no signal on an impedance plane display",
+    "the display automatically deletes lift-off signals"
+   ],
+   "correct": 1,
+   "explanation": "The meter shows only amplitude, so equal-size changes look identical. The impedance plane also shows direction: a lift-off change runs along the horizontal lift-off line, while a crack departs at a distinctly different phase angle. The lift-off signal is still displayed \u2014 the inspector reads the difference."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Basic Technique Course \u00a73.0\u20133.2 (readout mechanisms: calibrated/uncalibrated meters; analog and digital impedance plane displays)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice \u2014 Level I functions: perform tests and record results per written instructions",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method (calibrated conductivity meter practice)",
+  "ASTM E376, Standard Practice for Measuring Coating Thickness by Magnetic-Field or Eddy Current (Electromagnetic) Testing Methods (lift-off-based meter readings)"
+ ]
+}

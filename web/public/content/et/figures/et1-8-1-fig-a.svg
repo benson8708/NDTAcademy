@@ -1,0 +1,50 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Signal-Frequency Map &#8212; Bolt-Hole Scanner at 3,000 RPM</text>
+
+  <!-- pass band -->
+  <rect x="415" y="70" width="140" height="330" fill="#F2F7FE"/>
+  <text x="485" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">pass band</text>
+
+  <!-- broadband noise floor -->
+  <path d="M110,356 Q125,346 140,356 T170,356 T200,356 T230,356 T260,356 T290,356 T320,356 T350,356 T380,356 T410,356 T440,356 T470,356 T500,356 T530,356 T560,356 T590,356 T620,356 T650,356 T680,356 T710,356 T740,356" fill="none" stroke="#5B708C" stroke-width="1.5"/>
+  <text x="735" y="338" text-anchor="end" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#5B708C">broadband electronic noise floor</text>
+
+  <!-- wobble hump at 50 Hz -->
+  <path d="M 230,400 C 243,400 250,160 259,160 C 268,160 274,400 286,400 Z" fill="#D7E5FB" stroke="#0B1F3A" stroke-width="2"/>
+  <!-- 60 Hz line pickup spike -->
+  <path d="M 272,400 L 276,255 L 280,400 Z" fill="#9BC4FF" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="226" y="145" text-anchor="end" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">probe wobble &#8212; 50 Hz</text>
+  <text x="226" y="163" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#5B708C">(once per revolution)</text>
+  <text x="290" y="250" font-family="Arial, sans-serif" font-size="14" fill="#5B708C">60 Hz line pickup</text>
+
+  <!-- notch pulse energy hump centered ~500 Hz -->
+  <path d="M 325,400 C 380,398 408,198 460,196 C 512,194 528,398 540,400 Z" fill="#9BC4FF" stroke="#1E66F5" stroke-width="3"/>
+  <text x="478" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">EDM-notch pulse energy</text>
+  <text x="478" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#5B708C">&#8776;1 ms pulse &#8594; energy near 500 Hz</text>
+
+  <!-- cutoff lines -->
+  <line x1="415" y1="70" x2="415" y2="400" stroke="#1E66F5" stroke-width="2.5"/>
+  <line x1="555" y1="70" x2="555" y2="400" stroke="#1E66F5" stroke-width="2.5"/>
+  <text x="407" y="112" text-anchor="end" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">high-pass 300 Hz</text>
+  <text x="407" y="130" text-anchor="end" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#5B708C">&#8592; rejects slower</text>
+  <text x="563" y="112" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">low-pass 1.5 kHz</text>
+  <text x="563" y="130" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#5B708C">rejects faster &#8594;</text>
+
+  <!-- axis -->
+  <line x1="100" y1="400" x2="745" y2="400" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="745,394 757,400 745,406" fill="#0B1F3A"/>
+  <line x1="120" y1="400" x2="120" y2="408" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="320" y1="400" x2="320" y2="408" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="520" y1="400" x2="520" y2="408" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="720" y1="400" x2="720" y2="408" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="120" y="428" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">10 Hz</text>
+  <text x="320" y="428" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">100 Hz</text>
+  <text x="520" y="428" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">1 kHz</text>
+  <text x="720" y="428" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">10 kHz</text>
+  <text x="420" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">signal (modulation) frequency after demodulation &#8212; log scale</text>
+
+  <!-- carrier note -->
+  <text x="745" y="474" text-anchor="end" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#5B708C">test frequency (carrier) = 200 kHz &#8212; far right of this axis;</text>
+  <text x="745" y="491" text-anchor="end" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#5B708C">removed in demodulation, never touched by these filters</text>
+</svg>

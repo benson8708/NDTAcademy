@@ -1,0 +1,176 @@
+{
+ "lessonId": "et1-5-1",
+ "title": "Probe Coil Arrangements",
+ "narrationScript": "Every eddy current test begins with a coil carrying alternating current, and the shape of the part decides how that coil is arranged. This lesson covers the three classic arrangements. Probe coils, also called surface coils, press against the surface with the coil axis perpendicular to it. They induce small circular eddy currents directly beneath the winding, which makes them highly sensitive to short surface cracks, but each pass covers only a small footprint, so complete coverage means overlapping scans. Encircling coils wrap around the outside of bars, rods, wire, and tubing. The part feeds through the coil at production speed, the currents flow around the circumference, and a full three hundred sixty degree slice is inspected at once, although the coil cannot tell you where around the circumference a flaw sits. Inside coils, usually bobbin wound, travel through tubing from the bore, carrying the test to installed heat exchangers and condensers. And remember the orientation rule that governs every choice: a discontinuity is detected only when it interrupts the induced current paths.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Coil Is the Sensor",
+   "body": "Strip an eddy current instrument to its essentials and you are left with one working part: a **coil of wire carrying alternating current**. The coil builds the primary magnetic field, the field induces eddy currents in the conductive part, and the secondary field from those eddy currents loads the coil and shifts its impedance. Every indication you will ever evaluate starts in that loop.\n\nWhat changes from job to job is not the physics — it is **how the coil is arranged around the part**. CP-105 groups the sensing elements into three classic arrangements:\n\n- **Probe (surface) coils** — placed against the part's surface and scanned across it.\n- **Encircling coils** — ring-shaped coils that surround the part from the outside; the part passes through.\n- **Inside coils** — bobbin-wound coils that travel through a tube or bore, testing from within.\n\nThe part's geometry makes the choice for you. A flat fuselage skin or a weld toe cannot pass through a ring; a tube buried in an installed heat exchanger offers nothing but its bore. Learn what each arrangement does well, where its currents flow, and what it covers in one pass — that is this lesson's whole job."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-5-1-fig-a",
+   "caption": "The three coil arrangements: a surface probe inducing circular currents beneath its winding, an encircling coil the part feeds through, and a bobbin coil testing a tube from the bore."
+  },
+  {
+   "type": "text",
+   "heading": "Probe (Surface) Coils: Small Footprint, High Sensitivity",
+   "body": "A **probe coil** — surface coil, in many specifications — is held against the test surface with its **axis perpendicular (normal) to the surface**. The winding may live in a pencil probe for tight geometry, a flat pancake housing for skins, or a spring-loaded spot probe that holds contact pressure; housings can be shaped to match radii and contours so the spacing to the part stays constant.\n\nThe alternating field induces eddy currents that flow in **closed circular loops directly beneath the winding, parallel to the surface** — a mirror image of the coil itself. Current density is highest at the surface and falls off with depth according to the skin effect you studied earlier, so the surface probe is first and foremost a **surface and near-surface inspector**.\n\nThree working consequences:\n\n- **Sensitivity tracks coil size.** A small-diameter coil concentrates the field into a small spot and resolves short, tight cracks — the reason fastener-row and blade-root probes are tiny.\n- **A crack that crosses the circular loops interrupts them and signals strongly** — in practice, a surface-breaking crack at almost any orientation under the coil. A laminar flaw lying parallel to the surface runs parallel to the current loops and responds poorly.\n- **Coverage is only the footprint.** Inspecting an area means scanning in overlapping passes — sensitivity bought at the price of speed.\n\n**Lift-off** — the coil-to-surface spacing — is the coupling variable for this arrangement, and near a part edge the field distorts (edge effect), which is why many surface probes carry ferrite shielding. Typical work: aerospace skins and lap joints, fastener rows, weld toes, machined radii, and conductivity checks. One precision worth keeping: a small surface coil spun inside a fastener hole on a rotating scanner is still a *surface-coil* application — it examines the bore wall one small spot at a time."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The orientation rule",
+   "body": "Eddy currents reveal only what disturbs them. A discontinuity gives its strongest signal when it **cuts across the induced current paths**; lying parallel to them, it is nearly invisible. Surface probes drive circular loops — they catch surface cracks that cross those loops. Encircling and inside coils drive circumferential currents — they catch **longitudinal** flaws and struggle with purely **circumferential** cracks. Before selecting any coil arrangement, ask: which way will the currents flow, and will the flaw I am hunting interrupt them?"
+  },
+  {
+   "type": "text",
+   "heading": "Encircling Coils: The Part Feeds Through",
+   "body": "An **encircling coil** — also called a feed-through or OD coil — surrounds the part, and the part travels through the coil's bore. This is the production-line arrangement for **bar, rod, wire, and tubing**: stock feeds through at line speed while the instrument watches for impedance changes, with guides and conveyors doing the scanning for you. ASTM E309 (steel tubular products, examined under magnetic saturation) and ASTM E243 (copper and copper-alloy tubes) are built around exactly this arrangement.\n\nThe induced currents flow **circumferentially around the part**, mirroring the winding. That geometry sets everything else:\n\n- **Longitudinal discontinuities — seams, laps, longitudinal cracks — cut squarely across the circumferential currents** and are this arrangement's natural prey. A purely circumferential crack lies parallel to the currents and may pass with little or no signal.\n- **A full 360° slice of the part is inspected at every instant.** Length coverage comes free with the feed — but the signal integrates around the entire circumference, so an indication tells you *where along the length*, never *where around it*. And because the whole cross-section contributes to the signal, a small flaw competes against the response of the entire slice — sensitivity falls as product diameter grows.\n- **On solid bar, eddy current density falls to zero at the center.** The core of a solid product is blind to an encircling coil at any frequency — this is a surface and near-surface test.\n\nCoupling here is **fill factor**: the square of the ratio of part diameter to effective coil diameter, η = (d/D)². A snug coil (fill factor near 1) couples strongly; a loose one trades signal for clearance. Centering matters too — a bar wobbling off the coil axis modulates the signal and manufactures false indications. Ends are a known weakness: as a bar's end enters or leaves the coil, the field distorts (end effect), so the extreme ends are not reliably tested."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-5-1-fig-b",
+   "caption": "Fill factor for encircling and inside coils (end views), and the orientation rule on round stock: longitudinal flaws cut the circumferential currents and signal strongly; purely circumferential cracks run parallel and respond weakly."
+  },
+  {
+   "type": "text",
+   "heading": "Inside (Bobbin) Coils: Testing from the Bore",
+   "body": "Turn the encircling geometry inside-out and you have the **inside coil** — also called an ID coil, internal coil, or, from its construction, a **bobbin coil**. The winding sits on a small bobbin that travels through the tube or bore on a cable or shaft, and the currents it induces flow **circumferentially in the surrounding wall**.\n\nThis arrangement owns one of eddy current's biggest franchises: **in-service tubing inspection**. Condensers, feedwater heaters, chillers, and steam generators hold thousands of tubes whose outside surfaces are buried in the bundle — the bore is the only access. A bobbin probe is pushed in and drawn back at controlled speed from the waterbox or header, testing the **full 360° of wall at every instant of the pull**, full length, tube after tube. ASTM E690 governs this in-situ examination of nonmagnetic heat-exchanger tubes. With the test frequency chosen for the wall thickness — your skin-depth lesson at work — the signal responds to wall loss, pitting, and cracking of both ID and OD origin.\n\nThe encircling coil's rules carry over almost unchanged:\n\n- **Coupling is fill factor again** — here the square of the ratio of probe diameter to tube inside diameter. An undersized probe loses sensitivity, and centering features keep the probe from riding the bottom of the tube.\n- **Circumferential currents favor longitudinal flaws.** A standard bobbin responds weakly to purely circumferential cracks — a documented limitation in heat-exchanger work, and one reason rotating and array probes were later developed.\n- **No circumferential resolution.** The bobbin reports where along the tube a flaw sits, not where around the wall.\n\nInside coils also examine drilled holes and bores in manufactured parts — anywhere the inside surface is the accessible one."
+  },
+  {
+   "type": "table",
+   "caption": "The three coil arrangements at a glance.",
+   "headers": ["Arrangement", "Geometry it suits", "Eddy current flow", "Strongest on", "Coupling term"],
+   "rows": [
+    ["Probe (surface) coil", "Flat and contoured surfaces — skins, welds, fastener rows", "Circular loops beneath the winding, parallel to the surface", "Short surface cracks that cross the loops", "Lift-off"],
+    ["Encircling (OD) coil", "Bar, rod, wire, tubing moving on a line", "Circumferential, around the outside of the part", "Longitudinal seams, laps, and cracks", "Fill factor (d/D)²"],
+    ["Inside (ID/bobbin) coil", "Installed tubing and bores — ID is the only access", "Circumferential in the wall, driven from the bore", "Longitudinal cracks, pitting, wall loss", "Fill factor (d/D)²"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Coverage: Building a Complete Test",
+   "body": "Each arrangement covers the part differently, and a Level I is expected to know what complete coverage means for each.\n\n- **Surface probes cover a footprint, not an area.** The written technique specifies the scan pattern, the index — the step between adjacent passes — and the required overlap; the index must be smaller than the coil's effective width or you are leaving untested stripes. Slow, deliberate, repeatable — and any skip, probe lift, or speed change is a reason to rescan.\n- **Encircling coils cover by feed.** Every cross-section passes through the coil, so length coverage is automatic at line speed — except the distorted ends (end effect), which the procedure must address by cropping or supplementary inspection.\n- **Bobbin coils cover by pull.** One pass per tube at the procedure's pull speed covers full length and full circumference, and each tube's record stands on its own.\n\nTwo reminders frame what comes next. First, any of these arrangements can be wound and connected **absolute or differential** — that is the next lesson, and it changes what the signal looks like, not where the currents flow. Second, under SNT-TC-1A and your employer's written practice, a Level I sets up and performs these tests **per a written technique, under Level II or Level III supervision** — the arrangement, frequency, and scan plan arrive on the technique sheet. Your job is to execute the coverage exactly and to recognize when it was not achieved."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-5-1-fig-a",
+   "title": "Coil arrangements: surface, encircling, and inside",
+   "file": "et1-5-1-fig-a.svg"
+  },
+  {
+   "id": "et1-5-1-fig-b",
+   "title": "Fill factor and the orientation rule on round stock",
+   "file": "et1-5-1-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Match the Coil to the Job",
+  "intro": "For each inspection job, pick the coil arrangement the geometry demands. Think access first — then where the currents must flow.",
+  "buckets": ["Probe (surface) coil", "Encircling (OD) coil", "Inside (ID/bobbin) coil"],
+  "items": [
+   {
+    "label": "Fuselage lap joint scanned along a fastener row",
+    "bucket": 0,
+    "why": "Flat, accessible sheet — a surface probe scanned in overlapping passes is the only arrangement that fits skin geometry."
+   },
+   {
+    "label": "Steel bar stock screened for seams at the mill",
+    "bucket": 1,
+    "why": "Round product moving at line speed feeds through an encircling coil, and longitudinal seams cut squarely across its circumferential currents."
+   },
+   {
+    "label": "Condenser tubes inspected in place from the waterbox",
+    "bucket": 2,
+    "why": "The tube OD is buried in the bundle — the bore is the only access, so a bobbin probe is pulled through each tube."
+   },
+   {
+    "label": "Copper wire checked continuously during drawing",
+    "bucket": 1,
+    "why": "Continuous round product at production speed is classic feed-through territory — the wire passes through the coil and every slice is tested."
+   },
+   {
+    "label": "Crack check at the toe of a ground weld on flat plate",
+    "bucket": 0,
+    "why": "A small local area on an accessible surface calls for a surface probe — high sensitivity over a small, scanned footprint."
+   },
+   {
+    "label": "Heat-exchanger U-tubes in an installed bundle",
+    "bucket": 2,
+    "why": "Installed bundles offer ID access only; a flexible bobbin probe travels the tube and covers 360° of wall at every instant of the pull."
+   },
+   {
+    "label": "Machined radius on an engine disk checked with a pencil probe",
+    "bucket": 0,
+    "why": "A contoured local feature with open access is surface-probe work — the small coil follows the radius while lift-off is held constant."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "In a probe (surface) coil arrangement, the coil axis is oriented:",
+   "options": [
+    "Parallel to the test surface",
+    "Along the longitudinal axis of the part",
+    "Perpendicular (normal) to the test surface",
+    "At 45° to the expected crack direction"
+   ],
+   "correct": 2,
+   "explanation": "A surface probe is held with its axis normal to the surface, so the induced eddy currents flow in circular loops parallel to the surface, directly beneath the winding."
+  },
+  {
+   "question": "Steel bar stock must be screened for longitudinal seams at production line speed. The best coil arrangement is:",
+   "options": [
+    "An encircling coil that the bar feeds through",
+    "A pencil-type surface probe scanned by hand",
+    "A bobbin coil pulled along the bar",
+    "Any coil, provided the frequency is raised"
+   ],
+   "correct": 0,
+   "explanation": "An encircling coil inspects a full 360° slice at once while the bar feeds through at line speed, and its circumferential currents are cut squarely by longitudinal seams. A bobbin coil needs a bore, and hand scanning cannot keep pace with mill throughput."
+  },
+  {
+   "question": "A standard bobbin coil pulled through a heat-exchanger tube induces eddy currents that flow:",
+   "options": [
+    "Axially, along the length of the tube",
+    "Radially, straight through the wall thickness",
+    "Only on the outside surface of the tube",
+    "Circumferentially, around the tube wall"
+   ],
+   "correct": 3,
+   "explanation": "The induced currents mirror the bobbin winding and circle the tube wall circumferentially. With frequency chosen for the wall thickness, both ID- and OD-origin damage can influence the signal — but the flow direction is circumferential."
+  },
+  {
+   "question": "An encircling coil tends to miss a purely circumferential crack because the crack:",
+   "options": [
+    "Is located too far from the coil winding",
+    "Lies parallel to the induced current paths and barely interrupts them",
+    "Reflects the magnetic field back into the coil",
+    "Increases the fill factor"
+   ],
+   "correct": 1,
+   "explanation": "Encircling coils drive circumferential currents. A discontinuity signals in proportion to how strongly it cuts across the current paths; a circumferential crack runs parallel to them, so little current is interrupted and the response is weak."
+  },
+  {
+   "question": "Which statement correctly describes inspection coverage from a standard (non-rotating) encircling or bobbin coil?",
+   "options": [
+    "It resolves both the axial and the circumferential position of a flaw",
+    "It inspects only the thin strip of circumference nearest the winding",
+    "It inspects the full circumference at once but cannot resolve a flaw's circumferential position",
+    "It inspects the center of a solid bar more effectively than the surface"
+   ],
+   "correct": 2,
+   "explanation": "The signal integrates around the entire 360° slice inside the coil: axial location comes from position along the feed or pull, but circumferential position is not resolved — that takes rotating or array probes. On solid bar, current density is zero at the center, so the core is blind, not favored."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Basic Technique Course §1.0–1.1.1 (types of sensing elements: probe, encircling, and inside coil arrangements)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — Level I performs tests per written instructions under Level II/III supervision",
+  "ASTM E309, Standard Practice for Eddy-Current Examination of Steel Tubular Products Using Magnetic Saturation (encircling-coil practice)",
+  "ASTM E690, Standard Practice for In Situ Electromagnetic (Eddy Current) Examination of Nonmagnetic Heat Exchanger Tubes (bobbin-coil practice)"
+ ]
+}

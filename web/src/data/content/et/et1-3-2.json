@@ -1,0 +1,188 @@
+{
+ "lessonId": "et1-3-2",
+ "title": "Strength, Timing, Orientation, and Current Magnitude",
+ "narrationScript": "Eddy currents have three working properties — strength, time relationship, and orientation — and every one of them is set jointly by the test system and the test part. Strength follows Faraday's law: more ampere-turns, higher frequency, and tighter coupling drive stronger currents, while conductivity, permeability, and thickness decide what the part does with them. The time relationship comes from induction itself. Eddy currents alternate at the test frequency, flow in the direction that opposes the change that created them — that is Lenz's law — and lag further behind the coil current the deeper they flow. Orientation mirrors the coil. A surface probe drives loops parallel to the surface; an encircling coil drives them around the circumference. A flaw is detectable only where it interrupts those loops, so probe choice must match the expected flaw direction. Finally, the currents are tiny. The part is a one-turn secondary driven at a fraction of a watt — no heating, no direct measurement. Everything on the screen is their small magnetic field changing the coil's impedance.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Three Properties, Two Families of Variables",
+   "body": "In the last lesson you established how eddy currents behave geometrically: they flow in closed circular loops, they are strongest at the surface, and they fall to zero at the center of a solid bar inside an encircling coil. This lesson characterizes them as working quantities. Every induced eddy current field can be described by three properties:\n\n- **Strength** — how much current actually circulates at each point in the part.\n- **Time relationship** — when the currents flow relative to the coil's excitation current: their frequency and their phase.\n- **Orientation** — the plane and direction of the current loops within the part.\n\nEach property is controlled jointly by two families of variables. **Test-system parameters** are the ones the procedure and the operator set: test frequency, coil excitation current and windings, probe type and size, and how well the coil couples to the part. **Test-part characteristics** are what the part brings to the test: its electrical conductivity, magnetic permeability, geometry, and any discontinuities.\n\nHold on to this split. When a signal appears on the screen, it means one or more of the three properties changed — and your first interpretive question is always *which variable, on which side of the map, did the changing*."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-3-2-fig-a",
+   "caption": "The control map: test-system parameters and test-part characteristics jointly set eddy current strength, time relationship, and orientation — all sensed as a coil impedance change."
+  },
+  {
+   "type": "text",
+   "heading": "Strength: What Sets the Magnitude",
+   "body": "Eddy current strength starts with **Faraday's law**: the voltage induced in a conductor is proportional to the **rate of change of magnetic flux** passing through it. Everything that strengthens the flux, changes it faster, or couples it more tightly into the part raises the induced current.\n\nOn the **system side**:\n\n- **Excitation current × coil turns (ampere-turns).** Primary field strength scales with drive current and the number of windings. At the low field strengths used in testing, eddy current strength scales essentially in proportion to the drive.\n- **Test frequency.** Raising frequency makes the flux change faster, which raises the induced voltage and crowds stronger currents into a thinner surface layer.\n- **Coil size.** A surface coil's field is effective over a footprint comparable to its diameter — a small coil concentrates the field for sensitivity; a large one spreads it for coverage.\n- **Coupling.** Field strength falls off rapidly with distance from the coil. A few thousandths of an inch of **lift-off** measurably weakens the currents; for encircling coils the same role is played by **fill factor**.\n\nOn the **part side**:\n\n- **Conductivity.** For the same induced voltage, a more conductive material carries more current. Copper (100 %IACS by definition) develops far stronger eddy currents than a titanium alloy near 1 %IACS; pure aluminum sits near 61 %IACS.\n- **Permeability.** Ferromagnetic material multiplies the flux inside the part, strongly boosting induction near the surface — in carbon steels, permeability effects dominate the response.\n- **Geometry.** A wall thinner than the zone the currents want to occupy limits how fully they develop, and nearby edges rob them of room."
+  },
+  {
+   "type": "text",
+   "heading": "Time Relationship: Same Frequency, Opposed Direction, Growing Lag",
+   "body": "Eddy currents exist only while the magnetic flux through the part is **changing**. Hold a steady DC coil against a conductor and currents appear for an instant at switch-on, then vanish — which is why eddy current testing is built on alternating current. Once the coil is driven with AC, three time facts hold:\n\n- **Same frequency.** The induced currents alternate at exactly the test frequency, reversing direction every half cycle as the primary flux reverses. Set 100 kHz on the instrument and you have set the rhythm of every current loop in the part.\n- **Opposed direction — Lenz's law.** At every instant the eddy currents flow in the direction whose own magnetic field opposes the change in the primary flux that created them. The induced secondary field always bucks the coil's field; it never reinforces it.\n- **Growing phase lag with depth.** Currents just under the surface are already out of step with the coil current, and currents deeper in the material flow progressively later in the cycle — same beat, increasing delay, like a move passed down a line of dancers.\n\nWhich variables control timing? The **system** sets the frequency. The **part's conductivity and permeability** set how quickly phase lag accumulates with depth — in a better conductor or a magnetic material, the lag piles up over a much shorter distance. The next lesson puts hard numbers on frequency and phase; for now, lock in the pattern: same frequency, opposed direction, deeper means later."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "You never measure eddy currents directly",
+   "body": "The currents circulate inside solid metal — no meter can touch them. What the instrument actually senses is their **opposing secondary magnetic field**, which changes the test coil's **impedance**. Changes in eddy current **strength** appear mostly as signal amplitude; changes in **timing** appear as phase; changes in **orientation** decide how much of the flow a flaw interrupts. Every signal you will ever evaluate is one of these three properties, translated into an impedance change at the coil."
+  },
+  {
+   "type": "text",
+   "heading": "Orientation: The Coil Decides — the Flaw Must Interrupt",
+   "body": "Eddy currents are a mirror of the coil that makes them: the loops flow **parallel to the coil windings** and perpendicular to the axis of the primary flux.\n\n- A **surface (pancake) probe** held flat on a plate induces circular loops **parallel to the test surface**, strongest in a ring under the winding — and essentially zero on the coil's center axis.\n- An **encircling coil** around a bar or tube, or a **bobbin (ID) coil** inside tubing, drives the currents **circumferentially** around the part.\n\nWhy orientation earns a full section: **a discontinuity is detected only to the degree that it interrupts or diverts the current loops.** A flaw lying perpendicular to the flow forces the currents to crowd around it — maximum disturbance, maximum signal. A flaw lying parallel to the flow lines lets the currents slide past undisturbed — little or no signal, no matter how large the flaw is.\n\nThe field consequences are blunt:\n\n- A surface probe finds surface-breaking cracks in any compass direction, because its circular loops guarantee some paths cross the crack — but a **lamination parallel to the surface is essentially invisible** to it.\n- An encircling or bobbin coil is excellent on **longitudinal (axial) flaws**, which cut every circumferential loop — and notoriously weak on **circumferential cracks** lying parallel to the flow. That blind spot is exactly why rotating-probe systems exist for tubing.\n\nProbe selection and placement are test-system parameters; the flaw's orientation is a part characteristic. Matching one to the other is the difference between an inspection and a ritual."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-3-2-fig-b",
+   "caption": "Orientation and detectability: a surface probe's loops run parallel to the surface, so cracks crossing them respond while laminations do not; an encircling coil's circumferential currents catch axial cracks but slide past circumferential ones."
+  },
+  {
+   "type": "table",
+   "caption": "The control map in table form: each variable, its family, and what it does to the eddy currents.",
+   "headers": ["Variable", "Family", "Effect on the eddy currents"],
+   "rows": [
+    ["Test frequency", "Test system", "Faster flux change → stronger surface currents in a thinner layer; sets the timing cycle and how fast phase lag accumulates"],
+    ["Excitation current × coil turns", "Test system", "Sets primary field strength — eddy current strength scales with the drive"],
+    ["Probe type, size, placement", "Test system", "Sets the orientation of the loops and the footprint of the field"],
+    ["Coupling (lift-off / fill factor)", "Test system (setup)", "Field weakens rapidly with separation — poor coupling starves the currents"],
+    ["Electrical conductivity", "Test part", "More conductive → stronger currents, concentrated nearer the surface, faster phase-lag buildup"],
+    ["Magnetic permeability", "Test part", "Multiplies flux in the part → stronger induction; dominates the response in carbon steels"],
+    ["Geometry (thickness, edges, curvature)", "Test part", "Limits or distorts the loops — thin walls and edges constrain current development"],
+    ["Discontinuities", "Test part", "Interrupt and divert the loops — the property changes you are paid to detect"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Small Magnitude: Why the Part Never Notices the Test",
+   "body": "Topic 2.1.4.5 is two words — *small magnitude* — but it explains half of how the method behaves. Picture the test as a transformer. The coil is a **primary winding** with many turns. The part is the **secondary**: a single, short-circuited turn of metal. Faraday's law delivers the induced voltage per turn, and the part has only one — so the EMF driving the eddy currents is a small fraction of a volt, produced by a probe the instrument drives at a fraction of a watt.\n\nThree consequences follow:\n\n- **The part never notices.** Resistive heating from currents this small is negligible — the test leaves no mark, no meaningful temperature rise, no change in the material. Induction *heating* equipment uses the very same physics at kilowatt drive levels to bring steel to forging temperature; the only difference between heating a billet and testing one is power.\n- **Detection must be indirect.** You cannot put an ammeter inside solid metal. The instrument reads the currents' small secondary field as a change in coil impedance — often a tiny fraction of the coil's total impedance — so the electronics must null the standing signal and amplify what remains.\n- **Noise discipline is on you.** Because flaw signals are small, ordinary nuisances — probe wobble changing lift-off, temperature drift, cable movement — can produce signals that rival them. This is why your written procedure fixes frequency, probe, and drive, and why SNT-TC-1A keeps Level I work under written instructions: steady hands and a consistent setup are part of the measurement."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-3-2-fig-a",
+   "title": "Test-system parameters vs. test-part characteristics: what controls the eddy currents",
+   "file": "et1-3-2-fig-a.svg"
+  },
+  {
+   "id": "et1-3-2-fig-b",
+   "title": "Eddy current orientation and flaw detectability",
+   "file": "et1-3-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "System or part? Sort the variables",
+  "intro": "Every variable below controls eddy current strength, timing, or orientation. Sort each one: is it a test-system parameter (set by the procedure, instrument, or probe) or a test-part characteristic (the part brings it to the test)?",
+  "buckets": [
+   "Test-system parameter",
+   "Test-part characteristic"
+  ],
+  "items": [
+   {
+    "label": "Test frequency selected on the instrument",
+    "bucket": 0,
+    "why": "Frequency is dialed in per the written procedure — it sets the rate of flux change, and with it surface current strength and the phase-lag schedule."
+   },
+   {
+    "label": "Coil excitation current and number of windings",
+    "bucket": 0,
+    "why": "Ampere-turns set the primary field strength, and eddy current strength scales with it. This belongs to the instrument and probe design, not the part."
+   },
+   {
+    "label": "Probe type and placement (surface pancake vs. encircling)",
+    "bucket": 0,
+    "why": "Probe selection fixes the orientation of the current loops, so it must be matched to the expected flaw direction."
+   },
+   {
+    "label": "Coil diameter (size of the field footprint)",
+    "bucket": 0,
+    "why": "The field is effective over a region comparable to the coil diameter — a probe-design parameter that sets the inspected zone."
+   },
+   {
+    "label": "Electrical conductivity (%IACS) of the alloy",
+    "bucket": 1,
+    "why": "Conductivity is a material property: for the same induced voltage, a more conductive alloy carries stronger eddy currents."
+   },
+   {
+    "label": "Magnetic permeability of the material",
+    "bucket": 1,
+    "why": "Permeability multiplies the flux inside the material — a part property that dominates the response in carbon steels."
+   },
+   {
+    "label": "Part thickness, edges, and curvature",
+    "bucket": 1,
+    "why": "Geometry limits and distorts the current loops — edge effect and thin walls are part-side variables."
+   },
+   {
+    "label": "A surface-breaking crack across the current paths",
+    "bucket": 1,
+    "why": "Discontinuities are part characteristics — they interrupt the loops and create the very signal you are hired to find."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Which of the following is a test-part characteristic rather than a test-system parameter?",
+   "options": [
+    "Test frequency",
+    "Coil excitation current and number of windings",
+    "Electrical conductivity of the material",
+    "Probe type and placement"
+   ],
+   "correct": 2,
+   "explanation": "Frequency, coil drive, and probe selection are set by the procedure, instrument, and probe — the test system. Conductivity is a property the part brings to the test, along with permeability, geometry, and discontinuities."
+  },
+  {
+   "question": "Eddy currents induced during testing are small in magnitude primarily because:",
+   "options": [
+    "The part behaves as a single-turn secondary driven by a weak, low-power primary field, so the induced voltage is only a fraction of a volt",
+    "Metals have very high electrical resistance that blocks current flow",
+    "Eddy currents are direct currents and cannot build up in an alternating field",
+    "The currents concentrate at the center of the part, where the field is weakest"
+   ],
+   "correct": 0,
+   "explanation": "In the transformer analogy the part is one short-circuited turn, so it receives one turn's worth of induced voltage from a probe driven at a fraction of a watt. Metals are good conductors, the currents are alternating, and they concentrate at the surface — the other options reverse the facts."
+  },
+  {
+   "question": "An encircling coil is used on solid bar stock. Which discontinuity produces the strongest response?",
+   "options": [
+    "A circumferential crack lying parallel to the eddy current paths",
+    "A longitudinal (axial) crack, perpendicular to the circumferential current flow",
+    "A gradual, uniform taper in bar diameter",
+    "A small discontinuity at the exact center of the bar"
+   ],
+   "correct": 1,
+   "explanation": "Encircling coils drive currents circumferentially, so an axial crack cuts every loop and produces the maximum disturbance. A circumferential crack lies parallel to the flow, a gradual taper produces only a slow drift, and current density is zero at the center of a solid bar."
+  },
+  {
+   "question": "Which statement correctly describes the time relationship of induced eddy currents?",
+   "options": [
+    "They flow at a lower frequency than the coil current",
+    "They flow only during the positive half of each cycle",
+    "They are steady direct currents that persist after the field stabilizes",
+    "They alternate at the test frequency, with a phase lag that increases with depth below the surface"
+   ],
+   "correct": 3,
+   "explanation": "Induction requires changing flux, so the currents alternate at exactly the excitation frequency and vanish in a steady field. Currents deeper in the part flow progressively later in the cycle — the growing phase lag that later supports depth discrimination."
+  },
+  {
+   "question": "According to Lenz's law, the magnetic field created by the eddy currents:",
+   "options": [
+    "Adds to and reinforces the coil's primary field",
+    "Is unrelated to the behavior of the primary field",
+    "Opposes the change in the primary field — an opposition the instrument senses as a coil impedance change",
+    "Cancels the primary field completely, stopping the test"
+   ],
+   "correct": 2,
+   "explanation": "Induced currents always flow in the direction that opposes the change creating them. Their secondary field partially bucks the primary field, and that loading effect on the coil — read as an impedance change — is the entire basis of detection."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level I Topical Outline §2.1.4.4–2.1.4.5 (eddy current strength, time relationship, and orientation as functions of test-system parameters and test-part characteristics; small magnitude of current flow)",
+  "ASNT SNT-TC-1A (2024), Level I responsibilities (performing tests to written instructions with specified parameters)",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (electromagnetic testing definitions: lift-off, fill factor, %IACS)"
+ ]
+}

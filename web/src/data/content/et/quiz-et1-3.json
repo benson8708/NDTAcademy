@@ -1,0 +1,115 @@
+{
+ "moduleId": "et1-3",
+ "questions": [
+  {
+   "question": "An inclusion sits roughly five standard depths (5δ) below the surface of a thick aluminum part. Turning the instrument gain to maximum will NOT make it detectable because:",
+   "options": [
+    "Eddy currents stop abruptly at exactly one standard depth, so nothing below 1δ is ever tested",
+    "The phase lag at that depth rotates the signal completely off the display",
+    "Essentially no current flows that deep — only about 5% of surface density remains even at 3δ, the effective depth — and amplification cannot create current where none flows",
+    "Gain affects penetration only in ferromagnetic materials"
+   ],
+   "correct": 2,
+   "explanation": "Eddy current density decays exponentially: 37% at 1δ, 13.5% at 2δ, about 5% at 3δ — the effective depth of penetration. A flaw is detected only where current exists to be interrupted, and gain amplifies whatever signal exists; it cannot put current at depth. There is no abrupt stop at 1δ, and phase rotation moves a signal around the display, it does not erase it."
+  },
+  {
+   "question": "Eddy current testing is a workhorse for thin-wall tubing inspection, yet it cannot screen the core of solid bar stock. The property of eddy currents that explains both facts is that they:",
+   "options": [
+    "Reverse direction every half-cycle, which cancels signals from thick sections",
+    "Are strongest at the surface and fall to zero at the center of a solid conductor — a thin tube wall lies within the useful current zone, while a bar's core carries no current",
+    "Flow only in alloys more conductive than the tubing alloys",
+    "Can be induced by encircling coils only in hollow products"
+   ],
+   "correct": 1,
+   "explanation": "Current density peaks at the surface and decays to zero at the center of a solid conductor in an alternating field. A thin tube wall sits entirely inside the current-carrying zone, so the whole wall is inspectable; the core of a solid bar carries no current, so center flaws like shrinkage or bursts need a volumetric method such as ultrasonic testing."
+  },
+  {
+   "question": "Which inspection scenario is a fundamental orientation blind spot — little or no signal regardless of gain or frequency?",
+   "options": [
+    "A surface probe over a fatigue crack lying across its circular current paths",
+    "An encircling coil passing a longitudinal seam on a bar",
+    "A surface probe over corrosion pitting that breaks the inspection surface",
+    "A bobbin coil in tubing passing a circumferential crack lying parallel to the current flow"
+   ],
+   "correct": 3,
+   "explanation": "A flaw is detected only to the degree that it interrupts the current loops. Bobbin and encircling coils drive currents circumferentially, so a circumferential crack lies parallel to the flow and barely disturbs it — the blind spot that rotating-probe tubing systems exist to cover. The other three pairings all place the flaw across strong current paths."
+  },
+  {
+   "question": "Which list contains ONLY test-system parameters — variables set by the procedure, instrument, and probe rather than brought to the test by the part?",
+   "options": [
+    "Test frequency, coil ampere-turns, and probe type and size",
+    "Test frequency, electrical conductivity, and coil drive current",
+    "Magnetic permeability, part thickness, and surface cracks",
+    "Lift-off, magnetic permeability, and test frequency"
+   ],
+   "correct": 0,
+   "explanation": "Frequency, excitation current times windings, and probe selection belong to the test-system side of the control map, along with coupling. Conductivity, permeability, geometry, and discontinuities are test-part characteristics — so every other list smuggles in at least one part-side variable."
+  },
+  {
+   "question": "Eddy current testing and induction heating rely on the same electromagnetic induction physics. What chiefly separates a nondestructive test from a heat treatment?",
+   "options": [
+    "Testing uses DC fields while heating uses AC fields",
+    "Induction heating works only on ferromagnetic parts",
+    "Test coils have a single turn while heating coils have many",
+    "Drive power — a test probe runs at a fraction of a watt, so the induced currents are too small to heat or alter the part, while heaters drive kilowatts"
+   ],
+   "correct": 3,
+   "explanation": "In the transformer analogy the part is a one-turn, short-circuited secondary in both cases. At test drive levels the induced currents are tiny — negligible resistive heating, no mark on the part — while induction heating applies the same physics at kilowatt levels to bring metal to forging temperature. The only real difference is power."
+  },
+  {
+   "question": "While scanning toward the edge of an aluminum plate, the signal begins to shift well before the probe reaches the edge, with no flaw present. The cause is that the edge:",
+   "options": [
+    "Constrains and distorts the circular eddy current paths, which run out of room to develop fully — a part-geometry effect",
+    "Concentrates the magnetic flux, raising the local permeability of the aluminum",
+    "Automatically increases lift-off as the probe approaches",
+    "Reflects the eddy currents back toward the probe like an ultrasonic echo"
+   ],
+   "correct": 0,
+   "explanation": "Geometry — thickness, edges, curvature — is a test-part characteristic that limits and distorts the current loops. Near an edge the circular paths are robbed of room, producing the classic edge-effect signal with no discontinuity present. The aluminum's conductivity and permeability have not changed, and eddy currents do not reflect like sound beams."
+  },
+  {
+   "question": "A titanium alloy (≈1 %IACS, μr = 1) is tested at 1 MHz, giving a standard depth of penetration of about 0.66 mm. The procedure calls for a standard depth of roughly 1.3 mm. The test frequency should be changed to about:",
+   "options": [
+    "500 kHz",
+    "4 MHz",
+    "250 kHz",
+    "62.5 kHz"
+   ],
+   "correct": 2,
+   "explanation": "δ varies as 1/√f, so doubling the standard depth requires dividing frequency by four: 1 MHz → 250 kHz takes δ from about 0.66 mm to about 1.3 mm. Halving the frequency to 500 kHz only multiplies depth by √2 (≈0.93 mm), raising it to 4 MHz halves the depth, and 62.5 kHz overshoots to about 2.6 mm."
+  },
+  {
+   "question": "Why does the phase angle of a flaw signal, rather than its amplitude, serve as the dependable indicator of flaw depth?",
+   "options": [
+    "Deeper flaws always return larger amplitudes",
+    "Currents at depth flow later in the AC cycle — lag accumulates at about 57° per standard depth — and a flaw's signal carries the phase delay of the currents at its own depth",
+    "Phase is set only by the frequency the operator selects, so it never varies with the part",
+    "Deeper flaws raise the local conductivity, which shifts the signal phase"
+   ],
+   "correct": 1,
+   "explanation": "Phase lag grows linearly with depth (β = x/δ, about 57° per standard depth), so a subsurface flaw returns a signal rotated further than a surface flaw. Amplitude mainly reports how much current was interrupted — it says something is there — while phase reports how deep, the foundation of impedance-plane depth evaluation."
+  },
+  {
+   "question": "An absolute probe is balanced in air, then touched in turn to titanium (≈3 %IACS), 7075 aluminum (≈32 %IACS), and annealed copper (100 %IACS) — all nonmagnetic. On the impedance plane, the operating point:",
+   "options": [
+    "Moves the same distance for all three, since the frequency is unchanged",
+    "Climbs above the air point for all three materials",
+    "Travels farther from the air point around the comma-shaped conductivity curve as conductivity rises — copper plots farthest",
+    "Moves farthest for titanium, because its low conductivity lets the currents penetrate deepest"
+   ],
+   "correct": 2,
+   "explanation": "Higher conductivity lets the induced voltage drive stronger eddy currents, so the coil is loaded more heavily and the operating point slides farther around the conductivity curve: titanium clusters near the air point while copper rides the far end. Climbing above the air point is the signature of ferromagnetic permeability, not of any nonmagnetic conductor."
+  },
+  {
+   "question": "Before testing an unidentified fitting, a technician touches a pocket magnet to it and the magnet sticks. For eddy current work, the correct conclusion is:",
+   "options": [
+    "The part is a poor conductor, so the gain must be raised",
+    "%IACS conductivity readings on this part are unreliable — ferromagnetic permeability will dominate the response, and the technique must manage it, typically with magnetic saturation",
+    "The part cannot support eddy currents at all and must be tested by another method",
+    "The magnet has magnetized the part, which must be degaussed before any eddy current test"
+   ],
+   "correct": 1,
+   "explanation": "A sticking magnet means ferromagnetic material — relative permeability in the hundreds or more. Permeability multiplies the coil's flux, drives the operating point above the air point, collapses penetration to a thin skin, and buries conductivity information, so conductivity readings are off the table. DC magnetic saturation forces the steel to behave like a nonmagnetic conductor so a stable test is possible."
+  }
+ ]
+}

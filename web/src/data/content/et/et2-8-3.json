@@ -1,0 +1,190 @@
+{
+ "lessonId": "et2-8-3",
+ "title": "Flaw-Sizing Techniques and Flaw Frequency",
+ "narrationScript": "Detection found the indication — sizing decides what happens to the part. Eddy current gives you two rulers. Phase to depth rides on phase lag: currents flowing deeper arrive later, about fifty-seven degrees per standard depth of penetration, and the round trip roughly doubles it. Standardize on a reference tube — a through-wall hole plus flat-bottom holes of known depth — set the through-wall signal to forty degrees, and an unknown's angle becomes a depth on your curve. OD-origin signals spread across more than a hundred degrees, so phase sizes them well. ID-origin signals crowd between zero and forty, so supplement with amplitude or another channel. Volts to depth uses normalized amplitude instead — the right ruler for volumetric damage like support wear, where a machined standard matches the damage. But amplitude answers how much metal moved, not how deep, and it saturates beyond a few standard depths. Finally, continuous product: flaw frequency equals line speed divided by flaw spacing — match that spacing to a roll circumference to find the tooling, and keep the signal inside your filter passband.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "From Detection to Disposition: What Sizing Is For",
+   "body": "The last lesson got you a detection: a signal of interest, separated from noise, near surface or far. Detection alone disposes of nothing. The accept/reject criteria you studied at the start of this module are written in dimensions — **percent through-wall** in tube work, crack depth in millimetres on structure — so the Level II's job is to turn a signal into a defensible depth estimate. That step is **flaw sizing**.\n\nEddy current gives you two independent rulers, and CP-105 names them as this lesson's first two topics:\n\n- **Phase to depth** — *where* does the flaw live in the wall? Phase lag makes the signal's angle a clock that reads depth of origin.\n- **Volts to depth** — *how much* metal has the flaw disturbed? Calibrated amplitude reads severity when the flaw's shape matches your standard.\n\nBoth are **comparisons, not measurements**. Each rides on a calibration curve built from artificial flaws of known depth in a reference standard matched to the product — same alloy, same form, same probe and frequency. The estimate you report is only as good as the match between the real flaw and the artifacts behind the curve, which is why every sizing call carries its technique and its standard with it.\n\nThe module's third topic belongs to continuous product: when flaws repeat down a length of tube, bar, or wire, their **repetition frequency** identifies the tooling that made them — and decides whether your filters will even let you see them."
+  },
+  {
+   "type": "text",
+   "heading": "Phase Lag: The Clock Inside the Wall",
+   "body": "Phase-to-depth sizing works because eddy currents do not fill the wall instantly. The currents flowing at depth **lag** the surface currents — by about **one radian (≈57°) per standard depth of penetration δ**, with δ = 50√(ρ/(f·µr)) mm (ρ in µΩ·cm, f in Hz). A disturbance deep in the wall therefore reports back **late**, and because the field must diffuse down and the disturbance must diffuse back, the signal observed at the coil accumulates roughly **twice** the one-way lag — about 2x/δ radians for a perturbation centred at depth x.\n\nLate means rotated. On the impedance plane, signals that originate deeper in the wall appear at a **greater phase angle** than signals from metal near the coil. That is the entire basis of phase analysis: the angle of a flaw signal encodes the *depth at which it disturbed the current*, largely independent of how big the flaw is — amplitude carries the size information separately.\n\nFrequency sets the gearing of the clock. Raise f and δ shrinks, so each millimetre of wall is worth more degrees — finer depth resolution, at the price of weaker response from the far surface. For tube inspection from the ID, a widely used rule of thumb estimates the frequency that puts roughly **90° of separation between ID-surface and OD-surface signals**:\n\n**f₉₀ ≈ 3ρ/t²** (f in kHz, ρ in µΩ·cm, wall thickness t in mm)\n\nFor Alloy 600 steam-generator tubing (ρ ≈ 100 µΩ·cm, t = 1.27 mm), f₉₀ ≈ 185 kHz; written techniques typically set the prime sizing frequency at or somewhat above that value."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-3-fig-a",
+   "caption": "Standardization on the reference tube anchors the curve: the through-wall hole is rotated to 40°, the flat-bottom holes land at representative angles, and an unknown's measured angle reads out as % through-wall. The ID branch is compressed into 0–40°; the OD branch spreads over roughly 120°."
+  },
+  {
+   "type": "text",
+   "heading": "Phase to Depth in Practice: The Reference Tube and Its Curve",
+   "body": "The curve starts with the **reference standard**: a length of tubing of the same specification, diameter, and wall as the product, carrying machined flaws of known depth. The familiar ASME-style tube pairs a **100% through-wall hole** with **four flat-bottom holes 20% deep from the OD, spaced 90° apart** around the circumference; sizing techniques add intermediate depths — typically 40%, 60%, and 80% flat-bottom holes — so the curve has real points across the range.\n\nThe setup discipline:\n\n- Pull the probe through at the procedure's speed and **rotate the display** so probe motion lies flat; the through-wall hole signal is then set to the technique's reference angle — **40°** is the common convention.\n- Record the angle of each calibration flaw. On a representative differential-bobbin setup at prime frequency: 80% ≈ 65°, 60% ≈ 100°, 40% ≈ 130°, 20% ≈ 160°. Your standard defines *your* numbers.\n- Plot **angle versus % through-wall**, then work unknowns backward: measure the indication's peak-to-peak phase angle, enter the curve, report depth and origin.\n\nRead the geometry of the curve like a Level II. **OD-origin signals spread over roughly 120°** — phase sizes them well, and a shallow OD pit (≈160°) cannot be confused with a deep one (≈65°). **ID-origin signals crowd into 0–40°**, rotating from just above probe motion toward the through-wall angle as they deepen — so phase resolution on ID flaws is poor at prime frequency, and the technique supplements it with amplitude, a lower-frequency channel, or rotating/array-probe data.\n\nRespect the failure modes: real cracks, intergranular attack, and pitting are not flat-bottom holes; dents, deposits, and support-plate signals distort the angle you measure; and a distorted multifrequency mix residual can shift a call by tens of degrees. Phase depth is an **estimate with a technique-defined tolerance**, verified against the standard — never a micrometer reading."
+  },
+  {
+   "type": "text",
+   "heading": "Volts to Depth: Calibrated Amplitude",
+   "body": "Amplitude carries the other half of the information: **how much current the flaw disturbed**. Volts-to-depth sizing turns that into numbers with two disciplines — normalization, then a curve.\n\n- **Normalize the voltage.** Set the response of a defined reference signal to the value the written technique specifies — for example, the average of the four 20% flat-bottom holes adjusted to a stated volts peak-to-peak. Without normalization, \"volts\" drift with gain, probe wear, cable, and fill factor, and no two days of data are comparable.\n- **Build volts versus depth** from a standard whose flaws *look like the damage*: flat-bottom holes for pitting, machined **wear scars** for tube fretting at supports, EDM notches of graded depth for surface-probe crack work. Measure unknowns with the same probe, frequency, and normalization, and read depth from the curve.\n\nWhere volts beat phase: **volumetric wear** at anti-vibration bars and support plates, where the morphology is predictable and machined wear standards match it; **ID-origin flaws at prime frequency**, where the phase branch is too compressed to resolve; and threshold work — the go/no-go sorting gates from the start of this module are amplitude gates.\n\nNow the traps. Amplitude answers *how much*, not *how deep*: a small deep pit and a broad shallow scar can return the **same volts**. Fill factor, centering, and probe wear move amplitude directly — re-verify normalization on the standard at the intervals your technique sets. And with surface probes, amplitude **saturates** once a crack extends beyond roughly **two to three standard depths of penetration** — there is little current that deep left to disturb. At 200 kHz on 7075 aluminum, δ ≈ 0.26 mm, so depth discrimination fades beyond about 0.6–0.8 mm; if the depths you must separate live deeper than that, drop the frequency to keep them on the rising part of the curve."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-3-fig-b",
+   "caption": "Two amplitude curves, one rule: amplitude reads disturbed volume, so it sizes only what your standard imitates. Left — normalized bobbin volts against flat-bottom-hole depth. Right — a surface-probe crack response saturating beyond about two to three standard depths, the cue to drop frequency."
+  },
+  {
+   "type": "table",
+   "caption": "Phase reads where the flaw lives; volts read how much metal it moved. Choose the ruler by the question you must answer — and by the standard you can match.",
+   "headers": ["Attribute", "Phase to depth", "Volts to depth"],
+   "rows": [
+    ["Physical basis", "Phase lag — ≈57° per δ one way, ≈2x/δ observed; angle encodes depth of origin", "Disturbed current volume and its proximity to the coil; amplitude encodes severity"],
+    ["Calibration artifacts", "Through-wall hole plus flat-bottom holes of graded depth in a matched reference tube", "Morphology-matched flaws — wear scars, FBHs, EDM notch series — plus voltage normalization"],
+    ["Strongest for", "Discrete OD-origin flaws in tubing; assigning ID vs OD origin; far-surface thinning", "Volumetric support/AVB wear; ID-origin flaws at prime frequency; alarm-gate sorting"],
+    ["Weak when", "Signal distorted by dents, deposits, supports, mix residuals; ID branch compressed into 0–40°", "Flaw morphology differs from the standard; fill-factor or centering drift; depth beyond ≈2–3δ (saturation)"],
+    ["Level II check", "Re-verify curve angles on the standard per technique; report origin and % TW with its tolerance", "Re-verify normalization volts per technique; same probe, frequency, and gain as the curve"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Flaw Frequency: Periodic Flaws in Continuous Product",
+   "body": "In-line systems test tube, bar, and wire flowing through encircling coils at production speed, and some flaws arrive **on a schedule**: a damaged forming roll, a nicked die, or a flaking electrode wheel marks the product **once per revolution**, planting near-identical flaws at a fixed spacing s. The last topic in this module is the arithmetic that turns those repeating signals into a diagnosis.\n\nThree relationships do all the work:\n\n- **Flaw frequency:** f = v / s — line speed divided by flaw spacing. Equivalently f = 1/Δt from the chart, and s = v·Δt.\n- **Flaws per minute** = 60·v/s — the rate your paint marker, alarm, or cut-out gate must keep up with.\n- **Find the tooling:** the spacing equals the circumference of the guilty rotating component, so **D = s/π** points at the roll.\n\nWork the example. A tube mill runs at 90 m/min (1.5 m/s) and the differential channel logs an identical indication every 0.28 s. Spacing s = 1.5 × 0.28 = **0.42 m**; flaw frequency f = 1/0.28 ≈ **3.6 Hz** — about 214 flaws per minute; implicated roll diameter D = 0.42/π ≈ **134 mm**. Walk the line, find the 134 mm roll, and you have found the flaw factory.\n\nThe same arithmetic protects the test itself. A defect passing the coil produces a pulse lasting roughly (flaw length + effective coil aperture) ÷ v, and the channel's **band-pass filters** are set around the resulting signal frequencies *at production speed*. Slow the line and defect signals slide down toward the high-pass cutoff and attenuate; speed it up and they climb toward the low-pass. That is why the tubular-product practices require **dynamic standardization — the reference standard run through the coil at the same speed as production** — and why any line-speed change reopens the setup."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-3-fig-c",
+   "caption": "One damaged roll, one flaw per revolution: spacing s = πD on the product becomes repetition rate f = v/s at the coil. The numbers identify the tooling — and tell you whether the signal even sits inside your filter passband."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-8-3-fig-a",
+   "title": "Phase-to-depth calibration: signal angle to % through-wall",
+   "file": "et2-8-3-fig-a.svg"
+  },
+  {
+   "id": "et2-8-3-fig-b",
+   "title": "Volts-to-depth: amplitude curves and saturation",
+   "file": "et2-8-3-fig-b.svg"
+  },
+  {
+   "id": "et2-8-3-fig-c",
+   "title": "Flaw frequency in continuous product",
+   "file": "et2-8-3-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Sizing Shift: Steam Generator Tubing and the Tube Mill",
+  "intro": "You are the Level II on a bobbin-probe examination of Alloy 600 steam-generator tubing. Standardization on the reference tube at prime frequency, probe motion horizontal: through-wall hole 40°; flat-bottom holes 80% → 65°, 60% → 100°, 40% → 130°, 20% → 160°; the four-hole 20% FBH average is set to the technique's reference voltage. The last stop is an in-line tube mill. Work each call before you click.",
+  "steps": [
+   {
+    "prompt": "Free-span indication, clean differential lobe, peak-to-peak phase 130° on the prime channel. Your call:",
+    "options": [
+     "ID-origin, about 40% through-wall",
+     "OD-origin, about 40% through-wall — it sits on the OD branch of the curve",
+     "OD-origin, about 130% — beyond through-wall",
+     "Unsizable; phase only separates flaw from noise"
+    ],
+    "correct": 1,
+    "feedback": "Angles between 40° and ≈160° belong to the OD-origin branch, and 130° is exactly the 40% calibration point. Phase reads depth of origin; the figure you report is % through-wall, and it can never exceed 100."
+   },
+   {
+    "prompt": "Next indication: 25°, just above the probe-motion axis. Depth call from phase alone?",
+    "options": [
+     "OD-origin, about 85% through-wall",
+     "Definitely a dent — geometry signals live at 25°",
+     "ID-origin, and the curve gives the depth to ±5% — report it",
+     "ID-origin — but the 0–40° branch is compressed, so assign depth with the technique's supplemental tools (amplitude, lower-frequency or array data), not prime-channel phase alone"
+    ],
+    "correct": 3,
+    "feedback": "Below the 40° through-wall angle is ID territory, where the whole 0–100% depth range crowds into about 40° of rotation. A few degrees of distortion would swing the estimate wildly — Level II practice is to classify origin by phase and size ID flaws with supplemental data."
+   },
+   {
+    "prompt": "At an anti-vibration bar you find a broad volumetric signal consistent with fretting wear. Best sizing basis:",
+    "options": [
+     "Normalized volts against a machined wear-scar standard — morphology-matched amplitude sizing",
+     "Phase against the flat-bottom-hole curve, because FBHs are the only permitted artifacts",
+     "Double the gain and re-measure the phase angle",
+     "Compare its volts directly to the through-wall hole and scale linearly"
+    ],
+    "correct": 0,
+    "feedback": "Wear against a known support geometry is predictable and volumetric — exactly where volts-to-depth earns its keep, using a standard that imitates the damage. FBH phase curves imitate pitting, not broad wear; and changing gain after normalization invalidates every voltage you record."
+   },
+   {
+    "prompt": "At the tube mill (line speed 1.4 m/s), the chart shows an identical indication every 0.25 s. The maintenance map lists forming rolls of 111 mm and 160 mm diameter. Your diagnosis:",
+    "options": [
+     "Random porosity — repeating signals carry no information",
+     "The 160 mm roll — larger rolls always mark harder",
+     "Spacing s = 1.4 × 0.25 = 0.35 m ≈ π × 111 mm — pull and dress the 111 mm roll, and confirm 4 Hz sits inside the band-pass",
+     "Slow the line until the signals disappear, then resume production"
+    ],
+    "correct": 2,
+    "feedback": "s = v·Δt = 0.35 m and f = 1/Δt = 4 Hz. A 111 mm roll has circumference π × 0.111 ≈ 0.349 m — one mark per revolution. Slowing the line until signals vanish only slides them below the high-pass filter: the flaws are still there, now invisible."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Eddy current phase lag is the foundation of phase-to-depth sizing. For a perturbation centred at depth x in the wall, the working relationships are:",
+   "options": [
+    "Lag of 90° per standard depth of penetration, halved on the return trip",
+    "Lag of 57° in total regardless of depth, because the coil integrates the whole wall",
+    "About one radian (≈57°) of lag per standard depth of penetration one way — and roughly 2x/δ observed at the coil, since the disturbance is sensed after a round trip",
+    "No phase change with depth; only amplitude changes"
+   ],
+   "correct": 2,
+   "explanation": "Current at depth x lags the surface current by x/δ radians — one radian (≈57°) per standard depth. The coil senses the disturbance only after the field diffuses down and the perturbation diffuses back, so the observed rotation is roughly doubled. Deeper origin means a later, more rotated signal."
+  },
+  {
+   "question": "The classic ASME-style reference tube used to standardize a bobbin-probe tube examination pairs:",
+   "options": [
+    "A 100% through-wall hole with four flat-bottom holes 20% deep from the OD, spaced 90° apart around the circumference",
+    "A single longitudinal EDM notch at mid-wall depth",
+    "Four through-wall holes spaced 90° apart, with one 20% ID groove",
+    "A side-drilled hole at each support-plate location"
+   ],
+   "correct": 0,
+   "explanation": "The through-wall hole anchors the reference angle (commonly rotated to 40°), and the four 20% OD flat-bottom holes — distributed 90° apart to average circumferential response — anchor the shallow-OD end. Sizing techniques add intermediate-depth holes (40/60/80%) to fill in the curve."
+  },
+  {
+   "question": "On a differential bobbin channel at prime frequency, with probe motion horizontal and the through-wall hole set to 40°, an OD-origin defect that grows deeper through the wall will:",
+   "options": [
+    "Rotate from 40° toward 160° as it deepens",
+    "Rotate from near 160° toward the 40° through-wall angle as it deepens",
+    "Stay at a fixed angle while only its amplitude grows",
+    "Move below the probe-motion axis into negative angles"
+   ],
+   "correct": 1,
+   "explanation": "A shallow OD flaw disturbs only far-wall currents, which carry maximum lag — so it shows the largest angle (≈160°). As the flaw deepens it involves currents nearer the ID with less lag, and its angle falls toward the 40° through-wall value. That ~120° of spread is why phase sizes OD-origin flaws well."
+  },
+  {
+   "question": "Volts-to-depth is the preferred sizing ruler for fretting wear at tube support structures because:",
+   "options": [
+    "Phase angle cannot be measured at support locations",
+    "Amplitude is immune to fill-factor and centering variation",
+    "Wear always penetrates beyond three standard depths, where phase fails",
+    "The damage is volumetric and predictable in shape, so machined wear-scar standards match its morphology — and normalized amplitude tracks the metal volume removed"
+   ],
+   "correct": 3,
+   "explanation": "Amplitude responds to how much current-carrying metal the flaw disturbed. When morphology is predictable — wear against a known support geometry — a matched wear standard makes the volts-versus-depth curve valid. Amplitude is not immune to fill factor or probe wear (re-normalize per technique), and phase can be measured at supports; it is just distorted there."
+  },
+  {
+   "question": "A bar line runs at 2.0 m/s and the eddy current channel records an identical defect signal every 0.25 s. The flaw spacing and flaw frequency are:",
+   "options": [
+    "0.125 m and 8 Hz",
+    "8 m and 0.125 Hz",
+    "0.50 m and 4.0 Hz",
+    "2.0 m and 1.0 Hz"
+   ],
+   "correct": 2,
+   "explanation": "s = v·Δt = 2.0 × 0.25 = 0.50 m, and f = 1/Δt = v/s = 4.0 Hz — 240 flaws per minute. A 0.50 m spacing matches a rotating component of circumference 0.50 m, i.e., diameter about 159 mm — the next thing to check on the line."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II Inspection System Output and Evaluation Course §2.4–2.5 (flaw-sizing techniques; calculation of flaw frequency)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing method — Level II topical outline basis",
+  "ASME BPVC Section V, Article 8 (eddy current examination of tubular products; reference specimens with through-wall and flat-bottom holes)",
+  "ASTM E243 / ASTM E309 (electromagnetic examination of tubular products — dynamic standardization at production throughput speed)"
+ ]
+}

@@ -1,0 +1,87 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Threshold Placement: Why 3:1 Is the Floor</text>
+
+  <!-- ================= LEFT PANEL: SNR 3.5:1 ================= -->
+  <text x="36" y="62" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">SNR 3.5:1 — the threshold has room</text>
+  <rect x="36" y="72" width="350" height="240" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- noise trace (small) with three tall flaw peaks -->
+  <polyline points="46,266 56,258 66,272 76,260 86,270 96,257 104,268"
+            fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <polyline points="104,268 112,240 120,184 128,240 136,270"
+            fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <polyline points="136,270 146,258 156,271 166,259 176,269 186,257 194,267"
+            fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <polyline points="194,267 202,238 210,180 218,238 226,269"
+            fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <polyline points="226,269 236,257 246,270 256,260 266,271 276,258 284,268"
+            fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <polyline points="284,268 292,236 300,186 308,240 316,270"
+            fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <polyline points="316,270 326,259 336,271 346,258 356,270 366,260 376,268"
+            fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+
+  <!-- threshold line -->
+  <line x1="46" y1="226" x2="376" y2="226" stroke="#0B1F3A" stroke-width="3" stroke-dasharray="9 6"/>
+  <rect x="50" y="200" width="148" height="20" fill="#FFFFFF" opacity="0.9"/>
+  <text x="54" y="215" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">alarm threshold</text>
+
+  <!-- alarm markers on flaw peaks -->
+  <g fill="#1E66F5">
+    <polygon points="120,166 112,180 128,180"/>
+    <polygon points="210,162 202,176 218,176"/>
+    <polygon points="300,168 292,182 308,182"/>
+  </g>
+  <text x="211" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">alarms fire on flaws — and only on flaws</text>
+
+  <text x="211" y="296" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">noise stays far below the line</text>
+
+  <!-- ================= RIGHT PANEL: SNR 1.5:1 ================= -->
+  <text x="414" y="62" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">SNR 1.5:1 — nowhere safe to put it</text>
+  <rect x="414" y="72" width="350" height="240" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- big noise trace with barely-taller flaw peaks -->
+  <polyline points="424,262 434,236 444,276 454,228 464,278 474,240 482,266"
+            fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <polyline points="482,266 492,232 500,196 508,234 516,272"
+            fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <polyline points="516,272 526,230 536,278 546,224 556,274 566,238 574,264"
+            fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <polyline points="574,264 582,230 590,192 598,236 606,270"
+            fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <polyline points="606,270 616,226 626,276 636,232 646,278 656,228 666,268 676,240 686,274 696,234 706,276 716,242 726,270 736,230 746,272 754,250"
+            fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+
+  <!-- low threshold -->
+  <line x1="424" y1="234" x2="754" y2="234" stroke="#0B1F3A" stroke-width="2.5" stroke-dasharray="9 6"/>
+  <rect x="426" y="282" width="200" height="20" fill="#FFFFFF" opacity="0.9"/>
+  <text x="430" y="297" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">set it low → noise alarms</text>
+
+  <!-- false-call X markers where noise crosses low threshold -->
+  <g stroke="#0B1F3A" stroke-width="2.5">
+    <line x1="448" y1="222" x2="460" y2="234"/><line x1="460" y1="222" x2="448" y2="234"/>
+    <line x1="540" y1="218" x2="552" y2="230"/><line x1="552" y1="218" x2="540" y2="230"/>
+    <line x1="650" y1="222" x2="662" y2="234"/><line x1="662" y1="222" x2="650" y2="234"/>
+    <line x1="730" y1="224" x2="742" y2="236"/><line x1="742" y1="224" x2="730" y2="236"/>
+  </g>
+
+  <!-- high threshold -->
+  <line x1="424" y1="186" x2="754" y2="186" stroke="#0B1F3A" stroke-width="2.5" stroke-dasharray="3 5"/>
+  <rect x="426" y="92" width="216" height="20" fill="#FFFFFF" opacity="0.9"/>
+  <text x="430" y="107" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">set it high → flaws sneak under</text>
+  <line x1="500" y1="196" x2="500" y2="186" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="500" y="134" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">missed</text>
+  <text x="500" y="151" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">flaw</text>
+  <line x1="500" y1="158" x2="500" y2="184" stroke="#0B1F3A" stroke-width="1.5"/>
+  <polygon points="500,184 495,175 505,175" fill="#0B1F3A"/>
+
+  <!-- ================= TAKEAWAY BAR ================= -->
+  <rect x="36" y="336" width="728" height="84" rx="8" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="400" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">Below 3:1, every threshold either alarms on noise or sleeps through flaws.</text>
+  <text x="400" y="388" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">Fix the technique — frequency, filtering, probe, fixturing — then re-measure SNR.</text>
+  <text x="400" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">Gain is not a fix: it raises signal and noise together and the ratio never moves.</text>
+
+  <!-- dB reference strip -->
+  <text x="400" y="456" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">SNR in dB = 20 log (S ÷ N):   2:1 = 6 dB   |   3:1 ≈ 10 dB   |   5:1 = 14 dB   |   10:1 = 20 dB</text>
+</svg>

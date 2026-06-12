@@ -1,0 +1,110 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#0B1F3A">Two Output Disciplines: Go/No-Go and Sorting</text>
+
+  <line x1="400" y1="56" x2="400" y2="470" stroke="#9BC4FF" stroke-width="1.5"/>
+
+  <!-- ================= LEFT: GO/NO-GO ================= -->
+  <text x="200" y="70" text-anchor="middle" font-size="17" font-weight="bold" fill="#0B1F3A">Go/no-go — one threshold, two bins</text>
+
+  <!-- instrument -->
+  <rect x="120" y="88" width="160" height="52" rx="8" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="200" y="110" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">ET instrument</text>
+  <text x="200" y="130" text-anchor="middle" font-size="14" fill="#0B1F3A">alarm gate + threshold</text>
+
+  <!-- alarm wire to marker -->
+  <path d="M280,106 L295,106 L295,130" stroke="#0B1F3A" stroke-width="1.5" fill="none"/>
+  <polygon points="289,130 301,130 295,138" fill="#0B1F3A"/>
+  <text x="305" y="100" text-anchor="start" font-size="14" fill="#1E66F5">alarm → mark</text>
+  <rect x="288" y="138" width="14" height="16" rx="2" fill="#1E66F5"/>
+  <line x1="295" y1="154" x2="295" y2="166" stroke="#1E66F5" stroke-width="2" stroke-dasharray="3,3"/>
+
+  <!-- coil wire -->
+  <line x1="170" y1="140" x2="170" y2="155" stroke="#0B1F3A" stroke-width="1.5"/>
+
+  <!-- feed arrow -->
+  <text x="76" y="140" text-anchor="middle" font-size="14" fill="#0B1F3A">feed</text>
+  <line x1="52" y1="150" x2="100" y2="150" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="100,144 100,156 110,150" fill="#0B1F3A"/>
+
+  <!-- tube -->
+  <rect x="40" y="170" width="310" height="36" rx="18" fill="#9BC4FF" fill-opacity="0.45" stroke="#0B1F3A" stroke-width="2.5"/>
+
+  <!-- encircling coil -->
+  <ellipse cx="170" cy="188" rx="13" ry="33" fill="none" stroke="#1E66F5" stroke-width="8"/>
+
+  <!-- paint mark on alarmed length -->
+  <polygon points="289,170 301,170 295,179" fill="#0B1F3A"/>
+
+  <!-- outcome arrows -->
+  <line x1="125" y1="206" x2="125" y2="286" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="119,286 131,286 125,294" fill="#0B1F3A"/>
+  <line x1="295" y1="206" x2="295" y2="286" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="289,286 301,286 295,294" fill="#0B1F3A"/>
+
+  <!-- bins -->
+  <rect x="55" y="296" width="140" height="48" rx="8" fill="#FFFFFF" stroke="#1E66F5" stroke-width="2.5"/>
+  <text x="125" y="317" text-anchor="middle" font-size="15" font-weight="bold" fill="#1E66F5">ACCEPT</text>
+  <text x="125" y="336" text-anchor="middle" font-size="14" fill="#0B1F3A">below the gate</text>
+  <rect x="225" y="296" width="140" height="48" rx="8" fill="#0B1F3A"/>
+  <text x="295" y="317" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">REJECT</text>
+  <text x="295" y="336" text-anchor="middle" font-size="14" fill="#9BC4FF">alarmed — pulled</text>
+
+  <text x="200" y="380" text-anchor="middle" font-size="14" fill="#1E66F5">gate set on the reference discontinuity signal</text>
+  <text x="200" y="402" text-anchor="middle" font-size="14" fill="#0B1F3A">verified at production speed — start and end of run</text>
+  <text x="200" y="424" text-anchor="middle" font-size="14" fill="#0B1F3A">binary output: no severity grading</text>
+  <text x="200" y="446" text-anchor="middle" font-size="14" fill="#0B1F3A">borderline product → graded re-examination</text>
+
+  <!-- ================= RIGHT: SORTING ================= -->
+  <text x="600" y="70" text-anchor="middle" font-size="17" font-weight="bold" fill="#0B1F3A">Sorting — two-sided windows, several bins</text>
+
+  <!-- meter -->
+  <rect x="490" y="88" width="220" height="52" rx="8" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="600" y="110" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">conductivity meter</text>
+  <text x="600" y="130" text-anchor="middle" font-size="14" fill="#0B1F3A">window per class, %IACS</text>
+
+  <!-- scale -->
+  <line x1="440" y1="210" x2="760" y2="210" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="760,204 760,216 769,210" fill="#0B1F3A"/>
+  <text x="758" y="166" text-anchor="end" font-size="14" fill="#0B1F3A">conductivity, %IACS</text>
+  <line x1="480" y1="206" x2="480" y2="214" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="560" y1="206" x2="560" y2="214" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="640" y1="206" x2="640" y2="214" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="720" y1="206" x2="720" y2="214" stroke="#9BC4FF" stroke-width="1.5"/>
+
+  <!-- windows -->
+  <rect x="470" y="186" width="70" height="48" fill="#1E66F5" fill-opacity="0.15" stroke="#1E66F5" stroke-width="1.8" stroke-dasharray="5,3"/>
+  <text x="505" y="254" text-anchor="middle" font-size="14" fill="#0B1F3A">alloy A</text>
+  <rect x="600" y="186" width="70" height="48" fill="#1E66F5" fill-opacity="0.15" stroke="#1E66F5" stroke-width="1.8" stroke-dasharray="5,3"/>
+  <text x="635" y="254" text-anchor="middle" font-size="14" fill="#0B1F3A">alloy B</text>
+
+  <!-- measured parts -->
+  <circle cx="505" cy="210" r="5" fill="#1E66F5"/>
+  <circle cx="635" cy="210" r="5" fill="#1E66F5"/>
+  <circle cx="572" cy="210" r="5" fill="#0B1F3A"/>
+  <text x="572" y="160" text-anchor="middle" font-size="14" font-weight="bold" fill="#0B1F3A">between windows</text>
+  <text x="572" y="178" text-anchor="middle" font-size="14" fill="#0B1F3A">→ HOLD</text>
+  <line x1="572" y1="184" x2="572" y2="202" stroke="#0B1F3A" stroke-width="1"/>
+
+  <!-- bin arrows -->
+  <line x1="505" y1="234" x2="505" y2="288" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="499,288 511,288 505,296" fill="#0B1F3A"/>
+  <line x1="635" y1="234" x2="635" y2="288" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="629,288 641,288 635,296" fill="#0B1F3A"/>
+
+  <!-- bins -->
+  <rect x="453" y="298" width="104" height="48" rx="8" fill="#FFFFFF" stroke="#1E66F5" stroke-width="2.5"/>
+  <text x="505" y="319" text-anchor="middle" font-size="15" font-weight="bold" fill="#1E66F5">BIN A</text>
+  <text x="505" y="338" text-anchor="middle" font-size="14" fill="#0B1F3A">in window A</text>
+  <rect x="583" y="298" width="104" height="48" rx="8" fill="#FFFFFF" stroke="#1E66F5" stroke-width="2.5"/>
+  <text x="635" y="319" text-anchor="middle" font-size="15" font-weight="bold" fill="#1E66F5">BIN B</text>
+  <text x="635" y="338" text-anchor="middle" font-size="14" fill="#0B1F3A">in window B</text>
+  <rect x="692" y="298" width="78" height="48" rx="8" fill="#0B1F3A"/>
+  <text x="731" y="319" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">HOLD</text>
+  <text x="731" y="338" text-anchor="middle" font-size="14" fill="#9BC4FF">manual eval</text>
+
+  <text x="600" y="380" text-anchor="middle" font-size="14" fill="#1E66F5">windows set with known samples of every class</text>
+  <text x="600" y="402" text-anchor="middle" font-size="14" fill="#0B1F3A">parts and knowns at the same temperature</text>
+  <text x="600" y="424" text-anchor="middle" font-size="14" fill="#0B1F3A">re-verify with knowns before and after the run</text>
+  <text x="600" y="446" text-anchor="middle" font-size="14" fill="#0B1F3A">never force a borderline part into a bin</text>
+</svg>

@@ -1,0 +1,115 @@
+{
+ "moduleId": "et1-7",
+ "questions": [
+  {
+   "question": "A written instruction covers two jobs: go/no-go crack screening of machined parts against a threshold set on an EDM-notched reference standard, and reporting the conductivity of heat-treated aluminum plate in % IACS. The appropriate meter readouts are:",
+   "options": [
+    "an uncalibrated comparator for the crack screening and a calibrated conductivity meter for the plate readings",
+    "a calibrated meter for both jobs, since uncalibrated meters are obsolete",
+    "an uncalibrated meter for both jobs, since every eddy current reading is only a comparison",
+    "a calibrated meter for the crack screening and an uncalibrated meter for the plate readings"
+   ],
+   "correct": 0,
+   "explanation": "An uncalibrated meter is a comparator: its arbitrary 0–100 divisions gain meaning only from the reference-standard response and its alarm threshold — exactly what a go/no-go check needs. A calibrated meter reads in engineering units (% IACS) verified against standards of known value, so the number itself is reportable."
+  },
+  {
+   "question": "On an impedance plane display, the direction the dot moves and the distance it travels respectively reveal:",
+   "options": [
+    "the test frequency, and the fill factor",
+    "how severe the change is, and which variable caused it",
+    "the probe scan speed, and the coil temperature",
+    "which test variable changed, and how large the change is"
+   ],
+   "correct": 3,
+   "explanation": "Phase angle (direction) names the variable — lift-off runs along its set direction while defects break away at their own angles — and amplitude (distance) scales with the size of the change. Every signal is judged on both, by comparison with the responses the reference standard produced at standardization."
+  },
+  {
+   "question": "A written instruction for scanning with a digital impedance-plane instrument states a maximum probe scan speed. The readout-related reason is that:",
+   "options": [
+    "the LCD's persistence fades when the probe moves quickly",
+    "eddy currents need extra time to reach the standard depth of penetration at higher probe speeds",
+    "the instrument samples the signal at a finite rate, so scanning too fast can capture only a fragment of a defect's trace and may miss the alarm gate",
+    "high scan speeds overheat the coil windings"
+   ],
+   "correct": 2,
+   "explanation": "A digital instrument digitizes the signal at a finite sampling rate. Exceed the allowed scan speed and a defect's trace may be captured only in fragments — lower displayed amplitude, possibly never entering the alarm gate. Penetration depth is set by frequency and material, not by how fast the probe moves."
+  },
+  {
+   "question": "A tubing procedure requires at least 30 samples per inch of tube, and the probe pusher will run at 12 in/s. The data-acquisition system must digitize at no less than:",
+   "options": [
+    "42 samples per second",
+    "360 samples per second",
+    "2.5 samples per second",
+    "36 samples per second"
+   ],
+   "correct": 1,
+   "explanation": "Samples per inch equals digitizing rate divided by probe speed, so the required rate is 30 × 12 = 360 samples per second. Any slower at that pull speed spreads the samples apart, and a short pit could fall between them and never appear in the record."
+  },
+  {
+   "question": "Nuisance alarms keep sounding during a production run. Acting alone, a Level I operator may not widen the alarm gate or reduce the gain because:",
+   "options": [
+    "gain adjustments permanently damage digital instruments",
+    "alarm settings may only be changed at the start of a production run, never during one",
+    "only the instrument manufacturer is authorized to change gate settings",
+    "the alarm was proven on the reference standard at those settings — once detuned, the test being run is no longer the test that was verified"
+   ],
+   "correct": 3,
+   "explanation": "The alarm setup is a proven claim: at verification, every artificial discontinuity in the reference standard tripped it with margin. Widening the gate or cutting the gain voids that proof, so such changes take Level II/III direction — an alarm you have detuned is a test you are no longer performing."
+  },
+  {
+   "question": "A direct-reading % IACS conductivity measurement is valid only when the part under the probe is thicker than approximately:",
+   "options": [
+    "one standard depth of penetration",
+    "three standard depths of penetration — the effective depth",
+    "ten standard depths of penetration",
+    "the diameter of the probe coil"
+   ],
+   "correct": 1,
+   "explanation": "At the effective depth of about 3δ, eddy current density has fallen to roughly 5% of its surface value. A part thinner than that lets the field sense the far surface, so the number mixes thickness into what should be a pure conductivity reading — alongside the other validity conditions: a flat area clear of edges and matched part, probe, and standard temperatures."
+  },
+  {
+   "question": "Setting up an eddy current coating-thickness readout to measure paint over aluminum skin, the gauge should be zeroed on:",
+   "options": [
+    "bare base metal of the same alloy and shape as the parts to be measured",
+    "the certified steel zero block supplied with the gauge",
+    "the painted surface of the first production part",
+    "any convenient aluminum sample, since all aluminum alloys read alike"
+   ],
+   "correct": 0,
+   "explanation": "The coating reading is calibrated lift-off, and the lift-off response depends on the base metal's conductivity and geometry. ASTM E376 practice is to zero on the same bare base metal of the same alloy and shape, then span with certified shims — alloys and tempers differ in conductivity, so 'any aluminum' will not do."
+  },
+  {
+   "question": "A paint marker sits 4.5 m downstream of the test coil, and the alarm output is delayed by a fixed 3.0-second timer. Marks will land centered on the flaws only when the line speed is:",
+   "options": [
+    "13.5 m/s",
+    "0.67 m/s",
+    "1.5 m/s",
+    "3.0 m/s"
+   ],
+   "correct": 2,
+   "explanation": "The timer matches the transport delay only when delay = coil-to-device distance ÷ line speed, so 4.5 m ÷ 3.0 s = 1.5 m/s. At any other speed the flaw arrives at the marker early or late and the paint misses it — which is why robust systems track distance with an encoder instead of relying on a fixed time."
+  },
+  {
+   "question": "In a properly designed automated sorting system, the gate's de-energized position feeds the reject path. This arrangement guarantees that:",
+   "options": [
+    "reject-bin parts can be reworked without retest",
+    "the gate consumes no power during normal operation",
+    "good parts are counted twice for the production tally",
+    "a power, air, or trigger failure can never route untested or defective pieces to the accept bin"
+   ],
+   "correct": 3,
+   "explanation": "Fail-safe in sorting means fail-to-reject: any failure stops good-bin flow instead of contaminating it, and pieces missed by a jam or lost trigger are untested — they go to reject or retest, never to accept. Verification needs both masters: a seeded defective piece landing in reject and a known-good piece landing in accept."
+  },
+  {
+   "question": "On a welded-tube mill, a short length at each end of every cut piece must be cropped or examined separately because:",
+   "options": [
+    "the saw blade work-hardens the ends and raises their permeability",
+    "field distortion as an end enters or leaves the encircling coil swamps the signal, so those lengths are never truly examined",
+    "paint overspray from the marking system collects at the cut ends",
+    "eddy currents flow only in the middle third of any conductor"
+   ],
+   "correct": 1,
+   "explanation": "This is end effect. End suppression gates out the false signal the passing end produces — which also means those end lengths go untested, so honest practice crops them or examines them by another means before the piece is accepted."
+  }
+ ]
+}

@@ -1,0 +1,89 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Measuring SNR Peak-to-Peak on the Reference Standard</text>
+
+  <!-- ================= LEFT: STRIP CHART ================= -->
+  <text x="36" y="60" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">STRIP CHART — vertical (analysis) channel vs scan position</text>
+  <rect x="36" y="70" width="434" height="270" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- noise envelope dashed lines -->
+  <line x1="46" y1="225" x2="460" y2="225" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="6 5"/>
+  <line x1="46" y1="255" x2="460" y2="255" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="6 5"/>
+
+  <!-- noise trace, then notch signal (peak + undershoot), then noise again -->
+  <polyline points="46,242 60,232 72,250 84,236 96,252 108,229 120,248 132,238 144,253 156,230 168,246 180,239 192,251 204,228 216,247 228,240 240,252 252,233 264,244 276,240"
+            fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <polyline points="276,240 290,238 300,200 310,150 318,200 326,255 336,243 348,236"
+            fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <polyline points="348,236 358,251 370,231 382,249 394,235 406,252 418,230 430,247 442,238 454,250 460,241"
+            fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+
+  <!-- N p-p dimension at x=150 region -->
+  <line x1="120" y1="225" x2="120" y2="255" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="120,225 115,234 125,234" fill="#0B1F3A"/>
+  <polygon points="120,255 115,246 125,246" fill="#0B1F3A"/>
+  <rect x="58" y="190" width="170" height="20" fill="#FFFFFF" opacity="0.9"/>
+  <text x="62" y="205" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">N p-p = 1.2 divisions</text>
+
+  <!-- S p-p dimension to the right of the peak -->
+  <line x1="385" y1="150" x2="385" y2="255" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="385,150 380,159 390,159" fill="#0B1F3A"/>
+  <polygon points="385,255 380,246 390,246" fill="#0B1F3A"/>
+  <line x1="310" y1="150" x2="385" y2="150" stroke="#0B1F3A" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="326" y1="255" x2="385" y2="255" stroke="#0B1F3A" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <rect x="296" y="118" width="168" height="20" fill="#FFFFFF" opacity="0.9"/>
+  <text x="300" y="133" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">S p-p = 4.2 divisions</text>
+
+  <!-- region labels -->
+  <text x="160" y="288" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">flaw-free region — noise</text>
+  <text x="160" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">recorded WHILE scanning</text>
+  <text x="320" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">reference EDM notch</text>
+  <line x1="316" y1="98" x2="311" y2="140" stroke="#0B1F3A" stroke-width="1.5"/>
+
+  <!-- computation box -->
+  <rect x="36" y="356" width="434" height="64" rx="8" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="253" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">SNR = S ÷ N = 4.2 ÷ 1.2 = 3.5 : 1  (≈ 11 dB)</text>
+  <text x="253" y="406" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">meets the 3:1 minimum — technique may proceed</text>
+
+  <!-- ================= RIGHT: IMPEDANCE PLANE ================= -->
+  <text x="500" y="60" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">IMPEDANCE PLANE — same setup</text>
+  <rect x="500" y="70" width="270" height="270" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- operating point -->
+  <circle cx="565" cy="280" r="6" fill="#0B1F3A"/>
+  <text x="560" y="306" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">operating point</text>
+
+  <!-- lift-off rotated horizontal -->
+  <line x1="571" y1="280" x2="745" y2="280" stroke="#9BC4FF" stroke-width="4"/>
+  <polygon points="745,280 733,274 733,286" fill="#9BC4FF"/>
+  <text x="655" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">lift-off / wobble —</text>
+  <text x="655" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">rotated horizontal</text>
+  <line x1="680" y1="308" x2="680" y2="286" stroke="#0B1F3A" stroke-width="1.5"/>
+
+  <!-- notch signal loop, mostly vertical -->
+  <path d="M 565 280 C 585 240 615 170 638 120 C 650 96 662 110 650 140 C 632 190 595 250 567 281" fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <polygon points="638,120 626,128 640,136" fill="#1E66F5"/>
+  <text x="664" y="170" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">notch</text>
+  <text x="664" y="188" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">signal —</text>
+  <text x="664" y="206" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">mostly</text>
+  <text x="664" y="224" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">vertical</text>
+
+  <!-- vertical-component bracket -->
+  <line x1="522" y1="112" x2="522" y2="280" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="522,112 517,121 527,121" fill="#0B1F3A"/>
+  <polygon points="522,280 517,271 527,271" fill="#0B1F3A"/>
+  <line x1="522" y1="112" x2="648" y2="112" stroke="#0B1F3A" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="536" y="180" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">vertical</text>
+  <text x="536" y="198" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">component =</text>
+  <text x="536" y="216" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">what the strip</text>
+  <text x="536" y="234" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">chart plots</text>
+
+  <!-- bottom note -->
+  <rect x="500" y="356" width="270" height="64" rx="8" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="635" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">Rotate lift-off flat, then read S and N</text>
+  <text x="635" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">on the vertical channel — where flaws</text>
+  <text x="635" y="416" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">project and wobble does not</text>
+
+  <!-- footer rule -->
+  <text x="400" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">Same channel, same scan speed, same settings for both measurements — or the ratio is meaningless.</text>
+</svg>

@@ -1,0 +1,115 @@
+{
+ "moduleId": "et2-2",
+ "questions": [
+  {
+   "question": "During heat-treat verification, a 7075 aluminum fitting expected to read about 32% IACS in the T6 condition instead measures about 40% IACS. The instrument was standardized on bracketing standards and all temperatures were equalized. The most likely explanation is:",
+   "options": [
+    "The fitting is harder and stronger than the T6 requirement",
+    "The fitting is overaged (a T73-type condition) or has suffered heat damage — conditions that raise conductivity above the T6 value",
+    "The fitting has elevated magnetic permeability from machining stress",
+    "The reading is normal — 7075-T6 routinely reads anywhere from 30% to 45% IACS"
+   ],
+   "correct": 1,
+   "explanation": "Temper sets conductivity in aluminum alloys: 7075-T6 reads about 32% IACS while overaged 7075-T73 reads about 40%, and overheating or fire exposure drives readings upward toward the overaged and annealed conditions. Higher conductivity here signals a softer, lower-strength state — not extra hardness — and 7075 is nonmagnetic, so permeability is not in play."
+  },
+  {
+   "question": "On the normalized impedance plane, copper tested at 5 kHz can land at roughly the same operating point that Ti-6Al-4V occupies at 500 kHz. This is possible because position along the conductivity curve is set by:",
+   "options": [
+    "the conductivity of the part alone, so matching points indicate an instrument fault",
+    "the instrument's gain and display sensitivity settings",
+    "the coil's own winding resistance",
+    "the product of frequency, conductivity, and permeability — not conductivity alone"
+   ],
+   "correct": 3,
+   "explanation": "The operating point follows f × σ × μ, so raising frequency slides every alloy farther down the same comma-shaped curve. A low-conductivity alloy at high frequency can occupy the spot a high-conductivity alloy holds at low frequency — which is why material identity comes from position plus the test settings, never position alone."
+  },
+  {
+   "question": "A mill runs eddy current examination on steel product while it is still above about 770 °C, with no magnetic saturation equipment at that station. Saturation is unnecessary there because:",
+   "options": [
+    "eddy currents cannot be induced in hot metal, so only geometry is being measured",
+    "the heat raises the steel's conductivity until it behaves like copper",
+    "above the Curie temperature, ferromagnetism vanishes and the steel responds like a nonmagnetic conductor",
+    "high temperature drives the steel's permeability even higher, which improves penetration"
+   ],
+   "correct": 2,
+   "explanation": "Above the Curie point (about 770 °C for iron) the material loses its ferromagnetism, so there is no permeability noise to suppress — the hot product tests electromagnetically like a nonmagnetic metal. Heating actually lowers conductivity, and high permeability would collapse penetration, not improve it."
+  },
+  {
+   "question": "With identical probe setups, a small machined bracket and an entire wing spar of the same alloy give the same impedance reading. This is expected because the 'mass' that affects coil impedance is:",
+   "options": [
+    "the amount of conductive material inside the coil's field — a footprint-sized ring reaching to about 3δ — so identical local sections look identical",
+    "the total weight of the part, so matching readings indicate a standardization error",
+    "proportional to the part's overall surface area",
+    "the alloy's density multiplied by the part's total volume"
+   ],
+   "correct": 0,
+   "explanation": "The coil samples only the volume its field links: a ring about the size of the windings reaching roughly three standard depths of penetration into the part. If the section inside that sensing volume is the same, a bracket and a wing spar are indistinguishable — metal outside the field contributes nothing."
+  },
+  {
+   "question": "A low-frequency corrosion survey is set up so the aluminum skin is thinner than the 3δ effective depth. As the wall progressively thins, the operating point on the impedance plane:",
+   "options": [
+    "moves farther down the conductivity curve, away from the air point",
+    "rises above the air point along the permeability direction",
+    "remains stationary while only the signal amplitude changes",
+    "walks along a curling thickness locus back toward the air point — zero metal would be an empty coil"
+   ],
+   "correct": 3,
+   "explanation": "With t < 3δ the exponential decay of eddy currents is truncated, so every increment of metal loss reduces the loading on the coil and the point unwinds from the thick-part position back toward the air point. Calibrated against steps of known thickness, that path is the basis of eddy current thinning gauges."
+  },
+  {
+   "question": "Under the law of similarity, an encircling-coil technique proven on one diameter of nonmagnetic rod reproduces the same operating point — and geometrically similar signals — on a different diameter when:",
+   "options": [
+    "the f/fg ratio and the fill factor are held the same, recomputing the test frequency for the new diameter",
+    "the same test frequency is used, since the alloy has not changed",
+    "the drive voltage is scaled in proportion to the diameter change",
+    "the gain is raised until signal amplitudes match the original setup"
+   ],
+   "correct": 0,
+   "explanation": "The normalized operating point is fixed by the ratio f/fg, where fg = 5066/(σ × μr × d²); since fg falls with the square of diameter, the test frequency must be recomputed to hold the ratio. Equal f/fg plus equal fill factor reproduces the point — drive and gain change amplitude, never position."
+  },
+  {
+   "question": "On a nonmagnetic part, signals are weak relative to the instrument's electronic noise. Compared with raising the instrument gain, raising the coil drive level:",
+   "options": [
+    "increases the depth of penetration, which gain cannot do",
+    "moves the normalized operating point farther down the conductivity curve",
+    "strengthens the field and the eddy currents themselves, gaining signal over the electronic noise floor — whereas gain amplifies signal and electronic noise together",
+    "has an identical effect — both act on the signal after the coil"
+   ],
+   "correct": 2,
+   "explanation": "Drive raises the physics: more ampere-turns means stronger eddy currents and bigger signals before the amplifier, buying real margin over electronic noise; gain works after the coil and lifts electronic noise by the same factor as the signal. Neither moves the normalized operating point on a nonmagnetic part — that is set by frequency, conductivity, permeability, and geometry — and material noise grows with drive just as the flaw signal does."
+  },
+  {
+   "question": "A crack-detection procedure for painted aluminum structure requires the reference-standard sensitivity check to be performed through the maximum coating thickness the procedure allows. The technical basis is that:",
+   "options": [
+    "nonconductive paint chemically absorbs the electromagnetic field energy",
+    "coupling loss is sensitivity loss — lift-off weakens every signal because less field reaches the metal, so a crack under the thickest permitted coating answers weakest",
+    "thick coatings rotate crack signals into the lift-off direction, making them unreadable",
+    "coatings raise the surface conductivity of the part, masking crack responses"
+   ],
+   "correct": 1,
+   "explanation": "Lift-off does not merely write its own trace — it reduces the field reaching the part, so every other signal, crack responses included, shrinks as coating thickens. Demonstrating detection through the worst-case permitted coating proves the technique still finds the required flaw under the least favorable coupling."
+  },
+  {
+   "question": "A surface probe performs normally on its standard cable but becomes unusable near the top of its marked frequency range after a long extension cable is added. The most likely cause is:",
+   "options": [
+    "the longer cable's resistance has cut the coil drive current in half",
+    "the extension cable is acting as an antenna for shop electrical noise",
+    "the added cable capacitance has dragged the probe's self-resonant frequency down toward the test frequency",
+    "the extension cable reduces the probe's fill factor"
+   ],
+   "correct": 2,
+   "explanation": "The winding's distributed capacitance plus the cable's capacitance forms a resonant circuit with the coil inductance L₀, and a probe is usable only below that self-resonant frequency. Extra cable adds capacitance and pulls the resonance down — the reason probes carry marked frequency ranges and cable changes can invalidate a setup."
+  },
+  {
+   "question": "Hunting a flaw 10 mm deep in aluminum, a technician lowers the test frequency until the calculated effective depth (3δ) extends well past 10 mm — yet the 3 mm pencil probe still detects nothing. The reason is that:",
+   "options": [
+    "the coil's axial field dies out within a distance on the order of the coil radius — a separate ceiling from skin depth — so the small probe's field never reaches the flaw",
+    "the skin-depth formula does not apply at frequencies this low",
+    "eddy currents cannot be generated at frequencies low enough to penetrate 10 mm",
+    "aluminum's permeability blocks the field below the surface"
+   ],
+   "correct": 0,
+   "explanation": "Depth of interrogation has two ceilings: the skin-depth limit set by frequency, conductivity, and permeability, and a geometric limit — the axial field of a surface coil decays within roughly one coil radius. Whichever ceiling is lower wins, so deep-penetration probes must be physically large as well as low-frequency; a 3 mm probe cannot reach 10 mm at any frequency."
+  }
+ ]
+}

@@ -1,0 +1,185 @@
+{
+ "lessonId": "et2-3-1",
+ "title": "Defining Signal-to-Noise Ratio",
+ "narrationScript": "At Level Two, every call you sign comes down to a ratio. The signal is the response from the discontinuity you are tasked to find. Noise is everything else the display reports: instrument electronics, stray interference, conductivity and permeability variation, surface finish, and above all lift-off and probe wobble. Signal-to-noise ratio is the peak-to-peak amplitude of the defined signal divided by the peak-to-peak amplitude of the background, measured on the same channel at the same settings. Gain cannot improve it, because gain raises signal and noise together. No single value is universally mandatory, but aerospace practice treats three to one as the working minimum for flaw detection, and you verify it during standardization, before scanning, not after an indication appears. Read the impedance plane for phase and the sweep display for position and count. Linear cracks snap out at the notch phase and repeat at one clock position. Angled cracks run lower and broader and walk across the sweep. Line contacts build gradually and trace part geometry. Cracks snap; everything else drifts.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Detection Is a Ratio, Not an Amplitude",
+   "body": "By Level II you have seen plenty of strong, obvious indications. The calls that earn your stamp are the other kind — a small excursion in a moving background, where the question is not *is something on the screen?* but *does this stand far enough out of the background to be believed?* That separation has a name.\n\nThe **signal** is the instrument's response to the condition you are tasked to find — in flaw detection, the response of a discontinuity such as the EDM notch in your reference standard. **Noise** is every response you did not ask for: ASTM E1316 defines it, in essence, as any undesired signal that interferes with receiving or processing the wanted one. Note what that means in eddy current work — most noise is not electrical hash. It is real metallurgy and real geometry, faithfully reported by the coil.\n\n**Signal-to-noise ratio (SNR)** expresses the separation quantitatively:\n\n- **SNR = signal amplitude ÷ noise amplitude**, both measured **peak-to-peak, on the same channel, at the same settings** — normally the vertical flaw channel after lift-off has been rotated horizontal.\n- Worked example: reference-notch response of 4.2 screen divisions against a 1.4-division noise band → SNR = **3:1**.\n- In decibels: SNR(dB) = 20 log₁₀ (signal ÷ noise). So 2:1 ≈ 6 dB, **3:1 ≈ 9.5 dB**, and 10:1 = 20 dB."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "The 3-to-1 working minimum",
+   "body": "The joint-service NDI manual (TO 33B-1-1 / NAVAIR 01-1A-16-1) states it plainly: no specific signal-to-noise ratio is universally mandatory, **but a minimum of 3-to-1 is desirable for flaw detection**. Written procedures routinely make that floor binding: during standardization, the reference-discontinuity response must measure at least three times the noise on representative defect-free material — verified **before** scanning starts, not argued after an indication appears. Below 3:1, both failure modes climb at once: real cracks hide in the grass, and grass gets called cracks."
+  },
+  {
+   "type": "text",
+   "heading": "Where Noise Comes From — and Why Gain Cannot Buy It Back",
+   "body": "Eddy current noise comes in three families, and a Level II should name the family before reaching for a fix:\n\n- **Instrument and environment** — random variation in the instrument's own electronics, stray pickup from nearby electrical equipment, intermittent cables and connectors.\n- **The part itself** — normal point-to-point variation in conductivity and permeability, surface roughness and machining marks, scratches and gouges (which return crack-like signals, and more strongly as frequency rises), plus geometry: edges, thickness changes, and out-of-round holes.\n- **Coupling** — lift-off variation and probe wobble, the dominant noise in most surface and bolt-hole work. Raising test frequency concentrates the currents at the surface, so every surface-related noise source grows with it.\n\nTwo consequences follow. First, **SNR is not a property of the instrument alone** — the same instrument and probe deliver different ratios on different parts, finishes, and fixturing, so the ratio must be checked on representative material, not assumed from the last job. Second, **gain is not sensitivity**: amplification raises signal and noise together and leaves their ratio essentially unchanged. Real SNR improvement comes only from changes that act on the signal differently than the noise — frequency selection, probe choice, filtering, scanning mechanics — the subject of the final lesson in this module."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-3-1-fig-a",
+   "caption": "Quantifying SNR during standardization: on the flaw channel, the reference-notch response measures 4.2 divisions peak-to-peak against a 1.4-division noise band — exactly 3:1 (≈ 9.5 dB), the working minimum for reliable flaw detection."
+  },
+  {
+   "type": "text",
+   "heading": "Review of the Display Format",
+   "body": "Everything in this module is judged on two presentations, so review them with SNR in mind.\n\n**The impedance plane** — the flying dot. Nulling centers the dot at a chosen origin; from there, each test variable drives it along its own characteristic direction. Standard practice rotates the display so **lift-off runs horizontal**; crack responses then develop a strong **vertical** component, and the phase angle between an excursion and the lift-off direction becomes your primary discriminator. A box gate (alarm) set in the crack channel converts that geometry into an automatic alert — the dot leaving the box at the crack phase trips it, while lift-off sliding along the horizontal does not.\n\n**The linear time-base (sweep) display** — the standard companion for rotary bolt-hole scanning. The horizontal axis is one revolution of the probe, read as clock position in the hole; the vertical axis is flaw-channel amplitude. Display persistence stacks successive revolutions, so a repeating event at one clock position builds into an unmistakable mark while random noise smears out.\n\nUse them together, the way the military NDI manual directs: the impedance plane answers **what it is** — phase and signal shape — and the sweep answers **where it is and how many** — clock position and count."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-3-1-fig-b",
+   "caption": "Rotary bolt-hole presentation: the impedance plane gives phase — the differential split-D probe draws a crack as a 'figure-eight' — while the sweep display gives clock position. An axial crack snaps upward at the same position every revolution; an out-of-round hole builds broad 'goal-post' lift-off humps that can also break the alarm, which is why shape, phase, and rate make the call."
+  },
+  {
+   "type": "text",
+   "heading": "The Detection and Examination Procedure",
+   "body": "The written procedure governs; what follows is the skeleton nearly all of them share — and where SNR lives inside it.\n\n1. **Verify the setup** — correct probe and cable, the specified reference standard (material, notch locations and sizes per the procedure), instrument settings loaded.\n2. **Null** on a defect-free area of the reference standard, then rotate phase until lift-off lies horizontal.\n3. **Set gain** so the reference notch produces the screen response the procedure defines; for rotary work, set rotation speed, feed, and filters to the procedure's values.\n4. **Measure the noise** on representative defect-free part surface and confirm the notch response clears it by the required margin — 3:1 unless the procedure demands more. If it does not, fix the setup; you do not start scanning.\n5. **Scan with full coverage** — overlapping passes on surfaces; on rotary scans, a feed rate matched to rotation speed so no increment of hole depth passes uninterrogated.\n6. **Investigate every threshold-breaking signal** — mark it, re-scan slowly, approach from a second direction, and compare its phase and rate of deflection against the notch response.\n7. **Re-verify standardization** at the procedure's interval and after any change — probe, cable, settings, operator. A failed verification voids every examination back to the last good check: re-standardize and re-examine."
+  },
+  {
+   "type": "text",
+   "heading": "Crack Signals: Linear Cracks, Angled Cracks, Line Contacts",
+   "body": "A crack announces itself by interrupting eddy current flow, so the response is strongest when the crack lies **perpendicular to the induced currents** — and each display signature follows from that geometry.\n\n- **Linear cracks** crossed squarely are the full-amplitude case: a sharp excursion at the crack phase with a **rapid rate of deflection** — the dot snaps out and back as the coil crosses. In a bolt hole, a crack parallel to the hole axis is crossed once per revolution and writes a spike at the **same clock position every rev**; a differential split-D probe draws it as the classic **figure-eight**.\n- **Angled cracks** present less of themselves to the current flow, and directional probes punish the skew: published sliding-probe studies report roughly **half the amplitude at about 17° of skew** and only about a fifth near 30°. The signal arrives lower and broader, and on a rotary sweep the indication **walks across clock positions** as the probe feeds through the hole. The limiting case is a crack lying parallel to the current paths — a bobbin coil's near-blindness to circumferential cracks in tubing is the standard example — which is why procedures specify probe types and scan directions deliberately.\n- **Line contacts** are the false friend: anywhere the part touches another metal part along a line — a steel bushing or bearing seated at a bore edge, sheet-on-sheet contact at a lap-joint or doubler edge, a fastener shank bearing against one side of its hole — the local impedance picture changes and a crack-like indication appears. Its tells: it **traces the contact geometry exactly**, runs the full length of the contact rather than a crack's finite length, **builds gradually**, and sits at a phase that does not match your notch. Identify it and document it — but never auto-dismiss it, because contact noise can mask a real crack at the same location.\n\nKeep the military NDI manual's rule of thumb: **cracks snap; property and geometry changes drift**. Rate of deflection, phase, and repeatability — in that order — separate a reportable crack signal from everything else on the screen."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-3-1-fig-c",
+   "caption": "Crack orientation and the false friend: a linear crack crossed squarely returns full amplitude and snaps; skew bleeds amplitude on directional probes and broadens the signal; a metal-to-metal line contact builds gradually, sits off the notch phase, and traces the part geometry."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-3-1-fig-a",
+   "title": "Measuring signal-to-noise ratio on the display",
+   "file": "et2-3-1-fig-a.svg"
+  },
+  {
+   "id": "et2-3-1-fig-b",
+   "title": "Rotary bolt-hole displays: impedance plane and sweep",
+   "file": "et2-3-1-fig-b.svg"
+  },
+  {
+   "id": "et2-3-1-fig-c",
+   "title": "Crack signals: linear, angled, and line contact",
+   "file": "et2-3-1-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Crack, Noise, or Stop the Inspection?",
+  "intro": "Eight observations from surface and bolt-hole examinations. Sort each one: is it a crack signal to evaluate, a noise or non-relevant signal to identify and control, or a condition that stops the inspection until it is fixed? Phase, rate of deflection, and repeatability decide.",
+  "buckets": [
+   "Crack signal — evaluate and report",
+   "Noise / non-relevant — identify and control",
+   "Stop — fix the setup or condition first"
+  ],
+  "items": [
+   {
+    "label": "Sharp figure-eight at the notch phase, same clock position every revolution",
+    "bucket": 0,
+    "why": "A rapid deflection at the standardized phase that repeats at one circumferential position is the classic axial-crack signature — evaluate it against the acceptance criteria and report."
+   },
+   {
+    "label": "Lower, broader indication whose clock position walks as the probe feeds through the hole",
+    "bucket": 0,
+    "why": "An angled crack interrupts less of the current flow — lower amplitude — and is crossed at a different circumferential position each revolution. Still a crack: verify, evaluate, report."
+   },
+   {
+    "label": "Broad indication that builds gradually and traces exactly along a bushing's contact edge",
+    "bucket": 1,
+    "why": "A line-contact signal follows part geometry, builds gradually, and sits off the notch phase. Identify it, document it — and check that it is not hiding a real crack at the same location."
+   },
+   {
+    "label": "Horizontal dot excursions that grow when you tilt the probe in its guide",
+    "bucket": 1,
+    "why": "Movement along the rotated lift-off direction that responds to probe attitude is coupling noise — wobble. Fix the guide and the technique; do not chase it as a flaw."
+   },
+   {
+    "label": "Grass on the display with the probe sitting in air, away from the part",
+    "bucket": 1,
+    "why": "Whatever appears with no part under the coil is instrument or environment noise — check grounding, cables, connectors, and nearby electrical equipment."
+   },
+   {
+    "label": "Reference-notch response measures 2.5 divisions; the noise band measures 1.3 divisions",
+    "bucket": 2,
+    "why": "2.5 ÷ 1.3 is under 2:1 — below the 3-to-1 working minimum. Scanning would be unreliable; improve the setup and re-verify before inspecting anything."
+   },
+   {
+    "label": "Goal-post lift-off humps; the hole measures 0.010 inch out-of-round",
+    "bucket": 2,
+    "why": "Beyond roughly 0.006–0.008 inch out-of-round, crack signals are generally not distinguishable from the lift-off noise. The hole condition must be addressed before any eddy current call means anything."
+   },
+   {
+    "label": "Mid-shift spot check: the null has drifted and the notch no longer hits its set response",
+    "bucket": 2,
+    "why": "Standardization is void. Re-standardize and re-examine everything inspected since the last good verification — that is what the verification interval exists to bound."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "During standardization, the EDM-notch response measures 4.2 divisions peak-to-peak on the flaw channel, and the noise band on defect-free part surface measures 1.4 divisions peak-to-peak. The signal-to-noise ratio is:",
+   "options": [
+    "3:1 — right at the commonly applied working minimum for flaw detection",
+    "1:3 — the setup is inverted and must be re-nulled",
+    "6:1 — comfortably above the working minimum",
+    "9.5:1 — well above the working minimum"
+   ],
+   "correct": 0,
+   "explanation": "SNR = 4.2 ÷ 1.4 = 3:1, which just meets the widely applied 3-to-1 floor. The number 9.5 is the decibel equivalent of a 3:1 amplitude ratio (20 log₁₀ 3 ≈ 9.5 dB), not a ratio itself."
+  },
+  {
+   "question": "Which of the following is NOT a noise source in an eddy current examination?",
+   "options": [
+    "Lift-off variation and probe wobble during scanning",
+    "Normal point-to-point conductivity and permeability variation in the part",
+    "Stray electrical signals from nearby equipment",
+    "The response from the reference notch used for standardization"
+   ],
+   "correct": 3,
+   "explanation": "The reference-notch response is the defined signal of interest — the thing SNR measures against the background. The other three are the classic coupling, material, and instrument/environment noise families."
+  },
+  {
+   "question": "An indication is barely visible above the background grass. Doubling the instrument gain will:",
+   "options": [
+    "Roughly double the SNR, making detection reliable",
+    "Reduce the SNR, because noise always amplifies faster than signal",
+    "Leave the SNR essentially unchanged, because signal and noise are amplified together",
+    "Convert the noise into usable signal through filtering"
+   ],
+   "correct": 2,
+   "explanation": "Gain acts on everything entering the amplifier: the flaw signal and the noise grow together, so their ratio stays essentially the same. Real SNR improvement requires changes that treat signal and noise differently — frequency, probe selection, filtering, or scanning mechanics."
+  },
+  {
+   "question": "On a rotary bolt-hole scan, an indication appears at the same clock position on the sweep display every revolution and draws a sharp figure-eight on the impedance plane. The most probable source is:",
+   "options": [
+    "An out-of-round hole producing goal-post lift-off humps",
+    "Conductivity variation from local heat treatment",
+    "Probe wobble in the scanner guide",
+    "A crack aligned with the hole axis"
+   ],
+   "correct": 3,
+   "explanation": "A rapid deflection at the crack phase, repeating at one circumferential position, with the differential split-D figure-eight shape, is the axial-crack signature. Goal-post humps are broad and geometry-paced; wobble and conductivity changes produce slow, gradual responses at other phases."
+  },
+  {
+   "question": "An indication traces exactly along the line where a steel bushing bears against the edge of an aluminum bore, runs the full length of the contact, and builds gradually rather than snapping across the screen. The Level II should:",
+   "options": [
+    "Reject the part — any indication at an edge is treated as a crack",
+    "Classify it as a probable line-contact signal, verify it follows the contact geometry, compare its phase and rate of deflection with the notch response, and document the finding",
+    "Raise the gain until the indication resembles the notch response",
+    "Dismiss it without investigation, because edge signals are never relevant"
+   ],
+   "correct": 1,
+   "explanation": "Gradual build, full-contact length, and geometry tracing are line-contact tells — but the disposition is investigate and document, not auto-dismiss, because contact noise can mask a real crack at the same location. Raising gain changes nothing about the ratio, and rejecting without discrimination is not evaluation."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level II Principles Course §3.0–3.1 (signal-to-noise ratio — definition)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — Level II functions: set up and standardize equipment, interpret and evaluate results with respect to applicable codes, standards, and specifications",
+  "USAF TO 33B-1-1 / NAVAIR 01-1A-16-1 / TM 1-1500-335-23, Nondestructive Inspection Methods, Chapter 4 (eddy current: signal-to-noise ratio and the 3-to-1 minimum, noise sources, bolt-hole signal interpretation, rate of deflection)",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (definitions: signal, noise)"
+ ]
+}

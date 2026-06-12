@@ -1,0 +1,189 @@
+{
+ "lessonId": "et1-3-1",
+ "title": "Circular Flow and Surface Concentration",
+ "narrationScript": "Once a coil induces current in a part, three properties decide what your test can see. First, eddy currents travel in closed circular loops, mirroring the coil that made them. Under a surface probe they circle parallel to the surface, flowing opposite to the coil current — zero on the coil's axis and strongest in a ring beneath the windings. A flaw only shows itself when it cuts across those loops and forces the current to detour. Second, eddy currents concentrate at the surface. Each layer of current shields the metal below it, so density decays exponentially with depth: thirty-seven percent of the surface value at one standard depth of penetration, and only about five percent at three standard depths — the effective limit of the test. Third, in a solid bar inside an encircling coil, the currents flow in rings around the circumference and fall to zero at the exact center. The core of a solid product is invisible to eddy current testing — that is physics, not a setting you can fix.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "From Induced Current to Inspection Tool",
+   "body": "Pass alternating current through a coil and the coil builds an **alternating magnetic field** around itself. Bring that field near a conductor and Faraday's law does the rest: the changing flux induces a voltage in the material, and because the material conducts, current flows. Those induced currents are **eddy currents** — named for the way they swirl in closed loops, like the eddies trailing an oar blade in water.\n\nLenz's law sets their character: eddy currents always flow in the direction that **opposes the change creating them**, so they generate a secondary magnetic field that pushes back against the coil's primary field. The coil feels that opposition as a change in its electrical loading — and that is the entire basis of the method. The part talks back to the coil.\n\nTo use that conversation, you have to know what the currents actually do inside the part. Three properties govern every eddy current test:\n\n- They travel in **closed circular paths**.\n- They are **strongest at the surface** nearest the coil.\n- They fall to **zero at the center** of a solid conductor placed in an alternating magnetic field.\n\nThis lesson takes each property in turn — and ties each one to what your test can and cannot detect."
+  },
+  {
+   "type": "text",
+   "heading": "Circular Flow: A Mirror of the Coil",
+   "body": "Eddy currents do not wander. They circulate in **closed loops, in planes perpendicular to the magnetic flux** that induces them. Hold a flat 'pancake' coil against a plate and the primary flux enters the part roughly perpendicular to the surface — so the eddy currents flow in **circles parallel to the surface**, concentric with the coil's axis. The induced current is effectively a mirror image of the coil current: at any instant it flows **opposite** to the current in the winding (Lenz's law), and it reverses direction every half-cycle at the test frequency.\n\nThe mirror is not uniform. Directly on the coil's centerline the eddy current density is **zero** — a circular current at the exact axis would have no loop left to follow — and density rises to a **maximum in a ring directly beneath the coil windings**, falling off again outside the coil. The sensitive zone of a surface probe is that ring, not the geometric center. This is one reason scanning technique matters: the flaw has to pass through the ring of strong current, and scan index (overlap) is set so nothing slips between passes.\n\nChange the coil geometry and the current paths change with it. An **encircling coil** around a bar drives its flux along the bar's axis, so the eddy currents flow in **circumferential rings around the bar** — a geometry we will put to work at the end of this lesson."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-3-1-fig-a",
+   "caption": "A surface coil and its mirror: eddy currents circulate in closed loops parallel to the part surface, opposite to the coil current at every instant — zero on the coil axis, strongest in a ring beneath the windings."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "No interruption, no indication",
+   "body": "Eddy currents only reveal a discontinuity that **interrupts or diverts their flow**. A crack standing across the circular paths forces the current to detour around it — a strong, clean signal. A flaw lying **parallel** to the current paths barely disturbs them: a lamination parallel to the sheet surface under a surface probe, or a transverse crack under an encircling coil, can pass with little or no indication. Probe selection and orientation decide which flaws your test can see — before gain, frequency, or anything else on the instrument."
+  },
+  {
+   "type": "text",
+   "heading": "Strongest at the Surface: The Skin Effect",
+   "body": "Eddy current density is greatest at the **surface nearest the coil** and decreases **exponentially** with depth. The cause is the currents' own opposition — the **skin effect**. The loops flowing near the surface generate a secondary field that bucks the primary flux, so the metal just below them sees a weaker net field. Weaker field, weaker induced voltage, weaker current — and that layer in turn shields the layer beneath it. Every depth is screened by all the current flowing above it.\n\nThe yardstick for this decay is the **standard depth of penetration**, symbol **δ** (delta): the depth at which eddy current density has fallen to **1/e, about 37%** of its surface value. At **2δ** about **13.5%** remains; at **3δ**, roughly **5%** — and 3δ is commonly called the **effective depth of penetration**, the practical limit of the test. Material deeper than that contributes almost nothing to the probe signal.\n\nHow thick is one standard depth? That depends on **test frequency**, the material's **electrical conductivity**, and its **magnetic permeability** — raising any of the three squeezes the currents into a thinner skin. The formula and the frequency-selection strategy belong to the depth-of-penetration lesson; for now, lock in the shape of the curve and what it means: **eddy current testing is a surface and near-surface method**. Responses from deeper reflectors are weak — and they also lag in phase, a fact the impedance-plane lessons will put to work."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-3-1-fig-b",
+   "caption": "Skin effect: eddy current density decays exponentially with depth — 37% of the surface value at one standard depth of penetration (δ), about 13.5% at 2δ, and only about 5% at the 3δ effective depth."
+  },
+  {
+   "type": "table",
+   "caption": "Relative eddy current density versus depth, measured in standard depths of penetration (δ).",
+   "headers": ["Depth below surface", "Relative current density", "Meaning for the test"],
+   "rows": [
+    ["Surface (0)", "100%", "Maximum sensitivity — surface-breaking flaws give the strongest response"],
+    ["1δ — standard depth", "37% (1/e)", "Reference depth used to compare materials, frequencies, and probes"],
+    ["2δ", "13.5%", "Sensitivity fading fast — responses are weak and harder to evaluate"],
+    ["3δ — effective depth", "≈5%", "Practical limit of the test — deeper material is effectively uninspected"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Zero at the Center of a Solid Bar",
+   "body": "Put a solid bar through an encircling coil. The primary flux runs **along the bar's axis**, so the induced eddy currents flow in **circumferential rings** around the bar, strongest at the outside surface. Move inward and the density falls — and at the **exact center it is zero**. Two things guarantee it:\n\n- **Geometry.** Eddy currents need a loop. At the centerline the circular path has shrunk to a point — there is no area left to enclose changing flux, so there is no induced voltage to drive a current.\n- **Shielding.** Every ring of current between the surface and the core opposes the primary flux, so the net alternating field weakens step by step toward the axis. By the center there is effectively nothing left to induce with — and raising the frequency only squeezes the currents harder against the surface.\n\nThe consequence is absolute, not a matter of gain or instrument quality: **a discontinuity at or near the core of a solid product is invisible to an eddy current test.** Center shrinkage, pipe, or bursts in bar stock call for a volumetric method such as ultrasonic testing. ET earns its keep on the surface and near-surface — which is exactly why it dominates tubing inspection, where the entire wall is thin enough to carry useful current, and aerospace structure, where the flaws that matter break the surface."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-3-1-fig-c",
+   "caption": "A solid bar in an encircling coil: eddy currents flow in circumferential rings that peak at the surface and fall to zero at the center — a flaw at the core gives no signal at any gain or frequency."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-3-1-fig-a",
+   "title": "Circular eddy current flow beneath a surface coil",
+   "file": "et1-3-1-fig-a.svg"
+  },
+  {
+   "id": "et1-3-1-fig-b",
+   "title": "Skin effect: eddy current density versus depth",
+   "file": "et1-3-1-fig-b.svg"
+  },
+  {
+   "id": "et1-3-1-fig-c",
+   "title": "Solid bar in an encircling coil: zero current at the center",
+   "file": "et1-3-1-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Strong Signal or Silent Flaw?",
+  "intro": "Eddy currents only report flaws that interrupt their flow — where current actually exists. Sort each scenario by the response you should expect. Think about orientation to the current paths, depth below the surface, and where current density is zero.",
+  "buckets": [
+   "Strong response expected",
+   "Weak or no response"
+  ],
+  "items": [
+   {
+    "label": "Surface-breaking fatigue crack lying across the circular current paths of a surface probe",
+    "bucket": 0,
+    "why": "It cuts the loops at the surface, where density is 100% — the currents must detour around it, producing a strong change in the coil."
+   },
+   {
+    "label": "Lamination lying parallel to the sheet surface at mid-thickness",
+    "bucket": 1,
+    "why": "Its plane is parallel to the circular current loops, so it interrupts almost nothing — and it sits at depth, where density has already decayed."
+   },
+   {
+    "label": "Longitudinal seam on a bar passing through an encircling coil",
+    "bucket": 0,
+    "why": "Encircling-coil eddy currents flow around the circumference; a longitudinal flaw cuts squarely across that flow."
+   },
+   {
+    "label": "Shrinkage void at the exact center of a solid bar in an encircling coil",
+    "bucket": 1,
+    "why": "Eddy current density is zero at the center of a solid conductor — no current means no interruption and no signal, at any gain."
+   },
+   {
+    "label": "Corrosion pitting breaking the inspection surface beneath a pancake coil",
+    "bucket": 0,
+    "why": "The surface carries the maximum current density, so surface metal loss disturbs the current paths strongly."
+   },
+   {
+    "label": "Small inclusion three standard depths of penetration below the surface",
+    "bucket": 1,
+    "why": "At 3δ only about 5% of the surface current density remains — the effective depth of penetration is the practical limit of the test."
+   },
+   {
+    "label": "Short crack at the edge of a fastener hole, crossing the probe's current paths",
+    "bucket": 0,
+    "why": "Near-surface and oriented across the flow — the classic aerospace eddy current target."
+   },
+   {
+    "label": "Transverse crack on a bar inspected with an encircling coil",
+    "bucket": 1,
+    "why": "Its plane lies parallel to the circumferential current flow, so the loops pass it with little disturbance."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Beneath a flat surface coil held against a conductive plate, eddy currents flow:",
+   "options": [
+    "In straight lines parallel to the primary magnetic flux",
+    "In closed loops perpendicular to the part surface",
+    "In closed circular loops parallel to the surface, mirroring the coil winding",
+    "Radially outward from the coil centerline"
+   ],
+   "correct": 2,
+   "explanation": "Eddy currents circulate in planes perpendicular to the inducing flux. With a surface coil the flux enters the part perpendicular to the surface, so the currents flow in circles parallel to the surface, concentric with the coil axis and opposite to the coil current."
+  },
+  {
+   "question": "The standard depth of penetration (δ) is the depth at which eddy current density has fallen to approximately:",
+   "options": [
+    "37% of its surface value",
+    "50% of its surface value",
+    "13.5% of its surface value",
+    "5% of its surface value"
+   ],
+   "correct": 0,
+   "explanation": "One standard depth is defined by the exponential decay constant: density falls to 1/e ≈ 37% of the surface value at 1δ. The distractors are real numbers from the same curve — 13.5% at 2δ and about 5% at 3δ, the effective depth."
+  },
+  {
+   "question": "A solid bar passes through an encircling coil carrying alternating current. At the exact center of the bar, the eddy current density is:",
+   "options": [
+    "Maximum, because the primary flux concentrates along the axis",
+    "About half of the surface value",
+    "37% of the surface value",
+    "Zero — there is no circular path at the axis, and the opposing fields of the outer current rings cancel the flux that would drive current there"
+   ],
+   "correct": 3,
+   "explanation": "At the centerline a circular current path has no loop area left, and every ring of current outside it opposes the primary flux. Density is maximum at the bar surface and falls to zero at the center — which is why core flaws are undetectable by ET."
+  },
+  {
+   "question": "Which discontinuity should give the strongest eddy current response?",
+   "options": [
+    "A lamination parallel to the sheet surface under a surface probe",
+    "A surface-breaking crack oriented across the circular current paths",
+    "A void at the center of a solid bar inside an encircling coil",
+    "A flaw aligned parallel to the eddy current flow direction"
+   ],
+   "correct": 1,
+   "explanation": "Detection requires interrupting the current flow. A surface-breaking crack across the paths forces the currents to detour where their density is highest. The other flaws lie parallel to the flow or sit where current density is essentially zero."
+  },
+  {
+   "question": "Directly beneath the centerline (axis) of a circular surface coil, the eddy current density in the part is:",
+   "options": [
+    "At its maximum",
+    "Equal to the average density across the coil face",
+    "Zero — peak density lies in a ring beneath the coil windings",
+    "About 37% of the value beneath the windings"
+   ],
+   "correct": 2,
+   "explanation": "The induced currents mirror the coil: density is zero on the coil axis and reaches its maximum in a ring directly beneath the windings. The sensitive zone of a surface probe is that ring — one reason scan coverage and overlap matter."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Theory Course §2.1.4 (properties of eddy currents: circular travel, surface concentration, zero value at the center of a solid conductor)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice for Personnel Qualification and Certification in Nondestructive Testing",
+  "ASNT Nondestructive Testing Handbook, Vol. 5: Electromagnetic Testing (eddy current distribution, standard depth of penetration)"
+ ]
+}

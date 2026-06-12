@@ -1,0 +1,193 @@
+{
+ "lessonId": "et2-1-3",
+ "title": "Impedance Plane Mastery",
+ "narrationScript": "At Level one you learned to recognize impedance-plane patterns. At Level two you predict them. Every variable pushes the dot in its own direction. Lift-off chords toward the air point — the biggest, fastest mover on the screen. Conductivity slides the operating point along the comma-shaped curve, and frequency moves it the same way, because the coil only feels their product. Permeability lifts reactance above the air point and buries everything else until you saturate the part. Wall thinning walks a spiral, because each deeper layer answers with more phase lag. That phase lag is your depth ruler: fifty-seven degrees of rotation per standard depth of penetration, while amplitude decays to thirty-seven percent at one depth. So read direction first and magnitude second — every real trace is a vector sum, and your job is to decompose it. Finally, the probe rewrites the picture. An absolute coil draws one excursion and sees every slow drift. A differential pair draws opposed lobes and cancels drift, along with long gradual flaws. Match your pattern library to the probe in your hand.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Operating Point: Everything the Field Can Feel",
+   "body": "Level I taught you to recognize impedance-plane patterns after they appeared. Level II means **predicting the trajectory before the probe lands** — then treating any disagreement between prediction and screen as information.\n\nThe picture first. The display plots coil resistance horizontally and inductive reactance vertically, both normalized by the empty-coil reactance X₀ so that coil size and turn count drop out. Probe in air: the dot rests at the **air point**, normalized reactance 1.0, no eddy currents flowing. Probe on metal: the dot falls to its **operating point**, fixed by everything the field can feel — test frequency, conductivity, permeability, part thickness and geometry, and the coil-to-part coupling.\n\nFörster's similarity law makes the picture universal: tests with the same product of frequency, conductivity, permeability, and the square of the governing dimension (a bar's diameter in an encircling coil, the coil's own dimensions for a surface probe), at the same coupling, sit at the same normalized point and draw geometrically similar signals. One comma-shaped conductivity curve therefore serves every coil and every metal — and a pattern library learned on one job transfers to the next, **provided the probe type and display convention match**. That proviso is half of this lesson."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-1-3-fig-a",
+   "caption": "The trajectory map: lift-off chords to the air point, σ and f share one direction along the comma curve, permeability climbs above the air point — and the lift-off-to-flaw angle is narrow high on the curve, wide near and below the knee."
+  },
+  {
+   "type": "table",
+   "caption": "Trajectory quick card — normalized impedance plane; calibrated screens rotate lift-off horizontal.",
+   "headers": ["Variable", "Trajectory on the plane", "Why it moves that way"],
+   "rows": [
+    ["Conductivity ↑", "Down and around the comma curve, toward copper", "Stronger eddy currents load the coil — reflected resistance rises then falls while reactance keeps dropping; that bend is the comma"],
+    ["Frequency ↑", "Identical direction to conductivity ↑", "The coil feels the product f × σ and cannot tell them apart — frequency is the knob you own"],
+    ["Lift-off ↑", "Near-straight chord to the air point", "Coupling collapses with distance — the largest, fastest mover; the first fraction of a millimeter costs the most"],
+    ["Permeability ↑", "Upward, above the air point (ferromagnetic branch)", "μr multiplies flux linkage and raises reactance; small μ swings dwarf conductivity and flaw signals"],
+    ["Wall thinning (t < ~3δ)", "Spiral curling toward the air point", "Each deeper increment of lost metal answers with extra phase lag, rotating the locus as it grows"],
+    ["Surface crack", "Between the lift-off and σ-decrease directions — steeply up on a calibrated screen", "Currents detour around the break: part coupling loss, part local conductivity loss"],
+    ["Subsurface flaw", "Crack direction rotated clockwise, amplitude shrunken", "Phase lag β = x/δ delays the answer; e^(−x/δ) decay weakens it"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Phase Analysis: Depth From Angle",
+   "body": "Eddy currents weaken and lag as they descend. The standard depth of penetration is **δ = 1/√(πfμσ)** — in shop units, δ in millimeters ≈ **660/√(f × %IACS × μr)** with f in hertz. Current density falls to **37%** of the surface value at 1δ, **14%** at 2δ, and **5%** at 3δ — the *effective depth of penetration*, the practical floor of the test.\n\nPhase is the depth ruler. The current at depth x lags the surface current by **β = x/δ radians — 57° per standard depth**. On a calibrated screen with lift-off horizontal, a surface crack rises steeply; the same flaw buried deeper answers later and weaker — rotated clockwise by its phase lag and shrunk by e^(−x/δ). **Rotation reads depth; amplitude reads severity.** Never let one do the other's job.\n\nWork one: 2024-T3 aluminum, about 30% IACS, tested at 100 kHz gives δ ≈ 0.38 mm. An indication rotated about 29° clockwise from the surface-crack direction centers near 0.5δ — roughly 0.2 mm down. One caution before you size anything: 57°-per-δ is one-way theory for a uniform field. Practical phase–depth curves bend with probe design, geometry, and frequency, so they are built from notched reference standards — and your procedure's curve outranks the formula."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-1-3-fig-b",
+   "caption": "Phase lag turns the screen into a depth ruler: about 57° of clockwise rotation per standard depth of penetration, with amplitude decaying as e^(−x/δ) — rotation reads depth, amplitude reads severity."
+  },
+  {
+   "type": "text",
+   "heading": "Separation: Buy Angle First, Then Decompose",
+   "body": "A real trace is a vector sum — wobble plus crack, paint step plus alloy boundary, dent plus thinning. Two habits take it apart.\n\n**First, buy angle before you scan.** Separation lives in the geometry of the plane: high on the curve, lift-off and flaw directions run nearly parallel and everything overlaps; down toward and past the knee they spread apart. Raising frequency slides the operating point down the curve — which is why aluminum surface-crack work runs at hundreds of kilohertz with lift-off and crack signals roughly 90° apart, and why conductivity sorting parks near the knee, where small σ shifts give large, clean excursions (dedicated conductivity meters typically operate near 60 kHz). Chasing depth pulls the other way: second-layer cracks and hidden corrosion at aircraft lap joints force low frequencies, a compressed phase spread, and more careful decomposition.\n\n**Second, change one variable yourself.** Lift the probe — whatever collapses was coupling. Re-null on known-good material — whatever walks along the curve is conductivity, from alloy, heat treatment, or temperature. On carbon steel, expect permeability to bury everything: microstructure swings μr point to point, so either magnetically saturate the region — the principle behind ASTM E309 tubing practice — or evaluate only against reference standards with matching metallurgy. A signal you cannot decompose into known directions is not a finding; it is unfinished work."
+  },
+  {
+   "type": "text",
+   "heading": "Signal Response by Probe Type",
+   "body": "The same flaw draws a different picture depending on what senses it, so a pattern library is only valid for the probe family and display convention it was built with.\n\n- **Absolute** — one sensing coil, usually bridge-balanced against a reference. The dot tracks the operating point itself: a crack is a single excursion out and back. It sees everything — including slow conductivity drift, temperature, and gradual dimensional change — which makes it the choice for conductivity, coating thickness, and long taper, and the one that wanders during a long scan.\n- **Differential** — two sensing coils compared against each other. Only *differences across the pair* register: a sharp flaw draws the classic two-lobed, figure-eight signature as the leading and then the trailing coil crosses it. Drift, temperature, and slow wall changes cancel — and so does any flaw longer and more gradual than the coil spacing. The blindness and the stability are the same property.\n- **Reflection (driver–pickup)** — separate excitation and sensing windings, each optimized for its job. Broad usable frequency range and excellent thermal stability: the workhorse for multi-frequency surface work.\n- **Shielded** — a ferrite cup confines the footprint so edges and fastener heads stop swamping the flaw signal — standard for rivet-row scanning on aircraft skins.\n\nSame crack, four different traces. Read every signal through the probe that made it."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-1-3-fig-c",
+   "caption": "One surface crack, three signatures: an absolute coil draws a single excursion and tracks every slow change, a differential pair draws opposed lobes and cancels drift, a reflection probe adds bandwidth and thermal stability."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Direction first, magnitude second",
+   "body": "Every trace decomposes into directions you already know: **horizontal** means spacing; **along the curve** means conductivity — or frequency standing in for it; **above the air point** means permeability; **rotated and shrunken** means depth; **opposed lobes** mean a differential pair crossing something sharp. Decompose first, then let amplitude testify about size. The dot never lies — but it always answers in vector sums, and Level II is the discipline of refusing to call an indication until every component of the sum has a name."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-1-3-fig-a",
+   "title": "Impedance-plane trajectory map",
+   "file": "et2-1-3-fig-a.svg"
+  },
+  {
+   "id": "et2-1-3-fig-b",
+   "title": "Phase lag: the depth ruler",
+   "file": "et2-1-3-fig-b.svg"
+  },
+  {
+   "id": "et2-1-3-fig-c",
+   "title": "Signal response by probe type",
+   "file": "et2-1-3-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Trajectory Triage: Four Screens, Four Calls",
+  "intro": "Surface probe, instrument nulled on known-good material, lift-off rotated horizontal and pointing left. Decompose each trace by direction before you commit.",
+  "steps": [
+   {
+    "prompt": "Scanning a painted aluminum doubler, the dot slides left along the horizontal axis and snaps back, over and over. No vertical component. Your call:",
+    "options": [
+     "Surface cracking hidden under the paint",
+     "Lift-off — paint thickness variation or probe rock",
+     "Conductivity drift from in-service heat exposure",
+     "A subsurface flaw near one standard depth"
+    ],
+    "correct": 1,
+    "feedback": "Horizontal is the lift-off direction by your own calibration — only spacing speaks there. Paint steps and probe rock both live on that line. A crack would break steeply upward, heat-exposure conductivity drift would creep along the curve direction and stay, and a buried flaw would rise rotated clockwise — none of them snap back and forth along the horizontal."
+   },
+   {
+    "prompt": "Same panel: a sharp signal now rises steeply off the lift-off line — call it 85° — and retraces as the probe passes. Your call:",
+    "options": [
+     "A paint ridge — more lift-off",
+     "A permeability change in the aluminum skin",
+     "A surface-breaking crack",
+     "Far-side wall thinning"
+    ],
+    "correct": 2,
+    "feedback": "A steep rise well separated from horizontal is the surface-flaw direction at this frequency. Permeability is off the table — aluminum is nonmagnetic, μr = 1. Far-side metal loss would arrive rotated well clockwise and weakened by phase lag and e^(−x/δ) decay, not steep and strong."
+   },
+   {
+    "prompt": "A third indication mimics the crack signal but rotated about 29° clockwise, at roughly 60% of the amplitude. δ at this setup is 0.4 mm. Your call:",
+    "options": [
+     "A subsurface flaw roughly 0.2 mm down — near 0.5δ",
+     "A longer surface crack",
+     "Probe tilt during the pass",
+     "Electrical interference from the shop floor"
+    ],
+    "correct": 0,
+    "feedback": "Rotation reads depth: at 57° per δ, a 29° lag puts the response near 0.5δ ≈ 0.2 mm, and e^(−0.5) ≈ 0.61 matches the amplitude. A longer surface crack would grow without rotating, tilt speaks in the horizontal direction, and interference is not phase-coherent with probe position. Confirm depth against the notched standard before reporting."
+   },
+   {
+    "prompt": "You move to a welded carbon-steel bracket, same setup. Over the clean, smooth heat-affected zone the dot swings hard in multiple directions. Your call:",
+    "options": [
+     "A nest of HAZ cracks — reject the weld",
+     "Spatter-induced lift-off only",
+     "Permeability variation — evaluate only with saturation or matched reference standards",
+     "The HAZ conductivity rose sharply"
+    ],
+    "correct": 2,
+    "feedback": "Unsaturated carbon steel answers with its microstructure: μr swings from welding heat dwarf crack signals and drive the dot far above the air point. Saturate the region — the principle ASTM E309 applies to steel tubing — or compare only against reference standards with the same metallurgy. Never call cracks from permeability noise."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "On the normalized impedance plane, raising the test frequency moves the operating point in the same direction as:",
+   "options": [
+    "Increasing lift-off",
+    "Increasing the part's electrical conductivity",
+    "Increasing the part's magnetic permeability",
+    "Decreasing the part's electrical conductivity"
+   ],
+   "correct": 1,
+   "explanation": "The coil responds to the product f × σ: doubling frequency walks the operating point down the comma curve exactly as a conductivity increase would. Lift-off moves toward the air point and permeability moves above it — different directions entirely. This equivalence is why frequency is your lever for repositioning the operating point."
+  },
+  {
+   "question": "For 2024-T3 aluminum (about 30% IACS, μr = 1) tested at 100 kHz, the standard depth of penetration is approximately:",
+   "options": [
+    "0.4 mm",
+    "4 mm",
+    "0.04 mm",
+    "1.5 mm"
+   ],
+   "correct": 0,
+   "explanation": "δ (mm) ≈ 660/√(f × %IACS × μr) = 660/√(100,000 × 30 × 1) ≈ 660/1,732 ≈ 0.38 mm. The 4 mm distractor is the answer at 1 kHz and 0.04 mm at 10 MHz — frequency is the depth control."
+  },
+  {
+   "question": "With lift-off rotated horizontal, an indication appears rotated about 57° clockwise from the surface-crack direction and at much lower amplitude. Its response is centered nearest:",
+   "options": [
+    "The surface",
+    "About three standard depths down",
+    "About one standard depth of penetration down",
+    "The far wall, regardless of thickness"
+   ],
+   "correct": 2,
+   "explanation": "Phase lag accumulates at β = x/δ — about 57° per standard depth — so a 57° clockwise rotation places the response near 1δ, and the e^(−x/δ) decay (37% at 1δ) explains the smaller amplitude. Confirm depth against your notched reference standard before sizing."
+  },
+  {
+   "question": "Which condition is a differential probe configuration most likely to miss entirely?",
+   "options": [
+    "A short transverse fatigue crack",
+    "A sharp corrosion pit",
+    "A drilled through-hole",
+    "A long, gradual wall thinning"
+   ],
+   "correct": 3,
+   "explanation": "A differential pair registers only differences between its two coils. A change that develops over a distance much longer than the coil spacing presents both coils with nearly identical material, so it cancels — the same property that makes differential probes immune to drift and temperature."
+  },
+  {
+   "question": "ASTM E309 examinations of steel tubular products apply magnetic saturation because saturation:",
+   "options": [
+    "Raises permeability so the eddy currents penetrate deeper",
+    "Suppresses permeability variations so flaw and dimension signals can be read",
+    "Increases the tube's electrical conductivity",
+    "Demagnetizes the part for later magnetic particle testing"
+   ],
+   "correct": 1,
+   "explanation": "Unsaturated steel's permeability varies point to point with microstructure and stress, producing signals that dwarf flaw responses. A DC saturating field drives the incremental permeability toward unity, so the tube reads like a nonmagnetic conductor — that is the entire premise of E309."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, Eddy Current Testing Level II Topical Outline §1.1–1.2 (review of electromagnetic theory: eddy current theory and sensing probes)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing Method — Level II topical outline",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method",
+  "ASTM E309, Standard Practice for Eddy Current Examination of Steel Tubular Products Using Magnetic Saturation"
+ ]
+}

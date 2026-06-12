@@ -1,0 +1,186 @@
+{
+ "lessonId": "et2-7-4",
+ "title": "Reference Standards and System Standardization",
+ "narrationScript": "Eddy current testing is a comparative method. The instrument reports change, not absolute flaw size, so every test setup begins with a physical reference standard, an artifact of the same material and geometry as the part, carrying artificial discontinuities of known size. EDM notches stand in for surface cracks, drilled through-wall holes anchor tubing tests, conductivity coupons carry traceable IACS values, and nonconductive shims set lift-off. Standardization means adjusting the system, frequency, phase, gain, filters, and alarm gates, until those reference discontinuities produce the response the written procedure demands, at production speed, because filter response depends on speed. From that moment the setup is frozen. Any probe change, cable change, or power interruption invalidates it. Verification checks repeat at intervals the governing document sets, and the rule is unforgiving. Fail a check, and everything tested since the last good check gets re-examined after you re-standardize. And remember the limit. A notch sets sensitivity. Judging natural flaws is still your job.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "A Comparative Method Needs a Physical Truth",
+   "body": "An eddy current instrument measures one thing: **change in coil impedance**. The screen reports that change in volts or divisions — numbers that mean nothing by themselves. Two instruments at different gain settings show the same crack at wildly different amplitudes, and neither is wrong. A signal only acquires meaning after the test system has been adjusted so that a **known discontinuity in a known artifact produces a predetermined response**. That artifact is the **reference standard**; the adjustment process is **standardization**.\n\nKeep two words separate, because procedures use them precisely:\n\n- **Calibration** is the periodic, documented verification that the instrument itself meets its performance specifications — traceable to national standards, performed at fixed intervals under the quality system, and recorded against the instrument's serial number.\n- **Standardization** is what you do at the test site, at every setup: adjust frequency, phase, gain, filters, and alarm levels until the reference standard's artificial discontinuities give exactly the responses the written procedure demands.\n\nA perfectly calibrated instrument is still useless — and noncompliant — until it has been standardized on the specified reference standard. The ASTM eddy current practices are written around this distinction, and ASTM E1316 carries the controlling terminology.\n\nThis lesson closes the standards module with the physical half of the paperwork from the last three lessons: the blocks, tubes, coupons, and shims that turn a written acceptance criterion into a signal on your screen."
+  },
+  {
+   "type": "text",
+   "heading": "Artificial Discontinuities: The Stand-Ins",
+   "body": "Reference standards carry **artificial discontinuities** — machined features whose size, location, and orientation are controlled and documented. The working inventory:\n\n- **EDM notches.** Cut by electrical-discharge machining into a block of the same alloy and temper as the part. Widths are narrow — typically 0.1 to 0.2 mm — and depths come graded; a common surface block carries notches near 0.2, 0.5, and 1.0 mm so sensitivity can be set and the depth-response trend confirmed. They are the standard stand-in for surface-breaking cracks.\n- **Drilled through-wall holes.** The classic tubing reference: a hole interrupts the induced currents regardless of flow direction, giving a stable, reproducible signal. Hole diameters are dictated by the governing practice for each tube size — never chosen by the operator.\n- **Partial-depth OD and ID notches or holes.** Used where the test must discriminate origin: at a properly chosen frequency, the **phase angle** of the response separates a far-surface (ID) discontinuity from a near-surface (OD) one.\n- **Conductivity coupons.** Certified in **% IACS** — the International Annealed Copper Standard, where 100 % IACS is annealed copper at 58.0 MS/m — with values traceable to national standards.\n- **Nonconductive shims and foils.** Known thicknesses that set the lift-off response and build coating-thickness curves.\n\nOne physics rule governs them all: a discontinuity is detectable only insofar as it **interrupts the induced current path**. A notch lying parallel to the current flow barely disturbs it — which is why every practice specifies notch orientation relative to the coil and the scan."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-7-4-fig-a",
+   "caption": "Four workhorse reference standards: the EDM-notch surface block, the drilled-hole tubing standard, certified conductivity coupons, and nonconductive lift-off shims."
+  },
+  {
+   "type": "table",
+   "caption": "Common eddy current reference standards and the documents that govern them.",
+   "headers": ["Application", "Reference artifact", "What standardization sets", "Governing document"],
+   "rows": [
+    ["Surface crack detection on structure", "Same-alloy block with EDM notches of graded depth", "Sensitivity, phase rotation, alarm threshold", "Written procedure / OEM NDT manual"],
+    ["Nonferromagnetic tubing, production", "Tube length with through-wall drilled holes and/or machined notches", "Amplitude and phase reference, reject level", "ASTM E243 (copper alloys), E426 (stainless), E571 (nickel alloys)"],
+    ["Steel tubular products", "Tube standard examined under DC magnetic saturation", "Same — and confirms saturation is suppressing permeability noise", "ASTM E309"],
+    ["Conductivity measurement and alloy or temper sorting", "Coupons of certified % IACS bracketing the expected value", "Instrument accuracy across the working range", "ASTM E1004"],
+    ["Coating and cladding thickness", "Foils or shims of known thickness on the bare substrate", "The lift-off (thickness) response curve", "ASTM E376"]
+   ]
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "A notch is not a crack",
+   "body": "Artificial discontinuities make the test **repeatable**; they do not make natural flaws identical to notches. A real fatigue crack is tight, irregular, and may be partially closed under compressive stress — at the same depth it can return a noticeably weaker signal than the EDM notch that set your sensitivity. The reference standard establishes that the system detects the procedure's minimum target with margin. Deciding what a production signal actually is — crack, geometry, conductivity shift, lift-off wiggle — remains a Level II evaluation, made with the phase and amplitude reasoning from earlier modules."
+  },
+  {
+   "type": "text",
+   "heading": "Matching the Standard to the Test",
+   "body": "A reference standard speaks for the part only if it matches the part. The governing practices converge on the same matching rules:\n\n- **Material.** Same alloy and temper — or, where the practice allows, conductivity and permeability matched closely enough that phase behavior and depth of penetration are equivalent. A 0.5 mm notch in aluminum is not the same signal as a 0.5 mm notch in titanium, because the skin depths differ enormously.\n- **Geometry.** Same nominal diameter and wall thickness for tube standards — fill factor and through-wall response depend on both — and representative curvature and edge proximity for surface work, because edge effect can swamp a notch signal.\n- **Surface condition.** Comparable roughness and coatings: standardize on a bare block, then test a painted part, and you are reading through an unaccounted lift-off layer.\n- **Identity and traceability.** Standards are serialized, their discontinuity dimensions verified and documented, and they are handled as controlled equipment — re-verified if damaged, never 'improved' with a file. When the procedure names a standard by serial number, that standard — not a similar one from the cabinet — is part of the procedure.\n- **Temperature.** Critical for conductivity work: conductivity is temperature-dependent, so instrument, coupons, and part must be equalized before measuring. A sun-soaked panel checked against shop-temperature coupons carries a built-in bias. Bracketing the expected value with one coupon below and one above is standard ASTM E1004 practice."
+  },
+  {
+   "type": "text",
+   "heading": "The Standardization Routine, Step by Step",
+   "body": "The sequence below is the common skeleton; your procedure's version controls.\n\n1. **Stabilize.** Power the instrument and allow the warm-up the manufacturer requires; confirm the instrument's calibration status is current.\n2. **Configure.** Install the specified probe and cable. Set frequency, drive, filters, and display exactly per the procedure — not from memory of last week's job.\n3. **Balance.** Null the bridge on a discontinuity-free region of the reference standard, with the probe at test lift-off or the tube properly centered in the coil.\n4. **Set phase.** Rotate the display so the lift-off (or fill-factor and wobble) response lies along the chosen axis — horizontal in most surface techniques — so discontinuity signals break away from it.\n5. **Set response at production speed.** Run the reference discontinuities through at the speed the product will actually see. Band-pass and high-pass filters respond to the *rate* of signal change: a notch scanned at half the production speed produces a different filtered amplitude than the same notch at line speed. Adjust gain until the specified discontinuity reaches its predetermined response.\n6. **Set gates and alarms.** Place thresholds, gates, and sorting or marking outputs per the acceptance criteria — then confirm each reference discontinuity actually trips them.\n7. **Record.** Standard serial number, instrument and probe identification, every setting, the responses obtained, date, time, and operator. That record is what makes the next eight hours of signals defensible.\n\nFrom this point the setup is frozen. Change anything, and you start again."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-7-4-fig-b",
+   "caption": "The verification cycle: standardize at the start of the run, verify at the intervals the governing document sets, and when a check fails, re-standardize and re-examine everything tested since the last acceptable check."
+  },
+  {
+   "type": "text",
+   "heading": "Verification, Failure, and the Re-Examination Rule",
+   "body": "Standardization decays. Probes wear, temperatures drift, and electronics age across a shift — so the practices require **verification**: re-running the reference standard to confirm the responses still meet tolerance. The ASTM tubular practices require verification **at the start of the run, at periodic intervals during it, and at its end** — intervals commonly capped at a few hours of continuous operation, with the exact figure set by the governing document or contract. Production procedures often add checks at product changeover or operator handoff.\n\nThen the rule with teeth: **if a verification check fails — the reference response no longer meets the procedure's tolerance — the system must be re-standardized, and all material examined since the last acceptable check must be re-examined.** Nobody knows when sensitivity slipped inside that window, so the entire window is suspect. That makes the verification interval a risk decision: a longer interval means fewer interruptions, but more product on the line every time a check fails.\n\nCertain events invalidate standardization immediately, no check required: probe or cable replacement, power interruption, any change to a controlled setting, or a change of product alloy or size. After any of them, you re-standardize before the next part is tested.\n\nEvery check — pass or fail — goes on the record, with times. Those entries are the spine of the report you learned to build in the previous lesson: when an auditor reconstructs the run, the standardization log is where they start."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-7-4-fig-a",
+   "title": "The reference standard family",
+   "file": "et2-7-4-fig-a.svg"
+  },
+  {
+   "id": "et2-7-4-fig-b",
+   "title": "Verification timeline and the re-examination rule",
+   "file": "et2-7-4-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Standardization Under Pressure",
+  "intro": "You are running an encircling-coil examination of nonferromagnetic tubing under a written procedure that invokes the ASTM tubular practices. Four decisions stand between you and a defensible run — work each one before you click.",
+  "steps": [
+   {
+    "prompt": "Start of run. You are setting system gain on the reference standard's through-wall hole. How does the standard pass through the coil?",
+    "options": [
+     "Slowly, by hand, so the trace is clean and easy to read",
+     "At the same speed the production tubing will run",
+     "Speed is irrelevant — eddy current response is effectively instantaneous",
+     "At twice production speed, to build in conservatism"
+    ],
+    "correct": 1,
+    "feedback": "The filters care about the rate of signal change. A hole passed at half speed produces a different filtered amplitude than the same hole at line speed, so a gain set slowly is a gain set wrong. Standardize under production conditions — speed, centering, and settings."
+   },
+   {
+    "prompt": "Two hours in, the probe cable develops an intermittent dropout and is replaced. No instrument settings were touched. Before testing more tubing you must:",
+    "options": [
+     "Do nothing — the settings are unchanged, so standardization holds",
+     "Re-null the bridge and continue the run",
+     "Re-standardize on the reference standard and confirm every required response and alarm",
+     "Note the cable change in the final report and continue"
+    ],
+    "correct": 2,
+    "feedback": "The standardized system is the whole chain — instrument, cable, probe, fixturing, settings. Replacing any component invalidates standardization no matter what the knobs say. Re-standardize, confirm the alarms trip on the reference discontinuities, and record it."
+   },
+   {
+    "prompt": "At the periodic check, the reference hole reads well below the required response — the verification fails. Since the last passing check, 240 tubes were tested and all passed. Disposition?",
+    "options": [
+     "Re-standardize, then re-examine all 240 tubes tested since the last acceptable check",
+     "Re-standardize and release the 240 tubes — they were tested before the failure was discovered",
+     "Add gain until the hole responds correctly, then continue the run",
+     "Reject all 240 tubes outright"
+    ],
+    "correct": 0,
+    "feedback": "Sensitivity slipped somewhere inside that window and nobody knows when, so the whole window is suspect — that is the re-examination rule written into the ASTM tubular practices. The tubes are re-examined, not condemned; most will pass again. Adding gain without re-standardizing hides the problem instead of fixing it."
+   },
+   {
+    "prompt": "The line is back up. What must the standardization record for this event show?",
+    "options": [
+     "Only the final gain setting that restored the hole response",
+     "Standard serial number, settings, responses obtained, times of the failed and passing checks, the re-examination of the affected tubes, and the operator",
+     "Nothing — failed checks are not recorded once they are corrected",
+     "A single note that equipment was adjusted"
+    ],
+    "correct": 1,
+    "feedback": "The record must let a reviewer reconstruct the event: what failed, when the last good check was, which product was re-examined, and under what settings the line resumed. This is the compliance trail from the previous lesson, applied to the worst hour of the shift."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "In eddy current practice, 'standardization' refers to:",
+   "options": [
+    "The periodic, traceable verification that the instrument meets its performance specifications",
+    "Adjusting the test system to produce a predetermined response from the specified reference standard",
+    "Selecting the test frequency that places lift-off horizontal on the display",
+    "Certifying that the operator meets the written practice's vision requirements"
+   ],
+   "correct": 1,
+   "explanation": "Standardization is the at-the-test adjustment of the system — settings, gain, phase, alarms — until the reference standard's artificial discontinuities give the procedure's required responses. The first option describes instrument calibration, a separate, periodic quality-system activity."
+  },
+  {
+   "question": "A production eddy current examination of copper-alloy tubing is run to ASTM E243. The artificial discontinuities in the reference standard are:",
+   "options": [
+    "Natural service cracks retained from a failed tube",
+    "Simulated flaws bonded to the tube surface with adhesive",
+    "Corrosion pits produced in an accelerated salt-spray exposure",
+    "Drilled through-wall holes and/or machined notches of the dimensions the practice specifies"
+   ],
+   "correct": 3,
+   "explanation": "The tubular practices require machined artificial discontinuities — drilled holes and/or notches — because they are reproducible and their dimensions can be verified and documented. Natural flaws and improvised features cannot be controlled or traced, so they cannot anchor a standardization."
+  },
+  {
+   "question": "Two hours after a passing verification check, the next check shows the reference hole response well below the procedure's tolerance. The required disposition is:",
+   "options": [
+    "Re-standardize the system and re-examine all product tested since the last acceptable check",
+    "Re-standardize and continue — only product tested after the failed check is affected",
+    "Raise the gain until the response is correct and continue the run",
+    "Scrap all product tested during the entire shift"
+   ],
+   "correct": 0,
+   "explanation": "Sensitivity was lost at an unknown moment inside the window, so everything since the last acceptable check is suspect and must be re-examined after re-standardization. Re-examination is not rejection — the product gets retested, not scrapped — and simply adding gain leaves the loss-of-sensitivity window undetected."
+  },
+  {
+   "question": "During standardization of a filtered, high-speed tube test, the reference standard must pass through the coil at production speed because:",
+   "options": [
+    "Higher speed increases the eddy current depth of penetration",
+    "The encircling coil overheats if the standard moves too slowly",
+    "Filter response depends on the rate of signal change, so amplitudes set at the wrong speed misrepresent production responses",
+    "The conductivity of the reference standard changes with speed"
+   ],
+   "correct": 2,
+   "explanation": "Band-pass and high-pass filters are tuned to the frequency content of a discontinuity signal, and that content scales with how fast the discontinuity crosses the field. Speed does not change skin depth or conductivity — it changes what the filters pass, which is why speed is a controlled standardization parameter."
+  },
+  {
+   "question": "An EDM notch and a tight fatigue crack have the same depth. Compared with the notch response the test was standardized on, the crack:",
+   "options": [
+    "Must produce an identical signal, since the depths are equal",
+    "May produce a noticeably weaker signal, because a tight or partially closed crack interrupts the current path less completely",
+    "Cannot be detected at all",
+    "Will always produce a larger signal, because cracks concentrate stress"
+   ],
+   "correct": 1,
+   "explanation": "A notch is an open, air-filled slot; a real crack can be tight, irregular, or partially closed, so current can partially bridge it and the signal can be weaker for the same depth. Reference standards establish sensitivity and repeatability — flaw-for-flaw equivalence is not guaranteed, which is why evaluation remains a Level II judgment."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level II Techniques and Applications Course §1.0 (standards and operating procedures)",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (reference standard and standardization terminology)",
+  "ASTM E243, E309, E426, and E571, electromagnetic (eddy current) examination practices for tubular products (reference standards, standardization, and re-examination requirements)",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method, and ASTM E376, Standard Practice for Measuring Coating Thickness (reference standards for conductivity and lift-off work)"
+ ]
+}

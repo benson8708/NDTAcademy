@@ -1,0 +1,115 @@
+{
+ "moduleId": "et2-6",
+ "questions": [
+  {
+   "question": "A 26 dB preamplifier feeds a 34 dB main amplifier. The overall voltage amplification applied to the coil signal is:",
+   "options": [
+    "about ×60",
+    "about ×1,000",
+    "about ×1,000,000",
+    "about ×600"
+   ],
+   "correct": 1,
+   "explanation": "When stages cascade, ratios multiply but decibels add: 26 + 34 = 60 dB. For voltage, dB = 20·log₁₀(ratio), so 60 dB is ×1,000. Treating the dB sum itself as the ratio gives the ×60 trap, and misapplying the 10·log power formula gives ×1,000,000."
+  },
+  {
+   "question": "The first amplifier stage of an eddy current instrument is built as the quietest stage in the chain and placed as close to the coil as the design allows. The reason is that:",
+   "options": [
+    "the first stage must withstand the full standing coil voltage before the balance network removes it",
+    "gain applied early eliminates the need for filtering later in the chain",
+    "a stage mounted near the coil runs cooler and therefore drifts less",
+    "noise entering at the front is multiplied by every stage that follows, so the first stage sets the whole instrument's noise floor"
+   ],
+   "correct": 3,
+   "explanation": "Noise injected early rides through the entire gain chain, while noise added later lands on an already-large signal. That is why low-noise preamplification sits at the front end — sometimes inside the probe housing — and why the front stage, not the display, decides the smallest flaw signal the instrument can resolve. (The balance network nulls the standing voltage before high gain, so the first stage never handles it.)"
+  },
+  {
+   "question": "A differential bobbin probe passes a tube support plate, driving the amplifier stages far beyond their linear range. Indications recorded in the moments immediately afterward should be treated as suspect because:",
+   "options": [
+    "saturated stages need time to return to linear operation, and signals arriving during overload recovery are unreliable",
+    "the support plate demagnetizes the probe, which must be re-magnetized before testing continues",
+    "the oscillator shuts down briefly whenever the amplifier overloads",
+    "eddy currents cannot re-form in the tube wall until the probe stops moving"
+   ],
+   "correct": 0,
+   "explanation": "Overload recovery is one of saturation's three kinds of damage: after a large transient — a support plate, a part edge, a ferromagnetic inclusion — the amplifier needs time to come back to linear operation. A flaw signal arriving inside that recovery window can be distorted or lost, with no obvious warning on the display."
+  },
+  {
+   "question": "Early instruments of the 1940s and 50s rectified the coil voltage and displayed only its magnitude on a meter. The root limitation of that design was that:",
+   "options": [
+    "vacuum-tube amplifiers provided too little gain to reveal cracks",
+    "rectification destroyed the amplitude information in the signal",
+    "discarding phase collapses lift-off, conductivity change, and cracks onto a single reading — variables the impedance plane separates by direction",
+    "meter movements could not respond to signals above a few hertz"
+   ],
+   "correct": 2,
+   "explanation": "Amplitude detection keeps the signal's magnitude and throws its phase away. Direction on the impedance plane is phase, so every variable that moves the operating point in a distinct direction becomes indistinguishable on a one-number meter — probe wobble reads like a defect. Phase-sensitive detection preserves both quantities, which is what makes variable separation possible."
+  },
+  {
+   "question": "On an impedance-plane instrument, the quadrature detector outputs for a signal measured from the null are X = 3 V (horizontal) and Y = 4 V (vertical). The signal's amplitude is:",
+   "options": [
+    "7 V",
+    "5 V",
+    "3.5 V",
+    "1 V"
+   ],
+   "correct": 1,
+   "explanation": "The detector pair delivers the projections X = A·cos θ and Y = A·sin θ, so the complete vector is recovered as A = √(X² + Y²) = √(9 + 16) = 5 V, with phase θ = arctan(Y/X) ≈ 53°. Adding the components (7 V) or differencing them (1 V) ignores that they are perpendicular projections of one vector."
+  },
+  {
+   "question": "A procedure estimates flaw depth from displayed phase angles. Which instrument adjustment would INVALIDATE those phase readings?",
+   "options": [
+    "rotating the pattern so the lift-off trace lies along the horizontal axis",
+    "re-nulling the probe on the reference standard's defect-free area",
+    "raising the vertical channel gain 10 dB above the horizontal channel gain",
+    "adding 6 dB of gain equally to both channels"
+   ],
+   "correct": 2,
+   "explanation": "Equal gain on both channels scales the whole pattern, phase rotation turns it rigidly about the null, and re-nulling only re-zeros the origin — none of these changes an angle. Unequal axis gain stretches the display along one axis, shifting the apparent angle of every signal not aligned with an axis; depth calls are invalid until the gains are matched and the phase references re-established."
+  },
+  {
+   "question": "Conductivity sorting with a stationary absolute probe gives no usable steady reading until the high-pass filter is switched out. This is because:",
+   "options": [
+    "with high-pass filtering in, every steady signal decays to zero — static measurements require DC coupling",
+    "a stationary coil cannot induce eddy currents in the part",
+    "the high-pass filter passes signals only from differential probes",
+    "conductivity signals lie above the high-pass corner and are clipped"
+   ],
+   "correct": 0,
+   "explanation": "An excited coil induces eddy currents whether or not it moves — but a parked probe produces an unchanging detector output, and a high-pass filter blocks DC by design, so the reading decays to nothing. Static work such as conductivity sorting, lift-off checks, and spot thickness readings needs the filter out: the same filtering that erases drift erases any steady signal."
+  },
+  {
+   "question": "An amplitude-based acceptance criterion is written for a channel that uses electronic differentiation. For that criterion to mean anything, the procedure must also control:",
+   "options": [
+    "the display persistence setting",
+    "the ambient temperature to within ±1 °C",
+    "the alarm gate's phase width",
+    "scan speed — the differentiated output reports rate of change, so amplitude rides on probe speed as much as on the flaw"
+   ],
+   "correct": 3,
+   "explanation": "Differentiation makes the output proportional to dV/dt: the same flaw produces a taller signal at a fast pass and a smaller one at a creep. Amplitude acceptance is therefore meaningless without a stated, steady scan speed — standardize with the reference moving at production speed, and hold that speed during testing."
+  },
+  {
+   "question": "Band-pass filtering can isolate flaw responses because, at a fixed scan speed, the main components of the demodulated signal occupy different frequency bands. Ranked from lowest frequency to highest, they are:",
+   "options": [
+    "flaw signals, drift, electronic noise",
+    "electronic noise, flaw signals, drift",
+    "drift, flaw signals, electronic noise",
+    "drift, electronic noise, flaw signals"
+   ],
+   "correct": 2,
+   "explanation": "Temperature and gradual lift-off drift crawl along below about 1 Hz; flaw transients written by probe motion occupy roughly tens to hundreds of hertz depending on scan speed; broadband electronic noise extends beyond the kilohertz range. That separation is the basis of the band-pass window: a high-pass corner below the flaw band removes drift, and a low-pass corner above it removes noise."
+  },
+  {
+   "question": "The phase-sensitive detector's reference signal must be taken from the same oscillator that drives the test coil because:",
+   "options": [
+    "a second oscillator would double the instrument's power consumption",
+    "phase only has meaning measured against the wave that created the eddy currents — a common source keeps the measured angle a true, stable phase difference",
+    "the reference signal also supplies the coil's drive current",
+    "separate oscillators would prevent the display from showing amplitude"
+   ],
+   "correct": 1,
+   "explanation": "Coherent (synchronous) detection uses one clock for both drive and detection: the detector multiplies the coil signal by a reference locked to the excitation, so the result reads the coil signal's real phase shift. With an independent reference, the measured angle would drift, and the impedance-plane display would lose its meaning."
+  }
+ ]
+}

@@ -1,0 +1,187 @@
+{
+ "lessonId": "et2-4-2",
+ "title": "Noise Causes and Reduction: Saturation, Shielding, Grounding",
+ "narrationScript": "Every eddy current display shows two things at once: the signal you are paid to find, and the noise that wants to hide it. The ratio between them decides the test, and the working floor is three to one. Gain cannot rescue a poor ratio — it raises signal and noise together. So a Level Two attacks noise at its source. In the part, permeability variation is the loudest enemy, ahead of conductivity changes, dimensional variation, lift-off and wobble, edges, and deposits. From outside come power-line hum, welding arcs, cable pickup, and ground loops. Then the three countermeasures. DC saturation drives a ferromagnetic part onto the flat top of its B-H curve, where incremental permeability falls toward one — permeability noise vanishes and penetration returns. Shielding works twice: ferrite around the coil confines the field against edge and fastener signals, and shielded cable intercepts electrical pickup. Grounding gives the whole system exactly one path to earth, so no loop current hums in your signal. Prove three to one on the reference standard, and only then finalize your test frequency.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Signal-to-Noise Ratio: The Number That Decides the Test",
+   "body": "On the display, **signal** is the response that carries the information you are required to find — the crack, the wall loss, the reference notch. **Noise** is every response that carries none: material variation, probe wobble, electrical hum, vibration. The **signal-to-noise ratio (SNR)** — signal amplitude divided by noise amplitude — is the number that decides whether a discontinuity is detectable at all.\n\nThe widely used working floor is **3:1** (about 10 dB): a flaw response should stand at least three times above the surrounding noise before you trust detection, and evaluation is far more comfortable at 10:1. Below 3:1, real flaws hide in the grass — and noise excursions start masquerading as flaws, which costs just as much in false calls.\n\nNow the rule that separates Level II thinking from knob-turning: **gain cannot improve SNR**. The noise is riding on the coil's signal before the amplifier ever sees it, so raising gain lifts flaw and grass together — a buried signal stays exactly as buried at every gain setting. The ratio is set at the coil, by physics. To raise it you must attack noise at its source — which is why probe choice, saturation, shielding, grounding, and the test frequency itself are all SNR decisions, and why this topic sits in the middle of a module on frequency selection."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-4-2-fig-a",
+   "caption": "The same flaw at the same gain: at 3:1 it barely clears the grass — the minimum working level — and after the noise sources are attacked it stands at roughly 10:1. Amplification alone can never make this improvement."
+  },
+  {
+   "type": "text",
+   "heading": "Causes of Noise: Know the Enemy by Name",
+   "body": "Countermeasures only work when they are aimed, so identify the source first. **Part-generated noise** travels with the probe — it appears only while scanning, and it belongs to the material:\n\n- **Permeability variations** — the dominant noise in ferromagnetic material. Heat treatment, cold work, residual stress, and **magnetic writing** (local magnetization left by contact with magnetized tools or handling) change μᵣ from point to point, and because permeability multiplies flux linkage directly, these signals can dwarf any flaw response.\n- **Conductivity variations** — alloy segregation, hardness differences, local cold work.\n- **Dimensional variations** — wall-thickness drift, ovality, dents, surface roughness, fill-factor changes in tube testing.\n- **Coupling noise** — lift-off variation and probe wobble, the constant companions of every scan.\n- **Geometry and deposits** — edge effect, adjacent fasteners and structure, and conductive or magnetic deposits such as copper and magnetite on heat-exchanger tubes.\n\n**External and system noise** arrives even with the probe motionless: 50/60 Hz power-line hum and its harmonics from motors, lighting, and welders; broadband bursts when an arc strikes; radio-frequency pickup; capacitive coupling into unshielded cable; **ground loops**; scanner and tube vibration; and the instrument's own electronic floor.\n\nFrequency feels both families — which is why noise drives frequency selection. Raise the frequency and the current crowds into the surface, so roughness and near-surface permeability and conductivity texture speak louder. Drop too low and flaw responses shrink and rotate toward the ever-present lift-off and wobble responses. The usable frequency window is bounded by noise on both sides."
+  },
+  {
+   "type": "table",
+   "caption": "Noise sources and countermeasures map — identify the source first; every fix attacks a specific cause.",
+   "headers": ["Noise source", "Typical signature", "First-line countermeasure"],
+   "rows": [
+    ["Permeability variations (unsaturated steel, magnetic writing)", "Large erratic signals while scanning that bury flaw responses", "DC magnetic saturation"],
+    ["Lift-off and probe wobble", "Signals along the lift-off direction, tied to probe motion", "Probe fit, guides, and centering; phase setup (next lesson)"],
+    ["Conductivity and dimension drift", "Slow baseline wander along the scan", "Frequency placement; high-pass filtering matched to scan speed"],
+    ["Edge effect, adjacent fasteners and structure", "Strong repeatable signal as the probe approaches geometry", "Ferrite-shielded probe; controlled scan path"],
+    ["Power-line and welder interference", "50/60 Hz hum; spikes when the arc strikes", "Cable shielding; separation from power and welding leads"],
+    ["Ground loop", "Steady hum even with the probe motionless", "Single-point grounding; shield landed at one end; battery power"],
+    ["Vibration and tube motion", "Low-frequency baseline oscillation tied to scan speed", "Mechanical support and guides; filters matched to speed"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "DC Saturation: Make the Steel Forget It Is Magnetic",
+   "body": "In unsaturated ferromagnetic material, two problems share one cause. High, variable permeability generates the worst noise in the method — and the same μᵣ collapses penetration: recall δ (mm) ≈ 660/√(f·μᵣ·σ), which leaves carbon steel at 10 kHz with δ of only about 0.21 mm. Both problems live in the μᵣ term, so one countermeasure kills both.\n\n**DC saturation** applies a strong, steady magnetic field — DC-powered saturating windings on encircling and bobbin assemblies, or permanent magnets built into the probe — that drives the material onto the flat top of its **B-H curve**. The test coil's small AC field then swings about that bias point, and the slope it sees — the **incremental permeability** — falls toward **μᵣ ≈ 1**. The part now answers like a nonmagnetic conductor:\n\n- Permeability variations stop producing signals — the dominant noise source is switched off.\n- Penetration returns: saturated carbon steel at 10 kHz gives δ ≈ 2.1 mm instead of 0.21 mm.\n- Phase behaves, so depth evaluation by phase angle becomes meaningful.\n\n**Prove saturation — never assume it.** Raise the DC in steps until the noise floor stops falling and the reference responses hold steady, then verify that the reference discontinuities are detected — the approach codified in ASTM E309 for steel tubular products. Partial saturation leaves residual permeability noise and unstable phase. Slightly magnetic alloys — Monel 400, or cold-worked zones in 300-series stainless — may saturate with modest bias; fully ferromagnetic carbon steel demands far stronger fields, and heavy-wall product may be impossible to saturate completely. That is the territory of **remote-field testing (ASTM E2096)**, not conventional eddy current. And when the job is done, remember the part may retain magnetism — **demagnetize** when the drawing or the next operation requires it."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-4-2-fig-b",
+   "caption": "DC bias moves the operating point from the steep, variable slope of the B-H curve to its flat top, where incremental permeability approaches 1 — permeability noise disappears and the buried reference notch stands clear."
+  },
+  {
+   "type": "text",
+   "heading": "Shielding: Two Shields, Two Different Enemies",
+   "body": "The word covers two distinct countermeasures — match the shield to the noise.\n\n**Probe field shielding** controls where the coil's own field goes. A **ferrite cup core** — high permeability, low conductivity — gathers the flux and confines the footprint to a tight column under the probe. The payoff: **edge effect shrinks**, signals from adjacent fasteners, ribs, and radius changes fade, and you can scan close beside a fastener head in a lap joint without the geometry shouting over the cracks. At higher test frequencies a **conductive shield ring** of copper or aluminum does similar work in reverse: eddy currents induced in the ring oppose and exclude the field outside it. The trade is honest — a confined field samples a smaller volume, so a shielded probe gives up some coverage and reach in exchange for discrimination. Aerospace surface work accepts that trade almost everywhere.\n\n**Electrical shielding** keeps the world's interference out of the signal path. Use the **shielded or coaxial cable** the probe was designed for: the grounded braid intercepts capacitive pickup and drains it to ground, and the coaxial geometry leaves almost no loop area for magnetic induction. Then practice the habits that let shields work — keep probe cables away from welding leads and power runs, cross unavoidable power cables at right angles instead of running parallel, never coil excess cable beside a motor or transformer, and land the shield as the manufacturer directs — typically at the instrument end only. Why only one end is the subject of the next section."
+  },
+  {
+   "type": "text",
+   "heading": "Grounding: One Path to Earth",
+   "body": "A **ground loop** forms when the test system touches earth at two points — say, the instrument chassis grounded through its power cord and the cable shield clamped to plant structure at the far end. Industrial grounds are not equipotential: motors and welders leak current into building steel, so millivolts of 50/60 Hz stand between any two ground points. That difference drives current around the loop — straight through your cable shield — and the hum lands in the signal.\n\nThe diagnosis is free: **noise with the probe motionless is electrical**. Part-generated noise needs scanning to exist; a hum that persists with the probe sitting still in air points at grounding or pickup, never at the material.\n\nThe cures:\n\n- **Single-point grounding** — the entire test system touches earth once, normally at the instrument.\n- **Shield landed at one end only**, so the shield cannot carry loop current.\n- **Separation** — no shared circuits or ground clamps with welding machines; reroute before you filter.\n- **Battery operation** — the portable instrument's quiet advantage: no power-line connection, no loop possible.\n- **Never lift the AC safety ground** with an adapter to cure hum — that trades a noise problem for a lethal one. Reconfigure the signal grounds instead.\n\nThen close out the module's real question. With saturation, shields, and grounds in place, measure SNR on the **smallest reference discontinuity** at the candidate frequency: **3:1 or better, demonstrated on the reference standard, is the gate** a test frequency must pass before phase discrimination and response speed — the next lesson — finish the selection."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-4-2-fig-c",
+   "caption": "Two ground points turn the cable shield into a loop that circulates 50/60 Hz current through the signal path. Single-point grounding — or battery operation — breaks the loop; the shield is landed at the instrument end only."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-4-2-fig-a",
+   "title": "Signal-to-noise ratio: the 3:1 working floor",
+   "file": "et2-4-2-fig-a.svg"
+  },
+  {
+   "id": "et2-4-2-fig-b",
+   "title": "DC saturation: bias point, incremental permeability, and the payoff",
+   "file": "et2-4-2-fig-b.svg"
+  },
+  {
+   "id": "et2-4-2-fig-c",
+   "title": "Ground loops and single-point grounding",
+   "file": "et2-4-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Quiet the Test: A Retube Inspection Under Noise",
+  "intro": "A bobbin-probe inspection of thin-wall ferritic stainless condenser tubes, with trades working around you. Four decisions — work each one before you click. Working floor: SNR 3:1; a fully saturated material answers with incremental μᵣ ≈ 1.",
+  "steps": [
+   {
+    "prompt": "Pulling the bobbin through the first tube with the saturation field off, the display fills with large erratic signals that bury the through-wall reference hole. Your first move?",
+    "options": [
+     "Raise the gain 12 dB so the hole signal gets bigger",
+     "Energize the DC saturation field and bring it up in steps",
+     "Double the test frequency to outrun the noise",
+     "Pull faster to smooth out the baseline"
+    ],
+    "correct": 1,
+    "feedback": "Large erratic activity that exists only while scanning ferromagnetic material is permeability noise. Saturation drives the incremental permeability toward 1 and switches the source off. Gain lifts noise and signal together, and neither frequency nor pull speed touches the cause."
+   },
+   {
+    "prompt": "You raise the saturating current in steps. What tells you saturation is adequate?",
+    "options": [
+     "The coil's DC resistance stops changing",
+     "The baseline noise stops decreasing and the reference-hole signal holds steady as DC rises further — then the reference standard confirms detection",
+     "The tube becomes warm to the touch",
+     "The lift-off signal disappears completely"
+    ],
+    "correct": 1,
+    "feedback": "Adequate saturation is proven, not assumed: additional DC buys no further noise reduction, responses stabilize, and the reference discontinuities are detected — the approach ASTM E309 codifies for steel tubular products. Partial saturation leaves residual permeability noise and unstable phase."
+   },
+   {
+    "prompt": "Mid-shift, a steady 60 Hz hum appears — present even with the probe motionless in air. A welder fed from the same panel has struck up, its leads running alongside your probe cable. Best response?",
+    "options": [
+     "Evaluate the hum as a possible flaw indication",
+     "Crank the high-pass filter until the hum disappears, whatever it takes",
+     "Separate the cable runs, verify single-point grounding with the shield landed at one end — or switch to battery power",
+     "Lift the instrument's AC safety ground with an adapter"
+    ],
+    "correct": 2,
+    "feedback": "Noise with the probe motionless is electrical, so attack the entry path: separation, shield discipline, one path to earth — or battery power to break any loop outright. Filters are a final trim, not a cure, and defeating the safety ground is never an option."
+   },
+   {
+    "prompt": "Countermeasures applied: noise now reads 1 division peak, and the smallest reference notch reads 2.5 divisions at the candidate frequency. Finalize the frequency?",
+    "options": [
+     "Yes — 2.5:1 rounds up to 3:1",
+     "Yes, after doubling the gain so the notch reads 5 divisions",
+     "No — pull the probe slower until the notch reads higher",
+     "No — the ratio is below the 3:1 working floor; adjust the setup, test frequency included, and re-verify on the reference standard"
+    ],
+    "correct": 3,
+    "feedback": "SNR is the gate and 2.5:1 fails it. Gain moves signal and noise together, and pull speed does not change the ratio's cause. The remaining levers are frequency placement and phase discrimination — the next lesson — followed by re-verification on the reference standard."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "The widely used working minimum signal-to-noise ratio for reliable flaw detection in eddy current testing is:",
+   "options": ["1:1", "3:1 (about 10 dB)", "10:1", "30:1"],
+   "correct": 1,
+   "explanation": "Below about 3:1 a flaw response cannot be reliably distinguished from noise excursions — and noise starts producing false calls. Raising gain cannot restore the ratio, because it amplifies signal and noise alike; SNR must be won at the source."
+  },
+  {
+   "question": "When testing unsaturated ferromagnetic steel, the dominant source of noise is normally:",
+   "options": [
+    "local permeability variations in the material",
+    "conductivity variations from alloy segregation",
+    "capacitive pickup on the probe cable",
+    "the instrument's internal electronic noise"
+   ],
+   "correct": 0,
+   "explanation": "Permeability multiplies flux linkage directly, so point-to-point μᵣ changes from heat treatment, residual stress, cold work, or magnetic writing produce signals that can dwarf flaw responses — the reason DC saturation exists."
+  },
+  {
+   "question": "DC saturation reduces noise in ferromagnetic material by:",
+   "options": [
+    "demagnetizing the part before the test",
+    "concentrating the eddy currents at the surface to strengthen flaw signals",
+    "driving the material onto the flat of its B-H curve so the incremental permeability approaches 1",
+    "filtering the 50/60 Hz line interference out of the signal"
+   ],
+   "correct": 2,
+   "explanation": "With the part biased to saturation, the test coil's small AC swing sees a nearly flat slope — incremental μᵣ ≈ 1. Permeability variations stop producing signals, and penetration increases: carbon steel at 10 kHz goes from δ ≈ 0.21 mm unsaturated to ≈ 2.1 mm saturated."
+  },
+  {
+   "question": "During a tube inspection, a steady 60 Hz hum remains on the display even with the probe motionless in air. The most likely cause is:",
+   "options": [
+    "permeability variation in the tube",
+    "probe wobble",
+    "edge effect at the tube ends",
+    "electrical pickup or a ground loop in the cabling"
+   ],
+   "correct": 3,
+   "explanation": "Part-generated noise requires the probe to be scanning material; noise that persists with the probe still and away from the part is entering electrically. Check cable routing near power and welding leads, shield connections, and whether the system touches ground at more than one point."
+  },
+  {
+   "question": "A ferrite-shielded surface probe is chosen for aerospace lap-joint work primarily because it:",
+   "options": [
+    "penetrates deeper than an unshielded probe",
+    "confines the coil's field, suppressing edge effect and signals from adjacent fastener heads",
+    "eliminates the need for shielded probe cable",
+    "removes the lift-off response entirely"
+   ],
+   "correct": 1,
+   "explanation": "The ferrite cup gathers the flux into a tight footprint, so nearby geometry stops answering and the probe can work close beside fastener heads. The trade-off is a smaller sensed volume — not deeper penetration — and it does nothing about electrical pickup or lift-off."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II Technique Course §4.2 (considerations affecting choice of test: signal-to-noise ratio, causes of noise, methods of noise reduction — saturation, shielding, grounding)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing method — Level II training topic basis",
+  "ASTM E309, Standard Practice for Eddy Current Examination of Steel Tubular Products Using Magnetic Saturation",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (signal, noise, and signal-to-noise ratio)"
+ ]
+}

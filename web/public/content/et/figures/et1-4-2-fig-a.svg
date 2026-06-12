@@ -1,0 +1,59 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0B1F3A">Lift-Off Curves Fan Out From the Air Point</text>
+
+  <!-- axes -->
+  <line x1="110" y1="70" x2="110" y2="455" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="110" y1="455" x2="530" y2="455" stroke="#0B1F3A" stroke-width="2"/>
+  <text transform="rotate(-90 70 270)" x="70" y="270" text-anchor="middle" font-size="15" fill="#0B1F3A">Normalized reactance X / X&#8320;</text>
+  <text x="320" y="486" text-anchor="middle" font-size="15" fill="#0B1F3A">Normalized resistance R / X&#8320;</text>
+
+  <!-- lift-off curves (drawn beneath the conductivity curve and dots) -->
+  <path d="M 185 120 Q 146 110 110 95" fill="none" stroke="#9BC4FF" stroke-width="2.5"/>
+  <path d="M 240 150 Q 172 127 110 95" fill="none" stroke="#9BC4FF" stroke-width="2.5"/>
+  <path d="M 282 352 Q 188 228 110 95" fill="none" stroke="#9BC4FF" stroke-width="2.5"/>
+  <path d="M 172 428 Q 133 263 110 95" fill="none" stroke="#9BC4FF" stroke-width="2.5"/>
+  <path d="M 312 315 Q 203 209 110 95" fill="none" stroke="#1E66F5" stroke-width="3.5"/>
+  <polygon points="207,207 221,213 212,221" fill="#1E66F5"/>
+  <text transform="rotate(-47 204 184)" x="204" y="184" text-anchor="middle" font-size="15" fill="#1E66F5">lift-off increasing</text>
+
+  <!-- conductivity (comma) curve -->
+  <path d="M 110 95 C 140 100 165 108 185 120 C 205 132 222 140 240 150 C 290 178 330 215 331 258 C 331 285 322 299 312 315 C 302 331 292 341 282 352 C 258 380 220 406 172 428 C 162 434 154 438 148 444" fill="none" stroke="#0B1F3A" stroke-width="3.5"/>
+  <circle cx="331" cy="258" r="3" fill="#0B1F3A"/>
+  <text x="343" y="263" font-size="14" fill="#0B1F3A" opacity="0.7">knee</text>
+
+  <!-- air point -->
+  <circle cx="110" cy="95" r="7" fill="#0B1F3A"/>
+  <text x="126" y="90" font-size="16" font-weight="bold" fill="#0B1F3A">Air point — coil far from the part</text>
+
+  <!-- material operating points -->
+  <circle cx="185" cy="120" r="6" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="240" cy="150" r="6" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="312" cy="315" r="6" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="282" cy="352" r="6" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="172" cy="428" r="6" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="199" y="112" font-size="15" fill="#0B1F3A">Ti-6Al-4V &#8776; 1% IACS</text>
+  <text x="252" y="147" font-size="15" fill="#0B1F3A">304 stainless &#8776; 2.5%</text>
+  <text x="326" y="313" font-size="15" fill="#0B1F3A">7075-T6 &#8776; 32%</text>
+  <text x="296" y="357" font-size="15" fill="#0B1F3A">6061-T6 &#8776; 43%</text>
+  <text x="186" y="432" font-size="15" fill="#0B1F3A">Copper &#8776; 100%</text>
+
+  <!-- reading panel -->
+  <rect x="548" y="80" width="230" height="350" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="564" y="110" font-size="17" font-weight="bold" fill="#0B1F3A">How to read the fan</text>
+  <rect x="558" y="133" width="8" height="8" fill="#1E66F5"/>
+  <text x="576" y="142" font-size="15" fill="#0B1F3A">Every lift-off curve ends</text>
+  <text x="576" y="162" font-size="15" fill="#0B1F3A">at the same air point.</text>
+  <rect x="558" y="183" width="8" height="8" fill="#1E66F5"/>
+  <text x="576" y="192" font-size="15" fill="#0B1F3A">Titanium: short line, almost</text>
+  <text x="576" y="212" font-size="15" fill="#0B1F3A">parallel to the curve.</text>
+  <rect x="558" y="233" width="8" height="8" fill="#1E66F5"/>
+  <text x="576" y="242" font-size="15" fill="#0B1F3A">Copper: long sweep, wide</text>
+  <text x="576" y="262" font-size="15" fill="#0B1F3A">angle to the curve.</text>
+  <rect x="558" y="283" width="8" height="8" fill="#1E66F5"/>
+  <text x="576" y="292" font-size="15" fill="#0B1F3A">Separation from conductivity</text>
+  <text x="576" y="312" font-size="15" fill="#0B1F3A">effects is widest near the</text>
+  <text x="576" y="332" font-size="15" fill="#0B1F3A">knee of the curve.</text>
+
+  <text x="400" y="58" text-anchor="middle" font-size="14" fill="#0B1F3A" opacity="0.65">One absolute probe, one frequency. Lift-off curves drawn nearly straight — real traces bow gently.</text>
+</svg>

@@ -1,0 +1,79 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Flaw-Signal Amplitude Rides on Fill Factor</text>
+
+  <!-- gridlines -->
+  <g stroke="#9BC4FF" stroke-width="1" opacity="0.45">
+    <line x1="110" y1="335" x2="710" y2="335"/>
+    <line x1="110" y1="250" x2="710" y2="250"/>
+    <line x1="110" y1="165" x2="710" y2="165"/>
+    <line x1="110" y1="80" x2="710" y2="80"/>
+  </g>
+
+  <!-- typical working band 0.70 - 0.90 -->
+  <rect x="530" y="80" width="120" height="340" fill="#9BC4FF" opacity="0.25"/>
+  <text x="590" y="338" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">typical working</text>
+  <text x="590" y="356" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">range 0.70–0.90</text>
+
+  <!-- rule-of-thumb floor at 0.60 -->
+  <line x1="470" y1="80" x2="470" y2="420" stroke="#0B1F3A" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="462" y="100" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">≈ 0.60 — rule-of-thumb floor:</text>
+  <text x="462" y="118" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">below this, re-engineer the test</text>
+
+  <!-- axes -->
+  <line x1="110" y1="70" x2="110" y2="420" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="110,63 104,75 116,75" fill="#0B1F3A"/>
+  <line x1="110" y1="420" x2="735" y2="420" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="743,420 731,414 731,426" fill="#0B1F3A"/>
+
+  <!-- y ticks + labels -->
+  <g stroke="#0B1F3A" stroke-width="1.5">
+    <line x1="104" y1="420" x2="110" y2="420"/>
+    <line x1="104" y1="335" x2="110" y2="335"/>
+    <line x1="104" y1="250" x2="110" y2="250"/>
+    <line x1="104" y1="165" x2="110" y2="165"/>
+    <line x1="104" y1="80" x2="110" y2="80"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#0B1F3A" text-anchor="end">
+    <text x="98" y="424">0</text>
+    <text x="98" y="339">25</text>
+    <text x="98" y="254">50</text>
+    <text x="98" y="169">75</text>
+    <text x="98" y="84">100</text>
+  </g>
+
+  <!-- x ticks + labels -->
+  <g stroke="#0B1F3A" stroke-width="1.5">
+    <line x1="110" y1="420" x2="110" y2="426"/>
+    <line x1="230" y1="420" x2="230" y2="426"/>
+    <line x1="350" y1="420" x2="350" y2="426"/>
+    <line x1="470" y1="420" x2="470" y2="426"/>
+    <line x1="590" y1="420" x2="590" y2="426"/>
+    <line x1="710" y1="420" x2="710" y2="426"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#0B1F3A" text-anchor="middle">
+    <text x="110" y="442">0</text>
+    <text x="230" y="442">0.2</text>
+    <text x="350" y="442">0.4</text>
+    <text x="470" y="442">0.6</text>
+    <text x="590" y="442">0.8</text>
+    <text x="710" y="442">1.0</text>
+  </g>
+
+  <!-- axis titles -->
+  <text transform="rotate(-90 38 250)" x="38" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">relative flaw-signal amplitude (%)</text>
+  <text x="420" y="464" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">fill factor  η = (d / D)²</text>
+
+  <!-- amplitude line: proportional to fill factor -->
+  <line x1="110" y1="420" x2="710" y2="80" stroke="#1E66F5" stroke-width="3.5"/>
+
+  <!-- worked example point at 0.82 -->
+  <line x1="602" y1="141" x2="602" y2="420" stroke="#0B1F3A" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
+  <line x1="110" y1="141" x2="602" y2="141" stroke="#0B1F3A" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
+  <circle cx="602" cy="141" r="6" fill="#1E66F5" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="552" y="162" text-anchor="end" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">η = 0.82 → ≈ 82% of maximum signal</text>
+
+  <!-- footnotes -->
+  <text x="420" y="481" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#0B1F3A">First approximation: amplitude ∝ η — binding values come from the qualified procedure.</text>
+  <text x="420" y="497" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#0B1F3A">Coil or probe size changed? Fill factor changed — re-standardize.</text>
+</svg>

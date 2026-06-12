@@ -1,0 +1,75 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arwA224b" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9BC4FF"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">Coil Diameter Sets the Field Footprint</text>
+
+  <text x="210" y="70" text-anchor="middle" font-size="16" font-weight="bold" fill="#9BC4FF">Small coil — pencil probe</text>
+  <text x="590" y="70" text-anchor="middle" font-size="16" font-weight="bold" fill="#9BC4FF">Large coil — sorting probe</text>
+
+  <!-- ============ LEFT PANEL: small coil ============ -->
+  <!-- test part -->
+  <rect x="40" y="215" width="340" height="130" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="56" y="337" font-size="14" fill="#9BC4FF">test part</text>
+
+  <!-- probe housing -->
+  <rect x="192" y="118" width="36" height="66" fill="none" stroke="#9BC4FF" stroke-width="2"/>
+  <!-- winding cross-sections -->
+  <rect x="196" y="186" width="10" height="26" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="214" y="186" width="10" height="26" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+
+  <!-- field (dashed) -->
+  <ellipse cx="210" cy="214" rx="34" ry="26" fill="none" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+  <ellipse cx="210" cy="214" rx="56" ry="40" fill="none" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.45"/>
+
+  <!-- eddy current ring (cross-section) -->
+  <ellipse cx="201" cy="227" rx="8" ry="8" fill="#9BC4FF" fill-opacity="0.6"/>
+  <ellipse cx="219" cy="227" rx="8" ry="8" fill="#9BC4FF" fill-opacity="0.6"/>
+
+  <!-- depth arrow -->
+  <line x1="80" y1="218" x2="80" y2="252" stroke="#9BC4FF" stroke-width="2" marker-end="url(#arwA224b)"/>
+  <text x="56" y="274" font-size="14" fill="#FFFFFF">useful depth ≈ coil radius</text>
+
+  <!-- J profile -->
+  <line x1="90" y1="420" x2="330" y2="420" stroke="#9BC4FF" stroke-width="1.5" opacity="0.5"/>
+  <path d="M 120 420 L 158 420 C 172 420 184 374 198 372 C 205 371 207 412 210 414 C 213 412 215 371 222 372 C 236 374 248 420 262 420 L 300 420" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="158" y="375" text-anchor="end" font-size="14" fill="#FFFFFF">peak under windings</text>
+  <line x1="162" y1="371" x2="192" y2="372" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="224" y="404" font-size="14" fill="#9BC4FF">zero on the coil axis</text>
+  <line x1="212" y1="412" x2="222" y2="402" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="210" y="448" text-anchor="middle" font-size="14" fill="#9BC4FF">eddy current density across the footprint</text>
+
+  <!-- ============ RIGHT PANEL: large coil ============ -->
+  <!-- test part -->
+  <rect x="420" y="215" width="340" height="130" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+
+  <!-- probe housing -->
+  <rect x="496" y="132" width="188" height="50" fill="none" stroke="#9BC4FF" stroke-width="2"/>
+  <!-- winding cross-sections -->
+  <rect x="502" y="184" width="16" height="28" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="662" y="184" width="16" height="28" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+
+  <!-- field (dashed) -->
+  <ellipse cx="590" cy="214" rx="115" ry="68" fill="none" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+  <ellipse cx="590" cy="214" rx="145" ry="88" fill="none" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.45"/>
+
+  <!-- eddy current ring (cross-section, lower density) -->
+  <ellipse cx="510" cy="230" rx="24" ry="12" fill="#9BC4FF" fill-opacity="0.35"/>
+  <ellipse cx="670" cy="230" rx="24" ry="12" fill="#9BC4FF" fill-opacity="0.35"/>
+  <text x="560" y="332" text-anchor="middle" font-size="14" fill="#FFFFFF">response averaged over a large volume</text>
+
+  <!-- depth arrow -->
+  <line x1="735" y1="218" x2="735" y2="302" stroke="#9BC4FF" stroke-width="2" marker-end="url(#arwA224b)"/>
+  <text x="726" y="314" text-anchor="end" font-size="14" fill="#FFFFFF">deeper reach</text>
+
+  <!-- J profile -->
+  <line x1="445" y1="420" x2="735" y2="420" stroke="#9BC4FF" stroke-width="1.5" opacity="0.5"/>
+  <path d="M 450 420 L 472 420 C 488 420 496 399 510 398 C 545 396 565 415 590 416 C 615 415 635 396 670 398 C 684 399 692 420 708 420 L 728 420" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="590" y="448" text-anchor="middle" font-size="14" fill="#9BC4FF">wider, weaker, averaged</text>
+
+  <text x="400" y="484" text-anchor="middle" font-size="15" fill="#9BC4FF">Lateral footprint and useful depth both scale with coil diameter — small = resolution, large = averaging.</text>
+</svg>

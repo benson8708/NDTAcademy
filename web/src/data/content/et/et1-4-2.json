@@ -1,0 +1,191 @@
+{
+ "lessonId": "et1-4-2",
+ "title": "Lab: Generating Liftoff Curves",
+ "narrationScript": "In the last lab you traced the conductivity curve by touching one sample after another. This lab varies the other great variable: the gap between the coil and the part. Lift-off is the impedance change that gap produces, and it is the strongest, fastest signal a surface probe ever generates. You will balance in air, touch down on five samples from titanium to copper, and watch the dot land on the conductivity curve, then fly back to the air point as you lift away. Those return paths are lift-off curves. They fan out from the air point, one direction per material, nearly straight close to the surface, and the first tenth of a millimetre does most of the moving. Then you will set up the way working inspectors do: null on the part, wobble the probe, and rotate the display until lift-off runs flat, so handling noise stays horizontal and crack signals break upward into the vertical channel. Change material and the angle changes too — re-null and re-rotate.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "This Lab: Sweep the Gap, Not the Sample",
+   "body": "In the last lab you traced the conductivity curve — the Z-curve — by holding lift-off at zero and changing the metal: probe down on titanium, then stainless, then aluminum, then copper, one dot landing per sample. This lab flips the experiment. The sample stays put, and you vary the **gap between the coil and the surface**.\n\n**Lift-off** is the impedance change produced when coil-to-surface spacing changes. It is the strongest, fastest signal most surface probes ever generate — a few hundredths of a millimetre of hand wobble can swamp the response from a real crack. That makes this lab double duty:\n\n- **Exercise 1:** generate complete lift-off curves on five samples of different conductivity and watch them fan across the impedance plane.\n- **Exercise 2:** use a small lift-off excursion to set the instrument's **phase rotation** so lift-off runs horizontally — the standard setup written into nearly every impedance-plane surface-scan procedure.\n\nNinety minutes at this bench buys you the most-used display setup in surface eddy current work."
+  },
+  {
+   "type": "text",
+   "heading": "Why Pulling Away Moves the Dot",
+   "body": "At contact, the coil's alternating magnetic field couples strongly into the part: eddy currents are at their strongest, and their opposing secondary field pulls the coil's **inductive reactance down** and pushes its **effective resistance up**. That is what put each material's operating point where it sits on the conductivity curve.\n\nOpen a gap and the coupling weakens. Less field reaches the surface, the induced eddy currents shrink, and the coil's impedance retraces toward its empty-coil values — **reactance climbs back toward the air value while resistance falls away**. On the impedance plane, the dot travels from the operating point along a **lift-off curve** that ends at the **air point**. Three facts to verify at the bench:\n\n- **Every lift-off curve heads for the same air point**, whatever the sample. Even a ferromagnetic part obeys this — its operating point sits *above* the air point because permeability raises reactance, so its lift-off response moves *down*. Your nonmagnetic samples all approach from below.\n- **The response is brutally nonlinear.** The first tenth of a millimetre produces the biggest dot movement, and each equal step after it adds less. By the time the gap approaches the coil diameter, the part has effectively vanished from the measurement.\n- **Close to the surface the curve is nearly straight** — which is exactly what lets one phase-rotation setting flatten the working portion of it."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-4-2-fig-a",
+   "caption": "Five conductivity samples, one absolute probe, one frequency: each operating point launches its own lift-off curve, and every curve ends at the same air point."
+  },
+  {
+   "type": "text",
+   "heading": "Bench Exercise 1: Trace the Fan",
+   "body": "Set up an impedance-plane display instrument with an **absolute surface probe** at the frequency on your setup sheet — 100 kHz is typical for this demonstration. The sample set spans the conductivity range: **Ti-6Al-4V (about 1% IACS), 304 stainless (about 2.5%), 7075-T6 (about 32%), 6061-T6 (about 43%), and copper (about 100%)**. Samples must be clean, flat, and dry, and keep the coil **at least a probe diameter away from every edge** — edge effect will bend your curves.\n\n- **Balance in air** and park the null where the air point belongs — upper left of the screen works well.\n- **Set gain on copper first.** Copper sits farthest down the curve and makes the longest excursion; if copper stays on screen, every other sample will.\n- **Touch down on each sample.** The dot lands on the conductivity curve at that material's operating point — you are re-creating last lab's Z-curve one landing at a time.\n- **Lift away slowly and smoothly**, straight up. The trace the dot draws back to the null *is* the lift-off curve. Use display persistence or freeze to capture it.\n- **Repeat with shims.** Stack 0.1 mm plastic shims under the probe one at a time for repeatable, stepped lift-off, and mark the dot position at each step.\n\nSketch all five curves on one impedance-plane diagram in your lab record: a short stub for titanium, a long sweep for copper, every one converging on the air point."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-4-2-fig-c",
+   "caption": "Equal 0.1 mm shims produce shrinking steps: a typical small absolute probe gives up roughly 40% of its full lift-off excursion in the first tenth of a millimetre."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The angle is the information",
+   "body": "Every test variable moves the dot in its own direction — lift-off toward the air point, conductivity along the comma curve, a crack along a path of its own. The fan you just traced proves the lift-off direction **depends on where the operating point sits**: near the top of the curve, lift-off runs almost parallel to the conductivity locus and the two are hard to tell apart; toward the knee, the angle between them opens wide. **Phase discrimination — the whole reason impedance-plane instruments exist — is nothing more than exploiting these angles.** Choosing a test frequency is choosing where your material sits on the curve, which sets the angles you have to work with."
+  },
+  {
+   "type": "text",
+   "heading": "Bench Exercise 2: Rotate Lift-Off Flat",
+   "body": "Working inspections do not display the whole fan — they null **on the part** and care only about the first fraction of a millimetre of gap. The phase (rotation) control spins the entire display without changing any underlying impedance relationship, and you will use it the way every surface-scan procedure does:\n\n- **Null on the 7075 sample** with the probe seated flat, away from edges.\n- **Generate a clean, repeatable lift-off excursion** — lift and re-seat the probe, or slide a 0.1 mm shim in and out under the coil.\n- **Rotate until the excursion runs horizontal.** The common convention sends the dot left from the null; your written procedure governs.\n- **Verify.** The shim trace must hug the baseline. A full lift to air should leave horizontally before bending away — only the near-surface working portion of the curve can be made flat, because the full curve is curved. Set rotation on the first 0.1 to 0.2 mm, the range your hand wobble actually occupies.\n- **Prove the payoff.** On an aluminum notch standard at surface-scan frequency, the EDM-notch signal now breaks **upward**, cleanly separated from the flat lift-off band.\n- **Change material, redo the setup.** Lift-off direction depends on the operating point, so moving from 7075 to titanium means re-nulling *and* re-checking rotation.\n\nRecord frequency, gain, rotation setting, probe ID, and sample IDs in your lab sheet — the documentation habit matters as much as the curves."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-4-2-fig-b",
+   "caption": "Rotation preserves the angle between signals and only changes their orientation: once lift-off lies flat, probe wobble stays horizontal and the crack signal develops vertically, where a gate can alarm on it."
+  },
+  {
+   "type": "table",
+   "caption": "Lift-off in the field — the same physics shows up as noise on one job and as the measurement itself on the next.",
+   "headers": ["Situation", "What lift-off is doing", "Your move"],
+   "rows": [
+    ["Hand-scanning for surface cracks", "Probe wobble makes random excursions along the lift-off direction", "Rotate lift-off horizontal; watch or gate the vertical channel; use spring-loaded probes or guides"],
+    ["Scanning over paint of varying thickness", "Baseline wanders along the lift-off line as the gap changes", "Keep lift-off flat so the wander stays out of the vertical channel; confirm the coating is within procedure limits"],
+    ["Measuring a nonconductive coating", "Lift-off is the measurement — dot position along the curve reads thickness", "Calibrate with shims or foils of known thickness on bare substrate (ASTM B244)"],
+    ["Measuring conductivity with a meter", "Small gaps would corrupt the %IACS reading", "Use a meter with lift-off compensation and stay inside its rated gap (ASTM E1004)"],
+    ["Probe rocking on a curved surface", "Coupling changes mimic lift-off signals", "Hold the probe square to the surface; use fitted guides or fixtures"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-4-2-fig-a",
+   "title": "Lift-off curves fan out from the air point",
+   "file": "et1-4-2-fig-a.svg"
+  },
+  {
+   "id": "et1-4-2-fig-b",
+   "title": "Phase rotation: put lift-off on the horizontal",
+   "file": "et1-4-2-fig-b.svg"
+  },
+  {
+   "id": "et1-4-2-fig-c",
+   "title": "Lift-off decay: equal shims, shrinking steps",
+   "file": "et1-4-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Run the Lift-Off Bench",
+  "intro": "You have an impedance-plane instrument, a 100 kHz absolute pencil probe, 0.1 mm plastic shims, and the five-sample conductivity set: Ti-6Al-4V, 304 stainless, 7075-T6, 6061-T6, and copper. Work each decision before you click.",
+  "steps": [
+   {
+    "prompt": "Balanced in air with the null parked at the upper left of the screen, you plan to touch down on copper first to set the gain. Why copper?",
+    "options": [
+     "Copper's operating point sits just below the air point, so it gives the safest small signal",
+     "Copper is ferromagnetic, so it produces the only visible response",
+     "Copper sits farthest down the conductivity curve, so it makes the longest excursion — if copper stays on screen, every other sample will",
+     "Copper has the shortest lift-off curve of the set"
+    ],
+    "correct": 2,
+    "feedback": "At a given frequency, higher conductivity pushes the operating point farther down the comma curve, so copper (about 100% IACS) lands farthest from the air point and defines the biggest excursion. Gain that keeps copper on screen keeps the whole fan on screen. The point just below the air point belongs to titanium, the lowest conductivity in the set."
+   },
+   {
+    "prompt": "On the 7075 sample you lift the probe in 0.1 mm shim steps. After the first three shims the dot has already covered most of its path to the air point. What does that tell you about hand scanning?",
+    "options": [
+     "Tiny gap changes near contact create the biggest signals, so probe wobble is a first-order noise source",
+     "The instrument is over-gained and must be recalibrated",
+     "7075 is unusually conductive, so its lift-off response is abnormal",
+     "The plastic shims are conductive and corrupting the measurement"
+    ],
+    "correct": 0,
+    "feedback": "Electromagnetic coupling decays steeply with distance: the first 0.1 mm produces by far the largest step, and the increments shrink from there. That is normal physics, not a fault — and it is exactly why a slightly rocking probe generates large lift-off noise during real scans."
+   },
+   {
+    "prompt": "You null on 7075, rotate until a shim slide runs flat, then swap to the 304 stainless sample, re-null, and lift — the trace climbs at a steep angle instead of running flat. What happened?",
+    "options": [
+     "The probe failed mid-lab and must be replaced",
+     "Lift-off direction depends on the operating point — stainless sits near the top of the curve, so its lift-off angle differs and rotation must be reset",
+     "304 stainless is strongly ferromagnetic, so the lift-off response reversed",
+     "Re-nulling on the new sample cancelled the phase rotation setting"
+    ],
+    "correct": 1,
+    "feedback": "Each material launches its lift-off curve from its own spot on the conductivity curve, so the screen angle set on aluminum is wrong for stainless. Re-null and re-rotate on every material change. Annealed 304 is essentially nonmagnetic, and balancing only re-centers the dot — it never touches the rotation setting."
+   },
+   {
+    "prompt": "Final check: with lift-off flat on 7075, you scan the aluminum standard's EDM notch at surface-scan frequency. You expect the notch signal to appear as:",
+    "options": [
+     "A horizontal excursion identical to probe wobble",
+     "No signal — notches respond only to differential probes",
+     "A predominantly vertical, upward excursion, clearly separated from the flat wobble band",
+     "A jump of the dot all the way to the air point"
+    ],
+    "correct": 2,
+    "feedback": "That separation is the payoff of the whole setup. At a suitable surface-scan frequency on aluminum, the crack response is rotated well away from lift-off, so with lift-off horizontal the notch breaks upward into the vertical channel where a gate can alarm on it. Absolute probes detect notches fine — the display setup is what makes the signal easy to see."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "With an absolute surface probe balanced in air, you touch down on a copper sample and then lift away slowly. On the impedance-plane display, the lift-off trace:",
+   "options": [
+    "Runs from the copper operating point back to the air point — reactance rising toward the empty-coil value while resistance falls",
+    "Continues farther down the conductivity curve past copper",
+    "Moves toward the titanium operating point",
+    "Circles the air point at a constant radius"
+   ],
+   "correct": 0,
+   "explanation": "Opening the gap weakens coupling, so the eddy currents shrink and the coil impedance retraces toward its empty-coil values: reactance climbs back toward the air value, resistance falls away, and the dot lands on the air point. Conductivity changes — not lift-off — move the dot along the comma curve."
+  },
+  {
+   "question": "You stack identical 0.1 mm plastic shims under the probe, one at a time. The dot deflection produced by each added shim:",
+   "options": [
+    "Is the same for every shim in the stack",
+    "Grows with each shim as the magnetic field expands",
+    "Shrinks with each shim — the first one produces by far the largest step",
+    "Is zero until the stack exceeds the coil diameter"
+   ],
+   "correct": 2,
+   "explanation": "Coupling between coil and part decays steeply and nonlinearly with distance. The first tenth of a millimetre claims the largest share of the full excursion, each later shim adds less, and by roughly a coil diameter of gap the part has effectively vanished from the measurement."
+  },
+  {
+   "question": "The working reason for rotating the display so lift-off runs horizontal is that:",
+   "options": [
+    "It makes the coil impedance independent of probe spacing",
+    "Probe-handling wobble then stays in the horizontal channel while crack signals develop vertically, where they can be gated and alarmed",
+    "It removes the need to balance the instrument before scanning",
+    "It shortens the lift-off curve so the dot stays on screen"
+   ],
+   "correct": 1,
+   "explanation": "Rotation changes only the orientation of the display, not the physics: wobble noise still happens, but it is confined to the horizontal channel. Crack responses, separated from lift-off by a healthy phase angle at the right frequency, then break upward where a vertical gate sees them cleanly."
+  },
+  {
+   "question": "You set the rotation so lift-off is flat on the 7075-T6 sample, then move to the titanium sample. To keep lift-off horizontal you must:",
+   "options": [
+    "Do nothing — rotation is a property of the probe and never changes",
+    "Re-balance only; the rotation set on aluminum still applies to every material",
+    "Increase the frequency until titanium reads the same as aluminum",
+    "Re-balance on titanium and re-check the rotation — lift-off direction depends on where the material's operating point sits"
+   ],
+   "correct": 3,
+   "explanation": "Each material's lift-off curve leaves from its own operating point on the conductivity curve, so the lift-off angle on screen changes with material. A rotation set on 7075 will not be flat on titanium: re-null on the new material and reset the rotation with a fresh shim check."
+  },
+  {
+   "question": "In the fan demonstration, lift-off on the titanium sample is the hardest to tell from a small conductivity change because:",
+   "options": [
+    "Titanium is ferromagnetic, which reverses the lift-off direction",
+    "Near the top of the conductivity curve the lift-off line runs nearly parallel to the curve itself, so both variables move the dot in almost the same direction",
+    "Titanium produces no eddy currents at all",
+    "The air point shifts whenever a low-conductivity sample is tested"
+   ],
+   "correct": 1,
+   "explanation": "Discrimination comes from the angle between signal directions. High on the curve — low conductivity-frequency product — the lift-off line and the conductivity locus run nearly parallel, so the angle is small. Toward the knee the angle opens, which is why frequency selection (which sets the operating point) decides how well variables separate."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105 (2024), ET Level I Topical Outline — Theory Lab Demonstrations, Topic 3.2: Generation of liftoff curves",
+  "ASNT SNT-TC-1A (2024), Recommended Practice for Personnel Qualification and Certification in Nondestructive Testing",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method",
+  "ASTM B244, Standard Test Method for Measurement of Thickness of Anodic Coatings on Aluminum and of Other Nonconductive Coatings on Nonmagnetic Basis Metals with Eddy-Current Instruments"
+ ]
+}

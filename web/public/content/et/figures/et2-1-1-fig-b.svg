@@ -1,0 +1,64 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arwE21bB" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9BC4FF"/>
+    </marker>
+    <marker id="arwE21bW" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#FFFFFF"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">Coil Impedance: Vector Sum and the Loading Moves</text>
+
+  <!-- LEFT PANEL: impedance triangle -->
+  <text x="205" y="82" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">The impedance triangle</text>
+
+  <line x1="80" y1="380" x2="164" y2="380" stroke="#9BC4FF" stroke-width="3"/>
+  <line x1="164" y1="380" x2="164" y2="135" stroke="#9BC4FF" stroke-width="3"/>
+  <line x1="80" y1="380" x2="164" y2="135" stroke="#FFFFFF" stroke-width="3.5" marker-end="url(#arwE21bW)"/>
+  <path d="M156,380 L156,372 L164,372" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <path d="M110,380 A30,30 0 0 0 89.77,351.63" fill="none" stroke="#9BC4FF" stroke-width="2"/>
+  <text x="118" y="360" font-size="14" fill="#9BC4FF">θ ≈ 71°</text>
+  <text x="122" y="404" text-anchor="middle" font-size="15" fill="#FFFFFF">R = 12 Ω</text>
+  <text x="176" y="262" font-size="15" fill="#FFFFFF">XL = 35 Ω</text>
+  <text x="108" y="250" text-anchor="end" font-size="16" font-weight="bold" fill="#FFFFFF">Z = 37 Ω</text>
+
+  <rect x="45" y="418" width="320" height="52" rx="10" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="205" y="440" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">Z = √(R² + XL²) · θ = arctan(XL / R)</text>
+  <text x="205" y="461" text-anchor="middle" font-size="13" fill="#9BC4FF">XL = 2πfL → 150 µH at 100 kHz ≈ 94 Ω</text>
+
+  <!-- RIGHT PANEL: loading moves on the R–XL plane -->
+  <text x="595" y="82" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">Loading moves on the R–XL plane</text>
+
+  <line x1="420" y1="430" x2="420" y2="100" stroke="#FFFFFF" stroke-width="2" marker-end="url(#arwE21bW)"/>
+  <line x1="420" y1="430" x2="764" y2="430" stroke="#FFFFFF" stroke-width="2" marker-end="url(#arwE21bW)"/>
+  <text x="432" y="104" font-size="14" fill="#FFFFFF">XL (Ω)</text>
+  <text x="760" y="452" text-anchor="end" font-size="14" fill="#FFFFFF">R (Ω)</text>
+
+  <!-- conductivity curve from air point, comma shape -->
+  <path d="M455,140 C575,172 668,242 648,330 C625,390 530,408 478,402" fill="none" stroke="#9BC4FF" stroke-width="2" stroke-opacity="0.5"/>
+  <line x1="586" y1="196" x2="596" y2="203" stroke="#9BC4FF" stroke-width="2" stroke-opacity="0.7" marker-end="url(#arwE21bB)"/>
+  <text x="590" y="420" text-anchor="middle" font-size="13" fill="#9BC4FF">conductivity curve — σ increases along the arc</text>
+
+  <!-- air point -->
+  <circle cx="455" cy="140" r="6" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <line x1="463" y1="141" x2="483" y2="136" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="487" y="134" font-size="15" font-weight="bold" fill="#FFFFFF">air point (R₀, XL₀)</text>
+
+  <!-- ferromagnetic move -->
+  <line x1="458" y1="134" x2="475" y2="106" stroke="#9BC4FF" stroke-width="3" marker-end="url(#arwE21bB)"/>
+  <text x="487" y="112" font-size="14" fill="#FFFFFF">ferromagnetic: XL rises (μᵣ wins)</text>
+
+  <!-- operating point on conductor -->
+  <circle cx="640" cy="322" r="6" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="620" y="344" text-anchor="end" font-size="14" font-weight="bold" fill="#FFFFFF">on nonmagnetic conductor</text>
+  <text x="620" y="362" text-anchor="end" font-size="14" fill="#9BC4FF">XL falls · R rises</text>
+
+  <!-- crack / lift-off: return toward air point -->
+  <path d="M632,314 Q540,296 462,152" fill="none" stroke="#FFFFFF" stroke-width="2.5" marker-end="url(#arwE21bW)"/>
+  <text x="544" y="246" font-size="13" font-weight="bold" fill="#FFFFFF">crack / lift-off:</text>
+  <text x="544" y="264" font-size="13" fill="#9BC4FF">back toward air</text>
+
+  <text x="400" y="490" text-anchor="middle" font-size="14" fill="#9BC4FF">Nonmagnetic conductor: XL down, R up · Crack and lift-off: back toward air · Ferromagnetic: XL up</text>
+</svg>

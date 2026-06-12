@@ -1,0 +1,192 @@
+{
+ "lessonId": "et2-8-1",
+ "title": "Accept/Reject Criteria and Signal Classification",
+ "narrationScript": "An eddy current system can balance, filter, and display perfectly, and the test still fails if the disposition is wrong. This lesson is about the last link in the chain: the output and the decision. First, vocabulary that carries contractual weight. An indication is the response on your display. Interpretation decides whether it is false, nonrelevant, or relevant. A relevant indication means a discontinuity. A discontinuity detectable by NDT is a flaw, and a flaw is not necessarily rejectable. Only evaluation against written acceptance criteria can turn a flaw into a defect, which is rejectable by definition. Those criteria come from the governing code, standard, or specification, never from the technician. You translate them into instrument terms: alarm thresholds and windows set on a reference standard and verified at defined intervals. Go/no-go testing gives a binary disposition at line speed. Sorting uses two-sided windows to separate classes. Either way the rule is the same: classify the signal by phase, amplitude, and signature, evaluate it against the criteria, and document a disposition someone else can reconstruct.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Output Is a Decision Input",
+   "body": "Every lesson before this one was about making the system produce a trustworthy signal — coil selection, frequency, balance, filtering, standardization. This module is about what the system finally hands you: the **inspection system output**, and the decision you make from it.\n\nOutput takes whatever form the job demands:\n\n- **Impedance-plane trace** — the XY signature, carrying amplitude *and* phase. The richest output, and the basis for analysis work.\n- **Strip chart / recorded channels** — signal against position; the permanent record for tubing pulls and automated scans.\n- **Meter or digital readout** — a single number, used for conductivity (%IACS) and coating-thickness work.\n- **Threshold alarm** — a light, horn, or relay contact that closes when a gate is exceeded; on production lines the relay drives a paint marker, a cutter, or a sorting gate.\n\nWhatever the form, the signal carries four useful attributes: **amplitude** (volts — related to the size and volume of what produced it), **phase angle** (degrees — related to its origin and depth), **trace shape** (the signature), and **position** along the part. None of them mean anything in isolation. Volts and degrees acquire meaning only through **standardization** on a reference standard, and the standardized signal acquires a disposition only through **acceptance criteria**.\n\nSNT-TC-1A divides the decision work precisely. **Interpretation** is deciding what an indication is; **evaluation** is deciding whether it is acceptable. A Level I may perform specific accept/reject evaluations *according to written instructions*; a Level II is qualified to interpret and evaluate results with respect to the applicable codes, standards, and specifications. That difference is the subject of this lesson."
+  },
+  {
+   "type": "table",
+   "caption": "The disposition vocabulary of ASTM E1316 — using these terms loosely is how good parts get scrapped and bad parts ship.",
+   "headers": ["Term", "Meaning (ASTM E1316 sense)", "Your action"],
+   "rows": [
+    ["Indication", "The response or evidence from the examination — a deflection, trace, or alarm", "Interpret it: false, nonrelevant, or relevant"],
+    ["False indication", "Caused by the test system itself — electrical noise, vibration, probe wobble", "Find and fix the cause; re-examine the area"],
+    ["Nonrelevant indication", "A real response from a condition that is not a flaw — edge, support plate, geometry, permeability patch", "Verify the cause; record if the procedure requires; do not evaluate as a flaw"],
+    ["Discontinuity", "An interruption in the normal physical structure of the material — intentional or not", "Characterize it: origin, type, size"],
+    ["Flaw", "A discontinuity detectable by NDT — not necessarily rejectable", "Evaluate it against the acceptance criteria"],
+    ["Defect", "A flaw, or aggregate of flaws, that fails the specified acceptance criteria", "Rejectable by definition: disposition, mark, document"]
+   ]
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-1-fig-a",
+   "caption": "The disposition ladder: every term is a decision point, and only evaluation against acceptance criteria can produce the word 'defect'."
+  },
+  {
+   "type": "text",
+   "heading": "Acceptance Criteria in Instrument Terms",
+   "body": "Acceptance criteria are **specified limits** on what may remain in the product, and they live in the referencing documents — the construction code, the product standard, the purchase specification, the engineering drawing. The written procedure translates them into terms your instrument understands. Three translations cover most eddy current work:\n\n- **Amplitude versus a reference discontinuity.** Production tube, bar, and wire testing sets the alarm so that the signal from an artificial reference discontinuity — a drilled hole or EDM notch of specified size, per practices such as ASTM E243 — trips it reliably. Product producing a signal equal to or greater than the reference signal is rejectable or set aside.\n- **Phase-derived depth.** Heat-exchanger tubing analysis builds a **phase-to-depth curve** from a calibration tube containing a through-wall hole and partial-depth holes — the ASME Section V, Article 8 pattern. The criterion is then stated as percent through-wall, so a limit written as 'reject ≥ 40% TW' means the same thing to every analyst on the job.\n- **Property windows.** Conductivity sorting and verification criteria are stated as a window in **%IACS**; coating and thickness checks as dimensional limits.\n\nThen keep the translation honest. Verify standardization on the reference standard at the start and end of every run and at the intervals your procedure sets — and after any probe change, cable change, or suspected drift. **A failed verification voids everything back to the last good one:** re-standardize and re-examine that material. On automated lines, verify at production speed: the filters are speed-sensitive, and a notch that alarms at crawl speed can slide through at line rate."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "Criteria are never yours to invent — and every call must trace to them",
+   "body": "A Level II applies the acceptance criteria in the governing procedure; relaxing, tightening, or 'engineering-judging' them is a Level III, customer, or engineering decision. If a signal does not fit the procedure's classifications, stop and escalate — do not improvise. And make every disposition reconstructable. The record that survives an audit names: procedure and revision; the acceptance criteria applied; the reference standard serial number; instrument, probe, frequency, and settings; standardization checks with times and results; the indication's location; its data — volts, degrees, percent through-wall; its classification; the disposition; and your name, certification level, and date. A reject that cannot be reconstructed from the record cannot be defended — and neither can an accept."
+  },
+  {
+   "type": "text",
+   "heading": "Sorting and Go/No-Go",
+   "body": "**Go/no-go** is the simplest output discipline: one threshold, two outcomes, nothing graded in between. It is built for speed and objectivity — encircling-coil mill lines on tube, bar, and wire can run at meters per second, and nobody is reading an impedance plane at that rate. The instrument holds the decision: signal over the gate → alarm → paint marker, cutter, or diverter acts. The operator's job shifts from interpreting signals to policing the system — verifying standardization, watching for drift, and dispositioning what the line kicks out.\n\nSetting the threshold is the engineering decision. Too tight, and **false rejects** climb — good product is scrapped or re-tested and the line stops earning. Too loose, and **escapes** ship — and an escape usually costs far more than a false reject. The procedure resolves the trade by tying the gate to the reference discontinuity signal with a margin, then proving it dynamically: the reference standard must alarm at production speed, at the start and end of the run. Remember what a binary output throws away: severity. A go/no-go alarm says 'over the line', never 'how far over' — alarmed or borderline product that merits salvage gets a slower, graded re-examination.\n\n**Sorting** extends the idea from two bins to several, and from thresholds to **windows** — two-sided limits. Conductivity sorting separates alloys or tempers whose windows may sit only a few %IACS apart; ASTM E566 covers ferrous practice and E703 nonferrous. The discipline: set the windows using **known samples of every class you expect**, let parts and knowns reach the same temperature before measuring, and re-verify with the knowns before and after the run. Anything that lands between windows is never forced into a bin — it goes to **hold** for manual evaluation."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-1-fig-c",
+   "caption": "Two output disciplines — a go/no-go line holds one threshold and two outcomes; sorting holds two-sided windows, several bins, and a hold disposition for anything in between."
+  },
+  {
+   "type": "text",
+   "heading": "The Classification Process: Discontinuity, Flaw, Defect",
+   "body": "A signal has appeared and the line is not deciding for you. The procedure defines a **classification process** — a fixed order of questions, so that every analyst reaches the same call from the same data:\n\n1. **Is it repeatable?** Re-scan the same track. A response that will not reproduce is noise — electrical, vibration, probe handling — and is classified false, with the cause corrected.\n2. **Does position explain it?** Compare against the part: tube-support locations, edges, transitions, dents. A signal locked to a support plate or an edge is nonrelevant — verify it, do not evaluate it. In multifrequency tubing work the **mix channel** suppresses the support-plate response so a flaw beneath the support can still be seen.\n3. **What does phase say?** Phase angle, read against the standardization, places the origin — near surface or far surface, ID or OD — and, through the phase-to-depth curve, estimates depth.\n4. **What does amplitude say?** Volts, compared with the reference discontinuity, scale the severity and volume.\n5. **Does the signature match?** Compare the trace shape with the reference-standard signals and the procedure's catalog of known signatures.\n\nSurvive all five and you have a **relevant indication**: a **discontinuity** exists. Characterize it — crack, pit, wall loss, inclusion — and you are describing a **flaw**: detectable, and *still not necessarily rejectable*. Only the comparison against acceptance criteria — phase-depth versus the limit, volts versus the gate — decides defect or acceptable. Record the classification **with its reasons**: phase, amplitude, location, signature match. 'OD pit, 55% TW, 7.2 V, at support 4' survives review; 'bad signal' does not."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-1-fig-b",
+   "caption": "An impedance-plane output read against an alarm window: lift-off stays nonrelevant along the horizontal, a shallow flaw stays below the criteria, and the deep flaw crosses both the phase window and the reject level."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-8-1-fig-a",
+   "title": "From indication to disposition",
+   "file": "et2-8-1-fig-a.svg"
+  },
+  {
+   "id": "et2-8-1-fig-b",
+   "title": "Impedance-plane output against an alarm window",
+   "file": "et2-8-1-fig-b.svg"
+  },
+  {
+   "id": "et2-8-1-fig-c",
+   "title": "Go/no-go and sorting outputs",
+   "file": "et2-8-1-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Disposition on the Tube Line",
+  "intro": "You are the Level II on a condenser-tubing examination with a differential bobbin probe. The system is standardized on a reference tube with a through-wall hole and partial-depth flat-bottom holes, and the written procedure for this job sets the reject limit at 40% through-wall. Work each call in order.",
+  "steps": [
+   {
+    "prompt": "Mid-pull, a strong new signal appears on the main channel. Your first move?",
+    "options": [
+     "Reject the tube — the amplitude is clearly large",
+     "Re-scan for repeatability, check the location against the support-plate map, and read its phase against the calibration curve",
+     "Increase the gain to see the signal better before deciding",
+     "Ignore it unless it appears in more than one tube"
+    ],
+    "correct": 1,
+    "feedback": "Classification comes before disposition. Repeatability rules out noise, position rules out nonrelevant structures, and phase against the standardization tells you origin and depth. Amplitude alone — and gain changes mid-run — decide nothing."
+   },
+   {
+    "prompt": "The signal repeats on re-scan, sits between supports, and its phase angle reads OD-origin at about 55% through-wall on the calibration curve. The disposition is:",
+    "options": [
+     "Acceptable — the amplitude was only moderate",
+     "Hold — phase analysis cannot estimate depth",
+     "Reject — it is a flaw that exceeds the 40% TW criterion, which makes it a defect; record volts, degrees, %TW, and location",
+     "Re-standardize and hope the reading changes"
+    ],
+    "correct": 2,
+    "feedback": "The phase-to-depth curve exists exactly for this call: 55% TW against a 40% limit fails the acceptance criteria, and a flaw that fails the criteria is a defect — rejectable by definition. The record carries the numbers that justify it."
+   },
+   {
+    "prompt": "Another signal repeats — but it appears at every tube-support elevation and matches the support-plate signature, and the mix channel shows nothing beneath it. You classify it as:",
+    "options": [
+     "Nonrelevant — a support-plate response, verified by position and by the suppression mix; note it and continue",
+     "A defect at every support — reject the tube",
+     "Justification to raise the alarm threshold until support signals disappear",
+     "A flaw of unknown depth — plug the tube as a precaution"
+    ],
+    "correct": 0,
+    "feedback": "A response explained by part structure is nonrelevant: verified, recorded if required, not evaluated as a flaw. Raising the threshold to silence it would also blind you to real flaws at the supports — the mix channel exists so you keep both."
+   },
+   {
+    "prompt": "End of shift. Which record makes your 55% TW reject defensible a year from now?",
+    "options": [
+     "Tube number and the word 'reject'",
+     "A screen photo of the signal",
+     "A verbal handoff to the next analyst",
+     "Procedure and revision, criteria applied, reference standard serial, instrument and probe settings, standardization check times and results, tube and location, volts/degrees/%TW, classification, disposition, your name, level, and date"
+    ],
+    "correct": 3,
+    "feedback": "A disposition is only as good as its traceability. If the call cannot be reconstructed — what criteria, what standardization, what data — it cannot be defended in an audit, and neither can the accepts that surround it."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Per ASTM E1316 terminology, which statement is correct?",
+   "options": [
+    "Every discontinuity is a defect and must be rejected",
+    "A flaw is rejectable by definition",
+    "A defect is a flaw that fails the specified acceptance criteria — it is rejectable by definition",
+    "An indication is always caused by a discontinuity"
+   ],
+   "correct": 2,
+   "explanation": "The ladder runs indication → discontinuity → flaw → defect. A flaw is detectable but not necessarily rejectable; only failing the acceptance criteria makes it a defect, and 'defect' is the only term on the ladder that means rejectable by definition."
+  },
+  {
+   "question": "A go/no-go tube line has its alarm threshold set far tighter than the reference discontinuity requires. The most direct consequence is:",
+   "options": [
+    "More false rejects — acceptable product alarms and is scrapped or re-tested",
+    "More defective product escapes to the customer",
+    "Improved phase resolution on deep flaws",
+    "The reference standard no longer alarms"
+   ],
+   "correct": 0,
+   "explanation": "Tightening the gate moves the trade toward false rejects: smaller, acceptable conditions now trip the alarm. Escapes are the consequence of a threshold set too loose — the opposite error."
+  },
+  {
+   "question": "In heat-exchanger tubing analysis with a calibrated phase-to-depth curve, the phase angle of a flaw signal is used primarily to:",
+   "options": [
+    "Set the correct probe pull speed",
+    "Measure the tube material's conductivity",
+    "Count the number of flaws in the tube",
+    "Estimate the flaw's origin (ID or OD) and its depth through the wall"
+   ],
+   "correct": 3,
+   "explanation": "Phase, read against the curve built from the calibration tube's through-wall and partial-depth holes, places the origin and estimates percent through-wall. Amplitude — not phase — is the attribute scaled to severity and volume."
+  },
+  {
+   "question": "An indication cannot be reproduced on a re-scan of the same track, and its trace lay along the lift-off direction. The correct classification is:",
+   "options": [
+    "A defect — reject the part",
+    "A false/nonrelevant response from probe motion — correct the scanning condition; it is not evaluated against flaw criteria",
+    "A subsurface flaw at maximum depth",
+    "A conductivity shift requiring re-sorting"
+   ],
+   "correct": 1,
+   "explanation": "Repeatability is the first classification question. A non-repeating response lying in the lift-off direction is the signature of probe wobble — a test-system artifact. Fix the cause and re-examine; flaw evaluation never starts."
+  },
+  {
+   "question": "Your end-of-run standardization verification fails — the reference tube's through-wall hole now reads well below the alarm level. The required action is:",
+   "options": [
+    "Reject only the tubes that alarmed during the run",
+    "Document the drift and ship the run — verification only matters at setup",
+    "Re-standardize and re-examine all material tested since the last successful verification",
+    "Raise the gain until the reference signal alarms, then ship"
+   ],
+   "correct": 2,
+   "explanation": "A failed verification voids every result back to the last good check — accepts included, because the system may have been under-sensitive the whole time. Re-standardize, then re-examine that material."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level II Evaluation Course §2.0–2.2 (inspection system output; accept/reject criteria — sorting, go/no-go; signal classification processes — discontinuity, flaw)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing method — Level I and Level II responsibilities for interpretation and evaluation",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (indication, interpretation, discontinuity, flaw, defect, evaluation)",
+  "ASTM E243, Standard Practice for Electromagnetic (Eddy Current) Examination of Copper and Copper-Alloy Tubes (reference discontinuities and go/no-go production practice)"
+ ]
+}

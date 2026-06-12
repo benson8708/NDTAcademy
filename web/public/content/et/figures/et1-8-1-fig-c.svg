@@ -1,0 +1,69 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Halve the Speed &#8212; the Signal Leaves the Window</text>
+
+  <!-- ================= PANEL 1: 3000 RPM ================= -->
+  <text x="100" y="64" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">3,000 RPM &#8212; filters bracketed and standardized here</text>
+  <rect x="415" y="78" width="140" height="130" fill="#F2F7FE"/>
+
+  <!-- wobble 50 Hz -->
+  <path d="M 236,208 C 247,208 252,128 260,128 C 268,128 273,208 284,208 Z" fill="#D7E5FB" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="260" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">wobble 50 Hz</text>
+
+  <!-- notch hump ~500 Hz inside window -->
+  <path d="M 330,208 C 380,206 412,110 460,108 C 508,106 524,206 540,208 Z" fill="#9BC4FF" stroke="#1E66F5" stroke-width="3"/>
+  <text x="460" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">notch &#8776; 500 Hz &#8212; inside the window</text>
+
+  <!-- cutoffs + axis panel 1 -->
+  <line x1="415" y1="78" x2="415" y2="208" stroke="#1E66F5" stroke-width="2.5"/>
+  <line x1="555" y1="78" x2="555" y2="208" stroke="#1E66F5" stroke-width="2.5"/>
+  <line x1="100" y1="208" x2="740" y2="208" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="120" y1="208" x2="120" y2="215" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="320" y1="208" x2="320" y2="215" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="520" y1="208" x2="520" y2="215" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="720" y1="208" x2="720" y2="215" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="120" y="233" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">10 Hz</text>
+  <text x="320" y="233" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">100 Hz</text>
+  <text x="520" y="233" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">1 kHz</text>
+  <text x="720" y="233" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">10 kHz</text>
+  <text x="415" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">HP 300 Hz</text>
+  <text x="555" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">LP 1.5 kHz</text>
+
+  <!-- ================= PANEL 2: 1500 RPM ================= -->
+  <text x="100" y="276" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">1,500 RPM &#8212; same filters; the signal moved down an octave</text>
+  <rect x="415" y="290" width="140" height="130" fill="#F2F7FE"/>
+
+  <!-- wobble 25 Hz -->
+  <path d="M 178,420 C 188,420 193,345 200,345 C 207,345 212,420 222,420 Z" fill="#D7E5FB" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- notch hump ~250 Hz, mostly left of HP cutoff -->
+  <path d="M 265,420 C 318,418 350,322 400,320 C 450,318 466,418 480,420 Z" fill="#9BC4FF" stroke="#1E66F5" stroke-width="3"/>
+
+  <!-- rejected-zone overlay (everything below HP cutoff is removed) -->
+  <rect x="101" y="290" width="313" height="129" fill="#FFFFFF" opacity="0.6"/>
+
+  <!-- cutoffs + axis panel 2 -->
+  <line x1="415" y1="290" x2="415" y2="420" stroke="#1E66F5" stroke-width="2.5"/>
+  <line x1="555" y1="290" x2="555" y2="420" stroke="#1E66F5" stroke-width="2.5"/>
+  <line x1="100" y1="420" x2="740" y2="420" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="120" y1="420" x2="120" y2="427" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="320" y1="420" x2="320" y2="427" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="520" y1="420" x2="520" y2="427" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="720" y1="420" x2="720" y2="427" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="120" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">10 Hz</text>
+  <text x="320" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">100 Hz</text>
+  <text x="520" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">1 kHz</text>
+  <text x="720" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">10 kHz</text>
+
+  <!-- labels drawn after overlay so they stay crisp -->
+  <text x="200" y="333" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">wobble 25 Hz</text>
+  <text x="355" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">notch &#8776; 250 Hz</text>
+  <text x="485" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#5B708C">window unchanged</text>
+  <text x="575" y="335" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">most of the notch energy</text>
+  <text x="575" y="354" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">now falls below the HP</text>
+  <text x="575" y="373" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">cutoff &#8212; over-filtered</text>
+  <text x="575" y="392" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">without touching a knob</text>
+
+  <!-- bottom rule -->
+  <text x="400" y="482" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">Signal frequency rides on speed: change the RPM &#8594; re-optimize the filters &#8594; re-standardize.</text>
+</svg>

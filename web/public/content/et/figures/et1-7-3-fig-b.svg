@@ -1,0 +1,64 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowWhiteB" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L8,4.5 L0,9 Z" fill="#FFFFFF"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">Sorting Gate: Fail-Safe Disposition</text>
+  <text x="400" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#9BC4FF">Top view &#8212; discrete pieces after the test coil</text>
+
+  <!-- feed conveyor -->
+  <rect x="30" y="200" width="400" height="56" fill="#1E66F5" fill-opacity="0.15" stroke="#1E66F5" stroke-width="2"/>
+  <text x="46" y="172" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">part flow</text>
+  <line x1="44" y1="182" x2="116" y2="182" stroke="#FFFFFF" stroke-width="2" marker-end="url(#arrowWhiteB)"/>
+
+  <!-- parts on the conveyor -->
+  <rect x="56" y="215" width="36" height="26" rx="4" fill="#9BC4FF" stroke="#FFFFFF" stroke-width="1"/>
+  <rect x="136" y="215" width="36" height="26" rx="4" fill="#9BC4FF" stroke="#FFFFFF" stroke-width="1"/>
+  <rect x="216" y="215" width="36" height="26" rx="4" fill="#9BC4FF" stroke="#FFFFFF" stroke-width="1"/>
+
+  <!-- test coil station -->
+  <rect x="282" y="190" width="64" height="76" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="314" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#FFFFFF">test coil</text>
+
+  <!-- part-presence sensor -->
+  <polygon points="389,188 401,188 395,200" fill="#9BC4FF"/>
+  <text x="398" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">part sensor</text>
+
+  <!-- accept path -->
+  <rect x="430" y="200" width="230" height="56" fill="#1E66F5" fill-opacity="0.15" stroke="#1E66F5" stroke-width="2"/>
+  <rect x="660" y="168" width="124" height="120" rx="8" fill="#1E66F5" fill-opacity="0.12" stroke="#1E66F5" stroke-width="2"/>
+  <text x="722" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">ACCEPT</text>
+  <text x="722" y="232" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">table</text>
+  <rect x="688" y="246" width="28" height="20" rx="3" fill="#9BC4FF" opacity="0.9"/>
+  <rect x="724" y="246" width="28" height="20" rx="3" fill="#9BC4FF" opacity="0.9"/>
+
+  <!-- reject chute -->
+  <polygon points="438,256 502,256 602,392 538,392" fill="#1E66F5" fill-opacity="0.15" stroke="#1E66F5" stroke-width="2"/>
+  <rect x="508" y="392" width="160" height="76" rx="8" fill="#1E66F5" fill-opacity="0.12" stroke="#1E66F5" stroke-width="2"/>
+  <text x="588" y="424" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">REJECT</text>
+  <text x="588" y="448" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">bin &#8212; also the fail-safe path</text>
+
+  <!-- part being deflected down the chute -->
+  <rect x="522" y="307" width="36" height="26" rx="4" transform="rotate(54 540 320)" fill="#9BC4FF" stroke="#FFFFFF" stroke-width="1"/>
+
+  <!-- gate arm: solid = de-energized (reject), dashed ghost = energized (accept) -->
+  <line x1="436" y1="202" x2="522" y2="202" stroke="#9BC4FF" stroke-width="3" stroke-dasharray="6 5" opacity="0.5"/>
+  <line x1="436" y1="202" x2="514" y2="260" stroke="#9BC4FF" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="436" cy="202" r="5" fill="#FFFFFF"/>
+  <path d="M 524,210 A 70 70 0 0 1 519,248" fill="none" stroke="#FFFFFF" stroke-width="1.5" marker-end="url(#arrowWhiteB)"/>
+  <text x="452" y="284" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">gate arm &#8212; de-energized position = reject</text>
+
+  <!-- gate logic panel -->
+  <rect x="40" y="318" width="360" height="150" rx="8" fill="#1E66F5" fill-opacity="0.08" stroke="#1E66F5" stroke-width="2"/>
+  <text x="60" y="348" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">Gate logic &#8212; fail-safe</text>
+  <text x="60" y="380" font-family="Arial, sans-serif" font-size="15" fill="#9BC4FF">no alarm in part window &#8594; accept</text>
+  <text x="60" y="408" font-family="Arial, sans-serif" font-size="15" fill="#9BC4FF">alarm in part window &#8594; reject</text>
+  <text x="60" y="436" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">power, air, or trigger lost &#8594; REJECT</text>
+  <text x="60" y="458" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">untested product never reaches the accept bin</text>
+
+  <!-- three-way note -->
+  <text x="588" y="488" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">comparative sorts add a third path: retest / regrade</text>
+</svg>

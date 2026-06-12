@@ -1,0 +1,110 @@
+{
+ "moduleId": "et1-2",
+ "questions": [
+  {
+   "question": "Which sequence places the eddy current generation chain in the correct order, from instrument to induced currents?",
+   "options": [
+    "Oscillator → primary magnetic field → alternating coil current → changing flux in the part → induced EMF → closed-loop eddy currents",
+    "Oscillator → alternating coil current → primary magnetic field → changing flux in the part → induced EMF → closed-loop eddy currents",
+    "Oscillator → alternating coil current → primary magnetic field → induced EMF in the part → changing flux → closed-loop eddy currents",
+    "Oscillator → alternating coil current → closed-loop eddy currents → primary magnetic field → changing flux in the part → induced EMF"
+   ],
+   "correct": 1,
+   "explanation": "The current must exist before its field, the field must sweep changing flux through the part, and that changing flux induces the EMF that drives the eddy currents. Every measurement the method makes travels this chain — weaken any link (lower frequency, poorer conductor, more lift-off) and the signal weakens with it."
+  },
+  {
+   "question": "A demonstration coil carrying steady direct current is swept rapidly back and forth across an aluminum plate. Eddy currents in the plate:",
+   "options": [
+    "never appear — only alternating current can induce them",
+    "appear and persist even after the coil stops moving",
+    "flow while the coil is moving, because the motion itself changes the flux through the part",
+    "appear only if the plate is ferromagnetic, since a steady field needs permeability to couple"
+   ],
+   "correct": 2,
+   "explanation": "Induction requires changing flux — not AC specifically. A moving DC field drags changing flux through the plate, so currents circulate as long as the motion lasts and die when it stops. Instruments use AC because it keeps the flux changing continuously, at a frequency the operator chooses."
+  },
+  {
+   "question": "Scan patterns with a circular surface probe are overlapped partly because a small flaw sitting exactly on the probe's centerline can be missed. The physical reason is that:",
+   "options": [
+    "eddy current density passes through zero on the coil's axis, leaving the spot directly beneath the probe center uninspected",
+    "the primary magnetic field cannot penetrate the part along the coil's centerline",
+    "the secondary field is strongest at the center and shields the flaw from the primary field",
+    "eddy currents migrate to the outer edges of the part, away from the probe center"
+   ],
+   "correct": 0,
+   "explanation": "The induced loops mirror the circular winding: strongest directly beneath the windings, but zero at the center point — just as the winding itself has no conductor at its own center. A flaw parked on that centerline disturbs almost no current, so scans are overlapped to pass every point under the high-density ring."
+  },
+  {
+   "question": "When a probe is set on a conductive part, the coil's effective resistance rises. The energy bookkeeping behind that rise is that:",
+   "options": [
+    "the part's bulk resistance is connected in series with the coil winding through the contact point",
+    "the coil wire heats up in the part's reflected magnetic field",
+    "the secondary field forces extra flux through the winding",
+    "the I²R heat the eddy currents dissipate in the part is drawn from the coil's drive circuit"
+   ],
+   "correct": 3,
+   "explanation": "Eddy currents flowing through the metal's resistance dissipate power as heat, and that power has only one source: the coil's circuit. In the transformer model the shorted one-turn secondary's load is reflected back into the primary, so the coil looks more resistive. Flux cancellation — the other half of the story — is what lowers the inductive reactance."
+  },
+  {
+   "question": "The same probe is balanced in air, then placed first on a thick aluminum plate and next on a carbon-steel plate. Relative to the air value, the coil's inductive reactance:",
+   "options": [
+    "falls on aluminum but rises on steel — steel's permeability multiplies the coil's flux, overwhelming the eddy current cancellation",
+    "rises on both, because every conductor concentrates magnetic flux inside itself",
+    "falls on both, because the opposing secondary field cancels flux in any conductive material",
+    "rises on aluminum but falls on steel, because aluminum carries the stronger eddy currents"
+   ],
+   "correct": 0,
+   "explanation": "On nonmagnetic aluminum the only field effect is the eddy currents' opposing secondary field, so net flux — and XL — falls below the air value. On ferromagnetic steel, high permeability concentrates and multiplies the flux, an effect larger than the eddy current cancellation, so XL rises above it. That is why the ferromagnetic branch sits above the air point on the impedance plane and why permeability dominates testing of steels."
+  },
+  {
+   "question": "A test coil presents a total impedance of 50 Ω, of which 30 Ω is resistance. Its inductive reactance is:",
+   "options": ["20 Ω", "80 Ω", "40 Ω", "58 Ω"],
+   "correct": 2,
+   "explanation": "R and XL are 90° apart in phase, so Z is the hypotenuse of a right triangle: Z² = R² + XL². Rearranging, XL = √(50² − 30²) = √1600 = 40 Ω. Straight subtraction (20 Ω) ignores the phase difference between the two oppositions and is always wrong."
+  },
+  {
+   "question": "In the instrument's signal chain, the oscillator performs two jobs. Besides driving the test coil at the selected frequency, it also:",
+   "options": [
+    "nulls the large standing coil voltage before amplification",
+    "supplies a reference copy of its signal to the phase detector, defining zero phase for the measurement",
+    "splits the returning signal into horizontal and vertical display components",
+    "strips electrical noise from the signal before it reaches the screen"
+   ],
+   "correct": 1,
+   "explanation": "Phase has meaning only against a reference, and the oscillator provides it: the phase detector compares the amplified imbalance signal with that reference to recover both amplitude and phase angle. Nulling belongs to the balance bridge, component-splitting to the phase detector, and noise removal to the filters."
+  },
+  {
+   "question": "On an older meter-style instrument, probe wobble and a small surface crack can produce identical needle swings, yet on an impedance-plane display they are easy to tell apart. Why?",
+   "options": [
+    "The impedance-plane instrument drives its coil with far more current, producing stronger eddy currents",
+    "The meter responds only to reactance changes, and probe wobble is purely a resistance change",
+    "The impedance-plane display automatically filters lift-off out of the trace before drawing the dot",
+    "The meter collapses the signal to amplitude alone, while the flying dot preserves amplitude and phase — and wobble and cracks arrive at different angles"
+   ],
+   "correct": 3,
+   "explanation": "Amplitude says how big a change is, never what caused it. Lift-off and a crack disturb R and XL in different proportions, so they move the dot in different directions; with lift-off rotated horizontal, wobble slides the dot sideways while a crack breaks steeply upward. A needle that reads only magnitude cannot make that distinction."
+  },
+  {
+   "question": "During setup on an aluminum part, after nulling on a known-good spot, the operator lifts the probe and adjusts the phase rotation control until the resulting trace runs horizontally. What has this accomplished?",
+   "options": [
+    "It has magnetically saturated the part so permeability noise disappears",
+    "It has increased the depth of penetration so subsurface flaws respond more strongly",
+    "It has given lift-off a known screen direction: wobble now slides the dot horizontally while a surface crack breaks upward at a clearly separated angle",
+    "It has eliminated the coil's lift-off response entirely"
+   ],
+   "correct": 2,
+   "explanation": "Lift-off can never be eliminated — coupling always changes when spacing changes — but it can be pointed in a known direction. With the lift-off trace laid flat, spacing noise stays horizontal and a crack, which disturbs the impedance at a different phase angle, rises well separated from it. Direction, not amplitude, is what separates the variables."
+  },
+  {
+   "question": "Moving down the comma-shaped conductivity curve from just below the air point, nonmagnetic metals appear in which order?",
+   "options": [
+    "Copper → aluminum alloys → austenitic stainless steel → titanium",
+    "Titanium → austenitic stainless steel → aluminum alloys → copper",
+    "Aluminum alloys → titanium → copper → austenitic stainless steel",
+    "Austenitic stainless steel → copper → titanium → aluminum alloys"
+   ],
+   "correct": 1,
+   "explanation": "The curve runs from low conductivity near the air point to high conductivity far down it: titanium (~1% IACS), austenitic stainless (~2–3% IACS), aluminum alloys (~25–60% IACS), then copper (100% IACS, the definition of the IACS scale). Raising the test frequency walks the operating point down this same curve, exactly as if conductivity had increased."
+  }
+ ]
+}

@@ -1,0 +1,191 @@
+{
+ "lessonId": "et1-8-2",
+ "title": "Lab: Liftoff and Frequency Effects",
+ "narrationScript": "Two variables decide whether a surface scan tells the truth: the coil-to-metal gap, and the test frequency. This lab puts both on the bench. First, lift-off. Set an EDM notch signal to eighty percent of screen height, then slide plastic shims under the probe. The signal collapses, and the steepest loss comes in the first fraction of a millimetre — which is why probe wobble, paint, and a tilted wrist are the loudest noise sources in surface testing. Fight back two ways: rotate the display so lift-off runs horizontal and cracks break vertical, then steady the probe with spring-loaded holders, guides, and constant light pressure. Second, frequency. Sweeping the same notch from fifty kilohertz to one megahertz walks the operating point down the conductivity curve and widens the angle between lift-off and the flaw. Dropping to ten kilohertz grows the standard depth to a full millimetre, and a second-layer flaw finally appears, rotated by its phase lag. Surface work runs high, penetration runs low, and the depth of interest must stay inside three standard depths.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "This Lab: The Two Variables You Touch Most",
+   "body": "In the theory lab you traced lift-off curves on bare, flawless metal — the fan of paths running to the air point. This lab raises the stakes: now there is a **real flaw signal on the screen**, and you will watch what lift-off and frequency do to it. These are the two variables a working operator touches most, one with the wrist and one with a knob, and each can erase a crack indication if it is not controlled.\n\nOn the bench:\n\n- An **impedance-plane display instrument** with selectable frequency\n- An **absolute shielded surface probe** suited to 50 kHz–1 MHz operation\n- An **aluminum reference standard** with a 0.5 mm (0.020 in) deep EDM surface notch\n- **Nonconductive shim stock**, 0.13 mm (0.005 in) per layer\n- A **two-layer stack** of 1.6 mm 6061-T6 sheets with a corrosion-simulating cut in the second layer\n- Your **setup sheet** — every exercise here follows it, and as a Level I you run these demonstrations under Level II or Level III supervision\n\nBy the end you will have demonstrated lift-off's attack on signal amplitude and phase, frequency's control of response and penetration, and the two-part defense: **phase rotation plus probe technique**."
+  },
+  {
+   "type": "text",
+   "heading": "Bench Exercise 1: Starve the Notch with Shims",
+   "body": "Set the instrument to **200 kHz** — standard surface-scan territory for aluminum. Null on the standard with the probe seated flat, rotate lift-off horizontal the way you learned in the curve lab, and set the notch response to **80% of full screen height** as you scan across it. That is your contact baseline: record the amplitude and the angle.\n\nNow starve the coupling:\n\n- **Slide one 0.13 mm shim** between probe and standard. Re-null through the shim — you are comparing signal to signal, not null to null — and scan the notch again.\n- **Add a second shim** (0.26 mm total) and repeat.\n- **Add a third** if your setup sheet calls for it.\n\nTwo things happen, and both matter. The notch amplitude **collapses** — by the second shim the response is a fraction of its contact value, and the steepest loss came with the very first shim. The decay is rapid and non-linear because the coil's field weakens with distance on the scale of the **coil diameter**: less flux reaches the surface, the induced eddy currents shrink, and there is less current left for the notch to interrupt. Small pencil probes pay the steepest penalty; larger coils are more tolerant per millimetre of gap.\n\nWatch the angle too. As the gap opens, the notch signal **leans toward the lift-off direction** — the phase separation you count on for discrimination erodes along with the amplitude. Lift-off does not just shrink a flaw signal. It disguises it."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-8-2-fig-a",
+   "caption": "Shimming the probe off the surface: notch amplitude falls rapidly and non-linearly with gap, with the steepest loss in the first fraction of a millimetre — and small-diameter probes decay fastest."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "Coatings are lift-off — standardize through a shim",
+   "body": "Paint, primer, and anodize are nonconductive layers, and the coil reads them as **fixed lift-off**. Written instructions handle this the only honest way: set sensitivity on the bare reference standard **through a nonconductive shim matching the coating thickness** on the production part, so the notch amplitude you standardize to is the amplitude you will actually get in service. The same physics runs in reverse as a measuring tool — the **lift-off method** of ASTM E376 reads nonconductive coating thickness directly from the impedance change. One phenomenon: noise on a crack scan, signal on a coating gauge."
+  },
+  {
+   "type": "text",
+   "heading": "Bench Exercise 2: Compensate — Rotate Flat, Then Hold Steady",
+   "body": "You cannot eliminate lift-off, so working technique manages it in two layers.\n\n**Layer one: phase rotation.** Null on the part, draw a clean lift-off excursion — lift and re-seat the probe, or slide a shim in and out — and use the phase control to **rotate the excursion horizontal**, running toward the air point. Rotation spins the whole display without changing any impedance relationship underneath; what it buys you is geometry. Probe rock, paint steps, and surface waviness now move the dot **horizontally**, while a surface crack — separated in phase — **breaks upward**. Vertical alarm gates and box gates can then watch the crack channel while spacing noise slides past underneath them.\n\n**Layer two: probe technique.** Rotation reroutes wobble; it cannot refund amplitude lost to a gap. Only spacing control does that:\n\n- **Keep the coil perpendicular** to the surface — tilt is lift-off on one side of the winding.\n- **Light, constant force.** Let a **spring-loaded probe holder** supply it instead of your wrist on long scans.\n- **Guides, collars, and templates** on radii, fastener rows, and curved skins hold the probe square where fingers cannot.\n- **Wear caps and protective tape** are fixed lift-off — keep them on for standardization and replace them at the same thickness.\n- **Steady scan speed**, inside the window your filter settings expect.\n\nProve the layering to yourself: scan the notch freehand with a sloppy wrist, then repeat in the holder. Same probe, same notch — the horizontal chatter shrinks to a ripple and the vertical notch break stands clean."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-8-2-fig-b",
+   "caption": "The same notch scan before and after phase rotation: once lift-off is parked horizontal toward the air point, wobble stays out of the vertical channel where the crack signal breaks and the alarm gate watches."
+  },
+  {
+   "type": "text",
+   "heading": "Bench Exercises 3 and 4: Sweep the Frequency, Then Go Deep",
+   "body": "**Exercise 3 — one notch, three frequencies.** Run the same surface notch at **50 kHz, 200 kHz, and 1 MHz**, re-nulling and re-setting sensitivity at each step — every frequency is its own setup. Watch the display reorganize. Raising frequency walks the operating point **down the conductivity curve** (the σ × f product grows), and the **angle between lift-off and the notch signal widens** — at 50 kHz the two directions crowd together; at 1 MHz they separate cleanly. Higher frequency also crowds the eddy currents against the surface, so the shallow notch answers with a crisp, strong response. For surface cracks, frequency up means discrimination and sensitivity up.\n\n**Exercise 4 — chase a flaw into the second layer.** Now the two-layer stack: two 1.6 mm sheets of 6061-T6 (≈43% IACS), with a corrosion-simulating cut in the far side of the second sheet — the remaining-metal interface sits about **2.5 mm below the top surface**. At 200 kHz, δ ≈ 0.22 mm and the effective depth 3δ ≈ 0.7 mm: the currents never reach the second sheet, and the display shows nothing. Drop to **10 kHz**: δ ≈ 660/√(f·μᵣ·σ) ≈ 1.0 mm, so 3δ ≈ 3.0 mm and the cut at 2.5 mm sits just inside reach. The signal appears — **small and strongly rotated** by its accumulated phase lag (≈57° per standard depth, and this flaw is 2.5δ down), exactly as the depth clock predicts. You are working at the edge of the effective depth, and the display says so.\n\nThis is the real aerospace trade: high frequency for surface cracks at fastener holes, low kilohertz for hidden corrosion and second-layer cracking in lap joints — and always a frequency that keeps the **depth of interest inside about 3δ**."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-8-2-fig-c",
+   "caption": "Standard depth of penetration in 6061-T6 aluminum across four frequencies: a flaw interface 2.5 mm down is inside the 3δ effective depth only below roughly 15 kHz."
+  },
+  {
+   "type": "table",
+   "caption": "Lab record: what you changed, what the display did, and the rule each move proves.",
+   "headers": ["Bench move", "What the display showed", "Rule it proves"],
+   "rows": [
+    ["Shims under the probe: 0 → 0.13 → 0.26 mm", "Notch amplitude collapsed and its angle leaned toward lift-off", "Lift-off response is steepest in the first fraction of a millimetre — control spacing or lose the flaw"],
+    ["Phase rotation after nulling on the part", "Lift-off excursion ran horizontal; notch broke near-vertical", "Rotation separates spacing noise from crack signals so vertical gates stay honest"],
+    ["Freehand scan vs. spring-loaded guided holder", "Horizontal chatter shrank to a ripple; notch break stood clean", "Mechanical technique attacks lift-off at the source — rotation only reroutes what remains"],
+    ["Frequency up: 50 kHz → 200 kHz → 1 MHz on one notch", "Operating point slid down the curve; lift-off/notch angle widened; surface notch crisper", "Higher frequency buys surface sensitivity and phase separation"],
+    ["Frequency down: 200 kHz → 10 kHz over the two-layer stack", "Second-layer cut appeared — small, rotated by phase lag", "Lower frequency buys penetration; keep the depth of interest inside about 3δ"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-8-2-fig-a",
+   "title": "Lift-off starves the flaw signal: amplitude vs. gap",
+   "file": "et1-8-2-fig-a.svg"
+  },
+  {
+   "id": "et1-8-2-fig-b",
+   "title": "Phase rotation: park lift-off horizontal, let cracks break vertical",
+   "file": "et1-8-2-fig-b.svg"
+  },
+  {
+   "id": "et1-8-2-fig-c",
+   "title": "Frequency vs. standard depth of penetration in 6061-T6 aluminum",
+   "file": "et1-8-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Run the Lift-Off and Frequency Bench",
+  "intro": "Your bench: impedance-plane instrument, absolute shielded surface probe, aluminum standard with a 0.5 mm EDM notch, 0.13 mm plastic shims, and a two-layer 6061-T6 stack (two 1.6 mm sheets, ≈43% IACS) with a cut in the second layer. Work each call before you click.",
+  "steps": [
+   {
+    "prompt": "Nulled on the standard at 200 kHz, notch set to 80% screen height, you slide one 0.13 mm shim under the probe and rescan the notch. The display shows:",
+    "options": [
+     "The same amplitude, rotated 180 degrees",
+     "The notch amplitude well down and the whole pattern pulled toward the air point",
+     "A larger amplitude, because the field spreads over more metal",
+     "No change — the shim is nonconductive, so the coil cannot see it"
+    ],
+    "correct": 1,
+    "feedback": "Nonconductive spacing is exactly what lift-off is. The gap weakens coupling, the eddy currents shrink, and everything on the display retreats toward the air point — taking most of your notch amplitude with it. The first fraction of a millimetre costs the most."
+   },
+   {
+    "prompt": "Tomorrow's production part carries 0.13 mm of nonconductive primer. Per a properly written instruction, you set sensitivity by:",
+    "options": [
+     "Sanding the primer off a patch of the part and nulling there",
+     "Adding gain until the bare-standard notch reads double",
+     "Standardizing on the bare reference standard through a 0.13 mm nonconductive shim",
+     "Nulling in air, since the coating makes surface nulling meaningless"
+    ],
+    "correct": 2,
+    "feedback": "The coating is fixed lift-off, so the standard must replicate it during setup — a shim matching the coating thickness makes the standardized notch amplitude match what the coated part will actually deliver. Sanding the part damages it; piling on gain amplifies noise along with signal."
+   },
+   {
+    "prompt": "Scanning a curved wheel-hub radius freehand, the dot chatters back and forth along the horizontal. Your first corrective action:",
+    "options": [
+     "Steady the probe — guided, spring-loaded holder, coil perpendicular, constant light force",
+     "Raise the gain so the chatter is easier to see",
+     "Rotate the display so the chatter runs vertical",
+     "Drop the frequency until the chatter disappears"
+    ],
+    "correct": 0,
+    "feedback": "Horizontal chatter on this setup IS lift-off — the rotation already parked it out of the crack channel, which is why it is not alarming. But every wobble is still stealing coupling and amplitude. Fix it mechanically: seat the coil square with constant force. Rotating it vertical would aim the noise straight at your gate."
+   },
+   {
+    "prompt": "The corrosion cut in the second sheet — interface about 2.5 mm down — shows nothing at 200 kHz. Best move:",
+    "options": [
+     "Add gain until something appears",
+     "Switch to a smaller-diameter probe for sharper resolution",
+     "Raise the frequency to 1 MHz for a stronger response",
+     "Drop the frequency to around 10 kHz so 3δ covers the depth"
+    ],
+    "correct": 3,
+    "feedback": "At 200 kHz in this aluminum, δ ≈ 0.22 mm, so 3δ ≈ 0.7 mm — the currents die out long before the second sheet. At 10 kHz, δ ≈ 1.0 mm and 3δ ≈ 3.0 mm, putting 2.5 mm just inside the effective depth. Gain cannot amplify currents that never reached the flaw, and raising frequency or shrinking the coil makes the reach worse."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "With a 0.5 mm EDM notch signal set to 80% screen height at probe contact, sliding a 0.13 mm nonconductive shim under the probe will:",
+   "options": [
+    "Leave the amplitude unchanged but reverse the signal's direction",
+    "Cut the notch amplitude sharply and lean its angle toward the lift-off direction",
+    "Increase the amplitude because the field couples into more metal",
+    "Change nothing, because nonconductive material is invisible to the coil"
+   ],
+   "correct": 1,
+   "explanation": "A nonconductive gap is lift-off: coupling falls steeply over the first fraction of a millimetre, so the notch amplitude collapses, and the weakened signal rotates toward the lift-off direction — eroding both sensitivity and phase discrimination."
+  },
+  {
+   "question": "The display is rotated so the lift-off excursion runs horizontal primarily so that:",
+   "options": [
+    "The air point can be moved off the screen entirely",
+    "Conductivity variations no longer produce any response",
+    "Less gain is required to reach standardization amplitude",
+    "Probe wobble stays out of the vertical channel where crack signals break and alarm gates watch"
+   ],
+   "correct": 3,
+   "explanation": "Rotation changes presentation, not impedance: with lift-off parked horizontal, spacing noise moves the dot sideways while phase-separated crack signals break upward into the vertical channel — so vertical gates alarm on flaws, not on wrist wobble."
+  },
+  {
+   "question": "Raising the test frequency on a nonferromagnetic aluminum part moves the operating point ___ the conductivity curve and ___ the phase separation between lift-off and a surface crack signal.",
+   "options": [
+    "Down; widens",
+    "Up; widens",
+    "Down; narrows",
+    "Up; narrows"
+   ],
+   "correct": 0,
+   "explanation": "Higher frequency increases the σ × f product, walking the operating point down the conductivity curve where the angle between the lift-off direction and surface-flaw responses opens up — better discrimination for surface work."
+  },
+  {
+   "question": "Using δ (mm) ≈ 660/√(f · μᵣ · σ), the standard depth of penetration in 6061-T6 aluminum (43% IACS, μᵣ = 1) at 100 kHz is approximately:",
+   "options": [
+    "0.10 mm",
+    "1.0 mm",
+    "0.32 mm",
+    "3.2 mm"
+   ],
+   "correct": 2,
+   "explanation": "δ ≈ 660/√(100,000 × 1 × 43) = 660/2,074 ≈ 0.32 mm. The same arithmetic gives 1.0 mm at 10 kHz and 0.10 mm at 1 MHz — frequency is the penetration control, following the inverse square-root rule."
+  },
+  {
+   "question": "On a long scan over a convex hub radius, the operator's main mechanical defense against lift-off noise is:",
+   "options": [
+    "Increasing the drive voltage to strengthen the field",
+    "A spring-loaded, guided probe holder that keeps the coil seated and perpendicular",
+    "Reducing gain until the wobble no longer shows",
+    "Scanning faster so the wobble averages itself out"
+   ],
+   "correct": 1,
+   "explanation": "Phase rotation only reroutes wobble — it cannot refund amplitude lost to a gap. Constant light force, perpendicularity, and guided seating attack lift-off at the source; cutting gain hides flaws along with noise, and speed must stay inside the filter window."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level I Basic Technique Course §4.2–4.3 (demonstration of liftoff effects and frequency effects)",
+  "ASNT SNT-TC-1A (2024), Level I training and experience requirements (laboratory demonstrations performed under Level II/III supervision)",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (definitions: lift-off, standard depth of penetration, phase angle)",
+  "ASTM E376, Standard Practice for Measuring Coating Thickness by Magnetic-Field or Eddy-Current (Electromagnetic) Testing Methods (lift-off method for nonconductive coating thickness)"
+ ]
+}

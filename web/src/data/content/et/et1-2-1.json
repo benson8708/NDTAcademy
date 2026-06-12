@@ -1,0 +1,214 @@
+{
+ "lessonId": "et1-2-1",
+ "title": "Generation of Eddy Currents by an AC Field",
+ "narrationScript": "Eddy current testing begins with a coil and an alternating current. Drive the coil with AC and its magnetic field expands, collapses, and reverses every cycle \u2014 a field that never holds still. Faraday's law says a changing magnetic flux induces a voltage in any conductor it reaches, and the faster the change, the larger the voltage. Bring a conductive part into that field and the induced voltage drives electrons around closed circular loops. Those loops are eddy currents. Lenz's law sets their direction \u2014 at every instant they flow opposite to the coil current, and their own field opposes the field that created them. Think of it as a transformer. The coil is the primary winding, and the part acts as a single short-circuited secondary turn, coupled by mutual induction with no contact and no couplant. Three conditions, no exceptions: a changing field, a conductive material, and coupling between coil and part. Remove any one, and the currents \u2014 and your signal \u2014 vanish.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "An Alternating Current Makes a Field That Never Holds Still",
+   "body": "Module 1 left you with the two facts this entire method stands on: a current through a coil produces a magnetic field, and a *changing* magnetic field induces a voltage in any conductor it reaches \u2014 Faraday's law of electromagnetic induction. Eddy current testing is simply those two facts put to work on purpose.\n\nDrive a test coil with **alternating current** and its magnetic field \u2014 the **primary field** \u2014 expands, collapses, and reverses polarity every half-cycle. Nothing about it ever holds still. At a test frequency of 100 kHz the flux runs through 100,000 complete cycles every second, and Faraday's law pays for exactly that: the induced voltage is proportional to the **rate of change of flux**, not its strength at any frozen instant.\n\nNow contrast direct current. Switch DC into the same coil and the flux changes only during the brief switch-on transient \u2014 one momentary pulse of induction, then a strong but perfectly **static** field that induces nothing at all. That is why every eddy current instrument is built around an **AC oscillator**: alternating current keeps the flux changing continuously, at a frequency we choose. Industrial test frequencies run from below 1 kHz for thick sections and ferromagnetic tubing up to several megahertz for surface work on aerospace structure."
+  },
+  {
+   "type": "text",
+   "heading": "Bring a Conductor Into That Field",
+   "body": "Place an electrically conductive part within reach of the primary field and induction takes over. The changing flux induces an **electromotive force (EMF)** \u2014 an electrical pressure \u2014 throughout the volume of material the field penetrates. Metal is full of free electrons and offers closed conducting paths in every direction, so that EMF immediately drives current around **closed circular loops** inside the part. These are **eddy currents**, named for the swirling eddies behind a boulder in a stream \u2014 and they are not a figure of speech. Real charge circulates through real metal, reversing direction in step with the coil current for as long as the AC flows.\n\nTwo laws govern them completely:\n\n- **Faraday's law sets the magnitude.** More flux change per second \u2014 higher frequency, stronger coil current, tighter coupling \u2014 means more induced EMF, and a more conductive part lets that EMF drive more current.\n- **Lenz's law sets the direction.** Induced current always flows so that its own magnetic field **opposes the change that created it**. At every instant, the eddy currents circulating beneath the coil flow **opposite** to the coil current.\n\nThat opposition is not a nuisance \u2014 it is the entire basis of the measurement, as the next two lessons will show."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-2-1-fig-a",
+   "caption": "From AC to eddy currents: the coil's alternating flux crosses the air gap into the part (side view), inducing circular loops that mirror the coil winding in the opposite direction (top view). The strip below traces the full energy-transfer chain."
+  },
+  {
+   "type": "text",
+   "heading": "The Part Becomes the Secondary of a Transformer",
+   "body": "The cleanest model for what is happening is a **transformer**. In a transformer, alternating current in a **primary winding** creates a changing flux that induces current in a **secondary winding** \u2014 energy crosses between two circuits that never touch, by **mutual induction**.\n\nAn eddy current probe over a conductive part is exactly that machine, minus the iron core:\n\n- The **test coil is the primary** \u2014 many turns, driven by the instrument's oscillator.\n- The **part is the secondary** \u2014 and because the induced loops close on themselves inside solid metal, it behaves as a **single turn that is short-circuited**. A dead short through low-resistance metal carries a healthy current from even a small induced EMF.\n\nEnergy transfers across the air gap magnetically \u2014 **no electrical contact, no couplant**, no surface preparation beyond reasonable cleanliness. That non-contact coupling is one of the method's defining advantages.\n\nIf you doubt the currents are real, look at the same physics with the power turned up: an **induction cooktop** boils water with eddy currents induced in the pan, induction furnaces melt steel with them, and **eddy-current brakes** slow trains and roller coasters with the Lenz's-law opposition you just learned. ET uses the identical mechanism at tiny power levels \u2014 we induce currents to *sense* the part, never to change it."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-2-1-fig-b",
+   "caption": "The coil-and-part system is an air-core transformer: a multi-turn primary (the coil) magnetically coupled to a single short-circuited secondary turn (the part). The same physics, with the power turned up, runs cooktops, furnaces, and brakes."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Three conditions \u2014 no exceptions",
+   "body": "Eddy currents appear when, and only when, all three are present: **(1) a time-varying magnetic field**, supplied by alternating current in the test coil; **(2) an electrically conductive material** \u2014 any metal, plus conductors such as graphite and carbon fiber, but never glass, acrylic, or dry fiberglass; **(3) coupling** \u2014 the part must sit close enough that the coil's field actually reaches it, because field strength collapses rapidly with distance. Remove any one and the currents vanish \u2014 and with them, every signal this method can produce."
+  },
+  {
+   "type": "text",
+   "heading": "The Shape of the Flow",
+   "body": "Eddy currents are not a vague cloud of charge \u2014 they have a definite geometry you can predict.\n\n- **They mirror the coil.** The induced loops are circular and concentric, echoing the winding that created them. They flow in planes **parallel to the coil turns** \u2014 for a surface probe, parallel to the part surface \u2014 and **perpendicular to the primary flux**.\n- **They are strongest at the surface, directly beneath the windings.** Current density falls off rapidly with depth \u2014 the *skin effect*, which Module 3 puts numbers on \u2014 and with radial distance from the coil.\n- **Density passes through zero on the coil's axis.** Just as a circular winding has no conductor at its own center, the induced pattern has no current at the center point beneath it. A small flaw sitting exactly on the centerline of a circular probe sits in the one spot the currents ignore \u2014 one reason scan patterns overlap.\n- **Loops must close inside the conductor.** Current cannot leave the part, cross an insulating boundary, or jump a gap.\n\nHold that last point. When a surface crack interrupts a loop's path, the current is forced to detour around or beneath it \u2014 and that disturbance, as you will see shortly, is precisely what an eddy current instrument detects."
+  },
+  {
+   "type": "table",
+   "caption": "Six bench cases: apply the three conditions and predict whether eddy currents flow.",
+   "headers": [
+    "Bench setup",
+    "Eddy currents?",
+    "Why"
+   ],
+   "rows": [
+    [
+     "AC-driven coil resting on an aluminum plate",
+     "Yes \u2014 strong",
+     "Changing field, conductive part, tight coupling: all three conditions met"
+    ],
+    [
+     "Same coil and plate, steady DC drive",
+     "No (after the switch-on blip)",
+     "The field is strong but static \u2014 constant flux induces nothing"
+    ],
+    [
+     "DC-driven coil swept rapidly across the plate",
+     "Yes, while it moves",
+     "Motion changes the flux through the part \u2014 induction needs change, not AC specifically"
+    ],
+    [
+     "AC-driven coil on glass, acrylic, or dry fiberglass",
+     "No",
+     "No free charge carriers \u2014 an insulator gives the induced EMF nothing to drive"
+    ],
+    [
+     "AC-driven coil on graphite or carbon-fiber laminate",
+     "Weak but usable",
+     "Carbon conducts \u2014 non-metal does not mean non-conductive; CFRP is tested at high frequency"
+    ],
+    [
+     "AC-driven coil held 25 mm above the aluminum plate",
+     "Negligible",
+     "The primary field collapses rapidly with distance \u2014 coupling is lost"
+    ]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "From Generation to Signal",
+   "body": "Generation is only the first half of a two-way conversation. The eddy currents circulating in the part generate a magnetic field of their own \u2014 the **secondary field** \u2014 and by Lenz's law it **opposes the primary field** that created it. That opposition reaches back across the air gap and loads the coil, changing the coil's **impedance**: the quantity every eddy current instrument actually measures. How that happens is the business of the next lesson.\n\nWhat you must own from this lesson is the chain, in order and from memory:\n\n**oscillator \u2192 alternating coil current \u2192 primary field \u2192 changing flux in the part \u2192 induced EMF \u2192 closed-loop eddy currents**\n\nEvery measurement this method makes \u2014 conductivity sorting, coating thickness by lift-off, crack detection at a fastener hole, wall thinning in heat-exchanger tubing \u2014 reaches the display through that chain. If any link weakens, the signal weakens with it: drop the frequency and the induced EMF falls; pick a poor conductor and the current falls; lift the probe and the coupling falls. You now hold the front half of the method. The back half \u2014 how the part talks back to the coil \u2014 comes next."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-2-1-fig-a",
+   "title": "Generation of eddy currents by an AC coil field \u2014 side view, top view, and energy chain",
+   "file": "et1-2-1-fig-a.svg"
+  },
+  {
+   "id": "et1-2-1-fig-b",
+   "title": "The transformer analogy: coil as primary, part as shorted secondary",
+   "file": "et1-2-1-fig-b.svg"
+  },
+  {
+   "id": "et1-2-1-fig-c",
+   "title": "Four bench setups \u2014 where are eddy currents flowing?",
+   "file": "et1-2-1-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Where Are Eddy Currents Flowing?",
+  "intro": "Four bench setups, four test parts. Apply the three conditions \u2014 changing field, conductive material, coupling \u2014 and click the ONE part that has eddy currents circulating in it right now.",
+  "figureId": "et1-2-1-fig-c",
+  "regions": [
+   {
+    "x": 60,
+    "y": 184,
+    "w": 300,
+    "h": 52,
+    "label": "Station 1 plate \u2014 AC drive, probe on aluminum",
+    "isTarget": true,
+    "feedback": "Correct. All three conditions are met: the AC-driven coil supplies a continuously changing field, aluminum conducts, and the probe rests on the part so coupling is tight. Eddy currents are circulating beneath that coil right now."
+   },
+   {
+    "x": 448,
+    "y": 184,
+    "w": 300,
+    "h": 52,
+    "label": "Station 2 plate \u2014 steady DC drive",
+    "isTarget": false,
+    "feedback": "No currents here. The DC-fed coil makes a strong field, but strong is not enough \u2014 induction requires CHANGING flux. After the brief switch-on transient, a steady field induces nothing."
+   },
+   {
+    "x": 60,
+    "y": 400,
+    "w": 300,
+    "h": 52,
+    "label": "Station 3 plate \u2014 AC drive on acrylic",
+    "isTarget": false,
+    "feedback": "The field here is changing beautifully, but acrylic is an insulator: no free charge carriers, so the induced EMF has nothing to drive. No conductor, no eddy currents \u2014 which is also why ET cannot inspect plastics or glass."
+   },
+   {
+    "x": 448,
+    "y": 420,
+    "w": 300,
+    "h": 42,
+    "label": "Station 4 plate \u2014 coil held 25 mm above",
+    "isTarget": false,
+    "feedback": "Conductive part, changing field \u2014 but the coil's field collapses rapidly with distance, and at 25 mm essentially none of it reaches the aluminum. Coupling is the third condition, and it fails here. That distance sensitivity is the lift-off effect you will later use to measure coating thickness."
+   }
+  ],
+  "coordH": 500
+ },
+ "checkQuestions": [
+  {
+   "question": "Which set of conditions must ALL be present for eddy currents to be generated in a test part?",
+   "options": [
+    "A ferromagnetic part, direct current in the coil, and direct surface contact",
+    "A conductive part, a couplant layer, and a steady magnetic field",
+    "A time-varying magnetic field, an electrically conductive part, and the part within the coil's field",
+    "A time-varying magnetic field, a ferromagnetic part, and relative motion between coil and part"
+   ],
+   "correct": 2,
+   "explanation": "Generation requires changing flux (the AC-driven coil), a conductive material for the induced EMF to drive current through, and coupling \u2014 the part must actually intercept the field. Ferromagnetism is not required (aluminum tests beautifully), and neither contact nor couplant is ever needed."
+  },
+  {
+   "question": "Why is the test coil driven with alternating current rather than steady direct current?",
+   "options": [
+    "Only a changing magnetic flux induces a voltage \u2014 a steady DC field induces nothing after the switch-on transient",
+    "Direct current would overheat the coil windings",
+    "Static magnetic fields cannot penetrate metal surfaces",
+    "Alternating current is needed to magnetically saturate the part"
+   ],
+   "correct": 0,
+   "explanation": "Faraday's law ties the induced EMF to the rate of change of flux. DC builds a strong but constant field, and constant flux induces zero current. (Where magnetic saturation is used on ferromagnetic parts, it is applied with DC or permanent magnets \u2014 the opposite of this distractor.)"
+  },
+  {
+   "question": "In the transformer analogy for eddy current testing, the conductive test part plays the role of:",
+   "options": [
+    "the laminated iron core",
+    "the primary winding",
+    "an open-circuited secondary with many turns",
+    "a single-turn secondary winding that is short-circuited"
+   ],
+   "correct": 3,
+   "explanation": "The coil is the multi-turn primary; the part behaves as a one-turn secondary shorted on itself, because the induced loops close inside solid metal. Mutual induction couples the two with no electrical contact."
+  },
+  {
+   "question": "At any instant, the eddy currents induced directly beneath a surface probe coil flow:",
+   "options": [
+    "in the same direction as the coil current, reinforcing the primary field",
+    "opposite to the coil current, in closed loops that mirror the winding",
+    "radially outward from the coil's center toward the edges of the part",
+    "parallel to the primary flux lines, straight down into the part"
+   ],
+   "correct": 1,
+   "explanation": "Lenz's law: induced current opposes the change that created it, so the loops mirror the coil winding in the opposite direction and generate a secondary field opposing the primary. The flow is perpendicular to the flux and parallel to the part surface \u2014 never radial or straight down."
+  },
+  {
+   "question": "An AC-driven probe is placed, in turn, on four flat samples. Which one will develop NO eddy currents?",
+   "options": [
+    "A titanium alloy plate",
+    "A carbon-fiber (graphite-epoxy) laminate",
+    "A dry glass-fiber (fiberglass) panel",
+    "An austenitic stainless steel plate"
+   ],
+   "correct": 2,
+   "explanation": "Glass fibers and epoxy are insulators \u2014 no free charge carriers, so the induced EMF can drive no current. Titanium and austenitic stainless are poor conductors compared with aluminum, but they conduct and are tested routinely; carbon fibers conduct weakly, which is why CFRP can be examined at high frequencies."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105 (2024), ET Level I Topical Outline \u00a72.0\u20132.1.1 (electromagnetic theory; generation of eddy currents by means of an AC field)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice \u2014 eddy current method training and qualification framework",
+  "NAS 410, NAS Certification and Qualification of Nondestructive Test Personnel (aerospace ET personnel requirements)",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations \u2014 Section C, Electromagnetic Testing definitions"
+ ]
+}

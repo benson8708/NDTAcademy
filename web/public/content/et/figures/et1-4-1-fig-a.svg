@@ -1,0 +1,86 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">The Z-Curve at 60 kHz &#8212; One Dot per Conductivity Standard</text>
+
+  <!-- gridlines -->
+  <line x1="255" y1="70" x2="255" y2="440" stroke="#D7E5FB" stroke-width="1"/>
+  <line x1="370" y1="70" x2="370" y2="440" stroke="#D7E5FB" stroke-width="1"/>
+  <line x1="485" y1="70" x2="485" y2="440" stroke="#D7E5FB" stroke-width="1"/>
+  <line x1="600" y1="70" x2="600" y2="440" stroke="#D7E5FB" stroke-width="1"/>
+  <line x1="130" y1="101" x2="660" y2="101" stroke="#D7E5FB" stroke-width="1"/>
+  <line x1="130" y1="186" x2="660" y2="186" stroke="#D7E5FB" stroke-width="1"/>
+  <line x1="130" y1="270" x2="660" y2="270" stroke="#D7E5FB" stroke-width="1"/>
+  <line x1="130" y1="355" x2="660" y2="355" stroke="#D7E5FB" stroke-width="1"/>
+
+  <!-- axes -->
+  <line x1="130" y1="70" x2="130" y2="440" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="130" y1="440" x2="660" y2="440" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="122" y="106" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">1.0</text>
+  <text x="122" y="191" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0.8</text>
+  <text x="122" y="275" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0.6</text>
+  <text x="122" y="360" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0.4</text>
+  <text x="122" y="444" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0.2</text>
+  <text x="140" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0</text>
+  <text x="255" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0.1</text>
+  <text x="370" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0.2</text>
+  <text x="485" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0.3</text>
+  <text x="600" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0.4</text>
+  <text x="395" y="487" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">R / X&#8320;  (normalized resistance)</text>
+  <text transform="translate(52,255) rotate(-90)" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">&#969;L / &#969;L&#8320;  (normalized reactance)</text>
+
+  <!-- legend panel -->
+  <rect x="560" y="70" width="224" height="132" rx="8" fill="#F2F7FE" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="576" y="96" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">Reading the curve</text>
+  <text x="576" y="120" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">&#8226; low %IACS &#8594; near air point</text>
+  <text x="576" y="142" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">&#8226; knee &#8594; widest %IACS spread</text>
+  <text x="576" y="164" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">&#8226; copper &#8594; far down the tail</text>
+  <text x="576" y="188" font-family="Arial, sans-serif" font-size="14" fill="#5B708C">60 kHz &#183; absolute surface probe</text>
+
+  <!-- lift-off paths (dashed, behind curve) -->
+  <line x1="485" y1="262" x2="140" y2="101" stroke="#9BC4FF" stroke-width="2.5" stroke-dasharray="7 6"/>
+  <line x1="399" y1="386" x2="140" y2="101" stroke="#9BC4FF" stroke-width="2.5" stroke-dasharray="7 6"/>
+  <polygon points="0,-5 10,0 0,5" transform="translate(168,114) rotate(205)" fill="#9BC4FF"/>
+  <polygon points="0,-5 10,0 0,5" transform="translate(166,130) rotate(228)" fill="#9BC4FF"/>
+  <text x="200" y="330" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#5B708C">lift-off paths run</text>
+  <text x="200" y="349" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#5B708C">back to the air point</text>
+
+  <!-- conductivity locus -->
+  <path d="M 140 101
+           C 178 108, 218 116, 255 127
+           C 277 134, 296 143, 318 155
+           C 380 190, 452 224, 485 262
+           C 499 277, 505 281, 508 288
+           C 511 300, 511 310, 508 322
+           C 505 334, 492 341, 479 348
+           C 455 361, 425 373, 399 386
+           C 350 409, 268 421, 221 424"
+        fill="none" stroke="#1E66F5" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 221 424 C 203 425, 187 426, 172 427" fill="none" stroke="#1E66F5" stroke-width="3" stroke-dasharray="5 5"/>
+  <text x="212" y="412" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#5B708C">&#963; &#8594; &#8734;</text>
+
+  <!-- direction arrows along curve -->
+  <polygon points="0,-6 12,0 0,6" transform="translate(394,197) rotate(29)" fill="#1E66F5"/>
+  <polygon points="0,-6 12,0 0,6" transform="translate(309,413) rotate(169)" fill="#1E66F5"/>
+
+  <!-- air point -->
+  <circle cx="140" cy="101" r="8" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="3"/>
+  <text x="156" y="90" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">air point &#8212; probe in air</text>
+
+  <!-- sample dots -->
+  <circle cx="255" cy="127" r="7" fill="#1E66F5" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="318" cy="155" r="7" fill="#1E66F5" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="485" cy="262" r="7" fill="#1E66F5" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="508" cy="288" r="7" fill="#1E66F5" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="508" cy="322" r="7" fill="#1E66F5" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="479" cy="348" r="7" fill="#1E66F5" stroke="#FFFFFF" stroke-width="2"/>
+  <circle cx="399" cy="386" r="7" fill="#1E66F5" stroke="#FFFFFF" stroke-width="2"/>
+
+  <!-- sample labels -->
+  <text x="267" y="116" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">Ti-6Al-4V &#183; 1.0%</text>
+  <text x="332" y="150" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">304 SS &#183; 2.5%</text>
+  <text x="501" y="258" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">brass &#183; 28%</text>
+  <text x="524" y="292" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">7075-T6 &#183; 32%</text>
+  <text x="524" y="326" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">6061-T6 &#183; 43%</text>
+  <text x="495" y="366" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">1100 Al &#183; 59%</text>
+  <text x="415" y="400" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">copper &#183; 100%</text>
+</svg>

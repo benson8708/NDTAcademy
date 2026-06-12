@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arwE253aB" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9BC4FF"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">The B–H Curve: Bias Point Decides What the AC Field Sees</text>
+
+  <!-- axes -->
+  <line x1="110" y1="410" x2="755" y2="410" stroke="#9BC4FF" stroke-width="2" marker-end="url(#arwE253aB)"/>
+  <line x1="110" y1="410" x2="110" y2="62" stroke="#9BC4FF" stroke-width="2" marker-end="url(#arwE253aB)"/>
+  <text x="430" y="464" text-anchor="middle" font-size="15" fill="#9BC4FF">magnetizing field H — set by coil ampere-turns</text>
+  <text transform="rotate(-90 84 240)" x="84" y="240" text-anchor="middle" font-size="15" fill="#9BC4FF">flux density B — the part's answer</text>
+
+  <!-- magnetization curve -->
+  <path d="M110,410 C150,402 175,385 200,345 C228,295 252,215 290,160 C325,112 390,95 470,88 C570,82 670,80 738,79" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+
+  <!-- region labels -->
+  <text x="170" y="396" font-size="14" fill="#9BC4FF">initial region</text>
+  <line x1="352" y1="130" x2="346" y2="110" stroke="#9BC4FF" stroke-width="1"/>
+  <text x="352" y="146" text-anchor="middle" font-size="14" fill="#9BC4FF">knee</text>
+  <text x="580" y="62" text-anchor="middle" font-size="14" fill="#9BC4FF">saturation — all domains aligned</text>
+
+  <!-- slope note -->
+  <line x1="212" y1="258" x2="240" y2="243" stroke="#9BC4FF" stroke-width="1"/>
+  <text x="206" y="262" text-anchor="end" font-size="14" fill="#9BC4FF">slope = permeability μ</text>
+
+  <!-- minor loop 1: low bias -->
+  <ellipse cx="262" cy="200" rx="34" ry="9" transform="rotate(-62 262 200)" fill="#1E66F5" fill-opacity="0.35" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="262" y1="232" x2="262" y2="410" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="262" y="432" text-anchor="middle" font-size="14" fill="#FFFFFF">low bias</text>
+
+  <!-- delta-B bracket for loop 1 -->
+  <line x1="278" y1="170" x2="110" y2="170" stroke="#9BC4FF" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.7"/>
+  <line x1="246" y1="230" x2="110" y2="230" stroke="#9BC4FF" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.7"/>
+  <text x="118" y="206" font-size="14" fill="#FFFFFF">ΔB</text>
+
+  <text x="306" y="196" font-size="14" fill="#FFFFFF">same ΔH → big, wandering ΔB</text>
+  <text x="306" y="214" font-size="14" fill="#9BC4FF">μΔ high — and it varies with the metal</text>
+
+  <!-- minor loop 2: saturated bias -->
+  <ellipse cx="600" cy="81" rx="34" ry="4" transform="rotate(-2 600 81)" fill="#1E66F5" fill-opacity="0.35" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="600" y1="142" x2="600" y2="410" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="600" y="432" text-anchor="middle" font-size="14" fill="#FFFFFF">DC bias to saturation</text>
+
+  <text x="600" y="118" text-anchor="middle" font-size="14" fill="#FFFFFF">same ΔH → tiny, stable ΔB</text>
+  <text x="600" y="136" text-anchor="middle" font-size="14" fill="#9BC4FF">μΔ ≈ μ₀ — the AC field sees μᵣ ≈ 1</text>
+
+  <text x="430" y="488" text-anchor="middle" font-size="14" fill="#9BC4FF">Saturation parks the test where every region of the part shares the same flat slope.</text>
+</svg>

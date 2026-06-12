@@ -1,0 +1,165 @@
+{
+ "lessonId": "et2-1-4",
+ "title": "Phase Lag: How Eddy Current Signals Encode Depth",
+ "narrationScript": "This module rebuilt eddy current generation, the probe families, and the impedance plane. The closer adds the dimension Level Two signs for: depth. The skin effect encodes depth twice. Amplitude decays. Thirty-seven percent of surface current density remains at one standard depth, five percent at three, the effective depth of penetration. And phase lags. Currents at depth respond about one radian, fifty-seven degrees, later per standard depth. A flaw is interrogated by the currents at its own depth, and because the disturbance must also diffuse back to the coil, the rotation you see is roughly two x over delta. A flaw one standard depth down sits about one hundred fifteen degrees from the surface reference. Display rotation moves all signals together, so that separation survives. Calibrate it against notch standards and read depth from rotation, never from amplitude alone. And in unsaturated carbon steel, permeability collapses penetration to under a tenth of a millimeter and buries the phase information. Saturate the part, or treat the test as surface-only.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Depth Is Encoded Twice",
+   "body": "Three lessons of this module rebuilt the machinery: how eddy currents are generated, what each probe family senses, and how the impedance plane displays every variable as a direction. This closer adds the dimension you sign for at Level II — **depth**.\n\nThe skin effect does two things to the currents below the surface, and both are encoded in every signal you evaluate:\n\n- **Amplitude decays exponentially.** Current density falls to **37%** of the surface value at one standard depth (1δ), **13.5%** at 2δ, and **5%** at 3δ — the **effective depth of penetration**.\n- **Phase lags linearly.** Currents at depth respond later in the AC cycle, accumulating about one radian — **57°** — of lag per standard depth.\n\nAmplitude is the detection channel: it says *something is there*. Phase is the evaluation channel: it says *how deep*. A Level II who sizes from amplitude alone is guessing — this lesson makes the phase channel quantitative."
+  },
+  {
+   "type": "text",
+   "heading": "The Sixty-Second Recap of δ",
+   "body": "Everything in this lesson is measured in units of the standard depth of penetration, so keep the formula within reach:\n\n**δ = 1/√(π f μ σ)** — in shop units, **δ (mm) ≈ 660/√(f · μᵣ · σ)**, with f in hertz, σ in %IACS, and μᵣ the relative permeability (use **26** instead of 660 for inches).\n\nCurrent density fades as **J(x) = J₀ · e^(−x/δ)** — smooth, with no sharp floor. Work the formula in both directions, fast:\n\n- **Given f, find δ.** A 2024-T3 aluminum skin, σ = 30 %IACS, μᵣ = 1, tested at 100 kHz: δ = 660/√(100,000 × 30) ≈ **0.38 mm**. Effective depth ≈ 3δ ≈ **1.1 mm** — the deepest flaw this setup can be trusted to interrogate.\n- **Given the required depth, find f.** Rearranged: **f = (660/δ)² / (μᵣ · σ)**. To push δ to 1.0 mm in the same alloy: f = 435,600/30 ≈ **14.5 kHz**.\n\nThat second form is the Level II move. The depth requirement comes first, and the frequency is derived from it — never the other way around."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-1-4-fig-a",
+   "caption": "Amplitude fades and phase lags with depth — about one radian (≈57°) of lag per standard depth one way, and roughly double that in the rotation seen back at the coil."
+  },
+  {
+   "type": "table",
+   "caption": "Amplitude and phase versus depth. The round-trip rotation approaches a full turn near 3δ — one more reason the effective depth of penetration is the working limit for depth evaluation.",
+   "headers": ["Depth below surface", "Current density (% of surface)", "One-way phase lag β = x/δ", "Rotation seen at the coil ≈ 2x/δ"],
+   "rows": [
+    ["Surface (0)", "100%", "0°", "0°"],
+    ["0.5δ", "≈61%", "≈29°", "≈57°"],
+    ["1δ", "37%", "≈57°", "≈115°"],
+    ["2δ", "13.5%", "≈115°", "≈229°"],
+    ["3δ", "5%", "≈172°", "≈344°"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Two 'Phases' — Keep Them Apart",
+   "body": "The word *phase* does two different jobs in eddy current work, and both exams and field evaluations punish anyone who mixes them.\n\n- **Impedance-plane phase angle** is a *display* property — the direction a signal trajectory points on the screen. It depends on which variable moved, on the operating point and frequency, and on the **display rotation you dialed in** during setup. You chose to put lift-off horizontal; you could have put it anywhere.\n- **Phase lag (β = x/δ)** is *physics inside the part* — the depth-driven delay of the currents that built the signal. No knob removes it.\n\nHere is the resolution: display rotation moves **every signal together**, so the *separation* between two signals survives any rotation you choose. The angle between a surface-notch signal and a deeper flaw signal is phase-lag information — depth information — preserved on the screen. That separation, not the absolute screen angle, is what you measure and what you calibrate."
+  },
+  {
+   "type": "text",
+   "heading": "The Round Trip: Sizing From Rotation",
+   "body": "A surface coil never touches the flaw. Its field diffuses **down** to the flaw depth, accumulating x/δ of lag — and the disturbance diffuses **back up** before the coil feels it. The observed rotation of a flaw signal relative to a near-surface reference is therefore approximately **2x/δ radians**: a flaw at 1δ shows up rotated about **115°**, not 57°.\n\nThe working procedure:\n\n- Balance the probe and set **lift-off horizontal** — that is your reference direction.\n- Scan a **reference standard** carrying EDM notches of known depth in matching material, and record each notch's rotation.\n- Plot rotation against depth — the **phase–depth curve** — and size unknowns by interpolation. Never extrapolate beyond the deepest notch, and never past 3δ.\n\nThis is how phase rescues amplitude's ambiguity. A small flaw at 0.5δ and a larger flaw at 1.5δ can return the **same amplitude**, but their rotations differ by roughly 115° — on a calibrated display they cannot masquerade as each other."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-1-4-fig-b",
+   "caption": "Lift-off set horizontal as the reference: deeper flaws return signals rotated further from the surface-notch signal, and a notch-standard calibration curve converts that rotation into depth."
+  },
+  {
+   "type": "text",
+   "heading": "Ferromagnetic Parts: Where the Rules Tighten",
+   "body": "Every formula above carries μᵣ inside the square root, and ferromagnetic parts weaponize it. Take low-carbon steel: σ ≈ 10 %IACS — which *alone* would grow δ — but μᵣ runs into the hundreds, and it wins. At 100 kHz with μᵣ ≈ 100: δ = 660/√(100,000 × 100 × 10) ≈ **0.07 mm**, and the effective depth is only about **0.2 mm**.\n\nTwo consequences:\n\n- **The depth dimension collapses.** Subsurface evaluation in unsaturated carbon steel is not a calibration problem — the current simply is not there.\n- **Permeability is noisy.** μᵣ varies point to point with stress, heat treatment, and cold work, and those variations swing the signal harder than most flaws do, burying the clean phase-lag relationship.\n\nThe remedy in tube and bar inspection is **magnetic saturation**: a strong DC field drives μᵣ toward 1 and restores the nonmagnetic rules. Without saturation, treat eddy current on carbon steel as a **surface method** — crack detection, not depth evaluation. The next module dissects permeability as an impedance factor in its own right."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Quote depth like a Level II",
+   "body": "Before you put a depth number on any indication: **(1)** compute δ for your actual frequency, conductivity, and permeability; **(2)** confirm the depth of interest sits inside about 3δ — if it does not, change the frequency, not your confidence; **(3)** measure the signal's rotation from the lift-off-referenced surface signal, not its amplitude; **(4)** convert rotation to depth only through a phase–depth curve built on reference notches in matching material. Amplitude supports the call — rotation makes it."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-1-4-fig-a",
+   "title": "Phase lag — one radian (≈57°) per standard depth",
+   "file": "et2-1-4-fig-a.svg"
+  },
+  {
+   "id": "et2-1-4-fig-b",
+   "title": "Depth rotates the flaw signal: calibrate, then size",
+   "file": "et2-1-4-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Depth on Demand: Four Setup-and-Evaluate Problems",
+  "intro": "Work each problem on paper first. Tools: δ (mm) ≈ 660/√(f · μᵣ · σ), one-way phase lag β = x/δ, rotation seen at the coil ≈ 2x/δ (≈115° per δ). Material is 2024-T3 aluminum, σ = 30 %IACS, μᵣ = 1, unless stated otherwise.",
+  "steps": [
+   {
+    "prompt": "You set up a surface probe on the 2024-T3 skin at 100 kHz. The standard depth of penetration is about:",
+    "options": ["0.12 mm", "0.38 mm", "0.66 mm", "1.14 mm"],
+    "correct": 1,
+    "feedback": "δ = 660/√(100,000 × 30) = 660/1,732 ≈ 0.38 mm. The 1.14 mm option is 3δ — the effective depth, not the standard depth. 0.66 mm is copper at 10 kHz, a different problem entirely."
+   },
+   {
+    "prompt": "Same setup, lift-off horizontal. A crack signal sits rotated about 115° from the surface-notch reference signal. Its depth is roughly:",
+    "options": ["0.19 mm", "0.76 mm", "0.38 mm", "1.14 mm"],
+    "correct": 2,
+    "feedback": "Rotation at the coil ≈ 2x/δ. 115° ≈ 2 radians, so x/δ ≈ 1 and the flaw sits near 1δ ≈ 0.38 mm. Using the one-way relation x/δ = 2 by mistake gives the 0.76 mm distractor — remember the round trip."
+   },
+   {
+    "prompt": "Next job: corrosion at the second layer of a bonded lap joint, up to 2.0 mm below the outer surface. At 100 kHz your effective depth is only ≈1.1 mm. Best move?",
+    "options": [
+     "Raise the gain until a deep signal appears",
+     "Keep 100 kHz and size by amplitude instead",
+     "Drop to about 10 kHz so 3δ comfortably covers 2 mm",
+     "Raise the frequency to 500 kHz for better resolution"
+    ],
+    "correct": 2,
+    "feedback": "At 10 kHz, δ = 660/√(10,000 × 30) ≈ 1.2 mm and 3δ ≈ 3.6 mm — the second layer is now inside the effective depth. Gain cannot amplify current that never reached the flaw, and raising frequency shrinks δ further."
+   },
+   {
+    "prompt": "Last part of the shift: a low-carbon steel fitting (σ ≈ 10 %IACS, μᵣ ≈ 100), same probe, 100 kHz. Your aluminum phase–depth sizing curve:",
+    "options": [
+     "Still applies — phase lag is material independent",
+     "Only loses some amplitude; the rotations stay valid",
+     "Improves, because the stronger magnetic coupling boosts the signal",
+     "Is invalid — δ collapses to ≈0.07 mm and permeability noise dominates the display"
+    ],
+    "correct": 3,
+    "feedback": "δ = 660/√(100,000 × 100 × 10) ≈ 0.07 mm, so the depth dimension is gone, and point-to-point permeability variation swings the signal harder than flaws do. Unsaturated carbon steel is surface-crack territory, not depth-sizing territory."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A copper bus bar (σ = 100 %IACS, μᵣ = 1) is tested at 10 kHz. The standard depth of penetration is about:",
+   "options": ["6.6 mm", "0.066 mm", "0.66 mm", "1.32 mm"],
+   "correct": 2,
+   "explanation": "δ (mm) ≈ 660/√(f · μᵣ · σ) = 660/√(10,000 × 100) = 660/1,000 = 0.66 mm. The 6.6 and 0.066 mm options are decade slips from mishandling the square root; 1.32 mm doubles the result without basis."
+  },
+  {
+   "question": "The one-way phase lag of eddy currents flowing at a depth of 2δ is approximately:",
+   "options": ["115°", "57°", "172°", "13.5°"],
+   "correct": 0,
+   "explanation": "β = x/δ radians, so at 2δ the lag is 2 radians ≈ 115°. One radian (≈57°) is the lag at 1δ, 172° belongs to 3δ, and 13.5% is the current-density figure at 2δ — an amplitude number, not a phase angle."
+  },
+  {
+   "question": "On a calibrated display with lift-off set horizontal, which signal property tells you how DEEP a flaw lies?",
+   "options": [
+    "Its amplitude — bigger always means deeper",
+    "The frequency content of the signal",
+    "Its vertical height above the lift-off line",
+    "Its rotation relative to a calibrated surface reference signal"
+   ],
+   "correct": 3,
+   "explanation": "Depth rides on phase lag: the observed rotation grows at roughly 2x/δ, so deeper flaws sit rotated further from the surface reference. Amplitude is ambiguous — a small shallow flaw and a large deep one can match — and screen height changes with the rotation you dialed in."
+  },
+  {
+   "question": "Why is the rotation observed at a surface coil approximately 2x/δ rather than the one-way lag x/δ?",
+   "options": [
+    "Because display rotation doubles every measured angle",
+    "Because the field lags diffusing down to the flaw, and the disturbance lags again diffusing back to the coil",
+    "Because eddy currents circulate twice around their loop each cycle",
+    "Because β automatically doubles in ferromagnetic material"
+   ],
+   "correct": 1,
+   "explanation": "The coil only feels the flaw after a round trip: x/δ of lag accumulates on the way down and roughly the same again on the way back up. Display rotation moves all signals together and changes no separations, and μᵣ changes δ itself, not the 2x/δ relationship."
+  },
+  {
+   "question": "A surface probe at a typical surface-scan frequency is placed on unsaturated low-carbon steel (σ ≈ 10 %IACS, μᵣ in the hundreds). The best statement is:",
+   "options": [
+    "δ grows, because steel is less conductive than aluminum",
+    "Phase–depth sizing improves, because the magnetic coupling is stronger",
+    "δ collapses below about 0.1 mm and permeability variations mask the depth information",
+    "The effective depth is unchanged; only signal amplitude changes"
+   ],
+   "correct": 2,
+   "explanation": "Lower conductivity alone would grow δ, but μᵣ sits in the same square root and wins: at 100 kHz with μᵣ ≈ 100, δ ≈ 0.07 mm. On top of that, point-to-point permeability changes swing the signal harder than most flaws, so unsaturated carbon steel is treated as surface-crack territory unless it is magnetically saturated."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Topical Outlines — ECT Level II Principles Course §1.0 (review of electromagnetic theory: eddy current properties, depth of penetration, phase/amplitude relationships)",
+  "ASNT SNT-TC-1A (2024) — recommended practice governing ET Level II training and qualification",
+  "ASTM E1316 — Standard Terminology for Nondestructive Examinations (standard depth of penetration, phase angle, and related electromagnetic testing terms)"
+ ]
+}

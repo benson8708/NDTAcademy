@@ -1,0 +1,184 @@
+{
+ "lessonId": "et1-6-3",
+ "title": "Gain, Display Sensitivity, and Standardization",
+ "narrationScript": "You have already chosen a frequency and set the drive. This lesson makes the returning signal usable, and then makes it provable. Channel gain is receiver-side amplification, marked in decibels. Every six dB doubles the displayed amplitude, and twelve dB quadruples it. But gain amplifies flaw signals and noise by the same factor, so it never improves signal-to-noise ratio. Display sensitivity then scales the picture itself, setting how many volts move the dot one screen division, with separate horizontal and vertical scaling on most instruments. Standardization ties the whole system to a known reference. You set the documented parameters, null on a sound area of a reference standard that matches your part in alloy, temper, and geometry, rotate the phase until lift-off runs horizontal, scan the notches, and set gain so the specified notch reaches the required screen height. Then you verify on a schedule, after any change to settings, probe, cable, or power, and at the end of the run. If any check fails, you re-standardize and re-examine every part tested since the last valid check.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Channel Gain: The Receiver's Volume Knob",
+   "body": "The last two lessons set the transmit side: frequency shaped the field and the skin depth, and drive set how hard the coil pushes that field into the part. **Channel gain** lives on the receive side. It amplifies the signal the coil sends back — flaw responses, lift-off motion, and noise alike — before anything reaches the display. Drive decides how much energy goes into the part; gain decides how large the returning signal is drawn.\n\nGain is marked in **decibels (dB)**, a logarithmic scale, and the arithmetic is worth memorizing:\n\n- **+6 dB ≈ ×2** displayed amplitude; **−6 dB ≈ ×½**\n- **+12 dB ≈ ×4**\n- **+20 dB = ×10**\n- **+40 dB = ×100**\n\nYou will use this constantly. If the reference notch reaches only 20% of full screen height (FSH) and the procedure calls for 80%, that is a factor of four — add **12 dB** and rescan to confirm.\n\nBoth directions of error cost you. **Too little gain** and flaw responses crawl along the baseline, too small to evaluate and below any alarm threshold — a detectable crack can scroll past unseen. **Too much gain** and the response runs off the screen, so its true amplitude and phase angle are unreadable; push further and the amplifier itself **saturates**, clipping and distorting every signal it passes. Saturation happens before the display — no display adjustment can recover a signal the amplifier has already flattened."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-6-3-fig-a",
+   "caption": "The same reference notch at three channel-gain settings, 12 dB apart. At 34 dB the indication is easy to miss; at 46 dB it sits at the procedure's 80% FSH; at 58 dB it clips at the screen top — and the noise envelope has grown by exactly the same factor at every step."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Gain cannot buy signal-to-noise",
+   "body": "Gain amplifies the flaw response and the noise by the same factor. If grass hides the notch at 40 dB, the same grass hides it at 60 dB — just drawn larger. Signal-to-noise is won earlier in the chain: probe selection, frequency, drive, and filtering. Many written procedures require the reference response to stand at least **3:1 above background noise** — and if it does not, adding gain is not the fix. Change the setup, not the volume."
+  },
+  {
+   "type": "text",
+   "heading": "Display Sensitivity: Scaling the Picture",
+   "body": "Impedance-plane instruments draw the signal as a flying dot whose movement follows the coil's voltage. **Display sensitivity** sets the scale of that drawing — how many volts of signal move the dot one screen division. Choose a more sensitive display range (fewer volts per division) and every signal on screen grows; the relationships between signals do not change.\n\nThat is the practical difference from channel gain:\n\n- **Channel (input) gain** acts on the signal before it is processed. Set it too high and the amplifier saturates — information is destroyed and cannot be recovered downstream.\n- **Display sensitivity** rescales the processed signal for viewing. It makes signals comfortable to read, but it neither creates information nor destroys it.\n\nMost instruments also let you scale the **horizontal and vertical axes independently** (X/Y or H/V gain). A common surface-inspection setup adds vertical gain so crack responses — which rise up the screen — grow taller, while the horizontal lift-off direction stays compressed where probe wobble and surface chatter live.\n\nA usable display, per a typical written instruction, looks like this: balance point parked where the procedure puts it, lift-off trace lying horizontal, and the specified reference discontinuity reaching a defined amplitude — commonly around **80% FSH** or a set number of divisions — with the entire response, peak included, on screen."
+  },
+  {
+   "type": "text",
+   "heading": "Standardization: Tying the Screen to Something Real",
+   "body": "An eddy current display has no built-in truth. The same crack can be drawn tall or tiny depending on the knobs, so before any accept/reject decision means anything, the system's response must be tied to a known physical reference. That adjustment is **standardization**: setting the complete system — probe, cable, instrument, and settings — so a **reference standard** produces a specified response on the display.\n\nKeep the vocabulary straight, as ASTM E1316 separates the terms. **Calibration** is the periodic, documented check of the instrument's electronics against traceable references, performed in a lab on a schedule. **Standardization** is what you do at the test site, every shift, with the reference standard in your hand.\n\nThe reference standard does the heavy lifting, so its pedigree matters:\n\n- **Same nominal alloy and temper** as the test part — conductivity depends on both, and the operating point moves with conductivity.\n- **Same geometry and thickness** where they affect the test — curvature, edges, and thin sections all change the response.\n- **Artificial discontinuities of documented size** — EDM notches for surface work (a typical set: 0.2, 0.5, and 1.0 mm deep — 0.008, 0.020, and 0.040 in), and drilled through-holes or notches for tubing standards, each sized by the governing practice.\n\nMatch the standard to the job and every amplitude on your screen becomes a comparison against a known discontinuity. Mismatch it and the comparison is fiction."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-6-3-fig-b",
+   "caption": "Standardizing a surface inspection: null on a sound area of the matching reference standard, rotate the phase so lift-off lies horizontal, scan the EDM notches, then set channel gain so the specified notch reaches the required screen height. Deeper notches return larger amplitude and greater phase rotation."
+  },
+  {
+   "type": "text",
+   "heading": "The Standardization Sequence",
+   "body": "The written procedure controls; the typical sequence on an impedance-plane instrument runs like this:\n\n- **1 — Set the documented parameters.** Frequency, drive, and filters exactly as the technique sheet lists them. These were chosen by a Level II or III; they are not adjusted to chase a prettier signal.\n- **2 — Null (balance) on a defect-free area** of the reference standard. This parks the flying dot at its rest position with the probe sitting on sound material.\n- **3 — Rotate the phase** until lift-off is horizontal. Rock the probe slightly and watch the dot; adjust rotation until that motion lies flat, conventionally running left from the balance point. Flaw responses now rise up the screen at their own phase angles, cleanly separated from probe wobble.\n- **4 — Scan the reference discontinuities** at the speed and orientation the instruction specifies, and **set channel gain** so the specified notch reaches the required amplitude — 80% FSH in many techniques.\n- **5 — Verify and record.** Rescan each notch and confirm the responses repeat, check that signal-to-noise meets the procedure minimum (3:1 is common), then record every setting: frequency, gain, rotation, filters, probe and cable identification, and the reference standard's serial number.\n\nThat record is the heart of it. Standardization is only worth something if the next verification can reproduce it — and if an auditor can reconstruct exactly what the screen meant when you called a part good."
+  },
+  {
+   "type": "table",
+   "caption": "When verification or full re-standardization is required, and what each trigger demands.",
+   "headers": ["Trigger", "Required action", "Why"],
+   "rows": [
+    ["Start of the inspection or shift", "Full standardization on the reference standard; record all settings", "Establishes the response every later check is compared against"],
+    ["Periodic interval — commonly every 4 h, per procedure", "Verification scan of the reference standard", "Catches slow drift from temperature and electronics before it accumulates"],
+    ["Any instrument setting changed", "Re-standardize before testing continues", "Gain, frequency, rotation, or filter changes invalidate the recorded setup"],
+    ["Probe, cable, or instrument swapped", "Full re-standardization", "Each coil and cable loads the circuit differently — the response belongs to the whole system"],
+    ["Power interruption or battery change", "Verification before resuming", "A restart can shift or reset the stored operating point"],
+    ["Probe dropped or response looks suspect", "Stop and verify", "A worn or cracked probe changes sensitivity without warning"],
+    ["End of the inspection or shift", "Final verification scan", "Proves the system was still in tolerance for everything tested"],
+    ["Any verification fails its tolerance", "Re-standardize, then re-examine ALL parts tested since the last valid check", "A failed check means every result in that window is unproven"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Why Re-standardization Has Teeth",
+   "body": "Instrument response drifts, and none of the causes announce themselves on the screen. **Temperature** shifts the conductivity of part and standard alike and warms the electronics. **Probe wear** grinds away the coil's protective face, changing effective lift-off scan by scan. **Cable damage** and a sagging battery change the signal path quietly. The display keeps looking normal while reading wrong — the periodic verification is the only thing standing between you and a shift's worth of worthless results.\n\nNow the rule with teeth. When a verification fails — the notch reads 55% where the record says 80%, or outside whatever tolerance the procedure states — every part tested since the last valid check is unproven. The required response: **re-standardize, then re-examine all of it.** The ASTM eddy current practices for tubular products write this explicitly, and aerospace procedures carry the same requirement. This is also why verification intervals are kept short: the interval between checks is the size of your maximum re-work.\n\nThe Level I discipline that follows:\n\n- **Never ride the gain** mid-run to make signals look right — any setting change triggers re-standardization.\n- **Protect the reference standard** from gouges, corrosion, and mix-ups; it is the instrument's birth certificate.\n- **Record everything.** If it is not written down, it did not happen."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-6-3-fig-a",
+   "title": "Channel gain: one notch at three gain settings",
+   "file": "et1-6-3-fig-a.svg"
+  },
+  {
+   "id": "et1-6-3-fig-b",
+   "title": "Standardization sequence on the reference standard",
+   "file": "et1-6-3-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Standardize the Setup: Four Calls on the Line",
+  "intro": "You are the Level I on a surface inspection of 7075-T6 aluminum fittings, working to a written technique with an impedance-plane instrument and a matching reference standard carrying 0.2, 0.5, and 1.0 mm EDM notches. Make the right call at each step.",
+  "steps": [
+   {
+    "prompt": "The technique sheet's parameters are entered. Where do you null (balance) the instrument?",
+    "options": [
+     "With the probe held in air, away from any metal",
+     "Directly over the deepest EDM notch",
+     "On a defect-free area of the reference standard",
+     "Anywhere on the first production part"
+    ],
+    "correct": 2,
+    "feedback": "Balancing parks the flying dot at its rest position with the probe on sound material of the standard, so every notch response is measured from that known reference. Null on a notch and your reference signals are corrupted from the start."
+   },
+   {
+    "prompt": "You rock the probe and the lift-off trace runs diagonally up and to the left. Which control fixes this?",
+    "options": [
+     "Channel gain",
+     "Phase rotation",
+     "Test frequency",
+     "Drive voltage"
+    ],
+    "correct": 1,
+    "feedback": "Phase rotation turns the whole display. Rotate until lift-off motion lies horizontal — the standard convention — so flaw responses, which move at different phase angles, rise up the screen cleanly separated from probe wobble."
+   },
+   {
+    "prompt": "The 1.0 mm notch peaks at only 20% FSH; the procedure requires 80%. Your move?",
+    "options": [
+     "Increase drive voltage to maximum",
+     "Lower the test frequency until the signal grows",
+     "Add about 12 dB of channel gain and rescan",
+     "Scan the notch faster to build amplitude"
+    ],
+    "correct": 2,
+    "feedback": "20% to 80% is a factor of four, and +12 dB ≈ ×4. Gain is the control assigned to set reference amplitude. Frequency and drive are documented technique parameters — changing them to chase amplitude invalidates the setup."
+   },
+   {
+    "prompt": "Two hours into the run, you replace a kinked probe cable. Before testing the next part you must:",
+    "options": [
+     "Keep testing — the cable is just a conductor and does not affect response",
+     "Add 6 dB to cover any small loss from the new cable",
+     "Re-null on the part and continue the run",
+     "Re-verify the response on the reference standard"
+    ],
+    "correct": 3,
+    "feedback": "The standardized system is probe + cable + instrument + settings, together. Swap any component and the recorded response no longer applies — re-verify on the standard, and re-standardize if the response has moved. Guessing a dB correction is never permitted."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A reference notch response stands at 40% FSH. After adding 6 dB of channel gain, it will reach approximately:",
+   "options": ["46% FSH", "80% FSH", "120% FSH", "400% FSH"],
+   "correct": 1,
+   "explanation": "Gain is logarithmic: +6 dB doubles displayed amplitude, so 40% becomes about 80%. Adding 6 'percentage points' (46%) misreads dB as linear; ×10 would take +20 dB."
+  },
+  {
+   "question": "Which statement about channel gain is correct?",
+   "options": [
+    "It increases the eddy current energy the coil induces into the part",
+    "It suppresses noise while amplifying flaw signals",
+    "It amplifies flaw signals and noise by the same factor, so signal-to-noise stays about the same",
+    "It changes the phase angle of the lift-off trace"
+   ],
+   "correct": 2,
+   "explanation": "Gain is receiver-side amplification applied to everything the coil returns. Energy into the part is set by drive, phase angle by rotation — and no amount of gain improves signal-to-noise."
+  },
+  {
+   "question": "An acceptable reference standard for standardizing a surface eddy current inspection must:",
+   "options": [
+    "Match the test part's nominal alloy, temper, and geometry, and contain artificial discontinuities of documented size",
+    "Be made of any conductive metal, since eddy currents behave identically in all conductors",
+    "Contain natural service-induced cracks rather than EDM notches",
+    "Be replaced with a freshly machined block at the start of each shift"
+   ],
+   "correct": 0,
+   "explanation": "Conductivity follows alloy and temper, and geometry changes the response, so the standard must match the part. Its EDM notches or drilled holes are artificial discontinuities of known, documented size — that is what makes the comparison meaningful."
+  },
+  {
+   "question": "During a long run the instrument loses power and is restarted. Before testing continues, the Level I must:",
+   "options": [
+    "Re-enter the recorded gain setting from memory and continue",
+    "Increase drive 6 dB to compensate for instrument warm-up",
+    "Do nothing — digital instruments store their settings",
+    "Verify the system response on the reference standard"
+   ],
+   "correct": 3,
+   "explanation": "A power interruption is a mandatory verification trigger: a restart can shift the operating point even when stored settings look unchanged. Only the reference standard proves the response is still in tolerance."
+  },
+  {
+   "question": "The end-of-run verification shows the reference notch at 55% FSH where the record requires 80%, outside the procedure's tolerance. The required action is to:",
+   "options": [
+    "Adjust gain until the notch reads 80% again and release the lot",
+    "Re-standardize, then re-examine all parts tested since the last valid verification",
+    "Note the discrepancy in the report and accept the parts already tested",
+    "Replace the battery and release the lot"
+   ],
+   "correct": 1,
+   "explanation": "A failed check means every result since the last good check is unproven — sensitivity may have been low while flawed parts passed. Re-standardize and re-examine the entire window; simply re-gaining and shipping hides the problem."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Technique Course §2.4–2.6 (channel gain, display sensitivity selections, standardization)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — Level I performs instrument standardization per written instructions",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (standardization and calibration terminology)",
+  "ASTM E309, Standard Practice for Eddy Current Examination of Steel Tubular Products Using Magnetic Saturation (system standardization and periodic verification requirements)"
+ ]
+}

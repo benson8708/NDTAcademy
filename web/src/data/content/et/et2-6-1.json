@@ -1,0 +1,183 @@
+{
+ "lessonId": "et2-6-1",
+ "title": "Amplification",
+ "narrationScript": "Every signal you evaluate survives a chain. The oscillator drives the coil, a balance network nulls the standing signal, amplifiers multiply what remains, the phase detector extracts components, filters clean the result, and the display draws it. A discontinuity typically changes the coil voltage by a fraction of one percent, so the instrument must raise tiny changes by factors up to one hundred thousand without corrupting amplitude or phase. Gain is that multiplier, expressed in decibels, twenty times the log of the voltage ratio. Six decibels doubles a signal, twenty decibels is ten times, and cascaded stages add in decibels. The first stage sets the noise floor, which is why low noise preamplification sits at the front of the chain. Drive any amplifier past its linear range and peaks clip, amplitude stops tracking severity, and phase angles shift. Dynamic range is the span between noise floor and ceiling. Learn the saturation symptoms: flat tops, signals pinned at the screen edge, a reference that will not double when you add six decibels. Then reduce gain, re-null, and re-standardize.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Instrument Chain: Why Amplification Exists",
+   "body": "From this module on, the instrument stops being a black box. Every signal you evaluate is the output of a chain of stages, and each stage can strengthen the message or quietly corrupt it. The chain runs: an **oscillator** drives the coil at the test frequency; the **probe coil** answers with the impedance message; a **balance (null) network** subtracts the standing signal; **amplifiers** multiply what remains; the **phase detector** resolves the result into components (next lesson); **filters** strip what you do not need (the lesson after); and the **display** draws what survives.\n\nThis lesson covers the multiplying stages — and the reason they dominate instrument design is scale. The coil's standing voltage is typically on the order of volts. A small fatigue crack changes it by **a fraction of one percent**: the useful signal is microvolts to millivolts riding on a carrier hundreds to thousands of times larger. Putting that change at display level takes voltage gain of roughly **1,000× to 100,000× — 60 to 100 dB**.\n\nTwo design consequences follow immediately:\n\n- **Null before you amplify.** If the full standing voltage entered a 60 dB amplifier, the amplifier would saturate long before any flaw became visible. The balance network spends the amplifier's range on *changes*, not on the carrier.\n- **Amplify without altering relationships.** Everything downstream — phase-angle depth estimates, amplitude comparison against the calibration notch, alarm gates — assumes the amplifier preserved amplitude ratios and phase. An amplifier that distorts is more dangerous than one that is merely weak, because it keeps producing confident-looking signals."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-6-1-fig-a",
+   "caption": "The instrument signal chain. The balance network nulls the standing coil voltage so the highlighted amplifier stages can spend 60–100 dB of gain on flaw-induced changes instead of the carrier. Below: the scale problem — the flaw's contribution is a fraction of one percent of the standing signal until it is nulled and amplified."
+  },
+  {
+   "type": "text",
+   "heading": "Gain and the Decibel: What the Knob Actually Does",
+   "body": "**Gain** is the multiplication an amplifier applies: output voltage divided by input voltage. Because eddy current work spans ratios from a few times to a hundred thousand times, gain is expressed in **decibels**:\n\n**dB = 20 · log₁₀(V₂ ÷ V₁)**\n\nBurn in the anchors: **+6 dB doubles** a voltage, **+12 dB quadruples** it, **+20 dB is ×10**, **+40 dB is ×100**, **+60 dB is ×1,000**. Negative values divide — −6 dB halves a signal. And the property that makes decibels worth the trouble: when stages cascade, **ratios multiply but decibels add**. A 20 dB preamplifier feeding a 40 dB main amplifier delivers 10 × 100 = ×1,000 — or simply 20 + 40 = 60 dB.\n\nModern eddy current instruments provide gain ranges on the order of **0–100 dB**, adjustable in steps as fine as 0.1 dB. On a linear display, every +6 dB doubles the height of an unclipped signal — the quickest field check of amplifier linearity you own, and you will use it during every standardization.\n\nMost impedance-plane instruments also offer **independent horizontal and vertical gain** to spread the display — stretching the vertical axis, for example, so flaw signals stand tall while lift-off runs flat. Use it deliberately, with one Level II caution: **unequal axis gains change the apparent angle of every signal not aligned with an axis**. If your procedure evaluates phase angle — and at Level II it usually does — set the gains the procedure specifies and re-establish your phase references whenever you change them."
+  },
+  {
+   "type": "table",
+   "caption": "Decibel anchors for voltage gain: dB = 20·log₁₀(V₂/V₁). On a linear, unclipped display, signal height scales with the voltage ratio.",
+   "headers": ["Gain change", "Voltage ratio", "What it means on screen"],
+   "rows": [
+    ["−6 dB", "×0.5", "Signal height halves"],
+    ["+6 dB", "×2", "Signal height doubles — the field linearity check"],
+    ["+12 dB", "×4", "Two doublings"],
+    ["+20 dB", "×10", "An 8% signal becomes 80% of screen height"],
+    ["+40 dB", "×100", "Millivolt signals reach tenths of volts"],
+    ["+60 dB", "×1,000", "Microvolt-scale flaw responses reach display level"],
+    ["+100 dB", "×100,000", "Full gain range of a modern instrument"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "The Amplifier Chain, Stage by Stage",
+   "body": "**Preamplifier.** The first gain stage sits as close to the coil as the design allows — at the instrument's front end, sometimes inside the probe housing itself. Position is everything: **noise injected at the front of the chain is amplified by every stage after it**, while noise added later rides on an already-large signal. The first stage therefore sets the noise floor of the whole instrument, and it is built as the quietest, most linear stage in the box.\n\n**Carrier (test-frequency) amplifier.** Before demodulation, the signal is amplified at the test frequency itself. AC-coupled carrier amplification has a quiet virtue: slow drifts — temperature effects in the coil, cable, and electronics — fall outside the passband and are not amplified. The bandwidth must comfortably cover the test frequency plus the **modulation sidebands** that probe motion creates: scanning past a flaw amplitude- and phase-modulates the carrier, and an amplifier too narrow for those sidebands rounds off fast signals.\n\n**Post-detector amplifiers.** After the phase detector splits the signal into horizontal and vertical components, each channel carries its own amplification to drive the display, recorder, and alarm circuits. The two channels must track each other — mismatched channel gain is the unequal-axis angle distortion from the previous section, built permanently into the instrument.\n\n**The digital back end.** Today the analog chain ends at an **analog-to-digital converter**, and the planning number is **about 6 dB of dynamic range per bit** — roughly 72 dB for a 12-bit converter, 96 dB for 16 bits. Analog gain ahead of the converter decides how much of that range your signal actually uses. Software gain applied after the ADC only magnifies what was already captured: it cannot recover a signal that clipped at the converter, and it amplifies quantization noise right along with the signal."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Null first. Quiet gain early. Gain is never free.",
+   "body": "The balance network spends the amplifier's dynamic range on flaw-induced *changes* instead of the standing coil voltage — null first, then amplify. Put the quietest stage at the front, because its noise is multiplied by everything after it. And remember what the gain knob cannot do: amplification raises signal and noise together. It makes signals **bigger**, never **cleaner** — improving signal-to-noise belongs to probe selection, frequency choice, and filtering, not to gain."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-6-1-fig-b",
+   "caption": "An amplifier's transfer curve. Inside the linear range, output is proportional to input and every +6 dB doubles the signal; past the compression knee, peaks clip flat — the short dashed line marks the linear path the output no longer follows. Dynamic range spans from the noise floor to the onset of clipping."
+  },
+  {
+   "type": "text",
+   "heading": "Dynamic Range, Saturation, and Clipping",
+   "body": "A **linear amplifier** keeps one promise: output proportional to input — the same gain for every signal in its working range. That range has a floor and a ceiling. The floor is the **noise floor**: below it, signals drown in the amplifier's own thermal noise. The ceiling is **saturation**: the output cannot swing beyond its supply limits or the converter's full scale, so input peaks beyond that point emerge **clipped** flat. **Dynamic range** is the span between the two, expressed in dB. Gain accuracy and linearity are formally verifiable instrument characteristics under equipment standards such as ISO 15548-1 — the +6 dB doubling check is your field-level version.\n\nSaturation does three kinds of damage:\n\n- **Amplitude compression.** Once peaks clip, bigger flaws stop producing proportionally bigger signals. A 100% through-wall reference and a 60% reference can read nearly alike — and every amplitude comparison against your standard is invalid.\n- **Waveform and phase distortion.** Clipping flattens peaks and adds harmonic content the probe never produced; as the signal loop flattens against its invisible ceiling, the **measured phase angle shifts**, and the depth information distorts with it.\n- **Overload recovery.** After a large transient — a tube support plate, a part edge, a ferromagnetic inclusion — saturated stages need time to return to linear operation, and signals arriving during recovery are unreliable.\n\nRecognize saturation before it costs you: signals pinned at the screen limit; flat-topped peaks; a reference that grows less than ×2 when you add 6 dB; two very different references reading nearly the same. The response never changes: **reduce gain, re-null, re-standardize** — and only then evaluate."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-6-1-fig-c",
+   "caption": "Three saturation symptoms to recognize on sight: a signal loop pinned flat against the screen limit, a +6 dB check that fails to double the signal, and two very different references reading nearly alike. The response never changes — reduce gain, re-null, re-standardize."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-6-1-fig-a",
+   "title": "Eddy current instrument signal chain",
+   "file": "et2-6-1-fig-a.svg"
+  },
+  {
+   "id": "et2-6-1-fig-b",
+   "title": "Amplifier transfer curve: linear range, saturation, dynamic range",
+   "file": "et2-6-1-fig-b.svg"
+  },
+  {
+   "id": "et2-6-1-fig-c",
+   "title": "Recognizing saturation on the display",
+   "file": "et2-6-1-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Inside the Amplifier: Four Field Problems",
+  "intro": "Four instrument problems, each solved by one principle from this lesson. Anchors: +6 dB doubles voltage, decibels add when stages cascade, and a linear chain doubles an unclipped signal for every +6 dB.",
+  "steps": [
+   {
+    "prompt": "Your procedure requires the EDM-notch reference signal at 80% of screen height. With the probe nulled and the notch scanned, it reads 20%. What gain change sets it correctly?",
+    "options": ["+4 dB", "+6 dB", "+12 dB", "+60 dB"],
+    "correct": 2,
+    "feedback": "20% to 80% is a ×4 voltage ratio — two doublings, so +12 dB (20·log₁₀4 ≈ 12 dB). +6 dB would reach only 40%, and +60 dB is ×1,000 — deep into saturation."
+   },
+   {
+    "prompt": "On a heat-exchanger tube standard, the 100% through-wall hole and the 60% flat-bottom holes now produce nearly equal amplitudes, both with flattened peaks near the screen limit. The most likely cause is:",
+    "options": [
+     "Probe wear has reduced fill factor",
+     "The amplifier or ADC is saturating — large signals are being compressed",
+     "The test frequency has drifted upward",
+     "The tube material's conductivity has changed"
+    ],
+    "correct": 1,
+    "feedback": "Nearly equal readings from very different reflectors, plus flat tops, is the signature of amplitude compression at the top of the amplifier's range. Reduce gain until the largest reference sits inside the linear range, then re-standardize. Fill-factor, frequency, or conductivity changes would shift signals — not flatten and equalize them."
+   },
+   {
+    "prompt": "To make small flaw signals taller, a trainee adds 10 dB to the vertical channel only, then continues measuring phase angles for depth estimates. Your call:",
+    "options": [
+     "Acceptable — gain has no effect on phase",
+     "Acceptable, provided the probe is re-nulled afterward",
+     "Only a problem when using absolute probes",
+     "Not acceptable — unequal axis gain stretches the display and changes the measured angles"
+    ],
+    "correct": 3,
+    "feedback": "Equal gain on both channels scales the whole pattern and leaves angles alone; unequal gain stretches one axis, so the apparent phase of every signal not aligned with an axis shifts. Depth calls made from those angles are invalid until the gains are restored and the phase references re-established."
+   },
+   {
+    "prompt": "On a digital instrument the flaw signals are clean but tiny, using only the bottom few bits of the ADC. The best fix is to:",
+    "options": [
+     "Apply digital (software) gain downstream of the ADC",
+     "Increase display persistence so faint traces accumulate",
+     "Raise the analog gain ahead of the ADC so the signal fills more of the converter's range",
+     "Switch to a larger-diameter probe to gather more signal"
+    ],
+    "correct": 2,
+    "feedback": "Dynamic range at the converter is about 6 dB per bit, so a signal using only a few bits is coarsely quantized. Analog gain ahead of the ADC puts the signal across more of the converter's range. Software gain afterward only magnifies the quantization steps — and it can never recover a signal that clipped at the converter."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "An instrument's gain control is raised by 20 dB. The voltage amplification applied to the signal increases by a factor of:",
+   "options": ["2 times", "10 times", "100 times", "20 times"],
+   "correct": 1,
+   "explanation": "Voltage gain in decibels is 20·log₁₀(V₂/V₁), so 20 dB is a ×10 voltage ratio. The ×100 distractor comes from misapplying the power formula (10·log), and ×2 is the +6 dB rule."
+  },
+  {
+   "question": "The standing coil voltage is balanced (nulled) before high gain is applied because:",
+   "options": [
+    "the amplifier's limited dynamic range must be spent on the small flaw-induced changes, not on amplifying the large standing signal into saturation",
+    "nulling eliminates the need for a calibration standard",
+    "nulling converts the AC coil signal to DC for the display",
+    "nulling increases the eddy current density in the test part"
+   ],
+   "correct": 0,
+   "explanation": "The flaw signal is a tiny change riding on a standing voltage hundreds to thousands of times larger. Subtracting the standing signal first lets 60–100 dB of gain act on the changes alone; without the null, the amplifier would clip long before flaws became visible."
+  },
+  {
+   "question": "An amplifier's dynamic range is best described as:",
+   "options": [
+    "the band of frequencies it amplifies equally",
+    "the difference between the horizontal and vertical gain settings",
+    "the ratio, normally expressed in dB, between the largest signal it passes without distortion and the smallest signal usable above its noise floor",
+    "the time it needs to recover after an overload"
+   ],
+   "correct": 2,
+   "explanation": "Dynamic range spans the linear window between the noise floor at the bottom and saturation at the top. Frequency response, channel-gain matching, and overload recovery are separate amplifier characteristics."
+  },
+  {
+   "question": "During standardization you add 6 dB, but the reference signal grows far less than two times and its peak looks flattened. The most likely cause is:",
+   "options": [
+    "excessive lift-off on the reference standard",
+    "an open circuit in the probe cable",
+    "test frequency set too low for the material",
+    "saturation — the signal is clipping at the top of the amplifier's (or converter's) range"
+   ],
+   "correct": 3,
+   "explanation": "A linear chain doubles an unclipped signal for every +6 dB. Failure to double, combined with flat tops, is the classic signature of clipping. Lift-off or an open cable would change the signal in other recognizable ways, not cap its growth."
+  },
+  {
+   "question": "Phase distortion in the amplifier chain is a serious problem in eddy current testing because:",
+   "options": [
+    "it changes the conductivity of the test part",
+    "signal phase angle carries discontinuity depth information, so phase shifts that vary with amplitude or frequency corrupt depth evaluation",
+    "phase only matters when testing ferromagnetic materials",
+    "it prevents the oscillator from driving the coil"
+   ],
+   "correct": 1,
+   "explanation": "Eddy current evaluation reads phase — lag accumulates at roughly 57° per standard depth of penetration — to estimate flaw depth. An amplifier that shifts phase unevenly rewrites that information; a constant, known phase shift is acceptable, but a variable one is not."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level II Principles Course §7.0–7.1 (instrument design considerations: amplification)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — Eddy Current Testing method, Level II training outline",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations, Section C: Electromagnetic Testing (instrument and signal definitions)",
+  "ISO 15548-1, Non-destructive testing — Equipment for eddy current examination — Part 1: Instrument characteristics and verification (gain, linearity, and noise)"
+ ]
+}

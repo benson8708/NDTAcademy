@@ -1,0 +1,183 @@
+{
+ "lessonId": "et1-1-2",
+ "title": "Basic Physics: Varying Magnetic Fields and Induction",
+ "narrationScript": "Every eddy current test stands on three linked pieces of physics. First, Oersted: electric current creates a magnetic field that circles its conductor. Coil the wire and those circles stack into one concentrated field set by ampere-turns, current times turns. Second, change is everything. A coil on direct current makes a steady field and induces nothing. Drive it with alternating current and the field expands, collapses, and reverses polarity every cycle, a built-in flux variation with no motion required. Third, Faraday's law: changing magnetic flux through a conductor induces a voltage proportional to the rate of change of flux and the number of turns. Put a conductive part under that AC coil and induction is automatic. The induced voltage drives currents that swirl through the metal in closed circular loops, eddy currents. Lenz's law fixes their direction: they always oppose the change that created them. The coil acts as a transformer primary, the part as a one-turn, short-circuited secondary. A varying flux plus a conductive material, those are the two non-negotiables behind every eddy current test.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Every Current Wears a Magnetic Field",
+   "body": "In 1820, Hans Christian Oersted watched a compass needle swing the instant a nearby wire carried current — the first proof that electricity creates magnetism. That single observation is the starting point of every eddy current test.\n\nThe field around a straight conductor has a definite shape and definite habits:\n\n- The lines of force form **closed concentric circles** around the conductor, in planes perpendicular to it — no poles, just loops.\n- **Direction** follows the right-hand rule: grip the conductor with your right hand, thumb pointing along conventional current flow, and your fingers curl in the field direction. Reverse the current and the field reverses with it.\n- **Strength** is proportional to the current, is greatest at the conductor's surface, and weakens with distance.\n\nA straight wire's field is too spread out to be a useful tool, so we coil it. Bending the wire into a loop concentrates the lines of force through the loop's center; stacking many loops makes the turns' fields add into one strong field along the coil axis. For a given coil, field strength is set by **ampere-turns** — current multiplied by the number of turns. That small coil is the working end of every eddy current probe you will ever hold."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-1-2-fig-a",
+   "caption": "The magnetic field forms closed circles around a current-carrying conductor (direction by the right-hand rule); coiling the wire stacks those fields into one concentrated field set by ampere-turns."
+  },
+  {
+   "type": "text",
+   "heading": "Steady Fields Sit Still — Varying Fields Do the Work",
+   "body": "Drive that coil with **direct current** and you get a steady field: constant strength, constant polarity. A steady field deflects a compass and lifts iron filings, but hold it motionless beside a conductor and it induces **nothing**. Induction lives entirely on *change*.\n\nDrive the coil with **alternating current** and the picture transforms. Each cycle, the current climbs to a peak, falls back through zero, peaks in the opposite direction, and returns to zero. The field is locked to that current, so every cycle the field:\n\n1. **Expands** outward from the coil to maximum strength,\n2. **Collapses** back to zero,\n3. **Expands again with reversed polarity**, and\n4. **Collapses** once more.\n\nThe number of complete cycles per second is the **frequency**, measured in hertz (Hz) — in eddy current work, the **test frequency**. Instruments drive test coils from below 1 kHz for deep-penetration work up to several megahertz for surface inspection. At 100 kHz, the field builds and collapses 200,000 times every second.\n\nAn AC-driven coil therefore carries its own built-in flux variation. Nothing has to move for the field through nearby material to be changing constantly — and changing flux is exactly what induction requires."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-1-2-fig-b",
+   "caption": "One cycle of alternating coil current and the field that follows it: expand, collapse, expand with reversed polarity, collapse — repeated at the test frequency."
+  },
+  {
+   "type": "text",
+   "heading": "Faraday's Law in Practical Terms",
+   "body": "In 1831, Michael Faraday found the other half of Oersted's discovery: a **changing magnetic flux** passing through a conductor **induces an electromotive force (EMF)** — a voltage. If the conductor offers a closed path, that voltage drives a current.\n\nIn practical terms, Faraday's law says three things:\n\n- Voltage is induced **only while the flux is changing**. Steady flux — however strong — induces nothing.\n- The induced voltage is proportional to the **rate of change** of flux. Change the same flux in half the time and you induce twice the voltage; higher test frequency means faster flux change.\n- In a coil, every turn counts: **E = N × (ΔΦ/Δt)**, where N is the number of turns and Φ is the flux in webers. Flux changing at one weber per second through a single turn induces one volt.\n\nThere are two ways to make flux change through a conductor. **Move** the magnet or the conductor relative to each other — the generator principle. Or hold everything still and **vary the current with time** — the transformer principle. Eddy current testing runs on the second: the alternating current does the inducing. We move the probe to cover the part, not to create induction."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Lenz's law: induction pushes back",
+   "body": "Faraday's law gives the **size** of the induced voltage; Lenz's law (1834) gives its **direction**: induced current always flows so that its own magnetic field **opposes the change in flux that created it**. That opposition is the minus sign physicists write into Faraday's law (E = −N × ΔΦ/Δt), and it is why the currents induced in a test part push back against the test coil's field. The next lesson builds the entire eddy current signal on that push-back."
+  },
+  {
+   "type": "text",
+   "heading": "From Induction to Eddy Currents",
+   "body": "Now put the two requirements together under a real probe. The AC coil supplies the varying flux; place it near an **electrically conductive part** and induction is automatic. The induced voltage drives current through the metal itself — and with no wires to guide it, the current flows in **closed circular loops**, in planes parallel to the coil's windings, strongest in the material directly beneath the coil. The swirling pattern resembles the eddies trailing a boat oar — which is exactly where the name **eddy currents** comes from. (You will also see them called Foucault currents.)\n\nThe cleanest picture of the arrangement is a **transformer**: the test coil is the primary winding, and the part behaves as a **single-turn, short-circuited secondary**. Energy couples across the air gap through the magnetic field — no electrical contact, no couplant.\n\nTwo practical consequences fall straight out of the physics:\n\n- **Insulators carry no eddy currents.** Fiberglass, glass, plastic, paint — no conductive path, no induced current, nothing to test in those materials.\n- **The varying field passes through nonconductors unimpeded.** That is why eddy current testing works straight through a paint layer to the metal beneath — the coating only adds coil-to-metal distance, an effect (liftoff) you will study later in the course."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-1-2-fig-c",
+   "caption": "Transformer action under an eddy current probe: the AC-driven coil is the primary, the varying flux couples across the gap, and the conductive part responds as a one-turn, short-circuited secondary carrying eddy currents."
+  },
+  {
+   "type": "table",
+   "caption": "The controlling physical principles behind every eddy current test.",
+   "headers": ["Principle", "What it states", "Job in the eddy current test"],
+   "rows": [
+    ["Oersted's discovery (1820)", "Electric current creates a magnetic field circling its conductor", "AC in the test coil generates the probing field"],
+    ["Faraday's law (1831)", "Changing magnetic flux induces a voltage proportional to its rate of change: E = N × (ΔΦ/Δt)", "The coil's varying flux induces voltage — and current — in the conductive part"],
+    ["Lenz's law (1834)", "Induced current opposes the change in flux that produced it", "Eddy currents generate an opposing secondary field — the basis of the signal (next lesson)"],
+    ["Electrical conduction", "Induced voltage drives current only where a conductive path exists", "Limits the method to conductive materials; the part's conductivity shapes the response"],
+    ["Transformer action", "An AC primary induces current in a magnetically coupled secondary without contact", "Coil = primary; part = one-turn, short-circuited secondary — inspection with no contact or couplant"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-1-2-fig-a",
+   "title": "Magnetic field around a conductor and a coil",
+   "file": "et1-1-2-fig-a.svg"
+  },
+  {
+   "id": "et1-1-2-fig-b",
+   "title": "One AC cycle: field expansion, collapse, and reversal",
+   "file": "et1-1-2-fig-b.svg"
+  },
+  {
+   "id": "et1-1-2-fig-c",
+   "title": "Transformer action: coil primary, part as one-turn secondary",
+   "file": "et1-1-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Induction or No Induction?",
+  "intro": "Faraday's law demands two things: a changing magnetic flux and a conductor sitting in it. Sort each setup by whether current is induced.",
+  "buckets": ["Current is induced", "No current is induced"],
+  "items": [
+   {
+    "label": "AC-energized coil held steady over an aluminum plate",
+    "bucket": 0,
+    "why": "The alternating current varies the flux every cycle and aluminum conducts — both requirements met with no motion at all. This is the eddy current test condition."
+   },
+   {
+    "label": "DC-energized coil held motionless above a copper plate",
+    "bucket": 1,
+    "why": "Direct current makes a steady field. The flux through the copper never changes, so Faraday's law induces nothing — excellent conductivity cannot rescue a flux that stands still."
+   },
+   {
+    "label": "Permanent magnet swept rapidly across a copper sheet",
+    "bucket": 0,
+    "why": "Relative motion changes the flux through the sheet — the generator route to induction. The faster the sweep, the greater the induced voltage."
+   },
+   {
+    "label": "Permanent magnet resting stationary on a conductive plate",
+    "bucket": 1,
+    "why": "Strong field, zero change. Without a changing flux there is no induced voltage and no current."
+   },
+   {
+    "label": "AC-energized coil over a fiberglass panel",
+    "bucket": 1,
+    "why": "The varying flux is present, but fiberglass is an insulator — the induced EMF has no conductive path, so no current can flow."
+   },
+   {
+    "label": "AC-energized coil over a titanium fitting",
+    "bucket": 0,
+    "why": "Titanium is a poor conductor compared with aluminum — only a few percent IACS — but it still conducts. Eddy currents flow, and ET inspects titanium hardware routinely."
+   },
+   {
+    "label": "DC-energized coil being lowered toward a steel part",
+    "bucket": 0,
+    "why": "The field is steady, but the geometry is changing — the flux through the part grows as the coil approaches. Motion is the other legitimate way to change flux."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A coil carrying steady direct current is held motionless a few millimeters above a copper plate. What current is induced in the plate?",
+   "options": [
+    "A strong current, because copper is an excellent conductor",
+    "No current, because the magnetic flux through the plate is not changing",
+    "A weak current, proportional to the coil's ampere-turns",
+    "A current that flows only on the far side of the plate"
+   ],
+   "correct": 1,
+   "explanation": "Induction requires changing flux. A motionless DC coil produces a steady field, so no voltage is induced no matter how well the material conducts. Vary the current — or move the coil — and induction begins."
+  },
+  {
+   "question": "In practical terms, Faraday's law states that the voltage induced in a conductor is proportional to:",
+   "options": [
+    "the strength of the magnetic field alone",
+    "the electrical resistance of the conductor",
+    "the rate of change of magnetic flux through the conductor",
+    "the cross-sectional area of the coil wire"
+   ],
+   "correct": 2,
+   "explanation": "E = N × (ΔΦ/Δt): only changing flux induces voltage, and the faster the change — for example, at a higher test frequency — the greater the induced voltage. A strong but constant field induces nothing."
+  },
+  {
+   "question": "During each full cycle of alternating current, the magnetic field of the test coil:",
+   "options": [
+    "expands, collapses, expands with reversed polarity, then collapses again",
+    "grows steadily to a fixed maximum and holds there",
+    "rotates around the coil axis at the test frequency",
+    "keeps constant strength while reversing direction once"
+   ],
+   "correct": 0,
+   "explanation": "The field is locked to the current: it builds to a peak, collapses through zero, rebuilds with opposite polarity, and collapses again — two build-collapse events per cycle, repeated at the test frequency."
+  },
+  {
+   "question": "According to Lenz's law, the current induced in a conductive test part flows in the direction that:",
+   "options": [
+    "maximizes resistive heating of the part",
+    "exactly matches the direction of the current in the test coil",
+    "is random and changes unpredictably with each cycle",
+    "opposes the change in magnetic flux that created it"
+   ],
+   "correct": 3,
+   "explanation": "Lenz's law — the minus sign in E = −N × ΔΦ/Δt — says induced effects always oppose their cause. The induced current's own field bucks the coil's changing field, and that opposition becomes the eddy current signal."
+  },
+  {
+   "question": "Eddy current testing cannot be performed directly on a fiberglass panel because:",
+   "options": [
+    "the coil's magnetic field cannot pass through fiberglass",
+    "fiberglass is not electrically conductive, so the induced voltage cannot drive a current",
+    "fiberglass surfaces are too smooth for the probe to couple to",
+    "alternating current cannot create a varying field near nonmetallic materials"
+   ],
+   "correct": 1,
+   "explanation": "The varying flux passes through nonconductors unimpeded — that is why ET works through paint. But induction needs a conductive path: with no conductor there are no eddy currents, and nothing to test."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Theory Course §1.2 (basic physics and controlling principles: varying magnetic fields, electromagnetic induction)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — Eddy Current Testing Level I training outline",
+  "ASNT Nondestructive Testing Handbook, Vol. 5: Electromagnetic Testing (principles of electromagnetic induction)",
+  "Historical record (public domain facts): Oersted (1820) current-field link; Faraday (1831) electromagnetic induction; Lenz (1834) direction of induced current"
+ ]
+}

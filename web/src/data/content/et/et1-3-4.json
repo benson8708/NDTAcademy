@@ -1,0 +1,228 @@
+{
+ "lessonId": "et1-3-4",
+ "title": "Conductivity and Permeability Effects",
+ "narrationScript": "Every eddy current signal is the coil reporting on the material beneath it, and two material properties do most of the talking. The first is conductivity, how freely electrons flow. We grade it as a percentage of the international annealed copper standard, where copper reads one hundred percent. Silver runs about one hundred five. Aerospace aluminum alloys land near thirty. Titanium and austenitic stainless sit near three. Raise the conductivity and the eddy currents grow stronger, the operating point slides farther around the comma shaped conductivity curve, and the depth of penetration shrinks. Copper at one hundred kilohertz tests only about two tenths of a millimeter deep. Permeability is the second property, and when it appears, it wins. Ferromagnetic steel multiplies the coil's flux, drives inductive reactance above the air point, collapses penetration to a thin surface skin, and adds noise wherever permeability wanders with stress or microstructure. The cure is magnetic saturation, which forces steel to behave like a nonmagnetic conductor. Master these two properties and you can sort alloys, verify heat treatment, and catch hidden fire damage.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Two Material Properties Own the Signal",
+   "body": "By now you can explain where eddy currents come from: the coil's alternating magnetic field induces circulating currents in any nearby conductor, and those currents push back on the coil. Frequency, you have seen, is the operator's knob \u2014 it sets phase and depth of penetration. This lesson is about the two knobs you do not control, because the part owns them:\n\n- **Electrical conductivity (\u03c3)** \u2014 how freely the material lets electrons flow.\n- **Magnetic permeability (\u03bc)** \u2014 how strongly the material concentrates magnetic flux.\n\nBetween them, these two properties decide how strong the eddy currents are, how deep they reach, and which direction the signal moves on the impedance plane. Same probe, same frequency, different alloy \u2014 completely different response.\n\nThat sensitivity is a capability, not a nuisance. Because the method reads \u03c3 and \u03bc directly, eddy current testing can sort mixed alloys, verify heat treatment, and find fire-damaged aircraft structure \u2014 jobs no other surface NDT method does. It also means an unnoticed material change can masquerade as a flaw, which is why a Level I must know exactly what each property does to the signal."
+  },
+  {
+   "type": "text",
+   "heading": "Conductivity and the IACS Scale",
+   "body": "**Conductivity** measures how easily current flows; it is the reciprocal of resistivity. The SI unit is siemens per meter, but eddy current work uses a more convenient yardstick: **% IACS**, the International Annealed Copper Standard. By definition, **100% IACS is the conductivity of annealed, commercially pure copper at 20 \u00b0C** (resistivity 1.7241 \u00b5\u03a9\u00b7cm, about 58 MS/m). Every other material is graded against copper \u2014 and the scale is not capped: silver beats the standard at about 105%, while titanium limps in near 3%.\n\nConductivity is not a fixed label stamped on an alloy. Four things move it:\n\n- **Alloying.** Atoms added to a pure metal scatter electrons. Pure aluminum runs about 61% IACS; alloyed and hardened 2024-T4 drops to about 30%.\n- **Heat treatment and temper.** Solution treating, aging, and annealing change how much alloying element is dissolved in the lattice, so conductivity tracks temper \u2014 the basis for heat-treat verification.\n- **Temperature.** Warmer metal vibrates more and conducts less, so readings drift with temperature. Part, probe, and reference standards must be at the same temperature.\n- **Cold work and residual stress.** Plastic deformation adds lattice defects that scatter electrons \u2014 a smaller effect, but real.\n\nHardness, strength, and conductivity all ride on the same microstructure. That is why a conductivity meter can stand in as a strength screen on aluminum."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-3-4-fig-a",
+   "caption": "The IACS conductivity ladder for common metals. Copper defines 100%; aerospace aluminum alloys cluster near 30%; titanium, austenitic stainless, and nickel alloys sit in the low single digits. Steel's ~10% is almost irrelevant \u2014 its ferromagnetic permeability dominates the response."
+  },
+  {
+   "type": "text",
+   "heading": "What Conductivity Does to the Signal",
+   "body": "Put the same coil, at the same frequency, on a series of nonmagnetic metals and watch the impedance plane.\n\n**Signal strength.** Higher conductivity lets the induced voltage drive more current, so the eddy currents \u2014 and the secondary field they throw back at the coil \u2014 grow stronger. The coil's impedance changes more: the operating point travels farther from the **air point**, sweeping down and around the comma-shaped **conductivity curve**. Low-conductivity metals (titanium, austenitic stainless) cluster near the air point; high-conductivity metals (copper, silver) ride at the far end. The spacing between alloys along that curve is real, repeatable information \u2014 it is exactly what a conductivity meter reads.\n\n**Depth of penetration.** Conductivity sits in the denominator of the standard-depth formula you met last lesson, \u03b4 = 1/\u221a(\u03c0f\u03bc\u03c3). Stronger eddy currents shield the interior more effectively, so **the better the conductor, the shallower the test**. At 100 kHz, one standard depth is about **0.2 mm in copper** but about **1.2 mm in titanium** \u2014 same coil, same frequency, nearly a six-fold difference owned entirely by the material.\n\nThe practical consequence: you cannot choose a test frequency until you know what the part is made of. Material conductivity is the first line on any eddy current technique sheet."
+  },
+  {
+   "type": "table",
+   "caption": "Approximate room-temperature conductivity and magnetic class of materials you will meet on the bench.",
+   "headers": [
+    "Material",
+    "Conductivity (% IACS, approx.)",
+    "Magnetic class",
+    "What the probe sees"
+   ],
+   "rows": [
+    [
+     "Silver",
+     "105",
+     "Nonmagnetic (\u03bcr \u2248 1)",
+     "Strongest eddy currents \u2014 far end of the conductivity curve"
+    ],
+    [
+     "Copper (annealed)",
+     "100 \u2014 the reference",
+     "Nonmagnetic",
+     "Defines the IACS scale; very shallow penetration"
+    ],
+    [
+     "Aluminum 1100 (near-pure)",
+     "\u224861",
+     "Nonmagnetic",
+     "Alloying away from purity drops the reading fast"
+    ],
+    [
+     "2024-T4 / 7075-T6 aluminum",
+     "\u224830 / \u224832",
+     "Nonmagnetic",
+     "Aerospace structure \u2014 temper and heat damage shift the reading"
+    ],
+    [
+     "Cartridge brass (70-30)",
+     "\u224828",
+     "Nonmagnetic",
+     "Classic ET tubing alloy"
+    ],
+    [
+     "Titanium (comm. pure)",
+     "\u22483",
+     "Nonmagnetic",
+     "Weak eddy currents, deep penetration \u2014 plots near the air point"
+    ],
+    [
+     "304 stainless steel",
+     "\u22482.5",
+     "Nonmagnetic (can turn slightly magnetic when heavily cold-worked)",
+     "Low conductivity; watch for cold-work permeability surprises"
+    ],
+    [
+     "Low-carbon steel",
+     "\u224810",
+     "Ferromagnetic (\u03bcr in the hundreds)",
+     "Permeability dominates \u2014 reactance climbs above the air point"
+    ]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Permeability: The Flux Multiplier",
+   "body": "**Magnetic permeability (\u03bc)** is a material's flux-multiplying ability \u2014 the flux density produced per unit of magnetizing force (\u03bc = B/H). We normalize it to free space as **relative permeability, \u03bcr**. Copper, aluminum, titanium, and annealed austenitic stainless are **nonmagnetic: \u03bcr \u2248 1**, so permeability quietly drops out of their behavior.\n\n**Ferromagnetic** materials \u2014 iron, nickel, cobalt, carbon and low-alloy steels, 400-series stainless \u2014 are another world. Their **\u03bcr runs from the hundreds into the thousands**, and it is not even constant: it changes with magnetizing force, heat treatment, stress, and the part's magnetic history. Three consequences hit the test at once:\n\n- **Reactance climbs.** The part concentrates the coil's flux, so coil inductance \u2014 and inductive reactance \u2014 jumps. The operating point moves **above the air point**: the opposite direction from conductivity loading, and so much larger that conductivity information is buried.\n- **Penetration collapses.** \u03bc sits under the same square root as \u03c3 in \u03b4 = 1/\u221a(\u03c0f\u03bc\u03c3). Where 7075 aluminum gives you roughly 0.4 mm at 100 kHz, mild steel gives **well under 0.1 mm** \u2014 on ferromagnetic parts, eddy current testing is a surface examination.\n- **Permeability noise.** \u03bcr wanders from spot to spot with stress and microstructure, producing baseline signals that can dwarf a real crack indication.\n\nThe standard cure is **magnetic saturation**: a strong DC field drives the steel onto the flat top of its B-H curve, where the incremental permeability falls toward 1. Saturated, the part behaves like a nonmagnetic conductor \u2014 stable signals, predictable penetration. That is exactly how ferromagnetic tubing is examined in practice. One more escape hatch exists: above its **Curie temperature** (about 770 \u00b0C for iron), steel loses its ferromagnetism entirely, which is how hot-rolled steel can be tested in the mill."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-3-4-fig-b",
+   "caption": "The impedance plane. Nonmagnetic conductors leave the air point and slide around the comma-shaped conductivity curve \u2014 farther as \u03c3\u00b7f rises. A ferromagnetic part moves the opposite way: permeability multiplies the flux and drives the operating point above the air point. Lift-off always pulls back toward the air point."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Reading the plane in one breath",
+   "body": "Nonmagnetic conductor: the operating point leaves the air point and slides **down around the comma curve** \u2014 the higher the conductivity (and frequency), the farther it travels. Ferromagnetic part: the point **climbs above the air point** \u2014 permeability wins, every time. Lift-off: always **back toward the air point**. Field habit: touch a pocket magnet to the part before you test. If it sticks, conductivity readings are off the table, and the technique must deal with permeability \u2014 usually by magnetic saturation."
+  },
+  {
+   "type": "text",
+   "heading": "Field Use: Sorting, Heat Treat, and Heat Damage",
+   "body": "Level I eddy current work leans on conductivity every week:\n\n- **Conductivity measurement.** Dedicated meters \u2014 governed by **ASTM E1004** \u2014 read % IACS directly, commonly operating near 60 kHz (higher frequencies for thin stock). The discipline: verify on two standards that bracket the expected value, keep probe, part, and standards at the same temperature, and test on a flat, clean, accessible surface. Thin nonconductive coatings are tolerated only within the limits of your procedure, because lift-off compensation has limits.\n- **Alloy sorting.** Mixed stock with different conductivities separates in seconds \u2014 2024 near 30% IACS will never read like 6061-T6 in the low-to-mid 40s.\n- **Heat-treat verification.** Temper changes conductivity, so aerospace procedures verify aluminum heat treatment by conductivity, often paired with hardness testing.\n- **Heat and fire damage.** 7075-T6 should read about **30.5\u201333% IACS**. Overheat it \u2014 engine fire, lightning strike, a hangar fire \u2014 and the temper overages toward the annealed condition: conductivity climbs toward the **mid-40s** while strength falls. A conductivity map flags damaged skin that looks perfectly sound to the eye.\n\nOn ferromagnetic parts those readings mean nothing \u2014 permeability swamps them. Know which regime you are standing in before you trust a number; that is the heart of this lesson."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-3-4-fig-a",
+   "title": "IACS conductivity scale for common metals",
+   "file": "et1-3-4-fig-a.svg"
+  },
+  {
+   "id": "et1-3-4-fig-b",
+   "title": "Impedance plane: conductivity curve and the permeability direction",
+   "file": "et1-3-4-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Where Does Steel Land?",
+  "intro": "An absolute probe is balanced in air, then placed on a mild-steel fitting. Using the impedance plane from this lesson, click the region where the operating point lands.",
+  "figureId": "et1-3-4-fig-b",
+  "regions": [
+   {
+    "x": 150,
+    "y": 75,
+    "w": 140,
+    "h": 80,
+    "label": "Above the air point",
+    "isTarget": true,
+    "feedback": "Correct. Ferromagnetic permeability multiplies the coil's flux, so inductive reactance climbs above the air point \u2014 the opposite direction from conductivity loading. The \u03bc effect is so large it buries conductivity information until the part is magnetically saturated."
+   },
+   {
+    "x": 125,
+    "y": 225,
+    "w": 110,
+    "h": 60,
+    "label": "The air point",
+    "isTarget": false,
+    "feedback": "That is where the point starts, not where it lands. The air point is the balanced, no-part condition; touching the probe to any conductive or magnetic material moves the point away from it."
+   },
+   {
+    "x": 238,
+    "y": 262,
+    "w": 115,
+    "h": 66,
+    "label": "Low-conductivity end of the curve (Ti / 304 SS)",
+    "isTarget": false,
+    "feedback": "This is where low-conductivity NONMAGNETIC metals land. Steel conducts about as poorly (\u224810% IACS), but its permeability overrides conductivity and drives the operating point upward instead of along the curve."
+   },
+   {
+    "x": 160,
+    "y": 385,
+    "w": 160,
+    "h": 58,
+    "label": "High-conductivity end of the curve (Al / Cu)",
+    "isTarget": false,
+    "feedback": "Copper and aluminum live here \u2014 strong eddy currents with \u03bcr \u2248 1. Steel's eddy currents are comparatively weak, and permeability, not conductivity, controls where it plots."
+   }
+  ],
+  "coordH": 500
+ },
+ "checkQuestions": [
+  {
+   "question": "On the IACS scale used by every conductivity meter, 100% IACS is defined as the conductivity of:",
+   "options": [
+    "Pure silver, the best electrical conductor",
+    "Annealed, commercially pure copper at 20 \u00b0C",
+    "Electrolytically refined aluminum",
+    "Annealed low-carbon steel"
+   ],
+   "correct": 1,
+   "explanation": "IACS stands for International Annealed Copper Standard: annealed pure copper at 20 \u00b0C (resistivity 1.7241 \u00b5\u03a9\u00b7cm) defines 100%. The scale is not capped there \u2014 silver reads about 105% IACS."
+  },
+  {
+   "question": "Same coil, same frequency: you move the probe from titanium (\u22483% IACS) to copper (100% IACS). The standard depth of penetration:",
+   "options": [
+    "Increases, because better conductors carry current deeper",
+    "Stays the same, because depth depends only on frequency",
+    "Decreases, because stronger eddy currents shield the interior and crowd the current toward the surface",
+    "Becomes effectively infinite in a near-perfect conductor"
+   ],
+   "correct": 2,
+   "explanation": "Conductivity sits in the denominator of \u03b4 = 1/\u221a(\u03c0f\u03bc\u03c3). At 100 kHz one standard depth is roughly 1.2 mm in titanium but only about 0.2 mm in copper \u2014 higher conductivity always means a shallower test."
+  },
+  {
+   "question": "An absolute coil balanced in air is placed on a mild-steel part. Relative to the air point, the operating point:",
+   "options": [
+    "Climbs above it, because permeability multiplies the coil's flux and raises inductive reactance",
+    "Slides to the far, high-conductivity end of the comma curve",
+    "Barely moves, because steel is a poor conductor",
+    "Moves only along the resistance axis"
+   ],
+   "correct": 0,
+   "explanation": "Ferromagnetic \u03bcr \u2014 hundreds or more \u2014 concentrates flux and drives coil reactance up, the opposite direction from conductivity loading, and so strongly that conductivity information is buried beneath it."
+  },
+  {
+   "question": "Steel tubing is eddy current examined under a strong DC magnetic saturation field primarily to:",
+   "options": [
+    "Raise the tube's conductivity so eddy currents flow more strongly",
+    "Attract magnetic particles to surface cracks",
+    "Demagnetize the tube after the examination",
+    "Drive the effective permeability toward 1, suppressing permeability noise and restoring predictable penetration"
+   ],
+   "correct": 3,
+   "explanation": "Saturation pushes the steel onto the flat region of its B-H curve, where incremental \u03bcr approaches 1. The tube then behaves like a nonmagnetic conductor \u2014 stable signals and usable penetration. ASTM E309 practice is built on this."
+  },
+  {
+   "question": "A 7075-T6 skin panel nominally reads 30.5\u201333% IACS. After a hangar fire, one zone reads 41% IACS. The most likely interpretation is:",
+   "options": [
+    "Instrument drift \u2014 7075 cannot read above 33% IACS",
+    "Fire-induced cold work raised the conductivity",
+    "Heat exposure overaged or annealed the temper \u2014 conductivity moved toward the annealed value and strength has been lost",
+    "The zone has become ferromagnetic"
+   ],
+   "correct": 2,
+   "explanation": "Overheating drives 7075-T6 toward the annealed condition, whose conductivity sits in the mid-40s % IACS. Rising conductivity with falling strength is exactly the signature conductivity mapping is used to find \u2014 the metal can look completely undamaged."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Theory Course \u00a72.1.4.7\u20132.1.4.8 (electrical effects \u2014 conductivity of materials; magnetic effects \u2014 permeability of materials)",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method",
+  "ASTM E309, Standard Practice for Eddy-Current Examination of Steel Tubular Products Using Magnetic Saturation",
+  "ASM Handbook, Volume 17, Nondestructive Evaluation of Materials (published % IACS conductivity values for common metals and alloys)"
+ ]
+}

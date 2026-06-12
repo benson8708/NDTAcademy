@@ -1,0 +1,182 @@
+{
+ "lessonId": "et2-5-1",
+ "title": "Fill Factor",
+ "narrationScript": "Encircling and bobbin coils have no lift-off to manage — their coupling is set by geometry, and the number that captures it is fill factor. Fill factor is the fraction of the coil's effective cross-section that the part actually fills: diameter ratio, squared. A nineteen millimeter bar in a twenty-one millimeter coil gives zero point eight two. For a bobbin probe, flip it — probe diameter over tube inside diameter, squared. To a first approximation, flaw signal amplitude is proportional to fill factor — the air annulus between winding and part is flux that never touches metal. On the impedance plane, falling fill factor slides the operating point along a straight line toward the empty coil air point, just as lift-off does on a surface probe. And because fill factor goes as diameter squared, a one percent diameter change moves it about two percent — diameter noise and dimensional gauging both live there. Specify the snuggest coil the product can safely feed — typically point seven five to point nine — and whenever coil or probe size changes, re-standardize.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Coupling: How Much of the Field Reaches the Part",
+   "body": "Every eddy current test is a transformer. The coil is the primary; the part is a short-circuited, single-turn secondary; **mutual inductance** couples them. Level I established the model — Level II works its consequences, and the first one is blunt: the instrument can only respond to the fraction of the coil's flux that actually **links the part**. Flux that closes through air carries no information about the metal. It just sits in the measurement, diluting everything the part is trying to tell you.\n\nHow much flux links the part is **coupling**, and every coil arrangement has a coupling variable you are expected to control and account for. For a surface probe it is **lift-off** — the probe-to-surface spacing, covered in the next lesson. For **encircling and bobbin coils**, where coil and part are concentric cylinders, the coupling variable is **fill factor**: the fraction of the coil's effective cross-sectional area that the part fills. The symbol is the Greek letter **η (eta)**; it runs from 0 (empty coil) to 1 (part fills the coil completely), and it is often quoted as a percentage.\n\nη = 1 is the ideal, and it is unattainable — product has to feed through at line speed, probes have to pull through tube bundles, and both need clearance. Fill factor is therefore a number you **choose** when you size the coil to the product. A Level II is expected to calculate it, predict what it does to signal amplitude, and defend the chosen value in the technique."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-5-1-fig-a",
+   "caption": "Fill factor end-on. Encircling coil: part OD against the effective coil diameter. Bobbin coil: probe coil diameter against the tube inside diameter. Both are area ratios — diameter ratio squared — and the air annulus between winding and part is coupling lost."
+  },
+  {
+   "type": "text",
+   "heading": "Calculate It Both Ways",
+   "body": "Fill factor is an **area ratio**, and because both cross-sections are circles it collapses to a **diameter ratio squared**.\n\n- **Encircling (OD) coil:** η = (d/D)², where **d** is the part diameter and **D** is the **effective coil diameter**. A 19.0 mm bar through a coil of 21.0 mm effective diameter: η = (19.0/21.0)² = **0.82**.\n- **Bobbin (ID) coil:** η = (d/D)², where **d** is now the **probe coil diameter** and **D** is the **tube inside diameter**. A 19.05 mm OD condenser tube with 1.25 mm wall has ID = 19.05 − 2(1.25) = 16.55 mm. With a 15.0 mm bobbin: η = (15.0/16.55)² = **0.82**.\n\nTwo precision habits separate a Level II calculation from a guess:\n\n- **Use the effective coil diameter, not the bore of the coil form.** The winding has radial build and its field is not confined to the protective liner, so the effective diameter is larger than the opening you can see — and the honest fill factor is lower than a liner-bore calculation suggests. Use the manufacturer's stated effective diameter or the mean winding diameter.\n- **For bobbin work the denominator is the tube ID — never the OD.** Compute the ID from OD and wall before you square anything.\n\nAnd note what the square does: differentiate η = d²/D² and you get **Δη/η ≈ 2·(Δd/d)** — a 1% change in product diameter moves fill factor about 2%. That doubled sensitivity is why feed-through systems double as **dimensional gauges**, and why product diameter tolerance belongs in your noise budget."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Signal amplitude rides on fill factor",
+   "body": "To a good first approximation, **flaw-signal amplitude is directly proportional to fill factor**. The coil's response is a weighted blend: a fraction **η** of its flux region is part, and the remaining **(1 − η)** is air that never touches metal. At η = 0.82 you keep about 82% of the achievable signal; let coupling sag to 0.5 and nearly half the test's sensitivity is gone before the first discontinuity arrives — and no gain knob honestly buys it back, because gain raises the noise by the same factor."
+  },
+  {
+   "type": "text",
+   "heading": "Fill Factor on the Impedance Plane",
+   "body": "Put it where a Level II reasons: the **normalized impedance plane**. The empty coil sits at the **air point** — normalized reactance 1, normalized resistance 0. A nonferromagnetic bar that completely filled the coil (η = 1) would put the operating point on the full **conductivity curve**, its position set by frequency, conductivity, and diameter. At any real fill factor, the classic effective-permeability model gives the measured impedance as a linear blend:\n\n**Z(η) = (1 − η) · Z(air) + η · Z(part)**\n\nTwo working consequences follow directly:\n\n- **Each fill factor has its own curve** — the η = 1 curve shrunk toward the air point. Smaller η, smaller curve, smaller everything — flaw signals included.\n- **At fixed frequency, changing fill factor slides the operating point along a nearly straight line aimed at the air point.** That is the **fill-factor (diameter) direction** — the feed-through analogue of the lift-off line on a surface probe, and you handle it the same way: know its phase, and discriminate against it.\n\nDiameter variation, ovality, and wobble all generate signals **along that direction**; conductivity and frequency changes move **along the curve**. The angular separation between the two is the discrimination a Level II lives on. Channel choice matters too: an **absolute** coil displays slow diameter drift and taper faithfully, while a **differential** pair cancels gradual fill-factor drift and answers only abrupt changes — so a sharp diameter step can blip like a flaw, and you recognize it by its phase along the diameter direction.\n\nOne ferromagnetic caution: an unsaturated steel bar **raises** coil inductance — the operating point climbs above the air point, and permeability noise swamps this tidy picture. That is a key reason steel tubular product is examined under **magnetic saturation** (ASTM E309): saturation drives the incremental permeability toward 1 and restores nonmagnetic impedance-plane behavior, fill-factor line included."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-5-1-fig-b",
+   "caption": "Fill factor on the normalized impedance plane (nonferromagnetic bar in an encircling coil). Each fill factor traces the full-coupling curve shrunk toward the air point; at fixed frequency the operating point slides along the straight fill-factor line — the feed-through analogue of lift-off."
+  },
+  {
+   "type": "text",
+   "heading": "Choosing the Coil: Sensitivity Against Mechanical Reality",
+   "body": "Specify the snuggest coil the product can safely feed. What pushes back is mechanical: product diameter tolerance and ovality, bow and whip at line speed, weld-bead clearance on welded tube, thermal growth on hot product, and the replaceable wear liner that protects the winding from all of it. Production feed-through tests typically land at **η ≈ 0.75–0.90** — the coil sized so the largest diameter in the order still passes freely.\n\nA snug coil pays twice. Beyond raw amplitude, it **physically limits how far off-axis the product can wander**. The coil's field is strongest close to the winding, so an eccentric bar — even at mathematically identical fill factor — changes the signal, and a bar vibrating off-axis writes that change into the record as **wobble noise**. Guides and bushings on both sides of the coil are part of the test setup, not accessories.\n\nBobbin work inverts the geometry with the same logic: run the **largest probe that will pass the full tube length reliably** — typically **η ≈ 0.70–0.85** in clean tube. Dents, ovality, and deposits force a smaller probe, and the price is paid everywhere: sensitivity drops over the **entire** tube, not just at the restriction. Flag it, document it, and re-demonstrate capability if the procedure requires it.\n\nThe binding numbers come from the governing documents, not from habit. ASTM E243 (copper and copper-alloy tube), E309 (steel tubular products under magnetic saturation), and E690 (in-service heat-exchanger tubing) all drive the same discipline: the reference standard matches the product's nominal dimensions, the coil or probe used for standardization is the one used for the test — and **if coil or probe size changes, fill factor changed, and you re-standardize before testing continues**."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-5-1-fig-c",
+   "caption": "To a first approximation, flaw-signal amplitude is proportional to fill factor. Typical working ranges sit at 0.70–0.90; many shops treat about 0.60 as the floor below which the test is re-engineered rather than run."
+  },
+  {
+   "type": "table",
+   "caption": "Working fill factor values a Level II should be able to quote — and defend against the governing procedure.",
+   "headers": ["Situation", "Typical fill factor", "What governs it"],
+   "rows": [
+    ["Feed-through OD testing of bar, rod, wire, and tube at the mill", "0.75–0.90", "Snuggest coil that clears the largest product OD plus bow, whip, and line speed — clearance is set by handling, not preference"],
+    ["In-service bobbin testing of clean heat-exchanger tube (ASTM E690 practice)", "0.70–0.85", "Largest probe that passes the full tube length reliably; centering features control wobble"],
+    ["Dented, ovalized, or fouled tube runs", "Below normal — flag it", "An undersized probe restores passage but cuts sensitivity over the whole tube; document it and re-demonstrate per procedure"],
+    ["Common training rule-of-thumb floor", "≈ 0.60", "Below this, small-flaw response is usually too weak — re-engineer with a smaller coil or a rotating surface-probe system"],
+    ["Any change of coil or probe diameter", "Recalculate η — then re-standardize", "Amplitude and phase responses shift with fill factor; standardization is valid only for the geometry that produced it"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-5-1-fig-a",
+   "title": "Fill factor geometry: encircling and bobbin coils",
+   "file": "et2-5-1-fig-a.svg"
+  },
+  {
+   "id": "et2-5-1-fig-b",
+   "title": "Fill factor on the normalized impedance plane",
+   "file": "et2-5-1-fig-b.svg"
+  },
+  {
+   "id": "et2-5-1-fig-c",
+   "title": "Flaw-signal amplitude versus fill factor",
+   "file": "et2-5-1-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Fill Factor — or Not?",
+  "intro": "Production throws changes at you all shift. Sort each change by what it does to fill factor — and stay alert for the ones that change the signal without touching η at all.",
+  "buckets": [
+   "Raises fill factor",
+   "Lowers fill factor",
+   "Leaves fill factor unchanged"
+  ],
+  "items": [
+   {
+    "label": "The mill switches from 19 mm to 22 mm bar through the same encircling coil",
+    "bucket": 0,
+    "why": "η = (d/D)² — a larger part diameter in the same coil raises the ratio. Verify the larger bar still clears the coil liner before you celebrate the extra signal."
+   },
+   {
+    "label": "Same tube OD, but a heavier wall — bobbin-tested from the ID",
+    "bucket": 0,
+    "why": "Heavier wall at the same OD means a smaller inside diameter. The bobbin formula's denominator shrinks, so the same probe now fills more of the bore."
+   },
+   {
+    "label": "A dented tube run forces the next-smaller bobbin probe",
+    "bucket": 1,
+    "why": "Smaller probe diameter, same tube ID — the numerator drops and sensitivity falls over the entire tube, not just at the dent. Flag and re-demonstrate per procedure."
+   },
+   {
+    "label": "Product changes from 25 mm tube to 22 mm tube in the same OD coil",
+    "bucket": 1,
+    "why": "Smaller part diameter in the same encircling coil drops η = (d/D)² — roughly (22/25)² of the old coupling. The right fix is a smaller coil, not more gain."
+   },
+   {
+    "label": "Test frequency is doubled to sharpen phase separation",
+    "bucket": 2,
+    "why": "Fill factor is pure geometry. Frequency moves the operating point along the conductivity curve and changes skin depth — it does not change how much of the coil the part fills."
+   },
+   {
+    "label": "Gain is increased 6 dB to restore screen height",
+    "bucket": 2,
+    "why": "Gain amplifies signal and noise by the same factor. It changes nothing about coupling — lost fill factor cannot be bought back at the amplifier."
+   },
+   {
+    "label": "The bar runs 1 mm off the coil axis through a loose coil",
+    "bucket": 2,
+    "why": "With d and D unchanged, η is mathematically unchanged — yet the signal still shifts, because the field is strongest near the winding. Eccentricity is wobble noise, not fill factor."
+   },
+   {
+    "label": "Aluminum bar is replaced by brass bar of identical diameter",
+    "bucket": 2,
+    "why": "Conductivity moves the operating point along the impedance-plane curve. Coupling is geometry only — same diameters, same fill factor."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A 20.0 mm diameter brass bar feeds through an encircling coil with an effective diameter of 25.0 mm. The fill factor is approximately:",
+   "options": ["0.80", "0.64", "1.56", "0.89"],
+   "correct": 1,
+   "explanation": "η = (d/D)² = (20.0/25.0)² = 0.80² = 0.64. The traps: 0.80 is the unsquared ratio, 0.89 is its square root, and 1.56 comes from inverting the ratio before squaring."
+  },
+  {
+   "question": "A condenser tube measures 19.05 mm OD with a 1.25 mm wall. The largest bobbin probe available is 15.0 mm in diameter. The fill factor is about:",
+   "options": ["0.62", "0.91", "0.79", "0.82"],
+   "correct": 3,
+   "explanation": "Compute the ID first: 19.05 − 2(1.25) = 16.55 mm. Then η = (15.0/16.55)² ≈ 0.82. Using the OD instead of the ID gives the 0.62 trap; forgetting to square gives 0.91."
+  },
+  {
+   "question": "Coil wear forces a setup change that drops fill factor from 0.81 to 0.54. To a first approximation, the amplitude of a given flaw signal:",
+   "options": [
+    "falls to about two-thirds of its former value",
+    "is unchanged — fill factor affects only signal phase",
+    "falls to about 44% — the ratio of the fill factors, squared",
+    "cannot be predicted without remeasuring conductivity"
+   ],
+   "correct": 0,
+   "explanation": "Flaw-signal amplitude is approximately proportional to fill factor, so the new amplitude is about 0.54/0.81 = 2/3 of the old. Fill factor is already the squared diameter ratio — you do not square it again."
+  },
+  {
+   "question": "On the normalized impedance plane, as fill factor decreases at a fixed test frequency, the operating point:",
+   "options": [
+    "moves farther along the conductivity curve, as if frequency had increased",
+    "climbs above the air point, as if the part were ferromagnetic",
+    "slides along a nearly straight line toward the empty-coil (air) point",
+    "is unaffected — fill factor changes amplitude only, never the operating point"
+   ],
+   "correct": 2,
+   "explanation": "Measured impedance is the blend Z(η) = (1 − η)·Z(air) + η·Z(part), so falling η pulls the point straight toward the air point — the feed-through analogue of the lift-off line on a surface probe."
+  },
+  {
+   "question": "During an outage, dented tubes force you to swap the 15.0 mm bobbin for a 13.5 mm probe. Before testing continues, the procedure-compliant action is to:",
+   "options": [
+    "add gain equal to the computed amplitude loss and continue testing",
+    "re-standardize on the reference tube with the 13.5 mm probe and document the reduced fill factor",
+    "continue unchanged — a differential bobbin is immune to fill factor",
+    "raise the test frequency to recover the lost sensitivity"
+   ],
+   "correct": 1,
+   "explanation": "Fill factor changed, so amplitude and phase responses changed: standardization is valid only for the geometry that produced it. Re-standardize with the probe that will actually be used, and document the reduced coupling — gain arithmetic is not standardization, and frequency changes phase behavior, not coupling."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II Topical Outline §5.0–5.1 (Coupling — fill factor)",
+  "ASTM E243, Standard Practice for Electromagnetic (Eddy Current) Examination of Copper and Copper-Alloy Tubes",
+  "ASTM E309, Standard Practice for Eddy Current Examination of Steel Tubular Products Using Magnetic Saturation",
+  "ASTM E690, Standard Practice for In Situ Electromagnetic (Eddy Current) Examination of Nonmagnetic Heat Exchanger Tubes"
+ ]
+}

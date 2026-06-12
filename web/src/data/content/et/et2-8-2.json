@@ -1,0 +1,191 @@
+{
+ "lessonId": "et2-8-2",
+ "title": "Detection of Signals of Interest: Near and Far Surface",
+ "narrationScript": "This lesson makes the signals of interest show up — and tells you which surface they came from. Near surface means the surface facing the coil. Far surface is the one the field must cross the wall to reach — the back of a skin, the second layer of a splice, the OD of a tube run from the bore. Two numbers govern everything. Current density collapses exponentially: thirty-seven percent at one standard depth, five percent at three. Phase lags about fifty-seven degrees per standard depth. Near-surface flaws swim in full current, so their signals are strong — but they share that depth with lift-off, roughness, and edge effect. So run high, rotate lift-off horizontal, and watch the vertical channel. Far-surface flaws arrive weak and rotated: place the far surface near one standard depth, never trust anything past three, and let phase call the wall of origin. In tubing, f-ninety spreads the walls about ninety degrees, and both families converge at the through-wall angle. Prove every setup on a standard with flaws at both surfaces.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Near and Far Surface: Name the Battlefield",
+   "body": "The last lesson set accept/reject criteria and classified signals — false, nonrelevant, relevant. This lesson is the step that makes classification possible at all: getting the **signals of interest** — the responses from the conditions your procedure is hired to find — onto the screen, and telling **which surface they came from**.\n\nEvery test has two surfaces, defined by the probe, not the part:\n\n- **Near surface** — the surface the coil faces. Surface probe on a wing skin: the outer skin surface. Bobbin coil running a tube bore: the **ID**. Encircling coil around tube or bar on a production line (ASTM E243 territory): the **OD**.\n- **Far surface** — the surface the field must cross the metal to reach: the back wall of that skin, the second layer of a splice, the **OD** of the tube run from the bore.\n\nNear and far are **roles, not places** — run the same tube with an encircling coil instead of a bobbin and the two surfaces swap jobs.\n\nA signal of interest must clear two hurdles. **Detection**: enough eddy current must exist at the depth where the flaw lives for the flaw to disturb it. **Discrimination**: the resulting signal must land far enough — in phase and amplitude — from everything else on the display to be called. Frequency buys the first; phase setup cashes in the second."
+  },
+  {
+   "type": "text",
+   "heading": "The Two Currencies: Current Density and Phase Lag",
+   "body": "Two numbers price every signal in this lesson.\n\n**Current density falls exponentially.** J = J₀e^(−x/δ): at **1δ** below the surface, 37% of the surface current density remains; at **2δ**, 13.5%; at **3δ** — the **effective depth of penetration** — about **5%**, the working floor for reliable response. And δ is yours to place: **δ (mm) ≈ 660/√(f · µᵣ · σ)**, with f in hertz and σ in %IACS. In 7075-T6 (σ = 32), 2 MHz pins δ at ≈0.08 mm; 2.4 kHz opens it to ≈2.4 mm.\n\n**Phase lags linearly.** The current at depth x runs behind the surface current by about **57° per standard depth** (1 radian per δ). So depth is written into every signal twice: once as **lost amplitude**, once as **added rotation**. Amplitude decays brutally — exponentially — while phase accrues steadily, which is why phase, not amplitude, is the trustworthy depth messenger.\n\nRead the consequence before the figures make it visual: a near-surface flaw answers with a **strong signal at a repeatable angle near the surface reference**. A far-surface flaw answers with a **weaker signal rotated further around the display**. Detection spends the first currency; discrimination spends the second. Frequency sets the exchange rate between them."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-2-fig-a",
+   "caption": "The two depth currencies. Current density collapses exponentially — 37% at 1δ, 13.5% at 2δ, 5% at 3δ — while phase lag accrues steadily at about 57° per standard depth. Detection spends the first currency; discrimination spends the second."
+  },
+  {
+   "type": "text",
+   "heading": "Near-Surface Signals: Strong but Crowded",
+   "body": "Near-surface signals of interest are the classics: **surface-breaking fatigue cracks** at fastener holes, radii, and bores; **near-side pitting and intergranular attack**; plating and case variations. The physics is on your side — the flaw sits in **100% of the current density** with near-zero lag, so amplitude is the best it will ever be and the signal lives at a repeatable angle.\n\nThe problem is the neighborhood. Everything else that happens at the near surface answers from the same depth: **lift-off and probe wobble**, **surface roughness and scratches**, **edge effect** as the coil approaches a geometry change, **conductivity smearing** from local cold work or heating. You cannot separate these from a crack by depth — there is no depth difference. You separate them by **direction and dynamics**:\n\n- **Run high.** 100 kHz to a few megahertz in aluminum piles current onto the crack and widens the angle between crack response and lift-off — approaching **90°** in typical aluminum surface setups.\n- **Rotate lift-off horizontal and alarm on the vertical channel.** Probe handling then sweeps along the floor of the display while cracks break upward into the gate.\n- **Exploit speed.** A rotating bolt-hole scanner crosses a crack in milliseconds while lift-off wanders slowly; a band-pass filter keyed to rotation speed passes the crack blip and strips the wander.\n- **Set the angle on the reference notch.** The EDM notch in the procedure's standard defines where \"crack\" lives on your screen — gates and alarms are set there, never guessed."
+  },
+  {
+   "type": "text",
+   "heading": "Far-Surface Signals: Weak, Rotated, and Worth the Trouble",
+   "body": "Far-surface signals of interest carry the structural stakes: **second- and third-layer cracking** in lap splices, **far-wall corrosion thinning**, **OD defects** in tubing run from the bore. The physics now works against you in both currencies: amplitude arrives attenuated by e^(−x/δ), and phase arrives rotated by ≈57° per δ of origin depth.\n\nDetection fails in two opposite ways:\n\n- **Frequency too high** — the far surface lies beyond 3δ, under 5% of the current. **No gain setting recovers it**: gain lifts near-surface noise exactly as much as the buried signal. A crack 2.5 mm down in a 2024-T3 stack at 200 kHz (δ ≈ 0.27 mm) sits near 9δ — invisible at any gain.\n- **Frequency too low** — the whole wall compresses into a few degrees of phase, every response stacks toward the lift-off direction, and induced EMF weakens besides.\n\nThe optimization: **place the far surface near 1δ**, using f = (660/x)² ÷ (µᵣ · σ). For that 2.5-mm 2024-T3 splice (σ ≈ 30): ≈ **2.3 kHz**, where the far surface keeps 37% of the current and roughly a standard depth's worth of phase separation from near-surface responses. Low-frequency work typically runs **reflection (driver–pickup) probes**, which hold sensitivity across these wide low bands better than simple bridge coils.\n\nThen the rule that anchors this module: **phase calls the origin, then amplitude is judged against that origin**. Equal amplitudes do not mean equal flaws — after exponential attenuation, a far-origin signal matching a near-origin signal volt-for-volt represents the **larger** discontinuity."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-2-fig-b",
+   "caption": "Same gain, same pass — a near-surface crack and a far-surface crack on one calibrated display. The far-origin signal arrives smaller (e^(−x/δ)) and rotated further (≈57° per δ of extra depth). Exact angles are set on the reference standard; the ordering is physics."
+  },
+  {
+   "type": "text",
+   "heading": "Tubing: Calling the Wall of Origin",
+   "body": "Nonferromagnetic heat-exchanger tubing is the purest near/far arena: a **bobbin coil** runs the bore, so the **ID is the near surface, the OD is the far surface**, and both walls report through one channel. Evaluation begins with one question — **which wall did this come from?**\n\nFrequency is engineered first. The prime test frequency sits near **f₉₀ = 3ρ ÷ t²** (ρ in µΩ·cm, t in mm), which makes the wall about **1.1δ** thick and spreads ID-origin from OD-origin responses by roughly **90° of phase** — wide enough to call the wall while the far wall still carries usable current.\n\nThen the display is calibrated to a convention. Common heat-exchanger practice — built on the ASME Section V, Article 8 reference tube with its through-wall hole and partial-depth flat-bottom holes machined from the OD — rotates **probe wobble horizontal** and places the **through-wall hole signal near 40°**. The geometry that follows is the evaluator's map:\n\n- **ID (near-surface) family**: shallow ID damage answers just above the wobble line and rotates **toward 40°** as it deepens.\n- **OD (far-surface) family**: shallow OD damage answers near **170°** and rotates **back toward 40°** as it deepens.\n- **Both families converge at through-wall** — a 100% flaw belongs to both surfaces at once.\n\nDepth is then read from the **phase–depth curve** built on the reference tube — never from volts alone. And the far surface brings its own noise: **tube-support plates** sit against the OD and answer loudly. A **multifrequency mix** — prime combined with a lower subsidiary channel — subtracts the support-plate response so small OD pits at those elevations survive evaluation."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-2-fig-c",
+   "caption": "The bobbin convention: probe wobble rotated horizontal, through-wall hole at ≈40°. ID-origin (near-surface) signals climb from the wobble line toward 40° as depth grows; OD-origin (far-surface) signals start near 170° and rotate toward 40° — both families converge at through-wall."
+  },
+  {
+   "type": "table",
+   "caption": "Near vs. far surface at a glance — the same physics, opposite budgets. Every angle and gate is fixed on the procedure's reference standard, which must contain artificial flaws at both surfaces of interest.",
+   "headers": ["Factor", "Near surface (coil side)", "Far surface (across the wall)"],
+   "rows": [
+    ["Current density at the flaw", "Maximum — 100% at the surface", "e^(−x/δ): 37% at 1δ, 13.5% at 2δ, 5% at 3δ"],
+    ["Phase lag", "Near zero — answers close to the surface reference angle", "≈57° per standard depth of origin"],
+    ["Signal character", "Strong, sharp, repeatable angle", "Weaker, rotated further around the display"],
+    ["Frequency strategy", "Run high (≈100 kHz to a few MHz in aluminum) — pile current on the surface, push cracks toward 90° off lift-off", "Run low — far surface near 1δ, never past 3δ; tubing prime near f₉₀ = 3ρ/t²"],
+    ["Competing signals", "Lift-off, wobble, roughness, scratches, edge effect, conductivity smears", "Layer gaps and sealant, thickness taper, support plates, fastener geometry"],
+    ["Discrimination tools", "Lift-off horizontal + vertical-channel alarm; band-pass filter on rotating scanners; reference-notch angle", "Phase–depth curve from the standard; multifrequency mixing; amplitude judged only after origin is called"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-8-2-fig-a",
+   "title": "The depth currencies: exponential current decay and the 57°-per-δ phase clock",
+   "file": "et2-8-2-fig-a.svg"
+  },
+  {
+   "id": "et2-8-2-fig-b",
+   "title": "One display, two origins: near- vs. far-surface signals at the same gain",
+   "file": "et2-8-2-fig-b.svg"
+  },
+  {
+   "id": "et2-8-2-fig-c",
+   "title": "Bobbin convention: ID and OD families converging at through-wall",
+   "file": "et2-8-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Wall-of-Origin Week: Four Calls",
+  "intro": "A lap-joint survey on Monday, bobbin season on Thursday. Price every signal in the two currencies — J = J₀e^(−x/δ) and ≈57° per standard depth — before you click.",
+  "steps": [
+   {
+    "prompt": "Monday: the procedure targets second-layer cracking about 2.4 mm below the outer skin of a 2024-T3 splice (σ ≈ 30 %IACS). Which frequency do you set?",
+    "options": [
+     "200 kHz — higher frequency means stronger induced EMF",
+     "A few kilohertz (≈2.5 kHz) — places 2.4 mm near one standard depth",
+     "60 kHz — the conductivity-meter standard always applies",
+     "10 MHz — maximum surface resolution"
+    ],
+    "correct": 1,
+    "feedback": "f = (660/2.4)² ÷ 30 ≈ 2.5 kHz puts the second layer near 1δ — 37% of the surface current and a healthy ≈57° of phase room. At 200 kHz the crack sits near 9δ: no current, no signal, at any gain. The stronger-EMF argument fails because stronger currents that never reach the flaw detect nothing."
+   },
+   {
+    "prompt": "During the scan, two indications log at identical amplitude: one at the angle your near-surface reference notch produced, one rotated well beyond it. Your read?",
+    "options": [
+     "Equal amplitude, equal severity — write them up identically",
+     "The rotated one is shallower — rotation means closer to the probe",
+     "Phase calls origin first: the rotated signal is far-origin, and matching a near-origin signal volt-for-volt after e^(−x/δ) attenuation makes it the larger flaw",
+     "Discard the rotated one — far-surface responses cannot reach the screen"
+    ],
+    "correct": 2,
+    "feedback": "Rotation is the depth clock — more rotation, deeper origin. The far-origin flaw paid exponential attenuation on the way to the coil and still matched the near one, so it is the larger discontinuity. Amplitude is judged only after phase names the surface."
+   },
+   {
+    "prompt": "Thursday: bobbin display calibrated — probe wobble horizontal, through-wall hole at 40°. A clean 2-volt signal sits at ≈65°. The call?",
+    "options": [
+     "Deep OD-origin defect — the OD family rotates from ≈170° toward 40° as depth grows; read depth off the phase–depth curve and evaluate against the criteria",
+     "Shallow OD pit — 65° is close to the wobble line",
+     "ID gouge — anything under 90° is near-surface",
+     "Probe wobble — ignore it"
+    ],
+    "correct": 0,
+    "feedback": "65° sits deep in the OD family, well along its rotation from ≈170° toward the 40° through-wall point. Depth comes off the calibration curve built on the reference tube, not off the voltmeter — then disposition follows the procedure's accept/reject criteria."
+   },
+   {
+    "prompt": "At a tube-support-plate elevation, the residual support-plate signal smothers the small OD pits you must find. Best move?",
+    "options": [
+     "Raise the gain until the pits outgrow the plate signal",
+     "Quadruple the prime frequency for better resolution",
+     "Use the multifrequency mix — prime combined with a lower subsidiary frequency — to subtract the support-plate response, then re-evaluate the residual",
+     "Skip support-plate intersections; pits cannot form there"
+    ],
+    "correct": 2,
+    "feedback": "Gain lifts the plate signal and the pit together, and raising frequency starves the OD where the pits live. The mix subtracts the support-plate response measured on two channels and leaves the pit visible — and support intersections are exactly where OD damage concentrates, never where you skip."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "At two standard depths (2δ) below the near surface, the eddy current density and its phase lag relative to the surface current are about:",
+   "options": [
+    "63% and 57°",
+    "13.5% and 115°",
+    "37% and 90°",
+    "5% and 172°"
+   ],
+   "correct": 1,
+   "explanation": "J = J₀e^(−x/δ) gives e^(−2) ≈ 13.5% at 2δ, and phase lag accrues at ≈57° per standard depth, so 2δ ≈ 115°. The 37%/57° pair belongs to 1δ and the 5%/172° pair to 3δ; 63% is the amount lost at 1δ, not what remains at 2δ."
+  },
+  {
+   "question": "A survey targets corrosion thinning on the far side of a 2.0-mm 2024-T3 skin (σ ≈ 30 %IACS). The frequency that places the far surface at about one standard depth of penetration is:",
+   "options": [
+    "About 360 kHz",
+    "About 36 kHz",
+    "About 3.6 kHz",
+    "About 60 kHz"
+   ],
+   "correct": 2,
+   "explanation": "f = (660/x)² ÷ (µᵣ · σ) = (660/2.0)² ÷ 30 ≈ 3,600 Hz. At 36 kHz the far surface already lies past 3δ — the effective depth of penetration — and at 360 kHz it sits near 10δ, where essentially no current remains."
+  },
+  {
+   "question": "Two signals show equal amplitude on a calibrated display: signal A at the near-surface reference-notch angle, signal B rotated much further. The correct evaluation is:",
+   "options": [
+    "B originates deeper, and equal amplitude after exponential attenuation means B represents the larger discontinuity",
+    "A and B represent equally severe flaws because amplitude is equal",
+    "B must be lift-off, because rotation away from the reference angle indicates probe motion",
+    "A originates at the far surface, because near-surface signals are always the smaller ones"
+   ],
+   "correct": 0,
+   "explanation": "Phase is the depth clock — added rotation means deeper origin. B paid the e^(−x/δ) attenuation toll and still matched A volt-for-volt, so it is the larger flaw. Lift-off is discriminated by its set direction (rotated horizontal), not by extra rotation around the display."
+  },
+  {
+   "question": "A bobbin examination is calibrated with probe wobble horizontal and the through-wall hole at 40°. A low-amplitude signal appears at about 160°. It is most consistent with:",
+   "options": [
+    "A deep ID-origin crack",
+    "Probe wobble",
+    "A through-wall perforation",
+    "A shallow OD-origin (far-surface) defect"
+   ],
+   "correct": 3,
+   "explanation": "The OD family begins near 170° for shallow far-surface damage and rotates toward the 40° through-wall point as depth grows, so ≈160° with low amplitude reads as shallow OD. ID-origin signals live between the wobble line and 40°, wobble is horizontal by calibration, and through-wall sits at 40°."
+  },
+  {
+   "question": "The far-surface flat-bottom holes in an aluminum-stack reference standard give no response at 200 kHz even at maximum gain. The correct fix is to:",
+   "options": [
+    "Add more gain from the preamplifier",
+    "Switch to a smaller-diameter probe for higher resolution",
+    "Lower the test frequency until the far surface sits near one standard depth — beyond ≈3δ, no gain recovers the signal",
+    "Increase the scan speed to sharpen the response"
+   ],
+   "correct": 2,
+   "explanation": "Beyond about 3δ only ≈5% of the surface current density remains, and gain amplifies near-surface noise exactly as much as the buried response. Frequency, not gain, controls whether current reaches the far surface — lower it until the standard's far-surface flaws answer, then set gates there."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II Evaluation Course §2.3 (detection of signals of interest — near surface and far surface)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing method — Level II training outline basis",
+  "ASME BPVC Section V, Article 8 (eddy current examination of nonferromagnetic heat-exchanger tubing — reference tube, phase calibration, multifrequency examination)",
+  "ASTM E243, Standard Practice for Electromagnetic (Eddy Current) Examination of Copper and Copper-Alloy Tubes (encircling-coil practice)"
+ ]
+}

@@ -1,0 +1,191 @@
+{
+ "lessonId": "et1-2-2",
+ "title": "Fields Created by Eddy Currents and Impedance Changes",
+ "narrationScript": "In the last lesson, your coil's alternating field induced eddy currents in the part. This lesson is about what those currents do in return. Eddy currents are real circulating currents, so they generate a magnetic field of their own, the secondary field, and by Lenz's law it opposes the coil's primary field. That opposition does two things to the coil. Cancelling part of the flux lowers the coil's inductance and its inductive reactance. And the heat the eddy currents dissipate in the part is drawn from the coil's circuit, raising its effective resistance. Resistance and inductive reactance are the coil's two oppositions to alternating current, ninety degrees apart in phase, and their vector sum is impedance: Z equals the square root of R squared plus X L squared. Conductivity, lift-off, cracks, frequency — every test variable changes the eddy currents, the eddy currents change the secondary field, and the secondary field changes the coil's impedance. Reading that change is the entire eddy current method.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Part Answers Back: The Secondary Field",
+   "body": "In the last lesson you built the first half of the eddy current chain: alternating current in the coil produces an alternating **primary magnetic field**, and when that field reaches a conductor, induction drives **eddy currents** in closed loops inside the metal.\n\nNow the part answers back. Eddy currents are real circulating currents, and every electric current generates a magnetic field of its own. The field produced by the eddy currents is called the **secondary magnetic field**.\n\nIts direction is not random. **Lenz's law** says an induced current always flows in the direction whose magnetic field **opposes the change in flux that created it**. The eddy currents owe their existence to the coil's changing primary field — so their secondary field pushes back against it, every cycle. Where the primary flux points down into the part, the secondary flux pushes back up through the coil.\n\nTwo consequences follow, and they are the entire point of this lesson:\n\n- The secondary field **cancels part of the primary flux** linking the coil.\n- Driving eddy currents through the metal's resistance **drains energy** from the coil's circuit.\n\nThe coil feels both. Measuring that feeling precisely is the eddy current test."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-2-2-fig-a",
+   "caption": "The coil's alternating primary field induces eddy currents in the part; the eddy currents generate a secondary field that opposes the primary (Lenz's law) — and the coil's impedance carries the news."
+  },
+  {
+   "type": "text",
+   "heading": "A Transformer with a One-Turn, Shorted Secondary",
+   "body": "The cleanest model for coil-to-part coupling is a transformer. The test coil is the **primary winding**. The conductive part behaves as a **secondary winding of a single turn, short-circuited on itself** — the eddy current loop. **Mutual inductance** links the two across the lift-off gap.\n\nA transformer's primary always feels its secondary's load — the load is **reflected back** into the primary circuit. In eddy current testing that reflected load arrives at the coil as two distinct changes:\n\n- **Effective inductance drops.** The secondary field cancels part of the primary flux, so each ampere of coil current now links less net flux. Less flux per ampere is, by definition, less inductance.\n- **Effective resistance rises.** Eddy currents flowing through the metal's resistance dissipate power as heat — an I²R loss inside the part. That power has only one source: the coil's drive circuit. To the instrument, the coil suddenly looks more resistive.\n\nBoth effects scale with how strongly the eddy currents flow. Strong eddy currents — sound metal, tight coupling — mean a heavily loaded coil. Weak eddy currents — lift-off, low conductivity, or a crack blocking the current path — let the coil drift back toward its behavior in empty air."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "You never measure eddy currents directly",
+   "body": "Eddy currents flow in closed loops inside solid metal — no meter, lead, or probe ever touches them. The only message that escapes is the secondary magnetic field and what it does to the coil. Every eddy current instrument, whatever its display, is at heart watching one thing: **the impedance of a coil**. Learn to think in impedance and the rest of the method falls into place."
+  },
+  {
+   "type": "text",
+   "heading": "Resistance, Reactance, and Impedance — Defined",
+   "body": "A test coil opposes alternating current in two fundamentally different ways:\n\n- **Resistance (R)** — the familiar opposition of the conductor itself, in ohms. It dissipates energy as heat, and the voltage across it is **in phase** with the current. During a test, the reflected eddy current losses add to the winding's own resistance.\n- **Inductive reactance (XL)** — the opposition created by the coil's own changing magnetic field. It stores energy in the field and returns it each cycle, and it shifts timing: in a pure inductance, current **lags the applied voltage by 90°**. Its value is **XL = 2πfL**, with f in hertz and L in henries, giving ohms — double the test frequency and XL doubles.\n\nBecause the two oppositions are 90° apart in phase, they can never be added arithmetically. They combine as a **vector sum** called **impedance (Z)** — the coil's total opposition to alternating current:\n\n**Z = √(R² + XL²)**, with phase angle **θ = arctan(XL ÷ R)**\n\nTry it: R = 30 Ω and XL = 40 Ω give Z = √(900 + 1,600) = **50 Ω** at θ ≈ 53° — never 70 Ω. A realistic probe coil of 100 µH driven at 100 kHz has XL = 2π × 100,000 × 0.0001 ≈ **62.8 Ω**; with 10 Ω of winding resistance, Z ≈ 63.6 Ω at θ ≈ 81°. Probe coils are mostly reactive — which is exactly why flux changes move them so strongly. (Winding and cable capacitance exist too, but at typical test frequencies the working model of a probe coil is R and XL.)\n\nImpedance is therefore not one number but two — **a magnitude and a phase angle**, or equivalently an R value and an XL value. That pair is about to become a point on a plot."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-2-2-fig-b",
+   "caption": "Resistance and inductive reactance are 90° apart in phase, so they combine as a vector: Z = √(R² + XL²) with phase angle θ — shown here for R = 30 Ω and XL = 40 Ω, giving Z = 50 Ω."
+  },
+  {
+   "type": "text",
+   "heading": "Loading the Coil: From Air Point to Flaw Signal",
+   "body": "Energize the coil far from any metal and measure it: winding resistance **R₀** and reactance **XL₀ = 2πfL₀**. That pair is the coil's **air point** — its unloaded signature, fixed by its construction and the test frequency.\n\nNow set the coil on a thick aluminum plate — conductive, nonmagnetic:\n\n- Eddy currents flow, and their secondary field cancels flux: **XL falls below XL₀**.\n- Eddy current heating drains the coil's circuit: **R rises above R₀**.\n\nThe impedance point moves — how far and in what direction depends on conductivity, frequency, and coupling.\n\nSlide the coil over a **crack** and the eddy currents can no longer follow their natural circular paths: the gap interrupts them, forcing long detours and weakening the flow beneath the coil. A weaker secondary field cancels less flux and draws less energy, so **the impedance moves back toward the air point**. That motion — repeating every time the coil crosses the discontinuity — is the flaw signal.\n\n**Lift-off** does something similar for a different reason: raise the coil and the magnetic coupling weakens, fewer eddy currents are induced, and the impedance again heads toward the air point. Separating flaw motion from lift-off motion is possible because the two travel in different directions on the plot — the impedance-plane story finished in lesson 1-2-4.\n\nOne caveat: on **ferromagnetic** parts such as carbon steel, the part's high magnetic permeability concentrates and multiplies the coil's flux, and that effect overwhelms the eddy current cancellation — **XL rises above the air value** instead of falling. Same physics, opposite reactance shift — a preview of why permeability dominates so much of eddy current work on steel."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-2-2-fig-c",
+   "caption": "Plotting XL against R: loading the coil on a nonmagnetic conductor moves the impedance away from the air point (XL down, R up); a crack or lift-off weakens the eddy currents and sends the point back toward the air point."
+  },
+  {
+   "type": "table",
+   "caption": "Every test condition speaks to the coil through the secondary field — summary of impedance effects.",
+   "headers": ["Condition", "Eddy currents / secondary field", "Inductive reactance XL", "Effective resistance R"],
+   "rows": [
+    ["Coil in air (air point)", "None — nothing conductive in the field", "Maximum for that coil: XL₀ = 2πfL₀", "Winding resistance only (R₀)"],
+    ["Coil on nonmagnetic conductor", "Strong eddy currents; secondary field cancels part of the flux", "Falls below XL₀", "Rises above R₀ — eddy current losses reflected in"],
+    ["Crack interrupts current paths", "Eddy currents detour and weaken; secondary field weakens", "Rises back toward XL₀", "Falls back toward R₀"],
+    ["Lift-off increases", "Coupling weakens; fewer eddy currents induced", "Moves toward XL₀", "Moves toward R₀"],
+    ["Ferromagnetic part (e.g., carbon steel)", "Eddy currents flow, but high permeability multiplies coil flux", "Rises above XL₀ — permeability dominates", "Rises — eddy current plus magnetic losses"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-2-2-fig-a",
+   "title": "Primary field, eddy currents, and the opposing secondary field",
+   "file": "et1-2-2-fig-a.svg"
+  },
+  {
+   "id": "et1-2-2-fig-b",
+   "title": "Resistance, reactance, and the impedance vector",
+   "file": "et1-2-2-fig-b.svg"
+  },
+  {
+   "id": "et1-2-2-fig-c",
+   "title": "Loading the coil: the impedance point moves",
+   "file": "et1-2-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "R, XL, or Z?",
+  "intro": "Each statement describes one of the coil's three electrical quantities. Sort them. If you can do this cold, the impedance-plane lessons ahead will make sense on sight.",
+  "buckets": [
+   "Resistance R — in phase, dissipates energy",
+   "Inductive reactance XL — 90° out of phase, stores energy",
+   "Impedance Z — the vector combination"
+  ],
+  "items": [
+   {
+    "label": "Converts electrical energy into heat",
+    "bucket": 0,
+    "why": "Resistance is the dissipative opposition — in the winding wire, and in the part through reflected eddy current losses."
+   },
+   {
+    "label": "Rises when eddy currents dissipate power in the part",
+    "bucket": 0,
+    "why": "The I²R heat generated in the part is drawn from the coil's drive circuit, so the coil's effective resistance climbs."
+   },
+   {
+    "label": "Voltage and current stay in phase across it",
+    "bucket": 0,
+    "why": "A pure resistance produces no phase shift — that is exactly what distinguishes it from reactance."
+   },
+   {
+    "label": "Equals 2πfL",
+    "bucket": 1,
+    "why": "Inductive reactance grows in direct proportion to both the test frequency and the coil's inductance."
+   },
+   {
+    "label": "Falls when the secondary field cancels part of the coil's flux",
+    "bucket": 1,
+    "why": "Less net flux per ampere means less effective inductance, and XL = 2πfL falls with it (nonmagnetic part)."
+   },
+   {
+    "label": "Makes current lag voltage by 90°",
+    "bucket": 1,
+    "why": "A pure inductance stores energy in the field and returns it each cycle, shifting current a quarter-cycle behind voltage."
+   },
+   {
+    "label": "Equals √(R² + XL²)",
+    "bucket": 2,
+    "why": "The two oppositions are 90° apart, so they add as vectors — the hypotenuse of the right triangle is the total opposition."
+   },
+   {
+    "label": "What the instrument ultimately monitors at the coil",
+    "bucket": 2,
+    "why": "Every eddy current instrument reads the coil's total opposition — magnitude and phase — and displays its changes."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "According to Lenz's law, the secondary magnetic field generated by induced eddy currents:",
+   "options": [
+    "reinforces the primary field, increasing total flux through the coil",
+    "is oriented at 90° to the primary field and has no effect on the coil",
+    "opposes the primary field, cancelling part of the flux linking the coil",
+    "exists only in ferromagnetic materials"
+   ],
+   "correct": 2,
+   "explanation": "An induced current flows in the direction whose magnetic field opposes the change in flux that created it. The eddy currents' secondary field therefore bucks the coil's primary field, reducing the net flux the coil links — the root of every impedance change in eddy current testing."
+  },
+  {
+   "question": "A probe coil is placed on a thick, nonmagnetic conductor such as aluminum. Compared with its values in air, the coil's:",
+   "options": [
+    "inductive reactance decreases and its effective resistance increases",
+    "inductive reactance increases and its effective resistance decreases",
+    "inductive reactance and effective resistance both decrease",
+    "impedance does not change — only the current changes"
+   ],
+   "correct": 0,
+   "explanation": "The secondary field cancels part of the coil's flux, lowering effective inductance and therefore XL; the I²R heat the eddy currents dissipate in the part is drawn from the coil circuit, raising its effective resistance."
+  },
+  {
+   "question": "A coil presents 12 Ω of resistance and 16 Ω of inductive reactance. Its impedance is:",
+   "options": [
+    "28 Ω — the simple sum of the two",
+    "4 Ω — the difference between them",
+    "16 Ω — the reactance always dominates",
+    "20 Ω — the vector sum √(12² + 16²)"
+   ],
+   "correct": 3,
+   "explanation": "R and XL are 90° apart in phase, so they add as vectors: Z = √(144 + 256) = √400 = 20 Ω. Simple arithmetic addition (28 Ω) ignores the phase difference and is always wrong."
+  },
+  {
+   "question": "A coil in air has an inductive reactance of 50 Ω at a test frequency of 200 kHz. At 400 kHz, the same coil's reactance is approximately:",
+   "options": [
+    "25 Ω",
+    "100 Ω",
+    "50 Ω — reactance does not depend on frequency",
+    "200 Ω"
+   ],
+   "correct": 1,
+   "explanation": "XL = 2πfL is directly proportional to frequency: doubling f from 200 kHz to 400 kHz doubles the reactance from 50 Ω to 100 Ω."
+  },
+  {
+   "question": "As a probe coil passes over a tight surface crack in an aluminum part, the coil's impedance:",
+   "options": [
+    "moves farther from its air value, because the crack strengthens the eddy currents",
+    "moves back toward its air value, because the interrupted eddy currents produce a weaker secondary field",
+    "changes in resistance only — reactance cannot respond to a flaw",
+    "does not change unless the part is ferromagnetic"
+   ],
+   "correct": 1,
+   "explanation": "A crack blocks the circular eddy current paths and weakens the flow beneath the coil. The weaker secondary field cancels less flux and draws less energy, so the impedance relaxes back toward the air point — and that motion is the flaw signal."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level I Topical Outline §2.1.2 (effect of fields created by eddy currents — impedance changes)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing method — Level I training topic basis",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations, Section C: Electromagnetic Testing (definitions of impedance and eddy current)"
+ ]
+}

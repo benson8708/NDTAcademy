@@ -1,0 +1,83 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arwA" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L8,4.5 L0,9 Z" fill="#9BC4FF"/>
+    </marker>
+    <marker id="arwAw" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L8,4.5 L0,9 Z" fill="#FFFFFF"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">Signal-to-Noise Ratio on the Display</text>
+
+  <!-- ============ LEFT: impedance plane ============ -->
+  <text x="200" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#9BC4FF">Impedance plane — lift-off rotated horizontal</text>
+  <rect x="40" y="88" width="320" height="307" fill="#1E66F5" fill-opacity="0.10" stroke="#1E66F5" stroke-width="2"/>
+
+  <!-- flaw channel (vertical) reference -->
+  <line x1="190" y1="330" x2="190" y2="112" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.35"/>
+  <text x="190" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">flaw channel (vertical)</text>
+
+  <!-- null point -->
+  <circle cx="190" cy="330" r="4.5" fill="#FFFFFF"/>
+  <text x="198" y="352" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">null</text>
+
+  <!-- lift-off direction -->
+  <line x1="190" y1="330" x2="74" y2="330" stroke="#FFFFFF" stroke-width="2.5" marker-end="url(#arwAw)"/>
+  <text x="118" y="316" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">lift-off</text>
+
+  <!-- noise cluster around null -->
+  <polyline points="168,334 176,326 183,337 191,324 199,335 207,327 214,333 206,338 196,329 186,336 178,330" fill="none" stroke="#9BC4FF" stroke-width="1.5" opacity="0.9"/>
+  <line x1="216" y1="338" x2="258" y2="366" stroke="#9BC4FF" stroke-width="1" opacity="0.6"/>
+  <text x="262" y="372" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">noise cluster</text>
+
+  <!-- crack response vector -->
+  <path d="M190,330 C218,300 258,222 294,156" fill="none" stroke="#9BC4FF" stroke-width="3" marker-end="url(#arwA)"/>
+  <text x="290" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#9BC4FF">crack response</text>
+
+  <!-- phase arc between lift-off and crack directions -->
+  <path d="M145,330 A45,45 0 0 1 212.5,291" fill="none" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="143" y="276" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">phase</text>
+
+  <!-- ============ RIGHT: flaw-channel strip ============ -->
+  <text x="585" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#9BC4FF">Flaw-channel amplitude — strip view</text>
+  <rect x="410" y="88" width="350" height="307" fill="#1E66F5" fill-opacity="0.10" stroke="#1E66F5" stroke-width="2"/>
+
+  <!-- division ticks (24 px = 1 division) -->
+  <line x1="410" y1="350" x2="418" y2="350" stroke="#9BC4FF" stroke-width="1" opacity="0.6"/>
+  <line x1="410" y1="326" x2="418" y2="326" stroke="#9BC4FF" stroke-width="1" opacity="0.6"/>
+  <line x1="410" y1="302" x2="418" y2="302" stroke="#9BC4FF" stroke-width="1" opacity="0.6"/>
+  <line x1="410" y1="278" x2="418" y2="278" stroke="#9BC4FF" stroke-width="1" opacity="0.6"/>
+  <line x1="410" y1="254" x2="418" y2="254" stroke="#9BC4FF" stroke-width="1" opacity="0.6"/>
+  <line x1="410" y1="230" x2="418" y2="230" stroke="#9BC4FF" stroke-width="1" opacity="0.6"/>
+  <line x1="410" y1="206" x2="418" y2="206" stroke="#9BC4FF" stroke-width="1" opacity="0.6"/>
+  <line x1="421" y1="302" x2="421" y2="326" stroke="#9BC4FF" stroke-width="1" opacity="0.8"/>
+  <text x="428" y="318" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">1 div</text>
+
+  <!-- baseline -->
+  <line x1="412" y1="350" x2="758" y2="350" stroke="#FFFFFF" stroke-width="1" stroke-dasharray="3 4" opacity="0.45"/>
+
+  <!-- noise band (1.4 div peak-to-peak) -->
+  <rect x="412" y="333" width="346" height="34" fill="#9BC4FF" fill-opacity="0.14"/>
+
+  <!-- trace with notch signal (4.2 div peak-to-peak) -->
+  <polyline points="415,349 428,338 441,360 454,341 467,358 480,336 493,362 506,344 519,356 532,337 545,359 558,342 571,352 580,349 588,355 596,361 602,367 607,330 612,266 617,300 622,340 628,355 636,346 648,357 660,339 672,361 684,343 696,358 708,338 720,360 732,341 744,356 755,348" fill="none" stroke="#9BC4FF" stroke-width="2"/>
+
+  <!-- signal dimension (extension lines + double arrow at x=520) -->
+  <line x1="612" y1="266" x2="520" y2="266" stroke="#FFFFFF" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+  <line x1="602" y1="367" x2="520" y2="367" stroke="#FFFFFF" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+  <line x1="520" y1="272" x2="520" y2="268" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="520" y1="270" x2="520" y2="363" stroke="#FFFFFF" stroke-width="2" marker-start="url(#arwAw)" marker-end="url(#arwAw)"/>
+  <text x="520" y="254" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">signal 4.2 div p-p</text>
+
+  <!-- noise dimension -->
+  <line x1="442" y1="338" x2="442" y2="362" stroke="#9BC4FF" stroke-width="2" marker-start="url(#arwA)" marker-end="url(#arwA)"/>
+  <text x="452" y="328" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">noise 1.4 div p-p</text>
+
+  <text x="664" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">notch response</text>
+
+  <!-- bottom annotation -->
+  <text x="400" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">SNR = 4.2 ÷ 1.4 = 3 : 1 (≈ 9.5 dB) — at the 3-to-1 working minimum</text>
+  <text x="400" y="468" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#9BC4FF">Measure signal and noise the same way — peak-to-peak, same channel, same gain.</text>
+</svg>

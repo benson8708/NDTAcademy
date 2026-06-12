@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">One EDM Notch, Three Filter Settings &#8212; 3,000 RPM</text>
+
+  <!-- panel frames -->
+  <rect x="50" y="52" width="700" height="112" rx="8" fill="#FFFFFF" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="50" y="172" width="700" height="112" rx="8" fill="#FFFFFF" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="50" y="292" width="700" height="112" rx="8" fill="#FFFFFF" stroke="#9BC4FF" stroke-width="1.5"/>
+
+  <!-- vertical guides: same notch instant in every panel -->
+  <line x1="205" y1="52" x2="205" y2="428" stroke="#D7E5FB" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <line x1="540" y1="52" x2="540" y2="428" stroke="#D7E5FB" stroke-width="1.5" stroke-dasharray="6 6"/>
+
+  <!-- PANEL 1: under-filtered -->
+  <text x="66" y="74" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">1 &#183; Wide open &#8212; under-filtered</text>
+  <text x="734" y="74" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#5B708C">HP off &#183; LP max</text>
+  <text x="380" y="72" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#5B708C">fine grass rides the whole trace</text>
+  <!-- fuzz ribbon -->
+  <path d="M70,125 C 117,96 191,96 237,125 C 284,154 358,154 405,125 C 452,96 526,96 572,125 C 619,154 693,154 740,125" fill="none" stroke="#9BC4FF" stroke-width="9" opacity="0.6"/>
+  <!-- wobble trace -->
+  <path d="M70,125 C 117,96 191,96 237,125 C 284,154 358,154 405,125 C 452,96 526,96 572,125 C 619,154 693,154 740,125" fill="none" stroke="#0B1F3A" stroke-width="2.5"/>
+  <!-- notch blips riding the swell -->
+  <path d="M198,115 L205,82 L212,115" fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <path d="M533,115 L540,82 L547,115" fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <text x="70" y="159" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#5B708C">wobble swims once per revolution</text>
+
+  <!-- PANEL 2: bracketed -->
+  <text x="66" y="194" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">2 &#183; Bracketed &#8212; optimized</text>
+  <text x="734" y="194" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#5B708C">HP 300 Hz &#183; LP 1.5 kHz</text>
+  <line x1="70" y1="245" x2="740" y2="245" stroke="#0B1F3A" stroke-width="2.5"/>
+  <path d="M198,245 L205,205 L212,245" fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <path d="M533,245 L540,205 L547,245" fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <text x="300" y="270" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#5B708C">flat baseline &#183; notch at full height &#183; S/N up ~10&#215;</text>
+
+  <!-- PANEL 3: over-filtered -->
+  <text x="66" y="314" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">3 &#183; Over-filtered</text>
+  <text x="734" y="314" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#5B708C">HP 1.2 kHz &#183; LP 1.5 kHz</text>
+  <line x1="70" y1="360" x2="740" y2="360" stroke="#0B1F3A" stroke-width="2.5"/>
+  <path d="M193,360 C 198,344 202,344 205,360 C 208,376 212,376 217,360 C 220,354 224,358 228,360" fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <path d="M528,360 C 533,344 537,344 540,360 C 543,376 547,376 552,360 C 555,354 559,358 563,360" fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <text x="300" y="392" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#5B708C">amplitude down &#8776;70% &#183; shape bipolar &#183; phase information corrupted</text>
+
+  <!-- time axis -->
+  <line x1="70" y1="428" x2="740" y2="428" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="70" y1="428" x2="70" y2="436" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="405" y1="428" x2="405" y2="436" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="740" y1="428" x2="740" y2="436" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="70" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0 ms</text>
+  <text x="405" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">20 ms</text>
+  <text x="740" y="455" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">40 ms</text>
+  <text x="405" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#5B708C">one revolution = 20 ms at 3,000 RPM &#183; the notch crosses the coil once per revolution</text>
+</svg>

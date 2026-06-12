@@ -1,0 +1,187 @@
+{
+ "lessonId": "et1-6-2",
+ "title": "Drive Current and Voltage Settings",
+ "narrationScript": "Frequency decided where the eddy currents flow. Drive decides how strong the whole test runs. Drive is the excitation level — the alternating voltage or current the instrument applies to the coil. Raise it and the primary field, the eddy currents, and every signal grow in proportion. What never changes with drive is depth of penetration and phase — those belong to frequency, conductivity, and permeability. Use drive to lift small signals above the instrument's own electronic noise, the one noise gain cannot beat, because gain amplifies signal and receiver noise together. The ceilings are real. Too much drive heats the coil and drifts the balance point. In ferrite cores and ferromagnetic parts it distorts the response. Too much signal saturates the receiver — flat-topped indications whose amplitude and phase cannot be trusted. Hall effect elements add a second drive, a DC control current: output is proportional to control current times flux density, and self-heating sets the rating. Set drive per the written technique, standardize, and re-standardize after any change.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Drive Sets the Strength of the Test",
+   "body": "The last lesson chose the test frequency — the setting that decides *where* the eddy currents flow: how deep they reach, and how much phase lag separates a deep flaw from a shallow one. This lesson sets the second parameter on every technique sheet: **drive** — also called probe drive, excitation, or coil drive — the amplitude of the alternating voltage or current the instrument applies to the coil at the test frequency.\n\nDrive is the strength knob. The primary magnetic field is proportional to the **ampere-turns** of the winding — coil current times number of turns. Raise the drive and the whole chain scales with it: a stronger primary field induces proportionally stronger eddy currents, which build a proportionally stronger secondary field, which returns a proportionally larger signal to the instrument. In a nonferromagnetic part the test is linear: double the drive, and every signal — flaw, lift-off, edge effect — doubles with it.\n\nInstruments state drive differently. Portable impedance-plane instruments usually offer a few discrete levels — commonly about **1, 5, and 10 volts**, or simply low, medium, and high — while multifrequency tubing systems let the procedure call out a drive voltage for each test channel. One detail worth keeping: at a fixed drive *voltage*, the coil current still depends on the coil's impedance, and because inductive reactance climbs with frequency, **the same voltage pushes less current at a higher test frequency**.\n\nProbes that read with a Hall effect element carry a second, separate drive — the element's **control current**. That setting gets its own section later in this lesson."
+  },
+  {
+   "type": "text",
+   "heading": "More Drive vs. More Gain: Know Which Noise You Are Fighting",
+   "body": "Drive and gain both make signals bigger, and confusing them is the classic setup error. The difference is *where* they act.\n\n**Drive acts at the source.** It strengthens the field in the part, so the signal arriving back at the instrument is genuinely larger. **Gain acts at the receiver.** It multiplies whatever comes out of the probe — signal and noise alike — and adds nothing the probe did not already capture.\n\nNow split the noise into its two families:\n\n- **Instrument (electronic) noise** is generated in the receiver's own amplifier. It is there with the probe sitting in air, and its size is fixed — it does not care what the drive is. Raise the gain and it grows right along with the signal; raise the drive and the signal grows while this noise stands still. **Gain cannot improve this ratio; drive can.**\n- **Material and lift-off noise** — surface roughness, conductivity scatter, probe wobble — is induced in the part, so it scales with drive exactly as the flaw signal does. Drive does not improve that ratio by one decibel; frequency, probe choice, and the filters of a later lesson fight that battle.\n\nAnd what drive never touches: **depth of penetration and phase**. The standard depth of penetration is set by frequency, conductivity, and permeability — not by amplitude — so the current distribution keeps its shape, every signal keeps its phase angle, and the impedance-plane pattern simply grows. You cannot buy penetration with drive. What you can buy is **detectability**: a deep-flaw signal too small to clear the receiver's noise floor becomes usable when the source gets stronger.\n\nThe working rule: **set drive high enough that the smallest signal you must find clears the instrument's noise floor — then use gain to size it on the display.**"
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-6-2-fig-a",
+   "caption": "Signal reaching the receiver versus probe drive: below the instrument's fixed electronic noise floor a flaw is undetectable, through the linear window every signal scales in proportion, and past the receiver's input limit the response clips — flat tops, false amplitude, distorted phase."
+  },
+  {
+   "type": "text",
+   "heading": "The Ceilings: Heat, Distortion, and Clipping",
+   "body": "If more drive meant nothing but more signal, every instrument would run flat-out. Three ceilings say otherwise.\n\n**Coil heating.** Drive current dissipates power in the winding's resistance, and that power grows with the *square* of the current. Copper resistance rises roughly 0.4% per degree Celsius, so as the coil warms, its impedance — the very thing the instrument is measuring — drifts, and the balance point crawls across the screen until the probe reaches a stable temperature. Fine-wire pencil probes heat fastest and tolerate the least, and severe overdrive can damage a winding outright. Drift-sensitive work — conductivity measurement in particular — values a stable moderate drive far above a hot strong one.\n\n**Magnetic nonlinearity.** Eddy current theory assumes the magnetic circuit is linear. Push enough drive and that stops being true: the ferrite cores and shields built into many probes saturate at modest flux densities, and a ferromagnetic test part is worse — at high field strength its permeability changes over each AC cycle, distorting the response and generating harmonics. Signals turn unstable, and standardization stops meaning anything. Deliberate **magnetic saturation** of steel products is a different, controlled matter — a separate DC circuit, covered in the callout below.\n\n**Receiver saturation.** The receiver has a finite input range. Feed it too much — high drive, high gain, or both — and signals **clip**: tops flatten, amplitude stops growing no matter what you add, and phase angles distort. A clipped signal cannot be compared against a reference notch, which makes it worthless for evaluation. If clipping persists even at minimum gain, the overload is happening ahead of the gain stage — only lower drive cures it."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "One word, two saturations — plus the heat ceiling",
+   "body": "**Receiver saturation** is an electronics problem: too much signal into the amplifier — flat-topped indications, false amplitude, distorted phase. Cure: less gain or less drive, then re-standardize. **Magnetic saturation** is a materials condition: hold a ferromagnetic steel in a strong DC field and its permeability variations flatten out — applied *deliberately* by a separate DC magnetizing circuit in steel tubular testing (ASTM E309) so permeability noise stops masking defects. It is not produced by the test-coil drive. The third ceiling has no fancy name: **heat** — I²R in coil windings and Hall elements — and it is the limit you will hit most often. Know which one a procedure, or an exam question, means."
+  },
+  {
+   "type": "text",
+   "heading": "Hall Elements: Drive Means Control Current",
+   "body": "A coil reads a magnetic field by induction — its output follows the *rate of change* of flux, which is why a pickup coil goes quiet as the test frequency drops. A **Hall effect element** reads the field itself. It is a thin semiconductor wafer carrying a steady **control current**; when flux density passes through its face, the field pushes the moving charge carriers sideways and a **Hall voltage** appears across the element, perpendicular to both the current and the field:\n\n**V_H = K × I × B**\n\n— output equals a sensitivity constant, times control current, times flux density. Two working consequences fall straight out of that product:\n\n- **The element responds to B, not to how fast B changes.** Its sensitivity is flat from DC up through the test frequencies ECT uses. That is why Hall sensing owns the low-frequency end of the method — deep-penetration tests on thick or layered structure, where induction pickups fade — and why a Hall element can verify a *static* saturating field that a coil cannot see at all.\n- **Control current is the element's drive.** Double it and the output doubles. It is typically a steady DC current of a few milliamperes to a few tens of milliamperes, with a maximum set by the manufacturer.\n\nA driver–Hall probe therefore carries **two drive settings**: the excitation coil's drive, which sets how strong the field in the part is, and the element's control current, which sets how much voltage each unit of field produces. The technique sheet specifies both.\n\nThe ceilings mirror the coil's. **Self-heating:** dissipation in the wafer grows as I² — double the current for twice the output and you make four times the heat. A hot element drifts in both its zero offset and its sensitivity, and current beyond the rating can burn out the thin wafer permanently. **Offset:** even at zero field, small manufacturing asymmetries produce a residual voltage — and it scales with control current too, so any change to element drive means rebalancing, and re-standardizing, before work continues."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-6-2-fig-b",
+   "caption": "A Hall element multiplies control current by flux density: V_H = K × I × B. More control current means a steeper response to the same field — until self-heating, which grows as the square of the current, drifts the element and enforces the manufacturer's rating."
+  },
+  {
+   "type": "table",
+   "caption": "Matching drive to the application — the reasoning a technique sheet encodes.",
+   "headers": ["Situation", "Typical drive call", "Why"],
+   "rows": [
+    ["Low-frequency subsurface test on thick or layered aluminum", "High coil drive", "Pickup signals shrink as frequency falls; a strong source field lifts deep-flaw signals above the receiver's fixed electronic noise"],
+    ["High-frequency surface scan with a fine-wire pencil probe", "Low to moderate drive", "Surface signals are already strong, and fine windings heat quickly — drift, not noise, is the enemy"],
+    ["Ferromagnetic part tested without saturation", "Moderate drive", "High AC fields swing the part's permeability over each cycle — harmonics and unstable signals"],
+    ["Remote-field examination of ferromagnetic tubing", "High exciter drive", "The field crosses the tube wall twice and arrives heavily attenuated — the exciter must work hard for the detector to read anything"],
+    ["Hall-element probe", "Control current at the manufacturer's rating", "Output scales with I, heat scales with I² — the rating is the ceiling, and any change means rebalancing"],
+    ["Conductivity measurement", "Stable, moderate drive", "Measurement work prizes repeatability; a warm, drifting coil corrupts readings faster than a small signal does"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "On the Bench: Set It, Prove It, Don't Touch It",
+   "body": "Here is how drive behaves in a real Level I workflow.\n\n**Set drive before you standardize.** The technique sheet lists frequency, drive — and control current for Hall probes — then gain and filters. Set drive first, because every other response — balance, gain, the size of each reference indication — depends on it.\n\n**Warm up, then balance.** Give the probe a few minutes at the working drive level so the winding reaches a stable temperature; then null, and run your standardization on the reference standard. The responses from the specified notches or holes must meet the technique's requirements before any part is examined.\n\n**Read the symptoms.** A baseline that crawls during the first minutes points to coil heating — let it stabilize or reduce drive. A grassy display that stays grassy with the probe held in air, while the signal you need hides inside it, means drive is too low for the receiver's noise floor. Flat-topped signals that ignore added gain mean saturation — back off, fix it, and re-standardize before continuing.\n\n**Never change drive mid-job silently.** Drive changes the size of everything, so any change invalidates the standardization: re-standardize, and follow your procedure's rule on re-examining material tested since the last good check. Under SNT-TC-1A, a Level I sets these parameters from written instructions and reports anomalies upward — choosing new drive settings to chase a problem is a Level II or III decision."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-6-2-fig-a",
+   "title": "Drive level vs. signal response",
+   "file": "et1-6-2-fig-a.svg"
+  },
+  {
+   "id": "et1-6-2-fig-b",
+   "title": "Hall element drive: control current sets sensitivity",
+   "file": "et1-6-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Set the Drive: Four Bench Calls",
+  "intro": "Four setup problems from a working bench. For each, decide what the drive setting — coil or Hall — should do. Think source versus receiver before you click.",
+  "steps": [
+   {
+    "prompt": "You are hunting second-layer corrosion thinning in an aluminum lap joint at a few hundred hertz. At maximum gain the deep-layer signal is barely visible, and the display stays grassy even with the probe held in air. Best move?",
+    "options": [
+     "Raise the gain further",
+     "Switch to a higher frequency for a stronger signal",
+     "Raise the probe drive, then reset gain and re-standardize",
+     "Add more filtering and keep scanning"
+    ],
+    "correct": 2,
+    "feedback": "Grass that remains with the probe in air is receiver electronic noise — fixed in size. Gain magnifies grass and signal together, and a higher frequency would shrink penetration below the second layer. Raising drive strengthens the signal at its source so it clears the fixed noise floor — then re-standardize."
+   },
+   {
+    "prompt": "Ten minutes into a shift with a fine-wire pencil probe at maximum drive, the balanced dot crawls steadily across the screen — fastest right after switch-on — and the probe feels warm. What is happening?",
+    "options": [
+     "Coil self-heating from excessive drive is shifting the winding resistance — reduce drive, let it warm up, rebalance",
+     "The cable is failing intermittently",
+     "The part has become magnetized",
+     "Lift-off is varying as you scan"
+    ],
+    "correct": 0,
+    "feedback": "I²R heating raises copper resistance about 0.4% per degree Celsius, and the balance point follows the coil's changing impedance. Drop to a moderate drive, let the probe reach a stable temperature, rebalance — and re-standardize before continuing."
+   },
+   {
+    "prompt": "During standardization the EDM-notch signal looks squared off at the top, and raising gain — or drive — makes it wider but no taller. The phase angle looks wrong too.",
+    "options": [
+     "You have reached maximum sensitivity — proceed with the inspection",
+     "The receiver is saturated — reduce gain, and if clipping persists at minimum gain, reduce drive, then re-standardize",
+     "The notch is too small for the method",
+     "Increase the frequency to sharpen the signal"
+    ],
+    "correct": 1,
+    "feedback": "Flat tops that ignore added gain are clipping. Once the front end saturates, amplitude and phase are both lies, so no comparison against the reference notch is valid. If minimum gain does not clear it, the overload sits ahead of the gain stage — only less drive fixes that."
+   },
+   {
+    "prompt": "A Hall-element probe is reading a thick multilayer structure at low frequency. The procedure allows adjusting the element control current, and you need more sensitivity.",
+    "options": [
+     "Control current does not affect output — adjust gain only",
+     "Double the control current — more is always better",
+     "Raise the test frequency instead",
+     "Raise the control current toward the manufacturer's rated maximum, then rebalance"
+    ],
+    "correct": 3,
+    "feedback": "Hall output is V_H = K × I × B, so more control current means proportionally more signal — but heating grows as I², and the zero offset scales with I. The rating is the ceiling, and any change to element drive means rebalancing and re-standardizing."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A nonferromagnetic aluminum part is being tested and the coil drive voltage is doubled, with all other settings unchanged. The expected result is:",
+   "options": [
+    "The standard depth of penetration doubles",
+    "The flaw signal rotates 90 degrees on the impedance plane",
+    "All signal amplitudes roughly double, while phase angles and depth of penetration stay the same",
+    "The coil current falls by half"
+   ],
+   "correct": 2,
+   "explanation": "In linear, nonferromagnetic operation the response scales with drive: eddy current density and every signal amplitude rise in proportion. Depth of penetration is set by frequency, conductivity, and permeability — not amplitude — so the impedance-plane pattern keeps its shape and phase and simply grows."
+  },
+  {
+   "question": "Signals are buried in fuzzy baseline noise that is still present with the probe held in air, even at high gain. Raising the probe drive helps because:",
+   "options": [
+    "The flaw signal grows at the source while the receiver's electronic noise stays fixed, improving signal-to-noise",
+    "Higher drive increases the depth of penetration so flaws are easier to reach",
+    "Drive acts as a filter that removes the noise",
+    "Drive reduces lift-off variation during scanning"
+   ],
+   "correct": 0,
+   "explanation": "Noise present with the probe in air is generated in the instrument's receiver and does not scale with drive. Gain amplifies that noise and the signal together; drive enlarges only the signal. Drive does not change depth of penetration, filter anything, or steady the probe."
+  },
+  {
+   "question": "Which observation indicates the receiver is saturated (clipping)?",
+   "options": [
+    "The balance point drifts slowly during the first minutes of operation",
+    "Signal amplitude doubles when the drive is doubled",
+    "The baseline is quiet and all signals are small",
+    "Signals flat-top and stop growing when gain or drive is increased, and amplitude and phase no longer read correctly"
+   ],
+   "correct": 3,
+   "explanation": "A saturated receiver has run out of input range: signal tops flatten, added gain or drive makes them no taller, and both amplitude and phase information are corrupted. Slow early drift is coil heating, and proportional doubling is healthy linear behavior — neither is clipping."
+  },
+  {
+   "question": "The output voltage of a Hall effect element is proportional to:",
+   "options": [
+    "The rate of change of magnetic flux, so it falls as frequency falls",
+    "The product of its control current and the flux density through it",
+    "The square of the flux density",
+    "The coil drive voltage alone"
+   ],
+   "correct": 1,
+   "explanation": "V_H = K × I × B — sensitivity constant times control current times flux density. Because the element responds to B itself rather than its rate of change, it keeps full sensitivity down to DC; rate-of-change behavior belongs to induction pickup coils."
+  },
+  {
+   "question": "The main practical limit on raising a Hall element's control current is:",
+   "options": [
+    "Magnetic saturation of the semiconductor wafer",
+    "Skin effect concentrating the current at the element's surface",
+    "Self-heating, which drifts offset and sensitivity and can destroy the element above its rated current",
+    "It would lower the test frequency"
+   ],
+   "correct": 2,
+   "explanation": "Output rises with I, but dissipation rises with I²: heating drifts the zero offset and the sensitivity, and exceeding the manufacturer's rating risks burning out the thin wafer. The semiconductor is not ferromagnetic, the control current is DC so skin effect does not apply, and control current has nothing to do with test frequency."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105 (2024), Electromagnetic Testing Level I Basic Technique Course — Selection of Inspection Parameters (coil drive and Hall effect element drive, current/voltage)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — Level I sets test parameters per written instructions under Level II/III supervision",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations — electromagnetic testing terms (Hall effect, magnetic saturation)",
+  "ASTM E309, Standard Practice for Eddy-Current Examination of Steel Tubular Products Using Magnetic Saturation"
+ ]
+}

@@ -1,0 +1,35 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">Filters at Work: One Channel, Three Stages</text>
+  <text x="400" y="60" text-anchor="middle" font-size="15" fill="#9BC4FF">Hand scan over wavy paint near arc welding — EDM notch at mid-trace, constant 100 mm/s</text>
+
+  <!-- BAND 1: RAW -->
+  <rect x="70" y="78" width="670" height="95" rx="6" fill="#1E66F5" fill-opacity="0.08" stroke="#9BC4FF" stroke-width="1"/>
+  <text x="80" y="94" font-size="15" font-weight="bold" fill="#FFFFFF">1 · RAW</text>
+  <line x1="75" y1="130" x2="735" y2="130" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="5 5"/>
+  <polyline points="80,140 120,126 160,116 200,120 240,132 262,130 268,98 274,158 280,126 310,134 350,146 390,152 420,150 450,146 462,142 474,112 486,104 498,114 510,144 540,154 560,152 566,168 572,120 578,150 610,148 650,140 690,132 730,128" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="150" y="110" font-size="14" fill="#9BC4FF">slow drift</text>
+  <text x="262" y="92" text-anchor="middle" font-size="14" fill="#9BC4FF">EMI spike</text>
+  <text x="486" y="96" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">notch — buried</text>
+
+  <!-- BAND 2: AFTER HIGH-PASS -->
+  <rect x="70" y="192" width="670" height="95" rx="6" fill="#1E66F5" fill-opacity="0.08" stroke="#9BC4FF" stroke-width="1"/>
+  <text x="80" y="208" font-size="15" font-weight="bold" fill="#FFFFFF">2 · AFTER HIGH-PASS — slow drift removed</text>
+  <line x1="75" y1="244" x2="735" y2="244" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="5 5"/>
+  <polyline points="80,250 140,249 200,251 240,250 262,250 268,216 274,278 280,250 330,249 400,251 440,250 456,248 468,214 480,208 492,220 504,272 516,252 540,250 560,250 566,222 572,276 578,250 620,249 680,251 730,250" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="290" y="236" font-size="14" fill="#9BC4FF">spikes survive</text>
+  <text x="500" y="202" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">notch — clear of drift</text>
+
+  <!-- BAND 3: AFTER LOW-PASS -->
+  <rect x="70" y="306" width="670" height="95" rx="6" fill="#1E66F5" fill-opacity="0.08" stroke="#9BC4FF" stroke-width="1"/>
+  <text x="80" y="322" font-size="15" font-weight="bold" fill="#FFFFFF">3 · AFTER LOW-PASS — band-pass result</text>
+  <line x1="75" y1="338" x2="735" y2="338" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text x="728" y="332" text-anchor="end" font-size="14" fill="#9BC4FF">alarm threshold</text>
+  <polyline points="80,363 150,362 220,363 262,362 268,358 274,365 280,362 340,363 400,362 450,361 462,356 472,332 484,322 496,330 508,350 520,361 560,362 566,359 572,364 600,362 660,363 730,362" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="484" y="395" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">only the notch crosses — SNR ≥ 3:1</text>
+
+  <!-- bottom caution -->
+  <text x="400" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#9BC4FF">Filters only know event frequency:  f ≈ scan speed ÷ response width</text>
+  <text x="400" y="462" text-anchor="middle" font-size="14" fill="#FFFFFF">Standardized at 100 mm/s, a 5 mm notch response is a 20 Hz event. Slow to 10 mm/s and it becomes 2 Hz —</text>
+  <text x="400" y="482" text-anchor="middle" font-size="14" fill="#FFFFFF">below the high-pass corner. The filter eats the flaw. Hold the qualified scan speed.</text>
+</svg>

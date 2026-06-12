@@ -1,0 +1,76 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arwC" markerWidth="10" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#FFFFFF"/>
+    </marker>
+    <marker id="arwC2" markerWidth="10" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9BC4FF"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">Phase Lag — the Depth Clock</text>
+
+  <!-- LEFT: part cross-section with clocks at depth -->
+  <rect x="60" y="110" width="320" height="330" fill="#1E66F5" fill-opacity="0.10" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="60" y1="110" x2="380" y2="110" stroke="#FFFFFF" stroke-width="2.5"/>
+
+  <!-- AC coil above surface -->
+  <rect x="126" y="66" width="48" height="34" rx="4" fill="#1E66F5" stroke="#9BC4FF" stroke-width="2"/>
+  <line x1="138" y1="66" x2="138" y2="100" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="150" y1="66" x2="150" y2="100" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="162" y1="66" x2="162" y2="100" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="182" y="88" font-size="15" fill="#FFFFFF">AC coil</text>
+
+  <!-- depth labels -->
+  <text x="52" y="235" text-anchor="end" font-size="15" fill="#FFFFFF">1δ</text>
+  <text x="52" y="315" text-anchor="end" font-size="15" fill="#FFFFFF">2δ</text>
+  <text x="52" y="395" text-anchor="end" font-size="15" fill="#FFFFFF">3δ</text>
+
+  <!-- clock at surface: 0 deg -->
+  <circle cx="150" cy="150" r="26" fill="#0B1F3A" stroke="#9BC4FF" stroke-width="2.5"/>
+  <line x1="150" y1="124" x2="150" y2="131" stroke="#9BC4FF" stroke-width="2" stroke-opacity="0.6"/>
+  <line x1="150" y1="150" x2="150" y2="127" stroke="#FFFFFF" stroke-width="3" marker-end="url(#arwC)"/>
+  <text x="190" y="155" font-size="15" font-weight="bold" fill="#FFFFFF">surface — 0° (reference)</text>
+
+  <!-- clock at 1 delta: 57 deg -->
+  <circle cx="150" cy="230" r="26" fill="#0B1F3A" stroke="#9BC4FF" stroke-width="2.5" stroke-opacity="0.8"/>
+  <line x1="150" y1="204" x2="150" y2="211" stroke="#9BC4FF" stroke-width="2" stroke-opacity="0.6"/>
+  <line x1="150" y1="230" x2="169.5" y2="217.5" stroke="#FFFFFF" stroke-width="3" marker-end="url(#arwC)"/>
+  <text x="190" y="235" font-size="15" fill="#FFFFFF">1δ — lag ≈ 57°</text>
+
+  <!-- clock at 2 delta: 115 deg -->
+  <circle cx="150" cy="310" r="26" fill="#0B1F3A" stroke="#9BC4FF" stroke-width="2.5" stroke-opacity="0.6"/>
+  <line x1="150" y1="284" x2="150" y2="291" stroke="#9BC4FF" stroke-width="2" stroke-opacity="0.6"/>
+  <line x1="150" y1="310" x2="171" y2="319.6" stroke="#FFFFFF" stroke-width="3" stroke-opacity="0.8" marker-end="url(#arwC)"/>
+  <text x="190" y="315" font-size="15" fill="#FFFFFF">2δ — lag ≈ 115°</text>
+
+  <!-- clock at 3 delta: 172 deg -->
+  <circle cx="150" cy="390" r="26" fill="#0B1F3A" stroke="#9BC4FF" stroke-width="2.5" stroke-opacity="0.45"/>
+  <line x1="150" y1="364" x2="150" y2="371" stroke="#9BC4FF" stroke-width="2" stroke-opacity="0.6"/>
+  <line x1="150" y1="390" x2="153.3" y2="413" stroke="#FFFFFF" stroke-width="3" stroke-opacity="0.65" marker-end="url(#arwC)"/>
+  <text x="190" y="395" font-size="15" fill="#FFFFFF">3δ — lag ≈ 172° (nearly opposite)</text>
+
+  <!-- RIGHT: formula card -->
+  <rect x="470" y="70" width="300" height="86" rx="10" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="620" y="104" text-anchor="middle" font-size="19" font-weight="bold" fill="#FFFFFF">β = x / δ  (radians)</text>
+  <text x="620" y="136" text-anchor="middle" font-size="15" fill="#9BC4FF">≈ 57° of lag per standard depth</text>
+
+  <!-- RIGHT: signal phase fan -->
+  <text x="620" y="186" text-anchor="middle" font-size="15" fill="#FFFFFF">signal phase rotates with flaw depth</text>
+  <line x1="610" y1="330" x2="610" y2="212" stroke="#FFFFFF" stroke-width="3" marker-end="url(#arwC)"/>
+  <line x1="610" y1="330" x2="709" y2="266" stroke="#FFFFFF" stroke-width="3" stroke-opacity="0.85" marker-end="url(#arwC)"/>
+  <line x1="610" y1="330" x2="717" y2="378" stroke="#FFFFFF" stroke-width="3" stroke-opacity="0.65" marker-end="url(#arwC)"/>
+  <line x1="610" y1="330" x2="626" y2="447" stroke="#FFFFFF" stroke-width="3" stroke-opacity="0.5" marker-end="url(#arwC)"/>
+  <circle cx="610" cy="330" r="5" fill="#9BC4FF"/>
+
+  <path d="M 610,260 A 70,70 0 0 1 668.9,292.2" fill="none" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arwC2)"/>
+  <text x="648" y="247" font-size="14" fill="#9BC4FF">57° per δ</text>
+
+  <text x="610" y="202" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">surface flaw — 0°</text>
+  <text x="720" y="262" font-size="14" fill="#FFFFFF">1δ — 57°</text>
+  <text x="722" y="386" font-size="14" fill="#FFFFFF">2δ — 115°</text>
+  <text x="648" y="468" font-size="14" fill="#FFFFFF">3δ — 172°</text>
+
+  <text x="400" y="492" text-anchor="middle" font-size="15" fill="#9BC4FF">A flaw's signal carries the phase of the depth where it interrupts the currents — deeper flaw, more rotation.</text>
+</svg>

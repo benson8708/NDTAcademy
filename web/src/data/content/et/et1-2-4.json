@@ -1,0 +1,219 @@
+{
+ "lessonId": "et1-2-4",
+ "title": "Reading the Impedance Plane",
+ "narrationScript": "Every eddy current signal you will ever interpret lives on one picture: the impedance plane. Resistance runs along the horizontal axis, inductive reactance up the vertical, and your probe is a single bright dot. Each test variable pushes that dot in its own direction, and that direction is the information. Lift-off drags the dot toward the air point and is the biggest, fastest mover, so we rotate the display until it runs horizontal. Conductivity slides the operating point along the comma-shaped curve \u2014 titanium near the top, copper near the bottom \u2014 and raising frequency walks the point down it exactly as if conductivity had increased. A surface crack interrupts the currents and drives a sharp signal upward, well separated from lift-off. Deeper flaws answer later and weaker: phase lag rotates their signals about fifty-seven degrees per standard depth of penetration while amplitude shrinks. Permeability swings the dot harder than any flaw, which is why ferromagnetic parts get magnetically saturated. Read direction first, then amplitude: phase tells you what it is and how deep \u2014 amplitude tells you how much.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Plane Where Every Signal Lives",
+   "body": "Pull together what the last three lessons built. Your coil carries alternating current, so it owns a **primary magnetic field**. Hold that field against a conductor and it induces **eddy currents**; the eddy currents build a **secondary field** that opposes the primary; and that opposition arrives back at the coil terminals as a change in **impedance**. Impedance has exactly two parts \u2014 **resistance R** and **inductive reactance XL = 2\u03c0fL** \u2014 so everything that happens in the part reaches you as some combination of two numbers.\n\nTwo numbers define a point. Plot **R on the horizontal axis** and **XL on the vertical axis** and you have the **impedance plane**: a map on which the probe's condition at any instant is a single dot. The distance from the origin to the dot is the impedance magnitude **Z = \u221a(R\u00b2 + XL\u00b2)**; the angle it makes with the horizontal is the **phase angle \u03b8**.\n\nCouple the probe to a conductor and watch the dot move. Eddy-current losses pull energy from the coil, so **R rises**; the opposing secondary field cancels part of the flux, so **XL falls** below its air value. Every test variable \u2014 spacing, conductivity, a crack \u2014 pushes the dot in **its own characteristic direction**. Older meter-style instruments displayed only the magnitude as a needle swing, so a crack and a probe wobble could look identical. The modern **phase-analysis display** lets you **null** (balance) the dot at a chosen screen position and read both the **size and the direction** of every excursion. Direction is the new information \u2014 and this lesson is about learning those directions."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-2-4-fig-a",
+   "caption": "The normalized impedance plane: the comma-shaped conductivity curve runs from the air point down through titanium, stainless, aluminum, and copper; lift-off paths return to the air point; ferromagnetic material climbs above it."
+  },
+  {
+   "type": "text",
+   "heading": "The Conductivity Curve: One Map for Every Metal",
+   "body": "Raw R and XL values depend on the particular coil, so instruments and textbooks **normalize** the plane: subtract the coil's own wire resistance, then divide both axes by the empty-coil reactance **X0**. On the normalized plane every probe tells the same story. With the probe in air, the dot rests at the **air point** \u2014 normalized reactance 1.0, resistance 0.\n\nTouch the probe to metal and the dot lands somewhere on the **conductivity curve**, the comma-shaped locus that organizes every nonmagnetic conductor:\n\n- **Low-conductivity metals** sit near the top: titanium alloys around **1% IACS**, austenitic stainless steels around **2\u20133% IACS**.\n- **Aluminum alloys** occupy the middle-to-lower region \u2014 roughly **25\u201360% IACS** depending on alloy and temper.\n- **Copper** \u2014 **100% IACS** by definition of the International Annealed Copper Standard \u2014 sits far down the curve.\n\nNow the powerful part: the operating point's position depends on the **product of conductivity and frequency** (together with probe and part geometry). Raising the test frequency walks the dot down and around the curve exactly as if the metal had become more conductive. You cannot change the alloy \u2014 but you choose the frequency, which means **you choose where on the map you operate**. Why it matters: the angle between the lift-off direction and the conductivity curve **widens** as the point moves down the map, and separating variables from each other is the entire game of signal interpretation."
+  },
+  {
+   "type": "text",
+   "heading": "Lift-Off: Nuisance, Tool, and Reference Direction",
+   "body": "**Lift-off** is the change in electromagnetic coupling as the gap between probe and surface changes. On the map it has one fixed habit: from wherever the operating point sits, increasing lift-off drives the dot along a nearly straight path **back to the air point** \u2014 at large spacing, the part might as well not exist.\n\nThree facts make lift-off the first signal you must master:\n\n- **It is the biggest, fastest mover.** Coupling dies off steeply with distance, so the **first few thousandths of an inch** of gap produce the largest excursion. Probe wobble, paint steps, and surface roughness all speak in the lift-off direction.\n- **It is a nuisance** on crack searches \u2014 wobble noise can bury a flaw signal \u2014 which is why probes are spring-loaded, held square to the surface, and scanned with discipline.\n- **It is a tool** when spacing is exactly what you want to measure: calibrate the lift-off response and you have a **nonconductive coating-thickness gauge** for paint or anodic films over metal.\n\nBecause lift-off can never be eliminated, instruments give you a **phase rotation** control. The standard field convention: rotate the display until the lift-off trace runs **horizontally** \u2014 commonly moving left as the probe lifts. Conductivity meters, typically operating near **60 kHz** on aluminum alloys, exploit the same geometry: they work at an operating point where lift-off and conductivity separate cleanly, so small probe-spacing variations do not corrupt the %-IACS reading."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Null, lift, rotate \u2014 then trust your directions",
+   "body": "Set up the display the same way every time. **(1) Null** the dot on a known-good area of the reference standard. **(2) Lift** the probe and watch the trace move. **(3) Rotate** the phase control until that lift-off trace runs horizontally toward the left edge of the screen. **(4) Scan the reference notches** and set gain so the crack signal rises well up the screen. From that moment, direction has meaning: horizontal motion is spacing, a steep upward excursion is a surface crack, and a rotated, shrunken version of the crack signal is a flaw buried deeper."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-2-4-fig-b",
+   "caption": "Calibrated screen with lift-off rotated horizontal: spacing changes run left toward the air point, a surface crack rises steeply, and a subsurface flaw appears rotated clockwise and smaller because of phase lag."
+  },
+  {
+   "type": "text",
+   "heading": "Phase Tells Depth, Amplitude Tells How Much",
+   "body": "A crack is a wall across the current's path. Eddy currents flow in closed loops parallel to the coil winding; a surface crack forces them to **divert around and beneath it**, which both lowers the effective conductivity the coil sees and disturbs the coupling. The result is a sharp signal at a **distinct angle** from lift-off \u2014 with the standard rotation, the trace rises steeply as the coil crosses the crack and returns as it leaves. **Amplitude** scales with how much current the flaw interrupts: longer, deeper cracks interrupt more and swing harder.\n\nDepth is written in the **phase**. Current flowing deeper in the part **lags** the surface current by **\u03b2 = x/\u03b4 radians \u2014 about 57\u00b0 per standard depth of penetration** \u2014 while its density decays to **37% at 1\u03b4** and about **14% at 2\u03b4**. So a subsurface flaw answers later and weaker: its signal is **rotated** away from the surface-crack direction (clockwise on the common setup) and **smaller** for the same metal loss. That rotation is your depth gauge \u2014 in heat-exchanger tube testing, the phase angle of a signal is read against a calibration curve to report through-wall depth. The practical limit: beyond the **effective depth of penetration, about 3\u03b4**, only ~5% of the current density remains \u2014 too little to interrogate anything, so frequency must be chosen for the depth you need.\n\nOne more mover you must recognize on sight: **ferromagnetic material**. Permeability multiplies the coil's inductance, swinging the dot hard in the **reactance direction** \u2014 above the air point on the map \u2014 and ordinary permeability variations from heat treatment or cold work produce signals that **dwarf flaw responses**. The fix is **magnetic saturation**: a strong DC field drives the relative permeability toward 1 so the steel behaves like a nonmagnetic conductor while it is tested."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-2-4-fig-c",
+   "caption": "Phase lag through the thickness: current density falls to 37% at one standard depth of penetration and lags 57\u00b0, so the same flaw moved one \u03b4 deeper produces a rotated, weaker screen signal."
+  },
+  {
+   "type": "table",
+   "caption": "Impedance-plane response quick card \u2014 display convention: lift-off rotated horizontal, pointing left.",
+   "headers": [
+    "Variable",
+    "Direction on the screen",
+    "Character of the signal"
+   ],
+   "rows": [
+    [
+     "Lift-off / probe wobble",
+     "Horizontal, toward the air point",
+     "Large and fast; repeats with every probe lift; first few mils of gap move it most"
+    ],
+    [
+     "Conductivity change",
+     "Along the conductivity curve",
+     "Slow drift between alloys, tempers, or heat-treat conditions \u2014 not a sharp flick"
+    ],
+    [
+     "Surface crack",
+     "Rises steeply, well separated from lift-off",
+     "Sharp excursion and return as the coil crosses; grows with crack depth and length"
+    ],
+    [
+     "Subsurface flaw",
+     "Rotated farther by phase lag (\u224857\u00b0 per \u03b4 of depth)",
+     "Smaller than a surface flaw of the same size; rotation increases with depth"
+    ],
+    [
+     "Permeability (ferromagnetic part)",
+     "Strongly in the reactance direction, above the air point",
+     "Very large and erratic; suppress with magnetic saturation"
+    ],
+    [
+     "Wall thinning",
+     "Along its own thickness locus, distinct from lift-off",
+     "Gradual; visible only while the wall is within roughly 3\u03b4"
+    ],
+    [
+     "Edge effect",
+     "Large, repeatable sweep as the probe nears an edge",
+     "Predictable from geometry \u2014 keep a fixed scan path or use a shielded probe"
+    ]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-2-4-fig-a",
+   "title": "The normalized impedance plane and conductivity curve",
+   "file": "et1-2-4-fig-a.svg"
+  },
+  {
+   "id": "et1-2-4-fig-b",
+   "title": "Screen signatures with lift-off rotated horizontal",
+   "file": "et1-2-4-fig-b.svg"
+  },
+  {
+   "id": "et1-2-4-fig-c",
+   "title": "Phase lag: depth rotates and shrinks the signal",
+   "file": "et1-2-4-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Which Trace Is the Probe Wobble?",
+  "intro": "Same setup as the recognition card: aluminum skin, nulled on clean bare metal, lift-off rotated horizontal. Halfway down the scan your wrist rocks and the probe tilts slightly off the surface \u2014 twice. Click the trace that motion produces.",
+  "figureId": "et1-2-4-fig-b",
+  "regions": [
+   {
+    "x": 105,
+    "y": 298,
+    "w": 265,
+    "h": 72,
+    "label": "Horizontal trace running left",
+    "isTarget": true,
+    "feedback": "Correct. A wobble is a spacing change, and every spacing change speaks in the lift-off direction \u2014 horizontal on this setup, headed for the air point. That is exactly why we rotate lift-off flat: rocking probes and paint steps stay horizontal while cracks break upward."
+   },
+   {
+    "x": 412,
+    "y": 318,
+    "w": 76,
+    "h": 66,
+    "label": "Bright dot",
+    "isTarget": false,
+    "feedback": "That is the null point \u2014 the balanced resting position you parked the dot at on clean metal. It is where signals start from, not a signal itself."
+   },
+   {
+    "x": 372,
+    "y": 88,
+    "w": 88,
+    "h": 205,
+    "label": "Steep upward lobe",
+    "isTarget": false,
+    "feedback": "This steep excursion is the surface-crack direction, deliberately separated in phase from lift-off. A rocking wrist cannot draw this trace \u2014 that separation is the entire reason the display is set up this way."
+   },
+   {
+    "x": 480,
+    "y": 185,
+    "w": 112,
+    "h": 128,
+    "label": "Rotated, smaller lobe",
+    "isTarget": false,
+    "feedback": "This lobe is rotated clockwise from the surface-crack direction and smaller \u2014 the signature of a flaw below the surface answering with phase lag, not a spacing change. Wobble lives on the horizontal lift-off line."
+   }
+  ],
+  "coordH": 500
+ },
+ "checkQuestions": [
+  {
+   "question": "On a standard impedance-plane display, the two axes represent:",
+   "options": [
+    "Coil voltage and coil current",
+    "Resistance (horizontal) and inductive reactance (vertical)",
+    "Test frequency and signal amplitude",
+    "Conductivity and permeability"
+   ],
+   "correct": 1,
+   "explanation": "Coil impedance has exactly two components \u2014 resistance R and inductive reactance XL = 2\u03c0fL. Plotting R horizontally and XL vertically turns the probe's electrical state into a single dot whose excursions carry both magnitude and phase information."
+  },
+  {
+   "question": "While scanning an aluminum part, the probe lifts slightly off the surface. On the normalized impedance plane, the operating point moves:",
+   "options": [
+    "Down the conductivity curve toward the copper position",
+    "Vertically upward, far above the air point",
+    "Along the lift-off path toward the air point",
+    "Nowhere \u2014 spacing changes do not affect the coil"
+   ],
+   "correct": 2,
+   "explanation": "Increasing the gap weakens coupling, so the dot retreats along a nearly straight lift-off path that always terminates at the air point \u2014 at large spacing the part effectively is not there. Movement above the air point is a permeability effect, not lift-off."
+  },
+  {
+   "question": "With the same probe on the same nonmagnetic part, raising the test frequency moves the operating point:",
+   "options": [
+    "Back toward the air point",
+    "Above the air point, onto the ferromagnetic branch",
+    "Nowhere \u2014 frequency only changes signal amplitude",
+    "Down and around the conductivity curve, the same direction as a conductivity increase"
+   ],
+   "correct": 3,
+   "explanation": "The operating point's position depends on the product of conductivity and frequency, so raising f walks the dot down the comma-shaped curve exactly as if conductivity had increased \u2014 and the phase separation between lift-off and flaw signals improves lower on the map."
+  },
+  {
+   "question": "Compared with a surface crack of similar size, the signal from a subsurface flaw is:",
+   "options": [
+    "Rotated by phase lag \u2014 about 57\u00b0 per standard depth of penetration \u2014 and smaller in amplitude",
+    "Identical, because flaw depth does not change the signal",
+    "Larger, because more metal surrounds the flaw",
+    "Aligned exactly with the lift-off direction"
+   ],
+   "correct": 0,
+   "explanation": "Currents deeper in the part lag the surface current by \u03b2 = x/\u03b4 (\u224857\u00b0 per \u03b4) and their density decays to 37% at 1\u03b4, so deeper flaws produce rotated, weaker signals. That predictable rotation is the basis of phase-angle depth sizing."
+  },
+  {
+   "question": "Scanning a steel (ferromagnetic) fitting, you see large, erratic signals swinging mostly in the reactance direction across the whole part, masking the reference-notch response. The most likely cause and standard remedy are:",
+   "options": [
+    "Edge effect \u2014 increase the scanning speed",
+    "Permeability variations \u2014 apply magnetic saturation with a strong DC field",
+    "Probe wobble \u2014 simply hold the probe more steadily",
+    "Conductivity drift \u2014 recalibrate the conductivity meter"
+   ],
+   "correct": 1,
+   "explanation": "Permeability multiplies coil inductance, driving the dot strongly in the reactance direction above the air point, and normal heat-treat or cold-work variations swamp flaw signals. Saturating the part with a DC field flattens relative permeability toward 1 so it tests like a nonmagnetic conductor. Wobble would appear in the lift-off direction, and edge effect appears only near edges."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Theory Course \u00a72.1.1\u20132.1.3 (eddy current generation, impedance changes, and instrument response)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing Method \u2014 Level I topical outline",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method",
+  "ASTM E309, Standard Practice for Eddy Current Examination of Steel Tubular Products Using Magnetic Saturation"
+ ]
+}

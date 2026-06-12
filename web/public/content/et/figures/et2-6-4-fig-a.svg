@@ -1,0 +1,71 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Inside the Instrument: The Complete Signal Chain</text>
+
+  <!-- ============ ROW A ============ -->
+  <!-- Block 1: Oscillator -->
+  <rect x="50" y="90" width="180" height="80" rx="8" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="140" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">1 · OSCILLATOR</text>
+  <text x="140" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">sets test frequency</text>
+  <text x="140" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">and drive level</text>
+
+  <!-- Block 2: Coil + balance -->
+  <rect x="310" y="90" width="180" height="80" rx="8" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="400" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">2 · COIL + BALANCE</text>
+  <text x="400" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">probe in a bridge —</text>
+  <text x="400" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">null the standing signal</text>
+
+  <!-- Block 3: Amplifier -->
+  <rect x="570" y="90" width="180" height="80" rx="8" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="660" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">3 · AMPLIFIER</text>
+  <text x="660" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">gain for signals</text>
+  <text x="660" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">now worth amplifying</text>
+
+  <!-- Row A arrows -->
+  <line x1="230" y1="130" x2="298" y2="130" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="310,130 296,123 296,137" fill="#0B1F3A"/>
+  <line x1="490" y1="130" x2="558" y2="130" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="570,130 556,123 556,137" fill="#0B1F3A"/>
+
+  <!-- Bend: amplifier down to phase detector -->
+  <line x1="660" y1="170" x2="660" y2="288" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="660,300 653,286 667,286" fill="#0B1F3A"/>
+
+  <!-- Phase reference dashed path: oscillator -> phase detector -->
+  <line x1="140" y1="170" x2="140" y2="250" stroke="#1E66F5" stroke-width="2" stroke-dasharray="7 5"/>
+  <line x1="140" y1="250" x2="730" y2="250" stroke="#1E66F5" stroke-width="2" stroke-dasharray="7 5"/>
+  <line x1="730" y1="250" x2="730" y2="288" stroke="#1E66F5" stroke-width="2" stroke-dasharray="7 5"/>
+  <polygon points="730,300 723,286 737,286" fill="#1E66F5"/>
+  <rect x="240" y="220" width="400" height="22" fill="#FFFFFF" opacity="0.9"/>
+  <text x="440" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">phase reference — the same oscillator drives coil and detector</text>
+
+  <!-- ============ ROW B ============ -->
+  <!-- Block 4: Phase-sensitive detector -->
+  <rect x="570" y="300" width="180" height="80" rx="8" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="660" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">4 · PHASE DETECTOR</text>
+  <text x="660" y="348" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">resolves X and Y —</text>
+  <text x="660" y="366" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">phase becomes readable</text>
+
+  <!-- Block 5: Filters + ADC -->
+  <rect x="310" y="300" width="180" height="80" rx="8" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="400" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">5 · FILTERS + ADC</text>
+  <text x="400" y="348" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">pass flaw rates, reject</text>
+  <text x="400" y="366" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">noise — then digitize</text>
+
+  <!-- Block 6: Display + gates -->
+  <rect x="50" y="300" width="180" height="80" rx="8" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="140" y="325" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">6 · DISPLAY + GATES</text>
+  <text x="140" y="348" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">impedance plane, sweep,</text>
+  <text x="140" y="366" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">alarms, marker outputs</text>
+
+  <!-- Row B arrows (right to left) -->
+  <line x1="570" y1="340" x2="502" y2="340" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="490,340 504,333 504,347" fill="#0B1F3A"/>
+  <line x1="310" y1="340" x2="242" y2="340" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="230,340 244,333 244,347" fill="#0B1F3A"/>
+
+  <!-- Footer -->
+  <rect x="50" y="412" width="700" height="64" rx="8" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="400" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">A flaw signal must survive every link to reach the screen.</text>
+  <text x="400" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">Balance before gain — digitize fast enough for the scan — prove the whole chain at production speed.</text>
+</svg>

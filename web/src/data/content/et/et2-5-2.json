@@ -1,0 +1,193 @@
+{
+ "lessonId": "et2-5-2",
+ "title": "Liftoff",
+ "narrationScript": "Lift-off is the impedance change produced when the spacing between a surface coil and the part changes, and it is the strongest, fastest signal most surface probes ever generate. Coupling falls off steeply, almost exponentially, so the first tenth of a millimetre of gap moves the dot more than the next half millimetre does. On the impedance plane, every lift-off locus leaves the operating point and heads for the air point, and the angle between lift-off and a crack response opens as frequency pushes the operating point down the conductivity curve. That angle is your working room. Null on the part, lift onto a thin shim, rotate the trace flat, and evaluate the vertical channel. Then prove your notch response still survives the maximum expected coating. Lift-off is also a tool. Hold the coil off the metal with a nonconductive coating, and the dot's position along the lift-off locus reads coating thickness, calibrated with certified shims on bare base metal under ASTM E376.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Lift-Off: The Coupling Variable You Touch Most",
+   "body": "**Lift-off** is the impedance change produced when the spacing between a surface coil and the test surface varies — ASTM E1316 frames the liftoff effect as a change in test-system output caused by a change in **magnetic coupling** between probe and part as their separation changes. It is the surface-probe twin of the fill factor you studied in the last lesson: identical physics, flat geometry instead of encircling.\n\nThe coil's field is densest right at its face, so coupling collapses **steeply and nonlinearly** — close to exponentially — as the gap opens:\n\n- The first **0.05–0.1 mm** of separation moves the dot farther than the next half millimetre does.\n- A surface coil runs out of useful coupling within a gap on the order of its **own diameter** — for a 3-mm pencil-probe coil, a couple of millimetres of air is electrical infinity.\n- Anything that changes the effective gap writes the signal: hand wobble, probe **tilt** (lift-off across one side of the coil face), paint and primer thickness variation, scale, surface roughness, and curvature the probe cannot follow.\n\nWhy Level II owns this variable: in surface scanning, lift-off is almost always the **largest noise source on the screen**. A few hundredths of a millimetre of hand wobble can rival the response of the crack you were hired to find. Every surface-probe setup you sign will therefore handle lift-off twice — suppress it where it is noise, and read it where it is measurement."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-5-2-fig-a",
+   "caption": "Every lift-off locus leaves its operating point and ends at the air point — and the phase separation Δφ between lift-off and the conductivity/defect directions opens as the operating point moves down the curve."
+  },
+  {
+   "type": "text",
+   "heading": "Amplitude and Phase: How the Dot Moves",
+   "body": "Seat an absolute surface probe on a nonmagnetic part and coupling is at maximum: eddy currents are strongest, their secondary field depresses the coil's inductive reactance and raises its effective resistance, and the dot sits at the material's **operating point** on the conductivity curve. Now open the gap and watch both halves of the signal.\n\n- **Amplitude:** the dot retraces along the **lift-off locus** toward the **air point** — normalized reactance climbs back toward 1 while resistance falls away. Equal increments of gap produce **successively smaller excursions**: sensitivity is greatest at contact and dies off as the probe rises, which is exactly why near-contact wobble is so loud.\n- **Phase:** at the operating point, the lift-off direction differs from the conductivity direction — and from defect responses — by an angle set by **where the operating point sits**. Near the top of the curve the directions nearly coincide; move down the curve (raise the frequency, or test a higher-conductivity metal) and the separation opens.\n\nFrequency selection is therefore **angle selection**. For aluminum surface-crack work, the test frequency is chosen to push the separation between lift-off and the crack response toward a usable maximum — ideally approaching 90° — so a crack still stands up after lift-off is laid flat.\n\nTwo extensions a Level II must carry. On **ferromagnetic** parts the operating point sits *above* the air point (permeability raises reactance), so the lift-off locus runs *downward* to the air point and tangles with permeability noise — magnetic saturation, next lesson, is the cure. And in **bobbin-coil tube testing** the same coupling physics appears as fill factor: **probe wobble** is lift-off by another name, and it is the classic noise source in tube data."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Lift-off: enemy and tool",
+   "body": "The same locus does two jobs. **Enemy:** when you hunt cracks, lift-off is the dominant noise — null on the part, rotate the lift-off excursion onto the horizontal axis, and evaluate the vertical channel. **Tool:** when you measure nonconductive coating thickness, lift-off *is* the signal — the dot's position along the locus reads the gap directly. One curve, two jobs: suppression and measurement."
+  },
+  {
+   "type": "text",
+   "heading": "Compensation: Rotation, Vertical Evaluation, Hardware",
+   "body": "The standard surface-scan compensation is **phase rotation**, and it is defined by a controlled excursion — never by eye:\n\n- **Null on the part**, away from edges and fasteners, with the probe seated flat.\n- **Lift onto a nonconductive shim** of defined thickness — 0.1 mm is typical; use the maximum expected coating thickness when paint is in play.\n- **Rotate the display** until the excursion runs horizontal, conventionally leaving the null to the left. Re-seat and confirm the trace hugs the baseline.\n- **Evaluate and alarm on the vertical (Y) component.** Box gates and threshold alarms watch Y; the X channel absorbs the wobble.\n\nTwo cautions before you trust it. The full lift-off locus is **curved**, so only the near-contact working portion can be made flat — re-set the rotation after any probe, cable, or frequency change. And vertical-only evaluation **discards every signal component parallel to lift-off**: a defect whose phase lies near the lift-off direction loses amplitude or vanishes. Prove the separation on your reference standard's EDM notches — through a shim equal to the maximum coating — before the first scan, not after the last one.\n\nHardware carries the rest. **Spring-loaded probe bodies** hold contact force constant. **Wear caps** add a small *constant* standoff, which is acceptable because it is constant — null and standardize with the cap installed. Templates and **circle guides** steady the path around fastener heads, and conformable shoes manage curvature. Meter-type crack detectors and conductivity instruments carry built-in **lift-off compensation** — an operating point chosen so small gap changes barely move the reading — and in automated rotating-scanner and tube work, wobble's low signal frequency lets **filtering** and multifrequency mixing strip it away from the sharp defect channel."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-5-2-fig-b",
+   "caption": "Phase rotation with a defined excursion: the 0.1 mm shim signal is laid onto the horizontal axis, leaving the crack response to rise into the vertical alarm channel."
+  },
+  {
+   "type": "text",
+   "heading": "Lift-Off as a Tool: Coating Thickness",
+   "body": "A nonconductive coating is **frozen lift-off**: it holds the coil exactly its own thickness off the metal. Calibrate that relationship and the impedance plane becomes a micrometer for paint and anodize.\n\nThe governing practice is **ASTM E376**, and its discipline is the lesson:\n\n- **Calibrate on the bare base metal** — same alloy and temper (conductivity moves the locus), same curvature, and base metal thicker than the effective depth of penetration or backed consistently.\n- **Use certified nonconductive shims** spanning the expected range, zeroed at contact, with verification points across the range and periodic re-checks.\n- **Respect geometry:** stay away from edges, and calibrate on the curvature you will measure — a convex surface does not read like the flat plate that calibrated you.\n- **Work the steep end.** The response is steep for thin coatings and flattens as the gap grows, so resolution is best exactly where aircraft paint systems live — tenths of a millimetre. Relatively high test frequencies maximize lift-off sensitivity for this job.\n\nThe same thinking guards your conductivity work. **ASTM E1004** permits %IACS measurement through a thin nonconductive coating only within the instrument's demonstrated **lift-off compensation**: place a shim equal to the maximum coating on the bare conductivity standard and show the reading shift stays inside procedure limits. The spec sheet claims compensation; your standardization proves it."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-5-2-fig-c",
+   "caption": "A nonconductive coating is frozen lift-off: calibrated with certified shims on the bare base metal, the dot's travel along the lift-off locus reads coating thickness — steep and precise when thin, flattening as the gap grows."
+  },
+  {
+   "type": "table",
+   "caption": "Where lift-off shows up in the field — and the working countermeasure.",
+   "headers": ["Situation", "What lift-off does", "Working countermeasure"],
+   "rows": [
+    ["Free-hand scanning for surface cracks", "Baseline wander along the rotated horizontal axis", "Spring-loaded probe, steady pressure, lift-off rotated flat, Y-channel evaluation"],
+    ["Paint/primer thickness varies along a lap joint", "Slow drift — and sensitivity loss through thick paint", "Null mid-joint; prove notch response through a shim equal to maximum coating"],
+    ["Probe wear protection (wear cap)", "Small constant standoff and some signal loss", "Acceptable because constant — null and standardize with the cap installed"],
+    ["Curved or rough surfaces", "Effective gap varies across the coil face (tilt)", "Matched shoes and guides; probe size per procedure; standardize on like geometry"],
+    ["Scanning around fastener heads", "Wobble loops that mimic flaw signals", "Circle templates and guides; compare every call against the reference standard"],
+    ["Bobbin coil in tubing", "Probe wobble — the fill-factor/lift-off analog", "Well-fitted probe and centering devices; differential mode and filtering suppress slow wobble"],
+    ["Coating thickness measurement", "Lift-off is the measurand", "Certified shims on bare base metal per ASTM E376; work the steep end of the curve"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-5-2-fig-a",
+   "title": "Lift-off on the normalized impedance plane",
+   "file": "et2-5-2-fig-a.svg"
+  },
+  {
+   "id": "et2-5-2-fig-b",
+   "title": "Phase rotation: lift-off flat, defects vertical",
+   "file": "et2-5-2-fig-b.svg"
+  },
+  {
+   "id": "et2-5-2-fig-c",
+   "title": "Coating thickness from the lift-off locus",
+   "file": "et2-5-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Painted Lap Joint: Lift-Off in the Field",
+  "intro": "You are scanning a painted aluminum lap joint for surface cracks at the fastener rows — shielded absolute surface probe, 200 kHz, impedance-plane display. Work each decision before you click.",
+  "steps": [
+   {
+    "prompt": "Frequency and gain are set. The procedure requires lift-off compensation. Your next action:",
+    "options": [
+     "Null in air, then rotate until the dot stops moving",
+     "Null on the part away from fasteners, lift onto a 0.1 mm shim, and rotate the excursion horizontal",
+     "Rotate the display 90° first, then null wherever the dot lands",
+     "Skip rotation — the shielded probe is immune to lift-off"
+    ],
+    "correct": 1,
+    "feedback": "Rotation is defined by a controlled excursion from an on-part null: null seated flat, lift onto the shim, rotate the trace flat (convention: the dot exits left). Shielding narrows the field's footprint; it does not remove the coupling's dependence on gap."
+   },
+   {
+    "prompt": "Scanning the row, the dot wanders left and right along the baseline; the vertical channel stays quiet. What are you seeing?",
+    "options": [
+     "Multiple shallow cracks",
+     "Conductivity variation in the sheet",
+     "Paint-thickness variation and hand wobble — compensated lift-off doing exactly what it should",
+     "Instrument drift that requires re-nulling before each reading"
+    ],
+    "correct": 2,
+    "feedback": "Horizontal wander with a quiet Y channel is the rotated lift-off signature — paint and wobble ride the X axis. Cracks or conductivity changes would put energy into the vertical component."
+   },
+   {
+    "prompt": "At one fastener a sharp signal rises steeply into the vertical channel and repeats on re-scan. Your move as a Level II:",
+    "options": [
+     "Re-scan and compare its amplitude and phase against the EDM-notch response on the reference standard before classifying",
+     "Reduce the gain until the signal stays below the alarm",
+     "Ignore it — vertical signals near fasteners are always geometry",
+     "Mark the part rejected; no comparison needed"
+    ],
+    "correct": 0,
+    "feedback": "Evaluation means comparison against standardization: repeatability, then amplitude and phase against known notches. Turning gain down to silence an indication is falsification; auto-rejecting without comparison is almost as bad."
+   },
+   {
+    "prompt": "Paint on this joint can reach 0.25 mm, but your notch standard is bare metal. Before reporting the joint clean, you must:",
+    "options": [
+     "Do nothing — rotation already compensated for the paint",
+     "Sand a witness strip of paint off every joint",
+     "Double the gain across the whole inspection",
+     "Demonstrate the notch still gives an evaluable vertical response through a 0.25 mm shim on the standard"
+    ],
+    "correct": 3,
+    "feedback": "Rotation hides the lift-off signal; it does not restore the sensitivity that the coating's standoff costs you. The shim demonstration proves detection through maximum coating — the difference between a clean report and a hopeful one."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A surface probe on a nonmagnetic part lifts slowly away from the surface. On the normalized impedance plane, the operating point:",
+   "options": [
+    "Slides down the conductivity curve toward the copper end",
+    "Moves straight toward the origin (0, 0)",
+    "Retraces along the lift-off locus toward the air point — normalized reactance rises toward 1 while resistance falls",
+    "Stays fixed, because probe spacing is mechanical rather than electrical"
+   ],
+   "correct": 2,
+   "explanation": "Opening the gap weakens magnetic coupling, so the coil's impedance returns toward its empty-coil values: the dot travels the lift-off locus, and every such locus ends at the air point."
+  },
+  {
+   "question": "Equal 0.05 mm increments of additional lift-off produce:",
+   "options": [
+    "Successively smaller signal excursions — sensitivity is greatest near contact and decays steeply with gap",
+    "Equal excursions, since the increments are equal",
+    "Successively larger excursions as the coil approaches its air value",
+    "No change until the probe fully leaves the part's magnetic field"
+   ],
+   "correct": 0,
+   "explanation": "Coupling falls off nonlinearly — close to exponentially — with spacing. The first fraction of a millimetre moves the dot most, which is why near-contact wobble is the loudest noise in surface scanning."
+  },
+  {
+   "question": "The standard setup for suppressing lift-off noise during impedance-plane surface scanning is:",
+   "options": [
+    "Null in air and reduce the gain until wobble disappears",
+    "Select the lowest available test frequency so lift-off vanishes",
+    "Filter out every signal below the alarm threshold in both channels",
+    "Null on the part, lift onto a thin nonconductive shim, rotate the excursion onto the horizontal axis, and evaluate the vertical component"
+   ],
+   "correct": 3,
+   "explanation": "Rotation is set with a defined on-part excursion so lift-off rides the X axis while defect responses retain a vertical component. Gain starvation and frequency tricks sacrifice the defect signal along with the noise — lift-off never vanishes."
+  },
+  {
+   "question": "After rotating lift-off horizontal and gating only the vertical channel, the risk a Level II must control is:",
+   "options": [
+    "The air point will drift off screen during the scan",
+    "A defect whose signal phase lies close to the lift-off direction loses amplitude or disappears — separation must be proven on reference notches",
+    "The instrument can no longer measure conductivity at any frequency",
+    "Lift-off will reverse direction and read as a crack"
+   ],
+   "correct": 1,
+   "explanation": "Vertical-only evaluation discards everything parallel to lift-off. Frequency is chosen — and verified on the reference standard, through a shim simulating maximum coating — to keep defect responses angularly separated from lift-off."
+  },
+  {
+   "question": "When measuring nonconductive coating thickness on an aluminum part by the eddy current (lift-off) method, ASTM E376 practice requires calibration:",
+   "options": [
+    "In air, since the air point anchors the lift-off locus",
+    "On any convenient conductive block, since lift-off is material-independent",
+    "On the bare base metal of the same alloy and geometry, using certified nonconductive shims spanning the expected range",
+    "At a single mid-range thickness, because the response is linear"
+   ],
+   "correct": 2,
+   "explanation": "The lift-off locus depends on the substrate's conductivity, curvature, and thickness, and the response is nonlinear — so calibration uses matching bare base metal with certified shims across the range, verified periodically."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II Technique Course §5.2 (coupling — liftoff)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing method — Level II training topic basis",
+  "ASTM E376, Standard Practice for Measuring Coating Thickness by Magnetic-Field or Eddy-Current (Electromagnetic) Testing Methods",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy-Current) Method (lift-off compensation provisions)"
+ ]
+}

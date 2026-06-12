@@ -1,0 +1,190 @@
+{
+ "lessonId": "et2-2-1",
+ "title": "Test Part Factors: Conductivity and Permeability",
+ "narrationScript": "Every eddy current signal is the coil reporting a change in its own impedance, and at Level Two you should know which way the operating point will move before the probe does. This lesson covers the two properties the test part owns: conductivity and permeability. On the normalized impedance plane, every nonmagnetic alloy lands on one comma-shaped conductivity curve. Raise conductivity and the point sweeps down and around that curve, away from the air point, because stronger eddy currents cancel more of the coil's flux. Low-conductivity metals like titanium crowd the air point; copper rides the lower limb. Frequency slides every alloy along the same curve, because position follows the product of frequency, conductivity, and permeability. Ferromagnetic parts break the pattern: relative permeability in the hundreds multiplies flux, drives reactance above the air point, collapses depth of penetration, and buries conductivity and flaw signals under permeability noise. The cure is magnetic saturation, which forces steel to behave like a nonmagnetic conductor. And remember the knee of the curve — it is where lift-off and conductivity separate best.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Every Signal Is an Impedance Story",
+   "body": "An eddy current instrument measures exactly one thing: the **impedance of the test coil** — **Z = R + jXL**, resistance plus inductive reactance. Everything the method will ever tell you arrives as a move of one dot on the impedance plane.\n\nThe physics is a transformer. The coil is the primary; the conductive test part acts as a shorted, single-turn secondary. Two things happen the instant they couple:\n\n- The eddy currents' secondary field **opposes the coil's primary flux** (Lenz's law). Less net flux links the coil, so inductance — and **XL = ωL** — falls.\n- The eddy currents dissipate **I²R heat** in the part. That energy is drawn from the coil circuit, so the coil's apparent **resistance rises**.\n\nThis *reflected impedance* is the entire measurement chain: anything that changes how eddy currents flow in the part changes the coil's impedance, and nothing else does.\n\nThis module catalogs those factors. The **test part** owns conductivity and permeability (this lesson) plus mass, geometry, and homogeneity (next two lessons). The **test system** owns frequency, coupling, and field strength. Level I learned what each factor does. Level II — the evaluation level — is expected to **predict the direction of the move before the probe makes it**, because direction is what separates a temper change from lift-off, and a crack from a permeability swing."
+  },
+  {
+   "type": "text",
+   "heading": "Conductivity: What Moves It — and How You Defend a Reading",
+   "body": "Conductivity is graded in **% IACS**: 100% is annealed, commercially pure copper at 20 °C (about 58 MS/m; resistivity 1.7241 µΩ·cm). A Level II needs more than the definition — you need to know what *moves* a material's conductivity, because every mover is either information or error:\n\n- **Alloying.** Foreign atoms scatter electrons. Commercially pure aluminum runs about **61% IACS**; fully alloyed 2024-T4 drops to about **30%**.\n- **Heat treatment and temper.** What is dissolved in the lattice versus precipitated out changes electron scattering. The working aerospace example: **7075-T6 reads about 32% IACS, while overaged 7075-T73 reads about 40%** — that separation is the entire basis of eddy current heat-treat verification, and it catches heat and fire damage the eye cannot see.\n- **Cold work and residual stress.** Smaller shifts, but real — enough to matter near tight acceptance bands.\n- **Temperature.** Warming a metal lowers its conductivity: near room temperature, pure copper and aluminum lose roughly **0.4% of their conductivity (relative) per °C**. Alloys are less sensitive, but a sun-soaked skin measured against a shop-temperature standard can easily read a point or two of %IACS low.\n\nThe measurement discipline comes from **ASTM E1004**: standardize on **two certified standards that bracket** the expected value, keep probe, part, and standards at the **same temperature**, measure on a flat, clean, dry surface away from edges, and tolerate coatings only within your procedure's lift-off limits. A conductivity shift is either a *signal* — temper, alloy mix-up, heat damage — or a *systematic error* — temperature, lift-off, edge. Telling those apart is precisely the Level II job."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-2-1-fig-a",
+   "caption": "Every nonmagnetic alloy lands on one normalized conductivity curve, positioned by the product f × σ × μ. Lift-off points toward the air point, ferromagnetic parts ride above it, and the knee gives the best angular separation."
+  },
+  {
+   "type": "text",
+   "heading": "Reading the Conductivity Curve Like a Level II",
+   "body": "Raw coil impedance depends on the coil you happen to hold. Normalize it — subtract the winding's own resistance, then divide both axes by the empty-coil reactance **ωL₀** — and the clutter disappears: the air point sits at **(0, 1.0)** and every nonmagnetic alloy falls on **one comma-shaped curve** that serves every similar probe.\n\nAs conductivity rises, the operating point sweeps **down and around** the curve, away from the air point. Watch the resistance axis: it **rises, then falls**. Mid-curve, the part absorbs maximum energy from the coil. Push toward the perfect-conductor limit and the eddy currents become nearly lossless — the reflected resistance fades and the curve curls back toward the reactance axis. A perfect conductor wastes no energy.\n\nThree working consequences:\n\n- **Position depends on the product f × σ × μ**, not on conductivity alone. Raising frequency slides every alloy farther down the same curve — copper at 5 kHz occupies roughly the spot Ti-6Al-4V occupies at 500 kHz. Identity comes from position *plus* instrument settings, never position alone.\n- **Low-conductivity alloys crowd the air point.** Titanium alloys (≈1% IACS) and austenitic stainless (≈2.5%) sit nearly on top of each other at low frequency; separating them takes more frequency.\n- **The knee is prime real estate.** At the mid-curve bend, the angle between the lift-off direction and the conductivity direction is greatest, so the two variables are easiest to tell apart. That is why conductivity meters — typically operating near **60 kHz** — are designed to put aluminum alloys at the knee."
+  },
+  {
+   "type": "table",
+   "caption": "Representative room-temperature values. Conductivities are typical; certified standards and your written procedure govern acceptance.",
+   "headers": ["Material", "Conductivity (% IACS)", "Relative permeability μr", "Where it sits on the plane"],
+   "rows": [
+    ["Copper (annealed)", "100 — the IACS definition", "≈ 1", "Lower limb"],
+    ["Aluminum (commercially pure)", "≈ 61", "≈ 1", "Just below the knee"],
+    ["6061-T6", "≈ 42–47", "≈ 1", "Knee region"],
+    ["7075-T6 / 7075-T73", "≈ 32 / ≈ 40", "≈ 1", "Mid-curve — temper separates them"],
+    ["2024-T4", "≈ 30", "≈ 1", "Mid-curve"],
+    ["Cartridge brass (70-30)", "≈ 28", "≈ 1", "Mid-curve"],
+    ["304 stainless (annealed)", "≈ 2.5", "≈ 1 (cold work can raise it)", "Crowded near the air point"],
+    ["Ti-6Al-4V", "≈ 1", "≈ 1", "Hard against the air point"],
+    ["Carbon steel", "≈ 3–10", "50 to several thousand — and variable", "Above the air point until saturated"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Permeability: The Flux Multiplier That Buries Everything",
+   "body": "**Magnetic permeability** is flux density per unit of magnetizing force, **μ = B/H**, normalized to free space as **relative permeability μr**. For copper, aluminum, titanium, and annealed austenitic stainless, μr differs from 1 by parts per million — call it 1 and move on.\n\n**Ferromagnetic** materials — iron, nickel, cobalt, carbon and low-alloy steels, 400-series stainless — are a different test. Their μr runs from about **50 into the thousands**, and it is **not a constant**: it changes with the applied field strength, with heat treatment and microstructure, with mechanical stress, and with the part's magnetic history. Three consequences land at once:\n\n- **Reactance climbs.** The part concentrates the coil's flux instead of just opposing it, so inductance jumps and the operating point rises **above the air point** — roughly the opposite of the conductivity direction at the knee.\n- **Penetration collapses.** Permeability sits under the radical: **δ = 1/√(πfμσ)**. Carbon steel at 100 kHz (σ ≈ 10% IACS, effective μr ≈ 100) has δ ≈ **0.07 mm**; were it nonmagnetic at the same conductivity, δ would be about **0.66 mm**. The factor is exactly √μr = 10.\n- **Permeability noise swamps the channel.** μr varies point-to-point with hardness banding, cold work, and residual stress, generating signals that dwarf conductivity changes and most flaw responses. Unsaturated, a steel part mostly shows you its magnetic microstructure — not its defects.\n\nOne sting for the 'nonmagnetic' column: heavy cold work can transform austenite to martensite in 304 stainless, leaving a supposedly μr = 1 part locally magnetic — a homogeneity problem you will meet again next lesson."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-2-1-fig-b",
+   "caption": "Left: direction vectors at the knee — conductivity moves the point along the curve, lift-off points toward the air point, and permeability lifts it above. Right: DC saturation drives incremental μr toward 1, dropping a steel tube onto the nonmagnetic curve and silencing permeability noise (ASTM E309)."
+  },
+  {
+   "type": "text",
+   "heading": "Magnetic Saturation, the Curie Point, and Steel Practice",
+   "body": "The cure for permeability is to stop letting it vary. Apply a strong **DC bias field** — saturation coils or permanent magnets — and drive the steel's B-H operating region toward the flat, saturated portion of the curve. There, the **incremental (small-signal) permeability approaches 1**: the AC test field rides on top of the DC bias and sees what looks like a nonmagnetic conductor of about 3–10% IACS. The operating point drops near the nonmagnetic conductivity curve, permeability noise disappears, depth of penetration recovers by **√μr**, and phase analysis becomes meaningful again.\n\nThis is the basis of **ASTM E309**, the standard practice for eddy current examination of steel tubular products using magnetic saturation. The Level II disciplines that come with it:\n\n- **Verify saturation is adequate** — increase the DC field until the response stops changing. Partial saturation leaves residual μ noise that masks small discontinuities.\n- **Watch the saturation supply during the run.** If it sags, the baseline climbs along the reactance direction and noise floods back in; product tested in that condition is not tested.\n\nTwo more steel facts worth owning. Above the **Curie temperature** (about 770 °C for iron), ferromagnetism vanishes — which is why mills can run eddy current examination on hot product that behaves, electromagnetically, like a nonmagnetic metal. And where saturation is impractical — complex geometry, local hand scanning — limit your claims: high-frequency surface probes can find surface-breaking cracks through careful balancing and filtering, but volumetric evaluation of unsaturated steel is not a defensible call. Sometimes the right answer is a magnetic-particle test instead."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Predict before the probe moves",
+   "body": "**Conductivity up** → down and around the comma curve, away from the air point. **Conductivity down** — softer temper, heat damage, a warming part — → back up toward the air point. **Lift-off** → its own direction, pointing at the air point. **Permeability up** → reactance climbs; the point rides above the air point, roughly opposite conductivity at the knee. Direction (phase) names the variable; distance (amplitude) sizes the change. If the dot moves in a direction that does not match the variable you expected, stop scanning and find out what actually changed."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-2-1-fig-a",
+   "title": "The normalized impedance plane and the conductivity curve",
+   "file": "et2-2-1-fig-a.svg"
+  },
+  {
+   "id": "et2-2-1-fig-b",
+   "title": "Permeability direction and the magnetic saturation cure",
+   "file": "et2-2-1-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Predict the Move",
+  "intro": "Four signals to call before the probe moves. Use the direction rules: conductivity travels down-and-around the curve, lift-off points at the air point, permeability lifts the point above it. Working values: 6061-T6 ≈ 43% IACS, 2024-T4 ≈ 30% IACS, carbon steel σ ≈ 3–10% IACS with μr in the hundreds.",
+  "steps": [
+   {
+    "prompt": "Your absolute probe is balanced at the knee on a 6061-T6 skin (≈43% IACS). You slide onto a 2024-T4 doubler (≈30% IACS) at the same lift-off. The operating point:",
+    "options": [
+     "Moves back up the conductivity curve, toward the air point",
+     "Moves farther down the curve, away from the air point",
+     "Moves along the lift-off direction with no travel along the curve",
+     "Jumps above the air point"
+    ],
+    "correct": 0,
+    "feedback": "Lower conductivity means weaker eddy currents and less opposing flux, so the point retreats up the comma curve toward the air point. Down-curve would mean conductivity increased; above the air point is permeability territory, and 2024 is nonmagnetic."
+   },
+   {
+    "prompt": "A wing panel verified at 43.0% IACS in the shop reads 41.4% on the ramp after sitting in the sun. Before writing a nonconformance, you should:",
+    "options": [
+     "Reject the panel — the temper is out of specification",
+     "Let panel, probe, and standards reach the same temperature and re-measure",
+     "Add instrument gain and take the reading again immediately",
+     "Re-zero the meter on the warm panel and record the original 43.0%"
+    ],
+    "correct": 1,
+    "feedback": "Warming a metal lowers its conductivity — pure copper and aluminum lose roughly 0.4% (relative) per °C, and even alloys drift enough to read a point or two of %IACS low when sun-soaked. ASTM E1004 requires standards and test part at the same temperature. Equalize, re-standardize on bracketing standards, then judge the temper."
+   },
+   {
+    "prompt": "An unsaturated absolute probe scans a low-carbon steel bracket. Near a cold-formed bend, the signal swings wildly, mostly along the reactance direction. The most defensible interpretation is:",
+    "options": [
+     "Multiple tight cracks — reject the bracket",
+     "An alloy mix-up — the conductivity is changing",
+     "Paint thickness variation — pure lift-off response",
+     "Permeability variation from cold work and residual stress — evaluation is unreliable without magnetic saturation or a complementary method"
+    ],
+    "correct": 3,
+    "feedback": "Cold work and residual stress change μr, and permeability moves the point along the reactance direction with amplitudes that dwarf crack signals. In unsaturated steel you can neither condemn nor clear that zone with this setup — saturate, or bring in magnetic particle testing."
+   },
+   {
+    "prompt": "A steel tube line runs with DC saturation per ASTM E309. Mid-shift, the saturation supply sags well below its setpoint. On the impedance plane you should expect:",
+    "options": [
+     "Nothing — saturation only matters for conductivity meters",
+     "The baseline drops toward the origin and flaw signals shrink slightly",
+     "The operating point climbs along the reactance direction and permeability noise floods the channel",
+     "Lift-off sensitivity disappears entirely"
+    ],
+    "correct": 2,
+    "feedback": "Losing saturation lets incremental permeability rebound from ≈1 back toward the hundreds: flux multiplication lifts reactance, and every local μ variation becomes a signal again. Product run in that condition is untested — restore full saturation, verify the response is stable, and re-examine."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "With a surface probe at fixed frequency and lift-off, you move from a lower-conductivity nonmagnetic alloy to a higher-conductivity one. On the normalized impedance plane, the operating point:",
+   "options": [
+    "Moves straight toward the air point",
+    "Climbs above the air point",
+    "Sweeps farther down and around the comma-shaped conductivity curve, away from the air point",
+    "Stays put — conductivity changes only signal amplitude, not position"
+   ],
+   "correct": 2,
+   "explanation": "Higher conductivity strengthens the eddy currents; their opposing field cancels more coil flux, reactance falls, and the point travels farther along the conductivity locus. Straight toward the air point is the lift-off direction, and above the air point is permeability territory."
+  },
+  {
+   "question": "Placing an energized probe coil on a thick piece of high-conductivity, nonmagnetic metal lowers the coil's inductive reactance because:",
+   "options": [
+    "The eddy currents' secondary field opposes the coil's primary flux, reducing the net flux that links the coil",
+    "The part short-circuits the coil windings and bleeds off drive current",
+    "Eddy currents add capacitance to the coil circuit",
+    "The part's mass mechanically damps the coil's vibration"
+   ],
+   "correct": 0,
+   "explanation": "Lenz's law: induced currents oppose the flux change that created them. Less net flux through the coil means less inductance, so ωL drops and the operating point moves away from the air point. The part never touches the coil circuit electrically."
+  },
+  {
+   "question": "Which statement best describes the eddy current response of an unsaturated carbon-steel part?",
+   "options": [
+    "Permeability lowers inductive reactance, just as conductivity does",
+    "Permeability effects are negligible above a few kilohertz",
+    "Conductivity still dominates, because steel conducts better than aluminum",
+    "μr multiplies the coil's flux — reactance climbs above the air point, and small permeability variations mask conductivity and flaw information"
+   ],
+   "correct": 3,
+   "explanation": "Steel conducts poorly (≈3–10% IACS, far below aluminum) but its relative permeability runs from about 50 into the thousands, so flux multiplication dominates: reactance rises and μ noise buries everything else. That is why ferromagnetic examination normally requires magnetic saturation."
+  },
+  {
+   "question": "A carbon-steel part (σ ≈ 10% IACS, effective μr ≈ 100) is examined at 100 kHz. Compared with a nonmagnetic alloy of the same conductivity, its standard depth of penetration is approximately:",
+   "options": [
+    "The same — δ depends only on frequency",
+    "One-tenth as deep — about 0.07 mm instead of 0.66 mm, because δ scales as 1/√μr",
+    "Ten times deeper, because the concentrated flux carries the currents down",
+    "Zero — eddy currents cannot form in ferromagnetic material"
+   ],
+   "correct": 1,
+   "explanation": "δ = 1/√(πfμσ). Multiplying μr by 100 divides δ by √100 = 10: roughly 0.66 mm becomes 0.07 mm at 100 kHz. Permeability does not stop eddy currents — it confines them to a very thin skin."
+  },
+  {
+   "question": "ASTM E309 examinations of steel tubing apply a strong DC magnetic field during the eddy current test. The purpose of this magnetic saturation is to:",
+   "options": [
+    "Magnetize the tube so flux leakage reveals subsurface flaws",
+    "Raise the tube's permeability so flaw signals are amplified",
+    "Flatten the B-H response so incremental permeability approaches 1, suppressing permeability noise and restoring predictable penetration",
+    "Demagnetize the tube permanently before shipment"
+   ],
+   "correct": 2,
+   "explanation": "Driven toward saturation, the steel's small-signal permeability collapses toward 1 and the tube responds like a nonmagnetic conductor: μ noise disappears, depth of penetration recovers by √μr, and impedance-plane analysis becomes meaningful. The DC field is a bias for the eddy current test, not a flux-leakage method."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level II Principles Course §2.0–2.1 (factors that affect coil impedance: test part conductivity and permeability)",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method",
+  "ASTM E309, Standard Practice for Eddy-Current Examination of Steel Tubular Products Using Magnetic Saturation",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — Eddy Current Testing method training outline"
+ ]
+}

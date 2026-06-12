@@ -1,0 +1,69 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowWhiteDrv" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L8,4.5 L0,9 Z" fill="#FFFFFF"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">Drive Level vs. Signal Response</text>
+
+  <!-- ================= LEFT: response curve ================= -->
+  <text x="270" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#9BC4FF">Signal reaching the receiver vs. probe drive</text>
+
+  <!-- shaded regions -->
+  <rect x="90" y="385" width="380" height="45" fill="#1E66F5" fill-opacity="0.10"/>
+  <rect x="372" y="100" width="98" height="330" fill="#1E66F5" fill-opacity="0.10"/>
+
+  <!-- axes -->
+  <line x1="90" y1="430" x2="90" y2="100" stroke="#FFFFFF" stroke-width="2" marker-end="url(#arrowWhiteDrv)"/>
+  <line x1="90" y1="430" x2="470" y2="430" stroke="#FFFFFF" stroke-width="2" marker-end="url(#arrowWhiteDrv)"/>
+  <text x="98" y="98" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">signal amplitude</text>
+  <text x="280" y="486" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#FFFFFF">probe drive (V)</text>
+
+  <!-- receiver input limit -->
+  <line x1="90" y1="150" x2="470" y2="150" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.9"/>
+  <text x="466" y="140" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">receiver input limit — clipping</text>
+
+  <!-- electronic noise floor -->
+  <line x1="90" y1="385" x2="470" y2="385" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="466" y="377" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">receiver electronic noise — fixed</text>
+
+  <!-- flaw signal line -->
+  <polyline points="90,430 348,172 372,154 470,150" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <text x="104" y="196" font-family="Arial, sans-serif" font-size="15" fill="#FFFFFF">flaw signal —</text>
+  <text x="104" y="216" font-family="Arial, sans-serif" font-size="15" fill="#FFFFFF">scales with drive</text>
+
+  <!-- zone brackets -->
+  <line x1="90" y1="436" x2="90" y2="444" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="133" y1="436" x2="133" y2="444" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="139" y1="436" x2="139" y2="444" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="372" y1="436" x2="372" y2="444" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="378" y1="436" x2="378" y2="444" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="470" y1="436" x2="470" y2="444" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="90" y1="440" x2="133" y2="440" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="139" y1="440" x2="372" y2="440" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="378" y1="440" x2="470" y2="440" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="111" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">too low</text>
+  <text x="255" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">usable window</text>
+  <text x="424" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">clipped</text>
+
+  <!-- ================= RIGHT: what the display shows ================= -->
+  <text x="640" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#9BC4FF">What the display shows</text>
+
+  <!-- screen 1: drive too low -->
+  <rect x="510" y="96" width="260" height="86" rx="6" fill="#1E66F5" fill-opacity="0.12" stroke="#1E66F5" stroke-width="2"/>
+  <polyline points="520,151 532,143 544,153 556,144 568,152 580,145 592,153 604,143 616,151 628,144 636,134 640,128 644,134 652,146 664,152 676,144 688,152 700,145 712,153 724,144 736,152 748,145 760,151" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="640" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">too low: flaw lost in the noise</text>
+
+  <!-- screen 2: correct drive -->
+  <rect x="510" y="222" width="260" height="86" rx="6" fill="#1E66F5" fill-opacity="0.12" stroke="#1E66F5" stroke-width="2"/>
+  <polyline points="520,292 596,292 612,290 626,266 640,238 654,266 668,290 684,292 760,292" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="640" y="324" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">correct: clean and proportional</text>
+
+  <!-- screen 3: drive too high -->
+  <rect x="510" y="348" width="260" height="86" rx="6" fill="#1E66F5" fill-opacity="0.12" stroke="#1E66F5" stroke-width="2"/>
+  <line x1="518" y1="362" x2="762" y2="362" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.8"/>
+  <polyline points="520,420 596,418 606,400 614,362 666,362 676,400 686,418 760,420" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="640" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">too high: clipped — phase lost</text>
+</svg>

@@ -1,0 +1,194 @@
+{
+ "lessonId": "et1-5-3",
+ "title": "Hall Effect Sensors",
+ "narrationScript": "Every coil you have studied so far senses a magnetic field the same way — by induction, which means it responds only while the flux is changing. This lesson adds the second major sensing element: the Hall effect sensor. Pass a steady drive current through a thin semiconductor chip, place it in a magnetic field, and the moving charge carriers are pushed sideways by the Lorentz force. Charge piles up on one edge until the element develops a small transverse voltage — the Hall voltage — directly proportional to flux density. That one difference drives everything else. A Hall element reads the field itself, from DC up to roughly one hundred kilohertz, while a coil's output collapses as frequency drops and disappears entirely at DC. So Hall detection shines in low-frequency, deep-penetration eddy current work, in flux leakage scanning where the signal must not depend on scan speed, and in measuring static fields. Remember the one-line summary: a coil measures the rate of change of flux; a Hall element measures the flux itself.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Two Ways to Listen to a Magnetic Field",
+   "body": "Every sensing element you have met so far in this module — surface probes, encircling coils, inside coils, in absolute and differential arrangements — detects the test field the same way: by **induction**. A coil develops a voltage only while the magnetic flux through it is **changing**. That single fact is written into Faraday's law, and it sets hard limits on what coil detection can do.\n\nThe **Hall effect sensor** is the second major family of sensing elements in electromagnetic testing, and it plays by a different rule. A Hall element is a small semiconductor chip that outputs a voltage proportional to the **magnetic flux density B itself** — whether that field is alternating at 100 kHz, drifting slowly, or perfectly static. Nothing has to change for a Hall element to respond.\n\nKeep one distinction straight from the start: in eddy current work the **excitation** must still be an alternating (or moving) field, because eddy currents exist only while the flux in the part is changing. A Hall element does not replace the excitation coil. It replaces the **detector** — and that swap is what unlocks the low-frequency, deep-penetration testing that coils handle poorly."
+  },
+  {
+   "type": "text",
+   "heading": "Theory of Operation: A Sideways Push on Moving Charge",
+   "body": "Edwin Hall discovered the effect in 1879 — eighteen years before the electron itself was identified. Build the picture in three steps:\n\n- **Drive current.** A constant current I is passed along the length of a thin rectangular element of thickness t.\n- **Perpendicular field.** A magnetic flux density **B** acts at right angles to the element face. Every moving charge carrier then feels the **Lorentz force, F = qv × B**, pushing it sideways toward one edge of the element.\n- **Charge separation.** Carriers crowd that edge, leaving the opposite edge with the opposite charge. The separation builds an electric field across the width, and it grows until the electric force exactly balances the magnetic push. The steady voltage between the edges at that equilibrium is the **Hall voltage**:\n\n**Vₕ = I·B / (n·q·t)**\n\nwhere n is the charge-carrier density, q the carrier charge, and t the element thickness. For a fixed drive current, **Vₕ is directly proportional to B** — the element is a linear magnetic field meter.\n\nThe formula also explains the material choice. Carrier density n sits in the denominator, and metals have an enormous n — a copper strip yields microvolts at best. **Semiconductors** such as indium antimonide (InSb), indium arsenide (InAs), and gallium arsenide (GaAs) carry the current with orders of magnitude fewer, faster-moving carriers, so the same I and B produce a usable millivolt-level signal. Made thin (small t) and physically small — active areas a fraction of a millimeter across are available — the element reads flux density essentially at a point."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-5-3-fig-a",
+   "caption": "Theory of operation: drive current I, perpendicular flux density B, and the Lorentz force separating charge until the Hall voltage Vₕ appears across the element width."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "What a Hall element gives you",
+   "body": "A voltage **directly proportional to the flux density component perpendicular to its face** — at any frequency from **DC (0 Hz)** up to roughly **100 kHz** for common elements. Polarity follows field direction, so a Hall element can tell a north pole from a south pole in a completely static field — something no coil can ever do. Remember it as one line: **a coil measures the rate of change of flux; a Hall element measures the flux itself.**"
+  },
+  {
+   "type": "text",
+   "heading": "Coil Detection: Faraday's Rule and Its Price",
+   "body": "A sensing coil obeys **Faraday's law**: V = −N·dΦ/dt. The induced voltage depends on the number of turns N and on how fast the flux changes — not on the flux's actual value. Three consequences follow, and they define where coils struggle:\n\n- **No DC response.** A static field induces nothing. A coil sitting motionless in the strongest steady field in the world reads zero.\n- **Output falls with frequency.** For the same field amplitude, the induced voltage is proportional to frequency. Halve the test frequency and you halve the signal; drop from 100 kHz to 100 Hz and the coil's output falls a thousandfold.\n- **Sensitivity is bought with turns and area.** Shrink a coil to improve spatial resolution and you strip away the very turns and cross-section that produce its signal.\n\nNow recall why low frequencies matter: **standard depth of penetration grows as frequency drops** (δ = 1/√(πfμσ)). The deep-flaw tests you most want to run sit exactly where coil output is weakest. A Hall element's sensitivity is flat across that whole region — so for detectors of comparable size there is a **crossover frequency**: below it, the Hall element delivers the better signal-to-noise ratio; above it, the rising coil output wins. That crossover is the single most useful idea for choosing between the two systems."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-5-3-fig-b",
+   "caption": "For the same field amplitude, coil output rises in proportion to frequency while the Hall element stays flat from DC to its bandwidth limit — the two trade places at the crossover."
+  },
+  {
+   "type": "table",
+   "caption": "Coil and Hall element sensing systems compared — the differences that drive selection.",
+   "headers": ["Characteristic", "Induction coil", "Hall element"],
+   "rows": [
+    ["Quantity sensed", "Rate of change of flux (dΦ/dt)", "Flux density B itself"],
+    ["Static (DC) field response", "None — zero output", "Full output, with polarity"],
+    ["Output vs frequency (same field)", "Proportional to f — falls at low f", "Flat from DC to ≈100 kHz"],
+    ["Excitation required", "None — passive, signal is induced", "Constant drive current through the chip"],
+    ["Typical output level", "Large — grows with turns and area", "Millivolts — needs amplification"],
+    ["Shrinking the sensor", "Fewer turns and area → lost sensitivity", "Sub-millimeter elements keep sensitivity"],
+    ["Temperature behavior", "Comparatively stable", "Drifts — compensation required"],
+    ["Scan-speed dependence (flux leakage)", "Signal amplitude varies with speed", "Independent of speed"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Where Hall Elements Earn Their Place",
+   "body": "Match the element's strengths to the job:\n\n- **Low-frequency, deep-penetration eddy current testing.** Thick or layered aluminum structure — the classic case is hunting **second- and third-layer cracks at fastener holes in aircraft lap joints**. At 500 Hz the standard depth of penetration in 30 %IACS aluminum is about 5.4 mm, so the eddy currents genuinely reach the lower layers — and a Hall detector still hears them at full sensitivity, where a sensing coil would be nearly deaf.\n- **Magnetic flux leakage (MFL) examination.** Steel tubing, wire rope, and tank floors are magnetized and scanned for leakage fields. A coil responds only while it moves through the leakage field, so its signal amplitude varies with scanning speed; a **Hall element reads the leakage flux density regardless of speed**, which is why many MFL instruments carry Hall detectors.\n- **Static and slowly varying field measurement.** Hall elements are the heart of **gaussmeters and teslameters** used to verify magnetizing field strength and to check residual magnetism.\n- **Arrays and tight geometry.** Because a tiny element keeps its sensitivity, Hall sensors pack into high-resolution detector arrays and into probes for confined areas.\n\nLike coils, Hall elements can be wired **absolute or differential** — the operating modes from the previous lesson carry over unchanged. The honest limits: a Hall element needs a regulated drive current and amplification, its output **drifts with temperature** unless compensated, the semiconductor die is less rugged than a wound coil, and above the crossover frequency a coil simply produces more signal. That is why conventional mid- and high-frequency eddy current probes remain coil-based."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-5-3-fig-c",
+   "caption": "A low-frequency probe with Hall detection over a riveted lap joint: the excitation coils still drive the field, eddy currents reach the second layer, and the Hall element reads the small field change from the hidden crack at full sensitivity."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-5-3-fig-a",
+   "title": "The Hall effect — theory of operation",
+   "file": "et1-5-3-fig-a.svg"
+  },
+  {
+   "id": "et1-5-3-fig-b",
+   "title": "Coil vs Hall element — detector output vs frequency",
+   "file": "et1-5-3-fig-b.svg"
+  },
+  {
+   "id": "et1-5-3-fig-c",
+   "title": "Hall-element probe on a multilayer lap joint",
+   "file": "et1-5-3-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Coil or Hall? Sort the Sensing Element",
+  "intro": "Each statement below describes one of the two detector families. Sort it into the bucket it belongs to — and be ready to defend the choice with Faraday's law or the Hall voltage equation.",
+  "buckets": [
+   "Induction coil",
+   "Hall element"
+  ],
+  "items": [
+   {
+    "label": "Output voltage is proportional to the rate of change of flux (dΦ/dt)",
+    "bucket": 0,
+    "why": "Faraday's law governs a coil: V = −N·dΦ/dt. No change in flux, no voltage — the coil never reads the field itself, only its rate of change."
+   },
+   {
+    "label": "Reads magnetic flux density directly, even when nothing is changing",
+    "bucket": 1,
+    "why": "The Hall voltage Vₕ = I·B/(n·q·t) exists whenever drive current and a perpendicular field are present — including a perfectly static field."
+   },
+   {
+    "label": "Requires a constant drive current through a semiconductor chip",
+    "bucket": 1,
+    "why": "Without the drive current there are no moving carriers for the field to push, and no Hall voltage. The element is an active device."
+   },
+   {
+    "label": "Sensitivity falls in proportion as the test frequency drops",
+    "bucket": 0,
+    "why": "Induced voltage scales with how fast the flux changes, so for the same field amplitude a coil's output falls directly with frequency — and reaches zero at DC."
+   },
+   {
+    "label": "Flux leakage response does not depend on scanning speed",
+    "bucket": 1,
+    "why": "A Hall element reports the leakage flux density wherever it sits, fast or slow — a coil's MFL signal amplitude rides up and down with scan speed."
+   },
+   {
+    "label": "Completely passive — the magnetic field itself generates the signal",
+    "bucket": 0,
+    "why": "A coil needs no power supply on the sensing side: the changing flux induces the voltage. That simplicity is one reason coils dominate conventional probes."
+   },
+   {
+    "label": "Preferred detector for very low-frequency, deep-penetration tests",
+    "bucket": 1,
+    "why": "Below the crossover frequency the flat Hall response beats the collapsing coil output — exactly the region where skin depth is large enough to reach deep flaws."
+   },
+   {
+    "label": "Output grows with more turns of wire and a larger cross-section",
+    "bucket": 0,
+    "why": "N and coil area multiply the induced voltage — which is also why shrinking a coil for resolution costs sensitivity."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Which condition is required for a Hall element to produce an output voltage?",
+   "options": [
+    "The magnetic flux through the element must be changing with time",
+    "The element must be moving relative to the part",
+    "A drive current must flow through the element while a field component perpendicular to its face is present",
+    "The part being examined must be ferromagnetic"
+   ],
+   "correct": 2,
+   "explanation": "Vₕ = I·B/(n·q·t): the output needs both the drive current and a perpendicular flux density component. No change and no motion are required — needing a changing flux is the coil's limitation, not the Hall element's."
+  },
+  {
+   "question": "The fundamental difference between coil and Hall element sensing systems is that:",
+   "options": [
+    "a coil responds to the rate of change of flux, while a Hall element responds to the flux density itself",
+    "a coil measures electric fields, while a Hall element measures magnetic fields",
+    "a Hall element needs no power supply, while a coil requires a drive current",
+    "a coil works only on ferromagnetic parts, while a Hall element works on any conductor"
+   ],
+   "correct": 0,
+   "explanation": "Faraday's law makes the coil a dΦ/dt detector; the Hall effect makes the element a B detector. The drive-current statement is backwards — the coil is the passive device — and both detectors sense magnetic fields on any material."
+  },
+  {
+   "question": "Hall elements are made from semiconductors such as indium antimonide rather than from metals like copper because:",
+   "options": [
+    "semiconductors are unaffected by temperature changes",
+    "semiconductors safely carry much larger drive currents",
+    "metals cannot conduct current while inside a magnetic field",
+    "their far lower charge-carrier density produces a much larger Hall voltage for the same current and field"
+   ],
+   "correct": 3,
+   "explanation": "Carrier density n is in the denominator of Vₕ = I·B/(n·q·t). Metals have enormous n, so their Hall voltage is buried in the microvolts; semiconductors, with orders of magnitude fewer carriers, deliver usable millivolt signals. They are actually more temperature-sensitive, not less."
+  },
+  {
+   "question": "An inspection calls for a 400 Hz test frequency to reach deep subsurface flaws in thick aluminum structure. A Hall-element detector is attractive here because:",
+   "options": [
+    "it generates stronger eddy currents than a coil can at low frequency",
+    "its sensitivity is flat down to DC, whereas a sensing coil's output falls in proportion to frequency",
+    "it eliminates the skin effect in the part",
+    "it requires no excitation field at low frequencies"
+   ],
+   "correct": 1,
+   "explanation": "The Hall element only detects — an excitation coil still drives the field, and skin depth is set by the part and frequency regardless of detector. The advantage is in detection: at 400 Hz a coil's induced voltage is tiny, while the Hall element's response to B is undiminished."
+  },
+  {
+   "question": "During magnetic flux leakage scanning of a steel tank floor, what advantage does a Hall element offer over a sensing coil?",
+   "options": [
+    "It works without magnetizing the part",
+    "It produces a larger raw output voltage than any coil",
+    "Its response to a leakage field does not depend on scanning speed",
+    "It detects only surface-breaking flaws, reducing false calls"
+   ],
+   "correct": 2,
+   "explanation": "A coil generates voltage only from dΦ/dt, so its MFL signal amplitude changes with how fast the scanner moves; the Hall element reads the leakage flux density itself at any speed. MFL still requires magnetization, and raw Hall outputs are small millivolt-level signals."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level I Topical Outline §1.1.4 (Hall effect sensors: theory of operation; differences between coil and Hall element systems)",
+  "ASNT SNT-TC-1A (2024), employer-based qualification and certification framework (Level I ET training topic coverage)",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (electromagnetic testing terminology)",
+  "ASTM E570, Standard Practice for Flux Leakage Examination of Ferromagnetic Steel Tubular Products (sensor practice in flux leakage examination)"
+ ]
+}

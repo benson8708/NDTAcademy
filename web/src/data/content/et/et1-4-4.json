@@ -1,0 +1,214 @@
+{
+ "lessonId": "et1-4-4",
+ "title": "Lab: Crack Response and the Combined Impedance-Plane Picture",
+ "narrationScript": "This lab completes your impedance-plane picture. You have already generated conductivity curves and liftoff lines. Now you watch what a crack does. Eddy currents flow in closed loops that mirror the coil. A surface crack cuts those loops, forcing current to crowd around its ends and dive beneath it. The opposing field weakens, the coil's impedance shifts, and the spot on the screen traces a signal in a direction all its own. With liftoff rotated horizontal, the instructor scans a three-notch aluminum standard. Amplitude climbs with notch depth \u2014 strongly from half a millimeter to one millimeter, less from one to two, because current density is nearly spent a few standard depths down. You will also see thinning curl the signal toward the air point once the wall is inside the effective depth of penetration, and a touch of steel send the spot above the air point as permeability raises reactance. Direction identifies the variable. Amplitude scores its size. That is impedance-plane reading.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Last Curve You Need",
+   "body": "The first two demonstrations in this module built your map of the impedance plane one variable at a time. With the conductivity samples you traced the **conductivity locus** \u2014 the comma-shaped curve where every nonmagnetic alloy has its place. With the shims you traced **liftoff lines** and learned to rotate the display so liftoff runs horizontal.\n\nThis final demonstration adds the responses those curves exist to support: the **defect signal**. The instructor will scan a notched aluminum standard, thin a sample past the effective depth of penetration, and touch a ferromagnetic part \u2014 and you will watch each variable move the operating point in its **own characteristic direction**.\n\nThat is the entire logic of eddy current testing on the impedance plane: **direction tells you what changed; amplitude tells you how much.** As a Level I, you perform standardized tests to written instructions \u2014 but recognizing these signatures is what lets you follow those instructions intelligently, and it is the foundation for the interpretation work you will do at Level II."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-4-4-fig-a",
+   "caption": "Eddy currents flow in closed circular loops mirroring the coil. A surface crack interrupts the loops, forcing current to crowd around the crack ends and dive beneath it \u2014 the weakened secondary field shifts the coil's impedance."
+  },
+  {
+   "type": "text",
+   "heading": "What a Crack Does to the Current",
+   "body": "Eddy currents induced by a surface probe flow in **closed circular loops** parallel to the coil windings, strongest at the surface directly under the coil. A surface-breaking crack is a break in that racetrack. Current cannot cross the gap, so it **crowds around the crack ends and dives underneath** \u2014 a longer, more resistive path. The eddy currents' opposing (secondary) magnetic field weakens, and the coil's impedance moves.\n\nThe key point: a crack changes the **distribution of current in the metal**, while liftoff changes the **coupling between coil and metal**. Different causes move the operating point in **different directions** on the impedance plane \u2014 that is why a crack signal can be separated from probe wobble at all.\n\nDepth matters because eddy current density falls off exponentially. At one **standard depth of penetration** (\u03b4 = 1/\u221a(\u03c0f\u03bc\u03c3)) the density is down to about **37%** of its surface value; by **3\u03b4 \u2014 the effective depth of penetration \u2014 only about 5% remains**. The currents also lag in phase by roughly **57\u00b0 (one radian) per standard depth**. At 200 kHz on 7075-T6 aluminum (\u224832% IACS), \u03b4 is about **0.26 mm**, so the test you are about to watch lives in the first millimeter of metal."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Every variable has a direction",
+   "body": "With the display rotated so liftoff runs horizontal: **probe rock and lift** trace the horizontal; a **surface crack** rises at a clearly separated phase angle; a **conductivity change** drifts the null along the locus; **wall thinning** (once thickness drops inside ~3\u03b4) curls the point toward the air point; a **ferromagnetic touch** drives the point above the air point as permeability raises inductive reactance. Direction identifies the variable \u2014 amplitude scores its size."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-4-4-fig-b",
+   "caption": "The instrument display after phase rotation: liftoff runs horizontal, and the three EDM notches (0.5, 1.0, 2.0 mm) produce rising signals of increasing amplitude at a phase angle separated from liftoff. The three passes are drawn offset along the baseline for clarity."
+  },
+  {
+   "type": "text",
+   "heading": "Lab Walkthrough: the Three-Notch Standard",
+   "body": "The instructor uses a pencil probe at **200 kHz** on a 7075-T6 block carrying three EDM notches \u2014 **0.5, 1.0, and 2.0 mm deep** (slot widths around 0.1\u20130.2 mm, far narrower than any coil). Watch the sequence; you will repeat it under supervision:\n\n1. **Null** the probe on sound metal, well away from edges \u2014 the field wraps beyond the coil, so an approaching edge reads like a massive defect (edge effect).\n2. **Rock and lift** the probe to display liftoff, then **rotate the phase** until that trace runs horizontally toward screen left.\n3. **Set gain** per the written instruction \u2014 this demo sizes the 1.0 mm notch signal to about 80% of screen height.\n4. **Scan** across each notch at constant speed and constant probe pressure. A probe guide keeps liftoff steady so the only variable is the notch.\n\nThe signals rise off the horizontal at a separated phase angle, and **amplitude climbs with notch depth \u2014 but not linearly**. The step from 0.5 to 1.0 mm grows the signal strongly; the step from 1.0 to 2.0 mm adds much less. At 200 kHz, 3\u03b4 is roughly 0.8 mm \u2014 below that, eddy current density is nearly spent, so extra crack depth has little remaining current to interrupt. When the instructor switches to 500 kHz, current concentrates even tighter at the surface: the shallow notch gains relative to the deep ones. Choosing that frequency trade-off is a Level II decision \u2014 this demo is your preview of why it matters."
+  },
+  {
+   "type": "text",
+   "heading": "Thinning, Steel, and Depth: Three More Demonstrations",
+   "body": "Three short demonstrations finish the picture:\n\n- **Wall thinning.** On a stack of aluminum foils, peeling layers away does nothing at first \u2014 until the remaining thickness drops inside about **3\u03b4**. Then the operating point leaves its thick-part position and traces the **thinning curve**, curling toward the air point as metal runs out. Less metal carrying current looks, eventually, like no metal at all. This response is the basis of eddy current **thickness measurement**.\n- **A touch of steel.** Against a ferromagnetic sample the spot leaps to a region **above the air point**: relative permeability (\u03bcr > 1) multiplies the coil's inductive reactance, the opposite of what induced currents do. Tiny, uncontrolled permeability variations produce signals that can bury conductivity and crack responses \u2014 the reason ferromagnetic parts get different probes, techniques, or magnetic saturation, covered later in the course.\n- **A subsurface target.** At 200 kHz, a flat-bottom hole 1 mm below the surface barely registers \u2014 it sits beyond 3\u03b4. Dropping to **10 kHz** stretches \u03b4 to about 1.2 mm in the same alloy and the hole reappears, its signal **rotated relative to a surface notch by roughly an additional radian of phase lag**. Deeper currents flow later in phase, and the display shows it."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-4-4-fig-c",
+   "caption": "The combined normalized impedance-plane map: conductivity locus with alloy positions, liftoff paths back to the air point, the crack response off the 7075 operating point, the thinning curl, and the ferromagnetic region above the air point."
+  },
+  {
+   "type": "table",
+   "caption": "Signature directions observed in this lab (display rotated so liftoff is horizontal; aluminum surface scan).",
+   "headers": [
+    "Variable",
+    "Screen behavior",
+    "Lab demonstration"
+   ],
+   "rows": [
+    [
+     "Liftoff / probe rock",
+     "Trace runs along the horizontal",
+     "Rock and lift the probe on sound metal"
+    ],
+    [
+     "Surface crack",
+     "Rises at a separated phase angle; amplitude grows with depth, flattening past ~3\u03b4",
+     "Scan the 0.5 / 1.0 / 2.0 mm EDM notch standard"
+    ],
+    [
+     "Conductivity change",
+     "Null drifts along the conductivity locus",
+     "Swap between 7075 and 6061 samples"
+    ],
+    [
+     "Wall thinning (t < ~3\u03b4)",
+     "Point curls along the thinning curve toward the air point",
+     "Peel layers from the foil stack"
+    ],
+    [
+     "Ferromagnetic material",
+     "Large deflection to a region above the air point",
+     "Touch the probe to a steel sample"
+    ],
+    [
+     "Subsurface flaw",
+     "Signal rotated by added phase lag (~57\u00b0 per \u03b4)",
+     "Flat-bottom hole at 10 kHz vs 200 kHz"
+    ]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-4-4-fig-a",
+   "title": "A surface crack forces eddy currents off course",
+   "file": "et1-4-4-fig-a.svg"
+  },
+  {
+   "id": "et1-4-4-fig-b",
+   "title": "Display after phase rotation: liftoff horizontal, three notch signals",
+   "file": "et1-4-4-fig-b.svg"
+  },
+  {
+   "id": "et1-4-4-fig-c",
+   "title": "Combined normalized impedance-plane map",
+   "file": "et1-4-4-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Read the Screen: Find the Deepest Notch",
+  "intro": "Liftoff has been rotated horizontal and the probe scanned across the three EDM notches at constant speed and pressure. Click the indication produced by the deepest (2.0 mm) notch.",
+  "figureId": "et1-4-4-fig-b",
+  "regions": [
+   {
+    "x": 95,
+    "y": 330,
+    "w": 130,
+    "h": 45,
+    "label": "Horizontal trace along the baseline",
+    "isTarget": false,
+    "feedback": "That is liftoff \u2014 probe rock and lift, deliberately rotated to run horizontal exactly so it cannot be mistaken for a defect signal."
+   },
+   {
+    "x": 560,
+    "y": 245,
+    "w": 85,
+    "h": 95,
+    "label": "Smallest rising signal",
+    "isTarget": false,
+    "feedback": "This is the shallowest notch \u2014 0.5 mm. It interrupts the least current, so it produces the smallest deflection of the three."
+   },
+   {
+    "x": 405,
+    "y": 180,
+    "w": 90,
+    "h": 125,
+    "label": "Mid-height rising signal",
+    "isTarget": false,
+    "feedback": "This is the 1.0 mm reference notch \u2014 the one the written instruction sized to about 80% screen height. One signal stands taller."
+   },
+   {
+    "x": 235,
+    "y": 85,
+    "w": 95,
+    "h": 185,
+    "label": "Tallest rising signal",
+    "isTarget": true,
+    "feedback": "Correct. At fixed frequency and gain, the 2.0 mm notch interrupts the most current and gives the largest deflection \u2014 though past about 3\u03b4 each extra bit of depth adds less, which is why it does not tower twice as high as the 1.0 mm signal."
+   }
+  ],
+  "coordH": 500
+ },
+ "checkQuestions": [
+  {
+   "question": "Why does a surface-breaking crack produce an eddy current signal?",
+   "options": [
+    "It locally increases the part's conductivity, strengthening the eddy currents",
+    "It physically lifts the probe away from the surface as the coil passes over it",
+    "It interrupts the closed eddy current loops, forcing current around its ends and beneath it, which weakens the opposing secondary field and shifts coil impedance",
+    "It magnetizes the aluminum, raising the coil's inductive reactance"
+   ],
+   "correct": 2,
+   "explanation": "Eddy currents flow in closed loops mirroring the coil. A crack breaks those loops; the diverted, longer current path weakens the secondary field, and the coil's impedance moves \u2014 in a direction different from liftoff, because the current distribution (not the coupling) changed."
+  },
+  {
+   "question": "With the display rotated so liftoff runs horizontal, an inspector recognizes a crack because its signal:",
+   "options": [
+    "rises at a phase angle clearly separated from the horizontal liftoff trace",
+    "moves exactly along the horizontal axis, like probe rock",
+    "appears only when the probe is lifted completely off the part",
+    "drives the operating point above the air point"
+   ],
+   "correct": 0,
+   "explanation": "Phase rotation puts liftoff on the horizontal precisely so that defect responses \u2014 which move the operating point in a different direction \u2014 rise off that line at a separated angle. Horizontal means probe handling; rising means something in the metal."
+  },
+  {
+   "question": "In the notch demonstration at 200 kHz, the signal grew strongly from the 0.5 mm to the 1.0 mm notch but much less from 1.0 mm to 2.0 mm. Why?",
+   "options": [
+    "The instrument's gain compresses all large signals automatically",
+    "Deeper notches increase the local conductivity of the block",
+    "The probe was scanned faster over the deeper notch",
+    "Eddy current density is nearly spent a few standard depths below the surface, so depth beyond about 3\u03b4 has little remaining current to interrupt"
+   ],
+   "correct": 3,
+   "explanation": "Current density falls to about 37% at 1\u03b4 and about 5% at 3\u03b4. At 200 kHz on 7075-T6, 3\u03b4 is roughly 0.8 mm \u2014 so the portion of a notch deeper than that interrupts very little current, and amplitude growth flattens."
+  },
+  {
+   "question": "The thinning curve appears \u2014 the operating point leaves its thick-part position and curls toward the air point \u2014 only when the remaining wall thickness is:",
+   "options": [
+    "greater than about ten standard depths of penetration",
+    "less than about three standard depths of penetration (the effective depth)",
+    "greater than the diameter of the probe coil",
+    "less than the width of the EDM notch"
+   ],
+   "correct": 1,
+   "explanation": "As long as the wall is thicker than ~3\u03b4, the eddy currents never sense the far side and the part looks infinitely thick. Once thickness drops inside the effective depth of penetration, less metal carries current and the point migrates toward the air point \u2014 the basis of eddy current thickness measurement."
+  },
+  {
+   "question": "During the demonstration the instructor touches the probe to a ferromagnetic steel sample. On the impedance plane, the operating point:",
+   "options": [
+    "moves along the nonmagnetic conductivity locus toward the copper position",
+    "does not move, because permeability has no effect on coil impedance",
+    "moves to a region above the air point, because relative permeability raises the coil's inductive reactance",
+    "traces the same horizontal liftoff line observed on aluminum"
+   ],
+   "correct": 2,
+   "explanation": "Permeability (\u03bcr > 1) concentrates flux and multiplies inductive reactance \u2014 the opposite of the reactance-lowering effect of induced eddy currents in nonmagnetic alloys. Ferromagnetic materials therefore plot above the air point, and small permeability variations can bury other signals."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Topical Outlines \u2014 ECT Level I Theory Course \u00a73.0, laboratory demonstration of impedance-plane responses",
+  "ASNT SNT-TC-1A (2024) \u2014 recommended practice governing ET Level I training and qualification",
+  "ASTM E1316 \u2014 Standard Terminology for Nondestructive Examinations (electromagnetic testing terms: lift-off, edge effect, standard depth of penetration, IACS)",
+  "ASTM E1004 \u2014 Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method (conductivity reference standards used in these demonstrations)"
+ ]
+}

@@ -1,0 +1,115 @@
+{
+ "moduleId": "et1-4",
+ "questions": [
+  {
+   "question": "Every standard in the conductivity kit is marked in %IACS. The 100% point of that scale is defined as:",
+   "options": [
+    "the conductivity of pure silver, the most conductive metal in common use",
+    "the conductivity of annealed pure copper at 20 °C — 58.0 MS/m",
+    "the highest conductivity the instrument can display at 60 kHz",
+    "the average conductivity of the aerospace aluminum alloys"
+   ],
+   "correct": 1,
+   "explanation": "By definition, annealed pure copper at 20 °C — 58.0 MS/m, a resistivity of 1.7241 µΩ·cm — is 100% IACS. Every other metal is graded as a percentage of that copper reference: Ti-6Al-4V near 1%, the common aerospace aluminum alloys roughly 28–47%, commercially pure aluminum near 60%."
+  },
+  {
+   "question": "Dedicated aluminum conductivity meters operate near 60 kHz — the same frequency used in the Z-curve lab. That choice works because 60 kHz:",
+   "options": [
+    "places the aerospace aluminum alloys in the well-spread knee region, where a few %IACS produce a generous swing of the dot",
+    "is the only frequency at which aluminum supports eddy currents",
+    "drives the aluminum dots onto the air point, making balancing easier",
+    "maximizes the depth of penetration so the entire part thickness is measured"
+   ],
+   "correct": 0,
+   "explanation": "Spacing along the Z-curve is not uniform: near the top a few %IACS barely nudge the dot, while around the knee — the bend of maximum normalized resistance — the same difference produces a generous swing. At 60 kHz the aluminum alloys (roughly 28–47% IACS) land in that best-separated stretch by design, giving sorting and heat-treat checks their sensitivity."
+  },
+  {
+   "question": "During a heat-treat verification, a Level I standardizes the conductivity meter and measures 36.5% IACS on a 7075 part. The Level I's correct next step is to:",
+   "options": [
+    "reject the part, since 7075-T6 should read near 32% IACS",
+    "accept the part, since the value falls between the T6 and T73 readings",
+    "record the reading and refer the accept/reject decision to a Level II or III working to the governing procedure",
+    "re-balance the instrument and re-measure until the part reads 32% IACS"
+   ],
+   "correct": 2,
+   "explanation": "A Level I generates the data — standardize the instrument, measure, record. Deciding whether a conductivity value means acceptable or rejectable is evaluation, and that signature belongs to a Level II or III applying the governing procedure (aerospace heat-treat verification is formalized in MIL-STD-1537)."
+  },
+  {
+   "question": "Unlike the five nonmagnetic lab samples, a ferromagnetic part's operating point sits above the air point. When the probe is lifted from such a part, the dot:",
+   "options": [
+    "stays put, because permeability locks the coil's impedance",
+    "moves farther above the air point as the coupling weakens",
+    "traces the same upward path as the nonmagnetic samples",
+    "moves down toward the air point — every lift-off curve ends there, whatever the sample"
+   ],
+   "correct": 3,
+   "explanation": "Permeability raises the coil's reactance, so a ferromagnetic operating point sits above the air balance point. Lifting away still destroys the coupling, so the dot must return to the same air point — approaching it from above, moving down — while the nonmagnetic samples all approach it from below."
+  },
+  {
+   "question": "A job calls for measuring the thickness of a nonconductive anodic coating on an aluminum part with an eddy current instrument. In this application, lift-off is:",
+   "options": [
+    "a noise source that must be filtered out before the thickness can be read",
+    "the measurement itself — the dot's position along the lift-off curve reads the coating thickness, calibrated with shims or foils of known thickness on the bare substrate",
+    "cancelled out, because the coating conducts the eddy currents into the substrate",
+    "significant only when the coating is thicker than the standard depth of penetration"
+   ],
+   "correct": 1,
+   "explanation": "The same physics that makes lift-off the dominant noise in crack scanning becomes the signal in coating work: a nonconductive layer holds the coil off the metal by exactly its own thickness, so the position along the lift-off curve reads the coating. Calibration uses shims or foils of known thickness on bare substrate — the measurement ASTM B244 governs."
+  },
+  {
+   "question": "With rotation set so a 0.1 mm shim slide runs perfectly flat on the 7075 sample, you lift the probe completely off to air. The trace:",
+   "options": [
+    "leaves the null horizontally, then bends away — only the near-surface working portion of the curved lift-off path can be made flat",
+    "runs perfectly horizontal all the way to the air point",
+    "runs vertically, because a full lift is a different variable from shim lift-off",
+    "vanishes, because the instrument cannot display an excursion that large"
+   ],
+   "correct": 0,
+   "explanation": "The full lift-off curve is curved; only its nearly straight near-surface portion can be laid flat with a single rotation setting. That is why rotation is set on the first 0.1–0.2 mm — the range hand wobble actually occupies — and why a complete lift to air departs horizontally before bending away toward the air point."
+  },
+  {
+   "question": "A surface crack and probe lift-off both weaken the eddy currents' opposing field, yet the two signals can be separated on the impedance plane. The reason is that:",
+   "options": [
+    "a crack produces a far larger signal, and amplitude alone separates the variables",
+    "lift-off changes only the coil's resistance, while a crack changes only its reactance",
+    "a crack changes the distribution of current within the metal, while lift-off changes the coupling between coil and part — different causes move the operating point in different directions",
+    "the two cannot actually be separated; inspectors rely on scanning speed to tell them apart"
+   ],
+   "correct": 2,
+   "explanation": "A crack breaks the closed eddy current loops, forcing current to crowd around its ends and dive beneath it; lift-off instead weakens how strongly the coil couples to the part. Because the causes differ, the dot moves in different directions — with lift-off rotated horizontal, the crack signal rises at a clearly separated phase angle. Amplitude is no separator: a few hundredths of a millimetre of hand wobble can out-swing a real crack."
+  },
+  {
+   "question": "At 200 kHz, a flat-bottom hole 1 mm below the surface of the 7075-T6 block barely registers. The instructor recovers the signal by dropping to 10 kHz because the lower frequency:",
+   "options": [
+    "raises the eddy current density at the part surface",
+    "increases the coil's inductive reactance, amplifying every signal on screen",
+    "eliminates the phase lag between surface and subsurface currents",
+    "stretches the standard depth of penetration to about 1.2 mm in that alloy, so usable current density reaches the hole — its signal reappearing rotated by the added phase lag of depth"
+   ],
+   "correct": 3,
+   "explanation": "Standard depth of penetration, δ = 1/√(πfμσ), grows as frequency falls. At 200 kHz the hole sits beyond 3δ (about 0.8 mm), where only about 5% of the current density remains; at 10 kHz δ stretches to roughly 1.2 mm and the hole reappears. Deeper currents also lag by roughly 57° — one radian — per standard depth, so the subsurface signal shows up rotated relative to a surface notch."
+  },
+  {
+   "question": "Every demonstration in this module begins with the instruction to null and measure well away from sample edges. An approaching edge disturbs the test because:",
+   "options": [
+    "the coil's field extends beyond its windings, so the edge disturbs the eddy currents before the probe arrives and reads like a massive defect",
+    "edges are always work-hardened, which raises the local conductivity",
+    "the probe loses all lift-off response near an edge",
+    "edges reflect the magnetic field back into the coil, doubling its reactance"
+   ],
+   "correct": 0,
+   "explanation": "The magnetic field wraps beyond the physical coil, so the edge effect begins before the probe reaches the edge — bending conductivity readings, distorting Z-curves and lift-off curves, and producing a response that can mimic a huge discontinuity. That is why every lab keeps the probe at least a probe diameter from edges and nulls on sound metal."
+  },
+  {
+   "question": "With lift-off rotated horizontal during the combined demonstration, three more signatures appear. Which set of pairings matches the lab observations?",
+   "options": [
+    "Probe rock — curls toward the air point; wall thinning — runs along the horizontal; steel touch — moves down the conductivity locus",
+    "Probe rock — runs along the horizontal; wall thinning inside about 3δ — curls the point toward the air point; steel touch — large deflection above the air point",
+    "Probe rock, wall thinning, and a steel touch all move the dot in the same direction; only amplitude distinguishes them",
+    "Probe rock — deflects above the air point; wall thinning — rises at a separated phase angle; steel touch — runs along the horizontal"
+   ],
+   "correct": 1,
+   "explanation": "Direction identifies the variable; amplitude scores its size. Rotated flat, probe handling stays in the horizontal channel; thinning shows nothing until the wall drops inside the effective depth of penetration, then curls the operating point toward the air point as metal runs out — the basis of thickness measurement; and a ferromagnetic touch leaps above the air point because permeability raises inductive reactance. A surface crack adds the fourth signature, rising at its own separated angle."
+  }
+ ]
+}

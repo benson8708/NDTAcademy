@@ -1,0 +1,69 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arwE254aB" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9BC4FF"/>
+    </marker>
+    <marker id="arwE254aW" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#FFFFFF"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">Drive Level in the Linear Regime — Nonmagnetic Conductors</text>
+
+  <!-- LEFT PANEL: amplitude vs drive -->
+  <text x="230" y="72" text-anchor="middle" font-size="15" fill="#9BC4FF">Flaw-signal amplitude vs probe drive</text>
+
+  <!-- axes -->
+  <line x1="90" y1="420" x2="90" y2="100" stroke="#9BC4FF" stroke-width="2" marker-end="url(#arwE254aB)"/>
+  <line x1="90" y1="420" x2="370" y2="420" stroke="#9BC4FF" stroke-width="2" marker-end="url(#arwE254aB)"/>
+  <text x="48" y="260" transform="rotate(-90 48 260)" text-anchor="middle" font-size="14" fill="#FFFFFF">signal amplitude</text>
+  <text x="230" y="452" text-anchor="middle" font-size="14" fill="#FFFFFF">probe drive (coil excitation)</text>
+
+  <!-- fixed electronic noise floor -->
+  <line x1="90" y1="388" x2="368" y2="388" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="6 4" stroke-opacity="0.8"/>
+  <text x="366" y="380" text-anchor="end" font-size="13" fill="#9BC4FF">electronic noise floor — fixed</text>
+
+  <!-- proportional line -->
+  <line x1="90" y1="420" x2="330" y2="132" stroke="#FFFFFF" stroke-width="3"/>
+
+  <!-- guides for 2 V and 4 V -->
+  <line x1="170" y1="420" x2="170" y2="324" stroke="#9BC4FF" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.7"/>
+  <line x1="90" y1="324" x2="170" y2="324" stroke="#9BC4FF" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.7"/>
+  <line x1="250" y1="420" x2="250" y2="228" stroke="#9BC4FF" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.7"/>
+  <line x1="90" y1="228" x2="250" y2="228" stroke="#9BC4FF" stroke-width="1" stroke-dasharray="3 3" stroke-opacity="0.7"/>
+  <circle cx="170" cy="324" r="6" fill="#1E66F5" stroke="#9BC4FF" stroke-width="2"/>
+  <circle cx="250" cy="228" r="6" fill="#1E66F5" stroke="#9BC4FF" stroke-width="2"/>
+  <text x="170" y="440" text-anchor="middle" font-size="14" fill="#FFFFFF">2 V</text>
+  <text x="250" y="440" text-anchor="middle" font-size="14" fill="#FFFFFF">4 V</text>
+
+  <!-- doubling bracket -->
+  <line x1="290" y1="318" x2="290" y2="234" stroke="#FFFFFF" stroke-width="2" marker-start="url(#arwE254aW)" marker-end="url(#arwE254aW)"/>
+  <text x="298" y="272" font-size="14" font-weight="bold" fill="#FFFFFF">amplitude ×2</text>
+  <text x="298" y="290" font-size="14" fill="#9BC4FF">= +6 dB</text>
+
+  <!-- RIGHT PANEL: normalized impedance plane -->
+  <text x="615" y="72" text-anchor="middle" font-size="15" fill="#9BC4FF">Normalized impedance plane</text>
+
+  <line x1="480" y1="440" x2="480" y2="112" stroke="#9BC4FF" stroke-width="2" marker-end="url(#arwE254aB)"/>
+  <line x1="480" y1="440" x2="765" y2="440" stroke="#9BC4FF" stroke-width="2" marker-end="url(#arwE254aB)"/>
+  <text x="452" y="280" transform="rotate(-90 452 280)" text-anchor="middle" font-size="14" fill="#FFFFFF">XL / X0 (normalized reactance)</text>
+  <text x="630" y="466" text-anchor="middle" font-size="14" fill="#FFFFFF">R / X0 (normalized resistance)</text>
+
+  <!-- conductivity locus -->
+  <path d="M480,140 C 610,170 665,250 630,330 C 605,387 545,425 482,436" fill="none" stroke="#9BC4FF" stroke-width="2.5"/>
+  <text x="606" y="416" font-size="12" fill="#9BC4FF">higher f·σ along the curve</text>
+
+  <!-- air point -->
+  <circle cx="480" cy="140" r="5" fill="#FFFFFF"/>
+  <text x="494" y="136" font-size="14" fill="#FFFFFF">air point (1.0)</text>
+
+  <!-- operating point: parked at any drive -->
+  <circle cx="617" cy="216" r="16" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <circle cx="617" cy="216" r="7" fill="#1E66F5" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="758" y="146" text-anchor="end" font-size="14" font-weight="bold" fill="#FFFFFF">operating point —</text>
+  <text x="758" y="164" text-anchor="end" font-size="14" fill="#9BC4FF">same spot at every drive</text>
+  <line x1="700" y1="172" x2="632" y2="206" stroke="#9BC4FF" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <text x="400" y="487" text-anchor="middle" font-size="14" fill="#9BC4FF">Amplitude rises with drive; plane position, phase, and δ do not — δ = 1/√(π·f·μ·σ) has no drive term.</text>
+</svg>

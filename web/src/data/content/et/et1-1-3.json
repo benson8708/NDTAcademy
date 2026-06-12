@@ -1,0 +1,190 @@
+{
+ "lessonId": "et1-1-3",
+ "title": "Primary and Secondary Field Relationships",
+ "narrationScript": "Every eddy current test is a conversation between two magnetic fields. The primary field is the one you control. Alternating current through the test coil builds a magnetic field that expands, collapses, and reverses at the test frequency. Bring that coil near a conductor and the changing field induces eddy currents, closed loops of current circulating in the part and mirroring the coil above them. Those currents generate their own magnetic field, the secondary field, and Lenz's law fixes its behavior. It always opposes the change that created it. The part pushes back. That push-back cuts the net flux through the coil, so inductive reactance drops, and the energy the eddy currents burn off as heat appears as added coil resistance. The coil acts like the primary of a transformer whose secondary, the part, is a single shorted turn. Anything that disturbs the eddy currents, a crack, a conductivity change, lift-off, changes the secondary field, and the instrument reads that change as your indication.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Primary Field: The Field You Control",
+   "body": "Run alternating current through a coil of wire and you build the **primary field** — the magnetic field every eddy current test starts with. Any current-carrying conductor wraps itself in a magnetic field (the right-hand rule gives its direction); winding the wire into a coil stacks those contributions so the field concentrates along the coil's axis. Because the drive current is AC, this field is never static: it **expands, collapses, and reverses polarity every cycle**, at the test frequency you set on the instrument — from below a kilohertz for deeper-penetration work to several megahertz for fine surface testing.\n\nThe primary field is the one element of the test entirely under your control:\n\n- **Coil geometry** sets the field's shape and footprint.\n- **Drive current** sets its strength.\n- **Frequency** sets how fast the flux changes — and Faraday's law (last lesson) says the *rate of change* is what does the inducing.\n\nNote what the primary field does *not* need: a test part. A coil energized in open air carries its full primary field and nothing else. The story only gets interesting when conductive material enters that field."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-1-3-fig-a",
+   "caption": "Cross-section of an energized probe coil over a conductive part: the alternating primary field induces closed eddy current loops near the surface, and their secondary field pushes back against the change."
+  },
+  {
+   "type": "text",
+   "heading": "The Part Pushes Back: Eddy Currents and the Secondary Field",
+   "body": "Set the energized coil on a conductive part and the part's free electrons are now sitting inside a changing magnetic flux. **Faraday's law** demands an induced voltage, and in a solid conductor that voltage drives **eddy currents** — currents that circulate in **closed loops**, flowing in planes parallel to the coil windings and mirroring the coil's shape, strongest at the surface directly beneath the coil and weaker with depth.\n\nMoving charge creates a magnetic field, so the eddy currents wrap themselves in a field of their own: the **secondary field**. Its direction is not negotiable. **Lenz's law** states that an induced current always flows in the direction whose magnetic field **opposes the change in flux that created it**. While the primary field is growing, the eddy currents flow opposite to the coil current and buck that growth; when the primary collapses, they reverse and try to prop the flux up. Averaged over every AC cycle, the outcome is the same — the secondary field subtracts from the flux linking the coil.\n\nThis opposition is physically real, not a bookkeeping convention. It is the drag that slowed Arago's spinning disk, and it is the repulsion that launches the ring in the classic jumping-ring demonstration — the changing primary field literally pushes the conductor away."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Lenz's law — the push-back principle",
+   "body": "The secondary field **always opposes the change** that created it — it never aids it. With AC excitation the practical consequence is constant: the part's push-back subtracts from the primary flux at the coil. **How hard the part pushes back, and how the timing of that push-back shifts, is the entire measurement.** Strong, healthy push-back means a good conductor, closely coupled. A weakened push-back means the currents were throttled — by distance, by lower conductivity, or by a crack standing in their path."
+  },
+  {
+   "type": "text",
+   "heading": "What the Push-Back Does to the Coil",
+   "body": "In open air, the coil presents a fixed electrical **impedance** to the instrument: the wire's resistance R plus its inductive reactance Xʟ = 2πfL, set by how much flux the coil links per ampere of drive current. Couple the coil to a conductor and both terms move:\n\n- **Inductive reactance falls.** The opposing secondary field cancels part of the primary flux, so the coil links less flux per ampere — inductance L drops, and Xʟ drops with it.\n- **Effective resistance rises.** Eddy currents flowing through the part's resistance dissipate real energy as heat (I²R). That energy can only come from the coil's drive circuit, and the instrument sees the loss as added resistance in the coil.\n\nThe cleanest model is a **transformer**: the test coil is the primary winding, and the part behaves as a **single-turn secondary winding short-circuited through its own resistance**. Transformer rules apply — whatever loads the secondary reflects back into the primary. A hypothetical perfect conductor would carry loss-free eddy currents: pure flux cancellation, Xʟ down, R unchanged. Real metals have finite conductivity, so you always get both effects, in a ratio set by the material and the test frequency — the seed of the impedance-plane display you will meet in a later module."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-1-3-fig-b",
+   "caption": "The transformer analogy: the test part acts as a single shorted secondary turn, so coupling the coil to it lowers inductive reactance (opposed flux) and raises effective resistance (eddy current heating)."
+  },
+  {
+   "type": "table",
+   "caption": "Every test variable works through the same chain: it alters the eddy currents, the altered secondary field changes the net flux, and the coil's impedance moves.",
+   "headers": ["Change at the part", "Effect on eddy currents and secondary field", "What the coil reports"],
+   "rows": [
+    ["Higher conductivity (e.g., copper vs. titanium)", "Stronger eddy currents — stronger opposing secondary field", "Net flux falls further; inductive reactance drops more"],
+    ["Crack or discontinuity crossing the current paths", "Loops interrupted and diverted — secondary field weakens locally", "Impedance shifts back toward the in-air value: the flaw signal"],
+    ["Increased lift-off (coil moves away from the surface)", "Coupling weakens — smaller induced currents, weaker secondary field", "Response drifts toward the in-air point: the lift-off signal"],
+    ["Higher test frequency", "Faster flux change drives stronger induction; currents crowd toward the surface", "Stronger surface response with shallower penetration (skin effect, later lesson)"],
+    ["Ferromagnetic part (high permeability)", "Part concentrates magnetic flux in addition to carrying eddy currents", "Inductive reactance rises — the opposite direction; treated in later lessons"]
+   ]
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-1-3-fig-c",
+   "caption": "A surface crack severs the eddy current loops and forces the current into detours around its ends: weaker circulation means a weaker secondary field, and the coil's impedance shifts back toward its in-air value — the flaw indication."
+  },
+  {
+   "type": "text",
+   "heading": "From Push-Back to Indication",
+   "body": "Put the whole chain to work. You are scanning an aluminum skin with a probe coil. Over sound metal the eddy currents run in full, unbroken circles, and their secondary field holds the coil's impedance at a steady operating point. Then the coil crosses a tight surface crack. Eddy currents cannot jump the gap — the crack severs their paths and forces the current into longer detours around the crack ends. Circulation weakens, the secondary field sags, the net flux at the coil rises back toward its in-air value, and the impedance shifts. The instrument draws that shift on the screen. That is an **indication**.\n\nBe precise about what happened: **the instrument never saw the crack.** It saw a change in coil impedance, caused by a change in the secondary field, caused by a change in the eddy currents. Conductivity variations, lift-off wobble, thickness changes, and permeability shifts travel the same chain and also move the signal — so a Level I technician's discipline is knowing that every signal means *some* variable moved, and testing to a procedure that controls the variables the test is not meant to measure.\n\nOne more layer is waiting: the eddy currents do not respond perfectly in step with the primary field — they **lag** it, and currents flowing deeper lag more. That timing difference, called phase, is how an eddy current instrument tells one variable from another. The impedance-plane lessons ahead are built on it."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-1-3-fig-a",
+   "title": "Primary and secondary fields at the probe coil",
+   "file": "et1-1-3-fig-a.svg"
+  },
+  {
+   "id": "et1-1-3-fig-b",
+   "title": "The transformer analogy: part as shorted secondary",
+   "file": "et1-1-3-fig-b.svg"
+  },
+  {
+   "id": "et1-1-3-fig-c",
+   "title": "A crack interrupts the eddy current loops",
+   "file": "et1-1-3-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Walk the Chain: Coil, Part, Push-Back",
+  "intro": "Reason through each situation with the chain this lesson built: primary field → eddy currents → secondary field → net flux → coil impedance. Pick the answer the physics demands.",
+  "steps": [
+   {
+    "prompt": "An ET probe coil is energized in open air, far from any metal. Which magnetic fields exist around it?",
+    "options": [
+     "None — a magnetic field requires a conductor nearby",
+     "The primary field only, expanding and collapsing at the test frequency",
+     "Primary and secondary fields in balance",
+     "A steady, non-varying magnetic field"
+    ],
+    "correct": 1,
+    "feedback": "The primary field needs nothing but coil current — it exists with or without a part, and it alternates because the drive current does. The secondary field cannot exist yet: there is no conductor to carry eddy currents."
+   },
+   {
+    "prompt": "You set the coil on a thick aluminum plate. What happens at the coil?",
+    "options": [
+     "Net flux increases, so inductive reactance rises",
+     "Nothing changes until the aluminum is magnetized",
+     "Eddy currents create an opposing secondary field — net flux and inductive reactance fall, and effective resistance rises",
+     "The primary field is completely cancelled"
+    ],
+    "correct": 2,
+    "feedback": "Induced eddy currents obey Lenz's law and buck the changing primary flux, so flux linkage and Xʟ fall, while the part's I²R heating loads the coil and raises its effective resistance. Complete cancellation would require a perfect, loss-free conductor — real metals only push back partially."
+   },
+   {
+    "prompt": "Scanning along the plate, the coil passes over a tight surface crack. The instrument shows a shift because:",
+    "options": [
+     "the crack emits its own alternating magnetic field",
+     "the eddy current loops are interrupted and diverted, weakening the secondary field, so coil impedance moves back toward its in-air value",
+     "the crack strengthens the eddy currents and increases the opposition",
+     "the primary field cannot enter cracked metal"
+    ],
+    "correct": 1,
+    "feedback": "A crack generates nothing — it blocks. Current cannot cross the gap, so the loops detour around the crack ends, circulation weakens, the push-back sags, and the net flux at the coil rises. The impedance shift is the indication."
+   },
+   {
+    "prompt": "Mid-scan the probe rocks and lifts about half a millimeter off the surface. The signal moves even though the metal is sound. Why?",
+    "options": [
+     "Air becomes conductive at test frequencies",
+     "The secondary field reverses and aids the primary",
+     "The test frequency changes with distance",
+     "Lift-off weakens the magnetic coupling, so the eddy currents and secondary field weaken — the coil drifts toward its in-air condition"
+    ],
+    "correct": 3,
+    "feedback": "Coupling falls off rapidly with distance. Weaker coupling means weaker eddy currents and a weaker push-back, so the response moves toward the in-air point — the lift-off signal. Later lessons show how phase separates lift-off from flaw signals."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "The primary field in an eddy current test is produced by:",
+   "options": [
+    "eddy currents circulating in the test part",
+    "alternating current flowing through the test coil",
+    "residual magnetism left in the test part",
+    "the instrument's display circuitry"
+   ],
+   "correct": 1,
+   "explanation": "The primary field is the coil's own field, generated by the AC drive current and alternating at the test frequency. It exists whether or not a part is present — eddy currents produce the secondary field, not the primary."
+  },
+  {
+   "question": "According to Lenz's law, the secondary field produced by the eddy currents:",
+   "options": [
+    "always points in the same direction as the primary field",
+    "exists only in ferromagnetic materials",
+    "opposes the change in the magnetic flux that created the eddy currents",
+    "is a steady DC field even though the primary field alternates"
+   ],
+   "correct": 2,
+   "explanation": "Induced currents always flow so that their field opposes the change that created them. With AC excitation the net effect over each cycle is a secondary field that subtracts from the primary flux linking the coil. It arises in any conductor, magnetic or not, and it alternates with the drive."
+  },
+  {
+   "question": "When an energized probe coil is placed on a thick nonmagnetic conductor, the coil's:",
+   "options": [
+    "inductive reactance decreases and its effective resistance increases",
+    "inductive reactance increases and its effective resistance decreases",
+    "inductive reactance and resistance both drop to zero",
+    "impedance does not change unless a flaw is present"
+   ],
+   "correct": 0,
+   "explanation": "The opposing secondary field cancels part of the primary flux, so flux linkage and inductive reactance fall; the eddy currents' I²R heating in the part is supplied by the coil circuit and appears as added effective resistance. The impedance change happens on sound metal — flaws then disturb it further."
+  },
+  {
+   "question": "A surface crack produces an eddy current indication because it:",
+   "options": [
+    "generates its own alternating magnetic field",
+    "increases the conductivity of the surrounding metal",
+    "amplifies the primary field locally",
+    "interrupts and diverts the eddy current loops, weakening the opposing secondary field"
+   ],
+   "correct": 3,
+   "explanation": "Eddy currents cannot cross the crack, so they detour around its ends and circulation weakens. The weaker secondary field lets the net flux at the coil rise toward the in-air value, shifting the coil impedance — that shift is what the instrument displays."
+  },
+  {
+   "question": "In the transformer analogy for eddy current testing, the test part acts as:",
+   "options": [
+    "the transformer core, concentrating flux without carrying current",
+    "a single-turn, short-circuited secondary winding",
+    "the primary winding driven by the instrument",
+    "an open-circuited secondary winding carrying no current"
+   ],
+   "correct": 1,
+   "explanation": "The test coil is the primary winding; the part behaves as one shorted secondary turn closed through its own resistance. Whatever loads the secondary reflects back into the primary — which is why the instrument can read the part's condition through the coil's impedance."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Theory Course §1.2 (basic physics and controlling principles: electromagnetic induction; primary and secondary field/force relationships)",
+  "ASNT SNT-TC-1A (2024) — recommended practice governing the Level I training and qualification this course supports",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (electromagnetic testing terms: eddy current, primary and secondary fields, lift-off)"
+ ]
+}

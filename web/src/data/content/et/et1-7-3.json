@@ -1,0 +1,179 @@
+{
+ "lessonId": "et1-7-3",
+ "title": "Marking, Sorting, and Cutoff Systems",
+ "narrationScript": "On a production line, nobody reads a screen. Tube, bar, and wire move through the test coil at meters per second, and the alarm gate has milliseconds to act. This lesson covers the hardware that turns an alarm into a visible decision on the product. Marking systems spray paint or ink onto the section that alarmed, so it can be cropped, repaired, or reviewed later. Sorting gates and tables divert discrete pieces into accept, reject, or regrade paths, and a proper sorter fails safe, so losing air or power never sends parts to the accept bin. Cutoff saws and shears serve continuous product, cutting the defective section out of the line. Everything hangs on transport delay. The device sits downstream of the coil, so the output is delayed by distance divided by line speed, and an encoder keeps that timing honest when speed changes. Prove the whole chain dynamically with a reference standard at line speed. One failed check sends every piece back to the last good check for retest.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "From Alarm Gate to Action",
+   "body": "The readout devices you have met so far — meters, impedance-plane displays, recorders, alarm lights — all report to a person. A production eddy current line cannot wait for one. Welded tube, bar, rod, and wire feed through encircling coils at a meter or more per second — wire lines run far faster — and at that pace a discontinuity is detected, judged against the alarm threshold, and gone from the coil in milliseconds.\n\nSo on an automated line the alarm gate does more than light a lamp: it closes a relay, and that relay drives hardware that acts on the product itself. The Level I outline groups these output systems into three families:\n\n- **Marking systems** — put a visible, durable mark on the exact section that alarmed.\n- **Sorting gates and tables** — physically divert each discrete piece to an accept, reject, or regrade path.\n- **Cutoff saws and shears** — cut the defective section out of continuous product.\n\nYour role as a Level I is operational: set up per the written instruction, verify each output device works — dynamically, at line speed — keep it supplied and aimed, and leave the alarm threshold alone; setting it is Level II or III work. On an automated line the deliverable is not a clean screen. It is correct disposition — every rejectable section marked, diverted, or removed, and every acceptable piece untouched."
+  },
+  {
+   "type": "text",
+   "heading": "Transport Delay: Acting on a Flaw That Keeps Moving",
+   "body": "The alarm fires while the discontinuity is still inside the coil — but the marker, gate, or saw sits downstream, because hardware needs room. That gap creates the one piece of arithmetic this lesson runs on:\n\n**output delay = coil-to-device distance ÷ line speed**\n\nA marker 2.4 m downstream on a line running 1.2 m/s must fire **2.0 seconds** after the alarm. Fire on time and the paint lands on the flaw. Fire early or late and you have marked good product while the defect ships clean.\n\nThe simple implementation is a fixed timer — and it is correct at exactly one speed. Mills accelerate, decelerate, and creep during startup, slowdowns, and stock changes. Suppose the delay was timed for 1.0 m/s with the device 3.0 m downstream — a 3.0-second delay — and the line moves up to 1.5 m/s: the flaw now reaches the device in 2.0 seconds and is **1.5 m past it** when the output finally fires. The robust implementation is **distance-based tracking**: a shaft encoder or tachometer wheel rides the product and emits a pulse per increment of travel, and the system fires the output after the product has actually moved the coil-to-device distance — correct at any speed.\n\nReal systems also pad the action window. Filter response, relay pickup, and paint flight time each add positional uncertainty, so the mark or crop window is widened to guarantee the flaw sits inside it."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-7-3-fig-a",
+   "caption": "One automated line, end to end: the alarm fires at the encircling coil, the encoder tracks actual product travel, and the marker and cutoff each act exactly one coil-to-device travel distance later."
+  },
+  {
+   "type": "text",
+   "heading": "Marking Systems: Paint on the Problem",
+   "body": "Marking is the lightest-touch disposition: the product keeps moving, and the mark tells everyone downstream exactly where the problem is. The common hardware:\n\n- **Solenoid-actuated paint spray guns** — the workhorse on tube and bar lines; fast response, non-contact, effective at full line speed.\n- **Ink-jet heads** — fine, fast marks on small product such as wire and redraw rod.\n- **Paint wheels and daubers** — contact markers suited to slower lines and heavy sections.\n\nA useful mark has to survive its mission. It must contrast with the product surface, dry before the next roll touches it, and withstand handling until the marked section is cropped, reworked, or reviewed. On stainless steel and titanium for critical service, use only marking fluids the material specification permits — many restrict halogen-bearing inks. Systems with more than one alarm level or channel often mark in **multiple colors** — one color for a rejectable indication, another for a regrade or investigate level — so the crew at the cutoff knows what each mark means without a printout.\n\nVerification is blunt and physical: run the **reference standard**, with its EDM notches or drilled holes, through at production speed — every artificial discontinuity must come out wearing a mark, centered on it. If one passes unmarked, or the mark lands off the notch, the system failed — and **every piece tested since the last acceptable check must be re-examined**. That rule has no exceptions, and it applies to every device in this lesson."
+  },
+  {
+   "type": "text",
+   "heading": "Sorting Gates and Tables: Every Piece Gets a Verdict",
+   "body": "Once product exists as discrete pieces — cut-to-length tubes, bars, bearing rings, fasteners — the system can disposition each piece whole. Sorting hardware scales with the part:\n\n- **Air-blast nozzles** flick small parts off a track into bins.\n- **Solenoid or pneumatic gate flippers** swing a diverter so each piece travels the accept or the reject chute.\n- **Kick-out arms** push tubes and bars sideways off the runout line onto separate **accept and reject tables**.\n\nTwo-way accept/reject is the baseline. Comparative tests — alloy sort, hardness sort, mixed-stock screening — often run **three-way**: two identified classes plus a retest bin for pieces the instrument could not classify cleanly.\n\nTiming is everything. The system must track each piece from coil to gate — usually with a part-presence sensor — so the gate moves for the piece that alarmed, not its neighbor. Feed spacing keeps one piece in the decision window at a time; a jam or a missed trigger means those pieces are simply **untested**, and untested goes to reject or retest, never to accept.\n\nThat is the larger principle: a properly designed sorter **fails to reject**. The de-energized gate position feeds the reject path, so a power loss, air loss, or instrument fault stops good-bin flow instead of contaminating it. Verification needs both masters: a seeded **known-defective** piece must land in reject, and a **known-good** piece must land in accept — a sorter that rejects everything has also failed."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-7-3-fig-b",
+   "caption": "Sorting gate seen from above: the gate arm's de-energized position feeds the reject path, so a lost trigger, air failure, or power failure can never wave a part onto the accept table."
+  },
+  {
+   "type": "text",
+   "heading": "Cutoff Saws and Shears: Making the Defect Leave the Line",
+   "body": "Wire, rod, and welded tube come off the mill as effectively endless product. There is no piece to divert — until you make one. Cutoff devices give the alarm gate a way to physically remove a defective section from continuous product:\n\n- **Shears** — rotary or guillotine — crop small-section product such as wire and redraw rod, often actuated directly by the delayed alarm so the flawed section drops out of the line.\n- **Cutoff saws** handle tube and heavier sections. On a welded-tube mill, a **flying cutoff** clamps onto the moving product and travels with it while cutting, so the mill never stops.\n\nTwo arrangements dominate. In the **direct-crop** arrangement, the delayed alarm actuates the cutter and the flawed section is removed between two cuts placed with margin on both sides of the predicted flaw position. In the **tagging** arrangement, common on tube mills, the test system flags the cut length that contains the alarm; the flying cutoff makes its normal cut-to-length cuts, and the flagged length is kicked out at the runout table instead of joining accepted stock.\n\nOne limitation feeds the cutoff naturally: **end effect**. As a product end enters or leaves an encircling coil, the field distortion swamps the signal, so a short length at each end of every cut piece is never truly examined. Mills handle it honestly — end suppression gates out the false signal, and the untested ends are cropped or examined separately before the piece is accepted."
+  },
+  {
+   "type": "callout",
+   "variant": "safety",
+   "title": "The cutoff zone is a machine-guarding zone",
+   "body": "A saw or shear on an automated line actuates on the alarm signal — without warning, on no schedule a human can anticipate. Guards and interlocks stay in place whenever the line can move. Clearing a jam, changing a blade, or re-aiming a marker inside the guarded envelope is maintenance work: stop the line and apply your plant's lockout/tagout procedure before reaching in. No test result is worth a hand."
+  },
+  {
+   "type": "table",
+   "caption": "The three disposition systems and the dynamic check that proves each one. The retest rule backs them all: a failed check makes everything since the last acceptable check untested, and it must be re-examined.",
+   "headers": ["Output system", "Product form", "Action on the product", "Typical hardware", "Dynamic check"],
+   "rows": [
+    ["Marking system", "Continuous or cut lengths, moving at speed", "Flags the rejectable section for later crop, rework, or review", "Solenoid paint spray, ink-jet head, paint wheel", "Every reference notch receives a centered mark at line speed"],
+    ["Sorting gate and table", "Discrete pieces — cut tubes, bars, small parts", "Diverts each piece to accept, reject, or regrade", "Air blast, gate flipper, kick-out arms onto tables", "Seeded defective and good masters land in the correct bins"],
+    ["Cutoff saw or shear", "Continuous product — wire, rod, welded tube", "Crops the defective section out of the line", "Rotary or guillotine shear, flying cutoff saw", "Crop window brackets the reference flaw with margin on both sides"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-7-3-fig-a",
+   "title": "Automated ET line: coil to disposition",
+   "file": "et1-7-3-fig-a.svg"
+  },
+  {
+   "id": "et1-7-3-fig-b",
+   "title": "Sorting gate fail-safe logic",
+   "file": "et1-7-3-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Shift on the Tube Mill",
+  "intro": "You are the Level I operator on an automated eddy current station at a welded-tube mill: encircling coil, paint marker 3.0 m downstream, flying cutoff, and accept/reject kick-outs. Make each call the written instruction would demand.",
+  "steps": [
+   {
+    "prompt": "Start of run. Before any production ships, your first required action is to:",
+    "options": [
+     "Raise the gain until baseline noise just trips the alarm, proving the alarm circuit works",
+     "Run the reference standard through at production speed and confirm every artificial discontinuity is marked and rejected",
+     "Visually inspect the first ten tubes off the line for paint marks",
+     "Zero the encoder counter and log the line speed"
+    ],
+    "correct": 1,
+    "feedback": "Only a dynamic check proves the whole chain — coil, alarm gate, transport delay, marker, kick-out — under real line conditions. A static bench check or a noise-tripped alarm proves almost none of it."
+   },
+   {
+    "prompt": "Mid-shift, line speed rises from 1.0 to 1.5 m/s. On a check standard, marks now land about 1.5 m away from the notches. The cause is:",
+    "options": [
+     "Paint viscosity changed as the gun warmed up",
+     "Coil sensitivity dropped at the higher speed",
+     "The alarm delay is a fixed timer set for 1.0 m/s — at 1.5 m/s the flaw passes the marker before the timer fires",
+     "The encoder is double-counting pulses"
+    ],
+    "correct": 2,
+    "feedback": "The timer holds 3.0 s (3.0 m ÷ 1.0 m/s). At 1.5 m/s the flaw reaches the marker in 2.0 s, and by 3.0 s it is 1.5 m past it. Distance-based encoder tracking — or resetting the delay for the new speed — puts the mark back on the flaw."
+   },
+   {
+    "prompt": "The plant air supply to the reject kick-out drops out mid-run. In a properly designed system, what happens?",
+    "options": [
+     "Pieces keep flowing to the accept table until air returns",
+     "The instrument raises its alarm threshold to compensate",
+     "The line stops, or every piece routes to reject, until air is restored",
+     "The operator hand-sorts pieces at line speed"
+    ],
+    "correct": 2,
+    "feedback": "Fail-safe means fail-to-reject: the de-energized state must never feed the accept path. With no working reject mechanism, nothing is allowed to reach the good bin — the line stops or everything diverts to reject/retest."
+   },
+   {
+    "prompt": "At the end-of-run check, one notch on the reference standard passes through unmarked. The product run since the last successful check:",
+    "options": [
+     "Ships, because the start-of-run check passed",
+     "Is re-examined after the fault is corrected and the system passes verification again",
+     "Is scrapped without further examination",
+     "Ships with a note attached to the test report"
+    ],
+    "correct": 1,
+    "feedback": "A failed check means the system may have been missing real flaws, so everything back to the last acceptable check is untested. The governing ASTM practices require re-examination — not automatic scrap, and never acceptance."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "On an automated tube line, the primary purpose of a marking system is to:",
+   "options": [
+    "record the amplitude of each indication for the permanent test record",
+    "place a visible mark on the product at the rejectable indication so the section can be located and dispositioned later",
+    "increase the sensitivity of the test coil at high line speed",
+    "demagnetize the tube before it reaches the cutoff"
+   ],
+   "correct": 1,
+   "explanation": "The marker is the alarm gate's physical output: it flags exactly where the alarm occurred so the section can be cropped, reworked, or reviewed downstream. Recording amplitudes is the job of the data-recording readouts covered earlier in this module."
+  },
+  {
+   "question": "A paint marker is mounted 2.4 m downstream of the test coil and the product travels at 1.2 m/s. The alarm output must be delayed approximately:",
+   "options": ["2.0 s", "2.9 s", "0.5 s", "1.2 s"],
+   "correct": 0,
+   "explanation": "Delay equals coil-to-device distance divided by line speed: 2.4 m ÷ 1.2 m/s = 2.0 s. Multiplying instead of dividing gives the 2.9 s distractor — a classic setup error."
+  },
+  {
+   "question": "Production systems use encoder (distance-based) delay tracking rather than a fixed timer because:",
+   "options": [
+    "encoders also measure the product's conductivity",
+    "fixed timers cannot switch a relay quickly enough",
+    "encoders filter lift-off noise out of the coil signal",
+    "a fixed time delay is correct at only one line speed, while distance tracking puts the action on the flaw at any speed"
+   ],
+   "correct": 3,
+   "explanation": "The flaw arrives at the device after traveling a fixed distance, not after a fixed time. An encoder counts actual product travel, so speed changes during startup, slowdown, and creep no longer displace the mark or the crop."
+  },
+  {
+   "question": "On a continuous wire line, rejectable sections are removed with a shear rather than diverted by a sorting gate because:",
+   "options": [
+    "wire moves too fast for paint to adhere",
+    "sorting gates work only on ferromagnetic product",
+    "the product is continuous — no discrete piece exists to divert until a cut is made",
+    "shears also strip surface oxide from the wire"
+   ],
+   "correct": 2,
+   "explanation": "Sorting requires discrete pieces. Continuous product must first be cut, so the cutoff shear is the disposition device — it crops the defective section out of the line."
+  },
+  {
+   "question": "During a mid-run dynamic check, one notch on the reference standard passes through unmarked. The product tested since the last successful check must be:",
+   "options": [
+    "accepted, because the start-of-run verification passed",
+    "accepted, if the paint reservoir simply ran dry",
+    "treated as untested and re-examined after the system again passes verification",
+    "scrapped without further examination"
+   ],
+   "correct": 2,
+   "explanation": "A failed functional check means the system may have missed real discontinuities, so everything back to the last acceptable check is unproven. The governing ASTM practices require re-examination — not automatic scrap, and never acceptance on the strength of an earlier check."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Basic Technique Course §3.6–3.8 (readout mechanisms: marking systems, sorting gates and tables, cutoff saw or shears)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — Level I duties: perform tests and record results per written instructions under Level II/III supervision",
+  "ASTM E309, Standard Practice for Eddy-Current Examination of Steel Tubular Products Using Magnetic Saturation (automated production examination; re-examination of product tested since the last acceptable standardization check)",
+  "ASTM E426, Standard Practice for Electromagnetic (Eddy Current) Examination of Seamless and Welded Tubular Products, Titanium, Austenitic Stainless Steel and Similar Alloys (periodic standardization verification during production runs)"
+ ]
+}

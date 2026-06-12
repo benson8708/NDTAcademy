@@ -1,0 +1,191 @@
+{
+ "lessonId": "et1-8-3",
+ "title": "Lab: Rotational and Forward Speed Effects",
+ "narrationScript": "Every lab so far changed the part, the gap, or the test frequency. This one changes nothing but speed — and the signals change anyway. A rotating probe drags its sensing zone across a fixed notch, so the signal is a pulse whose duration is set by how fast the coil crosses it. Spin faster and the pulse narrows and its energy climbs in frequency. Spin slower and it stretches and slides down. Your filters do not move with it. A band-pass window that shows a crisp notch at fifteen hundred RPM starves the same notch at six hundred and clips it at three thousand. You will sweep the speed, watch a calibrated signal die both ways, and bring it back by re-matching the filters. Then forward speed: rotation plus feed traces a helix, and pitch equals feed divided by revolutions per second. Open the pitch past the coil's effective width and unswept stripes appear where a short flaw survives by luck. Find that cliff, document the speed window, and always verify at the speed you inspect.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "This Lab: Speed Becomes the Variable",
+   "body": "The first two labs in this module changed the electronics and the coupling — you watched band-pass filters carve up signals from a rotating reference standard, then watched lift-off and frequency move signals around the impedance plane. This lab holds the probe, the part, the test frequency, and the filters, and changes only **speed**.\n\nRotating systems have two speeds, and each one fails detection in its own way:\n\n- **Rotational speed** — the RPM of the bolt-hole scanner or the rotating head — sets how fast the coil sweeps the surface, which sets the **frequency content** of every flaw signal. Filters are fixed-frequency devices: change the RPM without re-matching them and a calibrated signal starves inside the instrument.\n- **Forward (throughput) speed** — the axial advance: the scanner withdrawing through a fastener hole, or bar and tube stock feeding through a rotating head. Rotation plus advance traces a **helix** on the surface, and forward speed sets the helix **pitch**. Open the pitch past the coil's coverage and stripes of the surface are never interrogated at all.\n\nThe first failure attenuates a signal the coil did generate. The second guarantees there is no signal to attenuate. Ninety minutes at this bench teaches you to provoke both, fix both, and write the resulting speed limits into the technique record."
+  },
+  {
+   "type": "text",
+   "heading": "Why Speed Changes the Signal",
+   "body": "Park a rotating probe over a notch and, with band-pass filters in line, the screen shows nothing — the response exists only in motion. The flaw is fixed in the part; the coil's sensing zone drags across it, and the result is a **transient pulse** whose duration is simply the crossing time:\n\n- **Surface speed = circumference × rev rate.** In a Ø10 mm bolt hole (31.4 mm around), 1500 RPM (25 rev/s) sweeps the coil at about **785 mm/s**.\n- With an effective sensing zone of about 1.5 mm, the notch pulse lasts roughly **1.9 ms**, its energy concentrated around **260 Hz** — using the rule of thumb that center frequency ≈ 1 ÷ (2 × duration).\n- Drop to 600 RPM and the same notch stretches to a ~4.8 ms pulse near **105 Hz**. Push to 3000 RPM and it narrows to ~0.95 ms near **525 Hz**. The exact values depend on the coil and the flaw; the proportionality does not — **signal frequency scales directly with speed**.\n\nThe impedance physics is indifferent to scanning speed at these rates: the eddy currents and the flaw response they carry are unchanged. What changes is the frequency at which that response is handed to the electronics. A band-pass window set to 200–500 Hz at 1500 RPM attenuates the 600 RPM signal from below (high-pass side) and the 3000 RPM signal from above (low-pass side) — same notch, same probe, three different answers. Rotation also stamps a **once-per-revolution repetition** on every real indication — 25 Hz at 1500 RPM — the steady rhythm that separates a crack from random noise on a rotation-synchronized display."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-8-3-fig-a",
+   "caption": "The same corner notch at three scanner speeds: pulse duration and frequency content scale with surface speed, while the band-pass window set at 1500 RPM stays put — the 600 and 3000 RPM signals are attenuated by the filters, not by the flaw."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Calibrate at the speed you inspect",
+   "body": "With band-pass filters engaged, signals exist only in motion — park the probe dead on the deepest notch and the screen stays blank, because a high-pass filter removes anything that is not changing. A static setup therefore proves nothing about dynamic detection. The electromagnetic tube-examination practices make this explicit: ASTM E243 and E309 require the system to be standardized **dynamically**, with the reference standard run through at the examination speed, and re-standardized when settings change. Treat rotational speed and forward speed as calibration settings — because to the electronics, they are."
+  },
+  {
+   "type": "text",
+   "heading": "Bench Exercise 1: Sweep the RPM Against Fixed Filters",
+   "body": "Mount the bolt-hole probe in the rotary scanner, center it in the Ø10 mm aluminum reference standard, and set 1500 RPM with the band-pass per the setup sheet — 200–500 Hz here. Gain the corner EDM notch to **80% full screen height** and confirm the indication repeats **once per revolution**.\n\n- **Drop to 600 RPM and touch nothing else.** The pulse stretches and its energy slides below the high-pass cutoff: amplitude falls hard and the signal smears toward the baseline. Record the amplitude.\n- **Raise to 3000 RPM, still untouched.** The pulse narrows past the low-pass: amplitude falls again and the signal rounds off. Mechanical once-per-rev noise — runout, centering wobble — also grows with speed. Record it.\n- **Re-match the filters at each RPM** — manually per the instrument manual, or by correcting the RPM entry on instruments that link the band-pass to rotation speed — and watch the notch recover toward its reference height. Record the matched amplitudes.\n- **Tabulate the result**: RPM, amplitude with filters as-found, amplitude with filters matched. Three rows of data that prove the rule — **filters and speed are a matched pair**.\n\nRPM-linked filtering is a convenience, not absolution: it is only correct if the entered speed is the actual speed, and only the reference standard proves detection either way."
+  },
+  {
+   "type": "text",
+   "heading": "Bench Exercise 2: Open the Pitch, Find the Cliff",
+   "body": "Move to the rotating-head bench — a motorized feed pushes notched tube stock through a 3000 RPM head with a **2.0 mm effective coil width**. Rotation plus feed traces a helix, and the geometry is one division:\n\n- **Pitch (mm/rev) = forward speed (mm/s) ÷ rev rate (rev/s).** At 50 rev/s, a 75 mm/s feed gives a 1.5 mm pitch — adjacent turns overlap by 0.5 mm and every point is swept.\n- **Full coverage requires pitch ≤ effective coil width.** The no-overlap ceiling here is 100 mm/s. With the 10% overlap margin this procedure requires, the documented limit is **90 mm/s** (1.8 mm pitch) — about 5.4 m/min of product.\n\nRun the short EDM notch through **five passes at each feed step** — 30, 50, 70, 90, 110, 130, 150 mm/s — and plot every pass. The data tells the story: tight, full-amplitude clusters inside the limit, then scatter, partial hits, and outright misses once the pitch outruns the coil. A long seam still crosses every turn of the helix; the **short flaw** is the one that lives or dies by where it happens to fall. Digital instruments add one more ceiling: at a fixed digitizing rate, faster surface speed means fewer samples across each signal, so honor the manufacturer's maximum-speed specification.\n\nThe same equation rules hand work. Withdrawing a bolt-hole scanner at 1500 RPM with a 1.5 mm zone, the no-overlap ceiling is 37.5 mm/s — pull a 25 mm grip-length hole in half a second and you have inspected stripes of it. **Document the window**: RPM and tolerance, maximum feed or withdrawal rate, the filter settings matched to that speed, reference standard ID, and the verified amplitudes — and re-verify whenever any of them changes."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-8-3-fig-b",
+   "caption": "Rotation plus feed is a helix. Left: 75 mm/s at 3000 RPM gives a 1.5 mm pitch against a 2.0 mm coil — every point swept. Right: 150 mm/s opens a 3.0 mm pitch, leaving white stripes the coil never visits — exactly where a short flaw hides."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-8-3-fig-c",
+   "caption": "Five passes per feed step on a short notch: amplitude holds to the documented 90 mm/s limit, then turns intermittent once the pitch passes the 2.0 mm coil width — beyond the cliff, detection is luck, not inspection."
+  },
+  {
+   "type": "table",
+   "caption": "Speed troubleshooting at the rotating bench — symptom, likely cause, corrective move.",
+   "headers": ["Symptom at the bench", "Likely cause", "Your move"],
+   "rows": [
+    ["Notch signal drops and smears after slowing the scanner", "Signal frequency content fell below the high-pass cutoff", "Re-match the filters to the new speed (or restore the speed); re-verify on the reference standard"],
+    ["Notch signal shrinks and rounds off at maximum RPM", "Narrowed pulse now extends above the low-pass cutoff", "Raise the low-pass or use the instrument's RPM-linked filters; re-verify dynamically"],
+    ["Short flaw found on some passes, missed on others at high feed", "Helical pitch exceeds the effective coil width — unswept stripes", "Cut the feed or raise the RPM until pitch is back inside the documented limit; re-prove coverage on the standard"],
+    ["Amplitudes wander run to run with settings unchanged", "Actual speed is varying — drive slip, line surging, manual pull rate", "Control and verify the speed; examine at the same speed used for standardization"],
+    ["Noise band grows with RPM until it buries small signals", "Mechanical once-per-rev noise — probe runout, centering wobble", "Re-center and guide the probe, service the scanner, and stay inside the qualified RPM range"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-8-3-fig-a",
+   "title": "One notch, three speeds: the signal moves, the filter does not",
+   "file": "et1-8-3-fig-a.svg"
+  },
+  {
+   "id": "et1-8-3-fig-b",
+   "title": "Helical scan pitch against effective coil width",
+   "file": "et1-8-3-fig-b.svg"
+  },
+  {
+   "id": "et1-8-3-fig-c",
+   "title": "Amplitude versus forward speed: the detection cliff",
+   "file": "et1-8-3-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Run the Speed Bench",
+  "intro": "A rotary bolt-hole scanner with a Ø10 mm aluminum reference standard sits on the left bench; a 3000 RPM rotating-head line with notched tube stock and a 2.0 mm effective-width coil runs on the right. Filters were matched at 1500 RPM with a 200–500 Hz band-pass. Make each call before you click.",
+  "steps": [
+   {
+    "prompt": "You drop the scanner from 1500 to 600 RPM to look at a suspect indication more slowly. The EDM notch that stood at 80% FSH now barely lifts off the baseline and looks smeared. What happened?",
+    "options": [
+     "The notch has been polished away by repeated scanning",
+     "Eddy currents need a minimum surface speed to form, and 600 RPM is below it",
+     "The slower crossing stretched the pulse and dropped its frequency content below the 200 Hz high-pass, which now removes most of the signal",
+     "Gain rescales automatically with RPM, so the display is simply zoomed out"
+    ],
+    "correct": 2,
+    "feedback": "Signal frequency scales with surface speed: at 600 RPM the pulse energy sits near 105 Hz, below the 200 Hz high-pass cutoff. Eddy current generation does not depend on scanning speed — the flaw response was generated, then filtered away inside the instrument. Re-match the filters or restore the speed, then re-verify on the standard."
+   },
+   {
+    "prompt": "At the rotating-head line, the operator has doubled the RPM 'for more throughput' without touching the band-pass. The known notch amplitude falls. Why?",
+    "options": [
+     "The narrowed pulse now carries its energy above the low-pass cutoff, so the top of the band clips it",
+     "Doubling the RPM halves the eddy current density in the part",
+     "The probe's impedance changes at high rotation speeds",
+     "Faster rotation increases lift-off between coil and tube"
+    ],
+    "correct": 0,
+    "feedback": "Faster crossing means a shorter pulse and higher frequency content, and the low-pass that was comfortable at the old speed now attenuates it. The eddy currents themselves are unchanged at these speeds — only the signal's frequency presentation moved. Re-match the band-pass (many instruments do it when the correct RPM is entered), then re-verify dynamically."
+   },
+   {
+    "prompt": "Production asks to raise the tube feed from 75 to 120 mm/s at the same 3000 RPM (50 rev/s). The coil's effective width is 2.0 mm and the documented limit is 90 mm/s. Your call?",
+    "options": [
+     "Approve it — the band-pass filters will compensate for the faster feed",
+     "Approve it but double the gain to make up the difference",
+     "Approve a compromise at 110 mm/s, since the no-overlap ceiling is 100 mm/s",
+     "Refuse: 120 mm/s is a 2.4 mm pitch against a 2.0 mm coil — unswept helical stripes. Hold 90 mm/s, or re-qualify the setup at a higher RPM"
+    ],
+    "correct": 3,
+    "feedback": "Pitch = 120 ÷ 50 = 2.4 mm, wider than the coil's 2.0 mm footprint: stripes of surface are never interrogated, and no filter or gain setting can recover a signal that was never generated. Coverage returns only by cutting feed or raising rev rate — and any new combination gets re-proven on the reference standard before production runs."
+   },
+   {
+    "prompt": "The speed study is complete. What goes into the technique record so the next shift cannot quietly undo it?",
+    "options": [
+     "Only the instrument model and the probe serial number",
+     "The verified window: RPM and tolerance, maximum feed or withdrawal rate, the filter settings matched to that speed, the reference standard ID and achieved amplitudes — plus mandatory re-verification after any speed change",
+     "A note that the filters are set automatically, so speeds may vary freely",
+     "The operator's name and the date — the settings live in instrument memory"
+    ],
+    "correct": 1,
+    "feedback": "Speed-related limits are essential variables. Document the qualified RPM, the feed ceiling, the filters that belong to them, and the dynamic verification that proved the combination — and bind every speed change to re-verification. Instrument memory is not a controlled record, and auto-linked filters still depend on the entered RPM being the real one."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "At practical scanning speeds, doubling a rotary scanner's RPM does what to the signal from a given notch?",
+   "options": [
+    "Doubles the pulse duration and halves its frequency content",
+    "Halves the pulse duration and doubles its frequency content",
+    "Doubles the eddy current density in the part",
+    "Nothing — the signal depends only on flaw size"
+   ],
+   "correct": 1,
+   "explanation": "The signal is a transient created by the sensing zone crossing the flaw, so its duration is the crossing time: twice the surface speed means half the duration and double the frequency content. The eddy currents themselves are unchanged at these speeds — what moves is where the signal sits relative to the filters."
+  },
+  {
+   "question": "A corner notch reads 80% FSH at 1500 RPM with a 200–500 Hz band-pass. The scanner is slowed to 600 RPM with the filters untouched, and the signal drops to a smeared fraction of that. The cause is:",
+   "options": [
+    "Eddy currents weaken at low rotational speeds",
+    "The notch responds only above 1000 RPM",
+    "Lift-off increases as the scanner slows down",
+    "The stretched pulse's frequency content (~105 Hz) now falls below the 200 Hz high-pass, which attenuates it"
+   ],
+   "correct": 3,
+   "explanation": "Slower crossing stretches the pulse and slides its energy down in frequency — from roughly 260 Hz at 1500 RPM to roughly 105 Hz at 600 RPM, below the high-pass cutoff. The flaw response was generated normally and then removed by the instrument's own filtering, which is why filters must be re-matched whenever speed changes."
+  },
+  {
+   "question": "A rotating head turns at 3000 RPM (50 rev/s) with a 2.0 mm effective coil width while tube feeds through at 75 mm/s. The helical pitch is:",
+   "options": [
+    "1.5 mm per revolution — full coverage with 0.5 mm of overlap",
+    "2.5 mm per revolution — leaving 0.5 mm unswept stripes",
+    "0.67 mm per revolution — excessive overlap that distorts the signal",
+    "Indeterminate without knowing the tube diameter"
+   ],
+   "correct": 0,
+   "explanation": "Pitch = forward speed ÷ rev rate = 75 ÷ 50 = 1.5 mm per revolution. Against a 2.0 mm effective width, adjacent helical turns overlap by 0.5 mm, so every point on the surface is swept. Tube diameter changes the surface speed under the coil, not the axial advance per turn."
+  },
+  {
+   "question": "Why do electromagnetic tube-examination practices such as ASTM E243 and E309 require the system to be standardized with the reference standard run through at the examination speed?",
+   "options": [
+    "Static standardization wears out the reference notches",
+    "It is an administrative convention with no technical basis",
+    "Filter response — and therefore signal amplitude — depends on speed, so a static or wrong-speed standardization does not prove detection at production speed",
+    "The reference standard's conductivity changes with speed"
+   ],
+   "correct": 2,
+   "explanation": "Band-pass filters respond only to moving signals, and the signal's frequency content is set by speed. A notch that calibrates beautifully at one speed can be attenuated out of the passband at another, so detection is only proven dynamically, at the speed actually used — and must be re-proven when that speed changes."
+  },
+  {
+   "question": "At a fixed RPM, the feed rate is raised until a short EDM notch is detected on some passes and missed entirely on others. The mechanism is:",
+   "options": [
+    "The instrument's gain drifts at high feed rates",
+    "The helical pitch now exceeds the effective coil width, leaving unswept stripes — detection depends on where the notch happens to fall",
+    "High feed rates demagnetize the tube",
+    "The notch signal's frequency falls below the high-pass at high feed"
+   ],
+   "correct": 1,
+   "explanation": "Once the pitch outruns the coil's footprint, spiral stripes of surface are never interrogated, and a short flaw inside a stripe produces no signal at all on that pass. Contrast this with filter mismatch, which attenuates a signal that was generated — a coverage gap means there is no signal to recover. (Higher speed also raises signal frequency; it does not lower it.)"
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105 (2024), ET Level I Topical Outline — Technique Lab Demonstrations, Topic 4.4: Demonstration of rotational and forward speed effects",
+  "ASNT SNT-TC-1A (2024), Recommended Practice for Personnel Qualification and Certification in Nondestructive Testing",
+  "ASTM E243, Standard Practice for Electromagnetic (Eddy Current) Examination of Copper and Copper-Alloy Tubes",
+  "ASTM E309, Standard Practice for Eddy-Current Examination of Steel Tubular Products Using Magnetic Saturation"
+ ]
+}

@@ -1,0 +1,224 @@
+{
+ "lessonId": "et1-4-1",
+ "title": "Lab: Generating Z-Curves with Conductivity Samples",
+ "narrationScript": "This lab turns three modules of impedance-plane theory into a curve you draw yourself. You will balance an absolute surface probe in air, set the instrument to sixty kilohertz, and step across a kit of certified conductivity standards, from titanium alloy near one percent IACS to annealed copper at one hundred. Each sample parks the dot at its own spot on the impedance plane. Connect the spots in conductivity order and the comma-shaped conductivity locus, the Z-curve, appears on your screen. Now watch the pattern. Low-conductivity metals crowd near the air point. The aluminum alloys spread out around the knee, where separation is best. Copper runs far down the tail. Lift the probe anywhere and the dot races straight back to the air point, tracing the lift-off line. Raise the frequency and every dot slides farther along the same curve. Master this one picture and material sorting, alloy verification, and heat-treat checks become something you can read at a glance.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "From Theory to the Bench",
+   "body": "Three modules of theory claimed that conductivity moves a coil's impedance in a predictable, repeatable way. This lab makes you prove it. You will place one probe on a series of certified conductivity samples and watch the instrument's dot park at a different spot for each one. Connect those spots in order and you have drawn the **Z-curve** \u2014 Z for impedance \u2014 your probe's **conductivity locus**: the path the coil's operating point follows as test-material conductivity climbs from almost nothing to the copper standard at the top of the scale.\n\nOn the bench you need four things:\n\n- An eddy current instrument with an **impedance-plane display** \u2014 the normalized plane you learned to read in the theory lessons.\n- An **absolute surface probe** suited to operation near 60 kHz.\n- A set of **certified conductivity standards** \u2014 typically eight to twelve flat samples spanning roughly 1% to 100% IACS.\n- The **Z-curve lab worksheet**, for recording dot positions, certified values, and instrument settings.\n\nNinety minutes from now, the comma-shaped curve in your textbook will be something you generated point by point with your own probe \u2014 and that changes how you read every eddy current screen from here on."
+  },
+  {
+   "type": "text",
+   "heading": "The Ruler: %IACS and Certified Standards",
+   "body": "Every sample in the kit is graded against the same ruler: the **International Annealed Copper Standard (IACS)**. By definition, annealed pure copper at 20 \u00b0C has a conductivity of **58.0 MS/m** \u2014 a resistivity of 1.7241 \u00b5\u03a9\u00b7cm \u2014 and that value is called **100% IACS**. Everything else is a percentage of copper: Ti-6Al-4V crawls along near **1% IACS**, the common aerospace aluminum alloys cluster between roughly **28% and 47%**, and commercially pure aluminum runs near **60%**.\n\nTwo requirements make a sample a **standard** rather than scrap metal:\n\n- Its conductivity is **certified** \u2014 measured, documented, traceable to national standards, with the %IACS value marked on the sample.\n- Its geometry cannot lie: flat, smooth, thick enough that the eddy currents never sense the far side, and wide enough that the probe sits well away from every edge.\n\nOne more deliberate choice: every sample in this kit is **nonmagnetic** (relative permeability of about 1). That keeps conductivity as the only variable you are changing, so the curve you generate is a pure conductivity locus. A ferromagnetic sample would break the pattern entirely \u2014 permeability drives the dot upward, above the balance point \u2014 which is exactly why magnetic materials get their own techniques later."
+  },
+  {
+   "type": "table",
+   "caption": "A typical conductivity kit, low to high. The 'knee' is the bend of maximum normalized resistance partway down the comma \u2014 the best-separated stretch of the curve. Always read the certified value marked on each sample, not a textbook table.",
+   "headers": [
+    "Standard",
+    "Typical conductivity (%IACS)",
+    "Where it parks at 60 kHz"
+   ],
+   "rows": [
+    [
+     "Ti-6Al-4V titanium",
+     "\u2248 1.0",
+     "Top of the curve, just below the air point"
+    ],
+    [
+     "304 stainless steel (austenitic)",
+     "\u2248 2.5",
+     "Upper curve, one step past titanium"
+    ],
+    [
+     "Cartridge brass (70Cu-30Zn)",
+     "\u2248 28",
+     "Approaching the knee"
+    ],
+    [
+     "2024-T3 aluminum",
+     "\u2248 30",
+     "Knee region"
+    ],
+    [
+     "7075-T6 aluminum",
+     "\u2248 32",
+     "Knee region, just past 2024-T3"
+    ],
+    [
+     "6061-T6 aluminum",
+     "\u2248 43",
+     "Just beyond the knee"
+    ],
+    [
+     "1100-O aluminum (commercially pure)",
+     "\u2248 59",
+     "Lower curve"
+    ],
+    [
+     "Copper, annealed",
+     "100 by definition",
+     "Far down the tail"
+    ]
+   ]
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-4-1-fig-a",
+   "caption": "Each certified standard parks the operating point at one spot on the normalized impedance plane. Connected in conductivity order, the dots trace the comma-shaped conductivity locus \u2014 the Z-curve. Dashed lift-off paths run from the curve straight back to the air point."
+  },
+  {
+   "type": "text",
+   "heading": "Procedure: Build the Curve Dot by Dot",
+   "body": "Work from the lab worksheet and record as you go \u2014 a Z-curve you cannot reproduce is a Z-curve you did not generate.\n\n1. **Stage and stabilize.** Lay out the standards, clean and dry, and let everything reach room temperature. A sample fresh from a warm pocket or a sunny windowsill will read wrong.\n2. **Configure.** Connect the absolute surface probe, select the impedance-plane display, and set the test frequency \u2014 **60 kHz** here, the working frequency of aluminum conductivity meters.\n3. **Balance in air.** Hold the probe well clear of all metal and null the instrument. Park the balance point \u2014 your **air point** \u2014 in the upper left of the screen so the whole comma fits.\n4. **Range-check the extremes.** Touch the lowest sample (titanium) and the highest (copper) and trim the gain until both dots stay on screen. Re-balance and repeat if you clipped.\n5. **Measure in order.** Starting at the lowest %IACS: probe flat on the center of the sample \u2014 no tilt, no rocking. Let the dot settle, mark its position on the worksheet grid, and log the sample's certified value beside it.\n6. **Watch lift-off at every stop.** Raise the probe slowly and watch the dot run home to the air point. That straight path is the lift-off line \u2014 note its direction before you move on.\n7. **Connect the dots.** Join the recorded positions in conductivity order. The smooth comma that appears is your conductivity locus.\n8. **Prove repeatability.** Return to any two samples and confirm the dot lands where you recorded it. If it does not, find the reason \u2014 balance drift, temperature, tilt \u2014 before you sign the worksheet."
+  },
+  {
+   "type": "text",
+   "heading": "Read the Curve You Just Built",
+   "body": "The shape carries the lesson:\n\n- **Order is fixed.** Low conductivity sits near the air point; copper sits farthest along the comma. Raise conductivity and the dot always advances along the locus \u2014 it never doubles back and never jumps off the path.\n- **Spacing is not fixed.** Near the top, a few %IACS barely nudge the dot; around the **knee**, the same few %IACS produce a generous swing. That spacing is your sensitivity \u2014 and at 60 kHz the aluminum alloys land in the well-spread region by design, not by coincidence.\n- **Lift-off lines fan out like spokes.** From every operating point, lifting the probe drives the dot straight back toward the air point. Watch the angle between the lift-off direction and the conductivity locus: narrow near the top of the curve, opening wide farther down. The wider that angle, the easier it is \u2014 for the instrument and for you \u2014 to tell probe wobble from a genuinely different metal.\n- **Frequency slides the dots.** For a fixed probe on nonmagnetic material, frequency and conductivity drive the operating point together, as the product **f \u00d7 \u03c3**. Double the frequency and every dot advances along the same normalized curve \u2014 order preserved, spacing reshuffled."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-4-1-fig-b",
+   "caption": "The same three standards measured at two frequencies with the same probe. Raising frequency advances every dot along the same normalized locus \u2014 order preserved \u2014 so frequency selection decides which alloys land in the well-spread knee region."
+  },
+  {
+   "type": "text",
+   "heading": "From Curve to Decisions: Sorting and Verification",
+   "body": "The Z-curve earns its keep wherever the question is *what metal is this, and is it in the right condition?*\n\n- **Material sorting.** Mixed stock \u2014 brass at 28% IACS against 7075-T6 at 32% \u2014 separates into distinct dot positions in seconds per piece, with no cutting and no chemistry.\n- **Alloy and temper verification.** Heat treatment changes a precipitation-hardened alloy's microstructure, and conductivity follows. 7075 in the **T6** temper runs near **32% IACS**; overaged to **T73**, it climbs to roughly **40%**. The parts look identical \u2014 the conductivity reading tells them apart, which is why aerospace verifies aluminum heat treatment by eddy current conductivity (MIL-STD-1537 governs exactly this test).\n- **Heat-damage screening.** An aluminum skin overheated by fire, a lightning strike, or a botched repair shifts in conductivity even when it looks normal. A conductivity survey checked against the part's documented range flags the damage.\n- **Dedicated conductivity meters** automate this lab: they operate near 60 kHz, resolve fractions of a %IACS, and are standardized on certified samples exactly like yours. The measurement discipline behind those numbers is **ASTM E1004**.\n\nKnow your level. A Level I generates the data \u2014 standardize the instrument, measure, record. Deciding whether 36.5% IACS on a 7075 part means acceptable or rejectable is evaluation, and that signature belongs to a Level II or III working to the governing procedure."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Lab discipline that keeps the curve honest",
+   "body": "**Temperature** \u2014 conductivity drops as metal warms. Keep standards, parts, and probe at the same stable room temperature; never measure a sample straight from your hand or a heater vent. **Thickness** \u2014 the sample must be at least about **three standard depths of penetration (3\u03b4)** thick, so the reading reflects bulk conductivity rather than thickness and backing. At 60 kHz that is under 1 mm for copper (\u03b4 \u2248 0.27 mm) but roughly **8 mm for Ti-6Al-4V** (\u03b4 \u2248 2.7 mm). **Edges** \u2014 keep the probe at least its own diameter away from sample edges; the edge effect bends the reading. **Contact** \u2014 flat and still: tilt is lift-off, and lift-off moves the dot. Break any of these and the curve still draws \u2014 it just lies."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-4-1-fig-a",
+   "title": "The conductivity locus (Z-curve) at 60 kHz",
+   "file": "et1-4-1-fig-a.svg"
+  },
+  {
+   "id": "et1-4-1-fig-b",
+   "title": "Frequency slides every dot along the same curve",
+   "file": "et1-4-1-fig-b.svg"
+  },
+  {
+   "id": "et1-4-1-fig-c",
+   "title": "Z-curve anatomy: where will the dot land?",
+   "file": "et1-4-1-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Park the Dot: Copper at 60 kHz",
+  "intro": "Your instrument is balanced in air at 60 kHz, the same setup you used to build the Z-curve. You now place the probe flat on the certified copper standard \u2014 100% IACS, the highest conductivity in the kit. Tap the zone where the dot will land.",
+  "figureId": "et1-4-1-fig-c",
+  "regions": [
+   {
+    "x": 110,
+    "y": 42,
+    "w": 120,
+    "h": 110,
+    "label": "Zone A \u2014 balance point",
+    "isTarget": false,
+    "feedback": "That is the balance point \u2014 the dot sits here only with the probe in air, lifted clear of any conductor. Copper under the coil pulls the operating point far away from it."
+   },
+   {
+    "x": 330,
+    "y": 100,
+    "w": 150,
+    "h": 110,
+    "label": "Zone B \u2014 upper curve",
+    "isTarget": false,
+    "feedback": "Zone B is low f\u00d7\u03c3 territory \u2014 titanium and austenitic stainless park here at 60 kHz. Copper's conductivity is forty to a hundred times higher, which drives the dot much farther along the locus."
+   },
+   {
+    "x": 515,
+    "y": 245,
+    "w": 150,
+    "h": 115,
+    "label": "Zone C \u2014 the knee",
+    "isTarget": false,
+    "feedback": "Close \u2014 the knee is where the mid-conductivity metals land at 60 kHz: brass and the aerospace aluminum alloys. Copper, at 100% IACS, travels well past the knee."
+   },
+   {
+    "x": 265,
+    "y": 365,
+    "w": 160,
+    "h": 105,
+    "label": "Zone D \u2014 down the tail",
+    "isTarget": true,
+    "feedback": "Correct. The highest f\u00d7\u03c3 in the kit plots farthest along the comma \u2014 copper runs down the tail, with low normalized resistance and strongly reduced reactance. That ordering \u2014 titanium high, aluminum at the knee, copper deep in the tail \u2014 never changes."
+   }
+  ],
+  "coordH": 500
+ },
+ "checkQuestions": [
+  {
+   "question": "On the normalized impedance plane, the Z-curve you generated in this lab represents:",
+   "options": [
+    "The path the dot follows when the probe is lifted off a single sample",
+    "The locus of coil operating points traced as test-material conductivity increases, sample by sample",
+    "The change in standard depth of penetration as frequency increases",
+    "The instrument's filter response at 60 kHz"
+   ],
+   "correct": 1,
+   "explanation": "Each certified standard parks the operating point at one location; connected in conductivity order, those points trace the conductivity locus \u2014 the Z-curve. The lift-off path is a different line: it runs from an operating point back to the air point."
+  },
+  {
+   "question": "At 60 kHz, the Ti-6Al-4V standard (about 1% IACS) plots:",
+   "options": [
+    "High on the curve, near \u2014 but not at \u2014 the air balance point",
+    "Farther along the curve than copper",
+    "Exactly at the knee, among the aluminum alloys",
+    "On the air point itself, because titanium is effectively nonconductive"
+   ],
+   "correct": 0,
+   "explanation": "Titanium alloy has the lowest f\u00d7\u03c3 in the kit, so its operating point moves least from the air point \u2014 but it is still a conductor, so it does move. Copper, at 100% IACS, plots farthest along the locus; the aluminum alloys hold the knee."
+  },
+  {
+   "question": "You rebuild the curve at double the original test frequency. The standards' dots:",
+   "options": [
+    "Stay where they were \u2014 frequency affects only gain",
+    "Move off the conductivity locus at right angles",
+    "Each advance farther along the same normalized curve, keeping their conductivity order",
+    "Reverse order, with copper now nearest the air point"
+   ],
+   "correct": 2,
+   "explanation": "For a fixed probe on nonmagnetic material, frequency and conductivity move the operating point together as the product f\u00d7\u03c3. Raising frequency slides every dot farther along the same comma \u2014 order preserved, spacing changed \u2014 which is why frequency selection controls where your alloys of interest sit."
+  },
+  {
+   "question": "Conductivity samples for this lab must be at least about three standard depths of penetration (3\u03b4) thick because:",
+   "options": [
+    "Thinner samples cannot be balanced against in air",
+    "Eddy currents only form once the part is thicker than the coil diameter",
+    "Thin samples overheat and change conductivity during the test",
+    "Below about 3\u03b4, eddy currents still flowing at the far surface make the dot position depend on thickness and backing \u2014 not just conductivity"
+   ],
+   "correct": 3,
+   "explanation": "Eddy current density falls to about 37% of its surface value at one standard depth and only about 5% at three \u2014 the effective depth of penetration. A thinner sample is partly transparent to the test, so its reading mixes conductivity with thickness and whatever sits behind it. At 60 kHz that minimum is under 1 mm for copper but roughly 8 mm for Ti-6Al-4V."
+  },
+  {
+   "question": "A shop uses a 60 kHz conductivity check to confirm that 7075 aluminum parts were properly overaged to the T73 temper. This works because:",
+   "options": [
+    "T73 parts are slightly ferromagnetic, which raises the coil's reactance",
+    "Overaging changes the alloy's microstructure, raising conductivity from about 32% IACS (T6) to roughly 40% (T73) \u2014 a measurable move along the Z-curve",
+    "T73 parts are machined thinner, which shifts the dot along the lift-off line",
+    "The Z-curve applies only to the T73 temper"
+   ],
+   "correct": 1,
+   "explanation": "Aluminum alloys are nonmagnetic, so the dot's position on the conductivity locus reads microstructure through conductivity. The T6 and T73 tempers sit several %IACS apart, and that separation is exactly the verification MIL-STD-1537 formalizes for aluminum heat treatment."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Theory Course \u00a73.0\u20133.1 (lab demonstration: generation of Z-curves with conductivity samples)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice \u2014 basis for ET Level I training outlines",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method",
+  "MIL-STD-1537, Electrical Conductivity Test for Verification of Heat Treatment of Aluminum Alloys, Eddy Current Method"
+ ]
+}

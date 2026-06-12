@@ -1,0 +1,69 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Comparator Bridge — the Comparative Circuit</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">two matched coils in adjacent bridge arms — only the parts differ</text>
+
+  <!-- AC oscillator -->
+  <circle cx="115" cy="270" r="22" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <path d="M 101,270 q 7,-13 14,0 q 7,13 14,0" fill="none" stroke="#1E66F5" stroke-width="2"/>
+  <text x="104" y="312" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">AC oscillator</text>
+  <text x="104" y="330" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">fixed f + drive</text>
+
+  <!-- supply wires and rails -->
+  <line x1="115" y1="248" x2="115" y2="120" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="115" y1="120" x2="560" y2="120" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="115" y1="292" x2="115" y2="420" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="115" y1="420" x2="560" y2="420" stroke="#0B1F3A" stroke-width="2.5"/>
+
+  <!-- left branch: R1 + reference coil -->
+  <line x1="330" y1="120" x2="330" y2="148" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polyline points="330,148 322,156 338,168 322,180 338,192 322,204 330,212" fill="none" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="308" y="184" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">balance arm R1</text>
+  <line x1="330" y1="212" x2="330" y2="250" stroke="#0B1F3A" stroke-width="2.5"/>
+  <circle cx="330" cy="250" r="4.5" fill="#0B1F3A"/>
+  <line x1="330" y1="250" x2="330" y2="292" stroke="#0B1F3A" stroke-width="2.5"/>
+  <rect x="312" y="292" width="36" height="104" fill="#9BC4FF" fill-opacity="0.45" stroke="#0B1F3A" stroke-width="1.5"/>
+  <path d="M 330,292 a 12 10.4 0 0 1 0 20.8 a 12 10.4 0 0 1 0 20.8 a 12 10.4 0 0 1 0 20.8 a 12 10.4 0 0 1 0 20.8 a 12 10.4 0 0 1 0 20.8" fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <line x1="330" y1="396" x2="330" y2="420" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="296" y="326" text-anchor="end" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">reference coil</text>
+  <text x="296" y="352" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">reference part</text>
+  <text x="296" y="370" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">(verified good)</text>
+
+  <!-- right branch: R2 + test coil -->
+  <line x1="560" y1="120" x2="560" y2="148" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polyline points="560,148 552,156 568,168 552,180 568,192 552,204 560,212" fill="none" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="582" y="184" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">balance arm R2</text>
+  <line x1="560" y1="212" x2="560" y2="250" stroke="#0B1F3A" stroke-width="2.5"/>
+  <circle cx="560" cy="250" r="4.5" fill="#0B1F3A"/>
+  <line x1="560" y1="250" x2="560" y2="292" stroke="#0B1F3A" stroke-width="2.5"/>
+  <rect x="542" y="292" width="36" height="104" fill="#9BC4FF" fill-opacity="0.45" stroke="#0B1F3A" stroke-width="1.5"/>
+  <path d="M 560,292 a 12 10.4 0 0 1 0 20.8 a 12 10.4 0 0 1 0 20.8 a 12 10.4 0 0 1 0 20.8 a 12 10.4 0 0 1 0 20.8 a 12 10.4 0 0 1 0 20.8" fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <line x1="560" y1="396" x2="560" y2="420" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="594" y="326" text-anchor="start" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">test coil</text>
+  <text x="594" y="352" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">test part</text>
+  <text x="594" y="370" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">(unknown)</text>
+
+  <!-- junction dots on rails -->
+  <circle cx="330" cy="120" r="4.5" fill="#0B1F3A"/>
+  <circle cx="560" cy="120" r="4.5" fill="#0B1F3A"/>
+  <circle cx="330" cy="420" r="4.5" fill="#0B1F3A"/>
+  <circle cx="560" cy="420" r="4.5" fill="#0B1F3A"/>
+
+  <!-- null detector across the bridge -->
+  <line x1="330" y1="250" x2="419" y2="250" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="471" y1="250" x2="560" y2="250" stroke="#0B1F3A" stroke-width="2.5"/>
+  <circle cx="445" cy="250" r="26" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="445" y="257" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1E66F5">V</text>
+  <text x="445" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">null detector / display</text>
+  <text x="445" y="304" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">amplitude — how much</text>
+  <text x="445" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">phase — which variable</text>
+
+  <!-- output insets -->
+  <rect x="160" y="442" width="200" height="48" rx="6" fill="#9BC4FF" fill-opacity="0.15" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="260" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">parts match — null output</text>
+  <line x1="175" y1="476" x2="345" y2="476" stroke="#1E66F5" stroke-width="2.5"/>
+
+  <rect x="440" y="442" width="200" height="48" rx="6" fill="#9BC4FF" fill-opacity="0.15" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="540" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">difference — unbalance</text>
+  <path d="M 455,476 q 10,-14 20,0 q 10,14 20,0 q 10,-14 20,0 q 10,14 20,0 q 10,-14 20,0 q 10,14 20,0 q 10,-14 20,0 q 10,14 20,0" fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+</svg>

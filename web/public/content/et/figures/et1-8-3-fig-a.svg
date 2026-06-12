@@ -1,0 +1,87 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0B1F3A">One Notch, Three Speeds: the Filter Does Not Move</text>
+
+  <!-- panel headers -->
+  <text x="170" y="62" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">600 RPM &#8212; 314 mm/s</text>
+  <text x="400" y="62" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">1500 RPM &#8212; 785 mm/s</text>
+  <text x="630" y="62" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">3000 RPM &#8212; 1571 mm/s</text>
+
+  <!-- panels -->
+  <rect x="60" y="70" width="220" height="130" fill="none" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="290" y="70" width="220" height="130" fill="none" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="520" y="70" width="220" height="130" fill="none" stroke="#9BC4FF" stroke-width="1.5"/>
+
+  <!-- baselines -->
+  <line x1="70" y1="145" x2="270" y2="145" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="300" y1="145" x2="500" y2="145" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="530" y1="145" x2="730" y2="145" stroke="#9BC4FF" stroke-width="1.5"/>
+
+  <!-- pulses: wide / medium / narrow -->
+  <path d="M 100,145 C 128,143 135,100 149,100 C 161.6,100 178.4,190 191,190 C 205,190 212,147 240,145" fill="none" stroke="#1E66F5" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 372,145 C 383.2,143 386,100 391.6,100 C 396.6,100 403.4,190 408.4,190 C 414,190 416.8,147 428,145" fill="none" stroke="#1E66F5" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 616,145 C 621.6,143 622.6,100 625.8,100 C 628.3,100 631.7,190 634.2,190 C 637,190 638.4,147 644,145" fill="none" stroke="#1E66F5" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- duration brackets -->
+  <line x1="100" y1="212" x2="240" y2="212" stroke="#0B1F3A" stroke-width="1.5"/>
+  <line x1="100" y1="207" x2="100" y2="217" stroke="#0B1F3A" stroke-width="1.5"/>
+  <line x1="240" y1="207" x2="240" y2="217" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="170" y="232" text-anchor="middle" font-size="14" fill="#0B1F3A">pulse &#8776; 4.8 ms</text>
+
+  <line x1="372" y1="212" x2="428" y2="212" stroke="#0B1F3A" stroke-width="1.5"/>
+  <line x1="372" y1="207" x2="372" y2="217" stroke="#0B1F3A" stroke-width="1.5"/>
+  <line x1="428" y1="207" x2="428" y2="217" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="400" y="232" text-anchor="middle" font-size="14" fill="#0B1F3A">pulse &#8776; 1.9 ms</text>
+
+  <line x1="616" y1="212" x2="644" y2="212" stroke="#0B1F3A" stroke-width="1.5"/>
+  <line x1="616" y1="207" x2="616" y2="217" stroke="#0B1F3A" stroke-width="1.5"/>
+  <line x1="644" y1="207" x2="644" y2="217" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="630" y="232" text-anchor="middle" font-size="14" fill="#0B1F3A">pulse &#8776; 0.95 ms</text>
+
+  <!-- frequency axis section -->
+  <text x="400" y="270" text-anchor="middle" font-size="16" font-weight="bold" fill="#0B1F3A">Frequency content vs the fixed band-pass window</text>
+
+  <!-- band-pass window -->
+  <rect x="268.6" y="300" width="282.8" height="120" fill="#9BC4FF" opacity="0.22"/>
+  <line x1="268.6" y1="345" x2="268.6" y2="420" stroke="#1E66F5" stroke-width="2" stroke-dasharray="6 5"/>
+  <line x1="551.4" y1="345" x2="551.4" y2="420" stroke="#1E66F5" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="410" y="292" text-anchor="middle" font-size="14" fill="#1E66F5">band-pass window 200&#8211;500 Hz (set at 1500 RPM)</text>
+
+  <!-- markers -->
+  <line x1="179" y1="420" x2="179" y2="352" stroke="#0B1F3A" stroke-width="2" stroke-dasharray="4 4"/>
+  <circle cx="179" cy="345" r="7" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="179" y="316" text-anchor="middle" font-size="14" font-weight="bold" fill="#0B1F3A">600 RPM &#8776; 105 Hz</text>
+  <text x="179" y="333" text-anchor="middle" font-size="14" fill="#0B1F3A">attenuated by high-pass</text>
+
+  <line x1="327" y1="420" x2="327" y2="352" stroke="#1E66F5" stroke-width="2"/>
+  <circle cx="327" cy="345" r="7" fill="#1E66F5"/>
+  <text x="327" y="316" text-anchor="middle" font-size="14" font-weight="bold" fill="#1E66F5">1500 RPM &#8776; 260 Hz</text>
+  <text x="327" y="333" text-anchor="middle" font-size="14" fill="#1E66F5">passes the window</text>
+
+  <line x1="575" y1="420" x2="575" y2="352" stroke="#0B1F3A" stroke-width="2" stroke-dasharray="4 4"/>
+  <circle cx="575" cy="345" r="7" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="595" y="316" text-anchor="middle" font-size="14" font-weight="bold" fill="#0B1F3A">3000 RPM &#8776; 525 Hz</text>
+  <text x="595" y="333" text-anchor="middle" font-size="14" fill="#0B1F3A">clipped by low-pass</text>
+
+  <!-- axis -->
+  <line x1="80" y1="420" x2="740" y2="420" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="80" y1="420" x2="80" y2="426" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="174.3" y1="420" x2="174.3" y2="426" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="268.6" y1="420" x2="268.6" y2="426" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="362.9" y1="420" x2="362.9" y2="426" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="457.1" y1="420" x2="457.1" y2="426" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="551.4" y1="420" x2="551.4" y2="426" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="645.7" y1="420" x2="645.7" y2="426" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="740" y1="420" x2="740" y2="426" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="80" y="442" text-anchor="middle" font-size="14" fill="#0B1F3A">0</text>
+  <text x="174.3" y="442" text-anchor="middle" font-size="14" fill="#0B1F3A">100</text>
+  <text x="268.6" y="442" text-anchor="middle" font-size="14" fill="#0B1F3A">200</text>
+  <text x="362.9" y="442" text-anchor="middle" font-size="14" fill="#0B1F3A">300</text>
+  <text x="457.1" y="442" text-anchor="middle" font-size="14" fill="#0B1F3A">400</text>
+  <text x="551.4" y="442" text-anchor="middle" font-size="14" fill="#0B1F3A">500</text>
+  <text x="645.7" y="442" text-anchor="middle" font-size="14" fill="#0B1F3A">600</text>
+  <text x="740" y="442" text-anchor="middle" font-size="14" fill="#0B1F3A">700</text>
+  <text x="410" y="464" text-anchor="middle" font-size="15" fill="#0B1F3A">flaw-signal frequency content (Hz)</text>
+
+  <text x="80" y="490" font-size="14" fill="#0B1F3A" opacity="0.65">&#216;10 mm bolt hole, &#8776;1.5 mm effective sensing zone; center frequency &#8776; 1 &#247; (2 &#215; pulse duration) &#8212; illustrative; exact spectra depend on coil and flaw.</text>
+</svg>

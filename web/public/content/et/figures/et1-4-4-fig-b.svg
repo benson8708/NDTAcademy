@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Display After Phase Rotation — Liftoff Horizontal</text>
+
+  <!-- instrument screen -->
+  <rect x="70" y="60" width="660" height="380" rx="10" fill="#0B1F3A" stroke="#1E66F5" stroke-width="2"/>
+  <!-- graticule -->
+  <g stroke="#9BC4FF" stroke-width="1" opacity="0.15">
+    <line x1="136" y1="66" x2="136" y2="434"/>
+    <line x1="202" y1="66" x2="202" y2="434"/>
+    <line x1="268" y1="66" x2="268" y2="434"/>
+    <line x1="334" y1="66" x2="334" y2="434"/>
+    <line x1="400" y1="66" x2="400" y2="434"/>
+    <line x1="466" y1="66" x2="466" y2="434"/>
+    <line x1="532" y1="66" x2="532" y2="434"/>
+    <line x1="598" y1="66" x2="598" y2="434"/>
+    <line x1="664" y1="66" x2="664" y2="434"/>
+    <line x1="76" y1="123" x2="724" y2="123"/>
+    <line x1="76" y1="186" x2="724" y2="186"/>
+    <line x1="76" y1="249" x2="724" y2="249"/>
+    <line x1="76" y1="312" x2="724" y2="312"/>
+    <line x1="76" y1="375" x2="724" y2="375"/>
+  </g>
+
+  <!-- liftoff baseline (rotated horizontal) -->
+  <line x1="95" y1="350" x2="705" y2="350" stroke="#9BC4FF" stroke-width="3"/>
+  <polygon points="97,344 97,356 85,350" fill="#9BC4FF"/>
+  <polygon points="703,344 703,356 715,350" fill="#9BC4FF"/>
+  <text x="185" y="394" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#9BC4FF">liftoff — rotated horizontal</text>
+
+  <!-- null points for the three offset passes -->
+  <circle cx="300" cy="350" r="4" fill="#FFFFFF"/>
+  <circle cx="470" cy="350" r="4" fill="#FFFFFF"/>
+  <circle cx="620" cy="350" r="4" fill="#FFFFFF"/>
+
+  <!-- notch signals: amplitude grows with depth -->
+  <path d="M 300,350 C 286,300 268,180 264,114 C 262,96 276,96 278,114 C 284,184 298,302 309,350" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <path d="M 470,350 C 459,318 444,250 441,208 C 439,191 452,191 454,208 C 459,252 472,318 480,350" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <path d="M 620,350 C 611,326 598,292 595,272 C 593,258 605,258 607,272 C 611,294 622,328 629,350" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+
+  <text x="271" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">2.0 mm</text>
+  <text x="447" y="182" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">1.0 mm</text>
+  <text x="601" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">0.5 mm</text>
+
+  <!-- phase separation arc at the deep-notch pass -->
+  <path d="M 240,350 Q 247,310 293,291" fill="none" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="218" y="282" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">phase separation</text>
+
+  <text x="595" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">three passes offset for clarity</text>
+
+  <text x="400" y="468" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">Gain: 1.0 mm notch ≈ 80% screen height · 200 kHz pencil probe · 7075-T6 EDM notch block</text>
+</svg>

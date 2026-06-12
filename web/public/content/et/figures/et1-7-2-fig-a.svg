@@ -1,0 +1,84 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0B1F3A">Recording the Test: Strip Chart to Digital File</text>
+
+  <!-- panel divider -->
+  <line x1="470" y1="60" x2="470" y2="472" stroke="#9BC4FF" stroke-width="1.5"/>
+
+  <!-- ================= LEFT PANEL: STRIP CHART ================= -->
+  <text x="235" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0B1F3A">Strip chart &#8212; locked to the pull</text>
+
+  <!-- tube walls (side view) -->
+  <rect x="60" y="96" width="350" height="13" fill="#9BC4FF" fill-opacity="0.45" stroke="#0B1F3A" stroke-width="2"/>
+  <rect x="60" y="144" width="350" height="13" fill="#9BC4FF" fill-opacity="0.45" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- pit on the upper wall -->
+  <polygon points="163,96 177,96 170,105" fill="#0B1F3A"/>
+  <text x="170" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">pit</text>
+
+  <!-- cable and pull arrow -->
+  <line x1="60" y1="127" x2="300" y2="127" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="84,121 84,133 66,127" fill="#0B1F3A"/>
+  <text x="100" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">pull</text>
+
+  <!-- bobbin probe -->
+  <rect x="300" y="114" width="46" height="26" rx="5" fill="#1E66F5"/>
+  <line x1="310" y1="117" x2="310" y2="137" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="336" y1="117" x2="336" y2="137" stroke="#FFFFFF" stroke-width="2"/>
+
+  <!-- dashed position link from pit to chart -->
+  <line x1="170" y1="105" x2="170" y2="212" stroke="#1E66F5" stroke-width="1.5" stroke-dasharray="5,4"/>
+
+  <!-- chart frame and grid -->
+  <rect x="60" y="212" width="350" height="170" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="110" y1="212" x2="110" y2="382" stroke="#9BC4FF" stroke-width="1"/>
+  <line x1="160" y1="212" x2="160" y2="382" stroke="#9BC4FF" stroke-width="1"/>
+  <line x1="210" y1="212" x2="210" y2="382" stroke="#9BC4FF" stroke-width="1"/>
+  <line x1="260" y1="212" x2="260" y2="382" stroke="#9BC4FF" stroke-width="1"/>
+  <line x1="310" y1="212" x2="310" y2="382" stroke="#9BC4FF" stroke-width="1"/>
+  <line x1="360" y1="212" x2="360" y2="382" stroke="#9BC4FF" stroke-width="1"/>
+
+  <!-- trace 1: absolute channel (broad bump at pit position) -->
+  <path d="M65,262 C100,260 125,261 140,259 C150,257 158,240 170,238 C182,240 190,257 200,259 C240,262 320,260 405,261" fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <text x="72" y="240" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">absolute</text>
+
+  <!-- trace 2: differential channel (sharp up-down at pit position) -->
+  <path d="M65,345 L150,345 C156,345 160,318 166,318 C171,318 173,372 178,372 C183,372 186,345 192,345 L405,345" fill="none" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="72" y="334" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">differential</text>
+
+  <!-- distance axis -->
+  <line x1="60" y1="392" x2="408" y2="392" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="406,386 406,398 420,392" fill="#0B1F3A"/>
+  <text x="235" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="14.5" fill="#0B1F3A">chart distance = position along the tube</text>
+  <text x="235" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">chart speed locked to pull speed</text>
+  <text x="235" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">pen response (~100 Hz) limits line speed</text>
+
+  <!-- ================= RIGHT PANEL: DIGITAL ACQUISITION ================= -->
+  <text x="635" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0B1F3A">Digital acquisition</text>
+
+  <!-- probe cable with position encoder -->
+  <line x1="500" y1="108" x2="770" y2="108" stroke="#0B1F3A" stroke-width="2.5"/>
+  <circle cx="545" cy="108" r="12" fill="#FFFFFF" stroke="#1E66F5" stroke-width="3"/>
+  <line x1="545" y1="100" x2="545" y2="116" stroke="#1E66F5" stroke-width="1.5"/>
+  <text x="568" y="98" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">position encoder</text>
+
+  <!-- instrument screen -->
+  <rect x="500" y="130" width="270" height="185" rx="8" fill="#0B1F3A"/>
+
+  <!-- impedance plane on screen -->
+  <line x1="560" y1="150" x2="560" y2="285" stroke="#9BC4FF" stroke-width="1"/>
+  <line x1="515" y1="250" x2="610" y2="250" stroke="#9BC4FF" stroke-width="1"/>
+  <path d="M560,250 C545,238 567,180 578,182 C589,184 570,240 560,250" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="562" y="304" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">impedance plane</text>
+
+  <!-- strip view on screen -->
+  <line x1="700" y1="150" x2="700" y2="285" stroke="#9BC4FF" stroke-width="1.5"/>
+  <path d="M700,152 L700,185 Q712,196 700,208 L700,238 Q686,250 700,260 L700,285" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="700" y="304" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">strip view</text>
+
+  <!-- notes -->
+  <text x="500" y="349" text-anchor="start" font-family="Arial, sans-serif" font-size="14.5" fill="#1E66F5">samples/inch = sample rate &#247; probe speed</text>
+  <text x="500" y="377" text-anchor="start" font-family="Arial, sans-serif" font-size="14.5" fill="#0B1F3A">stored with IDs + bracketing calibrations</text>
+  <text x="500" y="405" text-anchor="start" font-family="Arial, sans-serif" font-size="14.5" fill="#0B1F3A">replay: re-rotate, re-filter, re-measure</text>
+  <text x="500" y="433" text-anchor="start" font-family="Arial, sans-serif" font-size="14.5" fill="#0B1F3A">archive: outage-to-outage trends</text>
+</svg>

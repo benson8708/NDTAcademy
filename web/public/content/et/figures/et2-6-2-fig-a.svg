@@ -1,0 +1,106 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Inside the Instrument: Phase-Sensitive Detection</text>
+
+  <!-- probe coil box -->
+  <rect x="40" y="88" width="130" height="64" rx="8" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="105" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">probe coil</text>
+  <text x="105" y="136" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">(balanced bridge)</text>
+
+  <!-- oscillator box -->
+  <rect x="40" y="215" width="130" height="70" rx="8" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <path d="M75 230 q8 -12 16 0 q8 12 16 0" fill="none" stroke="#1E66F5" stroke-width="2"/>
+  <text x="105" y="256" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">oscillator</text>
+  <text x="105" y="276" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">test frequency f</text>
+
+  <!-- drive line oscillator -> coil -->
+  <line x1="105" y1="215" x2="105" y2="162" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="100,162 110,162 105,152" fill="#0B1F3A"/>
+  <text x="115" y="192" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">drive</text>
+
+  <!-- coil -> amplifier -->
+  <line x1="170" y1="120" x2="207" y2="120" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="207,115 207,125 215,120" fill="#0B1F3A"/>
+  <polygon points="215,98 215,142 262,120" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="238" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">amplifier</text>
+
+  <!-- signal bus: amp out, vertical split, stubs into both multipliers -->
+  <line x1="262" y1="120" x2="300" y2="120" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="300" y1="120" x2="300" y2="330" stroke="#0B1F3A" stroke-width="2"/>
+  <circle cx="300" cy="120" r="3.5" fill="#0B1F3A"/>
+  <line x1="300" y1="170" x2="398" y2="170" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="398,165 398,175 406,170" fill="#0B1F3A"/>
+  <line x1="300" y1="330" x2="398" y2="330" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="398,325 398,335 406,330" fill="#0B1F3A"/>
+  <circle cx="300" cy="170" r="3.5" fill="#0B1F3A"/>
+  <text x="398" y="140" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">amplified coil signal</text>
+  <text x="398" y="158" text-anchor="end" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">A·sin(ωt + θ)</text>
+
+  <!-- reference line with hop over the signal bus -->
+  <line x1="170" y1="250" x2="293" y2="250" stroke="#1E66F5" stroke-width="2"/>
+  <path d="M293 250 A7 7 0 0 1 307 250" fill="none" stroke="#1E66F5" stroke-width="2"/>
+  <line x1="307" y1="250" x2="380" y2="250" stroke="#1E66F5" stroke-width="2"/>
+  <circle cx="380" cy="250" r="3.5" fill="#1E66F5"/>
+  <text x="200" y="240" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">reference</text>
+
+  <!-- 90-degree shift branch (to top multiplier, Y channel) -->
+  <line x1="380" y1="250" x2="380" y2="232" stroke="#1E66F5" stroke-width="2"/>
+  <rect x="326" y="192" width="84" height="40" rx="6" fill="#FFFFFF" stroke="#1E66F5" stroke-width="2"/>
+  <text x="368" y="217" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">shift 90°</text>
+  <line x1="410" y1="212" x2="430" y2="212" stroke="#1E66F5" stroke-width="2"/>
+  <line x1="430" y1="212" x2="430" y2="203" stroke="#1E66F5" stroke-width="2"/>
+  <polygon points="425,203 435,203 430,194" fill="#1E66F5"/>
+
+  <!-- in-phase branch (to bottom multiplier, X channel) -->
+  <line x1="380" y1="250" x2="380" y2="290" stroke="#1E66F5" stroke-width="2"/>
+  <line x1="380" y1="290" x2="430" y2="290" stroke="#1E66F5" stroke-width="2"/>
+  <line x1="430" y1="290" x2="430" y2="297" stroke="#1E66F5" stroke-width="2"/>
+  <polygon points="425,297 435,297 430,306" fill="#1E66F5"/>
+  <text x="392" y="284" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">0°</text>
+
+  <!-- multiplier circles -->
+  <circle cx="430" cy="170" r="24" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="421" y1="161" x2="439" y2="179" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="439" y1="161" x2="421" y2="179" stroke="#0B1F3A" stroke-width="2.5"/>
+  <circle cx="430" cy="330" r="24" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="421" y1="321" x2="439" y2="339" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="439" y1="321" x2="421" y2="339" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="470" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">multiplier</text>
+
+  <!-- low-pass filter boxes -->
+  <line x1="454" y1="170" x2="486" y2="170" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="486,165 486,175 494,170" fill="#0B1F3A"/>
+  <rect x="494" y="146" width="118" height="48" rx="6" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="553" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">low-pass filter</text>
+  <text x="553" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">(removes 2f)</text>
+  <line x1="454" y1="330" x2="486" y2="330" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="486,325 486,335 494,330" fill="#0B1F3A"/>
+  <rect x="494" y="306" width="118" height="48" rx="6" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="553" y="326" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">low-pass filter</text>
+  <text x="553" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">(removes 2f)</text>
+
+  <!-- outputs into display -->
+  <line x1="612" y1="170" x2="640" y2="170" stroke="#1E66F5" stroke-width="2.5"/>
+  <line x1="640" y1="170" x2="640" y2="205" stroke="#1E66F5" stroke-width="2.5"/>
+  <line x1="640" y1="205" x2="647" y2="205" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="647,200 647,210 655,205" fill="#1E66F5"/>
+  <text x="616" y="158" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">Y = A·sin θ</text>
+  <line x1="612" y1="330" x2="640" y2="330" stroke="#1E66F5" stroke-width="2.5"/>
+  <line x1="640" y1="330" x2="640" y2="295" stroke="#1E66F5" stroke-width="2.5"/>
+  <line x1="640" y1="295" x2="647" y2="295" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="647,290 647,300 655,295" fill="#1E66F5"/>
+  <text x="616" y="352" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">X = A·cos θ</text>
+
+  <!-- X-Y display -->
+  <rect x="655" y="185" width="130" height="130" rx="8" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="665" y1="250" x2="775" y2="250" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="720" y1="195" x2="720" y2="305" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="720" y1="250" x2="757" y2="217" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="762,213 758.4,222.3 752.2,215.5" fill="#1E66F5"/>
+  <circle cx="762" cy="213" r="4" fill="#1E66F5"/>
+  <text x="720" y="333" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">X-Y display</text>
+
+  <!-- math strip -->
+  <text x="400" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">A·sin(ωt + θ) × sin(ωt)  =  ½·A·cos θ  −  ½·A·cos(2ωt + θ)</text>
+  <text x="400" y="466" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">the low-pass filter keeps the DC term and rejects the 2f term — the DC pair (X, Y) is the complete signal vector</text>
+</svg>

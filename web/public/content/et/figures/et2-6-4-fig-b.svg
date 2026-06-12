@@ -1,0 +1,83 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Sample Rate vs Scan Speed: Why Flaws Vanish When You Hurry</text>
+
+  <!-- ================= LEFT PANEL: dense sampling ================= -->
+  <text x="210" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">10,000 samples/s — ≈25 samples on the signal</text>
+  <rect x="40" y="70" width="340" height="260" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- analog crack signal (smooth) -->
+  <polyline points="60,270 150,270 162,250 174,215 186,175 198,140 210,122 222,140 234,175 246,215 258,250 270,270 360,270"
+            fill="none" stroke="#9BC4FF" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- dense sample dots ON the curve -->
+  <circle cx="60" cy="270" r="4" fill="#1E66F5"/>
+  <circle cx="75" cy="270" r="4" fill="#1E66F5"/>
+  <circle cx="90" cy="270" r="4" fill="#1E66F5"/>
+  <circle cx="105" cy="270" r="4" fill="#1E66F5"/>
+  <circle cx="120" cy="270" r="4" fill="#1E66F5"/>
+  <circle cx="135" cy="270" r="4" fill="#1E66F5"/>
+  <circle cx="150" cy="270" r="4" fill="#1E66F5"/>
+  <circle cx="162" cy="250" r="4" fill="#1E66F5"/>
+  <circle cx="174" cy="215" r="4" fill="#1E66F5"/>
+  <circle cx="186" cy="175" r="4" fill="#1E66F5"/>
+  <circle cx="198" cy="140" r="4" fill="#1E66F5"/>
+  <circle cx="210" cy="122" r="4" fill="#1E66F5"/>
+  <circle cx="222" cy="140" r="4" fill="#1E66F5"/>
+  <circle cx="234" cy="175" r="4" fill="#1E66F5"/>
+  <circle cx="246" cy="215" r="4" fill="#1E66F5"/>
+  <circle cx="258" cy="250" r="4" fill="#1E66F5"/>
+  <circle cx="270" cy="270" r="4" fill="#1E66F5"/>
+  <circle cx="285" cy="270" r="4" fill="#1E66F5"/>
+  <circle cx="300" cy="270" r="4" fill="#1E66F5"/>
+  <circle cx="315" cy="270" r="4" fill="#1E66F5"/>
+  <circle cx="330" cy="270" r="4" fill="#1E66F5"/>
+  <circle cx="345" cy="270" r="4" fill="#1E66F5"/>
+  <circle cx="360" cy="270" r="4" fill="#1E66F5"/>
+
+  <!-- peak annotation -->
+  <line x1="210" y1="116" x2="210" y2="96" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="210" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">peak captured</text>
+  <text x="210" y="312" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">demodulated channel vs time — 2.5 ms crack signal</text>
+
+  <!-- ================= RIGHT PANEL: sparse sampling ================= -->
+  <text x="590" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">500 samples/s — ≈1 sample lands on the signal</text>
+  <rect x="420" y="70" width="340" height="260" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- same analog crack signal -->
+  <polyline points="440,270 530,270 542,250 554,215 566,175 578,140 590,122 602,140 614,175 626,215 638,250 650,270 740,270"
+            fill="none" stroke="#9BC4FF" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- true peak reference -->
+  <line x1="500" y1="122" x2="660" y2="122" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="498" y="112" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">true peak</text>
+
+  <!-- sparse samples straddle the peak -->
+  <circle cx="470" cy="270" r="5" fill="#1E66F5"/>
+  <circle cx="518" cy="270" r="5" fill="#1E66F5"/>
+  <circle cx="566" cy="175" r="5" fill="#1E66F5"/>
+  <circle cx="614" cy="175" r="5" fill="#1E66F5"/>
+  <circle cx="662" cy="270" r="5" fill="#1E66F5"/>
+  <circle cx="710" cy="270" r="5" fill="#1E66F5"/>
+
+  <!-- reconstructed (recorded) signal through sparse samples -->
+  <polyline points="470,270 518,270 566,175 614,175 662,270 710,270"
+            fill="none" stroke="#1E66F5" stroke-width="2.5" stroke-dasharray="6 4" stroke-linejoin="round"/>
+
+  <!-- error dimension between true peak and recorded peak -->
+  <line x1="676" y1="122" x2="676" y2="175" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="676,122 671,131 681,131" fill="#0B1F3A"/>
+  <polygon points="676,175 671,166 681,166" fill="#0B1F3A"/>
+  <text x="684" y="146" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">reads</text>
+  <text x="684" y="163" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">≈35% low</text>
+
+  <text x="590" y="312" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">samples straddle the peak — recorded amplitude is luck</text>
+
+  <!-- ================= worked example box ================= -->
+  <rect x="40" y="356" width="720" height="76" rx="8" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="400" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">Bolt-hole scanner: 2,400 rpm in a 6.35 mm hole → surface speed ≈ 0.8 m/s</text>
+  <text x="400" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">1 mm coil + tight crack ≈ 2 mm of interaction → the signal lasts ≈ 2.5 ms, once per revolution.</text>
+  <text x="400" y="422" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">Design target: on the order of ten samples across the narrowest expected flaw response.</text>
+
+  <text x="400" y="466" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">The speed limit is set by instrument design — exceed it and flaws disappear with no warning on screen.</text>
+</svg>

@@ -1,0 +1,186 @@
+{
+ "lessonId": "et2-7-1",
+ "title": "Standards and Specifications in Eddy Current Testing",
+ "narrationScript": "Eddy current testing runs on documents as much as it runs on coils. This lesson builds your Level Two map of those documents. At the top sit codes and regulations with the force of law — the ASME Boiler and Pressure Vessel Code, and in aerospace, Airworthiness Directives under 14 CFR Part 39. Below them sit consensus standards: ASME Section Five, Article Eight, for methodology, and the ASTM family — E243 for copper-alloy tube, E309 for steel tube under magnetic saturation, E426 for titanium and stainless, E1004 for conductivity, E376 for coating thickness. Customer specifications pull those standards into a contract, and your employer translates all of it into a Level Three approved operating procedure and technique sheet. You will learn the order of precedence when documents conflict, why acceptance criteria usually live upstream in the product specification rather than in the method document, and how to find scope, reference standard, standardization, and reporting requirements inside any specification you are handed.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Every Test Answers to a Document",
+   "body": "At Level II you do more than run a standardized test — SNT-TC-1A expects you to **interpret and evaluate results with respect to applicable codes, standards, and specifications**. That sentence only works if you know which documents apply to your job and what authority each one carries. Four tiers cover nearly everything you will meet:\n\n- **Code** — a body of requirements that carries the **force of law** once a jurisdiction adopts it or a regulation invokes it. The ASME Boiler and Pressure Vessel Code governs pressure equipment in most North American jurisdictions; in aviation, Airworthiness Directives issued under **14 CFR Part 39** are federal regulation outright.\n- **Standard** — a **consensus document** published by a recognized body (ASTM, ASME, SAE, ISO). Voluntary on the shelf; mandatory the moment a code or contract invokes it.\n- **Specification** — a precise statement of requirements for a **specific product or service**, usually from the customer or prime contractor, made binding by the purchase order.\n- **Procedure** — your employer's step-by-step document stating how this shop performs this examination on this hardware, in compliance with everything above it.\n\nAuthority flows downward, and so does precedence. The contract states which documents govern and in what order — and when two of them disagree, you stop and resolve the conflict **in writing** through your Level III and the customer. The bench is never the place to pick a winner."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-7-1-fig-a",
+   "caption": "The document chain: codes and regulations at the top carry legal force, standards supply the methodology, specifications bind them into a contract, and employer documents put them to work at the bench."
+  },
+  {
+   "type": "text",
+   "heading": "Reading the Label: Practice, Test Method, Guide",
+   "body": "ASTM publishes its eddy current documents under several labels, and the label tells you what the document can — and cannot — give you:\n\n- A **test method** produces a measured result with defined apparatus and precision. **ASTM E1004**, electrical conductivity in %IACS, is the classic ET example.\n- A **practice** is a definitive set of instructions for performing an examination **without producing a numerical test result** — most ET tubing documents (E243, E309, E426, E571) are practices.\n- A **guide** offers options and information without mandating one course of action — E2884 on conformable eddy current array sensors is a guide.\n- A **terminology standard** — **ASTM E1316** — defines the words. When a report says 'indication' or 'evaluation,' E1316 is the referee.\n- A **recommended practice**, like SNT-TC-1A, is written in 'should': guidelines the employer tailors. Contrast ANSI/ASNT CP-189 and NAS410, true standards written in 'shall.'\n\nThese documents also share a predictable skeleton, and a Level II reads it in a deliberate order. **Scope first** — material, product form, and size range; if your titanium tube is not in the copper practice's scope, nothing after section 1 matters. Then the **reference standard** section: the artificial discontinuity type and dimensions you must standardize on. Then **standardization**: how the response is verified, at what intervals, and what happens when a check fails. Then the **procedure parameters** — frequency, fill factor, speed, coverage. Acceptance and reporting close the document — with a catch we will hit shortly."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-7-1-fig-b",
+   "caption": "Where requirements live in an ASTM-style eddy current practice — scope and the reference standard come first, and the acceptance section frequently points back upstream to the product specification or purchase order."
+  },
+  {
+   "type": "text",
+   "heading": "The ASTM Family for Eddy Current",
+   "body": "Map the ASTM family by what is being examined:\n\n- **Mill examination of tube and pipe** — automated lines with encircling or probe coils: **E243** for copper and copper-alloy tube; **E309** for steel tubular products using **magnetic saturation** to suppress permeability noise; **E426** for seamless and welded tube of titanium, austenitic stainless, and similar alloys; **E571** for nickel and nickel-alloy tube; and **E215** for standardizing equipment used on seamless aluminum-alloy tube.\n- **In-service heat-exchanger tubing** — **E690** for in situ examination of installed nonmagnetic tubes; **E2096** for **remote field testing** of ferromagnetic tubes, eddy current's answer to carbon steel walls.\n- **Material properties** — **E1004** measures conductivity for alloy and heat-treat verification; **E376** measures coating thickness using magnetic-field and eddy current methods; **E566** and **E703** sort ferrous and nonferrous metals by electromagnetic response.\n- **Probes and arrays** — **E1629** determines the impedance of absolute probes; **E3052** applies eddy current array to carbon steel welds; **E2884** guides conformable-array examinations.\n\nNotice the pattern: ASTM tells you **how to run a repeatable examination** — coil arrangement, reference standard, standardization discipline, examination speed. What it usually does *not* tell you is whether the tube ships. Hold that thought."
+  },
+  {
+   "type": "table",
+   "caption": "Quick index: the ASTM documents an eddy current Level II reaches for most.",
+   "headers": ["Document", "Type", "What it covers"],
+   "rows": [
+    ["ASTM E1316", "Terminology", "Definitions for NDE, including electromagnetic testing terms"],
+    ["ASTM E243", "Practice", "Encircling-coil examination of copper and copper-alloy tube"],
+    ["ASTM E309", "Practice", "Steel tubular products, examined under magnetic saturation"],
+    ["ASTM E426", "Practice", "Tubular products of titanium, austenitic stainless, similar alloys"],
+    ["ASTM E571", "Practice", "Nickel and nickel-alloy tubular products"],
+    ["ASTM E690 / E2096", "Practices", "In-service heat-exchanger tubing: nonmagnetic / ferromagnetic (remote field)"],
+    ["ASTM E1004", "Test method", "Electrical conductivity (%IACS) by the eddy current method"],
+    ["ASTM E376", "Practice", "Coating thickness by magnetic-field and eddy current methods"],
+    ["ASTM E566 / E703", "Practices", "Eddy current sorting of ferrous / nonferrous metals"],
+    ["ASTM E3052 / E2884", "Practice / Guide", "Eddy current array: carbon steel welds / conformable sensor arrays"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Codes That Put ET to Work: ASME and the FAA",
+   "body": "**ASME Boiler and Pressure Vessel Code, Section V** is the methods book for nondestructive examination, and **Article 8** is its eddy current article, supported by technique-specific mandatory appendices for work such as heat-exchanger tubing examination, surface examination with probe coils, and coating measurement. But Section V deliberately answers only *how*. **When** an examination is required and **what is acceptable** come from the referencing code section — Section I, III, VIII, or XI, or a piping code — together with the contract. In-service nuclear steam generator tubing adds its own layer: ASME **Section XI** in-service inspection programs and industry steam generator examination guidelines drive the bobbin and rotating-probe work.\n\nAerospace runs the same pattern under different names. An **Airworthiness Directive** issued under 14 CFR Part 39 is law, and it typically mandates an inspection detailed in a **service bulletin** and the airframe OEM's **NDT manual** — in Boeing manuals, eddy current procedures live in Part 6. The 1988 **Aloha Airlines** fuselage failure is the landmark case: multiple-site fatigue cracking at riveted lap splices led to directives requiring eddy current inspection of aging-aircraft lap joints and fastener holes — thousands of ET hours, every one traceable to a specific manual procedure. For general repair practice, FAA **AC 43.13-1B**, Chapter 5, describes accepted NDI methods. Property verification leans on **MIL-STD-1537** (conductivity verification of aluminum heat treatment) and **AMS 2658** (hardness and conductivity inspection of wrought aluminum parts), and aerospace personnel certification rides on **NAS410**."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "Acceptance criteria live upstream",
+   "body": "Most ET method documents — ASTM practices and ASME Section V alike — define **how** to examine and which artificial discontinuity to standardize on, then hand accept/reject back to the **product specification, the referencing code section, or the purchase order**. Before you evaluate a single indication, be able to name the document and paragraph your rejection threshold comes from. If you cannot, you are not ready to test — ask your Level III, not the signal."
+  },
+  {
+   "type": "text",
+   "heading": "User Standards: From Specification to Operating Procedure",
+   "body": "A governing specification almost never reaches the bench raw. Your employer converts it into **user standards** — the in-house documents you actually work from:\n\n- The **written practice** governs people: built on SNT-TC-1A (or complying with CP-189, NAS410, or ISO 9712 when invoked), it defines how technicians are trained, examined, and certified for ET at each level.\n- The **operating procedure** governs the examination. It is prepared and approved per the written practice — typically by the **Level III**, and NAS410 explicitly requires Level 3 approval — and states scope, referenced documents, personnel requirements, instrument and probe, the **reference standard by serial number**, standardization steps and re-verification intervals, examination parameters (frequency, gain, filters, scan speed and index), coverage, recording instructions, the source of acceptance criteria, and report content.\n- The **technique sheet or data card** distills the procedure to one part number: exact probe, exact settings, exact alarm gates.\n\nTwo disciplines keep this stack honest. **Document control**: only the current revision lives at the work station, obsolete copies are pulled, and every revision is re-approved. **Deviation control**: any departure from the procedure is requested in writing and dispositioned by the Level III or engineering *before* the work — never improvised. Then the bench habit that ties this lesson together: before the probe is energized, confirm the procedure number and revision against the contract documents, confirm the reference standard serial number, confirm the parameters match the governing specification — and know in advance what the document requires if a mid-run standardization check fails: **re-examine everything since the last valid check**."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-7-1-fig-a",
+   "title": "Who outranks whom: the ET document chain",
+   "file": "et2-7-1-fig-a.svg"
+  },
+  {
+   "id": "et2-7-1-fig-b",
+   "title": "Anatomy of an ASTM-style ET practice",
+   "file": "et2-7-1-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Pick the Governing Document",
+  "intro": "Four situations from real ET work. In each one, the technical setup is fine — the question is which document governs and what a Level II is paid to do about it.",
+  "steps": [
+   {
+    "prompt": "A purchase order for condenser retubing invokes ASME Section VIII and Section V, Article 8. After the examination, where do the final accept/reject criteria for tube indications come from?",
+    "options": [
+     "Section V, Article 8 — it is the eddy current article",
+     "The referencing code section and the contract documents that invoked Section V",
+     "ASTM E1316, since it defines what an indication is",
+     "The instrument manufacturer's operating manual"
+    ],
+    "correct": 1,
+    "feedback": "Section V tells you how to examine. The referencing code section and contract that invoked it tell you when to examine and what is acceptable. Article 8 methodology plus upstream acceptance criteria is the standing ASME pattern — and E1316 only defines terms."
+   },
+   {
+    "prompt": "Mid-job you notice the customer's process specification requires standardization checks every 2 hours, but your company procedure says every 4 hours. What do you do?",
+    "options": [
+     "Follow the company procedure — it is Level III approved",
+     "Split the difference and check every 3 hours",
+     "Check every 2 hours and flag the procedure for revision through your Level III",
+     "Let the shift supervisor decide which document to follow"
+    ],
+    "correct": 2,
+    "feedback": "The contractually invoked customer specification outranks the in-house procedure. Work to the stricter contractual requirement now, and get the procedure revised and re-approved in writing. A procedure may be stricter than the documents above it — never looser."
+   },
+   {
+    "prompt": "A new mill order arrives: seamless titanium condenser tube, encircling-coil examination. A coworker hands you ASTM E243 'because we always use it for tube.' Your move?",
+    "options": [
+     "Check the scope — E243 covers copper and copper alloys; titanium tube belongs to E426",
+     "Run E243 — tube is tube, as long as the coil fits",
+     "Use E309, since titanium is strong like steel",
+     "Use E690 — it mentions condensers"
+    ],
+    "correct": 0,
+    "feedback": "Scope first, always. E243 is the copper and copper-alloy tube practice; E426 covers titanium, austenitic stainless, and similar alloys; E309 is steel tube under magnetic saturation; E690 is in situ examination of installed heat-exchanger tubes, not mill product."
+   },
+   {
+    "prompt": "Three hours into a production run, the periodic standardization check fails — the reference notch no longer produces the required response. After the cause is found and fixed, what happens to the tubing examined since the last good check?",
+    "options": [
+     "Nothing — it was examined while everyone believed the system was working",
+     "It ships, with a note in the examination report",
+     "It is rejected outright and scrapped",
+     "It is re-examined after the system is re-standardized"
+    ],
+    "correct": 3,
+    "feedback": "The tubing practices are explicit: product examined since the last valid standardization must be re-examined once the system is restored. It is not shipped on faith and not scrapped without cause — the examination simply never validly happened."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A 'code' differs from a voluntary consensus standard primarily because a code:",
+   "options": [
+    "is always more technically detailed",
+    "is written only by government agencies",
+    "carries the force of law once adopted by a jurisdiction or invoked by regulation",
+    "never references other documents"
+   ],
+   "correct": 2,
+   "explanation": "A code is a body of requirements that becomes legally enforceable when a jurisdiction adopts it (ASME BPVC) or when it is regulation outright (Airworthiness Directives under 14 CFR Part 39). Standards are voluntary until a code or contract invokes them — detail and authorship are not the distinction."
+  },
+  {
+   "question": "Mill examination of copper-alloy condenser tube with an encircling coil falls under which ASTM practice?",
+   "options": ["ASTM E243", "ASTM E309", "ASTM E571", "ASTM E1004"],
+   "correct": 0,
+   "explanation": "E243 governs electromagnetic examination of copper and copper-alloy tube. E309 covers steel tubular products under magnetic saturation, E571 covers nickel alloys, and E1004 is the conductivity test method — not a tubing examination at all."
+  },
+  {
+   "question": "A contract invokes ASME Section V, Article 8 for heat-exchanger tubing examination. The accept/reject criteria for indications normally come from:",
+   "options": [
+    "Article 8 itself, in its mandatory appendices",
+    "ASTM E1316, the terminology standard",
+    "the eddy current instrument's operating manual",
+    "the referencing code section and the contract documents"
+   ],
+   "correct": 3,
+   "explanation": "Section V supplies methodology — the 'how.' The code section that invoked it (Section I, III, VIII, XI, or a piping code) and the contract supply the 'when' and the acceptance criteria. This split is the standing ASME pattern, and assuming Article 8 contains your reject threshold is a classic evaluation error."
+  },
+  {
+   "question": "Which statement correctly describes SNT-TC-1A (2024)?",
+   "options": [
+    "A mandatory federal regulation covering all NDT personnel in the United States",
+    "A recommended practice — guidelines the employer tailors through its written practice",
+    "An aerospace personnel certification standard administered through the AIA",
+    "An ASTM practice for eddy current examination of tubular products"
+   ],
+   "correct": 1,
+   "explanation": "SNT-TC-1A is a recommended practice written in 'should' language: the employer adapts it into a written practice that becomes the governing personnel document when a contract invokes it. ANSI/ASNT CP-189 and NAS410 (the AIA aerospace document) are standards written in 'shall.'"
+  },
+  {
+   "question": "During a production tube examination, the periodic standardization verification fails. After restoring and re-standardizing the system, the governing practice requires that product examined since the last valid check be:",
+   "options": [
+    "accepted, since it was examined in good faith",
+    "downgraded one quality class and shipped",
+    "re-examined with the restored system",
+    "scrapped without further examination"
+   ],
+   "correct": 2,
+   "explanation": "ASTM tubing practices require re-examination of all product tested since the last successful standardization. A failed verification means the examination since that point was never valid — it must be repeated, not waved through and not scrapped without cause."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level II (user standards and operating procedures; standards and specifications used in eddy current testing)",
+  "ASNT Recommended Practice No. SNT-TC-1A (2024), Personnel Qualification and Certification in Nondestructive Testing",
+  "ASME Boiler and Pressure Vessel Code, Section V, Article 8 — Eddy Current Examination",
+  "ASTM E243, E309, E426, E571, E690, E2096, E1004, E376, and E1316 (eddy current standard practices, test methods, and terminology)"
+ ]
+}

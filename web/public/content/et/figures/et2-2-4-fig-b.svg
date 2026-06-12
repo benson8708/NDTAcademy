@@ -1,0 +1,93 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arwB224b" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9BC4FF"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="34" text-anchor="middle" font-size="23" font-weight="bold" fill="#FFFFFF">Shape Decisions: Shields, Length, and Current Orientation</text>
+
+  <!-- ============ TL: shielded ferrite-core probe ============ -->
+  <text x="208" y="74" text-anchor="middle" font-size="16" font-weight="bold" fill="#9BC4FF">Shielded ferrite-core probe</text>
+  <!-- part -->
+  <rect x="44" y="196" width="328" height="36" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <!-- shield cup -->
+  <rect x="152" y="118" width="12" height="74" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="236" y="118" width="12" height="74" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="152" y="110" width="96" height="10" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="140" y="140" text-anchor="end" font-size="14" fill="#9BC4FF">ferrite shield</text>
+  <!-- core -->
+  <rect x="192" y="128" width="16" height="64" fill="#9BC4FF" fill-opacity="0.85"/>
+  <text x="260" y="140" font-size="14" fill="#FFFFFF">core</text>
+  <line x1="256" y1="136" x2="210" y2="142" stroke="#9BC4FF" stroke-width="1.2"/>
+  <!-- windings -->
+  <rect x="170" y="146" width="16" height="46" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="214" y="146" width="16" height="46" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <!-- confined field -->
+  <ellipse cx="200" cy="196" rx="32" ry="16" fill="none" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <!-- fastener -->
+  <path d="M 286 196 Q 304 174 322 196" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="304" y1="196" x2="304" y2="228" stroke="#9BC4FF" stroke-width="2.5"/>
+  <text x="304" y="166" text-anchor="middle" font-size="14" fill="#FFFFFF">fastener</text>
+  <text x="208" y="252" text-anchor="middle" font-size="14" fill="#FFFFFF">footprint ≈ winding OD — works beside fasteners and edges</text>
+
+  <!-- ============ TR: unshielded pancake ============ -->
+  <text x="592" y="74" text-anchor="middle" font-size="16" font-weight="bold" fill="#9BC4FF">Unshielded air-core pancake</text>
+  <!-- part with edge -->
+  <rect x="428" y="196" width="272" height="36" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="710" y="218" font-size="14" fill="#9BC4FF">part</text>
+  <text x="710" y="234" font-size="14" fill="#9BC4FF">edge</text>
+  <!-- windings -->
+  <rect x="552" y="152" width="14" height="40" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="592" y="152" width="14" height="40" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="552" y="144" width="54" height="8" fill="none" stroke="#9BC4FF" stroke-width="1.5"/>
+  <!-- spreading field -->
+  <ellipse cx="579" cy="196" rx="70" ry="34" fill="none" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.85"/>
+  <ellipse cx="579" cy="196" rx="118" ry="52" fill="none" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.45"/>
+  <text x="592" y="252" text-anchor="middle" font-size="14" fill="#FFFFFF">field spills past the copper — edge effect arrives early</text>
+
+  <!-- ============ BL: encircling coil on tube ============ -->
+  <text x="208" y="296" text-anchor="middle" font-size="16" font-weight="bold" fill="#9BC4FF">Encircling coil on tube</text>
+  <!-- tube -->
+  <rect x="44" y="350" width="320" height="70" rx="14" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <!-- coil band -->
+  <rect x="120" y="338" width="46" height="94" fill="#1E66F5" fill-opacity="0.3" stroke="#9BC4FF" stroke-width="2"/>
+  <line x1="132" y1="338" x2="132" y2="432" stroke="#9BC4FF" stroke-width="1" opacity="0.5"/>
+  <line x1="143" y1="338" x2="143" y2="432" stroke="#9BC4FF" stroke-width="1" opacity="0.5"/>
+  <line x1="154" y1="338" x2="154" y2="432" stroke="#9BC4FF" stroke-width="1" opacity="0.5"/>
+  <!-- induced current arrow -->
+  <line x1="178" y1="358" x2="178" y2="406" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#arwB224b)"/>
+  <text x="196" y="384" font-size="14" fill="#9BC4FF" transform="rotate(-90 196 384)" text-anchor="middle">induced current</text>
+  <!-- axial crack (detected) -->
+  <polyline points="230,372 240,369 250,374 260,370 270,375 280,371 290,373" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="268" y="330" text-anchor="middle" font-size="14" fill="#FFFFFF">axial crack — cuts current → detected</text>
+  <line x1="262" y1="334" x2="260" y2="366" stroke="#9BC4FF" stroke-width="1.2"/>
+  <!-- circumferential crack (missed) -->
+  <polyline points="320,352 317,362 321,374 318,386 322,398 319,410 321,418" fill="none" stroke="#9BC4FF" stroke-width="2.5"/>
+  <text x="208" y="446" text-anchor="middle" font-size="14" fill="#9BC4FF">circumferential crack — parallel to current → can be missed</text>
+  <line x1="310" y1="440" x2="320" y2="422" stroke="#9BC4FF" stroke-width="1.2"/>
+
+  <!-- ============ BR: bobbin coil length ============ -->
+  <text x="592" y="296" text-anchor="middle" font-size="16" font-weight="bold" fill="#9BC4FF">Bobbin coil length (ID probes)</text>
+  <!-- tube walls -->
+  <rect x="428" y="330" width="330" height="16" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="428" y="424" width="330" height="16" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <!-- probe shaft -->
+  <line x1="436" y1="385" x2="750" y2="385" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="6 5" opacity="0.5"/>
+  <!-- short differential pair -->
+  <rect x="470" y="360" width="14" height="50" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="492" y="360" width="14" height="50" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <!-- pit under short pair -->
+  <polygon points="480,424 494,424 487,435" fill="#0B1F3A" stroke="#9BC4FF" stroke-width="1.5"/>
+  <!-- long absolute coil -->
+  <rect x="590" y="360" width="130" height="50" fill="#1E66F5" fill-opacity="0.5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <!-- gradual thinning -->
+  <line x1="590" y1="428" x2="720" y2="436" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="495" y="458" text-anchor="middle" font-size="14" fill="#FFFFFF">short differential pair</text>
+  <text x="495" y="474" text-anchor="middle" font-size="14" fill="#9BC4FF">resolves short pits</text>
+  <text x="655" y="458" text-anchor="middle" font-size="14" fill="#FFFFFF">long absolute coil</text>
+  <text x="655" y="474" text-anchor="middle" font-size="14" fill="#9BC4FF">averages slow thinning</text>
+
+  <text x="400" y="495" text-anchor="middle" font-size="15" fill="#9BC4FF">Eddy currents mirror the winding — a flaw must interrupt them to be seen.</text>
+</svg>

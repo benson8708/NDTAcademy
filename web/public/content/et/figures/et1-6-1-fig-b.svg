@@ -1,0 +1,67 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arwB" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9BC4FF"/>
+    </marker>
+    <marker id="arwBw" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#FFFFFF"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">Frequency Positions the Operating Point</text>
+  <text x="400" y="62" text-anchor="middle" font-size="15" fill="#9BC4FF">Normalized impedance plane — surface coil over a nonmagnetic alloy</text>
+
+  <!-- axes -->
+  <line x1="210" y1="80" x2="210" y2="455" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="210" y1="455" x2="560" y2="455" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="172" y="268" font-size="15" fill="#FFFFFF" transform="rotate(-90 172 268)">normalized reactance (ωL / ωL₀)</text>
+  <text x="385" y="485" text-anchor="middle" font-size="15" fill="#FFFFFF">normalized resistance (R / ωL₀)</text>
+  <line x1="204" y1="95" x2="216" y2="95" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="198" y="100" text-anchor="end" font-size="14" fill="#FFFFFF">1.0</text>
+
+  <!-- conductivity locus (comma curve) -->
+  <path d="M 210,95 C 340,135 375,255 318,335 C 290,375 245,415 213,440" fill="none" stroke="#9BC4FF" stroke-width="3.5"/>
+
+  <!-- air point -->
+  <circle cx="210" cy="95" r="6" fill="#FFFFFF"/>
+  <text x="222" y="92" font-size="15" fill="#FFFFFF">air point — probe off the part</text>
+
+  <!-- f increasing arrow alongside curve -->
+  <line x1="372" y1="180" x2="352" y2="300" stroke="#9BC4FF" stroke-width="2" marker-end="url(#arwB)"/>
+  <text x="382" y="235" font-size="14" fill="#9BC4FF">f · σ · μ</text>
+  <text x="382" y="253" font-size="14" fill="#9BC4FF">increasing</text>
+
+  <!-- LOW f operating point: lift-off and flaw nearly parallel -->
+  <circle cx="262" cy="118" r="6" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="262" y="142" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">low f</text>
+  <line x1="262" y1="118" x2="214" y2="97" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arwB)"/>
+  <line x1="262" y1="118" x2="224" y2="95" stroke="#FFFFFF" stroke-width="2" marker-end="url(#arwBw)"/>
+  <text x="300" y="114" font-size="14" fill="#FFFFFF">≈ parallel: poor separation</text>
+
+  <!-- MID f operating point -->
+  <circle cx="344" cy="255" r="6" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="358" y="262" font-size="14" font-weight="bold" fill="#FFFFFF">mid f</text>
+  <line x1="344" y1="255" x2="299" y2="201" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arwB)"/>
+  <text x="292" y="197" text-anchor="end" font-size="14" fill="#9BC4FF">lift-off</text>
+  <line x1="344" y1="255" x2="345" y2="185" stroke="#FFFFFF" stroke-width="2" marker-end="url(#arwBw)"/>
+  <text x="352" y="180" font-size="14" fill="#FFFFFF">flaw</text>
+
+  <!-- HIGH f operating point -->
+  <circle cx="267" cy="393" r="6" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="250" y="400" text-anchor="end" font-size="14" font-weight="bold" fill="#FFFFFF">high f</text>
+  <line x1="267" y1="393" x2="254" y2="324" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arwB)"/>
+  <text x="247" y="318" text-anchor="end" font-size="14" fill="#9BC4FF">lift-off</text>
+  <line x1="267" y1="393" x2="317" y2="344" stroke="#FFFFFF" stroke-width="2" marker-end="url(#arwBw)"/>
+  <text x="327" y="352" font-size="14" fill="#FFFFFF">flaw — wide separation</text>
+
+  <!-- summary card -->
+  <rect x="500" y="92" width="280" height="152" rx="10" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="515" y="118" font-size="15" font-weight="bold" fill="#FFFFFF">Raise f → operating point slides</text>
+  <text x="515" y="138" font-size="15" font-weight="bold" fill="#FFFFFF">down the curve; lift-off and flaw</text>
+  <text x="515" y="158" font-size="15" font-weight="bold" fill="#FFFFFF">directions pull apart.</text>
+  <text x="515" y="186" font-size="14" fill="#9BC4FF">Position is set by f · σ · μ —</text>
+  <text x="515" y="206" font-size="14" fill="#9BC4FF">titanium needs megahertz to reach</text>
+  <text x="515" y="226" font-size="14" fill="#9BC4FF">what aluminum reaches by ~200 kHz.</text>
+
+</svg>

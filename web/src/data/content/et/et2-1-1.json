@@ -1,0 +1,157 @@
+{
+ "lessonId": "et2-1-1",
+ "title": "Eddy Current Theory Review",
+ "narrationScript": "Level one qualified you to run the test. Level two makes you the one who explains and evaluates it, so this lesson rebuilds eddy current theory until every link is defensible. Alternating current in the coil creates an alternating primary magnetic field. Near a conductor, Faraday's law drives eddy currents in closed loops that mirror the coil, and Lenz's law turns them against the field that made them. Their secondary field cancels part of the coil's flux, so inductive reactance falls while resistance rises — unless the part is ferromagnetic, where permeability wins and reactance rises instead. Then the numbers. Eddy current density decays exponentially with depth. One standard depth is where thirty-seven percent remains; three standard depths is the effective working limit. Delta in millimeters is about six sixty over the square root of frequency times relative permeability times conductivity in percent IACS, and phase lag accumulates at about fifty-seven degrees per standard depth. With those two formulas you can solve every frequency and depth problem this course will throw at you.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Rebuild the Chain: From Operator to Evaluator",
+   "body": "Level I qualified you to run a standardized test. Level II makes you the one who **interprets and evaluates** — you sign for what an indication is, and that signature is only as strong as your theory. So before techniques and procedures, we rebuild the foundation and push it harder than a first course would.\n\nThe entire method is one five-link chain:\n\n- **Link 1 — alternating current** drives the coil at the test frequency f. This is the only link you directly control: drive level and frequency.\n- **Link 2 — the alternating primary magnetic field.** Oersted showed that current makes a magnetic field; Ampère tied its strength to the ampere-turns. An alternating current wears an alternating field.\n- **Link 3 — eddy currents.** Near a conductor, the changing flux induces circulating currents — **Faraday's law**: induced electromotive force is proportional to the **rate of change** of flux linkage. That 'rate of change' is why frequency appears in every equation that follows.\n- **Link 4 — the secondary field.** The eddy currents generate a field that **opposes the primary** — **Lenz's law**, no exceptions.\n- **Link 5 — impedance change.** The coil feels the opposition as a change in its impedance, and the instrument displays it.\n\nNothing on an eddy current display is anything other than link five. A Level II who can walk a signal back up the chain can defend a callout; one who cannot is guessing."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-1-1-fig-a",
+   "caption": "The five-link signal chain: coil current builds the primary field, the part answers with eddy currents and an opposing secondary field, and the coil's impedance carries the message to the display."
+  },
+  {
+   "type": "text",
+   "heading": "Generation Reviewed: A Transformer With a Shorted Secondary",
+   "body": "Three conditions, no exceptions: a **changing magnetic field**, a **conductor**, and **flux linkage** between them. Remove any one — DC drive, an insulating part, too much lift-off — and eddy currents stop.\n\nThe working model is a **transformer**. The test coil is the primary winding; the part behaves as a **single-turn secondary, short-circuited on itself**; **mutual inductance** couples them across the lift-off gap. From that model, every property you memorized at Level I falls out:\n\n- **Geometry:** closed loops that **mirror the coil**, flowing parallel to the coil windings and to the test surface — strongest directly beneath the windings, zero on the coil's centerline.\n- **Frequency:** identical to the coil current's frequency. The part cannot answer at any other.\n- **Direction:** opposed to the coil current (Lenz), with additional **phase lag accumulating with depth**.\n- **Magnitude:** real but small — the instrument amplifies the coil's response, never the currents themselves.\n- **Strength:** set by the drive (ampere-turns), the frequency, the part's **conductivity σ** and **permeability μᵣ**, and the coupling — lift-off for surface probes, fill factor for encircling and bobbin coils.\n\nAnd the orientation rule that decides what you can detect: a discontinuity produces a signal only insofar as it **interrupts** the current loops. A crack standing across the flow forces long detours and shows strongly; a lamination lying parallel to the flow barely disturbs it and may not show at all."
+  },
+  {
+   "type": "text",
+   "heading": "Impedance Changes: Explain Every Move of the Dot",
+   "body": "You never measure eddy currents directly — they close on themselves inside solid metal. The only message that escapes is the secondary field and what it does to the coil's **impedance**.\n\nReview the vocabulary with numbers:\n\n- **Resistance R** dissipates energy; its voltage is in phase with the current.\n- **Inductive reactance XL = 2πfL** stores and returns field energy, 90° out of phase. A 150 µH probe coil at 100 kHz: XL = 2π × 100,000 × 0.00015 ≈ **94 Ω**.\n- They combine as a vector sum: **Z = √(R² + XL²)**, phase angle **θ = arctan(XL ÷ R)**. R = 12 Ω with XL = 35 Ω gives Z = √(144 + 1,225) = **37 Ω** at θ ≈ 71° — never 47 Ω.\n\nNow the loading story, transformer-style — the part's load is **reflected into the coil**:\n\n- **Nonmagnetic conductor** (aluminum, titanium, austenitic stainless): the secondary field cancels part of the primary flux, so inductance and **XL fall**; the eddy currents' I²R losses are fed by the coil's circuit, so **R rises**.\n- **Crack in the path:** the loops detour and weaken, less flux is cancelled, less power is drawn — the impedance moves **back toward the air point**. That repeating excursion as the coil crosses the discontinuity is the flaw signal.\n- **Lift-off:** weaker coupling, same destination — back toward the air point, but along its **own direction** on the plane.\n- **Ferromagnetic conductor** (unsaturated carbon steel, μᵣ in the hundreds): permeability multiplies the flux each ampere links and **outweighs** the eddy current opposition — **XL rises** above the air value while R also climbs.\n\nSame probe, opposite reactance moves. State the material class before you explain any signal — it is the first question in every Level II evaluation."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-1-1-fig-b",
+   "caption": "Left: resistance and reactance combine as a vector sum into coil impedance. Right: the loading moves on the R–XL plane — conductor loading along the conductivity curve, crack and lift-off returning toward the air point, and the ferromagnetic exception."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The four direction rules — recite them cold",
+   "body": "**Nonmagnetic conductor:** XL down, R up. **Higher conductivity:** farther along the conductivity curve. **Crack or lift-off:** back toward the air point, each along its own direction — the angle between those two directions is what makes flaw detection possible. **Ferromagnetic part:** XL up, because permeability multiplies flux faster than the eddy currents cancel it. Every impedance-plane interpretation in this course is built from these four moves."
+  },
+  {
+   "type": "text",
+   "heading": "Depth of Penetration: One Formula, Three Numbers",
+   "body": "Eddy current density is greatest at the surface nearest the coil and decays **exponentially** with depth — **J(x) = J₀ · e^(−x/δ)** — because every layer of circulating current partially shields the layer beneath it. That is the **skin effect**, and its yardstick is the **standard depth of penetration δ**: the depth where density has fallen to **1/e ≈ 37%** of the surface value.\n\n**δ = 1/√(π f μ σ)** — in shop units, **δ (mm) ≈ 660 / √(f · μᵣ · σ)**, with f in hertz, μᵣ the relative permeability, and σ in %IACS (for δ in inches, replace 660 with 26).\n\nCarry three numbers for life:\n\n- **1δ → 37%** of surface current density\n- **2δ → 13.5%**\n- **3δ → 5%** — the **effective depth of penetration**, the accepted working limit. Below about 3δ, too little current crosses a flaw to disturb the coil reliably.\n\nWork one cold. A 7075-T6 aluminum skin, σ = 32 %IACS, μᵣ = 1, tested at 100 kHz: δ = 660/√(100,000 × 32) = 660/1,789 ≈ **0.37 mm** — effective depth about **1.1 mm**. The same setup on unsaturated carbon steel (σ ≈ 10, μᵣ ≈ 100): δ ≈ **0.07 mm**. Permeability collapses penetration, which is why eddy current testing of unsaturated ferromagnetic steel is strictly surface work — and why tubing tests apply **magnetic saturation** to switch the μᵣ term off.\n\nOne honest caveat still stands from Level I: the formula assumes a uniform plane-wave field over a flat, thick conductor. A real coil's field fades somewhat faster, so treat δ as a planning number and verify the response on the reference standard your procedure specifies."
+  },
+  {
+   "type": "table",
+   "caption": "Standard depth of penetration δ (mm) from δ ≈ 660/√(f·μᵣ·σ). Carbon steel's permeability is a representative training value — real values vary widely with alloy, heat treatment, and field strength.",
+   "headers": ["Material (σ %IACS, μᵣ)", "1 kHz", "10 kHz", "100 kHz", "1 MHz"],
+   "rows": [
+    ["Copper (100, 1)", "2.09 mm", "0.66 mm", "0.21 mm", "0.07 mm"],
+    ["6061-T6 aluminum (42, 1)", "3.22 mm", "1.02 mm", "0.32 mm", "0.10 mm"],
+    ["7075-T6 aluminum (32, 1)", "3.69 mm", "1.17 mm", "0.37 mm", "0.12 mm"],
+    ["304 stainless (2.5, 1)", "13.2 mm", "4.2 mm", "1.32 mm", "0.42 mm"],
+    ["Ti-6Al-4V titanium (1.0, 1)", "20.9 mm", "6.6 mm", "2.09 mm", "0.66 mm"],
+    ["Carbon steel (10, ≈100)", "0.66 mm", "0.21 mm", "0.07 mm", "0.02 mm"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Three Problem Types You Must Solve Cold",
+   "body": "Level II written exams — and real setup decisions — reduce to three drills.\n\n**Type 1: given f, find δ.** Straight substitution. A 304 stainless part (σ = 2.5 %IACS, μᵣ = 1) at 500 kHz: δ = 660/√(500,000 × 2.5) = 660/1,118 ≈ **0.59 mm**.\n\n**Type 2: given the depth you must reach, find f.** Rearrange once and keep it: **f = (660/δ)² ÷ (μᵣ · σ)**. A second-layer crack 2.5 mm below the outer surface of a 2024-T3 lap joint (σ ≈ 30 %IACS): placing the flaw at one standard depth — strong current density and strong phase separation — needs f = (660/2.5)² ÷ 30 = 264² ÷ 30 ≈ **2.3 kHz**. This is why subsurface aluminum work lives in the low kilohertz while surface crack detection runs from hundreds of kilohertz into the megahertz range.\n\n**Type 3: given depth and δ, find the phase lag.** Currents at depth respond later in the cycle: **β = x/δ radians ≈ 57° per standard depth** — about 57° at 1δ, 115° at 2δ, 172° at 3δ. A flaw's signal carries the lag of its depth, so phase rotation on the screen reads as depth. This is the foundation of the depth evaluation you will perform throughout this level.\n\nHold on to the governing proportionality: **δ ∝ 1/√(f · μᵣ · σ)**. Quadruple the frequency and δ halves; to double δ, cut the frequency to one quarter. Conductivity and permeability belong to the part — **frequency is the only term in the equation you control** — and the deepest flaw you must catch belongs inside 3δ, with many procedures aiming to place it near 1δ."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-1-1-fig-a",
+   "title": "The eddy current signal chain",
+   "file": "et2-1-1-fig-a.svg"
+  },
+  {
+   "id": "et2-1-1-fig-b",
+   "title": "Coil impedance: vector sum and loading moves",
+   "file": "et2-1-1-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Theory Review Under Pressure: Four Field Problems",
+  "intro": "Each problem takes one or two first-principles steps. Work it on paper before you click. Shop formula: δ (mm) ≈ 660/√(f · μᵣ · σ), with f in hertz and σ in %IACS; phase lag ≈ 57° per standard depth.",
+  "steps": [
+   {
+    "prompt": "A 6061-T6 aluminum fitting (σ = 42 %IACS, μᵣ = 1) is inspected at 60 kHz. The standard depth of penetration is about:",
+    "options": ["0.42 mm", "0.83 mm", "1.25 mm", "4.2 mm"],
+    "correct": 0,
+    "feedback": "δ = 660/√(60,000 × 42) = 660/1,587 ≈ 0.42 mm. Note that 1.25 mm is 3δ — the effective depth of penetration, the working limit — not the standard depth."
+   },
+   {
+    "prompt": "A second-layer crack sits 2.5 mm below the outer surface of a 2024-T3 lap joint (σ ≈ 30 %IACS). To place the crack at about one standard depth, the test frequency should be near:",
+    "options": ["230 kHz", "23 kHz", "2.3 kHz", "70 kHz"],
+    "correct": 2,
+    "feedback": "Rearrange the formula: f = (660/δ)² ÷ (μᵣ · σ) = (660/2.5)² ÷ 30 ≈ 2,300 Hz. Subsurface aluminum work lives in the low kilohertz — at hundreds of kilohertz essentially no current reaches the second layer."
+   },
+   {
+    "prompt": "At your chosen frequency, δ = 0.3 mm. A flaw signal is rotated about 172° beyond the surface-flaw response. Its depth is roughly:",
+    "options": ["0.3 mm", "0.9 mm", "0.6 mm", "1.8 mm"],
+    "correct": 1,
+    "feedback": "Phase lag accumulates at about 57° per standard depth, so 172° ≈ 3δ = 0.9 mm — right at the effective depth of penetration. Expect a weak signal: only about 5% of the surface current density crosses that flaw."
+   },
+   {
+    "prompt": "Your absolute probe nulls in air, then lands on unsaturated carbon steel. Compared with the aluminum response you know (XL falls, R rises), the steel's reactance move is:",
+    "options": [
+     "XL falls even further — steel is a conductor too",
+     "XL rises — permeability multiplies flux linkage and outweighs the eddy current opposition",
+     "XL is unchanged — only R responds to steel",
+     "XL drops to zero"
+    ],
+    "correct": 1,
+    "feedback": "With μᵣ in the hundreds, each ampere of coil current links far more flux, so inductance and XL rise despite the opposing eddy currents. The same μᵣ collapses δ to hundredths of a millimeter — unsaturated steel testing is strictly surface work."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "The standard depth of penetration (1δ) is defined as the depth at which eddy current density has fallen to approximately:",
+   "options": [
+    "5% of the surface value",
+    "13.5% of the surface value",
+    "37% (1/e) of the surface value",
+    "50% of the surface value"
+   ],
+   "correct": 2,
+   "explanation": "The decay is exponential, J(x) = J₀·e^(−x/δ), so at x = 1δ the density is 1/e ≈ 37% of its surface value. 13.5% corresponds to 2δ, and 5% to 3δ — the effective depth of penetration."
+  },
+  {
+   "question": "A 7075-T6 aluminum part (σ = 32 %IACS, μᵣ = 1) is tested at 100 kHz. Using δ (mm) ≈ 660/√(f · μᵣ · σ), the standard depth of penetration is about:",
+   "options": ["0.37 mm", "1.17 mm", "0.12 mm", "3.69 mm"],
+   "correct": 0,
+   "explanation": "δ = 660/√(100,000 × 1 × 32) = 660/1,789 ≈ 0.37 mm. The distractors are the same material at 10 kHz (1.17 mm), 1 MHz (0.12 mm), and 1 kHz (3.69 mm) — frequency owns the result."
+  },
+  {
+   "question": "An absolute probe coil is placed on a thick, nonmagnetic conductor such as aluminum. Compared with its air values, the coil's:",
+   "options": [
+    "inductive reactance rises and resistance falls",
+    "inductive reactance falls and resistance rises",
+    "reactance and resistance both fall",
+    "reactance and resistance both rise"
+   ],
+   "correct": 1,
+   "explanation": "The eddy currents' secondary field opposes and cancels part of the primary flux, so inductance — and XL = 2πfL — falls; their I²R losses in the metal are supplied by the coil's circuit, so effective resistance rises. On unsaturated ferromagnetic steel, permeability reverses the reactance move: XL rises."
+  },
+  {
+   "question": "To double the standard depth of penetration in a given material, the test frequency must be:",
+   "options": ["halved", "doubled", "quadrupled", "reduced to one quarter"],
+   "correct": 3,
+   "explanation": "δ ∝ 1/√f, so doubling δ requires the √f term to halve — which means dividing the frequency by four. Halving the frequency only grows δ by √2 ≈ 1.4 times."
+  },
+  {
+   "question": "During evaluation, a flaw signal shows a phase lag of about 115° relative to the surface response. With δ = 0.4 mm at the test frequency, the flaw lies at a depth of approximately:",
+   "options": ["0.4 mm", "0.8 mm", "1.2 mm", "2.3 mm"],
+   "correct": 1,
+   "explanation": "Phase lag accumulates at β = x/δ radians ≈ 57° per standard depth. A lag of 115° is about 2δ, and 2 × 0.4 mm = 0.8 mm. Phase reads depth; amplitude alone cannot."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II Technique Course §1.0–1.1 (review of electromagnetic theory — eddy current theory)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing method — Level II training topic basis",
+  "Classical skin-effect relations: δ = 1/√(πfμσ); J(x) = J₀·e^(−x/δ); 37% at 1δ, 13.5% at 2δ, 5% at 3δ (effective depth); phase lag β = x/δ radians ≈ 57° per standard depth",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations, Section C: Electromagnetic Testing (definitions of impedance and standard depth of penetration)"
+ ]
+}

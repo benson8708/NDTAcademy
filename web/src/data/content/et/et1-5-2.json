@@ -1,0 +1,186 @@
+{
+ "lessonId": "et1-5-2",
+ "title": "Modes of Operation: Absolute, Differential, and Hybrid",
+ "narrationScript": "Last lesson you picked a coil arrangement. This lesson wires it, because the mode of operation decides what your instrument can and cannot see. An absolute coil measures its own impedance against a fixed internal reference, so it responds to everything — conductivity, dimensions, lift-off, gradual wall thinning, and sharp pits alike — but its baseline also drifts with temperature. A differential pair is wound in opposition and compares two adjacent spots on the part. Whatever both coils see cancels. Gradual changes and thermal drift disappear, while a small pit sweeping past produces the crisp two-lobed signal that makes differential tube inspection so sensitive at speed. The price is a blind spot: a flaw longer than the coil spacing shows only its ends. Hybrid configurations split the work — a driver coil excites the part and separate pickup coils sense the response — giving reflection probes their wide frequency range and thermal stability. Learn what each mode hides as well as what it shows. That is the skill this lesson builds.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "A Wiring Question, Not a Shape Question",
+   "body": "Last lesson sorted coils by **arrangement** — surface probes, encircling coils, bobbin coils riding inside a tube. Arrangement is geometry: how the coil faces the part. The **mode of operation** is a different decision entirely: how the coil or coils are **electrically connected and referenced** inside the measuring circuit. The same bobbin probe body can be wired absolute or differential, and the two versions will show you completely different pictures of the same tube.\n\nThe Level I body of knowledge names three modes:\n\n- **Absolute** — one sensing coil, measured against a fixed reference inside the instrument.\n- **Differential** — two sensing coils connected in opposition, so the instrument reports only the *difference* between them.\n- **Hybrid** — configurations that split excitation and sensing between separate elements or combine modes in one assembly; reflection (driver–pickup) and through-transmission probes are the classic examples.\n\nThe mode you choose decides what the instrument can perceive at all. One mode tracks a slow wall taper faithfully; another cancels it to dead silence. Predicting that behavior — gradual versus abrupt, mode by mode — is the core skill of this lesson."
+  },
+  {
+   "type": "text",
+   "heading": "Absolute Mode: One Coil Against a Fixed Reference",
+   "body": "An **absolute coil** is a single sensing element whose impedance is measured directly. The instrument compares it against a **fixed internal reference** — a balancing impedance network, or a matched **reference coil** mounted so it never sees the test material (many designs use that dummy coil purely for temperature compensation). Either way, only one coil senses the part, and the output represents the coil's **total impedance** relative to the null you set on known-good material.\n\nBecause nothing is subtracted, an absolute coil responds to **every variable** that moves coil impedance: electrical conductivity, magnetic permeability, part dimensions, lift-off, and discontinuities — whether they change abruptly or over half a meter. A slow wall taper produces a slow, faithful baseline shift; a sharp pit produces a sharp deflection. The signal's *position* carries meaning, not just its motion.\n\nThat completeness is the mode's strength and its burden:\n\n- **Strengths** — conductivity measurement and alloy sorting, nonconductive coating thickness by lift-off, heat-treatment verification, and **gradual wall thinning** that no self-comparing probe will ever report.\n- **Burdens** — the baseline **drifts with temperature** as coil resistance and material conductivity change, and probe wobble or lift-off variation rides directly on the signal. Absolute channels demand frequent re-nulling and steady probe handling."
+  },
+  {
+   "type": "text",
+   "heading": "Differential Mode: Two Coils That Vote Against Each Other",
+   "body": "A **differential** configuration uses two sensing coils **wound in series opposition**, closely spaced, examining adjacent regions of the same part. When both coils see identical material, their outputs are equal and opposite — the net signal is **null**. The instrument reports only *differences* between the two locations. This is **self-comparison**: the part acts as its own reference standard.\n\nSweep a small pit past a self-comparing bobbin probe and the signature is unmistakable. The leading coil meets the pit first and swings the signal one way; an instant later the trailing coil meets it and swings the signal the other way. The result is a sharp **two-lobed, bipolar deflection** — on an impedance-plane display, the familiar **figure-eight** loop that tube analysts read all day.\n\nBecause gradual changes and ambient effects appear under both coils at nearly the same value, they cancel: slow dimensional variation, gradual conductivity change, and **temperature drift vanish from the signal**. The baseline stays planted, gain can run high, and small localized flaws stand out even at production scanning speeds.\n\nOne variant moves the second coil off the part entirely: an **external-reference differential** places it on a separate, known-good reference standard, so the output is any difference between the test article and that standard — the basis of the comparator bridges used for metal sorting."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-5-2-fig-a",
+   "caption": "One scan, two channels: the absolute trace follows the gradual taper and spikes at the pit; the differential trace cancels the taper completely and marks the pit with a sharp two-lobed signal."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The Cancellation Rule — and Its Blind Spot",
+   "body": "Differential output equals what coil 1 sees **minus** what coil 2 sees. Anything identical under both coils cancels — temperature drift, a slow taper, uniform wall loss. And a defect **longer than the coil spacing** announces only its **entry and exit**: in the middle, both coils sit in the same flawed material and the signal returns to null. This is why tubing examinations run an absolute channel alongside the differential one — and why 'no differential signal' must never be reported as 'no metal loss.'"
+  },
+  {
+   "type": "text",
+   "heading": "Hybrid Configurations: Splitting Drive from Sense",
+   "body": "Absolute and differential probes use the **same coil or coils** to energize the part and to sense it. **Hybrid** configurations break that coupling: one element **drives**, a separate element **senses**, and the instrument measures the **voltage induced in the pickup** rather than the impedance of the excitation coil.\n\n- **Reflection probes** (also called **driver–pickup** or **send–receive**) nest small pickup coils inside a larger driver coil. The driver can be built large for a strong, uniform field while the pickups stay small for resolution — each element optimized for its own job. The payoff is a **wide usable frequency range**, which is why reflection probes anchor multifrequency work, and **greatly reduced thermal drift**, because slow resistance changes in the windings barely disturb an induced-voltage measurement.\n- **Through-transmission** places the driver on one face of a thin sheet and the pickup on the opposite face. Eddy currents induced in the wall attenuate the field crossing it, so the received signal reads the material between the coils. It demands **two-side access** and works only on sections thin enough for the field to penetrate.\n\nNote the layering: the pickups themselves can be wound absolute or differential, so a 'differential reflection probe' is a hybrid in both senses. Hybrids can even pair a coil driver with an entirely different detector type — the Hall-effect element, next lesson's subject."
+  },
+  {
+   "type": "text",
+   "heading": "Theory of Operation: From Impedance Change to Screen Signal",
+   "body": "Every mode runs on the same chain of physics. The instrument's oscillator drives the coil with **alternating current**, generating an alternating **primary magnetic field**. That field induces **eddy currents** in the conductive part (Faraday's law of induction), and those eddy currents generate a **secondary field that opposes** the primary (Lenz's law). The opposition reduces the net flux through the coil and dissipates energy in the part — so the coil's **inductive reactance falls and its effective resistance rises**. Anything that changes the eddy currents — a crack, a thinner wall, different conductivity, more lift-off — moves the coil's impedance.\n\nThe instrument turns that movement into a signal with an **AC bridge circuit**. The sensing coil forms one arm; pressing **balance (null)** on good material adjusts the bridge so the output is zero. From then on, any impedance change **unbalances the bridge**, and the small output voltage is amplified and resolved by **phase-sensitive detection** into two components — resistive and reactive — that drive the dot on the impedance-plane display.\n\nThe three modes are simply three ways of filling that bridge: **absolute** puts the test coil against a fixed balancing impedance; **differential** puts the two opposed coils in adjacent arms, so the bridge nulls itself whenever they agree; **driver–pickup hybrids** bypass bridge measurement of the drive coil and read the pickup's induced voltage — amplitude and phase — directly."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-5-2-fig-b",
+   "caption": "Three ways to fill the measuring circuit: an absolute coil balanced against a fixed reference, a differential pair in opposing bridge arms, and a driver–pickup hybrid whose pickup voltage is read directly."
+  },
+  {
+   "type": "table",
+   "caption": "Mode-by-mode behavior — what each configuration shows, hides, and is used for.",
+   "headers": ["Mode", "Abrupt local flaw", "Gradual change / drift", "Typical applications"],
+   "rows": [
+    ["Absolute", "Sharp deflection", "Follows gradual changes faithfully — but baseline also drifts with temperature", "Conductivity, alloy sorting, coating thickness, gradual wall loss"],
+    ["Differential — self-comparison", "Sharp two-lobed (bipolar) signal", "Cancels gradual change and thermal drift; long flaws show ends only", "High-speed inspection of tubing, bar, and wire for pits and cracks"],
+    ["Differential — external reference", "Shows any difference from a known-good standard", "Reports gradual deviation from the standard", "Comparator bridges, metal sorting"],
+    ["Hybrid — reflection (driver–pickup)", "Detects; pickups may be wound absolute or differential", "Greatly reduced thermal drift; wide frequency range", "Aerospace surface scanning, multifrequency examinations"],
+    ["Hybrid — through-transmission", "Detects within thin sections", "Requires two-side access; limited by penetration", "Thin sheet and foil"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-5-2-fig-a",
+   "title": "Absolute vs. differential response: gradual taper and sharp pit",
+   "file": "et1-5-2-fig-a.svg"
+  },
+  {
+   "id": "et1-5-2-fig-b",
+   "title": "How each mode is wired: bridge circuits and driver–pickup",
+   "file": "et1-5-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Two Channels, One Tube: Predict Every Signal",
+  "intro": "You are pulling a bobbin probe through nonmagnetic condenser tubing. The instrument records an absolute channel and a self-comparison differential channel simultaneously. Predict what each condition does to each channel before you click.",
+  "steps": [
+   {
+    "prompt": "Erosion has thinned the tube wall gradually over half a meter. What do the channels show as the probe traverses it?",
+    "options": [
+     "Both channels show the thinning equally",
+     "The absolute channel shifts slowly through the thinned region; the differential channel stays near null",
+     "The differential channel gives a strong two-lobed signal; the absolute channel shows nothing",
+     "Neither channel responds to wall thinning"
+    ],
+    "correct": 1,
+    "feedback": "The taper changes so slowly that both differential coils always see nearly identical wall — their outputs cancel. The absolute coil is measured against a fixed reference, so it tracks the thinning faithfully along its full length."
+   },
+   {
+    "prompt": "The probe passes a small, sharp pit. What is the classic differential-channel signature?",
+    "options": [
+     "A sharp bipolar deflection — one lobe as the leading coil passes the pit, the opposite lobe as the trailing coil does",
+     "A slow, sustained baseline shift that lasts for the rest of the pull",
+     "A single lobe with no polarity reversal",
+     "No response — differential coils cannot see localized flaws"
+    ],
+    "correct": 0,
+    "feedback": "Each coil meets the pit in turn, unbalancing the pair first one way and then the other. On the impedance-plane display this draws the familiar figure-eight loop — the signature tube analysts evaluate."
+   },
+   {
+    "prompt": "Mid-shift, with the probe stationary in clean tube, the absolute channel wanders slowly off null while the differential channel sits rock-steady. Most likely cause?",
+    "options": [
+     "A through-wall crack is opening in real time",
+     "The differential channel has failed",
+     "Thermal drift — temperature change affects both differential coils equally and cancels, but moves the absolute coil's baseline",
+     "Lift-off — impossible inside a tube"
+    ],
+    "correct": 2,
+    "feedback": "Temperature slowly changes coil resistance and material conductivity. The differential pair rejects whatever is common to both coils; the absolute coil, measured against a fixed reference, drifts. Re-null the absolute channel and log the condition."
+   },
+   {
+    "prompt": "A corrosion groove runs uniformly for 300 mm — far longer than the differential coil spacing. How do you make sure it is detected and evaluated?",
+    "options": [
+     "Trust the differential channel and raise its gain",
+     "Use the absolute channel, which responds along the groove's full length — the differential channel will only mark the entry and exit",
+     "Pull the probe faster so the groove looks shorter",
+     "Switch to through-transmission inside the tube"
+    ],
+    "correct": 1,
+    "feedback": "Once both differential coils are inside the groove they see identical material and the signal returns to null — only the ends show. This blind spot is exactly why tubing examinations record an absolute channel alongside the differential one."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A bobbin probe can be supplied in absolute or differential versions of the same body. What actually determines a probe's mode of operation?",
+   "options": [
+    "The physical shape of the coil and how it faces the part",
+    "How the coil or coils are electrically connected and referenced in the measuring circuit",
+    "The test frequency selected on the instrument",
+    "Whether the test material is ferromagnetic or nonferromagnetic"
+   ],
+   "correct": 1,
+   "explanation": "Arrangement (surface, encircling, bobbin) is geometry; mode is wiring. The same coil body becomes absolute or differential depending on how its windings are connected and what they are referenced against."
+  },
+  {
+   "question": "An examination must detect and follow gradual wall thinning along the full length of a heat-exchanger tube. Which mode is required?",
+   "options": [
+    "Absolute — it responds to gradual changes as well as abrupt ones",
+    "Self-comparison differential — its high sensitivity catches everything",
+    "Differential with both coils on the test part, run at higher gain",
+    "None — eddy current testing cannot respond to gradual wall loss"
+   ],
+   "correct": 0,
+   "explanation": "Self-comparing differential coils cancel any change that appears under both coils at once, so a gradual taper reads as null no matter the gain. The absolute coil is measured against a fixed reference and tracks the thinning along its entire length."
+  },
+  {
+   "question": "As a small through-wall pit passes a self-comparison differential bobbin probe, the typical signal is:",
+   "options": [
+    "A slow baseline shift that persists after the pit is passed",
+    "No signal, because differential coils do not respond to localized flaws",
+    "A sharp two-lobed, bipolar deflection — the figure-eight loop on an impedance-plane display",
+    "A steady amplitude increase proportional to coil temperature"
+   ],
+   "correct": 2,
+   "explanation": "The leading coil sees the pit first and unbalances the pair one way; the trailing coil then sees it and unbalances the pair the opposite way — two lobes of opposite polarity, drawn as a figure-eight on the impedance plane."
+  },
+  {
+   "question": "What distinguishes a hybrid driver–pickup (reflection) probe from simple absolute or differential probes?",
+   "options": [
+    "It needs no alternating-current excitation",
+    "It can only be used on ferromagnetic materials",
+    "Its single coil both drives and senses through a bridge circuit",
+    "Excitation and sensing are handled by separate elements, and the instrument measures the pickup's induced voltage"
+   ],
+   "correct": 3,
+   "explanation": "In a reflection probe a driver coil excites the part while separate pickup coils sense the response. Measuring induced voltage instead of drive-coil impedance lets each element be optimized independently — the source of the wide frequency range and low thermal drift."
+  },
+  {
+   "question": "A uniform corrosion groove is much longer than a self-comparison differential probe's coil spacing. Along the groove, the differential channel will typically show:",
+   "options": [
+    "A continuous, strong signal for the groove's entire length",
+    "Signals only at the groove's beginning and end, where the two coils see different material",
+    "A stronger response than the absolute channel for the full length",
+    "Pure lift-off signals with no flaw content"
+   ],
+   "correct": 1,
+   "explanation": "Once both coils ride inside the groove they see identical material and cancel back to null. Only the entry and exit — where one coil is in the groove and the other is not — produce signals. The absolute channel reports the full length."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105 (2024), ET Level I Theory Course — eddy current sensing elements: modes of operation (absolute, differential, hybrids) and theory of operation",
+  "ASNT SNT-TC-1A (2024) — recommended practice governing ET Level I training and qualification",
+  "ASTM E690 — Standard Practice for In Situ Electromagnetic (Eddy Current) Examination of Nonmagnetic Heat Exchanger Tubes (absolute and differential bobbin practice)",
+  "ASTM E1004 — Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method (absolute-mode application)"
+ ]
+}

@@ -1,0 +1,55 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#0B1F3A">Phase Lag: Depth Rotates and Shrinks the Signal</text>
+
+  <!-- part cross-section -->
+  <rect x="55" y="170" width="330" height="265" fill="#9BC4FF" fill-opacity="0.22" stroke="#0B1F3A" stroke-width="3"/>
+  <text x="220" y="458" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">part cross-section</text>
+
+  <!-- surface probe -->
+  <rect x="150" y="112" width="80" height="46" fill="#0B1F3A"/>
+  <rect x="150" y="158" width="80" height="8" fill="#1E66F5"/>
+  <text x="245" y="138" text-anchor="start" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">surface probe</text>
+
+  <!-- eddy current density bars at depth -->
+  <line x1="110" y1="193" x2="330" y2="193" stroke="#1E66F5" stroke-width="7"/>
+  <text x="110" y="218" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">surface: 100% current density · no lag</text>
+
+  <line x1="110" y1="275" x2="192" y2="275" stroke="#1E66F5" stroke-width="5" stroke-opacity="0.75"/>
+  <text x="110" y="300" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">1δ deep: 37% · lags 57°</text>
+
+  <circle cx="300" cy="275" r="7" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="3"/>
+  <text x="300" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">flaw at 1δ</text>
+
+  <line x1="110" y1="355" x2="140" y2="355" stroke="#9BC4FF" stroke-width="4"/>
+  <text x="110" y="380" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">2δ deep: 14% · lags 115°</text>
+
+  <line x1="60" y1="412" x2="380" y2="412" stroke="#0B1F3A" stroke-width="1.5" stroke-dasharray="5 5"/>
+  <text x="120" y="430" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">≈ 3δ: effective depth limit (~5% current)</text>
+
+  <!-- tie line from flaw to its screen signal -->
+  <line x1="307" y1="277" x2="600" y2="332" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="6 5"/>
+
+  <!-- instrument screen -->
+  <rect x="440" y="110" width="330" height="330" rx="10" fill="#0B1F3A"/>
+
+  <!-- surface notch lobe -->
+  <path d="M 545 390 C 522 330 508 210 514 168 C 521 215 534 330 545 390" fill="none" stroke="#1E66F5" stroke-width="4"/>
+  <text x="514" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">surface notch</text>
+
+  <!-- same notch at 1δ: rotated 57°, weaker -->
+  <path d="M 545 390 C 568 372 596 352 612 338 C 593 358 566 376 545 390" fill="none" stroke="#9BC4FF" stroke-width="3.5"/>
+  <text x="640" y="325" text-anchor="start" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#9BC4FF">same flaw at 1δ</text>
+  <text x="640" y="343" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">rotated, weaker</text>
+
+  <!-- 57 degree arc -->
+  <path d="M 537 331 A 60 60 0 0 1 592 353" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="576" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">57°</text>
+
+  <!-- null dot -->
+  <circle cx="545" cy="390" r="7" fill="#FFFFFF"/>
+  <text x="560" y="412" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">null</text>
+
+  <!-- formula strip -->
+  <text x="400" y="482" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0B1F3A">phase lag β = x/δ → about 57° per standard depth of penetration — rotation reads depth</text>
+</svg>

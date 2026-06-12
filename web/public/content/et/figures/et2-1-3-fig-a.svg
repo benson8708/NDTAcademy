@@ -1,0 +1,64 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0B1F3A">Impedance-Plane Trajectory Map</text>
+
+  <!-- axes -->
+  <line x1="140" y1="450" x2="640" y2="450" stroke="#0B1F3A" stroke-width="3"/>
+  <polygon points="640,444 654,450 640,456" fill="#0B1F3A"/>
+  <line x1="140" y1="450" x2="140" y2="70" stroke="#0B1F3A" stroke-width="3"/>
+  <polygon points="134,70 140,56 146,70" fill="#0B1F3A"/>
+  <text x="390" y="484" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0B1F3A">normalized resistance R / X0</text>
+  <text x="96" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0B1F3A" transform="rotate(-90 96 260)">normalized reactance XL / X0</text>
+  <text x="134" y="466" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0</text>
+
+  <!-- 1.0 tick at air point level -->
+  <line x1="130" y1="130" x2="150" y2="130" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="124" y="136" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">1.0</text>
+
+  <!-- ferromagnetic branch -->
+  <line x1="140" y1="130" x2="208" y2="74" stroke="#0B1F3A" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <polygon points="200,78 214,68 210,84" fill="#0B1F3A"/>
+  <text x="224" y="80" text-anchor="start" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">μr &gt; 1 — permeability climbs above the air point</text>
+
+  <!-- conductivity comma curve -->
+  <path d="M 140 130 C 205 137 258 143 300 153 C 355 166 395 176 420 193 C 458 217 477 233 483 257 C 490 286 462 313 423 333 C 380 355 320 382 277 401 C 247 414 214 425 188 433" fill="none" stroke="#1E66F5" stroke-width="4"/>
+  <polygon points="352,368 370,358 368,374" fill="#1E66F5"/>
+
+  <!-- narrow-angle demo at titanium (high on curve) -->
+  <line x1="420" y1="193" x2="317" y2="170" stroke="#9BC4FF" stroke-width="3" stroke-dasharray="7 6"/>
+  <polygon points="303,167 319,163 316,177" fill="#9BC4FF"/>
+  <line x1="420" y1="193" x2="333" y2="156" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="320,150 336,149 330,162" fill="#0B1F3A"/>
+  <text x="336" y="131" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">narrow angle here — lift-off and flaw nearly parallel</text>
+
+  <!-- operating point vectors at aluminum -->
+  <line x1="423" y1="333" x2="283" y2="233" stroke="#9BC4FF" stroke-width="3.5" stroke-dasharray="8 6"/>
+  <polygon points="272,225 287,227 279,239" fill="#9BC4FF"/>
+  <text x="345" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">lift-off — chord to the air point</text>
+
+  <line x1="423" y1="333" x2="405" y2="236" stroke="#0B1F3A" stroke-width="3.5"/>
+  <polygon points="402,222 412,235 398,237" fill="#0B1F3A"/>
+  <text x="398" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">surface crack</text>
+
+  <path d="M 416 294 A 40 40 0 0 0 391 310" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="438" y="318" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">wide angle</text>
+
+  <line x1="423" y1="333" x2="364" y2="365" stroke="#1E66F5" stroke-width="3.5"/>
+  <polygon points="352,372 361,359 367,371" fill="#1E66F5"/>
+  <text x="368" y="398" text-anchor="start" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">σ ↑ or f ↑ — down the curve</text>
+
+  <!-- air point -->
+  <circle cx="140" cy="130" r="7" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="3"/>
+  <text x="132" y="112" text-anchor="end" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">air point</text>
+
+  <!-- metal operating points -->
+  <circle cx="420" cy="193" r="6" fill="#1E66F5"/>
+  <text x="434" y="190" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">titanium ≈ 1% IACS</text>
+  <circle cx="483" cy="257" r="6" fill="#1E66F5"/>
+  <text x="497" y="252" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">stainless 2–3% IACS — the knee</text>
+  <circle cx="423" cy="333" r="7" fill="#0B1F3A" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="437" y="344" text-anchor="start" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">aluminum 25–60% IACS</text>
+  <text x="437" y="362" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">operating point</text>
+  <circle cx="277" cy="401" r="6" fill="#1E66F5"/>
+  <text x="290" y="412" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">copper = 100% IACS</text>
+</svg>

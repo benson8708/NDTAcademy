@@ -1,0 +1,115 @@
+{
+ "moduleId": "et1-8",
+ "questions": [
+  {
+   "question": "On the rotating-probe bench, four controls sit in front of you: scanner RPM, high-pass cutoff, test frequency, and channel gain. Which one actually changes the eddy current depth of penetration in the part?",
+   "options": [
+    "Scanner RPM",
+    "High-pass filter cutoff",
+    "Test (carrier) frequency",
+    "Channel gain"
+   ],
+   "correct": 2,
+   "explanation": "Penetration rides on the carrier: δ ≈ 660/√(f · μᵣ · σ), so only the test frequency moves it. RPM changes just the demodulated signal frequency handed to the filters, the filters act after demodulation and never touch the carrier, and gain rescales signal and noise by the same factor."
+  },
+  {
+   "question": "At 3,000 RPM, probe wobble and the EDM notch each produce a response exactly once per revolution — 50 times a second. Why can the band-pass filters still separate them?",
+   "options": [
+    "The filters synchronize to the rotation and gate out anything that repeats once per revolution",
+    "Filters respond to how fast the trace moves during the event, not how often it recurs: the wobble is a slow 50 Hz swing spread across the whole revolution, while the ~1 ms notch crossing concentrates its energy near 500 Hz",
+    "The notch produces a much larger amplitude, and band-pass filters pass only the largest signals",
+    "Wobble appears only on the impedance-plane display, while the notch appears only on the time-base display"
+   ],
+   "correct": 1,
+   "explanation": "Repetition rate and frequency content are different things. Both events recur at 50 per second, but the wobble wiggles slowly (50 Hz) while the 1 ms notch snap carries its energy near f ≈ 1/(2τ) ≈ 500 Hz — a decade apart, and that gap is exactly where the high-pass/low-pass bracket goes to work."
+  },
+  {
+   "question": "During filter optimization on the rotating standard, the notch suddenly looks short, broadened, and sluggish to rise and fall, and two closely spaced indications begin to merge. Which cutoff drifted, and in which direction?",
+   "options": [
+    "High-pass too high — it is differentiating the signal",
+    "High-pass too low — wobble is swinging the baseline",
+    "Low-pass too high — broadband grass is being admitted",
+    "Low-pass too low — the filter is smearing the fast pulse"
+   ],
+   "correct": 3,
+   "explanation": "Smearing, broadening, and merging of adjacent indications is the signature of an over-restrictive low-pass; the fix is to raise it until the notch is sharp and at full height again. An excessive high-pass instead produces a shrunken, bipolar, phase-rotated notch, while too-low settings admit baseline wobble (high-pass) or grass (low-pass)."
+  },
+  {
+   "question": "A baseline swimming with once-per-revolution wobble and fuzzed with grass is hiding a small notch signal. The operator reaches for 6 dB more gain. The result will be:",
+   "options": [
+    "The same signal-to-noise ratio — gain amplifies wobble, grass, and notch by exactly the same factor",
+    "Better detection, because gain raises the notch above the noise floor",
+    "A cleaner baseline, because the amplifier saturates on the noise first",
+    "Shallower penetration, because gain concentrates the field at the surface"
+   ],
+   "correct": 0,
+   "explanation": "Gain is not a cure for noise: it rescales everything on the screen equally, so the wobble still swings through the alarm threshold and the grass still fuzzes the trace. Noise is removed relative to the signal only by frequency-selective filtering — high-pass for the slow wobble, low-pass for the grass — plus probe technique."
+  },
+  {
+   "question": "Tomorrow's lap-joint skins carry 0.13 mm of nonconductive primer that stays on during inspection. Which standardization approach makes the reference-notch amplitude match what the production scan will actually deliver?",
+   "options": [
+    "Standardize on the bare reference standard in direct contact, then add gain as a safety margin",
+    "Strip a small patch of primer from a production part and standardize there",
+    "Standardize on the bare reference standard scanned through a 0.13 mm nonconductive shim that duplicates the coating",
+    "Null the probe in air, since coatings make surface nulling meaningless"
+   ],
+   "correct": 2,
+   "explanation": "The coil reads a nonconductive coating as fixed lift-off, so setup must replicate it: a shim of matching thickness makes the standardized notch amplitude equal the amplitude the coated part will give in service. Piling on gain amplifies noise along with signal, and sanding damages the part. The same physics, used deliberately, is the ASTM E376 lift-off method for measuring coating thickness."
+  },
+  {
+   "question": "One work order covers two jobs on an aluminum lap joint: surface cracks breaking at fastener holes, and corrosion in the second layer about 2.5 mm below the top surface. The sound frequency strategy is to:",
+   "options": [
+    "Run both at 1 MHz, since the highest frequency gives the strongest response to every flaw",
+    "Run both at a 200 kHz compromise so only one setup is needed",
+    "Run both near 10 kHz, since extra penetration helps surface flaws too",
+    "Split the job: a high frequency (hundreds of kHz) for the surface cracks, and a low frequency near 10 kHz so the 2.5 mm depth sits inside roughly 3δ"
+   ],
+   "correct": 3,
+   "explanation": "At 200 kHz in this aluminum, δ ≈ 0.22 mm and 3δ ≈ 0.7 mm — the currents die out long before the second layer, and no gain can recover what never reached the flaw. At 10 kHz, δ ≈ 1.0 mm and 3δ ≈ 3.0 mm, putting 2.5 mm just inside reach. High frequency buys surface sensitivity and lift-off/flaw phase separation; low frequency buys penetration — choose per the depth of interest, keeping it inside about 3δ."
+  },
+  {
+   "question": "When the second-layer corrosion cut finally appears at 10 kHz, its signal is small and strongly rotated compared with a surface notch. The rotation is caused by:",
+   "options": [
+    "Phase lag accumulated by the eddy currents traveling down about 2.5 standard depths to the flaw",
+    "Extra lift-off introduced by the second sheet of the stack",
+    "The reduced gain available from the instrument at low frequencies",
+    "The magnetic permeability of the 6061-T6 sheets"
+   ],
+   "correct": 0,
+   "explanation": "Eddy currents lag in phase as they penetrate — roughly 57° per standard depth — so a flaw 2.5δ down answers with a strongly rotated signal, exactly as the depth clock predicts. Aluminum is nonmagnetic (μᵣ = 1), so permeability plays no role, and lift-off is the coil-to-surface gap, not depth within the part."
+  },
+  {
+   "question": "A bolt-hole scanner turns at 1,500 RPM (25 rev/s) and the probe's effective sensing zone is 1.5 mm wide. Ignoring any overlap margin, the fastest withdrawal rate that still sweeps every point of the hole wall is about:",
+   "options": [
+    "25 mm/s",
+    "37.5 mm/s",
+    "75 mm/s",
+    "150 mm/s"
+   ],
+   "correct": 1,
+   "explanation": "Rotation plus withdrawal traces a helix with pitch = forward speed ÷ rev rate, and full coverage requires pitch ≤ effective coil width. Maximum feed = 1.5 mm × 25 rev/s = 37.5 mm/s — which is why yanking a 25 mm grip-length hole out in half a second leaves uninspected stripes."
+  },
+  {
+   "question": "Two speed-related failures were provoked at the bench: (1) slowing the scanner with the filters untouched, and (2) raising the tube feed until the helical pitch passed the coil width. What is the essential difference between them?",
+   "options": [
+    "Failure 1 attenuates a flaw signal the coil actually generated; failure 2 leaves stripes of surface uninspected, so no signal exists for any instrument setting to recover",
+    "There is none — both are corrected by adding gain at the new speed",
+    "Failure 1 affects only deep flaws, while failure 2 affects only surface flaws",
+    "Both occur because eddy currents cannot form when the speed is wrong"
+   ],
+   "correct": 0,
+   "explanation": "A filter/speed mismatch starves a real signal inside the instrument and is cured by re-matching the filters (or restoring the speed) and re-verifying. A coverage gap is worse: the coil never visits parts of the surface, so detection of a short flaw becomes luck, recoverable only by cutting feed or raising rev rate. Eddy current generation depends on the test frequency, not on motion — motion only modulates the signal."
+  },
+  {
+   "question": "Across all three labs, every optimized setup ended the same way before going to work. Which closing step do the labs — and tube practices like ASTM E243 and E309 — demand?",
+   "options": [
+    "Clear the previous settings from instrument memory to avoid confusion",
+    "Park the probe motionless on the deepest reference notch and confirm a full-screen signal",
+    "Add a final 6 dB of gain as margin against future drift",
+    "Verify the response dynamically on the reference standard at the examination speed, record the speed and filter settings, and re-verify after any change"
+   ],
+   "correct": 3,
+   "explanation": "With band-pass filters in line, a parked probe shows nothing — the high-pass removes anything that is not changing — so a static check proves nothing about dynamic detection. Detection is proven by running the reference standard at the speed actually used, and the qualified RPM, feed limit, filter cutoffs, standard ID, and achieved amplitudes are documented as a matched set, with any change triggering re-verification."
+  }
+ ]
+}

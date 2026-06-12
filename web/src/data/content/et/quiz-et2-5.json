@@ -1,0 +1,115 @@
+{
+ "moduleId": "et2-5",
+ "questions": [
+  {
+   "question": "Setting up an encircling-coil test, a technician calculates fill factor using the bore of the coil's protective wear liner as the coil diameter D. Compared with the honest value, the computed fill factor is:",
+   "options": [
+    "optimistically high — the effective coil diameter is larger than the liner bore, so true coupling is lower than computed",
+    "pessimistically low — the field concentrates inside the liner, so true coupling is higher than computed",
+    "correct as computed — the liner bore is the defined reference diameter for fill factor",
+    "indeterminate — fill factor cannot be computed for coils fitted with wear liners"
+   ],
+   "correct": 0,
+   "explanation": "η = (d/D)² with D the effective coil diameter. The winding has radial build and its field is not confined to the liner, so the effective diameter exceeds the visible bore — plugging in the smaller liner bore inflates η. Use the manufacturer's stated effective diameter or the mean winding diameter."
+  },
+  {
+   "question": "On a feed-through line, bar stock runs 1% under its nominal diameter through the same encircling coil. To a first approximation, the fill factor:",
+   "options": [
+    "falls about 1% — fill factor tracks diameter one-for-one",
+    "falls about 0.5% — the square-root relationship softens the change",
+    "falls about 2% — fill factor varies as diameter squared, doubling the sensitivity",
+    "is unchanged — fill factor depends on the coil, not the product"
+   ],
+   "correct": 2,
+   "explanation": "η = d²/D², so Δη/η ≈ 2·(Δd/d): a 1% diameter change moves fill factor about 2%. That doubled sensitivity is why feed-through systems double as dimensional gauges — and why product diameter tolerance belongs in the noise budget."
+  },
+  {
+   "question": "For aluminum surface-crack scanning, raising the test frequency moves the operating point down the conductivity curve. The payoff for lift-off handling is that:",
+   "options": [
+    "lift-off signals disappear entirely above a threshold frequency",
+    "the phase separation between the lift-off direction and crack responses opens toward 90°, so cracks still stand up after lift-off is rotated flat",
+    "the lift-off locus reverses direction and points away from the air point",
+    "coupling no longer depends on probe-to-surface spacing"
+   ],
+   "correct": 1,
+   "explanation": "Near the top of the conductivity curve the lift-off and defect directions nearly coincide; moving down the curve opens the angle between them. Frequency selection is angle selection: with lift-off rotated onto the horizontal axis, a crack only keeps vertical amplitude if that separation exists. Lift-off itself never vanishes."
+  },
+  {
+   "question": "When nonconductive coating thickness is measured by the eddy current lift-off method, measurement resolution is best:",
+   "options": [
+    "for thick coatings, because the dot is closest to the air point",
+    "at mid-range, where the response is most linear",
+    "uniformly across the range — the lift-off response is linear with gap",
+    "for thin coatings, because the lift-off response is steepest near contact and flattens as the gap grows"
+   ],
+   "correct": 3,
+   "explanation": "Coupling collapses steeply — nearly exponentially — over the first fractions of a millimetre, so the dot moves most per unit of gap when the coating is thin. That steep end is exactly where aircraft paint systems live, and relatively high test frequencies maximize lift-off sensitivity for the job."
+  },
+  {
+   "question": "Fill factor and lift-off are described as the same physics in different geometry. The statement that captures what they share is:",
+   "options": [
+    "both quantify coil-to-part magnetic coupling, and weakening either sends the operating point along its locus toward the empty-coil air point",
+    "both change the standard depth of penetration in the test part",
+    "both apply only when the test part is ferromagnetic",
+    "both can be restored electronically by adding instrument gain"
+   ],
+   "correct": 0,
+   "explanation": "Lift-off is the surface-probe coupling variable; fill factor is its encircling/bobbin twin — probe wobble in tube data is lift-off by another name. Losing either means more flux closes through air, sliding the dot toward the air point and shrinking every signal. Depth of penetration is set by frequency, conductivity, and permeability — not coupling — and gain amplifies noise as much as signal, so it cannot buy coupling back."
+  },
+  {
+   "question": "Bobbin data from the U-bend region of austenitic stainless heat-exchanger tubes shows flaw-like signals that correspond to no wall loss. The most likely cause is:",
+   "options": [
+    "unusually high conductivity that develops at the bend radii",
+    "improved fill factor where the tube ovalizes",
+    "strain-induced martensite from cold work, creating local permeability spots in a nominally nonmagnetic alloy",
+    "the Curie transition occurring at the bends"
+   ],
+   "correct": 2,
+   "explanation": "Cold work transforms some austenite to strain-induced martensite, so U-bends and straightened ends of 'nonmagnetic' stainless carry local ferromagnetic spots whose permeability moves the impedance dot by the same mechanism a flaw uses. Conductivity does not spike at bends, ovality degrades rather than improves the test, and the Curie point is a temperature effect near 770 °C."
+  },
+  {
+   "question": "A mill wants in-line eddy current testing of steel bar while it is still glowing hot from rolling, above roughly 770 °C. Saturation hardware is:",
+   "options": [
+    "mandatory — permeability noise is worst at high temperature",
+    "unnecessary — above the Curie point steel loses its ferromagnetism and tests like a nonmagnetic conductor",
+    "unusable at temperature, so testing must wait until the product cools",
+    "replaced by remote field testing, which requires elevated temperature to work"
+   ],
+   "correct": 1,
+   "explanation": "Ferromagnetism vanishes at the Curie point (≈ 770 °C for iron), so hot product behaves as a nonmagnetic conductor and needs no DC saturation coil — an elegant mill-floor alternative. Remote field testing exists for unsaturated ferromagnetic tube at ordinary temperatures; it has no high-temperature requirement."
+  },
+  {
+   "question": "Steel tube sections arrive for unsaturated eddy current testing straight from a rack served by a lifting magnet. The parts should first be demagnetized because residual magnetization:",
+   "options": [
+    "raises the tube's electrical conductivity and shifts the operating point",
+    "blocks eddy current generation entirely until it is removed",
+    "increases the required test frequency beyond the instrument's range",
+    "locally biases the operating point on the hysteretic B–H curve, making signals shift and repeat runs disagree"
+   ],
+   "correct": 3,
+   "explanation": "The B–H curve is history-dependent: the same H gives a different B depending on past fields, so magnet handling, chucks, and prior MT leave residual bias that changes the incremental permeability from spot to spot. Demagnetizing restores a repeatable magnetic starting state — conductivity and eddy current generation are not the issue."
+  },
+  {
+   "question": "A surface scan on titanium shows fuzzy baseline hash that remains with the probe held in air, and the gain is nearly maxed. The Level II fix is to:",
+   "options": [
+    "add the remaining gain until the reference signal reaches the alarm threshold",
+    "lower the test frequency so the hash averages away",
+    "raise the probe drive and pull the gain back — the signal grows before the receiver's fixed noise is added",
+    "reduce the probe drive so the receiver has less noise to amplify"
+   ],
+   "correct": 2,
+   "explanation": "Hash present in air is the instrument's own electronic noise, and it is fixed. Drive enlarges the coil signal upstream of that noise, so SNR improves; gain lifts hash and signal together. Titanium is nonmagnetic, so high drive stays linear and costs nothing but coil heating — material noise, by contrast, scales with drive and would not improve."
+  },
+  {
+   "question": "A steel tube line tests under DC magnetic saturation. The working practice of keeping the AC test-coil drive modest exists because a large AC swing can:",
+   "options": [
+    "demagnetize the DC saturation coil and shut the test down",
+    "pull the wall back into the steep region of the B–H curve on part of each cycle, restoring the permeability noise saturation was meant to remove",
+    "reduce fill factor by heating and expanding the tube",
+    "push the eddy currents deeper than the wall thickness and waste sensitivity"
+   ],
+   "correct": 1,
+   "explanation": "DC bias parks the operating point on the flat of the B–H curve, where the incremental relative permeability is about 1. If saturation is marginal, a fat AC excursion sweeps down into the steep region during part of every cycle, and permeability noise re-enters the measurement. Fix the bias field and keep the AC swing modest — drive has no term in the depth-of-penetration formula."
+  }
+ ]
+}

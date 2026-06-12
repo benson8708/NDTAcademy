@@ -1,0 +1,72 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">The Failed-Check Rule</text>
+  <text x="400" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">Periodic verification brackets validity — a failure reaches back to the last good check</text>
+
+  <!-- Invalid span shading (between last good check and failure) -->
+  <rect x="515" y="176" width="182" height="28" fill="#DCE7F8"/>
+
+  <!-- Timeline -->
+  <line x1="60" y1="190" x2="770" y2="190" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="782,190 768,183 768,197" fill="#0B1F3A"/>
+
+  <!-- Node 1: standardize -->
+  <rect x="60" y="104" width="150" height="64" fill="#1E66F5" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="135" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">STANDARDIZE</text>
+  <text x="135" y="151" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">job start — full setup</text>
+  <line x1="135" y1="168" x2="135" y2="190" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- Node 2: verify pass -->
+  <rect x="250" y="104" width="150" height="64" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="325" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">VERIFY · PASS</text>
+  <text x="325" y="151" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">+4 h · notch in limits</text>
+  <line x1="325" y1="168" x2="325" y2="190" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- Node 3: verify pass (last good) -->
+  <rect x="440" y="104" width="150" height="64" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="515" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">VERIFY · PASS</text>
+  <text x="515" y="151" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">+8 h · last good check</text>
+  <line x1="515" y1="168" x2="515" y2="190" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- Node 4: verify fail -->
+  <rect x="615" y="96" width="165" height="72" fill="#0B1F3A" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="697" y="119" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">VERIFY · FAIL</text>
+  <text x="697" y="139" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">+12 h · notch 62%</text>
+  <text x="697" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">(required 80% ±5%)</text>
+  <line x1="697" y1="168" x2="697" y2="190" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- Part groups -->
+  <text x="230" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">parts 1–8</text>
+  <text x="420" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">parts 9–16</text>
+  <text x="606" y="216" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">parts 17–24</text>
+  <text x="606" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">unproven — not bad</text>
+
+  <!-- Fail branch -->
+  <line x1="697" y1="190" x2="697" y2="262" stroke="#1E66F5" stroke-width="2.5"/>
+  <line x1="177" y1="262" x2="697" y2="262" stroke="#1E66F5" stroke-width="2.5"/>
+  <line x1="177" y1="262" x2="177" y2="292" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="177,300 171,290 183,290" fill="#1E66F5"/>
+  <line x1="402" y1="262" x2="402" y2="292" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="402,300 396,290 408,290" fill="#1E66F5"/>
+  <line x1="627" y1="262" x2="627" y2="292" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="627,300 621,290 633,290" fill="#1E66F5"/>
+
+  <!-- Action boxes -->
+  <rect x="70" y="300" width="215" height="96" fill="#FFFFFF" stroke="#1E66F5" stroke-width="2"/>
+  <text x="177" y="328" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">1 · STOP — FIND CAUSE</text>
+  <text x="177" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">probe wear, cable, drift,</text>
+  <text x="177" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">temperature, damage</text>
+
+  <rect x="295" y="300" width="215" height="96" fill="#FFFFFF" stroke="#1E66F5" stroke-width="2"/>
+  <text x="402" y="328" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">2 · RE-STANDARDIZE</text>
+  <text x="402" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">full setup on the serialized</text>
+  <text x="402" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">reference standard</text>
+
+  <rect x="520" y="300" width="215" height="96" fill="#FFFFFF" stroke="#1E66F5" stroke-width="2"/>
+  <text x="627" y="328" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">3 · RE-EXAMINE</text>
+  <text x="627" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">every part since the last</text>
+  <text x="627" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">good check — parts 17–24</text>
+
+  <!-- Bottom note -->
+  <text x="400" y="446" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">Accepting them untested violates the procedure — rejecting them untested is equally indefensible.</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Noise Has Direction: SNR on the Impedance Plane</text>
+  <text x="400" y="57" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">Two setups, same flaw, same noise amplitude — only the phase separation differs</text>
+
+  <!-- LEFT PANEL: well-chosen setup -->
+  <rect x="45" y="70" width="340" height="310" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="215" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">Well-chosen setup — wide separation</text>
+
+  <!-- balance point -->
+  <circle cx="110" cy="340" r="5" fill="#0B1F3A"/>
+  <text x="104" y="324" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">balance</text>
+
+  <!-- lift-off / wobble noise band (horizontal) -->
+  <polyline points="112,340 126,333 140,346 154,336 168,344 182,334 196,345 210,337 224,343 238,334 252,346 266,338 280,344 294,335 308,343 322,338 330,341" fill="none" stroke="#9BC4FF" stroke-width="4"/>
+  <line x1="130" y1="358" x2="310" y2="358" stroke="#0B1F3A" stroke-width="1.5"/>
+  <polygon points="124,358 134,353 134,363" fill="#0B1F3A"/>
+  <polygon points="316,358 306,353 306,363" fill="#0B1F3A"/>
+  <text x="220" y="374" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">lift-off + probe wobble noise</text>
+
+  <!-- crack signal vector (steep) -->
+  <line x1="110" y1="340" x2="176" y2="137" stroke="#1E66F5" stroke-width="4"/>
+  <polygon points="181,121 182,140 169,136" fill="#1E66F5"/>
+  <text x="192" y="138" text-anchor="start" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">surface crack signal</text>
+
+  <!-- phase separation arc -->
+  <path d="M 170 340 A 60 60 0 0 0 128.5 283" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="150" y="264" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">wide phase separation</text>
+
+  <text x="215" y="402" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">Lift-off horizontal; crack breaks upward into the clear</text>
+
+  <!-- RIGHT PANEL: poor setup -->
+  <rect x="415" y="70" width="340" height="310" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="585" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">Poor setup — separation collapsed</text>
+
+  <!-- noise wedge -->
+  <polygon points="480,340 700,340 674,237" fill="#DCE7F8" stroke="#9BC4FF" stroke-width="1.5"/>
+  <polyline points="480,340 500,335 530,334 560,326 590,327 620,318 650,318 680,310" fill="none" stroke="#9BC4FF" stroke-width="2.5"/>
+  <polyline points="480,340 500,331 530,324 560,309 590,302 620,287 650,280" fill="none" stroke="#9BC4FF" stroke-width="2.5"/>
+  <text x="612" y="334" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">noise wedge</text>
+
+  <!-- balance point -->
+  <circle cx="480" cy="340" r="5" fill="#0B1F3A"/>
+  <text x="474" y="324" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">balance</text>
+
+  <!-- flaw vector inside wedge -->
+  <line x1="480" y1="340" x2="655" y2="277" stroke="#1E66F5" stroke-width="4"/>
+  <polygon points="668,272 653.5,284.7 648.7,271.5" fill="#1E66F5"/>
+  <text x="585" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">same flaw amplitude —</text>
+  <text x="585" y="214" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">buried inside the noise wedge</text>
+  <line x1="600" y1="222" x2="628" y2="268" stroke="#0B1F3A" stroke-width="1.5"/>
+
+  <text x="585" y="402" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">No angle left between flaw and noise — gain cannot help</text>
+
+  <!-- bottom note -->
+  <text x="400" y="466" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">Gain rescales signal and noise together — only phase separation tells them apart.</text>
+</svg>

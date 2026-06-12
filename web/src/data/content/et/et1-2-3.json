@@ -1,0 +1,212 @@
+{
+ "lessonId": "et1-2-3",
+ "title": "Effect of Impedance Change on Instrumentation",
+ "narrationScript": "In the last two lessons you watched eddy currents push back on the test coil and change its impedance. The problem is that the change is invisible, and small \u2014 for a fine crack, often less than one percent of the coil's total impedance. This lesson follows that change through the instrument until it becomes a signal you can act on. The key is Ohm's law for alternating current. The oscillator drives the coil with a constant alternating current, so the voltage across the coil equals current times impedance. When the part changes the coil's impedance, the coil voltage changes with it, in amplitude and in phase. The balance circuit nulls the large standing voltage, the amplifier boosts the tiny difference, and the phase detector splits the result into horizontal and vertical components that move the dot on the display. Amplitude tells you how big the change is. Phase tells you what kind of change it is. That pair of ideas unlocks the impedance plane in the next lesson.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "A Real Change You Cannot See",
+   "body": "Walk the chain you built over the last two lessons. Alternating current in the test coil creates a **primary magnetic field**. That field induces **eddy currents** in the conductive part. The eddy currents generate an opposing **secondary field** \u2014 and the opposition changes the coil's **impedance**: the coil's effective resistance rises because the part dissipates energy, and its inductive reactance falls because the opposing field reduces the net flux through the coil.\n\nHere is the problem this lesson solves: that impedance change is **real but invisible**. No one can see impedance, and the change is small \u2014 for a fine surface crack, often **less than 1%** of the coil's total impedance. The entire job of an eddy current instrument is to convert that tiny change into something an operator can see, measure, and act on: a moving dot, a meter deflection, an alarm.\n\nEvery instrument, from a simple conductivity meter to a modern impedance-plane flaw detector, does it with the same chain: **drive the coil, capture the voltage change, subtract the steady part, amplify the difference, and display amplitude and phase**. This lesson walks that chain stage by stage."
+  },
+  {
+   "type": "text",
+   "heading": "Ohm's Law for AC: Impedance Becomes Voltage",
+   "body": "The instrument's oscillator drives the test coil with alternating current at the selected test frequency. Treat that current as constant \u2014 the standard way to model the instrument's front end \u2014 and **Ohm's law for AC** does the rest:\n\n**V = I \u00d7 Z**\n\nWith the current I held steady, the **voltage across the coil is directly proportional to its impedance**. Z is the combination you met last lesson \u2014 **Z = \u221a(R\u00b2 + XL\u00b2)**, with **XL = 2\u03c0fL** \u2014 so anything in the part that disturbs R or XL changes the coil voltage immediately.\n\nThat voltage carries **two** pieces of information, not one:\n\n- **Amplitude** \u2014 how large the voltage is. It reports the **size** of the impedance change.\n- **Phase** \u2014 how far the voltage's timing leads or lags the drive signal. It reports the **kind** of change, because different test variables shift R and XL in different proportions.\n\nThe coil voltage \u2014 not the eddy currents themselves \u2014 is the instrument's raw material. Everything downstream exists to protect, enlarge, and translate it."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-2-3-fig-b",
+   "caption": "A crack chokes off the eddy currents, so their opposing field weakens and the coil's impedance vector swings back toward its empty-coil value \u2014 both its magnitude and its phase angle change (shift exaggerated for clarity). With constant-current drive, the coil voltage copies the change."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "What the instrument actually measures",
+   "body": "An eddy current instrument never measures eddy currents directly \u2014 they flow inside the part, out of reach. It measures the **voltage across the test coil**: its **amplitude** and its **phase** relative to the drive signal. Because V = I \u00d7 Z, that voltage is a faithful copy of coil impedance. Every dot movement, meter deflection, and alarm traces back to one event: **the part changed the coil's impedance.**"
+  },
+  {
+   "type": "text",
+   "heading": "The Signal Chain: Oscillator to Display",
+   "body": "Follow the signal through the five stages every eddy current instrument shares.\n\n- **Oscillator** \u2014 generates a stable alternating current at the test frequency and drives the coil. It also hands a **reference copy** of its signal to the phase detector, so the instrument always knows what zero phase means.\n- **Balance circuit (bridge)** \u2014 the test coil sits in one arm of a bridge network. With the probe on sound material, the operator presses **balance (null)**: the bridge output drops to essentially zero. The large standing coil voltage is cancelled, so only **departures** from the balanced condition pass onward.\n- **Amplifier** \u2014 a fraction-of-a-percent impedance change produces a voltage far too small to display. High-gain amplification raises the imbalance signal to a working level; the **gain** control sets how much.\n- **Phase detector** \u2014 compares the amplified signal against the oscillator's reference and resolves it into **two components, horizontal and vertical**. Together they preserve both the amplitude and the phase angle of the change.\n- **Filters and display** \u2014 filtering strips electrical noise, then the two components drive the readout: a dot on an impedance-plane screen, a meter needle, a recorded trace, or an alarm gate.\n\nNotice what the chain accomplishes: a change you could never sense by hand emerges as a signal you can see, measure, and document."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-2-3-fig-a",
+   "caption": "Block diagram of an eddy current instrument. The oscillator drives the coil and supplies the phase reference; the balance bridge nulls the standing signal; the amplifier boosts the tiny imbalance; the phase detector splits it into horizontal and vertical components for the display."
+  },
+  {
+   "type": "text",
+   "heading": "Amplitude and Phase: Two Channels of Information",
+   "body": "On the display, the dot's excursion from the null point is a vector, and you read it on two channels at once.\n\n- **Amplitude \u2014 how big.** The length of the excursion scales with the size of the impedance change: a deeper crack, a larger conductivity shift, or more probe wobble all push the dot farther from the null.\n- **Phase \u2014 what kind.** The angle of the excursion identifies the **source** of the change. Liftoff, a thickness change, and a surface crack each disturb R and XL in different proportions, so each arrives at its own characteristic angle.\n\nBecause the phase detector preserves both, the operator can **separate variables**. The standard setup move: with the instrument balanced on a reference part, use the **phase rotation** control to lay the liftoff response flat \u2014 horizontal. Probe wobble then merely slides the dot sideways, while a crack drives it upward at a clearly different angle. You will practice exactly this in the lab lessons.\n\nOne discipline follows from all of this: a signal is only meaningful **relative to the setup that produced it**. Same frequency, same probe, same balance, same gain, same rotation \u2014 then the same discontinuity produces the same signal, and signals become evidence. That repeatability, verified on reference standards, is what standardization means, and the next lesson builds on it to read the impedance plane in full."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-2-3-fig-c",
+   "caption": "Two states of the display. Balanced on reference material, the dot rests at the null point; over a crack, it sweeps out a signal whose length reports amplitude (size of the change) and whose angle reports phase (kind of change). Liftoff has been rotated horizontal."
+  },
+  {
+   "type": "table",
+   "caption": "Readout mechanisms: how different instruments present the same impedance change.",
+   "headers": [
+    "Readout",
+    "What it presents",
+    "Where you meet it"
+   ],
+   "rows": [
+    [
+     "Meter (analog or digital)",
+     "Amplitude of the imbalance only \u2014 a needle or a number",
+     "Conductivity meters, coating-thickness gauges, simple crack detectors"
+    ],
+    [
+     "Impedance-plane display (flying dot)",
+     "Amplitude and phase together as a moving dot",
+     "Modern flaw detectors \u2014 the display this course standardizes on"
+    ],
+    [
+     "Strip chart / recorded trace",
+     "Signal amplitude against time or probe position",
+     "Automated tube, bar, and wire inspection lines"
+    ],
+    [
+     "Alarm gate (lights, horn, marker)",
+     "Go / no-go output when the signal crosses a set threshold",
+     "High-speed production testing"
+    ]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-2-3-fig-a",
+   "title": "Block diagram of an eddy current instrument",
+   "file": "et1-2-3-fig-a.svg"
+  },
+  {
+   "id": "et1-2-3-fig-b",
+   "title": "Impedance change becomes a voltage change",
+   "file": "et1-2-3-fig-b.svg"
+  },
+  {
+   "id": "et1-2-3-fig-c",
+   "title": "Null, amplitude, and phase on the display",
+   "file": "et1-2-3-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Walk the Signal Chain",
+  "intro": "A crack has just passed under the probe and changed the coil's impedance. Click the stage of the instrument whose job is to split the amplified signal into the horizontal and vertical components that position the dot on the screen.",
+  "figureId": "et1-2-3-fig-a",
+  "regions": [
+   {
+    "x": 28,
+    "y": 120,
+    "w": 120,
+    "h": 80,
+    "label": "Oscillator",
+    "isTarget": false,
+    "feedback": "The oscillator generates the stable AC drive at the test frequency and supplies the phase reference. It feeds the chain \u2014 it does not resolve the returning signal into components."
+   },
+   {
+    "x": 182,
+    "y": 120,
+    "w": 120,
+    "h": 80,
+    "label": "Balance bridge",
+    "isTarget": false,
+    "feedback": "The bridge cancels the large standing coil signal so only changes pass onward. It creates the imbalance voltage, but it does not split that voltage into display components."
+   },
+   {
+    "x": 336,
+    "y": 120,
+    "w": 110,
+    "h": 80,
+    "label": "Amplifier",
+    "isTarget": false,
+    "feedback": "The amplifier boosts the tiny imbalance voltage to a usable level. It raises amplitude \u2014 it does not separate the signal into horizontal and vertical parts."
+   },
+   {
+    "x": 480,
+    "y": 120,
+    "w": 130,
+    "h": 80,
+    "label": "Phase detector",
+    "isTarget": true,
+    "feedback": "Correct. The phase detector compares the amplified signal with the oscillator's reference and resolves it into horizontal and vertical components \u2014 preserving both amplitude and phase angle for the display."
+   },
+   {
+    "x": 644,
+    "y": 120,
+    "w": 130,
+    "h": 80,
+    "label": "Display",
+    "isTarget": false,
+    "feedback": "The display only draws what it is given: the dot's position comes from components already produced upstream by the phase detector."
+   }
+  ],
+  "coordH": 500
+ },
+ "checkQuestions": [
+  {
+   "question": "An eddy current instrument never senses eddy currents directly. The quantity its electronics actually process is:",
+   "options": [
+    "The eddy currents themselves, picked up by a sensor embedded in the test part",
+    "The change in amplitude and phase of the voltage across the test coil",
+    "The heat the eddy currents generate as they flow through the part's resistance",
+    "The direct current flowing from the probe into the part"
+   ],
+   "correct": 1,
+   "explanation": "Through V = I \u00d7 Z, the coil voltage mirrors coil impedance. When eddy currents change the coil's resistance and reactance, the coil voltage changes in amplitude and phase \u2014 and that voltage change is the only thing the instrument processes."
+  },
+  {
+   "question": "With the probe resting on sound reference material, the operator presses the balance (null) control. The purpose is to:",
+   "options": [
+    "Increase the oscillator frequency until the dot stops moving",
+    "Magnetize the part so the eddy currents flow more strongly",
+    "Switch off the amplifier between measurements to save power",
+    "Cancel the large standing coil signal so only changes from the part are amplified and displayed"
+   ],
+   "correct": 3,
+   "explanation": "A small flaw changes coil impedance by a tiny fraction \u2014 often under 1% \u2014 so the steady signal must be subtracted first. Balancing drives the bridge output to essentially zero; from then on the instrument amplifies only departures from that null."
+  },
+  {
+   "question": "An instrument drives its test coil with a constant alternating current. When the coil's impedance increases, the voltage across the coil:",
+   "options": [
+    "Increases in proportion, because V = I \u00d7 Z",
+    "Stays the same, because voltage depends only on the oscillator setting",
+    "Drops to zero immediately",
+    "Becomes direct current"
+   ],
+   "correct": 0,
+   "explanation": "Ohm's law for AC: with the current held constant, the coil voltage is directly proportional to impedance. That proportionality is what lets a voltage-measuring instrument report an impedance change."
+  },
+  {
+   "question": "Which stage of the instrument resolves the amplified coil signal into the horizontal and vertical components that position the dot on the screen?",
+   "options": [
+    "The oscillator",
+    "The balance bridge",
+    "The phase detector, working against a reference signal from the oscillator",
+    "The alarm gate"
+   ],
+   "correct": 2,
+   "explanation": "The phase detector compares the amplified signal with the oscillator's reference and splits it into two components. Those components drive the display's horizontal and vertical axes, preserving both amplitude and phase angle."
+  },
+  {
+   "question": "Two signals on the display have the same amplitude but arrive at clearly different phase angles. To the operator this means:",
+   "options": [
+    "The instrument is out of calibration and must be returned to the manufacturer",
+    "The changes in the part are of different kinds \u2014 for example, liftoff versus a crack",
+    "The two signals came from identical causes",
+    "The test frequency drifted between the two signals"
+   ],
+   "correct": 1,
+   "explanation": "Amplitude reports how large a change is; phase angle reports what kind of change produced it. Different variables disturb coil resistance and reactance in different proportions, so they appear at different angles \u2014 the basis of separating variables on the impedance plane."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Theory Course \u00a72.1 (eddy current theory: generation, impedance changes, and effect of change of impedance on instrumentation, \u00a72.1.1\u20132.1.3)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing Level I (training outline basis for qualification)",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (electromagnetic testing terms: impedance, balance/null, phase angle)"
+ ]
+}

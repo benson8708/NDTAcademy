@@ -1,0 +1,184 @@
+{
+ "lessonId": "et2-4-3",
+ "title": "Phase Discrimination and Response Speed",
+ "narrationScript": "At Level Two, you choose the test frequency, and this lesson covers the two considerations that usually settle it. First, phase discrimination. Every variable writes its signal in a characteristic direction on the impedance plane, and frequency controls the angles between those directions. Raising the frequency shrinks the standard depth of penetration, so each millimeter of depth adds more phase rotation, and signals from different depths fan apart. On surface work, you rotate lift-off horizontal and pick a frequency that stands crack signals nearly upright, then alarm on the vertical channel. In tubing, the f ninety rule, three times resistivity divided by wall thickness squared, spreads the wall across about ninety degrees, so inside and outside defects land in separate bands. More spread always costs penetration, so you balance. Second, response speed. A passing defect is a brief modulation of the carrier, and the carrier must complete many cycles during the transit. Filters are tuned to one speed. Standardize at production speed, and re-standardize whenever speed, rotation rate, filters, or frequency change.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Discrimination by Direction, Not Amplitude",
+   "body": "By this point in the course, the impedance plane has taught its central lesson: every test variable writes its signal in a characteristic direction. Lift-off pushes the operating point one way, a conductivity shift another, a surface crack another, and a deeper flaw further around still. **Phase discrimination** is the deliberate use of that fact: choose the test frequency so the variable you are hunting points in a visibly different direction from the variables that are noise, then separate them by **angle**, not amplitude.\n\nWhy not amplitude? Because real noise is not small. Probe wobble on a scanned skin or fill-factor variation in a pulled tube can swing the spot as hard as a reportable flaw does. An amplitude threshold cannot tell them apart. An angle can.\n\nFrequency controls the angles through two mechanisms:\n\n- **It moves the operating point.** Raising f/fg on an aluminum surface scan swings the lift-off direction away from the flaw directions — at surface-crack frequencies the separation approaches a right angle.\n- **It sets the phase lag per millimeter of depth.** Lag accumulates at about **57° per standard depth** one way — roughly **2x/δ** in the signal you observe — so shrinking δ stretches the depth dimension across more of the screen.\n\nThe price is immediate: shrink δ and amplitude at depth collapses — **37%** at 1δ, **13.5%** at 2δ, **5%** at 3δ. Phase discrimination and penetration pull on the same knob in opposite directions, and this lesson is about settling that negotiation."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-4-3-fig-a",
+   "caption": "The same three responses at two frequencies: run too low, everything rides the lift-off line and the flaws hide in the noise; chosen for discrimination, lift-off runs horizontal while flaw signals stand up and fan apart by depth."
+  },
+  {
+   "type": "text",
+   "heading": "Surface Probes: Park the Noise Horizontal",
+   "body": "On scanned surface work — skins, webs, fastener rows — the dominant noise is **lift-off**: probe wobble, paint and coating thickness, surface curvature. The discrimination play has four moves:\n\n- **Balance on the part, then rotate.** Bounce the probe slightly while adjusting display rotation until the lift-off trace runs **horizontal**. That direction is now your noise reference.\n- **Choose frequency for the angle.** Everyday aluminum surface-crack work runs at roughly **100–500 kHz**; at those frequencies a surface crack drives the spot steeply away from the lift-off line, approaching vertical. Rotary bolt-hole setups push higher still — hundreds of kilohertz to a few megahertz — because the target is a tight near-surface crack and penetration is irrelevant.\n- **Verify on the reference standard.** EDM notches of known depth confirm the actual angles between lift-off, shallow notches, and deep notches before the part gets a vote.\n- **Gate on the vertical channel.** Wobble rides the horizontal line; an alarm threshold on the vertical component ignores it, while a crack signal punches straight through it.\n\nThe compromise arrives when the flaw is buried. Second- and third-layer crack detection in a lap joint forces the frequency down to a few kilohertz to a few tens of kilohertz so current actually reaches that layer — and as δ grows, the angular separation closes. You accept a narrower angle, scan deliberately, and lean harder on the reference standard. That trade — angle versus reach — never goes away; you manage it."
+  },
+  {
+   "type": "text",
+   "heading": "Tubing: Make the Wall Span About Ninety Degrees",
+   "body": "In bobbin-coil tube inspection the discrimination question is blunt: did this indication originate at the **ID or the OD**? The wall itself answers if frequency gives it room — an OD-origin defect is sensed through the full wall, so its signal arrives rotated by the wall's worth of phase lag relative to an ID-origin defect.\n\nThe working rule for the prime frequency comes from the AECL eddy current manual (Cecco, Van Drunen, and Sharp):\n\n**f90 (kHz) ≈ 3ρ ÷ t²** — ρ in μΩ·cm (convert with ρ = 172.41 ÷ %IACS), t the wall thickness in mm.\n\nAt f90, signals originating at the inner and outer surfaces separate by about **90°** — enough spread to classify origin without smearing the bands together. Work one: an Inconel-600 steam-generator tube, ρ ≈ 100 μΩ·cm, wall 1.13 mm, gives f90 ≈ 3 × 100 ÷ 1.28 ≈ **235 kHz** — and operating programs run prime frequencies right in that neighborhood.\n\nCalibration then anchors the display, ASME-style: rotate so **probe motion sits near 0°** (horizontal), set the **through-wall hole near 40°**, and record the calibration flat-bottomed holes to build the **phase–depth curve**. ID-origin indications fall between probe motion and 40°; OD-origin indications rotate beyond 40°, further as they get shallower.\n\nRun well below f90 and the bands overlap — an OD pit plots among the ID signals and gets the wrong disposition. Run far above it and the spread widens, but OD amplitude dies by e^(−x/δ) and shallow OD defects fade into the noise. Multifrequency mixes extend the same idea — a lower auxiliary frequency views the wall at a different spread so support-plate signals can be subtracted — but the prime channel starts at f90."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-4-3-fig-b",
+   "caption": "Representative bobbin-coil phase–depth curve at the prime frequency: probe motion near 0°, through-wall hole set near 40°, ID-origin indications between them, and OD-origin indications rotating beyond 40° as they get shallower."
+  },
+  {
+   "type": "text",
+   "heading": "Response Speed: The Test Must Keep Up With the Part",
+   "body": "Everything so far assumed the signal has time to form. In production — tube and bar mills, pulled bobbin probes, rotary scanners — it barely does, and **response speed** becomes a frequency consideration in its own right.\n\nA passing defect does not produce a waveform of its own; it briefly **modulates the carrier**, which is the test frequency. The numbers stack up like this:\n\n- **Transit time:** t = effective sensing width ÷ relative speed. A 5 mm differential sensing zone at 2 m/s gives t = **2.5 ms**.\n- **Envelope frequency:** roughly 1 ÷ t — here about **400 Hz**, with harmonics above it for sharp differential signatures.\n- **Carrier requirement:** the detector can only reconstruct an envelope drawn on many carrier cycles. Keep **at least ten — comfortably dozens — of cycles inside the transit**. At 10 kHz this transit holds 25 cycles; at 1 kHz it holds 2.5, and the envelope is undefined. Throughput speed therefore sets a **floor** under the test frequency, exactly as penetration sets a ceiling.\n- **Filters:** the band-pass is tuned to the expected envelope band *at the qualified speed*. Slow down and the defect's frequency content drops below the high-pass — filtered out as drift. Speed up and it climbs past the low-pass — clipped and smeared.\n\nThe same arithmetic governs rotary bolt-hole scanners — typically **600–3,000 rpm**, with the crack signature repeating once per revolution and the filters tuned to that rate — and digital instruments, where the acquisition rate must land multiple samples across the briefest defect signal. It is also why a needle-meter instrument, fine for a static conductivity check, is blind on a moving line."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-4-3-fig-c",
+   "caption": "A defect is a brief modulation of the carrier: transit time sets the envelope frequency, the carrier must supply many cycles inside that window, and the band-pass only passes the envelope if the speed stays where you standardized."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "Standardize at the speed you scan",
+   "body": "Amplitude and phase response ride on the filter settings, and filter settings only mean something at one speed. Tube examination practices such as **ASTM E243** (copper-alloy tube) and **ASTM E309** (steel tubular products under magnetic saturation) therefore call for **dynamic standardization**: the reference standard passes through the coil at the **same relative speed** used for the production examination. The same logic binds a rotary scanner to the rpm at which it was standardized. Any change in line speed, pull rate, rotation rate, filter settings, or test frequency invalidates the setup — re-standardize before the next part, not after the next miss."
+  },
+  {
+   "type": "text",
+   "heading": "Setting the Frequency: A Level II Checklist",
+   "body": "Frequency selection condenses into a four-step negotiation you should be able to defend line by line:\n\n1. **Find the ceiling — penetration.** The deepest material you must interrogate has to sit within about 3δ. Compute δ (mm) ≈ 660 ÷ √(f · μr · σ) with σ in %IACS, and establish the highest frequency that still reaches; in tube work, start at f90.\n2. **Find the angles — discrimination.** At that frequency, measure the separation on the reference standard between the flaw signals and the dominant noise direction — lift-off, wobble, fill factor. If the angle is unworkable, move frequency within the ceiling, or attack the noise itself — saturation, shielding, and grounding were the previous lesson.\n3. **Find the floor — response speed.** At maximum production speed, confirm dozens of carrier cycles per defect transit and set the filters for that envelope band. If the floor lands above the ceiling, the test changes, not the physics: slow the line, shorten the sensing zone, or split the job across stations.\n4. **Lock it.** Frequency, rotation, gates, filters, qualified speed range, and the reference standard — written into the procedure, proven at standardization, re-verified after any change.\n\nOne consideration remains, and it is big enough to own the next lesson: the skin effect itself — the physics that set the ceiling in step one."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-4-3-fig-a",
+   "title": "Phase discrimination: frequency sets the angular separation",
+   "file": "et2-4-3-fig-a.svg"
+  },
+  {
+   "id": "et2-4-3-fig-b",
+   "title": "Bobbin-coil phase–depth curve at the prime frequency",
+   "file": "et2-4-3-fig-b.svg"
+  },
+  {
+   "id": "et2-4-3-fig-c",
+   "title": "Response speed: carrier, envelope, and filters",
+   "file": "et2-4-3-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "The Frequency Desk: Four Calls",
+  "intro": "Four setups, one dial. For each job, pick the frequency move a Level II should make — and be ready to defend it with δ, phase lag, or the carrier arithmetic. Working tools: δ (mm) ≈ 660/√(f·μr·σ), f90 (kHz) ≈ 3ρ/t², cycles in transit = f × t.",
+  "steps": [
+   {
+    "prompt": "Job 1: surface fatigue cracks along a fastener row in bare 2024 aluminum skin. The probe rocks slightly on every pass, and wobble noise is swamping the display. Your setup call:",
+    "options": [
+     "5 kHz — maximize penetration so no crack escapes",
+     "A few hundred kilohertz, lift-off rotated horizontal, alarm gate on the vertical channel",
+     "Any frequency works — display rotation alone separates wobble from cracks",
+     "60 Hz, the frequency used for conductivity bench checks"
+    ],
+    "correct": 1,
+    "feedback": "A surface crack needs no penetration, so spend the frequency on geometry: at 100–500 kHz on aluminum the crack signal stands nearly perpendicular to lift-off. Rotation alone cannot help — it moves every signal together, so the wobble-to-crack angle is fixed by physics, not the rotation knob. Park wobble horizontal and gate the vertical."
+   },
+   {
+    "prompt": "Job 2: bobbin inspection of 90-10 copper-nickel condenser tube, ρ ≈ 19 μΩ·cm, wall 1.0 mm. The customer requires ID-versus-OD origin calls. Your prime frequency:",
+    "options": [
+     "About 5.7 kHz",
+     "About 570 kHz",
+     "About 57 kHz",
+     "Any frequency — phase separation does not depend on frequency"
+    ],
+    "correct": 2,
+    "feedback": "f90 (kHz) ≈ 3ρ/t² = 3 × 19 ÷ 1.0² ≈ 57 kHz. At that frequency the wall spans about 90° of phase, so ID-origin and OD-origin bands stay apart. Ten times lower and the bands collapse together; ten times higher and OD response fades by e^(−x/δ)."
+   },
+   {
+    "prompt": "Job 3: suspected fatigue cracks in the second layer of an aluminum lap joint, about 2.5 mm below the probe (σ = 30 %IACS). At your usual 200 kHz the notch standard looks beautiful — but the second layer gives nothing. Your move:",
+    "options": [
+     "Drop to roughly 10 kHz and accept the smaller angular separation",
+     "Stay at 200 kHz and add 12 dB of gain",
+     "Go up to 2 MHz for sharper phase resolution",
+     "Keep 200 kHz but switch to a smaller-diameter probe"
+    ],
+    "correct": 0,
+    "feedback": "At 200 kHz, δ ≈ 660/√(200,000 × 30) ≈ 0.27 mm, so 2.5 mm is about 9δ — there is essentially no current at the second layer, and gain or probe diameter cannot amplify current that does not exist. At ~10 kHz, δ ≈ 1.2 mm and the layer sits near 2δ, inside the effective depth. The angles close as δ grows; that is the price of reach."
+   },
+   {
+    "prompt": "Job 4: overnight, the tube mill doubled line speed from 1 m/s to 2 m/s. This morning the reference notch barely registers at the same instrument settings. Your diagnosis and fix:",
+    "options": [
+     "Signal fatigue in the coil — replace the probe",
+     "Lower the test frequency so each defect spends more cycles in the coil",
+     "Add 6 dB of gain until the notch reads full screen again",
+     "The defect envelope doubled in frequency past the filter band — re-tune the filters and dynamically re-standardize at 2 m/s"
+    ],
+    "correct": 3,
+    "feedback": "Doubling speed halves the transit time and doubles the envelope frequencies, pushing the notch signal past the low-pass that was set for 1 m/s. Gain just amplifies the clipped remnant, and lowering the carrier makes the cycles-per-transit problem worse. Re-tune the band-pass for the new speed and re-standardize dynamically at that speed — exactly what tube practices like ASTM E243 demand."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Raising the test frequency improves phase discrimination between flaws at different depths primarily because:",
+   "options": [
+    "Higher frequency increases eddy current amplitude at every depth",
+    "Higher frequency increases the coil's wire resistance",
+    "The standard depth of penetration shrinks, so a given depth difference spans more degrees of phase lag",
+    "Higher frequency eliminates the lift-off signal entirely"
+   ],
+   "correct": 2,
+   "explanation": "Phase lag accumulates at about 57° per standard depth one way — roughly 2x/δ as observed. Shrinking δ means each millimeter of depth represents more rotation, fanning signals from different depths apart. The cost is amplitude at depth, and lift-off never disappears — it is managed by rotation and gating."
+  },
+  {
+   "question": "A nonmagnetic heat-exchanger tube has resistivity ρ = 50 μΩ·cm and a wall thickness of 1.25 mm. Using the f90 rule, the prime test frequency is approximately:",
+   "options": [
+    "96 kHz",
+    "9.6 kHz",
+    "38 kHz",
+    "960 kHz"
+   ],
+   "correct": 0,
+   "explanation": "f90 (kHz) ≈ 3ρ/t² = 3 × 50 ÷ (1.25)² = 150 ÷ 1.5625 ≈ 96 kHz. At f90 the wall spans about 90° of phase, separating ID-origin from OD-origin indications without losing OD sensitivity."
+  },
+  {
+   "question": "A bobbin-coil channel is calibrated ASME-style: probe motion near 0° (horizontal) and the through-wall hole set near 40°. A flaw signal measuring about 150° most likely originates from:",
+   "options": [
+    "Probe wobble or fill-factor variation",
+    "A deep crack at the inside surface",
+    "The through-wall calibration hole",
+    "A shallow OD-origin defect"
+   ],
+   "correct": 3,
+   "explanation": "ID-origin indications plot between probe motion and the 40° through-wall angle; OD-origin indications rotate beyond 40°, and the shallower the OD defect, the further the rotation — representative curves put shallow OD defects near 150°. Wobble stays near horizontal, by your own calibration."
+  },
+  {
+   "question": "An encircling-coil line tests bar at 3 m/s with an effective sensing zone of 6 mm, so a defect transits in 2 ms. The lowest test frequency listed that still places dozens of carrier cycles inside that transit is:",
+   "options": [
+    "500 Hz",
+    "25 kHz",
+    "1 kHz",
+    "100 Hz"
+   ],
+   "correct": 1,
+   "explanation": "Cycles in the transit = f × t. At 25 kHz: 25,000 × 0.002 = 50 cycles — a well-defined envelope. At 1 kHz the transit holds 2 cycles, at 500 Hz one, and at 100 Hz a fifth of a cycle: the modulation cannot be reconstructed and the defect can be missed."
+  },
+  {
+   "question": "A rotary bolt-hole scanner qualified at 2,400 rpm is run at 1,200 rpm without any other change. The most likely consequence is:",
+   "options": [
+    "Crack signals double in amplitude because the probe dwells longer",
+    "No change — signal phase and frequency content do not depend on speed",
+    "The crack signature's frequency content halves and can fall below the high-pass filter, attenuating or eliminating it",
+    "The standard depth of penetration doubles"
+   ],
+   "correct": 2,
+   "explanation": "The crack signature repeats once per revolution, so halving rpm halves its frequency content. Filters tuned for 2,400 rpm can now reject the signal as low-frequency drift. Skin depth depends on test frequency, not scan speed — which is why speed and filters must be re-standardized together."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II Technique Course §4.2.4–4.2.5 (considerations affecting choice of test frequency: phase discrimination; response speed)",
+  "Cecco, Van Drunen, and Sharp, Eddy Current Testing Manual (AECL) — prime-frequency rule f90 (kHz) ≈ 3ρ/t², with ρ in μΩ·cm and t in mm",
+  "ASME BPVC Section V, Article 8 (eddy current examination of nonferromagnetic heat-exchanger tubing — phase-angle calibration with the through-wall hole and phase–depth evaluation)",
+  "ASTM E243 and ASTM E309 (electromagnetic examination of copper-alloy and steel tubular products — dynamic standardization at the examination speed)"
+ ]
+}

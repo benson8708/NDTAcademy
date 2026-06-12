@@ -1,0 +1,191 @@
+{
+ "lessonId": "et2-8-5",
+ "title": "Measurement of Ferromagnetic Properties",
+ "narrationScript": "For the whole flaw-detection side of this course, permeability was noise — the variable you saturated away on steel. This lesson flips it: in ferromagnetic property measurement, permeability is the signal. The same microstructure that sets hardness pins magnetic domain walls, so heat treatment, carbon content, case depth, and cold work all reshape the hysteresis loop — permeability, retentivity, coercive force, loop area. A hardened part draws a wide, flat loop; an annealed part draws a tall, narrow one. The instrument is the comparator bridge: two matched coils in one AC bridge, a verified reference part in one coil, the test part in the other. Matched parts balance the bridge and the output nulls; any difference in permeability, conductivity, or size unbalances it. Run low frequencies so the field penetrates the cross-section. Demagnetize every part first, equalize temperature, fix the positioning, build the acceptance window from several verified parts, and challenge it with known deviants. The bridge reports difference — the laboratory proves what that difference means.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "When Permeability Becomes the Signal",
+   "body": "Through the whole flaw-detection arc of this course, magnetic permeability was the villain — the variable that buried crack signals on carbon steel until you saturated it into silence. This lesson inverts that relationship. In **ferromagnetic property measurement**, permeability variation is not noise. It *is* the measurement.\n\nThe leverage is enormous. A nonmagnetic alloy answers the coil only through conductivity; an unsaturated steel part answers through relative permeability — **μᵣ in the hundreds** — which multiplies the flux every ampere of coil current links and drives inductive reactance far above the air value. Small metallurgical changes therefore produce large impedance changes.\n\nAnd those magnetic properties are not arbitrary. They are written by the same microstructure that sets mechanical properties. Carbon in solution, martensite, fine precipitates, dislocations from cold work, residual stress — every one of those obstacles pins **magnetic domain walls**, and pinned domain walls mean lower permeability and higher coercive force. The same obstacles resist dislocation motion, which is what hardness *is*. In steels, magnetically hard and mechanically hard rise together — a strong correlation, but one you establish empirically for each part family, never assume. That link is what makes electromagnetic sorting work:\n\n- **Heat-treat verification** — catching parts that missed the quench, or missed the temper\n- **Alloy and carbon-content sorting** — recovering mixed stock\n- **Case-depth evaluation** — hardened case and softer core answer the coil differently\n- **Decarburization and cold-work detection**\n\nThe method is comparative from first principles: you never read 'hardness' off a dial — you read *difference from a verified reference part*."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-5-fig-a",
+   "caption": "The hysteresis loop and the properties written on it — annealed steel draws a tall, narrow loop (high μᵣ, low Hc); hardened martensite draws a wide, flat one (low μᵣ, high Hc)."
+  },
+  {
+   "type": "text",
+   "heading": "Reading the Hysteresis Loop",
+   "body": "Drive a coil around a steel part with alternating current and the material traces its **B–H loop** once per cycle. Every property the comparator feels lives on that loop:\n\n- **Permeability μ** — the slope, B per unit H. Steep means magnetically soft. It is *not a constant*: it starts at an initial value, peaks (maximum permeability), then collapses as the part approaches saturation. That is why the comparator's **drive level must be fixed** — change the magnetizing current and you measure a different μ on a different part of the curve.\n- **Saturation Bs** — domains fully aligned; more H buys almost no more B.\n- **Retentivity Br** — the flux density remaining when H returns to zero.\n- **Coercive force Hc** — the reverse field needed to drive B back to zero. Hc tracks hardness in steel so faithfully that coercivity-based instruments are used for hardness and case-depth checks.\n- **Loop area** — the energy lost per magnetization cycle (hysteresis loss).\n\nAnnealed, soft steel draws a tall, narrow loop: high permeability, low coercive force, little loss. Quench-hardened martensite draws a wide, flattened loop: low permeability, high coercive force, large loss. Temper a hardened part and the loop walks back toward the soft shape — which is exactly how a comparator catches the part that never saw the temper furnace.\n\nOne more consequence of the loop's nonlinearity: a sinusoidal drive does not produce a sinusoidal response. The distorted waveform carries **odd harmonics**, and the third harmonic is so sensitive to hysteresis properties that many magnetic comparators evaluate it directly."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Correlate first, verify always",
+   "body": "An eddy current instrument never measures hardness, case depth, or chemistry — it measures **electromagnetic response**. A sort is legitimate only after you demonstrate, on parts independently verified by hardness testing, metallography, or chemical analysis, that the metallurgical difference you care about moves the signal **further than the nuisance variables do** — dimensions, temperature, residual stress, position. Parts inside the window pass; parts in a proven deviant band reject; borderline parts go out for **independent verification**. The meter never gets the final word on a questionable part. This is the working logic of ASTM E566, the governing practice for eddy current sorting of ferrous metals."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-5-fig-b",
+   "caption": "Comparator bridge: matched coils in adjacent arms, a verified reference part in one and the test part in the other. Matched parts null the output; any difference in μ, σ, or dimensions unbalances it."
+  },
+  {
+   "type": "text",
+   "heading": "Comparative Circuits: Null Means Match",
+   "body": "Topic 2.8.1 is the circuit that turns 'compare against a reference' into hardware. The classic form is the **comparator bridge** — an AC bridge with two electromagnetically matched coils in adjacent arms, fed by one oscillator at fixed frequency and fixed drive. A **verified reference part stays in one coil**; each test part drops into the other.\n\n- Parts with matching permeability, conductivity, and dimensions load their coils identically — the bridge stays balanced and the output **nulls**.\n- Any difference unbalances the bridge. The unbalance voltage's **amplitude** says *how much* the parts differ; its **phase** hints at *which* variable moved — permeability, conductivity, or fill factor.\n\nThe same comparison can be wired as a **differential transformer**: both primaries driven in series, secondaries connected in **series opposition**, so the output is the difference of the two induced voltages — zero when the parts match. Either way, this is the *external reference differential* arrangement from your probe lessons, scaled up to whole-part sorting. Older comparators displayed the unbalance as an ellipse on a CRT; modern instruments plot a vector point — the reading logic is identical.\n\nFrequency does real work here. With μᵣ ≈ 100 and σ ≈ 10 %IACS — representative training values for carbon steel — δ ≈ 660/√(f·μᵣ·σ) gives about **2.7 mm at 60 Hz**, but only 0.66 mm at 1 kHz and 0.07 mm at 100 kHz. Property sorting therefore runs at **power-line frequencies up to a few kilohertz**, so the field interrogates the cross-section — bulk heat-treat condition, not just skin condition."
+  },
+  {
+   "type": "text",
+   "heading": "Setting Up the Sort",
+   "body": "Objective three is the procedure. Run it in this order, every time:\n\n1. **Assemble the references.** Several independently verified acceptable parts — plus known-deviant parts whenever you can get them. One 'master part' is never enough, because acceptable parts scatter.\n2. **Demagnetize everything**, references included. Prior magnetic history — magnetic chucks, MT residual fields, transport on a crane magnet — shifts a part's operating point on the B–H curve and masquerades as a property difference.\n3. **Equalize temperature.** Conductivity shifts with part temperature, and the bridge will faithfully report a cold part as a different part. Reference and test parts must be at the same temperature.\n4. **Fix the geometry.** Same insertion depth, same centering, consistent fill factor; keep part ends clear of the coil or position them identically every time (end effect).\n5. **Null the bridge** with the reference in one coil and a verified good part in the other, at the chosen frequency and drive level.\n6. **Establish the spread.** Run every known-good part and record the envelope of outputs — that envelope, not a guess, defines the acceptance window.\n7. **Challenge the window.** Known-deviant parts must fall clearly outside it. If the populations overlap, change frequency or drive level and re-evaluate; if no setting separates them, the sort is **not feasible** by this method.\n8. **Maintain it.** Re-verify the null and the window at set intervals and after any change — new coil, new shift, new lot.\n\nAnd the standing rule: a part that lands just outside the window is referred for independent verification — the window is never widened to swallow strays."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-5-fig-c",
+   "caption": "The acceptance window is built from verified good parts and challenged with known deviants — borderline parts are referred for independent verification, never absorbed by widening the window."
+  },
+  {
+   "type": "table",
+   "caption": "The variables that unbalance a comparator bridge — one is the signal, the rest are setup discipline.",
+   "headers": ["Variable", "What the bridge sees", "Your control"],
+   "rows": [
+    ["Permeability (heat treat, hardness, carbon, residual stress)", "The target signal — strong unbalance through flux linkage", "This is what you sort on — prove it by correlation"],
+    ["Conductivity (alloy, part temperature)", "Unbalance that can mimic a property change", "Sort one alloy at a time; equalize temperatures"],
+    ["Dimensions (diameter, mass, plating)", "Fill-factor change that reads like a material change", "Gauge parts first; hold dimensional tolerance"],
+    ["Residual magnetism", "Shifted operating point on the B–H curve", "Demagnetize every part — references included"],
+    ["Position and end effect", "Apparent signal with no material difference", "Fixture for repeatable centering and insertion depth"],
+    ["Instrument and coil drift", "Slow walk of the null", "Re-balance and re-verify the window at set intervals"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-8-5-fig-a",
+   "title": "The hysteresis loop: permeability, retentivity, coercivity",
+   "file": "et2-8-5-fig-a.svg"
+  },
+  {
+   "id": "et2-8-5-fig-b",
+   "title": "Comparator bridge circuit for comparative testing",
+   "file": "et2-8-5-fig-b.svg"
+  },
+  {
+   "id": "et2-8-5-fig-c",
+   "title": "Acceptance window: building and challenging the sort",
+   "file": "et2-8-5-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Set Up the Sort: 4140 Pins, One Missed-Temper Lot",
+  "intro": "A bin of 4140 steel pins arrives with paperwork suggesting some escaped the temper furnace. You have a comparator bridge with matched encircling coils, a set of independently verified good pins, and three pins verified hard by laboratory hardness testing. Walk the setup.",
+  "steps": [
+   {
+    "prompt": "Before any pin goes into a coil, your first action is:",
+    "options": [
+     "Raise the drive voltage to maximum for best sensitivity",
+     "Apply DC magnetic saturation to every pin",
+     "Demagnetize every pin — verified references included",
+     "Balance the bridge with both coils empty"
+    ],
+    "correct": 2,
+    "feedback": "Prior magnetic history — magnetic chucks, MT residuals, crane magnets — shifts each pin's operating point on the B–H curve and masquerades as a property difference. And saturation is the flaw-detection trick for suppressing permeability; here permeability IS the measurement, so you must not kill it."
+   },
+   {
+    "prompt": "How do you establish the acceptance window?",
+    "options": [
+     "Run all the verified good pins and span their recorded spread — then confirm the verified hard pins fall outside it",
+     "Null on one master pin and reject anything that moves the output",
+     "Set limits at ±50% of full scale, the usual default",
+     "Reuse the window from last month's sort of a different alloy"
+    ],
+    "correct": 0,
+    "feedback": "Acceptable parts scatter — heat-to-heat chemistry, minor dimensional variation. The window must span the verified good population, and it only means something once known-deviant parts demonstrably fall outside it."
+   },
+   {
+    "prompt": "On the display, the verified good pins and the verified hard pins partially overlap. Your move:",
+    "options": [
+     "Widen the window so every verified good pin passes; some overlap is normal",
+     "Change test frequency and/or drive level and re-evaluate the separation — if nothing separates the populations, the sort is not feasible",
+     "Add gain until the hard pins read farther out",
+     "Call the overlapping good pins defective to be safe"
+    ],
+    "correct": 1,
+    "feedback": "Separation depends on where the drive puts you on the B–H curve and how deeply the field penetrates — explore frequency and drive level. Gain scales both populations equally and creates no separation. If no setting separates them, ASTM E566's logic applies: this sort is not feasible — and widening the window into the reject band is never an answer."
+   },
+   {
+    "prompt": "Mid-shift, a tray of pins straight from cold outdoor storage starts reading outside the window. Most likely cause:",
+    "options": [
+     "The entire tray missed heat treatment",
+     "The reference coil has failed",
+     "Residual magnetism picked up in transit",
+     "The cold pins' conductivity differs from the room-temperature reference — equalize temperature and retest"
+    ],
+    "correct": 3,
+    "feedback": "Conductivity rises as metal cools, and the bridge faithfully reports that as unbalance with zero metallurgical cause. Comparative testing assumes reference and test parts at the same temperature — let the tray equalize, retest, and only then evaluate any stragglers."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Placing an unsaturated ferromagnetic steel part in a test coil moves the coil's inductive reactance, relative to the empty-coil value:",
+   "options": [
+    "Downward, because eddy currents always cancel primary flux",
+    "Upward, because permeability multiplies the flux linkage and outweighs the eddy-current opposition",
+    "Nowhere — reactance depends only on frequency",
+    "To exactly zero"
+   ],
+   "correct": 1,
+   "explanation": "On nonmagnetic conductors the eddy currents' opposing field wins and XL falls; on unsaturated steel, μᵣ in the hundreds multiplies the flux linked per ampere, so XL rises well above the air value — the leverage that property measurement exploits."
+  },
+  {
+   "question": "Compared with correctly quenched-and-tempered parts, a part that missed its temper (harder, more martensitic) will generally show:",
+   "options": [
+    "Higher permeability and lower coercive force",
+    "An identical hysteresis loop — hardness is purely mechanical",
+    "A narrower hysteresis loop with less loss per cycle",
+    "Lower permeability and higher coercive force — a wider hysteresis loop"
+   ],
+   "correct": 3,
+   "explanation": "The same microstructural obstacles that block dislocations pin magnetic domain walls. Untempered martensitic parts are magnetically hard: lower μ, higher Hc, wider loop — exactly the shift a comparator detects."
+  },
+  {
+   "question": "A comparator bridge output nulls with a test part in the coil. The defensible conclusion is:",
+   "options": [
+    "The test part's electromagnetic response matches the reference at this frequency and drive level",
+    "The part is certified free of all discontinuities",
+    "The part's hardness is exactly equal to the reference part's",
+    "The instrument has lost excitation"
+   ],
+   "correct": 0,
+   "explanation": "Null means electromagnetic match within the test's sensitivity. Hardness is inferred only through the correlation you proved during setup, and a balanced bridge says nothing about discontinuities the field never interrogated."
+  },
+  {
+   "question": "Ferromagnetic property sorting usually runs at low frequencies — power-line frequency up to a few kilohertz — because:",
+   "options": [
+    "Bridge circuits cannot stay balanced above 60 Hz",
+    "Low frequency eliminates the need for reference parts",
+    "With μᵣ in the hundreds, the standard depth of penetration is small — only low frequencies let the field sample the cross-section instead of the skin",
+    "Higher frequencies would magnetically saturate the part"
+   ],
+   "correct": 2,
+   "explanation": "δ ≈ 660/√(f·μᵣ·σ): with μᵣ ≈ 100 and σ ≈ 10 %IACS, δ is about 2.7 mm at 60 Hz but only 0.07 mm at 100 kHz. Bulk properties such as heat-treat condition demand cross-section penetration, so the test runs low."
+  },
+  {
+   "question": "During a production sort, a few parts read just outside the acceptance window. Good practice per ASTM E566 is to:",
+   "options": [
+    "Widen the window until they pass — verified good parts scatter anyway",
+    "Segregate them and refer them for independent verification, such as hardness testing or metallography",
+    "Re-test them at reduced gain until they read inside the window",
+    "Demagnetize them and accept them on the second reading"
+   ],
+   "correct": 1,
+   "explanation": "The bridge reports electromagnetic difference, not its cause. Borderline parts get an independent answer — the window is never widened into the reject population, and gain games only hide the difference."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II Topical Outline §2.8 (measurement of ferromagnetic properties; comparative circuits)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — ET training and qualification framework",
+  "ASTM E566, Standard Practice for Electromagnetic (Eddy Current) Sorting of Ferrous Metals"
+ ]
+}

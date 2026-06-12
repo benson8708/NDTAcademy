@@ -1,0 +1,193 @@
+{
+ "lessonId": "et2-2-4",
+ "title": "Test Coil Shape and Hall Effect Elements",
+ "narrationScript": "This module has covered what the part does to coil impedance, and what frequency, coupling, and field strength do. One system factor remains — the coil itself. Geometry sets the empty coil's inductance: double the turns and inductance quadruples, and the operating point on the impedance plane moves with it. Field footprint follows diameter. Under a surface coil, eddy currents flow in a ring — essentially zero on the axis, strongest beneath the windings — so a small coil makes a small crack disturb a large fraction of its field, while a large coil averages over volume, which is exactly what conductivity sorting wants. Winding length, ferrite cores, and shields tune resolution further. And remember that eddy currents mirror the winding: an encircling coil's circumferential currents catch axial flaws and can run straight past circumferential ones. Finally, the Hall element reads flux density itself — flat from DC to about one hundred kilohertz — where a coil's output collapses as frequency falls. Match coil shape and detector to the requirement, and the signal follows.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Coil Is a Test Parameter, Not a Window",
+   "body": "This module began with the part — conductivity, permeability, mass, homogeneity — then moved to system settings: frequency, coupling, field strength. One system factor remains, and it is the one most often treated as furniture: the **test coil itself**. Its size and shape are selections you make, and they set the impedance baseline that everything else moves around.\n\nStart with the empty coil. Its impedance combines winding resistance R and inductive reactance **X₀ = 2πfL₀**, and geometry writes both:\n\n- **Turns.** Inductance scales with the **square of the number of turns** — L₀ ∝ N². Double the turns and L₀ quadruples.\n- **Area and length.** For a solenoid-style winding, L₀ grows with the winding's cross-sectional area and shrinks as the same turns stretch over a longer winding (L = μN²A/l in the long-coil case).\n- **Core.** A ferrite core gathers more flux through the same copper, raising L₀ again.\n- **Wire gauge.** Finer wire packs more turns but adds resistance; the ratio ωL/R — the coil's Q — governs how cleanly small impedance changes resolve on the display.\n\nWhy a Level II cares: the normalized impedance plane you interpret is referenced to X₀, so geometry literally positions the operating point. And the winding's distributed capacitance, together with the cable's, forms a resonant circuit with L₀ — the probe is usable only **below its self-resonant frequency**. That is why probes carry a marked frequency range, and why a long extension cable can drag a probe's resonance down toward your test frequency."
+  },
+  {
+   "type": "text",
+   "heading": "Field Footprint: What the Coil Actually Illuminates",
+   "body": "Set a circular surface coil on a part and the induced eddy currents **mirror the winding**: they flow in closed circles directly beneath the conductors. The density map matters:\n\n- **Zero on the axis.** At the exact center of the coil, the circulating currents cancel — eddy current density is essentially zero on the coil's centerline.\n- **Peak beneath the windings.** Density is greatest in a ring roughly under the mean winding radius, then tapers off outside the coil.\n\nTwo working consequences. First, a tiny flaw sitting dead-center under a pencil probe answers weakly; it speaks loudest as the winding ring passes over it — scan plans owe their **index and overlap requirements** to this ring-shaped sensitivity. Second, the footprint does not stop at the copper: the field of an **unshielded** coil spreads laterally beyond the winding, which is why edge effect announces a part edge before the probe physically reaches it.\n\nDepth follows diameter too. The axial field of a surface coil decays within a distance on the order of the **coil radius** — a separate ceiling from the skin-depth limit δ = 1/√(πfμσ). Drop the frequency as far as you like: a 3 mm pencil probe still cannot interrogate 10 mm down, because its field never gets there. Deep-penetration probes are therefore **physically large** as well as low-frequency, and whichever ceiling is lower — coil size or skin depth — wins."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-2-4-fig-a",
+   "caption": "Eddy current density under a surface coil: zero on the axis, peaking beneath the windings — a small coil concentrates its field for resolution, a large coil spreads and averages it."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Signal amplitude follows the fraction of the field disturbed",
+   "body": "The impedance change a discontinuity produces is governed by **how large a share of the total eddy current flow it interrupts**. A 1 mm fatigue crack under a 3 mm shielded probe blocks a meaningful fraction of a small, concentrated field — strong signal. The same crack under a 25 mm sorting coil disturbs a tiny share of a large averaged field and disappears into the baseline. Match the footprint to the question: coil diameter **comparable to the flaw** when you must detect it; coil diameter **deliberately oversized** when you want bulk properties — conductivity, heat treat — with surface noise averaged away."
+  },
+  {
+   "type": "text",
+   "heading": "Shape Decisions: Length, Cores, Shields, and Orientation",
+   "body": "Each geometry feature is a lever with a known direction:\n\n- **Winding length (bobbin and encircling coils).** A short coil concentrates its field over a short axial zone — it resolves short pits and cracks, and a short **differential pair** cancels gradual variation. A long coil averages along its length: short defects smear out, but slow trends — gradual wall thinning, dimension or conductivity drift — read cleanly, especially in an **absolute** connection.\n- **Ferrite cores.** A high-permeability, low-conductivity core concentrates flux through the same winding: more inductance and sensitivity from a smaller package, which is how sub-3 mm probes stay usable.\n- **Shields and cup cores.** A ferrite shield ring or cup confines the field laterally, pulling the footprint back to roughly the winding diameter. That is the probe you bring to **edges, radii, and fastener heads** — the geometry signal that would bury a crack indication stays outside the shield.\n- **Driver–pickup (reflection) windings.** Separating excitation from sensing lets you size each for its own job — a large driver to establish the field, a small pickup or a Hall element to read it — and broadens the usable bandwidth.\n\nAnd one orientation rule worth tattooing on the clipboard: **eddy currents mirror the winding, and a flaw must interrupt them to be seen.** An encircling coil drives currents around the tube's circumference, so it finds **axial** seams and cracks well — and can run straight past a thin **circumferential** crack lying parallel to the current flow. ASTM E243 carries that caveat for exactly this reason."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-2-4-fig-b",
+   "caption": "Four geometry levers: a ferrite shield confines the footprint for work beside fasteners; an unshielded pancake spills field sideways; an encircling coil's circumferential currents cut across axial flaws but run parallel to circumferential ones; bobbin length trades resolution for averaging."
+  },
+  {
+   "type": "table",
+   "caption": "Matching geometry and detector to the impedance-response requirement.",
+   "headers": ["Requirement", "Geometry / detector", "Why it wins"],
+   "rows": [
+    ["Crack detection at fastener heads and edges", "Small shielded, ferrite-cored surface probe", "Confined footprint keeps geometry signals out; a small field makes a small crack a large disturbance"],
+    ["Conductivity sorting and heat-treat verification", "Large-diameter air-core absolute probe", "Broad footprint averages roughness and microstructure into a stable bulk reading"],
+    ["Short pits in heat-exchanger tubing", "Short differential bobbin pair", "Short field zone resolves short defects; differential connection cancels slow drift"],
+    ["Gradual wall thinning in tubing", "Long absolute bobbin coil", "Long field zone and absolute connection keep slow trends visible"],
+    ["Axial seams in bar and tube at line speed", "Encircling (OD) coil, differential", "Circumferential currents cut across axial flaws as product feeds through"],
+    ["Second- and third-layer cracks in lap joints", "Large low-frequency driver with Hall (or pickup) detection", "Large coil pushes the field deep; the detector stays sensitive at low frequency"],
+    ["Static or slow leakage fields (MFL, residual magnetism)", "Hall element", "Reads flux density itself, down to DC, independent of scan speed"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Hall Elements: Reading B Instead of dΦ/dt",
+   "body": "Level I introduced the physics; Level II selects with it. A Hall element is a thin semiconductor chip — InSb, InAs, GaAs — carrying a regulated drive current. A flux density component **perpendicular to its face** pushes the moving carriers sideways, and the chip develops a transverse voltage **Vₕ = I·B/(n·q·t)** — directly proportional to **B itself**, polarity included. Nothing has to change for it to respond.\n\nA sensing coil obeys Faraday instead: V = −N·dΦ/dt. Same field, different question — the coil reports the **rate of change**, so its output is proportional to frequency, collapses as frequency falls, and is exactly zero at DC. For detectors of comparable size the two characteristics cross at a **crossover frequency**: below it, the flat Hall response delivers the better signal-to-noise ratio; above it, the rising coil output wins — which is why conventional surface probes from roughly 100 kHz into the megahertz range remain coils.\n\nThree Level II selection points:\n\n- **Size without penalty.** Shrinking a coil strips away the turns and area that make its signal; a Hall element keeps full sensitivity in a sub-millimeter active area.\n- **Directionality.** The element reads only the field component perpendicular to its face — orient it to the component carrying the flaw information, or exploit the selectivity to map fields. Gaussmeters and teslameters are Hall instruments.\n- **It replaces the detector, not the physics.** Excitation must still be an alternating or moving field, and depth of penetration is still set by frequency, conductivity, and permeability. The instrument now phase-analyzes a sensor voltage rather than a coil impedance, but the display logic — lift-off direction, phase rotation with depth — carries over.\n\nThe honest costs: millivolt output that needs amplification, temperature drift that needs compensation, a regulated supply, and a die less rugged than wound copper. Below a few kilohertz — multilayer aerospace structure, MFL, static field verification — those costs buy a detector no coil can match."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-2-4-fig-c",
+   "caption": "Detector selection: coil output rises with frequency while the Hall element stays flat from DC to about 100 kHz. Below the crossover, Hall detection wins — and the excitation field still does the penetrating."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-2-4-fig-a",
+   "title": "Coil diameter sets the field footprint",
+   "file": "et2-2-4-fig-a.svg"
+  },
+  {
+   "id": "et2-2-4-fig-b",
+   "title": "Shape decisions: shields, length, and current orientation",
+   "file": "et2-2-4-fig-b.svg"
+  },
+  {
+   "id": "et2-2-4-fig-c",
+   "title": "Choosing the detector: coil vs Hall element",
+   "file": "et2-2-4-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Geometry on the Line: Four Probe Calls",
+  "intro": "Four jobs, four selections. For each, pick the coil geometry — or detector — whose field behavior matches the impedance-response requirement. Reason from footprint, fraction-of-field, and frequency response before you click.",
+  "steps": [
+   {
+    "prompt": "Fatigue cracks start at fastener heads in an aluminum wing skin. You must scan tight against each steel fastener without the geometry signal burying the crack response. Which probe?",
+    "options": [
+     "A 25 mm air-core conductivity probe — its big field guarantees coverage",
+     "A long unshielded pancake coil for maximum raw sensitivity",
+     "A small-diameter shielded probe with a ferrite core",
+     "Any probe will do — shielding only matters on ferromagnetic parts"
+    ],
+    "correct": 2,
+    "feedback": "The ferrite shield confines the footprint to roughly the winding OD, so the fastener stays outside the field until you are nearly on it — and the small, concentrated field makes a short crack interrupt a large fraction of the eddy current flow. Unshielded or oversized coils ring on the fastener long before the crack speaks."
+   },
+   {
+    "prompt": "You are sorting heat-treated 2024 aluminum parts by conductivity. The machined surfaces are slightly rough. Which probe gives the most stable %IACS readings?",
+    "options": [
+     "A large-diameter air-core absolute probe",
+     "The smallest shielded probe in the kit — highest resolution wins",
+     "A short differential bobbin pair",
+     "A Hall-element gaussmeter held against the surface"
+    ],
+    "correct": 0,
+    "feedback": "Conductivity measurement wants averaging, not resolution: a broad footprint integrates roughness and local microstructure into one stable bulk reading. A tiny probe turns every tool mark into noise, bobbin coils are for tubes and bores, and a gaussmeter reads static flux density — not conductivity."
+   },
+   {
+    "prompt": "In heat-exchanger tubing you must flag short, isolated ID pits while ignoring slow, gradual variation along the tube. Which bobbin configuration?",
+    "options": [
+     "A long absolute coil",
+     "A short differential pair",
+     "A single differential coil wound over the probe's full length",
+     "An encircling OD coil — inspect the bundle from outside"
+    ],
+    "correct": 1,
+    "feedback": "A short field zone matches the short defect — the pit fills a large fraction of it — and the differential connection nulls slow trends so the pit stands alone. The long absolute coil answers the opposite question: gradual wall thinning. And in an installed bundle the OD is unreachable — ID bobbin probes exist for exactly that reason."
+   },
+   {
+    "prompt": "A procedure calls for detecting third-layer cracks in a lap joint at 200 Hz using a large driver coil. Which detector completes the probe?",
+    "options": [
+     "A small high-Q absolute coil — the highest-sensitivity winding available",
+     "Raise the frequency to 100 kHz so a coil detector can hear the flaw",
+     "Either one — detector choice does not affect low-frequency response",
+     "A Hall element centered in the driver"
+    ],
+    "correct": 3,
+    "feedback": "At 200 Hz a sensing coil's dΦ/dt output has collapsed to a sliver, and raising the frequency would shrink the skin depth so the field never reaches the third layer. The Hall element reads B itself at full sensitivity down to DC — the large driver supplies the depth, the Hall chip supplies the hearing."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A probe designer doubles the number of turns on a surface coil while keeping its dimensions and core unchanged. The empty-coil inductance L₀ will:",
+   "options": [
+    "Double",
+    "Quadruple — inductance scales with the square of the turns",
+    "Stay the same — inductance depends only on the core material",
+    "Halve"
+   ],
+   "correct": 1,
+   "explanation": "L₀ ∝ N², so twice the turns means four times the inductance. Because X₀ = 2πfL₀ sets the reference for the normalized impedance plane, the operating point your instrument displays moves with it — coil geometry is a test parameter."
+  },
+  {
+   "question": "Directly beneath the center of a circular surface probe, the eddy current density in the part is:",
+   "options": [
+    "Maximum — the field is strongest on the coil axis",
+    "Uniform across the entire footprint",
+    "Greatest several diameters outside the winding",
+    "Essentially zero, with the peak in a ring beneath the windings"
+   ],
+   "correct": 3,
+   "explanation": "The induced currents mirror the circular winding, so they cancel on the centerline and peak under the mean winding radius. That ring-shaped sensitivity is why a small flaw answers loudest as the winding passes over it — and why scan plans specify index and overlap."
+  },
+  {
+   "question": "A 1 mm crack gives a strong signal under a 3 mm probe but vanishes under a 25 mm sorting coil at the same frequency. The reason is that:",
+   "options": [
+    "Under the small coil, the crack interrupts a much larger fraction of the total eddy current flow",
+    "The large coil's field cannot reach the part surface",
+    "Small coils always operate at higher frequency",
+    "The large coil has greater lift-off"
+   ],
+   "correct": 0,
+   "explanation": "Signal amplitude follows the fraction of the field disturbed. The small probe concentrates its field, so the crack blocks a meaningful share of it; under the large coil the same crack disturbs a tiny share of a big averaged field. Frequency and lift-off were unchanged — geometry alone made the difference."
+  },
+  {
+   "question": "An encircling-coil examination of tubing is LEAST sensitive to which discontinuity?",
+   "options": [
+    "A longitudinal seam on the tube OD",
+    "A short axial crack",
+    "A thin circumferential crack lying parallel to the induced current flow",
+    "A long axial score with varying depth"
+   ],
+   "correct": 2,
+   "explanation": "An encircling coil induces currents that flow around the circumference. A flaw must interrupt the current to be seen: axial flaws cut across the flow and respond strongly, while a circumferential crack parallel to it can pass with little or no signal — a limitation noted in encircling-coil practices such as ASTM E243."
+  },
+  {
+   "question": "For a 250 Hz examination of a three-layer aluminum lap joint, a Hall element is preferred over a sensing coil as the detector because:",
+   "options": [
+    "Hall detection increases the standard depth of penetration",
+    "Hall element output is flat down to DC, while a sensing coil's output falls in proportion to frequency",
+    "A Hall element eliminates the need for an excitation coil",
+    "Hall elements are more temperature-stable than coils"
+   ],
+   "correct": 1,
+   "explanation": "Vₕ = I·B/(n·q·t) responds to flux density itself, so the Hall element keeps full sensitivity at 250 Hz where a coil's dΦ/dt output has collapsed. Penetration is still set by frequency and material, excitation is still required, and Hall elements actually need temperature compensation — the advantage is purely in detection."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II Topical Outline §2.2.4–2.2.5 (test coil and shape; Hall effect elements)",
+  "ASNT SNT-TC-1A (2024), employer-based qualification and certification framework (ET Level II training topic coverage)",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (electromagnetic testing terminology)",
+  "ASTM E243, Standard Practice for Electromagnetic (Eddy Current) Examination of Copper and Copper-Alloy Tubes (encircling-coil practice and orientation limitations)"
+ ]
+}

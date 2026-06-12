@@ -1,0 +1,85 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arwC224b" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9BC4FF"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">Choosing the Detector: Coil vs Hall Element</text>
+
+  <!-- ============ LEFT: output vs frequency ============ -->
+  <!-- region shading left of crossover -->
+  <rect x="70" y="100" width="233" height="300" fill="#1E66F5" fill-opacity="0.12"/>
+  <text x="185" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#9BC4FF">Hall wins</text>
+  <text x="185" y="152" text-anchor="middle" font-size="14" fill="#9BC4FF">deep penetration · MFL · static fields</text>
+  <text x="390" y="130" text-anchor="middle" font-size="15" font-weight="bold" fill="#9BC4FF">Coil wins</text>
+  <text x="390" y="152" text-anchor="middle" font-size="14" fill="#9BC4FF">conventional surface ET</text>
+
+  <!-- axes -->
+  <line x1="70" y1="400" x2="470" y2="400" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="70" y1="400" x2="70" y2="100" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="44" y="250" font-size="14" fill="#9BC4FF" transform="rotate(-90 44 250)" text-anchor="middle">relative output</text>
+
+  <!-- x ticks -->
+  <line x1="90" y1="400" x2="90" y2="406" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="90" y="424" text-anchor="middle" font-size="14" fill="#FFFFFF">DC</text>
+  <line x1="160" y1="400" x2="160" y2="406" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="160" y="424" text-anchor="middle" font-size="14" fill="#FFFFFF">10 Hz</text>
+  <line x1="250" y1="400" x2="250" y2="406" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="250" y="424" text-anchor="middle" font-size="14" fill="#FFFFFF">1 kHz</text>
+  <line x1="340" y1="400" x2="340" y2="406" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="340" y="424" text-anchor="middle" font-size="14" fill="#FFFFFF">100 kHz</text>
+  <line x1="430" y1="400" x2="430" y2="406" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="430" y="424" text-anchor="middle" font-size="14" fill="#FFFFFF">10 MHz</text>
+  <text x="270" y="450" text-anchor="middle" font-size="14" fill="#9BC4FF">test frequency (log scale)</text>
+
+  <!-- Hall line: flat then roll-off -->
+  <path d="M 90 230 L 340 230 C 370 230 395 280 420 330" fill="none" stroke="#FFFFFF" stroke-width="3.5"/>
+  <text x="290" y="218" text-anchor="end" font-size="14" fill="#FFFFFF">Hall element — flat to ≈100 kHz</text>
+
+  <!-- Coil line: rising with f -->
+  <line x1="90" y1="392" x2="455" y2="115" stroke="#9BC4FF" stroke-width="3.5"/>
+  <text x="208" y="328" font-size="14" fill="#9BC4FF">sensing coil — output ∝ f</text>
+
+  <!-- crossover -->
+  <circle cx="303" cy="230" r="7" fill="#1E66F5" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="303" y="208" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">crossover</text>
+
+  <!-- ============ RIGHT: lap-joint sketch ============ -->
+  <text x="640" y="88" text-anchor="middle" font-size="16" font-weight="bold" fill="#9BC4FF">Hall replaces only the detector</text>
+
+  <!-- driver coil -->
+  <rect x="540" y="120" width="200" height="26" fill="#1E66F5" fill-opacity="0.3" stroke="#9BC4FF" stroke-width="2"/>
+  <text x="640" y="113" text-anchor="middle" font-size="14" fill="#FFFFFF">large low-frequency driver coil</text>
+
+  <!-- Hall chip -->
+  <rect x="630" y="152" width="20" height="12" fill="#FFFFFF"/>
+  <text x="640" y="180" text-anchor="middle" font-size="14" fill="#FFFFFF">Hall chip (detector)</text>
+
+  <!-- field arrows -->
+  <line x1="560" y1="150" x2="560" y2="272" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arwC224b)"/>
+  <line x1="720" y1="150" x2="720" y2="272" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arwC224b)"/>
+
+  <!-- three layers -->
+  <rect x="540" y="190" width="200" height="26" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="540" y="222" width="200" height="26" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="540" y="254" width="200" height="26" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+
+  <!-- fastener -->
+  <line x1="600" y1="186" x2="600" y2="284" stroke="#9BC4FF" stroke-width="3"/>
+  <path d="M 590 190 Q 600 178 610 190" fill="none" stroke="#9BC4FF" stroke-width="2"/>
+
+  <!-- third-layer crack -->
+  <polyline points="600,268 612,265 624,270 636,266" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="688" y="300" text-anchor="middle" font-size="14" fill="#FFFFFF">3rd-layer crack</text>
+  <line x1="660" y1="290" x2="638" y2="270" stroke="#9BC4FF" stroke-width="1.2"/>
+
+  <!-- formula card -->
+  <rect x="500" y="330" width="280" height="120" rx="10" fill="#1E66F5" fill-opacity="0.16" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="640" y="362" text-anchor="middle" font-size="15" fill="#FFFFFF">Coil:  V = −N·dΦ/dt  →  output ∝ f</text>
+  <text x="640" y="394" text-anchor="middle" font-size="14" fill="#FFFFFF">Hall:  Vₕ = I·B/(nqt)  →  flat to ≈100 kHz</text>
+  <text x="640" y="428" text-anchor="middle" font-size="14" font-weight="bold" fill="#9BC4FF">Below the crossover, choose Hall.</text>
+
+  <text x="400" y="484" text-anchor="middle" font-size="14" fill="#9BC4FF">Excitation is still an alternating field — depth of penetration physics is unchanged.</text>
+</svg>

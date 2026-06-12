@@ -1,0 +1,77 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">Probe-Side Noise Killers</text>
+  <text x="400" y="60" text-anchor="middle" font-size="15" fill="#9BC4FF">Change the physics at the coil — before the signal ever reaches a filter</text>
+
+  <!-- COLUMN 1: DIFFERENTIAL -->
+  <rect x="40" y="76" width="230" height="340" rx="8" fill="#1E66F5" fill-opacity="0.06" stroke="#9BC4FF" stroke-width="1"/>
+  <text x="155" y="102" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">DIFFERENTIAL COILS</text>
+
+  <!-- part with gradual taper and notch -->
+  <polygon points="60,170 250,150 250,200 60,200" fill="#1E66F5" fill-opacity="0.35" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="186" y="156" width="8" height="16" fill="#0B1F3A"/>
+  <text x="64" y="138" font-size="14" fill="#9BC4FF">gradual thinning →</text>
+  <text x="204" y="146" font-size="14" font-weight="bold" fill="#FFFFFF">notch</text>
+
+  <!-- absolute trace -->
+  <text x="60" y="246" font-size="14" fill="#9BC4FF">absolute channel:</text>
+  <polyline points="60,272 100,268 140,263 170,259 184,256 190,242 196,253 220,251 250,248" fill="none" stroke="#9BC4FF" stroke-width="2"/>
+
+  <!-- differential trace -->
+  <text x="60" y="306" font-size="14" font-weight="bold" fill="#FFFFFF">differential channel:</text>
+  <polyline points="60,330 120,330 170,330 182,330 188,312 194,348 200,330 250,330" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+
+  <text x="155" y="378" text-anchor="middle" font-size="14" fill="#9BC4FF">cancels gradual change —</text>
+  <text x="155" y="396" text-anchor="middle" font-size="14" fill="#9BC4FF">and is blind to it, too</text>
+
+  <!-- COLUMN 2: SHIELDED CORE -->
+  <rect x="285" y="76" width="230" height="340" rx="8" fill="#1E66F5" fill-opacity="0.06" stroke="#9BC4FF" stroke-width="1"/>
+  <text x="400" y="102" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">SHIELDED CORE</text>
+
+  <!-- plate top view with fastener row -->
+  <rect x="300" y="130" width="200" height="120" rx="4" fill="#1E66F5" fill-opacity="0.12" stroke="#9BC4FF" stroke-width="1.5"/>
+  <circle cx="340" cy="190" r="13" fill="#1E66F5" fill-opacity="0.9" stroke="#9BC4FF" stroke-width="1.5"/>
+  <circle cx="400" cy="190" r="13" fill="#1E66F5" fill-opacity="0.9" stroke="#9BC4FF" stroke-width="1.5"/>
+  <circle cx="460" cy="190" r="13" fill="#1E66F5" fill-opacity="0.9" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="400" y="270" text-anchor="middle" font-size="14" fill="#9BC4FF">fastener row</text>
+
+  <!-- unshielded footprint overlapping a fastener -->
+  <circle cx="362" cy="168" r="34" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="340" y="116" text-anchor="middle" font-size="14" fill="#FFFFFF">unshielded</text>
+  <line x1="346" y1="120" x2="356" y2="136" stroke="#9BC4FF" stroke-width="1"/>
+
+  <!-- shielded footprint clear of fasteners -->
+  <circle cx="440" cy="160" r="12" fill="none" stroke="#9BC4FF" stroke-width="2.5"/>
+  <text x="452" y="116" text-anchor="middle" font-size="14" fill="#9BC4FF">shielded</text>
+  <line x1="450" y1="120" x2="443" y2="146" stroke="#9BC4FF" stroke-width="1"/>
+
+  <text x="400" y="378" text-anchor="middle" font-size="14" fill="#9BC4FF">tight footprint scans close</text>
+  <text x="400" y="396" text-anchor="middle" font-size="14" fill="#9BC4FF">to edges and fastener heads</text>
+
+  <!-- COLUMN 3: MAGNETIC SATURATION -->
+  <rect x="530" y="76" width="230" height="340" rx="8" fill="#1E66F5" fill-opacity="0.06" stroke="#9BC4FF" stroke-width="1"/>
+  <text x="645" y="102" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">MAGNETIC SATURATION</text>
+
+  <!-- noisy trace before saturation -->
+  <text x="550" y="124" font-size="14" fill="#9BC4FF">without saturation:</text>
+  <polyline points="550,150 566,134 582,164 598,140 614,168 630,138 646,160 662,132 678,166 694,142 710,158 726,144 740,152" fill="none" stroke="#9BC4FF" stroke-width="2"/>
+
+  <!-- steel tube wall with DC bias -->
+  <rect x="550" y="210" width="190" height="40" fill="#1E66F5" fill-opacity="0.35" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="645" y="226" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">DC bias field</text>
+  <line x1="560" y1="238" x2="716" y2="238" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="8 5"/>
+  <polygon points="730,238 716,231 716,245" fill="#FFFFFF"/>
+  <text x="645" y="268" text-anchor="middle" font-size="14" fill="#9BC4FF">steel tube wall (μᵣ varies)</text>
+
+  <!-- calm trace after saturation -->
+  <text x="550" y="296" font-size="14" font-weight="bold" fill="#FFFFFF">with saturation (μᵣ → 1):</text>
+  <polyline points="550,330 580,329 610,331 630,330 640,316 648,308 656,318 666,330 700,329 740,330" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="648" y="352" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">flaw</text>
+
+  <text x="645" y="378" text-anchor="middle" font-size="14" fill="#9BC4FF">permeability noise collapses</text>
+  <text x="645" y="396" text-anchor="middle" font-size="14" fill="#9BC4FF">(ASTM E309 practice)</text>
+
+  <!-- bottom takeaway -->
+  <text x="400" y="448" text-anchor="middle" font-size="15" fill="#9BC4FF">Pick hardware when the noise is born in the part — it removes noise the gain knob can only enlarge.</text>
+  <text x="400" y="472" text-anchor="middle" font-size="14" fill="#FFFFFF">Every probe or core change voids the previous setup: re-standardize before the next scan.</text>
+</svg>

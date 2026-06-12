@@ -1,0 +1,192 @@
+{
+ "lessonId": "et2-4-1",
+ "title": "Frequency and Type of Test",
+ "narrationScript": "Every term in the depth of penetration formula belongs to the part except one. Conductivity and permeability are fixed the moment the part arrives, so frequency is the variable you own — it sets how deep the current reaches, how much phase lag encodes depth, and where the operating point sits on the impedance plane. Let the type of test choose it. Surface cracks want high frequency, one hundred kilohertz to a few megahertz, piling current into the first fraction of a millimeter and rotating crack signals away from lift-off. Buried flaws want low kilohertz: place the deepest required flaw near one standard depth and never trust anything past three. Conductivity sorting lives at the knee of the curve — sixty kilohertz meters with enough metal under the probe. Thinning surveys keep the far wall inside the current. Tubing follows the f-ninety rule, three rho over t squared, spreading inner and outer wall signals about ninety degrees apart. Run far off optimum and the test goes blind — so prove every setup on the reference standard.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Frequency: The Only Term in the Equation You Own",
+   "body": "By Level II you carry the working formula everywhere: **δ (mm) ≈ 660/√(f · µᵣ · σ)**, with f in hertz and σ in %IACS. Now look at who owns each term. Conductivity and permeability belong to the part — fixed the moment it arrives at your bench. Coil geometry is fixed the moment you pick the probe. **Frequency is the one variable still yours at setup**, and it commands four things at once:\n\n- **Depth of penetration.** δ ∝ 1/√f — raise the frequency and the current climbs toward the surface; lower it and the current reaches deep.\n- **Phase room.** Phase lag accumulates at about **57° per standard depth**, so δ sets how much angular separation a difference in depth produces on the screen.\n- **The operating point.** Frequency slides the coil's operating point along the impedance-plane conductivity locus — and with it, the angles between lift-off, flaw, and conductivity responses.\n- **Raw signal strength.** Induced EMF follows the rate of flux change, so raising frequency strengthens the eddy currents; lowering it weakens everything.\n\nThat is why the governing question is never \"what frequency is best?\" but \"**what type of test is this?**\" Flaw detection at the surface, flaw detection at depth, conductivity sorting, thickness measurement, and tubing inspection each optimize a different quantity — and each lands in a different part of the spectrum. This lesson maps them."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-4-1-fig-a",
+   "caption": "One part, three frequencies — 7075-T6 at 2 MHz, 100 kHz, and 2.2 kHz. The current (blue shading) must reach the feature you are hired to find: the surface crack sits in everyone's current, but the 2.5-mm second-layer flaw stays invisible until the frequency drops enough to place it near one standard depth."
+  },
+  {
+   "type": "text",
+   "heading": "Surface Flaw Detection: Run High",
+   "body": "Fatigue cracks start at the surface — fastener holes, fillets, tool marks. The test must do two things: **pile current density into the first fraction of a millimeter**, where the crack interrupts the most flow, and **rotate the crack response away from lift-off**, the noise probe handling generates continuously. Both jobs reward high frequency.\n\nOn 7075-T6 skin (σ = 32 %IACS): at 200 kHz, δ ≈ 0.26 mm; at 2 MHz, δ ≈ 0.08 mm — the current rides in a skin thinner than a coat of paint, exactly where the cracks live. Aerospace surface work therefore runs from about **100 kHz to a few megahertz**.\n\nThe material moves the number, not the logic. Titanium at σ ≈ 1 %IACS: 200 kHz gives δ ≈ 1.5 mm — current wasted far below the surface — so titanium surface inspection pushes to **2–6 MHz** to recover the shallow skin that aluminum gets at lower frequency. Same type of test, same δ target, different frequency: the **test type sets the depth; the material sets the number**.\n\nFerromagnetic steel is its own case: with µᵣ in the hundreds, current is surface-bound at almost any frequency (δ ≈ 0.07 mm at 100 kHz for σ = 10, µᵣ = 100). Frequency selection there is driven by probe design and noise — permeability noise and the magnetic saturation that tames it are the next lesson's subject.\n\nThere is a ceiling. Once δ is already thin compared with the smallest crack you must find, more frequency buys mostly trouble: surface roughness and plating variations grow louder, and probe-cable resonance sets a hard practical limit."
+  },
+  {
+   "type": "text",
+   "heading": "Subsurface Flaws: Run Low — and Place Them Near One δ",
+   "body": "Hidden-layer cracking and far-side defects flip the priority: the current must **reach** the flaw before anything else matters. Rearrange the formula once and keep it:\n\n**f = (660/δ)² ÷ (µᵣ · σ)**\n\nWork the standard case. A second-layer crack about 2.5 mm below the outer surface of a 2024-T3 lap joint (σ ≈ 30 %IACS): placing that depth at **one standard depth** requires f = (660/2.5)² ÷ 30 ≈ **2.3 kHz**. At 1δ the flaw sits in **37%** of the surface current density and carries roughly **57° of phase lag** — strong enough to detect, rotated enough to separate from lift-off and outer-surface responses.\n\nThe placement rules:\n\n- **Aim near 1δ** when phase discrimination matters — current density and phase separation are both healthy there.\n- **Never rely on anything beyond 3δ** — the effective depth of penetration, where only about 5% of the surface density remains.\n- **Prove the choice on the reference standard** — the formula plans the test; the standard demonstrates it.\n\nLow frequency is not free. Induced EMF falls with frequency, so every signal weakens; responses crowd toward the lift-off direction at the top of the impedance-plane locus; and the allowable scan speed drops — a bandwidth penalty quantified in the response-speed lesson (et2-4-3). The discipline: run **as high as the deepest required flaw allows, and no higher**."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-4-1-fig-b",
+   "caption": "Frequency slides the operating point of one aluminum part along the conductivity locus. Near the top, lift-off, crack, and conductivity moves crowd together; the knee gives the widest conductivity spread — sorting territory; farther down, crack responses rotate well away from lift-off — surface flaw territory."
+  },
+  {
+   "type": "text",
+   "heading": "Property Tests: Sorting and Thickness Work the Curve",
+   "body": "**Conductivity sorting** — alloy verification, heat-treat checks — measures where the operating point sits along the conductivity locus. Sensitivity is best where equal steps in %IACS spread farthest along the curve: **the knee**. Commercial conductivity meters operate near **60 kHz** (the practice standardized in ASTM E1004), which parks aluminum alloys in exactly that region; many meters offer higher frequencies for thin sections. The payoff is real resolution: 7075 reads in the **mid-40s %IACS annealed** and roughly the **low-to-mid 30s at T6** — a spread a 60 kHz meter resolves without effort.\n\nOne requirement makes the reading honest — **enough metal under the probe**. The working criterion is about **2.6 standard depths**. Bare 6061 (σ ≈ 42 %IACS) at 60 kHz: δ ≈ 0.42 mm, so 2.6δ ≈ 1.1 mm — a 1.0-mm sheet falls short. The accepted corrections: **stack identical sheets of the same alloy and temper** until the criterion is met, or test at a higher frequency. Never back thin sheet with a different metal — the instrument will read the stack, not the sheet.\n\n**Thinning and thickness surveys** choose frequency the opposite way from sorting: the far wall must stay **inside** the current. Set δ near the nominal wall so metal loss produces a steep, monotonic response — on aluminum skins that lands in the **low kilohertz**. Run too high and the instrument is blind to far-wall loss; run far too low and the response goes weak and sluggish.\n\n**Nonconductive coating thickness** (paint over metal) is a calibrated **lift-off** measurement: run high — hundreds of kilohertz and up — so the substrate looks uniform and the entire response rides the lift-off line."
+  },
+  {
+   "type": "text",
+   "heading": "Tubing: Engineer the ID–OD Phase Spread with f₉₀",
+   "body": "A bobbin coil travels the tube bore and watches **both walls at once**. Evaluation then hangs on one question: did this signal originate on the **ID** (near surface) or the **OD** (far surface)? Depth through the wall reads as phase — current crossing the wall arrives weaker and later — so frequency must be chosen to spread ID and OD responses far enough apart to call them.\n\nThe planning rule used throughout nonferromagnetic tube testing:\n\n**f₉₀ (kHz) = 3ρ ÷ t²** — ρ in µΩ·cm (= 172.4 ÷ %IACS), t in mm.\n\nf₉₀ is the frequency at which ID-origin and OD-origin signals separate by roughly **90° of phase** — wide enough to identify the wall of origin and grade depth, while the far wall still carries usable current. Work three tubes:\n\n- **304 stainless condenser tube**, ρ ≈ 72 µΩ·cm, t = 1.2 mm: f₉₀ = 3 × 72 ÷ 1.44 ≈ **150 kHz**.\n- **Admiralty brass**, ρ ≈ 7 µΩ·cm, t = 1.65 mm: f₉₀ ≈ **8 kHz** — high conductivity drags the frequency down.\n- **Inconel steam-generator tubing**, ρ ≈ 100 µΩ·cm, t = 1.27 mm: f₉₀ ≈ **190 kHz**.\n\nRun far below f₉₀ and the phase angles collapse together — the wall of origin becomes a guess. Run far above it and OD defects starve for current. Production examinations are standardized and verified on artificial-defect calibration tubes — **ASME BPVC Section V, Article 8** governs nonferromagnetic heat-exchanger tubing — and modern testers drive several frequencies at once (a prime near f₉₀ plus lower ones) so support-plate signals can be mixed out, a technique you will meet again in the evaluation module."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-4-1-fig-c",
+   "caption": "Bobbin testing of nonferromagnetic tubing: current crossing the wall arrives weaker and phase-lagged, and at f₉₀ = 3ρ/t² the ID- and OD-origin responses land about 90° apart — wide enough to call the wall of origin and grade defect depth."
+  },
+  {
+   "type": "table",
+   "caption": "Frequency-selection logic by type of test (nonferrous examples). Every planned frequency is proved on the procedure's reference standard before testing begins.",
+   "headers": ["Type of test", "Optimize for", "Typical neighborhood", "Far off optimum"],
+   "rows": [
+    ["Surface crack detection", "Current piled at the surface; crack rotated off lift-off", "≈100 kHz–3 MHz aluminum; 2–6 MHz titanium", "Too low: weak signals hugging lift-off. Too high: roughness and plating noise, probe-cable limits"],
+    ["Subsurface / second-layer cracks", "Deepest required flaw near 1δ, never past 3δ", "≈500 Hz–50 kHz in aluminum stacks, set by depth", "Too high: flaw lies beyond 3δ — no signal at any gain"],
+    ["Conductivity sorting / heat-treat check", "Knee of the locus; ≥ ~2.6δ of metal under the probe", "60 kHz meters; higher-frequency options for thin sheet", "Too low: thickness and back-side effects contaminate the reading"],
+    ["Wall-thinning / corrosion survey", "Far wall inside the current — δ near the nominal wall", "Low kilohertz on aluminum skins", "Too high: blind to far-wall loss. Too low: weak, sluggish response"],
+    ["Nonconductive coating thickness", "Shallow δ; response rides the lift-off line", "Hundreds of kHz and up", "Too low: substrate variations read as coating change"],
+    ["Tubing ID/OD discrimination (bobbin)", "≈90° ID–OD phase spread", "f₉₀ = 3ρ/t² — ≈8 kHz brass to ≈190 kHz Inconel", "Below f₉₀: walls merge in phase. Above: OD starved"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-4-1-fig-a",
+   "title": "Same part, three frequencies: current depth vs. the flaw",
+   "file": "et2-4-1-fig-a.svg"
+  },
+  {
+   "id": "et2-4-1-fig-b",
+   "title": "Operating point vs. frequency on the impedance plane",
+   "file": "et2-4-1-fig-b.svg"
+  },
+  {
+   "id": "et2-4-1-fig-c",
+   "title": "Tubing frequency selection: the f₉₀ rule",
+   "file": "et2-4-1-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Pick the Band: Eight Jobs, Three Frequency Neighborhoods",
+  "intro": "For each job, decide which frequency neighborhood the physics demands. Reason from δ ≈ 660/√(f · µᵣ · σ) and from what each type of test must optimize — then check yourself.",
+  "buckets": [
+   "High — 100 kHz to a few MHz",
+   "Middle — tens of kHz (meter range)",
+   "Low — a few kHz and below"
+  ],
+  "items": [
+   {
+    "label": "Fatigue cracks at fastener holes in the outer skin (7075-T6)",
+    "bucket": 0,
+    "why": "Surface-breaking cracks want current piled into the first tenth of a millimeter and crack signals rotated well away from lift-off — at 2 MHz, δ in 7075-T6 is only about 0.08 mm."
+   },
+   {
+    "label": "Heat-treat verification of 7075 forgings with a conductivity meter",
+    "bucket": 1,
+    "why": "Conductivity meters run near 60 kHz, which parks aluminum alloys at the knee of the impedance-plane locus — the region of maximum spread per %IACS."
+   },
+   {
+    "label": "Second-layer cracks in a bolted three-layer wing splice",
+    "bucket": 2,
+    "why": "The flaw sits millimeters below the surface. Placing it near one standard depth in aluminum demands low kilohertz — about 2.3 kHz for 2.5 mm in 2024-T3."
+   },
+   {
+    "label": "Far-wall corrosion thinning on a 2-mm aluminum skin",
+    "bucket": 2,
+    "why": "The far wall must stay inside strong current: δ = 2 mm in 2024-T3 corresponds to roughly 3.6 kHz. At tens of kilohertz the instrument never sees the wall loss."
+   },
+   {
+    "label": "Paint thickness on an aluminum fuselage by the lift-off method",
+    "bucket": 0,
+    "why": "High frequency confines current to a shallow skin so the substrate reads uniform and the response rides cleanly along the lift-off line — coating measurements run hundreds of kilohertz and up."
+   },
+   {
+    "label": "Sorting mixed bronze and brass bar stock at goods-inwards",
+    "bucket": 1,
+    "why": "Alloy sorting is a conductivity test: meter-range frequencies near the knee give the widest separation between alloys along the conductivity locus."
+   },
+   {
+    "label": "Shallow surface cracks in a titanium engine component (σ ≈ 1 %IACS)",
+    "bucket": 0,
+    "why": "Low conductivity inflates δ — at 200 kHz it is already about 1.5 mm in titanium. Confining current to the surface takes 2–6 MHz, the top of the practical range."
+   },
+   {
+    "label": "Inconel steam-generator tubing, 1.27-mm wall, bobbin probe (ρ ≈ 100 µΩ·cm)",
+    "bucket": 0,
+    "why": "Folklore says tubing means low frequency, but f₉₀ = 3ρ/t² = 3 × 100 ÷ 1.61 ≈ 190 kHz — high-resistivity Inconel and a thin wall push the prime frequency into the high bucket."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Fatigue cracks breaking the surface around fastener holes must be detected in 7075-T6 skin (σ = 32 %IACS). The Level II reasoning that selects the frequency band is:",
+   "options": [
+    "Run low — a few hundred hertz — so the field penetrates the entire skin in case the cracks extend deep",
+    "Run high — hundreds of kilohertz to a few megahertz — to concentrate current density at the surface where the cracks live and rotate their signals away from lift-off",
+    "Run at 60 Hz line frequency to avoid electrical interference",
+    "Frequency is unimportant for surface cracks because added gain compensates for any choice"
+   ],
+   "correct": 1,
+   "explanation": "Surface cracks need current where they are: at 2 MHz, δ in 7075-T6 is about 0.08 mm, piling current density onto the crack and widening the phase separation from lift-off. Gain amplifies noise as much as signal, and running low only wastes current below the surface."
+  },
+  {
+   "question": "A second-layer crack lies 2.0 mm below the outer surface of a 7075-T6 stack (σ = 32 %IACS, µᵣ = 1). The frequency that places it at about one standard depth of penetration is:",
+   "options": [
+    "About 3.4 kHz",
+    "About 34 kHz",
+    "About 340 kHz",
+    "About 850 Hz"
+   ],
+   "correct": 0,
+   "explanation": "Rearrange the depth formula: f = (660/δ)² ÷ (µᵣ · σ) = (660/2)² ÷ 32 ≈ 3,400 Hz. At 34 kHz the flaw already sits past 3δ — the effective depth — and at 340 kHz it lies near 10δ, where essentially no current remains."
+  },
+  {
+   "question": "A conductivity check is required on bare 1.0-mm 6061 sheet (σ ≈ 42 %IACS) with a 60 kHz meter, where δ ≈ 0.42 mm and the ~2.6δ criterion calls for about 1.1 mm of metal. The accepted correction is to:",
+   "options": [
+    "Lower the meter frequency so the field fills the sheet completely",
+    "Place the sheet on a steel bench plate to add metal beneath it",
+    "Stack identical sheets of the same alloy and temper to satisfy the thickness criterion, or use a meter with a higher test frequency",
+    "Press the probe harder against the sheet"
+   ],
+   "correct": 2,
+   "explanation": "Stacking same-alloy, same-temper sheet is the recognized practice — the stack behaves electrically like thick metal — and a higher frequency shrinks δ so the criterion is met. Lowering frequency makes penetration deeper and the violation worse, and a dissimilar backing metal contaminates the reading."
+  },
+  {
+   "question": "A 304 stainless heat-exchanger tube (ρ ≈ 72 µΩ·cm) has a 1.2-mm wall. Using f₉₀ = 3ρ/t², the frequency giving roughly 90° of phase separation between ID-origin and OD-origin signals is about:",
+   "options": [
+    "15 kHz",
+    "60 kHz",
+    "1.5 MHz",
+    "150 kHz"
+   ],
+   "correct": 3,
+   "explanation": "f₉₀ = 3 × 72 ÷ (1.2)² = 216 ÷ 1.44 ≈ 150 kHz. Far below f₉₀ the ID and OD responses collapse toward the same phase angle and the wall of origin becomes a guess; far above it, the OD is starved of current."
+  },
+  {
+   "question": "A three-layer aluminum lap joint must be inspected for second-layer cracking about 2.5 mm down (2024-T3, σ ≈ 30 %IACS), but the technician leaves the instrument at 200 kHz from the previous surface job. The consequence is:",
+   "options": [
+    "Signals appear normally but mirrored on the impedance plane",
+    "Second-layer cracks produce essentially no signal — at 200 kHz the flaw lies many standard depths down, far beyond the effective depth of penetration",
+    "Lift-off response disappears entirely",
+    "Sensitivity to the second layer improves, because higher frequency means higher induced EMF"
+   ],
+   "correct": 1,
+   "explanation": "At 200 kHz in 2024-T3, δ ≈ 0.27 mm, so 2.5 mm is roughly 9δ — far past the 3δ working limit, with a tiny fraction of one percent of the surface current density remaining. The higher EMF argument is seductive but irrelevant: stronger currents that never reach the flaw cannot detect it."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II Technique Course §4.0–4.1 (selection of test frequency — relationship of frequency to type of test)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing method — Level II training outline basis",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method (meter frequency practice and specimen-thickness requirements)",
+  "ASME BPVC Section V, Article 8 (eddy current examination of nonferromagnetic heat-exchanger tubing, including calibration-tube requirements)"
+ ]
+}

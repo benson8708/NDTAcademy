@@ -1,0 +1,56 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0B1F3A">Transformer Action in the Eddy Current Test</text>
+
+  <!-- AC source -->
+  <circle cx="130" cy="160" r="26" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="3"/>
+  <path d="M 114 160 Q 122 144 130 160 Q 138 176 146 160" fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <text x="130" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">AC source</text>
+  <text x="130" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">(test frequency)</text>
+
+  <!-- leads from source to coil -->
+  <polyline points="130,134 130,96 366,96 366,118" fill="none" stroke="#0B1F3A" stroke-width="3"/>
+  <polyline points="156,160 252,160 252,252 366,252 366,214" fill="none" stroke="#0B1F3A" stroke-width="3"/>
+
+  <!-- coil (primary) -->
+  <ellipse cx="430" cy="120" rx="64" ry="14" fill="none" stroke="#0B1F3A" stroke-width="4"/>
+  <ellipse cx="430" cy="150" rx="64" ry="14" fill="none" stroke="#0B1F3A" stroke-width="4"/>
+  <ellipse cx="430" cy="180" rx="64" ry="14" fill="none" stroke="#0B1F3A" stroke-width="4"/>
+  <ellipse cx="430" cy="210" rx="64" ry="14" fill="none" stroke="#0B1F3A" stroke-width="4"/>
+  <text x="512" y="148" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">test coil —</text>
+  <text x="512" y="166" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">the primary winding</text>
+
+  <!-- varying flux into the part -->
+  <line x1="400" y1="230" x2="400" y2="312" stroke="#1E66F5" stroke-width="2" stroke-dasharray="5 4"/>
+  <polygon points="394,310 406,310 400,322" fill="#1E66F5"/>
+  <line x1="430" y1="230" x2="430" y2="312" stroke="#1E66F5" stroke-width="2" stroke-dasharray="5 4"/>
+  <polygon points="424,310 436,310 430,322" fill="#1E66F5"/>
+  <line x1="460" y1="230" x2="460" y2="312" stroke="#1E66F5" stroke-width="2" stroke-dasharray="5 4"/>
+  <polygon points="454,310 466,310 460,322" fill="#1E66F5"/>
+  <line x1="478" y1="268" x2="540" y2="268" stroke="#1E66F5" stroke-width="1.5"/>
+  <text x="548" y="262" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">varying magnetic flux</text>
+  <text x="548" y="280" font-family="Arial, sans-serif" font-size="15" fill="#1E66F5">couples across the gap</text>
+
+  <!-- part: top face, front face, side face -->
+  <polygon points="180,350 700,350 740,310 220,310" fill="#9BC4FF" fill-opacity="0.45" stroke="#0B1F3A" stroke-width="2"/>
+  <rect x="180" y="350" width="520" height="70" fill="#0B1F3A"/>
+  <polygon points="700,350 740,310 740,380 700,420" fill="#0B1F3A" fill-opacity="0.75"/>
+
+  <!-- eddy current loops on the top face, under the coil -->
+  <ellipse cx="455" cy="330" rx="66" ry="16" fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <ellipse cx="455" cy="330" rx="46" ry="11" fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <ellipse cx="455" cy="330" rx="26" ry="6" fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="447,337 447,345 459,341" fill="#1E66F5"/>
+  <polygon points="463,315 463,323 451,319" fill="#1E66F5"/>
+  <text x="330" y="284" text-anchor="end" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">induced eddy currents:</text>
+  <text x="330" y="302" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">closed circular loops</text>
+  <line x1="336" y1="298" x2="396" y2="324" stroke="#0B1F3A" stroke-width="1.5"/>
+
+  <!-- part label on front face -->
+  <text x="440" y="392" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">conductive part = one-turn, short-circuited secondary</text>
+
+  <!-- bottom strip -->
+  <rect x="60" y="444" width="680" height="46" rx="8" fill="#9BC4FF" fill-opacity="0.3" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="400" y="463" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">No contact, no couplant — energy couples through the magnetic field</text>
+  <text x="400" y="482" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">anything that disturbs the secondary current loads the primary coil — the basis of every ET signal</text>
+</svg>

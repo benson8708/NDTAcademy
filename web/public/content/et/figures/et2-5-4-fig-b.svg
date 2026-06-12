@@ -1,0 +1,70 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <defs>
+    <marker id="arwE254bB" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#9BC4FF"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">AC Field Strength on a Ferromagnetic Part</text>
+
+  <!-- LEFT PANEL: B-H curve with minor loops -->
+  <text x="220" y="70" text-anchor="middle" font-size="15" fill="#9BC4FF">Minor hysteresis loops on the B–H curve</text>
+
+  <!-- axes -->
+  <line x1="55" y1="285" x2="398" y2="285" stroke="#9BC4FF" stroke-width="2" marker-end="url(#arwE254bB)"/>
+  <line x1="225" y1="465" x2="225" y2="95" stroke="#9BC4FF" stroke-width="2" marker-end="url(#arwE254bB)"/>
+  <text x="393" y="305" text-anchor="end" font-size="14" fill="#FFFFFF">H — field strength (A/m)</text>
+  <text x="240" y="106" font-size="14" fill="#FFFFFF">B — flux density</text>
+
+  <!-- initial magnetization curve, both quadrants -->
+  <path d="M225,285 C 262,278 290,258 305,222 C 316,196 336,178 382,168" fill="none" stroke="#9BC4FF" stroke-width="2.5"/>
+  <path d="M225,285 C 188,292 160,312 145,348 C 134,374 114,392 68,402" fill="none" stroke="#9BC4FF" stroke-width="2.5"/>
+
+  <!-- high-drive fat minor loop sweeping the steep region -->
+  <ellipse cx="225" cy="285" rx="112" ry="22" transform="rotate(-35 225 285)" fill="#1E66F5" fill-opacity="0.25" stroke="#FFFFFF" stroke-width="2"/>
+  <!-- low-drive small lens loop in the initial region -->
+  <ellipse cx="225" cy="285" rx="42" ry="5" transform="rotate(-11 225 285)" fill="#1E66F5" fill-opacity="0.5" stroke="#FFFFFF" stroke-width="2"/>
+
+  <!-- loop labels -->
+  <text x="58" y="236" font-size="13" fill="#FFFFFF">low drive: small minor loop —</text>
+  <text x="58" y="253" font-size="13" fill="#9BC4FF">μ stays near μᵢ, quasi-linear</text>
+  <line x1="168" y1="258" x2="208" y2="277" stroke="#9BC4FF" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <text x="58" y="130" font-size="13" fill="#FFFFFF">high drive: fat loop sweeps</text>
+  <text x="58" y="147" font-size="13" fill="#9BC4FF">the steep region every cycle</text>
+  <line x1="160" y1="153" x2="282" y2="222" stroke="#9BC4FF" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- region tags -->
+  <text x="330" y="200" font-size="13" fill="#9BC4FF">steep region — μ max</text>
+  <text x="382" y="158" text-anchor="end" font-size="13" fill="#9BC4FF">knee — approach to saturation</text>
+  <text x="236" y="302" font-size="13" fill="#9BC4FF">initial (Rayleigh) region</text>
+
+  <!-- RIGHT PANEL: waveforms and harmonic content -->
+  <text x="610" y="70" text-anchor="middle" font-size="15" fill="#9BC4FF">What the coil sees at high drive</text>
+
+  <!-- strip 1: clean sinusoidal drive field -->
+  <text x="450" y="104" font-size="14" fill="#FFFFFF">drive field H(t) — clean sine</text>
+  <line x1="450" y1="160" x2="770" y2="160" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.5"/>
+  <polyline points="450,160.0 454,152.6 458,145.5 462,138.9 466,133.1 470,128.4 474,124.9 478,122.7 482,122.0 486,122.7 490,124.9 494,128.4 498,133.1 502,138.9 506,145.5 510,152.6 514,160.0 518,167.4 522,174.5 526,181.1 530,186.9 534,191.6 538,195.1 542,197.3 546,198.0 550,197.3 554,195.1 558,191.6 562,186.9 566,181.1 570,174.5 574,167.4 578,160.0 582,152.6 586,145.5 590,138.9 594,133.1 598,128.4 602,124.9 606,122.7 610,122.0 614,122.7 618,124.9 622,128.4 626,133.1 630,138.9 634,145.5 638,152.6 642,160.0 646,167.4 650,174.5 654,181.1 658,186.9 662,191.6 666,195.1 670,197.3 674,198.0 678,197.3 682,195.1 686,191.6 690,186.9 694,181.1 698,174.5 702,167.4 706,160.0 710,152.6 714,145.5 718,138.9 722,133.1 726,128.4 730,124.9 734,122.7 738,122.0 742,122.7 746,124.9 750,128.4 754,133.1 758,138.9 762,145.5 766,152.6 770,160.0" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+
+  <!-- strip 2: distorted, peaked induced voltage vs reference sine -->
+  <text x="450" y="232" font-size="14" fill="#FFFFFF">coil signal e(t) — peaked, distorted</text>
+  <line x1="450" y1="290" x2="770" y2="290" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.5"/>
+  <polyline points="450,290.0 458,278.5 466,268.8 474,262.3 482,260.0 490,262.3 498,268.8 506,278.5 514,290.0 522,301.5 530,311.2 538,317.7 546,320.0 554,317.7 562,311.2 570,301.5 578,290.0 586,278.5 594,268.8 602,262.3 610,260.0 618,262.3 626,268.8 634,278.5 642,290.0 650,301.5 658,311.2 666,317.7 674,320.0 682,317.7 690,311.2 698,301.5 706,290.0 714,278.5 722,268.8 730,262.3 738,260.0 746,262.3 754,268.8 762,278.5 770,290.0" fill="none" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <polyline points="450,290.0 454,289.1 458,286.8 462,282.2 466,275.2 470,266.8 474,258.8 478,253.1 482,251.0 486,253.1 490,258.8 494,266.8 498,275.2 502,282.2 506,286.8 510,289.1 514,290.0 518,290.9 522,293.2 526,297.8 530,304.8 534,313.2 538,321.2 542,326.9 546,329.0 550,326.9 554,321.2 558,313.2 562,304.8 566,297.8 570,293.2 574,290.9 578,290.0 582,289.1 586,286.8 590,282.2 594,275.2 598,266.8 602,258.8 606,253.1 610,251.0 614,253.1 618,258.8 622,266.8 626,275.2 630,282.2 634,286.8 638,289.1 642,290.0 646,290.9 650,293.2 654,297.8 658,304.8 662,313.2 666,321.2 670,326.9 674,329.0 678,326.9 682,321.2 686,313.2 690,304.8 694,297.8 698,293.2 702,290.9 706,290.0 710,289.1 714,286.8 718,282.2 722,275.2 726,266.8 730,258.8 734,253.1 738,251.0 742,253.1 746,258.8 750,266.8 754,275.2 758,282.2 762,286.8 766,289.1 770,290.0" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="770" y="246" text-anchor="end" font-size="12" fill="#9BC4FF">dashed: pure sine for comparison</text>
+
+  <!-- strip 3: harmonic spectrum -->
+  <text x="450" y="368" font-size="14" fill="#FFFFFF">harmonic content</text>
+  <text x="650" y="398" font-size="13" fill="#9BC4FF">odd harmonics — third dominant</text>
+  <rect x="510" y="375" width="36" height="80" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="600" y="421" width="36" height="34" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <rect x="690" y="441" width="36" height="14" fill="#1E66F5" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="450" y1="455" x2="770" y2="455" stroke="#9BC4FF" stroke-width="1"/>
+  <text x="528" y="473" text-anchor="middle" font-size="14" fill="#FFFFFF">f</text>
+  <text x="618" y="473" text-anchor="middle" font-size="14" fill="#FFFFFF">3f</text>
+  <text x="708" y="473" text-anchor="middle" font-size="14" fill="#FFFFFF">5f</text>
+
+  <text x="400" y="493" text-anchor="middle" font-size="13" fill="#9BC4FF">Symmetric loop → odd harmonics only; a DC bias or residual field breaks the symmetry and adds even harmonics.</text>
+</svg>

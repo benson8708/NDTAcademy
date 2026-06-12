@@ -1,0 +1,177 @@
+{
+ "lessonId": "et2-4-4",
+ "title": "Skin Effect",
+ "narrationScript": "Every lesson in this module tuned the test frequency for something — test type, noise, phase separation, speed. This closer is the wall those choices trade against: the skin effect. Each layer of eddy current generates a field that opposes the field driving the layer below, so current density fades exponentially with depth. The yardstick is the standard depth of penetration: thirty-seven percent of surface density remains at one delta, five percent at three delta — the effective depth. Delta equals one over the square root of pi, frequency, permeability, conductivity. In shop units, delta in millimeters is six sixty divided by the square root of frequency times relative permeability times conductivity in percent IACS. Run it forward to find your reach. Invert it to derive frequency from a required depth. Keep flaws you must detect inside three standard depths, and flaws you must evaluate near one. The formula assumes an ideal plane wave over thick, flat metal — real probes reach a little less. Plan with delta, then prove the setup on the reference standard your procedure specifies.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Wall Every Frequency Choice Hits",
+   "body": "Three lessons in this module tuned frequency against competing demands — test type, noise, phase discrimination, response speed. This closer is the physics those trades happen inside. The skin effect is not one more factor on the list; it is the hard boundary that decides whether **any current at all** reaches the depth you care about.\n\nThe mechanism is Lenz's law applied layer by layer. The coil's alternating field induces currents in the first layer of metal. Those currents generate their own field, which **opposes the drive field** — so the layer beneath is excited by a weakened field, induces less current, and shields the next layer in turn. Self-shielding compounds smoothly, and the result is an exponential decay of current density with depth:\n\n**J(x) = J₀ · e^(−x/δ)**\n\nNo sharp floor, no cutoff — just a fade governed by one scaling parameter, **δ**, the **standard depth of penetration**. You memorized the milestones at Level I: **37%** (1/e) of surface current density remains at 1δ, **13.5%** at 2δ, and **5%** at 3δ — the **effective depth of penetration**. Level II is about running δ as an engineering number: computing it, inverting it, and defending a frequency selection with it."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-4-4-fig-a",
+   "caption": "Self-shielding makes the fade: each layer of eddy current opposes the field driving the layer below, so density decays as J(x) = J₀·e^(−x/δ) — 37% at 1δ, 13.5% at 2δ, 5% at 3δ, the effective depth of penetration."
+  },
+  {
+   "type": "text",
+   "heading": "One Equation, Run in Both Directions",
+   "body": "**δ = 1/√(π f μ σ)** — frequency, permeability, and conductivity, all under one square root. Unit discipline first, because this is where computed answers go wrong:\n\n- **μ is the absolute permeability**: μ = μ₀ · μᵣ, with μ₀ = 4π × 10⁻⁷ H/m. Forgetting μ₀ is the classic error in SI calculations.\n- **σ is in siemens per meter** in the SI form. Convert: 100 %IACS = 5.8 × 10⁷ S/m.\n\nThe shop-unit forms bury those conversions in one constant:\n\n**δ (mm) ≈ 660/√(f · μᵣ · σ)** and **δ (in) ≈ 26/√(f · μᵣ · σ)** — f in hertz, σ in %IACS.\n\n**Forward — given f, find the reach.** Ti-6Al-4V (σ = 1.0 %IACS, μᵣ = 1) at 200 kHz: δ = 660/√200,000 ≈ **1.48 mm**, so the effective depth 3δ ≈ 4.4 mm. Titanium's low conductivity is exactly why it is so forgiving of penetration problems.\n\n**Inverted — given the required depth, derive f.** Rearranged: **f = (660/δ)²/(μᵣ · σ)**. To place 1δ at a 2.0-mm-deep target in 7075-T6 aluminum (32 %IACS): f = (330)²/32 ≈ **3.4 kHz**.\n\nThe inverted form is the Level II posture: the depth requirement comes out of the part and the procedure, and the frequency is derived from it — never the reverse. And the square root forces coarse moves: to double δ, divide frequency by four; to triple it, divide by nine."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-4-4-fig-b",
+   "caption": "On log-log axes, δ versus frequency is a straight line of slope −½ for every material — two decades of frequency buy one decade of depth. Read it depth-first: needing 1δ = 1.0 mm in 7075-T6 leads straight to about 14 kHz."
+  },
+  {
+   "type": "table",
+   "caption": "Frequency that places one standard depth (1δ) at the listed depth, from f = (660/δ)²/(μᵣ·σ). For detection-only work the flaw may sit out to 3δ, which permits frequencies up to nine times higher than shown. The carbon-steel row uses a representative training permeability — real μᵣ varies widely with alloy, heat treatment, and field strength.",
+   "headers": ["Material (σ %IACS, μᵣ)", "1δ = 0.5 mm", "1δ = 1.0 mm", "1δ = 2.0 mm"],
+   "rows": [
+    ["Copper (100, 1)", "17.4 kHz", "4.4 kHz", "1.1 kHz"],
+    ["7075-T6 aluminum (32, 1)", "54 kHz", "13.6 kHz", "3.4 kHz"],
+    ["304 stainless (2.5, 1)", "697 kHz", "174 kHz", "44 kHz"],
+    ["Ti-6Al-4V titanium (1.0, 1)", "1.74 MHz", "436 kHz", "109 kHz"],
+    ["Carbon steel (10, μᵣ ≈ 100)", "1.7 kHz", "≈440 Hz", "≈110 Hz"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Detection Limit Is Not Evaluation Limit",
+   "body": "The 3δ effective depth is a **detection** ceiling: by 3δ only 5% of the surface current density remains, and a flaw must still disturb that remnant enough to clear the noise. Two refinements separate a Level II from a formula user:\n\n- **Gain is not a depth control.** Beyond 3δ the flaw sits in nearly current-free metal. There is no flaw signal to amplify — the amplifier raises grain noise, lift-off chatter, and the flaw response all in the same proportion. If the depth requirement moves, the frequency moves.\n- **Evaluation wants the flaw near 1δ.** Detection at 3δ may be honest, but depth evaluation leans on phase, and the rotation observed at the coil accumulates at roughly **2x/δ** — about 115° per standard depth of flaw depth, because the field lags going down and the disturbance lags again coming back. A flaw near 3δ returns a signal rotated ≈344°, nearly a full wrap, with its amplitude down in the grass. Near 1δ, current density is strong and the ≈115° rotation is wide open for discrimination.\n\nThat spread gives a working rule worth memorizing: the frequency that places a flaw at 1δ for solid evaluation is **nine times lower** than the frequency that barely keeps the same flaw inside 3δ for detection — depth ratio 3, frequency ratio 3² = 9. Whether the procedure says *detect* or *evaluate* moves your frequency by nearly a decade."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "δ is a planning number — the plane-wave fine print",
+   "body": "The δ equation is derived for a **uniform plane wave** entering a **flat, thick, homogeneous** conductor. Real tests bend every assumption. A practical coil's field diverges and weakens with distance, so true penetration runs **somewhat shallower** than the computed δ — and a small-diameter probe loses its field within a distance comparable to its own diameter, a limit no frequency can buy back. Sections thinner than about 3δ let the currents interact with the far surface — which is exactly how far-side corrosion and thickness response work, and why reference standards must match part material, thickness, and geometry. Compute δ to plan the test; **prove the response on the reference standard your written procedure specifies** before any part is examined."
+  },
+  {
+   "type": "text",
+   "heading": "Working the Limit: Stack-Ups, Tube Walls, Steel",
+   "body": "**Layered aerospace structure.** Count the metal path before choosing frequency. A riveted lap joint of two 2.0-mm 7075-T6 skins puts faying-surface and second-layer cracking 2 to 4 mm down. At 200 kHz, 3δ ≈ 0.8 mm — the test never leaves the first skin. Invert the equation for the deepest flaw: at 5 kHz, δ ≈ 1.65 mm and 3δ ≈ 5 mm, and the whole stack is inside reach. Sealant and adhesive carry no current — they add depth without adding signal.\n\n**Tubing.** With a bobbin coil inside a nonmagnetic tube, the far (OD) surface *is* the subsurface. The working condition keeps the wall on the order of **one standard depth**: OD current density stays near 37%, and the through-wall phase spread (≈2t/δ ≈ 115°) cleanly separates ID-origin from OD-origin signals. Run δ ≪ t and OD flaws fall below the 5% floor; run δ ≫ t and every depth answers at nearly the same phase angle — the phase-compression problem from the previous lesson.\n\n**Ferromagnetic steel.** With μᵣ in the hundreds, δ collapses — about 0.07 mm at 100 kHz for σ ≈ 10 %IACS, μᵣ ≈ 100. Dropping to very low frequency grows δ on paper, but induction itself weakens as frequency falls, and point-to-point permeability variation keeps swinging the signal harder than flaws do. The real fixes are **magnetic saturation** — drive μᵣ toward 1, the basis of ASTM E309 tube practice — or a different method entirely. And a flaw many millimeters deep in any alloy belongs to ultrasonics, not to a heroic frequency."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-4-4-fig-c",
+   "caption": "Two everyday penetration problems: a riveted lap joint where only low kilohertz reaches second-layer cracking, and a nonmagnetic tube wall held near one standard depth so the OD surface keeps strong current density and a usable through-wall phase spread."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-4-4-fig-a",
+   "title": "Self-shielding and the exponential fade",
+   "file": "et2-4-4-fig-a.svg"
+  },
+  {
+   "id": "et2-4-4-fig-b",
+   "title": "Standard depth versus frequency — the selection chart",
+   "file": "et2-4-4-fig-b.svg"
+  },
+  {
+   "id": "et2-4-4-fig-c",
+   "title": "Applying the limit: lap joints and tube walls",
+   "file": "et2-4-4-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Move the Dial — or Don't: Seven Penetration Calls",
+  "intro": "Seven field situations. Decide whether the fix is a lower frequency, a higher frequency, or something the frequency dial cannot deliver. Tools: δ (mm) ≈ 660/√(f · μᵣ · σ %IACS), detection floor ≈ 3δ, through-wall phase spread ≈ 2t/δ.",
+  "buckets": [
+   "Lower the frequency",
+   "Raise the frequency",
+   "Frequency alone cannot fix it"
+  ],
+  "items": [
+   {
+    "label": "Second-layer cracking 2.5–4 mm down in a riveted aluminum lap joint — current setup 200 kHz (3δ ≈ 0.8 mm)",
+    "bucket": 0,
+    "why": "Detection requires the flaw inside about 3δ. Dropping into the low kilohertz grows δ from 0.26 mm toward 1.5–2 mm, putting real current in the second layer. No gain setting substitutes."
+   },
+   {
+    "label": "OD pits keep getting missed on nonmagnetic heat-exchanger tubing while ID notches respond strongly — the wall is about 3δ thick at the present frequency",
+    "bucket": 0,
+    "why": "With the wall at ~3δ, OD current density sits near the 5% floor and the round-trip rotation nearly wraps a full turn. Lower the frequency until the wall is on the order of one standard depth."
+   },
+   {
+    "label": "A flaw computed to lie at 4δ shows nothing on screen even at maximum gain",
+    "bucket": 0,
+    "why": "At 4δ, less than 2% of the surface current density remains. Amplification raises signal and noise in the same proportion — only growing δ puts current at the flaw."
+   },
+   {
+    "label": "0.2-mm-deep surface fatigue cracks in a Ti-6Al-4V fitting respond weakly at 50 kHz",
+    "bucket": 1,
+    "why": "At 50 kHz in titanium (1.0 %IACS), δ ≈ 3 mm — the current is diluted through a layer fifteen times deeper than the crack. Raising the frequency toward the megahertz range concentrates current where the crack actually is."
+   },
+   {
+    "label": "On thin-wall tubing, signals from shallow and deep wall flaws bunch together at nearly the same phase angle",
+    "bucket": 1,
+    "why": "Phase spread across the wall is roughly 2t/δ. When δ is much larger than the wall, every depth answers at almost the same angle — raise the frequency until the wall spans about one δ and the spread opens toward 115°."
+   },
+   {
+    "label": "Subsurface evaluation is required in an unsaturated carbon-steel part, and permeability noise swamps the display at every frequency tried",
+    "bucket": 2,
+    "why": "μᵣ in the hundreds collapses δ and varies point to point, swinging the signal harder than flaws do. The fixes are magnetic saturation or a different method — not the frequency dial."
+   },
+   {
+    "label": "A forging review asks for characterization of a flaw 12 mm deep in thick aluminum",
+    "bucket": 2,
+    "why": "Reaching 12 mm takes frequencies down near a few hundred hertz, where induction is weak, small-flaw sensitivity is poor, and a practical surface coil's field has spread and faded long before that depth. Deep volumetric characterization belongs to ultrasonics."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Using δ (mm) ≈ 660/√(f · μᵣ · σ), the standard depth of penetration in 304 stainless steel (σ = 2.5 %IACS, μᵣ = 1) at 400 kHz is about:",
+   "options": ["0.21 mm", "1.32 mm", "0.66 mm", "2.09 mm"],
+   "correct": 2,
+   "explanation": "f · μᵣ · σ = 400,000 × 1 × 2.5 = 1.0 × 10⁶, whose square root is 1,000, so δ = 660/1,000 = 0.66 mm. The 1.32 mm option is the 100 kHz answer, and 0.21 and 2.09 mm are decade slips from mishandling the square root."
+  },
+  {
+   "question": "In the SI form δ = 1/√(π f μ σ), the permeability term μ is:",
+   "options": [
+    "The relative permeability μᵣ by itself, a dimensionless ratio",
+    "The absolute permeability — μ₀ × μᵣ, in henries per meter",
+    "The permeability of free space μ₀ alone, for every material",
+    "The permeability of the probe's ferrite core"
+   ],
+   "correct": 1,
+   "explanation": "μ is the absolute permeability μ₀·μᵣ = 4π × 10⁻⁷ × μᵣ H/m; omitting μ₀ wrecks the units and the answer. The shop constant 660 already folds in μ₀ and the %IACS conversion, which is why only μᵣ appears in that form. The probe core shapes the coil's field, not the part's skin depth."
+  },
+  {
+   "question": "A procedure must detect corrosion no deeper than 1.8 mm in 2024-T3 aluminum (σ = 30 %IACS, μᵣ = 1). Keeping that full depth within the effective depth of penetration (3δ), the highest usable test frequency is about:",
+   "options": ["40 kHz", "4.5 kHz", "120 kHz", "360 kHz"],
+   "correct": 0,
+   "explanation": "Detection requires δ ≥ 1.8/3 = 0.6 mm, so f = (660/0.6)²/30 ≈ 40 kHz. The 4.5 kHz option places 1δ at 1.8 mm — the better choice for evaluation, but not the maximum. Anything above 40 kHz leaves the deepest corrosion beyond 3δ."
+  },
+  {
+   "question": "Raising the gain cannot substitute for lowering the frequency when a flaw lies beyond 3δ because:",
+   "options": [
+    "Gain controls only the horizontal axis of the impedance-plane display",
+    "High gain shifts the operating point along the conductivity curve",
+    "The phase lag at 3δ reverses the signal polarity, which gain cannot correct",
+    "Almost no current crosses the flaw, so there is essentially no flaw signal to amplify — gain raises signal and noise together"
+   ],
+   "correct": 3,
+   "explanation": "Beyond 3δ less than 5% of the surface current density remains and it keeps falling exponentially. An amplifier multiplies whatever exists — flaw response and noise in the same proportion — and creates nothing. Only growing δ, by lowering frequency, puts usable current at the flaw."
+  },
+  {
+   "question": "An internal bobbin coil must examine the full 1.3-mm wall of a nonmagnetic alloy tube, including the far (OD) surface. The soundest frequency reasoning is:",
+   "options": [
+    "Set the frequency so the wall is on the order of one standard depth — OD current density stays near 37% and the through-wall phase spread (≈2t/δ ≈ 115°) separates ID from OD signals",
+    "Set the frequency so δ is about one-tenth of the wall thickness, to maximize sensitivity",
+    "Set the frequency so δ is several times the wall thickness, to maximize phase separation",
+    "Any frequency works, because a bobbin coil drives current through the full wall regardless of skin effect"
+   ],
+   "correct": 0,
+   "explanation": "Wall ≈ 1δ keeps the OD inside the strong-current zone with a ~115° through-wall rotation — wide enough to discriminate depth without wrapping. With δ = t/10 the OD current is e⁻¹⁰ of the surface value, effectively zero; with δ ≫ t the phase spread 2t/δ collapses and all depths answer alike. Skin effect applies to every coil geometry."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Topical Outlines — ECT Level II course §4.2.6 (selection of test frequency: skin effect)",
+  "ASNT SNT-TC-1A (2024) — recommended practice governing ET Level II training, qualification, and certification",
+  "ASTM E1316 — Standard Terminology for Nondestructive Examinations (standard depth of penetration and related electromagnetic testing terms)",
+  "ASTM E309 — eddy current examination of steel tubular products using magnetic saturation (the working response to permeability-collapsed penetration in ferromagnetic tubes)"
+ ]
+}

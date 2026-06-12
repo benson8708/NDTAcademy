@@ -1,0 +1,76 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">DC Saturation: Switching Off Permeability</text>
+
+  <!-- ============ LEFT: B-H CURVE ============ -->
+  <text x="40" y="60" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">THE B-H CURVE — bias point decides the noise</text>
+  <!-- axes -->
+  <line x1="70" y1="80" x2="70" y2="345" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="70" y1="345" x2="380" y2="345" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="80" y="92" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">B (flux density)</text>
+  <text x="378" y="338" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">H (magnetizing force)</text>
+  <!-- magnetization curve -->
+  <path d="M 70 345 C 95 340, 108 290, 128 225 C 148 165, 180 122, 220 102 C 258 88, 320 84, 376 82" fill="none" stroke="#0B1F3A" stroke-width="3"/>
+  <!-- P1: unsaturated bias point on steep slope -->
+  <circle cx="128" cy="225" r="6" fill="#1E66F5"/>
+  <line x1="117" y1="255" x2="140" y2="196" stroke="#1E66F5" stroke-width="2"/>
+  <polygon points="142,191 134,196 141,201" fill="#1E66F5"/>
+  <polygon points="115,260 123,255 116,250" fill="#1E66F5"/>
+  <text x="152" y="222" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">unsaturated bias: steep, variable</text>
+  <text x="152" y="240" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">slope — incremental μr is large</text>
+  <text x="152" y="258" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">and differs point to point = noise</text>
+  <!-- P2: saturated bias point on flat top -->
+  <circle cx="310" cy="84" r="6" fill="#1E66F5"/>
+  <line x1="286" y1="90" x2="336" y2="83" stroke="#1E66F5" stroke-width="2"/>
+  <polygon points="341,82 333,78 334,87" fill="#1E66F5"/>
+  <polygon points="281,91 289,95 288,86" fill="#1E66F5"/>
+  <text x="210" y="122" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">saturated bias: slope ≈ μ0,</text>
+  <text x="210" y="140" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">incremental μr ≈ 1 — alike</text>
+  <text x="210" y="158" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">everywhere = noise off</text>
+  <!-- DC bias arrow along H axis -->
+  <line x1="70" y1="362" x2="296" y2="362" stroke="#1E66F5" stroke-width="3"/>
+  <polygon points="296,356 296,368 308,362" fill="#1E66F5"/>
+  <text x="185" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">strong DC bias H</text>
+
+  <!-- ============ RIGHT: TUBE + WINDINGS ============ -->
+  <text x="420" y="60" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">SATURATING WINDING ON A STEEL TUBE</text>
+  <!-- tube walls (side view) -->
+  <rect x="420" y="92" width="350" height="20" fill="#9BC4FF" fill-opacity="0.35" stroke="#0B1F3A" stroke-width="2"/>
+  <rect x="420" y="156" width="350" height="20" fill="#9BC4FF" fill-opacity="0.35" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="764" y="171" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">steel tube</text>
+  <!-- DC saturating winding turns -->
+  <g fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5">
+    <circle cx="455" cy="80" r="8"/><circle cx="485" cy="80" r="8"/><circle cx="515" cy="80" r="8"/><circle cx="545" cy="80" r="8"/>
+    <circle cx="455" cy="188" r="8"/><circle cx="485" cy="188" r="8"/><circle cx="515" cy="188" r="8"/><circle cx="545" cy="188" r="8"/>
+  </g>
+  <text x="500" y="214" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">DC saturating winding</text>
+  <!-- AC test coil -->
+  <g fill="#FFFFFF" stroke="#1E66F5" stroke-width="2.5">
+    <circle cx="660" cy="84" r="5"/><circle cx="678" cy="84" r="5"/>
+    <circle cx="660" cy="184" r="5"/><circle cx="678" cy="184" r="5"/>
+  </g>
+  <text x="669" y="214" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">AC test coil</text>
+  <!-- axial DC flux arrow in bore -->
+  <text x="515" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">axial DC flux</text>
+  <line x1="440" y1="136" x2="598" y2="136" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="598,130 598,142 610,136" fill="#1E66F5"/>
+
+  <!-- ============ RIGHT: BEFORE/AFTER STRIPS ============ -->
+  <text x="420" y="240" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">THE PAYOFF ON THE DISPLAY</text>
+  <!-- unsaturated strip -->
+  <rect x="420" y="250" width="350" height="58" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+  <polyline fill="none" stroke="#1E66F5" stroke-width="2" points="424,280 436,258 448,296 460,266 472,302 484,272 496,254 508,290 520,300 532,262 544,252 556,284 568,298 580,270 592,256 604,288 616,300 628,274 640,258 652,292 664,302 676,268 688,254 700,286 712,296 724,270 736,260 748,282 766,278"/>
+  <rect x="424" y="254" width="262" height="18" fill="#FFFFFF" opacity="0.9"/>
+  <text x="428" y="268" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">unsaturated — noise buries the notch</text>
+  <!-- saturated strip -->
+  <rect x="420" y="326" width="350" height="58" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+  <polyline fill="none" stroke="#1E66F5" stroke-width="2" points="424,360 448,359 472,361 496,358 520,360 544,359 566,361 582,358 590,352 598,334 604,372 610,380 616,366 624,361 648,358 672,360 696,359 720,361 744,359 766,360"/>
+  <rect x="600" y="364" width="166" height="18" fill="#FFFFFF" opacity="0.9"/>
+  <text x="762" y="378" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">saturated — notch clear</text>
+
+  <!-- ============ FOOTNOTE ============ -->
+  <rect x="40" y="410" width="720" height="78" rx="8" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="400" y="434" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">Saturation also restores penetration — carbon steel at 10 kHz:</text>
+  <text x="400" y="454" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">δ ≈ 0.21 mm unsaturated (μr ≈ 100)  →  δ ≈ 2.1 mm saturated (μr ≈ 1)</text>
+  <text x="400" y="476" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">Prove it: raise the DC until noise stops falling and reference signals hold steady.</text>
+</svg>

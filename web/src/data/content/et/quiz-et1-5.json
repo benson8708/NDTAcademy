@@ -1,0 +1,115 @@
+{
+ "moduleId": "et1-5",
+ "questions": [
+  {
+   "question": "A written technique for surface-probe inspection of a wing skin specifies the scan index — the step between adjacent passes. To avoid leaving untested stripes of material, the index must be:",
+   "options": [
+    "smaller than the coil's effective width",
+    "equal to exactly twice the coil diameter",
+    "larger than the longest crack expected in the part",
+    "chosen by the operator to match the time available"
+   ],
+   "correct": 0,
+   "explanation": "A surface probe inspects only its small footprint, so area coverage is built from overlapping passes. If the step between passes exceeds the coil's effective width, stripes of the part are never interrogated — which is why the index and required overlap are written into the technique, not left to convenience."
+  },
+  {
+   "question": "Lift-off is the coupling variable for a surface probe. For encircling and inside (bobbin) coils, the equivalent coupling variable is:",
+   "options": [
+    "edge effect",
+    "fill factor — the square of the ratio of the two diameters, (d/D)²",
+    "standard depth of penetration",
+    "magnetic permeability"
+   ],
+   "correct": 1,
+   "explanation": "Fill factor expresses how snugly coil and part match: for an encircling coil it is (part diameter / effective coil diameter)², and for a bobbin coil (probe diameter / tube inside diameter)². A fill factor near 1 couples strongly; a loose fit trades signal for clearance, just as lift-off does for a surface probe."
+  },
+  {
+   "question": "During encircling-coil inspection of bar stock at line speed, the extreme ends of each bar are not reliably tested because:",
+   "options": [
+    "eddy current density falls to zero at the surface of the bar ends",
+    "the fill factor rises above 1.0 as each end passes through",
+    "the ends travel through the coil too fast for the instrument to respond",
+    "the field distorts as a bar end enters or leaves the coil — the end effect"
+   ],
+   "correct": 3,
+   "explanation": "As an end enters or leaves the coil the field is no longer surrounded by uniform material and distorts, producing unreliable response. Procedures address this by cropping the ends or covering them with supplementary inspection. (Current density is zero at the center of solid bar, not at the surface, and fill factor cannot exceed 1.)"
+  },
+  {
+   "question": "A surface probe drives eddy currents in circular loops parallel to the test surface. Which discontinuity is this arrangement LEAST suited to detect?",
+   "options": [
+    "A short fatigue crack breaking the surface directly under the coil",
+    "A surface crack oriented at an odd angle to the scan direction",
+    "A laminar flaw lying parallel to the surface",
+    "A crack at the toe of a ground weld on flat plate"
+   ],
+   "correct": 2,
+   "explanation": "The orientation rule: a flaw signals in proportion to how strongly it cuts the induced current paths. A laminar flaw parallel to the surface runs parallel to the circular loops and barely interrupts them, so it responds poorly. A surface-breaking crack at almost any orientation under the coil crosses the loops and signals strongly."
+  },
+  {
+   "question": "Self-comparison differential probes hold a steady baseline through shift-long temperature changes because:",
+   "options": [
+    "the instrument automatically re-nulls the display at fixed intervals",
+    "temperature changes appear under both coils at nearly the same value, and the instrument reports only the difference between them",
+    "the opposing windings prevent eddy currents from forming in the part",
+    "thermal effects change only the resistive component, which differential circuits do not measure"
+   ],
+   "correct": 1,
+   "explanation": "The two coils are wound in series opposition, so anything common to both — thermal drift, slow dimensional or conductivity change — cancels to null. An absolute coil, measured against a fixed internal reference, has no such common-mode rejection, which is why absolute channels need periodic re-nulling."
+  },
+  {
+   "question": "In the differential configuration used by comparator bridges for metal sorting, the second coil is placed:",
+   "options": [
+    "on a separate known-good reference standard, so the output shows any difference between the test piece and that standard",
+    "around the test piece at ninety degrees to the first coil",
+    "a fixed distance behind the first coil on the same part",
+    "inside a magnetic shield so it senses no field at all"
+   ],
+   "correct": 0,
+   "explanation": "This is the external-reference differential: instead of comparing two adjacent spots on the same part (self-comparison), the second coil sits on a known-good standard, and the bridge output reports any deviation of the test article from that standard — the basis of metal-sorting comparators."
+  },
+  {
+   "question": "Which statement about the hybrid through-transmission configuration is correct?",
+   "options": [
+    "It requires access to only one surface, which makes it ideal for installed structures",
+    "Its driver and pickup are wound in series opposition on a single bobbin",
+    "A driver on one face of a thin sheet excites the part while a pickup on the opposite face senses the field crossing the wall",
+    "It measures the impedance of the excitation coil rather than an induced voltage"
+   ],
+   "correct": 2,
+   "explanation": "Through-transmission splits drive from sense across the part: eddy currents induced in the wall attenuate the field reaching the far-side pickup, so the received signal reads the material between the coils. It demands two-side access and works only on sections thin enough for the field to penetrate — and like all hybrids, it reads the pickup's induced voltage, not drive-coil impedance."
+  },
+  {
+   "question": "Conventional eddy current probes operating at mid and high test frequencies remain coil-based mainly because:",
+   "options": [
+    "above the crossover frequency, a coil's induced voltage — which rises in proportion to frequency — delivers more signal than a comparable Hall element",
+    "Hall elements cannot respond to alternating magnetic fields at all",
+    "coils read flux density directly, while Hall elements respond only to changing flux",
+    "Hall elements function only on ferromagnetic test parts"
+   ],
+   "correct": 0,
+   "explanation": "For the same field, coil output is proportional to frequency while a Hall element's response is flat from DC to roughly 100 kHz. The two trade places at a crossover frequency: below it the Hall element gives better signal-to-noise, above it the rising coil output wins — which is exactly where conventional probes operate. Option C states the relationship backwards."
+  },
+  {
+   "question": "Compared with a wound sensing coil, the practical burdens of a Hall element include that it:",
+   "options": [
+    "cannot be packaged into high-resolution detector arrays",
+    "loses sensitivity rapidly as the element is made smaller",
+    "produces an output only while the probe is moving",
+    "needs a regulated drive current, amplification of its millivolt output, and temperature compensation"
+   ],
+   "correct": 3,
+   "explanation": "A Hall element is an active device: without drive current there is no Hall voltage, its raw output is millivolt-level, and it drifts with temperature unless compensated — and the semiconductor die is less rugged than a wound coil. Smallness is actually its strength (sub-millimeter elements keep full sensitivity, enabling arrays), and motion-dependence is the coil's trait, not the Hall element's."
+  },
+  {
+   "question": "Which pairing of inspection task and sensing element is correct?",
+   "options": [
+    "Condenser tubes in an installed heat-exchanger bundle — encircling coil around each tube",
+    "Copper wire screened continuously at the drawing line — bobbin coil pulled through the wire",
+    "Second- and third-layer cracks at lap-joint fastener holes, tested at low frequency — Hall-element detection",
+    "Verifying the strength of a static magnetizing field — a sensing coil held stationary in the field"
+   ],
+   "correct": 2,
+   "explanation": "Deep multilayer work needs low frequency for penetration, and there a Hall detector keeps full sensitivity while a coil's output collapses — the classic lap-joint application. Installed tubes offer only bore access (bobbin, not encircling); solid wire has no bore (encircling, not bobbin); and a stationary coil in a static field reads zero — measuring static fields is Hall-element (gaussmeter) territory."
+  }
+ ]
+}

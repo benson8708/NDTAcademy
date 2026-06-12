@@ -1,0 +1,77 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0B1F3A">Channel Gain: One Notch, Three Settings</text>
+
+  <!-- panel headers -->
+  <text x="140" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">gain 34 dB</text>
+  <text x="400" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">gain 46 dB</text>
+  <text x="660" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">gain 58 dB</text>
+
+  <!-- ============ SCREEN 1: too little gain ============ -->
+  <rect x="30" y="84" width="220" height="230" rx="8" fill="#0B1F3A"/>
+  <line x1="140" y1="92" x2="140" y2="306" stroke="#9BC4FF" stroke-width="1" opacity="0.3"/>
+  <line x1="40" y1="199" x2="240" y2="199" stroke="#9BC4FF" stroke-width="1" opacity="0.3"/>
+  <!-- noise envelope -->
+  <ellipse cx="180" cy="284" rx="6" ry="4" fill="none" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <!-- lift-off trace -->
+  <line x1="48" y1="284" x2="180" y2="284" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="84" y="272" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">lift-off</text>
+  <!-- tiny notch lobe (20% FSH) -->
+  <path d="M 180 284 Q 162 262 156 244 Q 168 264 180 284" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <circle cx="180" cy="284" r="5" fill="#FFFFFF"/>
+  <text x="140" y="338" text-anchor="middle" font-family="Arial, sans-serif" font-size="14.5" fill="#0B1F3A">20% FSH &#8212; easy to miss</text>
+  <text x="140" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">sits below the alarm gate</text>
+
+  <!-- +12 dB arrow 1 -->
+  <text x="270" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">+12</text>
+  <text x="270" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">dB</text>
+  <line x1="253" y1="206" x2="277" y2="206" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="277,200 287,206 277,212" fill="#1E66F5"/>
+
+  <!-- ============ SCREEN 2: correct gain ============ -->
+  <rect x="290" y="84" width="220" height="230" rx="8" fill="#0B1F3A"/>
+  <line x1="400" y1="92" x2="400" y2="306" stroke="#9BC4FF" stroke-width="1" opacity="0.3"/>
+  <line x1="300" y1="199" x2="500" y2="199" stroke="#9BC4FF" stroke-width="1" opacity="0.3"/>
+  <!-- 80% FSH guide -->
+  <line x1="302" y1="124" x2="498" y2="124" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="462" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">80% FSH</text>
+  <!-- noise envelope -->
+  <ellipse cx="440" cy="284" rx="24" ry="12" fill="none" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <!-- lift-off trace -->
+  <line x1="308" y1="284" x2="440" y2="284" stroke="#FFFFFF" stroke-width="2.5"/>
+  <!-- notch lobe at 80% FSH -->
+  <path d="M 440 284 Q 418 224 404 124 Q 426 226 440 284" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <circle cx="440" cy="284" r="5" fill="#FFFFFF"/>
+  <text x="400" y="338" text-anchor="middle" font-family="Arial, sans-serif" font-size="14.5" fill="#0B1F3A">80% FSH &#8212; set per procedure</text>
+  <text x="400" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">peak fully on screen</text>
+
+  <!-- +12 dB arrow 2 -->
+  <text x="530" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">+12</text>
+  <text x="530" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">dB</text>
+  <line x1="513" y1="206" x2="537" y2="206" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="537,200 547,206 537,212" fill="#1E66F5"/>
+
+  <!-- ============ SCREEN 3: too much gain ============ -->
+  <rect x="550" y="84" width="220" height="230" rx="8" fill="#0B1F3A"/>
+  <line x1="660" y1="92" x2="660" y2="306" stroke="#9BC4FF" stroke-width="1" opacity="0.3"/>
+  <line x1="560" y1="199" x2="760" y2="199" stroke="#9BC4FF" stroke-width="1" opacity="0.3"/>
+  <!-- noise envelope, grown by the same factor -->
+  <ellipse cx="700" cy="284" rx="56" ry="24" fill="none" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <text x="728" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">noise</text>
+  <!-- lift-off trace -->
+  <line x1="568" y1="284" x2="700" y2="284" stroke="#FFFFFF" stroke-width="2.5"/>
+  <!-- clipped lobe -->
+  <path d="M 700 284 C 692 218 686 140 681 92 L 653 92 C 658 165 670 240 694 284" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <circle cx="700" cy="284" r="5" fill="#FFFFFF"/>
+  <text x="660" y="338" text-anchor="middle" font-family="Arial, sans-serif" font-size="14.5" fill="#0B1F3A">clipped at screen top</text>
+  <text x="660" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">amplitude &amp; phase unreadable</text>
+
+  <!-- ============ dB arithmetic strip ============ -->
+  <text x="400" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">decibel arithmetic for amplitude</text>
+  <rect x="85" y="416" width="170" height="42" rx="21" fill="#9BC4FF" fill-opacity="0.35" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="170" y="443" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">+6 dB = &#215;2</text>
+  <rect x="315" y="416" width="170" height="42" rx="21" fill="#9BC4FF" fill-opacity="0.35" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="400" y="443" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">+12 dB = &#215;4</text>
+  <rect x="545" y="416" width="170" height="42" rx="21" fill="#9BC4FF" fill-opacity="0.35" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="630" y="443" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">+20 dB = &#215;10</text>
+</svg>

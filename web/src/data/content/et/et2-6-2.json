@@ -1,0 +1,191 @@
+{
+ "lessonId": "et2-6-2",
+ "title": "Phase Detection",
+ "narrationScript": "Everything the coil knows comes back as one carrier at the test frequency, and the information rides on two properties: its amplitude, and its phase relative to the oscillator driving it. Early instruments rectified the signal and kept amplitude alone, which collapsed lift-off, conductivity, and cracks onto a single meter reading. Phase detection keeps both. The instrument multiplies the amplified coil signal by a reference from its own oscillator and low-pass filters the product, leaving a DC voltage proportional to amplitude times the cosine of the phase angle. A second detector uses a reference shifted ninety degrees and reads the sine component. Those two voltages, X and Y, drive the horizontal and vertical deflection of the screen, so the flying dot is simply the head of the signal vector. The phase rotation control turns the whole pattern about the null without changing amplitudes or separations. Use it to set conventions: lift-off horizontal for surface work, the through-wall hole near forty degrees for tubing. Real separation comes from frequency, not the knob.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "One Carrier, Two Pieces of Information",
+   "body": "Everything the test coil knows comes back to the instrument as a single AC voltage at the test frequency — a **carrier**. When the probe passes a crack, or lift-off changes, or conductivity shifts, that carrier changes in exactly two ways: its **amplitude** changes, and its **phase** shifts relative to the oscillator driving the coil. Both quantities carry information — and they carry *different* information.\n\nEarly eddy current instruments — the simple meter and resonance designs of the 1940s and 50s — rectified the coil voltage and displayed its magnitude on a meter. That is **amplitude detection**, and it throws the phase away. The consequence is fatal for discrimination: lift-off, conductivity change, wall thinning, and cracks all collapse onto one number, and a wobble of the probe becomes indistinguishable from a defect.\n\nYou already know from impedance-plane theory that these variables move the operating point in **different directions**. Direction on the plane *is* phase. An instrument that preserves phase can therefore separate variables that an amplitude meter never could. The circuit that does it is the **phase-sensitive detector** — also called a synchronous or coherent detector — and it is the heart of every impedance-plane instrument you will operate."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-6-2-fig-a",
+   "caption": "Inside the instrument: the amplified coil signal is multiplied by two references from the same oscillator — one in phase, one shifted 90° — and low-pass filtered, yielding the DC pair X = A·cos θ and Y = A·sin θ that drives the display."
+  },
+  {
+   "type": "text",
+   "heading": "Multiply, Then Filter: How the Detector Works",
+   "body": "The phase-sensitive detector does two things: it **multiplies** the amplified coil signal by a **reference signal** taken from the instrument's own oscillator, and it **low-pass filters** the product.\n\nWrite the amplified coil signal as A·sin(ωt + θ) — amplitude A, phase θ measured against the reference sin(ωt). The multiplication produces exactly two terms:\n\n- a **DC term** proportional to **A·cos θ** — steady as long as the signal is steady, and\n- a **double-frequency (2f) term** swinging at twice the test frequency.\n\nThe low-pass filter strips the 2f term, leaving a clean DC voltage proportional to A·cos θ. Because the reference comes from the **same oscillator** that drives the coil, the comparison is coherent: θ is a true, stable phase difference, not a drifting one.\n\nOne detector is not enough. An output of A·cos θ confounds the two quantities — a strong signal at 80° and a weak signal at 20° can produce the same voltage. The fix is a **second detector** fed the same coil signal but a reference shifted by **90°**; its filtered output is proportional to **A·sin θ**. The pair — **quadrature detection** — pins the signal down completely. Modern digital instruments sample the carrier and perform the same multiplication numerically; the mathematics, and the result, are identical. One design consequence to bank for the next lesson: the low-pass filter's bandwidth sets how fast the outputs can follow a moving probe."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Two outputs, the complete vector",
+   "body": "X = A·cos θ and Y = A·sin θ. From that pair, everything is recoverable: **amplitude A = √(X² + Y²)** and **phase θ = arctan(Y/X)**. Nothing the coil reported is lost. Every signal you will ever evaluate on an impedance-plane display is this vector, drawn from the null point."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-6-2-fig-b",
+   "caption": "The detector outputs are the projections of the signal vector: X = A·cos θ horizontally, Y = A·sin θ vertically. Amplitude and phase are recovered as A = √(X² + Y²) and θ = arctan(Y/X)."
+  },
+  {
+   "type": "text",
+   "heading": "Drawing the Impedance Plane, One Dot at a Time",
+   "body": "Connect the two detector outputs to the display — **X to horizontal deflection, Y to vertical** — and the impedance-plane display builds itself. The flying dot sits at the head of the signal vector, and as the probe passes a discontinuity the dot sweeps out the looping trace you evaluate.\n\nTwo details matter for interpretation:\n\n- **The null comes first.** Balancing the bridge on a chosen reference condition forces X = Y = 0 and parks the dot at the null point. From that moment the display shows **changes** from the balance condition, not absolute impedance. Everything you evaluate is a departure from normal — which is exactly what you want, because that is what a flaw is.\n- **The screen is a voltage analog of the impedance plane.** The deflections are detector voltages proportional to the change in coil impedance (or, for driver–pickup probes, in induced voltage). For the small changes of normal testing, the display geometry corresponds to the impedance-plane diagrams you studied: the lift-off direction, the conductivity locus, and flaw responses keep the same relationships.\n\nThe same X and Y channels do more than paint the screen. They feed the **strip-chart recorders** in tube testing (X and Y each plotted against time), the **alarm gates** drawn on the plane, and the recorded data an analyst reviews later. In a multifrequency instrument, every frequency channel carries its **own pair of phase detectors**."
+  },
+  {
+   "type": "text",
+   "heading": "Phase Rotation: Choosing the Orientation",
+   "body": "The phase angle the detector measures is referenced to the instrument's internal oscillator — and that reference is, by itself, **arbitrary**. Cable length, probe winding sense, and bridge components all add fixed phase shifts, so the raw orientation of the display pattern means nothing until you set it deliberately.\n\nThat is the job of the **phase rotation control**. It inserts an adjustable phase shift into the reference — equivalently, it remixes X and Y mathematically — which **rotates the entire pattern rigidly about the null point**. Three facts define the control:\n\n- **Everything turns together.** Lift-off, flaw signals, structure signals — all rotate by the same angle.\n- **Nothing else changes.** Amplitudes are preserved, and so is the angular separation between any two signals.\n- **Separation is physics, not display.** The angle between lift-off and a crack response is set by test frequency, conductivity, permeability, and geometry. If two variables overlap on the plane, no amount of rotation will split them — that is a frequency and probe-selection problem.\n\nStandard orientations make patterns comparable between instruments, operators, and days. Surface work commonly sets the **lift-off trace horizontal**, so crack signals break upward and probe wobble stays out of a vertical alarm gate. Tubing procedures — for example, those based on ASME Section V, Article 8 — commonly set the differential bobbin signal from the **through-wall calibration hole to approximately 40°** from horizontal at the prime frequency. With that convention fixed, the **phase-angle-versus-depth curve** built from the calibration standard lets you estimate the depth of partial-wall indications: phase lag through the wall is what makes depth appear as display angle, and rotation simply puts that scale in its agreed position."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-6-2-fig-c",
+   "caption": "Rotating the reference phase turns lift-off and flaw signals together about the null. Amplitudes and the angle between signals are preserved — only the orientation convention changes."
+  },
+  {
+   "type": "table",
+   "caption": "The setup controls of an impedance-plane instrument: what each one changes — and what it cannot do.",
+   "headers": ["Control", "What it changes", "What it cannot do"],
+   "rows": [
+    ["Phase rotation", "Orientation of the whole pattern about the null", "Cannot change amplitudes or the separation angle between variables"],
+    ["Gain (overall)", "Size of every displayed signal equally", "Cannot improve signal-to-noise ratio or angular separation"],
+    ["Horizontal/vertical gain (set unequally)", "Stretches the display along one axis", "Corrupts measured phase angles — keep X and Y gain equal whenever phase will be read"],
+    ["Test frequency", "The physics: phase separation between variables, depth of penetration, the phase–depth curve", "Not a display adjustment — changing it requires re-standardization"],
+    ["Balance (null)", "The zero point that X and Y are measured from", "Does not alter signal shapes, amplitudes, or angles"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-6-2-fig-a",
+   "title": "Phase-sensitive detection: block diagram of the quadrature detector",
+   "file": "et2-6-2-fig-a.svg"
+  },
+  {
+   "id": "et2-6-2-fig-b",
+   "title": "Recovering amplitude and phase: the (X, Y) vector",
+   "file": "et2-6-2-fig-b.svg"
+  },
+  {
+   "id": "et2-6-2-fig-c",
+   "title": "Phase rotation turns the whole pattern about the null",
+   "file": "et2-6-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Bench Setup: Make the Display Tell the Truth",
+  "intro": "Four setup decisions from real jobs. Each one tests whether you know what phase detection actually measures — and what the rotation control does and does not change.",
+  "steps": [
+   {
+    "prompt": "Surface inspection of an aluminum skin with a pencil probe. You null on clean material; raising the probe drives the dot toward the lower right. The procedure requires the lift-off trace horizontal. Your move:",
+    "options": [
+     "Increase horizontal gain until the trace flattens onto the X-axis",
+     "Adjust phase rotation until the lift-off trace lies along the horizontal axis",
+     "Re-null the probe on a different spot until lift-off comes out horizontal",
+     "Reduce the test frequency until the trace rotates to horizontal"
+    ],
+    "correct": 1,
+    "feedback": "Rotation adds a fixed offset to the reference phase, turning the whole pattern rigidly about the null until lift-off lies where the procedure wants it. Unequal horizontal gain would distort every phase angle, re-nulling only moves the zero point, and changing frequency changes the physics — and voids the standardization."
+   },
+   {
+    "prompt": "Lift-off is now horizontal, and the EDM notch in your reference standard breaks upward about 80° from the lift-off trace. You rotate the display another 25°. The angle between lift-off and the notch signal is now:",
+    "options": [
+     "Still 80° — rotation turns both signals together",
+     "105° — the notch rotates while lift-off stays put",
+     "55° — rotation compresses the pattern",
+     "Unpredictable until you re-null"
+    ],
+    "correct": 0,
+    "feedback": "Rotation is rigid: every displayed vector turns by the same angle, so separations never change. Both traces now sit 25° from where they were — and still 80° apart."
+   },
+   {
+    "prompt": "A trainee suggests: 'Turn the phase knob further — get more separation between lift-off and crack signals so calls are easier.' Your correction:",
+    "options": [
+     "Good idea — rotation increases separation up to a maximum of 90°",
+     "Better to add overall gain; bigger signals separate more",
+     "Separation between variables is set by test frequency, material, and probe — to change it, change the frequency and re-standardize",
+     "Stretch the vertical gain instead; taller signals are easier to call"
+    ],
+    "correct": 2,
+    "feedback": "The angle between lift-off and a crack response is physics — frequency, conductivity, permeability, geometry. Rotation orients the picture; it cannot split overlapping variables. Gain makes signals bigger (or, set unequally, distorts angles); it creates no separation either."
+   },
+   {
+    "prompt": "Differential bobbin standardization on nonferromagnetic condenser tubing. The through-wall hole signal displays at 75°; the procedure requires 40° ± 2° at the prime frequency. You should:",
+    "options": [
+     "Shift the test frequency until the hole signal reads 40°",
+     "Adjust phase rotation until the through-wall hole signal sits at 40°, then verify the remaining reference discontinuities",
+     "Raise the gain — angle requirements only apply at full-screen amplitude",
+     "Accept the 75° — phase angle has no meaning in a differential channel"
+    ],
+    "correct": 1,
+    "feedback": "The 40° convention is exactly what rotation exists for: it fixes the display orientation so the phase-angle-versus-depth curve from your calibration standard applies. Changing frequency would change the phase–depth physics itself and force a complete re-standardization."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "An amplified coil signal A·sin(ωt + θ) is multiplied by the reference sin(ωt) and low-pass filtered. The detector's output is a DC voltage proportional to:",
+   "options": [
+    "A — the amplitude alone, with phase discarded",
+    "A·cos θ — amplitude times the cosine of the phase angle",
+    "cos(2ωt + θ) — the double-frequency component",
+    "θ alone, independent of amplitude"
+   ],
+   "correct": 1,
+   "explanation": "The product contains exactly two terms: ½A·cos θ (DC) and a double-frequency term. The low-pass filter rejects the 2f term, so the output reads A·cos θ — one projection of the signal vector."
+  },
+  {
+   "question": "Impedance-plane instruments use two phase-sensitive detectors with references 90° apart because:",
+   "options": [
+    "two detectors double the signal-to-noise ratio",
+    "one detector is needed for each strip-chart pen",
+    "a single output A·cos θ confounds amplitude with phase — the quadrature pair X = A·cos θ, Y = A·sin θ recovers the complete vector",
+    "the second detector cancels temperature drift in the first"
+   ],
+   "correct": 2,
+   "explanation": "From A·cos θ alone, a strong signal at a large phase angle and a weak signal at a small one can read identically. The 90°-shifted channel adds A·sin θ; together the pair gives A = √(X² + Y²) and θ = arctan(Y/X) — nothing is lost."
+  },
+  {
+   "question": "Adjusting the phase rotation control on an impedance-plane instrument:",
+   "options": [
+    "rotates the entire display pattern rigidly about the null, leaving amplitudes and separation angles unchanged",
+    "increases the amplitude of flaw signals relative to lift-off",
+    "changes the phase lag of the eddy currents within the part",
+    "increases the depth of penetration"
+   ],
+   "correct": 0,
+   "explanation": "Rotation shifts the reference phase, which turns every displayed vector by the same angle. The physics in the part — phase lag, penetration, separations between variables — is untouched; only the orientation of the picture changes."
+  },
+  {
+   "question": "At your working frequency, the lift-off trace and the response from a surface crack lie nearly on top of each other. The correct way to gain real angular separation is to:",
+   "options": [
+    "rotate the phase until they separate",
+    "increase the overall gain",
+    "narrow the low-pass filter",
+    "change the test frequency and re-standardize, since separation between variables is set by the test physics"
+   ],
+   "correct": 3,
+   "explanation": "Rotation turns both signals together, so overlapping signals stay overlapped at any knob position. Gain scales the picture and the filter affects response speed and noise. Only changing the physics — frequency, probe selection — changes the angle between variables."
+  },
+  {
+   "question": "Tubing procedures commonly require the differential bobbin signal from the through-wall calibration hole to be set at approximately 40° from horizontal. The purpose is to:",
+   "options": [
+    "maximize the amplitude of the through-wall hole signal",
+    "keep the depth of penetration constant along the tube",
+    "establish a standard display orientation so the phase-angle-versus-depth curve can be used to estimate the depth of partial-wall indications",
+    "prevent the probe from saturating at support plates"
+   ],
+   "correct": 2,
+   "explanation": "Phase lag through the tube wall makes indication depth appear as display angle. Fixing the through-wall signal at the agreed 40° anchors that scale, so partial-depth signals can be read against the phase–depth calibration curve."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level II Principles Course §7.2 (instrument design considerations: phase detection)",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (definitions of phase analysis and phase angle)",
+  "ASME Boiler and Pressure Vessel Code, Section V, Article 8 (eddy current examination; tubing calibration practice including phase rotation)",
+  "ASTM E690, Standard Practice for In Situ Electromagnetic (Eddy Current) Examination of Nonmagnetic Heat Exchanger Tubes"
+ ]
+}

@@ -1,0 +1,181 @@
+{
+ "lessonId": "et2-3-4",
+ "title": "Quantifying SNR: Measurement, Thresholds, and Verification",
+ "narrationScript": "Signal-to-noise ratio stops being a concept in this lesson and becomes a number you measure, record, and defend. You will measure it the way written procedures demand. Scan a flaw-free region of the reference standard at full production settings and record the peak-to-peak noise. Scan the reference notch and record the peak-to-peak signal on the same channel. Then divide. Express the result as a ratio or in decibels, twenty times the log of the ratio, so three to one is about ten decibels. Three to one matters because it is the floor written into most eddy current procedures. Below it, no alarm threshold can separate flaws from noise without trading missed cracks for false calls. You will also learn what gain cannot do. It amplifies signal and noise together and leaves the ratio untouched. And you will build the habit that follows every fix: re-scan the reference standard, confirm the signal survived, recompute the ratio, and re-verify on schedule. SNR is a ratio. Guard both halves.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "SNR Becomes a Number",
+   "body": "The first two lessons of this module defined signal-to-noise ratio and traced where noise comes from; the last one gave you the tools to improve it. This lesson closes the module: SNR as a **measured, recorded, defensible number** — the quantity a Level II writes on the standardization record and stands behind.\n\nThe definitions stay strict. The **signal** is the response from the discontinuity you are hired to find. In practice you measure it from the **reference discontinuity** in your standard — typically an EDM notch — because that notch is the stand-in for the smallest flaw the procedure must catch. **Noise**, in the language of ASTM E1316, is any undesired signal that tends to interfere with the desired one: lift-off variation and probe wobble, surface roughness, conductivity and permeability scatter, geometry changes, electrical interference.\n\nBoth terms are measured the same way — **peak-to-peak amplitude**, on the same display channel, at the same instrument settings, at the same scan speed. And the noise term must be measured **dynamically**: probe scanning a flaw-free region at production speed, never parked. A stationary probe shows you instrument noise at best. Wobble, surface texture, and speed-sensitive filter behavior exist only in motion — and they are usually the noise that matters."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-3-4-fig-a",
+   "caption": "Measuring SNR on the reference standard: peak-to-peak noise from a flaw-free region scanned at production settings, peak-to-peak signal from the reference notch, both read on the vertical channel after lift-off is rotated horizontal."
+  },
+  {
+   "type": "text",
+   "heading": "Decibels — and What Gain Cannot Do",
+   "body": "SNR is a pure ratio, so the decibel scale fits it naturally. For amplitudes, **SNR (dB) = 20 log₁₀ (S ÷ N)**. A 2:1 ratio is 6 dB; 3:1 is about 10 dB (9.5 to be exact); every doubling of the ratio adds 6 dB; a tenfold ratio is 20 dB. Decibels earn their keep because instrument gain is calibrated in dB, so the arithmetic becomes subtraction: a signal sitting 11 dB above the noise floor has an SNR of 11 dB, whatever the gain knob says.\n\nThat same arithmetic exposes the oldest trap in the method. **Gain does not improve SNR.** Add 6 dB of gain and the signal doubles — and so does the noise, because the noise on your screen comes from the part, the probe, and the scan, all of which enter the amplifier ahead of the gain stage. The ratio never moves. Gain sets *display size*, not detectability. If you cannot separate flaw from noise at 3:1, more gain shows you a bigger mess, not a better one.\n\nThe practical sequence is therefore fixed: first win the ratio — frequency, filtering, probe choice, fixturing, the methods of the previous lesson — *then* set gain so the signals you have earned sit at a convenient height on the screen."
+  },
+  {
+   "type": "table",
+   "caption": "Working SNR values and what they mean at the test station.",
+   "headers": ["SNR (ratio)", "SNR (dB)", "What it means in practice"],
+   "rows": [
+    ["1:1", "0 dB", "Signal and noise indistinguishable — detection is a coin toss"],
+    ["2:1", "6 dB", "Marginal — the threshold crowds the noise; false calls and misses both likely"],
+    ["3:1", "≈10 dB", "The minimum most written ET procedures accept before examination proceeds"],
+    ["5:1", "14 dB", "Comfortable margin for manual scanning and evaluation"],
+    ["10:1", "20 dB", "Robust — the target for high-speed automated tube and bar testing"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "The Measurement Procedure",
+   "body": "Measuring SNR is a short, disciplined sequence performed on the reference standard with the **complete production technique** in place — probe, cable, frequency, drive, filters, phase rotation, scan speed, and fixturing exactly as they will run on hardware:\n\n1. **Set the phase** so lift-off and wobble lie horizontal. Flaw signals then project strongly onto the vertical channel — the analysis channel for both measurements.\n2. **Scan a flaw-free region** of the standard at production speed. Record the peak-to-peak noise on the vertical channel. Scan enough length, in more than one area, to capture the worst representative noise — not the one quiet stripe on the part.\n3. **Scan the reference discontinuity** at the same speed and settings. Record its peak-to-peak vertical response.\n4. **Divide.** Signal peak-to-peak over noise peak-to-peak is the SNR; convert to dB if the procedure reports it that way.\n5. **Record the result** on the technique or standardization record, with the settings that produced it.\n\nEvery condition repeats between steps 2 and 3 for one reason: filters respond to *rate of change*, so a signal's displayed amplitude depends on how fast the probe crosses it. Change the scan speed between the noise pass and the notch pass and the ratio you compute belongs to no real test."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The 3:1 floor",
+   "body": "Most written ET procedures — aerospace NDT manuals and tube-mill practices alike — require a signal-to-noise ratio of **at least 3:1 (≈10 dB)** from the reference discontinuity before the examination may proceed. The number is not arbitrary: at 3:1 there is finally room to park an alarm threshold above the noise envelope yet safely below the smallest signal you must catch. Below the floor, no threshold setting avoids trading missed flaws for false calls — so the *technique* must change, never just the gain."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-3-4-fig-b",
+   "caption": "At 3.5:1 the alarm threshold has room to live between noise and signal; at 1.5:1 every placement either alarms on noise or sleeps through flaws — the geometry behind the 3:1 minimum."
+  },
+  {
+   "type": "text",
+   "heading": "Thresholds, False Calls, and Misses",
+   "body": "An alarm threshold — whether an automated gate on a tube line or the mental line a scanner evaluates against — has exactly one safe home: **above the noise envelope, below the smallest signal of interest**. A common pattern is to standardize so the reference response sits at a fixed screen height, then place the alarm far enough above the noise that random excursions cannot trip it, and far enough below the reference that a flaw at the edge of rejectability still alarms.\n\nSNR decides whether that home exists. As the ratio shrinks toward 1:1, the noise peaks and the flaw signals begin to overlap, and the threshold faces an impossible brief:\n\n- **Set it low** and noise crosses it — false calls. On a production line that means good tube cut out, good fastener holes reworked, and an inspection nobody trusts.\n- **Set it high** and real flaws pass under it — misses. In an aerospace lap joint, that is a fatigue crack flying on.\n\nThis is why SNR governs **probability of detection**: detectability is not a yes/no property of a flaw, it is a statistics problem between two overlapping amplitude populations. The Level II's discipline cuts both ways — never \"find\" a flaw by reading into the noise floor, and never silence the screen so thoroughly that the flaws die with the noise. Which leads to the final habit of this module."
+  },
+  {
+   "type": "text",
+   "heading": "Verify After Every Change — and on Schedule",
+   "body": "SNR is a ratio, so **every fix must be checked against both halves**. The classic failure: noise from surface roughness, so you raise the high-pass filter. The screen goes beautifully quiet — and so does the flaw. A high-pass filter set too high for the scan speed removes slow-crossing signals indiscriminately, and a notch crossed at hand-scan speed is a slow signal. The screen looks better while detection quietly dies. After *any* change — filter, frequency, probe, speed, fixturing — re-scan the reference discontinuity, re-measure the noise, and recompute the ratio. A quiet screen is not the objective; a measured ratio is.\n\nVerification also runs on a clock, not just on changes. Standard practice — written into ASTM tube-examination practices such as E309 and mirrored in aerospace procedures — is to verify system response on the reference standard:\n\n- at the **start** of the examination,\n- at **regular intervals** during the run — 4 hours is a common maximum,\n- after **any system change** or suspected malfunction, and\n- at the **end** of the run.\n\nIf a check fails, the system is re-standardized and **everything examined since the last good check is re-examined**. Log the SNR at each verification: a ratio that drifts downward across a shift is a probe wearing out, a cable failing, or a surface changing — caught on the record before it becomes a missed crack."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-3-4-fig-a",
+   "title": "Measuring SNR peak-to-peak on the reference standard",
+   "file": "et2-3-4-fig-a.svg"
+  },
+  {
+   "id": "et2-3-4-fig-b",
+   "title": "Threshold placement: why 3:1 is the floor",
+   "file": "et2-3-4-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Lap-Joint Scan: Prove Your SNR",
+  "intro": "You are setting up a surface scan along an aluminum lap-joint fastener row. The reference standard carries an EDM notch representing the smallest rejectable crack. Lift-off is rotated horizontal and you read the vertical channel. Work each step on paper before you click.",
+  "steps": [
+   {
+    "prompt": "First number: the noise term. How do you establish it?",
+    "options": [
+     "Hold the probe motionless on a polished spot and read the trace",
+     "Scan a flaw-free length of the joint at production speed and settings, and read the vertical peak-to-peak",
+     "Lift the probe into the air and record the channel amplitude",
+     "Switch the filters off so you can see the raw, unprocessed noise"
+    ],
+    "correct": 1,
+    "feedback": "Noise is measured dynamically, with the full production technique running. Wobble, surface texture, and filter behavior exist only in motion — a parked probe shows instrument noise at best, an in-air probe measures nothing relevant, and defeating the filters measures a test you will never actually run."
+   },
+   {
+    "prompt": "The flaw-free scan shows 1.2 divisions peak-to-peak of noise; the notch returns 4.2 divisions peak-to-peak. Your call?",
+    "options": [
+     "SNR = 3.5:1, about 11 dB — meets the 3:1 minimum, so the technique may proceed",
+     "SNR = 2.9:1 — just under the floor; improve before scanning",
+     "SNR = 5.4:1 — comfortable margin either way",
+     "Peak-to-peak values cannot produce a valid SNR"
+    ],
+    "correct": 0,
+    "feedback": "4.2 ÷ 1.2 = 3.5, and 20 log(3.5) ≈ 11 dB. Both terms were measured peak-to-peak on the same channel at the same settings — exactly how a valid SNR is built. Above the 3:1 floor: record it and go to work."
+   },
+   {
+    "prompt": "Mid-job you reach a repainted, rougher section of skin. The noise climbs to 2.0 divisions. Now what?",
+    "options": [
+     "Add 6 dB of gain to restore the signal's height on the screen",
+     "Keep scanning, but watch the screen extra carefully",
+     "Stop — SNR is now 2.1:1, below the floor. Apply a noise fix (filter, frequency, probe shielding, fixturing), then re-measure both S and N",
+     "Raise the alarm threshold until the new noise stops tripping it"
+    ],
+    "correct": 2,
+    "feedback": "4.2 ÷ 2.0 = 2.1:1 — below the 3:1 floor, so the examination cannot legitimately continue here. Gain raises signal and noise together. 'Watching carefully' is not a technique. And a threshold raised above 2.0 divisions of noise sits dangerously close to a 4.2-division flaw — misses guaranteed. Fix the ratio itself, then prove it."
+   },
+   {
+    "prompt": "You raise the high-pass filter and the screen goes beautifully quiet — noise now reads 0.6 divisions. Before resuming, what must you do?",
+    "options": [
+     "Nothing — noise fell from 2.0 to 0.6, so the SNR roughly tripled",
+     "Re-scan the reference notch at production speed and recompute the ratio",
+     "Halve the alarm threshold to exploit the quiet baseline",
+     "Re-measure the noise with the probe stationary to confirm the fix"
+    ],
+    "correct": 1,
+    "feedback": "You re-scan the notch — and it returns only 1.5 divisions. The high-pass filter is clipping the slow-crossing flaw signal just as it clips the noise: actual SNR is 1.5 ÷ 0.6 = 2.5:1, still failing, with the absolute signal nearly gone. Option A assumed the signal survived; it did not. Back the filter off or slow the scan-speed mismatch out, then verify BOTH halves of the ratio."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "When measuring the noise term of SNR for a surface-scan technique, correct practice is to:",
+   "options": [
+    "hold the probe stationary on the cleanest area of the part and read the baseline",
+    "scan a flaw-free region of the reference standard at production speed and settings, reading peak-to-peak on the analysis channel",
+    "measure the channel amplitude with the probe held in air",
+    "disable the filters first so the noise is not artificially reduced"
+   ],
+   "correct": 1,
+   "explanation": "Probe wobble, surface texture, and speed-sensitive filter response exist only while scanning. The noise that competes with flaw signals is dynamic, so it must be measured dynamically, with every production setting in place."
+  },
+  {
+   "question": "A signal-to-noise ratio of 3:1 expressed in decibels is approximately:",
+   "options": ["3 dB", "6 dB", "10 dB", "20 dB"],
+   "correct": 2,
+   "explanation": "For amplitude ratios, SNR (dB) = 20 log₁₀(S ÷ N) = 20 log₁₀(3) ≈ 9.5 dB, conventionally rounded to 10 dB. (2:1 gives 6 dB; 10:1 gives 20 dB.)"
+  },
+  {
+   "question": "Raising the instrument gain by 6 dB does what to the SNR of a test limited by part and probe noise?",
+   "options": [
+    "Leaves it unchanged — signal and noise are amplified equally",
+    "Doubles it, since the signal is amplified",
+    "Halves it, since noise responds more strongly to gain",
+    "Improves it, provided the high-pass filter is bypassed"
+   ],
+   "correct": 0,
+   "explanation": "Part, probe, and scanning noise enter ahead of the gain stage, so gain multiplies signal and noise by the same factor. Gain sets display size, not detectability — the ratio must be won with frequency, filtering, probe choice, and fixturing."
+  },
+  {
+   "question": "A technique yields an SNR of 1.5:1. What is true about alarm-threshold placement?",
+   "options": [
+    "Set the threshold at twice the noise level and proceed",
+    "Set the threshold just below the reference signal and proceed",
+    "Average several scans and set the threshold between the averages",
+    "No placement avoids both false calls and missed flaws — the technique must be improved first"
+   ],
+   "correct": 3,
+   "explanation": "At 1.5:1 the noise envelope and the flaw-signal population overlap: a threshold low enough to catch flaws is crossed by noise, and one high enough to silence noise lets flaws pass under. That geometry is exactly why procedures impose the 3:1 minimum."
+  },
+  {
+   "question": "After raising the high-pass filter to suppress surface noise, the screen becomes much quieter. Before resuming the examination you must:",
+   "options": [
+    "resume immediately — lower noise always means higher SNR",
+    "re-scan the reference discontinuity at production scan speed and recompute the SNR",
+    "increase the gain to restore the original noise height",
+    "lower the alarm threshold to take advantage of the quiet baseline"
+   ],
+   "correct": 1,
+   "explanation": "A high-pass filter set too high for the scan speed removes slow-crossing flaw signals along with the noise — the screen improves while detection dies. SNR is a ratio: after any change, both the signal term and the noise term must be re-measured on the reference standard."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level II Principles Course §3.0 (signal-to-noise ratio)",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (signal, noise, and related definitions)",
+  "ASTM E309, Standard Practice for Eddy Current Examination of Steel Tubular Products Using Magnetic Saturation (system standardization and periodic re-verification)",
+  "ASNT Recommended Practice No. SNT-TC-1A (2024), Personnel Qualification and Certification in Nondestructive Testing"
+ ]
+}

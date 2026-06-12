@@ -1,0 +1,190 @@
+{
+ "lessonId": "et1-8-1",
+ "title": "Lab: Filter Effects on Rotating Reference Standards",
+ "narrationScript": "This lab puts the filter section of your instrument to work on a spinning probe. A bolt-hole probe turning at three thousand RPM crosses the EDM notch in your reference standard once every revolution, and the crossing lasts about one millisecond — a sharp pulse with energy near five hundred hertz. Probe wobble paints a slow once-per-revolution wave at fifty hertz, and electronic grass fuzzes the whole trace. Your job is to bracket the notch: raise the high-pass until the wobble dies, lower the low-pass until the grass dies, and stop the moment the notch loses amplitude or grows distorted tails. Push past that point and you over-filter — the signal shrinks, turns bipolar, and rotates in phase, while the screen looks beautifully clean. Then we cut the rotation to fifteen hundred RPM and the clean setup fails, because signal frequency rides on speed. Filters are only valid at the speed where you set them. Optimize, verify on the notch, document, and re-standardize after any change.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "A Notch Going in Circles",
+   "body": "The filtering lesson in the parameters module made a claim: filters separate signals by how fast they wiggle, and choosing the cutoffs is a real technique decision. This lab makes you prove it on the setup where filters matter most — a probe in continuous motion.\n\nOn the bench you need:\n\n- An eddy current instrument with **rotary-scanner support**, an impedance-plane display, and a **time-base (sweep) display** for watching the signal against time.\n- A **rotating bolt-hole scanner** — a motorized handpiece that spins the probe, adjustable from a few hundred to about 3,000 RPM.\n- A **bolt-hole probe** sized to the standard's fastener hole.\n- An **aluminum reference standard** with a fastener hole carrying a small EDM corner notch — commonly on the order of 0.5 mm (0.020 in.).\n- The **filter lab worksheet** for recording settings, amplitudes, and signal-to-noise readings.\n\nTest frequency for aluminum fastener-hole work typically sits in the 100 kHz–1 MHz band; this lab runs **200 kHz**.\n\nWhy rotation changes the game: scanned by hand, a probe makes signals only as fast as your wrist moves — slow and irregular. Spinning at 3,000 RPM, everything happens on a strict schedule. The notch sweeps past the coil exactly once per revolution. Probe wobble repeats once per revolution. Electronic noise never stops. The filter section is the only tool that can pull those three apart — and the same physics applies whether the probe spins inside a stationary standard, as here, or the reference standard itself rotates past a fixed probe on a production tube bench. What matters is relative motion between coil and metal."
+  },
+  {
+   "type": "text",
+   "heading": "Carrier vs. Signal: What the Filters Actually Touch",
+   "body": "Keep two frequency domains separate in your head — confusing them is the classic filter mistake.\n\n- The **test frequency** (the carrier) — 200 kHz here — is what the oscillator drives through the coil. It sets eddy current depth of penetration and the phase relationships you read on the impedance plane. The filters in this lab **never touch it**: demodulation strips the carrier away before the signal reaches the filter stage.\n- The **signal frequency** (modulation frequency) is how fast the demodulated trace moves — and it is set entirely by motion: how quickly features pass under the coil.\n\nNow put numbers on this bench. At **3,000 RPM** the probe makes **50 revolutions per second**. In a 6.35 mm (1/4 in.) hole, the circumference is about 20 mm, so the coil sweeps the hole wall at roughly **1,000 mm/s — one meter per second**.\n\n- **Probe wobble:** the probe runs slightly off-center, so lift-off swells and shrinks smoothly once per revolution — a clean sinusoid at **50 Hz**.\n- **The notch:** with an effective coil footprint of about 1 mm, the coil crosses the notch in roughly **1 ms**. A pulse of duration τ concentrates its energy near **f ≈ 1/(2τ)** — here, about **500 Hz**.\n\nHere is the subtlety that makes filtering work at all: the notch also repeats once per revolution — fifty times a second, the same repetition rate as the wobble. But filters do not care how often an event recurs; they care how fast the trace wiggles while it happens. The wobble is a slow swing spread across the whole 20 ms revolution. The notch is a 1 ms snap. One lives at 50 Hz, the other near 500 Hz — a decade apart, and that gap is where your filters go to work."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-8-1-fig-a",
+   "caption": "Everything on a rotating system lives at a predictable signal frequency. At 3,000 RPM the wobble sits at 50 Hz (with 60 Hz line pickup beside it), the ≈1 ms notch pulse concentrates its energy near 500 Hz, and broadband electronic noise spans the whole axis. The filters' job is to pass the notch band and reject everything else — and note that the 200 kHz test frequency is not on this axis at all."
+  },
+  {
+   "type": "text",
+   "heading": "Bracket the Notch: Raise the Floor, Lower the Ceiling",
+   "body": "Open everything up and look at the truth first: high-pass at minimum or off, low-pass at maximum. The screen is a mess — the baseline swims up and down at 50 Hz, stray 60 Hz line pickup rides along with it, fine grass fuzzes the trace, and the notch is a blip riding the swell. This is the **under-filtered** condition. Notice what it does to your alarm threshold: any gate tight enough to catch the notch also gets crossed by the wobble, so it false-calls every revolution. And gain is no cure — gain amplifies wobble, grass, and notch by exactly the same factor.\n\nNow bracket the signal from below and above:\n\n1. **Raise the high-pass in steps** — 50, 100, 200, 300 Hz — watching the wobble and the notch at every step. The 50 Hz swell shrinks and dies; the baseline flattens; the notch barely changes, because its energy sits near 500 Hz. Stop criterion: **as high as you can go with the notch amplitude and shape untouched.**\n2. **Lower the low-pass in steps** from maximum toward the signal — 5 kHz, 3 kHz, 1.5 kHz. The grass dies and the trace steadies. Stop criterion: **the moment the notch starts losing height or broadening, you have gone one step too far — back off.**\n\nThe result is a pass band bracketing 500 Hz — roughly 300 Hz to 1.5 kHz on this setup. Log the notch amplitude and the signal-to-noise ratio on the worksheet before and after: a well-bracketed setup typically buys an order-of-magnitude S/N improvement.\n\nOne vocabulary note: some instruments label the high-pass **low cut** and the low-pass **high cut**, and some rotary instruments offer automatic filter settings slaved to RPM. Use them — then verify on the notch anyway."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-8-1-fig-b",
+   "caption": "The same EDM notch under three filter settings at 3,000 RPM. Wide open, the notch rides a swimming baseline fuzzed with grass; bracketed at 300 Hz–1.5 kHz it stands alone at full height; over-filtered with the high-pass pushed to 1.2 kHz it is small, bipolar, and corrupted — the dangerous setting that looks the cleanest."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Over-filtering: the failure that looks clean",
+   "body": "Noise announces itself — over-filtering hides. Push the **high-pass too far** and it starts differentiating the signal: the notch **loses amplitude**, distorts into a **bipolar** shape with overshoot tails, and its **phase rotates** — poison for any technique that reads phase. Worse, indications that develop slowly under the coil — gradual wall thinning, hole taper, ovality — live at low signal frequencies and are erased outright. Push the **low-pass too far** and the pulse **smears**: shorter, broader, sluggish, until adjacent indications merge or a fast signal at high RPM vanishes entirely. Either way the screen looks beautifully clean. **Prove sensitivity on the reference notch — never on an empty baseline.**"
+  },
+  {
+   "type": "table",
+   "caption": "Diagnosing filter conditions on a rotating system. Every diagnosis is confirmed the same way: watch the reference notch while you move one cutoff at a time.",
+   "headers": ["Condition", "What the screen shows", "What you risk", "The fix"],
+   "rows": [
+    ["High-pass too low (under-filtered)", "Baseline swims once per revolution; threshold gates trip on the swell", "False calls; small flaw signals hidden inside the wobble", "Raise the cutoff stepwise until the baseline flattens and the notch is untouched"],
+    ["High-pass too high (over-filtered)", "Notch shrunken and bipolar with overshoot tails; phase rotated", "Missed flaws; corrupted phase evaluation; slow, gradual indications erased", "Back the cutoff down until the notch recovers full amplitude and shape"],
+    ["Low-pass too high (under-filtered)", "Fine high-frequency grass rides the trace; the dot jitters", "Poor signal-to-noise; noisy alarms near threshold", "Lower the cutoff until the grass dies with the notch still at full height"],
+    ["Low-pass too low (over-filtered)", "Notch short, broadened, sluggish to rise and fall", "Adjacent indications merge; fast signals lost when speed rises", "Raise the cutoff until the notch is sharp and at full height again"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Speed Moves the Signal — Filters Don't Follow",
+   "body": "The final demonstration changes how you treat the speed control forever. With the setup bracketed and standardized at 3,000 RPM, drop the scanner to **1,500 RPM** and touch nothing else.\n\nRun the arithmetic: 25 revolutions per second, surface speed ≈ 500 mm/s, notch crossing ≈ 2 ms — the signal's energy slides down to about **250 Hz**, and the wobble drops to 25 Hz. Your high-pass is still parked at 300 Hz, so the notch energy now sits at and mostly **below** the cutoff. On screen, the signal collapses and distorts exactly as if you had cranked the high-pass too far. You are over-filtered, and nobody touched a filter knob. The rule, in one line: **signal frequency scales in direct proportion to speed — filters set at one speed are wrong at another.** Re-optimizing for 1,500 RPM means roughly halving the bracket — a high-pass near 150 Hz, a low-pass near 800 Hz — and then **re-standardizing**, because the system's response to the reference notch has changed.\n\nProduction work obeys the same physics. Tube and bar lines examine at fixed throughput and rotation speeds, and the method standards — ASTM E243 for copper-alloy tubes, ASTM E309 for steel tubular products — require the reference standard to be run through the system at the production examination speed, precisely because instrument response is speed-dependent.\n\nYour Level I duties off this bench: set filters per the technique sheet, verify response on the reference standard, record the RPM and both cutoff settings on the worksheet, and treat **any** change to speed or filtering as a re-standardization trigger. Evaluating what a production indication means belongs to Level II — keeping the system demonstrably sensitive belongs to you."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-8-1-fig-c",
+   "caption": "Halving rotational speed slides the notch energy from ≈500 Hz down to ≈250 Hz, but the filter window stays put — most of the signal now falls below the 300 Hz high-pass cutoff and is rejected along with the wobble. The cure is to re-optimize the bracket for the new speed, then re-standardize on the reference notch."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-8-1-fig-a",
+   "title": "Signal-frequency map: wobble, notch, and the band-pass window",
+   "file": "et1-8-1-fig-a.svg"
+  },
+  {
+   "id": "et1-8-1-fig-b",
+   "title": "One notch, three filter settings (time-base traces)",
+   "file": "et1-8-1-fig-b.svg"
+  },
+  {
+   "id": "et1-8-1-fig-c",
+   "title": "Speed coupling: the signal moves, the filters do not",
+   "file": "et1-8-1-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "At the Bench: Bracket It, Then Break It",
+  "intro": "You are running the filter lab: aluminum bolt-hole standard with a 0.5 mm EDM corner notch, 200 kHz test frequency, scanner at 3,000 RPM. Filters start wide open. Make each call before you click.",
+  "steps": [
+   {
+    "prompt": "With filters wide open, the time-base shows a large, slow wave repeating exactly once per revolution, with a small sharp blip riding on it. The slow wave is:",
+    "options": [
+     "The EDM notch — it also passes the coil once per revolution",
+     "Probe wobble — lift-off swelling and shrinking as the probe spins slightly off-center",
+     "The 200 kHz test frequency leaking through to the display",
+     "Voltage surges from the scanner motor"
+    ],
+    "correct": 1,
+    "feedback": "Both the wobble and the notch repeat once per revolution — but the notch is a ≈1 ms snap while the wobble is a smooth swing spread across the whole 20 ms turn. The slow 50 Hz wave is wobble; the fast blip riding it is your notch. Filters will separate them by wiggle speed, not by repetition rate."
+   },
+   {
+    "prompt": "You step the high-pass up — 50, 100, 300 Hz. The wobble dies and the baseline flattens while the notch holds full height. A colleague says, 'Keep going to 800 Hz — cleaner is better.' If you do, the notch will:",
+    "options": [
+     "Grow taller, because competing noise energy is removed",
+     "Stay identical — high-pass filters only affect the slow wobble",
+     "Lose amplitude, distort into a bipolar shape with tails, and rotate in phase",
+     "Broaden and smear until it merges with neighboring signals"
+    ],
+    "correct": 2,
+    "feedback": "The notch energy is centered near 500 Hz, so an 800 Hz high-pass cuts into the heart of the signal: amplitude drops, the shape goes bipolar with overshoot tails, and the phase rotates. That is the over-filtered condition — and the baseline looks cleaner than ever while it happens. Broadening and smearing is the low-pass over-filtering signature, not high-pass."
+   },
+   {
+    "prompt": "High-pass back at 300 Hz. Fine grass still fuzzes the flat baseline and the dot jitters. Your best move is to:",
+    "options": [
+     "Add 6 dB of gain so the notch towers over the grass",
+     "Lower the low-pass in steps until the grass dies, stopping before the notch loses any height",
+     "Raise the high-pass further — filtering is filtering",
+     "Increase the RPM so the signal outruns the noise"
+    ],
+    "correct": 1,
+    "feedback": "Grass is broadband high-frequency noise — the low-pass filter's job. Walk it down until the grass disappears, and stop the moment the notch amplitude or sharpness starts to suffer. Gain is no cure: it amplifies grass and notch by the same factor and leaves S/N unchanged. Raising the high-pass attacks the wrong end of the spectrum."
+   },
+   {
+    "prompt": "The setup is bracketed and standardized at 3,000 RPM (HP 300 Hz, LP 1.5 kHz). A supervisor drops the scanner to 1,500 RPM for a different hole size — and the notch signal nearly disappears. Why?",
+    "options": [
+     "The notch has worn away from repeated scanning",
+     "Eddy currents are weaker at lower rotational speeds",
+     "The instrument's gain drifted when the speed changed",
+     "The signal's energy halved to ≈250 Hz — below the 300 Hz high-pass — so the filters must be re-optimized and the system re-standardized"
+    ],
+    "correct": 3,
+    "feedback": "Signal frequency rides on surface speed: half the RPM means the notch crossing takes 2 ms instead of 1 ms, putting its energy near 250 Hz — under the unchanged 300 Hz cutoff. Eddy current strength depends on the 200 kHz test frequency, not on rotation; motion only modulates the signal. Filters are valid only at the speed where they were set: re-optimize, then re-standardize."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "The high-pass and low-pass filter controls on an eddy current instrument act on:",
+   "options": [
+    "The excitation (test) frequency driving the coil — 200 kHz in this lab",
+    "The demodulated signal, whose frequency content is set by how fast features pass the coil",
+    "The scanner motor circuit, electronically limiting the RPM",
+    "The probe's resonant frequency, retuning the coil"
+   ],
+   "correct": 1,
+   "explanation": "Demodulation removes the carrier before the filter stage, so the filters see only the signal (modulation) frequency — set by relative motion between coil and metal. That is why the same filter knobs mean nothing until you know the scanning speed, and why they never alter depth of penetration."
+  },
+  {
+   "question": "A bolt-hole probe spins at 3,000 RPM in a 6.35 mm hole (surface speed about 1 m/s) with an effective coil footprint of about 1 mm. The principal frequency content of the notch signal is closest to:",
+   "options": [
+    "50 Hz, because the notch passes the coil once per revolution",
+    "About 50 kHz, one quarter of the test frequency",
+    "About 500 Hz, because the ≈1 ms crossing concentrates its energy near f ≈ 1/(2τ)",
+    "200 kHz, the same as the test frequency"
+   ],
+   "correct": 2,
+   "explanation": "The coil crosses the 1 mm zone in about 1 ms at 1 m/s, and a 1 ms pulse carries its energy near 1/(2 × 0.001 s) ≈ 500 Hz. The 50 Hz figure is the repetition rate (and the wobble frequency) — filters respond to how fast the trace wiggles, not how often the event recurs."
+  },
+  {
+   "question": "While stepping the high-pass filter upward you pass the optimum setting and keep going. The notch signal will:",
+   "options": [
+    "Lose amplitude, distort into a bipolar shape with overshoot tails, and rotate in phase",
+    "Grow taller, because filtering removes competing noise energy",
+    "Stay identical — high-pass filters affect only the slow wobble",
+    "Broaden and smear until adjacent indications merge together"
+   ],
+   "correct": 0,
+   "explanation": "An excessive high-pass differentiates the signal: amplitude drops, the shape turns bipolar with tails, and the phase angle rotates — corrupting phase-based evaluation. Broadening and merging is the signature of an over-restrictive low-pass, the opposite error."
+  },
+  {
+   "question": "An under-filtered setup — high-pass left far too low — is put into service on a rotating system. The most likely operational consequence is:",
+   "options": [
+    "The notch signal becomes bipolar and rotates in phase",
+    "Defect signals broaden until they merge together",
+    "Depth of penetration decreases because the skin effect strengthens",
+    "The once-per-revolution wobble swings the baseline through the alarm threshold, causing false calls and hiding small flaw signals"
+   ],
+   "correct": 3,
+   "explanation": "With the low-frequency wobble unfiltered, the baseline swims once per revolution: alarm gates trip on the swell and genuine small signals ride unseen on top of it. Bipolar distortion is over-filtering, signal merging is low-pass over-filtering, and penetration depends on the test frequency — not on these filters."
+  },
+  {
+   "question": "After standardizing at 3,000 RPM with a 300 Hz high-pass, production drops the scanner to 1,500 RPM without touching the instrument. The notch signal:",
+   "options": [
+    "Is unchanged — the notch still passes the coil once per revolution",
+    "Falls to roughly 250 Hz signal content, at or below the high-pass cutoff — its amplitude collapses, so the filters must be re-optimized and the system re-standardized",
+    "Doubles in frequency content and is removed by the low-pass filter",
+    "Disappears because eddy currents cannot form at low rotational speeds"
+   ],
+   "correct": 1,
+   "explanation": "Signal frequency scales in direct proportion to surface speed: halving the RPM halves the notch signal's frequency content, dropping it under the unchanged cutoff. Eddy current generation depends on the carrier (test) frequency, not on motion — motion only modulates the signal. This speed-filter coupling is why method standards require standardization at the examination speed."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Technique Course §4.0–4.1 (lab demonstration: effects of filtering on response from rotating reference standards)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — basis for ET Level I training outlines",
+  "ASTM E243, Standard Practice for Electromagnetic (Eddy Current) Examination of Copper and Copper-Alloy Tubes (standardization performed at the examination speed)",
+  "ASTM E309, Standard Practice for Eddy Current Examination of Steel Tubular Products Using Magnetic Saturation (speed-dependent response; standardization at production speed)"
+ ]
+}

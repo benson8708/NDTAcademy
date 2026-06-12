@@ -1,0 +1,105 @@
+{
+ "moduleId": "et2-1",
+ "questions": [
+  {
+   "question": "Every indication on an eddy current display — flaw, lift-off, or conductivity shift — is ultimately the instrument reporting:",
+   "options": [
+    "the eddy currents themselves, measured directly inside the part",
+    "a change in the test coil's impedance caused by the eddy currents' opposing secondary field",
+    "the temperature rise the circulating currents produce in the metal",
+    "the strength of the primary field measured with the probe in air"
+   ],
+   "correct": 1,
+   "explanation": "The five-link chain ends at the coil: AC drive builds the primary field, Faraday's law induces eddy currents, Lenz's law turns their secondary field against the primary, and the coil feels that opposition as an impedance change. The currents close on themselves inside solid metal and are never measured directly — the instrument amplifies the coil's response, nothing else."
+  },
+  {
+   "question": "A probe coil presents 30 Ω of resistance and 40 Ω of inductive reactance at the test frequency. Its impedance is:",
+   "options": ["70 Ω", "10 Ω", "35 Ω", "50 Ω"],
+   "correct": 3,
+   "explanation": "Resistance and reactance are 90° apart and combine as a vector sum: Z = √(R² + XL²) = √(900 + 1,600) = √2,500 = 50 Ω, at a phase angle of arctan(40/30) ≈ 53°. The algebraic sum (70 Ω) is the classic error — impedance is never R + XL."
+  },
+  {
+   "question": "Procedures treat about three standard depths (3δ) as the effective depth of penetration — the working limit for flaw detection — because below that depth:",
+   "options": [
+    "only about 5% of the surface eddy current density remains, too little to disturb the coil reliably",
+    "the eddy currents reverse phase and cancel the flaw signal",
+    "current density is still 37% of the surface value, but the phase lag becomes unreadable",
+    "the primary magnetic field can no longer exist in the material"
+   ],
+   "correct": 0,
+   "explanation": "Density decays exponentially, J(x) = J₀·e^(−x/δ): 37% remains at 1δ, 13.5% at 2δ, and only about 5% at 3δ. With so little current crossing a flaw, the disturbance reflected back into the coil is too weak for reliable detection — which is why the deepest flaw you must catch has to lie inside 3δ."
+  },
+  {
+   "question": "Corrosion is suspected 3.0 mm below the outer surface of a 2024-series aluminum lap joint (σ ≈ 30 %IACS, μᵣ = 1). To place that depth at about one standard depth of penetration, the test frequency should be near:",
+   "options": ["160 kHz", "16 kHz", "1.6 kHz", "1.6 MHz"],
+   "correct": 2,
+   "explanation": "Rearrange the shop formula: f = (660/δ)² ÷ (μᵣ·σ) = (660/3.0)² ÷ 30 = 220² ÷ 30 ≈ 1,600 Hz. Subsurface aluminum work lives in the low kilohertz — at hundreds of kilohertz, essentially no current reaches a layer 3 mm down, which is why high frequencies are reserved for surface cracks."
+  },
+  {
+   "question": "In-service heat-exchanger tubing examinations record absolute and differential bobbin channels simultaneously because:",
+   "options": [
+    "running two channels doubles the signal amplitude from every flaw",
+    "each mode covers the other's blind spot — differential flags sharp local flaws while cancelling drift, and absolute tracks the gradual wall thinning differential cancels",
+    "the absolute channel supplies the DC saturation the differential channel needs",
+    "the differential channel measures conductivity while the absolute channel measures permeability"
+   ],
+   "correct": 1,
+   "explanation": "A self-comparison differential pair cancels whatever both coils see alike — temperature drift, but also slow uniform wall loss and the middle of long gradual flaws. The absolute channel sees all of that, yet wanders with drift. Recording both turns two complementary blind spots into full coverage; neither channel changes the other's amplitude or provides saturation."
+  },
+  {
+   "question": "A differential encircling coil screens bar stock on a mill line. The discontinuity it is BEST suited to detect is:",
+   "options": [
+    "a purely circumferential crack",
+    "a defect at the center of the bar",
+    "a longitudinal surface seam",
+    "a long, gradual diameter taper"
+   ],
+   "correct": 2,
+   "explanation": "An encircling coil drives circumferential currents, and a flaw signals in proportion to how strongly it cuts them — a longitudinal seam crosses those loops, so the encircling coil is a longitudinal-seam hunter. A circumferential crack lies parallel to the currents, the bar's center carries zero current at any frequency, and a gradual taper is cancelled by the differential self-comparison connection."
+  },
+  {
+   "question": "Aerospace procedures specify shielded probes for scanning rivet rows and hole edges because the ferrite shield:",
+   "options": [
+    "increases the standard depth of penetration at the fastener row",
+    "protects the winding from abrasion against the fastener heads",
+    "removes the lift-off response from the display entirely",
+    "confines the coil's field laterally so edge and fastener-head responses do not swamp the crack signal"
+   ],
+   "correct": 3,
+   "explanation": "An unshielded coil's field reaches well beyond its housing and starts answering to an edge before the probe arrives. The ferrite cup confines the footprint so cracks at fastener heads, hole edges, and radii stay readable. Penetration depth is set by frequency, conductivity, and permeability — no shield changes it — and lift-off response remains, shield or not."
+  },
+  {
+   "question": "During surface-probe scanning, the variable that typically produces the LARGEST and fastest signal movement on the impedance plane is:",
+   "options": [
+    "lift-off from probe wobble or coating-thickness variation",
+    "alloy-to-alloy conductivity differences",
+    "a subsurface flaw near three standard depths",
+    "slow drift in the instrument's oscillator frequency"
+   ],
+   "correct": 0,
+   "explanation": "Coupling collapses with distance, and the first fraction of a millimeter of lift-off costs the most, so lift-off draws a near-straight chord toward the air point — the biggest, fastest mover on the screen. That is exactly why calibration rotates lift-off horizontal: the dominant nuisance gets parked in one known direction. A flaw near 3δ, by contrast, is among the weakest responses (about 5% of surface current density)."
+  },
+  {
+   "question": "Conductivity sorting and measurement set the operating point near the knee of the conductivity curve (dedicated meters typically run near 60 kHz) because at the knee:",
+   "options": [
+    "the standard depth of penetration is at its maximum",
+    "the lift-off response disappears completely",
+    "small conductivity changes produce large, well-separated signal excursions",
+    "permeability effects are amplified for better alloy separation"
+   ],
+   "correct": 2,
+   "explanation": "Separation lives in the geometry of the plane: high on the curve, lift-off and other variables run nearly parallel and overlap, while near the knee small shifts in σ give large, clean excursions. Raising frequency is the lever that slides the operating point down the curve. Lift-off never vanishes, deeper penetration would call for lower (not knee-optimal) frequency, and permeability is a nuisance to suppress, not amplify."
+  },
+  {
+   "question": "On the NORMALIZED impedance plane, two different eddy current setups sit at the same operating point and draw geometrically similar signals when they share:",
+   "options": [
+    "identical coil diameters and turn counts",
+    "the same display gain and phase-rotation settings",
+    "the same test frequency, regardless of material",
+    "the same product of frequency, conductivity, permeability, and the square of the governing dimension, at the same coupling"
+   ],
+   "correct": 3,
+   "explanation": "That is Förster's similarity law. Normalizing by the empty-coil reactance X₀ removes coil size and turn count, so one comma-shaped conductivity curve serves every coil and every metal — and a pattern library learned on one job transfers to the next, provided the probe type and display convention match. Frequency alone is not enough: the coil feels the product of the variables, not any one of them."
+  }
+ ]
+}

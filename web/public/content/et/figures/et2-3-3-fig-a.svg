@@ -1,0 +1,64 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">Frequency Buys Phase Separation</text>
+  <text x="400" y="62" text-anchor="middle" font-size="15" fill="#9BC4FF">Same aluminum skin (32 %IACS), same notch, same wobble — only the frequency changes</text>
+
+  <!-- LEFT PANEL: 10 kHz -->
+  <rect x="55" y="90" width="320" height="300" rx="8" fill="#1E66F5" fill-opacity="0.08" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="215" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">10 kHz — δ ≈ 1.2 mm</text>
+
+  <!-- wobble noise sector ±10° around lift-off -->
+  <polygon points="300,340 126,308 126,372" fill="#9BC4FF" fill-opacity="0.18"/>
+
+  <!-- lift-off vector -->
+  <line x1="300" y1="340" x2="124" y2="340" stroke="#9BC4FF" stroke-width="3"/>
+  <polygon points="110,340 124,333 124,347" fill="#9BC4FF"/>
+  <text x="120" y="326" font-size="14" fill="#9BC4FF">lift-off / wobble</text>
+
+  <!-- crack vector at ~25° above lift-off -->
+  <line x1="300" y1="340" x2="152" y2="273" stroke="#FFFFFF" stroke-width="3.5"/>
+  <polygon points="146,268 161.7,267.6 155.7,280.2" fill="#FFFFFF"/>
+  <text x="142" y="256" font-size="14" font-weight="bold" fill="#FFFFFF">crack response</text>
+
+  <!-- angle arc and label -->
+  <path d="M 230 340 A 70 70 0 0 1 236.6 310.4" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="200" y="306" font-size="15" font-weight="bold" fill="#FFFFFF">Δφ ≈ 25°</text>
+
+  <!-- balance point -->
+  <circle cx="300" cy="340" r="6" fill="#FFFFFF"/>
+  <text x="306" y="361" font-size="14" fill="#9BC4FF">balance point</text>
+
+  <text x="215" y="382" text-anchor="middle" font-size="14" fill="#9BC4FF">crack hides inside the wobble sector</text>
+
+  <!-- RIGHT PANEL: 500 kHz -->
+  <rect x="425" y="90" width="320" height="300" rx="8" fill="#1E66F5" fill-opacity="0.08" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="585" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#FFFFFF">500 kHz — δ ≈ 0.17 mm</text>
+
+  <!-- wobble noise sector -->
+  <polygon points="670,340 496,308 496,372" fill="#9BC4FF" fill-opacity="0.18"/>
+
+  <!-- lift-off vector -->
+  <line x1="670" y1="340" x2="494" y2="340" stroke="#9BC4FF" stroke-width="3"/>
+  <polygon points="480,340 494,333 494,347" fill="#9BC4FF"/>
+  <text x="492" y="326" font-size="14" fill="#9BC4FF">lift-off / wobble</text>
+
+  <!-- crack vector near 90° -->
+  <line x1="670" y1="340" x2="670" y2="174" stroke="#FFFFFF" stroke-width="3.5"/>
+  <polygon points="670,160 663,174 677,174" fill="#FFFFFF"/>
+  <text x="670" y="148" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">crack response</text>
+
+  <!-- angle arc and label -->
+  <path d="M 610 340 A 60 60 0 0 1 670 280" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="596" y="296" font-size="15" font-weight="bold" fill="#FFFFFF">Δφ ≈ 90°</text>
+
+  <!-- balance point -->
+  <circle cx="670" cy="340" r="6" fill="#FFFFFF"/>
+  <text x="676" y="361" font-size="14" fill="#9BC4FF">balance point</text>
+
+  <text x="585" y="382" text-anchor="middle" font-size="14" fill="#9BC4FF">wobble stays on X — the crack owns Y</text>
+
+  <!-- bottom takeaway -->
+  <text x="400" y="430" text-anchor="middle" font-size="15" fill="#9BC4FF">Rotate lift-off horizontal and alarm on the vertical channel:</text>
+  <text x="400" y="454" text-anchor="middle" font-size="15" fill="#FFFFFF">at 500 kHz wobble cannot climb the screen, so the alarm threshold sits low — SNR rises without gain.</text>
+  <text x="400" y="478" text-anchor="middle" font-size="14" fill="#9BC4FF">Rotation only aims the pattern; frequency sets the angle between flaw and noise.</text>
+</svg>

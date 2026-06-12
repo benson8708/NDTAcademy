@@ -1,0 +1,184 @@
+{
+ "lessonId": "et2-2-3",
+ "title": "Test System Factors: Frequency, Coupling, and Field Strength",
+ "narrationScript": "The part brings conductivity, permeability, and shape to the coil. The test system brings the three levers you control: frequency, coupling, and field strength. Frequency is the master lever. The operating point on the normalized impedance plane follows the product of frequency, conductivity, permeability, and diameter. Förster packaged that product as the characteristic frequency, and equal f over f-g ratios land on the same operating point. That is the law of similarity — how a proven technique transfers to a new part size. Walking the point down the curve spreads lift-off, conductivity, and crack signals into separate directions, but it costs penetration — depth shrinks, and phase lag stacks up at fifty-seven degrees per standard depth. Coupling sets how much field reaches the part: lift-off on surface probes, fill factor in encircling and bobbin coils — a diameter ratio squared — and signal amplitude tracks it. Field strength scales every signal in nonmagnetic metals without moving the operating point. In steels, permeability rides the drive level: saturate the part, or lock the drive and never change it without re-standardizing.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Frequency Places the Operating Point",
+   "body": "The last two lessons covered the part's half of the impedance equation — conductivity, permeability, mass, and homogeneity — none of which you can change. This lesson covers your half: the **test system**, with its three levers of **frequency**, **coupling**, and **field strength**.\n\nFrequency is the master lever, because the operating point on the normalized impedance plane is set not by conductivity alone but by the **product** of frequency, conductivity, permeability, and part size. Förster packaged that product into one number. For the reference case — a solid, nonmagnetic cylinder centered in an encircling coil — the **characteristic (limit) frequency** is:\n\n**fg = 5066 / (σ × μᵣ × d²)** — fg in hertz, σ in MS/m (m/Ω·mm²), d in centimeters.\n\nThe operating point is then fixed by the **ratio f/fg**: two tests with equal f/fg — and equal fill factor — sit at the **same point** on the normalized plane and produce geometrically similar signals. This is the **law of similarity**, and it is why a technique proven on one bar size transfers to another by recomputing the frequency instead of starting over.\n\nWork one: 2024-T4 rod, σ ≈ 30% IACS ≈ 17.4 MS/m, d = 1.27 cm (0.500 in). fg = 5066 ÷ (17.4 × 1 × 1.61) ≈ **180 Hz**, so a 9 kHz test runs at **f/fg ≈ 50**. Double the diameter and fg falls to one quarter (≈ 45 Hz) — holding f/fg ≈ 50 now means testing near **2.3 kHz**."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-2-3-fig-a",
+   "caption": "Raising f/fg walks the operating point down the normalized conductivity locus. Near the air point the lift-off direction runs almost parallel to the locus; toward the knee and below, the directions separate cleanly."
+  },
+  {
+   "type": "text",
+   "heading": "Where to Park: Separation versus Penetration",
+   "body": "Why walk the point down at all? Because **direction is information**, and directions spread as you descend. Near the air point — low f/fg — the lift-off line and the conductivity locus run nearly **parallel**: probe wobble and an alloy change write almost the same trace, and no rotation knob can separate two signals that arrive in the same direction. Descending the curve opens the angle between them; in the **knee region** the spread approaches a right angle, which is why conductivity meters and most surface-probe techniques are set up to operate there for the alloy at hand.\n\nDescending has a price, and you already know its name. Raising frequency shrinks the standard depth of penetration — **δ (mm) ≈ 660/√(f × μᵣ × σ %IACS)** — and stacks phase lag at about **57° per standard depth**. The same 9 kHz that parks a 12.7-mm 2024 rod at f/fg ≈ 50 gives δ ≈ 1.3 mm: a discontinuity 4 mm deep lies beyond the ~3δ effective depth and returns almost nothing.\n\nSo frequency selection is a negotiation: high enough that the variables you must separate point in different directions, low enough that real current still crosses the deepest flaw the procedure requires you to find. Module 2.4 builds the full selection method — this lesson's job is to make sure you can read the map it is played on."
+  },
+  {
+   "type": "text",
+   "heading": "Coupling I: Lift-Off on Surface Probes",
+   "body": "**Coupling** is how much of the coil's field actually links the part. For a surface probe the coupling variable is **lift-off**, and Level I gave you its signature: a fast, nearly straight excursion toward the air point, steepest over the **first few thousandths of an inch** of gap.\n\nLevel II adds the discipline:\n\n- **Coupling loss is sensitivity loss — everywhere.** Lift-off does not merely write its own trace; it weakens every other signal, because less field reaches the metal at all. A crack under thick paint answers weaker than the same crack under thin paint — which is why sensitivity must be demonstrated on a reference standard **through the maximum coating thickness the procedure permits**.\n- **Control it mechanically first.** Spring-loaded probes, wear shoes and guides, a probe held square to the surface, and consistent scanning pressure all attack coupling noise before the electronics ever see it.\n- **Then handle the remainder by phase.** Standard practice rotates the display so lift-off runs **horizontal**; crack signals then break away at a distinct angle, and you evaluate what departs from the lift-off line instead of trusting raw amplitude.\n- **Or put it to work.** Calibrated lift-off is a measurement: nonconductive coating thickness over metal (the province of ASTM B244), with conductivity meters compensating small probe-spacing changes — but only within the limits the instrument and procedure state."
+  },
+  {
+   "type": "text",
+   "heading": "Coupling II: Fill Factor in Encircling and Bobbin Coils",
+   "body": "When the coil surrounds the part — or travels inside it — coupling becomes **fill factor (η)**: the fraction of the coil's window the part actually fills, computed as a **diameter ratio squared**.\n\n- **Encircling (OD) coil:** η = (part diameter ÷ effective coil diameter)². A 15.9-mm rod in a coil of 17.0-mm effective diameter: η = (15.9/17.0)² ≈ **0.87**.\n- **Internal bobbin (ID) probe:** η = (probe coil diameter ÷ tube inside diameter)². A 14.0-mm bobbin in 19.05 × 1.65-mm wall condenser tubing (ID = 15.75 mm): η = (14.0/15.75)² ≈ **0.79**.\n\nPerfect coupling is η = 1 — unreachable, because the probe has to pass. To a first approximation **signal amplitude scales with fill factor**: drop η from 0.8 to 0.4 and every response on the screen, flaw and noise alike, roughly halves. Practice follows directly: use the **largest probe, or snuggest coil, that passes the worst expected part condition reliably**, with the governing procedure setting the minimum.\n\nTwo consequences matter at Level II. First, for an encircling coil a **diameter change is a coupling change**: OD variation speaks in the fill-factor direction — the basis of dimensional monitoring, and the reason an off-center rod in an oversize coil generates wobble noise. Center the part with guides and saddles. Second, fill factor is the through-coil analog of lift-off — same physics, same pull toward the air point, same discipline."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-2-3-fig-b",
+   "caption": "Fill factor is the diameter ratio squared — part-to-coil for encircling coils, probe-to-tube-ID for bobbin probes — and signal amplitude is roughly proportional to it."
+  },
+  {
+   "type": "text",
+   "heading": "Field Strength: The Drive Lever",
+   "body": "The third system lever is **field strength** — the magnetizing force **H** the coil applies to the part. It is set by the drive current and the number of turns (**ampere-turns**) and it weakens with distance from the winding, which means coupling and field strength travel together: lift-off literally lowers the field the surface sees.\n\nIn **nonmagnetic** conductors the test is **linear**. Double the drive and the induced eddy current density doubles; every signal on the screen doubles; and the **normalized operating point does not move**, because position is set by f, σ, μᵣ, and geometry — not by amplitude. Drive therefore buys signal relative to the instrument's **electronic noise floor** — valuable with small probes, low fill factor, or long cables — but it creates no new information: material noise grows by exactly the same factor as the flaw. Note the difference from **gain**, which amplifies signal and electronic noise together after the coil; drive raises the physics itself.\n\nThe limits arrive quickly: drive the coil too hard and the amplifier saturates and clips, while **coil self-heating** drifts the winding resistance and walks your null. The working rule on nonmagnetic parts: enough drive to stand clear of electronic noise, then stop.\n\n**Ferromagnetic** parts break the linearity — permeability is the local slope of the B-H curve, so μᵣ itself depends on H. That changes everything, and it gets the final word below."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-2-3-fig-c",
+   "caption": "In nonmagnetic material, drive scales amplitude and nothing else. In ferromagnetic material, permeability is the local slope of the B-H curve, so the response moves with drive level — until DC saturation pins incremental μᵣ near 1."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "In steel, the drive lever moves the material",
+   "body": "On a ferromagnetic part, every drive setting is a different test: μᵣ follows field strength, so the operating point, the depth of penetration, and every phase angle move with excitation — and the distorted, nonsinusoidal response generates harmonics (exploited deliberately in some sorting instruments, poison for repeatability). The stable fix is **magnetic saturation**: a strong DC field flattens the B-H slope until incremental μᵣ approaches 1 and the steel tests like a plain conductor — the basis of steel-tube examination per ASTM E309. No saturation available? Use the lowest drive that clears noise, lock it, and re-standardize any time it changes."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-2-3-fig-a",
+   "title": "Frequency and the f/fg ratio on the normalized impedance plane",
+   "file": "et2-2-3-fig-a.svg"
+  },
+  {
+   "id": "et2-2-3-fig-b",
+   "title": "Fill factor: coupling for encircling and bobbin coils",
+   "file": "et2-2-3-fig-b.svg"
+  },
+  {
+   "id": "et2-2-3-fig-c",
+   "title": "Field strength: linear response versus ferromagnetic B-H behavior",
+   "file": "et2-2-3-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Tune the Test System: Four Calls",
+  "intro": "Frequency, coupling, and drive — one decision each. Your tools: fg = 5066/(σ × μᵣ × d²) with σ in MS/m and d in cm; η = (diameter ratio)²; δ (mm) ≈ 660/√(f × μᵣ × σ %IACS). Work each on paper before you click.",
+  "steps": [
+   {
+    "prompt": "A qualified encircling-coil technique was proven on 12.7-mm (1.27 cm) 2024-T4 rod — fg ≈ 180 Hz — running at 9 kHz, so f/fg ≈ 50. The line switches to 25.4-mm rod of the same alloy. To reproduce the same operating point you should:",
+    "options": [
+     "Stay at 9 kHz — the alloy has not changed",
+     "Drop to about 2.3 kHz so f/fg stays near 50",
+     "Raise to 36 kHz to compensate for the larger mass",
+     "Double the drive voltage and leave the frequency alone"
+    ],
+    "correct": 1,
+    "feedback": "fg scales with 1/d²: doubling the diameter cuts fg to about 45 Hz, so holding f/fg ≈ 50 requires f ≈ 50 × 45 ≈ 2.3 kHz. Equal f/fg with equal fill factor reproduces the operating point — the law of similarity. Drive changes amplitude, never position."
+   },
+   {
+    "prompt": "You are choosing a bobbin probe for 19.05 × 1.65-mm wall condenser tubing (ID 15.75 mm). The kit offers 10.0-, 12.0-, and 14.0-mm probes, and the tube sheet log notes light denting in some legs. Best choice:",
+    "options": [
+     "10.0 mm — easiest passage, η ≈ 0.40",
+     "12.0 mm — splits the difference, η ≈ 0.58",
+     "14.0 mm — the highest fill factor that still passes, η ≈ 0.79",
+     "Any of them — fill factor affects phase, not amplitude"
+    ],
+    "correct": 2,
+    "feedback": "Signal amplitude scales roughly with η, so the 14-mm probe returns about double the 10-mm probe's response from the same flaw. Pick the largest probe that will pass the worst expected tube condition reliably — and prove passage before committing the bundle."
+   },
+   {
+    "prompt": "Scanning painted aluminum skin with a surface probe, lift-off rotated horizontal, you see large horizontal excursions wherever the paint thickness steps; the reference-notch signal breaks steeply upward. The horizontal excursions are:",
+    "options": [
+     "Cracks — paint cannot move an eddy current signal",
+     "Conductivity variations in the aluminum skin",
+     "Coupling (lift-off) changes from the coating — separated from flaws by direction, not amplitude",
+     "Evidence that the drive level is set too high"
+    ],
+    "correct": 2,
+    "feedback": "Coating steps change coil-to-metal spacing, and coupling signals run along the lift-off line toward the air point. With lift-off rotated horizontal, you evaluate whatever breaks away in phase from that line — judged on amplitude alone, a thick paint step could outshout a crack."
+   },
+   {
+    "prompt": "A 410 stainless (ferromagnetic) component is tested with no saturation fixture available. The night shift raised the drive 'for more signal,' and now indications will not repeat against the morning standardization. The root cause:",
+    "options": [
+     "Coil heating changed the cable capacitance",
+     "Permeability follows field strength — changing the drive moved the operating point and depth response",
+     "The higher drive reduced the fill factor",
+     "The instrument gain control is out of calibration"
+    ],
+    "correct": 1,
+    "feedback": "In ferromagnetic material μᵣ is the local B-H slope, so a new drive level is a new material response — operating point, δ, and phase angles all shift. Without saturation, set the lowest workable drive, lock it, and re-standardize whenever it changes."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "For a solid nonmagnetic cylinder in an encircling coil, fg = 5066/(σ × μᵣ × d²). If the rod diameter doubles and the alloy is unchanged, the characteristic frequency fg:",
+   "options": [
+    "Doubles",
+    "Falls to one quarter of its value",
+    "Falls to one half of its value",
+    "Increases four times"
+   ],
+   "correct": 1,
+   "explanation": "fg varies inversely with d². Doubling d multiplies d² by four, so fg drops to one quarter — and holding the same operating point means dropping the test frequency by the same factor of four."
+  },
+  {
+   "question": "A 12.0-mm bobbin probe is used in tubing with a 15.0-mm inside diameter. The fill factor is approximately:",
+   "options": [
+    "0.80",
+    "0.36",
+    "0.64",
+    "1.25"
+   ],
+   "correct": 2,
+   "explanation": "η = (12.0/15.0)² = 0.80² = 0.64. Fill factor is the diameter ratio squared — the unsquared ratio, 0.80, is the classic wrong answer."
+  },
+  {
+   "question": "On a nonmagnetic aluminum part, the excitation (drive) level is doubled. The expected result is:",
+   "options": [
+    "All signal amplitudes roughly double, while the normalized operating point stays put",
+    "The operating point moves down the conductivity curve",
+    "The standard depth of penetration doubles",
+    "Lift-off sensitivity disappears"
+   ],
+   "correct": 0,
+   "explanation": "Nonmagnetic conductors respond linearly: eddy current density — and every signal — scales with field strength, but the normalized impedance point, penetration, and phase geometry are set by frequency, conductivity, permeability, and geometry, not by drive."
+  },
+  {
+   "question": "Operating near the knee of the conductivity curve is preferred for conductivity and surface-probe work mainly because:",
+   "options": [
+    "Eddy current penetration is deepest there",
+    "The instrument needs less gain there",
+    "Fill factor reaches its maximum there",
+    "The lift-off and conductivity directions separate widely there, so each variable claims its own direction"
+   ],
+   "correct": 3,
+   "explanation": "Near the air point, lift-off and the conductivity locus run nearly parallel and cannot be separated by phase. Descending toward the knee opens the angle between them toward a right angle — separation is the prize, and it is bought at the cost of penetration, which shrinks as frequency rises."
+  },
+  {
+   "question": "A ferromagnetic steel tube is examined with an encircling coil and DC magnetic saturation per ASTM E309. The saturating field is applied primarily to:",
+   "options": [
+    "Increase the eddy current density for stronger flaw signals",
+    "Drive the incremental permeability toward 1 so permeability variations stop masking the test and penetration stabilizes",
+    "Demagnetize the tube after the examination",
+    "Raise the fill factor of the coil"
+   ],
+   "correct": 1,
+   "explanation": "Saturation flattens the B-H slope: incremental μᵣ approaches 1, the steel behaves like a nonmagnetic conductor, permeability noise collapses, and the depth of penetration becomes stable and predictable. It is a permeability fix, not a sensitivity boost."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II Course §2.2 (factors that affect coil impedance — test system: frequency, coupling, field strength)",
+  "ASNT Recommended Practice No. SNT-TC-1A (2024), Eddy Current Testing method (training and qualification framework)",
+  "ASTM E243 (electromagnetic / eddy current examination of copper and copper-alloy tubes — encircling-coil and fill-factor practice)",
+  "ASTM E309 (eddy current examination of steel tubular products using magnetic saturation)"
+ ]
+}

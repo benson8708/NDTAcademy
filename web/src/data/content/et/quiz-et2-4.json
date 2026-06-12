@@ -1,0 +1,115 @@
+{
+ "moduleId": "et2-4",
+ "questions": [
+  {
+   "question": "In the working relationship δ ≈ 660/√(f · µᵣ · σ), test frequency is called \"the only term you own\" at setup. The reason is that:",
+   "options": [
+    "conductivity and permeability are fixed by the part and coil geometry by the probe, so frequency is the remaining setup variable — and it sets penetration depth, phase spread, operating point, and raw signal strength all at once",
+    "instrument gain and filter controls have no effect on the displayed signal",
+    "conductivity and permeability can be corrected afterward with display rotation",
+    "frequency is the only term with no effect on depth of penetration, so it is safe to change"
+   ],
+   "correct": 0,
+   "explanation": "The part fixes σ and µᵣ the moment it arrives, and choosing the probe fixes coil geometry — frequency is the lever left to the technician. It simultaneously commands δ (∝ 1/√f), the phase lag per unit depth (≈57° per standard depth), the operating point on the conductivity locus, and induced signal strength. That is why selection always starts from the question \"what type of test is this?\""
+  },
+  {
+   "question": "A shop must (a) verify heat treatment of aluminum parts with a 60 kHz conductivity meter and (b) survey thin aluminum skins for far-side corrosion thinning. How does the thickness-versus-penetration reasoning differ between the two jobs?",
+   "options": [
+    "Both jobs require at least 2.6 standard depths of metal under the probe",
+    "Both jobs require δ to be much smaller than the part thickness",
+    "Sorting wants the part to look electrically thick — about 2.6δ of metal under the probe so the far side cannot influence the reading; thinning wants the opposite — δ set near the nominal wall so the far surface stays inside the current",
+    "Sorting requires the far wall inside the current, while thinning requires at least 2.6δ of metal beneath the probe"
+   ],
+   "correct": 2,
+   "explanation": "A conductivity reading is honest only when the metal under the probe satisfies the ~2.6δ criterion (stack identical same-alloy, same-temper sheets or raise frequency if it falls short). A thinning survey is the mirror image: the far wall must remain inside the current so metal loss produces a steep, monotonic response — run the frequency too high and the instrument is blind to far-wall loss."
+  },
+  {
+   "question": "For bobbin-coil ID/OD discrimination, Admiralty brass condenser tube (ρ ≈ 7 µΩ·cm, 1.65-mm wall) runs near 8 kHz while Inconel steam-generator tube (ρ ≈ 100 µΩ·cm, 1.27-mm wall) runs near 190 kHz. The property chiefly responsible for the difference is:",
+   "options": [
+    "magnetic permeability — Inconel is strongly ferromagnetic and needs more field",
+    "electrical resistivity — f₉₀ = 3ρ/t² scales directly with ρ, so brass's high conductivity (low resistivity) drags its prime frequency far below the high-resistivity nickel alloy's",
+    "tube diameter — larger bores always demand lower frequencies",
+    "fill factor — brass probes fit the bore more loosely"
+   ],
+   "correct": 1,
+   "explanation": "The f₉₀ rule puts resistivity in the numerator: 3 × 7 ÷ (1.65)² ≈ 8 kHz for brass versus 3 × 100 ÷ (1.27)² ≈ 190 kHz for Inconel. The ~14× resistivity difference dominates; the walls differ far less. Both are tested as nonferromagnetic tubing — permeability, diameter, and fill factor do not set the prime frequency."
+  },
+  {
+   "question": "A flaw indication stands only about twice as high as the surrounding grass. Doubling the instrument gain will:",
+   "options": [
+    "raise the ratio to 4:1, making the flaw reliably detectable",
+    "improve the ratio slightly, because flaw signals amplify faster than noise",
+    "leave the ratio at 2:1 — the noise rides on the coil's signal before the amplifier ever sees it, so gain lifts flaw and grass together",
+    "reduce the noise, because the amplifier clips the grass first"
+   ],
+   "correct": 2,
+   "explanation": "SNR is set at the coil, by physics. Amplification multiplies whatever arrives — signal and noise in the same proportion — so a buried flaw stays buried at every gain setting. Raising the ratio means attacking noise at its source (probe choice, saturation, shielding, grounding, frequency placement) and then proving at least 3:1 on the reference standard."
+  },
+  {
+   "question": "During lap-joint scanning a technician faces two separate noise problems: strong signals whenever the probe nears fastener heads, and 50/60 Hz hum picked up from welding leads running beside the probe cable. The correctly matched countermeasures are:",
+   "options": [
+    "a ferrite-shielded probe for both problems",
+    "shielded coaxial cable for both problems",
+    "DC saturation for the fastener signals and a ferrite cup core for the hum",
+    "a ferrite-shielded probe to confine the coil's field against the fastener geometry, plus shielded cable, separated routing, and grounding discipline against the electrical pickup"
+   ],
+   "correct": 3,
+   "explanation": "\"Shielding\" covers two different fixes aimed at two different enemies. A ferrite cup core confines the magnetic footprint so adjacent fasteners and edges stop answering — at the price of a smaller sensed volume. Electrical interference enters through the cabling, so the cure is the grounded shield braid, separation from power and welding leads, and proper grounding. Neither shield substitutes for the other, and saturation addresses permeability noise, not geometry."
+  },
+  {
+   "question": "An instrument chassis is earthed through its power cord while the probe-cable shield is also clamped to plant steel at the far end, and a steady hum results. The correct cure is to:",
+   "options": [
+    "reconfigure for a single point of earth contact — land the shield at one end only or run on battery power — and never lift the AC safety ground",
+    "break the loop by lifting the AC safety ground with a two-prong adapter",
+    "raise the high-pass filter until the hum disappears, then continue testing",
+    "apply DC saturation to the part"
+   ],
+   "correct": 0,
+   "explanation": "Two earth points form a ground loop: industrial grounds differ by millivolts of 50/60 Hz, which drives current through the shield and into the signal path. Single-point grounding or battery operation breaks the loop safely. Defeating the safety ground trades a noise problem for a lethal one, filters are a final trim rather than a cure, and saturation targets permeability noise — a different enemy."
+  },
+  {
+   "question": "Phase discrimination separates the variable of interest from noise by angle rather than by amplitude because:",
+   "options": [
+    "noise signals are always smaller than flaw signals",
+    "real noise is not small — probe wobble or fill-factor variation can swing the spot as hard as a reportable flaw, so an amplitude threshold cannot tell them apart, but their directions on the impedance plane differ",
+    "amplitude information is discarded by the impedance-plane display",
+    "phase angles do not depend on the choice of test frequency"
+   ],
+   "correct": 1,
+   "explanation": "Every test variable writes its signal in a characteristic direction, and frequency controls the angles between those directions — by moving the operating point and by setting the phase lag per standard depth (≈57°/δ one way). Wobble can match a flaw's amplitude but not its direction, which is why surface setups rotate lift-off horizontal and alarm on the vertical channel."
+  },
+  {
+   "question": "Tube examination practices such as ASTM E243 and E309 require the reference standard to pass through the coil at the same speed used for the production examination. The reason is that:",
+   "options": [
+    "faster passes heat the tube and change its conductivity",
+    "the reference notches enlarge with repeated passes",
+    "scan speed changes the standard depth of penetration",
+    "a passing defect briefly modulates the carrier, and the band-pass filters are tuned to that envelope band at one speed — change the speed and the defect's frequency content moves out of the filter band"
+   ],
+   "correct": 3,
+   "explanation": "Transit time (sensing width ÷ speed) sets the envelope frequency. Filters tuned at the qualified speed reject the signature as drift if the line slows, or clip and smear it if the line speeds up — so speed, filters, and frequency are standardized together, and any change forces dynamic re-standardization. Skin depth depends on test frequency, not on scan speed."
+  },
+  {
+   "question": "A procedure that only required detecting a subsurface flaw is revised to require depth evaluation by phase. For the same flaw depth, the test frequency should move:",
+   "options": [
+    "up by about a factor of nine, because evaluation needs finer phase resolution",
+    "down by about a factor of nine — detection allows the flaw just inside 3δ, but evaluation wants it near 1δ, and a depth ratio of 3 means a frequency ratio of 3² = 9",
+    "nowhere — detection and evaluation share the same optimum frequency",
+    "down by about a factor of three, matching the depth ratio directly"
+   ],
+   "correct": 1,
+   "explanation": "Since δ ∝ 1/√f, moving the flaw's position from 3δ to 1δ means tripling δ, which requires dividing frequency by 3² = 9. Near 1δ the flaw sits in about 37% of the surface current density with a healthy ≈115° of observed rotation per standard depth to grade against; at 3δ only about 5% of the density remains and the rotation nearly wraps a full turn — honest for detection, useless for evaluating depth."
+  },
+  {
+   "question": "Eddy current density decays exponentially with depth in a conductor because:",
+   "options": [
+    "the metal absorbs the entire magnetic field as heat in the first layer",
+    "eddy currents reflect off grain boundaries back toward the surface",
+    "each layer of induced current generates a field that opposes the field driving the layer beneath it, so the self-shielding compounds layer by layer — Lenz's law applied through the depth",
+    "the coil's field is electrostatic and cannot enter a conductor"
+   ],
+   "correct": 2,
+   "explanation": "The decay J(x) = J₀ · e^(−x/δ) is Lenz's law working layer by layer: each sheet of current weakens the field exciting the metal below, so every successive layer carries less current. There is no sharp cutoff — only the milestones worth memorizing: 37% of surface density at 1δ, 13.5% at 2δ, and 5% at 3δ, the effective depth of penetration."
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">Standard Depth vs Frequency — the Selection Chart</text>
+
+  <!-- grid -->
+  <line x1="220" y1="60" x2="220" y2="420" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.15"/>
+  <line x1="340" y1="60" x2="340" y2="420" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.15"/>
+  <line x1="460" y1="60" x2="460" y2="420" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.15"/>
+  <line x1="580" y1="60" x2="580" y2="420" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.15"/>
+  <line x1="700" y1="60" x2="700" y2="420" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.15"/>
+  <line x1="100" y1="60" x2="700" y2="60" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.15"/>
+  <line x1="100" y1="150" x2="700" y2="150" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.15"/>
+  <line x1="100" y1="240" x2="700" y2="240" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.15"/>
+  <line x1="100" y1="330" x2="700" y2="330" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.15"/>
+
+  <!-- axes -->
+  <line x1="100" y1="60" x2="100" y2="420" stroke="#FFFFFF" stroke-width="2"/>
+  <line x1="100" y1="420" x2="700" y2="420" stroke="#FFFFFF" stroke-width="2"/>
+
+  <!-- y labels -->
+  <text x="92" y="52" text-anchor="end" font-size="15" fill="#FFFFFF">δ (mm)</text>
+  <text x="92" y="64" text-anchor="end" font-size="14" fill="#FFFFFF">100</text>
+  <text x="92" y="154" text-anchor="end" font-size="14" fill="#FFFFFF">10</text>
+  <text x="92" y="244" text-anchor="end" font-size="14" fill="#FFFFFF">1</text>
+  <text x="92" y="334" text-anchor="end" font-size="14" fill="#FFFFFF">0.1</text>
+  <text x="92" y="424" text-anchor="end" font-size="14" fill="#FFFFFF">0.01</text>
+
+  <!-- x labels -->
+  <text x="100" y="442" text-anchor="middle" font-size="14" fill="#FFFFFF">100 Hz</text>
+  <text x="220" y="442" text-anchor="middle" font-size="14" fill="#FFFFFF">1 kHz</text>
+  <text x="340" y="442" text-anchor="middle" font-size="14" fill="#FFFFFF">10 kHz</text>
+  <text x="460" y="442" text-anchor="middle" font-size="14" fill="#FFFFFF">100 kHz</text>
+  <text x="580" y="442" text-anchor="middle" font-size="14" fill="#FFFFFF">1 MHz</text>
+  <text x="700" y="442" text-anchor="middle" font-size="14" fill="#FFFFFF">10 MHz</text>
+  <text x="400" y="468" text-anchor="middle" font-size="15" fill="#9BC4FF">test frequency — δ = 660/√(f · μᵣ · σ %IACS), slope −½ on log–log axes</text>
+
+  <!-- material lines -->
+  <line x1="100" y1="76.2" x2="700" y2="301.2" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="3 5"/>
+  <line x1="100" y1="94.1" x2="700" y2="319.1" stroke="#9BC4FF" stroke-width="2.5" stroke-dasharray="8 5"/>
+  <line x1="100" y1="144" x2="700" y2="369" stroke="#FFFFFF" stroke-width="4"/>
+  <line x1="100" y1="166.2" x2="700" y2="391.2" stroke="#9BC4FF" stroke-width="2.5"/>
+  <line x1="100" y1="211.2" x2="656.7" y2="420" stroke="#1E66F5" stroke-width="4"/>
+
+  <!-- worked example: 1δ = 1.0 mm in 7075-T6 -->
+  <line x1="100" y1="240" x2="356" y2="240" stroke="#FFFFFF" stroke-width="1.8" stroke-dasharray="7 6"/>
+  <line x1="356" y1="240" x2="356" y2="420" stroke="#FFFFFF" stroke-width="1.8" stroke-dasharray="7 6"/>
+  <circle cx="356" cy="240" r="5.5" fill="#1E66F5" stroke="#FFFFFF" stroke-width="1.5"/>
+  <text x="362" y="410" font-size="14" font-weight="bold" fill="#FFFFFF">≈14 kHz</text>
+
+  <rect x="420" y="64" width="278" height="58" rx="8" fill="#1E66F5" fill-opacity="0.14" stroke="#9BC4FF" stroke-width="1"/>
+  <text x="559" y="88" text-anchor="middle" font-size="14" fill="#FFFFFF">Example: need 1δ = 1.0 mm in 7075-T6</text>
+  <text x="559" y="108" text-anchor="middle" font-size="14" fill="#9BC4FF">read across, drop down → f ≈ 14 kHz</text>
+
+  <!-- legend -->
+  <line x1="115" y1="308" x2="148" y2="308" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="3 5"/>
+  <text x="156" y="312" font-size="14" fill="#FFFFFF">Ti-6Al-4V (1.0 %IACS)</text>
+  <line x1="115" y1="332" x2="148" y2="332" stroke="#9BC4FF" stroke-width="2.5" stroke-dasharray="8 5"/>
+  <text x="156" y="336" font-size="14" fill="#FFFFFF">304 stainless (2.5)</text>
+  <line x1="115" y1="356" x2="148" y2="356" stroke="#FFFFFF" stroke-width="4"/>
+  <text x="156" y="360" font-size="14" fill="#FFFFFF">7075-T6 aluminum (32)</text>
+  <line x1="115" y1="380" x2="148" y2="380" stroke="#9BC4FF" stroke-width="2.5"/>
+  <text x="156" y="384" font-size="14" fill="#FFFFFF">copper (100)</text>
+  <line x1="115" y1="404" x2="148" y2="404" stroke="#1E66F5" stroke-width="4"/>
+  <text x="156" y="408" font-size="14" fill="#FFFFFF">carbon steel (10, μᵣ ≈ 100)</text>
+
+  <text x="400" y="492" text-anchor="middle" font-size="14" fill="#9BC4FF">two decades of frequency buy one decade of depth — detection-only work (flaw at 3δ) allows 9× the frequency shown</text>
+</svg>

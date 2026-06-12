@@ -1,0 +1,115 @@
+{
+ "moduleId": "et1-6",
+ "questions": [
+  {
+   "question": "A written ET technique fixes four families of settings — frequency, drive, gain and display sensitivity, and filtering and thresholds. This module takes frequency first because it alone:",
+   "options": [
+    "determines how hard the coil pushes its field into the part",
+    "changes what physically happens inside the part — which depths carry current and how much phase lag accumulates",
+    "sets how large the returning signal is drawn on the display",
+    "cleans unwanted noise out of the returned signal"
+   ],
+   "correct": 1,
+   "explanation": "Frequency decides which depths carry current, the phase lag per millimeter, and the impedance-plane operating point. Drive sets field strength, gain stretches whatever comes back, and filters clean it up — all downstream, and none of them can recover what a wrong frequency threw away."
+  },
+  {
+   "question": "An aluminum part is re-examined with the test frequency raised from 100 kHz to 400 kHz. The standard depth of penetration:",
+   "options": [
+    "doubles",
+    "drops to one quarter of its former value",
+    "is unchanged — penetration depends on drive level, not frequency",
+    "drops to one half of its former value"
+   ],
+   "correct": 3,
+   "explanation": "δ varies as 1/√f, so quadrupling the frequency divides δ by √4 = 2: the depth window halves, and the 3δ effective-depth bound shrinks with it. Cutting frequency to one quarter would do the opposite and double the window. Drive never sets penetration."
+  },
+  {
+   "question": "For bobbin-coil examination of nonferromagnetic heat-exchanger tubing, the prime frequency f90 ≈ 3ρ/t² is used because at f90:",
+   "options": [
+    "support plates no longer produce any signal",
+    "the standard depth of penetration exactly equals the wall thickness",
+    "signals originating at the tube's inner and outer surfaces are separated by about 90° of phase",
+    "the coil's inductive reactance cancels its resistance"
+   ],
+   "correct": 2,
+   "explanation": "At f90 the wall spans a readable quarter-turn of phase; many procedures then rotate the through-wall hole signal to about 40° so ID-origin indications fall below it and OD-origin indications above it. Support-plate suppression comes from lower-frequency channels combined in mixes, not from f90 itself."
+  },
+  {
+   "question": "A second-layer flaw sits just beyond 3δ for the frequency in use, and no indication appears. The only adjustment from this module that can make the flaw detectable is:",
+   "options": [
+    "lowering the test frequency so δ — and the 3δ detection window — grows",
+    "raising the channel gain",
+    "raising the coil drive voltage",
+    "selecting a more sensitive display range (fewer volts per division)"
+   ],
+   "correct": 0,
+   "explanation": "Beyond 3δ too little current flows for reliable detection — only about 5% of the surface density remains there. Gain amplifies signal and noise by the same factor, drive scales the whole pattern without changing the current distribution (you cannot buy penetration with drive), and display sensitivity merely rescales the picture. Only frequency changes which depths carry current."
+  },
+  {
+   "question": "Raising coil drive lifts a weak deep-flaw signal above the receiver's electronic noise, yet does nothing against noise from surface roughness and probe wobble, because:",
+   "options": [
+    "electronic noise grows with drive while part-generated noise stays fixed",
+    "drive acts only on the receiver electronics, not on the field in the part",
+    "roughness noise occurs at frequencies too high for the drive circuit to influence",
+    "roughness and wobble noise are induced in the part, so they grow with drive in the same proportion as the flaw signal, while the receiver's electronic noise stays fixed"
+   ],
+   "correct": 3,
+   "explanation": "Drive acts at the source: it strengthens the field in the part, so everything induced there — flaw response and material or lift-off noise alike — scales together, leaving that ratio untouched. Electronic noise is generated in the receiver and does not care what the drive is, so signal-to-electronic-noise improves. Material and lift-off noise are fought with frequency, probe choice, and filtering."
+  },
+  {
+   "question": "In steel tubular-product testing, 'magnetic saturation' differs from 'receiver saturation' in that magnetic saturation:",
+   "options": [
+    "is a deliberate condition — a separate DC magnetizing circuit holds the ferromagnetic part in a strong field so permeability variations flatten out — while receiver saturation is an electronics overload that clips signals",
+    "is an overload of the input amplifier, while receiver saturation occurs in the test part",
+    "is produced by turning the test coil's AC drive up to maximum",
+    "must always be avoided, while receiver saturation is applied intentionally"
+   ],
+   "correct": 0,
+   "explanation": "Deliberate magnetic saturation — the ASTM E309 approach — suppresses permeability noise in steel products and comes from a separate DC circuit, not from the test-coil drive. Receiver saturation is too much signal into the amplifier: flat-topped indications with false amplitude and distorted phase, cured by less gain or less drive followed by re-standardization."
+  },
+  {
+   "question": "A procedure holds the drive voltage constant while the test frequency is raised. The current actually flowing in the coil:",
+   "options": [
+    "increases in proportion to frequency",
+    "decreases, because the coil's inductive reactance climbs with frequency",
+    "stays the same, because current depends only on the applied voltage",
+    "drops to zero once the frequency exceeds resonance"
+   ],
+   "correct": 1,
+   "explanation": "At a fixed drive voltage the coil current is set by the coil's impedance, and inductive reactance rises with frequency — so the same voltage pushes less current at a higher test frequency. The primary field follows ampere-turns, which is one reason technique sheets state and verify drive for each frequency or channel."
+  },
+  {
+   "question": "An ET shop checks its instrument electronics against traceable references in a lab on a documented schedule, and also adjusts the whole probe-cable-instrument system on a reference standard at the start of every shift. In ASTM E1316 terms these two activities are, respectively:",
+   "options": [
+    "standardization; calibration",
+    "calibration; nulling",
+    "calibration; standardization",
+    "verification; calibration"
+   ],
+   "correct": 2,
+   "explanation": "Calibration is the periodic, documented lab check of the instrument's electronics against traceable references. Standardization is performed at the test site, every shift, by setting the complete system so the reference standard produces the specified response. Nulling (balancing) is just one step inside the standardization sequence."
+  },
+  {
+   "question": "Channel (input) gain and display sensitivity both make signals look bigger. The critical difference is that channel gain:",
+   "options": [
+    "rescales the processed picture without ever affecting the signal itself",
+    "improves signal-to-noise ratio while display sensitivity does not",
+    "is marked in volts per division rather than decibels",
+    "acts on the signal before processing, so set too high it saturates the amplifier and destroys amplitude and phase information — while display sensitivity only rescales the processed picture"
+   ],
+   "correct": 3,
+   "explanation": "Amplifier saturation happens before the display, so a clipped signal cannot be recovered by any display adjustment. Display sensitivity sets volts per screen division and neither creates nor destroys information. Neither control improves signal-to-noise: gain amplifies flaw signals and noise by exactly the same factor."
+  },
+  {
+   "question": "Halfway through a shift the probe is replaced with a spare of the same part number. Before another part may be examined, the technique requires:",
+   "options": [
+    "nothing — probes of the same part number respond identically",
+    "full re-standardization on the reference standard",
+    "applying a fixed gain correction taken from the probe's data sheet",
+    "re-nulling on the next production part and continuing the run"
+   ],
+   "correct": 1,
+   "explanation": "The standardized response belongs to the complete system — probe, cable, instrument, and settings together — and each coil loads the circuit differently. Swapping a probe, cable, or instrument is a mandatory full re-standardization trigger; guessing a dB correction or nulling on production material is never permitted."
+  }
+ ]
+}

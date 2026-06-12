@@ -1,0 +1,74 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">One Path to Earth: Killing the Ground Loop</text>
+
+  <!-- ============ PANEL 1: WRONG ============ -->
+  <text x="40" y="58" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">WRONG — grounded at two points: the loop hums</text>
+  <!-- instrument -->
+  <rect x="50" y="72" width="140" height="92" rx="8" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <rect x="62" y="82" width="78" height="46" fill="#FFFFFF" stroke="#1E66F5" stroke-width="2"/>
+  <polyline fill="none" stroke="#1E66F5" stroke-width="2" points="66,105 72,96 78,114 84,96 90,114 96,96 102,114 108,96 114,114 120,96 126,114 132,100 136,105"/>
+  <text x="120" y="152" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">instrument</text>
+  <!-- probe + structure -->
+  <rect x="560" y="92" width="120" height="56" rx="6" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="620" y="124" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">probe + scanner</text>
+  <rect x="540" y="150" width="160" height="22" fill="#9BC4FF" fill-opacity="0.35" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="620" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">structure</text>
+  <!-- cable -->
+  <line x1="190" y1="118" x2="560" y2="118" stroke="#0B1F3A" stroke-width="2.5"/>
+  <rect x="290" y="98" width="100" height="18" fill="#FFFFFF" opacity="0.9"/>
+  <text x="340" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">cable shield</text>
+  <!-- two ground stems to the bus -->
+  <line x1="120" y1="164" x2="120" y2="238" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="620" y1="172" x2="620" y2="238" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="132" y="196" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">ground 1 — power cord</text>
+  <text x="632" y="192" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">ground 2 — shield</text>
+  <text x="632" y="210" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">clamped to structure</text>
+  <!-- circulating loop -->
+  <ellipse cx="390" cy="176" rx="150" ry="38" fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="402,138 388,132 388,144" fill="#1E66F5"/>
+  <polygon points="378,214 392,208 392,220" fill="#1E66F5"/>
+  <rect x="318" y="166" width="146" height="20" fill="#FFFFFF" opacity="0.95"/>
+  <text x="390" y="181" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">loop current = hum</text>
+  <!-- building ground bus -->
+  <line x1="90" y1="238" x2="710" y2="238" stroke="#0B1F3A" stroke-width="2.5"/>
+  <g stroke="#0B1F3A" stroke-width="2.5">
+    <line x1="76" y1="244" x2="104" y2="244"/>
+    <line x1="82" y1="250" x2="98" y2="250"/>
+    <line x1="87" y1="256" x2="93" y2="256"/>
+  </g>
+  <text x="400" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">building ground — millivolts of 50/60 Hz stand between any two ground points</text>
+
+  <!-- ============ PANEL 2: RIGHT ============ -->
+  <text x="40" y="290" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">RIGHT — one ground point: no loop can form</text>
+  <!-- instrument -->
+  <rect x="50" y="304" width="140" height="92" rx="8" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <rect x="62" y="314" width="78" height="46" fill="#FFFFFF" stroke="#1E66F5" stroke-width="2"/>
+  <polyline fill="none" stroke="#1E66F5" stroke-width="2" points="66,340 94,340 100,330 106,350 112,340 136,340"/>
+  <text x="120" y="384" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">instrument</text>
+  <!-- probe + structure -->
+  <rect x="560" y="324" width="120" height="56" rx="6" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="620" y="356" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">probe + scanner</text>
+  <rect x="540" y="382" width="160" height="22" fill="#9BC4FF" fill-opacity="0.35" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="620" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">structure — no shield bond</text>
+  <!-- signal line and shield (open at probe end) -->
+  <line x1="190" y1="346" x2="560" y2="346" stroke="#0B1F3A" stroke-width="2.5"/>
+  <line x1="190" y1="356" x2="544" y2="356" stroke="#1E66F5" stroke-width="2"/>
+  <circle cx="550" cy="356" r="4" fill="#FFFFFF" stroke="#1E66F5" stroke-width="2"/>
+  <text x="210" y="374" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">shield landed at instrument end only</text>
+  <text x="538" y="374" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">open →</text>
+  <!-- single ground -->
+  <line x1="120" y1="396" x2="120" y2="424" stroke="#0B1F3A" stroke-width="2.5"/>
+  <g stroke="#0B1F3A" stroke-width="2.5">
+    <line x1="106" y1="424" x2="134" y2="424"/>
+    <line x1="112" y1="430" x2="128" y2="430"/>
+    <line x1="117" y1="436" x2="123" y2="436"/>
+  </g>
+  <text x="142" y="420" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">single-point ground</text>
+  <text x="300" y="420" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">— or battery power: no earth connection, no loop</text>
+
+  <!-- ============ NOTE ============ -->
+  <rect x="40" y="448" width="720" height="44" rx="8" fill="#9BC4FF" fill-opacity="0.18" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="400" y="466" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">Route probe cables clear of welding leads — cross power runs at right angles, never parallel.</text>
+  <text x="400" y="484" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">Never lift the AC safety ground to cure hum — reconfigure the signal grounds instead.</text>
+</svg>

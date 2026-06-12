@@ -1,0 +1,192 @@
+{
+ "lessonId": "et2-7-2",
+ "title": "Working from Written Operating Procedures",
+ "narrationScript": "At Level two, the written operating procedure is your contract with the part. This lesson walks the document chain — from the customer contract through the governing code or specification and the employer's written practice, down to the operating procedure a Level three developed and approved, and the technique sheet below it. You will learn the ten elements every eddy current procedure contains, and the idea that gives the document its teeth: the essential variable. Frequency, probe type and shielding, fill factor, scan speed, the reference standard — each changes the physics of the response, so none may change without a revised, requalified, approved procedure. Execution is a sequence: confirm the revision, gather the listed equipment, standardize exactly as written, then verify on schedule. When a verification fails, every part since the last good check gets re-examined — and when the part, the equipment, or the criteria do not match the page, a Level two stops and gets written approval. That stop is competence, not delay.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Procedure Owns the Test",
+   "body": "An eddy current test is not designed at the bench. By the time you uncoil a probe cable, every consequential decision — frequency, probe, reference standard, scan pattern, acceptance criteria — has already been made, qualified, and written down. Level II work is executing those decisions exactly, and understanding why each one is there.\n\nTrace the chain above you. A customer contract or purchase order invokes a **governing code or specification** — ASME Section V, Article 8 on code work; ASTM practices such as E243, E309, or E426 for tubular products; a prime contractor's specification on aerospace structure. The employer's **written practice**, built to ASNT SNT-TC-1A (2024) or NAS410, controls who is qualified to perform, interpret, and evaluate. The **operating procedure** translates the specification's requirements into one executable test: this instrument, this probe, this reference standard, these settings, these criteria. It is developed and approved at **Level III** — under NAS410, Level 3 approval of procedures is mandatory, and most written practices mirror that. Below the procedure may sit a **technique sheet** or work instruction pinning part-specific details, and below everything, the record your signature goes on.\n\nThat signature certifies compliance with a named procedure **revision**. Run a superseded revision — or a private improvement of your own — and the results are nonconforming even if every reading was perfect."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-7-2-fig-a",
+   "caption": "The document chain: every eddy current test sits inside layers of requirements. The Level II executes the highlighted layer exactly as written — changes to it belong to Level III."
+  },
+  {
+   "type": "text",
+   "heading": "Anatomy of an ET Operating Procedure",
+   "body": "Layouts differ between employers; content does not. Before setup, locate all ten elements — and if one is missing, that is a question for Level III, not a blank to improvise over.\n\n- **1 Scope:** materials, product form, part numbers, and the discontinuity types sought. Confirm it covers *your* part and alloy — a procedure for wrought 2024-T3 skin says nothing about a casting.\n- **2 References:** the governing specification and its edition. The procedure serves these documents.\n- **3 Personnel:** the certification level required to perform, interpret, and evaluate.\n- **4 Equipment:** instrument by model or performance requirement; probe type, size, shielding, and connector; cable type and length.\n- **5 Reference standards:** material, geometry, artificial discontinuity sizes — typically EDM notches with toleranced depth, width, and length — serial numbers, and certification.\n- **6 Standardization:** the setup sequence — frequency, balance, phase rotation (commonly lift-off horizontal), gain to bring the reference response to a stated value, filters, alarm gates — plus how often verification repeats and what passes.\n- **7 Scanning:** coverage, index and overlap, scan-speed limits, probe orientation, surface preparation.\n- **8 Evaluation and acceptance:** how indications are classified — usually phase and amplitude against the reference — what is recorded, what is rejectable, or a pointer to the criteria's home in the governing specification.\n- **9 Records:** what is written down, on what form, traceable to which revision.\n- **10 Deviations:** the documented path to follow when reality and the procedure disagree."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-7-2-fig-b",
+   "caption": "Ten standard elements of an eddy current operating procedure. Essential variables concentrate in elements 4 through 7; acceptance criteria may point upstream; deviations leave the document entirely."
+  },
+  {
+   "type": "table",
+   "caption": "Representative essential variables in an eddy current procedure — each one changes the physics of the response, so each is locked by the procedure.",
+   "headers": ["Variable", "Why the response changes", "If it must change"],
+   "rows": [
+    ["Test frequency", "Sets the standard depth of penetration and the phase separation between lift-off and flaw signals", "Revised, requalified procedure — a new frequency is a new test"],
+    ["Probe type and configuration (absolute or differential; surface, bobbin, rotating)", "Signal shape, noise rejection, and sensitivity to flaw orientation all shift", "Requalification on the reference standard before any part is tested"],
+    ["Probe size, shielding, fill factor", "Field footprint and coupling set sensitivity and edge-effect behavior near fasteners and geometry", "Documented Level III approval — 'similar' is not 'specified'"],
+    ["Scan or pull speed", "Band-pass filters are tuned to the flaw-signal rates produced at the qualified speed", "Stay inside the qualified range, or requalify the filter settings"],
+    ["Reference standard (material, geometry, notch dimensions)", "Defines the baseline every signal is judged against — conductivity, permeability, and geometry must represent the part", "Substitute standards require documented Level III / engineering approval"],
+    ["Instrument model and cable type / length", "Drive, bandwidth, and cable effects alter amplitude and phase response", "Re-standardize per procedure; substitutions outside it require approval"]
+   ]
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The essential-variable rule",
+   "body": "An **essential variable** is any parameter that changes the physical response of the test — frequency, probe, reference standard, speed, settings. Changing one without a revised and requalified procedure does not merely bend a rule; it produces results that no qualification has ever validated. The rule: **essential change → procedure revision + requalification + approval before the next part**. Nonessential changes — report format, the name of a qualified inspector — are documented by revision without requalification. A Level II can flag the need for either; only a Level III can approve."
+  },
+  {
+   "type": "text",
+   "heading": "Executing in Compliance: Setup, Standardization, Verification",
+   "body": "Compliance is a sequence. **Before setup:** confirm the procedure revision against the work order — then read the whole document, including the sections you think you remember. Pull the listed equipment: instrument with current calibration status, the specified probe (by part number where given), the serialized reference standard with its certification. If the procedure sets environmental limits — part and standard temperature for conductivity work is the classic — verify them now.\n\n**Standardize exactly as written.** Set the frequency, null the probe on the standard, rotate phase so lift-off runs horizontal, bring the reference notch to the required response within its stated tolerance, set filters and gates. Procedure numbers carry tolerances for a reason: '80% FSH ±5%' is an instruction, not a suggestion — and so is every **shall** in the document. *Shall* marks a mandatory requirement; *should* marks a recommendation you still need a reason to skip.\n\n**Verify on schedule.** Procedures require re-verification of the standardized response — typically at the start and end of the job, at fixed intervals such as every four hours or a set number of parts, and after any probe, cable, or instrument change, suspected probe damage, or power interruption. Pass: keep testing. Fail: everything since the last successful verification is **unproven** — find the cause, re-standardize, and re-examine every one of those parts. Accepting them untested violates the procedure; rejecting them untested wastes hardware and is equally indefensible."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-7-2-fig-c",
+   "caption": "Verification brackets validity. A failed check makes every result since the last good check unproven — stop, find the cause, re-standardize, and re-examine."
+  },
+  {
+   "type": "text",
+   "heading": "When the Page and the Part Disagree",
+   "body": "Some inspections cannot proceed in compliance, and recognizing that moment is a Level II skill, not a failure. Stop and escalate when:\n\n- **The part is outside scope** — an alloy, temper, geometry, or part number the procedure does not list.\n- **Specified equipment is unavailable** — the called-out probe or reference standard is missing, and only a 'similar' one sits on the shelf.\n- **The required setup cannot be achieved** — the notch response will not reach the required screen height within available gain, lift-off will not rotate clear of the flaw direction, or noise swallows the required signal-to-noise margin.\n- **Documents conflict** — the procedure and the governing specification disagree, or the acceptance criteria are ambiguous for the indication in front of you.\n- **Anything requires judgment the procedure does not delegate to you.**\n\nThe escalation path is short and formal: stop, preserve the setup, document what you found, and take it to the **Level III** — who may issue a clarification, a revision, or a documented deviation approval, involving cognizant engineering where the contract requires it. Verbal permission is worth the paper it is written on. Until the approval exists in writing, the test waits.\n\nThis is the quiet discipline behind the stamp: a Level II who stops on a mismatch is exercising certification, not obstructing the schedule — and every governing document in this lesson is on your side when you do."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-7-2-fig-a",
+   "title": "From contract to coil: the document chain",
+   "file": "et2-7-2-fig-a.svg"
+  },
+  {
+   "id": "et2-7-2-fig-b",
+   "title": "Anatomy of an eddy current operating procedure",
+   "file": "et2-7-2-fig-b.svg"
+  },
+  {
+   "id": "et2-7-2-fig-c",
+   "title": "The failed-check rule: verification and re-examination",
+   "file": "et2-7-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Procedure Walkthrough: One Shift on ET-214",
+  "intro": "You are the second-shift Level II. Work order WO-5521 invokes procedure ET-214 for eddy current inspection of aluminum fittings — surface scans and fastener holes. Four moments from one shift; in each, choose the action that keeps the test in compliance.",
+  "steps": [
+   {
+    "prompt": "The work order calls out 'ET-214, current revision.' The copy at the bench is Rev B; the document system shows Rev C was issued last month. Your first move?",
+    "options": [
+     "Use the bench copy of Rev B — differences between revisions are usually minor",
+     "Retrieve Rev C, confirm it is the revision the work order invokes, and read it through before setup",
+     "Start setup from memory while a trainee fetches the current revision",
+     "Ask another Level II what changed in Rev C and proceed on their summary"
+    ],
+    "correct": 1,
+    "feedback": "Your report certifies compliance with a named revision. Testing to a superseded document is a nonconformance even if every reading would have been identical — and revision changes in ET procedures are often exactly the 'minor' details that change response: frequency, reference standard, response tolerances."
+   },
+   {
+    "prompt": "ET-214 specifies a shielded 200 kHz absolute pencil probe by part number. The crib has none in stock — but an unshielded probe of the same frequency and diameter is available. What now?",
+    "options": [
+     "Standardize with the unshielded probe; if the notch response meets the required screen height, proceed",
+     "Use the unshielded probe and add a note to the report",
+     "Proceed, but only on areas away from fasteners where shielding matters less",
+     "Stop — probe type and shielding are essential variables; substitution needs documented Level III approval before any part is tested"
+    ],
+    "correct": 3,
+    "feedback": "Shielding confines the field. Near fastener heads and edges, the unshielded probe's response is a different test that no qualification has validated — meeting the notch response on the standard proves nothing about edge behavior. The procedure, not the bench stock, defines the probe."
+   },
+   {
+    "prompt": "Two hours into the run, you knock the probe hard against a fixture. The next part shows nothing unusual. ET-214 requires verification after suspected probe damage. Do you:",
+    "options": [
+     "Verify on the reference standard now — and if the response is out of limits, re-standardize and re-examine the parts since your last good check",
+     "Keep testing — the next part looked normal, so the probe survived",
+     "Swap to a fresh probe and continue without re-standardizing",
+     "Add 6 dB of gain as a precaution and continue"
+    ],
+    "correct": 0,
+    "feedback": "'Nothing unusual on the next part' proves nothing — a cracked ferrite core or chipped wear face can cut sensitivity while still producing a quiet, clean-looking trace. The reference standard is the only evidence. A new probe requires full re-standardization anyway, and gain added outside the procedure is itself a violation."
+   },
+   {
+    "prompt": "A fastener hole gives a sharp, repeatable indication at crack phase, peaking at 45% of the reference-notch response. ET-214 rejects indications at or above 100% of notch response and requires recording all crack-phase indications at or above 30%. Your action:",
+    "options": [
+     "No action — it is below the reject threshold",
+     "Reject the part — crack-phase indications are cracks",
+     "Record and report it per the procedure, with location and amplitude — the part is acceptable, but the indication stays in the record",
+     "Re-scan at higher gain until it crosses 100%, then reject"
+    ],
+    "correct": 2,
+    "feedback": "Compliance includes the recording threshold, not just the reject line — sub-reject indications feed trending and future engineering disposition. Silently passing it violates the records requirement; rejecting an acceptable part substitutes your judgment for the criteria; and manipulating gain to force a reject is falsification."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Which of the following changes to an approved eddy current procedure is an essential-variable change requiring revision and requalification before further testing?",
+   "options": [
+    "Printing the inspection report on a new form",
+    "Raising the test frequency from 200 kHz to 500 kHz",
+    "A different qualified Level II taking over the next shift",
+    "Correcting a typographical error in the references section"
+   ],
+   "correct": 1,
+   "explanation": "Frequency sets the standard depth of penetration and the phase separation between lift-off and flaw signals — the physical response of the test changes, so the procedure must be revised, requalified, and approved. Report format, a qualified change of operator, and typo corrections are administrative."
+  },
+  {
+   "question": "An ET procedure limits probe pull speed through heat-exchanger tubing to a qualified range. The physical reason speed is an essential variable is that:",
+   "options": [
+    "faster pulls heat the bobbin coil and shift its impedance",
+    "pull speed changes the tube material's conductivity",
+    "the instrument's band-pass filters are tuned to the flaw-signal rates produced at the qualified speed — outside that range they can suppress real flaw signals",
+    "slower speeds increase the fill factor"
+   ],
+   "correct": 2,
+   "explanation": "The frequency content of a flaw signal depends on how fast the coil crosses the flaw. Filters qualified at one speed pass those signal rates; run faster or slower and a real flaw's signal can fall outside the passband and vanish. Heating, conductivity, and fill factor do not change with speed."
+  },
+  {
+   "question": "A required four-hour verification fails — the reference notch reads well below the required response. After the cause is corrected and the system is re-standardized, the parts examined since the last successful verification must be:",
+   "options": [
+    "accepted, because they were examined under an approved procedure",
+    "rejected, because the equipment was found out of standardization",
+    "accepted if the operator believes sensitivity was still adequate",
+    "re-examined — their results are unproven in both directions"
+   ],
+   "correct": 3,
+   "explanation": "A failed check invalidates everything back to the last good check: those results are not bad, they are unproven. Accepting them untested violates the procedure; rejecting them untested scraps hardware with no evidence. Re-standardize and re-examine."
+  },
+  {
+   "question": "Under NAS410 and typical written practices per SNT-TC-1A (2024), who may approve an eddy current operating procedure — and a deviation from it?",
+   "options": [
+    "The NDT Level III, with cognizant engineering where the contract requires it",
+    "The Level II performing the test, provided the deviation is noted on the report",
+    "Any certified NDT person, in any method",
+    "The instrument manufacturer's field representative"
+   ],
+   "correct": 0,
+   "explanation": "Procedure development, qualification, and approval — and approval of deviations — sit at Level III; NAS410 makes Level 3 approval of procedures and work instructions explicit. A Level II executes, interprets, and evaluates per the procedure, and escalates when it cannot be followed."
+  },
+  {
+   "question": "In procedure language, the word 'shall':",
+   "options": [
+    "is interchangeable with 'should'",
+    "marks a recommendation that may be skipped at Level II discretion",
+    "marks a mandatory requirement — departing from it requires documented approval",
+    "applies only to safety-related steps"
+   ],
+   "correct": 2,
+   "explanation": "'Shall' states a binding requirement of the procedure; 'should' states a recommendation. Skipping a 'shall' without a documented, approved deviation makes the examination nonconforming regardless of the technical outcome."
+  }
+ ],
+ "references": [
+  "ASNT SNT-TC-1A (2024), Recommended Practice — employer written practice; Level II and Level III responsibilities",
+  "ANSI/ASNT CP-105-2024, Eddy Current Testing Level II topical outline §1.1 (explanation of standards and specifications used in eddy current testing)",
+  "ASME Boiler and Pressure Vessel Code, Section V, Article 8 (eddy current examination — written procedure requirements and essential variables)",
+  "NAS410 / EN 4179, Certification and Qualification of Nondestructive Test Personnel (Level 3 procedure approval; Level 2 execution and evaluation authority)"
+ ]
+}

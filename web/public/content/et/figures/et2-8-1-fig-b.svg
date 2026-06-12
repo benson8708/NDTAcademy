@@ -1,0 +1,65 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="500" fill="#0B1F3A"/>
+  <text x="400" y="36" text-anchor="middle" font-size="24" font-weight="bold" fill="#FFFFFF">Impedance-Plane Output Against an Alarm Window</text>
+
+  <!-- display -->
+  <rect x="60" y="64" width="340" height="360" rx="10" fill="#1E66F5" fill-opacity="0.08" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="76" y1="244" x2="384" y2="244" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.5"/>
+  <line x1="230" y1="80" x2="230" y2="408" stroke="#9BC4FF" stroke-width="1" stroke-opacity="0.5"/>
+  <text x="80" y="224" text-anchor="start" font-size="14" fill="#9BC4FF">← lift-off</text>
+  <text x="240" y="402" text-anchor="start" font-size="14" fill="#9BC4FF">amplitude</text>
+
+  <!-- alarm sector (phase + level gate) -->
+  <path d="M230,244 L301.9,89.9 L281.1,81.9 L259.5,76.6 L237.4,74.2 L215.2,74.6 Z" fill="#FFFFFF" fill-opacity="0.07"/>
+  <line x1="230" y1="244" x2="301.9" y2="89.9" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="230" y1="244" x2="215.2" y2="74.6" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <polyline points="301.9,89.9 281.1,81.9 259.5,76.6 237.4,74.2 215.2,74.6" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="140" y="88" text-anchor="middle" font-size="14" fill="#FFFFFF">alarm window</text>
+  <text x="140" y="106" text-anchor="middle" font-size="14" fill="#9BC4FF">(phase + level gate)</text>
+  <line x1="178" y1="92" x2="210" y2="79" stroke="#FFFFFF" stroke-width="1"/>
+
+  <!-- reject level arc -->
+  <polyline points="276.5,144.3 263.1,139.1 249.1,135.7 234.8,134.1 220.4,134.4" fill="none" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="4,4"/>
+  <text x="292" y="148" text-anchor="start" font-size="14" fill="#9BC4FF">reject level</text>
+
+  <!-- balance point -->
+  <circle cx="230" cy="244" r="4" fill="#FFFFFF"/>
+  <text x="242" y="262" text-anchor="start" font-size="14" fill="#9BC4FF">balance point</text>
+
+  <!-- lift-off / wobble lobe -->
+  <path d="M230,244 C200,240 165,238 130,237 C165,242 200,244 230,244" fill="none" stroke="#9BC4FF" stroke-width="2.5" stroke-dasharray="5,4"/>
+  <text x="150" y="266" text-anchor="middle" font-size="14" fill="#9BC4FF">lift-off / wobble</text>
+  <text x="150" y="284" text-anchor="middle" font-size="14" fill="#9BC4FF">nonrelevant</text>
+
+  <!-- shallow flaw lobe -->
+  <path d="M230,244 C246,226 262,208 275,190 C266,206 248,226 230,244" fill="none" stroke="#9BC4FF" stroke-width="2.5"/>
+
+  <!-- deep flaw lobe -->
+  <path d="M230,244 C252,200 264,152 269,99 C258,154 244,200 230,244" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+
+  <!-- phase rotation arrow -->
+  <polyline points="287.9,175.1 272.2,164.5 253.3,157.1" fill="none" stroke="#9BC4FF" stroke-width="1.5"/>
+  <polygon points="244.9,153.8 255.1,152.4 251.5,161.8" fill="#9BC4FF"/>
+  <text x="292" y="210" text-anchor="start" font-size="14" fill="#9BC4FF">phase rotates</text>
+  <text x="292" y="228" text-anchor="start" font-size="14" fill="#9BC4FF">with depth</text>
+
+  <!-- right column labels -->
+  <text x="430" y="92" text-anchor="start" font-size="15" font-weight="bold" fill="#FFFFFF">deep flaw — inside window, over level</text>
+  <text x="430" y="112" text-anchor="start" font-size="14" fill="#9BC4FF">evaluate → fails criteria → REJECT</text>
+  <line x1="426" y1="96" x2="272" y2="102" stroke="#FFFFFF" stroke-width="1"/>
+
+  <text x="430" y="166" text-anchor="start" font-size="15" font-weight="bold" fill="#9BC4FF">shallow flaw — repeatable, below level</text>
+  <text x="430" y="186" text-anchor="start" font-size="14" fill="#9BC4FF">evaluate → meets criteria → ACCEPT, record</text>
+  <line x1="426" y1="170" x2="278" y2="188" stroke="#9BC4FF" stroke-width="1"/>
+
+  <!-- chain box -->
+  <rect x="430" y="224" width="340" height="192" rx="10" fill="#1E66F5" fill-opacity="0.1" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="446" y="252" text-anchor="start" font-size="15" font-weight="bold" fill="#FFFFFF">Walk the chain on every signal:</text>
+  <text x="446" y="280" text-anchor="start" font-size="14.5" fill="#9BC4FF">1. Repeatable on re-scan?</text>
+  <text x="446" y="306" text-anchor="start" font-size="14.5" fill="#9BC4FF">2. Position — support, edge, dent?</text>
+  <text x="446" y="332" text-anchor="start" font-size="14.5" fill="#9BC4FF">3. Phase — origin and depth?</text>
+  <text x="446" y="358" text-anchor="start" font-size="14.5" fill="#9BC4FF">4. Amplitude vs the reference?</text>
+  <text x="446" y="384" text-anchor="start" font-size="14.5" fill="#9BC4FF">5. Disposition per written criteria</text>
+
+  <text x="400" y="468" text-anchor="middle" font-size="15" fill="#9BC4FF">Window and level come from standardization on the reference standard — never set by eye.</text>
+</svg>

@@ -93,9 +93,9 @@ function Hotspot({ courseId, data, file, onComplete }: { courseId: string; data:
             className={`hotspot-region${found.has(i) ? (r.isTarget ? " hit" : " miss") : ""}`}
             style={{
               left: `${(r.x / 800) * 100}%`,
-              top: `${(r.y / 450) * 100}%`,
+              top: `${(r.y / ((data as { coordH?: number }).coordH ?? 450)) * 100}%`,
               width: `${(r.w / 800) * 100}%`,
-              height: `${(r.h / 450) * 100}%`,
+              height: `${(r.h / ((data as { coordH?: number }).coordH ?? 450)) * 100}%`,
             }}
             aria-label={r.label}
             onClick={() => {

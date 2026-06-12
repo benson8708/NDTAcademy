@@ -1,0 +1,215 @@
+{
+ "lessonId": "et2-2-2",
+ "title": "Test Part Factors: Mass and Homogeneity",
+ "narrationScript": "A coil does not test a point \u2014 it samples a volume of metal: a ring the size of its windings, reaching about three standard depths of penetration into the part. Change the amount of conductive material inside that volume and the coil's impedance moves. That is the mass effect. A part thicker than three delta looks infinitely thick, and thickness changes are invisible. Thinner than that, the currents are truncated and wall thickness becomes a test variable \u2014 the basis of corrosion-thinning surveys on aircraft skins. Edges and tapers are mass effects too: less metal in the field, big signal, no flaw. Homogeneity is the second part factor. Segregation, uneven heat treatment, hardness and grain variations all shift local conductivity, and the probe reports them as broad, gradual drifts that travel along the conductivity locus. A discontinuity is different: abrupt, no wider than the probe footprint, and separated in phase from lift-off. Learning to tell those apart is the Level Two call this lesson trains.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Mass in the Field: What the Coil Actually Samples",
+   "body": "An energized test coil does not interrogate a point \u2014 it samples a **volume** of metal. For a surface probe that volume is the ring of current beneath the windings, reaching into the part to about the **effective depth of penetration, 3\u03b4**. Everything the impedance-plane dot does traces back to what happens inside that sampled volume.\n\nThe loading on the coil scales with the amount of conductive material the field links: more metal in the field \u2192 more eddy current flow \u2192 a stronger opposing secondary field \u2192 a larger shift of coil impedance away from its empty-coil (air) values. In CP-105 language this is the **mass effect** \u2014 the *quantity of conductive material within the coil's field* is a test variable in its own right, independent of what the material is made of.\n\nBe precise about what 'mass' means here. The part's total weight is irrelevant: a small bracket and an entire wing spar look identical to the probe if the local section inside the sensing volume is identical. What counts is metal **inside the field**:\n\n- **Thickness** \u2014 does the part fill the full 3\u03b4 reach, or end short of it?\n- **Edges and ends** \u2014 does the sensing ring hang past the side of the part?\n- **Tapers, steps, and substructure** \u2014 does the section change beneath the scan path?\n\nConductivity and permeability (last lesson) set how strongly each cubic millimeter responds; mass sets **how many cubic millimeters are responding**. The system-side knobs \u2014 frequency, coupling, field strength \u2014 are next lesson's business."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-2-2-fig-a",
+   "caption": "Mass effect in cross-section: thicker than 3\u03b4, the back wall sits in dead metal and thickness cannot move the signal; thinner than 3\u03b4, the exponential decay is truncated and coil impedance tracks every change in wall thickness."
+  },
+  {
+   "type": "text",
+   "heading": "The Thickness Window: When the Back Wall Talks",
+   "body": "Hold a surface probe on plate and ask one question: **does the far surface lie inside the field?**\n\n- **Thick part \u2014 t > 3\u03b4.** Current density has decayed to roughly 5% before the back wall, so the wall sits in essentially dead metal. The part is **effectively infinite**: double its thickness and the operating point does not move. Thickness is *not* a test variable.\n- **Thin part \u2014 t < 3\u03b4.** The exponential decay is **truncated** \u2014 current that would have flowed in deeper metal has no metal to flow in. The total induced current, and with it the impedance loading, now changes with every change in wall thickness. Thickness *is* a test variable.\n\nThe second regime is a measurement tool. As a wall thins, the operating point walks along a curling **thickness locus** that unwinds from the thick-part position back toward the air point \u2014 zero metal is, after all, an empty coil. Calibrate that path against steps of known thickness and you have an eddy current **thinning gauge**.\n\nPut numbers on the window for 2024-T3 aluminum (\u224830% IACS): \u03b4 \u2248 **1.2 mm at 10 kHz**, but only \u2248 **0.27 mm at 200 kHz**. On a 1.0 mm skin, a 200 kHz crack inspection never feels the far surface (3\u03b4 \u2248 0.8 mm) \u2014 while a 10 kHz survey puts the entire wall, and hidden second-layer corrosion in a lap joint, well inside the field. Same probe position, two opposite tests, chosen by frequency."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The 3\u03b4 rule cuts both ways",
+   "body": "Thickness only speaks when the far surface lies inside the field. To make wall variations **disappear** \u2014 say, crack detection on plate of varying section \u2014 choose a frequency high enough that **t > 3\u03b4**: the part looks infinitely thick and the back wall cannot move your signal. To **measure** thinning, do the opposite: choose a frequency low enough that the far surface sits well inside the effective depth, so every increment of metal loss walks the operating point along the thinning locus. Same physics, opposite frequency choices \u2014 and the written technique states which test you are running."
+  },
+  {
+   "type": "text",
+   "heading": "Edges, Tapers, and Geometry: Mass Signals in Disguise",
+   "body": "Slide a probe toward the side of a part and watch the dot run off the screen. Nothing is wrong with the metal \u2014 the **edge effect** is a pure mass signal. As the sensing ring reaches the boundary, the current loops are squeezed and distorted, and beyond the edge there is simply **no metal left to carry current**. The amount of conductive material in the field collapses, and the resulting impedance change is typically far larger than any flaw signal \u2014 which it will happily bury.\n\nLevel II practice treats edge effect as a known, repeatable geometry signal to be **engineered out of the test**, not interpreted:\n\n- **Scan parallel to edges at a fixed standoff** \u2014 a steady edge contribution can be balanced out; a wandering one cannot.\n- **Use guides, fixtures, or non-conductive templates** so the standoff cannot vary.\n- **Balance (null) with the probe at its scanning position near the edge**, not out in open plate.\n- **Choose a smaller or magnetically shielded probe** \u2014 a ferrite-shielded cup confines the field and lets you work closer to the boundary before the edge speaks.\n\nThe same accounting covers every geometry change: tapers and chamfers (gradually shrinking section), steps and lands (sudden section change), and fasteners or conductive substructure beneath thin skin (extra metal entering the field from below). Walk the part drawing before you scan \u2014 **any signal that begins exactly where the geometry changes is charged to the geometry first**, then verified."
+  },
+  {
+   "type": "text",
+   "heading": "Homogeneity: When the Material Itself Varies",
+   "body": "A **homogeneous** material presents the same conductivity and permeability to the probe everywhere. Real parts are rarely that polite. Point-to-point variations in material condition \u2014 with no discontinuity present \u2014 modulate the eddy currents and write themselves onto the signal:\n\n- **Alloy segregation and banding** \u2014 composition differences frozen in during solidification and elongated by working.\n- **Heat-treatment differences** \u2014 in aluminum alloys, temper directly sets conductivity: 7075-T6 runs roughly 31\u201336% IACS, and overheating drives it upward several points toward the overaged and annealed conditions. That is exactly how eddy current conductivity surveys map **heat damage** after a fire or lightning strike.\n- **Hardness, cold work, and residual stress** \u2014 local strain and microstructure shifts move conductivity by smaller but detectable amounts.\n- **Grain-size zones and scattered micro-inclusions** \u2014 the fine-scale scatter that sets the **material noise floor** under every scan.\n\nIn **ferromagnetic** parts, add permeability variation \u2014 and it dominates, because small permeability changes move the signal far more than large conductivity changes. Mill inspection of steel bar and tube therefore applies **magnetic saturation**: drive the part to saturation with a strong DC field and the permeability variations flatten, leaving conductivity and geometry to be tested.\n\nTreat homogeneity signals with respect: they are **real responses to real material conditions**. Sometimes they are the noise you must rise above; sometimes \u2014 heat damage, mixed alloy, a missed heat treatment \u2014 they are the finding."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-2-2-fig-b",
+   "caption": "Signal directions on the normalized impedance plane: conductivity drifts ride along the comma-shaped locus, wall thinning unwinds back toward the air point, and lift-off and surface cracks cut across the plane at separated phase angles."
+  },
+  {
+   "type": "text",
+   "heading": "Material Variation or Discontinuity? Making the Level II Call",
+   "body": "This is the call you will make every working day: a signal appears \u2014 is the material varying, or is metal missing? Four discriminators, applied in order:\n\n1. **Onset and width.** A discontinuity is local: the response rises and falls within about one probe-footprint of travel, every pass. Homogeneity variations build and fade **gradually over many probe diameters** \u2014 segregation bands and heat-affected zones do not have knife edges.\n2. **Impedance-plane direction.** Conductivity-type variations drift **along the conductivity locus**. A surface crack cuts across the plane at a **phase angle separated from lift-off** \u2014 the separation your frequency choice deliberately created.\n3. **Repeatability and symmetry.** Re-scan slower, then run the same line in the opposite direction and at 90\u00b0. A crack reproduces as the same sharp signature at the same spot; a material zone reproduces as the same broad, symmetric drift.\n4. **Frequency behavior.** Drop the frequency and deep or distributed variations strengthen relative to surface responses; raise it and the test goes blind to everything but the near surface. A response that persists unchanged at high frequency lives at or near the surface.\n\nThen verify independently: spot-check conductivity with a calibrated meter (ASTM E1004), compare against a **reference standard of the same alloy and temper**, and confirm suspected surface-breaking indications with a second method such as penetrant. The dispositions differ completely \u2014 a discontinuity is evaluated against acceptance criteria; a homogeneity zone is documented as material condition and chased back to the mill or heat-treat record."
+  },
+  {
+   "type": "table",
+   "caption": "Reading the signal: homogeneity variation versus discontinuity versus mass/geometry effect.",
+   "headers": [
+    "Signal feature",
+    "Homogeneity variation",
+    "Discontinuity",
+    "Mass / geometry effect"
+   ],
+   "rows": [
+    [
+     "Onset as probe scans",
+     "Gradual \u2014 builds over many probe widths",
+     "Abrupt \u2014 rises and falls within the probe footprint",
+     "Begins exactly where the drawing says geometry changes"
+    ],
+    [
+     "Spatial extent",
+     "Broad zone or whole regions of the part",
+     "Localized; repeats at the same spot",
+     "Tracks the edge, taper, step, or thin wall"
+    ],
+    [
+     "Impedance-plane direction",
+     "Drifts along the conductivity (or permeability) locus",
+     "Cuts across the plane, phase-separated from lift-off",
+     "Thinning unwinds along the locus toward the air point; edges give large off-scale swings"
+    ],
+    [
+     "Typical causes",
+     "Segregation, uneven heat treatment, hardness or grain differences",
+     "Cracks, laps, seams, gouges",
+     "Edges, chamfers, section changes, substructure, t < 3\u03b4"
+    ],
+    [
+     "Disposition",
+     "Document; verify with conductivity spot checks \u2014 may itself be the finding (heat damage)",
+     "Mark, re-scan, evaluate against acceptance criteria",
+     "Anticipate in the technique: guides, standoff, balancing, frequency choice"
+    ]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-2-2-fig-a",
+   "title": "Thin vs. thick part: field interaction and the 3\u03b4 window",
+   "file": "et2-2-2-fig-a.svg"
+  },
+  {
+   "id": "et2-2-2-fig-b",
+   "title": "Impedance-plane signal directions for mass and homogeneity effects",
+   "file": "et2-2-2-fig-b.svg"
+  },
+  {
+   "id": "et2-2-2-fig-c",
+   "title": "One scan across an extrusion: three indication types",
+   "file": "et2-2-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Three Indications, One Reportable",
+  "intro": "You scanned an aluminum extrusion end to end at constant speed \u2014 the dashed line at the right of the chart is the known end of the part, and the scale bar shows the probe footprint. Three indications stand above the baseline. Click the one you must work as a possible discontinuity.",
+  "figureId": "et2-2-2-fig-c",
+  "regions": [
+   {
+    "x": 180,
+    "y": 235,
+    "w": 195,
+    "h": 100,
+    "label": "Indication 1 \u2014 broad rise",
+    "isTarget": false,
+    "feedback": "This response builds and fades over many probe diameters and reproduces as the same smooth drift in both scan directions \u2014 the signature of a homogeneity variation such as segregation banding or a heat-treatment difference. Document it and verify with conductivity spot checks; it is not a crack call."
+   },
+   {
+    "x": 438,
+    "y": 115,
+    "w": 64,
+    "h": 225,
+    "label": "Indication 2 \u2014 sharp spike",
+    "isTarget": true,
+    "feedback": "Correct. Abrupt onset, confined to about one probe footprint, far above the material noise \u2014 the classic discontinuity signature. Mark the location, re-scan slowly from both directions, check the phase angle against lift-off, and evaluate against the acceptance criteria."
+   },
+   {
+    "x": 612,
+    "y": 150,
+    "w": 120,
+    "h": 190,
+    "label": "Indication 3 \u2014 rise at scan end",
+    "isTarget": false,
+    "feedback": "The rise begins exactly where you know the part ends: as the sensing field hangs past the boundary, conductive material in the field collapses. That is edge effect \u2014 a mass/geometry signal to engineer out with a guide, fixed standoff, or a shielded probe, not a flaw."
+   },
+   {
+    "x": 70,
+    "y": 300,
+    "w": 95,
+    "h": 55,
+    "label": "Baseline jitter",
+    "isTarget": false,
+    "feedback": "Low-level scatter from normal microstructure \u2014 grain-size zones and micro-inclusions. This is the material noise floor; your reporting threshold is set above it, and a real indication must stand clear of it."
+   }
+  ],
+  "coordH": 500
+ },
+ "checkQuestions": [
+  {
+   "question": "To make part thickness variations invisible during a surface-crack inspection, the test frequency should be chosen so that the part thickness is:",
+   "options": [
+    "Less than one standard depth of penetration",
+    "About equal to one standard depth of penetration",
+    "Greater than about three standard depths of penetration \u2014 the effective depth",
+    "Exactly half the coil diameter"
+   ],
+   "correct": 2,
+   "explanation": "Beyond 3\u03b4 only about 5% of the surface current density remains, so the back wall sits in essentially dead metal. With t > 3\u03b4 the part looks infinitely thick and wall variations cannot move the signal; thinner than that, thickness becomes a test variable."
+  },
+  {
+   "question": "A corrosion survey must detect metal loss on the far surface of a 1.0 mm aluminum skin. The correct frequency strategy is:",
+   "options": [
+    "A frequency low enough that the effective depth (3\u03b4) extends past the far surface, so wall loss changes the coil impedance",
+    "The highest available frequency, for maximum resolution",
+    "A frequency placing 3\u03b4 at about half the skin thickness",
+    "Any frequency \u2014 the thickness response is independent of frequency"
+   ],
+   "correct": 0,
+   "explanation": "Thickness only speaks when the far surface lies inside the field. For 2024-T3 (\u224830% IACS), 200 kHz gives \u03b4 \u2248 0.27 mm and 3\u03b4 \u2248 0.8 mm \u2014 the far wall of a 1.0 mm skin is never felt. Near 10 kHz, \u03b4 \u2248 1.2 mm and the whole wall sits inside the field, so thinning walks the operating point along the thickness locus."
+  },
+  {
+   "question": "Scanning an aluminum extrusion, you record a smooth signal that builds and fades over roughly 80 mm of travel, repeats identically in both scan directions, and drifts along the conductivity locus on the impedance plane. The most likely cause is:",
+   "options": [
+    "A fatigue crack lying across the current paths",
+    "Lift-off chatter from a rough surface",
+    "A tight crack just below the surface",
+    "Alloy segregation or a local heat-treatment difference"
+   ],
+   "correct": 3,
+   "explanation": "Gradual onset over many probe diameters, symmetric repetition, and movement along the conductivity locus are the signature of a homogeneity variation. Cracks \u2014 surface or near-surface \u2014 give abrupt, footprint-wide responses phase-separated from lift-off, and lift-off chatter moves along the lift-off line, not the conductivity curve."
+  },
+  {
+   "question": "The edge effect that dominates the signal as a surface probe approaches the side of a part is fundamentally a response to:",
+   "options": [
+    "Increased magnetic permeability at machined edges",
+    "The shrinking amount of conductive material within the coil's field as the sensing zone crosses the boundary",
+    "Higher conductivity caused by work-hardening at the edge",
+    "Capacitive coupling between the coil and the part edge"
+   ],
+   "correct": 1,
+   "explanation": "Edge effect is a mass effect: beyond the boundary there is no metal to carry current, so the current loops distort and the conductive volume in the field collapses, producing a signal far larger than most flaw responses. It is controlled with guides, fixed standoff, balancing near the edge, and shielded probes."
+  },
+  {
+   "question": "Which combination of signal characteristics most strongly indicates a discontinuity rather than a homogeneity variation?",
+   "options": [
+    "An abrupt response confined to about one probe-footprint width, phase-separated from the lift-off direction",
+    "A drift extending over many probe diameters that follows the conductivity locus",
+    "A uniform balance-point shift affecting the entire part",
+    "A gradual rise that begins exactly where the section starts to taper"
+   ],
+   "correct": 0,
+   "explanation": "Discontinuities are local interruptions of the current paths: abrupt onset, width near the probe footprint, and a phase angle distinct from lift-off. Broad conductivity-locus drifts are material variations, a whole-part offset suggests wrong alloy or temper, and a signal starting at a known taper is charged to geometry first."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level II Principles Course \u00a72.1.3\u20132.1.4 (factors that affect coil impedance: mass and homogeneity of the test part)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice for Personnel Qualification and Certification in Nondestructive Testing",
+  "ASNT Nondestructive Testing Handbook, Vol. 5: Electromagnetic Testing (impedance-plane response to thickness, edge effect, and material property variations)",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method"
+ ]
+}

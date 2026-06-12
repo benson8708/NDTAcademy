@@ -1,0 +1,177 @@
+{
+ "lessonId": "et1-7-2",
+ "title": "Data Recording, Alarms, and Numerical Readouts",
+ "narrationScript": "A meter or an impedance-plane display works only while someone is watching it. This lesson covers what the signal does next. First, recording. A strip-chart recorder draws amplitude against distance, and its chart drive must stay synchronized with probe speed so the trace can locate an indication back on the part. Digital acquisition replaced paper: both signal components are sampled and stored with position, and the digitizing rate divided by probe speed must meet the procedure's samples-per-inch minimum. Every record is bracketed by calibrations, and if the closing check fails, everything since the last good one gets re-examined. Second, alarms. Box and sector gates on the impedance plane fire lights, horns, and downstream markers, with phase rotated so lift-off stays out of the gate. Prove every alarm on the reference standard. Third, numerical readouts. Conductivity in percent IACS, coating thickness from calibrated lift-off, and thin-wall thickness — direct numbers that are only as trustworthy as the two-standard calibration, the part thickness, and the matched temperatures behind them.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "After the Display: Record, Alarm, Number",
+   "body": "The last lesson put the signal in front of your eyes — meter needles and impedance-plane traces, live readouts that exist only while you watch them. Three practical problems remain, and they define this lesson.\n\n- **The signal vanishes.** The instant the probe moves on, the indication is gone. Inspection reports, acceptance decisions, and next outage's comparison all need the signal **captured** — that is data recording.\n- **Nobody can watch fast enough.** Product feeds through an encircling coil at production speed, and a hand scanner's eyes belong on the probe, not the screen. The instrument must make the call itself — alarms, lights, and audible indicators.\n- **Some jobs want a number, not a signature.** Conductivity in %IACS, coating thickness in mils, remaining wall in thousandths — direct numerical readouts.\n\nAs a Level I you will set up all three exactly as the written technique directs — recorder settings, gate positions, verification intervals — and you are the first person positioned to notice when one of them stops telling the truth."
+  },
+  {
+   "type": "text",
+   "heading": "Strip Charts and X-Y Recorders: The Paper Record",
+   "body": "The classic permanent record is the **strip-chart recorder**: paper feeds at a set speed under one or two pens, and pen deflection tracks signal amplitude. Two-pen units capture two channels at once — the vertical and horizontal impedance-plane components, or an absolute channel beside a differential one — so the record preserves far more of the signal than any single meter reading could.\n\nThe discipline that makes a strip chart usable is **synchronization**: the chart drive must be locked to probe travel — a constant pull or feed speed, or a direct drive linkage — so that distance along the chart maps to **position along the part**. That mapping is how an indication on paper gets located back to tube 41 of a condenser bundle, and why an unexplained speed change voids the record.\n\nTwo relatives complete the paper era:\n\n- The **X-Y recorder** drives one pen with both signal components, drawing the actual impedance-plane signature on paper — ideal for documenting calibration responses, far too slow to record a moving test.\n- **Magnetic tape** recorders captured the raw signals themselves for later replay and re-analysis — the archive medium of early in-service tubing programs.\n\nThe hard limit of paper is the pen: its mechanical response — on the order of 100 Hz at best — caps how fast product can move past the coil while the trace stays faithful. Production lines outran pens long ago, which is exactly where digital acquisition and hard-wired alarms come in."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-7-2-fig-a",
+   "caption": "Recording the test: a strip chart locked to the bobbin pull, so chart distance maps to tube position — and the digital acquisition that replaced it, sampling both components and storing them with position."
+  },
+  {
+   "type": "text",
+   "heading": "Digital Data Acquisition: The Record That Replays",
+   "body": "Modern instruments digitize both impedance-plane components continuously and store them with **position** — from an encoder on the probe pusher or cable, or from a clock when speed is held constant. The paper limits disappear, and three new disciplines take their place.\n\n- **Sample density.** Digitizing rate ÷ probe speed = samples per unit length. Run 800 samples per second at 20 in/s of pull and you record 40 samples per inch; double the speed and the density halves. The written procedure sets a minimum — commonly on the order of 30 samples per inch in tubing work — so a short pit cannot slip between samples. Probe speed is now limited by arithmetic, not pen inertia.\n- **Traceability.** Each record is stored against the tube or part ID, the probe and cable identity, the instrument settings, and the calibrations that bracket it. A record nobody can trace is not a record.\n- **Bracketing calibrations.** Data are valid only between successful calibration checks — one before the data, one after. If the closing check fails, every tube since the last good check is suspect and gets re-examined.\n\nThe payoff is **replay**: stored data can be re-displayed, re-rotated, re-filtered, and re-measured offline, so an analyst sees exactly what the coil saw. And archives compound — in-service tubing programs (ASTM E690 work) compare this outage's record against the last one, turning two snapshots into a wall-loss trend."
+  },
+  {
+   "type": "text",
+   "heading": "Alarms, Lights, and Audible Indicators",
+   "body": "An alarm is a readout that acts: when the signal crosses a boundary, a relay closes. Three forms dominate.\n\n- **Amplitude threshold.** The simplest alarm fires when signal voltage exceeds a set level. It is also the crudest — a lift-off jolt and a crack can both cross a pure amplitude line.\n- **Gates on the impedance plane.** A **box gate** is a rectangular window on the display; a **sector (phase) gate** is a wedge bounded by two phase angles and an amplitude floor. The standard setup: rotate the display phase so lift-off and wobble lie **horizontal**, then place the gate over the flaw direction. Probe rock skates along the horizontal axis and stays out of the gate, while crack signals climb into it — the alarm now discriminates by phase, exactly the way your eye does on the impedance plane.\n- **Lights and horns.** The **audible alarm** is the hand scanner's tool: on a fastener row your eyes belong on probe placement and coverage, and the horn frees them from the screen. On production lines, **alarm lights latch** — a defect passing an encircling coil at production speed produces a signal lasting only milliseconds, so the latch holds the light until reset and a counter tallies events.\n\nThe alarm relay is also the trigger for everything downstream: it can fire a paint marker after a delay equal to the coil-to-marker distance divided by line speed, or drive a sorter or cutoff — the systems of the next lesson."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-7-2-fig-b",
+   "caption": "Left: with phase rotated so lift-off lies horizontal, a sector or box gate alarms on crack-direction signals and ignores wobble. Right: the production alarm chain — coil, threshold and latch, light and horn, and a delayed relay firing the paint marker downstream."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "Prove the alarm, bracket the run",
+   "body": "An alarm setting is a claim — *anything like the reference discontinuities will be caught* — and claims get proven. Verify on the **reference standard** before product runs: every artificial discontinuity must trip the alarm, with margin. Re-verify at the intervals the procedure sets and again at the end of the run. **If a verification fails, everything tested since the last successful check is re-examined** once calibration is restored — the same bracketing rule that governs recorded data (the practice built into standards such as ASTM E309). And never widen a gate, drop the gain, or silence a horn to quiet nuisance alarms without Level II/III direction: an alarm you have detuned is a test you are no longer performing."
+  },
+  {
+   "type": "text",
+   "heading": "Numerical Readouts: Conductivity, Coating, and Wall",
+   "body": "A numerical readout performs the impedance analysis internally and hands you the answer as a number. Three numbers carry most of the workload.\n\n**Conductivity in %IACS.** The scale is the International Annealed Copper Standard: 100 %IACS is the conductivity of annealed copper — 58.0 MS/m at 20 °C. Dedicated meters, typically operating near **60 kHz** (with a 480 kHz mode for thin stock), read directly in %IACS. ASTM E1004 sets the discipline: calibrate on **two certified standards that bracket the expected value** — one below, one above — and recheck during use. The number is valid only when the part is **thicker than the effective depth of penetration** (about three standard depths, 3δ, where eddy current density has fallen to roughly 5% of its surface value), the reading area is flat and clear of edges, and **part, probe, and standards are at the same temperature** — aluminum's conductivity falls as it warms, so a sun-heated part reads low. Thin paint is tolerated only within the meter's rated lift-off allowance.\n\nWhy it matters: heat treatment moves conductivity. Typical published bands put **7075-T6 near 30.5–36 %IACS** and the overaged **T73 temper near 38–43 %IACS** — cleanly separable on the meter, with the exact acceptance limits taken from the governing specification (AMS 2658 or the drawing). The same readout screens for **heat and fire damage**, usually paired with hardness testing.\n\n**Coating thickness.** Calibrated lift-off becomes a thickness gauge for nonconductive coatings on conductive bases (ASTM E376): zero on the **bare base metal of the same alloy and shape**, span with certified shims, then read paint or anodize in mils or micrometers.\n\n**Material thickness.** With the frequency low enough that the skin depth spans the wall, the reading tracks remaining thickness of thin skins and walls — valid only on the calibrated alloy and range. In every case the rule is the same: a digital number removes display interpretation, not setup discipline. Wrong standard, wrong temperature, or too-thin part produces a confident, wrong number."
+  },
+  {
+   "type": "table",
+   "caption": "Recording and readout options at a glance — what each gives you and what to watch.",
+   "headers": ["Option", "What it gives you", "Where it earns its keep", "Watch out for"],
+   "rows": [
+    ["Strip-chart recorder", "One or two analog channels plotted against distance", "Legacy tube and production records", "Chart drive must stay locked to probe speed; pen response limits speed"],
+    ["X-Y recorder", "The impedance-plane signature drawn on paper", "Documenting calibration responses", "Far too slow for a moving test — snapshots only"],
+    ["Digital data acquisition", "Both components sampled and stored with position", "Tubing exams, automated lines, archives", "Sample rate ÷ speed must meet the samples-per-inch minimum"],
+    ["Alarms, lights, horns", "Instant go/no-go action at line speed", "Feed-through production, hand scanning", "Gates catch only what they are set for — prove them on the reference standard"],
+    ["Conductivity readout (%IACS)", "Direct material conductivity number", "Alloy and temper verification, heat-damage screening", "Two bracketing standards; thickness ≥ ~3δ; equal temperatures"],
+    ["Coating-thickness readout", "Nonconductive coating thickness from lift-off", "Paint and anodize over aluminum", "Calibrate on the same bare base metal with certified shims"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-7-2-fig-a",
+   "title": "Recording systems: strip chart to digital acquisition",
+   "file": "et1-7-2-fig-a.svg"
+  },
+  {
+   "id": "et1-7-2-fig-b",
+   "title": "Alarm gates and the production alarm chain",
+   "file": "et1-7-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Run the Readout Chain",
+  "intro": "One shift, four readout decisions — recording, alarming, verifying, and reading a number. Work each one before you click.",
+  "steps": [
+   {
+    "prompt": "Bobbin-testing condenser tubes: the system digitizes 600 samples per second and the procedure requires at least 30 samples per inch of tube. The fastest pull speed you may use is:",
+    "options": ["20 in/s", "30 in/s", "60 in/s", "5 in/s"],
+    "correct": 0,
+    "feedback": "Samples per inch = digitizing rate ÷ speed: 600 ÷ 20 = 30, exactly the minimum. Pull faster and the samples spread out — a short pit could fall between them and never appear in the record."
+   },
+   {
+    "prompt": "Hand-scanning a fastener row, the horn chirps every time the probe rocks on a paint ridge. Lift-off is correctly rotated horizontal on the display. The right fix is to:",
+    "options": [
+     "Widen the alarm gate so small signals stop triggering it",
+     "Turn off the horn and watch the screen instead",
+     "Move the alarm to a sector gate set off the horizontal lift-off direction",
+     "Lower the gain until the chirping stops"
+    ],
+    "correct": 2,
+    "feedback": "Probe rock is lift-off, and lift-off lives on the horizontal axis. A sector gate clear of that axis alarms on flaw-direction signals and ignores the rocking. Widening gates or cutting gain detunes the test, and abandoning the horn pulls your eyes off the probe."
+   },
+   {
+    "prompt": "End of the production run: the reference standard's through-wall notch — which alarmed at setup — passes the coil without a peep. You must:",
+    "options": [
+     "Record the failure and ship; the notch worked at setup",
+     "Re-test the last ten bars only",
+     "Increase the gain until the notch alarms again, then ship",
+     "Restore calibration, then re-examine everything tested since the last successful verification"
+    ],
+    "correct": 3,
+    "feedback": "Verifications bracket the product between them. A failed closing check means the alarm cannot be shown to have worked since the last good check — so all product in that window goes back through the test after calibration is restored."
+   },
+   {
+    "prompt": "Verifying 7075-T73 temper (the procedure's acceptance band is 38–43 %IACS), your meter reads 37.4 on parts just carried in from a sun-baked flatbed. The standards have been on the bench all morning. Best move:",
+    "options": [
+     "Reject the lot as under-aged 7075-T6",
+     "Let parts, probe, and standards reach the same temperature, recheck both calibration standards, then re-measure",
+     "Switch the meter to 480 kHz",
+     "Slip a plastic shim under the probe"
+    ],
+    "correct": 1,
+    "feedback": "Aluminum's conductivity falls as it warms, so a hot part reads low against room-temperature standards. Equalize temperatures, confirm the two-standard calibration, then measure. Rejecting first would condemn parts with a known measurement error in play."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A strip-chart recording is made while a bobbin probe is pulled through a heat-exchanger tube. The chart drive is synchronized with the pull speed so that:",
+   "options": [
+    "the pens can respond to higher signal frequencies",
+    "distance along the chart corresponds to position along the tube",
+    "signal amplitude is automatically calibrated in volts",
+    "the phase angle of each indication is preserved on paper"
+   ],
+   "correct": 1,
+   "explanation": "Synchronization makes the chart a map: with the chart drive locked to probe travel, an indication's location on paper locates the flaw on the part. It does nothing for pen response, amplitude calibration, or phase."
+  },
+  {
+   "question": "A digital acquisition system digitizes at 800 samples per second and the procedure requires at least 40 samples per inch. The maximum allowable probe speed is:",
+   "options": ["10 in/s", "32 in/s", "20 in/s", "5 in/s"],
+   "correct": 2,
+   "explanation": "Samples per inch = digitizing rate ÷ probe speed, so the maximum speed = 800 ÷ 40 = 20 in/s. Any faster and the sample density drops below the minimum, and a short indication could fall between samples."
+  },
+  {
+   "question": "On a production line, the display phase is set so lift-off and wobble signals move horizontally. To alarm on cracks while ignoring probe wobble, the gate should be placed:",
+   "options": [
+    "over the vertical, flaw-direction component — a sector gate clear of the horizontal axis",
+    "along the horizontal axis, where signals occur most often",
+    "around the display origin, so every signal is captured",
+    "on total amplitude, regardless of phase angle"
+   ],
+   "correct": 0,
+   "explanation": "With lift-off rotated horizontal, wobble skates along the horizontal axis while crack signals climb away from it. A gate set off the horizontal axis alarms by phase — catching cracks and ignoring wobble. An amplitude-only alarm fires on both."
+  },
+  {
+   "question": "During the end-of-run verification, a reference-standard discontinuity that alarmed at setup no longer triggers the alarm. The correct response is to:",
+   "options": [
+    "note the discrepancy in the report and release the product",
+    "raise the gain until the discontinuity alarms, then release the product",
+    "re-verify on the last few parts tested and release if they look clean",
+    "restore calibration and re-examine all product tested since the last successful verification"
+   ],
+   "correct": 3,
+   "explanation": "Verifications bracket the product. A failed check means the test was not demonstrably working since the last good check, so everything tested in that window is re-examined. Adjusting the gain after the fact proves nothing about parts already passed."
+  },
+  {
+   "question": "A conductivity readout of 52 %IACS means the material's conductivity is 52 percent of:",
+   "options": [
+    "the conductivity of pure aluminum",
+    "the conductivity of the annealed copper standard — 58.0 MS/m at 20 °C",
+    "the maximum conductivity the meter can display",
+    "the conductivity of silver, the best conductor"
+   ],
+   "correct": 1,
+   "explanation": "The IACS scale is anchored to the International Annealed Copper Standard: 100 %IACS equals 58.0 MS/m at 20 °C. Silver actually exceeds copper (about 105 %IACS) and pure aluminum sits near 61 %IACS — neither one defines the scale."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Basic Technique Course §3.3–3.5 (data recording systems; alarms, lights; numerical readouts)",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method",
+  "ASTM E376, Standard Practice for Measuring Coating Thickness by Magnetic-Field or Eddy Current (Electromagnetic) Testing Methods",
+  "ASTM E309, Standard Practice for Eddy-Current Examination of Steel Tubular Products Using Magnetic Saturation (automatic production examination practice)"
+ ]
+}

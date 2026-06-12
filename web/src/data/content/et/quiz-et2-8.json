@@ -1,0 +1,115 @@
+{
+ "moduleId": "et2-8",
+ "questions": [
+  {
+   "question": "A conductivity-sorting station separates two aluminum tempers whose acceptance windows sit only a few %IACS apart. A part's reading lands in the gap between the two windows. The correct disposition is:",
+   "options": [
+    "Assign it to the class whose window its reading lies closer to, since some conductivity scatter is expected",
+    "Reject it and scrap it as a defect",
+    "Send it to hold for manual evaluation — between-window readings are never forced into a bin",
+    "Re-measure it at higher gain until the reading falls inside one of the windows"
+   ],
+   "correct": 2,
+   "explanation": "Sorting uses two-sided windows set from known samples of every class you expect, with parts and knowns equalized to the same temperature. A reading between windows is ambiguous by definition: forcing it into the nearest bin risks shipping a mixed temper, so it goes to hold for separate evaluation."
+  },
+  {
+   "question": "In the SNT-TC-1A sense used throughout this module, the difference between interpretation and evaluation is:",
+   "options": [
+    "Interpretation decides what an indication is — false, nonrelevant, or relevant; evaluation decides whether it is acceptable against the acceptance criteria",
+    "Interpretation is performed by the instrument's alarm gate; evaluation is performed by the operator",
+    "Interpretation applies only to impedance-plane displays; evaluation applies only to meter readouts",
+    "Interpretation compares the signal with the acceptance criteria; evaluation decides whether the indication is false or relevant"
+   ],
+   "correct": 0,
+   "explanation": "Interpretation sorts the indication: false, nonrelevant, or relevant. Evaluation then judges the relevant indication against written acceptance criteria. The split also tracks certification: a Level I may make specific accept/reject evaluations per written instructions, while a Level II interprets and evaluates with respect to codes, standards, and specifications."
+  },
+  {
+   "question": "On an automated tube line, the procedure requires the reference standard to alarm while passing through the coil at full production speed — a crawl-speed check is not acceptable. The reason is that:",
+   "options": [
+    "Eddy current penetration into the tube wall increases with speed, so a slow pass under-tests the far surface",
+    "The channel's band-pass filters are set around the signal frequencies produced at production speed — at a different speed, defect signals shift out of the passband and attenuate",
+    "The reference notches produce no signal at all unless the standard is moving at line rate",
+    "Crawl-speed verification overheats the drive coil and distorts the balance"
+   ],
+   "correct": 1,
+   "explanation": "A defect passing the coil produces a pulse whose frequency content depends on line speed, and the filters are tuned around those frequencies. A notch that alarms at crawl speed can slide through at line rate — which is why the tubular-product practices require dynamic standardization at production throughput speed, and why any line-speed change reopens the setup."
+  },
+  {
+   "question": "The same tube can be examined with a bobbin coil pulled through the bore or with an encircling coil around the outside. Which statement about near and far surfaces is correct?",
+   "options": [
+    "The OD is always the far surface, because the field must cross the wall to reach it no matter where the coil sits",
+    "The ID is always the near surface, because eddy currents concentrate at the bore",
+    "Near and far surface are fixed by the tube's geometry when it is manufactured",
+    "For the bobbin coil the ID is near and the OD is far; for the encircling coil the roles swap — near and far are defined by the probe, not the part"
+   ],
+   "correct": 3,
+   "explanation": "Near surface is the surface the coil faces; far surface is the one the field must cross the metal to reach. Run the same tube with an encircling coil instead of a bobbin and the two surfaces swap jobs — which changes which flaws arrive strong at a near-zero lag angle and which arrive attenuated and rotated."
+  },
+  {
+   "question": "For nonferromagnetic heat-exchanger tubing run with a bobbin probe, f₉₀ ≈ 3ρ/t² (f in kHz, ρ in µΩ·cm, t in mm) estimates the frequency that spreads ID-origin and OD-origin signals by about 90° of phase. For Alloy 600 tubing with ρ ≈ 100 µΩ·cm and a 1.27 mm wall, f₉₀ is about:",
+   "options": [
+    "185 kHz",
+    "236 kHz",
+    "18.5 kHz",
+    "1.85 MHz"
+   ],
+   "correct": 0,
+   "explanation": "f₉₀ = 3 × 100 ÷ (1.27)² = 300 ÷ 1.61 ≈ 186 kHz. Forgetting to square the wall thickness gives the 236 kHz distractor. Near f₉₀ the wall is about 1.1δ thick, so the two wall families separate by roughly 90° while the far wall still carries usable current; written techniques set the prime frequency at or somewhat above this value."
+  },
+  {
+   "question": "On the prime-frequency bobbin channel (probe motion horizontal, through-wall hole at 40°), techniques size OD-origin flaws directly from phase but require supplemental data — amplitude, a lower-frequency channel, or rotating/array-probe data — before assigning depth to ID-origin flaws. The reason is that:",
+   "options": [
+    "ID-origin flaws produce amplitude changes but no measurable phase shift",
+    "The ID branch of the calibration curve spans more than 120°, making readings overly sensitive to small angle errors",
+    "The full 0–100% depth range for ID-origin signals is compressed into roughly 0–40° of rotation, so a few degrees of distortion swings the estimate — while the OD branch spreads over about 120°",
+    "Phase-to-depth analysis is valid only on ferromagnetic tubing"
+   ],
+   "correct": 2,
+   "explanation": "OD-origin signals rotate from about 160° (shallow) back toward the 40° through-wall angle — roughly 120° of usable resolution, so phase sizes them well. ID-origin signals crowd between the probe-motion axis and 40°, so prime-frequency phase resolution on ID flaws is poor and the technique supplements it with other data."
+  },
+  {
+   "question": "Two indications on a properly normalized bobbin channel return identical voltages. From amplitude alone you can conclude:",
+   "options": [
+    "Both flaws have penetrated to the same depth in the wall",
+    "Very little — volts track how much current-carrying metal was disturbed, so a small deep pit and a broad shallow wear scar can read the same",
+    "Both flaws originate at the same surface, ID or OD",
+    "Both flaws exceed the through-wall reference hole in severity"
+   ],
+   "correct": 1,
+   "explanation": "Amplitude answers 'how much', not 'how deep'. Volts-to-depth sizing is valid only when the real flaw's morphology matches the calibration artifacts — wear scars for fretting, flat-bottom holes for pitting — and origin and depth are assigned by phase analysis first, then amplitude is judged against that origin."
+  },
+  {
+   "question": "A tube mill runs at 1.5 m/s and the eddy current channel logs an identical indication every 0.20 s. To find the damaged tooling, you walk the line looking for a rotating component with a diameter of about:",
+   "options": [
+    "300 mm",
+    "150 mm",
+    "95 mm",
+    "48 mm"
+   ],
+   "correct": 2,
+   "explanation": "Flaw spacing s = v·Δt = 1.5 × 0.20 = 0.30 m. A damaged roll marks the product once per revolution, so its circumference equals the spacing and D = s/π ≈ 95 mm. Treating the 0.30 m spacing as the diameter itself gives the 300 mm distractor. The 5 Hz repetition rate (1/Δt) must also sit inside the channel's band-pass at this line speed."
+  },
+  {
+   "question": "DC magnetic saturation is a standard noise-suppression tool when crack-testing carbon steel, yet it is never applied during ferromagnetic property sorting. Why?",
+   "options": [
+    "Saturation currents would overheat the comparator bridge coils",
+    "Saturation works only on nonferromagnetic alloys",
+    "Saturated parts retain so much residual magnetism that they can never be demagnetized for service",
+    "Saturation suppresses the permeability variation that property sorting exists to measure — there, permeability is the signal, not the noise"
+   ],
+   "correct": 3,
+   "explanation": "Flaw detection saturates steel to silence permeability noise. Property measurement inverts the relationship: heat treatment, hardness, and case depth are read through the permeability changes they cause, so the variation must survive. Parts are instead demagnetized before testing, because prior magnetic history shifts the operating point on the B–H curve and masquerades as a property difference."
+  },
+  {
+   "question": "A comparator bridge holds a verified reference part in one coil; inserting a test part unbalances it. The amplitude and the phase of the unbalance voltage indicate, respectively:",
+   "options": [
+    "The test part's exact hardness, and its exact case depth, read directly from the display",
+    "How much the two parts differ, and a hint at which variable moved — permeability, conductivity, or fill factor",
+    "Which of the two coils has drifted, and how long ago it drifted",
+    "The depth of a discontinuity in the test part, and its length along the part"
+   ],
+   "correct": 1,
+   "explanation": "The bridge reports difference, never properties: matched parts null the output, and any mismatch unbalances it with an amplitude scaled to the size of the difference and a phase pointing toward the responsible variable. What that difference means — missed temper, wrong alloy, dimensional drift — is established only by correlation with independently verified parts."
+  }
+ ]
+}

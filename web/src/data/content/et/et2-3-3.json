@@ -1,0 +1,193 @@
+{
+ "lessonId": "et2-3-3",
+ "title": "Methods of Improving SNR",
+ "narrationScript": "Every eddy current display is a contest between signal and noise, and the gain knob has no vote in it. Amplify, and the noise grows exactly as fast as the flaw. Level Two work starts by finding where the noise is born. Lift the probe into the air. Noise that stays is electrical, so fix cables, grounding, and distance from welders. Noise that dies lives in the part or the coupling. Frequency is the first lever. It sets the phase angle between lift-off and flaw, and it sets the depth the currents sample. Then steer and filter. Rotate lift-off horizontal, alarm on the vertical channel, and let high-pass and low-pass filters strip drift and fuzz, valid only at the qualified scan speed. Probe hardware finishes the job. Differential coils cancel gradual change, shielded cores hug fastener rows, magnetic saturation silences permeability noise, and multifrequency mixing subtracts support plates. Then prove it. Re-standardize, measure at least three to one on the reference standard, and write it down.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Gain Is a Magnifier, Not a Filter",
+   "body": "Level I left you with the rule: **gain amplifies the flaw response and the noise by the same factor**, so the ratio between them never moves. If grass hides the notch at 40 dB, it hides it at 60 dB — just drawn larger. SNR is won earlier in the chain, and the Level II job is knowing exactly where.\n\nStart every noisy test with one diagnostic: **lift the probe into the air**.\n\n- **Noise still there?** It is electrical — it never came from the part. Attack it with housekeeping: reroute the probe cable away from welding leads and motor drives, add distance from VFDs and RF sources, check connectors, shielding, and grounding. Against the instrument's own internal noise, more **drive** can help — it raises the signal before that noise enters the receiver.\n- **Noise gone?** It is born in the part or the coupling: lift-off and wobble, surface condition, conductivity or permeability variation, or geometry. No amount of electrical hygiene will touch it — the fix lives in frequency, filtering, probe design, or technique.\n\nThat split — **electrical versus part-borne** — decides which half of the toolbox you open. Misdiagnose it and you will polish cables while the real noise sits in the metal."
+  },
+  {
+   "type": "table",
+   "caption": "The Level II troubleshooting map: identify the noise source, then pick a countermeasure that attacks its cause.",
+   "headers": ["Noise source", "How it shows itself", "Countermeasures that work"],
+   "rows": [
+    ["Lift-off / probe wobble", "Baseline wander along the lift-off direction; worst on curved or rough surfaces", "Phase rotation + vertical-channel alarm, high-pass filter, spring-loaded or gimbaled probe holder, scan guides"],
+    ["Surface roughness, scale, paint variation", "Broadband grass that tracks the surface texture", "Surface preparation as the procedure allows, frequency low enough that roughness is shallow compared with δ, footprint choice"],
+    ["Gradual conductivity, heat-treat, or dimension change", "Slow drift the flaw signal must out-climb", "Differential probe, high-pass filter"],
+    ["Permeability variation (ferromagnetic parts)", "Large erratic excursions that bury flaw signals", "Magnetic saturation — a DC bias field drives μᵣ toward 1"],
+    ["Geometry: edges, fasteners, support plates", "Strong repeating signals at known locations", "Shielded or focused probes, fixtures and scan-path control, multifrequency mixing"],
+    ["Electrical interference (EMI)", "Spikes and hash present even with the probe in air", "Cable routing and shielding, grounding, distance from welders and VFDs"],
+    ["Random instrument noise", "Fine fuzz independent of probe position", "More drive (within heating limits), signal averaging, low-pass filter"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Frequency: The First Lever",
+   "body": "Frequency improves SNR through two separate mechanisms — know which one you are using.\n\n**Phase separation.** At low frequency on aluminum, lift-off and crack responses run nearly parallel on the impedance plane, so every wobble looks like a flaw. Raising frequency moves the operating point down the conductivity locus and opens the angle between them: on a 32 %IACS skin at a few hundred kilohertz, lift-off can be rotated horizontal while cracks rise nearly vertically. The noise and the flaw now live on different channels.\n\n**Depth weighting.** δ (mm) = 660/√(f · μᵣ · σ %IACS). Raising frequency concentrates current at the surface — stronger response from surface cracks, while deeper benign structure falls beyond 3δ and stops contributing. Lowering frequency reaches subsurface targets, and shallow surface roughness, now small compared with δ, contributes less. At 10 kHz on 32 %IACS aluminum, δ ≈ 1.2 mm; at 500 kHz, δ ≈ 0.17 mm.\n\n**Tubing** has its own anchor: the prime test frequency f90 (kHz) ≈ 3ρ/t² is chosen exactly because it spreads ID and OD responses across a usable phase range — SNR by phase discrimination.\n\nTwo cautions. Push frequency too high and lift-off sensitivity and surface grass grow faster than the flaw signal — there is an optimum, not a maximum. And frequency is usually fixed by the written procedure: propose the change through your Level III, and re-standardize after every change."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-3-3-fig-a",
+   "caption": "The same notch and the same wobble at two frequencies on 32 %IACS aluminum: at 10 kHz the crack response hides inside the lift-off noise sector; at 500 kHz it rises roughly 90° away, so the vertical channel alarms on flaws and ignores wobble."
+  },
+  {
+   "type": "text",
+   "heading": "Steer It, Filter It, Average It",
+   "body": "**Rotate first.** Null on sound material, rock the probe, and rotate the display until lift-off lies horizontal. Set the alarm on the **vertical channel** and wobble can no longer trip it. Understand the limit: rotation only aims the whole pattern — it cannot change the angle *between* lift-off and flaw. If they are nearly parallel, fix frequency first.\n\n**Filter second.** A **high-pass** filter removes slow events — drift from lift-off, temperature, and gradual property change. A **low-pass** filter removes fast fuzz and spikes. Together they form a **band-pass**, the standard arrangement on rotating fastener-hole scanners, where the passband is computed from the rotational speed. Filters only know event frequency, and event frequency is set by motion: **f ≈ scan speed ÷ response width**. A notch response about 5 mm wide scanned at 100 mm/s is a 20 Hz event — comfortably above a 5 Hz high-pass corner. Slow to 10 mm/s in an awkward corner and the same flaw becomes a 2 Hz event: the high-pass eats it. Constant scan speed is a detection requirement, not a style preference — and changing a rotary scanner's rpm means resetting the filters and re-standardizing.\n\n**Average third.** Repeating and averaging N scans cuts **random** noise by √N — 16 averages buys 4×, about 12 dB. But part-borne noise repeats identically every pass and survives averaging untouched. Averaging fixes fuzz, never grass.\n\nEvery filter corner pushed toward the signal spends flaw-signal margin. After any filter change, verify the reference notch still reads full amplitude."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-3-3-fig-b",
+   "caption": "One noisy channel cleaned in two stages: the high-pass strips slow drift, the low-pass strips spikes and fuzz, and the notch response is left standing alone above the alarm threshold — valid only at the qualified scan speed."
+  },
+  {
+   "type": "text",
+   "heading": "Change the Probe, Change the Physics",
+   "body": "When electronics run out of room, change what the coil sees.\n\n- **Differential coils** — two matched coils wound in opposition produce output only when they sense *different* material. Temperature drift, gradual thinning, and conductivity gradients affect both coils equally and cancel; an abrupt flaw hits one coil first and rings sharply. The cost is symmetry's blind spot: a change more gradual than the coil spacing is invisible, which is why tubing examinations pair the differential channel with an **absolute** channel to catch gradual wall loss.\n- **Shielded and focused probes** — a ferrite cup core or shielding ring confines the field to a tight footprint. Edge signals shrink, so you can scan close to fastener heads and skin edges without geometry flooding the screen, and the smaller interrogated volume integrates less material noise around a small flaw.\n- **Coupling** — signal strength is free SNR. On surfaces, a spring-loaded or gimbaled holder keeps lift-off constant; in tubing, use the largest practical probe diameter — higher **fill factor** means stronger response from the same flaw.\n- **Magnetic saturation** — a DC bias field drives a ferromagnetic part toward saturation so μᵣ approaches 1. Permeability variation — usually the dominant noise in steel — collapses. ASTM E309 builds the entire examination of steel tubing around this method.\n- **Multifrequency mixing** — drive two or more frequencies and combine the channels so an unwanted signal, classically the tube **support plate**, subtracts out. The residual mix keeps a flaw under the support visible."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-3-3-fig-c",
+   "caption": "Three hardware fixes that change the physics instead of the volume: differential coils cancel gradual variation, a shielded core keeps fastener heads out of the footprint, and DC saturation collapses permeability noise in steel."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "No fix is real until the reference standard says so",
+   "body": "Pick the cheapest lever that touches the cause: surface preparation, cable routing, a probe guide, and constant scan speed cost nothing and cure most operator-induced noise. Frequency, filters, probe changes, saturation, and mixing are engineering changes — and every one of them voids the previous setup. The loop is always the same: **change one parameter at a time → re-standardize → re-scan the reference discontinuities at production scan speed → measure the SNR** against the procedure minimum — commonly **3:1, about 10 dB** — **→ record every setting**. If the best defensible setup still cannot reach the minimum, stop scanning: the technique, not the gain knob, is inadequate, and the call belongs to the Level III and a revised procedure."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-3-3-fig-a",
+   "title": "Frequency buys phase separation: lift-off vs crack on the impedance plane",
+   "file": "et2-3-3-fig-a.svg"
+  },
+  {
+   "id": "et2-3-3-fig-b",
+   "title": "Filters at work: raw, after high-pass, after low-pass",
+   "file": "et2-3-3-fig-b.svg"
+  },
+  {
+   "id": "et2-3-3-fig-c",
+   "title": "Probe-side noise killers: differential coils, shielded cores, magnetic saturation",
+   "file": "et2-3-3-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Rescue the Inspection: A Noisy Lap-Joint Survey",
+  "intro": "A sliding-probe survey of a 7075-T6 lap joint (32 %IACS) is drowning in noise. Work it like a Level II: identify each noise source, pick the lever that attacks its cause, and prove the fix.",
+  "steps": [
+   {
+    "prompt": "The strip chart shows a slow baseline swell as you hand-scan over slightly wavy paint, and the EDM notch on the reference standard barely clears it. First move?",
+    "options": [
+     "Add 12 dB of gain so the notch response gets bigger",
+     "Engage the high-pass filter — or switch to a differential probe — to strip the slow drift",
+     "Lower the test frequency for deeper penetration",
+     "Re-null the instrument every few seconds during the scan"
+    ],
+    "correct": 1,
+    "feedback": "Drift from paint-thickness variation and slow wobble is a low-frequency event; a high-pass filter (or a differential coil, which cancels what both coils see) removes it while passing the fast notch response. Gain would enlarge swell and notch by exactly the same factor — the ratio would not move."
+   },
+   {
+    "prompt": "Drift is gone, but sharp spikes remain — and they keep coming when you lift the probe into the air. A welder two bays over is striking arcs. What does the probe-in-air test tell you to do?",
+    "options": [
+     "Raise the high-pass corner until the spikes disappear",
+     "Replace the probe — its windings are failing",
+     "Treat it as electrical noise: reroute the cable away from welding leads, check shielding and grounding, add distance, or schedule around the welding",
+     "Lower the gain until the spikes fall below the alarm level"
+    ],
+    "correct": 2,
+    "feedback": "Noise that survives with the probe in air never came from the part — it is entering electrically. Housekeeping attacks the cause; filter and gain tricks only disguise it, and the disguise is paid for in flaw-signal margin."
+   },
+   {
+    "prompt": "The baseline is clean now, but on the reference standard the notch response lies nearly parallel to lift-off on the impedance plane at your 10 kHz setup — rotation alone will not separate them. Root fix?",
+    "options": [
+     "Raise the test frequency into the hundreds of kilohertz so the crack-to-lift-off angle opens toward 90°, then re-standardize",
+     "Rotate the display another 45 degrees",
+     "Increase the drive voltage to strengthen the field",
+     "Scan faster so the notch response looks sharper"
+    ],
+    "correct": 0,
+    "feedback": "Rotation only aims the whole pattern — it cannot change the angle BETWEEN lift-off and flaw. Frequency does: on aluminum, hundreds of kilohertz moves the operating point down the conductivity locus and puts cracks near 90° from lift-off, so the vertical channel sees flaws and ignores wobble. Every frequency change demands re-standardization."
+   },
+   {
+    "prompt": "Settings finalized. Which single result proves the SNR problem is actually solved?",
+    "options": [
+     "The screen looks much cleaner to the operator than it did this morning",
+     "The gain setting ended up lower than where you started",
+     "At final settings and production scan speed, the reference notch reads at least the procedure minimum — commonly 3:1 over peak background — and every setting is recorded",
+     "No flaw indications appear during the first production scan"
+    ],
+    "correct": 2,
+    "feedback": "Improvement is a measured ratio on the reference standard at the final, documented settings — nothing else counts. A quiet production scan could just as easily mean the test went blind."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Part-borne grass nearly buries a reference notch response. Adding 12 dB of receiver gain will:",
+   "options": [
+    "Raise the signal-to-noise ratio by 12 dB",
+    "Leave the signal-to-noise ratio unchanged — signal and noise are amplified by the same factor",
+    "Improve SNR, but only at test frequencies below 100 kHz",
+    "Reduce the noise by driving the eddy currents deeper into the part"
+   ],
+   "correct": 1,
+   "explanation": "Gain sits downstream of where part-borne noise enters the signal, so it multiplies flaw response and noise equally and the ratio never moves. SNR must be won earlier in the chain — frequency, filtering, probe design, or technique."
+  },
+  {
+   "question": "At 10 kHz on a 32 %IACS aluminum skin, lift-off and surface-crack responses lie nearly parallel on the impedance plane, so wobble keeps tripping the alarm. The change that attacks the root cause is to:",
+   "options": [
+    "Rotate the display until lift-off lies horizontal",
+    "Add gain on the vertical channel only",
+    "Raise the test frequency into the hundreds of kilohertz, then re-standardize",
+    "Switch to a larger-diameter probe"
+   ],
+   "correct": 2,
+   "explanation": "Rotation aims the whole pattern but cannot change the angle between lift-off and crack vectors. Raising frequency moves the operating point down the conductivity locus and opens that angle toward 90°, so wobble stays horizontal while cracks rise vertically — and any frequency change requires re-standardization."
+  },
+  {
+   "question": "A surface scan was standardized at 100 mm/s with a high-pass filter engaged. Working around an obstruction, the inspector slows to about 10 mm/s. The principal risk is that:",
+   "options": [
+    "The flaw response frequency drops below the high-pass corner and is attenuated — a crack can be missed",
+    "The eddy currents penetrate deeper at the lower scan speed",
+    "The low-pass filter begins clipping the lift-off noise",
+    "Probe heating increases at low speed and shifts the null"
+   ],
+   "correct": 0,
+   "explanation": "Filters only know event frequency, and event frequency ≈ scan speed ÷ response width. A response that was a 20 Hz event at 100 mm/s becomes a 2 Hz event at 10 mm/s — below the high-pass corner, so the filter removes the flaw signal itself. Constant scan speed is a detection requirement."
+  },
+  {
+   "question": "During eddy current examination of steel tubing, large erratic signals from permeability variation bury the defect responses. The established remedy is to:",
+   "options": [
+    "Engage a steeper high-pass filter to strip the variations",
+    "Raise the test frequency until the variations smooth out",
+    "Increase receiver gain on the vertical channel",
+    "Apply magnetic saturation — a DC bias field drives μᵣ toward 1 and collapses the permeability noise"
+   ],
+   "correct": 3,
+   "explanation": "Permeability variation is usually the dominant noise in ferromagnetic material, and no filter or gain setting removes it without also costing flaw signal. Saturating the material switches the μᵣ term off at its source — the practice ASTM E309 builds the examination of steel tubular products around."
+  },
+  {
+   "question": "After changing frequency, filters, and probe to fight noise, which action verifies that the SNR improvement is real?",
+   "options": [
+    "Compare the new display with your memory of the old one",
+    "Re-standardize, re-scan the reference discontinuities at production scan speed, and measure the response against the procedure's minimum SNR — commonly 3:1",
+    "Run one production part and confirm that no indications appear",
+    "Confirm the background noise is invisible at the instrument's minimum gain"
+   ],
+   "correct": 1,
+   "explanation": "Every parameter change voids the previous setup, so verification means re-standardizing and measuring the reference response against the documented minimum — commonly 3:1, about 10 dB — at the final settings and real scan speed, then recording them. A quiet screen alone could mean the test went blind."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II Techniques Course §3.3 (methods of improving signal-to-noise ratio)",
+  "ASNT SNT-TC-1A (2024) — Level II responsibilities: setting up and standardizing equipment, interpreting and evaluating results",
+  "ASTM E309, Standard Practice for Eddy Current Examination of Steel Tubular Products Using Magnetic Saturation",
+  "Cecco, Van Drunen, and Sharp, Eddy Current Testing Manual (AECL) — multifrequency mixing and f90 prime-frequency practice for tubing"
+ ]
+}

@@ -1,0 +1,218 @@
+{
+ "lessonId": "et2-6-4",
+ "title": "The Complete Signal Chain: Oscillator to Display",
+ "narrationScript": "Three lessons gave you the heavy machinery of an eddy current instrument \u2014 amplification, phase detection, and filtering. This capstone assembles the whole chain. One oscillator does two jobs: it drives the coil at the test frequency, and it hands the phase-sensitive detector the reference that makes phase measurement possible at all. Between coil and amplifier sits the balance network. A small crack changes the coil voltage by well under one percent, so the instrument first nulls the large standing signal \u2014 otherwise gain and converter range are wasted re-amplifying a number that never changes. After demodulation and filtering, the analog-to-digital converter samples the signal. Sample rate plus scan speed set a hard speed limit: scan too fast and a crack signal falls between samples and reads low, with no warning on the screen. Bit depth sets dynamic range, roughly six decibels per bit. Displays, gates, and markers turn the result into decisions. Prove the chain end to end \u2014 run the reference standard at production speed, and re-standardize after any change.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Instrument Is a Chain",
+   "body": "An eddy current instrument is a **chain of six links**: an **oscillator** that drives the coil at the test frequency, a **balance network** that nulls the coil's standing signal, an **amplifier** that raises what remains, a **phase-sensitive detector** that resolves the signal into horizontal and vertical components, **filters** that pass flaw rates and reject noise rates, and a **digitizer feeding the display, gates, and outputs**.\n\nThe last three lessons took the middle links apart one at a time \u2014 amplification, phase detection, differentiation and filtering. This capstone installs the remaining links and forces the system view, because a flaw signal must survive **every link** to reach the screen:\n\n- the **oscillator** \u2014 where frequency and drive level are actually executed,\n- the **balance network** \u2014 why nulling comes before gain,\n- the **digitizer** \u2014 how sample rate and bit depth set a hard speed limit,\n- the **display, gates, and outputs** \u2014 where signals become decisions.\n\nA chain is only as strong as its weakest link. A perfectly chosen frequency cannot rescue an undersampled scan, and a razor-sharp filter cannot recover a signal the amplifier already clipped. Level II means you can name the link that failed."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-6-4-fig-a",
+   "caption": "The complete signal chain of an eddy current instrument. One oscillator drives the coil and supplies the phase reference to the detector; the balance network nulls the standing signal before any gain is applied."
+  },
+  {
+   "type": "text",
+   "heading": "One Oscillator, Two Jobs",
+   "body": "The oscillator generates the sinusoidal excitation that drives the coil \u2014 so every frequency decision you have made in this course (skin depth, phase spread, response speed) is **executed here**. Its second job is just as important: it supplies the **reference signal** the phase-sensitive detector compares against. The phase angle of the returning coil signal only means something when it is measured against the same wave that created it \u2014 one clock for drive and detection is what makes the impedance plane readable.\n\nTwo design consequences follow:\n\n- **Stability.** Your standardized phase angles \u2014 lift-off horizontal, notch responses at their recorded angles \u2014 assume the frequency holds. Oscillator drift shifts skin depth and phase lag, and the display quietly stops matching the standardization.\n- **Drive level.** More drive means stronger eddy currents and a better signal-to-noise ratio, but probe heating sets one limit, and on ferromagnetic parts a strong field pushes permeability into its nonlinear range and distorts the signal \u2014 the field-strength effects you studied in the coupling module.\n\n**Multifrequency instruments** run two or more frequencies through the coil simultaneously or time-multiplexed, each with its own detection channel \u2014 the hardware basis for the signal mixing used in tubing inspection to suppress support-plate responses."
+  },
+  {
+   "type": "text",
+   "heading": "Balance: Null the Signal That Never Changes",
+   "body": "Put magnitudes on the problem. The coil sitting on defect-free material returns a large standing voltage. A small fatigue crack changes that voltage by **well under one percent** \u2014 the information you are paid to find is a tiny ripple riding a large constant.\n\nThe classic solution is an **AC bridge**: the test coil forms one arm, and a reference coil or adjustable impedance forms the opposing arm. Balanced, the bridge output is **zero** \u2014 the standing signal cancels itself \u2014 and any impedance change unbalances the bridge, producing an output proportional to the **change alone**. Modern instruments automate this: press **null**, and the instrument measures the residual signal and stores an equal-and-opposite offset, dropping the operating point to the **origin of the impedance plane**. Everything you read on the screen is measured from that null.\n\nNull does not hold forever:\n\n- **Temperature** changes the copper winding's resistance by roughly **0.4% per \u00b0C**, so the dot wanders as the probe and part warm \u2014 give the instrument its warm-up time.\n- **Cable flex** shifts capacitance and can walk the null mid-scan.\n- **Differential probes** hold balance far better, because both coils see slow common-mode changes equally and the bridge stays nulled.\n\nThe discipline: null at the operating point your procedure names \u2014 on the reference standard, off the flaw \u2014 and re-null after any change of probe, cable, frequency, or whenever the dot has drifted."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The dynamic-range budget",
+   "body": "Every stage has finite headroom \u2014 the amplifier clips, the converter runs out of counts. An un-nulled standing signal spends that headroom on a number that **never changes**, leaving less for the flaw signal that does. **Balance first. Then amplify. Then digitize.** Every decibel wasted re-amplifying a constant is a decibel unavailable where the crack needs it."
+  },
+  {
+   "type": "text",
+   "heading": "Digitization Sets the Speed Limit",
+   "body": "After demodulation and filtering, an **analog-to-digital converter** samples the horizontal and vertical channels. Two numbers define it: **sample rate** and **bit depth**.\n\nWork the sample-rate problem on a rotating bolt-hole scanner. At **2,400 rpm** in a 6.35 mm hole, the circumference is about 20 mm and the coil sweeps the surface at roughly **0.8 m/s**. A 1 mm coil crossing a tight crack interacts over about 2 mm of travel, so the crack signal lasts about **2.5 ms**, once per revolution. A digitizer sampling at **10,000 samples per second** puts about **25 samples** across that signal \u2014 the peak is captured faithfully. Sample at 500 per second and roughly **one sample** lands on the event: the same crack reads full amplitude, half amplitude, or nothing, depending on where the samples happen to fall. A practical design target is on the order of **ten samples across the narrowest expected flaw response**.\n\n**Bit depth** sets amplitude resolution \u2014 each bit is worth about **6 dB** of range, so a 12-bit converter spans roughly **72 dB** and a 16-bit converter about **96 dB**. A signal living in the bottom few counts comes out coarse and steppy, which is why gain staging still matters in a digital instrument.\n\nThe operational consequence: the **maximum scan or rotation speed in your procedure is an instrument-design number**, not a comfort preference. Exceed it and flaws are undersampled \u2014 and the screen gives no warning that it happened."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-6-4-fig-b",
+   "caption": "The same 2.5 ms crack signal sampled densely and sparsely. With ~25 samples on the signal the peak is captured; with ~1 sample the recorded amplitude depends on luck and reads low."
+  },
+  {
+   "type": "text",
+   "heading": "Displays, Gates, and Outputs: Where the Chain Pays Off",
+   "body": "The end of the chain converts clean signals into decisions, and the format is matched to the technique:\n\n- **Impedance-plane (X\u2013Y) display** \u2014 preserves phase, the Level II interpretation workhorse for surface scanning and aerospace structure.\n- **Sweep (timebase) display** \u2014 one channel plotted against time; on a rotating scanner a crack repeats as a blip at the same angular position every revolution.\n- **Strip chart and C-scan** \u2014 position-stamped records for tube pulls and automated scanning.\n\n**Alarm gates** automate the first decision. A **box gate** is a pure amplitude window on a channel. A **sector gate**, anchored at the null point, adds **phase**: the wedge is set to exclude the lift-off direction, so probe wobble does not alarm but signals breaking toward the flaw plane do. Gate outputs drive horns, lights, paint markers, and sorter mechanisms \u2014 and on a mill line the marker sits downstream of the coil, so the instrument delays the fire command by the transport time computed from line speed.\n\nFinally, prove the chain **end to end**. Dynamic standardization \u2014 running the reference standard through the system **at production speed** \u2014 is required by tubular-product standards such as ASTM E309 precisely because it exercises every link at once: drive, balance, gain, demodulation, filters, sampling, and gates. Re-standardize after **any** change to the chain \u2014 frequency, drive, null, gain, rotation, filters, or speed \u2014 and at the intervals your procedure sets. If a re-check fails, everything tested since the last good check is suspect."
+  },
+  {
+   "type": "table",
+   "caption": "One chain, six links \u2014 the design parameter each link owns, and what you get when it is set wrong.",
+   "headers": [
+    "Link",
+    "It owns",
+    "Set wrong, you get"
+   ],
+   "rows": [
+    [
+     "Oscillator",
+     "Test frequency, drive level, detector reference",
+     "Wrong depth of penetration; phase angles drift off standardization"
+    ],
+    [
+     "Balance network",
+     "Null at the operating point",
+     "Standing signal eats headroom; dot pinned off-screen; early saturation"
+    ],
+    [
+     "Amplifier",
+     "Gain and headroom",
+     "Large signals clipped, or small flaws buried in electronic noise"
+    ],
+    [
+     "Phase-sensitive detector",
+     "X\u2013Y resolution and rotation",
+     "Lift-off not horizontal; phase readings disagree with the standard"
+    ],
+    [
+     "Filters",
+     "Pass band matched to scan speed",
+     "Flaw responses removed \u2014 or noise passed \u2014 when speed changes"
+    ],
+    [
+     "Digitizer, display, gates",
+     "Sample rate, bit depth, gate geometry",
+     "Undersampled cracks read low; gates false-call on wobble or miss flaws"
+    ]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-6-4-fig-a",
+   "title": "The complete eddy current instrument signal chain",
+   "file": "et2-6-4-fig-a.svg"
+  },
+  {
+   "id": "et2-6-4-fig-b",
+   "title": "Sample rate versus scan speed",
+   "file": "et2-6-4-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "One Chain, One Job Each",
+  "intro": "The block diagram below is the instrument you standardize every shift. A small fatigue crack changes the coil voltage by well under one percent \u2014 the rest is a large standing signal that never changes. Click the block whose job is to remove that standing signal before anything is amplified.",
+  "figureId": "et2-6-4-fig-a",
+  "regions": [
+   {
+    "x": 50,
+    "y": 90,
+    "w": 180,
+    "h": 80,
+    "label": "Oscillator",
+    "isTarget": false,
+    "feedback": "The oscillator generates the drive at the test frequency and the detector's phase reference \u2014 it creates the standing signal; it cannot remove it."
+   },
+   {
+    "x": 310,
+    "y": 90,
+    "w": 180,
+    "h": 80,
+    "label": "Coil + balance network",
+    "isTarget": true,
+    "feedback": "Correct. The balance network nulls the standing coil voltage \u2014 bridge cancellation or a stored auto-null offset \u2014 so the amplifier and digitizer spend their range on changes, not on a constant."
+   },
+   {
+    "x": 570,
+    "y": 90,
+    "w": 180,
+    "h": 80,
+    "label": "Amplifier",
+    "isTarget": false,
+    "feedback": "The amplifier boosts whatever reaches it. Un-nulled, the standing signal saturates the amplifier long before the flaw signal reaches useful size."
+   },
+   {
+    "x": 570,
+    "y": 300,
+    "w": 180,
+    "h": 80,
+    "label": "Phase-sensitive detector",
+    "isTarget": false,
+    "feedback": "The detector resolves the amplified signal into horizontal and vertical components against the oscillator reference \u2014 it measures the signal; it does not null it."
+   },
+   {
+    "x": 310,
+    "y": 300,
+    "w": 180,
+    "h": 80,
+    "label": "Filters + digitizer",
+    "isTarget": false,
+    "feedback": "A high-pass filter can block a constant on the demodulated channel, but by then the damage is done \u2014 an un-nulled standing signal saturates the amplifier upstream. Balance must happen at the coil, before gain."
+   }
+  ],
+  "coordH": 500
+ },
+ "checkQuestions": [
+  {
+   "question": "Besides driving the test coil, the instrument's oscillator also supplies:",
+   "options": [
+    "the alarm-gate threshold voltage",
+    "the high-pass filter corner frequency",
+    "the reference signal the phase-sensitive detector compares against",
+    "the digitizer's bit depth"
+   ],
+   "correct": 2,
+   "explanation": "Phase only has meaning relative to the wave that created the eddy currents. The same oscillator that drives the coil feeds the phase-sensitive detector its reference \u2014 one clock for drive and detection is what makes the impedance plane readable."
+  },
+  {
+   "question": "The purpose of the balance (null) network is to:",
+   "options": [
+    "subtract the coil's large standing voltage so later stages amplify and digitize only the changes",
+    "rotate the lift-off response to the horizontal axis",
+    "remove high-frequency electronic noise from the signal",
+    "increase the depth of penetration at the chosen frequency"
+   ],
+   "correct": 0,
+   "explanation": "A flaw changes the coil voltage by well under one percent. Nulling the standing signal \u2014 by bridge cancellation or a stored offset \u2014 frees the amplifier's headroom and the converter's counts for the part that actually carries information. Rotation belongs to the phase detector, noise rejection to the filters."
+  },
+  {
+   "question": "A 12-bit analog-to-digital converter gives a theoretical dynamic range of about:",
+   "options": [
+    "12 dB",
+    "24 dB",
+    "48 dB",
+    "72 dB"
+   ],
+   "correct": 3,
+   "explanation": "Each bit of resolution is worth about 6 dB, so 12 bits spans roughly 72 dB and 16 bits about 96 dB. Signals forced into the bottom few counts come out coarse, which is why gain staging still matters in digital instruments."
+  },
+  {
+   "question": "A bolt-hole crack signal lasts about 2.5 ms at the procedure's rotation speed, but the operator doubles the rpm. The most likely result is that the crack signal:",
+   "options": [
+    "saturates the amplifier",
+    "falls between digitizer samples and reads low \u2014 or is missed \u2014 with no warning on screen",
+    "rotates from the flaw plane onto the lift-off axis",
+    "causes the oscillator frequency to drift"
+   ],
+   "correct": 1,
+   "explanation": "Doubling speed halves the signal duration, so fewer samples land on the event. An undersampled flaw reads at whatever amplitude the nearest samples happened to catch \u2014 often low, sometimes zero \u2014 and the display gives no indication that sampling failed. Scan-speed limits are instrument-design numbers."
+  },
+  {
+   "question": "Compared with a simple amplitude (box) gate, a sector gate set around the flaw direction reduces false alarms because it:",
+   "options": [
+    "samples the signal at a higher rate",
+    "adds gain only to vertical signals",
+    "uses phase as well as amplitude, so responses along the lift-off direction do not trigger it",
+    "filters out 50/60 Hz line interference"
+   ],
+   "correct": 2,
+   "explanation": "A sector gate is anchored at the null point and opens a phase wedge that excludes the lift-off direction. Probe wobble \u2014 large in amplitude but lying along lift-off \u2014 stays outside the gate, while signals breaking toward the flaw plane alarm."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level II Principles Course \u00a77.0 (instrument design considerations)",
+  "ASNT Recommended Practice No. SNT-TC-1A (2024), Personnel Qualification and Certification in Nondestructive Testing",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (electromagnetic testing terms)",
+  "ASTM E309, Standard Practice for Eddy Current Examination of Steel Tubular Products Using Magnetic Saturation (dynamic standardization at production speed)"
+ ]
+}

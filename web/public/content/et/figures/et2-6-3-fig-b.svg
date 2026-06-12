@@ -1,0 +1,60 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">The Band-Pass Window and Scan Speed</text>
+
+  <!-- passband shading between the two corners -->
+  <rect x="306.7" y="140" width="320" height="220" fill="#9BC4FF" fill-opacity="0.18"/>
+  <text x="467" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">PASSBAND</text>
+  <text x="467" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">signals here reach the display</text>
+
+  <!-- axes -->
+  <line x1="90" y1="360" x2="740" y2="360" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="90" y1="360" x2="90" y2="90" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="90" y="78" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">FILTER RESPONSE</text>
+  <line x1="90" y1="140" x2="740" y2="140" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="84" y="144" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">100%</text>
+  <text x="84" y="364" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0</text>
+  <g font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A" text-anchor="middle">
+    <text x="90" y="382">1</text>
+    <text x="306.7" y="382">10</text>
+    <text x="523.3" y="382">100</text>
+    <text x="740" y="382">1,000</text>
+  </g>
+  <g stroke="#0B1F3A" stroke-width="2">
+    <line x1="90" y1="360" x2="90" y2="366"/>
+    <line x1="306.7" y1="360" x2="306.7" y2="366"/>
+    <line x1="523.3" y1="360" x2="523.3" y2="366"/>
+    <line x1="740" y1="360" x2="740" y2="366"/>
+  </g>
+  <text x="415" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">frequency content of the demodulated signal (Hz, log scale)</text>
+
+  <!-- filter corners -->
+  <line x1="306.7" y1="128" x2="306.7" y2="360" stroke="#1E66F5" stroke-width="2" stroke-dasharray="6 5"/>
+  <line x1="626.7" y1="128" x2="626.7" y2="360" stroke="#1E66F5" stroke-width="2" stroke-dasharray="6 5"/>
+  <g font-family="Arial, sans-serif" font-size="14" text-anchor="middle">
+    <text x="306.7" y="104" font-weight="bold" fill="#1E66F5">HP corner</text>
+    <text x="306.7" y="122" fill="#0B1F3A">10 Hz</text>
+    <text x="626.7" y="104" font-weight="bold" fill="#1E66F5">LP corner</text>
+    <text x="626.7" y="122" fill="#0B1F3A">300 Hz</text>
+  </g>
+
+  <!-- combined band-pass response curve -->
+  <path d="M 90 338.1 L 100.8 335.5 L 111.7 332.5 L 122.5 329.2 L 133.3 325.6 L 144.2 321.5 L 155 317 L 165.8 311.9 L 176.7 306.4 L 187.5 300.3 L 198.3 293.7 L 209.2 286.4 L 220 278.6 L 230.8 270.3 L 241.7 261.4 L 252.5 252.2 L 263.3 242.6 L 274.2 232.9 L 285 223.2 L 295.8 213.7 L 306.7 204.5 L 317.5 195.9 L 328.3 187.9 L 339.2 180.6 L 350 174.2 L 360.8 168.6 L 371.7 163.8 L 382.5 159.7 L 393.3 156.3 L 404.2 153.6 L 415 151.4 L 425.8 149.7 L 436.7 148.5 L 447.5 147.7 L 458.3 147.2 L 469.2 147.1 L 480 147.4 L 490.8 148 L 501.7 149 L 512.5 150.4 L 523.3 152.3 L 534.2 154.8 L 545 157.8 L 555.8 161.5 L 566.7 165.9 L 577.5 171 L 588.3 177 L 599.2 183.9 L 610 191.5 L 620.8 199.8 L 631.7 208.7 L 642.5 218 L 653.3 227.6 L 664.2 237.4 L 675 247 L 685.8 256.5 L 696.7 265.5 L 707.5 274.2 L 718.3 282.3 L 729.2 289.8 L 740 296.8" fill="none" stroke="#0B1F3A" stroke-width="3"/>
+
+  <!-- the same crack at two scan speeds -->
+  <path d="M 128.2 360 Q 184.8 261.2 241.4 360" fill="#9BC4FF" fill-opacity="0.15" stroke="#0B1F3A" stroke-width="2.2" stroke-dasharray="6 4"/>
+  <path d="M 344.8 360 Q 401.5 198.5 458.1 360" fill="#9BC4FF" fill-opacity="0.5" stroke="#1E66F5" stroke-width="2.5"/>
+  <g font-family="Arial, sans-serif" font-size="14" text-anchor="middle">
+    <text x="185" y="270" fill="#0B1F3A">same crack at 5 mm/s</text>
+    <text x="185" y="288" font-weight="bold" fill="#0B1F3A">&#8776; 2&#8211;5 Hz &#8212; blocked</text>
+    <text x="400" y="250" fill="#0B1F3A">same crack at 50 mm/s</text>
+    <text x="400" y="268" font-weight="bold" fill="#1E66F5">&#8776; 15&#8211;50 Hz &#8212; passes</text>
+  </g>
+  <line x1="262" y1="256" x2="314" y2="256" stroke="#1E66F5" stroke-width="2"/>
+  <polygon points="322,256 312,251 312,261" fill="#1E66F5"/>
+  <text x="736" y="330" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">electronic noise extends past 1 kHz</text>
+
+  <!-- footnotes -->
+  <text x="415" y="434" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">scan speed &#215; 10 &#8594; the signal band shifts one decade right &#8212; corners must follow</text>
+  <text x="415" y="458" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">the 200 kHz carrier ripple lies far beyond the right edge &#8212; deep in the LP stopband</text>
+</svg>

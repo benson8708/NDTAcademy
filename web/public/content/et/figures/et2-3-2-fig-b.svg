@@ -1,0 +1,66 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Measuring SNR on the Strip Chart</text>
+
+  <!-- chart frame -->
+  <text x="50" y="62" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">vertical channel (divisions)</text>
+  <rect x="50" y="70" width="505" height="360" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="50" y1="110" x2="555" y2="110" stroke="#EAF1FE" stroke-width="1"/>
+  <line x1="50" y1="150" x2="555" y2="150" stroke="#EAF1FE" stroke-width="1"/>
+  <line x1="50" y1="190" x2="555" y2="190" stroke="#EAF1FE" stroke-width="1"/>
+  <line x1="50" y1="230" x2="555" y2="230" stroke="#EAF1FE" stroke-width="1"/>
+  <line x1="50" y1="270" x2="555" y2="270" stroke="#DCE7F8" stroke-width="1.5"/>
+  <line x1="50" y1="310" x2="555" y2="310" stroke="#EAF1FE" stroke-width="1"/>
+  <line x1="50" y1="350" x2="555" y2="350" stroke="#EAF1FE" stroke-width="1"/>
+  <line x1="50" y1="390" x2="555" y2="390" stroke="#EAF1FE" stroke-width="1"/>
+
+  <!-- one-division scale marker -->
+  <line x1="68" y1="352" x2="68" y2="388" stroke="#0B1F3A" stroke-width="1.5"/>
+  <polygon points="68,350 64,358 72,358" fill="#0B1F3A"/>
+  <polygon points="68,390 64,382 72,382" fill="#0B1F3A"/>
+  <text x="78" y="374" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">1 div</text>
+
+  <!-- trace: free-span noise, flaw signal, free-span noise -->
+  <polyline points="65,272 77,262 89,278 101,264 113,276 125,260 137,282 149,266 161,274 173,258 185,279 197,268 209,276 221,261 233,278 245,265 257,273 269,259 281,277 293,266 305,274 317,262 329,272 341,267 353,272 361,265 369,240 377,222 385,258 391,318 399,300 407,278 415,268 427,275 439,262 451,277 463,264 475,273 487,261 499,278 511,266 523,274 535,263 545,271" fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+
+  <!-- N measurement -->
+  <line x1="65" y1="258" x2="330" y2="258" stroke="#0B1F3A" stroke-width="1" stroke-dasharray="6 4"/>
+  <line x1="65" y1="282" x2="330" y2="282" stroke="#0B1F3A" stroke-width="1" stroke-dasharray="6 4"/>
+  <line x1="90" y1="259" x2="90" y2="281" stroke="#0B1F3A" stroke-width="1.5"/>
+  <polygon points="90,258 86,264 94,264" fill="#0B1F3A"/>
+  <polygon points="90,282 86,276 94,276" fill="#0B1F3A"/>
+  <text x="100" y="248" text-anchor="start" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">N = 0.6 div p-p</text>
+
+  <!-- S measurement -->
+  <line x1="345" y1="222" x2="470" y2="222" stroke="#0B1F3A" stroke-width="1" stroke-dasharray="6 4"/>
+  <line x1="345" y1="318" x2="470" y2="318" stroke="#0B1F3A" stroke-width="1" stroke-dasharray="6 4"/>
+  <line x1="455" y1="223" x2="455" y2="317" stroke="#0B1F3A" stroke-width="1.5"/>
+  <polygon points="455,222 451,230 459,230" fill="#0B1F3A"/>
+  <polygon points="455,318 451,310 459,310" fill="#0B1F3A"/>
+  <text x="380" y="207" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">S = 2.4 div p-p</text>
+  <text x="380" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">flaw indication</text>
+
+  <text x="295" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">probe position along the scan</text>
+  <line x1="398" y1="447" x2="430" y2="447" stroke="#0B1F3A" stroke-width="1.5"/>
+  <polygon points="436,447 426,442 426,452" fill="#0B1F3A"/>
+
+  <!-- calculation card -->
+  <rect x="578" y="80" width="192" height="210" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="674" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0B1F3A">SNR = S ÷ N</text>
+  <text x="674" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">= 2.4 div ÷ 0.6 div</text>
+  <text x="674" y="196" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#1E66F5">4 : 1</text>
+  <line x1="592" y1="214" x2="756" y2="214" stroke="#DCE7F8" stroke-width="1.5"/>
+  <rect x="594" y="228" width="160" height="46" fill="#1E66F5"/>
+  <text x="674" y="247" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">meets the common</text>
+  <text x="674" y="266" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">3:1 minimum</text>
+
+  <!-- measurement discipline note -->
+  <text x="578" y="322" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">Measure N over a</text>
+  <text x="578" y="340" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">representative free span —</text>
+  <text x="578" y="358" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">away from supports and</text>
+  <text x="578" y="376" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">tubesheet, not the quietest</text>
+  <text x="578" y="394" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">stretch on the chart.</text>
+
+  <!-- bottom note -->
+  <text x="400" y="482" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">S and N: peak-to-peak, same channel, same gain and filter settings.</text>
+</svg>

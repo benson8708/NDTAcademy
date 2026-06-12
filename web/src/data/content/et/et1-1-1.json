@@ -1,0 +1,186 @@
+{
+ "lessonId": "et1-1-1",
+ "title": "History and Development of Eddy Current Testing",
+ "narrationScript": "Eddy current testing reads a part without touching it. We drive a coil with alternating current. The coil's changing magnetic field induces swirling currents in any nearby conductor, and those currents push back on the coil. Every piece of that sentence was discovered between 1824 and 1873. Arago saw the effect first — a spinning copper disk dragged a compass needle, and nobody could explain why. Faraday explained it in 1831: a changing magnetic field induces current in a conductor. Lenz added the direction in 1834: induced currents always oppose the change that created them. Maxwell wrote the complete mathematics by 1873. In 1879, Hughes built the first practical test, sorting metals with an induction balance. Then electronics turned a laboratory effect into an industrial method: vacuum tubes in the thirties, Förster's quantitative impedance-plane instruments after 1948, transistorized portables in the sixties, microprocessor instruments in the eighties, and today's eddy current arrays. Learn this story, and you have already met every working part of the modern test.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Two Hundred Years in One Probe",
+   "body": "Eddy current testing (ET) inspects a part without touching it. The instrument drives a small coil with alternating current. The coil's alternating magnetic field induces circulating electrical currents — **eddy currents** — in any electrically conductive material brought near it. Those currents generate a magnetic field of their own, which acts back on the coil and changes its electrical **impedance**. Cracks, conductivity changes, coating thickness, and probe-to-part spacing all disturb the eddy currents, and every disturbance appears as an impedance change the instrument can display.\n\nThat one paragraph places ET in the NDT family: it is the principal **electromagnetic** method, it works **only on conductive materials**, it is strongest **at and near the surface**, and it needs no couplant and no consumables — it even inspects through paint.\n\nNothing in that description is modern. The effect was observed in 1824, explained in 1831, given its direction in 1834, and given complete mathematics by 1873 — by four men whose physics you will use for the rest of your career: **Arago, Faraday, Lenz, and Maxwell**. This lesson follows their discoveries into the instruments you will calibrate, because every discovery in this story is a working part of every test you will ever run."
+  },
+  {
+   "type": "text",
+   "heading": "1824: Arago's Spinning Disk",
+   "body": "In 1824, the French physicist and astronomer **François Arago** reported something nobody could explain: when a **copper disk** spun beneath a pivoted compass needle, the needle was dragged around in the direction of the disk's rotation. Stop the disk, and the effect vanished. The reverse was also observed — a magnetized needle swinging above a copper plate settled far faster than one swinging in open air, as if the copper were gripping it.\n\nThis was sensational, because copper is **not magnetic**. No magnet attracts it, and it holds no magnetism of its own. Yet here it was, exchanging real forces with a magnet — but only while something **moved**. The phenomenon was labeled 'magnetism of rotation,' a name that admitted nobody understood it.\n\nToday we can read the experiment at a glance: seen from the moving disk, the needle's magnetic field was a **changing** field. That change induced circulating currents in the copper, and those currents produced a magnetic field that tugged on the needle. Arago had generated and detected **eddy currents** — seven years before the principle behind them was discovered. Every ET probe repeats his experiment, with the motion replaced by alternating current."
+  },
+  {
+   "type": "text",
+   "heading": "1831–1834: Faraday and Lenz Explain the Mystery",
+   "body": "In 1831, **Michael Faraday** found the missing law. He wound two separate coils on an iron ring and watched a galvanometer on the second coil while switching current through the first. The needle kicked only at **make and break** — only while the magnetic field was changing. A steady field induced nothing. That is **electromagnetic induction**: a changing magnetic field induces a voltage in a conductor, and in a closed conducting path that voltage drives a current. (Joseph Henry observed the same effect independently in America.) Induction solved Arago's disk: relative motion made the field change, the change drove currents in the copper, and the currents' field dragged the needle.\n\nIn 1834, **Heinrich Lenz** supplied the direction: the induced current always flows so that its magnetic field **opposes the change that created it**. Nature never assists — it always pushes back. And in 1855, **Léon Foucault** demonstrated the cost of that opposition — rotating a copper disk between magnet poles took real force and heated the disk — which is why much of the world still calls eddy currents 'Foucault currents.'\n\nThese two laws are the entire working principle of ET. Faraday's law puts eddy currents into the part; Lenz's law makes the part push back on the coil. The pushback — measured as an impedance change — is the signal."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-1-1-fig-b",
+   "caption": "The founders' physics in every probe: the coil's alternating field induces eddy currents in the part (Faraday); the eddy currents' field opposes the coil's field (Lenz); the resulting load on the coil is the same back-action Arago first witnessed — and Maxwell's equations predict it all."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Four names, four working parts",
+   "body": "**Arago (1824)** saw it — induced currents in a copper disk acting back on a magnet. **Faraday (1831)** made it lawful — a changing magnetic field induces current, which is exactly what your AC-driven coil does to the part. **Lenz (1834)** set the direction — the induced currents oppose the coil's field, so the part loads the coil and shifts its impedance. **Maxwell (1864–1873)** wrote the mathematics — the field equations behind skin depth, probe design, and every curve on an impedance-plane display. Your probe replays all four discoveries thousands of times per second."
+  },
+  {
+   "type": "text",
+   "heading": "Maxwell's Rulebook and the First Practical Test",
+   "body": "Between 1864 and 1873, **James Clerk Maxwell** unified everything known about electricity and magnetism into one compact set of field equations — presented in his 1864 paper and completed in his 1873 *Treatise on Electricity and Magnetism*. For this method, Maxwell's equations are the difference between a curiosity and a measurement science: from them come the **skin effect** that confines eddy currents near the surface, the standard depth of penetration you will calculate in a later lesson, and the modeled probe responses that designers and procedure writers rely on.\n\nThe first person to *test materials* with eddy currents was **David E. Hughes** in 1879. His **induction balance** used matched pairs of coils balanced so precisely that a telephone receiver across the circuit stayed silent. Slip a metal sample into one coil set and the balance broke — audibly. Hughes sorted metals and coins by their conductivity and permeability signatures without touching or harming them: the first recorded eddy current materials test.\n\nHughes also exposed the method's lasting weakness: his balance responded to *everything* — alloy, size, shape, temperature, position — with no way to tell the variables apart. Eddy current testing stalled as a laboratory trick for decades. Solving that separation problem is the story of the modern instrument."
+  },
+  {
+   "type": "text",
+   "heading": "Advances in Electronics: Tubes, Förster, Transistors, Digital",
+   "body": "Eddy current testing could never outrun its electronics. The signal is a tiny impedance change riding on an AC excitation, so every leap in capability followed a leap in electronics.\n\n- **1920s–1930s — vacuum tubes.** Stable tube oscillators and amplifiers made the first industrial systems possible: in-line testing of bar, tube, and wire in mills for cracks and seams, plus comparator-style alloy sorting.\n- **From 1948 — Förster makes it quantitative.** German physicist **Friedrich Förster** (institute founded 1948) built instruments with stable, calibrated, repeatable readings and introduced **impedance-plane analysis**, publishing the supporting theory in the early 1950s. For the first time, an operator could *separate* conductivity, permeability, lift-off, and crack responses by their distinct directions on the display. Modern ET dates from this work.\n- **1960s–1970s — transistors and new industries.** Solid-state electronics shrank instruments into rugged, battery-powered portables. Aerospace adopted ET for surface cracks and fastener holes; nuclear power demanded high-speed steam generator **tubing** inspection, where **Hugo Libby's** multifrequency techniques separated still more variables at once.\n- **1980s–today — digital.** Microprocessor instruments brought impedance-plane displays to portables, stored calibrations, automatic signal mixing, and recorded data. **Eddy current array (ECA)** probes now paint C-scan images of entire surfaces in a single pass.\n\nThe physics has not changed since 1873. The electronics never stopped changing."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-1-1-fig-a",
+   "caption": "Two centuries of eddy current testing: the founding physics was complete by 1873 — everything since has been engineering, with better electronics extracting more information from the same laws."
+  },
+  {
+   "type": "table",
+   "caption": "Where eddy current testing sits among the major NDT methods — and why it earns its place on conductive parts.",
+   "headers": ["Method", "Principle", "Best at", "Key limits"],
+   "rows": [
+    ["Eddy current (ET)", "Electromagnetic induction — coil impedance changes", "Surface/near-surface cracks, conductivity, coating thickness, alloy sorting; no couplant, inspects through paint", "Conductive materials only; shallow penetration (skin effect); permeability noise in ferromagnetic parts"],
+    ["Magnetic particle (MT)", "Flux leakage at flaws attracts magnetic particles", "Surface and slightly subsurface cracks in ferromagnetic parts", "Ferromagnetic materials only; needs magnetization and particles"],
+    ["Liquid penetrant (PT)", "Capillary action pulls penetrant into surface openings", "Surface-breaking flaws on almost any nonporous material", "Surface-breaking flaws only; consumables; strict precleaning"],
+    ["Ultrasonic (UT)", "High-frequency sound reflects from internal boundaries", "Volumetric inspection with depth information; thickness", "Needs couplant; coarse grain scatters; operator-dependent"],
+    ["Radiographic (RT)", "Penetrating radiation images internal density changes", "Volumetric inspection with a permanent image record", "Radiation hazard; usually two-sided access; cost"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-1-1-fig-a",
+   "title": "Timeline of eddy current testing milestones, 1824–today",
+   "file": "et1-1-1-fig-a.svg"
+  },
+  {
+   "id": "et1-1-1-fig-b",
+   "title": "Electromagnetic induction in the ET probe: the founders' physics",
+   "file": "et1-1-1-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Physics or Engineering?",
+  "intro": "The founding physics of eddy current testing was complete by 1873 — decades before anyone built a practical instrument. Sort each milestone into the era it belongs to. Knowing which work is physics and which is engineering keeps the story, and the exam answers, straight.",
+  "buckets": [
+   "Founding physics (1824–1873)",
+   "Engineering the method (1879–today)"
+  ],
+  "items": [
+   {
+    "label": "A rotating copper disk drags a compass needle (Arago)",
+    "bucket": 0,
+    "why": "Arago's 1824 observation was the first recorded eddy current effect — seen seven years before anyone could explain it."
+   },
+   {
+    "label": "Electromagnetic induction discovered (Faraday)",
+    "bucket": 0,
+    "why": "Faraday's 1831 law — a changing magnetic field induces current in a conductor — is the principle every ET coil exploits."
+   },
+   {
+    "label": "Induced currents shown to oppose their cause (Lenz)",
+    "bucket": 0,
+    "why": "Lenz's 1834 law sets the direction: the eddy currents' field opposes the coil's field, which is why the part loads the coil."
+   },
+   {
+    "label": "The unified field equations of electromagnetism (Maxwell)",
+    "bucket": 0,
+    "why": "Maxwell's 1864–1873 equations completed the founding physics — skin depth and modeled probe responses all derive from them."
+   },
+   {
+    "label": "Induction balance sorts metals by their effect on coils (Hughes)",
+    "bucket": 1,
+    "why": "Hughes' 1879 induction balance was the first eddy current materials test — an application of existing physics, not new physics."
+   },
+   {
+    "label": "Vacuum-tube systems test bar and tube stock in mills",
+    "bucket": 1,
+    "why": "1930s tube oscillators and amplifiers produced the first industrial in-line eddy current systems for crack, seam, and sorting work."
+   },
+   {
+    "label": "Impedance-plane analysis separates crack, conductivity, and lift-off signals (Förster)",
+    "bucket": 1,
+    "why": "From 1948, Förster's quantitative instruments and impedance-plane analysis turned ET into a measurement science — engineering built on Maxwell's physics."
+   },
+   {
+    "label": "Transistor portables, then microprocessor instruments and ECA probes",
+    "bucket": 1,
+    "why": "Solid-state and digital electronics (1960s–today) shrank, sped up, and imaged the test — new hardware running on the same 1873 physics."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "In 1824, François Arago recorded the first known eddy current effect when he observed that:",
+   "options": [
+    "an iron bar became permanently magnetized inside a current-carrying coil",
+    "a rotating copper disk dragged a magnetized compass needle around with it",
+    "a quartz crystal generated a voltage when squeezed",
+    "a stationary copper plate attracted a compass needle"
+   ],
+   "correct": 1,
+   "explanation": "Arago's spinning copper disk dragged the needle even though copper is non-magnetic — and a stationary disk did nothing. The cause, currents induced in the moving copper, was unexplained until Faraday discovered induction in 1831."
+  },
+  {
+   "question": "Faraday's 1831 discovery of electromagnetic induction matters to eddy current testing because it establishes that:",
+   "options": [
+    "eddy currents flow only in ferromagnetic materials",
+    "direct current in the coil magnetizes the test part",
+    "a changing magnetic field induces current in a nearby conductor — exactly what the AC-driven test coil does to the part",
+    "high-frequency sound reflects from internal flaws"
+   ],
+   "correct": 2,
+   "explanation": "Induction is the generating principle of ET: only a changing field induces current, which is why the test coil is driven with alternating current rather than direct current."
+  },
+  {
+   "question": "According to Lenz's law (1834), the eddy currents induced in a test part flow in a direction such that:",
+   "options": [
+    "their magnetic field opposes the coil's changing field — so the part pushes back and loads the coil",
+    "their magnetic field reinforces and strengthens the coil's field",
+    "they always align with the axis of the test coil",
+    "they flow only while the part is being heated"
+   ],
+   "correct": 0,
+   "explanation": "Lenz's law says induced currents always oppose the change that created them. The opposing secondary field is what loads the coil and shifts its impedance — the pushback IS the ET signal."
+  },
+  {
+   "question": "Which advance in electronics made rugged, battery-powered portable eddy current instruments practical in the 1960s, opening up aerospace flight-line inspection?",
+   "options": [
+    "The vacuum-tube oscillator",
+    "The induction balance",
+    "The microprocessor",
+    "The transistor"
+   ],
+   "correct": 3,
+   "explanation": "Solid-state transistor electronics replaced bulky, power-hungry vacuum tubes and shrank instruments into field portables. Microprocessors came later, in the 1980s, bringing digital displays and stored calibrations."
+  },
+  {
+   "question": "Which statement correctly places eddy current testing within the family of NDT methods?",
+   "options": [
+    "It is a volumetric method that inspects the full thickness of any material",
+    "It is an electromagnetic method for electrically conductive materials, strongest at and near the surface, requiring no couplant or consumables",
+    "It is a surface method limited to ferromagnetic materials only",
+    "It detects only flaws that are open to the surface, like penetrant testing"
+   ],
+   "correct": 1,
+   "explanation": "ET works on any electrical conductor, and the skin effect concentrates its sensitivity at and near the surface. MT is the ferromagnetic-only method, PT needs surface-breaking flaws, and UT/RT are the volumetric methods."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Theory Course §1.1 (historical and developmental process; founding fathers; advances in electronics)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing method (training and qualification basis for ET Level I)",
+  "ASNT Nondestructive Testing Handbook, Vol. 5: Electromagnetic Testing (history of electromagnetic testing)",
+  "Historical record (public domain facts): Arago (1824) rotation effect; Faraday (1831) induction; Lenz (1834) opposition law; Foucault (1855) dissipation demonstrations; Maxwell (1864–1873) field equations; Hughes (1879) induction balance; Förster (from 1948) impedance-plane instruments"
+ ]
+}

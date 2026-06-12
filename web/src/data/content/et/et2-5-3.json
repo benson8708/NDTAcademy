@@ -1,0 +1,187 @@
+{
+ "lessonId": "et2-5-3",
+ "title": "Field Strength: Permeability Changes and Saturation",
+ "narrationScript": "Fill factor and lift-off covered coupling. This lesson covers the field itself. Your instrument sets the magnetizing field H through the coil's ampere-turns, and the part answers with flux density B. The ratio between them is permeability. In nonmagnetic alloys permeability is one and constant, so drive level only sets signal strength. In ferromagnetic steel it is enormous and unstable — it shifts with chemistry, hardness, residual stress, temperature, and magnetic history. Those shifts move the impedance dot exactly like flaws, and they can bury real flaw signals completely. The same permeability collapses penetration to hundredths of a millimeter. The cure is magnetic saturation. A strong DC field drives the steel onto the flat top of the B-H curve, where the small AC test field sees an incremental relative permeability of about one. The noise disappears, penetration returns by the square root of the permeability you removed, and the steel tests like a nonmagnetic conductor. Prove saturation by raising the DC field until the reference signal stops changing, and demagnetize when the job requires it.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "You Set H — the Part Answers with B",
+   "body": "The last two lessons covered how well your field reaches the part — **fill factor** for encircling and bobbin coils, **lift-off** for surface probes. This lesson is about the field itself: how strong it is, and what the part's magnetic character does with it.\n\nKeep two quantities separate, because the whole lesson lives in the gap between them:\n\n- **H — magnetizing field strength.** Set by the coil's **ampere-turns** and geometry. This one is yours: the instrument's drive level decides it.\n- **B — flux density.** The part's answer: how much flux actually threads the metal. **B = μH**, and μ = μ₀μᵣ is the **permeability**.\n\nIn a **nonmagnetic conductor** — aluminum, titanium, austenitic stainless, μᵣ = 1 — B follows H in a straight line at any practical drive. Field strength selection is genuinely simple: enough drive for clean signal-to-noise, inside the instrument's linear range, and **identical during standardization and testing**, because signal amplitude scales with drive.\n\nIn a **ferromagnetic part**, μᵣ runs from the tens into the thousands — and it is **not a constant**. It is the slope of a nonlinear, history-dependent B–H curve, and it changes with where the bias point sits and with the metallurgical state of every inch you scan. That one fact creates the noise problem this lesson exists to solve — and magnetic saturation is the move that solves it."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-5-3-fig-a",
+   "caption": "The B–H curve. The same AC excursion ΔH produces a large, metallurgy-dependent ΔB at low bias, but a tiny, stable ΔB at saturation — the incremental permeability the coil feels collapses to about μ₀."
+  },
+  {
+   "type": "text",
+   "heading": "Permeability Changes: Noise on Two Fronts",
+   "body": "Permeability is the slope of the B–H curve, and a real part refuses to hold it steady. The AC test field rides a small **minor loop** around the bias point, so what the coil actually feels is the **incremental permeability μΔ = ΔB/ΔH** — the local slope. Anything that shifts that slope writes a signal:\n\n- **Chemistry** — alloy and residual-element variation from heat to heat, even along one tube.\n- **Heat treatment and hardness** — microstructure sets magnetic behavior; hard spots and weld heat-affected zones read differently than parent metal.\n- **Cold work and residual stress** — stress and magnetism couple in iron (magnetostriction works both ways), so straightening, denting, and forming leave magnetic footprints.\n- **Temperature** — permeability drifts with it, and ferromagnetism vanishes entirely at the **Curie point** (≈ 770 °C for iron).\n- **Magnetic history** — the curve is **hysteretic**: the same H gives different B depending on past fields. Lifting magnets, magnetic chucks, and prior MT all leave residual bias behind.\n\nEach of these moves the impedance dot by the same mechanism a flaw uses, and the variation signals are routinely **larger than the discontinuity signals** — gain amplifies both equally, so it cannot rescue you. That is front one. Front two is penetration: μᵣ sits under the square root in **δ (mm) ≈ 660/√(f · μᵣ · σ)**. Carbon steel (σ ≈ 10 %IACS, μᵣ ≈ 100 as a representative training value) at 100 kHz: δ = 660/10,000 ≈ **0.066 mm** — and even dropping to 1 kHz only buys 0.66 mm. No practical frequency sees through a tube wall while μᵣ ≈ 100 stands in the formula, so unsaturated steel testing is strictly **surface work**.\n\nOne more trap: 'nonmagnetic' austenitic stainless joins in. Cold work transforms some austenite to **strain-induced martensite**, so tube U-bends and straightened ends carry local permeability spots that masquerade as flaws."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-5-3-fig-b",
+   "caption": "The same flaw on the same tube at the same gain. Unsaturated, permeability variations swamp the baseline and the flaw hides in the noise; saturated, the baseline goes quiet and the flaw stands alone."
+  },
+  {
+   "type": "text",
+   "heading": "Saturation: Switching Permeability Off",
+   "body": "Ferromagnetism lives in **domains** — microscopic regions already magnetized to saturation, pointing in many directions. Raising H grows and rotates the favorably aligned domains, so B climbs steeply. When essentially **all domains are aligned**, the material is **magnetically saturated**: pushing H further adds almost nothing, and the B–H curve goes flat.\n\nThat flat region is the whole trick. Superimpose a strong **DC magnetizing field** on the part and park the bias point on the flat top. The small AC test field now rides a minor loop whose slope — the incremental permeability — has collapsed to **μΔ ≈ μ₀, that is, μᵣ ≈ 1**. Three things follow at once:\n\n- **The noise dies.** Hard spot or soft, stressed or annealed, every region of the part now sits on the same flat slope. The metallurgical differences that screamed at low bias have nothing left to modulate.\n- **Penetration returns — by √μᵣ.** Remove a factor of 100 and δ grows tenfold: 0.066 mm at 100 kHz becomes 0.66 mm. For a saturated 2 mm steel tube wall (σ ≈ 10 %IACS, μᵣ ≈ 1), placing one standard depth at the full wall takes f = (660/2)² ÷ 10 ≈ **11 kHz** — a completely practical encircling-coil frequency.\n- **The impedance plane comes back.** The part now behaves like a nonmagnetic conductor, so everything this level has taught you — position on the conductivity curve, phase-reads-depth, the lift-off direction — applies again.\n\nThe DC field does the magnetizing; the AC field does the testing. Keep the DC field **constant and on** through standardization and through every foot of product — if it sags, the bias point slides back down the knee and the noise returns."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-5-3-fig-c",
+   "caption": "Production saturation testing: a DC coil holds the tube wall at saturation while the encircling AC coil tests it. Adequacy is proven on the reference standard — raise the DC field until further increase changes nothing."
+  },
+  {
+   "type": "text",
+   "heading": "Saturation in Practice: Hardware, Proof, and Limits",
+   "body": "**Production tube and bar.** An encircling **DC saturation coil** surrounds the AC test coil and the product feeds through both. This is the arrangement standardized in **ASTM E309** for steel tubular products: line speeds stay high, the DC supply is generous, and full saturation is routine.\n\n**In-service tubing from the ID.** Inside a heat exchanger you cannot wrap a DC coil around the tube, so bobbin probes carry **permanent-magnet bias** — magnetically biased, or 'saturation', probes. These can fully saturate thin-wall, **slightly magnetic alloys**: Monel 400 (its Curie temperature sits near room temperature, which is exactly why its permeability is so unstable), ferritic stainless condenser tube, and duplex grades. Thick-wall **carbon steel cannot be brought near saturation by internal magnets**, and a partially saturated test keeps the noise. The standardized answer is to change methods: **remote field testing per ASTM E2096** is built for unsaturated ferromagnetic tubes.\n\n**Prove it — never assume it.** With the reference standard in the coil, raise the DC field while watching the reference discontinuity signal and the baseline. Saturation is adequate when **further increase produces no significant change** in amplitude, phase, or noise; record those ampere-turns in the technique. Symptoms of incomplete saturation: baseline noise creeps back, phase angles drift, and repeat runs disagree — hysteresis is back in play.\n\n**Housekeeping.** Demagnetize **before** testing when the part carries magnetic history — residual fields bias the operating point locally and make signals unrepeatable. Demagnetize **after** saturation testing when downstream work demands it: residual magnetism causes arc blow in welding and chip cling in machining. And one elegant mill-floor alternative: steel above its **Curie point (≈ 770 °C)** is not ferromagnetic at all, so in-line testing of hot product can run as if it were nonmagnetic — no saturation hardware needed."
+  },
+  {
+   "type": "table",
+   "caption": "Field strength selection by test situation.",
+   "headers": ["Situation", "Permeability behavior", "Field strength strategy"],
+   "rows": [
+    ["Nonmagnetic alloys (Al, Ti, austenitic SS)", "μᵣ = 1, constant — response linear with drive", "Drive for signal-to-noise inside the linear range; identical drive for standardization and test"],
+    ["Surface cracks in steel welds and structures (no saturation)", "μᵣ high and locally variable — noise accepted", "Low, constant AC drive; high frequency; small shielded differential probes plus filtering; surface-breaking flaws only"],
+    ["Steel tube and bar on production lines", "μᵣ high — must be removed", "Encircling DC saturation coil per ASTM E309; verify saturation on the reference standard; demagnetize as required"],
+    ["Slightly magnetic tubing from the ID (Monel 400, ferritic and duplex SS)", "μᵣ low but unstable", "Magnet-biased (saturating) bobbin probes; re-verify saturation on the reference standard"],
+    ["Thick-wall carbon steel tubing from the ID", "Cannot be saturated by internal magnets", "Change methods — remote field testing per ASTM E2096"],
+    ["Hot steel above the Curie point (≈ 770 °C)", "Ferromagnetism absent", "Test in line as a nonmagnetic conductor — no saturation hardware"]
+   ]
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Field strength rules — recite them cold",
+   "body": "**Nonmagnetic:** drive sets amplitude and nothing else — choose it for signal-to-noise and never change it between standardization and test. **Unsaturated steel:** surface work only; expect permeability noise; keep the AC drive low and constant. **Saturate when the job needs depth or a quiet baseline:** DC bias to the flat of the B–H curve makes the AC field see μᵣ ≈ 1 — noise gone, penetration multiplied by √μᵣ. **Prove saturation:** adequate means more DC changes nothing — record the setting. **Demagnetize** before testing if the part has magnetic history, and after saturation testing when downstream work requires it. AC drive level has effects of its own on ferromagnetic signals — that is the next lesson."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-5-3-fig-a",
+   "title": "B–H curve: bias point sets the incremental permeability",
+   "file": "et2-5-3-fig-a.svg"
+  },
+  {
+   "id": "et2-5-3-fig-b",
+   "title": "Permeability noise before and after saturation",
+   "file": "et2-5-3-fig-b.svg"
+  },
+  {
+   "id": "et2-5-3-fig-c",
+   "title": "Saturation hardware and verification",
+   "file": "et2-5-3-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Saturation Decisions: Four Field Problems",
+  "intro": "Four field-strength calls from real jobs. Work each one before you click. Shop numbers: δ (mm) ≈ 660/√(f · μᵣ · σ); carbon steel σ ≈ 10 %IACS, unsaturated μᵣ ≈ 100 (training value).",
+  "steps": [
+   {
+    "prompt": "You are setting up an encircling-coil test on carbon steel tube with a DC saturation coil. How do you prove the saturating field is adequate?",
+    "options": [
+     "Raise the DC current until the instrument gain can be set to maximum",
+     "Raise the DC current until the reference-standard signal and baseline noise stop changing — further increase does nothing",
+     "Always set the DC current to the highest value the coil can carry",
+     "Remove the DC field and confirm the flaw signal doubles"
+    ],
+    "correct": 1,
+    "feedback": "Adequate saturation is proven by stability: the bias point is on the flat of the B–H curve when more DC produces no significant change in the reference signal's amplitude, phase, or the baseline noise. Record those ampere-turns in the technique — maximum current wastes heat and proves nothing by itself."
+   },
+   {
+    "prompt": "The same line runs 2 mm wall tube. Under saturation (μᵣ ≈ 1, σ ≈ 10 %IACS), the frequency that places one standard depth of penetration at the full wall is about:",
+    "options": ["1.1 kHz", "11 kHz", "110 kHz", "1.1 MHz"],
+    "correct": 1,
+    "feedback": "f = (660/δ)² ÷ (μᵣ · σ) = (660/2)² ÷ 10 ≈ 10,900 Hz ≈ 11 kHz. Unsaturated, with μᵣ ≈ 100, the same δ would demand about 109 Hz — and the permeability noise would still bury the signal. Saturation is what makes a practical test frequency possible at all."
+   },
+   {
+    "prompt": "In a refinery heat exchanger you must inspect Monel 400 tubes from the ID. A standard unbiased bobbin probe gives erratic, non-repeatable signals over the full tube length. The fix:",
+    "options": [
+     "Increase the test frequency until the noise disappears",
+     "Add gain and aggressive filtering",
+     "Use a magnetically biased (saturating) bobbin probe and re-verify on the reference standard",
+     "Demagnetize the tubes once, then retest with the same probe"
+    ],
+    "correct": 2,
+    "feedback": "Monel 400 is slightly ferromagnetic, and with its Curie temperature near room temperature its permeability wanders with stress and temperature history. Permanent-magnet bias saturates the thin wall so the AC field sees μᵣ ≈ 1. A one-time demag cannot help — the material itself is magnetic, not just magnetized."
+   },
+   {
+    "prompt": "The next bundle is carbon steel tube with a 2.9 mm wall. Your magnet-biased bobbin probe cannot bring the wall anywhere near saturation. Best call:",
+    "options": [
+     "Run anyway — enough gain will overcome the permeability noise",
+     "Switch to remote field testing per ASTM E2096, built for unsaturated ferromagnetic tubes",
+     "Raise the AC coil drive until the test coil itself saturates the wall",
+     "Use a higher fill factor probe to strengthen coupling"
+    ],
+    "correct": 1,
+    "feedback": "Internal magnets cannot fully saturate thick-wall carbon steel, and a partially saturated test keeps both the noise and the collapsed penetration. Gain amplifies noise and signal equally, the AC test field is far too weak to saturate anything, and fill factor does not touch permeability. RFT per ASTM E2096 exists for exactly this case."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Eddy current testing of unsaturated carbon steel is difficult primarily because:",
+   "options": [
+    "steel's conductivity is too low to support eddy currents",
+    "local permeability variations produce signals that can dwarf and mimic discontinuity signals",
+    "eddy currents cannot form in ferromagnetic materials",
+    "the required test frequency exceeds 10 MHz"
+   ],
+   "correct": 1,
+   "explanation": "Steel conducts well enough (σ ≈ 10 %IACS) and carries eddy currents readily. The problem is permeability: it is large, nonlinear, and varies with chemistry, hardness, residual stress, temperature, and magnetic history. Those variations move the impedance dot exactly as flaws do — often with larger amplitude — and the same μᵣ collapses penetration to hundredths of a millimeter."
+  },
+  {
+   "question": "When a ferromagnetic part is driven to magnetic saturation, the incremental permeability seen by the small AC test field approaches:",
+   "options": [
+    "zero",
+    "the material's maximum permeability",
+    "infinity",
+    "μ₀ — a relative permeability of about 1"
+   ],
+   "correct": 3,
+   "explanation": "On the flat, saturated region of the B–H curve essentially all domains are aligned, so a small ΔH produces only the tiny ΔB ≈ μ₀ΔH. The incremental relative permeability falls to about 1 and the part behaves magnetically like a nonmagnetic conductor — which is the entire purpose of saturation."
+  },
+  {
+   "question": "Carbon steel (σ ≈ 10 %IACS) shows an effective relative permeability of about 100 when unsaturated. At a given test frequency, saturating it changes the standard depth of penetration by about:",
+   "options": [
+    "10 times deeper",
+    "100 times deeper",
+    "no change — δ depends only on frequency and conductivity",
+    "10 times shallower"
+   ],
+   "correct": 0,
+   "explanation": "δ ∝ 1/√(μᵣ), so removing a factor of 100 multiplies δ by √100 = 10. At 100 kHz the depth grows from about 0.066 mm to about 0.66 mm — the difference between skin-only testing and a usable through-wall examination at a practical frequency."
+  },
+  {
+   "question": "The accepted way to verify that a DC saturating field is adequate is to:",
+   "options": [
+    "set the DC current to the maximum the supply can deliver",
+    "confirm the part remains strongly magnetized after the test",
+    "increase the DC field while watching the reference-standard response — adequate when further increase produces no significant change",
+    "reduce the test frequency until the baseline noise disappears"
+   ],
+   "correct": 2,
+   "explanation": "Stability is the proof: on the flat of the B–H curve, more DC changes nothing significant in the reference signal's amplitude or phase or in the baseline noise. That setting is recorded in the technique. Maximum supply current proves nothing by itself, residual magnetism is a side effect rather than evidence, and changing frequency does not demonstrate saturation."
+  },
+  {
+   "question": "Thick-wall carbon steel heat-exchanger tubes must be inspected from the ID, and the available magnet-biased probes cannot approach full saturation. The appropriate response is to:",
+   "options": [
+    "increase instrument gain until flaw signals exceed the noise",
+    "change methods — remote field testing per ASTM E2096 is the standard practice for unsaturated ferromagnetic tubes",
+    "increase the AC coil drive so the test coil saturates the wall",
+    "raise the test frequency to restore penetration"
+   ],
+   "correct": 1,
+   "explanation": "Partial saturation leaves permeability noise and a δ of hundredths of a millimeter. Gain amplifies noise as much as signal, the AC test field is orders of magnitude too weak to saturate the wall, and raising frequency makes penetration worse, not better. Remote field testing was standardized for exactly this situation."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II Technique Course §6.0–6.2 (field strength and its selection — permeability changes, saturation)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing method — Level II training topic basis",
+  "ASTM E309, Standard Practice for Eddy-Current Examination of Steel Tubular Products Using Magnetic Saturation",
+  "ASTM E2096/E2096M, Standard Practice for In Situ Examination of Ferromagnetic Heat-Exchanger Tubes Using Remote Field Testing"
+ ]
+}

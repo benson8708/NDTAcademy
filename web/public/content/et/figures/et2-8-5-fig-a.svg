@@ -1,0 +1,65 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">The Hysteresis Loop — Magnetic Properties the Coil Feels</text>
+
+  <!-- ============ LEFT: full B-H loop ============ -->
+  <text x="40" y="62" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">B–H LOOP OF A FERROMAGNETIC PART</text>
+
+  <!-- axes -->
+  <line x1="75" y1="265" x2="445" y2="265" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="445,259 445,271 457,265" fill="#0B1F3A"/>
+  <line x1="250" y1="440" x2="250" y2="85" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="244,85 256,85 250,73" fill="#0B1F3A"/>
+  <text x="266" y="90" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">B</text>
+  <text x="449" y="289" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">H</text>
+
+  <!-- initial magnetization curve (dashed) -->
+  <path d="M 250,265 C 262,259 274,247 286,228 C 304,199 350,158 410,135" fill="none" stroke="#1E66F5" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <rect x="304" y="202" width="92" height="16" fill="#FFFFFF" opacity="0.9"/>
+  <text x="308" y="214" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">initial curve</text>
+
+  <!-- hysteresis loop: descending branch -->
+  <path d="M 410,135 C 330,143 292,155 250,180 C 207,206 196,228 185,265 C 172,317 142,362 90,385" fill="none" stroke="#0B1F3A" stroke-width="3"/>
+  <!-- ascending branch -->
+  <path d="M 90,385 C 170,377 208,365 250,340 C 293,314 304,292 315,265 C 328,215 358,168 410,135" fill="none" stroke="#0B1F3A" stroke-width="3"/>
+
+  <!-- direction arrows -->
+  <polygon points="300,147 300,159 288,153" fill="#0B1F3A"/>
+  <polygon points="204,365 204,377 216,371" fill="#0B1F3A"/>
+
+  <!-- property markers -->
+  <circle cx="410" cy="135" r="4" fill="#0B1F3A"/>
+  <text x="408" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">saturation Bs</text>
+
+  <circle cx="250" cy="180" r="5" fill="#1E66F5"/>
+  <rect x="258" y="160" width="104" height="16" fill="#FFFFFF" opacity="0.9"/>
+  <text x="262" y="172" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">retentivity Br</text>
+
+  <circle cx="185" cy="265" r="5" fill="#1E66F5"/>
+  <rect x="52" y="236" width="126" height="16" fill="#FFFFFF" opacity="0.9"/>
+  <text x="176" y="248" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">coercive force Hc</text>
+
+  <!-- bottom notes -->
+  <text x="40" y="442" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">B = flux density in the part • H = magnetizing force from the coil</text>
+  <text x="40" y="462" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">slope = permeability μ — it varies with drive level H</text>
+  <text x="40" y="482" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">loop area = hysteresis loss per magnetization cycle</text>
+
+  <!-- ============ RIGHT: microstructure comparison ============ -->
+  <text x="480" y="62" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1E66F5">MICROSTRUCTURE WRITES THE LOOP</text>
+
+  <!-- mini plot 1: annealed (tall, narrow) -->
+  <line x1="520" y1="165" x2="710" y2="165" stroke="#0B1F3A" stroke-width="1.5"/>
+  <line x1="615" y1="95" x2="615" y2="235" stroke="#0B1F3A" stroke-width="1.5"/>
+  <path d="M 685,103 C 640,110 622,122 612,165 C 605,205 590,222 545,227" fill="none" stroke="#0B1F3A" stroke-width="2.5"/>
+  <path d="M 545,227 C 590,220 608,208 618,165 C 625,125 640,108 685,103" fill="none" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="615" y="256" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">annealed — magnetically soft</text>
+  <text x="615" y="274" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">high μr, low Hc, narrow loop</text>
+
+  <!-- mini plot 2: hardened (wide, flat) -->
+  <line x1="520" y1="360" x2="710" y2="360" stroke="#0B1F3A" stroke-width="1.5"/>
+  <line x1="615" y1="295" x2="615" y2="430" stroke="#0B1F3A" stroke-width="1.5"/>
+  <path d="M 695,318 C 630,323 575,332 560,360 C 548,383 552,398 535,408" fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <path d="M 535,408 C 600,403 655,394 670,360 C 682,337 678,323 695,318" fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <text x="615" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">hardened — magnetically hard</text>
+  <text x="615" y="468" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">low μr, high Hc, wide loop</text>
+</svg>

@@ -1,0 +1,195 @@
+{
+ "lessonId": "et2-7-3",
+ "title": "Procedure Compliance, Records, and Reporting",
+ "narrationScript": "An eddy current test leaves no trace on the part. When the probe lifts, the only evidence the examination ever happened is what you wrote down — so the record is the product, and SNT-TC-1A makes organizing and reporting results a named Level II responsibility. The standard of completeness is reproducibility: another qualified technician, given your report, your reference standard, and an equivalent instrument, should rebuild your test and reach your conclusion. That means recording the instrument, probe, cable, settings, and reference standard identity, plus a standardization log with teeth: standardize at the start, re-verify at fixed intervals — four hours is the common ceiling — after any system change, and at the end of the run. Fail a check, and everything tested since the last good one gets retested. Keep the traceability chain unbroken from reference standard to signed report, verify the report line by line against the specification's reporting clause, disposition every indication, correct errors with a single line — never an eraser — and retain records as long as the contract demands.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Report Is the Product",
+   "body": "An eddy current examination leaves no trace on the part. No film, no developed indication — when the probe lifts, the only evidence the test ever happened is what you wrote down. That makes the record the product of your work, and it is why **SNT-TC-1A** names **organizing and reporting the results of tests** as a Level II responsibility, right alongside interpreting and evaluating them.\n\nKeep two terms separate:\n\n- **Examination records** — everything generated while testing: the technique or data sheet, the standardization log, raw signal data, indication notes. They live in the quality system as evidence.\n- **The test report** — the deliverable the specification requires you to transmit: identification, governing documents, system description, results, dispositions, signatures. The records stand behind the report.\n\nThe standard of completeness is **reproducibility**: an equally qualified technician, given your report, your reference standard, and an equivalent instrument, must be able to rebuild your test — same responses, same conclusions — without ever speaking to you. Anything short of that is an anecdote, not a record.\n\nThe stakes are not theoretical. ET reports are audited by customers and regulators; in aviation work the inspection result becomes part of the aircraft's permanent maintenance record. A weak report can void a sound examination — and a sound report has settled more than one dispute years after the technician moved on."
+  },
+  {
+   "type": "table",
+   "caption": "The complete eddy current examination record — what each category captures and why it is there.",
+   "headers": ["Record category", "What you write down", "Why it is there"],
+   "rows": [
+    ["Part and material", "P/N, S/N or tube map, alloy and condition, size, heat/lot", "Ties one record to one physical part"],
+    ["Governing documents", "Procedure and revision, specification, acceptance criteria paragraph", "Names the rules the results were judged against"],
+    ["Instrument", "Make, model, serial number, calibration due date", "Proves the electronics live in a calibration program"],
+    ["Probe/coil and cable", "Type (absolute/differential; surface, bobbin, encircling), size, serial, cable type and length", "Every one of these changes the system's response"],
+    ["Settings", "Frequency(ies), drive, gain, phase rotation, filters, mixes, scan speed", "What another technician needs to reproduce the display"],
+    ["Reference standard", "Unique ID, material, artificial discontinuity types and dimensions", "The physical basis of the test's sensitivity"],
+    ["Standardization log", "Times, responses, tolerance, pass/fail — initial, periodic, final", "Proves the system worked for the entire run"],
+    ["Results", "Indication locations against a stated datum, amplitude, phase, depth or %TW estimate, disposition", "The answer the specification asked for"],
+    ["Personnel", "Names, certification levels, signatures, dates", "Accountability under the employer's written practice"]
+   ]
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-7-3-fig-a",
+   "caption": "Anatomy of an eddy current test report. Each zone answers a different audit question — which part, which rules, which system, what proof, what result, and who signed."
+  },
+  {
+   "type": "text",
+   "heading": "Standardization Records and the Retest Rule",
+   "body": "First, vocabulary — eddy current practice deliberately splits what other methods lump together:\n\n- **Calibration** is the periodic, documented event in which the instrument's functions are verified against standards traceable to a national laboratory. It happens in a metrology program, not at the test site; the report carries the instrument's calibration status and due date.\n- **Standardization** (the ASTM E1316 term) is what you do at the job: adjusting the system on the **reference standard** until its artificial discontinuities give the known, recorded responses. Balancing or nulling the probe is *not* standardization — a balanced channel proves nothing about sensitivity.\n\nEach standardization entry records the **time**, the reference standard's **identification**, the **settings**, and the **response** — amplitude and phase — from each artificial discontinuity, judged against the tolerance the procedure sets.\n\nThen the system must be proven again, and every check logged:\n\n- at **fixed intervals** — ASTM tubular-product practices cap the interval, commonly at **4 hours** of continuous operation, and procedures may be tighter;\n- after **any system change**: probe, cable, instrument, frequency or other settings, or a power interruption;\n- whenever proper functioning is **in doubt**;\n- at the **end of the examination** — the final check is what validates the last stretch of product.\n\nThe **retest rule** gives the log its teeth: if a verification falls outside tolerance, **every item examined since the last acceptable verification must be re-examined** after the cause is corrected and the system re-standardized. You cannot know when the drift began, so the specifications assume the worst."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-7-3-fig-b",
+   "caption": "The standardization timeline. Every check is logged; a failed check fires the retest rule — everything examined since the last acceptable verification is re-examined."
+  },
+  {
+   "type": "text",
+   "heading": "Traceability: One Unbroken Chain",
+   "body": "The auditor's favorite question is simple: *show me how this number got onto this page.* The answer is a chain with no missing links.\n\n- **Link 1 — the reference standard.** It carries a unique serial number, its material matches what the procedure demands, and its artificial discontinuities — EDM notch depths, drilled-hole diameters, through-wall percentages — are documented on a certificate kept on file. Conductivity standards carry certified %IACS values traceable to a national standards body.\n- **Link 2 — the standardization record** ties that serial number to a time, a set of responses, and a pass against tolerance.\n- **Link 3 — the technique settings**, recorded so that any deviation is visible: frequencies, gain, phase rotation, filters, mixes, scan speed, probe serial, and **cable type and length** — the cable is part of the resonant test circuit, which is why tubing codes require it on the record.\n- **Link 4 — the recorded data.** Each indication is located against a **stated datum**: tube row-and-column from the tubesheet map in a heat exchanger; station, stringer, and fastener number on an aircraft lap joint. Modern tubing examinations also archive the complete raw impedance-plane data, so an indication can be re-analyzed independently years later; the report references the data file identifiers.\n- **Link 5 — the signed report** points back to all of it.\n\nBreak any link and the result can be neither defended nor reproduced — and the re-evaluation that follows a tube leak or a fleet directive becomes guesswork instead of analysis."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-7-3-fig-c",
+   "caption": "The traceability chain. The serialized reference standard, the standardization log, the technique settings, the recorded data, and the signed report must connect without a gap."
+  },
+  {
+   "type": "text",
+   "heading": "Verify the Report Against the Spec — Then Protect It",
+   "body": "A Level II does not release a report hoping it is complete — you **verify it, line by line, against the reporting clause of the governing specification**. Build the closing checklist into your routine:\n\n- **Identification:** part numbers, serials or tube map, material, examination date and location.\n- **Authority:** procedure and revision, governing specification, acceptance criteria paragraph.\n- **System:** instrument, probe, cable, and reference standard IDs; calibration due dates; every essential setting.\n- **Evidence:** the complete standardization log, including the final check; coverage actually achieved versus required.\n- **Results:** every indication located, characterized — amplitude, phase, estimated depth or percent through-wall where the technique supports it — and dispositioned in the specification's own vocabulary: acceptable, rejectable, or recordable for monitoring. **No indication leaves the report without a disposition.**\n- **Accountability:** names, certification levels, signatures, dates; reviewer signature where required.\n\nThen protect the record's integrity:\n\n- **Corrections** are made with a single line through the erroneous entry, the correct value beside it, initials, and the date. Nothing is erased, whited out, or rewritten on a fresh page — the original must remain legible. Electronic systems must do the same job with an audit trail.\n- **Retention** is whatever the contract or specification demands — aerospace records are commonly kept for the service life of the component. Verify before you archive.\n- **Falsification ends careers.** An intentionally false entry is grounds for revoking certification under the employer's written practice — and in U.S. aviation maintenance it violates 14 CFR 43.12."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Records discipline — recite it cold",
+   "body": "**Record enough to reproduce** — instrument, probe, cable, settings, reference standard, responses. **Log every standardization and every re-check**, including the final one. **Fail a check → fix, re-standardize, and retest** everything back to the last good verification. **Keep the chain unbroken:** reference standard → standardization log → settings → data → signed report. **Disposition every indication** — none leave the report open. **Correct with a single line**, initials, and a date — never an eraser. **Retain per contract**, and never sign a report you have not verified against the specification's reporting clause."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-7-3-fig-a",
+   "title": "Anatomy of an eddy current test report",
+   "file": "et2-7-3-fig-a.svg"
+  },
+  {
+   "id": "et2-7-3-fig-b",
+   "title": "Standardization checks and the retest rule",
+   "file": "et2-7-3-fig-b.svg"
+  },
+  {
+   "id": "et2-7-3-fig-c",
+   "title": "The traceability chain",
+   "file": "et2-7-3-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Sign It Like You Mean It: Four Records Calls",
+  "intro": "Four documentation decisions from real eddy current jobs. The specification's reporting clause is quoted where it matters — answer as the Level II who signs the report.",
+  "steps": [
+   {
+    "prompt": "At the end-of-run check on a tubing job, the reference standard's response has shifted beyond the procedure tolerance. The last acceptable verification was at 11:00. What does the specification require?",
+    "options": [
+     "Ship the product tested since 11:00 with a note in the report describing the failed check",
+     "Correct the cause, re-standardize, and re-examine everything tested since the 11:00 check",
+     "Re-standardize and release the run — the 11:00 check proved the system worked for most of it",
+     "Lower the reported sensitivity for the affected product instead of retesting"
+    ],
+    "correct": 1,
+    "feedback": "You cannot know when the drift began, so every item examined since the last acceptable verification is re-examined after the system is corrected and re-standardized. The end-of-run check exists precisely so the final stretch of product is provable — a note or a sensitivity caveat does not satisfy any reporting clause."
+   },
+   {
+    "prompt": "You are checking a draft condenser-tubing report against the specification. Four items are missing; the reporting clause requires three of them. Which omission is acceptable?",
+    "options": [
+     "Reference standard unique identification",
+     "Probe and cable description, including cable length",
+     "Couplant brand and batch number",
+     "Times and responses of the standardization checks"
+    ],
+    "correct": 2,
+    "feedback": "Eddy current is a noncontact electromagnetic method — the coil couples to the tube through its magnetic field, so there is no couplant to record; that line item belongs to ultrasonics. The other three are exactly what ET reporting clauses demand: the standard that set sensitivity, the probe and cable that shape the system response, and the log that proves the system worked."
+   },
+   {
+    "prompt": "Eighteen months after your inspection, a tube you reported as a 35% through-wall recordable indication has leaked. Engineering must determine whether the flaw grew in service or was under-called. What makes that determination possible?",
+    "options": [
+     "The examiner's recollection of what the signals looked like",
+     "The leak location, which can be compared with the reported location",
+     "The final summary report, since it lists the disposition",
+     "Archived raw data plus the standardization records and reference standard identity, allowing independent re-analysis"
+    ],
+    "correct": 3,
+    "feedback": "Traceability turns an argument into an analysis. With the raw impedance-plane data on file, the standardization responses, and the same serialized reference standard, the original signal can be re-analyzed and compared against the current condition. Memory fades, a location match proves nothing about growth, and a summary disposition cannot be re-evaluated."
+   },
+   {
+    "prompt": "A planner asks you to drop the recordable indications from a report and list only the rejects 'to keep it short.' The specification requires reporting all indications over 20% through-wall, with disposition. You should:",
+    "options": [
+     "Comply — recordable indications are acceptable anyway, so nothing is lost",
+     "Comply, but keep a private copy of the full results in your toolbox",
+     "Decline — the report must contain every element the specification's reporting clause requires; any deviation needs formal, documented authorization",
+     "Ask the Level III to approve the omission verbally so the report stays short"
+    ],
+    "correct": 2,
+    "feedback": "Reporting requirements are specification requirements: omitting required content is a nonconformance, and recordable indications exist so future inspections can monitor growth. A private copy is not a quality record, and verbal approval changes nothing — deviations happen only through documented amendment by the authority that owns the specification. Knowingly incomplete records also walk straight into falsification territory — in U.S. aviation, 14 CFR 43.12."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A complete ET examination record lists the instrument serial, probe type and serial, cable length, frequencies, gain, phase rotation, filter settings, and the reference standard's unique ID. The governing principle behind recording all of these together is:",
+   "options": [
+    "they are required only when the customer witnesses the examination",
+    "an equally qualified technician must be able to reproduce the examination and its responses from the record alone",
+    "they allow the instrument manufacturer to track warranty service",
+    "they eliminate the need for periodic instrument calibration"
+   ],
+   "correct": 1,
+   "explanation": "Reproducibility is the completeness standard: every listed parameter changes the system's response, so all of them must be on record for the test to be rebuilt and its results defended. Witnessing does not change what is recorded, and job records never replace the instrument's traceable calibration program."
+  },
+  {
+   "question": "Three hours into a production run, a scheduled standardization check shows the reference notch response has fallen outside the procedure's tolerance. The required action is to:",
+   "options": [
+    "restore the response with the gain control and continue testing",
+    "note the discrepancy in the report and continue, since earlier product was accepted by a standardized system",
+    "correct the cause, re-standardize, and re-examine all product tested since the last acceptable verification",
+    "re-examine only the product tested during the 30 minutes before the failed check"
+   ],
+   "correct": 2,
+   "explanation": "There is no way to know when the drift began, so ASTM tubular-product practices and ASME Section V both require re-examining everything tested since the last good verification. Simply restoring the response with gain hides the malfunction, and an arbitrary 30-minute window has no basis in any specification."
+  },
+  {
+   "question": "In eddy current practice, adjusting the system immediately before testing so a reference standard's artificial discontinuities produce known, repeatable responses is properly termed:",
+   "options": [
+    "standardization",
+    "calibration, which replaces the metrology laboratory's periodic verification of the instrument",
+    "demagnetization",
+    "balancing, which by itself also verifies the system's sensitivity"
+   ],
+   "correct": 0,
+   "explanation": "ASTM terminology (E1316) reserves 'standardization' for the job-site adjustment against a reference standard; 'calibration' is the separate, periodic, traceable verification of the instrument in a metrology program. Balancing or nulling merely zeroes the display and proves nothing about sensitivity, and demagnetization is a magnetic-history operation, not a response adjustment."
+  },
+  {
+   "question": "Under SNT-TC-1A, interpreting and evaluating eddy current results against applicable codes and specifications — and organizing and reporting those results — is the stated responsibility of:",
+   "options": [
+    "the Level I who performed the scanning",
+    "the quality manager, regardless of NDT certification",
+    "any technician trained to operate the instrument",
+    "the NDT Level II (or Level III) performing or directing the examination"
+   ],
+   "correct": 3,
+   "explanation": "SNT-TC-1A describes the Level II as qualified to set up and standardize equipment, interpret and evaluate results with respect to codes, standards, and specifications, and organize and report test results. A Level I works to written instructions and does not perform final interpretation or evaluation; job titles without certification confer no evaluation authority."
+  },
+  {
+   "question": "You discover a wrong tube number on a handwritten report page that has already been started. The acceptable correction is to:",
+   "options": [
+    "carefully white-out the entry and write the correct tube number in its place",
+    "draw a single line through the entry, write the correct value beside it, and initial and date the change",
+    "discard the page and rewrite it cleanly without the error",
+    "leave the entry as written and explain the error verbally to the reviewer"
+   ],
+   "correct": 1,
+   "explanation": "Quality records are corrected so the original entry stays legible and the change is attributable and dated — a single-line strike-through with initials and date. Obliterating an entry or discarding the original page destroys evidence and breaks the record's integrity; a verbal explanation is not a record at all."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II, User Standards and Operating Procedures §1.0–1.1 (standards and specifications — documentation and reporting requirements)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — NDT Level II responsibilities (interpret, evaluate, organize, and report test results)",
+  "ASME BPVC Section V, Article 8 (eddy current examination of tubular products — examination records and report content)",
+  "ASTM E309, Standard Practice for Eddy-Current Examination of Steel Tubular Products Using Magnetic Saturation (standardization verification and product re-examination provisions)"
+ ]
+}

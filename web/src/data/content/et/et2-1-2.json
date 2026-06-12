@@ -1,0 +1,187 @@
+{
+ "lessonId": "et2-1-2",
+ "title": "Types of Eddy Current Sensing Probes",
+ "narrationScript": "At Level One you learned where each coil goes. At Level Two you choose the probe and defend the choice, because a flaw the probe cannot see never becomes data. Every probe is three decisions. Configuration — surface, encircling, or bobbin — decides where the currents flow, and a flaw signals only if it cuts them. Winding and mode decide what survives to the screen. An absolute coil responds to everything, including drift. A differential pair cancels what both coils share, drawing its two lobed signature on local flaws while hiding gradual thinning. A reflection probe separates driver from pickup, buying a wide frequency range and thermal stability. A coil senses the rate of change of flux, so its output falls as frequency drops. A Hall element reads flux density directly, flat down to DC, which is why deep penetration work at very low frequency leans on field sensors. When orientation beats you — a bobbin against circumferential cracks — change the coil, not the settings: rotating pancake and array probes exist for that job.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Probe Is the First Evaluation Decision",
+   "body": "At Level I you scanned with whatever the technique sheet specified. Level II is different: you help select the probe and you defend the selection — because a flaw the probe cannot put on the screen never becomes data at all. No amount of gain, filtering, or analysis recovers it downstream.\n\nEvery probe is three stacked decisions:\n\n- **Configuration** — *where the coil sits*. A **surface (probe) coil**, axis normal to the surface, drives circular current loops directly beneath the winding. An **encircling (OD) coil** that the product feeds through, and a **bobbin (ID) coil** working from the bore, both drive **circumferential** currents. Configuration fixes where the currents flow, and the Level I master rule still governs everything: **a discontinuity signals in proportion to how strongly it cuts the induced current paths**.\n- **Winding arrangement and operating mode** — *how the coil is built and connected*: impedance or reflection windings; absolute or differential connection. This decides which part of the raw response survives to the display.\n- **Sensing element** — *what physically senses the field*: an induction coil, or a solid-state field sensor such as a Hall element.\n\nConstruction details ride along. A **ferrite core** concentrates flux so a small coil keeps usable sensitivity, and a **ferrite shield** — a cup around the winding — confines the field laterally, letting the probe work beside edges, fastener heads, and geometry changes without drowning the flaw signal in edge effect."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-1-2-fig-a",
+   "caption": "The three winding-and-mode building blocks: an absolute coil answers to everything including drift; a differential pair cancels shared responses and writes a two-lobed signature on local flaws; a reflection probe separates driver from pickup for wide frequency range and thermal stability."
+  },
+  {
+   "type": "text",
+   "heading": "Winding Arrangements and Operating Modes",
+   "body": "Keep two ideas separate that Level I often blurs: how the windings are **built**, and how they are **connected**.\n\n**Built — the winding arrangement:**\n\n- **Impedance type.** One winding drives the field and senses the response; the instrument reads the coil's own impedance change. Simple and rugged — the classic arrangement.\n- **Reflection (driver–pickup, send–receive).** Separate driver and pickup windings, commonly a larger driver with small pickups inside it. Each winding is optimized for its own job, so one probe holds sensitivity across a **wide frequency range** — the natural choice for multifrequency work — and because the output is the pickup's induced voltage rather than the driven coil's impedance, the probe is noticeably more stable against **thermal drift**.\n- **Through-transmission.** Driver on one side of a thin sheet, pickup on the other. Full-thickness interrogation, but only where both surfaces are accessible and the field can penetrate the section.\n\n**Connected — the operating mode:**\n\n- **Absolute.** A single sensing winding, usually balanced against a reference winding that never sees the part. It responds to *everything*: local flaws, gradual wall thinning, conductivity shifts, temperature, lift-off or fill-factor change. Total information — and total exposure to drift.\n- **Differential, self-comparison.** Two sensing windings side by side on the same part, connected in opposition. Whatever both coils see alike cancels. A short local flaw passes one coil and then the other, writing the characteristic **two-lobed, figure-eight** trace on the impedance plane.\n- **Differential, external reference.** The second coil sits on a separate reference standard, so the pair reports any part-versus-standard difference, gradual ones included — the sorting arrangement.\n\nThe axes combine freely. A rotating bolt-hole probe is typically a **reflection-differential hybrid**: driver winding, differential pickup pair."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Every mode has a blind spot",
+   "body": "Differential self-comparison cancels whatever both coils see alike — which kills temperature drift, but also hides **gradual wall thinning** and the middle of a **long, uniform flaw** (only its ends signal as they enter and leave the coil pair). Absolute sees all of that, but **drifts** with temperature and wobbles with lift-off. That is why in-service tubing examinations record **absolute and differential channels simultaneously**, and why mode is chosen from the flaw you expect — never from habit."
+  },
+  {
+   "type": "text",
+   "heading": "Matching the Probe: Geometry First, Then Orientation",
+   "body": "Probe matching is two questions, asked in order. **Can the configuration reach the region of interest?** Installed heat-exchanger tubing offers only the bore — bobbin. Product running on a mill line feeds through a ring — encircling. Open surfaces belong to surface probes. **Then: will the induced currents be cut by the flaw you expect?** Draw the current paths, draw the flaw, check the crossing.\n\nTubing shows why the second question has teeth. A bobbin's currents are **circumferential**, so it is strong on pitting, wall loss, and **longitudinal** cracking — and weak on **circumferential** cracks, which lie parallel to its currents. Circumferential cracking concentrates exactly where that hurts: tube support plates, expansion transitions, U-bends. No mode, gain, or frequency change fixes an orientation problem; the fix is a different coil:\n\n- **Rotating pancake coils (RPC/MRPC)** — small surface coils spun against the wall while the probe advances, scanning a helix. Their small circular loops are cut by cracks of **any surface orientation**, and rotation resolves **where around the circumference** the flaw sits — the answer a bobbin can never give. The price is time: minutes per tube instead of seconds, so rotating probes are typically targeted at known degradation locations.\n- **Array probes** — a ring of small coils multiplexed electronically: most of that coverage at far higher speed, with no moving parts.\n- **Orthogonal ('plus-point') coils** — two windings crossed at right angles and connected differentially; a linear flaw in either orientation unbalances the pair, while shared responses — including much of the lift-off wobble — cancel.\n\nThe same logic runs on the production line: an encircling coil is a **longitudinal-seam hunter**, the center of solid bar is blind at any frequency, and purely circumferential cracks call for a supplementary technique."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-1-2-fig-b",
+   "caption": "Orientation matching in tubing: a bobbin's circumferential currents run parallel to a circumferential crack (weak or missed), while a rotating pancake coil's small loops are cut by cracks of any surface orientation — and rotation reports position around the tube."
+  },
+  {
+   "type": "text",
+   "heading": "Aerospace Surface Work: Holes, Layers, and Edges",
+   "body": "Aerospace structure asks three recurring questions, and each has a standard probe answer.\n\n- **Fastener holes.** Bore fatigue cracks start small — often a corner crack at the faying surface — and grow radially. The standard tool is a **motorized rotating scanner** spinning a small, shielded, usually reflection-differential surface coil at hundreds to a few thousand rpm while it advances through the hole, covering the bore in a tight helix. The small coil concentrates sensitivity on millimeter-scale cracks, the shield keeps hole-entry and layer-interface edges from swamping the signal, and rotation reports the crack's clock position.\n- **Buried layers.** Lap joints and doublers crack at fastener rows in the **second or third layer**, far below a high-frequency probe's reach. Penetration grows as frequency falls — in a 2024-series aluminum skin (≈30 %IACS), the standard depth of penetration is roughly **0.4 mm at 100 kHz** but about **3.8 mm at 1 kHz** — so buried-layer work runs at **hundreds of hertz to a few kilohertz**. At those frequencies an ordinary impedance coil's output is feeble, which is why the standard hardware is **reflection type**: **sliding probes** (driver–pickup pairs scanned rapidly along the fastener row) and **ring probes** (centered on each fastener in turn).\n- **Edges and fasteners.** An unshielded coil's field reaches well beyond its housing, so it begins answering to an edge before the probe arrives there. **Shielded probes** confine the field so cracks at fastener heads, hole edges, skin edges, and radii stay readable.\n\nThe running trade in all three: the smaller and better-shielded the coil, the higher the sensitivity and the smaller the footprint — and the more passes complete coverage costs."
+  },
+  {
+   "type": "table",
+   "caption": "The configuration-and-mode matrix: six recurring jobs and the probe that matches.",
+   "headers": ["Job", "Configuration", "Winding / mode", "Why it matches"],
+   "rows": [
+    ["Surface cracks on open skin or weld toe", "Shielded surface probe (pancake/pencil)", "Impedance; absolute or differential", "Circular loops are cut by surface cracks at any orientation; shield tames edges"],
+    ["Bolt hole, fastener removed", "Small shielded surface coil on rotating scanner", "Reflection-differential hybrid", "Helical bore coverage; finds short corner cracks; reports clock position"],
+    ["Second-layer crack at lap-joint fastener row", "Sliding or ring probe over the row", "Reflection, low frequency (hundreds of Hz–few kHz)", "Low frequency reaches the buried layer; pickup keeps output usable"],
+    ["In-service condenser tubing, full length", "Bobbin (ID) coil", "Absolute + differential recorded together", "Bore is the only access; differential flags pits, absolute tracks thinning"],
+    ["Circumferential cracking at tube supports", "Rotating pancake or array probe", "Driver–pickup, differential/multiplexed", "Small loops cross the crack; resolves position around the tube"],
+    ["Bar, rod, wire screened at the mill", "Encircling (OD) coil", "Differential self-comparison", "Longitudinal seams cut the circumferential currents; line speed does the scanning"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Coil or Hall Element?",
+   "body": "Everything above sensed the field with a winding, and a winding obeys Faraday's law: output voltage proportional to the **rate of change of flux** — for sinusoidal fields, proportional to **frequency × flux density**. That single fact decides the matchup.\n\n- **Induction coil.** At conventional test frequencies — tens of kilohertz to megahertz — a coil delivers excellent sensitivity from a passive, rugged, inexpensive element. But cut the frequency tenfold and the same coil's output drops tenfold; at the very low frequencies that deep penetration demands, coil output sinks toward the noise floor.\n- **Hall element.** A thin semiconductor slab carrying a bias current develops a voltage proportional to **flux density itself: Vₕ ∝ I × B**, regardless of how fast the field changes. Its response is flat **from DC** up through typical test frequencies, the element can be made well under a millimeter across, and it packs naturally into arrays. The costs: it needs bias current and amplification, and at conventional ET frequencies its raw sensitivity generally does not match a good coil's.\n\nThe Level II rule of thumb follows: **the coil is the workhorse of conventional eddy current testing; as frequency falls toward DC — thick sections, far-surface flaws in multilayer structure, field measurement under magnetic saturation — solid-state field sensors take over.** In practice the Hall element usually serves as the **pickup in a reflection arrangement**: a wound driver supplies the field, the solid-state element reads the response. Magnetoresistive (MR/GMR) sensors occupy the same niche with the same flat-to-DC argument.\n\nClose every probe decision the same way: one sentence each for configuration, winding and mode, and sensing element. If you cannot say all three, the probe was chosen by habit — not by the flaw."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-1-2-fig-a",
+   "title": "Operating modes: absolute, differential, reflection",
+   "file": "et2-1-2-fig-a.svg"
+  },
+  {
+   "id": "et2-1-2-fig-b",
+   "title": "Bobbin vs rotating pancake on circumferential cracks",
+   "file": "et2-1-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Probe Selection Clinic",
+  "intro": "Four jobs from real tubing and airframe work. For each one, pick the probe — configuration, mode, element — that the flaw demands. Decide before you click.",
+  "steps": [
+   {
+    "prompt": "A condenser tube bundle has a history of slow, uniform wall thinning over long lengths. Last outage's differential bobbin data showed almost nothing. What catches it this time?",
+    "options": [
+     "Add 6 dB of gain to the differential channel",
+     "Record and evaluate an absolute bobbin channel alongside the differential",
+     "Pull the bobbin probe faster to sharpen the response",
+     "Raise the test frequency"
+    ],
+    "correct": 1,
+    "feedback": "Self-comparison differential cancels whatever both coils share — and gradual thinning is shared almost perfectly, so gain just amplifies a cancelled signal. The absolute channel tracks slow wall loss, which is why in-service tubing exams record both channels at once."
+   },
+   {
+    "prompt": "Outside-surface stress-corrosion cracking is suspected at the tube support plates — circumferentially oriented. Your bobbin shows little. The fix is:",
+    "options": [
+     "Switch the bobbin from differential to absolute",
+     "Lower the frequency for deeper penetration",
+     "Run a rotating pancake or array probe at the support-plate elevations",
+     "Use a larger bobbin to improve fill factor"
+    ],
+    "correct": 2,
+    "feedback": "This is an orientation problem: the bobbin's circumferential currents lie parallel to a circumferential crack at any mode, frequency, or fill factor. Small pancake coils drive loops the crack must cut — and the rotating or array scan also tells you where around the tube it sits."
+   },
+   {
+    "prompt": "Fatigue cracks are suspected at a fastener row in the second layer of a fuselage lap joint, about 3 mm down. Best tool:",
+    "options": [
+     "A 2 MHz shielded pencil probe scanned along the row",
+     "A through-transmission pair across the joint",
+     "An absolute conductivity probe and meter",
+     "A low-frequency reflection probe — sliding or ring type — over the fastener row"
+    ],
+    "correct": 3,
+    "feedback": "At 2 MHz in this aluminum the standard depth of penetration is under 0.1 mm — first-layer only. Through-transmission needs access to both sides, which an assembled joint denies. Low frequency (hundreds of hertz to a few kilohertz) reaches the second layer, and the reflection winding keeps the output usable down there."
+   },
+   {
+    "prompt": "A wing-attach bolt hole has just had its fastener removed for inspection. The standard examination is:",
+    "options": [
+     "A large unshielded pancake coil centered over the hole mouth",
+     "A small shielded differential coil on a motorized rotating scanner, run through the bore",
+     "A bobbin coil sized to the hole, pulled through once",
+     "Reinstall the fastener and scan around its head at high frequency"
+    ],
+    "correct": 1,
+    "feedback": "The rotating shielded coil covers the bore in a tight helix with sensitivity to millimeter-scale corner cracks and reports their clock position. A surface coil at the hole mouth mostly reads edge effect, a single bobbin pull averages the full circumference and blunts sensitivity to small corner cracks, and scanning over an installed fastener inspects the fastener — not the bore."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A differential self-comparison bobbin probe passes a short, isolated corrosion pit in a condenser tube. The classic signal is:",
+   "options": [
+    "A permanent shift in the baseline that persists after the pit",
+    "A single unipolar excursion with a slow return",
+    "A two-lobed, figure-eight trace as first one coil and then the other passes the pit",
+    "No response, because differential coils cancel all flaws"
+   ],
+   "correct": 2,
+   "explanation": "Each coil of the opposed pair passes the pit in turn — the first unbalances the bridge one way, the second reverses it — producing the bipolar, figure-eight trace. A persistent baseline shift is absolute-channel behavior at a property change, not a differential pit response."
+  },
+  {
+   "question": "Gradual, uniform wall thinning along a long length of tube is most reliably tracked by:",
+   "options": [
+    "The absolute channel",
+    "The differential self-comparison channel",
+    "Either channel equally well",
+    "Neither — eddy currents cannot respond to wall loss"
+   ],
+   "correct": 0,
+   "explanation": "Both coils of a self-comparison differential pair ride the same slowly changing wall and cancel it; only the absolute channel tracks gradual loss. That complementarity is why in-service examinations record both channels together."
+  },
+  {
+   "question": "The main reason low-frequency aerospace probes (sliding and ring probes) use a reflection (driver–pickup) winding arrangement is:",
+   "options": [
+    "It increases the standard depth of penetration at a given frequency",
+    "It eliminates the need for standardization on a reference part",
+    "It makes the probe immune to lift-off variations",
+    "Driver and pickup are optimized separately, preserving sensitivity and drift stability over a wide frequency range"
+   ],
+   "correct": 3,
+   "explanation": "Depth of penetration is set by frequency, conductivity, and permeability — no winding scheme changes it. Reflection construction lets the driver and pickup each be optimized, so the probe stays sensitive and thermally stable at the very low frequencies buried-layer work requires."
+  },
+  {
+   "question": "Compared with an induction coil, a Hall element used as the sensing element:",
+   "options": [
+    "Responds to the rate of change of flux, so its output rises with frequency",
+    "Responds to flux density directly, so its response holds flat down to DC",
+    "Works only on ferromagnetic test materials",
+    "Requires no electrical connections to operate"
+   ],
+   "correct": 1,
+   "explanation": "The Hall voltage is proportional to flux density itself (Vₕ ∝ I × B), so the response holds from DC up through test frequencies. The coil is the element whose output tracks rate of change and therefore falls as frequency falls — the reason field sensors take over in very-low-frequency, deep-penetration work."
+  },
+  {
+   "question": "Why can no change of mode, gain, or frequency make a standard bobbin coil reliably detect a purely circumferential crack?",
+   "options": [
+    "The crack lies parallel to the bobbin's circumferential currents, so the coil geometry — not the settings — limits the response",
+    "The crack is too deep for any eddy current technique",
+    "Tube support plates block the magnetic field completely",
+    "Bobbin coils function only in ferromagnetic tubes"
+   ],
+   "correct": 0,
+   "explanation": "Signal strength scales with how strongly a flaw interrupts the induced currents. A circumferential crack runs parallel to a bobbin's circumferential currents, so the geometry caps the response no matter the settings. The remedy is a coil whose currents cross the crack: rotating pancake, array, or orthogonal (plus-point) windings."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level II Eddy Current Evaluation Course §1.2 (types of eddy current sensing probes)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — Level II interprets and evaluates results and must know the scope and limitations of the method",
+  "ASTM E690, Standard Practice for In Situ Electromagnetic (Eddy Current) Examination of Nonmagnetic Heat Exchanger Tubes (bobbin-coil practice)",
+  "ASTM E309, Standard Practice for Eddy-Current Examination of Steel Tubular Products Using Magnetic Saturation (encircling-coil practice)"
+ ]
+}

@@ -1,0 +1,110 @@
+{
+ "moduleId": "et2-3",
+ "questions": [
+  {
+   "question": "A written procedure states its minimum signal-to-noise requirement as approximately 10 dB. Expressed as an amplitude ratio, that floor is closest to:",
+   "options": ["2:1", "10:1", "3:1", "5:1"],
+   "correct": 2,
+   "explanation": "SNR(dB) = 20 log₁₀(signal ÷ noise), so 3:1 ≈ 9.5 dB — the common working minimum for eddy current flaw detection. A 10:1 ratio would be 20 dB and 2:1 only about 6 dB."
+  },
+  {
+   "question": "At what point in an eddy current examination must the minimum signal-to-noise ratio be demonstrated?",
+   "options": [
+    "After a suspect indication appears, to decide whether it should be believed",
+    "During standardization, before scanning begins — reference-discontinuity response against noise measured on representative defect-free material",
+    "Only at the end of the shift, during the final standardization verification",
+    "Whenever the customer or an auditor asks to see the figure"
+   ],
+   "correct": 1,
+   "explanation": "The SNR floor — commonly 3:1 — is a standardization gate: at the final instrument settings, the reference response must clear the noise before inspection may begin, not be argued after an indication appears. If the ratio cannot be met, the setup is invalid and scanning does not start."
+  },
+  {
+   "question": "On a rotary bolt-hole examination, the impedance-plane and time-base (sweep) displays divide the work. The correct pairing is:",
+   "options": [
+    "Impedance plane: phase and signal character — 'what it is'; sweep display: clock position and count — 'where it is and how many'",
+    "Impedance plane: clock position in the hole; sweep display: phase angle of the indication",
+    "Both displays present identical information; the sweep exists only as a backup",
+    "Impedance plane: noise signals only; sweep display: flaw signals only"
+   ],
+   "correct": 0,
+   "explanation": "The flying dot gives phase and shape — the differential split-D's figure-eight, for example — while the sweep maps one probe revolution across the screen so an event marks its clock position. Display persistence stacks revolutions, so a repeating signal builds into an unmistakable mark while random noise smears out."
+  },
+  {
+   "question": "A bobbin (inside) coil pulled through heat-exchanger tubing is nearly blind to circumferential cracks because:",
+   "options": [
+    "circumferential cracks are always filled with conductive deposits",
+    "a bobbin coil induces no eddy currents near the tube wall",
+    "the support plates mask every circumferentially oriented signal",
+    "the induced currents flow circumferentially, so a circumferential crack lies parallel to them and barely interrupts the flow"
+   ],
+   "correct": 3,
+   "explanation": "A crack responds strongest when it lies perpendicular to the induced current paths and weakest when parallel to them. The bobbin's currents circulate around the tube circumference, so a circumferential crack interrupts almost nothing — the standard example of why procedures specify probe types and scan directions deliberately."
+  },
+  {
+   "question": "On the impedance plane, a flaw response is noticeably larger than the wobble noise, but its trajectory lies nearly parallel to the lift-off direction. The practical consequence is:",
+   "options": [
+    "detection is assured, because amplitude separation is all the alarm gate needs",
+    "the vertical-channel gate cannot separate flaw from wobble, so the working channel SNR collapses despite the amplitude advantage",
+    "further display rotation will open the angle between the flaw and lift-off responses",
+    "the flaw will register only on the horizontal channel, where there is no noise"
+   ],
+   "correct": 1,
+   "explanation": "Phase separation is the real currency: a flaw 'louder' than the noise can still be undetectable if it responds in the same direction. Rotation only aims the whole pattern — it cannot change the angle between lift-off and flaw; opening that angle takes a real change such as test frequency, followed by re-standardization."
+  },
+  {
+   "question": "Background hash remains on the display even after the probe is lifted clear of the part. The correct conclusion and response is:",
+   "options": [
+    "the noise is part-borne — change test frequency or probe footprint",
+    "the probe windings have failed and the probe must be replaced",
+    "the noise is entering electrically — attack cable routing, shielding, grounding, and distance from welders and motor drives",
+    "the part's permeability is varying — apply magnetic saturation"
+   ],
+   "correct": 2,
+   "explanation": "Whatever appears with no part under the coil cannot be material or coupling response; it is instrument or environment noise, fixed by electrical housekeeping. Noise that dies in air is born in the part or coupling and calls for frequency, filtering, probe, or technique changes — the probe-in-air test decides which half of the toolbox to open."
+  },
+  {
+   "question": "On aluminum surface work, raising test frequency improves crack-to-lift-off phase separation and concentrates current at the surface. Why is 'run the frequency as high as possible' still wrong?",
+   "options": [
+    "Past the optimum, lift-off sensitivity and surface-condition grass grow faster than the flaw response, and SNR falls again",
+    "Higher frequencies drive the eddy currents deeper, so surface cracks are lost",
+    "Phase separation between lift-off and cracks disappears entirely at high frequency",
+    "Instruments cannot amplify signals above a few kilohertz"
+   ],
+   "correct": 0,
+   "explanation": "Raising frequency crowds the currents at the surface, so every surface-related noise source — roughness, scratches, micro lift-off — strengthens along with the crack response. There is an optimum, not a maximum; and since frequency is normally fixed by the written procedure, changes go through the Level III and require re-standardization."
+  },
+  {
+   "question": "Sixteen-scan signal averaging is added to a noisy eddy current channel. The expected result is:",
+   "options": [
+    "all noise, including surface-roughness grass, drops by a factor of 16",
+    "lift-off wobble cancels completely because it repeats on every pass",
+    "no change of any kind, since averaging is just another form of gain",
+    "random electrical and instrument noise drops by about a factor of 4 (√16), while part-borne noise that repeats each pass survives untouched"
+   ],
+   "correct": 3,
+   "explanation": "Averaging N scans cuts random noise by √N — sixteen averages buys 4×, about 12 dB. Coherent, part-borne noise reproduces itself on every pass and averages to exactly what it was: averaging fixes fuzz, never grass."
+  },
+  {
+   "question": "In-service tubing examinations commonly run a differential bobbin channel alongside an absolute channel because:",
+   "options": [
+    "two channels double the signal-to-noise ratio by averaging each other",
+    "differential coils cancel changes more gradual than their coil spacing, so slowly developing wall loss needs the absolute channel to be seen",
+    "absolute coils cannot detect sharp, local flaws at all",
+    "regulations require redundant instrumentation on heat exchangers"
+   ],
+   "correct": 1,
+   "explanation": "Two matched coils wound in opposition output only what they sense differently: abrupt flaws ring sharply while temperature drift and gradual gradients cancel. That same symmetry makes the differential pair blind to changes more gradual than the coil spacing — such as gradual wall thinning — which is exactly the blind spot the absolute channel covers."
+  },
+  {
+   "question": "Large, repeatable signals at heat-exchanger support plates can hide flaws located beneath the supports. The technique designed specifically to remove the support-plate response while keeping such flaws visible is:",
+   "options": [
+    "multifrequency mixing — combining channels driven at two or more frequencies so the unwanted signal subtracts out",
+    "magnetic saturation of the tube wall",
+    "a steeper high-pass filter setting",
+    "raising the pull speed through the supported spans"
+   ],
+   "correct": 0,
+   "explanation": "The support plate is coherent noise at a known location on the tube map; driving two or more frequencies and combining the channels subtracts its response, and the residual mix keeps a flaw under the support visible. Saturation targets permeability noise in ferromagnetic material, filters only know event rates, and pulling off the qualified speed just slides flaw energy out of the band-pass."
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-size="22" font-weight="bold" fill="#0B1F3A">Forward Speed Sets the Pitch &#8212; Pitch Decides Coverage</text>
+  <text x="400" y="60" text-anchor="middle" font-size="14" fill="#0B1F3A">pitch (mm/rev) = forward speed &#247; rev rate &#8226; full coverage: pitch &#8804; effective coil width</text>
+
+  <!-- panel headers -->
+  <text x="215" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#1E66F5">pitch 1.5 mm &lt; coil 2.0 mm &#8212; overlap</text>
+  <text x="585" y="86" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">pitch 3.0 mm &gt; coil 2.0 mm &#8212; gaps</text>
+
+  <defs>
+    <clipPath id="clipA"><rect x="70" y="96" width="290" height="300"/></clipPath>
+    <clipPath id="clipB"><rect x="440" y="96" width="290" height="300"/></clipPath>
+  </defs>
+
+  <!-- left panel: overlapping helix bands (pitch 36 px, width 48 px) -->
+  <g clip-path="url(#clipA)">
+    <path d="M 70,60 L 360,96 L 360,144 L 70,108 Z" fill="#1E66F5" opacity="0.32"/>
+    <path d="M 70,96 L 360,132 L 360,180 L 70,144 Z" fill="#1E66F5" opacity="0.32"/>
+    <path d="M 70,132 L 360,168 L 360,216 L 70,180 Z" fill="#1E66F5" opacity="0.32"/>
+    <path d="M 70,168 L 360,204 L 360,252 L 70,216 Z" fill="#1E66F5" opacity="0.32"/>
+    <path d="M 70,204 L 360,240 L 360,288 L 70,252 Z" fill="#1E66F5" opacity="0.32"/>
+    <path d="M 70,240 L 360,276 L 360,324 L 70,288 Z" fill="#1E66F5" opacity="0.32"/>
+    <path d="M 70,276 L 360,312 L 360,360 L 70,324 Z" fill="#1E66F5" opacity="0.32"/>
+    <path d="M 70,312 L 360,348 L 360,396 L 70,360 Z" fill="#1E66F5" opacity="0.32"/>
+    <path d="M 70,348 L 360,384 L 360,432 L 70,396 Z" fill="#1E66F5" opacity="0.32"/>
+    <path d="M 70,384 L 360,420 L 360,468 L 70,432 Z" fill="#1E66F5" opacity="0.32"/>
+  </g>
+  <rect x="70" y="96" width="290" height="300" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- right panel: gapped helix bands (pitch 72 px, width 48 px) -->
+  <g clip-path="url(#clipB)">
+    <path d="M 440,50 L 730,122 L 730,170 L 440,98 Z" fill="#1E66F5" opacity="0.32"/>
+    <path d="M 440,122 L 730,194 L 730,242 L 440,170 Z" fill="#1E66F5" opacity="0.32"/>
+    <path d="M 440,194 L 730,266 L 730,314 L 440,242 Z" fill="#1E66F5" opacity="0.32"/>
+    <path d="M 440,266 L 730,338 L 730,386 L 440,314 Z" fill="#1E66F5" opacity="0.32"/>
+    <path d="M 440,338 L 730,410 L 730,458 L 440,386 Z" fill="#1E66F5" opacity="0.32"/>
+  </g>
+  <rect x="440" y="96" width="290" height="300" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- short flaw in an unswept stripe (right panel) -->
+  <line x1="545" y1="278" x2="580" y2="287" stroke="#0B1F3A" stroke-width="5" stroke-linecap="round"/>
+  <line x1="562" y1="330" x2="562" y2="292" stroke="#0B1F3A" stroke-width="1.5"/>
+
+  <!-- annotation chips -->
+  <rect x="95" y="330" width="240" height="46" rx="6" fill="#FFFFFF" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="215" y="349" text-anchor="middle" font-size="14" fill="#0B1F3A">adjacent turns overlap 0.5 mm</text>
+  <text x="215" y="367" text-anchor="middle" font-size="14" fill="#0B1F3A">100% of the surface swept</text>
+
+  <rect x="465" y="330" width="240" height="46" rx="6" fill="#FFFFFF" stroke="#9BC4FF" stroke-width="1.5"/>
+  <text x="585" y="349" text-anchor="middle" font-size="14" font-weight="bold" fill="#0B1F3A">short flaw in unswept stripe</text>
+  <text x="585" y="367" text-anchor="middle" font-size="14" fill="#0B1F3A">missed on every revolution</text>
+
+  <!-- under-panel captions -->
+  <text x="215" y="420" text-anchor="middle" font-size="14" fill="#0B1F3A">feed 75 mm/s at 3000 RPM (50 rev/s)</text>
+  <text x="585" y="420" text-anchor="middle" font-size="14" fill="#0B1F3A">feed 150 mm/s at 3000 RPM (50 rev/s)</text>
+
+  <!-- legend swatch -->
+  <rect x="170" y="438" width="34" height="14" fill="#1E66F5" opacity="0.32"/>
+  <text x="212" y="450" font-size="14" fill="#0B1F3A">area swept by the coil in one revolution (2.0 mm effective width)</text>
+
+  <text x="400" y="474" text-anchor="middle" font-size="14" fill="#0B1F3A" opacity="0.65">Unrolled tube or bore surface &#8212; horizontal: one circumference; vertical: axial feed direction.</text>
+  <text x="400" y="492" text-anchor="middle" font-size="14" fill="#0B1F3A" opacity="0.65">The same pitch equation governs bolt-hole scanner withdrawal rate.</text>
+</svg>

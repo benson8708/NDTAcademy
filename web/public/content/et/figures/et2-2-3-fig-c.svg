@@ -1,0 +1,69 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Field Strength: Linear Metals Scale — Magnetic Metals Move</text>
+
+  <!-- ===== left panel: nonmagnetic, linear ===== -->
+  <text x="215" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">Nonmagnetic: linear response</text>
+
+  <!-- axes -->
+  <line x1="70" y1="420" x2="360" y2="420" stroke="#0B1F3A" stroke-width="3"/>
+  <polygon points="360,414 374,420 360,426" fill="#0B1F3A"/>
+  <line x1="70" y1="420" x2="70" y2="90" stroke="#0B1F3A" stroke-width="3"/>
+  <polygon points="64,90 70,76 76,90" fill="#0B1F3A"/>
+  <text x="215" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">drive (ampere-turns ∝ H)</text>
+  <text x="42" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A" transform="rotate(-90 42 255)">signal amplitude</text>
+
+  <!-- straight line through origin -->
+  <line x1="70" y1="420" x2="330" y2="120" stroke="#1E66F5" stroke-width="4"/>
+
+  <!-- 1x point -->
+  <line x1="170" y1="420" x2="170" y2="305" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="70" y1="305" x2="170" y2="305" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="6 4"/>
+  <circle cx="170" cy="305" r="6" fill="#0B1F3A"/>
+  <text x="170" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">1×</text>
+  <text x="62" y="310" text-anchor="end" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">A</text>
+
+  <!-- 2x point -->
+  <line x1="270" y1="420" x2="270" y2="189" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="6 4"/>
+  <line x1="70" y1="189" x2="270" y2="189" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="6 4"/>
+  <circle cx="270" cy="189" r="6" fill="#0B1F3A"/>
+  <text x="270" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">2×</text>
+  <text x="62" y="194" text-anchor="end" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">2A</text>
+
+  <text x="180" y="118" text-anchor="start" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">2× drive → 2× every signal;</text>
+  <text x="180" y="138" text-anchor="start" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">normalized operating point</text>
+  <text x="180" y="156" text-anchor="start" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">does not move</text>
+
+  <!-- ===== right panel: ferromagnetic B-H ===== -->
+  <text x="610" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">Ferromagnetic: the B-H curve</text>
+
+  <!-- axes -->
+  <line x1="450" y1="420" x2="770" y2="420" stroke="#0B1F3A" stroke-width="3"/>
+  <polygon points="770,414 784,420 770,426" fill="#0B1F3A"/>
+  <line x1="450" y1="420" x2="450" y2="90" stroke="#0B1F3A" stroke-width="3"/>
+  <polygon points="444,90 450,76 456,90" fill="#0B1F3A"/>
+  <text x="612" y="452" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">magnetizing force H (drive)</text>
+  <text x="424" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A" transform="rotate(-90 424 255)">flux density B</text>
+
+  <!-- B-H curve: initial slope, steep section, saturation plateau -->
+  <path d="M 450 420 C 470 412 485 395 500 360 C 518 318 540 220 575 170 C 615 122 690 112 760 110" fill="none" stroke="#1E66F5" stroke-width="4"/>
+
+  <!-- tangent slope markers (mu = local slope) -->
+  <line x1="487" y1="408" x2="513" y2="338" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="548" y1="234" x2="584" y2="158" stroke="#0B1F3A" stroke-width="2"/>
+
+  <!-- zone notes -->
+  <text x="548" y="300" text-anchor="start" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">the slope is μ — it changes</text>
+  <text x="548" y="318" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">with drive, so the response moves</text>
+  <text x="505" y="378" text-anchor="start" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">low drive: μ nearly stable —</text>
+  <text x="505" y="396" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">work here when you cannot saturate</text>
+  <text x="520" y="210" text-anchor="start" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">DC saturation: incremental μᵣ → 1 —</text>
+  <text x="520" y="230" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">stable signals and depth (ASTM E309)</text>
+  <line x1="660" y1="204" x2="690" y2="118" stroke="#0B1F3A" stroke-width="1.5"/>
+
+  <!-- divider -->
+  <line x1="405" y1="76" x2="405" y2="452" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="4 6"/>
+
+  <!-- bottom note -->
+  <text x="400" y="484" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">Drive buys amplitude, never information — and in steel it changes the material the coil sees.</text>
+</svg>

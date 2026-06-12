@@ -1,0 +1,176 @@
+{
+ "lessonId": "et1-3-3",
+ "title": "Frequency, Phase, and Depth of Penetration",
+ "narrationScript": "Eddy currents do not fill a part evenly. They crowd against the surface and fade exponentially with depth — the skin effect. We measure that fade with one number: the standard depth of penetration, the depth where current density drops to thirty-seven percent of its surface value. By two standard depths, thirteen and a half percent remains; by three, just five percent — and three standard depths is the accepted effective limit of detection. Frequency, conductivity, and permeability set the depth, and frequency is the only one you control. Penetration follows one over the square root of frequency: quadruple the frequency and the depth halves; cut it to one quarter and the depth doubles. Currents at depth also lag the surface currents in phase, about fifty-seven degrees per standard depth, and that lag is how a deep flaw separates from a shallow one on the display. Raise the frequency for surface cracks. Lower it to reach second layers and hidden corrosion. And verify every choice on the reference standard your procedure specifies.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Eddy Currents Crowd the Surface",
+   "body": "You already know eddy currents flow in closed circular paths that mirror the coil, concentrated directly beneath it. Now look down into the part. Eddy current density is **greatest at the surface nearest the coil** and falls off **exponentially** with depth — there is no sharp edge where the currents stop, only a smooth, predictable fade. This is the **skin effect**, and it has a clean physical cause: the eddy currents at each depth generate their own magnetic field that **opposes the coil's field**, so every layer of current partially shields the layer beneath it. By the time the field reaches deeper material, there is less of it left to induce anything.\n\nTwo consequences follow, and they shape every test you will ever set up:\n\n- Eddy current testing is inherently a **near-surface method**. The deeper a flaw sits, the less current crosses it and the weaker its signal.\n- The fade is **calculable**. 'How deep can this setup see?' is not a guess — it is a number you can compute before the probe ever touches the part.\n\nThat number is the subject of this lesson."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-3-3-fig-a",
+   "caption": "Eddy current density decays exponentially with depth: 37% remains at one standard depth (1δ), 13.5% at 2δ, and 5% at 3δ — the effective depth of penetration."
+  },
+  {
+   "type": "text",
+   "heading": "One Standard Depth: Where 37% Remains",
+   "body": "The fade is measured with one yardstick: the **standard depth of penetration**, symbol **δ** (delta), also written **1δ**. It is the depth at which eddy current density has dropped to **1/e ≈ 37%** of its surface value. The decay keeps compounding from there:\n\n- **1δ → 37%** of surface current density\n- **2δ → 13.5%**\n- **3δ → 5%** — the **effective depth of penetration**, the accepted working limit. A flaw deeper than about 3δ has too little current crossing it to disturb the coil reliably.\n\nThe controlling equation is **δ = 1/√(π f μ σ)** — frequency, magnetic permeability, electrical conductivity. In shop units:\n\n**δ (mm) ≈ 660 / √( f · μᵣ · σ )**, with f in hertz, μᵣ the relative permeability, and σ in %IACS. (For δ in inches, replace 660 with 26.)\n\nWork one. A 7075-T6 aluminum skin, σ = 32 %IACS, μᵣ = 1, tested at 200 kHz: δ = 660/√(200,000 × 32) ≈ **0.26 mm**, so the effective depth is about **0.8 mm**. A crack 1.5 mm down is invisible at this frequency — essentially no current reaches it.\n\nOne honest caveat: the equation is derived for a uniform plane-wave field over a flat, thick conductor. A real coil's field spreads and weakens somewhat faster than the ideal. Treat δ as the planning number it is, and verify actual response on the reference standard your procedure specifies."
+  },
+  {
+   "type": "table",
+   "caption": "Standard depth of penetration computed from δ = 1/√(πfμσ). Carbon steel's permeability is a representative training value — real values vary widely with alloy, heat treatment, and field strength.",
+   "headers": ["Material (σ %IACS, μᵣ)", "1 kHz", "10 kHz", "100 kHz", "1 MHz"],
+   "rows": [
+    ["Copper (100, 1)", "2.09 mm", "0.66 mm", "0.21 mm", "0.07 mm"],
+    ["7075-T6 aluminum (32, 1)", "3.69 mm", "1.17 mm", "0.37 mm", "0.12 mm"],
+    ["Ti-6Al-4V titanium (1.0, 1)", "20.9 mm", "6.6 mm", "2.09 mm", "0.66 mm"],
+    ["304 stainless (2.5, 1)", "13.2 mm", "4.2 mm", "1.32 mm", "0.42 mm"],
+    ["Carbon steel (10, ≈100)", "0.66 mm", "0.21 mm", "0.07 mm", "0.02 mm"]
+   ]
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The square-root rule",
+   "body": "δ ∝ 1/√(f · μᵣ · σ). **Quadruple the frequency and the standard depth halves; cut frequency to one quarter and it doubles.** Conductivity and permeability belong to the part — frequency is the only term in the equation you control. And respect the μᵣ term: in carbon steel (μᵣ ≈ 100), penetration collapses to hundredths of a millimeter, which is why eddy current testing of unsaturated ferromagnetic steel is strictly surface work."
+  },
+  {
+   "type": "text",
+   "heading": "Phase Lag: The Depth Clock",
+   "body": "Depth does a second thing to eddy currents: it delays them. Currents at depth respond **later in the AC cycle** than the surface currents — they **lag in phase**, and the lag accumulates linearly with depth:\n\n**β = x/δ radians ≈ 57° per standard depth** (x = depth below the surface)\n\n- At 1δ, the currents lag the surface currents by about **57°**\n- At 2δ, by about **115°**\n- At 3δ, by about **172°** — nearly opposite in phase\n\nWhy you care: a flaw disturbs the currents flowing **at its own depth**, so the signal it returns carries that depth's phase delay. A subsurface flaw produces a signal **rotated further** on the display than a surface flaw of similar size. Amplitude says 'something is there' — **phase says how deep**. This phase-versus-depth relationship is the foundation of impedance-plane analysis and the depth evaluation you will perform at Level II.\n\nFrequency couples directly into the clock: raising the frequency shrinks δ, so the same physical depth spans more standard depths and shows **more lag**. Choosing a test frequency is also choosing how the depth range of interest spreads out in phase across the screen."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-3-3-fig-c",
+   "caption": "Currents at depth lag the surface currents by about 57° per standard depth, so a flaw signal's phase angle carries depth information — the basis of depth estimation on the impedance plane."
+  },
+  {
+   "type": "text",
+   "heading": "Choosing the Frequency Direction",
+   "body": "The selection logic falls straight out of the two relationships you now own:\n\n- **Surface flaws → raise the frequency.** A small δ concentrates the available current right where the flaw is, giving maximum sensitivity and sharp resolution of small surface cracks. Surface crack detection on aluminum structure typically runs from a couple hundred kilohertz up into the low megahertz.\n- **Subsurface flaws → lower the frequency.** Second-layer cracks and hidden corrosion in bonded or riveted lap joints need δ grown until real current reaches the flaw — for aluminum stack-ups this lands in the low kilohertz.\n- **Keep the depth of interest within the effective depth.** The deepest flaw you must detect should lie no deeper than about 3δ — and many setups aim to place it near 1δ, where current density and phase separation are both strong.\n\nThe trade is permanent. Lower frequency buys depth but costs surface sensitivity and resolution; higher frequency sharpens the surface and goes blind below a fraction of a millimeter. And no gain knob changes it: **amplification cannot create current where none flows**.\n\nThe final word always belongs to the written procedure: it specifies or bounds the frequency, and your job as a Level I is to confirm the response on the specified reference standard — EDM notches and drilled holes at known depths — before any part is examined."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-3-3-fig-b",
+   "caption": "The same two-layer aluminum joint at two frequencies: at 500 kHz the effective depth is about 0.5 mm and the test never leaves the first skin; at 5 kHz the standard depth grows to 1.65 mm and the second layer falls within reach."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-3-3-fig-a",
+   "title": "Exponential decay and the standard depth of penetration",
+   "file": "et1-3-3-fig-a.svg"
+  },
+  {
+   "id": "et1-3-3-fig-b",
+   "title": "High vs. low frequency penetration in a two-layer joint",
+   "file": "et1-3-3-fig-b.svg"
+  },
+  {
+   "id": "et1-3-3-fig-c",
+   "title": "Phase lag versus depth",
+   "file": "et1-3-3-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Set the Frequency: Four Calls on the Hangar Floor",
+  "intro": "Four setups, two rules: δ (mm) ≈ 660/√(f · μᵣ · σ %IACS), and phase lag ≈ 57° per standard depth. Work each one on paper before you click. 7075-T6 aluminum: 32 %IACS, μᵣ = 1.",
+  "steps": [
+   {
+    "prompt": "You are hunting tight fatigue cracks breaking the surface of an aluminum wing skin around fastener heads. Which direction do you take the test frequency, and why?",
+    "options": [
+     "Lower — deeper penetration always improves sensitivity",
+     "Higher — it concentrates the current at the surface, where the cracks are, and sharpens resolution",
+     "It does not matter — the gain control sets sensitivity",
+     "Lower — less phase lag makes signals easier to read"
+    ],
+    "correct": 1,
+    "feedback": "Higher frequency shrinks δ, packing the available current into the thin layer the cracks actually occupy — stronger signals from small surface flaws and better resolution. Surface crack work on aluminum commonly runs hundreds of kilohertz and up."
+   },
+   {
+    "prompt": "At 200 kHz your standard depth in 7075-T6 is about 0.26 mm. The work instruction needs solid response at roughly double that standard depth, 0.5 mm. What frequency gets you there?",
+    "options": [
+     "800 kHz",
+     "100 kHz",
+     "50 kHz",
+     "Stay at 200 kHz and double the gain"
+    ],
+    "correct": 2,
+    "feedback": "δ ∝ 1/√f, so doubling δ requires dividing frequency by four: 200 kHz → 50 kHz gives δ ≈ 0.52 mm. Gain amplifies signal and noise alike — it cannot create current where none flows."
+   },
+   {
+    "prompt": "Next job: corrosion and cracking in the second layer of a riveted lap joint — two 2 mm aluminum skins, so the damage sits 2 to 4 mm down. Which starting frequency band is right?",
+    "options": [
+     "1–10 kHz, so the effective depth (3δ) reaches through the second layer",
+     "200–500 kHz, for maximum sensitivity",
+     "2–6 MHz, to maximize phase lag",
+     "Any frequency — the adhesive and rivets carry the currents deeper"
+    ],
+    "correct": 0,
+    "feedback": "At 5 kHz, δ ≈ 1.65 mm and 3δ ≈ 5 mm — the whole stack is within reach. At 200 kHz the effective depth is about 0.8 mm and the test never leaves the first skin. Adhesive is nonconductive; it carries nothing."
+   },
+   {
+    "prompt": "Two indications give similar amplitudes, but one signal is rotated noticeably further on the display — more phase lag — than the other. What is the rotation telling you?",
+    "options": [
+     "The rotated indication is shallower",
+     "Rotation is random instrument noise",
+     "The rotated indication lies deeper — lag grows about 57° per standard depth",
+     "The rotated indication must be lift-off"
+    ],
+    "correct": 2,
+    "feedback": "β = x/δ: currents at depth respond later in the cycle, so a deeper flaw returns a signal rotated further. Phase, not amplitude, is the dependable depth clue — and reading it is the heart of Level II impedance-plane evaluation."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "The standard depth of penetration (1δ) is defined as the depth at which eddy current density has fallen to approximately what fraction of its surface value?",
+   "options": ["50%", "5%", "37% (1/e)", "13.5%"],
+   "correct": 2,
+   "explanation": "By definition, current density at one standard depth is 1/e ≈ 37% of the surface value. 13.5% is the density at 2δ, and 5% is the density at 3δ — the effective depth of penetration."
+  },
+  {
+   "question": "A test on an aluminum alloy gives a standard depth of penetration of 1.2 mm at 10 kHz. If the frequency is raised to 40 kHz, the standard depth becomes approximately:",
+   "options": ["0.6 mm", "0.3 mm", "2.4 mm", "1.2 mm — frequency does not affect penetration"],
+   "correct": 0,
+   "explanation": "δ varies as 1/√f. Multiplying frequency by four divides the standard depth by √4 = 2, so 1.2 mm becomes 0.6 mm. Penetration depends directly on frequency — that dependence is the main reason frequency is selectable at all."
+  },
+  {
+   "question": "Compared with the eddy currents at the surface, the currents flowing at a depth of two standard depths (2δ) lag in phase by approximately:",
+   "options": ["37°", "57°", "90°", "115°"],
+   "correct": 3,
+   "explanation": "Phase lag accumulates at β = x/δ radians — about 57° per standard depth — so at 2δ the lag is roughly 115°. The 57° option is the lag at 1δ, and 37% is an amplitude figure, not a phase angle."
+  },
+  {
+   "question": "You must detect cracks in the second layer of a riveted aluminum lap joint, about 4 mm below the surface. The correct frequency decision is to:",
+   "options": [
+    "Raise the frequency to concentrate the currents at the surface",
+    "Lower the frequency so the standard depth grows and usable current reaches the second layer",
+    "Keep the frequency and raise the gain — gain controls penetration",
+    "Raise the frequency because phase lag decreases with depth"
+   ],
+   "correct": 1,
+   "explanation": "Only a lower frequency enlarges δ enough to put real current at 4 mm — in an aluminum stack-up that means low kilohertz. Gain amplifies whatever signal exists but cannot create current at depth, and phase lag increases (not decreases) with depth."
+  },
+  {
+   "question": "The same probe and frequency are moved from 7075-T6 aluminum (32 %IACS, μᵣ = 1) to unsaturated carbon steel (≈10 %IACS, μᵣ ≈ 100). The standard depth of penetration:",
+   "options": [
+    "Stays the same — penetration depends only on frequency",
+    "Increases, because steel is less conductive than the aluminum alloy",
+    "Decreases sharply — the large permeability term shrinks δ far more than the lower conductivity enlarges it",
+    "Increases, because permeability helps the field penetrate deeper"
+   ],
+   "correct": 2,
+   "explanation": "δ ∝ 1/√(μᵣ·σ). Steel's lower conductivity alone would deepen penetration, but μᵣ ≈ 100 dominates: at 100 kHz, δ drops from about 0.37 mm in the aluminum to roughly 0.07 mm in the steel. That collapse is why ET of ferromagnetic steel is surface-only work unless magnetic saturation is applied."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Theory Course §2.1.4.6 (relationships of frequency and phase)",
+  "ASNT SNT-TC-1A (2024) — recommended practice governing ET training, qualification, and certification",
+  "Classical skin-effect relations: δ = 1/√(πfμσ); density 37% (1/e) at 1δ, 13.5% at 2δ, 5% at 3δ (effective depth); phase lag β = x/δ radians ≈ 57° per standard depth",
+  "ASTM E309 (eddy current examination of steel tubular products using magnetic saturation — context for the ferromagnetic-steel penetration limit)"
+ ]
+}

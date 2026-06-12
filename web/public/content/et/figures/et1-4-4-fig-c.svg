@@ -1,0 +1,72 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">One Plane, Every Variable — the Combined Map</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A" opacity="0.75">single-frequency surface coil on nonmagnetic alloys (normalized impedance)</text>
+
+  <!-- axes -->
+  <line x1="140" y1="440" x2="710" y2="440" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="707,434 707,446 719,440" fill="#0B1F3A"/>
+  <line x1="140" y1="440" x2="140" y2="65" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="134,68 146,68 140,56" fill="#0B1F3A"/>
+  <line x1="134" y1="136" x2="146" y2="136" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="134" y1="288" x2="146" y2="288" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="340" y1="436" x2="340" y2="444" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="540" y1="436" x2="540" y2="444" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="128" y="141" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">1.0</text>
+  <text x="128" y="293" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0.5</text>
+  <text x="340" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0.2</text>
+  <text x="540" y="462" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">0.4</text>
+  <text x="425" y="487" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">normalized resistance R / X₀</text>
+  <text x="78" y="253" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A" transform="rotate(-90 78 253)">normalized reactance X / X₀</text>
+
+  <!-- liftoff paths (dashed light blue) -->
+  <line x1="470" y1="312" x2="140" y2="136" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="6,5"/>
+  <line x1="300" y1="385" x2="140" y2="136" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="6,5"/>
+
+  <!-- thinning curve (dashed blue) -->
+  <path d="M 470,312 C 560,288 600,205 522,172 C 458,146 300,142 150,138" fill="none" stroke="#1E66F5" stroke-width="2.5" stroke-dasharray="7,5"/>
+  <text x="575" y="212" font-family="Arial, sans-serif" font-size="15" fill="#1E66F5">wall thinning (t &lt; 3δ)</text>
+
+  <!-- conductivity locus -->
+  <path d="M 140,136 C 205,144 266,153 300,172 C 348,200 468,208 498,260 C 512,288 494,306 470,312 C 455,315 449,322 440,331 C 416,356 342,376 300,385" fill="none" stroke="#1E66F5" stroke-width="3"/>
+  <path d="M 300,385 C 268,392 238,397 212,401" fill="none" stroke="#1E66F5" stroke-width="3" stroke-dasharray="4,4"/>
+
+  <!-- alloy points -->
+  <circle cx="300" cy="172" r="5" fill="#1E66F5"/>
+  <circle cx="380" cy="200" r="5" fill="#1E66F5"/>
+  <circle cx="470" cy="312" r="5" fill="#1E66F5"/>
+  <circle cx="440" cy="331" r="5" fill="#1E66F5"/>
+  <circle cx="300" cy="385" r="5" fill="#1E66F5"/>
+  <text x="312" y="166" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">Ti-6Al-4V ≈ 1% IACS</text>
+  <text x="392" y="196" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">304 SS ≈ 2.5%</text>
+  <text x="484" y="320" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">7075-T6 ≈ 32%</text>
+  <text x="452" y="344" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">6061-T6 ≈ 42%</text>
+  <text x="312" y="394" font-family="Arial, sans-serif" font-size="15" fill="#0B1F3A">Cu 100% IACS</text>
+
+  <!-- surface crack response at the 7075 operating point -->
+  <line x1="470" y1="312" x2="452" y2="246" stroke="#1E66F5" stroke-width="3"/>
+  <polygon points="448.8,234.4 457.8,244.4 446.2,247.6" fill="#1E66F5"/>
+
+  <!-- ferromagnetic response above the air point -->
+  <line x1="140" y1="136" x2="182" y2="85" stroke="#0B1F3A" stroke-width="3"/>
+  <polygon points="189.6,75.7 186.6,88.8 177.4,81.2" fill="#0B1F3A"/>
+  <text x="200" y="84" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">ferromagnetic (μr &gt; 1)</text>
+  <text x="200" y="103" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">reactance above the air point</text>
+
+  <!-- air point -->
+  <circle cx="140" cy="136" r="6" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="130" y="118" text-anchor="end" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">air point</text>
+  <line x1="131" y1="121" x2="138" y2="131" stroke="#0B1F3A" stroke-width="1.5"/>
+
+  <!-- legend -->
+  <rect x="572" y="70" width="206" height="110" fill="#FFFFFF" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="582" y1="90" x2="612" y2="90" stroke="#1E66F5" stroke-width="3"/>
+  <text x="620" y="95" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">conductivity locus</text>
+  <line x1="582" y1="115" x2="612" y2="115" stroke="#9BC4FF" stroke-width="2" stroke-dasharray="6,5"/>
+  <text x="620" y="120" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">liftoff path</text>
+  <line x1="582" y1="140" x2="612" y2="140" stroke="#1E66F5" stroke-width="2.5" stroke-dasharray="7,5"/>
+  <text x="620" y="145" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">thinning (t &lt; 3δ)</text>
+  <line x1="582" y1="165" x2="606" y2="165" stroke="#1E66F5" stroke-width="3"/>
+  <polygon points="606,160 606,170 616,165" fill="#1E66F5"/>
+  <text x="620" y="170" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">surface crack response</text>
+</svg>

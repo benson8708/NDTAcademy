@@ -75,6 +75,16 @@ export default function LessonPlayer({
     setXpPop(`+${amount} XP · ${label}`);
     setTimeout(() => setXpPop(null), 1400);
   }, []);
+  // Interactive/simulator/trainer completion can re-fire on re-renders; award
+  // and unlock exactly once per step index.
+  const awardedSteps = useRef<Set<number>>(new Set());
+  const completeStep = useCallback((amount: number, label: string) => {
+    setUnlocked(true);
+    if (!awardedSteps.current.has(idx)) {
+      awardedSteps.current.add(idx);
+      award(amount, label);
+    }
+  }, [award, idx]);
 
   // ----- voiceover (browser speech synthesis) -----
   useEffect(() => {
@@ -389,7 +399,7 @@ export default function LessonPlayer({
           <div className="lp-slide lp-wide">
             <Trainer3D
               config={step.config as unknown as TrainerConfig}
-              onComplete={() => { setUnlocked(true); award(30, "3-D task complete"); }}
+              onComplete={() => completeStep(30, "3-D task complete")}
             />
           </div>
         )}
@@ -400,7 +410,7 @@ export default function LessonPlayer({
               courseId={courseId}
               interactive={step.interactive}
               figureFileById={figureFileById}
-              onComplete={() => { setUnlocked(true); award(25, "exercise complete"); }}
+              onComplete={() => completeStep(25, "exercise complete")}
             />
           </div>
         )}
@@ -410,7 +420,7 @@ export default function LessonPlayer({
             <SimulatorBlock
               sim={step.simulator}
               courseId={courseId}
-              onComplete={() => { setUnlocked(true); award(30, "simulation complete"); }}
+              onComplete={() => completeStep(30, "simulation complete")}
             />
           </div>
         )}
