@@ -1,0 +1,139 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="ellGlow" filterUnits="userSpaceOnUse" x="-30" y="-30" width="660" height="400">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ellGlowS" filterUnits="userSpaceOnUse" x="67" y="-20" width="544" height="370">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ellBlurS" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="1"/>
+    </filter>
+    <linearGradient id="ellSteel" gradientUnits="userSpaceOnUse" x1="0" y1="180" x2="0" y2="256">
+      <stop offset="0" stop-color="#39689a"/>
+      <stop offset=".5" stop-color="#1a3a5f"/>
+      <stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="ellSteelB" gradientUnits="userSpaceOnUse" x1="0" y1="54" x2="0" y2="102">
+      <stop offset="0" stop-color="#39689a"/>
+      <stop offset=".5" stop-color="#1a3a5f"/>
+      <stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="ellCone" gradientUnits="userSpaceOnUse" x1="130" y1="60" x2="279" y2="282">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".28"/>
+      <stop offset=".55" stop-color="#5fe0ff" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".04"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== static caption ===== -->
+  <text x="16" y="26" font-size="11" fill="#9fe6ff" letter-spacing="1.5" opacity=".85">DOUBLE WALL &#183; DOUBLE IMAGE</text>
+
+  <!-- ===== weld plane (vertical reference through both walls) ===== -->
+  <line x1="230" y1="40" x2="230" y2="306" stroke="#7fd8ff" stroke-width="1.2" stroke-dasharray="5 5" opacity=".4"/>
+
+  <!-- ===== small-bore tube, side elevation (both walls in section) ===== -->
+  <rect x="85" y="180" width="300" height="76" fill="url(#ellSteel)"/>
+  <rect x="85" y="196" width="300" height="44" fill="#061224" fill-opacity=".92"/>
+  <g stroke="#8fb6e0" stroke-linecap="round">
+    <line x1="85" y1="180" x2="385" y2="180" stroke-width="2"/>
+    <line x1="85" y1="256" x2="385" y2="256" stroke-width="2"/>
+    <line x1="85" y1="196" x2="385" y2="196" stroke-width="1.5"/>
+    <line x1="85" y1="240" x2="385" y2="240" stroke-width="1.5"/>
+    <line x1="85" y1="180" x2="85" y2="256" stroke-width="1.2" opacity=".45"/>
+    <line x1="385" y1="180" x2="385" y2="256" stroke-width="1.2" opacity=".45"/>
+  </g>
+  <line x1="85" y1="186" x2="385" y2="186" stroke="#5fe0ff" stroke-width="1" opacity=".12"/>
+  <line x1="85" y1="250" x2="385" y2="250" stroke="#5fe0ff" stroke-width="1" opacity=".10"/>
+
+  <!-- ===== circumferential butt weld: band crossing top + bottom walls ===== -->
+  <path d="M223.5 180 Q230 171.5 236.5 180 L234.8 196 Q230 201.5 225.2 196 Z" fill="#2b86ff" stroke="#7fd8ff" stroke-width="1.1"/>
+  <path d="M223.5 180 Q230 171.5 236.5 180" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".9" filter="url(#ellGlowS)"/>
+  <path d="M223.5 256 Q230 264.5 236.5 256 L234.8 240 Q230 234.5 225.2 240 Z" fill="#2b86ff" stroke="#7fd8ff" stroke-width="1.1"/>
+  <path d="M223.5 256 Q230 264.5 236.5 256" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".9" filter="url(#ellGlowS)"/>
+  <text x="244" y="158" font-size="11" fill="#9fe6ff" opacity=".9">GIRTH WELD</text>
+  <path d="M247 162 L234 172" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+  <text x="86" y="274" font-size="11" fill="#9fe6ff" opacity=".85">OD &#8804; 3.5 IN</text>
+
+  <!-- ===== SETUP: source above tube, axially offset + beam fan + film ===== -->
+  <g id="ellOffset" opacity="0">
+    <!-- beam fan through both walls down to film -->
+    <path d="M130 60 L238 282 L320 282 Z" fill="url(#ellCone)"/>
+    <line x1="130" y1="60" x2="238" y2="282" stroke="#5fe0ff" stroke-width="1.2" opacity=".5"/>
+    <line x1="130" y1="60" x2="320" y2="282" stroke="#5fe0ff" stroke-width="1.2" opacity=".5"/>
+
+    <!-- flat film plate below the tube -->
+    <rect x="150" y="282" width="202" height="12" rx="2" fill="#081830" fill-opacity=".95" stroke="#ffc24b" stroke-width="1.4" stroke-linejoin="round"/>
+    <line x1="154" y1="288" x2="348" y2="288" stroke="#ffc24b" stroke-width="1" opacity=".35" stroke-dasharray="3 4"/>
+    <text x="357" y="291" font-size="11" fill="#ffc24b" opacity=".95">FILM</text>
+
+    <!-- gamma source above tube, offset along the pipe axis -->
+    <line x1="130" y1="68" x2="130" y2="177" stroke="#9fe6ff" stroke-width="1" stroke-dasharray="3 4" opacity=".35"/>
+    <circle cx="130" cy="60" r="5" fill="#ffc24b" filter="url(#ellGlowS)"/>
+    <circle cx="130" cy="60" r="2" fill="#fff3d6"/>
+    <g stroke="#ffc24b" stroke-width="1.5" stroke-linecap="round" opacity=".8">
+      <line x1="124" y1="67" x2="120" y2="72"/>
+      <line x1="130" y1="69" x2="130" y2="75"/>
+      <line x1="136" y1="67" x2="140" y2="72"/>
+    </g>
+    <text x="120" y="52" text-anchor="end" font-size="11" fill="#ffc24b" opacity=".95">&#947; SOURCE</text>
+
+    <!-- AXIAL OFFSET arrow: source position to weld plane, along the tube axis -->
+    <line x1="141" y1="60" x2="221" y2="60" stroke="#5fe0ff" stroke-width="1.4"/>
+    <path d="M138 60 L146 56.5 L146 63.5 Z" fill="#5fe0ff"/>
+    <path d="M224 60 L216 56.5 L216 63.5 Z" fill="#5fe0ff"/>
+    <text x="182" y="46" text-anchor="middle" font-size="11" fill="#9fe6ff" letter-spacing="1">AXIAL OFFSET</text>
+  </g>
+
+  <!-- ===== projection rays: top-wall weld displaced, bottom-wall weld near plumb ===== -->
+  <path id="ellRays" d="M130 60 L303.4 282 M130 60 L248.1 282" fill="none" stroke="#eaf6ff" stroke-width="1.4" opacity=".85" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#ellGlow)"/>
+
+  <!-- ===== landings on the film ===== -->
+  <g id="ellLand" opacity="0">
+    <!-- film-side (bottom-wall) weld image: sharp, lands nearly straight down -->
+    <rect x="244.1" y="282.5" width="8" height="9" rx="2" fill="#5fe0ff" filter="url(#ellGlowS)"/>
+    <rect x="246.1" y="284.5" width="4" height="5" rx="1.5" fill="#eaffff" opacity=".85"/>
+    <!-- source-side (top-wall) weld image: wider, displaced along the film -->
+    <rect x="298.4" y="282.5" width="10" height="9" rx="3" fill="#9fe6ff" opacity=".8" filter="url(#ellBlurS)"/>
+    <!-- displacement along the film, from weld plane to source-side landing -->
+    <line x1="233" y1="300" x2="294" y2="300" stroke="#9fe6ff" stroke-width="1.1" opacity=".7"/>
+    <path d="M302 300 L294 296.6 L294 303.4 Z" fill="#9fe6ff" opacity=".8"/>
+    <text x="240" y="313" text-anchor="middle" font-size="10" fill="#5fe0ff">FILM SIDE</text>
+    <text x="312" y="313" text-anchor="middle" font-size="10" fill="#9fe6ff">SOURCE SIDE</text>
+  </g>
+
+  <!-- ===== RADIOGRAPH inset: weld opens into an ellipse ===== -->
+  <g id="ellEllipse" opacity="0">
+    <rect x="402" y="34" width="186" height="196" rx="10" fill="#0a1c36" fill-opacity=".6" stroke="#8fb6e0" stroke-width="1" opacity=".95"/>
+    <text x="495" y="52" text-anchor="middle" font-size="11" fill="#9fe6ff" letter-spacing="1.5">RADIOGRAPH</text>
+    <rect x="414" y="60" width="162" height="138" rx="4" fill="#04101f" stroke="#8fb6e0" stroke-width="1" opacity=".9"/>
+    <ellipse cx="495" cy="128" rx="58" ry="34" fill="none" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="3 4" opacity=".22"/>
+    <!-- upper limb: source-side weld image (displaced, slightly magnified) -->
+    <path d="M437 128 A58 34 0 0 1 553 128" fill="none" stroke="#9fe6ff" stroke-width="6" stroke-linecap="round" opacity=".55" filter="url(#ellBlurS)"/>
+    <!-- lower limb: film-side weld image (sharp) -->
+    <path d="M437 128 A58 34 0 0 0 553 128" fill="none" stroke="#5fe0ff" stroke-width="4.5" stroke-linecap="round" opacity=".95" filter="url(#ellGlowS)"/>
+    <!-- highlight trace draws the ellipse open -->
+    <path id="ellLimbHi" d="M437 128 A58 34 0 0 0 553 128 A58 34 0 0 0 437 128" fill="none" stroke="#eaf6ff" stroke-width="1.4" opacity=".9" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#ellGlowS)"/>
+    <text x="495" y="78" text-anchor="middle" font-size="11" fill="#9fe6ff">SOURCE SIDE</text>
+    <line x1="495" y1="82" x2="495" y2="90" stroke="#9fe6ff" stroke-width="1" opacity=".5"/>
+    <text x="495" y="180" text-anchor="middle" font-size="11" fill="#5fe0ff">FILM SIDE</text>
+    <line x1="495" y1="166" x2="495" y2="170" stroke="#5fe0ff" stroke-width="1" opacity=".5"/>
+    <text x="495" y="217" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".9">READ BOTH &#183; ONE FILM</text>
+  </g>
+
+  <!-- ===== end-view badge: two shots, 90 degrees apart ===== -->
+  <g id="ellRotate" opacity="0">
+    <circle cx="340" cy="78" r="24" fill="url(#ellSteelB)" stroke="#8fb6e0" stroke-width="1.4"/>
+    <circle cx="340" cy="78" r="15" fill="#061224" fill-opacity=".92" stroke="#8fb6e0" stroke-width="1.1"/>
+    <path d="M340 42 A36 36 0 0 1 374.8 68.7" fill="none" stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" filter="url(#ellGlowS)"/>
+    <path d="M371.2 70.6 L376.6 75.6 L379.6 68.9 Z" fill="#5fe0ff"/>
+    <circle cx="340" cy="42" r="3.6" fill="#ffc24b" filter="url(#ellGlowS)"/>
+    <circle cx="376" cy="78" r="3.6" fill="#ffc24b" filter="url(#ellGlowS)"/>
+    <text x="331" y="40" text-anchor="end" font-size="11" fill="#ffc24b" opacity=".9">1</text>
+    <text x="384" y="92" font-size="11" fill="#ffc24b" opacity=".9">2</text>
+    <text x="368" y="46" font-size="11" fill="#9fe6ff">90&#176;</text>
+    <text x="340" y="122" text-anchor="middle" font-size="11" fill="#9fe6ff">2 SHOTS @ 90&#176;</text>
+  </g>
+</svg>

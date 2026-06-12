@@ -1,0 +1,132 @@
+{
+ "lessonId": "ut1-4-1",
+ "title": "Piezoelectricity and Transducer Elements",
+ "narrationScript": "Unscrew the housing of a contact probe, and at the heart of it you will find a thin disc, often smaller than a shirt button. That disc does the two hardest jobs in ultrasonic testing. It turns electrical pulses into mechanical vibration, and it turns returning vibration back into electricity. Everything else, the cable, the instrument, the screen, exists to serve it. This lesson is about that disc, the piezoelectric element. Piezoelectricity is a property of certain crystals and ceramics. Squeeze the material, and electric charge appears on its faces. Release it, and the charge reverses. That is the direct piezoelectric effect, and it is how a probe receives. A returning echo presses on the element, the element produces a small voltage, and the receiver amplifies that voltage into a signal on the screen. The effect also runs backward. Apply a voltage across the element, and it physically changes thickness, swelling or shrinking depending on the polarity. That is the inverse piezoelectric effect, and it is how a probe transmits. The instrument hits the element with a brief electrical spike, typically a few hundred volts lasting a fraction of a microsecond. The element snaps into vibration like a struck bell, pushes against the part through the couplant, and launches a stress wave. So one component is both the loudspeaker and the microphone, swapping roles hundreds or thousands of times every second. The first elements were natural crystals. Quartz is rugged, stable, and immune to aging, but it is a poor converter of electrical energy into sound. It needs a high drive voltage to produce a usable pulse, so today it survives mostly in history questions. Lithium sulfate came next, and it remains the best receiver among the classic materials, but it dissolves in water and cannot take much heat, so it had to be sealed and babied. Modern probes use manufactured ceramics instead. These start life with no piezoelectric behavior at all. The manufacturer heats the ceramic above a critical temperature called the Curie point, applies a strong electric field, and lets the ceramic cool with the field still on. The internal electric domains line up and freeze in place, and the ceramic becomes permanently polarized and strongly piezoelectric. Remember the flip side of that process. Heat the element back above its Curie point, even once, and the domains scramble. The element is depoled, and the probe is dead. That is why you never park a standard contact probe on a hot surface and walk away. Barium titanate was the first useful ceramic, but its Curie point is low, near one hundred twenty degrees Celsius, and better materials replaced it. Lead zirconate titanate, which everyone calls P Z T, is the workhorse of the industry. It is an efficient transmitter, a good receiver, and its Curie point sits comfortably above three hundred degrees Celsius in common formulations. Lead metaniobate is the specialist. Its own internal structure damps the ringing, so it naturally produces short, clean pulses that are excellent for resolution work, at some cost in sensitivity. The newest family is the piezocomposite, fine rods of P Z T standing in a polymer matrix. Composites combine high sensitivity with broad bandwidth, and their lower acoustic impedance pushes energy into water, plastics, and curved parts more efficiently. They are standard in premium probes and in phased array. Finally, the rule that ties the element to the number printed on your probe. An element resonates when its thickness equals half a wavelength of sound inside the element material. That gives a simple formula. Frequency equals the sound velocity in the element divided by twice the element thickness. Thin elements ring fast, and thick elements ring slow. Run the numbers for a common ceramic with a velocity around four thousand meters per second. A two and a quarter megahertz element is a bit under one millimeter thick. A five megahertz element is only about four tenths of a millimeter. A ten megahertz element is half that again, about two tenths of a millimeter, thin enough to crack under a careless thumb. That fragility is why high frequency probes get wear plates, delay lines, and gentle handling. Know the element, and the rest of the probe makes sense.",
+ "imagePrompt": "Close-up of a technician's gloved fingers holding a disassembled ultrasonic contact probe above a workbench, with the thin silvery piezoelectric disc, dark backing block, and wear plate laid out in a row beside a flaw detector.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "One Element, Two Jobs",
+   "body": "Strip away the case, cable, and connector, and an ultrasonic transducer is a thin disc of piezoelectric material with an electrode on each face. That disc performs both conversions the method depends on:\n\n- **Transmitting:** the instrument's pulser hits the element with a short electrical spike — typically a few hundred volts lasting a fraction of a microsecond. The element deforms violently, rings briefly at its natural frequency, and drives a stress wave into the part through the couplant.\n- **Receiving:** a returning echo presses on the same element, which generates a voltage of only millivolts or less. The receiver amplifies that tiny signal into the echo you see on the A-scan.\n\nIn pulse-echo work the one element alternates between these roles at the pulse repetition rate — hundreds or thousands of times per second. The element transmits for about a microsecond, then sits quietly listening for the next several hundred microseconds. Strictly, the **element** is the piezoelectric disc; the assembled unit of element, backing, wear face, housing, and connector is the **transducer** or **probe** (search unit). The terms blur in the field, but on an exam the distinction can matter."
+  },
+  {
+   "type": "text",
+   "heading": "The Piezoelectric Effect, Forward and Reverse",
+   "body": "Piezoelectricity is a property of materials whose internal electric charges are arranged without a center of symmetry. Squeeze such a material and the charge distribution shifts: a measurable voltage appears across its faces. That is the **direct piezoelectric effect** — pressure in, electricity out — and it is the receiving mechanism. Run it the other way and you get the **inverse (reverse) piezoelectric effect**: apply a voltage across the element and it physically changes thickness, expanding or contracting with the polarity. That is the transmitting mechanism.\n\nNatural crystals such as quartz are born piezoelectric. Modern ceramic elements are not — they are **polarized** (poled) at the factory. The ceramic is heated above a critical temperature called the **Curie point**, a strong DC field is applied, and the material is cooled with the field still on. Its internal domains align and lock, leaving the ceramic permanently polarized.\n\nThe flip side: heat a poled element above its Curie point and the domains scramble — the element is **depoled** and the probe is permanently dead. Rough handling and severe shock can degrade polarization too. This is why standard probes are never left sitting on hot surfaces, and why high-temperature inspection uses special probes and timed-contact techniques."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-4-1-fig-a",
+   "caption": "The same element transmits by the inverse piezoelectric effect (voltage in, vibration out) and receives by the direct effect (echo pressure in, voltage out)."
+  },
+  {
+   "type": "text",
+   "heading": "Element Materials and Their Trade-offs",
+   "body": "Every element material is a compromise among transmitting efficiency, receiving sensitivity, temperature limit, and durability.\n\n- **Quartz** (historic): extremely stable, rugged, insoluble, and immune to aging — but a very inefficient transmitter that needs high drive voltage. Largely obsolete except in some reference applications.\n- **Lithium sulfate** (historic): the best receiver of the classic materials and a good acoustic match to water, but it dissolves in water, is fragile, and tolerates only about 75 °C.\n- **Barium titanate**: the first polarized ceramic — a strong transmitter, but with a Curie point near 115–120 °C and a tendency to age. Superseded.\n- **Lead zirconate titanate (PZT)**: today's workhorse. Efficient as both transmitter and receiver, with Curie points well above 300 °C in common formulations.\n- **Lead metaniobate**: strong internal damping gives naturally short, broadband pulses — excellent resolution at some cost in sensitivity, plus a high Curie point.\n- **Piezocomposites**: fine PZT rods embedded in polymer. High sensitivity *and* broad bandwidth, with lower acoustic impedance that couples well into water, plastics, and curved surfaces. Standard in premium conventional and phased-array probes."
+  },
+  {
+   "type": "table",
+   "caption": "Transducer element materials compared — every choice trades sensitivity, resolution, and temperature tolerance.",
+   "headers": ["Material", "Strength", "Weakness", "Typical role"],
+   "rows": [
+    ["Quartz", "Stability, ruggedness, no aging", "Very inefficient transmitter (high voltage needed)", "Historic / reference"],
+    ["Lithium sulfate", "Best receiver of the classics", "Water-soluble, fragile, ~75 °C limit", "Historic"],
+    ["Barium titanate", "Strong transmitter (first ceramic)", "Low Curie point (~115–120 °C), ages", "Superseded"],
+    ["PZT (lead zirconate titanate)", "Efficient both ways; Curie point > 300 °C", "Moderate internal damping only", "General-purpose workhorse"],
+    ["Lead metaniobate", "Internally damped — short pulse, broadband", "Lower sensitivity", "High-resolution probes"],
+    ["Piezocomposite (PZT + polymer)", "High sensitivity and bandwidth; lower impedance", "Cost", "Premium and phased-array probes"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Element Thickness Sets the Frequency",
+   "body": "An element driven by a spike rings at its **fundamental resonance**, which occurs when the element thickness equals **half a wavelength** of sound in the element material. From λ = v/f that gives the design equation:\n\n**f = v ÷ (2t)**  or equivalently  **t = v ÷ (2f)**\n\nwhere v is the sound velocity *in the element material* and t is the element thickness. Thinner element → higher frequency.\n\nWorked examples for a PZT-type ceramic with v ≈ 4,000 m/s (4.0 mm/µs):\n\n- **2.25 MHz**: t = 4.0 ÷ (2 × 2.25) ≈ **0.89 mm**\n- **5 MHz**: t = 4.0 ÷ 10 = **0.40 mm**\n- **10 MHz**: t = 4.0 ÷ 20 = **0.20 mm**\n\nFor the same frequency a quartz element (v ≈ 5,740 m/s) is thicker than a PZT element — velocity in the element matters as much as frequency. The practical consequence: high-frequency elements are paper-thin and fragile, which is why they get protective wear faces or delay lines and why dropping a 10 MHz probe is an expensive mistake. The frequency on the probe label is **nominal**; heavily damped probes actually emit a band of frequencies around a measured center frequency, which is characterized rather than assumed for critical work."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-4-1-fig-b",
+   "caption": "At resonance the element thickness is half a wavelength in the element material, so each doubling of frequency halves the element thickness."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Carry these out of the lesson",
+   "body": "Direct effect = **receive** (pressure → voltage). Inverse effect = **transmit** (voltage → motion). Ceramic elements are poled above the **Curie point** and die if reheated past it — keep standard probes off hot surfaces. Resonance: **t = λ/2 in the element**, so **f = v ÷ 2t**; a 5 MHz PZT element is only ~0.4 mm thick."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-4-1-fig-a",
+   "title": "The piezoelectric effect: transmit and receive",
+   "file": "ut1-4-1-fig-a.svg"
+  },
+  {
+   "id": "ut1-4-1-fig-b",
+   "title": "Element thickness versus resonant frequency",
+   "file": "ut1-4-1-fig-b.svg"
+  }
+ ],
+ "interactive": null,
+ "checkQuestions": [
+  {
+   "question": "When a returning echo strikes the element and produces the voltage the receiver amplifies, the probe is using:",
+   "options": [
+    "The inverse piezoelectric effect",
+    "The direct piezoelectric effect",
+    "Magnetostriction",
+    "The Curie effect"
+   ],
+   "correct": 1,
+   "explanation": "Receiving is the direct effect — mechanical pressure generates electric charge. The inverse effect (voltage producing motion) is the transmitting mechanism."
+  },
+  {
+   "question": "A PZT-type element has a sound velocity of about 4,000 m/s (4.0 mm/µs) and a thickness of 0.5 mm. Its fundamental resonant frequency is approximately:",
+   "options": [
+    "2 MHz",
+    "8 MHz",
+    "4 MHz",
+    "1 MHz"
+   ],
+   "correct": 2,
+   "explanation": "f = v ÷ (2t) = 4.0 mm/µs ÷ (2 × 0.5 mm) = 4 MHz. The element is half a wavelength thick at resonance."
+  },
+  {
+   "question": "A technician leaves a standard PZT contact probe lying on a 400 °C vessel shell during a break. The most likely result is:",
+   "options": [
+    "The element is depoled above its Curie point and the probe is permanently ruined",
+    "The probe's frequency permanently doubles",
+    "Nothing — ceramic elements are unaffected by heat",
+    "The element becomes more sensitive once it cools"
+   ],
+   "correct": 0,
+   "explanation": "Heating a polarized ceramic above its Curie point scrambles the aligned domains and permanently destroys its piezoelectric behavior. Hot-surface work needs special probes and techniques."
+  },
+  {
+   "question": "Which element material is the general-purpose workhorse of modern contact probes — efficient as both transmitter and receiver with a high Curie point?",
+   "options": [
+    "Quartz",
+    "Lithium sulfate",
+    "Barium titanate",
+    "Lead zirconate titanate (PZT)"
+   ],
+   "correct": 3,
+   "explanation": "PZT converts efficiently in both directions and keeps its polarization to well above 300 °C in common formulations, which made it the industry standard. Quartz transmits poorly and lithium sulfate is water-soluble and heat-limited."
+  },
+  {
+   "question": "Compared with a 5 MHz element of the same material, a 10 MHz element is:",
+   "options": [
+    "Twice as thick",
+    "Half as thick — and therefore more fragile",
+    "The same thickness with a different backing",
+    "Four times thinner"
+   ],
+   "correct": 1,
+   "explanation": "Thickness is inversely proportional to frequency (t = v ÷ 2f), so doubling the frequency halves the element thickness — about 0.2 mm for 10 MHz PZT, which is why high-frequency probes need protection and careful handling."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, Basic UT Course §3.3–3.3.3 (transducer operation, piezoelectric effect, element types, frequency–thickness)",
+  "Resonance relationship: t = λ/2 in the element; f = v ÷ 2t",
+  "Typical element velocities: PZT ≈ 4,000 m/s; quartz ≈ 5,740 m/s (reference values)"
+ ]
+}

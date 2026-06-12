@@ -1,0 +1,79 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="32" text-anchor="middle" font-size="23" font-weight="bold" fill="#0B1F3A">The AE Signal Processing Chain</text>
+  <text x="400" y="55" text-anchor="middle" font-size="15" fill="#1E66F5">microvolts at the sensor &#8212; decisions at the threshold</text>
+
+  <!-- row 1: sensor -->
+  <rect x="30" y="95" width="100" height="65" rx="4" fill="#0B1F3A"/>
+  <text x="80" y="122" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">SENSOR</text>
+  <text x="80" y="142" text-anchor="middle" font-size="12" fill="#9BC4FF">PZT &#183; ~150 kHz</text>
+  <text x="80" y="178" text-anchor="middle" font-size="12" font-style="italic" fill="#1E66F5">microvolts out</text>
+
+  <!-- short low-noise cable -->
+  <line x1="130" y1="127" x2="200" y2="127" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="200,121 200,133 210,127" fill="#0B1F3A"/>
+  <text x="170" y="113" text-anchor="middle" font-size="11" fill="#0B1F3A">low-noise coax</text>
+  <text x="170" y="148" text-anchor="middle" font-size="11" font-style="italic" fill="#1E66F5">keep short (&#8804;2 m)</text>
+
+  <!-- preamplifier -->
+  <rect x="210" y="95" width="155" height="65" rx="4" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="287" y="120" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">PREAMPLIFIER</text>
+  <text x="287" y="140" text-anchor="middle" font-size="12" fill="#1E66F5">gain 40 dB + bandpass</text>
+  <text x="287" y="178" text-anchor="middle" font-size="12" font-style="italic" fill="#1E66F5">often built into the sensor</text>
+
+  <!-- long signal cable -->
+  <line x1="365" y1="127" x2="608" y2="127" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="608,121 608,133 618,127" fill="#0B1F3A"/>
+  <line x1="395" y1="119" x2="405" y2="135" stroke="#1E66F5" stroke-width="1.5"/>
+  <line x1="445" y1="119" x2="455" y2="135" stroke="#1E66F5" stroke-width="1.5"/>
+  <line x1="495" y1="119" x2="505" y2="135" stroke="#1E66F5" stroke-width="1.5"/>
+  <line x1="545" y1="119" x2="555" y2="135" stroke="#1E66F5" stroke-width="1.5"/>
+  <text x="491" y="105" text-anchor="middle" font-size="11" fill="#0B1F3A">shielded coax &#183; 100&#8211;300 m</text>
+  <text x="491" y="150" text-anchor="middle" font-size="11" font-style="italic" fill="#1E66F5">28 V phantom power on the same line</text>
+
+  <!-- main amplifier -->
+  <rect x="618" y="95" width="152" height="65" rx="4" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="694" y="118" text-anchor="middle" font-size="14" font-weight="bold" fill="#0B1F3A">MAIN AMPLIFIER</text>
+  <text x="694" y="136" text-anchor="middle" font-size="12" fill="#1E66F5">adjustable gain (dB)</text>
+  <text x="694" y="152" text-anchor="middle" font-size="12" fill="#1E66F5">+ bandpass filters</text>
+
+  <!-- down connector -->
+  <line x1="694" y1="160" x2="694" y2="228" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="688,228 700,228 694,238" fill="#0B1F3A"/>
+  <text x="706" y="200" font-size="11" font-style="italic" fill="#1E66F5">signal conditioning done</text>
+
+  <!-- row 2: threshold detector -->
+  <rect x="592" y="238" width="178" height="80" rx="4" fill="#FFFFFF" stroke="#1E66F5" stroke-width="3"/>
+  <text x="681" y="262" text-anchor="middle" font-size="14" font-weight="bold" fill="#0B1F3A">THRESHOLD DETECTOR</text>
+  <text x="681" y="281" text-anchor="middle" font-size="12" fill="#1E66F5">fixed or floating &#183; 35&#8211;45 dB typ.</text>
+  <text x="681" y="299" text-anchor="middle" font-size="12" fill="#1E66F5">hit timing: PDT &#183; HDT &#183; HLT</text>
+
+  <!-- arrow threshold -> features -->
+  <line x1="592" y1="278" x2="556" y2="278" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="556,272 556,284 546,278" fill="#0B1F3A"/>
+
+  <!-- feature extraction -->
+  <rect x="330" y="238" width="216" height="80" rx="4" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="438" y="262" text-anchor="middle" font-size="14" font-weight="bold" fill="#0B1F3A">FEATURE EXTRACTION</text>
+  <text x="438" y="281" text-anchor="middle" font-size="12" fill="#1E66F5">amplitude &#183; counts &#183; duration</text>
+  <text x="438" y="299" text-anchor="middle" font-size="12" fill="#1E66F5">rise time &#183; energy (MARSE)</text>
+
+  <!-- arrow features -> location/display -->
+  <line x1="330" y1="278" x2="294" y2="278" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="294,272 294,284 284,278" fill="#0B1F3A"/>
+
+  <!-- location + display -->
+  <rect x="30" y="238" width="254" height="80" rx="6" fill="#0B1F3A"/>
+  <text x="157" y="263" text-anchor="middle" font-size="14" font-weight="bold" fill="#FFFFFF">&#916;T LOCATION &#183; DISPLAYS</text>
+  <text x="157" y="283" text-anchor="middle" font-size="12" fill="#9BC4FF">activity vs load &#183; amplitude plots</text>
+  <text x="157" y="301" text-anchor="middle" font-size="12" fill="#9BC4FF">location maps &#183; zone alarms</text>
+
+  <!-- raw data storage -->
+  <line x1="438" y1="318" x2="438" y2="356" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="432,356 444,356 438,366" fill="#0B1F3A"/>
+  <rect x="330" y="366" width="216" height="48" rx="4" fill="#9BC4FF" fill-opacity="0.35" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="438" y="386" text-anchor="middle" font-size="13" font-weight="bold" fill="#0B1F3A">RAW DATA STORAGE</text>
+  <text x="438" y="404" text-anchor="middle" font-size="12" fill="#1E66F5">post-test software filters are reversible</text>
+
+  <text x="400" y="441" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">front-end settings are forever &#8212; what the chain rejects before storage cannot be recovered later</text>
+</svg>

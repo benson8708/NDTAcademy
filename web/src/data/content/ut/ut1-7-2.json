@@ -1,0 +1,173 @@
+{
+ "lessonId": "ut1-7-2",
+ "title": "Water Path, Focused Transducers, and Curved Parts",
+ "narrationScript": "The water between the transducer and the part is not just coupling. Its length is a setting you choose deliberately, because it decides where the front surface echo lands on your screen and whether the part interior is clear to read. Let's get the water path right first. Sound travels through water at about one thousand four hundred eighty meters per second, but through steel at about five thousand nine hundred twenty, four times faster. That four to one velocity ratio is the number that governs immersion setup. Here is the problem it creates. After the sound enters the part, it bounces off the back wall and returns, giving a back wall echo. But the water surface also produces a second front surface echo, the sound that reflected off the entry face, traveled back up to the probe, reflected again, and made a second trip down. If the water path is too short, that second front surface echo lands right on top of the back wall echo and confuses the screen. To keep them apart, the rule is to set the water path at least equal to the part thickness divided by the velocity ratio. For steel that is one quarter of the thickness, because the back wall echo returns in the time sound would cross just a quarter of that thickness of water. So a twenty five millimeter steel plate needs a water path of at least about six millimeters, and good practice adds a small margin, commonly another six millimeters or a quarter inch, so the echoes clear comfortably. Set the water path with that rule and the interior of the part sits in a clean window with no overlap. Now focusing. A flat immersion transducer sends out a roughly cylindrical beam that spreads with distance. A focused immersion transducer puts an acoustic lens on the front, usually a concave face, that squeezes the beam down to a small, bright focal spot at a set distance. Why bother? Two big wins. First, sensitivity. Concentrating the same energy into a smaller spot raises the amplitude from a small reflector and sharpens lateral resolution, so you can separate two flaws that sit close together and you can find smaller ones. Second, signal to noise. In a noisy, coarse grained material, the focused spot collects less grain scatter from the surrounding volume, so the flaw stands taller above the grass on the screen. There is a catch worth remembering. When a beam focused in water enters metal, the higher velocity of the metal refracts the rays and the focal point moves. The focus shortens in the metal by roughly the velocity ratio, so a probe focused at a certain depth in water focuses much shallower once the sound is inside steel. You select a focused probe by where you need the focal zone, near the surface, at mid wall, or deep, and you account for that shift. Finally, curved surfaces, because real parts are rarely flat. Picture a straight beam aimed at the center of a round bar or a pipe from outside. The convex surface acts like a diverging lens. It spreads the beam, scatters energy, and weakens the signal, exactly the opposite of focusing. A concave surface, like the bore of a pipe seen from inside, does the reverse and tends to converge the beam. To fight the divergence on a convex part, you choose a transducer focused to compensate, often a probe with a cylindrical or spherical focus matched to the radius, so the curved surface and the lens together restore a useful beam. And aiming matters enormously. On a round part, the sound must enter along a line that passes through the center, the true radial direction, or the curved surface refracts the beam off to the side and you lose it. A small steering error becomes a big miss on a tight radius. The same physics that bends the beam by accident can be used on purpose. By tilting the transducer so the beam strikes the curved surface away from the radial line, you set an angle of incidence, refract a shear wave into the part, and inspect a weld or a near surface zone at an angle, all without ever changing the probe. That deliberate use of incident angle in water is the bridge to the next lesson, where a few degrees of tilt turns a normal beam into a plate wave or an angled shear inspection.",
+ "imagePrompt": "A focused immersion transducer on a manipulator arm aims down through clear tank water at a curved steel pipe section, the converging sound beam visible as a narrowing cone toward the pipe wall, flaw detector screen showing a sharp front-surface echo.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Water Path Is a Setting",
+   "body": "The water between the transducer and the part is more than coupling — its **length is a deliberate setting**, because it controls where echoes land on the time base and whether the part interior reads cleanly.\n\nThe governing number is the **velocity ratio**. Sound travels through water at about **1,480 m/s** but through steel at about **5,920 m/s** — roughly **four times faster**. Sound therefore covers four millimeters of steel in the time it crosses one millimeter of water. This 4:1 ratio (for steel) drives every immersion timing decision.\n\nThe problem it creates is a competing echo. After the sound enters the part it reflects off the back wall, giving the wanted **back-wall echo**. But the entry face also produces a **second front-surface echo**: energy that reflected off the front face, returned to the probe, reflected again, and made a second round trip. If the water path is too short, that second front-surface echo lands on top of the back-wall echo and the screen becomes ambiguous. Setting the water path correctly keeps the interior of the part in a clean, unobstructed window."
+  },
+  {
+   "type": "text",
+   "heading": "Calculating Minimum Water Path",
+   "body": "To keep the second front-surface echo from overlapping the first back-wall echo, the water-path round trip must take longer than the back-wall round trip in the metal. Because sound is about four times slower in water, only a quarter of the thickness is needed — set the water path at least equal to the part thickness divided by the velocity ratio:\n\n- **Minimum water path = part thickness × (v_water ÷ v_part)**\n- For steel, v_part ÷ v_water ≈ 5,920 ÷ 1,480 ≈ **4**, so **minimum water path ≈ thickness ÷ 4**.\n\nGood practice adds a small **margin** — commonly **+6 mm (¼ in.)** — so the echoes separate comfortably rather than just barely.\n\nWorked examples for carbon steel:\n\n- **25 mm plate:** 25 ÷ 4 ≈ 6 mm minimum; set about **12 mm** with margin.\n- **12.7 mm (½ in.) plate:** 12.7 ÷ 4 ≈ 3 mm; set about **9 mm**.\n- **50 mm forging:** 50 ÷ 4 = 12.5 mm minimum; about **19 mm** with margin.\n\nThe ratio differs by material — aluminum's higher longitudinal velocity (≈ 6,320 m/s) gives a slightly larger ratio against water, so a slightly smaller minimum — but the method is identical: divide thickness by the part-to-water velocity ratio, then add a margin. Set it too short and the interior is masked; far too long wastes screen range and adds delay, so size it to the rule. (Multiplying by the ratio instead of dividing — the classic inversion error — gives a path 16 times longer than the rule requires.)"
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-7-2-fig-a",
+   "caption": "Setting the water path to at least one quarter of the steel thickness (plus a small margin) keeps the second front-surface echo clear of the first back-wall echo, leaving a clean interior window."
+  },
+  {
+   "type": "text",
+   "heading": "Focused Transducers: Sharper and Quieter",
+   "body": "A **flat** immersion transducer radiates a roughly cylindrical beam that spreads with distance. A **focused** immersion transducer adds an **acoustic lens** — usually a concave face — that converges the beam to a small, bright **focal spot** at a designed distance. Focusing buys two things that matter to an inspector:\n\n- **Sensitivity and lateral resolution.** Concentrating the same energy into a smaller spot raises the echo amplitude from a small reflector and lets you separate two flaws that sit close together. Smaller reflectors become detectable in the focal zone.\n- **Signal-to-noise ratio.** In coarse-grained or noisy material, the tight focal spot collects less grain scatter from the surrounding volume, so the flaw signal stands taller above the background 'grass.'\n\nFocused probes come with **spherical (point) focus** for pinpoint sensitivity or **cylindrical (line) focus** for scanning along a feature. You choose the probe by **where you need the focal zone** — near the surface, at mid-wall, or deep — accepting that the sharp benefit applies over the limited depth of the focal zone, not the whole thickness."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The focal point shifts when sound enters metal",
+   "body": "A probe's stated focal length is its focus **in water**. When the beam crosses into steel, the higher velocity refracts the rays and the focus **shortens** by roughly the **velocity ratio** (about 4:1 for steel). A probe focused deep in water focuses much **shallower** in the metal — always select and verify the focal depth in the actual material, not from the water-path number alone."
+  },
+  {
+   "type": "text",
+   "heading": "Curved Surfaces Bend the Beam",
+   "body": "Real parts are rarely flat, and curvature acts on the beam like a lens. Aim a straight beam at the outside of a **round bar or pipe**: the **convex** entry surface behaves like a **diverging lens**, spreading the beam, scattering energy, and weakening the signal — the opposite of focusing. A **concave** surface (the bore of a pipe seen from inside) does the reverse and tends to **converge** the beam.\n\nTwo techniques manage this:\n\n- **Compensating focus.** To counter divergence on a convex part, select a transducer **focused to match the radius** — often a cylindrical or spherical focus chosen so the lens and the curved surface together restore a useful, concentrated beam.\n- **Radial aiming.** On a round part, the beam must enter along a line that passes through the **center (true radial direction)**. Off-axis, the curved surface refracts the beam to the side and you lose it. The tighter the radius, the less steering error it tolerates — a small misalignment becomes a large miss."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-7-2-fig-b",
+   "caption": "On a convex surface a straight beam diverges and weakens; aiming through the center and using a focus matched to the radius restores a concentrated beam."
+  },
+  {
+   "type": "text",
+   "heading": "Manipulating the Beam by Intent",
+   "body": "The same physics that bends a beam by accident can be used on purpose. By **tilting the transducer** so the beam strikes the surface **away from the radial (or surface-normal) line**, you create a controlled **angle of incidence** in the water. Through refraction and mode conversion, that incident angle launches a **refracted shear wave** into the part, letting you inspect a weld or a near-surface zone at an angle — all without changing the probe, since the angle is set by the manipulator, not by a fixed wedge.\n\nThis is the great flexibility of immersion: one transducer plus a manipulator can do **normal-incidence** straight-beam work (entry face square to the beam) or **angled-incidence** shear-wave work (probe tilted by a chosen angle) on the same part in the same tank. Choosing that incident angle precisely — and pushing it far enough to generate plate and surface waves — is exactly where the next lesson begins."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-7-2-fig-a",
+   "title": "Water-path rule and echo separation",
+   "file": "ut1-7-2-fig-a.svg"
+  },
+  {
+   "id": "ut1-7-2-fig-b",
+   "title": "Beam behavior on curved surfaces",
+   "file": "ut1-7-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Setting Up an Immersion Scan of a 25 mm Steel Plate",
+  "intro": "You are configuring a full-immersion, normal-incidence inspection of a 25 mm carbon-steel plate using a focused immersion transducer. Make the setup decisions a Level II will expect — water path, focusing, and echo interpretation.",
+  "steps": [
+   {
+    "prompt": "What is the minimum water path that keeps the second front-surface echo clear of the first back-wall echo? (Steel longitudinal ≈ 5,920 m/s, water ≈ 1,480 m/s.)",
+    "options": ["25 mm", "100 mm", "6 mm"],
+    "correct": 2,
+    "feedback": "Minimum water path = thickness × (v_water ÷ v_part) = 25 × (1,480 ÷ 5,920) = 25 ÷ 4 ≈ 6 mm. Good practice then adds about 6 mm of margin, for a standoff of roughly 12 mm. (25 × 4 = 100 mm is the inverted rule.)"
+   },
+   {
+    "prompt": "You set the water path far longer than needed — say 400 mm. What is the main penalty?",
+    "options": [
+     "The interior echoes overlap and become unreadable",
+     "Nothing useful is gained; screen range and time delay are wasted, and coupling losses grow",
+     "The front-surface echo disappears entirely"
+    ],
+    "correct": 1,
+    "feedback": "Beyond the minimum-plus-margin, extra water path just consumes screen range and adds delay; size it to the rule rather than overshooting."
+   },
+   {
+    "prompt": "The probe is rated to focus at 90 mm in water. Roughly where will it actually focus once the sound enters the steel?",
+    "options": [
+     "At about 90 mm deep in the steel",
+     "Much shallower — the focus shortens by roughly the 4:1 velocity ratio",
+     "It will not focus in steel at all"
+    ],
+    "correct": 1,
+    "feedback": "The stated focal length is in water; the higher velocity of steel shortens the focus by roughly the velocity ratio, so the real focal depth in metal is far shallower. Verify in the actual material."
+   },
+   {
+    "prompt": "Why choose a focused probe over a flat one for finding small, closely spaced flaws in coarse-grained steel?",
+    "options": [
+     "It increases the water path automatically",
+     "It concentrates energy into a small spot, raising sensitivity and signal-to-noise by collecting less grain scatter",
+     "It eliminates the front-surface echo"
+    ],
+    "correct": 1,
+    "feedback": "Focusing concentrates the same energy into a tight focal spot — higher amplitude from small reflectors, better lateral resolution, and less surrounding grain scatter, so flaws stand above the noise."
+   },
+   {
+    "prompt": "You now need to inspect the outside of a round bar with a straight beam. What happens if you aim slightly off the bar's center line?",
+    "options": [
+     "The convex surface refracts the beam off to the side and the signal is lost",
+     "The signal improves because the surface focuses the beam",
+     "Nothing changes; curvature has no effect on a straight beam"
+    ],
+    "correct": 0,
+    "feedback": "A convex surface diverges and steers the beam; entering off the radial line refracts it sideways. On a tight radius even a small aiming error becomes a large miss — aim through the center."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A 50 mm thick steel forging is inspected by immersion. What is the minimum water path to keep the interior echoes clear (steel ≈ 5,920 m/s, water ≈ 1,480 m/s)?",
+   "options": ["≈ 6 mm", "≈ 13 mm", "≈ 50 mm", "≈ 200 mm"],
+   "correct": 1,
+   "explanation": "Minimum water path = thickness × (v_water ÷ v_part) = 50 ÷ 4 = 12.5 mm; in practice add about 6 mm of margin (≈ 19 mm). Multiplying by the ratio instead — 200 mm — is the classic inversion of the rule."
+  },
+  {
+   "question": "The minimum-water-path rule exists primarily to:",
+   "options": [
+    "Cool the transducer during long scans",
+    "Prevent the second front-surface echo from overlapping the first back-wall echo",
+    "Increase the beam's focal length",
+    "Reduce the frequency of the probe"
+   ],
+   "correct": 1,
+   "explanation": "If the water path is too short, the multiple front-surface reflection lands on top of the back-wall echo; the rule sets enough delay to separate them."
+  },
+  {
+   "question": "A focused immersion transducer improves signal-to-noise ratio in coarse-grained material mainly because:",
+   "options": [
+    "It lowers the test frequency",
+    "Its tight focal spot collects less grain scatter from surrounding material, so the flaw stands above the noise",
+    "It removes the need for a water path",
+    "It converts the longitudinal wave to a surface wave"
+   ],
+   "correct": 1,
+   "explanation": "Concentrating energy into a small focal spot raises the flaw amplitude while gathering less scatter from the surrounding grain, increasing signal-to-noise."
+  },
+  {
+   "question": "A probe is specified to focus at 100 mm in water. When the beam enters steel, the focal point will:",
+   "options": [
+    "Move deeper, to about 400 mm in the steel",
+    "Stay at 100 mm regardless of material",
+    "Shift shallower, because the higher velocity of steel shortens the focus by roughly the velocity ratio",
+    "Disappear, because steel cannot be focused"
+   ],
+   "correct": 2,
+   "explanation": "The stated focal length is in water; the higher metal velocity refracts the rays so the focus shortens by approximately the velocity ratio, giving a much shallower focal depth in steel."
+  },
+  {
+   "question": "When inspecting the convex outer surface of a round bar with a normal-incidence beam, the curvature tends to:",
+   "options": [
+    "Converge the beam, increasing amplitude",
+    "Diverge the beam, spreading energy and weakening the signal",
+    "Have no effect on the beam",
+    "Convert the wave to a Lamb wave"
+   ],
+   "correct": 1,
+   "explanation": "A convex surface acts like a diverging lens, spreading the beam and reducing amplitude; a focus matched to the radius and radial aiming counteract this."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Technique Course §1.2.4 (sound beam path, transducer to part)",
+  "CP-105-2024 UT Technique Course §1.2.5 (focused transducers)",
+  "CP-105-2024 UT Technique Course §1.2.6 (curved surfaces)",
+  "Standard relationships: minimum water path = thickness × (v_water / v_part) ≈ thickness ÷ 4 for steel; steel/water velocity ratio ≈ 4:1",
+  "Reference velocities: steel longitudinal 5,920 m/s; water 1,480 m/s"
+ ]
+}

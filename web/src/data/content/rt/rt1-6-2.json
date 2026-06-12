@@ -1,0 +1,174 @@
+{
+ "lessonId": "rt1-6-2",
+ "title": "Geometric Exposure Principles",
+ "narrationScript": "Strip away the electronics and the chemistry, and a radiograph is a shadow. The source plays the role of a light bulb, the part casts the shadow, and the film catches it. Everything we call geometric technique comes from thinking honestly about shadows. Hold your hand near a wall under a single bare bulb and you see a crisp shadow about the same size as your hand. Move your hand toward the bulb and the shadow grows, and its edges go soft. Tilt your hand and the shadow stretches out of shape. Radiation does exactly the same things, with one difference that matters. The shadow is cast through the part, not just around it, so internal features cast shadows too. Five rules give you a sharp, true shadow, and they are worth memorizing as a set. Keep the source as small as possible. Keep the source far from the part. Keep the film close against the part. Keep the film perpendicular to the beam. And aim the central ray straight through the area of interest. Break any one of them and the image pays for it. Start with size. Because the rays spread out from the source, the shadow on the film is always at least a little larger than the feature that cast it. The amount is set by simple proportion. Image size equals object size times the source to film distance divided by the source to object distance. Put numbers on it. A feature two inches wide, source to film distance of thirty six inches, source to object distance of thirty inches. Thirty six over thirty is one point two, so the image measures two point four inches. The closer the feature sits to the film, the closer that ratio gets to one and the truer the image. That is one reason we press the film tight against the back of the part. Distortion is the shadow changing shape or position rather than just size. If the film is tilted relative to the object, a round hole projects as an egg. If a feature sits off to the side of the beam, its shadow is thrown sideways, and two flaws at different depths can even appear to trade places. You control distortion with alignment. Beam perpendicular to the film, film parallel to the part, central ray through the middle of the area of interest. Now sharpness. A real source is not a point. A focal spot might be a tenth of an inch across, and a gamma source pellet stack can be larger. Every point on that source casts its own shadow of every edge, and the shadows do not quite line up. The result is a fuzzy border around each edge, called the penumbra, and we measure it as geometric unsharpness. Here is the formula you will use for the rest of your career. Unsharpness equals the source size, times the distance from the object to the film, divided by the distance from the source to the object. Try it with easy numbers. Source a tenth of an inch wide. Part two inches thick with the film in contact underneath, so the object to film distance is two inches measured from the source side of the part. Source twenty inches above that surface. A tenth times two is point two. Divide by twenty and the unsharpness is one hundredth of an inch. Codes set hard caps on this number. A common limit is twenty thousandths of an inch for material under two inches thick, with larger allowances as thickness grows. So you will often run the formula backwards to find the minimum shooting distance that passes. Three moves shrink unsharpness. A smaller source. A longer source to object distance. A shorter object to film distance. The source size was bought when the equipment was bought, so in the field you live by the other two, distance and film contact. One more gift from geometry. Because shadows shift when the source shifts, parallax can tell us how deep a flaw lies. Make two exposures on a single film, moving the source a known distance sideways between them. A flaw lying near the film barely moves. A flaw near the source side moves a lot. Measure the shift of the flaw image on the film, and from the source shift and the source to film distance you can calculate the height of the flaw above the film. Lead markers on the front and back surfaces give you reference shifts to compare against. Where access allows, a second exposure at ninety degrees does the same job, the way a side view completes a front view on a drawing. Depth information turns a flat picture into a located, repairable defect, and located is exactly what the welder who has to dig it out needs from you.",
+ "imagePrompt": "A radiographer stretches a tape measure from the focal spot mark on a portable X-ray tube head down to a film cassette pressed flat against a thick steel weldment on a shop floor, checking the shooting distance against a handwritten technique sheet on a clipboard.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Shadow Formation - and How Shadows Lie",
+   "body": "A radiograph is a **shadow picture**. The source plays the part of a light bulb, the part casts the shadow, and the film records it - with the crucial difference that the radiation passes **through** the part, so internal features cast shadows too. Every geometric rule of radiography can be reasoned out from this picture.\n\nBecause the rays diverge from the source, the shadow is always somewhat **enlarged**, and careless geometry adds **distortion**:\n- **Size distortion (enlargement)** - the image is larger than the object, growing as the object moves toward the source or away from the film\n- **Shape distortion** - a tilted film or an inclined object stretches a round feature into an oval; a planar flaw inclined to the beam can foreshorten into a faint smudge or disappear\n- **Position distortion** - features off the beam axis are thrown sideways in the image, and two flaws at different depths near the edge of the field can even appear to swap places\n\nDistortion is controlled by alignment: keep the **central ray perpendicular to the film**, the **film parallel to the part**, and the **area of interest on the beam axis**. The image can never be more honest than its geometry."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-6-2-fig-a",
+   "caption": "Diverging rays enlarge the shadow; tilting the film stretches and distorts it."
+  },
+  {
+   "type": "text",
+   "heading": "Calculating Enlargement",
+   "body": "Enlargement follows from similar triangles. With the source-to-film distance written **SFD** and the source-to-object distance **SOD**:\n\n- **Image size = Object size × SFD ÷ SOD**\n- **Magnification M = SFD ÷ SOD**\n\nWorked example: a 2.0 in. feature, SFD = 36 in., SOD = 30 in. M = 36/30 = 1.2, so the image measures **2.4 in.** The percentage enlargement is (SFD/SOD − 1) × 100 = 20%.\n\nTwo practical consequences. First, a flaw measured on film is the **enlarged** size; the true size is image × SOD/SFD. Second, keeping the film tight against the part and the source far away drives M toward 1, so film dimensions approach truth - with film in contact, the object-to-film distance of any internal feature is at most the part thickness, and at SFD = 36 in. the worst-case enlargement across a 2 in. part is only about 6%.\n\nDeliberate projective magnification (part moved toward the source) exists in microfocus work, but it demands an extremely small focal spot. With a conventional focal spot it simply produces a big, blurry shadow."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The five rules of a sharp, true shadow",
+   "body": "- Use the **smallest source or focal spot** available\n- Put the source **far from the part** (long source-to-object distance)\n- Put the film **as close to the part as possible** - in contact when you can\n- Keep the **beam perpendicular** to the film\n- Aim the **central ray through the area of interest**\n\nEvery geometric defect in a radiograph traces back to breaking one of these."
+  },
+  {
+   "type": "text",
+   "heading": "Shadow Sharpness and Geometric Unsharpness",
+   "body": "A real source has width, and that width costs sharpness. Each point of the source casts its own shadow of every edge; the shadows land in slightly different places, and the band where they disagree - the **penumbra** - is recorded as **geometric unsharpness**:\n\n- **Ug = F·t ÷ d**\n\nwhere **F** is the source or focal-spot size, **t** is the object-to-film distance, and **d** is the source-to-object distance measured to the **source side** of the part. For a part of thickness T with film in contact, t = T and d = SFD − T.\n\nWorked example: F = 0.10 in., part 2.0 in. thick, film in contact, source 20 in. from the source-side surface: Ug = 0.10 × 2.0 ÷ 20 = **0.010 in.**\n\nBecause codes cap Ug, the formula is often run backwards to find the **minimum distance**: d = F·t ÷ Ug. Same part with a 0.20 in. source and a 0.020 in. cap: d ≥ 0.20 × 2.0 ÷ 0.020 = 20 in.\n\nThree moves shrink Ug: a **smaller source**, a **longer source-to-object distance**, a **shorter object-to-film distance**. Source size was fixed when the equipment was bought - in the field you live by distance and film contact."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-6-2-fig-b",
+   "caption": "A source of finite width F casts overlapping edge shadows; the band of disagreement is the penumbra, Ug = F·t/d."
+  },
+  {
+   "type": "table",
+   "caption": "Typical code limits on geometric unsharpness (ASME Section V-style practice - always verify against the governing code).",
+   "headers": ["Material thickness", "Maximum Ug"],
+   "rows": [
+    ["Under 2 in.", "0.020 in."],
+    ["2 in. through 3 in.", "0.030 in."],
+    ["Over 3 in. through 4 in.", "0.040 in."],
+    ["Greater than 4 in.", "0.070 in."]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Finding Discontinuity Depth",
+   "body": "A single radiograph collapses the part onto a plane: it gives a flaw's length and width but not its **depth**. Geometry gives depth back through **parallax** - shadows shift when the source shifts, and the shift depends on how far the flaw sits above the film.\n\n**Tube-shift (double-exposure) method**: make two exposures on one film, moving the source a known distance **S** sideways between them, at source-to-film distance **D**. Measure the resulting shift **s** of the flaw image. The flaw's height above the film is:\n\n- **h = s·D ÷ (S + s)**\n\nWorked example: D = 24 in., S = 4.0 in., measured image shift s = 0.40 in.: h = 0.40 × 24 ÷ 4.40 ≈ **2.2 in.** above the film surface. Lead markers placed on the source side and film side of the part shift by known amounts and anchor the measurement.\n\nA flaw near the film barely moves; a flaw near the source side moves most - the same effect that makes the near rail race past a train window while the far hills crawl.\n\n**Right-angle (two-view) method**: where access allows, a second exposure at 90° locates depth directly, the way a side view completes a front view on a drawing."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-6-2-fig-c",
+   "caption": "Shifting the source by S shifts a flaw's image by s in proportion to its height h above the film - the tube-shift depth method."
+  }
+ ],
+ "figures": [
+  { "id": "rt1-6-2-fig-a", "title": "Shadow enlargement and distortion", "file": "rt1-6-2-fig-a.svg" },
+  { "id": "rt1-6-2-fig-b", "title": "Geometric unsharpness (penumbra)", "file": "rt1-6-2-fig-b.svg" },
+  { "id": "rt1-6-2-fig-c", "title": "Tube-shift method for flaw depth", "file": "rt1-6-2-fig-c.svg" }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Make the Geometry Pass",
+  "intro": "You are setting up an X-ray shot of a 1.5 in. thick steel fabrication. The tube's effective focal spot is 0.12 in., and the governing procedure caps geometric unsharpness at 0.020 in. You control the distances and the film placement.",
+  "steps": [
+   {
+    "prompt": "First layout: film in contact with the back surface, source 18 in. above the film, so d = 16.5 in. and t = 1.5 in. What is Ug, and does it pass?",
+    "options": [
+     "About 0.011 in. - passes the 0.020 in. cap with margin",
+     "About 0.16 in. - fails badly",
+     "About 0.0011 in. - passes with two orders of magnitude to spare"
+    ],
+    "correct": 0,
+    "feedback": "Ug = F·t/d = 0.12 × 1.5 ÷ 16.5 ≈ 0.011 in. Keep the units straight and the formula does the rest - this geometry passes comfortably."
+   },
+   {
+    "prompt": "A clamp fixture now forces the film 1.5 in. away from the back surface, so t = 3.0 in. while d stays 16.5 in. Ug climbs to about 0.022 in. - over the cap. What is the correct fix?",
+    "options": [
+     "Raise the tube head until d is at least 18 in. (d = F·t/Ug = 0.12 × 3.0 ÷ 0.020), and go higher for margin",
+     "Swap in a tube with a larger focal spot",
+     "Keep the geometry but shorten the exposure time"
+    ],
+    "correct": 0,
+    "feedback": "Only F, t, and d set geometric unsharpness - exposure time has no effect, and a larger focal spot makes it worse. Run the formula backwards for the minimum distance, or remove the fixture and restore film contact."
+   },
+   {
+    "prompt": "On the processed film you measure an indication at 0.59 in. The flaw plane sat about 16.5 in. from the source with SFD = 19.5 in. What is its true size?",
+    "options": [
+     "About 0.50 in. - divide the image by the magnification SFD/SOD ≈ 1.18",
+     "0.59 in. - measurements on film are true size",
+     "About 0.70 in. - multiply by the magnification"
+    ],
+    "correct": 0,
+    "feedback": "The shadow is always the enlarged version: image = object × SFD/SOD, so the object = 0.59 × 16.5 ÷ 19.5 ≈ 0.50 in. Reporting the film measurement as true size would overstate the flaw."
+   },
+   {
+    "prompt": "The engineer asks how deep the flaw lies. With film back in contact you make two exposures on one film, shifting the source 6.0 in. sideways at SFD = 18 in.; the flaw image shifts 0.40 in. Where is the flaw?",
+    "options": [
+     "About 1.1 in. above the film-side surface - h = s·D/(S + s) = 0.40 × 18 ÷ 6.4",
+     "About 0.40 in. above the film - the image shift equals the height",
+     "Exactly mid-wall - the tube-shift method cannot resolve any finer"
+    ],
+    "correct": 0,
+    "feedback": "h = s·D/(S + s) = 7.2 ÷ 6.4 ≈ 1.1 in. above the film. In a 1.5 in. part that puts the flaw in the upper third, near the source-side surface - exactly the location the repair crew needs."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A 0.15 in. source radiographs a 2.0 in. thick part with the film in contact, the source 20 in. from the source-side surface. What is the geometric unsharpness?",
+   "options": [
+    "0.0075 in.",
+    "0.015 in.",
+    "0.030 in.",
+    "0.15 in."
+   ],
+   "correct": 1,
+   "explanation": "Ug = F·t/d = 0.15 × 2.0 ÷ 20 = 0.015 in. With film in contact, t equals the part thickness and d is measured to the source side of the part."
+  },
+  {
+   "question": "A procedure caps Ug at 0.020 in. Using a 0.20 in. source with an object-to-film distance of 2.5 in., what is the minimum source-to-object distance?",
+   "options": [
+    "12.5 in.",
+    "20 in.",
+    "25 in.",
+    "250 in."
+   ],
+   "correct": 2,
+   "explanation": "Run the formula backwards: d = F·t/Ug = 0.20 × 2.5 ÷ 0.020 = 25 in. Any shorter distance pushes the penumbra over the cap."
+  },
+  {
+   "question": "A 2.0 in. feature is radiographed at SFD = 30 in. with the feature 24 in. from the source. How large is its image?",
+   "options": [
+    "1.6 in.",
+    "2.0 in.",
+    "2.5 in.",
+    "3.75 in."
+   ],
+   "correct": 2,
+   "explanation": "Image = object × SFD/SOD = 2.0 × 30 ÷ 24 = 2.5 in. - a magnification of 1.25 because the rays diverge between the feature and the film."
+  },
+  {
+   "question": "A round drilled hole appears as a pronounced oval on the radiograph. The most likely cause is:",
+   "options": [
+    "The focal spot was too small",
+    "The film was tilted relative to the beam and part",
+    "The source-to-film distance was too long",
+    "The mA was set too high"
+   ],
+   "correct": 1,
+   "explanation": "Shape distortion comes from misalignment - a tilted film or inclined object stretches the projected shadow. Distance and mA change size and density, not shape."
+  },
+  {
+   "question": "In a tube-shift depth check, the source is moved 5.0 in. between two exposures at SFD = 20 in., and the flaw image shifts 0.25 in. How high above the film is the flaw?",
+   "options": [
+    "0.25 in.",
+    "About 0.95 in.",
+    "About 1.9 in.",
+    "4.0 in."
+   ],
+   "correct": 1,
+   "explanation": "h = s·D/(S + s) = 0.25 × 20 ÷ 5.25 ≈ 0.95 in. The deeper the flaw sits below the source side, the smaller its image shift."
+  }
+ ],
+ "references": [
+  "CP-105-2024 RT Topical Outline, Radiography Technique 2.1-2.1.5",
+  "Codes such as ASME BPVC Section V (geometric unsharpness limits, general practice)",
+  "General projection geometry: shadow enlargement, penumbra, parallax depth location"
+ ]
+}

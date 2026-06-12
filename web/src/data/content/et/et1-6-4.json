@@ -1,0 +1,187 @@
+{
+ "lessonId": "et1-6-4",
+ "title": "Filtering and Thresholds",
+ "narrationScript": "Frequency shaped the field. Drive set its strength. Gain and standardization made the display mean something. The last two settings clean the signal and automate the call. Filters do not act on the test frequency — they act on the signal frequency that motion creates, roughly scan speed divided by the width of the probe's response. The high-pass filter strips slow variation: thermal drift, gradual dimensional change, slow lift-off ramps. Set it too high, or scan too slowly, and a real flaw becomes a slow event the filter throws away. Long, gradual wall thinning is the classic casualty. The low-pass filter strips fast noise — electronic grass, probe bounce, interference. Set it too low, or scan too fast, and flaw signals round off and shrink. So filters belong to a scan speed, and standardization must happen at that speed. The threshold draws the alarm line for automated accept and reject. Prove it dynamically: the reference discontinuity must trip the alarm at production speed, pass after pass. And never raise a threshold just to silence a noisy line.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Last Two Settings on the Sheet",
+   "body": "Three lessons closed three decisions: **frequency** chose where the eddy currents flow, **drive** set how strong the field works, and **gain with standardization** tied the display to a reference standard. The technique sheet keeps two more lines — **filters** and **thresholds** — and they come last for a reason: filtering cleans the signal that everything upstream produced, and the threshold turns that cleaned signal into an automatic accept/reject call.\n\nFirst, the distinction that prevents most filter mistakes. Filters do **not** act on the test frequency. The 200 kHz or 2 MHz excitation is a carrier; the instrument demodulates it, and what remains is the slowly varying voltage that moves the dot around the screen. Filters act on that remainder — the **signal frequency** (also called the modulation frequency), measured in single-digit hertz on a hand scan and hundreds of hertz on a production line, while the test frequency stays up in the kilohertz and megahertz.\n\nWhat sets the signal frequency is **motion**. A discontinuity passing through the coil's field produces a transient whose frequency is roughly:\n\n**f_signal ≈ scan speed ÷ effective response width**\n\nwhere the response width is about the probe's field footprint plus the flaw dimension along the scan. Run the numbers once and the bands make sense:\n\n- **Hand scan:** 25 mm/s across a ~5 mm footprint → about **5 Hz**\n- **Tubing line:** 1 m/s feed, ~5 mm response → about **200 Hz**\n- **Bolt-hole rotary probe:** 1,500 rpm is 25 revolutions per second; a crack pulse occupying a tenth of each revolution puts its energy near a few hundred hertz\n\nFlaw signals live in a frequency band set by speed. Everything outside that band — slower than it, faster than it — is something a filter can legitimately remove."
+  },
+  {
+   "type": "text",
+   "heading": "High-Pass Filtering: Removing the Slow Components",
+   "body": "A **high-pass filter** passes signal frequencies above its cutoff and attenuates everything below. Below the flaw band live the test's slow troubles:\n\n- **Drift** — thermal warm-up of probe and electronics, the slow balance-point crawl you met in the drive lesson\n- **Gradual part variation** — wall taper and slow dimensional or conductivity change along a tube or extrusion\n- **Slow lift-off ramps** — long swells from gentle surface curvature or a probe easing across a contour\n\nWith the high-pass set per the technique, the baseline holds flat and centered, and only fast events — flaws crossing the field — draw signals. On automated tubing channels this is what keeps hours of feed watchable at all.\n\nTwo things to expect. First, **shape change**: a high-pass filter differentiates. A single-lobe response comes out as a sharper **bipolar** up-and-down excursion, and you learn the filtered signal shapes during standardization, not mid-run. Second, the **masking risk** that gives this lesson its weight:\n\n- **Scan too slowly** and the flaw's signal frequency falls toward — then below — the cutoff. The same notch that stood at 80% FSH at the technique's speed shrinks at half speed and can vanish at a crawl. The flaw did not change; its signal frequency did.\n- **Gradual discontinuities** — long, tapered wall thinning or smooth corrosion scanned along its length — generate slowly varying signals at *any* reasonable speed. To a high-pass filter they are indistinguishable from drift, and it removes them. Procedures that target gradual loss therefore use a very low cutoff, an unfiltered (absolute) channel, or a different measurement entirely."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-6-4-fig-a",
+   "caption": "One scan, three views: the raw signal carries slow drift, fast grass, and one flaw pulse. The high-pass removes the drift and leaves the flaw as a sharper bipolar event; the low-pass then removes the grass. The passband works only because the flaw-signal frequency — scan speed divided by response width — sits inside it."
+  },
+  {
+   "type": "text",
+   "heading": "Low-Pass Filtering, Band-Pass Thinking",
+   "body": "The **low-pass filter** is the mirror: it passes signal frequencies below its cutoff and attenuates those above, where the fast nuisances live — receiver electronic grass, spikes from probe bounce and chatter, and electrical interference from motors, welders, and switchgear sharing the shop's power. A correctly set low-pass smooths the trace without touching the flaw band.\n\nIts masking risk is the mirror image too. A flaw pulse is a fast event; set the cutoff too low — or **scan faster than the filters were set for**, which is the same mistake approached from the other side — and the pulse comes out rounded, reduced, and late. On an automated line a short notch response can shrink below the alarm threshold while the operator sees nothing but a slightly smoother trace.\n\nTogether the two cutoffs form the **band-pass**: high-pass below the flaw-signal frequency, low-pass above it, flaw band in the middle. Work the example once:\n\n- Response width ~5 mm, line speed 1 m/s → **f_signal ≈ 200 Hz**. A 50–500 Hz band-pass brackets it with margin: drift and ramps die below 50 Hz, grass dies above 500 Hz, and the flaw rides through.\n- The line slows to 0.2 m/s → the same flaw now writes **40 Hz** — below the 50 Hz high-pass. Its signal is attenuated before it ever reaches the gain stage, and no threshold can catch what a filter has already removed.\n\nNothing about the part changed. Speed changed, the filters did not, and detection quietly failed — which is exactly why filters and speed are locked together by procedure."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Filters are set for one scan speed",
+   "body": "Every cutoff in hertz is implicitly a statement about scan speed, because speed is what turns a flaw into a signal frequency. The consequences run through every ET technique: **(1)** Standardize **dynamically, at production speed** — the ASTM eddy current practices for tubular products (E243, E309) require the reference standard to be run at the same speed as the examination. **(2)** **Rotary bolt-hole work:** the filter band is paired with rotor rpm — by the instrument or by the OEM NDT manual's table — so changing rotational speed means re-setting filters and re-standardizing. **(3)** **Manual scanning** uses low cutoffs or minimal filtering precisely because hand speed varies; the technique states a scan-speed range, and staying inside it is a detection requirement, not a productivity tip. Change the speed, change the filters, or change either without re-standardizing, and every result that follows is unproven."
+  },
+  {
+   "type": "text",
+   "heading": "Thresholds: Drawing the Alarm Line",
+   "body": "Filters clean the signal; the **threshold** decides what happens when one crosses the line. A threshold — alarm level, alarm gate — is a boundary drawn on the display. Signal stays inside: nothing. Signal crosses: the instrument acts — a lamp or horn on a hand scan; on automated lines a paint marker, a flag for the cut-out saw, or a reject gate that pulls the piece. That is an accept/reject decision no human re-makes, which is why the threshold is the most consequential number on the sheet.\n\nInstruments offer threshold geometries to match the test:\n\n- **Level (amplitude) thresholds** — a voltage line or a circle around the balance point; any signal larger than the set amplitude alarms.\n- **Box gates** — alarm regions bounded in both axes, parked where flaw signals land.\n- **Sector (phase) gates** — wedges defined by amplitude *and* phase angle. Because standardization laid lift-off horizontal, a sector gate opening above the lift-off direction alarms on crack-phase signals while ignoring probe wobble — the discrimination that makes automated bolt-hole scanning workable.\n\nThe threshold is set during standardization, from the **reference discontinuity**, exactly as the procedure directs — never by eye against production noise. A typical surface technique sets gain so the reference notch reaches 80% FSH, then places the alarm level where the procedure states and requires the notch to alarm on every verification pass.\n\nThe two failure directions are not symmetric. **Too low**, and noise trips it: false rejects, line stops, re-tests — money, time, and an operator who learns to ignore alarms. **Too high**, and a rejectable flaw rides underneath it: on a tube mill, an escape; in a Part 145 shop, a cracked fastener hole signed back into service. Cost on one side, airworthiness on the other — which is why thresholds are set from reference standards and changed only with authority."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-6-4-fig-b",
+   "caption": "Left: a sector (phase) gate set from the reference notch — lift-off runs horizontal outside the gate, a rejectable flaw crosses into the wedge and alarms, and a small signal below the gate floor does not. Right: the two failure directions of a level threshold — too low and noise trips false alarms; too high and a rejectable flaw passes in silence."
+  },
+  {
+   "type": "table",
+   "caption": "Filter and threshold troubleshooting — symptom, likely cause, and the required Level I action.",
+   "headers": ["Symptom", "Likely cause", "Required action"],
+   "rows": [
+    ["Reference notch response shrinks or vanishes when the probe moves slower than the technique speed", "Signal frequency has fallen below the high-pass cutoff", "Scan inside the technique's speed range; if speed must change, filters are re-set per procedure and the system re-standardized"],
+    ["Short notches alarm reliably, but the long tapered wall-loss reference barely registers", "High-pass filtering removes slowly varying responses regardless of speed", "Use the procedure's low-filter or absolute channel for gradual loss; report it — do not improvise cutoffs"],
+    ["After a line speed increase, signals arrive rounded, reduced, and late, and marginal notches stop alarming", "Low-pass cutoff now sits below the flaw-signal frequency", "Restore the standardized speed, or have filters re-set and re-standardize dynamically at the new speed"],
+    ["Grass rides the trace at any speed and remains with the probe in air", "Receiver electronic noise — a drive and gain problem, not a filter problem", "Re-check drive against the technique; do not lower the low-pass into the flaw band or raise the threshold to hide it"],
+    ["Frequent alarms from probe wobble, all at the lift-off phase angle", "Threshold geometry too crude — a level gate is catching non-flaw signals", "Use the sector or phase gate the procedure specifies and fix probe guidance; raising the level is not authorized"],
+    ["During periodic verification the reference discontinuity fails to alarm on one pass", "Threshold too high, sensitivity drifted, or filters mismatched to speed", "Stop. Re-standardize, then re-examine all material tested since the last valid verification"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Proving Filters and Thresholds Together",
+   "body": "On the line, filters and thresholds are proven as one system, dynamically:\n\n- **1 — Set filters and threshold per the written technique**, after frequency, drive, and gain. They are the last settings entered, and they assume everything upstream is already standardized.\n- **2 — Run the reference standard at production speed** — feed speed on a line, rotor rpm in a hole, the stated hand speed on a manual scan — and confirm every specified reference discontinuity **trips the alarm**, not merely 'appears on screen.' Many procedures require it to alarm on each of several consecutive passes before the setup counts.\n- **3 — Record everything:** high-pass and low-pass cutoffs, threshold level and gate geometry, and the speed or rpm, alongside the settings from the previous lessons.\n- **4 — Re-verify on the standardization triggers** you already know — start of shift, periodic interval, any setting or hardware change, end of run — and treat a speed change as a setting change, because it is one.\n\nAnd the discipline that closes this module: **never raise a threshold, narrow a filter, or silence an alarm to keep a noisy line moving.** Noise is information — a probe wearing out, interference arriving, drive set wrong — and burying it also buries every flaw signal near the limit. A failed verification, such as the reference notch no longer alarming, means stop, re-standardize, and re-examine everything since the last valid check. Under SNT-TC-1A, a Level I sets filters and thresholds from written instructions and reports anomalies upward; choosing new ones is Level II or III work."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-6-4-fig-a",
+   "title": "Band-pass filtering: what each cutoff removes",
+   "file": "et1-6-4-fig-a.svg"
+  },
+  {
+   "id": "et1-6-4-fig-b",
+   "title": "Alarm thresholds: sector gate and the two failure directions",
+   "file": "et1-6-4-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Filters and Gates: Four Calls on the Line",
+  "intro": "Two production lines and a bolt-hole job, all standardized earlier in the shift. Each situation turns on this lesson's coupling between scan speed, filter cutoffs, and the alarm threshold. Make the Level I call.",
+  "steps": [
+   {
+    "prompt": "On a manual surface scan (technique speed 25–50 mm/s, high-pass filter set per the technique sheet), you slow to a crawl over a suspect area to 'look closer.' The indication you thought you saw gets smaller the slower you go. Why?",
+    "options": [
+     "Residual heat from scanning is changing the part's conductivity",
+     "Crawling lowered the signal frequency below the high-pass cutoff, so the filter is removing the response",
+     "Slow scanning reduces the eddy current density induced in the part",
+     "The low-pass filter only operates at high scan speeds"
+    ],
+    "correct": 1,
+    "feedback": "Signal frequency is roughly scan speed divided by response width. At a crawl, a real flaw becomes a near-DC event and the high-pass treats it as drift. Stay inside the technique's speed range — slowing below it makes the test less sensitive, not more. Eddy current density depends on drive and frequency, not probe motion."
+   },
+   {
+    "prompt": "A tube line runs 0.9 m/s with a ~5 mm probe response — flaw signals near 180 Hz — and a 50–500 Hz band-pass. Grass from a nearby welder is irritating the operator, who proposes dropping the low-pass cutoff to 30 Hz to 'really clean it up.' Your call?",
+    "options": [
+     "Agree — the cleaner the trace, the more reliable the test",
+     "Agree, provided gain is raised to compensate for any signal loss",
+     "Decline — 30 Hz sits below the 180 Hz flaw band, so the filter would round off and bury the very signals the test exists to find",
+     "Decline — the right fix is raising the low-pass to 5 kHz so nothing is filtered"
+    ],
+    "correct": 2,
+    "feedback": "A low-pass at 30 Hz attenuates everything faster than 30 Hz — including the 180 Hz flaw pulses; gain cannot restore what the filter removed. Opening the low-pass to 5 kHz just admits more interference. Noise is attacked at its source or per procedure, and any filter change voids the standardization."
+   },
+   {
+    "prompt": "A bolt-hole rotary scan was standardized at 1,500 rpm with the filter band the OEM NDT manual pairs with that speed. To reduce chatter in a tight fastener hole you drop the rotor to 600 rpm. Before inspecting, you must:",
+    "options": [
+     "Do nothing more — rpm only changes how fast the display sweeps",
+     "Add gain to make up for the slower rotation",
+     "Re-set the filters to the manual's 600 rpm values and re-standardize on the reference-notch hole",
+     "Raise the alarm threshold so chatter cannot trip the gate"
+    ],
+    "correct": 2,
+    "feedback": "Rotor speed sets the crack pulse's signal frequency, and the filter band was chosen for 1,500 rpm — at 600 rpm the crack signal falls toward the old band's high-pass cutoff. The manual pairs speeds with filter settings: change one, change the other, then prove the response on the reference standard before any hole is inspected."
+   },
+   {
+    "prompt": "A batch with rough machining keeps tripping the alarm gate, and the lead wants the threshold raised 'just for this lot' to keep the line moving. The reference standard has not been re-run. Your response?",
+    "options": [
+     "Raise it — procedures allow judgment calls on noisy material",
+     "Raise it, but record the change in the shift log",
+     "Leave the threshold alone and switch off the audible alarm instead",
+     "Decline; verify on the reference standard, report the noise to the Level II/III, and change nothing without an authorized re-standardization"
+    ],
+    "correct": 3,
+    "feedback": "A threshold raised above the noise may also sit above the response of the smallest rejectable flaw — the reference discontinuity might no longer alarm at all. Silencing the horn is the same failure wearing a different switch. Noise has a cause worth finding; thresholds are set from reference standards under written authority, not negotiated against a noisy lot."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "The high-pass and low-pass filters in an eddy current instrument act on:",
+   "options": [
+    "The test frequency driving the coil — for example, 200 kHz",
+    "The signal (modulation) frequency produced as the probe and discontinuity move past each other",
+    "The resonant frequency of the probe cable",
+    "The part's mechanical vibration frequency"
+   ],
+   "correct": 1,
+   "explanation": "The test frequency is a carrier; the instrument demodulates it, and the filters act on what remains — the signal frequency, roughly scan speed divided by the effective response width. That is why filter cutoffs read in hertz to a few hundred hertz while test frequencies sit in the kilohertz and megahertz."
+  },
+  {
+   "question": "A tubing test with a ~5 mm effective response width and a 50 Hz high-pass cutoff was standardized at 1 m/s. The line then slows to 0.2 m/s. The flaw-signal frequency becomes approximately:",
+   "options": [
+    "200 Hz — unchanged and comfortably inside the passband",
+    "100 Hz — lower, but still above the cutoff",
+    "40 Hz — below the 50 Hz high-pass cutoff, so flaw responses are attenuated and can be missed",
+    "It does not change — signal frequency depends on the test frequency, not the line speed"
+   ],
+   "correct": 2,
+   "explanation": "f_signal ≈ speed ÷ response width = 200 mm/s ÷ 5 mm = 40 Hz. At 1 m/s the same flaw wrote 200 Hz, inside the 50–500 Hz band; at 0.2 m/s it falls below the high-pass cutoff and is filtered down before gain or threshold ever see it. Signal frequency comes from motion, not from the excitation frequency."
+  },
+  {
+   "question": "Which discontinuity is MOST likely to be masked by an aggressively set high-pass filter, even at the correct scan speed?",
+   "options": [
+    "A short, sharp fatigue crack crossed transversely by the probe",
+    "A drilled through-wall hole passing a bobbin coil at line speed",
+    "Long, gradually tapered wall thinning scanned along its length",
+    "A surface EDM notch crossed at the technique speed"
+   ],
+   "correct": 2,
+   "explanation": "Gradual thinning changes the signal slowly over a long travel distance — a low-frequency event the high-pass cannot distinguish from drift at any normal speed, so it removes it. Short, sharp discontinuities produce fast transients that pass the filter; that is why gradual-loss procedures use very low cutoffs or an absolute, low-filter channel."
+  },
+  {
+   "question": "An alarm threshold ends up set higher than the response of the smallest rejectable discontinuity defined by the procedure. The consequence is:",
+   "options": [
+    "False alarms increase and good product is rejected",
+    "Parts containing rejectable flaws pass without an alarm — the dangerous failure direction",
+    "The filters compensate by amplifying signals that fall short of the gate",
+    "Nothing, provided gain was set correctly during standardization"
+   ],
+   "correct": 1,
+   "explanation": "A threshold only flags what crosses it: set above the smallest rejectable response, rejectable flaws ride underneath unflagged. Too-low thresholds cost false rejects and line stops; too-high thresholds release flawed product — in aviation work, an airworthiness escape. Filters remove signal content; they never add amplitude, and correct gain cannot rescue a gate set above the flaw response."
+  },
+  {
+   "question": "During the periodic check, the reference standard is run at production speed and the specified reference notch fails to trip the alarm on one of the required passes. The required response is to:",
+   "options": [
+    "Lower the low-pass cutoff until the notch alarms",
+    "Accept the setup, since the notch alarmed on the other passes",
+    "Add a little gain and continue the run",
+    "Stop, re-standardize the system, and re-examine all material tested since the last valid verification"
+   ],
+   "correct": 3,
+   "explanation": "Detection must be demonstrated reliably — the reference discontinuity alarming on every required pass at production speed. A missed pass means detection is unproven, so every result since the last good check is unproven too: re-standardize and re-examine. Nudging a cutoff or the gain to force an alarm without re-standardizing only hides the failure."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Basic Technique Course §2.7–2.8 (selection of inspection parameters — filtering and thresholds)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — Level I sets filters and alarm levels per written instructions under Level II/III supervision",
+  "ASTM E243, Standard Practice for Electromagnetic (Eddy Current) Examination of Copper and Copper-Alloy Tubes (dynamic standardization at examination speed; reject level set from artificial discontinuities)",
+  "ASTM E309, Standard Practice for Eddy-Current Examination of Steel Tubular Products Using Magnetic Saturation (speed during standardization equal to examination speed)"
+ ]
+}

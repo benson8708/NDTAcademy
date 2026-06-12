@@ -1,0 +1,69 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Why Particles Collect: Flux Leakage at a Discontinuity</text>
+
+  <!-- steel bar cross-section -->
+  <rect x="70" y="190" width="660" height="150" fill="#E8F1FB" stroke="#0A2342" stroke-width="3"/>
+
+  <!-- flux lines (left to right) -->
+  <!-- top line: forced out over the surface crack -->
+  <path d="M 80 220 L 243 220 C 260 220 258 163 280 163 C 302 163 300 220 317 220 L 720 220" fill="none" stroke="#1B82E8" stroke-width="2.5"/>
+  <!-- second line: squeezes under the crack tip, bends over the inclusion -->
+  <path d="M 80 252 L 248 252 Q 280 264 312 252 L 512 252 Q 560 240 608 252 L 720 252" fill="none" stroke="#1B82E8" stroke-width="2.5"/>
+  <!-- third line: bends under the inclusion -->
+  <path d="M 80 284 L 512 284 Q 560 300 608 284 L 720 284" fill="none" stroke="#1B82E8" stroke-width="2.5"/>
+  <!-- bottom line: undisturbed -->
+  <line x1="80" y1="312" x2="720" y2="312" stroke="#1B82E8" stroke-width="2.5"/>
+  <!-- flow arrowheads at right -->
+  <polygon points="706,214 722,220 706,226" fill="#1B82E8"/>
+  <polygon points="706,246 722,252 706,258" fill="#1B82E8"/>
+  <polygon points="706,278 722,284 706,290" fill="#1B82E8"/>
+  <polygon points="706,306 722,312 706,318" fill="#1B82E8"/>
+  <text x="92" y="334" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">magnetic flux</text>
+
+  <!-- surface crack (V notch) -->
+  <path d="M 272 190 L 280 248 L 288 190 Z" fill="#FFFFFF" stroke="#D14343" stroke-width="2.5"/>
+  <text x="258" y="212" text-anchor="end" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">N</text>
+  <text x="300" y="212" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">S</text>
+
+  <!-- particles bridging the surface crack: tight, dense cluster -->
+  <circle cx="272" cy="184" r="4" fill="#F2A33C"/>
+  <circle cx="280" cy="180" r="4.5" fill="#F2A33C"/>
+  <circle cx="288" cy="184" r="4" fill="#F2A33C"/>
+  <circle cx="276" cy="174" r="3.5" fill="#F2A33C"/>
+  <circle cx="284" cy="173" r="3.5" fill="#F2A33C"/>
+  <circle cx="280" cy="188" r="3.5" fill="#F2A33C"/>
+
+  <!-- subsurface inclusion -->
+  <ellipse cx="560" cy="268" rx="30" ry="13" fill="#5A6B7E" stroke="#0A2342" stroke-width="2"/>
+
+  <!-- weak broad leakage over the inclusion -->
+  <path d="M 516 190 Q 560 170 604 190" fill="none" stroke="#1B82E8" stroke-width="2" stroke-dasharray="6 5"/>
+  <!-- scattered, fuzzy particles -->
+  <circle cx="528" cy="184" r="3" fill="#F2A33C" opacity="0.7"/>
+  <circle cx="545" cy="179" r="3" fill="#F2A33C" opacity="0.7"/>
+  <circle cx="562" cy="177" r="3" fill="#F2A33C" opacity="0.7"/>
+  <circle cx="579" cy="180" r="3" fill="#F2A33C" opacity="0.7"/>
+  <circle cx="594" cy="185" r="3" fill="#F2A33C" opacity="0.7"/>
+
+  <!-- leader lines and labels -->
+  <line x1="280" y1="160" x2="248" y2="120" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="240" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">
+    <tspan x="240" y="96">Surface crack: strong leakage field —</tspan>
+    <tspan x="240" y="115">sharp, dense, tightly held particles</tspan>
+  </text>
+
+  <line x1="560" y1="172" x2="600" y2="128" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="610" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">
+    <tspan x="610" y="105">Subsurface flaw: weak, spread leakage —</tspan>
+    <tspan x="610" y="124">broad, fuzzy, weakly held buildup</tspan>
+  </text>
+
+  <line x1="575" y1="278" x2="630" y2="362" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="632" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">subsurface discontinuity</text>
+
+  <line x1="280" y1="248" x2="218" y2="368" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="200" y="386" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">crack interrupts the flux path</text>
+
+  <text x="400" y="428" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#5A6B7E">Leakage is strongest when flux crosses the flaw at 45–90° — flaws parallel to the flux barely leak.</text>
+</svg>

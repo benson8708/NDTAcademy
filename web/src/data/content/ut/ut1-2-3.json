@@ -1,0 +1,161 @@
+{
+ "lessonId": "ut1-2-3",
+ "title": "Acoustic Impedance and Reflection",
+ "narrationScript": "Why does an ultrasonic echo happen at all? Not because a flaw is dark, or rough, or made of anything exotic. An echo happens because the sound suddenly meets a material that carries it differently. The property that measures how a material carries sound is acoustic impedance, and impedance is simply density times velocity. Dense, stiff, fast materials have high impedance. Light, slow materials have low impedance. Steel has a density of about seven thousand eight hundred fifty kilograms per cubic meter and carries longitudinal sound at five thousand nine hundred twenty meters per second, so its impedance works out to about forty six and a half megarayls. Aluminum comes in near seventeen megarayls. Water, about one and a half. Acrylic wedge plastic, about three point two. And air, about four ten thousandths of a megarayl, which is essentially zero on this scale. Now put two materials face to face and send sound straight at the boundary. The fraction of energy that reflects depends only on how badly the two impedances disagree. Take the difference between the two impedances, divide by their sum, and square the result. That is the reflected fraction. Work it for steel against water. Forty six and a half minus one and a half, over forty six and a half plus one and a half, squared, comes out near eighty eight percent reflected. Only about twelve percent of the energy crosses into the water. Work it for steel against air and the mismatch is so extreme that essentially one hundred percent reflects. Nothing usable crosses a steel to air boundary, in either direction. And notice something useful. The formula gives the same answer no matter which side the sound comes from. Steel into water reflects exactly what water into steel reflects. That one number, the mismatch, explains the two pillars of this method. First, couplant. Press a probe on a dry part and there is a microscopic air cushion between them, a steel to air boundary that reflects everything before the test even starts. Flood that gap with water, gel, glycerin, or oil and you replace the impossible interface with a workable one. Plenty still reflects at the probe face, but enough crosses to do the job, and there is a bonus. When the couplant film is squeezed down thin compared with the wavelength, the film becomes almost invisible to the sound, and transmission is much better than the raw numbers suggest. Thin film, firm pressure, better signal. Second, flaw detection itself. The far side of a healthy plate is a metal to air boundary, a near perfect mirror, so the back wall returns a strong, dependable echo through sound material. A crack inside the part is the same mirror in miniature. Even the tightest crack carries a film of gas, so it reflects essentially everything that strikes it. A slag inclusion is a milder mismatch. Slag sits closer to steel in impedance, so part of the energy reflects and part passes straight through, which is why slag tends to echo weaker than a crack of the same size. Echo height is the instrument's first hint about what kind of reflector you have found. Treat it as a hint and not a verdict, because size, shape, orientation, and depth all pull on amplitude too. Now put the whole picture on the screen. The instrument fires, and the initial pulse stands at the left edge of the display. The sound crosses the plate, and wherever impedance changes, part of it turns back. A discontinuity at mid wall sends back an echo that lands between the initial pulse and the back wall echo, and its screen position reports its depth, because distance is just velocity times time divided by two, the round trip cut in half. The remaining energy continues to the far side and returns the big back wall echo. So a flaw usually testifies twice. A new echo stands where nothing should be, and the back wall echo loses height because the flaw is shadowing it. Healthy plate, one clean back echo. Laminated plate, an early echo and a starved back wall. Some conditions, like fields of fine porosity, announce themselves mostly by killing the back echo rather than by returning one clean signal, and procedures treat that loss itself as a recordable condition. Learn to read impedance and reflection stops being theory. It becomes the reason every echo on your screen exists, and the reason a bottle of couplant rides in every UT kit on earth.",
+ "imagePrompt": "A technician squeezes amber couplant gel onto a machined steel block beside a flaw detector whose screen shows one tall echo spike, in a well-lit inspection bay.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Acoustic Impedance: Z = ρ × v",
+   "body": "Acoustic impedance describes how stubbornly a material resists being vibrated — formally **Z = ρ × v**, density times sound velocity. The units are kg/(m²·s), called **rayls**; engineering materials land in the millions, so we quote **megarayls (MRayl)**.\n\nWork steel: ρ ≈ 7,850 kg/m³ and longitudinal v = 5,920 m/s give Z ≈ **46.5 MRayl**. Aluminum: 2,700 × 6,320 ≈ **17.1 MRayl**. Water: 1,000 × 1,480 ≈ **1.48 MRayl**. Acrylic wedge plastic ≈ **3.2 MRayl**. Air: about 1.2 kg/m³ × 330 m/s ≈ **0.0004 MRayl** — four to five orders of magnitude below the metals.\n\nImpedance by itself does nothing. It matters at **boundaries**: whenever traveling sound meets a material of different Z, part of the energy reflects and part transmits. How the energy splits depends only on the two impedances — and that split is the engine of every echo this method produces."
+  },
+  {
+   "type": "table",
+   "caption": "Longitudinal acoustic impedances — the spread between metals and air is the whole story of couplant.",
+   "headers": ["Material", "Density (kg/m³)", "Velocity (m/s)", "Z (MRayl)"],
+   "rows": [
+    ["Carbon steel", "7,850", "5,920", "46.5"],
+    ["Aluminum", "2,700", "6,320", "17.1"],
+    ["Acrylic (wedge)", "1,180", "2,730", "3.2"],
+    ["Glycerin", "1,260", "1,920", "2.4"],
+    ["Water", "1,000", "1,480", "1.48"],
+    ["Air", "1.2", "330", "0.0004"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "How Much Reflects: the Mismatch Equation",
+   "body": "At a boundary met head-on (normal incidence), the fraction of sound **energy** reflected is\n\n**R = ((Z₂ − Z₁) ÷ (Z₂ + Z₁))²**\n\nand the transmitted fraction is simply **1 − R**. Two properties worth noticing: R depends only on the **mismatch**, and it is the **same from either direction** — steel-to-water reflects exactly what water-to-steel does.\n\nWork the pairs that run your job:\n\n- **Steel ↔ water:** R = ((46.5 − 1.48) ÷ (46.5 + 1.48))² = (45.0 ÷ 48.0)² ≈ **0.88** — 88% reflects; only about 12% crosses.\n- **Steel ↔ air:** the mismatch is so extreme that R ≈ 0.9999 — effectively **100% reflection**. Nothing usable crosses a metal–air boundary in either direction.\n- **Acrylic ↔ steel:** ≈ **76%** reflects — even a perfectly coupled wedge delivers a minority of its energy into the part.\n\nThat steel–air number is why **couplant** exists. A dry probe sits on a microscopic air cushion — a 100% mirror before the test begins. Water, gel, glycerin, or oil replaces the impossible interface with two workable ones (probe-to-couplant, couplant-to-steel). Plenty still reflects, but the method runs comfortably on the fraction that gets through — it just pays the same toll again on the way back."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-2-3-fig-a",
+   "caption": "At each impedance mismatch the energy splits: 88 percent reflects at a steel–water boundary, and essentially everything reflects at steel–air."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Steel–air is a perfect mirror — twice over",
+   "body": "The same physics that forces couplant under every probe makes the method work: a healthy back wall is a metal–air boundary returning ~100% of the energy, and even the tightest crack carries a gas film that reflects essentially everything that strikes it. One number — impedance mismatch — pays for the whole UT method."
+  },
+  {
+   "type": "text",
+   "heading": "Couplant as Part of the Sound Path",
+   "body": "Knowing that ~88% bounces at a steel–water boundary, treat couplant as an engineered part of the sound path:\n\n- **Choices:** water (cheap, evaporates, needs wetting agent on horizontal work), gel and paste (clings to vertical and overhead surfaces), glycerin (Z ≈ 2.4 MRayl — the best impedance bridge among common liquids), oils (machined parts, leaves residue). High-temperature lines need specialty couplants — ordinary ones boil off.\n- **Film thickness:** a couplant layer **thin compared with the wavelength** transmits considerably better than the raw two-boundary arithmetic suggests — the film becomes acoustically almost invisible. That is why a thin, squeezed-out film under firm probe pressure beats a thick puddle, and why couplant pooled ahead of a surface-wave probe absorbs the very wave you are using.\n- **Surface condition:** roughness, scale, and loose paint trap air pockets the couplant cannot fill, scattering energy right at entry. Cleaning to sound metal is cheaper than the decibels it recovers.\n\nThe same impedance thinking explains the wedge: acrylic (3.2 MRayl) sits partway between couplant and steel, yet the acrylic–steel boundary still reflects about 76% — angle-beam energy budgets start deep in the hole, which is why receiver gain matters so much."
+  },
+  {
+   "type": "text",
+   "heading": "Why Discontinuities and Back Surfaces Echo",
+   "body": "Pulse-echo testing is reflection harvested on a clock. The instrument fires, listens, and converts time to distance with **d = v × t ÷ 2** — half the round trip. Every echo on the screen is an impedance change at a known depth:\n\n- The **back-wall echo** is the part's far side — a steel–air mirror returning a strong, dependable signal through sound metal.\n- A **discontinuity** is an impedance change inside the part. A **crack or lamination** holds a gas film: near-total reflection, strong echo. **Slag** sits closer to steel in impedance, so part of the energy passes straight through it and its echo runs weaker than a crack's of equal size. Echo height is the first clue to a reflector's nature — but size, shape, orientation, and depth all pull on amplitude, so treat height as evidence, not a verdict.\n\nA mid-wall flaw usually testifies twice: a **new echo** standing between the initial pulse and the back wall, and a **shorter back-wall echo**, because the flaw shadows energy that used to reach the far side. Clean plate reads as one crisp back echo; laminated plate reads as an early echo and a starved back wall. Some conditions — fine porosity fields, gross laminations — announce themselves mostly by **loss of back echo** rather than any single clean reflection, and procedures treat that loss itself as a recordable condition."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-2-3-fig-b",
+   "caption": "A 50-millimeter plate with a mid-wall reflector: initial pulse, discontinuity echo at 25 millimeters, and a shadow-shortened back-wall echo."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-2-3-fig-a",
+   "title": "Reflection at an impedance mismatch",
+   "file": "ut1-2-3-fig-a.svg"
+  },
+  {
+   "id": "ut1-2-3-fig-b",
+   "title": "A-scan of a plate with a mid-wall reflector",
+   "file": "ut1-2-3-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Read the A-Scan",
+  "intro": "Straight-beam probe on 50 mm steel plate, range set to 60 mm. Click the signal that proves an internal discontinuity.",
+  "figureId": "ut1-2-3-fig-b",
+  "regions": [
+   {
+    "x": 62,
+    "y": 84,
+    "w": 86,
+    "h": 286,
+    "label": "Initial pulse",
+    "isTarget": false,
+    "feedback": "That is the transducer firing — the dead zone at the entry surface, not a reflector inside the part."
+   },
+   {
+    "x": 306,
+    "y": 192,
+    "w": 76,
+    "h": 178,
+    "label": "Echo at 25 mm",
+    "isTarget": true,
+    "feedback": "Correct. An echo at mid-wall with no part geometry to explain it is an internal impedance change — and notice the back wall standing shorter in its shadow."
+   },
+   {
+    "x": 588,
+    "y": 138,
+    "w": 80,
+    "h": 232,
+    "label": "Echo at 50 mm",
+    "isTarget": false,
+    "feedback": "That is the back wall — the plate's far side at 50 mm. Its reduced height is a clue, but the echo itself is normal geometry."
+   },
+   {
+    "x": 420,
+    "y": 330,
+    "w": 130,
+    "h": 42,
+    "label": "Baseline grass",
+    "isTarget": false,
+    "feedback": "Low-level grain scatter rides the baseline on most real screens — noise, not a discrete reflector."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Titanium has a density of about 4,500 kg/m³ and a longitudinal velocity of about 6,100 m/s. Its acoustic impedance is approximately:",
+   "options": ["1.36 MRayl", "10.6 MRayl", "27.5 MRayl", "46.5 MRayl"],
+   "correct": 2,
+   "explanation": "Z = ρ × v = 4,500 × 6,100 ≈ 27.5 million kg/(m²·s) = 27.5 MRayl. The 46.5 MRayl distractor is steel's impedance."
+  },
+  {
+   "question": "At a steel–water interface (Z = 46.5 and 1.48 MRayl), about what fraction of the sound energy crosses into the water?",
+   "options": ["88%", "50%", "12%", "Essentially zero"],
+   "correct": 2,
+   "explanation": "R = ((46.5 − 1.48)/(46.5 + 1.48))² ≈ 0.88, so 88% reflects and the remaining ~12% transmits. Essentially-zero transmission describes steel–air, not steel–water."
+  },
+  {
+   "question": "Which interface reflects essentially 100% of the incident sound energy?",
+   "options": ["Steel to water", "Steel to air", "Acrylic to steel", "Water to aluminum"],
+   "correct": 1,
+   "explanation": "Air's impedance (~0.0004 MRayl) is five orders of magnitude below steel's, making the mismatch nearly total — the reason couplant is mandatory and the reason back walls and cracks echo so strongly."
+  },
+  {
+   "question": "A crack and a slag inclusion of identical size sit at the same depth. The crack returns the stronger echo because:",
+   "options": [
+    "Cracks are always smoother than slag",
+    "The gas film in the crack creates a far larger impedance mismatch than slag, which is acoustically closer to steel",
+    "Slag absorbs sound and converts it to heat",
+    "Cracks vibrate at the probe frequency"
+   ],
+   "correct": 1,
+   "explanation": "A gas-filled crack is essentially a steel–air mirror, while slag's impedance is much closer to the parent metal — part of the energy passes straight through slag, so its echo runs weaker."
+  },
+  {
+   "question": "The primary acoustic job of couplant is to:",
+   "options": [
+    "Lubricate the probe so it slides smoothly",
+    "Displace the air gap and provide a continuous elastic path of intermediate impedance into the part",
+    "Amplify the sound entering the part",
+    "Cool the transducer element"
+   ],
+   "correct": 1,
+   "explanation": "A dry probe sits on an air film that reflects essentially everything. Couplant replaces that impossible interface with workable ones; the smooth glide is a side benefit, not the purpose."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, Basic UT Course §2.5 (acoustic impedance)",
+  "ANSI/ASNT CP-105-2024, Basic UT Course §2.6 (reflection)",
+  "Standard relationships: Z = ρ × v; R = ((Z₂ − Z₁)/(Z₂ + Z₁))²; d = v × t ÷ 2",
+  "Reference impedances (MRayl): steel 46.5; aluminum 17.1; acrylic 3.2; water 1.48; air 0.0004"
+ ]
+}

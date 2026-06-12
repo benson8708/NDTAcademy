@@ -1,0 +1,185 @@
+{
+ "lessonId": "rt2-8-2",
+ "title": "Enlargement, Projection, and Geometric Relationships",
+ "narrationScript": "Strip away the electronics and the chemistry, and a radiograph is a shadow on a wall. A source throws radiation past a part, and the film catches the shadow. Whether that shadow is sharp or smeared comes down to three numbers. The size of the source. The distance from the source to the part. And the distance from the part to the film. This lesson is about controlling those three numbers, because they decide your image quality before a single photon reaches the film. No source is a point. An iridium one ninety two source is a stack of metal pellets a tenth of an inch or more across, and an X ray focal spot has real width too. Because the source has size, every edge in the part casts a fuzzy border called the penumbra. We measure it as geometric unsharpness. The rule is simple. Unsharpness equals the source size, times the distance from the object to the film, divided by the distance from the source to the object. Source size sits on top, so make it smaller and the image sharpens. The object to film gap sits on top too, so keep the film tight against the part. The source to object distance sits on the bottom, so back the source away and the shadow cleans up. Work one example. Take a source fifteen hundredths of an inch across, a weld whose source side surface sits two inches from the film, and the source set twenty two inches from that surface. Multiply fifteen hundredths by two and divide by twenty two, and you get about fourteen thousandths of an inch of unsharpness. Codes commonly cap unsharpness at twenty thousandths for sections up to two inches, thirty thousandths up to three inches, forty up to four, and seventy beyond that, as typical values. So this setup passes with a little margin. When you need the minimum distance instead, run the same formula backwards and solve for it. Distance is your cheapest sharpness, but it is not free. Radiation spreads with the square of distance, so moving the source from twenty four inches out to thirty six costs you about two and a quarter times the exposure. Double the distance and you pay four times the time. Every technique is a negotiation between the unsharpness you can accept, the exposure time you can afford, and the simple matter of covering the full length of film with a reasonably uniform beam. On the source side, know what you actually have. An X ray tube quotes an effective focal spot, which is the spot as seen from the film, foreshortened by the anode angle. Many tubes offer two filaments, a small spot that is sharp but limited in current, and a large spot that runs hard and fast, because nearly all of the beam energy becomes heat in the target. For gamma work, the physical size of the capsule contents is on the source certificate, and it depends on specific activity. Higher specific activity packs the same number of curies into a smaller pellet stack, and a smaller source means a sharper image at the same distances. Normally we fight to keep the film tight to the part. But flip the geometry on purpose and you get projection enlargement. Pull the detector away from the part, and the image magnifies by the source to detector distance divided by the source to object distance. Put the part halfway between and you get two times magnification. The catch is brutal. With the part midway, the geometric unsharpness equals the focal spot size itself. A conventional spot of a few millimeters smears everything into fog. A microfocus spot of a few hundredths of a millimeter keeps the blur negligible, and that is what makes enlargement practical for electronics, thin investment castings, and digital detectors whose pixel size is coarser than the detail you need. The air gap even cuts the scatter reaching the detector. The price is low tube output, long exposures, and a small field of view. Finally, the image quality indicator is where all of this geometry gets graded. The penetrameter hole or the essential wire is the finest detail on the radiograph, so unsharpness erases it first, while density and overall contrast sit there looking normal. Learn that signature. If your density is in the window, your contrast looks healthy, and the essential wire still will not show, stop blaming the film. Check the distance. Check the source size. Check the gap between the part and the film. Sensitivity around two percent of thickness is the goal, and geometry is usually the thief when you miss it. Run the chain in order. Small source, long standoff, film in contact. Get those right, and the rest of your technique finally has something worth recording.",
+ "imagePrompt": "A technician positions a compact microfocus X-ray tube close to a small investment-cast turbine blade on a fixture inside a lead-lined test cell, with the flat digital detector panel mounted far behind the part to project an enlarged image.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Every Radiograph Is a Shadow Picture",
+   "body": "Radiographic image formation is shadow projection. Radiation travels in straight lines from the source, passes through the part, and prints a shadow of its internal structure on the film. Because the rays diverge from a source of finite size, three geometric facts follow:\n\n- **The image is always larger than the object.** Divergent rays magnify everything by the ratio of distances - usually only slightly, because we keep the film tight to the part.\n- **Edges are never perfectly sharp.** A real source has width, so each edge casts a shadow with a fuzzy border - the **penumbra** - which we quantify as geometric unsharpness.\n- **Misalignment distorts.** If the beam is not aimed through the area of interest, or the film is not perpendicular to the beam, or the part is tilted, the image stretches and skews. A round hole images as an ellipse; a straight weld bows.\n\nThe three players that govern all of it: **F**, the source or focal-spot size; **d**, the source-to-object distance; and **t**, the object-to-film distance. A Level II who controls those three numbers controls sharpness, magnification, and distortion - before exposure, film, or processing ever enter the conversation."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt2-8-2-fig-a",
+   "caption": "Left: a finite source casts a penumbra at every edge, giving geometric unsharpness Ug = F times t over d. Right: divergent rays magnify the image by M = (d + t) / d."
+  },
+  {
+   "type": "text",
+   "heading": "Geometric Unsharpness: The Penumbra Tax",
+   "body": "**Ug = F · t / d** - source size times object-to-film distance, divided by source-to-object distance. Each term tells you the fix: shrink F, shrink t, or grow d. When measuring t, be conservative - use the distance from the film to the **farthest feature you must detect**, normally the source-side surface of the part plus any cassette standoff.\n\nWorked example: an Ir-192 source with F = 0.150 in., a 2.0-in. weldment with the cassette in contact (t = 2.0 in.), source set 24 in. from the film, so d = 22 in. Ug = 0.150 × 2.0 / 22 = **0.014 in.** Is that acceptable? Codes commonly cap Ug by material thickness, with typical limits of:\n\n- under 2 in.: **0.020 in.**\n- 2 to 3 in.: **0.030 in.**\n- over 3 to 4 in.: **0.040 in.**\n- over 4 in.: **0.070 in.**\n\nOur 0.014 passes the 0.020 cap with margin. Run the formula backwards to plan: the minimum source-to-object distance is d = F · t / Ug-max. With F = 0.150 in., t = 2.0 in., and a 0.020 cap, d must be at least 15 in. Anything shorter and no film, screen, or processing choice can buy the sharpness back."
+  },
+  {
+   "type": "text",
+   "heading": "Source-to-Film Distance and Focal Spot Size",
+   "body": "**SFD is your cheapest sharpness - paid for in time.** Intensity falls with the square of distance, so stretching SFD from 24 in. to 36 in. multiplies exposure by (36/24)² = **2.25 times**; doubling SFD costs four times the exposure. Distance also buys beam coverage: a long film or a panoramic shot needs enough standoff that the beam intensity and angle stay reasonably uniform end to end, or the far ends of the film run light and distorted. Every technique sheet is a negotiation between the Ug cap, the clock, and coverage.\n\n**Know your true source size.** X-ray tubes quote an **effective focal spot** - the electron target area projected toward the film, foreshortened by the anode angle, so the effective spot is smaller than the actual bombarded area. Dual-focus tubes offer a small filament (sharp, but current-limited because about 99 percent of beam energy becomes target heat) and a large one for speed. Gamma sources list physical capsule dimensions on the source certificate. **Specific activity** - curies per gram - decides how small a pellet stack can deliver the activity you need: a high-specific-activity Ir-192 source packs the same curies into a smaller emitting volume, directly lowering Ug. A collimator shapes and shields the beam, but it does not shrink the emitting size."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt2-8-2-fig-b",
+   "caption": "Identical 2x projection geometry with a conventional 3 mm focal spot and a 0.05 mm microfocus spot - with the part midway, Ug equals F, so only the microfocus spot keeps enlargement useful."
+  },
+  {
+   "type": "text",
+   "heading": "Enlargement and Projection Techniques",
+   "body": "Contact radiography is the default: film tight to the part, magnification barely above 1, unsharpness minimized. **Projection enlargement** deliberately breaks that rule. Move the detector away from the part and the image magnifies:\n\n**M = (d + t) / d** - source-to-detector distance over source-to-object distance. Part midway (t = d) gives M = 2; at d = 10 in. and t = 30 in., M = 4.\n\nThe trap is in the same triangles: with t = d, geometric unsharpness equals the focal spot size itself - Ug = F · t / d = F. A conventional 3 mm spot turns a 2x enlargement into a 3 mm smear that obliterates fine detail. A **microfocus** tube with a 10 to 50 micrometer spot keeps the penumbra smaller than the detail of interest even at 2x to 10x, which is what makes true projective enlargement work.\n\nWhy bother? Because magnifying the image **before** it reaches the detector lifts fine detail above the detector's own resolution floor - film graininess, or the fixed pixel pitch of a CR or DDA panel. The air gap between part and detector also lets scatter spread past the image area, improving contrast. The costs: microfocus output is tiny, exposures run long, and the field of view shrinks as magnification grows. Typical applications: electronics and semiconductor packages, thin-wall investment castings, fine weld detail on small components."
+  },
+  {
+   "type": "text",
+   "heading": "IQI Sensitivity Closes the Loop",
+   "body": "The image quality indicator is where geometry gets graded. A hole-type plaque demonstrates **2-2T quality** when the plaque is 2 percent of the part thickness and its 2T hole is visible; a wire IQI demonstrates equivalent sensitivity when the **essential wire** resolves. Either way, the IQI is the finest detail on the radiograph - which means **geometric unsharpness erases it first**, while density and large-area contrast sit unchanged.\n\nThat gives you a diagnostic signature worth memorizing. Density in the window, contrast healthy, but the essential wire or 2T hole missing: suspect geometry before film or processing - SFD too short, source too large, or a gap between part and film inflating t. The fix is never a faster film; it is distance, source size, or film contact.\n\nGeometry also explains placement rules. The IQI sits on the **source side** when possible, where unsharpness and magnification treat it exactly as they treat a source-side flaw; film-side placement (marked with a lead letter F) sees less unsharpness and must be justified by procedure. Shims under a plaque IQI account for weld reinforcement so the 2 percent comparison stays honest. Sensitivity of about **2 percent of thickness** is the working target - and when you miss it with good density, go fix the triangle, not the film."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt2-8-2-fig-c",
+   "caption": "Two simulated radiographs at identical density: within the Ug limit all wires resolve, while excess unsharpness smears the fine wires away and sensitivity fails."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Work the geometry chain in order",
+   "body": "Small source, long source-to-object distance, film in contact - in that order, before any film or exposure change. Plan with **d-min = F · t / Ug-max**, then verify with the IQI. If the essential wire is missing while density and contrast are fine, the answer is **distance, source size, or film contact** - never a faster film."
+  }
+ ],
+ "figures": [
+  {
+   "id": "rt2-8-2-fig-a",
+   "title": "Shadow geometry: penumbra and magnification",
+   "file": "rt2-8-2-fig-a.svg"
+  },
+  {
+   "id": "rt2-8-2-fig-b",
+   "title": "Projection enlargement needs a microfocus spot",
+   "file": "rt2-8-2-fig-b.svg"
+  },
+  {
+   "id": "rt2-8-2-fig-c",
+   "title": "Unsharpness shows up in the IQI first",
+   "file": "rt2-8-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Geometry Planning: A Two-Inch Nozzle Weld",
+  "intro": "You are shooting a 2.0-in.-thick nozzle weld with an 85 Ci Ir-192 source whose physical dimension is 0.14 in. The cassette is strapped in contact with the back surface; counting reinforcement and cassette, the source-side surface sits t = 2.2 in. from the film. Your procedure caps geometric unsharpness at 0.020 in. Walk the geometry decisions a Level II owns.",
+  "steps": [
+   {
+    "prompt": "First, the floor: what is the minimum source-to-object distance d that keeps Ug within the 0.020-in. cap?",
+    "options": [
+     "About 7.7 in.",
+     "About 15.4 in.",
+     "About 31 in.",
+     "About 3.1 in."
+    ],
+    "correct": 1,
+    "feedback": "Solve the unsharpness formula backwards: d-min = F x t / Ug-max = 0.14 x 2.2 / 0.020 = 15.4 in. from the source-side weld surface. Any closer and the shot is geometrically illegal before you ever expose."
+   },
+   {
+    "prompt": "The crew sets up at SFD = 36 in., so d = 36 - 2.2 = 33.8 in. What Ug does that deliver?",
+    "options": [
+     "About 0.009 in. - well inside the cap",
+     "About 0.020 in. - exactly at the cap",
+     "About 0.031 in. - over the cap",
+     "Ug cannot be computed without the exposure time"
+    ],
+    "correct": 0,
+    "feedback": "Ug = F x t / d = 0.14 x 2.2 / 33.8 = 0.009 in. - less than half the allowable. Time has no place in the formula; unsharpness is pure geometry."
+   },
+   {
+    "prompt": "Schedule pressure: the foreman wants SFD cut from 36 in. to 18 in. What actually happens?",
+    "options": [
+     "Exposure time drops to one quarter; Ug roughly doubles to about 0.019 in. - still legal, but the sharpness margin is nearly gone",
+     "Exposure time drops by half; Ug is unchanged because the source is the same",
+     "Exposure time drops to one quarter; Ug is halved because the beam is more intense",
+     "Nothing changes except setup time"
+    ],
+    "correct": 0,
+    "feedback": "Inverse square: (18/36) squared = 1/4 the exposure. But d falls to 15.8 in., so Ug = 0.308 / 15.8 = 0.019 in. - one thousandth under the cap. Legal, with zero margin for a bowed cassette or extra standoff. Distance saved is sharpness spent."
+   },
+   {
+    "prompt": "On the processed film the density is 2.8 and contrast looks normal, but the essential wire will not resolve at the weld centerline. Best corrective action?",
+    "options": [
+     "Switch to a faster film so the wire records more strongly",
+     "Increase the SFD (or eliminate any part-to-film gap) and reshoot - cut the geometric unsharpness",
+     "Raise the source activity for more intensity",
+     "Move the IQI to the film side so the wire shows"
+    ],
+    "correct": 1,
+    "feedback": "Good density plus good contrast plus missing fine detail is the fingerprint of geometric unsharpness. Film speed and source activity change exposure, not geometry, and relocating the IQI film-side without procedure justification hides the problem instead of fixing it."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "An X-ray tube has a 5 mm (0.197 in.) effective focal spot. The source-side surface of the part is 1.5 in. from the film and the focal spot is 30 in. from that surface. The geometric unsharpness is about:",
+   "options": [
+    "0.010 in.",
+    "0.039 in.",
+    "0.004 in.",
+    "0.025 in."
+   ],
+   "correct": 0,
+   "explanation": "Ug = F x t / d = 0.197 x 1.5 / 30 = 0.0099, or about 0.010 in. of penumbra at every image edge."
+  },
+  {
+   "question": "A 3.5-in.-thick section must meet a typical 0.040-in. Ug limit using a 0.25-in. source with the film in contact (t = 3.5 in.). The minimum source-to-object distance is about:",
+   "options": [
+    "22 in. - giving a source-to-film distance of roughly 25.5 in.",
+    "9 in. - giving a source-to-film distance of roughly 12.5 in.",
+    "44 in. - giving a source-to-film distance of roughly 47.5 in.",
+    "3.5 in. - the source may sit at one thickness away"
+   ],
+   "correct": 0,
+   "explanation": "d-min = F x t / Ug = 0.25 x 3.5 / 0.040 = 21.9 in. from the source-side surface; add t to get the source-to-film distance of about 25.4 in."
+  },
+  {
+   "question": "In a projection setup the source-to-object distance is 8 in. and the object-to-detector distance is 4 in. The image magnification is:",
+   "options": [
+    "1.5x",
+    "2.0x",
+    "0.5x",
+    "3.0x"
+   ],
+   "correct": 0,
+   "explanation": "M = (d + t) / d = (8 + 4) / 8 = 1.5 - the image is half again larger than the object."
+  },
+  {
+   "question": "Why does useful projection enlargement require a microfocus focal spot?",
+   "options": [
+    "Because with the part midway between source and detector, Ug equals the focal spot size itself - only a spot far smaller than the detail of interest keeps the enlarged image sharp",
+    "Because small focal spots emit higher-energy photons that penetrate better",
+    "Because magnification reverses the image unless the spot is small",
+    "Because large focal spots cannot produce enough intensity for any exposure"
+   ],
+   "correct": 0,
+   "explanation": "At t = d, Ug = F x t / d = F: a millimeter-class spot smears the magnified image into uselessness, while a 10-50 micrometer microfocus spot keeps the penumbra below the detail size."
+  },
+  {
+   "question": "A radiograph shows density 2.5 in the window and normal contrast, yet the essential wire of the IQI does not resolve. The most likely cause is:",
+   "options": [
+    "Underdevelopment of the film",
+    "Excess geometric unsharpness - SFD too short, source too large, or a part-to-film gap",
+    "Film fog from safelight exposure",
+    "Density outside the allowable viewing range"
+   ],
+   "correct": 1,
+   "explanation": "Unsharpness destroys the finest detail first while leaving density and large-area contrast untouched - the classic geometry signature. Development, fog, or density problems would show in the density and contrast as well."
+  }
+ ],
+ "references": [
+  "CP-105-2024 RT Topical Outline, Radiographic Interpretation and Evaluation Course 2.0, IE 2.2-2.3.4",
+  "Codes such as ASME BPVC Section V, Article 2 - geometric unsharpness limits by thickness (general reference)",
+  "Hole-type and wire IQI practices (ASTM E1025 / E747 style - general reference)",
+  "Microfocus projection radiography practice (general reference)"
+ ]
+}

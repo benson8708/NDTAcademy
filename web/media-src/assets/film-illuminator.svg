@@ -1,0 +1,186 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="filGlowF" filterUnits="userSpaceOnUse" x="-60" y="-60" width="720" height="460">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="filSoftF" filterUnits="userSpaceOnUse" x="-60" y="-60" width="720" height="460">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+    </filter>
+    <linearGradient id="filGlowGrad" x1="0" y1="97" x2="0" y2="229" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f6fcff" stop-opacity=".97"/>
+      <stop offset=".5" stop-color="#ddf1ff" stop-opacity=".94"/>
+      <stop offset="1" stop-color="#bfe4ff" stop-opacity=".92"/>
+    </linearGradient>
+    <linearGradient id="filFilmGrad" x1="0" y1="140" x2="0" y2="192" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1b3d6b"/><stop offset=".5" stop-color="#142f54"/><stop offset="1" stop-color="#193a64"/>
+    </linearGradient>
+    <linearGradient id="filWeldGrad" x1="0" y1="158" x2="0" y2="176" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6b9bd1"/><stop offset=".5" stop-color="#5584ba"/><stop offset="1" stop-color="#6b9bd1"/>
+    </linearGradient>
+    <linearGradient id="filApronGrad" x1="0" y1="307" x2="0" y2="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a1e3c" stop-opacity=".6"/><stop offset="1" stop-color="#0a1e3c" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="filBodyGrad" x1="0" y1="66" x2="0" y2="294" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#14345e" stop-opacity=".92"/><stop offset="1" stop-color="#0b2244" stop-opacity=".92"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===================== BENCH ===================== -->
+  <polygon points="30,294 578,294 590,307 20,307" fill="rgba(10,30,60,.55)"/>
+  <line x1="30" y1="294" x2="578" y2="294" stroke="#9fe6ff" stroke-width="1" opacity=".18"/>
+  <rect x="20" y="307" width="570" height="23" fill="url(#filApronGrad)"/>
+
+  <!-- ===================== ILLUMINATOR (three-quarter view) ===================== -->
+  <!-- top face -->
+  <path d="M118 66 L148 50 L424 50 L394 66 Z" fill="rgba(22,50,90,.8)" stroke="#3f6ea6" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- right side face -->
+  <path d="M394 66 L424 50 L424 278 L394 294 Z" fill="rgba(8,22,46,.85)" stroke="#355f92" stroke-width="1.2" stroke-linejoin="round"/>
+  <!-- side vent louvers -->
+  <g stroke="#5b8cc0" stroke-width="2" stroke-linecap="round" opacity=".55">
+    <line x1="400" y1="216" x2="418" y2="206"/>
+    <line x1="400" y1="228" x2="418" y2="218"/>
+    <line x1="400" y1="240" x2="418" y2="230"/>
+    <line x1="400" y1="252" x2="418" y2="242"/>
+    <line x1="400" y1="264" x2="418" y2="254"/>
+  </g>
+  <!-- front face -->
+  <rect x="114" y="66" width="280" height="228" rx="10" fill="url(#filBodyGrad)" stroke="#5b8cc0" stroke-width="1.5"/>
+  <text x="131" y="84" font-size="11" letter-spacing="1.2" fill="#9fe6ff" opacity=".5">HIGH-INTENSITY ILLUMINATOR</text>
+  <!-- power LED socket (dim until lit) -->
+  <circle cx="372" cy="80" r="3.2" fill="#0a1c38" stroke="#466f9f" stroke-width="1"/>
+
+  <!-- viewing port frame + dark diffuser glass (unlit state) -->
+  <rect x="129" y="92" width="236" height="142" rx="8" fill="#0a1c38" stroke="#466f9f" stroke-width="1.5"/>
+  <rect x="134" y="97" width="226" height="132" rx="5" fill="#061226" stroke="#1E66F5" stroke-width="1" opacity=".9"/>
+  <line x1="156" y1="214" x2="244" y2="112" stroke="#1E66F5" stroke-width="1.5" opacity=".18"/>
+
+  <!-- ====== REVEAL 1: filGlow — diffused port lights up, even cyan-white ====== -->
+  <g id="filGlow" opacity="0">
+    <rect x="128" y="91" width="238" height="144" rx="7" fill="#cfeaff" opacity=".5" filter="url(#filSoftF)"/>
+    <rect x="134" y="97" width="226" height="132" rx="5" fill="url(#filGlowGrad)"/>
+    <rect x="139" y="102" width="216" height="122" rx="3" fill="none" stroke="#ffffff" stroke-width="1" opacity=".22"/>
+    <!-- light spill onto the bench -->
+    <ellipse cx="254" cy="301" rx="195" ry="11" fill="#9fd4ff" opacity=".14" filter="url(#filSoftF)"/>
+    <!-- power LED on -->
+    <circle cx="372" cy="80" r="6" fill="#5fe0ff" opacity=".3"/>
+    <circle cx="372" cy="80" r="2.6" fill="#5fe0ff" filter="url(#filGlowF)"/>
+  </g>
+
+  <!-- ====== REVEAL 2: filFilm — girth-weld radiograph strip on the port ====== -->
+  <g id="filFilm" opacity="0">
+    <rect x="112" y="140" width="270" height="52" rx="3" fill="url(#filFilmGrad)" stroke="#5b8cc0" stroke-width="1.2"/>
+    <!-- weld band (reinforcement prints lighter), wavy fusion toes -->
+    <rect x="113" y="156" width="268" height="22" fill="#cfeaff" opacity=".12" filter="url(#filSoftF)"/>
+    <path d="M112 159 Q132 156 152 159 T192 159 T232 159 T272 159 T312 159 T352 159 Q367 161 382 159 L382 175 Q367 173 352 175 T312 175 T272 175 T232 175 T192 175 T152 175 Q132 178 112 175 Z" fill="url(#filWeldGrad)" opacity=".92"/>
+    <g fill="none" stroke="#9cc8f0" stroke-width="1.1" opacity=".6">
+      <path d="M112 159 Q132 156 152 159 T192 159 T232 159 T272 159 T312 159 T352 159 Q367 161 382 159"/>
+      <path d="M112 175 Q132 178 152 175 T192 175 T232 175 T272 175 T312 175 T352 175 Q367 173 382 175"/>
+    </g>
+    <!-- root pass: thin lighter line down the middle -->
+    <line x1="118" y1="167" x2="378" y2="167" stroke="#aed6f7" stroke-width="2.4" opacity=".4"/>
+    <!-- subtle porosity specks -->
+    <g fill="#04101f" opacity=".85">
+      <circle cx="214" cy="165" r="1.5"/><circle cx="258" cy="169" r="1.2"/><circle cx="304" cy="164" r="1.4"/>
+    </g>
+    <!-- film ID flash in corner -->
+    <rect x="119" y="180" width="24" height="8" rx="1" fill="#7fa8cf" opacity=".25"/>
+    <!-- spring clips holding the strip -->
+    <g fill="#0e2848" stroke="#6fa3d8" stroke-width="1.2">
+      <rect x="116" y="133" width="16" height="13" rx="2"/>
+      <rect x="362" y="133" width="16" height="13" rx="2"/>
+    </g>
+    <circle cx="124" cy="139" r="1.4" fill="#9fe6ff" opacity=".7"/>
+    <circle cx="370" cy="139" r="1.4" fill="#9fe6ff" opacity=".7"/>
+  </g>
+
+  <!-- ====== REVEAL 3: filMask — opaque plates frame the weld zone ====== -->
+  <g id="filMask" opacity="0">
+    <rect x="134" y="97" width="226" height="43" fill="#071223" opacity=".97" stroke="#2a4a74" stroke-width="1"/>
+    <rect x="134" y="192" width="226" height="37" fill="#071223" opacity=".97" stroke="#2a4a74" stroke-width="1"/>
+    <!-- faint brushed-metal texture -->
+    <g stroke="#1d3a61" stroke-width="1" opacity=".7">
+      <line x1="134" y1="111" x2="360" y2="111"/><line x1="134" y1="125" x2="360" y2="125"/>
+      <line x1="134" y1="205" x2="360" y2="205"/><line x1="134" y1="218" x2="360" y2="218"/>
+    </g>
+    <!-- light leaking along the mask seams -->
+    <line x1="134" y1="140" x2="360" y2="140" stroke="#cfeaff" stroke-width="1.4" opacity=".8" filter="url(#filGlowF)"/>
+    <line x1="134" y1="192" x2="360" y2="192" stroke="#cfeaff" stroke-width="1.4" opacity=".8" filter="url(#filGlowF)"/>
+    <!-- finger tabs -->
+    <rect x="236" y="130" width="22" height="6" rx="2" fill="#0e2848" stroke="#466f9f" stroke-width="1"/>
+    <rect x="236" y="196" width="22" height="6" rx="2" fill="#0e2848" stroke="#466f9f" stroke-width="1"/>
+  </g>
+
+  <!-- control strip: divider, intensity dial, rocker switch, front louvers -->
+  <line x1="114" y1="246" x2="394" y2="246" stroke="#2c517f" stroke-width="1.2"/>
+  <circle cx="162" cy="268" r="14" fill="#0a1c38" stroke="#6fa3d8" stroke-width="1.5"/>
+  <circle cx="162" cy="268" r="5" fill="#143055" stroke="#466f9f" stroke-width="1"/>
+  <line x1="160" y1="264.5" x2="156.5" y2="258.5" stroke="#9fe6ff" stroke-width="2" stroke-linecap="round" opacity=".75"/>
+  <g stroke="#9fe6ff" stroke-width="1.5" stroke-linecap="round" opacity=".45">
+    <line x1="147.3" y1="276.5" x2="143.8" y2="278.5"/>
+    <line x1="145.3" y1="265.1" x2="141.3" y2="264.4"/>
+    <line x1="151.1" y1="255.0" x2="148.5" y2="251.9"/>
+    <line x1="162" y1="251" x2="162" y2="247"/>
+    <line x1="172.9" y1="255.0" x2="175.5" y2="251.9"/>
+    <line x1="178.7" y1="265.1" x2="182.7" y2="264.4"/>
+    <line x1="176.7" y1="276.5" x2="180.2" y2="278.5"/>
+  </g>
+  <rect x="204" y="259" width="20" height="17" rx="3" fill="#0a1c38" stroke="#466f9f" stroke-width="1.2"/>
+  <line x1="214" y1="263" x2="214" y2="272" stroke="#6fa3d8" stroke-width="1.5" stroke-linecap="round" opacity=".7"/>
+  <g stroke="#5b8cc0" stroke-width="1.5" stroke-linecap="round" opacity=".4">
+    <line x1="312" y1="258" x2="378" y2="258"/>
+    <line x1="312" y1="266" x2="378" y2="266"/>
+    <line x1="312" y1="274" x2="378" y2="274"/>
+    <line x1="312" y1="282" x2="378" y2="282"/>
+  </g>
+
+  <!-- ====== REVEAL 5: filDial — intensity dial tick-arc pulse ====== -->
+  <g id="filDial" opacity="0">
+    <circle cx="162" cy="268" r="22" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".35"/>
+    <path d="M145.55 277.5 A19 19 0 0 1 152.5 251.55" fill="none" stroke="#5fe0ff" stroke-width="2.5" stroke-linecap="round" filter="url(#filGlowF)"/>
+    <circle cx="162" cy="268" r="14" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".9"/>
+    <line x1="160" y1="264.5" x2="156.5" y2="258.5" stroke="#5fe0ff" stroke-width="2.2" stroke-linecap="round" filter="url(#filGlowF)"/>
+  </g>
+
+  <!-- foot-switch cable hint -->
+  <path d="M348 294 C352 310 366 313 386 315 S414 324 418 331" fill="none" stroke="#466f9f" stroke-width="1.8" stroke-linecap="round" opacity=".8"/>
+  <path d="M420 334 L454 334 L448 323 L426 323 Z" fill="rgba(10,30,60,.8)" stroke="#466f9f" stroke-width="1.2" stroke-linejoin="round"/>
+
+  <!-- ===================== DENSITOMETER (always-on body) ===================== -->
+  <ellipse cx="512" cy="296" rx="70" ry="5" fill="#03101f" opacity=".4" filter="url(#filSoftF)"/>
+  <polygon points="448,246 462,238 589,238 575,246" fill="rgba(22,50,90,.8)" stroke="#355f92" stroke-width="1.2"/>
+  <polygon points="575,246 589,238 589,286 575,294" fill="rgba(8,22,46,.85)" stroke="#355f92" stroke-width="1.2"/>
+  <rect x="448" y="246" width="127" height="48" rx="5" fill="rgba(12,30,58,.88)" stroke="#5b8cc0" stroke-width="1.5"/>
+  <rect x="544" y="212" width="14" height="30" rx="3" fill="rgba(10,26,50,.9)" stroke="#466f9f" stroke-width="1.2"/>
+  <rect x="474" y="206" width="84" height="16" rx="7" fill="rgba(14,34,64,.9)" stroke="#5b8cc0" stroke-width="1.5"/>
+  <rect x="470" y="202" width="26" height="24" rx="4" fill="rgba(14,34,64,.95)" stroke="#5b8cc0" stroke-width="1.5"/>
+  <rect x="478" y="226" width="11" height="12" rx="2" fill="rgba(14,34,64,.95)" stroke="#5b8cc0" stroke-width="1.2"/>
+  <ellipse cx="484" cy="241" rx="5" ry="3" fill="#061226" stroke="#466f9f" stroke-width="1"/>
+  <!-- readout window (dark until reading) -->
+  <rect x="506" y="256" width="58" height="28" rx="4" fill="#04101f" stroke="#2a4a74" stroke-width="1.2"/>
+
+  <!-- ====== REVEAL 4: filMeter — readout + film boxes glow in ====== -->
+  <g id="filMeter" opacity="0">
+    <rect x="506" y="256" width="58" height="28" rx="4" fill="#5fe0ff" opacity=".08"/>
+    <rect x="506" y="256" width="58" height="28" rx="4" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".55"/>
+    <text x="535" y="276" font-size="14" letter-spacing="1" fill="#5fe0ff" text-anchor="middle" filter="url(#filGlowF)">2.04</text>
+    <!-- aperture light under the read head -->
+    <circle cx="484" cy="241" r="5" fill="#5fe0ff" opacity=".3"/>
+    <circle cx="484" cy="241" r="2.2" fill="#eaf6ff" filter="url(#filGlowF)"/>
+    <!-- stacked boxes of industrial film at the bench edge -->
+    <g>
+      <rect x="16" y="276" width="86" height="17" rx="2" fill="rgba(12,30,58,.92)" stroke="#466f9f" stroke-width="1.2"/>
+      <rect x="16" y="276" width="10" height="17" fill="#1E66F5" opacity=".5"/>
+      <g transform="rotate(-2 64 267)">
+        <rect x="21" y="259" width="86" height="16" rx="2" fill="rgba(12,30,58,.92)" stroke="#466f9f" stroke-width="1.2"/>
+        <rect x="21" y="259" width="10" height="16" fill="#1E66F5" opacity=".5"/>
+        <text x="38" y="270" font-size="8" letter-spacing=".5" fill="#9fe6ff" opacity=".65">X-RAY FILM</text>
+      </g>
+      <g transform="rotate(1.6 62 250)">
+        <rect x="18" y="242" width="84" height="16" rx="2" fill="rgba(12,30,58,.92)" stroke="#466f9f" stroke-width="1.2"/>
+        <rect x="18" y="242" width="10" height="16" fill="#1E66F5" opacity=".5"/>
+        <text x="35" y="253" font-size="8" letter-spacing=".5" fill="#9fe6ff" opacity=".65">X-RAY FILM</text>
+      </g>
+    </g>
+  </g>
+</svg>

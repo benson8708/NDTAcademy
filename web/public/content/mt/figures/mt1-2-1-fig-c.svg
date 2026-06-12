@@ -1,0 +1,57 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Closed Ring vs. Slotted Ring</text>
+
+  <!-- ===== Left: closed ring, flux contained ===== -->
+  <circle cx="215" cy="255" r="105" fill="#D9E0E8" stroke="#0A2342" stroke-width="3"/>
+  <circle cx="215" cy="255" r="55" fill="#FFFFFF" stroke="#0A2342" stroke-width="3"/>
+  <!-- circulating flux inside the metal -->
+  <circle cx="215" cy="255" r="80" fill="none" stroke="#1B82E8" stroke-width="2.5" stroke-dasharray="9 6"/>
+  <polygon points="208,170 232,175 210,184" fill="#1B82E8"/>
+  <polygon points="222,340 198,335 220,326" fill="#1B82E8"/>
+  <text x="215" y="260" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">
+    <tspan x="215" y="250">flux stays</tspan>
+    <tspan x="215" y="270">in the metal</tspan>
+  </text>
+
+  <text x="215" y="396" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Closed ring</text>
+  <text x="215" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">no poles, no external field, no particles</text>
+
+  <!-- ===== Right: slotted ring, leakage field ===== -->
+  <circle cx="585" cy="255" r="105" fill="#D9E0E8" stroke="#0A2342" stroke-width="3"/>
+  <circle cx="585" cy="255" r="55" fill="#FFFFFF" stroke="#0A2342" stroke-width="3"/>
+  <circle cx="585" cy="255" r="80" fill="none" stroke="#1B82E8" stroke-width="2.5" stroke-dasharray="9 6"/>
+  <polygon points="592,340 568,335 590,326" fill="#1B82E8"/>
+
+  <!-- slot through the ring wall at 12 o'clock -->
+  <rect x="573" y="146" width="24" height="60" fill="#FFFFFF"/>
+  <line x1="573" y1="148" x2="573" y2="204" stroke="#0A2342" stroke-width="3"/>
+  <line x1="597" y1="148" x2="597" y2="204" stroke="#0A2342" stroke-width="3"/>
+  <!-- poles at the slot faces -->
+  <text x="562" y="174" text-anchor="end" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#D14343">N</text>
+  <text x="608" y="174" text-anchor="start" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1B82E8">S</text>
+
+  <!-- leakage field bridging the slot -->
+  <path d="M 567 150 Q 585 118 603 150" fill="none" stroke="#D14343" stroke-width="2.5"/>
+  <path d="M 561 162 Q 585 120 609 162" fill="none" stroke="#D14343" stroke-width="2.5"/>
+  <path d="M 556 176 Q 585 124 614 176" fill="none" stroke="#D14343" stroke-width="2.5"/>
+  <polygon points="598,142 608,156 594,152" fill="#D14343"/>
+
+  <!-- particles trapped at the leakage field -->
+  <circle cx="577" cy="140" r="4" fill="#F2A33C"/>
+  <circle cx="586" cy="133" r="4" fill="#F2A33C"/>
+  <circle cx="595" cy="139" r="4" fill="#F2A33C"/>
+  <circle cx="571" cy="149" r="4" fill="#F2A33C"/>
+  <circle cx="600" cy="148" r="4" fill="#F2A33C"/>
+  <circle cx="581" cy="145" r="4" fill="#F2A33C"/>
+  <circle cx="590" cy="146" r="4" fill="#F2A33C"/>
+
+  <line x1="624" y1="128" x2="676" y2="106" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="682" y="102" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">
+    <tspan x="682" y="92">leakage field</tspan>
+    <tspan x="682" y="112">traps particles</tspan>
+  </text>
+
+  <text x="585" y="396" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Slotted ring</text>
+  <text x="585" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">poles form at the cut — a crack does the same</text>
+</svg>

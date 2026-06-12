@@ -1,0 +1,128 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="fdwSoft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+    </filter>
+    <filter id="fdwGlowR" filterUnits="userSpaceOnUse" x="-8" y="35" width="601" height="313">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fdwGlowB" filterUnits="userSpaceOnUse" x="175" y="26" width="360" height="78">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="fdwIllumG" x1="0" y1="20" x2="0" y2="298" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#cfe9fb"/><stop offset=".5" stop-color="#7fb3e3"/><stop offset="1" stop-color="#4d86c2"/>
+    </linearGradient>
+    <radialGradient id="fdwSheenG" cx="300" cy="150" r="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eaf6ff" stop-opacity=".22"/>
+      <stop offset=".55" stop-color="#eaf6ff" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#eaf6ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fdwFilmG" x1="0" y1="92" x2="0" y2="226" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0a1e3c" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#0a1e3c" stop-opacity=".34"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== REVEAL 1: illuminator + step-tablet film + density patches ===== -->
+  <g id="fdwFilmStrip" opacity="0">
+    <!-- illuminator (light box, face-on) -->
+    <rect x="30" y="14" width="540" height="290" rx="18" fill="#6fb2e8" opacity=".35" filter="url(#fdwSoft)"/>
+    <rect x="36" y="20" width="528" height="278" rx="16" fill="url(#fdwIllumG)" opacity=".75"/>
+    <rect x="36" y="20" width="528" height="278" rx="16" fill="url(#fdwSheenG)"/>
+    <rect x="36" y="20" width="528" height="278" rx="16" fill="none" stroke="#dff2ff" stroke-width="1" opacity=".3"/>
+    <circle cx="52" cy="288" r="2.5" fill="#5fe0ff" opacity=".9" filter="url(#fdwGlowR)"/>
+
+    <!-- film strip lying on the glass -->
+    <rect x="66" y="95" width="472" height="134" rx="7" fill="#04101f" opacity=".35"/>
+    <rect x="64" y="92" width="472" height="134" rx="7" fill="url(#fdwFilmG)"/>
+    <g stroke="#0b2240" stroke-width="1" opacity=".10">
+      <line x1="64" y1="120" x2="536" y2="120"/><line x1="64" y1="148" x2="536" y2="148"/>
+      <line x1="64" y1="176" x2="536" y2="176"/><line x1="64" y1="204" x2="536" y2="204"/>
+    </g>
+
+    <!-- four square density steps, darker left -> right (T = 10^-D) -->
+    <rect x="95"  y="116" width="80" height="80" fill="#3b6191"/>
+    <rect x="205" y="116" width="80" height="80" fill="#1d3a5f"/>
+    <rect x="315" y="116" width="80" height="80" fill="#10243f"/>
+    <rect x="425" y="116" width="80" height="80" fill="#050e1d"/>
+    <g fill="none" stroke="#cfe9ff" stroke-width="1" opacity=".3">
+      <rect x="95"  y="116" width="80" height="80"/>
+      <rect x="205" y="116" width="80" height="80"/>
+      <rect x="315" y="116" width="80" height="80"/>
+      <rect x="425" y="116" width="80" height="80"/>
+    </g>
+
+    <!-- density labels -->
+    <g font-size="12.5" fill="#cfe9ff" text-anchor="middle" letter-spacing="1" opacity=".9">
+      <text x="135" y="109">D=1</text>
+      <text x="245" y="109">D=2</text>
+      <text x="355" y="109">D=3</text>
+      <text x="465" y="109">D=4</text>
+    </g>
+
+    <!-- film rim light -->
+    <rect x="64" y="92" width="472" height="134" rx="7" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".5" filter="url(#fdwGlowR)"/>
+
+    <!-- caption -->
+    <text x="46" y="330" font-size="11.5" fill="#9fe6ff" opacity=".7">FILM ON ILLUMINATOR — EACH DENSITY STEP = 10× LESS LIGHT</text>
+  </g>
+
+  <!-- ===== REVEAL 2a/2b: viewing-light transmission tags ===== -->
+  <g id="fdwTransmit" opacity="0">
+    <rect x="107" y="202" width="56" height="18" rx="4" fill="#0e2848" opacity=".85"/>
+    <rect x="107" y="202" width="56" height="18" rx="4" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".55"/>
+    <text x="135" y="215" text-anchor="middle" font-size="11" fill="#9fe6ff">10%</text>
+    <rect x="217" y="202" width="56" height="18" rx="4" fill="#0e2848" opacity=".85"/>
+    <rect x="217" y="202" width="56" height="18" rx="4" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".55"/>
+    <text x="245" y="215" text-anchor="middle" font-size="11" fill="#9fe6ff">1%</text>
+    <rect x="60" y="240" width="142" height="44" rx="6" fill="rgba(10,30,60,.55)" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".35"/>
+    <text x="72" y="258" font-size="11" fill="#9fe6ff" opacity=".9" letter-spacing="1">% OF VIEWING</text>
+    <text x="72" y="274" font-size="11" fill="#9fe6ff" opacity=".9" letter-spacing="1">LIGHT THROUGH</text>
+  </g>
+  <g id="fdwTransmitB" opacity="0">
+    <rect x="327" y="202" width="56" height="18" rx="4" fill="#0e2848" opacity=".85"/>
+    <rect x="327" y="202" width="56" height="18" rx="4" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".55"/>
+    <text x="355" y="215" text-anchor="middle" font-size="11" fill="#9fe6ff">0.1%</text>
+    <rect x="437" y="202" width="56" height="18" rx="4" fill="#0e2848" opacity=".85"/>
+    <rect x="437" y="202" width="56" height="18" rx="4" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".55"/>
+    <text x="465" y="215" text-anchor="middle" font-size="11" fill="#9fe6ff">0.01%</text>
+  </g>
+
+  <!-- ===== REVEAL 3: code window bracket + densitometer chip ===== -->
+  <g id="fdwWindow" opacity="0">
+    <!-- window veil over the D2..D4 span -->
+    <rect x="205" y="92" width="300" height="134" fill="#5fe0ff" opacity=".05"/>
+    <line x1="205" y1="86" x2="205" y2="230" stroke="#5fe0ff" stroke-width="1.5" stroke-dasharray="4 4" opacity=".45"/>
+    <line x1="505" y1="86" x2="505" y2="230" stroke="#5fe0ff" stroke-width="1.5" stroke-dasharray="4 4" opacity=".45"/>
+
+    <!-- bracket over D~2 .. D=4 -->
+    <path d="M205 84 V72 H505 V84" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linejoin="round" filter="url(#fdwGlowB)"/>
+    <line x1="355" y1="72" x2="355" y2="58" stroke="#5fe0ff" stroke-width="1.5" opacity=".8"/>
+    <rect x="257" y="36" width="196" height="22" rx="4" fill="#0e2848" opacity=".9"/>
+    <rect x="257" y="36" width="196" height="22" rx="4" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".8"/>
+    <text x="355" y="51" text-anchor="middle" font-size="12" fill="#9fe6ff" letter-spacing="1">CODE WINDOW · D ≈ 2–4</text>
+
+    <!-- densitometer readout chip (2.50 sits inside the window) -->
+    <path d="M294 240 L300 230 L306 240 Z" fill="#5fe0ff" opacity=".85"/>
+    <rect x="215" y="240" width="170" height="46" rx="8" fill="#0e2848" opacity=".92"/>
+    <rect x="215" y="240" width="170" height="46" rx="8" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".8" filter="url(#fdwGlowR)"/>
+    <!-- mini gauge, needle at 2.5 of 0..5 -->
+    <path d="M228 273 A15 15 0 0 1 258 273" fill="none" stroke="#9fe6ff" stroke-width="1.5" opacity=".45"/>
+    <path d="M238.4 258.7 A15 15 0 0 1 255.1 264.2" fill="none" stroke="#5fe0ff" stroke-width="2.5" opacity=".9"/>
+    <line x1="243" y1="273" x2="243" y2="259.5" stroke="#eaf6ff" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="243" cy="273" r="2.2" fill="#eaf6ff"/>
+    <text x="268" y="257" font-size="11" fill="#9fe6ff" letter-spacing=".5">DENSITOMETER</text>
+    <text x="268" y="280" font-size="19" font-weight="700" fill="#eaf6ff">2.50</text>
+  </g>
+  <circle id="fdwPing" cx="300" cy="262" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#fdwGlowR)"/>
+
+  <!-- ===== REVEAL 4: on-target tag (with "hit it on the first shot") ===== -->
+  <g id="fdwHit" opacity="0">
+    <line x1="386" y1="263" x2="398" y2="263" stroke="#5fe0ff" stroke-width="1.2" opacity=".7"/>
+    <rect x="398" y="252" width="94" height="22" rx="4" fill="#0e2848" opacity=".85"/>
+    <rect x="398" y="252" width="94" height="22" rx="4" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".8"/>
+    <text x="445" y="267" text-anchor="middle" font-size="11" fill="#5fe0ff" letter-spacing="1">ON TARGET</text>
+  </g>
+</svg>

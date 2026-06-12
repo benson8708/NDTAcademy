@@ -1,0 +1,59 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">The Annotated Stress-Strain Curve</text>
+
+  <!-- elastic region shading -->
+  <rect x="100" y="80" width="150" height="305" fill="#E8F1FB" opacity="0.55"/>
+  <text x="175" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-style="italic" fill="#5A6B7E">ELASTIC — recoverable</text>
+  <text x="470" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-style="italic" fill="#5A6B7E">PLASTIC — permanent deformation</text>
+
+  <!-- axes -->
+  <line x1="100" y1="385" x2="742" y2="385" stroke="#0A2342" stroke-width="2.5"/>
+  <polygon points="740,377 756,385 740,393" fill="#0A2342"/>
+  <line x1="100" y1="385" x2="100" y2="78" stroke="#0A2342" stroke-width="2.5"/>
+  <polygon points="92,80 100,64 108,80" fill="#0A2342"/>
+  <text x="738" y="410" text-anchor="end" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0A2342">STRAIN ε = ΔL/L₀ (in/in)</text>
+  <text transform="rotate(-90 40 240)" x="40" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0A2342">STRESS σ = F/A (ksi · MPa)</text>
+
+  <!-- 0.2% offset construction -->
+  <line x1="124" y1="385" x2="268" y2="174" stroke="#5A6B7E" stroke-width="2" stroke-dasharray="7 5"/>
+  <line x1="124" y1="385" x2="124" y2="392" stroke="#5A6B7E" stroke-width="2"/>
+  <text x="150" y="407" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#5A6B7E">0.2% offset (0.002 strain)</text>
+
+  <!-- the curve -->
+  <path d="M 100 385 L 240 180 Q 254 175 268 174 C 330 152 420 116 475 112 C 535 116 595 134 638 160" fill="none" stroke="#1B82E8" stroke-width="4"/>
+
+  <!-- slope triangle -->
+  <line x1="150" y1="312" x2="195" y2="312" stroke="#0A2342" stroke-width="1.5"/>
+  <line x1="195" y1="312" x2="195" y2="247" stroke="#0A2342" stroke-width="1.5"/>
+  <text x="172" y="328" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#0A2342">Δε</text>
+  <text x="210" y="284" text-anchor="start" font-family="Arial, sans-serif" font-size="13" fill="#0A2342">Δσ</text>
+  <text x="218" y="330" text-anchor="start" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0A2342">Slope = Δσ/Δε = E (stiffness)</text>
+
+  <!-- proportional limit -->
+  <circle cx="240" cy="180" r="5" fill="#0A2342"/>
+  <line x1="236" y1="176" x2="196" y2="154" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="190" y="150" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#0A2342">Proportional limit</text>
+
+  <!-- yield point -->
+  <circle cx="268" cy="174" r="5" fill="#F2A33C"/>
+  <line x1="272" y1="180" x2="296" y2="204" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="300" y="218" text-anchor="start" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0A2342">Yield strength</text>
+  <text x="300" y="236" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-style="italic" fill="#5A6B7E">(0.2% offset method)</text>
+
+  <!-- UTS -->
+  <circle cx="475" cy="112" r="5" fill="#F2A33C"/>
+  <line x1="475" y1="106" x2="475" y2="98" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="475" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0A2342">ULTIMATE TENSILE STRENGTH</text>
+  <text x="475" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-style="italic" fill="#5A6B7E">highest engineering stress — necking begins</text>
+
+  <!-- fracture -->
+  <line x1="631" y1="153" x2="645" y2="167" stroke="#0A2342" stroke-width="3.5"/>
+  <line x1="645" y1="153" x2="631" y2="167" stroke="#0A2342" stroke-width="3.5"/>
+  <text x="656" y="156" text-anchor="start" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0A2342">Fracture</text>
+  <text x="656" y="174" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-style="italic" fill="#5A6B7E">ductility: % elongation,</text>
+  <text x="656" y="190" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-style="italic" fill="#5A6B7E">% reduction of area</text>
+
+  <!-- takeaway -->
+  <text x="400" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0A2342">Heat treatment moves yield and UTS dramatically — the elastic slope E barely moves.</text>
+</svg>

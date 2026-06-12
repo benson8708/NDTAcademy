@@ -1,0 +1,58 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Amplitude vs Distance and Reflector Size (Far Field)</text>
+
+  <!-- dB gridlines -->
+  <line x1="100" y1="100" x2="570" y2="100" stroke="#D9E0E8" stroke-width="1"/>
+  <line x1="100" y1="142" x2="570" y2="142" stroke="#D9E0E8" stroke-width="1"/>
+  <line x1="100" y1="184" x2="570" y2="184" stroke="#D9E0E8" stroke-width="1"/>
+  <line x1="100" y1="226" x2="570" y2="226" stroke="#D9E0E8" stroke-width="1"/>
+  <line x1="100" y1="268" x2="570" y2="268" stroke="#D9E0E8" stroke-width="1"/>
+  <line x1="100" y1="310" x2="570" y2="310" stroke="#D9E0E8" stroke-width="1"/>
+  <line x1="100" y1="352" x2="570" y2="352" stroke="#D9E0E8" stroke-width="1"/>
+  <text x="94" y="105" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">0</text>
+  <text x="94" y="147" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">−6</text>
+  <text x="94" y="189" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">−12</text>
+  <text x="94" y="231" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">−18</text>
+  <text x="94" y="273" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">−24</text>
+  <text x="94" y="315" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">−30</text>
+  <text x="94" y="357" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">−36</text>
+  <text x="58" y="76" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">dB</text>
+
+  <!-- axes -->
+  <line x1="100" y1="80" x2="100" y2="365" stroke="#0A2342" stroke-width="2"/>
+  <line x1="100" y1="365" x2="570" y2="365" stroke="#0A2342" stroke-width="2"/>
+  <text x="140" y="388" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">d</text>
+  <text x="280" y="388" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">2d</text>
+  <text x="420" y="388" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">4d</text>
+  <text x="560" y="388" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">8d</text>
+  <text x="335" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">distance (each step doubles)</text>
+
+  <!-- back wall line: −6 dB per doubling -->
+  <polyline points="140,100 280,142 420,184 560,226" fill="none" stroke="#1E9E6A" stroke-width="4"/>
+  <text x="575" y="231" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1E9E6A">Back wall: −6 dB / 2×</text>
+
+  <!-- SDH line: −9 dB per doubling -->
+  <polyline points="140,100 280,163 420,226 560,289" fill="none" stroke="#1B82E8" stroke-width="4"/>
+  <text x="575" y="294" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">SDH: −9 dB / 2×</text>
+
+  <!-- FBH line: −12 dB per doubling -->
+  <polyline points="140,100 280,184 420,268 560,352" fill="none" stroke="#D14343" stroke-width="4"/>
+  <text x="575" y="357" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">FBH: −12 dB / 2×</text>
+
+  <!-- common start marker -->
+  <circle cx="140" cy="100" r="6" fill="#0A2342"/>
+
+  <!-- size-law panel -->
+  <rect x="590" y="80" width="195" height="132" rx="8" fill="#E8F1FB" stroke="#0A2342" stroke-width="2"/>
+  <text x="687" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">Same distance — size law</text>
+  <circle cx="640" cy="148" r="10" fill="#D14343"/>
+  <circle cx="730" cy="148" r="20" fill="#D14343"/>
+  <line x1="656" y1="148" x2="700" y2="148" stroke="#0A2342" stroke-width="2"/>
+  <polygon points="696,142 708,148 696,154" fill="#0A2342"/>
+  <text x="687" y="188" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">diameter ×2 → area ×4</text>
+  <text x="687" y="206" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#F2A33C">→ amplitude +12 dB</text>
+
+  <!-- footnote -->
+  <text x="400" y="438" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">Material attenuation (dB per mm, charged both ways) adds on top of these geometric losses.</text>
+</svg>

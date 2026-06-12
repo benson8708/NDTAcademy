@@ -1,0 +1,83 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Tank Floor Scanner: Coverage Pattern</text>
+
+  <!-- ===== plan view (left): floor plates, lanes, dead zones ===== -->
+  <circle cx="205" cy="228" r="138" fill="none" stroke="#9BC4FF" stroke-width="15"/>
+  <circle cx="205" cy="228" r="150" fill="none" stroke="#0B1F3A" stroke-width="2.5"/>
+
+  <!-- lap weld joints between rectangular plates -->
+  <line x1="94" y1="143" x2="316" y2="143" stroke="#0B1F3A" stroke-width="1.5" opacity="0.6"/>
+  <line x1="68" y1="200" x2="342" y2="200" stroke="#0B1F3A" stroke-width="1.5" opacity="0.6"/>
+  <line x1="68" y1="256" x2="342" y2="256" stroke="#0B1F3A" stroke-width="1.5" opacity="0.6"/>
+  <line x1="94" y1="313" x2="316" y2="313" stroke="#0B1F3A" stroke-width="1.5" opacity="0.6"/>
+  <line x1="175" y1="95" x2="175" y2="143" stroke="#0B1F3A" stroke-width="1.5" opacity="0.6"/>
+  <line x1="255" y1="143" x2="255" y2="200" stroke="#0B1F3A" stroke-width="1.5" opacity="0.6"/>
+  <line x1="140" y1="200" x2="140" y2="256" stroke="#0B1F3A" stroke-width="1.5" opacity="0.6"/>
+  <line x1="290" y1="200" x2="290" y2="256" stroke="#0B1F3A" stroke-width="1.5" opacity="0.6"/>
+  <line x1="230" y1="256" x2="230" y2="313" stroke="#0B1F3A" stroke-width="1.5" opacity="0.6"/>
+  <line x1="185" y1="313" x2="185" y2="360" stroke="#0B1F3A" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- serpentine scan lanes with overlap on one plate -->
+  <rect x="152" y="218" width="126" height="4" fill="#1E66F5" opacity="0.22"/>
+  <rect x="152" y="234" width="126" height="4" fill="#1E66F5" opacity="0.22"/>
+  <line x1="152" y1="212" x2="266" y2="212" stroke="#1E66F5" stroke-width="4"/>
+  <polygon points="266,206 278,212 266,218" fill="#1E66F5"/>
+  <line x1="278" y1="228" x2="164" y2="228" stroke="#1E66F5" stroke-width="4"/>
+  <polygon points="164,222 152,228 164,234" fill="#1E66F5"/>
+  <line x1="152" y1="244" x2="266" y2="244" stroke="#1E66F5" stroke-width="4"/>
+  <polygon points="266,238 278,244 266,250" fill="#1E66F5"/>
+  <path d="M 280 214 Q 290 220 280 226" stroke="#1E66F5" stroke-width="2" fill="none"/>
+  <path d="M 150 230 Q 140 236 150 242" stroke="#1E66F5" stroke-width="2" fill="none"/>
+
+  <!-- plan-view labels -->
+  <text x="30" y="62" text-anchor="start" font-family="Arial, sans-serif" font-size="13" fill="#0B1F3A">lap welds between plates:</text>
+  <text x="30" y="78" text-anchor="start" font-family="Arial, sans-serif" font-size="13" fill="#0B1F3A">bridge dead zone — hand work</text>
+  <line x1="150" y1="84" x2="174" y2="118" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="30" y="402" text-anchor="start" font-family="Arial, sans-serif" font-size="13" fill="#0B1F3A">shell junction + annular zone: hand scanner and manual UT</text>
+  <line x1="140" y1="390" x2="112" y2="330" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="362" y="200" text-anchor="start" font-family="Arial, sans-serif" font-size="13" fill="#1E66F5">scan lanes,</text>
+  <text x="362" y="216" text-anchor="start" font-family="Arial, sans-serif" font-size="13" fill="#1E66F5">250–300 mm swath,</text>
+  <text x="362" y="232" text-anchor="start" font-family="Arial, sans-serif" font-size="13" fill="#1E66F5">overlap every pass</text>
+  <line x1="358" y1="226" x2="286" y2="230" stroke="#1E66F5" stroke-width="1.5"/>
+
+  <!-- ===== side view (right): magnet bridge over plate ===== -->
+  <text x="605" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">Side view: bridge saturates the plate</text>
+  <line x1="688" y1="95" x2="742" y2="66" stroke="#0B1F3A" stroke-width="5"/>
+  <rect x="520" y="92" width="170" height="20" fill="#0B1F3A"/>
+  <rect x="520" y="112" width="36" height="38" fill="#0B1F3A"/>
+  <rect x="654" y="112" width="36" height="38" fill="#0B1F3A"/>
+  <text x="538" y="136" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">N</text>
+  <text x="672" y="136" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">S</text>
+  <rect x="594" y="128" width="26" height="20" fill="#1E66F5"/>
+  <circle cx="508" cy="143" r="7" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <circle cx="702" cy="143" r="7" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+
+  <!-- plate, soil, soil-side pit, flux loop, leakage -->
+  <rect x="445" y="152" width="320" height="26" fill="#9BC4FF" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="598,178 618,178 608,160" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="1.5"/>
+  <path d="M 538 152 L 538 166 L 672 166 L 672 152" stroke="#1E66F5" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
+  <path d="M 596 150 Q 607 140 618 150" stroke="#1E66F5" stroke-width="2" stroke-dasharray="4 3" fill="none"/>
+  <line x1="455" y1="186" x2="469" y2="178" stroke="#0B1F3A" stroke-width="1.5" opacity="0.5"/>
+  <line x1="495" y1="186" x2="509" y2="178" stroke="#0B1F3A" stroke-width="1.5" opacity="0.5"/>
+  <line x1="535" y1="186" x2="549" y2="178" stroke="#0B1F3A" stroke-width="1.5" opacity="0.5"/>
+  <line x1="575" y1="186" x2="589" y2="178" stroke="#0B1F3A" stroke-width="1.5" opacity="0.5"/>
+  <line x1="635" y1="186" x2="649" y2="178" stroke="#0B1F3A" stroke-width="1.5" opacity="0.5"/>
+  <line x1="675" y1="186" x2="689" y2="178" stroke="#0B1F3A" stroke-width="1.5" opacity="0.5"/>
+  <line x1="715" y1="186" x2="729" y2="178" stroke="#0B1F3A" stroke-width="1.5" opacity="0.5"/>
+  <text x="470" y="124" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#1E66F5">sensor bar</text>
+  <line x1="474" y1="120" x2="592" y2="134" stroke="#1E66F5" stroke-width="1.5"/>
+  <text x="608" y="206" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#0B1F3A">soil-side pit leaks flux to the top surface</text>
+
+  <!-- notes box -->
+  <rect x="430" y="248" width="340" height="134" rx="8" fill="#9BC4FF"/>
+  <text x="444" y="274" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0B1F3A">Swath about 250–300 mm; walk lane by lane</text>
+  <text x="444" y="300" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0B1F3A">Overlap every pass; map plate by plate</text>
+  <text x="444" y="326" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0B1F3A">Amplitude tracks volume of loss — not depth</text>
+  <text x="444" y="352" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0B1F3A">Mark, then UT prove-up: depth + which surface</text>
+  <text x="444" y="376" text-anchor="start" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0B1F3A">Edges, welds, obstructions: manual methods</text>
+
+  <!-- bottom emphasis bar -->
+  <rect x="30" y="410" width="740" height="32" rx="8" fill="#0B1F3A"/>
+  <text x="400" y="431" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">MFL screens the whole floor fast — UT sizes what it flags; edges and welds get hand work</text>
+</svg>

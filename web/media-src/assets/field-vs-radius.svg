@@ -1,0 +1,123 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="fvrG" filterUnits="userSpaceOnUse" x="-20" y="-20" width="640" height="380">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="fvrsteelL" gradientUnits="userSpaceOnUse" cx="92" cy="190" r="80">
+      <stop offset="0" stop-color="#38699c"/><stop offset=".45" stop-color="#224a72"/><stop offset="1" stop-color="#122e50"/>
+    </radialGradient>
+    <radialGradient id="fvrsteelR" gradientUnits="userSpaceOnUse" cx="424" cy="205" r="58">
+      <stop offset="0" stop-color="#2b5c8e"/><stop offset=".6" stop-color="#1e4670"/><stop offset="1" stop-color="#122e50"/>
+    </radialGradient>
+    <radialGradient id="fvrcc" gradientUnits="userSpaceOnUse" cx="420" cy="201" r="16">
+      <stop offset="0" stop-color="#ffb066"/><stop offset=".6" stop-color="#a86230"/><stop offset="1" stop-color="#7a4318"/>
+    </radialGradient>
+  </defs>
+
+  <!-- divider -->
+  <line x1="300" y1="24" x2="300" y2="316" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="3 6" opacity=".25"/>
+
+  <!-- ===== LEFT: solid bar cross-section + H vs r plot ===== -->
+  <rect x="107" y="22" width="86" height="22" rx="5" fill="#0e2848" fill-opacity=".85" stroke="#8fb6e0" stroke-opacity=".5"/>
+  <text x="150" y="37" text-anchor="middle" font-size="11" letter-spacing=".5" fill="#9fe6ff">SOLID BAR</text>
+
+  <circle cx="105" cy="205" r="58" fill="url(#fvrsteelL)" stroke="#8fb6e0" stroke-width="1.5" opacity=".92"/>
+  <g fill="none" stroke="#8fb6e0" opacity=".15">
+    <circle cx="105" cy="205" r="40" stroke-width="1"/>
+    <circle cx="105" cy="205" r="20" stroke-width="1"/>
+  </g>
+  <!-- current out of page at centerline -->
+  <circle cx="105" cy="205" r="7" fill="#0e2848" stroke="#ffc24b" stroke-width="1.6" opacity=".95"/>
+  <circle cx="105" cy="205" r="2.2" fill="#ffc24b" opacity=".95"/>
+  <text x="87" y="194" font-size="11" fill="#ffc24b" opacity=".9">I</text>
+
+  <!-- axes -->
+  <g stroke="#8fb6e0" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".8">
+    <path d="M105 205 L282 205 M282 205 L274 200.5 M282 205 L274 209.5"/>
+    <path d="M105 205 L105 86 M105 86 L100.5 94 M105 86 L109.5 94"/>
+  </g>
+  <line x1="163" y1="200" x2="163" y2="210" stroke="#8fb6e0" stroke-width="1.2" opacity=".7"/>
+  <text x="93" y="98" font-size="11" fill="#9fe6ff" opacity=".85" text-anchor="end">H</text>
+  <text x="272" y="221" font-size="11" fill="#9fe6ff" opacity=".85">r</text>
+  <text x="163" y="223" font-size="10" fill="#9fe6ff" opacity=".8" text-anchor="middle">R</text>
+
+  <!-- H(r): linear inside, sharp peak at surface, 1/r outside (draw 0.5s) -->
+  <path id="fvrBarCurve" d="M105 205 L163 115 L169 123.4 L175 130.4 L182 137.2 L189 142.9 L197 148.3 L205 152.8 L214 157.1 L223 160.8 L233 164.2 L243 167.2 L254 170 L265 172.4 L278 174.8"
+    fill="none" stroke="#5fe0ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#fvrG)"
+    pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- peak marker (fade 3.2s) -->
+  <g id="fvrSurfacePeak" opacity="0">
+    <line x1="163" y1="205" x2="163" y2="118" stroke="#ffc24b" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>
+    <circle cx="163" cy="115" r="7" fill="#ffc24b" opacity=".28" filter="url(#fvrG)"/>
+    <circle cx="163" cy="115" r="3.2" fill="#ffc24b"/>
+    <path d="M172 101 L166 111" stroke="#ffc24b" stroke-width="1" opacity=".6" fill="none"/>
+    <text x="175" y="99" font-size="11" letter-spacing=".5" fill="#ffc24b">MAX AT SURFACE</text>
+  </g>
+
+  <!-- ===== RIGHT: hollow tube shot directly (fade 5.2s) ===== -->
+  <g id="fvrHollowDead" opacity="0">
+    <rect x="410" y="22" width="100" height="22" rx="5" fill="#0e2848" fill-opacity=".85" stroke="#8fb6e0" stroke-opacity=".5"/>
+    <text x="460" y="37" text-anchor="middle" font-size="11" letter-spacing=".5" fill="#9fe6ff">HOLLOW TUBE</text>
+
+    <circle cx="424" cy="205" r="58" fill="url(#fvrsteelR)" stroke="#8fb6e0" stroke-width="1.5" opacity=".92"/>
+    <circle cx="424" cy="205" r="34" fill="#071427" stroke="#8fb6e0" stroke-width="1.2" opacity=".95"/>
+
+    <!-- current dots in the wall (kept clear of axes + curve corridor) -->
+    <g stroke="#ffc24b" stroke-width="1.2" fill="#0e2848" opacity=".85">
+      <circle cx="450.4" cy="167.3" r="4.5"/><circle cx="394.4" cy="169.8" r="4.5"/>
+      <circle cx="378" cy="205" r="4.5"/><circle cx="394.4" cy="240.2" r="4.5"/>
+      <circle cx="432" cy="250.3" r="4.5"/><circle cx="463.8" cy="228" r="4.5"/>
+    </g>
+    <g fill="#ffc24b" opacity=".9">
+      <circle cx="450.4" cy="167.3" r="1.6"/><circle cx="394.4" cy="169.8" r="1.6"/>
+      <circle cx="378" cy="205" r="1.6"/><circle cx="394.4" cy="240.2" r="1.6"/>
+      <circle cx="432" cy="250.3" r="1.6"/><circle cx="463.8" cy="228" r="1.6"/>
+    </g>
+
+    <!-- axes -->
+    <g stroke="#8fb6e0" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".8">
+      <path d="M424 205 L586 205 M586 205 L578 200.5 M586 205 L578 209.5"/>
+      <path d="M424 205 L424 86 M424 86 L419.5 94 M424 86 L428.5 94"/>
+    </g>
+    <line x1="458" y1="200" x2="458" y2="210" stroke="#8fb6e0" stroke-width="1.2" opacity=".7"/>
+    <line x1="482" y1="200" x2="482" y2="210" stroke="#8fb6e0" stroke-width="1.2" opacity=".7"/>
+    <text x="412" y="98" font-size="11" fill="#9fe6ff" opacity=".85" text-anchor="end">H</text>
+    <text x="576" y="221" font-size="11" fill="#9fe6ff" opacity=".85">r</text>
+    <text x="449" y="217" font-size="9" fill="#9fe6ff" opacity=".75" text-anchor="middle">ID</text>
+    <text x="490" y="217" font-size="9" fill="#9fe6ff" opacity=".75" text-anchor="middle">OD</text>
+
+    <!-- bore field flatlined at zero -->
+    <path d="M424 205 L458 205" fill="none" stroke="#ff6b6b" stroke-width="2.6" stroke-linecap="round" filter="url(#fvrG)"/>
+    <text x="424" y="231" font-size="10" letter-spacing=".5" fill="#ff6b6b" text-anchor="middle">ID &#8776; 0</text>
+
+    <!-- wall field rises to OD, short dim tail outside -->
+    <path d="M458 205 L462 189 L468 167.8 L474 148.5 L478 136.5 L482 125" fill="none" stroke="#5fe0ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#fvrG)"/>
+    <path d="M482 125 L494 138.7 L509 150.4 L529 160.8 L545 166.7" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" opacity=".45"/>
+    <circle cx="482" cy="125" r="2.6" fill="#5fe0ff" opacity=".9"/>
+  </g>
+
+  <!-- ===== central conductor fix (fade 7.6s) ===== -->
+  <g id="fvrCentralFix" opacity="0">
+    <!-- tube current switches off: discs blend dots back into the wall -->
+    <g fill="url(#fvrsteelR)">
+      <circle cx="450.4" cy="167.3" r="7"/><circle cx="394.4" cy="169.8" r="7"/>
+      <circle cx="378" cy="205" r="7"/><circle cx="394.4" cy="240.2" r="7"/>
+      <circle cx="432" cy="250.3" r="7"/><circle cx="463.8" cy="228" r="7"/>
+    </g>
+    <!-- central conductor threaded through the bore -->
+    <circle cx="424" cy="205" r="13" fill="url(#fvrcc)" stroke="#ffc24b" stroke-width="1.5"/>
+    <circle cx="424" cy="205" r="5" fill="none" stroke="#ffc24b" stroke-width="1.2" opacity=".9"/>
+    <circle cx="424" cy="205" r="1.8" fill="#ffc24b"/>
+    <text x="424" y="284" font-size="9.5" letter-spacing=".5" fill="#ffc24b" text-anchor="middle" opacity=".9">CENTRAL CONDUCTOR</text>
+
+    <!-- re-plotted field: maximum at the ID wall, 1/r outward -->
+    <path d="M458 121 L464 133.6 L472 145.5 L482 155.8 L496 165.3 L514 173.3 L536 179.5 L562 184.3 L584 187.8" fill="none" stroke="#ffc24b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#fvrG)"/>
+    <line x1="458" y1="205" x2="458" y2="124" stroke="#ffc24b" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>
+    <circle cx="458" cy="121" r="7" fill="#ffc24b" opacity=".28" filter="url(#fvrG)"/>
+    <circle cx="458" cy="121" r="3.2" fill="#ffc24b"/>
+    <path d="M504 103 L463 117" stroke="#ffc24b" stroke-width="1" opacity=".6" fill="none"/>
+    <text x="506" y="100" font-size="11" letter-spacing=".5" fill="#ffc24b">ID STRONGEST</text>
+  </g>
+</svg>

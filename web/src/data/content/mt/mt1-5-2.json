@@ -1,0 +1,178 @@
+{
+ "lessonId": "mt1-5-2",
+ "title": "Principles of Demagnetization",
+ "narrationScript": "When the magnetizing current stops, the magnetism does not always stop with it. Ferromagnetic parts keep some flux after the field is removed. That leftover field is residual magnetism, and how much remains depends on the material. Retentivity is the material's ability to hold residual flux. Hard magnetic materials, like high carbon and many heat treated steels, hold a lot. Soft magnetic materials, like low carbon steel, hold little. The other number that matters is coercive force. That is the reverse magnetizing force needed to drive the residual flux back to zero. High coercive force means the part fights you when you try to strip the field out. Those two properties together tell you how hard demagnetization will be. Why do we care about a leftover field at all. Several good reasons. A magnetized part grabs chips, filings, and dust during later machining, which ruins surface finish and chews up tooling. Residual fields near bearings attract wear debris and grind it into the races. If the part is welded later, a residual field can push the arc around, a problem called arc blow. Strong residual fields disturb instruments and compasses near the part, plate unevenly in electroplating baths, and can even interfere with later magnetic particle tests. And many customer specifications simply require the part to come back demagnetized. There are also times you do not demagnetize. If the part will be magnetized again in another direction for the next shot, if it is low retentivity structural steel where nobody cares, or if it is headed for a stress relief or heat treatment above the Curie point, around thirteen hundred fifty degrees Fahrenheit for steel, where all magnetism vanishes on its own. Your procedure and the customer decide. Now the sneaky part. The shape of the residual field depends on how the part was magnetized. Longitudinal magnetization leaves poles at the ends of the part. Those external poles leak flux into the air, so a simple field indicator held near the end will show them, and a demagnetizing coil can grab the part and work on it easily. Circular magnetization is different. The flux runs in closed rings inside the part and barely leaks out at all. A field indicator can read near zero on a part that is still strongly magnetized inside. That is why some shops deliberately magnetize a part longitudinally before demagnetizing it, converting the hidden circular field into an external one they can verify. Remember that trap. A zero reading after a circular shot proves very little by itself. The principle behind every demagnetization method is the same. Subject the part to a magnetizing force that keeps reversing direction while it steadily shrinks toward zero. Each reversal flips the magnetic domains, and each smaller cycle flips fewer of them back, so the part walks down a series of shrinking hysteresis loops until the leftover flux is too small to matter. Two conditions must be met. The first applied force has to be strong enough to overcome the part's coercive force, which in practice means starting at or above the field strength that magnetized the part in the first place. And the steps have to shrink gradually. Big jumps leave the part stranded partway down the curve. The most common method is the alternating current coil. The current reverses on its own one hundred twenty times a second, so all you add is the decay. You pass the part slowly through the energized coil and keep withdrawing it along the axis until it is two or three feet away before the coil is switched off. Distance provides the taper. The catch is skin effect. Alternating current works mostly at the surface, so an A C coil may not touch a deep residual field in a thick section. For parts magnetized with direct current, where the field penetrates deep, the better tool is reversing and step down direct current. The equipment flips the polarity of D C while lowering the amplitude step by step, walking the whole cross section down to zero. Yokes can demagnetize locally, and a furnace above the Curie point erases everything, though that is a metallurgical decision, not an inspection one. Finally, prove it. Demagnetization is never assumed, it is measured. The everyday tool is the pocket field indicator, a small magnetometer with a pointer that deflects either way from zero. Calibrated Hall effect gaussmeters give real numbers. Check the places where poles concentrate, especially the ends, corners, and any machined features. A common acceptance value is three gauss or less, but your written procedure governs. For scale, the Earth's own field is about half a gauss, so you will never read a true zero on the bench. Demagnetize with intent, verify with an instrument, and write down what you measured.",
+ "imagePrompt": "A technician slowly withdraws a machined steel shaft along the axis of a large energized demagnetizing coil mounted on a workbench in an industrial inspection shop, holding the part with both gloved hands.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Residual Magnetism, Retentivity, and Coercive Force",
+   "body": "Switch off the magnetizing current and ferromagnetic parts keep some flux. That leftover field is **residual magnetism**, and two material properties from the B–H hysteresis loop predict how it behaves:\n\n- **Retentivity** — the flux density the material retains when the magnetizing force H returns to zero. Hard magnetic materials (high-carbon, many heat-treated alloy steels) have high retentivity; soft magnetic materials (low-carbon structural steel) have little.\n- **Coercive force** — the *reverse* magnetizing force required to drive that residual flux density back to zero.\n\nTogether they set the demagnetization problem: high retentivity means there is a lot of field to remove, and high coercive force means the material resists removal. A hardened bearing steel may hold a strong residual field and demand a strong, carefully tapered demagnetizing cycle; a mild-steel weldment may shed nearly everything on its own. This is the same hard-versus-soft distinction that decides whether the residual *inspection* method is even possible — the same property that makes a part inspectable by residual method makes it stubborn to demagnetize."
+  },
+  {
+   "type": "text",
+   "heading": "Why Demagnetize — and When Not To",
+   "body": "Reasons a procedure or customer requires demagnetization:\n\n- **Later machining** — a magnetized part grabs chips and filings, degrading surface finish and dulling tooling.\n- **Bearings and wear surfaces** — residual fields attract metallic debris and hold it where it grinds.\n- **Subsequent welding** — residual flux deflects the welding arc (**arc blow**), causing erratic, defective welds.\n- **Instruments and avionics** — strong fields disturb compasses, gauges, and sensitive electronics near the part.\n- **Plating and cleaning** — fields can cause uneven electroplating and hold contaminating particles through cleaning.\n- **Later NDT** — a leftover field distorts the next magnetic particle examination's intended field.\n\nDemagnetization may be **unnecessary** when the part will immediately be re-magnetized in another direction for the next shot, when it is low-retentivity material in non-critical service, or when it will pass through heat treatment **above the Curie point (≈ 1,350 °F for steel)**, where ferromagnetism — and every residual field — disappears completely. The written procedure and purchase order decide; demagnetization is a requirement, not a reflex."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt1-5-2-fig-a",
+   "caption": "Longitudinal residual fields leak flux at external poles and are easy to detect; circular residual fields stay contained inside the part and can read near zero on a field indicator."
+  },
+  {
+   "type": "text",
+   "heading": "Longitudinal vs Circular Residual Fields",
+   "body": "The *shape* of the residual field depends on how the part was magnetized, and it changes both detection and removal.\n\n**Longitudinal residual fields** leave magnetic poles at the part's ends. Those poles push flux out into the surrounding air, so a field indicator held near an end deflects plainly, and a demagnetizing coil couples to the part easily. What leaks can be measured, and what can be measured can be verified.\n\n**Circular residual fields** are the trap. The flux runs in closed loops *inside* the part — no ends, no poles, almost no external leakage. A pocket field indicator can read near zero against a part that is still strongly magnetized internally, and that hidden field will still attract chips at a machined keyway or bias a later weld. Because you cannot readily measure it, some procedures call for deliberately magnetizing the part **longitudinally first**, converting the contained circular field into an external longitudinal one that a coil can remove and an indicator can verify. Treat any \"zero\" reading after circular magnetization with suspicion — it proves little by itself."
+  },
+  {
+   "type": "text",
+   "heading": "The Principle: Reverse and Diminish",
+   "body": "Every practical demagnetization method does the same thing: it subjects the part to a magnetizing force that **alternates in direction while decreasing in amplitude toward zero**. Each reversal drives the magnetic domains around a hysteresis loop; each successively smaller cycle traces a smaller loop, leaving less flux behind, until the part spirals down to a negligible residual level.\n\nTwo conditions must both be met:\n\n- **Start strong enough.** The initial demagnetizing force must exceed the part's coercive force — in practice, start at or above the magnetizing force originally used. A weak field cannot flip the domains a strong field aligned; it just adds noise on top.\n- **Decay gradually.** The amplitude steps must shrink smoothly. Cut the field in large jumps and the loop collapses unevenly, stranding the part partway down the curve with a meaningful residual field.\n\nFrequency matters too: the lower the frequency of reversal, the deeper the field penetrates, which is exactly why AC and DC methods divide the work the way the next section describes."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt1-5-2-fig-b",
+   "caption": "Demagnetization traced on the B–H plane: each reversal of the shrinking applied field walks the part down smaller hysteresis loops toward zero."
+  },
+  {
+   "type": "text",
+   "heading": "Methods of Demagnetization",
+   "body": "**AC coil pass-through** — the workhorse. Line-frequency current reverses on its own 120 times per second, so the operator only supplies the decay: pass the part slowly through the energized coil and **withdraw it along the coil axis to about 2–3 feet away before the coil is de-energized** — distance provides the taper. Small parts go through one at a time, oriented along the field, not in baskets of tangled steel. The limitation is **skin effect**: AC concentrates near the surface, so deep residual fields in thick sections survive an AC coil.\n\n**AC step-down** — the part stays in the coil (or under a yoke) while the equipment ramps the AC amplitude to zero. Same physics, no walking.\n\n**Reversing step-down DC** — for parts magnetized with FWDC or HWDC, where the residual field penetrates deep. The equipment reverses DC polarity while reducing amplitude step by step, demagnetizing the full cross-section. This is the method for thick, hardened, deeply magnetized parts.\n\n**Yoke demagnetization** — an energized AC yoke stroked across a local area and withdrawn while energized handles welds and spot work.\n\n**Above the Curie point** — heat treatment beyond ≈ 1,350 °F erases all magnetism, but that is a metallurgical operation, not an inspection-room technique."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "Typical verification limit",
+   "body": "Practices such as ASTM E1444 and ASME Section V, Article 7 require demagnetization to be **verified, not assumed**. A calibrated field indicator or Hall-effect gaussmeter is applied at the locations where poles concentrate — ends, corners, machined features — and a common acceptance level is **3 gauss (240 A/m) or less**, *as your written procedure and customer specification define*. Record the readings."
+  },
+  {
+   "type": "text",
+   "heading": "Measuring the Result",
+   "body": "Demagnetization ends with an instrument, not an opinion.\n\n- **Pocket field indicator** — a small mechanical magnetometer whose pointer deflects either side of zero. Fast, rugged, and adequate for go/no-go checks against a procedure limit. Hold it close to the surface, at the part's ends and corners where poles concentrate, and scan — a single reading at mid-length can miss everything.\n- **Hall-effect gaussmeter** — a calibrated probe giving numeric flux-density readings, used when a specification states a hard number or when diagnosing a stubborn part.\n\nKeep scale in mind: the **Earth's field is about 0.5 gauss**, so a true zero never appears on the bench, and a long part left aligned north-south can slowly re-acquire a weak longitudinal field. Verify in a consistent orientation, away from magnetized fixtures and steel tables. And remember the circular-field caution — a near-zero external reading after a circular shot is grounds for the longitudinal-conversion technique, not for celebration. Document the instrument, the locations checked, and the readings; the record is part of the inspection."
+  }
+ ],
+ "figures": [
+  { "id": "mt1-5-2-fig-a", "title": "Longitudinal versus circular residual fields", "file": "mt1-5-2-fig-a.svg" },
+  { "id": "mt1-5-2-fig-b", "title": "Diminishing hysteresis loops during demagnetization", "file": "mt1-5-2-fig-b.svg" }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Demag Decisions: Hardened Shaft After Inspection",
+  "intro": "You have just finished a fluorescent MT examination of a hardened, high-carbon pump shaft on a bench unit: a FWDC head shot (circular) followed by a FWDC coil shot (longitudinal). The shaft passes. The router says it goes next to finish grinding between centers, and the customer specification requires demagnetization with verification.",
+  "steps": [
+   {
+    "prompt": "The grinder operator says low-carbon shafts never give him trouble and asks if you can skip demag. Your call?",
+    "options": [
+     "Skip it — the field indicator will probably read low anyway",
+     "Demagnetize — this is a high-retentivity steel headed for machining, and the specification requires it",
+     "Skip it — FWDC fields always decay on their own within an hour"
+    ],
+    "correct": 1,
+    "feedback": "Hardened high-carbon steel has high retentivity, grinding debris will be attracted to a residual field at the centers and journals, and the customer spec explicitly requires demag with verification. Low-carbon habits do not transfer to hard parts, and DC fields do not self-decay."
+   },
+   {
+    "prompt": "You try a quick pass through the AC demagnetizing coil and the end-of-shaft reading barely drops. Why is AC struggling?",
+    "options": [
+     "The coil reversed polarity too quickly for steel",
+     "Skin effect — AC works mostly at the surface, and the FWDC magnetization left a deep residual field",
+     "The shaft is too short for any coil method"
+    ],
+    "correct": 1,
+    "feedback": "AC concentrates near the surface, so it cannot reach the deep residual field that full-wave DC magnetization put through the cross-section. Deep DC fields call for reversing, step-down DC demagnetization."
+   },
+   {
+    "prompt": "You switch to reversing step-down DC. To actually walk the domains down to zero, the starting amplitude must be:",
+    "options": [
+     "At or above the magnetizing force used during inspection, then reduced in small steps",
+     "As low as possible to avoid re-magnetizing the part",
+     "Exactly half the inspection amperage, reduced in two large steps"
+    ],
+    "correct": 0,
+    "feedback": "The initial force must exceed the part's coercive force — practically, start at or above the original magnetizing level — and the amplitude must shrink gradually with each reversal, or the part is left stranded partway down the hysteresis curve."
+   },
+   {
+    "prompt": "After the DC cycle, your field indicator reads near zero at mid-length. The head shot was circular. Are you done verifying?",
+    "options": [
+     "Yes — zero anywhere on the part means zero everywhere",
+     "No — check the ends and corners where poles concentrate, and remember a circular residual field barely leaks externally",
+     "No — wait 24 hours and read again before deciding"
+    ],
+    "correct": 1,
+    "feedback": "Poles concentrate at ends, corners, and machined features, so that is where you measure. And because circular fields are internally contained, a near-zero external reading alone is weak evidence — which is why the longitudinal coil shot before demag matters."
+   },
+   {
+    "prompt": "Readings at both ends now show 2 gauss; the procedure limit is 3 gauss. Your last move?",
+    "options": [
+     "Run one more demag cycle to chase a perfect zero before signing",
+     "Accept, record the instrument, locations, and readings, and release the shaft",
+     "Accept verbally and skip the paperwork since it passed"
+    ],
+    "correct": 1,
+    "feedback": "2 G is within the 3 G procedure limit — chasing zero is pointless when Earth's field alone is about 0.5 G. Verification is complete when the readings are taken at the right locations and documented."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A part's resistance to being demagnetized is governed chiefly by its:",
+   "options": [
+    "Electrical conductivity",
+    "Coercive force — the reverse magnetizing force needed to drive residual flux to zero",
+    "Density and section thickness only",
+    "Surface roughness"
+   ],
+   "correct": 1,
+   "explanation": "Coercive force is the reverse H required to zero the residual flux density; high-coercive-force (hard) materials resist demagnetization and need a stronger initial demagnetizing field."
+  },
+  {
+   "question": "Which situation generally makes demagnetization UNNECESSARY?",
+   "options": [
+    "The part goes next to finish machining on precision surfaces",
+    "The part will be welded in a later operation",
+    "The part will be heat treated above the Curie point after inspection",
+    "The part operates next to sensitive flight instruments"
+   ],
+   "correct": 2,
+   "explanation": "Above the Curie point (about 1,350 °F for steel) ferromagnetism disappears and all residual magnetism is erased, so demagnetizing first accomplishes nothing. The other three are classic reasons demag is required."
+  },
+  {
+   "question": "After a circular (head-shot) magnetization, a pocket field indicator held against the part reads essentially zero. The correct conclusion is:",
+   "options": [
+    "The part is fully demagnetized",
+    "The part was never magnetized in the first place",
+    "Little can be concluded — a circular residual field is contained within the part and leaks almost no external flux",
+    "The indicator must be defective"
+   ],
+   "correct": 2,
+   "explanation": "Circular fields form closed loops inside the part with no external poles, so an external indicator can read near zero on a strongly magnetized part — one reason procedures may magnetize longitudinally before demagnetizing."
+  },
+  {
+   "question": "Why does an AC demagnetizing coil often fail to remove the residual field left by full-wave DC magnetization of a thick part?",
+   "options": [
+    "AC reverses polarity too slowly to flip domains",
+    "Skin effect confines the AC field near the surface, leaving the deep residual field untouched",
+    "AC coils cannot produce enough total amperage",
+    "DC fields can only be removed by heating the part"
+   ],
+   "correct": 1,
+   "explanation": "Line-frequency AC concentrates at the surface, while FWDC magnetizes the full cross-section; deep residual fields call for reversing, step-down DC, which penetrates and decays through the whole section."
+  },
+  {
+   "question": "Using an AC coil, the proper technique is to:",
+   "options": [
+    "Hold the part stationary in the coil and switch the coil off",
+    "Pass the part slowly through and withdraw it about 2–3 feet along the axis before the coil is de-energized",
+    "Drop a basket of small parts in the coil for one cycle",
+    "Move the part through as fast as possible to maximize reversals"
+   ],
+   "correct": 1,
+   "explanation": "Withdrawing the part along the axis lets distance taper the field gradually to zero — the required diminishing amplitude. Switching off with the part inside, or tangling parts in a basket, leaves residual fields."
+  }
+ ],
+ "references": [
+  "CP-105-2024 MT Topical Outline §8.1–8.3 (residual magnetism, reasons, longitudinal and circular residual fields)",
+  "CP-105-2024 MT Topical Outline §8.4–8.7 (principles, retentivity and coercive force, methods, measurement)",
+  "Practices such as ASTM E1444 and ASME BPVC Section V, Article 7 (demagnetization and verification — general practice)",
+  "ASTM E709 (guide — demagnetization methods, general practice)"
+ ]
+}

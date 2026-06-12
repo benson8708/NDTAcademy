@@ -1,0 +1,193 @@
+{
+  "lessonId": "basic-5-2",
+  "title": "Radiographic Testing: Imaging, Interpretation, and Applications",
+  "narrationScript": "The first radiography lesson built the beam and kept you safe around it. This one teaches you to read what the beam draws. A radiograph is a shadow picture painted in film density: dark where little metal stood in the way, light where extra thickness or a dense tungsten fleck soaked the radiation up. Image quality balances contrast against definition, and geometry rules the sharpness: a small focal spot, a long source-to-object distance, and a detector held tight against the part all shrink geometric unsharpness, while the image quality indicator proves on every exposure that the system can still show a two percent change of section. Interpretation then becomes pattern reading. Porosity prints as rounded dark spots, slag as irregular dark lines off the centerline, incomplete penetration as a ruler-straight dark line down the root, and a tight crack shows only when the beam runs nearly along its plane. We close with the applications the outline names: castings, welds, assemblies examined without disassembly, electronic components under microfocus magnification, and gamma radiography in the field.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "A Shadow Picture Painted in Density",
+      "body": "A radiograph records **differential absorption**: every point on the image measures how much radiation survived its particular path through the part. On film, the record is **density** — the darkness of the developed emulsion, defined as the base-10 logarithm of the ratio of the viewing light striking the film to the light getting through. Density 2.0 passes 1% of the illuminator's light; 3.0 passes 0.1%. Codes set a working window because film performs best there: ASME Section V requires a minimum of **1.8 through the area of interest for X-ray** techniques and **2.0 for gamma**, with a maximum of **4.0**.\n\nThree image qualities decide whether a flaw is visible:\n\n- **Contrast** — the density difference between a detail and its background. **Subject contrast** comes from the part and the beam: lower energy (kV) widens the difference between thicknesses, while scatter flattens it. **Detector contrast** comes from the film's response: film gradient climbs as density rises, one reason the codes demand those minimum densities.\n- **Definition** — edge sharpness, governed by the exposure geometry of the next section, by screen-to-film contact, and by the grain of the film or the pixel pitch of a digital panel. Fine-grain Class 1 films are slower but sharper.\n- **Latitude** — the range of thicknesses one exposure records within the working density window. Latitude and contrast trade against each other: a low-energy, high-contrast technique may need two exposures to cover a part with large section changes.\n\nProof that the balance succeeded travels on the image itself: the **image quality indicator (IQI)**. The hole-type plaque (ASTM E1025) is a small step of radiographically similar material **2% of the section thickness**, pierced with holes of 1T, 2T, and 4T diameter; the wire-type set (ASTM E747) lays graded wires across the weld. The standard **2-2T quality level** — plaque outline plus the 2T hole visible — demonstrates roughly 2% thickness sensitivity. The IQI normally rides the **source side** of the part, where geometric unsharpness penalizes it most honestly."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-5-2-fig-a",
+      "caption": "Why edges blur: a finite focal spot casts a penumbra at every edge — geometric unsharpness, Ug = F·d/D. Shrink the source, hold the detector tight against the part, and stand the source far back. Gamma capsules cannot be focused, so distance is their only sharpness lever."
+    },
+    {
+      "type": "text",
+      "heading": "Systems Factors: Source, Test Object, Detector",
+      "body": "Every radiograph is a negotiation among three players, and technique development is the art of balancing them.\n\n**The source.** Energy must match the section. As rough working ranges in steel: 200–400 kV X-ray covers a few millimeters up to about 75 mm, **Se-75** roughly 4–30 mm, **Ir-192** roughly 12–65 mm, and **Co-60** roughly 40–180 mm. Energy too high flattens subject contrast; too low, and exposures stretch while thick sections starve the detector. The source's **physical size** sets the geometric limit below: X-ray focal spots run from a few millimeters down to the **microfocus** regime (tens of micrometers and smaller), while gamma capsules are physically large — a few millimeters — and cannot be focused.\n\n**Geometry.** Because no source is a point, every edge casts a penumbra — **geometric unsharpness**: **Ug = F·d/D**, where F is the source size, **d** the distance from the flaw (source side of the part, conservatively) to the detector, and **D** the source-to-object distance. The levers follow directly: small source, detector tight against the part, source far away. ASME Section V caps Ug at **0.020 in. (0.51 mm) for sections under 2 in.**, stepping up for heavier walls. Magnification runs the same equation in reverse: only a microfocus spot tolerates a deliberate part-to-detector gap without smearing the image — the trick behind electronics radiography.\n\n**The test object — and its scatter.** The part contributes more than attenuation: it radiates **scatter**, which fogs contrast. Internal scatter rises with thickness; **sidescatter** arrives from walls and nearby objects; **backscatter** comes up from the floor or table behind the detector. The defenses are collimating the beam to the area of interest, masking around the part, metallic filters at the tube, and lead backing behind the cassette — plus a sentinel: a lead letter **\"B\"** at least 1/16 in. thick fastened to the **back** of the film holder. If a **light image of the B** appears on the darker background, backscatter got through and the technique is rejected; a dark B image is not cause for rejection.\n\n**The detector.** Film is sandwiched between **lead foil screens** (commonly 0.005 in. front, 0.010 in. back) that intensify the exposure with ejected photoelectrons while filtering soft scatter — and that print every scratch and dent, so screens are inspected like instruments. The digital families — **computed radiography (CR)** phosphor plates and **digital detector arrays (DDA)** — trade grain for pixels and gain enormous latitude, but they answer to the same referee: every technique, film or digital, is qualified by the IQI sensitivity demonstrated on the image."
+    },
+    {
+      "type": "callout",
+      "variant": "standard",
+      "title": "Numbers the exam will ask for",
+      "body": "Film density window: **minimum 1.8 (X-ray) or 2.0 (gamma)** through the area of interest, **maximum 4.0**. IQI: hole-type plaque thickness **2% of the section**, standard quality level **2-2T**. Geometric unsharpness **Ug = F·d/D** — a 0.15 in. source, a 1 in. flaw-to-detector distance, and a 30 in. source-to-object distance give Ug = 0.005 in., comfortably inside the **0.020 in. limit for sections under 2 in.** Backscatter check: lead **\"B\"** on the back of the holder — a **light** B image rejects the technique. These values come from ASME Section V, Article 2; your written procedure names the governing document and edition."
+    },
+    {
+      "type": "text",
+      "heading": "Interpretation: Reading Shadows Honestly",
+      "body": "Film reading happens in a darkened area on a high-luminance illuminator, and the first read is of the film itself, not the weld: density inside the window, the required IQI hole or wire visible, location markers present, no artifact obscuring the area of interest. Only then does **interpretation** begin — the same three-verdict discipline as PT and MT: artifact (false), geometry or process feature (nonrelevant), or discontinuity (relevant), with **evaluation** against acceptance criteria reserved for the relevant.\n\nTwo physical facts govern every call:\n\n- **Darker means less metal in the beam; lighter means more.** A void, a slag-filled cavity, a missing root — all transmit more radiation and print **dark**. Extra reinforcement, spatter, and high-atomic-number material — a tungsten fleck from a GTAW electrode — absorb more and print **light**.\n- **A radiograph is a two-dimensional projection of a volume.** The whole thickness is superimposed, so a single film locates nothing in depth, and a planar flaw shows only when the beam travels **nearly along its plane**. A tight crack a few degrees off the beam axis fades; a lamination lying parallel to the part surface — square to the beam — is effectively invisible. That orientation blindness is why cracks found by RT are treated as found, never as bounded, and why UT complements RT on planar flaws.\n\n**Artifacts** imitate all of it, which is why the double-film cassette earns its keep: a true indication prints on **both** films, an artifact usually on one. The family album: crescent-shaped **crimp marks** from kinking the film (light if kinked before exposure, dark if after), branched black **static marks** from sliding film in dry air, **screen-scratch** lines, chemical streaks and water spots from processing, and **fog** from age, heat, or light leaks. When the verdict is relevant, castings get one more aid: graded **reference radiographs** — ASTM **E155** for aluminum and magnesium, **E446** and its heavier-section companions for steel — give the interpreter a calibrated picture to compare against."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-5-2-fig-b",
+      "caption": "Signature gallery. Top, castings: round gas porosity, fuzzy sponge shrinkage, ragged branched hot tears, smooth cold shuts. Bottom, welds: porosity, off-center slag lines, the ruler-straight dark centerline of incomplete penetration, faint wandering cracks, and bright tungsten flecks. Darker always means less metal in the beam; lighter means more — or heavier."
+    },
+    {
+      "type": "text",
+      "heading": "Discontinuity Signatures: Castings and Welds",
+      "body": "**Castings** write their indications during solidification:\n\n- **Gas porosity** — rounded, sharply defined dark spots, scattered or clustered.\n- **Shrinkage** — thick sections starved as feed metal ran out: **sponge shrinkage** prints as a fuzzy, mottled dark patch, **filamentary (dendritic) shrinkage** as branching dark streamers, and **microshrinkage** as a faint cloud.\n- **Hot tears** — ragged, often branched dark lines at section changes, torn while the metal was hot and weak.\n- **Cold shuts** — smooth, continuous dark lines with rounded ends where two metal streams met without fusing.\n- **Inclusions** — sand and dross print dark and irregular; a dense inclusion prints **light**. **Unfused chaplets** show as a telltale circular outline, and **core shift** announces itself as a wall-thickness difference written in density.\n\n**Welds** add process discipline to the reading:\n\n- **Porosity** — rounded dark spots; porosity aligned along the root hints at technique trouble.\n- **Slag inclusions** — irregular dark shapes, often **elongated and off the weld centerline**, trailing along the bevel where flux was trapped between passes.\n- **Incomplete penetration (IP)** — a **straight, sharply defined dark line tracking the weld centerline**, drawn by the machined, unfused root faces. Its geometric straightness is the giveaway.\n- **Incomplete fusion** — a thin dark line along the fusion zone or bevel, frequently straighter on one side.\n- **Cracks** — fine, **wandering, often faint** dark lines, sometimes branched, at toes, roots, and craters: the hardest relevant indication to see and the least forgiving to miss.\n- **Undercut** — a dark band hugging the toe of the cap or root, matching the groove a sharp eye finds on the surface.\n- **Tungsten inclusions** — bright **light** spots in GTAW welds.\n- **Burn-through and excess penetration** — a localized dark area where the root blew away; excess penetration prints as a **light** band of extra metal along the root."
+    },
+    {
+      "type": "table",
+      "caption": "RT applications summary: what the image shows and how the technique is typically set up.",
+      "headers": ["Product form", "What RT reveals", "Typical approach"],
+      "rows": [
+        ["Castings", "Gas porosity, shrinkage, hot tears, cold shuts, inclusions, core shift", "Energy matched to wall thickness; indications graded against ASTM E155/E446 reference radiographs"],
+        ["Welds", "Porosity, slag, incomplete penetration, incomplete fusion, cracks, undercut", "Code-mandated volumetric examination; panoramic, double-wall single-image, and elliptical double-wall techniques for pipe"],
+        ["Assemblies", "Internal fit-up, lockwire and fastener presence, switch positions, potting voids, FOD", "Low-to-medium kV; views chosen from the drawing; no disassembly required"],
+        ["Electronic components", "Solder and BGA voids, die-attach defects, broken or swept bond wires", "Microfocus projection magnification with digital detectors, often 10–100×"],
+        ["Field inspections", "Girth-weld flaws, structural cracking, corrosion profiles under insulation", "Ir-192/Se-75 gamma projectors, pipeline crawlers, surveyed radiation boundaries"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Applications in Practice",
+      "body": "**Castings.** RT is the foundry's volumetric workhorse because solidification flaws live inside the wall, where surface methods cannot vote. Techniques span low-kV exposures of thin aluminum investment castings to Co-60 shots through heavy steel valve bodies, and acceptance commonly works by grading the image against the ASTM reference-radiograph sets, severity level by severity level.\n\n**Welds.** Construction codes make RT the traditional volumetric examination of pressure-boundary butt welds. Pipe brings its own geometry: **panoramic** exposures with the source centered in the bore shoot a full girth weld at once; **double-wall single-image** techniques view one wall at a time through both; small-bore lines use the **double-wall double-image** elliptical shot that lays both walls of the weld open on one film.\n\n**Assemblies.** Aerospace leans on RT precisely because it needs no disassembly: verifying internal fit-up and clearances, lockwire and fastener presence, relay and switch positions, potting voids, water in honeycomb cells, and foreign object debris (FOD) sealed inside hardware that must never be opened just to look.\n\n**Electronic components.** Microfocus sources turn the geometry lesson inside out: a focal spot measured in micrometers permits **projection magnification** — part close to the source, detector far away — at 10× to 100× without geometric blur. Routine targets: solder-joint and BGA voids, die-attach quality, broken or swept bond wires, and counterfeit screening inside encapsulated packages.\n\n**Field inspections.** Where parts cannot travel, gamma sources go to work: no power, no cooling, a projector small enough to carry up scaffolding. Ir-192 and Se-75 cover most pipe and structural sections, and pipeline **crawlers** carry the source down the bore for production girth-weld radiography. The price of portability is the discipline from the previous lesson — surveyed boundaries, time-distance-shielding, and the survey-meter habit that confirms the source is back in its shield after every exposure."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-5-2-fig-a",
+      "title": "Geometric unsharpness and source-object-detector setup",
+      "file": "basic-5-2-fig-a.svg"
+    },
+    {
+      "id": "basic-5-2-fig-b",
+      "title": "Radiographic signature gallery: castings and welds",
+      "file": "basic-5-2-fig-b.svg"
+    },
+    {
+      "id": "basic-5-2-fig-c",
+      "title": "Practice radiograph: five indications to call",
+      "file": "basic-5-2-fig-c.svg"
+    }
+  ],
+  "interactive": {
+    "type": "hotspot",
+    "title": "Spot the Discontinuity on the Radiograph",
+    "intro": "A double-loaded film of a single-V butt weld hangs on the illuminator; density and IQI checks both pass. The governing code rejects incomplete penetration outright. Click the indication of INCOMPLETE PENETRATION.",
+    "figureId": "basic-5-2-fig-c",
+    "regions": [
+      {
+        "x": 140,
+        "y": 205,
+        "w": 70,
+        "h": 58,
+        "label": "Point 1 — small spot brighter than the weld around it",
+        "isTarget": false,
+        "feedback": "Lighter than its surroundings means extra absorption, not missing metal: a tungsten fleck from a GTAW electrode (Z = 74) soaks up far more of the beam than steel or aluminum. Relevant — but it is evaluated as a tungsten inclusion, not as incomplete penetration."
+      },
+      {
+        "x": 288,
+        "y": 218,
+        "w": 264,
+        "h": 46,
+        "label": "Point 2 — straight, sharp dark line down the weld centerline",
+        "isTarget": true,
+        "feedback": "Correct. A ruler-straight, sharply defined dark line tracking the weld centerline is the signature of incomplete penetration — the machined, unfused root faces draw that geometric line. Its very straightness separates it from a crack's wandering trace, and most fabrication codes reject IP outright."
+      },
+      {
+        "x": 368,
+        "y": 184,
+        "w": 104,
+        "h": 30,
+        "label": "Point 3 — irregular dark shapes strung along the bevel, off center",
+        "isTarget": false,
+        "feedback": "Close — this IS a relevant discontinuity, but the irregular width, ragged outline, and position off the centerline along the bevel say slag inclusion: flux trapped between passes. It is evaluated under the elongated-indication criteria, not called IP."
+      },
+      {
+        "x": 574,
+        "y": 198,
+        "w": 100,
+        "h": 64,
+        "label": "Point 4 — cluster of rounded dark spots",
+        "isTarget": false,
+        "feedback": "Rounded, sharply defined dark spots scattered through the weld image: gas porosity. Relevant, but rounded indications carry their own acceptance limits — and nothing about random round voids matches the straight, continuous line of incomplete penetration."
+      },
+      {
+        "x": 606,
+        "y": 298,
+        "w": 100,
+        "h": 62,
+        "label": "Point 5 — light crescent out in the parent plate, on one film only",
+        "isTarget": false,
+        "feedback": "A crescent in the parent-plate image that appears on only one film of the double-loaded pair is a crimp mark — the film was kinked during handling (light means it was kinked before exposure). An artifact, not a discontinuity; if it lay over the weld, the area would be reshot."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "A technique produces too much geometric unsharpness. Which single change reduces Ug?",
+      "options": [
+        "Moving the source closer to the test object",
+        "Using a source with a larger physical size",
+        "Increasing the source-to-object distance",
+        "Increasing the gap between the part and the detector"
+      ],
+      "correct": 2,
+      "explanation": "Ug = F·d/D: unsharpness grows with source size F and with the flaw-to-detector distance d, and shrinks as the source-to-object distance D grows. Smaller source, detector tight against the part, source far away — that is the entire sharpness toolkit, and ASME Section V caps the result at 0.020 in. for sections under 2 in."
+    },
+    {
+      "question": "A radiograph of a gas tungsten arc weld shows a small, sharply defined spot distinctly LIGHTER than the surrounding weld image. It is most likely:",
+      "options": [
+        "Gas porosity",
+        "A tungsten inclusion from the electrode",
+        "Burn-through at the root",
+        "A crack viewed along its plane"
+      ],
+      "correct": 1,
+      "explanation": "Lighter means more absorption — more metal or heavier metal in the beam. Tungsten's high atomic number absorbs far more radiation than the surrounding weld, printing a bright fleck. Porosity, burn-through, and cracks are all missing metal, so they print dark, not light."
+    },
+    {
+      "question": "A tight crack is most likely to be detected by radiography when:",
+      "options": [
+        "Its plane lies perpendicular to the radiation beam",
+        "Orientation does not matter, because RT is a volumetric method",
+        "It is filled with dense oxide",
+        "Its plane lies nearly parallel to — aligned with — the beam"
+      ],
+      "correct": 3,
+      "explanation": "A radiograph superimposes the whole thickness, so a planar flaw changes the transmitted intensity only when the beam travels nearly along its plane. A few degrees of misalignment fades the indication, and a lamination square to the beam is effectively invisible — the orientation blindness that makes UT the complement to RT for planar flaws."
+    },
+    {
+      "question": "After processing, a LIGHT image of the lead letter B appears on the radiograph against a darker background. The radiographer must:",
+      "options": [
+        "Reject the technique — backscatter protection was insufficient — add lead backing and reshoot",
+        "Accept the film; the B merely confirms the holder was loaded correctly",
+        "Reject the film only if the B image is dark rather than light",
+        "Raise the film density until the B image disappears"
+      ],
+      "correct": 0,
+      "explanation": "The lead B rides the BACK of the film holder, so the only way its light image can print is for backscatter to expose the film from behind — proof the protection failed. The technique is rejected and reshot with better backing. A dark image of the B is not, by itself, cause for rejection."
+    },
+    {
+      "question": "Radiography is selected for inspecting closed aerospace assemblies chiefly because it:",
+      "options": [
+        "Measures residual stress in the internal parts",
+        "Is more sensitive to surface cracks than penetrant testing",
+        "Reveals internal configuration — fit-up, lockwire, FOD, switch positions — without disassembly",
+        "Requires no radiation-safety controls when used on assemblies"
+      ],
+      "correct": 2,
+      "explanation": "The assembly application trades flaw-detection sensitivity for information no other method delivers: the internal arrangement of hardware that must not be opened just to look — fit-up, fastener and lockwire presence, potting voids, and foreign object debris. Surface cracks belong to PT/MT, and the radiation-safety obligations never go away."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Topical Outline §2.7.2 (RT survey: basic imaging considerations, test result interpretation, systems factors, applications)",
+    "ASME Boiler and Pressure Vessel Code, Section V, Article 2, Radiographic Examination (density limits, IQI selection, geometric unsharpness limits, backscatter check)",
+    "ASTM E1025 and E747, Standard Practices for Hole-Type and Wire Image Quality Indicators",
+    "ASTM E155 / E446, Standard Reference Radiographs for Aluminum/Magnesium and Steel Castings"
+  ]
+}

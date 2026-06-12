@@ -1,0 +1,55 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="32" text-anchor="middle" font-size="23" font-weight="bold" fill="#0B1F3A">Detection Is a Decision: Fixed vs Floating Threshold</text>
+  <text x="400" y="55" text-anchor="middle" font-size="15" fill="#1E66F5">nothing below the threshold ever becomes data</text>
+
+  <!-- left panel: fixed -->
+  <rect x="30" y="75" width="360" height="290" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="210" y="99" text-anchor="middle" font-size="16" font-weight="bold" fill="#0B1F3A">FIXED THRESHOLD</text>
+
+  <!-- noise band (background envelope, rising) -->
+  <polygon fill="#9BC4FF" fill-opacity="0.5" points="50,258 80,252 110,255 140,247 170,250 200,242 230,244 260,234 290,237 320,226 350,229 370,218 370,322 350,311 320,314 290,303 260,306 230,296 200,298 170,290 140,293 110,285 80,288 50,282"/>
+  <text x="106" y="276" font-size="11" font-style="italic" fill="#1E66F5">background noise</text>
+
+  <!-- genuine burst -->
+  <polyline fill="none" stroke="#0B1F3A" stroke-width="2.5" points="124,256 128,230 130,150 132,290 134,238 136,256"/>
+  <circle cx="130" cy="218" r="4" fill="#1E66F5"/>
+  <text x="130" y="138" text-anchor="middle" font-size="12" font-weight="bold" fill="#0B1F3A">genuine burst &#8212; hit</text>
+
+  <!-- fixed threshold line -->
+  <line x1="50" y1="218" x2="370" y2="218" stroke="#0B1F3A" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="56" y="208" font-size="12" font-weight="bold" fill="#0B1F3A">threshold (set once)</text>
+
+  <!-- false hits where noise crosses -->
+  <circle cx="320" cy="226" r="4" fill="#1E66F5"/>
+  <circle cx="350" cy="229" r="4" fill="#1E66F5"/>
+  <circle cx="370" cy="218" r="4" fill="#1E66F5"/>
+  <line x1="330" y1="180" x2="338" y2="212" stroke="#1E66F5" stroke-width="1.5"/>
+  <text x="330" y="170" text-anchor="middle" font-size="12" font-weight="bold" fill="#1E66F5">false hits</text>
+
+  <text x="210" y="346" text-anchor="middle" font-size="13" font-style="italic" fill="#0B1F3A">background rises into a fixed threshold &#8594; data flood</text>
+
+  <!-- right panel: floating -->
+  <rect x="410" y="75" width="360" height="290" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="590" y="99" text-anchor="middle" font-size="16" font-weight="bold" fill="#0B1F3A">FLOATING THRESHOLD</text>
+
+  <!-- same noise band -->
+  <polygon fill="#9BC4FF" fill-opacity="0.5" points="430,258 460,252 490,255 520,247 550,250 580,242 610,244 640,234 670,237 700,226 730,229 750,218 750,322 730,311 700,314 670,303 640,306 610,296 580,298 550,290 520,293 490,285 460,288 430,282"/>
+  <text x="486" y="276" font-size="11" font-style="italic" fill="#1E66F5">background noise</text>
+
+  <!-- genuine burst -->
+  <polyline fill="none" stroke="#0B1F3A" stroke-width="2.5" points="514,249 518,225 520,150 522,288 524,232 526,249"/>
+  <circle cx="520" cy="222" r="4" fill="#1E66F5"/>
+  <text x="520" y="138" text-anchor="middle" font-size="12" font-weight="bold" fill="#0B1F3A">genuine burst &#8212; hit</text>
+
+  <!-- floating threshold tracking the band -->
+  <polyline fill="none" stroke="#0B1F3A" stroke-width="2" stroke-dasharray="7,4" points="430,234 470,228 510,224 550,221 590,215 630,209 670,206 710,199 750,193"/>
+  <text x="666" y="186" text-anchor="middle" font-size="12" font-weight="bold" fill="#0B1F3A">rides a set margin above background</text>
+
+  <text x="700" y="258" text-anchor="middle" font-size="12" font-style="italic" fill="#1E66F5">noise never crosses</text>
+  <text x="590" y="346" text-anchor="middle" font-size="13" font-style="italic" fill="#0B1F3A">threshold tracks the noise floor &#8594; only real bursts become hits</text>
+
+  <!-- bottom: hit timing windows -->
+  <text x="400" y="404" text-anchor="middle" font-size="14" fill="#1E66F5">hit timing windows: PDT finds the true peak &#183; HDT closes the hit &#183; HLT holds the channel before re-arming</text>
+  <text x="400" y="434" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">the first threshold crossing is also the time stamp that feeds &#916;T source location</text>
+</svg>

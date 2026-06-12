@@ -1,0 +1,158 @@
+{
+ "lessonId": "ut1-4-2",
+ "title": "Sound Beam Characteristics: Near Field, Beam Spread, and Intensity",
+ "narrationScript": "Point a flashlight at a wall and you get a neat cone of light. A lot of people picture an ultrasonic beam the same way, a tidy cone starting at the probe face. The real beam is stranger than that, and the strangeness matters, because echo amplitude is how we judge flaws, and amplitude depends on where in the beam a reflector sits. Here is where the shape comes from. The element face does not vibrate as a single point. Think of it as thousands of tiny sources, each radiating its own wavelet. Near the probe those wavelets arrive at any given spot over many different path lengths, so they interfere, reinforcing here and canceling there. The result is a turbulent zone called the near field, or Fresnel zone, where the beam stays roughly as wide as the element and the intensity along the center line swings through maxima and minima. A small reflector moved through this zone can show a bigger echo farther away and a smaller echo closer in, exactly the opposite of what you would expect. Past a certain distance the path differences become trivial, the interference settles out, and the beam enters the far field, the Fraunhofer zone. There the beam spreads at a steady angle, and the amplitude from a small reflector falls off smoothly and predictably as distance grows. The boundary between the two zones is the near field length, big N, and the intensity along the axis reaches its last and strongest maximum right at that distance. You can calculate N for any probe. Near field length equals the element diameter squared, times the frequency, divided by four times the velocity. Or, the same thing, diameter squared divided by four wavelengths. Try it. A ten millimeter element at five megahertz in steel, where the longitudinal wavelength is about one point one eight millimeters, gives a near field about twenty one millimeters long. Make the element twenty five millimeters and the near field stretches past one hundred thirty millimeters. Diameter counts double because it is squared. Higher frequency also stretches the near field, because the wavelength shrinks. Why care? Because amplitude inside the near field is unreliable. Good practice pushes you to evaluate and size reflectors beyond the near field whenever you can, or to move the near field out of the metal entirely with a delay line or an immersion water path. Now the far field and beam spread. The half angle of the spreading beam comes from the wavelength and the diameter. The sine of the half angle equals one point two two times the wavelength divided by the diameter. That defines the outer edge of the beam, where the intensity drops to nothing. Run the same ten millimeter five megahertz probe. One point two two times one point one eight, divided by ten, gives zero point one four four, and the half angle is about eight degrees. Drop to two and a quarter megahertz and the same element spreads at almost nineteen degrees. Shrink the element to six millimeters at that lower frequency and the spread passes thirty degrees, a floodlight instead of a spotlight. Both formulas tell the same story. Big elements and high frequencies make long near fields and narrow beams. Small elements and low frequencies make short near fields and wide beams. Neither is good or bad. A wide beam covers more volume per pass and finds reflectors faster. A narrow beam pins down location, separates neighboring reflectors, and holds its energy together for depth. Choosing a probe is choosing a beam shape. One more layer, intensity across the beam. The center line is the hottest part of the beam, and intensity falls away toward the edges. We usually define the working edge where the echo amplitude has dropped six decibels, to half. The same flaw caught at the beam edge can read half the amplitude it shows on the center line, or less, so amplitude alone never tells you whether you found the flaw dead center. That is why scan plans overlap each pass, commonly by at least ten or fifteen percent of the element dimension, and why you maximize an indication, moving the probe until the echo peaks, before you evaluate it. Learn your beam. Calculate its near field and its spread before the job, and the echoes will start making sense.",
+ "imagePrompt": "A technician scans the machined face of a large steel forging with a straight-beam ultrasonic probe, flaw detector on a cart beside him showing a tall echo on its screen, spare probes and a couplant bottle laid out on a felt mat.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Where the Beam Shape Comes From",
+   "body": "The element face does not move as one rigid piston radiating a perfect cylinder of sound. Treat it instead as thousands of tiny point sources (Huygens' principle), each radiating spherical wavelets. Close to the probe, the wavelets reaching any given point have traveled noticeably different path lengths, so they **interfere** — reinforcing at some spots, canceling at others.\n\nThat interference divides the beam into two zones:\n\n- **Near field (Fresnel zone):** from the probe face out to the near-field length **N**. The beam stays roughly as wide as the element, but the intensity along the axis fluctuates through a series of maxima and minima. Echo amplitude from a small reflector here does not vary smoothly with distance.\n- **Far field (Fraunhofer zone):** beyond N the path differences become negligible, the interference settles out, the beam spreads at a steady angle, and amplitude from a small reflector decays smoothly and predictably with distance.\n\nThe on-axis intensity reaches its final — and strongest — maximum right at N. Every quantitative judgment you make from echo height assumes you know which zone the reflector sits in."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-4-2-fig-a",
+   "caption": "The near field extends to N with a roughly parallel but internally turbulent beam; beyond N the far field diverges at half-angle γ with smooth, predictable amplitude behavior."
+  },
+  {
+   "type": "text",
+   "heading": "Near Field: Calculate It Before You Trust an Amplitude",
+   "body": "The near-field length of a round element is:\n\n**N = D²f ÷ (4v) = D² ÷ (4λ)**\n\nwhere D is element diameter, f frequency, v velocity in the test material, and λ the wavelength in that material.\n\nWorked example — 10 mm diameter, 5 MHz, longitudinal in steel (λ = 5.92 ÷ 5 = 1.18 mm):\n\nN = 10² ÷ (4 × 1.18) = 100 ÷ 4.72 ≈ **21 mm**\n\nSwap in a 25 mm element at the same frequency and N = 625 ÷ 4.72 ≈ **132 mm** — diameter counts double because it is squared. Raising frequency also lengthens N because λ shrinks.\n\nWhy it matters: inside N, a small reflector's echo can *grow* as you move it farther away or *shrink* as it comes closer, because it is passing through interference maxima and minima. Amplitude-based evaluation and sizing inside the near field is unreliable. The professional responses are to **evaluate beyond N** where possible, or to **move the near field out of the metal** entirely using a delay line or an immersion water path, so the part is interrogated by the well-behaved far-field beam. (The *dead zone* — the blind region right at the probe face caused by the ringing of the initial pulse — is a separate, instrument-related limitation.)"
+  },
+  {
+   "type": "text",
+   "heading": "Far Field and Beam Spread",
+   "body": "Beyond the near field the beam diverges at a constant half-angle γ measured from the beam axis. For the beam edge (where intensity falls essentially to zero):\n\n**sin γ = 1.22 v ÷ (D × f) = 1.22 λ ÷ D**\n\nSame 10 mm, 5 MHz probe in steel: sin γ = 1.22 × 1.18 ÷ 10 = 0.144, so γ ≈ **8.3°**. Drop the frequency to 2.25 MHz (λ = 2.63 mm) and the same element spreads at sin γ = 0.321 → γ ≈ **18.7°**. A small 6 mm element at 2.25 MHz spreads past 32° — a floodlight rather than a spotlight. (Tighter working definitions of the beam edge — the 6 dB or 20 dB boundaries — use smaller constants than 1.22, which is why measured beam plots are narrower than the null-edge calculation.)\n\nConsequences in the field:\n\n- **Wide beams** cover more volume per pass — faster screening — but smear lateral position, merge adjacent reflectors, and lose energy density quickly.\n- **Narrow beams** locate reflectors precisely, separate neighbors, and carry energy deeper — but demand tighter scan indexing for full coverage.\n\nSpreading is also one reason echo amplitude falls with distance even in clean material; distance-amplitude correction (DAC/TCG) exists to compensate for exactly that."
+  },
+  {
+   "type": "table",
+   "caption": "Near field and edge beam spread in steel (longitudinal, 5,920 m/s) for common probe choices — diameter and frequency pull both numbers in opposite directions.",
+   "headers": ["Element D", "Frequency", "λ in steel", "Near field N", "Half-angle γ"],
+   "rows": [
+    ["6 mm", "2.25 MHz", "2.63 mm", "≈ 3.4 mm", "≈ 32.3°"],
+    ["10 mm", "2.25 MHz", "2.63 mm", "≈ 9.5 mm", "≈ 18.7°"],
+    ["10 mm", "5 MHz", "1.18 mm", "≈ 21 mm", "≈ 8.3°"],
+    ["25 mm", "5 MHz", "1.18 mm", "≈ 132 mm", "≈ 3.3°"]
+   ]
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-4-2-fig-b",
+   "caption": "On-axis amplitude fluctuates through maxima and minima inside the near field, peaks at N, then decays smoothly; across the beam, amplitude is highest on the axis and falls to half at the 6 dB edges."
+  },
+  {
+   "type": "text",
+   "heading": "Intensity Along and Across the Beam",
+   "body": "Put the two behaviors together and you have the beam's intensity map.\n\n**Along the axis:** maxima and minima through the near field, the last and largest maximum at N, then a smooth decay through the far field as spreading dilutes the energy over a growing cross-section.\n\n**Across the beam:** intensity is highest on the axis and falls off toward the edges in a roughly bell-shaped profile. The practical working edge is usually taken where amplitude is down **6 dB** — half the axial value. A reflector caught at that edge reads half the amplitude it would show dead-center, and one near the null edge may barely register.\n\nField consequences:\n\n- **Maximize before you evaluate.** Move the probe until the echo peaks, so the reflector sits on the axis; only then compare it to your reference level.\n- **Overlap every pass.** Scan plans typically overlap adjacent passes by at least 10–15% of the element dimension so no volume is interrogated only by the weak beam edge.\n- **Expect amplitude to lie off-axis.** An indication that wanders across the screen as you scan sideways is telling you about beam geometry, not necessarily flaw size."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The two formulas that define your beam",
+   "body": "**N = D² ÷ 4λ** and **sin γ = 1.22 λ ÷ D**. Bigger diameter or higher frequency → longer near field and narrower beam; smaller or lower → the reverse. Amplitude is only trustworthy **beyond N**, **on axis** — so size and evaluate in the far field, peak the echo first, and overlap your scan passes."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-4-2-fig-a",
+   "title": "Beam profile: near field, far field, and spread angle",
+   "file": "ut1-4-2-fig-a.svg"
+  },
+  {
+   "id": "ut1-4-2-fig-b",
+   "title": "Beam intensity along the axis and across the beam",
+   "file": "ut1-4-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Beam Math Before the Job: A 75 mm Forging",
+  "intro": "You are planning a straight-beam longitudinal examination of a 75 mm thick steel forging (v = 5,920 m/s). Two probes are in the kit: a 10 mm, 5 MHz and a 6 mm, 2.25 MHz. Work the beam numbers the way a Level II expects — before the probe touches the part.",
+  "steps": [
+   {
+    "prompt": "Start with the 5 MHz probe. What is the longitudinal wavelength in the steel?",
+    "options": ["0.59 mm", "1.18 mm", "2.63 mm"],
+    "correct": 1,
+    "feedback": "λ = v ÷ f = 5.92 mm/µs ÷ 5 MHz ≈ 1.18 mm. The 2.63 mm answer belongs to 2.25 MHz, and 0.59 mm would be the shear-wave value at 5.5 MHz — keep mode and frequency straight."
+   },
+   {
+    "prompt": "Compute the near-field length for the 10 mm, 5 MHz probe in this steel.",
+    "options": ["≈ 5.3 mm", "≈ 21 mm", "≈ 84 mm"],
+    "correct": 1,
+    "feedback": "N = D² ÷ (4λ) = 100 ÷ (4 × 1.18) ≈ 21 mm. The first 21 mm of metal sits in the interference zone; the remaining 54 mm of the forging is interrogated by the far field."
+   },
+   {
+    "prompt": "Scanning with that probe, you find a small indication at 12 mm depth. What do you know about its echo amplitude?",
+    "options": [
+     "It is reliable because the reflector is close to the probe",
+     "It is unreliable — 12 mm is inside the near field, where interference distorts amplitude",
+     "It always reads high inside the near field, so downgrade it"
+    ],
+    "correct": 1,
+    "feedback": "Inside N a small reflector can fall on a maximum or a minimum, so amplitude may read high or low. A delay line (or evaluating with a probe whose N is shorter than 12 mm) puts the reflector in well-behaved far field before you judge it."
+   },
+   {
+    "prompt": "Deep in the forging you must separate two small reflectors lying side by side at the same depth. Which probe gives the better chance?",
+    "options": [
+     "The 6 mm, 2.25 MHz — its short near field makes it more accurate everywhere",
+     "The 10 mm, 5 MHz — its half-angle is about 8° versus over 32°, so the narrow beam resolves neighbors",
+     "Either one — beam spread does not affect lateral resolution"
+    ],
+    "correct": 1,
+    "feedback": "sin γ = 1.22λ ÷ D: the 10 mm, 5 MHz beam spreads at ≈ 8.3°, the 6 mm, 2.25 MHz at ≈ 32°. A wide beam hits both reflectors at once and merges them; the narrow beam can address them separately. The trade-off is the longer near field — which here (21 mm) still leaves the deep zone in far field."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A 12.7 mm (½ in.) diameter, 2.25 MHz straight-beam probe works longitudinally in steel (λ = 2.63 mm). Its near-field length is approximately:",
+   "options": ["6.1 mm", "15.3 mm", "30.6 mm", "61 mm"],
+   "correct": 1,
+   "explanation": "N = D² ÷ (4λ) = 12.7² ÷ (4 × 2.63) = 161.3 ÷ 10.52 ≈ 15.3 mm. Diameter is squared, so it dominates the result."
+  },
+  {
+   "question": "Which probe change SHORTENS the near field?",
+   "options": [
+    "Choosing a smaller element diameter",
+    "Choosing a larger element diameter",
+    "Raising the frequency from 2.25 to 5 MHz",
+    "Testing a material with a slower sound velocity"
+   ],
+   "correct": 0,
+   "explanation": "N = D²f ÷ 4v: smaller diameter (or lower frequency, or higher velocity) shortens the near field. Larger D or higher f lengthens it."
+  },
+  {
+   "question": "For a 10 mm, 2.25 MHz probe in steel (λ = 2.63 mm), the edge beam-spread half-angle is about:",
+   "options": ["3.3°", "8.3°", "18.7°", "32.3°"],
+   "correct": 2,
+   "explanation": "sin γ = 1.22 × 2.63 ÷ 10 = 0.321, so γ ≈ 18.7°. The 8.3° figure belongs to the same element at 5 MHz — higher frequency narrows the beam."
+  },
+  {
+   "question": "Amplitude-based evaluation and sizing of a small reflector is most reliable when the reflector lies:",
+   "options": [
+    "Just in front of the probe face, inside the dead zone",
+    "Anywhere inside the near field, where the beam is strongest",
+    "Beyond the near-field distance N, on the beam axis",
+    "At the extreme edge of the beam in the far field"
+   ],
+   "correct": 2,
+   "explanation": "Beyond N the interference has settled and on-axis amplitude varies smoothly with distance, so echo height means something. Inside N it fluctuates through maxima and minima, and at the beam edge it under-reads."
+  },
+  {
+   "question": "The same small flaw is caught once on the beam axis and once at the 6 dB beam edge at the same depth. Compared with the on-axis echo, the edge echo reads:",
+   "options": [
+    "About half the amplitude",
+    "About twice the amplitude",
+    "Exactly the same amplitude",
+    "One tenth the amplitude"
+   ],
+   "correct": 0,
+   "explanation": "The 6 dB edge is by definition where intensity is 6 dB below the axis — half the amplitude. This is why indications are peaked (maximized) before evaluation and why scan passes overlap."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, Basic UT Course §3.3.4–3.3.5, §3.3.8 (near/far field, beam spread, beam intensity)",
+  "Near field: N = D²f ÷ 4v = D² ÷ 4λ; edge beam spread: sin γ = 1.22 v ÷ (D·f)",
+  "Steel longitudinal velocity 5,920 m/s (reference value)"
+ ]
+}

@@ -1,0 +1,59 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0B1F3A">Thresholds: The Alarm Gate Makes the Call</text>
+
+  <!-- ============ LEFT: sector gate on the impedance plane ============ -->
+  <rect x="30" y="64" width="400" height="356" rx="8" fill="#0B1F3A"/>
+  <text x="230" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#9BC4FF">sector (phase) gate &#8212; set from the reference notch</text>
+
+  <!-- alarm sector: 40 to 140 degrees, radius 70 to 210 -->
+  <path d="M 284 295 L 391 205 A 210 210 0 0 0 69 205 L 176 295 A 70 70 0 0 1 284 295 Z" fill="#1E66F5" fill-opacity="0.22" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="318" y="160" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#9BC4FF">alarm</text>
+  <text x="318" y="178" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#9BC4FF">sector</text>
+
+  <!-- gate floor leader -->
+  <line x1="265" y1="279" x2="300" y2="262" stroke="#9BC4FF" stroke-width="1.2"/>
+  <text x="304" y="260" font-family="Arial, sans-serif" font-size="13" fill="#9BC4FF">gate floor =</text>
+  <text x="304" y="276" font-family="Arial, sans-serif" font-size="13" fill="#9BC4FF">amplitude threshold</text>
+
+  <!-- lift-off trace: horizontal, outside the gate -->
+  <line x1="90" y1="340" x2="230" y2="340" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="120" y="328" font-family="Arial, sans-serif" font-size="13.5" fill="#9BC4FF">lift-off &#8212; outside the gate</text>
+
+  <!-- rejectable flaw lobe: crosses into the sector -->
+  <path d="M 230 340 Q 212 250 195 160 Q 220 252 230 340" fill="none" stroke="#FFFFFF" stroke-width="3"/>
+  <text x="100" y="140" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">rejectable flaw</text>
+  <text x="100" y="158" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">&#8212; ALARM</text>
+
+  <!-- small signal below the floor -->
+  <path d="M 230 340 Q 240 318 246 296 Q 238 320 230 340" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="252" y="316" font-family="Arial, sans-serif" font-size="13" fill="#FFFFFF">small signal &#8212; no alarm</text>
+
+  <!-- balance point -->
+  <circle cx="230" cy="340" r="5" fill="#FFFFFF"/>
+  <text x="230" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#9BC4FF">balance point</text>
+  <text x="230" y="400" text-anchor="middle" font-family="Arial, sans-serif" font-size="13.5" fill="#9BC4FF">phase + amplitude window: wobble ignored, cracks flagged</text>
+
+  <!-- ============ RIGHT: level threshold, two failure directions ============ -->
+  <text x="615" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">threshold too low</text>
+  <rect x="460" y="70" width="310" height="120" rx="8" fill="#0B1F3A"/>
+  <line x1="468" y1="132" x2="762" y2="132" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <polygon points="526,106 534,106 530,114" fill="#1E66F5"/>
+  <polygon points="574,102 582,102 578,110" fill="#1E66F5"/>
+  <polygon points="670,104 678,104 674,112" fill="#1E66F5"/>
+  <polyline points="470,166 482,150 494,170 506,140 518,168 530,126 542,166 554,136 566,168 578,122 590,164 602,142 614,168 626,128 638,166 650,148 662,168 674,124 686,164 698,144 710,168 722,130 734,166 746,152 758,168" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="615" y="212" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">noise trips the gate &#8212; false rejects, line stops</text>
+
+  <text x="615" y="244" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">threshold too high</text>
+  <rect x="460" y="252" width="310" height="120" rx="8" fill="#0B1F3A"/>
+  <line x1="468" y1="278" x2="762" y2="278" stroke="#9BC4FF" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <polyline points="470,348 500,350 530,348 560,350 580,346 596,322 610,298 624,322 640,346 670,350 700,348 730,350 758,348" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="610" y="290" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" fill="#9BC4FF">flaw peak stays under the line</text>
+  <text x="615" y="394" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">rejectable flaw rides under &#8212; no alarm, part released</text>
+
+  <!-- ============ takeaway chips ============ -->
+  <rect x="60" y="442" width="320" height="42" rx="21" fill="#9BC4FF" fill-opacity="0.35" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="220" y="468" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">too low &#8594; false rejects + alarm fatigue</text>
+  <rect x="420" y="442" width="340" height="42" rx="21" fill="#9BC4FF" fill-opacity="0.35" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="590" y="468" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">too high &#8594; flawed part released to service</text>
+</svg>

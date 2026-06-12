@@ -1,0 +1,35 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#0A2342"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#E8F1FB">A-Scan During a Probe-Motion Size Scan</text>
+
+  <!-- screen frame -->
+  <rect x="70" y="70" width="660" height="320" fill="#06182F" stroke="#5A6B7E" stroke-width="2"/>
+
+  <!-- baseline -->
+  <line x1="70" y1="370" x2="730" y2="370" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="690" y="388" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#5A6B7E">baseline (0%)</text>
+
+  <!-- top reference (100%) line -->
+  <line x1="70" y1="125" x2="730" y2="125" stroke="#1E9E6A" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="92" y="118" text-anchor="start" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E9E6A">100% reference (peak)</text>
+
+  <!-- half-height (-6 dB) line: midway between 370 baseline and 125 peak = ~247 -->
+  <line x1="70" y1="247" x2="730" y2="247" stroke="#F2A33C" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="92" y="240" text-anchor="start" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#F2A33C">50% = -6 dB</text>
+
+  <!-- main echo: rises to peak at x~340 (y125), falls through half-height at x~415 (y247) -->
+  <!-- secondary smaller peak around x~555 (y~270) -->
+  <polyline points="70,370 250,370 295,300 340,125 392,247 430,330 480,330 520,300 555,270 595,330 640,360 730,368" fill="none" stroke="#1B82E8" stroke-width="3"/>
+
+  <!-- markers -->
+  <circle cx="340" cy="125" r="6" fill="#1E9E6A" stroke="#E8F1FB" stroke-width="1.5"/>
+  <text x="340" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#E8F1FB">peak</text>
+
+  <circle cx="412" cy="247" r="6" fill="#F2A33C" stroke="#E8F1FB" stroke-width="1.5"/>
+  <text x="448" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#F2A33C">-6 dB edge point</text>
+
+  <circle cx="555" cy="270" r="5" fill="#D14343" stroke="#E8F1FB" stroke-width="1.5"/>
+  <text x="563" y="258" text-anchor="start" font-family="Arial, sans-serif" font-size="13" fill="#D14343">secondary facet</text>
+
+  <text x="400" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#5A6B7E">time / depth &#8594;   (echo shape as the probe is moved across the reflector)</text>
+</svg>

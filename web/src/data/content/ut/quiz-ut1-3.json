@@ -1,0 +1,115 @@
+{
+ "moduleId": "ut1-3",
+ "questions": [
+  {
+   "question": "Which instrument component determines how many fire-listen cycles occur each second?",
+   "options": [
+    "The receiver's filter stage",
+    "The clock (timer/synchronizer), which sets the pulse repetition frequency",
+    "The gain control",
+    "The delay control"
+   ],
+   "correct": 1,
+   "explanation": "The clock triggers each cycle and therefore sets the PRF; gain, filtering, and delay shape or position the signal but do not control firing rate."
+  },
+  {
+   "question": "What is the difference between an RF display and a full-wave rectified display?",
+   "options": [
+    "RF shows the raw waveform swinging above and below zero; full-wave rectification folds the negative half up into a single positive envelope",
+    "RF is for angle beam only; rectified is for straight beam",
+    "RF displays frequency instead of time",
+    "Full-wave rectification doubles the echo amplitude"
+   ],
+   "correct": 0,
+   "explanation": "The receiver's rectifier converts the bipolar RF signal into the positive envelope most field instruments display; the underlying timing information is the same."
+  },
+  {
+   "question": "What does a gate on a pulse-echo instrument do?",
+   "options": [
+    "It increases pulser voltage during scanning",
+    "It monitors a selected span of the time base and triggers an alarm or outputs a measurement when an echo crosses its threshold",
+    "It blanks all signals below a set amplitude across the whole screen",
+    "It locks the gain so it cannot be changed"
+   ],
+   "correct": 1,
+   "explanation": "A gate watches a chosen region of the sound path and reacts to signals inside it - the basis of flaw alarms and automatic thickness readouts. Blanking small signals everywhere is the reject control, not a gate."
+  },
+  {
+   "question": "An indication needs 20 dB of added gain to reach the same screen height as your reference echo. Its amplitude relative to the reference is:",
+   "options": [
+    "One half",
+    "One quarter",
+    "One tenth",
+    "One twentieth"
+   ],
+   "correct": 2,
+   "explanation": "20 dB corresponds to a factor of 10 in amplitude (20 log 10 = 20 dB), so the indication is returning one tenth of the reference amplitude."
+  },
+  {
+   "question": "Periodic screen-height linearity verification confirms that:",
+   "options": [
+    "The probe's refracted angle has not changed",
+    "A 6 dB gain change truly halves or doubles displayed echo height across the screen, so amplitude comparisons can be trusted",
+    "The couplant meets viscosity requirements",
+    "The PRF matches the part length"
+   ],
+   "correct": 1,
+   "explanation": "Amplitude-based evaluation assumes display height scales truly with signal amplitude; codes such as ASME Section V Article 4 require periodic vertical and amplitude-control linearity checks to prove it."
+  },
+  {
+   "question": "Halfway through a weld examination your probe cable fails and you swap in a spare cable. What does the procedure require?",
+   "options": [
+    "Continue - cables do not affect calibration",
+    "Re-verify standardization before continuing, because a system component changed",
+    "Add 6 dB of gain to cover any difference",
+    "Note the change in the report and re-standardize at the end of the shift only"
+   ],
+   "correct": 1,
+   "explanation": "Any change to the system - probe, cable, couplant type, significant temperature shift - invalidates the standardization, which must be re-verified before more data is collected."
+  },
+  {
+   "question": "In an area-amplitude reference block set, a number 5 flat-bottom hole has a diameter of:",
+   "options": [
+    "5 mm",
+    "5/64 of an inch",
+    "0.5 inch",
+    "5/32 of an inch"
+   ],
+   "correct": 1,
+   "explanation": "FBH numbers give the hole diameter in 64ths of an inch, so a #5 hole is 5/64 in. (about 2 mm); the set runs #1 through #8 at a fixed metal travel."
+  },
+  {
+   "question": "A digital thickness gauge times a 6.76 µs round trip in carbon steel (about 5.92 mm/µs). The displayed thickness should be about:",
+   "options": [
+    "40.0 mm",
+    "11.7 mm",
+    "20.0 mm",
+    "6.8 mm"
+   ],
+   "correct": 2,
+   "explanation": "T = vt/2 = 5.92 x 6.76 / 2 = 20.0 mm. Forgetting the divide-by-two gives the 40 mm distractor."
+  },
+  {
+   "question": "Why are dual-element probes the standard choice for corrosion-survey thickness gauging?",
+   "options": [
+    "They produce shear waves, which measure thickness more accurately",
+    "Their crossed transmit and receive elements give a pseudo-focus just below the surface and almost no dead zone, ideal for rough, pitted back walls",
+    "They eliminate the need for couplant",
+    "They are the only probes that work in mode 3"
+   ],
+   "correct": 1,
+   "explanation": "The slightly angled separate elements focus sensitivity where pitting lives and keep the receiver from being blinded by the transmit pulse; the trade-off is a small V-path nonlinearity on very thin walls."
+  },
+  {
+   "question": "On a smooth, uncorroded section of plate, one isolated point suddenly reads about half the nominal wall. The most professional interpretation is:",
+   "options": [
+    "Record it as wall loss - the gauge does not lie",
+    "It may be a mid-wall lamination returning an early echo rather than thinning; check the waveform, scan around the point, and report it for evaluation",
+    "It is doubling, so the true wall is twice the reading",
+    "The battery is low; replace it and keep the original reading"
+   ],
+   "correct": 1,
+   "explanation": "A lamination reflects sound from mid-thickness and mimics sudden thinning. Doubling would read thicker, not thinner. Verifying with the waveform and surrounding readings separates metal loss from an internal discontinuity."
+  }
+ ]
+}

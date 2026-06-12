@@ -1,0 +1,193 @@
+{
+  "lessonId": "basic-6-1",
+  "title": "Ultrasonic Testing: Wave Propagation and Transducers",
+  "narrationScript": "Ultrasonic testing sends pulses of high-frequency sound into a part and listens for the echoes. This lesson builds the physics every later UT topic stands on. How the particles move defines the wave mode: longitudinal waves compress and stretch the material and travel in solids, liquids, and gases; shear waves slide particles sideways, exist only in solids, and move at about half the longitudinal speed; Rayleigh waves hug the surface, and Lamb waves fill thin plates. A transducer's beam is not a flashlight: an interference-filled near field gives way to a smoothly spreading far field, and that geometry decides where amplitude can be trusted. At every boundary, acoustic impedance sets how much energy reflects — at steel to air, essentially all of it — and oblique incidence brings Snell's law, mode conversion, and the critical angles that make a forty-five, sixty, or seventy degree shear wedge possible. Scattering and absorption tax the beam along the way. Piezoelectric elements convert volts to sound and back, and a thin film of couplant lets the energy through at all.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Sound in Solids: The Pulse-Echo Idea",
+      "body": "Ultrasonic testing (UT) interrogates a part with **mechanical vibration** — sound — at frequencies far above hearing: industrial work spans roughly **0.5 to 25 MHz**, with most inspection done between 1 and 10 MHz. Unlike penetrating radiation, sound cannot exist in a vacuum; it *is* particles of the material elastically pushing on their neighbors, which is exactly why it carries information about that material.\n\nThe dominant technique is **pulse-echo**: a transducer fires a brief pulse into the part and then listens. Any acoustic boundary in the path — the far wall, a crack, a porosity cluster, a disbond — returns an echo, and two numbers make that echo useful. **Arrival time** locates the reflector: distance = velocity × time ÷ 2, since the pulse travels there and back. **Amplitude** speaks to the reflector's size and orientation — with caveats this lesson develops. UT is volumetric, works from **one side** of the part, penetrates meters of fine-grained steel, and locates reflectors with millimeter precision — the reasons a Part 145 shop reaches for it for thickness after corrosion blend-out, for bond lines, and for forging soundness where two-sided radiographic access is impossible.\n\nThree quantities organize all of UT physics: **velocity (v)**, a property of the material *and the wave mode*; **frequency (f)**, chosen by the operator through the transducer; and **wavelength (λ = v/f)**, the outcome that sets what the beam can resolve. Longitudinal sound crosses steel at about **5,920 m/s**, so a 5 MHz beam has λ ≈ **1.18 mm**; the shear mode at the same frequency, traveling about 3,240 m/s, has λ ≈ 0.65 mm. The working rule of thumb: a reflector smaller than about **λ/2** returns too little energy to call reliably. Frequency is therefore a trade — higher frequency buys sensitivity to smaller flaws and a tighter beam but loses penetration; lower frequency punches through coarse, attenuating material at the cost of resolution."
+    },
+    {
+      "type": "text",
+      "heading": "Wave Travel Modes: How the Particles Move",
+      "body": "Sound is particle motion, and the **relationship between particle motion and travel direction defines the mode** — each with its own velocity, its own rules about where it can exist, and its own inspection jobs.\n\n- **Longitudinal (compression) waves.** Particles oscillate **parallel** to propagation, passing alternating zones of compression and rarefaction. Because gases and liquids resist compression, longitudinal waves travel in **every medium** — which is why they are the mode that crosses couplant films and immersion water columns. They are the fastest mode (steel ≈ 5,920 m/s; aluminum ≈ 6,320; water ≈ 1,480; air ≈ 330) and the mode of straight-beam thickness, lamination, and forging work.\n- **Shear (transverse) waves.** Particles oscillate **perpendicular** to propagation, sliding layer past layer. Liquids and gases cannot support shear stress, so shear waves exist **only in solids** — no transducer can push one through a liquid couplant directly; it must be created *inside* the part by mode conversion (next sections). Shear velocity is about **55% of longitudinal** (steel ≈ 3,240 m/s), so at any given frequency the shear wavelength is nearly halved — finer sensitivity from the same frequency. Angle-beam weld inspection lives on this mode.\n- **Rayleigh (surface) waves.** Particles trace **retrograde ellipses** in a skin about **one wavelength deep**; the wave travels at roughly **92% of shear velocity**, follows gentle contours around fillets and radii, and reflects strongly from surface cracks and sharp edges. It is famously easy to damp — a drop of couplant or a fingertip placed ahead of the wave knocks the signal down, a property inspectors use to confirm and locate surface indications.\n- **Lamb (plate) waves.** When the section is only on the order of a wavelength thick — sheet stock, aircraft skin — the entire thickness vibrates as a unit in **symmetric** or **asymmetric** mode families. Lamb waves are **dispersive**: their velocity depends on frequency, thickness, and mode, so they must be tuned to the structure. The reward is sweeping long lengths of thin material for laminations and bond problems from a single probe position."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-6-1-fig-a",
+      "caption": "Three modes, three motions. Longitudinal particles oscillate along the travel direction in compression–rarefaction zones and exist in any medium; shear particles slide perpendicular to travel and survive only in solids, at about half the speed; Rayleigh waves carry retrograde elliptical motion in a skin about one wavelength deep."
+    },
+    {
+      "type": "table",
+      "caption": "The four wave travel modes at a glance — velocity, habitat, and the inspection jobs each one owns.",
+      "headers": ["Mode", "Particle motion", "Velocity in steel", "Where it exists", "Typical use"],
+      "rows": [
+        ["Longitudinal (compression)", "Parallel to propagation", "≈ 5,920 m/s", "Solids, liquids, gases", "Straight-beam thickness, laminations, forging soundness"],
+        ["Shear (transverse)", "Perpendicular to propagation", "≈ 3,240 m/s (~0.55 × longitudinal)", "Solids only", "Angle-beam weld and fastener-hole inspection"],
+        ["Rayleigh (surface)", "Retrograde ellipses, ~1 λ deep", "≈ 0.92 × shear", "Solid surfaces", "Surface cracks on fillets, radii, and complex contours"],
+        ["Lamb (plate)", "Entire thickness flexes or stretches", "Dispersive — depends on f, thickness, mode", "Thin plates and skins (~λ thick)", "Sheet lamination and skin/bond screening over long lengths"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Sound Fields: Near Zone, Far Zone, and Beam Spread",
+      "body": "A transducer does not emit a pencil-thin ray. Every point on the element face radiates, and the wavelets **interfere**. Close to the transducer the interference is fierce: along the axis the pressure swings through a chain of maxima and minima. This is the **near field (Fresnel zone)**, and inside it the echo from a small reflector depends as much on *where* it sits as on *what* it is — amplitude-based evaluation there is unreliable. The turbulence ends at the last axial maximum, the near-field length **N = D²f/4v = D²/4λ** for a flat circular element of diameter D. Worked example: a 10 mm diameter, 5 MHz longitudinal probe on steel gives N = (0.010 m)² × 5×10⁶ Hz ÷ (4 × 5,920 m/s) ≈ **21 mm**. Note what stretches the near field: larger diameter (squared!) and higher frequency.\n\nBeyond N lies the **far field (Fraunhofer zone)**: a single smooth lobe whose pressure decays steadily with distance and which **diverges** in a cone. The half-angle to the beam's null edge is **sin γ = 1.22 v/(D·f)** — about **8°** for that same probe in steel. The two formulas move together: large, high-frequency elements give long near fields and tight beams; small or low-frequency elements give short near fields but wide, fast-weakening beams. Distance–amplitude correction curves, reference reflectors at several depths, and the probe-selection rules in every UT procedure exist because of this geometry.\n\nOne more zone deserves its name: immediately under a contact probe the element is still ringing from its own transmit pulse and cannot hear. This **dead zone** is why near-surface resolution appears as a specification item — and why dual-element and delay-line probes were invented, as the transducer section shows."
+    },
+    {
+      "type": "text",
+      "heading": "Reflection, Refraction, and Mode Conversion at a Boundary",
+      "body": "What sound does at a boundary is governed by **acoustic impedance, Z = ρv** — density times velocity. At normal incidence the fraction of energy reflected is **R = ((Z₂ − Z₁)/(Z₂ + Z₁))²**, and the numbers explain most of UT practice: steel ≈ 46.5, water ≈ 1.48, air ≈ 0.0004 (all × 10⁶ kg/m²·s). Steel against air: **R > 99.9%** — essentially total reflection. That single fact is why the back wall returns a strong echo, why a tight air-filled crack is an excellent reflector, and why a dry transducer on a dry part transmits effectively nothing — the whole case for couplant. Water against steel reflects about **88%**, so immersion testing accepts roughly 12% transmission each way and calibrates accordingly.\n\nAt **oblique incidence** the rules of optics arrive with a twist. **Snell's law** — sin θ₁/v₁ = sin θ₂/v₂ — holds for every wave pair, but a solid carries two bulk modes, so one incident longitudinal beam generally produces **two refracted beams**: a longitudinal wave bent far from the normal (it is faster in steel than in the wedge) and a slower shear wave bent less. The creation of new modes at an interface is **mode conversion**, and it also happens at every internal reflection inside the part — the source of many ghost signals in angle-beam work.\n\nRaise the incidence angle in an acrylic wedge (v ≈ 2,730 m/s) on steel and the modes leave one at a time. At the **first critical angle, ≈ 27.5°**, the refracted longitudinal wave reaches 90° and stops entering the part. At the **second critical angle, ≈ 57°**, the shear wave follows. Between the two lies the window where **only shear** transmits — the standard **45°, 60°, and 70°** probes are all wedge angles inside it. Just past the second critical angle the energy reappears as a **Rayleigh wave** running the surface. In immersion testing, where water replaces the wedge, the same physics gives critical angles of about **14.5° and 27.2°**."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-6-1-fig-b",
+      "caption": "One incident longitudinal beam, two refracted modes — each obeying Snell's law with its own velocity. Right: raising the wedge angle strips the modes away one at a time; the shaded band between the critical angles (27.5°–57.4°, acrylic on steel) is the shear-only window where every standard angle-beam probe is designed."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "The working window between the critical angles",
+      "body": "Below the first critical angle, two beams enter the part at different angles and different velocities — every reflector answers **twice**, and the display is ambiguous. From **≈ 27.5° to ≈ 57°** (acrylic on steel) only the **shear** beam survives: one mode, one velocity, one known refracted angle. Every commercial contact wedge — **45°, 60°, 70°** — is designed inside this window, and the angle stamped on it is the *refracted shear angle in steel*; on any other material it must be recalculated. Push past the second critical angle and bulk transmission ceases — the energy runs the surface as a Rayleigh wave."
+    },
+    {
+      "type": "text",
+      "heading": "Scattering, Absorption, and Attenuation",
+      "body": "Beam spread thins the energy geometrically, but the material itself also taxes the beam. **Attenuation** — the loss of sound pressure with travel distance, expressed in **dB per unit path length** — is the sum of two mechanisms.\n\n- **Absorption** converts ordered vibration to heat through internal friction and elastic hysteresis. It grows roughly **in proportion to frequency** and is the dominant loss in fine-grained metals and in plastics.\n- **Scattering** redirects energy at every acoustic discontinuity inside the material — grain boundaries (each grain slightly stiffer in some crystal directions than others), second phases, micro-porosity. Scattering depends savagely on the **ratio of grain size to wavelength**: while grains are much smaller than λ it climbs as fast as the **fourth power of frequency**, and as grain size approaches the wavelength the material turns to fog.\n\nScattered energy does double damage: it is lost from the beam *and* part of it wanders back to the transducer as **grass** — the grainy baseline noise that buries small real echoes. That is why the right response to a coarse-grained austenitic casting showing hash and no back wall at 10 MHz is not more gain (gain amplifies the grass too) but a **lower frequency**: drop to 2.25 or 1 MHz and the longer wavelength averages over the grains, the noise collapses, and penetration returns. The same logic runs the other way — fine-grained wrought aluminum tolerates 10 to 15 MHz, buying resolution for thin aerospace sections. Because attenuation is material- and frequency-specific, procedures state it the only meaningful way: measured dB lost per unit path at a stated frequency."
+    },
+    {
+      "type": "text",
+      "heading": "Transducers: The Piezoelectric Search Unit",
+      "body": "At the heart of every search unit is a **piezoelectric element**, a material that converts between electrical and mechanical energy in both directions. Strain it and charge appears on its faces — the **direct effect**, used to *receive*. Hit it with a voltage spike and it deforms — the **converse (inverse) effect**, used to *transmit*. Pulsed hundreds of times a second, one element does both jobs. The element is ground to a thickness of **half a wavelength** of sound *in the element material* at the desired frequency — thinner crystal, higher frequency.\n\nThe classic element materials each have a personality: **quartz** — stable, hard, nearly immune to aging, but the least efficient transmitter; **lithium sulfate** — the best *receiver*, but water-soluble and limited to about 75 °C; **barium titanate** — an efficient transmitter among the early polarized ceramics, Curie point near 120 °C and prone to aging; **lead zirconate titanate (PZT)** — efficient in both directions with a Curie point above 300 °C, the general-purpose workhorse; **lead metaniobate** — internally damped for very short, broadband pulses; and modern **piezocomposites** (ceramic rods in polymer) combining sensitivity with bandwidth. Heat any polarized ceramic past its **Curie temperature** and the polarization — and the transducer — is gone.\n\nAround the element: electrodes, a **wear face** or lens, and behind it the **backing**, typically tungsten-loaded epoxy, whose damping sets the pulse character. Heavy damping gives a short pulse — **broad bandwidth and fine axial (distance) resolution** — at the cost of sensitivity; light damping gives a long, ringing, narrowband pulse with maximum punch. The element-plus-housing families: **straight-beam contact** probes; **dual-element** probes with separate transmit and receive crystals tilted toward a crossing point, a pseudo-focus that delivers excellent near-surface resolution for corrosion thinning and thin walls; **angle-beam** probes — an element on an acrylic wedge cut for a marked refracted shear angle in steel; **delay-line** probes for thin sections and hot surfaces; and **immersion** probes, watertight and often fitted with spherical or cylindrical lenses that focus the beam to a fine spot for high-resolution scanning."
+    },
+    {
+      "type": "text",
+      "heading": "Coupling the Beam Into the Part",
+      "body": "Between any contact transducer and the part there is a film of air, and the impedance arithmetic already priced it: a steel–air interface reflects **more than 99.9%** of the energy. The **couplant's** one essential job is to **displace that air** with something whose impedance is at least in the neighborhood of the part's — water, light oil, glycerin, cellulose gel, grease — applied as the thinnest continuous film the surface allows.\n\nChoosing it is part of the procedure, not an afterthought. **Surface roughness** calls the viscosity — rough or hot surfaces hold heavier couplants, smooth cold ones work with light oil or water. **Position** matters: vertical and overhead surfaces need gels that stay put. **Temperature** sets the chemistry — standard couplants boil off or break down on hot parts, so high-temperature formulations exist. And **material compatibility** is a hard gate in aerospace work: on titanium and nickel-base alloys the governing specifications restrict **sulfur and halogens** (chlorides) in anything that touches the part, couplant included, because residues attack those alloys at engine temperatures. Couplant is removed after the test, and water-based couplants on bare steel carry corrosion inhibitors for the interval in between.\n\n**Immersion coupling** replaces the film with a controlled water column: part and watertight transducer submerged in a tank, or coupled through a **squirter/bubbler** water jet, or through a liquid-filled **wheel** rolling along the surface — the architectures of the automated C-scan systems that map aerospace skins, bonded panels, and engine-disk forgings. Immersion buys constant, pressure-independent coupling, easy beam angulation, and focused beams. One geometric rule keeps the display honest: sound runs about **four times faster in steel or aluminum than in water**, so the water path is set to at least **one-quarter of the part thickness plus a margin** (commonly about 6 mm) — far enough that the *second* echo of the front surface lands beyond the back wall instead of inside the inspection range."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-6-1-fig-a",
+      "title": "Wave travel modes: particle motion vs. propagation",
+      "file": "basic-6-1-fig-a.svg"
+    },
+    {
+      "id": "basic-6-1-fig-b",
+      "title": "Snell's law, mode conversion, and the critical angles",
+      "file": "basic-6-1-fig-b.svg"
+    },
+    {
+      "id": "basic-6-1-fig-c",
+      "title": "Angle beam in a single-V weld: which reflector answers?",
+      "file": "basic-6-1-fig-c.svg"
+    }
+  ],
+  "interactive": {
+    "type": "hotspot",
+    "title": "Beam Path Visualizer: Angle Beam in a Weld",
+    "intro": "A 60° shear-wave probe sits to the right of this single-V butt weld, its first leg angling down toward the far fusion face. Click the reflector that returns the strongest echo to this probe.",
+    "figureId": "basic-6-1-fig-c",
+    "regions": [
+      {
+        "x": 235,
+        "y": 246,
+        "w": 92,
+        "h": 76,
+        "label": "A — lack of sidewall fusion on the far bevel",
+        "isTarget": true,
+        "feedback": "Correct. The 60° beam meets the 30° fusion face square-on, and a planar reflector struck at normal incidence sends a specular echo straight back down the path it came. Probe angles are chosen for exactly this — so the beam hits the expected fusion face at or near 90°."
+      },
+      {
+        "x": 295,
+        "y": 200,
+        "w": 62,
+        "h": 44,
+        "label": "B — scattered porosity in the weld nugget",
+        "isTarget": false,
+        "feedback": "Porosity scatters sound in every direction: many tiny echoes, little energy returned to the probe. It shows as low, broad, grassy signals from almost any angle — detectable, but never the loudest answer on the screen."
+      },
+      {
+        "x": 460,
+        "y": 233,
+        "w": 195,
+        "h": 42,
+        "label": "C — lamination parallel to the plate surface",
+        "isTarget": false,
+        "feedback": "The angle beam strikes this flat, surface-parallel reflector obliquely and glances forward instead of returning. Laminations answer a straight (0°) beam at full strength — one reason plate is straight-beam screened before angle-beam weld examination."
+      },
+      {
+        "x": 470,
+        "y": 298,
+        "w": 165,
+        "h": 38,
+        "label": "D — smooth back wall on the skip path",
+        "isTarget": false,
+        "feedback": "At 0° the back wall is the biggest echo on the screen, but an angle beam mirrors off the smooth surface and carries on along the V-path — nothing comes back. That is why an angle-beam display stays empty until a flaw interrupts the path."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "Compared with a longitudinal wave at the same frequency in the same steel, a shear wave:",
+      "options": [
+        "travels faster, with particle motion parallel to the direction of travel",
+        "travels at about half the velocity, with particle motion perpendicular to travel — and it cannot exist in liquids or gases",
+        "travels at the same velocity but penetrates more deeply",
+        "exists only within about one wavelength of the surface"
+      ],
+      "correct": 1,
+      "explanation": "Shear waves move particles perpendicular to propagation at roughly 55% of longitudinal velocity — about 3,240 versus 5,920 m/s in steel — and because liquids and gases cannot support shear stress, the mode survives only in solids. The half velocity also halves the wavelength at a given frequency, sharpening sensitivity. A wave confined to one wavelength of the surface is the Rayleigh mode, not shear."
+    },
+    {
+      "question": "Within a transducer's near field, evaluating a small reflector by echo amplitude is unreliable because:",
+      "options": [
+        "the beam has already spread too wide to strike the reflector",
+        "interference between wavelets from across the element face drives the pressure through maxima and minima with distance",
+        "attenuation removes nearly all the energy in the first few millimeters",
+        "only shear waves exist close to the transducer"
+      ],
+      "correct": 1,
+      "explanation": "Every point on the element radiates, and close in the wavelets interfere constructively and destructively — so an identical reflector can return very different amplitudes depending on where it sits. The chaos ends at the last axial maximum, N = D²f/4v (about 21 mm for a 10 mm, 5 MHz probe on steel); beam spread and smooth decay belong to the far field beyond it."
+    },
+    {
+      "question": "An acrylic wedge drives a longitudinal wave into steel at increasing incidence angles. Just past the first critical angle (≈ 27.5°), the sound transmitted into the steel is:",
+      "options": [
+        "both a refracted longitudinal and a refracted shear beam",
+        "a Rayleigh wave traveling along the surface",
+        "a refracted shear beam only — the refracted longitudinal wave has been eliminated",
+        "nothing — total reflection blocks all transmission"
+      ],
+      "correct": 2,
+      "explanation": "At the first critical angle the refracted longitudinal wave reaches 90° and stops entering the part, leaving only the shear beam between roughly 27.5° and 57° — the single-mode window in which all standard 45°, 60°, and 70° wedges are designed. Two beams exist below the first critical angle; the Rayleigh wave appears past the second."
+    },
+    {
+      "question": "A coarse-grained austenitic steel casting examined at 10 MHz shows a forest of grassy baseline noise and no back-wall echo. The soundest corrective action is to:",
+      "options": [
+        "increase the gain until a back-wall echo appears",
+        "raise the frequency to 20 MHz for better resolution",
+        "apply a thicker layer of couplant",
+        "switch to a lower test frequency so the longer wavelength is scattered far less by the grain structure"
+      ],
+      "correct": 3,
+      "explanation": "Grain scattering climbs steeply with frequency — up to its fourth power while grains are much smaller than the wavelength — and it both robs the beam and returns as grass. Lowering the frequency lengthens the wavelength so it averages over the grains: noise drops and penetration returns. More gain amplifies the grass along with everything else, higher frequency makes both problems worse, and couplant thickness is not the mechanism."
+    },
+    {
+      "question": "A couplant is required between a contact transducer and the test part because:",
+      "options": [
+        "it electrically amplifies the transducer's output",
+        "without it, the thin air gap — an enormous acoustic impedance mismatch — reflects essentially all of the sound back into the transducer",
+        "it focuses the beam to a smaller diameter",
+        "it is needed only on rough surfaces, to reduce wear on the probe face"
+      ],
+      "correct": 1,
+      "explanation": "Reflection at normal incidence is set by impedance mismatch, R = ((Z₂ − Z₁)/(Z₂ + Z₁))², and steel (≈ 46.5 × 10⁶ kg/m²·s) against air (≈ 0.0004 × 10⁶) reflects more than 99.9% of the energy. A film of oil, gel, or water displaces the air and lets sound transmit on every surface, smooth or rough; lubrication is a side benefit, and no couplant amplifies or focuses the beam."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §2.9.1 (UT fundamentals: wave propagation — sound fields, wave travel modes, refraction, reflection, scattering, and attenuation; transducers and sound beam coupling)",
+    "ASTM E114, Standard Practice for Ultrasonic Pulse-Echo Straight-Beam Contact Testing",
+    "ASTM E164, Standard Practice for Contact Ultrasonic Testing of Weldments (angle-beam technique and wedge angles)",
+    "ASTM E1065/E1065M, Standard Guide for Evaluating Characteristics of Ultrasonic Search Units"
+  ]
+}

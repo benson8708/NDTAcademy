@@ -1,0 +1,175 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <!-- scanline glow: vertical line => explicit userSpaceOnUse region (Chrome) -->
+    <filter id="fvScanGlow" filterUnits="userSpaceOnUse" x="-46" y="-20" width="92" height="380">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fvGlowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- housing face -->
+    <linearGradient id="fvHouseG" x1="0" y1="64" x2="0" y2="268" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#13294a" stop-opacity=".92"/>
+      <stop offset=".5" stop-color="#0c1f3d" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#081730" stop-opacity=".92"/>
+    </linearGradient>
+    <linearGradient id="fvBenchG" x1="0" y1="292" x2="0" y2="316" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0e2342" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#081427" stop-opacity="0"/>
+    </linearGradient>
+    <!-- illuminator window: bright core fading to cyan rim -->
+    <radialGradient id="fvWinG" cx="300" cy="156" r="158" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f4fcff"/>
+      <stop offset=".45" stop-color="#d6f1ff" stop-opacity=".95"/>
+      <stop offset=".8" stop-color="#9fe6ff" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#7cc8f2" stop-opacity=".7"/>
+    </radialGradient>
+    <radialGradient id="fvBloomG" cx="300" cy="156" r="190" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bfe9ff" stop-opacity=".5"/>
+      <stop offset=".55" stop-color="#9fe6ff" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#9fe6ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="fvSpillG" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#9fe6ff" stop-opacity=".26"/>
+      <stop offset=".6" stop-color="#9fe6ff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#9fe6ff" stop-opacity="0"/>
+    </radialGradient>
+    <!-- radiographic film: near-opaque dark emulsion -->
+    <linearGradient id="fvFilmG" x1="0" y1="126" x2="0" y2="190" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0d1f3a"/>
+      <stop offset=".5" stop-color="#0a1a32"/>
+      <stop offset="1" stop-color="#0c1d37"/>
+    </linearGradient>
+    <linearGradient id="fvSheenG" x1="162" y1="126" x2="438" y2="190" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bfe7ff" stop-opacity="0"/>
+      <stop offset=".42" stop-color="#bfe7ff" stop-opacity=".06"/>
+      <stop offset=".58" stop-color="#bfe7ff" stop-opacity=".06"/>
+      <stop offset="1" stop-color="#bfe7ff" stop-opacity="0"/>
+    </linearGradient>
+    <!-- pores: soft-edged dark spots (more exposure through a void) -->
+    <radialGradient id="fvPoreG">
+      <stop offset="0" stop-color="#020a18"/>
+      <stop offset=".6" stop-color="#04101f" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#04101f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="fvScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+    <radialGradient id="fvVigG" cx="300" cy="160" r="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9fe6ff" stop-opacity=".04"/>
+      <stop offset=".6" stop-color="#9fe6ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#010815" stop-opacity=".45"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ===== housing + reading bench (fade @0.5) ===== -->
+  <g id="fvHousing" opacity="0">
+    <!-- bench -->
+    <rect x="36" y="292" width="528" height="24" fill="url(#fvBenchG)"/>
+    <line x1="36" y1="292" x2="564" y2="292" stroke="#5fe0ff" stroke-width="1.5" opacity=".5" stroke-linecap="round"/>
+    <!-- feet -->
+    <rect x="180" y="266" width="30" height="26" rx="4" fill="#0a1a32" stroke="#5fe0ff" stroke-width="1.5" opacity=".85"/>
+    <rect x="390" y="266" width="30" height="26" rx="4" fill="#0a1a32" stroke="#5fe0ff" stroke-width="1.5" opacity=".85"/>
+    <!-- illuminator body -->
+    <rect x="150" y="64" width="300" height="204" rx="14" fill="url(#fvHouseG)" stroke="#5fe0ff" stroke-width="2" stroke-linejoin="round"/>
+    <!-- cooling vents -->
+    <g stroke="#9fe6ff" stroke-width="1.5" opacity=".3" stroke-linecap="round">
+      <line x1="262" y1="71" x2="274" y2="71"/><line x1="284" y1="71" x2="296" y2="71"/>
+      <line x1="306" y1="71" x2="318" y2="71"/><line x1="328" y1="71" x2="340" y2="71"/>
+    </g>
+    <!-- mask bezel around the viewing aperture -->
+    <rect x="166" y="80" width="268" height="152" rx="8" fill="none" stroke="#9fe6ff" stroke-width="1.5" opacity=".4" stroke-linejoin="round"/>
+    <!-- control row -->
+    <rect x="180" y="244" width="18" height="13" rx="3" fill="#0a1a32" stroke="#9fe6ff" stroke-width="1.5" opacity=".8"/>
+    <circle cx="189" cy="248.5" r="1.6" fill="#9fe6ff" opacity=".8"/>
+    <line x1="216" y1="250" x2="320" y2="250" stroke="#9fe6ff" stroke-width="1.5" opacity=".4" stroke-linecap="round"/>
+    <g stroke="#9fe6ff" stroke-width="1" opacity=".3"><line x1="216" y1="254" x2="216" y2="257"/><line x1="268" y1="254" x2="268" y2="257"/><line x1="320" y1="254" x2="320" y2="257"/></g>
+    <circle cx="294" cy="250" r="4.5" fill="#0a1a32" stroke="#5fe0ff" stroke-width="1.5"/>
+    <text x="336" y="253.5" font-size="9" letter-spacing="1" fill="#9fe6ff" opacity=".75">HI-INTENSITY</text>
+    <circle cx="434" cy="249" r="3.2" fill="#5fe0ff" filter="url(#fvGlowR)" opacity=".95"/>
+    <!-- densitometer on the bench, lower right -->
+    <g stroke="#5fe0ff" stroke-width="1.5" stroke-linejoin="round">
+      <rect x="476" y="272" width="86" height="20" rx="4" fill="#081628" opacity=".95"/>
+      <rect x="542" y="242" width="12" height="32" rx="2" fill="#081628" opacity=".9"/>
+      <rect x="488" y="236" width="62" height="11" rx="5" fill="#081628" opacity=".9"/>
+      <rect x="486" y="245" width="18" height="12" rx="3" fill="#081628" opacity=".95"/>
+    </g>
+    <circle cx="495" cy="272" r="2" fill="#5fe0ff" opacity=".8"/>
+    <rect x="508" y="277" width="32" height="11" rx="2" fill="#02101f" stroke="#5fe0ff" stroke-width="1" opacity=".9"/>
+    <text x="524" y="285.5" text-anchor="middle" font-size="8.5" fill="#5fe0ff">2.84</text>
+  </g>
+
+  <!-- ===== illuminator light (fade @1.0) ===== -->
+  <g id="fvGlow" opacity="0">
+    <rect x="146" y="58" width="308" height="212" rx="12" fill="url(#fvBloomG)"/>
+    <rect x="178" y="92" width="244" height="128" rx="5" fill="url(#fvWinG)" stroke="#eaf6ff" stroke-width="1" opacity=".98"/>
+    <ellipse cx="300" cy="295" rx="180" ry="15" fill="url(#fvSpillG)"/>
+    <ellipse cx="300" cy="62" rx="150" ry="13" fill="url(#fvSpillG)" opacity=".7"/>
+    <ellipse cx="519" cy="262" rx="70" ry="26" fill="url(#fvSpillG)" opacity=".4"/>
+  </g>
+
+  <!-- ===== weld radiograph clipped over the window (fade @1.6) ===== -->
+  <g id="fvFilm" opacity="0">
+    <rect x="162" y="126" width="276" height="64" rx="3" fill="url(#fvFilmG)" opacity=".97" stroke="#9fe6ff" stroke-width="1" stroke-opacity=".35"/>
+    <rect x="162" y="126" width="276" height="64" rx="3" fill="url(#fvSheenG)"/>
+    <!-- weld seam band: thicker reinforcement = lighter image -->
+    <path d="M162,148 C200,146.6 236,149.2 278,148.2 C320,147.2 360,149 400,147.8 C414,147.4 428,148.4 438,148 L438,169.6 C400,171 364,168.6 322,169.6 C280,170.6 240,168.8 200,170 C186,170.4 172,169.4 162,169.8 Z" fill="#bfe7ff" opacity=".3"/>
+    <!-- weld toe lines -->
+    <path d="M162,148 C200,146.6 236,149.2 278,148.2 C320,147.2 360,149 400,147.8 C414,147.4 428,148.4 438,148" fill="none" stroke="#dff4ff" stroke-width="1" opacity=".32"/>
+    <path d="M162,169.8 C172,169.4 186,170.4 200,170 C240,168.8 280,170.6 322,169.6 C364,168.6 400,171 438,169.6" fill="none" stroke="#dff4ff" stroke-width="1" opacity=".32"/>
+    <!-- faint cap ripples -->
+    <g fill="none" stroke="#dff4ff" stroke-width="3" opacity=".09" stroke-linecap="round">
+      <path d="M190,168 q 7,-10 4,-19"/><path d="M214,168.6 q 7,-10 4,-19"/><path d="M238,168 q 7,-10 4,-19"/>
+      <path d="M262,168.6 q 7,-10 4,-19"/><path d="M286,168 q 7,-10 4,-19"/><path d="M310,168.6 q 7,-10 4,-19"/>
+      <path d="M334,168 q 7,-10 4,-19"/><path d="M358,168.6 q 7,-10 4,-19"/><path d="M382,168 q 7,-10 4,-19"/><path d="M406,168.6 q 7,-10 4,-19"/>
+    </g>
+    <!-- hole-type IQI plaque on parent metal beside the seam (lead = light) -->
+    <rect x="338" y="132" width="46" height="13" rx="1.5" fill="#cfeaff" opacity=".85"/>
+    <circle cx="348" cy="138.5" r="1.3" fill="#0a1a32" opacity=".9"/>
+    <circle cx="360" cy="138.5" r="2.3" fill="#0a1a32" opacity=".9"/>
+    <circle cx="375" cy="138.5" r="4" fill="#0a1a32" opacity=".9"/>
+    <text x="332" y="142" text-anchor="end" font-size="9" fill="#dff4ff" opacity=".8">10</text>
+    <!-- lead station + ID markers near the film edges -->
+    <text x="172" y="185" font-size="9" fill="#dff4ff" opacity=".75">1</text>
+    <text x="428" y="185" text-anchor="end" font-size="9" fill="#dff4ff" opacity=".75">2</text>
+    <text x="300" y="185" text-anchor="middle" font-size="8.5" letter-spacing="1" fill="#dff4ff" opacity=".6">NDTA·W104</text>
+    <!-- spring clips holding the film -->
+    <g stroke="#5fe0ff" stroke-width="1.5" stroke-linejoin="round">
+      <rect x="196" y="117" width="26" height="13" rx="2.5" fill="#0c1f3d" opacity=".95"/>
+      <path d="M203,117 q 6,-7 12,0" fill="none" opacity=".8"/>
+      <rect x="378" y="117" width="26" height="13" rx="2.5" fill="#0c1f3d" opacity=".95"/>
+      <path d="M385,117 q 6,-7 12,0" fill="none" opacity=".8"/>
+    </g>
+    <!-- callouts -->
+    <text x="142" y="151" text-anchor="end" font-size="11" letter-spacing="1.2" fill="#9fe6ff" opacity=".9">WELD SEAM</text>
+    <line x1="146" y1="153" x2="170" y2="158" stroke="#9fe6ff" stroke-width="1" opacity=".5"/>
+    <text x="456" y="117" font-size="11" letter-spacing="1.2" fill="#9fe6ff" opacity=".9">IQI</text>
+    <line x1="453" y1="119" x2="386" y2="133" stroke="#9fe6ff" stroke-width="1" opacity=".5"/>
+  </g>
+
+  <!-- ===== unlabeled indications (fade @2.4) ===== -->
+  <g id="fvIndications" opacity="0">
+    <circle cx="250" cy="159" r="5.5" fill="url(#fvPoreG)"/>
+    <circle cx="296" cy="155" r="3" fill="url(#fvPoreG)" opacity=".55"/>
+    <path d="M318,164 q 10,-3 18,-1 q 9,2 17,-1.5" fill="none" stroke="#051020" stroke-width="1.6" opacity=".9" stroke-linecap="round"/>
+  </g>
+
+  <!-- ping ring on the faint pore (loop-fired) -->
+  <circle id="fvPing" cx="296" cy="155" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#fvGlowR)"/>
+
+  <!-- darkened-room vignette -->
+  <rect x="0" y="0" width="600" height="340" fill="url(#fvVigG)"/>
+
+  <!-- captions -->
+  <text x="40" y="331" font-size="11" letter-spacing="1" fill="#9fe6ff" opacity=".7">READING BENCH — FILM ON HIGH-INTENSITY ILLUMINATOR</text>
+  <text x="519" y="331" text-anchor="middle" font-size="10.5" letter-spacing="1" fill="#9fe6ff" opacity=".65">DENSITOMETER</text>
+
+  <!-- ===== scan sheen (renderer translates 60->520) ===== -->
+  <g id="fvscanG" transform="translate(60,0)" opacity="0">
+    <rect x="-26" y="24" width="26" height="300" fill="url(#fvScanFade)"/>
+    <line x1="0" y1="24" x2="0" y2="324" stroke="#5fe0ff" stroke-width="2" filter="url(#fvScanGlow)" opacity=".9"/>
+  </g>
+</svg>

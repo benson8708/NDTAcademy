@@ -1,0 +1,184 @@
+{
+ "lessonId": "mt2-2-1",
+ "title": "Flux Theory and Current Calculations",
+ "narrationScript": "At Level One you learned that magnetic particle testing works because flux leaks out of a part wherever a discontinuity crosses it. At Level Two the job changes. You are now the person who decides how much current to use, which direction the field must run, and whether the field that actually shows up on the part is strong enough to trust. That takes flux theory you can use, not just recite. Start with the simplest picture in the method. Pass current through a straight bar and the magnetic field forms closed circles around the current, at right angles to it. Inside a solid bar the field starts at zero on the centerline and climbs steadily to its maximum right at the surface. Outside the bar it falls away quickly, roughly in proportion to one over the distance. That single curve explains a lot of field behavior. The surface is exactly where the field is strongest, which is one reason magnetic particle testing is a surface method. Now make the bar hollow and the picture changes in a way that catches people. When current flows through a hollow tube, the field at the inside wall is essentially zero. All of the current sits outside that inner surface, so nothing magnetizes it. If the flaws you care about are on the inside diameter, a direct shot through the tube will not find them. You run a central conductor through the bore instead, because then the inside wall sits closest to the current and carries the strongest field. Next, frequency and voltage. The magnetizing force comes from amperes, not volts. A magnetizing unit is a step down transformer. It trades plant voltage for very high current at only a few volts. Voltage matters only because it has to push the current through the resistance of the cables, the contacts, and the part. Long thin cables and dirty contacts steal amperage, which is why the meter reading matters more than the tap setting. Frequency controls depth. Alternating current at fifty or sixty hertz rides in a thin skin at the surface of steel, roughly a millimeter or so deep. Raise the frequency and the skin gets thinner. Lower it, or rectify the current toward direct current, and the field spreads deeper into the section. Now the calculations. For a head shot, typical procedures call for something on the order of three hundred to eight hundred amperes per inch of part diameter, and many shops start near five hundred. A two inch diameter bar at five hundred amperes per inch needs about one thousand amperes. For a coil shot the classic low fill factor rule says ampere turns equal forty five thousand divided by the length to diameter ratio. Take a sixteen inch long part, two inches in diameter. Length over diameter is eight. Forty five thousand divided by eight is about fifty six hundred ampere turns, and with a five turn coil that is about eleven hundred amperes on the meter. The rule holds for length to diameter ratios between about two and fifteen. Short chunky parts need pole pieces or stacking to raise the effective ratio, and long parts get magnetized in sections of about eighteen inches. For prods, typical procedures run about ninety to one hundred twenty five amperes per inch of prod spacing, with spacing commonly six to eight inches. Treat every one of these numbers the same way. They are typical starting values, and your written procedure governs. Then verify. A calculation cannot see a bad contact, an odd geometry, or a worn cable. A Hall effect gaussmeter reading the tangential field at the surface should typically land around thirty to sixty gauss where procedures call for a measured value. A quantitative quality indicator shim taped to the part proves the field direction and the field strength together. Finally, remember what happens below the surface. Leakage flux from a flaw weakens fast as the flaw sits deeper. A surface crack gives a sharp, tight indication. The same crack a few millimeters down gives a broad, fuzzy one, and a little deeper than that it gives nothing at all. Direct current and half wave current reach somewhat deeper than alternating current, but no magnetic particle technique is a volumetric test. Calculate the shot, verify the field, and respect the depth limit. That is flux theory doing real work.",
+ "imagePrompt": "A technician sets the current control on a wet horizontal magnetic particle bench while a machined steel shaft rests between copper-braid contact heads inside a five-turn magnetizing coil under shop lighting.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Theory You Can Calculate With",
+   "body": "At Level I you accepted the core principle largely on faith: drive flux through a part, and any discontinuity that cuts across the flux forces some of it out of the surface, where particles collect on the leakage field. At Level II the principle becomes a working tool. You choose the technique, set the amperage, and sign for the result — so you must be able to **predict** the field, not just produce one.\n\nThree quantities run the whole show. **Magnetizing force H** comes from current — amperes and geometry, nothing else. **Flux density B** is what the steel actually carries in response, and **permeability** (µ = B/H) is how willingly it responds. Detection happens when flux crosses a discontinuity at roughly **45–90°**; flux running parallel to a flaw slides past without leaking. That is why every complete examination needs two roughly perpendicular magnetizations, and why the question \"how much current?\" is always paired with \"pointed in which direction?\"\n\nEverything in this lesson — flux patterns, frequency and voltage factors, the amperage rules, surface field verification, and depth limits — exists to let you answer those two questions with defensible numbers."
+  },
+  {
+   "type": "text",
+   "heading": "Flux Patterns: Solid Bars, Hollow Parts, and Coils",
+   "body": "Current creates a magnetic field that circles it — wrap your right hand around the conductor with your thumb pointing with the current, and your fingers trace the flux. From that one rule you can sketch every flux pattern in the method.\n\n- **Solid bar, current along it (head shot).** Inside the bar the field is zero at the centerline and rises roughly linearly to a maximum **at the surface**. Outside, it falls off in proportion to one over the distance. The strongest field sits exactly where MT looks.\n- **Hollow part, current through the wall.** No current is enclosed inside the bore, so the field at the inside surface is essentially **zero**. A direct shot through a tube leaves the ID dead — ID flaws go undetected.\n- **Central conductor.** Put the current on a bar through the bore instead, and the ID becomes the surface closest to the current — the strongest field in the setup. This is the standard fix for hollow parts.\n- **Coil.** Bend the conductor into loops and the circular fields of the turns add together along the axis: flux runs lengthwise through a part placed in the coil, making it a temporary bar magnet with poles at its ends.\n\nThese are the patterns the calculations below feed. Know which pattern you are buying before you spend a single ampere."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt2-2-1-fig-a",
+   "caption": "Field strength versus radius for a solid bar carrying current and for a hollow part shot directly — the bore of the hollow part sees almost no field."
+  },
+  {
+   "type": "text",
+   "heading": "Frequency and Voltage Factors",
+   "body": "A magnetizing unit is best understood as a **step-down transformer**: it trades plant voltage for amperage. The output that matters is **current**, because H is set by amperes and geometry. Voltage exists only to push current through the total circuit resistance — cables, contacts, and the part. Open-circuit voltages on typical units are low, on the order of a few volts to a few tens of volts, which is why the shock hazard at the part circuit is modest while the arc and burn hazard remains serious.\n\nPractical consequences:\n\n- **Long or undersized cables, dirty contact pads, and loose clamps** add resistance and quietly steal amperage. The tap setting is a promise; the ammeter reading is the fact. Read the meter on every shot.\n- **Frequency controls depth.** At 50/60 Hz the skin effect confines AC flux to a thin surface layer in steel — on the order of a millimeter. Raise the frequency and the skin thins further; lower it, or rectify toward DC, and the field penetrates deeper.\n- **Rectification** turns line AC into half-wave DC or full-wave DC; three-phase full-wave DC is nearly ripple-free, behaves like true direct current, and gives the deepest field.\n\nIn short: amperage sets strength, frequency and waveform set depth, and voltage just pays the resistance bill."
+  },
+  {
+   "type": "text",
+   "heading": "Current Calculations",
+   "body": "The rules below are classic starting points that appear, with variations, in practices such as ASTM E709 and E1444. **Your written procedure governs**, and field verification settles arguments.\n\n- **Direct circular (head shot):** typical procedure values run on the order of **300–800 A per inch of part diameter**. A 2 in. diameter bar at 500 A/in. needs about 1,000 A. Base the number on the diameter of the section the current actually passes through.\n- **Coil shot (low fill factor):** the classic rule of thumb is **NI ≈ 45,000 ÷ (L/D)** — ampere-turns equal 45,000 divided by the length-to-diameter ratio, effective for L/D between about 2 and 15. Example: a 16 in. long, 2 in. diameter part gives L/D = 8, so NI ≈ 5,625 ampere-turns; through a 5-turn coil, about 1,125 A on the meter.\n- **L/D out of range:** below about 2 the part is too short and stubby for the rule — raise the effective ratio by stacking parts end-to-end or adding ferromagnetic pole pieces. For long parts, magnetize in sections of roughly **18 in.**, repositioning the coil with overlap.\n- **Prods:** typically **90–125 A per inch of prod spacing**, with spacing commonly 6–8 in.; stay toward the low end on thin sections to limit overheating.\n\nMemorize the structures, not just the numbers: per inch of diameter for circular shots, ampere-turns versus L/D for coils, per inch of spacing for prods."
+  },
+  {
+   "type": "table",
+   "caption": "Typical starting values for common magnetization setups — the written procedure always governs.",
+   "headers": ["Technique", "Typical procedure value", "Key limits and notes"],
+   "rows": [
+    ["Head shot (direct circular)", "≈ 300–800 A per inch of diameter", "Field is maximum at the surface, zero at the centerline; many shops start near 500 A/in."],
+    ["Central conductor", "Amperage based on the part diameter, as for a head shot", "Offset conductor covers ≈ 4× the conductor diameter of ID circumference per shot; rotate and overlap ≈ 10%."],
+    ["Coil shot (low fill factor)", "NI ≈ 45,000 ÷ (L/D) ampere-turns", "Valid for L/D ≈ 2–15; magnetize long parts in ≈ 18 in. sections."],
+    ["Prods", "≈ 90–125 A per inch of prod spacing", "Spacing commonly 6–8 in.; use the lower end on thin sections."]
+   ]
+  },
+  {
+   "type": "figure",
+   "figureId": "mt2-2-1-fig-b",
+   "caption": "Coil-shot geometry: the L/D ratio drives the ampere-turn requirement, and the flux runs along the part axis to catch transverse flaws."
+  },
+  {
+   "type": "text",
+   "heading": "Surface Flux Strength and Subsurface Effects",
+   "body": "A calculation cannot see a worn cable, a bad contact, or an oddball geometry, so Level II practice is **calculate, then verify**. Three verification tools, in rising order of authority:\n\n- **Pie (octagon) gauge** — a fast, qualitative check of field **direction** on the surface; it does not measure strength.\n- **QQI shim standards** — artificial flaws of known depth taped flaw-side down to the part. Crisp shim indications prove the field is adequate **and** correctly oriented at that location; the QQI is the workhorse proof during technique development.\n- **Hall-effect gaussmeter** — reads the tangential surface field directly; procedures that specify a number commonly target on the order of **30–60 G** tangential at the surface during the shot.\n\nBelow the surface, the physics turns against you quickly. Leakage flux weakens rapidly as a discontinuity lies deeper: a surface crack pinches flux into a sharp, tight, strongly held indication; the same crack a couple of millimeters down produces a broad, fuzzy, weakly held one; a little deeper still and nothing usable reaches the surface. Full-wave DC penetrates deepest, half-wave DC nearly as deep with better particle mobility, and AC sees only the skin. But no current type makes MT volumetric — practical sensitivity more than roughly 6 mm (about 1/4 in.) below the surface is poor even under favorable conditions. Promise surface and near-surface detection; send deeper questions to UT or RT."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Calculate, then verify",
+   "body": "The amperage formula buys you a starting point — nothing more. The **QQI shim** and the **tangential gaussmeter reading** are the proof that the field on *this* part, with *these* cables, in *this* fixture is strong enough and pointed the right way. When formula and measurement disagree, the measurement wins, and your written procedure tells you how to respond."
+  }
+ ],
+ "figures": [
+  {
+   "id": "mt2-2-1-fig-a",
+   "title": "Field in and around current-carrying parts",
+   "file": "mt2-2-1-fig-a.svg"
+  },
+  {
+   "id": "mt2-2-1-fig-b",
+   "title": "Coil shot and the L/D rule",
+   "file": "mt2-2-1-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Current Calculation Practice",
+  "intro": "You are setting up a wet horizontal bench to process a batch of machined steel parts. The written procedure gives the rules — you supply the arithmetic and the verification.",
+  "steps": [
+   {
+    "prompt": "First part: a solid journal, 3.0 in. in diameter, gets a head shot. The procedure specifies 400 A per inch of diameter. What do you set?",
+    "options": ["400 A", "1,200 A", "3,600 A"],
+    "correct": 1,
+    "feedback": "Circular shots are figured per inch of diameter: 3.0 in. × 400 A/in. = 1,200 A. Confirm the delivered current on the ammeter — cables and contacts can steal amperage."
+   },
+   {
+    "prompt": "Next: a 10 in. long, 2 in. diameter pin needs a coil shot in the 5-turn coil, low fill factor. Using NI ≈ 45,000 ÷ (L/D), what current do you expect on the meter?",
+    "options": ["9,000 A", "1,800 A", "450 A"],
+    "correct": 1,
+    "feedback": "L/D = 10 ÷ 2 = 5, so NI ≈ 45,000 ÷ 5 = 9,000 ampere-turns. The coil supplies 5 turns, so the meter should read about 9,000 ÷ 5 = 1,800 A."
+   },
+   {
+    "prompt": "A gear blank is 4 in. long and 5 in. in diameter — L/D = 0.8. What is the correct move for the coil shot?",
+    "options": [
+     "Use the formula anyway; close enough",
+     "Raise the effective L/D — stack blanks end-to-end or add ferromagnetic pole pieces — then recalculate",
+     "Triple the calculated amperage to compensate"
+    ],
+    "correct": 1,
+    "feedback": "The 45,000/(L/D) rule is only effective for L/D between about 2 and 15. Short, stubby parts self-demagnetize strongly; stacking or pole pieces raise the effective ratio so the rule applies."
+   },
+   {
+    "prompt": "During technique proof-out, the Hall-effect gaussmeter reads 14 G tangential at the inspection surface. The procedure calls for 30–60 G. Now what?",
+    "options": [
+     "Accept it — any measurable field proves magnetization",
+     "Increase the amperage and re-measure until the tangential reading is in range",
+     "Switch to the residual method"
+    ],
+    "correct": 1,
+    "feedback": "A measured tangential field below the procedure window means the shot is too weak at that location. Raise the current (or fix the setup) and verify again — the meter reading, not the formula, is the record."
+   },
+   {
+    "prompt": "Why tape a QQI shim to the part during technique development when you already have a gaussmeter?",
+    "options": [
+     "The shim replaces the ammeter reading",
+     "The shim demonstrates adequate field strength AND direction as an actual particle indication on the part",
+     "The shim measures the residual field after demagnetization"
+    ],
+    "correct": 1,
+    "feedback": "The QQI's artificial flaws only display when the field crossing them is strong enough and properly oriented — it proves the whole system end-to-end, particles and lighting included."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "In a solid steel bar carrying direct current for a head shot, where is the magnetic field strongest?",
+   "options": [
+    "At the centerline of the bar",
+    "At the outer surface of the bar",
+    "Uniform everywhere inside the bar",
+    "About one inch outside the bar"
+   ],
+   "correct": 1,
+   "explanation": "The field is zero at the centerline, rises roughly linearly to a maximum at the surface, and falls off outside the bar in proportion to one over the distance."
+  },
+  {
+   "question": "A tube is magnetized by passing current directly through its wall, but the flaws of concern are on the inside diameter. Why is this setup wrong, and what is the fix?",
+   "options": [
+    "The ID field is essentially zero because no current is enclosed inside the bore; use a central conductor instead",
+    "The ID field is too strong and will fur over; reduce amperage by half",
+    "Direct current cannot magnetize hollow parts; switch to AC at the same amperage",
+    "The setup is fine; ID and OD always carry the same field"
+   ],
+   "correct": 0,
+   "explanation": "With current in the wall, the bore encloses no current and carries almost no field. A central conductor puts the current inside the bore, making the ID the strongest-field surface."
+  },
+  {
+   "question": "A 12 in. long, 3 in. diameter shaft gets a low fill-factor coil shot in a 5-turn coil. Using NI ≈ 45,000 ÷ (L/D), the meter should read about:",
+   "options": [
+    "11,250 A",
+    "2,250 A",
+    "562 A",
+    "4,500 A"
+   ],
+   "correct": 1,
+   "explanation": "L/D = 12 ÷ 3 = 4, so NI ≈ 45,000 ÷ 4 = 11,250 ampere-turns; divided across 5 turns, that is about 2,250 A of coil current."
+  },
+  {
+   "question": "If the frequency of the magnetizing current is increased well above 60 Hz, the skin effect causes the field in a steel part to:",
+   "options": [
+    "Penetrate deeper into the cross section",
+    "Concentrate in an even thinner surface layer",
+    "Disappear entirely",
+    "Become uniform through the thickness"
+   ],
+   "correct": 1,
+   "explanation": "Skin depth shrinks as frequency rises, so higher-frequency current crowds the flux into a thinner surface skin; deeper penetration requires lower frequency or rectified (DC-like) current."
+  },
+  {
+   "question": "Two indications appear on a shaft: one sharp, tight, and strongly held; the other broad, fuzzy, and weakly held. The most likely interpretation is:",
+   "options": [
+    "Both are surface cracks of equal severity",
+    "The sharp one is a surface-breaking flaw; the fuzzy one is a similar flaw lying below the surface",
+    "The fuzzy one is the surface crack; subsurface flaws always look sharp",
+    "Both are nonrelevant indications from over-magnetization"
+   ],
+   "correct": 1,
+   "explanation": "Leakage flux weakens and spreads as flaw depth increases, so surface flaws print sharp and tight while near-subsurface flaws print broad and fuzzy."
+  }
+ ],
+ "references": [
+  "CP-105-2024 MT Topical Outline §2.1 (theory)",
+  "CP-105-2024 MT Topical Outline §2.1.1–2.1.5 (flux patterns; frequency and voltage factors; current calculations; surface flux strength; subsurface effects)",
+  "Practices such as ASTM E709 and ASTM E1444 present amperage guidance of this form (generic reference)",
+  "Reference values: NI ≈ 45,000/(L/D) for low fill-factor coil shots; tangential surface field commonly 30–60 G when measured"
+ ]
+}

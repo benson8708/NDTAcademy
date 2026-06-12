@@ -1,0 +1,162 @@
+{
+ "lessonId": "ut1-6-4",
+ "title": "Testing Curved Surfaces",
+ "narrationScript": "Calibration blocks are flat. Real parts are round. This lesson is about what happens to your coupling, your beam, and your plotted positions the moment the entry surface curves, and what a working technician does about it. Start with the flat case, because it is the baseline. On a flat surface the whole wedge face touches the part. The couplant film is even, the exit point and refracted angle are the ones you verified on the calibration block, and the skip and leg numbers you calculated apply exactly as drawn. When a surface curves gently enough, codes let you keep treating it as flat. A common threshold is a diameter of about five hundred millimeters, or twenty inches. Above that, scan as if on plate. Below it, curvature starts charging rent. Set a flat wedge on a pipe and it touches along a single line. Most of the wedge face hovers over an air gap, so only a fraction of the energy gets in, and the probe rocks. Every rock moves the exit point and changes the actual refracted angle, so your indications wander even when the reflector has not moved. The fix is to contour the wedge or shoe to match the part. The common shop rule is, if the gap between the wedge face and the surface exceeds about half a millimeter, twenty thousandths of an inch, contour it. And contour it in the correct plane. For a girth weld the beam runs along the pipe axis, and the curvature problem is across the width of the wedge. For a long seam the beam runs around the circumference, and the curvature problem is along the wedge length. A shoe contoured for one job rocks on the other. After any contouring, verify the exit point and the actual refracted angle again, because removing wedge material moves both. Curvature also bends your geometry inside the wall. On flat plate the beam crosses at one angle all the way down. Scanning around a pipe, the beam is a chord across a curved wall, and the angle it makes with the wall steepens as it heads for the bore. There is a clean rule for whether it ever gets there. The sine of the refracted angle must be no greater than the inside diameter divided by the outside diameter. Take four inch schedule forty pipe, with an outside diameter of one hundred fourteen point three millimeters and a wall of about six. The bore to outside ratio is about zero point eight nine, which corresponds to about sixty three degrees. So a sixty degree wedge still reaches the inside surface, but it arrives at an effective angle of about seventy five degrees, a glancing hit. A seventy degree wedge never touches the bore at all. It skims through the outer wall and comes back. On heavy wall, small bore pipe the ratio drops further, and even forty five degrees can fail to reach the inside. This is why pipe procedures specify angles by diameter and thickness, and why flat plate skip formulas stop being trustworthy on a circumferential scan. Plot on a curved section drawing, or better, calibrate on a block with the same curvature. The rule of thumb written into common codes is that one curved calibration block covers parts from zero point nine to one and a half times its own diameter. Notches in that block, on the inside and outside surfaces, prove the beam really reaches both surfaces and let you set sensitivity honestly. A few habits finish the job. Convex entry spreads the beam inside the part, so expect weaker responses from a given reflector and set sensitivity on curvature matched references, never on a flat block. Use a thicker couplant on curved and vertical surfaces so the film survives. Favor smaller probes on small diameters so the footprint fits the curve. Keep your pressure steady, because squeezing a contoured shoe changes the film thickness and the amplitude with it. And when the diameter gets truly small, ask whether contact is the right approach at all, because immersion methods carry the couplant problem for you. Curves are not exotic. Most of the world's welds live on pipe. Respect the contact patch, match the contour to the scan direction, check whether your angle can even reach the bore, and calibrate on the curvature you actually scan.",
+ "imagePrompt": "A technician presses a contoured-wedge angle-beam probe against the outside of a large steel pipe near a girth weld on a pipe rack, portable flaw detector slung at his side showing an A-scan trace.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Flat Entry Surfaces: The Baseline",
+   "body": "Everything you calibrated travels with you only as long as the entry surface matches the calibration surface. On a **flat entry surface** the full wedge face contacts the part: the couplant film is even, the **exit point and refracted angle** are exactly what you verified on the IIW block, beam spread behaves as designed, and the flat-plate relationships — skip = 2T·tan θ, leg = T ÷ cos θ — plot reflectors faithfully.\n\nFlat-surface behavior also extends to gently curved parts. When the diameter is large enough, the wedge footprint sees an essentially flat surface; a common code threshold treats surfaces above roughly **500 mm (20 in.) diameter** as flat, allowing flat calibration blocks and standard plotting. The lesson of this baseline: every curved-surface adjustment that follows exists to recover what flatness gives you for free — stable coupling, a known beam, and trustworthy geometry."
+  },
+  {
+   "type": "text",
+   "heading": "What Curvature Does to Coupling and Beam",
+   "body": "Put a flat wedge on a pipe and it touches along a **single line**. Three problems start immediately:\n\n- **Coupling collapses.** Most of the wedge face hovers over an air gap; only the thin contact line transmits, so far less energy enters the part and echo amplitudes drop.\n- **The probe rocks.** With line contact the wedge tips fore-aft or side-to-side. Each rock **moves the exit point and changes the actual refracted angle**, so indication positions and amplitudes wander even on a stationary reflector.\n- **The beam defocuses.** A convex entry surface acts as a lens: with the part velocity higher than the wedge or couplant velocity, the transmitted beam **spreads** in the metal. Energy density falls, responses weaken with depth, and beam-spread-based sizing changes. (A concave entry — scanning from inside a bore — converges the beam instead.)\n\nThe smaller the diameter, the worse all three effects get. Sensitivity established on a flat block simply does not transfer to a curved part: amplitudes, beam dimensions, and even the angle in the metal have all shifted."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-6-4-fig-a",
+   "caption": "Four curved-surface setups: a rocking flat wedge with line contact, a properly contoured shoe, a shoe contoured in the wrong plane for the scan, and a flat calibration block wrongly substituted for a curved one."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "Code rules of thumb for curvature",
+   "body": "Common code practice (e.g., procedures based on ASME Section V, Article 4): **contour the wedge** when the gap between wedge face and part exceeds about **0.5 mm (0.020 in.)**; a **curved calibration block** covers examination surfaces from about **0.9 to 1.5 times its own diameter**; and surfaces over roughly **500 mm (20 in.)** diameter may be treated as flat. Always confirm the exact limits in the governing procedure."
+  },
+  {
+   "type": "text",
+   "heading": "Contoured Wedges and Shoes",
+   "body": "The cure for line contact is a wedge or shoe **contoured to the part** — machined or carefully sanded against abrasive laid on a pipe of the right size until the face mates fully.\n\nContour in the **correct plane**. For a **girth weld** the beam travels along the pipe axis, and the curvature mismatch lies **across the wedge width** — so the face is contoured across its width. For a **longitudinal (seam) weld** the beam travels around the circumference, and the mismatch lies **along the wedge length**. A shoe contoured for one scan rocks on the other, recreating the problem it was meant to fix.\n\nAfter any contouring, **re-verify the exit point and measured beam angle** on a calibration standard: removing wedge material moves both, and the angle stamped on the housing is now only a suggestion. Field habits that make curved scanning repeatable: use a **higher-viscosity couplant** so the film survives on curved and vertical surfaces, prefer **smaller probes** on small diameters so the footprint follows the curve, and keep contact pressure steady — squeezing a contoured shoe changes the couplant film and the amplitude with it."
+  },
+  {
+   "type": "text",
+   "heading": "Cylindrical Shapes: Can the Beam Even Reach the Bore?",
+   "body": "On a **circumferential scan** (beam directed around the pipe, hunting axial flaws and long-seam defects) the beam is a **chord across a curved wall**. As it heads inward, the angle between beam and wall steepens — and there is a clean test for whether it ever reaches the inside surface:\n\n- The beam reaches the bore only if **sin θ ≤ ID ÷ OD**.\n- When it does, it arrives at a steeper effective angle: **sin θ_ID = (OD ÷ ID) × sin θ**.\n\nWorked example — 4 in. schedule 40 pipe: OD = 114.3 mm, wall ≈ 6.0 mm, so ID ≈ 102.3 mm and ID/OD ≈ 0.89, corresponding to a maximum usable angle of about **63°**. A **60° wedge** (sin 60° = 0.866) still reaches the bore — but strikes it at about **75°**, a glancing hit. A **70° wedge** (sin 70° = 0.940) **never touches the bore at all**: it skims through the outer wall and returns. On heavy-wall small-bore pipe the ratio falls further and even 45° can fail.\n\nConsequences: pipe procedures specify angle by diameter and wall; flat-plate skip distances are no longer trustworthy on circumferential scans, so plot on a curved cross-section or calibrate distances on a **curved block with ID and OD notches** — which also proves the beam genuinely reaches both surfaces. Axial scans (beam along the axis, for girth welds) keep near-flat geometry along the beam path, but still need the width-wise contour for coupling."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-6-4-fig-b",
+   "caption": "Circumferential scanning on 4-inch schedule 40 pipe: a 60-degree beam reaches the bore at a glancing 75 degrees, while a 70-degree beam misses the inside surface entirely."
+  },
+  {
+   "type": "text",
+   "heading": "Field Checklist for Curved Work",
+   "body": "Before scanning any curved part, run the list:\n\n- **Fit:** does the wedge mate with the surface, gap under ~0.5 mm? Contoured in the plane that matches this scan direction?\n- **Verification:** exit point and actual refracted angle re-checked *after* contouring?\n- **Reach:** for circumferential scans, does sin θ ≤ ID/OD? What is the effective angle at the bore?\n- **Calibration:** distance and sensitivity set on a block of matching curvature (within the 0.9–1.5 × diameter window), with ID/OD notches responding?\n- **Couplant and pressure:** viscous enough to hold a film, applied with steady hand pressure?\n\nIf the diameter is very small or the geometry complex, consider whether a contact technique is still the right choice — immersion and bubbler systems carry the coupling problem for you, and a later module covers them. Most of the world's welds live on pipe; technicians who respect the contact patch and the chord geometry produce plots that match reality."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-6-4-fig-a",
+   "title": "Curved-surface setups: right and wrong",
+   "file": "ut1-6-4-fig-a.svg"
+  },
+  {
+   "id": "ut1-6-4-fig-b",
+   "title": "Circumferential scan geometry on pipe",
+   "file": "ut1-6-4-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Find the Setup Problems",
+  "intro": "A crew left four setups on the pipe job. Click every setup that has a problem a Level II would flag.",
+  "figureId": "ut1-6-4-fig-a",
+  "regions": [
+   {
+    "x": 55,
+    "y": 75,
+    "w": 330,
+    "h": 168,
+    "label": "Flat wedge on the pipe OD",
+    "isTarget": true,
+    "feedback": "Problem. Line contact only: most of the wedge face sits over air, energy transmission collapses, and the probe rocks — moving the exit point and angle with every pass. The gap exceeds 0.5 mm (0.020 in.), so this wedge must be contoured."
+   },
+   {
+    "x": 415,
+    "y": 75,
+    "w": 330,
+    "h": 168,
+    "label": "Contoured shoe matched to the OD",
+    "isTarget": false,
+    "feedback": "Nothing wrong here — the shoe face mates fully with the pipe, coupling is stable, and the exit point stays put. This is what the other setups should look like."
+   },
+   {
+    "x": 55,
+    "y": 268,
+    "w": 330,
+    "h": 162,
+    "label": "Shoe contoured in the wrong plane",
+    "isTarget": true,
+    "feedback": "Problem. The contour was cut along the beam direction (long-seam style), but this girth-weld scan needs the contour ACROSS the wedge width. The curvature across the shoe is unmatched, so it still rocks side to side."
+   },
+   {
+    "x": 415,
+    "y": 268,
+    "w": 330,
+    "h": 162,
+    "label": "Flat calibration block for the curved job",
+    "isTarget": true,
+    "feedback": "Problem. Calibrating flat and scanning curved invalidates sensitivity and distance: the curved entry changes coupling, beam spread, and geometry. Use a calibration block of matching curvature — one curved block commonly covers 0.9 to 1.5 times its own diameter."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A flat wedge placed on a 100 mm diameter pipe makes contact along a single line. The immediate consequences are:",
+   "options": [
+    "Higher frequency and shorter wavelength in the part",
+    "Greatly reduced transmitted energy plus rocking that shifts the exit point and actual beam angle",
+    "Mode conversion of the shear wave to a longitudinal wave",
+    "A longer near field in the part"
+   ],
+   "correct": 1,
+   "explanation": "Line contact leaves most of the wedge face over an air gap, so little energy enters, and the unstable wedge rocks — moving the index point and changing the refracted angle as you scan."
+  },
+  {
+   "question": "A pipe has OD 80 mm and wall 10 mm (ID 60 mm, ID/OD = 0.75). For a circumferential scan, which is the largest standard angle that still reaches the bore?",
+   "options": ["70° (sin = 0.940)", "60° (sin = 0.866)", "45° (sin = 0.707)", "All three reach the bore"],
+   "correct": 2,
+   "explanation": "The beam reaches the inside surface only if sin θ ≤ ID/OD = 0.75. Sin 45° = 0.707 passes; sin 60° = 0.866 and sin 70° = 0.940 both exceed 0.75, so those beams skim the outer wall and never touch the bore."
+  },
+  {
+   "question": "A common code-based rule requires contouring the wedge to the part when:",
+   "options": [
+    "The part diameter exceeds 500 mm",
+    "The gap between the wedge face and the examination surface exceeds about 0.5 mm (0.020 in.)",
+    "The refracted angle exceeds 60 degrees",
+    "The couplant viscosity is too low"
+   ],
+   "correct": 1,
+   "explanation": "The roughly 0.5 mm (0.020 in.) gap limit is the standard trigger for contouring. Above about 500 mm diameter the surface is commonly treated as flat — that rule works the other way."
+  },
+  {
+   "question": "A calibration block with a curved scanning surface is generally acceptable for examination surfaces in what diameter range?",
+   "options": [
+    "Only the exact diameter of the block",
+    "0.5 to 3 times the block diameter",
+    "About 0.9 to 1.5 times the block diameter",
+    "Any diameter, provided the material matches"
+   ],
+   "correct": 2,
+   "explanation": "Common code practice lets one curved calibration block serve surfaces from about 0.9 to 1.5 times its own diameter; outside that window the coupling and beam behavior differ too much."
+  },
+  {
+   "question": "Compared with a flat entry surface, sound transmitted through a convex entry surface into steel:",
+   "options": [
+    "Diverges (spreads) in the part, lowering energy density and weakening deeper responses",
+    "Converges to a sharp focus at the back wall",
+    "Travels at a higher velocity",
+    "Cannot mode-convert at the interface"
+   ],
+   "correct": 0,
+   "explanation": "A convex interface into a higher-velocity material acts as a diverging lens: the beam spreads, responses weaken with depth, and flat-block sensitivity no longer applies. A concave entry has the opposite, converging effect."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Technique Course §1.1.6, §1.1.6.1, §1.1.6.2 (curved surfaces; flat entry; cylindrical and tubular shapes)",
+  "Chord geometry on cylinders: beam reaches the bore only if sin θ ≤ ID/OD; sin θ_ID = (OD/ID)·sin θ",
+  "Curvature practice per codes such as ASME BPVC Section V, Article 4 (wedge contouring gap, curved-block 0.9–1.5 × diameter window, flat treatment of large diameters)"
+ ]
+}

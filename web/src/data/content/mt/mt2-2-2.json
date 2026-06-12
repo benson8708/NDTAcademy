@@ -1,0 +1,191 @@
+{
+ "lessonId": "mt2-2-2",
+ "title": "Magnetism Behavior and Flux Fields from DC, Pulsed DC, and AC",
+ "narrationScript": "Every magnetic particle indication is the visible end of a chain of physics. In this lesson we walk that chain. A magnet and the flux it carries, what distance and heat and hardness do to that flux, what happens when the flux meets a discontinuity, and then the three currents that build the field. Direct current, half wave direct current, and alternating current. Start with the magnet itself. Flux travels in closed loops. Inside a bar magnet the flux runs from the south pole to the north pole, and outside it returns from north to south through the air. Poles are simply the places where flux leaves or enters the metal. Strength falls off quickly with distance. Move a field indicator away from a pole and the reading collapses, roughly with the square of the distance for a compact pole. The same idea applies around a conductor, where the field weakens in proportion to one over the distance from the current. This is why lift off matters, why the legs of a yoke must seat firmly on the surface, and why a gaussmeter probe must lie flat against the part right where the reading counts. Now the patterns. A longitudinally magnetized bar has poles at its ends and an external field you can feel with an indicator. A circularly magnetized part is different. The flux closes entirely inside the metal, so there are no poles and almost no external field. The part can carry a strong working field and still read quiet on a field meter. In both cases a discontinuity changes everything. Steel carries flux hundreds of times more easily than air. A crack is an air gap, so the flux refuses to cross it cheaply. Some flux dives under the gap, some crowds around the ends, and if the flaw is at or near the surface, some is forced out into the air above it. That escaping flux forms a small north pole on one face of the crack and a south pole on the other, and magnetic particles bridge the gap because the particles make the magnetic path easier. A tight surface crack throws a strong, sharp leakage field. The same flaw buried below the surface leaks weakly over a wide area, which is why subsurface indications look broad and fuzzy. Heat works against you. As steel heats up, its permeability and its ability to hold magnetism both fall, gently at first, then completely at the Curie point, about seven hundred seventy degrees Celsius for iron. Above that temperature the steel is simply not ferromagnetic, and no magnetic particle test is possible until it cools back down. Hardness pulls the other way. Hard, high carbon, heat treated steels hold magnetism stubbornly. Their hysteresis loop is wide, with high retentivity and high coercive force, and that is exactly what makes the residual method possible on them. Soft, annealed, low carbon steels let go of magnetism almost instantly, so they must be inspected with the continuous method, particles applied while the current is still on. Now the three currents. Full wave direct current is smooth and steady. It fills the cross section, penetrates deepest, and is the bench unit choice when subsurface flaws matter. Its source is a rectifier bank fed from plant power, and in the early days, storage batteries. Its drawback is that deep residual fields are the hardest to remove at demag time. Half wave direct current comes from a single rectifier that keeps only one half of the alternating wave. On average it behaves much like direct current and reaches nearly as deep, but it pulses, and that pulse shakes dry powder across the surface and helps it gather on weak leakage fields. Depth plus particle mobility makes half wave the favorite for dry powder work on welds and castings with prods. Alternating current reverses every cycle, fifty or sixty times a second. The skin effect crowds its field into a thin surface layer, so it delivers a strong surface field per ampere and excellent particle movement, but it will not find anything deep. Use it for surface breaking cracks, especially fatigue cracks in service parts. And respect it. Magnetizing circuits are low voltage by design, a few volts pushed through step down transformers, but the line side carries full plant voltage, the output amperage is enormous, and breaking a live contact draws an arc that burns metal and skin. Keep contacts firm before the shot, keep them closed until the current is off, and keep the equipment grounded.",
+ "imagePrompt": "Glowing orange forged steel parts cool on a steel rack beside a magnetic particle inspection station while a technician holds a Hall-effect gaussmeter probe flat against a cooled dark bar in the foreground.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Magnets, Flux, and the Distance Problem",
+   "body": "Flux always travels in **closed loops**. Inside a bar magnet it runs from the south pole to the north pole; outside, it returns from north to south through the air. A **pole** is nothing more than a place where flux leaves or enters the metal — and poles are what attract particles.\n\nThat gives a Level II two mental pictures to carry:\n\n- **Internal pattern** — the flux path inside the metal, which determines which flaw orientations will be crossed.\n- **External pattern** — whatever flux is forced outside the metal: at the ends of a longitudinally magnetized bar, at yoke poles, and at discontinuities.\n\nDistance is the silent variable in both. The field near a compact pole collapses roughly with the **square of the distance**; around a straight conductor it falls off in proportion to **one over the distance**. Practical consequences are everywhere: yoke legs must seat firmly because a millimeter of lift-off costs real field strength; a cable wrap pulled tight against the part magnetizes far better than a loose one; a gaussmeter probe must lie flat on the surface at the exact location of interest; and leakage fields from flaws are only strong **close to the surface** — which is why particles must reach the surface, and why paint and plating thickness degrade sensitivity."
+  },
+  {
+   "type": "text",
+   "heading": "Action at the Discontinuity",
+   "body": "Steel conducts flux hundreds of times more easily than air — its relative permeability is in the hundreds or thousands, while air sits at about 1. A crack, seam, or inclusion is a low-permeability gap in the flux path, and the flux negotiates it three ways at once:\n\n- some flux **compresses and dives beneath** the gap,\n- some **crowds around the ends** of it,\n- and — if the flaw is at or near the surface — some is **forced out of the part** into the air above it.\n\nThe escaping flux is the **leakage field**. It creates a miniature north pole on one face of the discontinuity and a south pole on the other. Particles drifting through that field are pulled in and held, bridging the gap because ferromagnetic powder offers the flux an easier path than air.\n\nThe strength and shape of the leakage field depend on the flaw: **depth below the surface** (leakage weakens rapidly as the flaw sits deeper), **width of the gap** (a tight crack pinches flux into a sharp, strong leakage field; a wide open gouge leaks weakly), and **orientation** (maximum leakage when flux crosses the flaw at 90°, fading to nothing as flux runs parallel). A surface crack therefore prints sharp, dense, and tightly held; a subsurface flaw prints broad, fuzzy, and weak."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt2-2-2-fig-a",
+   "caption": "Flux meeting a surface crack and a subsurface flaw — the surface gap forces a strong, sharp leakage field with poles at the crack faces, while the buried flaw leaks weakly over a wide area."
+  },
+  {
+   "type": "text",
+   "heading": "Heat and Hardness: How the Steel Pushes Back",
+   "body": "Two material conditions change how well a part can be magnetized — and a Level II must recognize both.\n\n**Heat degrades magnetism.** As temperature climbs, thermal agitation disturbs domain alignment: permeability and retentivity fall gradually, then ferromagnetism vanishes entirely at the **Curie point — about 770 °C (roughly 1,400 °F) for iron**. Above the Curie point a steel part is effectively paramagnetic and cannot be magnetic particle tested at all; it regains its magnetic behavior as it cools back through that temperature. Below the Curie point, hot work is still possible with the right consumables — some dry powders are rated to about 600 °F — but expect weaker fields than the same shot would produce cold.\n\n**Hardness raises retention.** Hard, high-carbon and heat-treated steels resist domain movement in both directions: they are harder to magnetize *and* harder to demagnetize. Their hysteresis loop is wide, with high **retentivity** (residual flux density) and high **coercive force**. That stubbornness is exactly what makes the **residual method** workable on hardened parts — the part keeps a useful field after the current stops. Soft, annealed, low-carbon steels sit at the other extreme: narrow loop, low retentivity, field gone the instant the current is. They demand the **continuous method**, with particles applied while the magnetizing current is flowing."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt2-2-2-fig-b",
+   "caption": "Left: the ability to magnetize steel collapses at the Curie point near 770 °C. Right: a hard steel's wide hysteresis loop holds high residual flux, while a soft steel's narrow loop lets the field go at once."
+  },
+  {
+   "type": "text",
+   "heading": "Flux Fields: Direct Current and Half-Wave DC",
+   "body": "The waveform of the magnetizing current decides where the flux lives in the cross section.\n\n**Full-wave direct current (FWDC)** is steady — in modern bench units it comes from three-phase rectification of plant power and is nearly ripple-free; the historical source was banks of storage batteries. Because nothing varies with time, there is no skin effect: the field occupies the **full cross section** and gives the **deepest penetration** of any current type. That makes FWDC the choice when near-subsurface discontinuities matter, typically on wet horizontal bench units. The depth advantage has a price: deep residual fields are the hardest to remove, often needing reversing, step-down DC demagnetization.\n\n**Half-wave direct current (HWDC)** comes from a single rectifier that simply blocks one half of the AC sine wave, leaving unidirectional pulses. *Similarity to DC:* on average the current is unidirectional, so its penetration approaches that of full-wave DC. *Advantages:* the pulsation makes the field swell and relax 50 or 60 times a second, which physically shakes dry powder across the surface and helps it migrate into weak leakage fields — strong subsurface response **plus** excellent particle mobility, from simple, light, inexpensive circuitry. *Typical fields of use:* portable prod work with dry powder on structural weldments and castings, where shallow subsurface flaws such as lack of fusion and slag are the quarry."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt2-2-2-fig-c",
+   "caption": "Where the field lives by current type: AC rides a thin surface skin, HWDC pulses deeper, and FWDC fills the cross section most uniformly."
+  },
+  {
+   "type": "text",
+   "heading": "Flux Fields: Alternating Current",
+   "body": "**Alternating current** reverses direction every cycle — 50 or 60 times per second on line power. The cyclic effects work for you and against you.\n\n- **Skin effect:** the continually changing field induces eddy currents that cancel flux in the interior, crowding the field into a thin surface layer — on the order of a millimeter in steel at 60 Hz. AC therefore concentrates its entire effort exactly where surface cracks live, delivering a **strong surface field per ampere**, but it has essentially no subsurface capability.\n- **Particle mobility:** the reversing field vibrates particles, helping them dance into leakage fields. AC gives the liveliest particle behavior of the three current types.\n- **Voltage and current factors:** magnetizing units are step-down transformers — plant voltage in, a few volts and thousands of amperes out. Delivered amperage depends on total circuit impedance, so cable length and size, connection quality, and the part itself all change what the meter reads. Set by the ammeter, not the tap label, and remember AC meters typically display RMS values — comparisons between current types must follow the procedure's metering rules.\n- **Source of current:** plant line power through the unit's transformer taps; in the field, engine-driven generators or portable transformer units serve prods, clamps, and AC yokes.\n\nChoose AC when the target is a **surface-breaking** discontinuity — classically fatigue cracks in parts returning from service."
+  },
+  {
+   "type": "callout",
+   "variant": "safety",
+   "title": "Safety precautions around magnetizing current",
+   "body": "The part circuit is low-voltage, but the **line side is full plant voltage** and the output is **thousands of amperes**. Never make or break a contact while current flows — the arc can burn metal, ignite vapors, and injure. Keep contact areas clean and clamped tight before the shot; keep equipment grounded and cables insulated and undamaged; let the current stop before prods or clamps lift. On wet benches, remember you are working with electrical equipment and a liquid bath — inspect cords, connections, and interlocks, and treat oil-based carriers as flammable."
+  }
+ ],
+ "figures": [
+  {
+   "id": "mt2-2-2-fig-a",
+   "title": "Flux action at surface and subsurface discontinuities",
+   "file": "mt2-2-2-fig-a.svg"
+  },
+  {
+   "id": "mt2-2-2-fig-b",
+   "title": "Curie point and hysteresis: heat and hardness effects",
+   "file": "mt2-2-2-fig-b.svg"
+  },
+  {
+   "id": "mt2-2-2-fig-c",
+   "title": "Field depth by current type",
+   "file": "mt2-2-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Match the Behavior to the Current Type",
+  "intro": "Classify each statement under the current type it best describes: alternating current, half-wave DC, or full-wave DC. Think about waveform, skin effect, penetration, and particle mobility.",
+  "buckets": [
+   "Alternating current (AC)",
+   "Half-wave DC (HWDC)",
+   "Full-wave DC (FWDC)"
+  ],
+  "items": [
+   {
+    "label": "Skin effect crowds the field into a thin surface layer",
+    "bucket": 0,
+    "why": "AC's continual reversal induces eddy currents that cancel interior flux, confining the field to roughly a millimeter of skin at line frequency."
+   },
+   {
+    "label": "Best choice for a fine grinding crack open to the surface of a machined journal",
+    "bucket": 0,
+    "why": "A surface-breaking crack needs maximum surface field and particle mobility — AC's specialty; depth is irrelevant here."
+   },
+   {
+    "label": "Gives the liveliest particle dance but essentially no subsurface reach",
+    "bucket": 0,
+    "why": "AC's reversing field vibrates particles strongly, but the skin effect denies it any depth."
+   },
+   {
+    "label": "Single rectifier passes only one half of the sine wave",
+    "bucket": 1,
+    "why": "That is the definition of half-wave rectification — unidirectional pulses at line frequency."
+   },
+   {
+    "label": "Pulsation shakes dry powder into weak leakage fields over welds",
+    "bucket": 1,
+    "why": "HWDC's swell-and-relax field gives dry powder mobility while keeping near-DC penetration — the classic prod-and-powder combination."
+   },
+   {
+    "label": "Penetrates almost like DC while running on simple, light circuitry",
+    "bucket": 1,
+    "why": "Because the pulses are unidirectional, average penetration approaches full-wave DC, from a single inexpensive rectifier."
+   },
+   {
+    "label": "Nearly ripple-free output from three-phase rectification",
+    "bucket": 2,
+    "why": "Three-phase full-wave rectification overlaps the phases into an almost smooth direct current."
+   },
+   {
+    "label": "Deepest, most uniform field — the bench choice when subsurface matters",
+    "bucket": 2,
+    "why": "With no time variation there is no skin effect, so FWDC fills the cross section and reaches deepest."
+   },
+   {
+    "label": "Leaves the deep residual fields that are hardest to demagnetize",
+    "bucket": 2,
+    "why": "FWDC magnetizes the full section, so removing its residual field often takes reversing, step-down DC demagnetization."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A forged part comes off a stress-relief furnace at about 800 °C and the shop wants it inspected immediately. What governs your answer?",
+   "options": [
+    "Use extra amperage to overcome the heat",
+    "The part is above the Curie point (≈770 °C for iron) and is not ferromagnetic — MT is impossible until it cools below that temperature",
+    "Switch to fluorescent particles, which tolerate heat better",
+    "Use AC, since the skin effect is unaffected by temperature"
+   ],
+   "correct": 1,
+   "explanation": "Above the Curie point steel loses ferromagnetism entirely, so no amperage or particle choice helps; the part must cool below roughly 770 °C, and consumable temperature limits still apply after that."
+  },
+  {
+   "question": "Which part is the legitimate candidate for the residual method?",
+   "options": [
+    "An annealed low-carbon steel bracket",
+    "A hardened, high-carbon bearing race with a wide hysteresis loop",
+    "Any part inspected with AC",
+    "A hot forging just below the Curie point"
+   ],
+   "correct": 1,
+   "explanation": "The residual method depends on high retentivity — the wide-loop behavior of hard, heat-treated, high-carbon steels. Soft annealed steel sheds its field immediately and requires the continuous method."
+  },
+  {
+   "question": "A circularly magnetized bar shows almost nothing on a field-indicator held near its surface, yet a QQI shim on the part displays clearly during the shot. Why?",
+   "options": [
+    "The bar was never magnetized",
+    "Circular flux closes entirely inside the part — no external poles form, so little external field exists despite a strong internal working field",
+    "The field indicator only responds to AC fields",
+    "The shim is defective"
+   ],
+   "correct": 1,
+   "explanation": "Circular magnetization produces an internal flux pattern with no poles, hence almost no external field; the working field inside the part is still strong, as the shim proves."
+  },
+  {
+   "question": "You need to find shallow subsurface lack-of-fusion in a structural weld using dry powder and prods. Which current type is the classic choice, and why?",
+   "options": [
+    "AC — the skin effect drives flux deeper",
+    "HWDC — near-DC penetration plus a pulsation that gives dry powder mobility into weak leakage fields",
+    "FWDC — it is the only current that can magnetize a weld",
+    "Any type — current waveform does not affect depth"
+   ],
+   "correct": 1,
+   "explanation": "Half-wave DC keeps most of direct current's penetration while its pulsing field shakes dry powder toward weak subsurface leakage fields — the standard prod-and-powder combination."
+  },
+  {
+   "question": "Why must a yoke's legs seat firmly on the part surface for a valid examination?",
+   "options": [
+    "To complete the electrical circuit through the part",
+    "Field strength falls off rapidly with distance, so even small lift-off at the poles sharply weakens the flux driven into the part",
+    "To keep the yoke from overheating",
+    "Seating only matters for DC yokes"
+   ],
+   "correct": 1,
+   "explanation": "Magnetic field strength collapses quickly with distance from a pole; an air gap under a yoke leg adds reluctance and bleeds away the field before it enters the part."
+  }
+ ],
+ "references": [
+  "CP-105-2024 MT Topical Outline §2.2 (magnets and magnetism; distance factors; internal and external flux patterns; action at the discontinuity; heat effects; hardness versus retention)",
+  "CP-105-2024 MT Topical Outline §2.3 (flux fields: direct current, direct pulsating current, alternating current)",
+  "Practices such as ASTM E709/E1444 and ASME Section V Article 7 address current-type selection and equipment (generic reference)",
+  "Reference values: iron Curie point ≈ 770 °C; some dry powders rated to ≈ 600 °F; AC skin depth in steel on the order of 1 mm at 60 Hz"
+ ]
+}

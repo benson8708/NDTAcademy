@@ -1,0 +1,124 @@
+{
+ "lessonId": "ut2-3-3",
+ "title": "Composite Structures: Layup Defects and Ultrasonic Response",
+ "narrationScript": "A laminated composite is not a solid the way steel is a solid. It is a stack. Dozens or hundreds of thin plies of carbon, glass, or aramid fiber held in a cured resin, sometimes wrapped around a honeycomb core to make a sandwich panel. The part is born in the layup room. Plies of prepreg, fiber already wetted with resin, are laid by hand or by machine, one on another, each at its engineered angle. Then the stack is bagged, pulled under vacuum, and cured under heat and pressure, classically in an autoclave. Other routes infuse dry fiber with liquid resin in a closed mold. Either way, the finished laminate is anisotropic, stiff along the fibers and soft across them, and it is full of internal interfaces. That is exactly why ultrasound works so well on it. The discontinuity list reads differently from metal. The big one is delamination, a separation between plies. It can be born in manufacturing, from a contaminated ply or a bad cure, or born in service, from an impact. Impact is sneaky in composites. A dropped tool can leave a dent you can barely see while the plies underneath separate in a cone that widens with depth. The industry calls it barely visible impact damage, and finding it is a core job for ultrasonic testing. Porosity is next. Fields of tiny voids left behind when volatiles could not escape or when autoclave pressure was lost. Then foreign material, and this one is embarrassing but real. Pieces of backing film, peel ply, or release paper accidentally laid up inside the stack. Add unbonds in bonded joints, skin to core disbonds in sandwich panels, crushed core, resin rich and resin starved zones, and fiber wrinkles. Notice the shared geometry. Almost everything lies flat, parallel to the surface, between plies. For once the defects are perfectly oriented for a straight beam from the surface. Now the response. Through the thickness, a carbon laminate carries sound at roughly three kilometers per second, about half the speed of steel, and it attenuates far more, so working frequencies sit lower, commonly one to five megahertz. A delamination is a resin to air interface, and almost nothing crosses it. You get a strong echo from the delamination depth and you lose everything behind it, including the back wall echo. The arrival time hands you the depth directly. Depth equals half the velocity times the round trip time. If the echo arrives four microseconds after the entry surface in material running three kilometers per second, the delamination sits six millimeters down. Porosity behaves differently. It scatters the beam, so the back wall echo sinks as the void content rises, and that loss in decibels, compared against a known good reference, is how porosity is actually judged. A foreign film gives an echo between plies, often weaker than a delamination, and some sound usually keeps going, so the back wall may survive. That surviving back wall is a useful clue that you are looking at an inclusion rather than a separation. Technique splits into two camps. Pulse echo from one side gives depth information and works where you can only reach one surface, which is most of an assembled aircraft. Through transmission puts a transmitter on one side and a receiver on the other and judges a single thing, how much energy got across. It gives no depth, and it demands careful alignment, but it forgives high attenuation, and it is the standard for honeycomb sandwich, where pulse echo dies in the core. Production scanning is automated. Squirter systems carry the sound in thin water jets, a gantry rasters the part, and the output is a C scan, a plan view map of amplitude or time of flight. On that map a delamination shows as a sharp edged dead zone, porosity as a mottled, diffuse loss, and an inclusion as a discrete shape with the footprint of the film that caused it. Calibration leans on reference standards built from the same material and layup with engineered flaws, flat bottom holes and embedded film inserts at set depths, commonly around a quarter inch across. Acceptance comes from the engineering drawing and the governing specification. Typical rules cap porosity around two percent, forbid any delamination above a stated size, often that same quarter inch, and tighten everything in designated critical zones. When you find something, map its boundary with the six decibel drop, take the depth from time of flight, and record size, depth, and location. The part was built layer by layer. Inspect it the same way, and let the interfaces tell the story.",
+ "imagePrompt": "A gantry-mounted squirter ultrasonic system arcs twin water jets onto a curved black carbon-fiber wing skin in a bright aerospace inspection cell while a technician studies the C-scan map filling in on a monitor.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Built in Layers: How Laminates Are Made",
+   "body": "A laminated composite is a stack of thin **plies** — carbon, glass, or aramid fiber in a polymer resin — cured into a single part. In the prepreg route, plies of fiber pre-impregnated with resin are laid **by hand or by machine** (automated tape laying, fiber placement), each ply at its engineered angle; the stack is vacuum-bagged and cured under heat and pressure, classically in an **autoclave**. Liquid routes (resin transfer molding, vacuum infusion) inject resin into dry fiber in a closed mold. **Sandwich construction** bonds thin laminate skins to a lightweight **honeycomb or foam core** for stiffness.\n\nTwo properties drive the inspection. The laminate is **anisotropic** — stiff along fibers, compliant across them — and acoustic properties vary with direction, so through-thickness examination is the norm. And it is built of **interfaces**: every ply boundary, every bondline, every skin-to-core joint is a potential separation surface, and nearly every defect of consequence lies **flat, parallel to the surface** — ideally oriented for a straight beam."
+  },
+  {
+   "type": "text",
+   "heading": "The Laminate Discontinuity Family",
+   "body": "**Delaminations** — separations between plies — are the headline defect. Manufacturing causes include contaminated plies, bridging, and bad cure; in service the cause is **impact**. A dropped tool or hail strike can leave a barely visible dent while the plies beneath separate in a cone that **widens with depth** — the industry's *barely visible impact damage* (BVID) problem, and a standing reason composites get ultrasonic surveys after suspect events.\n\n**Porosity and voids** form when volatiles cannot escape or autoclave pressure is lost — distributed fields of tiny voids, often concentrated in particular plies or regions.\n\n**Foreign material**: pieces of backing film, peel ply, or release paper accidentally cured into the stack — thin, planar, and lying between plies.\n\n**Bondline defects**: unbonds and weak bonds in adhesive joints, **skin-to-core disbonds** and crushed core in sandwich panels.\n\n**Process variations**: resin-rich and resin-starved zones, fiber **wrinkles and waviness** that fold load paths out of plane.\n\nThe common geometry — planar, parallel to the surface, at a ply interface — sets the technique: normal-incidence longitudinal waves, gated on the interfaces and the back wall."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-3-3-fig-a",
+   "caption": "Laminate cross-section with a delamination, a porosity field, a foreign-film inclusion, and an impact-damage cone, beside the pulse-echo screen a delamination produces."
+  },
+  {
+   "type": "text",
+   "heading": "Pulse-Echo Response and Reading Depth",
+   "body": "Through the thickness, carbon-fiber laminate carries longitudinal sound at roughly **3,000 m/s** — about half of steel — and attenuates far more, so composite work runs at **1–5 MHz** (higher for thin skins, lower for thick or cored stacks).\n\n- **Delamination**: a laminate-to-air interface reflects essentially everything. The screen shows a **strong echo at the ply depth and loss of the back-wall echo** — nothing behind the separation is examined, so suspect areas may need mapping from both surfaces. Depth comes straight from time: depth = v·t/2, so an echo arriving 4 µs after the front surface at 3,000 m/s sits 3,000 × 4×10⁻⁶ ÷ 2 = **6 mm** deep.\n- **Porosity**: scatters rather than reflects. The back-wall echo **sinks as void content rises**, and porosity is judged by that attenuation loss in dB against a known-good reference — practices correlate dB loss with percent voids.\n- **Foreign film**: an intermediate echo at a ply interface, usually weaker than a delamination, and **partially transmitting** — a surviving back wall hints at an inclusion rather than a separation.\n\nGating is everything: an interface gate for the entry zone, a flaw gate across the ply stack, and a back-wall gate watching amplitude."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Nothing crosses a delamination",
+   "body": "A delamination is a resin-to-air interface — reflection is nearly total. Expect **an echo at the separation depth plus a dead back wall**, and remember the shadow: everything beneath the delamination is unexamined until you map from the far side. A surviving back wall under an intermediate echo points to a partially transmitting **inclusion**, not a separation."
+  },
+  {
+   "type": "text",
+   "heading": "Through-Transmission and C-Scan Mapping",
+   "body": "**Through-transmission (TTU)** puts a transmitter on one side and a receiver on the other and measures one quantity: **how much energy crossed**. It carries no depth information and demands two-sided access with careful alignment, but it shrugs off attenuation that defeats pulse-echo — which makes it the production standard for **honeycomb sandwich**, where the core scatters a pulse-echo beam into nothing. Pulse-echo remains the field tool: one-sided access on assembled structure, with depth readout.\n\nProduction scanning is automated. **Squirter systems** couple through thin water jets, a gantry rasters transmitter and receiver (or a single pulse-echo probe) over the contour, and the result is a **C-scan**: a plan-view map of gated amplitude or time of flight. Read the signatures:\n\n- **Delamination** — a sharp-edged dead zone of near-total loss.\n- **Porosity** — mottled, diffuse partial loss spread over a region.\n- **Foreign film** — a discrete footprint, often with the tell-tale shape of the offending material.\n\nAmplitude C-scans answer \"how much got through\"; time-of-flight C-scans add \"how deep,\" turning an impact cone into a stepped contour map of delaminations ply by ply."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-3-3-fig-b",
+   "caption": "C-scan plan view of a solid laminate: a sharp-edged delamination dead zone, a mottled porosity field, and the discrete footprint of a film inclusion."
+  },
+  {
+   "type": "text",
+   "heading": "Reference Standards and Acceptance",
+   "body": "Metal calibration blocks are useless here — sensitivity must be demonstrated in the **same material, layup, and thickness** as the part. Composite reference standards embed engineered flaws: **flat-bottom holes** machined from the back side and **film inserts** (PTFE patches simulating delaminations) at several depths, commonly about **6.35 mm (0.25 in.) across**. Calibration sets gain so the reference flaws meet required screen response, and C-scan systems verify with the standard before and after each part.\n\nAcceptance comes from the **engineering drawing and governing specification** — aerospace primes write their own, and consensus practices in the pattern of ASTM E2580 cover flat solid laminates. Typical rules: **porosity capped near 2%** (enforced through the calibrated dB-loss correlation), **no delamination or inclusion larger than a stated size** — often that same 6.35 mm — with tighter limits and closer scan index in **designated critical zones** such as fastener rows and load fittings. Evaluation mechanics are familiar: bound the indication with the **6 dB drop**, take depth from time of flight, and record size, depth, and location against the zone's limits. After any reported impact, map the damage cone from both sides and report its full extent — the dent is never the whole story."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-3-3-fig-a",
+   "title": "Laminate defects in cross-section and the pulse-echo view",
+   "file": "ut2-3-3-fig-a.svg"
+  },
+  {
+   "id": "ut2-3-3-fig-b",
+   "title": "C-scan signatures of laminate defects",
+   "file": "ut2-3-3-fig-b.svg"
+  }
+ ],
+ "interactive": null,
+ "checkQuestions": [
+  {
+   "question": "In pulse-echo examination of a solid laminate, a delamination typically produces:",
+   "options": [
+    "A weak echo with the back wall unchanged",
+    "A strong echo at the delamination depth and loss of the back-wall echo",
+    "No echo, only a slight gain in back-wall amplitude",
+    "A doubled back-wall echo at twice the thickness"
+   ],
+   "correct": 1,
+   "explanation": "A delamination is a laminate-to-air interface that reflects essentially all the energy: a strong echo appears at the separation depth and everything behind it — including the back wall — goes dark."
+  },
+  {
+   "question": "In a carbon laminate with a through-thickness velocity of 3,000 m/s, an echo arrives 4 microseconds after the front surface. The reflector depth is about:",
+   "options": [
+    "3 mm",
+    "6 mm",
+    "12 mm",
+    "1.5 mm"
+   ],
+   "correct": 1,
+   "explanation": "Depth = v·t/2 = 3,000 m/s × 4 µs ÷ 2 = 6 mm; the round-trip time is halved because the pulse travels down and back."
+  },
+  {
+   "question": "Which statement about through-transmission testing of composites is correct?",
+   "options": [
+    "It gives precise depth information for each defect",
+    "It detects defects as a loss of transmitted amplitude, gives no depth information, and requires aligned two-sided access",
+    "It only works on metals because composites attenuate too much",
+    "It eliminates the need for couplant or water jets"
+   ],
+   "correct": 1,
+   "explanation": "TTU measures only how much energy crossed the part — defects appear as transmission loss with no depth data — and the aligned transmitter-receiver pair needs access to both surfaces."
+  },
+  {
+   "question": "Porosity content in a cured laminate is normally evaluated by:",
+   "options": [
+    "Counting individual pore echoes on the A-scan",
+    "Measuring the back-wall attenuation loss in dB against a known-good reference and applying the correlation to percent voids",
+    "The color change of the resin under the couplant",
+    "Switching to shear waves, which porosity reflects completely"
+   ],
+   "correct": 1,
+   "explanation": "Distributed micro-voids scatter the beam rather than returning discrete echoes; the calibrated dB drop in back-wall (or transmitted) amplitude is the standard measure, correlated to void percentage."
+  },
+  {
+   "question": "A dropped tool leaves a barely visible dent on a CFRP skin. An ultrasonic survey matters because:",
+   "options": [
+    "The dent always tells the full extent of the damage",
+    "Internal delaminations can spread in a cone that widens with depth, far beyond the visible dent",
+    "Impacts only damage the paint on composites",
+    "Composites cannot be damaged by low-energy impacts"
+   ],
+   "correct": 1,
+   "explanation": "Barely visible impact damage is the classic composite failure mode: a small surface mark over a depth-widening cone of ply separations, which is why suspect impacts trigger ultrasonic mapping from both sides where possible."
+  }
+ ],
+ "references": [
+  "CP-105-2024 UT Evaluation Course §2.7 (composite structures: process review, discontinuities, response, codes/standards)",
+  "Flat-laminate ultrasonic practices such as ASTM E2580 (cited generically)",
+  "Aerospace prime-contractor composite acceptance specifications and BVID survey requirements (cited generically)"
+ ]
+}

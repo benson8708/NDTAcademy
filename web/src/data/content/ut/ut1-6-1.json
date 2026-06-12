@@ -1,0 +1,161 @@
+{
+ "lessonId": "ut1-6-1",
+ "title": "Straight-Beam and Angle-Beam Contact Techniques",
+ "narrationScript": "Contact testing is the bread and butter of ultrasonic work. The transducer rides directly on the part, separated only by a thin film of couplant, and the two core techniques are straight beam and angle beam. Master both and you can handle most of the contact work in a fabrication shop. First, what makes any contact exam valid. Steel against air reflects essentially all of the sound back into the probe, so the couplant film is not optional. Glycerin, gel, oil, or even water on a smooth surface all work, but the film must stay continuous while you scan. The surface matters just as much. Loose scale, weld spatter, and flaking paint have to come off, because every air pocket under the probe steals energy. And scanning is a discipline, not a wander. You cover the area in overlapping passes, commonly with at least ten to fifteen percent overlap between them, and slowly enough that the instrument fires several pulses on every spot. Many procedures cap scan speed at about one hundred fifty millimeters, or six inches, per second. Now straight beam. The probe sends a longitudinal wave straight down, and the screen shows time across the bottom and echo height up the side. On clean plate you see the initial pulse at the left and a back wall echo at the plate thickness. That back wall echo is your health monitor, so watch it constantly. A lamination, a flat separation rolled into the plate, shows up two ways at once. A new echo appears at the lamination depth, often with its own string of repeats, and the back wall echo drops or disappears because the lamination is stealing the beam before it reaches the bottom. If the back wall falls but no new echo appears, think before you call it. You may have lost couplant, the surface may be rough, or the reflector may be tilted so the energy is going somewhere other than back at the probe. Straight beam earns its keep on thickness work, laminar checks of plate before welding, and forgings, but it has a blind spot. A flaw standing vertically reflects almost nothing straight back up. That is what angle beam is for. Put the same element on an angled plastic wedge and the beam refracts at the interface. Between the first and second critical angles only a shear wave travels in the steel, and the standard wedges put it at forty five, sixty, or seventy degrees from vertical. The beam travels down through the plate, bounces off the bottom, and climbs back to the top in a vee. We describe that path with a few right triangle numbers. The leg is the soundpath from the surface to the back wall, thickness divided by the cosine of the angle. The half skip is how far along the surface the beam lands when it touches the bottom, thickness times the tangent. The full skip is twice that. Run a sixty degree wedge on twelve millimeter plate. The tangent of sixty degrees is one point seven three two, so the half skip is about twenty one millimeters and the full skip about forty two. The cosine is one half, so each leg is twenty four millimeters of soundpath. Those numbers let you mark a scan zone on the part with a grease pencil before you start, from the weld toe back to a full skip plus the cap width, so the first leg sweeps the lower half of the weld and the second leg sweeps the upper half as you raster back and forth. Finally, choosing the angle. The goal is to hit the expected flaw face as close to square on as you can. Lack of fusion lives on the bevel, so on a thirty degree bevel a sixty degree beam arrives nearly perpendicular. Thickness drives the choice too. Thin material wants seventy degrees, so the skip is long enough to keep the probe clear of the weld cap. Heavy sections want forty five, because a seventy degree path through thick steel gets long, and long soundpaths lose energy to attenuation and beam spread. When a procedure offers a choice, picture the flaw plane and pick the beam that faces it. That is the whole game of contact technique. Keep the couplant continuous, keep the back wall honest, know your triangle numbers cold, and aim the beam at the flaw you expect to find.",
+ "imagePrompt": "A technician slides an angle-beam ultrasonic probe along a grease-pencil grid beside a butt weld on carbon steel plate, flaw detector A-scan glowing next to a couplant bottle in a fabrication shop.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Contact Testing: Probe on the Part",
+   "body": "In contact testing the transducer rides directly on the test surface, separated only by a thin **couplant** film. That film is not a convenience: a steel–air interface reflects essentially 100% of the incident sound (the acoustic impedance mismatch is enormous), so a dry probe puts almost no energy into the part. Glycerin, cellulose gel, oil, or plain water on a smooth surface all serve — the requirement is a continuous film that survives the scan.\n\nThe entry surface must support that film. Loose scale, weld spatter, flaking paint, and deep pitting all trap air under the wedge and must be removed or the technique adjusted. Tightly adhered paint can sometimes be scanned through, but only when the procedure allows it and calibration accounts for it.\n\nScanning itself is a discipline:\n\n- Mark a datum and scan in **overlapping passes** — commonly at least 10–15% overlap of the element width, so no strip goes uninspected.\n- Keep speed down. Many codes limit scanning to about **150 mm (6 in.) per second** unless a faster rate is demonstrated, so the pulser interrogates every spot several times.\n- Maintain even pressure; rocking the probe changes the coupled energy and the indication amplitude."
+  },
+  {
+   "type": "text",
+   "heading": "Straight Beam: Thickness and Laminar Flaws",
+   "body": "A straight-beam (0°) probe sends a **longitudinal wave** straight down. On clean plate the A-scan shows the initial pulse at the left and a **back-wall echo** at a screen position corresponding to the thickness; on thin sections you may see a string of multiple back echoes, each a further round trip.\n\nStraight beam is the technique for **thickness measurement**, for **laminar discontinuities** — laminations in rolled plate, delaminations, large inclusions — and for forgings and castings where flaws lie parallel to the entry surface. The signature of a lamination is a double event: a **new echo appears at the lamination depth** (a mid-wall lamination puts it at half the back-wall distance, often with its own repeat pattern), and the **back-wall echo drops or vanishes** because the lamination intercepts the beam.\n\nLoss of back wall *without* a replacement echo deserves thought before a call: lost couplant, a rough or curved back surface, high attenuation, or a tilted reflector scattering energy away can all do it. Two limits to respect: the **dead zone** just under the surface (the probe is still ringing — covered properly in the next lesson), and the geometry blind spot — a **vertical planar flaw returns almost nothing** to a straight beam. That is the angle beam's job."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-6-1-fig-a",
+   "caption": "Straight-beam contact testing: clean plate gives a strong back-wall echo, while a mid-wall lamination produces a new echo at half the distance and kills the back wall."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The back wall is your witness",
+   "body": "Monitor the back-wall echo on every straight-beam scan. A healthy back wall proves coupling and penetration; a new echo **plus** a dropped back wall says a reflector is intercepting the beam; a dropped back wall **alone** says investigate — couplant, surface, attenuation, or a tilted flaw — before you write anything down."
+  },
+  {
+   "type": "text",
+   "heading": "Angle Beam: Geometry You Can Mark on the Part",
+   "body": "Mount the element on an acrylic wedge angled between the first and second critical angles (roughly 27.5°–57° incidence for acrylic on steel) and only a **shear wave** travels in the part — at the standard refracted angles of **45°, 60°, or 70°** from the surface normal. The beam leaves the wedge at the **exit (index) point**, travels down to the back wall, reflects, and climbs back to the surface in a V.\n\nThree right-triangle relationships, with plate thickness T and refracted angle θ, let you plot everything:\n\n- **Leg** (soundpath to the back wall) = T ÷ cos θ\n- **Half-skip** (surface distance where the beam strikes the bottom) = T × tan θ\n- **Full skip** (surface distance where it returns to the top) = 2T × tan θ\n\nWorked example — 60° on 12 mm plate (tan 60° = 1.732, cos 60° = 0.500): half-skip = 12 × 1.732 ≈ **20.8 mm**; full skip ≈ **41.6 mm**; leg = 12 ÷ 0.5 = **24 mm**. Before scanning, mark the scan zone with a grease pencil: the probe rasters from near the weld toe back to **one full skip plus the cap width**, with a 10–15° swivel at each position, so the first leg covers the lower half of the weld and the second leg covers the upper half."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-6-1-fig-b",
+   "caption": "A 60-degree beam in 12-millimeter plate: with the probe forward the first leg interrogates the root, and as the probe rasters back the second leg sweeps the upper weld."
+  },
+  {
+   "type": "text",
+   "heading": "Choosing the Beam Angle",
+   "body": "Sound reflects best when it strikes a flaw face **near perpendicular**, so the expected discontinuity orientation drives angle selection. Lack of sidewall fusion lies along the bevel: on a single-V weld with a 30° bevel, a **60° beam** arrives almost square to the fusion face (probe angle + bevel angle ≈ 90°). Centerline cracks and incomplete penetration at the root respond well to a beam aimed at the root from the half-skip position.\n\nThickness sets practical limits. On thin material a steep (45°) beam returns to the surface so quickly that the probe crowds the weld cap; a **70°** wedge stretches the skip so you can stand clear. On heavy sections a 70° soundpath grows very long — more attenuation, more beam spread, weaker echoes — so **45°** (often paired with a second angle) is the workhorse. Where geometry allows, scan from **both sides** of the weld and, on thicker joints, from both surfaces: every additional direction catches orientations the first one missed.\n\nWhen the procedure offers options, sketch the joint, draw the expected flaw planes, and choose the angle whose beam faces them — never just the wedge that happens to be on the bench."
+  },
+  {
+   "type": "table",
+   "caption": "First-choice beam angles by plate thickness — always subject to the governing procedure.",
+   "headers": ["Thickness", "Typical first choice", "Why"],
+   "rows": [
+    ["Under ~15 mm (5/8 in.)", "70°", "Long skip keeps the probe clear of the cap; short soundpaths stay strong"],
+    ["~15–40 mm (5/8–1 1/2 in.)", "60° (or 70°)", "Balanced skip length; near-perpendicular to common 30° bevels"],
+    ["Over ~40 mm (1 1/2 in.)", "45° (+ second angle)", "Shorter soundpath limits attenuation; add 60°/70° for coverage"]
+   ]
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "What codes expect of a contact scan",
+   "body": "Codes such as ASME Section V, Article 4 require a calibrated distance range and reference sensitivity, scanning at a controlled speed (commonly ≤ 150 mm/s), defined overlap between passes, coverage of the required volume from the specified sides and angles, and records of the couplant, probe, angle, and reference level used — so the exam can be repeated by the next technician."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-6-1-fig-a",
+   "title": "Straight-beam contact testing and the lamination signature",
+   "file": "ut1-6-1-fig-a.svg"
+  },
+  {
+   "id": "ut1-6-1-fig-b",
+   "title": "Angle-beam V-path: 60° on 12 mm plate",
+   "file": "ut1-6-1-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Marking Out a Thin-Plate Weld Scan",
+  "intro": "You are assigned a butt weld in 12 mm carbon steel plate, accessible from both sides of the weld on one surface. The procedure allows 45°, 60°, or 70° shear-wave probes. Work through the setup the way a Level II expects it done.",
+  "steps": [
+   {
+    "prompt": "Which wedge do you reach for first on this 12 mm plate?",
+    "options": ["45° — shortest soundpath, strongest signal", "70° — the longer skip keeps the probe clear of the weld cap", "60° — always the default angle"],
+    "correct": 1,
+    "feedback": "On thin plate a steep beam returns to the surface so fast that the probe rides onto the cap before the first leg covers the weld. A 70° wedge stretches the skip (tan 70° = 2.747) so you can stand clear. There is no universal default — thickness and flaw orientation decide."
+   },
+   {
+    "prompt": "With the 70° wedge, where does the beam first strike the bottom surface (the half-skip)?",
+    "options": ["33 mm from the exit point", "16.5 mm from the exit point", "66 mm from the exit point"],
+    "correct": 0,
+    "feedback": "Half-skip = T × tan θ = 12 × 2.747 ≈ 33 mm. The 66 mm figure is the full skip (2T·tan θ), and 16.5 mm would be the half-skip of a much steeper beam."
+   },
+   {
+    "prompt": "How far back from the weld must your grease-pencil scan zone extend?",
+    "options": ["To the half-skip line only — one leg is enough", "To one full skip (≈ 66 mm) plus the cap width", "Exactly one leg length (≈ 35 mm)"],
+    "correct": 1,
+    "feedback": "The first leg only covers the lower half of the weld. To sweep the upper half with the second leg, the probe must raster back to a full skip plus enough extra for the cap width. A leg is a soundpath, not a surface distance — don't mix them."
+   },
+   {
+    "prompt": "Scanning the first leg you get an indication at 20 mm soundpath (cos 70° = 0.342). How deep is the reflector?",
+    "options": ["18.8 mm — deeper than the plate, so re-check", "13.2 mm", "About 6.8 mm below the scanning surface"],
+    "correct": 2,
+    "feedback": "Depth (first leg) = soundpath × cos θ = 20 × 0.342 ≈ 6.8 mm. The 18.8 mm figure is the surface distance (20 × sin 70°) — and any 'depth' greater than the 12 mm thickness should trigger an immediate sanity check."
+   },
+   {
+    "prompt": "Another indication appears at 50 mm soundpath — past the half-skip, so it is on the second leg. Its true depth is:",
+    "options": ["17.1 mm — below the back wall", "About 6.9 mm, measured down from the scanning surface", "50 mm"],
+    "correct": 1,
+    "feedback": "On the second leg the beam climbs: depth = 2T − soundpath × cos θ = 24 − (50 × 0.342) ≈ 6.9 mm. Forgetting the second-leg correction is the classic plotting error — 17.1 mm would put the reflector outside a 12 mm plate."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "During a straight-beam scan of 30 mm plate, a new echo appears at the 15 mm screen position and the back-wall echo disappears. The most likely cause is:",
+   "options": [
+    "A vertical crack at the back surface",
+    "A lamination near mid-thickness intercepting the beam",
+    "Loss of couplant under the probe",
+    "Excessive gain setting"
+   ],
+   "correct": 1,
+   "explanation": "A mid-wall lamination reflects the beam early (echo at half the back-wall distance) and shadows the back wall. Lost couplant would kill all signals including the new echo, and a vertical crack returns little energy to a straight beam."
+  },
+  {
+   "question": "What is the full skip distance for a 45° shear-wave beam in 20 mm plate (tan 45° = 1.0)?",
+   "options": ["20 mm", "28.3 mm", "40 mm", "34.6 mm"],
+   "correct": 2,
+   "explanation": "Skip = 2 × T × tan θ = 2 × 20 × 1.0 = 40 mm. At 45 degrees the full skip is always twice the thickness; 20 mm is only the half-skip."
+  },
+  {
+   "question": "Using a 60° wedge on 25 mm plate (cos 60° = 0.5), the soundpath needed to reach the back wall on the first leg is:",
+   "options": ["28.9 mm", "43.3 mm", "25 mm", "50 mm"],
+   "correct": 3,
+   "explanation": "Leg = T ÷ cos θ = 25 ÷ 0.5 = 50 mm. Dividing by sin θ (43.3 mm would come from tan-based confusion) or forgetting the division entirely gives the distractors."
+  },
+  {
+   "question": "Couplant is required in contact testing primarily because:",
+   "options": [
+    "It lubricates the probe and reduces wedge wear",
+    "A steel–air interface reflects essentially all of the sound, so an air gap blocks transmission",
+    "It increases the frequency of the transmitted pulse",
+    "It converts longitudinal waves to shear waves"
+   ],
+   "correct": 1,
+   "explanation": "The acoustic impedance mismatch between steel and air gives nearly 100% reflection, so without a coupling film almost no energy enters the part. Reduced wedge wear is a side benefit, not the reason."
+  },
+  {
+   "question": "A single-V butt weld has a 30° bevel. For detecting lack of sidewall fusion, the preferred beam angle is 60° because:",
+   "options": [
+    "60° gives the shortest possible soundpath",
+    "The beam then strikes the fusion face nearly perpendicular, maximizing the reflected echo",
+    "60° wedges produce longitudinal waves in the part",
+    "Codes prohibit every other angle on single-V welds"
+   ],
+   "correct": 1,
+   "explanation": "Probe angle + bevel angle ≈ 90° puts the beam square onto the fusion face (30° + 60° = 90°), and perpendicular incidence returns the strongest echo from a planar flaw."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Technique Course §1.1, §1.1.1, §1.1.2 (contact testing; straight beam; angle beam)",
+  "Angle-beam relationships: leg = T ÷ cos θ; half-skip = T·tan θ; skip = 2T·tan θ; depth (2nd leg) = 2T − soundpath·cos θ",
+  "General weld-examination practice per codes such as ASME BPVC Section V, Article 4 (scan speed, overlap, coverage)"
+ ]
+}

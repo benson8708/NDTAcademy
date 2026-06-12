@@ -1,0 +1,178 @@
+{
+  "lessonId": "basic-5-4",
+  "title": "Neutron Radiography: Imaging, Interpretation, and Applications",
+  "narrationScript": "The neutron fundamentals lesson gave you sources and detectors. This lesson puts them to work. Imaging begins with geometry: a neutron beam cannot be focused, so a collimator does the shaping, and its L over D ratio is the number that runs the facility — a longer, tighter collimator sharpens the image but starves it of neutrons. Conversion screens turn captured neutrons into something film can record: gadolinium screens in the direct technique, or activation foils of dysprosium or indium in the transfer technique when the test object itself is radioactive. Then comes interpretation, where neutron logic is the mirror image of X-ray instinct. Hydrogen prints light on the film, metals become windows, and a gap in an explosive column prints dark. Beam purity and sensitivity indicators ride along on every exposure as proof the system performed. We finish with the applications that justify the reactor: explosive and pyrotechnic devices, O-rings and seals inside assembled hardware, adhesive bondlines, hidden corrosion in aluminum structure, and residual ceramic core in cast turbine blades. When X-rays cannot see it, ask for neutrons.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Basic Imaging Considerations: Collimation, L/D, and Conversion Screens",
+      "body": "A neutron radiograph obeys the same shadow-picture geometry as an X-ray exposure — with two complications in front of the part and one behind it. In front: a reactor or moderator assembly emits thermal neutrons in every direction, and **neutrons cannot be focused** by any practical optic. Directionality comes from a **collimator** — typically a divergent duct with a small inlet aperture lined with neutron-absorbing material — and image sharpness is governed by its **L/D ratio**: collimator length L, from inlet aperture to image plane, divided by inlet aperture diameter D. A feature standing a distance t off the detector blurs by a geometric unsharpness of roughly **Ug ≈ t ÷ (L/D)**, so a higher L/D buys a sharper image. The price is intensity: flux at the image plane falls roughly with the *square* of L/D, so doubling the ratio costs about three-quarters of the neutrons and stretches the exposure. Production facilities commonly run effective L/D values from about 50 to several hundred — measured, not assumed, by the method of **ASTM E803** — and the part stays pressed close to the detector for exactly the reason film radiographers keep film tight to the weld.\n\nBehind the part sits the third complication: thermal neutrons are uncharged and barely interact with photographic emulsion, so **film cannot record them directly**. A **conversion screen** captures neutrons and emits something film does respond to:\n\n- **Direct technique.** A thin **gadolinium** metal screen sits in the cassette in contact with single-emulsion film, in the beam with the object. Gadolinium captures thermal neutrons more avidly than virtually any other element and promptly emits low-energy internal-conversion electrons that expose the film exactly where neutrons arrived. This is the resolution benchmark of film NR — and the default whenever the object is not radioactive.\n- **Transfer (indirect) technique.** Only a metal activation foil — **dysprosium** (Dy-165, half-life 2.35 h) or **indium** (In-116m, 54 min) — sits in the beam, becoming radioactive in the pattern of the transmitted neutrons. Carried to a darkroom and clamped against film, the foil writes an autoradiograph as it decays. Because the film never sees the beam or the object, the transfer method is **immune to gamma radiation**.\n- **Electronic and track-etch detectors.** Scintillator screens (gadolinium oxysulfide, ⁶LiF/ZnS) viewed by cameras or coupled to digital arrays give NR its digital workflow; nitrocellulose **track-etch** film over a boron or lithium converter records purely neutron-made images for the most radioactive objects of all."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-5-4-fig-a",
+      "caption": "The neutron imaging chain. The collimator's L/D ratio sets geometric unsharpness (Ug ≈ t ÷ L/D) at the cost of flux. Below, the two film techniques: direct, with a gadolinium screen and film together in the beam, and transfer, where only an activation foil is exposed and the film meets it later in the darkroom."
+    },
+    {
+      "type": "text",
+      "heading": "Reading a Neutron Radiograph",
+      "body": "Test result interpretation starts by **recalibrating your eye**. On a direct-exposure film, blackening tracks how many neutrons arrived — exactly as density tracks photons in RT — but *what attenuates* is reversed. **Hydrogen-bearing materials** — explosives, elastomers, adhesives, lubricants, water, plastics — scatter thermal neutrons strongly and print **light**. Boron, lithium, cadmium, and gadolinium absorb neutrons outright and print lighter still. Most structural metals — aluminum, steel, even **lead** — pass thermal neutrons readily and print **dark**, becoming windows instead of walls. (Digital displays and prints may invert this, so confirm the convention before calling anything.)\n\nDiscontinuity logic follows directly from the contrast rule:\n\n- A **gap, void, or low-density region in an explosive or propellant column** removes hydrogenous material from the beam path: a **dark** line or spot interrupting the light column.\n- A **missing or mispositioned O-ring, gasket, or seal** is the *absence of an expected light band* — interpretation runs against the assembly drawing, because nothing flags a part that simply is not there.\n- **Voids and porosity in an adhesive bondline** print as dark spots inside the light adhesive line.\n- **Hydrated corrosion product or entrapped moisture** adds hydrogen where the drawing shows none: an unexpected **light** patch inside or behind aluminum structure.\n\nLike any radiograph, the image is a **superposition** of everything in the path, so interpreters work from drawings, comparison radiographs of known-good assemblies, and — when depth matters — a second projection from another angle. NR also has its own artifact list: **gamma fog** from beam contamination (a direct-technique problem only), contrast washed out by **neutrons scattered inside thick hydrogenous objects**, and screen and handling marks. That is why every exposure carries the image-quality devices covered with the systems factors below."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Reverse your X-ray instincts",
+      "body": "On a film neutron radiograph, **hydrogen prints light** — explosive, rubber, adhesive, water — and **steel, aluminum, even lead print dark** as near-transparent windows. X-ray logic is the mirror image: there, lead is the wall and a thin O-ring behind steel is invisible. One question chooses the method: *is the feature of interest hydrogenous (or a strong neutron absorber like boron, cadmium, or gadolinium), and is what hides it metal?* If yes — ask for neutrons."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-5-4-fig-b",
+      "caption": "Light/dark logic on direct-exposure film. A gap in an explosive column prints dark inside the light column; a missing O-ring is the absence of an expected light band; hydrated corrosion product prints as an unexpected light patch behind near-transparent aluminum."
+    },
+    {
+      "type": "text",
+      "heading": "Systems Factors: Source, Object, and Detector in Tension",
+      "body": "The Basic outline frames NR performance as **source/test object/detector interactions**, and every facility decision is a trade among the three.\n\n**Source side.** Image quality scales with thermal neutron flux. **Reactors** deliver the highest flux — supporting tight, high-L/D collimation, fine-grained film, and exposures measured in minutes — but the part travels to the reactor. **Accelerator sources** and **californium-252** assemblies bring NR toward portability at a small fraction of reactor flux: collimation must be relaxed (lower L/D), exposures stretch, and image quality falls accordingly. Beam *quality* matters as much as quantity: every real beam carries some **gamma contamination** (which fogs direct-technique film) plus epithermal and scattered neutrons, and a **bismuth filter** — nearly transparent to neutrons, opaque to photons — is a common fix at the collimator.\n\n**Object side.** Thick, hydrogen-rich objects do two unhelpful things at once: they attenuate the beam, and they become diffuse secondary sources that **scatter neutrons into the detector**, washing out contrast — NR's version of the scatter problem, managed with masking, spacing, and technique choices. A second effect has no RT equivalent: neutron capture can temporarily **activate the test object**. Most aerospace alloys decay to background quickly, but exposed parts are surveyed and held as required before release back to handlers.\n\n**Detector side.** Direct gadolinium film buys resolution; transfer foils buy gamma immunity for radioactive objects; digital systems buy speed and dynamic range. Proof of overall performance rides on the radiograph itself per **ASTM E545**: a **beam purity indicator (BPI)** — boron nitride and lead disks set in a polytetrafluoroethylene block — whose densitometer readings quantify the thermal-neutron, scattered-neutron, and gamma contributions to the image, and a **sensitivity indicator (SI)** — a stepped gap-and-hole device — whose smallest visible features report the sensitivity actually achieved. The governing specification assigns the required image-quality category; the indicators prove each radiograph met it. Hole and wire IQIs stay home: they belong to photon radiography."
+    },
+    {
+      "type": "table",
+      "caption": "NR applications summary: the five families named in the Basic outline, and why neutrons beat photons at each.",
+      "headers": ["Application", "What the neutron radiograph shows", "Why not X-ray?"],
+      "rows": [
+        ["Explosives and pyrotechnic devices (CAD/PAD, detonators, cutting cord, explosive bolts)", "Presence, continuity, and density of the energetic column; gaps, voids, low-density regions, missing increments", "Photons image the metal housing; the light-element explosive inside produces almost no X-ray contrast"],
+        ["Assembled components", "O-rings, gaskets, seals, lubricant fill, potting, and plastic parts inside closed metal assemblies; misassembly", "Thin organics behind metal walls are invisible to photons; to thermal neutrons the metal is a window"],
+        ["Bonded components", "Adhesive presence, fillets, and distribution in bondlines and honeycomb; voids in the adhesive itself", "A thin hydrogenous glue line under metal skins gives marginal photon contrast but prints strongly for neutrons"],
+        ["Corrosion detection", "Hydrated corrosion product and entrapped moisture in skins, lap joints, and honeycomb — before measurable thinning", "Early corrosion removes little metal; its bound hydrogen lights up to neutrons while X-ray needs mass change"],
+        ["Nonmetallic materials", "Residual investment-casting core in turbine blade passages (often gadolinia-tagged), resin distribution, water ingress, seals at ceramic-to-metal joints", "Light-element detail inside or behind metal sits exactly in the photon blind spot"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Applications: Where Neutron Radiography Earns Its Keep",
+      "body": "**Explosives and pyrotechnic devices.** The signature NR application — and an aviation-safety one. Ejection-seat **cartridge- and propellant-actuated devices (CAD/PAD)**, canopy-severance cutting cord, explosive bolts, thermal batteries, and detonation-transfer lines are all energetic material sealed in metal. Neutron radiography verifies the charge is **present, continuous, and at density** — no gaps in the explosive train, no missing increments, no separated columns — without opening (or arming) anything. Lot surveillance and service-life programs for egress-system devices lean on NR precisely because one hidden gap can break a detonation train.\n\n**Assembled components.** Inside a closed valve, actuator, fuze, or gearbox, neutrons confirm the **elastomer-and-lubricant universe**: O-rings present and seated, gaskets uncrushed, grease where grease belongs, potting compound void-free, plastic insulators intact. An X-ray of the same assembly draws the metal beautifully and the organics not at all.\n\n**Bonded components.** In adhesive-bonded structure — metal-skinned **honeycomb panels**, bonded doublers, laminates — NR images the **adhesive itself**: bondline coverage, fillet formation, voids. It complements ultrasonic bond inspection, which interrogates stiffness coupling, by showing where adhesive physically is and is not.\n\n**Corrosion detection.** Aluminum corrosion products are **hydrated** — they carry chemically bound water — so corrosion under an intact skin, between the faying surfaces of a lap joint, or wicking through honeycomb prints light long before metal loss would register radiographically. Trial mobile systems have taken this capability to parked aircraft; production work remains facility-based.\n\n**Nonmetallic materials.** Hollow investment-cast turbine blades must shed every trace of ceramic core after leaching; NR — often helped by a **gadolinium oxide tag** blended into the core material — proves the cooling passages clean, because even milligrams of tagged residue capture neutrons hard. Composites, rubber, propellant grains, and ceramic seals follow the same rule: where the engineering question lives in the **light elements**, neutron radiography answers it.\n\nFor an FAA Part 145 repair station, NR is a **send-out method**: thermal-neutron facilities are few and mostly reactor-based, and the Level III's contribution is recognizing which jobs justify the trip — and writing the purchase order to the right specification."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-5-4-fig-a",
+      "title": "Neutron imaging chain: L/D geometry and the two film techniques",
+      "file": "basic-5-4-fig-a.svg"
+    },
+    {
+      "id": "basic-5-4-fig-b",
+      "title": "Reading the film: light/dark logic on a neutron radiograph",
+      "file": "basic-5-4-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "sort",
+    "title": "X-ray or Neutron? Choose the Imaging Method",
+    "intro": "Eight inspection jobs cross your desk. For each one, choose the radiation that actually makes the condition visible: conventional X-ray/gamma radiography, or thermal neutron radiography.",
+    "buckets": ["X-ray / gamma radiography", "Neutron radiography"],
+    "items": [
+      {
+        "label": "Verify the explosive column inside a metal-cased ejection-seat cartridge is continuous, with no gaps or low-density regions",
+        "bucket": 1,
+        "why": "The metal case is nearly transparent to thermal neutrons while the hydrogen-rich explosive attenuates them strongly — photons show mostly the case and almost nothing of the charge."
+      },
+      {
+        "label": "Find scattered gas porosity in an aluminum weld",
+        "bucket": 0,
+        "why": "Voids in metal are classic photon contrast: less mass in the path means more X-ray transmission and a dark spot on film. This is everyday RT."
+      },
+      {
+        "label": "Confirm a rubber O-ring is present and seated inside an assembled stainless steel valve",
+        "bucket": 1,
+        "why": "The elastomer is hydrogenous and prints a strong light band to neutrons; the steel body is a near-transparent window. To X-rays, thin rubber behind steel is essentially invisible."
+      },
+      {
+        "label": "Image a dense tungsten inclusion in a GTAW weld",
+        "bucket": 0,
+        "why": "A high-density, high-atomic-number inclusion absorbs photons heavily and prints as a light spot — textbook X-ray contrast through photoelectric absorption."
+      },
+      {
+        "label": "Detect hydrated corrosion product trapped between the faying surfaces of an aluminum lap joint under intact skin",
+        "bucket": 1,
+        "why": "Early corrosion removes little metal, so photons see almost no change — but the chemically bound hydrogen in the hydrated product scatters thermal neutrons strongly and prints light."
+      },
+      {
+        "label": "Inspect a 100 mm (4 in.) thick steel casting for internal shrinkage",
+        "bucket": 0,
+        "why": "Thick steel is Co-60 or linac territory: photons penetrate it predictably, while a thermal neutron beam would be attenuated and scattered into uselessness at this thickness."
+      },
+      {
+        "label": "Prove all leached ceramic core residue is gone from the cooling passages of an investment-cast turbine blade with a gadolinia-tagged core",
+        "bucket": 1,
+        "why": "Gadolinium has one of the highest thermal-neutron capture cross sections of any element, so even milligrams of tagged residue print sharply through the near-transparent nickel walls."
+      },
+      {
+        "label": "Check a pipe weld root for incomplete penetration",
+        "bucket": 0,
+        "why": "An unfused root is missing metal along the beam path — more photon transmission, a dark straight indication on the radiograph. Standard film or digital RT owns this job."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "A neutron radiography facility narrows its collimator inlet aperture, raising the effective L/D ratio from 50 to 200. The predictable result is:",
+      "options": [
+        "Sharper images — geometric unsharpness shrinks — but far less neutron flux at the image plane, so exposures lengthen",
+        "Higher neutron flux at the image plane and shorter exposures, with no effect on sharpness",
+        "More gamma contamination in the beam, fogging direct-technique film",
+        "Increased geometric unsharpness, because unsharpness grows in proportion to L/D"
+      ],
+      "correct": 0,
+      "explanation": "Geometric unsharpness is roughly Ug ≈ t ÷ (L/D), so quadrupling L/D cuts the blur of any feature standing off the detector to about a quarter. But image-plane flux falls roughly with the square of L/D — on the order of sixteen times fewer neutrons — so the sharper geometry is paid for in exposure time. Gamma content is set by the source and filtration, not by the aperture diameter."
+    },
+    {
+      "question": "The transfer (indirect) film technique is the required choice for neutron radiography of an irradiated, radioactive component because:",
+      "options": [
+        "Dysprosium foils produce finer resolution than gadolinium screens",
+        "Only an activation foil is exposed in the beam; the film is exposed later by the decaying foil, so gamma radiation from the object and the beam never reaches it",
+        "The transfer method needs no conversion screen of any kind",
+        "Activation foils respond directly to the gamma rays that radioactive objects emit"
+      ],
+      "correct": 1,
+      "explanation": "In the transfer method a dysprosium or indium foil alone sits behind the object, is activated in the pattern of the transmitted neutrons, and is then clamped to film in a darkroom — Dy-165 (2.35 h half-life) or In-116m (54 min) writes the autoradiograph as it decays. The foil activates by neutron capture, not gamma, so the object's radioactivity never touches the image. Resolution honors run the other way: the direct gadolinium screen is the film benchmark."
+    },
+    {
+      "question": "On a direct-exposure film neutron radiograph of a metal-cased pyrotechnic device, a gap in the explosive column appears as:",
+      "options": [
+        "A light band, because the empty gap absorbs more neutrons than the explosive does",
+        "A dark band interrupting the light column, because missing hydrogenous material lets more neutrons through to expose the film",
+        "No change — neutron radiography cannot resolve conditions inside organic materials",
+        "A light band, but only when the case is aluminum rather than steel"
+      ],
+      "correct": 1,
+      "explanation": "The hydrogen-rich explosive scatters thermal neutrons strongly, shielding the film and printing light; where the column is interrupted, neutrons stream through and blacken the film, so the gap prints dark. The case material barely matters — steel and aluminum are both near-transparent windows at thermal neutron energies."
+    },
+    {
+      "question": "Neutron radiography can reveal corrosion hidden inside aluminum aircraft structure at an early stage because:",
+      "options": [
+        "Corrosion products are dense and absorb the beam the way a heavy metal absorbs X-rays",
+        "Aluminum strongly absorbs thermal neutrons, so locally thinned areas transmit measurably more beam",
+        "Corrosion products are hydrated — their chemically bound hydrogen scatters thermal neutrons strongly while the surrounding aluminum stays comparatively transparent",
+        "Neutron capture makes corroded areas fluoresce visibly under UV-A illumination"
+      ],
+      "correct": 2,
+      "explanation": "Early corrosion changes the metal's mass very little, which is why photon radiography needs measurable thinning. But aluminum corrosion products carry chemically bound water, and that hydrogen prints as an unexpected light patch against near-transparent aluminum — detectable in skins, lap joints, and honeycomb before thickness loss registers. The other options invert or invent the physics."
+    },
+    {
+      "question": "Per ASTM E545, the image-quality devices radiographed alongside the test object in thermal neutron radiography are:",
+      "options": [
+        "A hole-type plaque penetrameter and a wire IQI, exactly as in film RT",
+        "A beam purity indicator, whose densitometer readings quantify the thermal-neutron, scattered-neutron, and gamma contributions, plus a sensitivity indicator whose smallest visible gaps and holes report achieved sensitivity",
+        "Notched QQI shims fastened to the source side of the part",
+        "A step-wedge comparison film processed with each production batch"
+      ],
+      "correct": 1,
+      "explanation": "NR has its own image-quality system: the BPI — boron nitride and lead disks in a PTFE block — lets densitometer readings separate what fraction of film density came from thermal neutrons, scatter, and gamma, while the stepped SI reports the smallest gaps and holes actually resolved. Hole and wire penetrameters are photon-radiography devices, and QQI shims belong to magnetic particle testing."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §2.6.2 (NR: basic imaging considerations, test result interpretation and discontinuity indications, systems factors, applications)",
+    "ASTM E748, Standard Guide for Thermal Neutron Radiography of Materials (collimation, L/D, direct and transfer techniques)",
+    "ASTM E545, Standard Test Method for Determining Image Quality in Direct Thermal Neutron Radiographic Examination (beam purity indicator and sensitivity indicator)",
+    "ASTM E803, Standard Test Method for Determining the L/D Ratio of Neutron Radiography Beams"
+  ]
+}

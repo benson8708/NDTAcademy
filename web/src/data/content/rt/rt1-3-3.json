@@ -1,0 +1,178 @@
+{
+ "lessonId": "rt1-3-3",
+ "title": "Attenuation, Shielding, and the Inverse Square Law",
+ "narrationScript": "Two pieces of physics stand between every radiographer and an overexposure. The first is attenuation, which is what matter does to a beam. The second is the inverse square law, which is what distance does to it. Master both and you can predict the radiation level anywhere around your setup before you ever crank the source out. Attenuation first. When a beam of X-rays or gamma rays enters a material, photons are removed from it by absorption and by scattering, one interaction at a time. The key fact is that each thickness of material removes the same fraction of the beam, not the same amount. The first half inch of steel might remove half the photons. The next half inch removes half of what is left, and so on. Mathematically the intensity falls exponentially with thickness. The practical consequence is blunt. No shield stops radiation completely. Every added layer cuts the level by a factor, and the level approaches zero without ever quite reaching it. So we never talk about stopping a beam. We talk about reducing it to an acceptable, surveyed level. Because attenuation works in fractions, the most useful numbers in shielding are the half value layer and the tenth value layer. The half value layer is the thickness of a given material that cuts the radiation intensity in half. The tenth value layer is the thickness that cuts it to one tenth. One tenth value layer equals about three point three half value layers. Stack them and the factors multiply. Two half value layers cut the beam to one quarter. Three cut it to one eighth. Ten half value layers cut it by about a factor of one thousand, and so do three tenth value layers. Here are working values to carry with you, all approximate. For iridium one ninety two, one half value layer is about half an inch of steel or about five millimeters of lead. For cobalt sixty, with its much harder photons, one half value layer is about seven eighths of an inch of steel or about twelve and a half millimeters of lead. Now run a real one. Your survey meter reads forty roentgens per hour and you need to get below five. Forty over five is a factor of eight, which is three halvings, so three half value layers. For iridium that is about fifteen millimeters of lead. For cobalt it is closer to thirty eight. A few field realities sharpen the math. Published half value figures assume a narrow, well collimated beam. In a real broad beam, scatter generated inside the shield sneaks around and out, so the shield performs a little worse than the table says. Build in margin. Shielding placed close to the source protects in every direction with the least material, which is exactly what a collimator is. A few pounds of tungsten wrapped around the working beam can cut the field dose dramatically, often by a factor of ten or more in the directions it covers. And the choice of material is energy dependent. At low energies, high atomic number materials like lead are spectacularly effective, because the photoelectric effect eats low energy photons. At cobalt sixty energies, Compton scattering dominates, atomic number matters less, and what counts most is simply mass between you and the source. That is why thick concrete and steel do honest shielding work where lead would be impractical. Now distance. Radiation from a compact source spreads out in straight lines in all directions. Move twice as far away and the same photons are spread over four times the area, so the intensity is one quarter. Three times as far, one ninth. That is the inverse square law. Intensity one times distance one squared equals intensity two times distance two squared. It is the cheapest shielding there is. Take the eighty curie iridium source from last lesson, about forty roentgens per hour at one meter. At ten meters it is down to four hundred milliroentgens per hour. At one hundred meters, four. To reach a typical two milliroentgen per hour boundary with distance alone you would need to stand about a hundred and forty meters out, which is why real boundaries are set with collimation plus distance instead of distance alone. The law also warns you in reverse. Cut your distance in half and the rate quadruples. The last few steps toward an exposed source are the most dangerous steps on the job, which is why an approach survey is made with the meter held out in front of you, reading continuously, every single time. One discipline ties the whole lesson together. These formulas predict. They never certify. The survey meter is the only thing that tells you what the radiation level actually is. So you calculate to plan the job, and then you survey after every exposure, on every approach, without exception.",
+ "imagePrompt": "A night-shift radiography crew strings rope barrier far out from a collimated gamma-ray projector aimed at a pipe weld, one technician walking the perimeter with a glowing survey meter held in front of him.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Attenuation: Removal by Fractions",
+   "body": "Put material in a photon beam and the beam thins out — photons are removed by **absorption** (photoelectric effect, pair production) and redirected by **scattering** (Compton). Together those losses are **attenuation**, and the defining fact is that each successive layer of a material removes the same **fraction** of the photons reaching it, never the same number. The result is the exponential law **I = I₀e^(−µx)**, where µ — the linear attenuation coefficient — expresses how aggressively a given material, at a given photon energy, removes photons per unit thickness.\n\nExponential behavior has a consequence every radiographer must internalize: **no thickness of any material stops radiation completely**. Doubling a shield does not block 'twice as much'; it squares the reduction factor, and the transmitted level approaches zero without reaching it. Shielding design is therefore never about stopping a beam — it is about cutting it to an acceptable, surveyed level.\n\nOne honesty check from the field: textbook attenuation values are measured in **narrow-beam** (well-collimated) geometry. A real shield sees a **broad beam**, and photons Compton-scattered inside the shield can still wander out the far side. This **buildup** makes a real shield perform somewhat worse than the narrow-beam math predicts — the reason shielding calculations carry safety margin and end with a survey, not an equals sign."
+  },
+  {
+   "type": "text",
+   "heading": "HVL and TVL: Shielding by Halves and Tenths",
+   "body": "Because attenuation works in fractions, shielding is calculated in factor-sized steps:\n\n- A **half-value layer (HVL)** is the thickness of a material that cuts radiation intensity to **one half**.\n- A **tenth-value layer (TVL)** cuts it to **one tenth** — and **1 TVL ≈ 3.32 HVL**.\n\nLayers multiply. Two HVLs pass 1/4, three pass 1/8, ten pass about 1/1000 (2¹⁰ = 1024). Two TVLs pass 1/100, three pass 1/1000. To size a shield: divide the unshielded rate by the target rate, find how many halvings (or tenthings) that factor requires, and multiply by the HVL (or TVL) of your material at your photon energy.\n\n**Worked example:** a survey reads **40 R/h** and you need to get **below 5 R/h**. The required factor is 40 ÷ 5 = 8 = 2³, so **three HVLs**: in lead, 3 × 4.8 ≈ **14.4 mm for Ir-192**, or 3 × 12.5 ≈ **38 mm for Co-60**.\n\nNeed a bigger cut? Reducing **125 mR/h to 2 mR/h** is a factor of 62.5; since 2⁶ = 64, six HVLs do it — about 29 mm of lead for Ir-192. Notice the leverage: each added HVL costs the same metal but multiplies the protection."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-3-3-fig-a",
+   "caption": "Exponential attenuation: every half-value layer passes half of what reaches it, and one tenth-value layer equals about 3.32 HVLs."
+  },
+  {
+   "type": "table",
+   "caption": "Approximate narrow-beam HVL and TVL values — broad-beam shields perform worse, so design with margin and verify by survey.",
+   "headers": ["Source", "HVL steel", "HVL lead", "TVL steel", "TVL lead"],
+   "rows": [
+    ["Ir-192", "≈ 0.5 in. (12.7 mm)", "≈ 4.8 mm", "≈ 1.7 in.", "≈ 16 mm"],
+    ["Co-60", "≈ 0.875 in. (22 mm)", "≈ 12.5 mm", "≈ 2.9 in.", "≈ 41 mm"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Shielding in Practice",
+   "body": "Three field principles turn HVL arithmetic into real protection.\n\n**Put shielding close to the source.** Geometry rules: a few kilograms of tungsten wrapped around the source — a **collimator** — intercepts the beam over a huge solid angle, often cutting exposure in the directions it covers by a factor of ten to one hundred. The same protection built at the boundary would take tons. It is also why exposure devices themselves are shielded with **depleted uranium or tungsten**, the densest practical materials.\n\n**Match material to energy.** At low photon energies the photoelectric effect makes high-Z lead extraordinarily efficient per millimeter. At Co-60 energies Compton scattering dominates, atomic number matters far less, and what counts is **mass between you and the source** — so thick steel, concrete, or even water do honest work where lead would be impractical or costly.\n\n**Respect scatter.** Radiation bounces. A shield wall does nothing for photons scattering off the floor, the ceiling, or the part itself, which is why permanent enclosures are designed against **sky-shine and maze scatter**, and why your boundary survey walks the whole perimeter — including the places the beam supposedly never points."
+  },
+  {
+   "type": "text",
+   "heading": "The Inverse Square Law",
+   "body": "Photons from a compact source fly outward in straight lines. At twice the distance, the same photons have spread over **four times the area**; at three times the distance, **nine times**. Intensity therefore falls with the square of the distance:\n\n**I₁d₁² = I₂d₂²**\n\nWorked examples, using the 80 Ci Ir-192 source from the previous lesson (≈ 40 R/h at 1 m, unshielded):\n\n- At 10 m: 40 × (1/10)² = 0.4 R/h = **400 mR/h**\n- At 100 m: **4 mR/h**\n- Distance for a 2 mR/h boundary: d = √(40,000 ÷ 2) ≈ **141 m** with no shielding — exactly why real boundaries combine collimation with distance instead of relying on distance alone.\n\nThe law warns in both directions: **halve your distance and the rate quadruples**. The final steps of an approach to a source carry the steepest dose-rate climb of the whole job, which is why approach surveys are made with the meter held out in front, reading continuously.\n\nOne caution: the inverse square law assumes an effectively **point source** with no shielding or scatter in play. Close to a collimated beam port, along a guide tube, or inside a scatter-rich enclosure, real fields deviate from the ideal — one more reason the survey meter, not the formula, gets the final word."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-3-3-fig-b",
+   "caption": "Inverse square geometry: the same photons spread over four times the area at twice the distance and nine times the area at three times the distance."
+  },
+  {
+   "type": "callout",
+   "variant": "safety",
+   "title": "Time, distance, shielding — and the meter",
+   "body": "ALARA in the field is this lesson applied: minimize **time**, maximize **distance** (inverse square), and interpose **shielding** (HVL/TVL). Typical NRC/Agreement-State practice posts radiography boundaries at about **2 mR/h** and requires a meter survey on **every approach after every exposure** — source-position indicators and crank feel can lie; a calibrated survey meter cannot be argued with."
+  }
+ ],
+ "figures": [
+  {
+   "id": "rt1-3-3-fig-a",
+   "title": "Exponential attenuation, HVL and TVL",
+   "file": "rt1-3-3-fig-a.svg"
+  },
+  {
+   "id": "rt1-3-3-fig-b",
+   "title": "The inverse square law",
+   "file": "rt1-3-3-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Set the Boundary: 100 Curies of Ir-192",
+  "intro": "You are planning a panoramic exposure on a compressor-station header with a 100 Ci Ir-192 source. Use emissivity ≈ 0.5 R/h per Ci at 1 m and HVL ≈ 4.8 mm in lead. Work the numbers the way a Level II works them before the first shot.",
+  "steps": [
+   {
+    "prompt": "First number on the pad: the unshielded exposure rate at one meter from the source.",
+    "options": [
+     "5 R/h",
+     "50 R/h",
+     "500 R/h",
+     "0.5 R/h"
+    ],
+    "correct": 1,
+    "feedback": "0.5 R/h per Ci × 100 Ci = 50 R/h at 1 m. Every other number in the plan grows from this one."
+   },
+   {
+    "prompt": "The crew's staging area is 20 m from the source position. Unshielded rate there?",
+    "options": [
+     "2.5 R/h",
+     "250 mR/h",
+     "125 mR/h",
+     "12.5 mR/h"
+    ],
+    "correct": 2,
+    "feedback": "Inverse square: 50 ÷ 20² = 50 ÷ 400 = 0.125 R/h = 125 mR/h. Distance alone took 50 R/h down to 125 mR/h."
+   },
+   {
+    "prompt": "Collimation and shielding must bring that 125 mR/h below the 2 mR/h boundary level in the staging direction. How many half-value layers does that take?",
+    "options": [
+     "3",
+     "4",
+     "6",
+     "10"
+    ],
+    "correct": 2,
+    "feedback": "125 ÷ 2 = 62.5, and 2⁶ = 64 is the first power of two above it — six HVLs, about 29 mm of lead-equivalent (6 × 4.8 mm) in that direction."
+   },
+   {
+    "prompt": "Exposure complete. You crank in the source, but your meter still reads high near the guide tube while the position indicator shows the source shielded. You:",
+    "options": [
+     "Trust the indicator — survey meters drift",
+     "Walk up and visually check the guide-tube connector",
+     "Back out along your surveyed approach path and treat the source as exposed",
+     "Re-crank harder and check the meter again in five minutes"
+    ],
+    "correct": 2,
+    "feedback": "The survey meter outranks every indicator. A high reading means the source is exposed until proven otherwise — withdraw to a safe boundary and initiate the source-retrieval/emergency procedure."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A survey meter reads 32 R/h at 2 m from a source. What will it read at 8 m, unshielded?",
+   "options": [
+    "8 R/h",
+    "4 R/h",
+    "2 R/h",
+    "0.5 R/h"
+   ],
+   "correct": 2,
+   "explanation": "I₂ = I₁ × (d₁/d₂)² = 32 × (2/8)² = 32 ÷ 16 = 2 R/h."
+  },
+  {
+   "question": "How many half-value layers are required to reduce 80 R/h to 10 R/h?",
+   "options": [
+    "2",
+    "3",
+    "4",
+    "8"
+   ],
+   "correct": 1,
+   "explanation": "80 ÷ 10 = 8 = 2³ — three halvings, so three half-value layers."
+  },
+  {
+   "question": "Approximately how much lead cuts an Ir-192 beam by a factor of 16 (HVL ≈ 4.8 mm)?",
+   "options": [
+    "4.8 mm",
+    "9.6 mm",
+    "14.4 mm",
+    "19.2 mm"
+   ],
+   "correct": 3,
+   "explanation": "A factor of 16 = 2⁴ requires four HVLs: 4 × 4.8 mm ≈ 19 mm of lead."
+  },
+  {
+   "question": "Which statement about tenth-value layers is correct?",
+   "options": [
+    "1 TVL ≈ 3.32 HVL, and two TVLs cut intensity by a factor of 100",
+    "1 TVL = 10 HVL",
+    "1 TVL = 2 HVL",
+    "TVL values apply only to lead"
+   ],
+   "correct": 0,
+   "explanation": "Ten equals 2 raised to about 3.32, so one TVL is about 3.32 HVLs; TVL factors multiply just as HVLs do, so two TVLs pass one one-hundredth."
+  },
+  {
+   "question": "A lead shield sized from published HVL data transmits slightly more radiation than calculated. The most likely physics reason is:",
+   "options": [
+    "The HVL data were measured with a stronger source",
+    "Published HVLs assume narrow-beam geometry; in a broad beam, scatter buildup inside the shield adds transmitted radiation",
+    "Lead becomes radioactive under irradiation",
+    "The inverse square law stops applying behind shields"
+   ],
+   "correct": 1,
+   "explanation": "Broad-beam geometry lets photons scattered within the shield still reach the far side (buildup), so real shields underperform narrow-beam numbers — design with margin and verify by survey."
+  }
+ ],
+ "references": [
+  "CP-105-2024 RT Topical Outline, Basic Radiographic Physics Course §5.6–5.8",
+  "Typical NRC/Agreement-State radiography requirements (10 CFR 34 style): post-exposure surveys and boundary posting (general reference)",
+  "Published HVL/TVL data for Ir-192 and Co-60 in steel and lead (approximate narrow-beam values)"
+ ]
+}

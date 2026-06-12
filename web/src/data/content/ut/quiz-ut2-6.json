@@ -1,0 +1,115 @@
+{
+ "moduleId": "ut2-6",
+ "questions": [
+  {
+   "question": "An inspector finds a strong echo from a small reflector and a weak echo from a larger one in the same part. The most likely explanation a Level II would offer first is:",
+   "options": [
+    "The instrument gain drifted between the two readings",
+    "Echo height depends on orientation, type, and depth as well as size, so a small favorably oriented reflector can out-echo a larger tilted or rounded one",
+    "The smaller reflector is closer to the back wall",
+    "Larger reflectors always return weaker echoes"
+   ],
+   "correct": 1,
+   "explanation": "Sensitivity to reflections is governed by size, type, location/orientation, wave characteristics, and material together. A small reflector squared to the beam, or a flat crack versus a rounded pore, can easily out-echo a larger but tilted or scattering reflector."
+  },
+  {
+   "question": "A 4 MHz longitudinal beam is used in aluminum (longitudinal velocity 6,320 m/s). The wavelength, and the practical smallest reliably detectable reflector, are about:",
+   "options": [
+    "1.58 mm wavelength; about 0.8 mm detectable",
+    "0.63 mm wavelength; about 0.3 mm detectable",
+    "2.53 mm wavelength; about 1.3 mm detectable",
+    "1.58 mm wavelength; about 3 mm detectable"
+   ],
+   "correct": 0,
+   "explanation": "λ = v/f = 6.32 mm/µs ÷ 4 MHz = 1.58 mm. The λ/2 rule of thumb puts reliable detection near 0.8 mm."
+  },
+  {
+   "question": "A test on a coarse-grained austenitic weld shows a noisy baseline and a weak flaw signal. Which single change most improves the signal-to-noise ratio?",
+   "options": [
+    "Increase gain by 20 dB",
+    "Raise frequency from 2 MHz to 10 MHz",
+    "Lower the frequency, often with a larger element and shorter pulse",
+    "Apply the reject control"
+   ],
+   "correct": 2,
+   "explanation": "Grain scattering rises roughly with the fourth power of frequency, so lowering frequency reduces the grass while preserving penetration. Gain lifts noise and signal together, higher frequency worsens scatter, and reject distorts the display."
+  },
+  {
+   "question": "Axial resolution and lateral resolution are limited, respectively, by:",
+   "options": [
+    "Beam width and pulse length",
+    "Pulse length and beam width",
+    "Gain and frequency",
+    "Velocity and the dead zone"
+   ],
+   "correct": 1,
+   "explanation": "Axial (depth) resolution depends on pulse length — a shorter pulse separates reflectors close in depth. Lateral resolution depends on beam width at the reflector's depth — a narrower beam separates reflectors side by side."
+  },
+  {
+   "question": "Which transducer setup best resolves two reflectors lying very close together just below the front surface?",
+   "options": [
+    "Low frequency, lightly damped (narrowband)",
+    "High frequency, heavily damped (broadband)",
+    "Low frequency, heavily damped",
+    "High frequency, lightly damped"
+   ],
+   "correct": 1,
+   "explanation": "High frequency shortens the wavelength and heavy damping shortens the pulse, both improving axial resolution; heavy damping also shrinks the dead zone, which matters for near-surface reflectors."
+  },
+  {
+   "question": "Before inspecting a rolled steel plate for in-service hydrogen damage, part history most usefully leads the inspector to expect:",
+   "options": [
+    "Casting shrinkage cavities at the center",
+    "Mid-wall laminations and laminar damage parallel to the rolling plane",
+    "Weld root cracks along a bevel",
+    "Fatigue cracks at machined fillets"
+   ],
+   "correct": 1,
+   "explanation": "Rolled product is prone to laminations parallel to the surface, and laminar hydrogen damage develops in that plane. Manufacturing and service history steer the inspector toward the plausible flaw types and orientations."
+  },
+  {
+   "question": "A flaw echo is set to peak at the DAC reference line. As the probe scans past it, the echo drops to one quarter of that peak. In decibels, that drop is:",
+   "options": [
+    "−3 dB",
+    "−6 dB",
+    "−12 dB",
+    "−20 dB"
+   ],
+   "correct": 2,
+   "explanation": "ΔdB = 20·log₁₀(A₂/A₁) = 20·log₁₀(0.25) = −12 dB. A factor of one half is −6 dB, so one quarter (½ × ½) is −12 dB."
+  },
+  {
+   "question": "Using the 6 dB-drop method on a reflector that turns out to be smaller than the beam will:",
+   "options": [
+    "Report the flaw accurately",
+    "Underestimate the flaw size",
+    "Overestimate the size, because the method then measures the beam width rather than the flaw",
+    "Report zero length"
+   ],
+   "correct": 2,
+   "explanation": "The 6 dB-drop assumes the beam centre is over the flaw edge at half amplitude, which holds only when the flaw is larger than the beam. On a smaller flaw the half-amplitude travel reflects the beam width, oversizing the flaw."
+  },
+  {
+   "question": "A 70° shear probe on a 15 mm plate reads a soundpath of 20 mm on the first leg (sin 70° ≈ 0.940, cos 70° ≈ 0.342). The reflector's depth and surface distance are about:",
+   "options": [
+    "Depth 6.8 mm; surface distance 18.8 mm",
+    "Depth 18.8 mm; surface distance 6.8 mm",
+    "Depth 10 mm; surface distance 10 mm",
+    "Depth 20 mm; surface distance 0 mm"
+   ],
+   "correct": 0,
+   "explanation": "Depth (1st leg) = S·cos θ = 20 × 0.342 ≈ 6.8 mm. Surface distance = S·sin θ = 20 × 0.940 ≈ 18.8 mm. A steep refracted angle puts most of the soundpath into surface distance, not depth."
+  },
+  {
+   "question": "An angle-beam A-scan calculation places a flaw at 8 mm deep, but the B-scan cross-section shows it near the back wall of a 25 mm plate. The correct action is:",
+   "options": [
+    "Trust the A-scan and record 8 mm",
+    "Average the two readings",
+    "Stop and resolve the discrepancy, checking for the wrong leg, a mode-converted signal, or an incorrect velocity",
+    "Discard the B-scan as unreliable"
+   ],
+   "correct": 2,
+   "explanation": "Location results should agree across display formats. A clear conflict signals an error — most commonly the wrong leg, a mode-converted arrival, or a wrong velocity — and must be resolved before the position is recorded."
+  }
+ ]
+}

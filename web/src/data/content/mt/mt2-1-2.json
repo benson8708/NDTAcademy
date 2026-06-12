@@ -1,0 +1,142 @@
+{
+ "lessonId": "mt2-1-2",
+ "title": "Terminology, Test Factors, Safety, and Certification",
+ "narrationScript": "Every trade has its language, its variables, its hazards, and its paperwork, and this lesson reviews all four for magnetic particle testing. Start with the words, because as a Level Two you will write reports that other people act on, and sloppy language creates expensive confusion. An indication is anything that attracts and holds particles, nothing more. When you examine an indication and decide what caused it, you are interpreting. A relevant indication comes from an actual discontinuity, a real break or interruption in the material. A nonrelevant indication is caused by a genuine leakage field, but one created by the design or condition of the part rather than by a flaw. Think of section changes, keyways, drilled holes near the surface, the boundary between weld metal and base metal where permeability changes, or magnetic writing where a magnetized part touched another part. A false indication involves no leakage field at all. Particles caught in a rough patch, drainage patterns left by a wet bath, or the fuzzy background called furring that comes from over magnetization. Only after interpretation do you evaluate, which means comparing a relevant indication against the acceptance criteria in the governing code or specification. The word defect is reserved for a discontinuity that fails evaluation and is rejectable. Every defect is a discontinuity, but calling every indication a defect is the mark of an untrained eye. Keep the magnetic vocabulary sharp too. Flux density, B, in gauss or tesla. Magnetizing force, H, in oersteds. Permeability, B over H, the ease with which a material accepts flux. Retentivity, the flux that stays behind. Coercive force, the reverse push needed to clear it. Saturation, where the domains are fully aligned. These terms appear in every procedure you will ever read and on every Level Two exam. Now the test factors, the variables that decide whether a crack becomes an indication you can actually see. The part comes first. Its alloy and heat treatment set permeability and retentivity. Its shape sets field behavior at section changes. Its surface matters because scale, grease, paint, and plating sit between the leakage field and your particles, and a thick enough coating hides a flaw entirely, so procedures either require coating removal or require proof that flaws can still be found through it. Then the field. Direction within forty five to ninety degrees of the expected flaw. Strength high enough to produce leakage but not so high that the surface furs over with background. The right current type for the depth you need. Then the particles. Dry or wet, visible or fluorescent, with wet bath concentration proven by a thirty minute settling test, typically one point two to two point four milliliters per hundred milliliters for visible particles and zero point one to zero point four for fluorescent. Then the method, continuous or residual. And finally the lighting. At least one thousand microwatts per square centimeter of ultraviolet at the surface for fluorescent work, with ambient white light held to two footcandles or less, or at least one hundred footcandles of white light for visible work. Change any one factor and you change what you can find. Safety next, and none of it is optional. Magnetizing equipment delivers thousands of amperes. The voltage is low, but the stored energy is enormous, and breaking a live contact at a head, clamp, or prod draws an arc that burns metal and flesh. Current off before contact is broken, every time. Keep cable insulation sound, keep contact pads clean, and keep prods away from finished and aerospace surfaces, where a single arc strike condemns the part. Ultraviolet lamps demand respect. Never stare into the lens, never use a lamp with a cracked filter, and remember that skin exposure adds up across a shift. Hot parts and energized coils burn, and hoists and rotating headstocks pinch and crush. As for the materials, the particles themselves are mostly iron and iron oxides with pigments, low in toxicity, but airborne powder is still a dust you should not breathe, so use ventilation and keep your face out of the cloud. Wet method carriers are conditioned water or light petroleum oil. Oil mist and repeated skin contact can cause dermatitis, so wear gloves and wash up before eating. The safety data sheet is the governing document for every product in the booth. Read it. Petroleum carriers are combustible, and specifications require flash points comfortably above shop temperature, commonly on the order of two hundred degrees Fahrenheit for bath vehicles. Keep flames, grinding sparks, and smoking away from the bath, and never lower a hot part into oil. Finally, the framework that makes you official. Most shop programs follow SNT TC 1A, a recommended practice under which your employer writes a written practice and certifies you. CP 189 turns the same framework into a standard, and NAS 410 governs aerospace. Levels run from trainee through Level Three. As a Level Two you set up and calibrate equipment, interpret and evaluate indications against codes and specifications, guide and supervise Level Ones and trainees, and sign the report. That signature is the whole point of this review. Make sure the knowledge behind it stays current.",
+ "imagePrompt": "Inside a curtained inspection booth bathed in deep violet UV light, a gloved technician leans over a steel gear with glowing green-yellow indications while safety glasses, a handheld radiometer, and drums of bath concentrate stand on the bench beside the unit.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Indication, Interpretation, Evaluation",
+   "body": "Level II reports get acted on - parts scrapped, welds ground out, shafts returned to service - so the words must be exact.\n\nAn **indication** is simply any particle accumulation. Deciding what caused it is **interpretation**, and there are only three verdicts:\n\n- **Relevant** - caused by leakage flux from an actual **discontinuity**, a real interruption in the material (crack, seam, lap, inclusion).\n- **Nonrelevant** - caused by a genuine leakage field that comes from the part's design or condition, not a flaw: section changes, keyways, drilled holes near the surface, permeability boundaries at weld fusion lines, external poles, or **magnetic writing** from contact with another magnetized part.\n- **False** - no leakage field at all: particles trapped by surface roughness, bath drainage patterns, or **furring** (fuzzy edge buildup from over-magnetization).\n\nOnly a relevant indication moves on to **evaluation** - comparison against the acceptance criteria of the governing code, specification, or drawing. A discontinuity that fails evaluation is a **defect**, and that is the only thing the word defect means. Every defect is a discontinuity; most indications are not defects. Use the chain - indication, interpretation, evaluation - and your reports will say exactly what you mean."
+  },
+  {
+   "type": "table",
+   "caption": "Core MT vocabulary - the terms every procedure and exam assumes you own.",
+   "headers": ["Term", "Working definition", "Why it matters"],
+   "rows": [
+    ["Flux density (B)", "Magnetic flux per unit area; gauss or tesla (10,000 G = 1 T)", "What actually leaks at a flaw and holds particles"],
+    ["Magnetizing force (H)", "The applied field driving the flux; oersteds", "What your amperage controls"],
+    ["Permeability (µ = B/H)", "Ease with which a material accepts flux", "High µ steels magnetize easily; nonferromagnetics cannot be tested"],
+    ["Retentivity", "Residual flux density left when H returns to zero", "High-retentivity (hard) steels qualify for the residual method"],
+    ["Coercive force", "Reverse H needed to drive residual flux to zero", "Sets how hard demagnetization will be"],
+    ["Saturation", "Domains fully aligned; more H gains almost no B", "Beyond it, extra amperage only adds background furring"],
+    ["Leakage field", "Flux forced out of the part where a discontinuity crosses it", "The physical event the whole method detects"],
+    ["Continuous / residual", "Particles applied with current on / after current stops", "Continuous is standard and most sensitive; residual needs high retentivity"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Test Factors That Decide the Indication",
+   "body": "Whether a crack becomes a visible indication is decided by a chain of variables - and a Level II is expected to control every link.\n\n- **The part.** Alloy and heat treatment set permeability and retentivity; geometry creates field distortions at section changes and L/D effects in coils; surface condition - scale, grease, paint, plating - sits between the leakage field and the particles. A thick coating can hide a flaw outright, so procedures require removal or a demonstration that the required sensitivity survives.\n- **The field.** Direction within 45-90 degrees of the expected flaw orientation; strength sufficient for leakage without furring (procedures commonly target a tangential surface field on the order of 30-60 G when measured, or verify with QQI shims); current type matched to depth - AC for surface, HWDC/FWDC for subsurface reach.\n- **The particles and method.** Dry powder or wet bath, visible or fluorescent; wet concentration proven by the 30-minute settling test - typically 1.2-2.4 mL/100 mL visible, 0.1-0.4 mL/100 mL fluorescent; continuous versus residual application; bath cleanliness and breakdown checked each shift.\n- **The lighting.** UV-A at or above 1,000 µW/cm² at the surface with ambient white light at or below 2 fc for fluorescent work; at least 100 fc white light for visible particles.\n\nChange one factor and you change what the test can find - which is why the written procedure freezes them."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt2-1-2-fig-a",
+   "caption": "The five test-factor groups that stand between a discontinuity and a correctly interpreted indication - the written procedure controls every one."
+  },
+  {
+   "type": "callout",
+   "variant": "safety",
+   "title": "Booth rules that are never optional",
+   "body": "**Current off before any contact is broken** - opening a live head, clamp, or prod connection draws an arc that burns the part and you. **Never look into a UV-A lamp or use one with a cracked filter**, and limit skin exposure under the beam. Treat every cable, contact pad, and connection as part of the electrical circuit it is - inspect before the first shot of the shift."
+  },
+  {
+   "type": "text",
+   "heading": "Safety in the MT Booth",
+   "body": "MT equipment is low-voltage but very high-current - thousands of amperes through heads, cables, prods, and clamps. The hazards follow directly:\n\n- **Arcing.** Breaking contact under current, dirty or worn contact pads, insufficient clamping pressure, or prod tips rocking on the surface all draw arcs. Arcs burn skin, flash eyes, and leave **arc strikes** - hard, cracked spots that condemn finished and aerospace parts, which is why many specifications prohibit prods on them entirely.\n- **Electrical condition.** Inspect cable insulation, lugs, and connections each shift; report damaged gear instead of working around it.\n- **UV-A practice.** Position the lamp so you view the surface, not the bulb; verify filter condition; let lamps warm up and keep radiometer checks current. Long sleeves and UV-blocking glasses are cheap insurance for daily users.\n- **Mechanical and thermal.** Rotating headstocks, pneumatic tailstocks, and overhead hoists pinch and crush; energized coils and freshly processed hot parts burn. Dark adaptation in the booth also means poor visibility of tripping hazards - keep the floor clear.\n\nNone of this is exotic. It is the same discipline as any shop electrical work, applied every shift."
+  },
+  {
+   "type": "text",
+   "heading": "Toxicity and Flammability of MT Materials",
+   "body": "The consumables deserve the same respect as the current.\n\n**Toxicity.** Dry particles are mostly iron and iron oxides with pigments or fluorescent dyes - low toxicity, but airborne powder is still a dust: apply as a light cloud, use ventilation, and keep your face out of it. Wet-method baths mist when sprayed; petroleum carriers and repeated skin contact can cause **dermatitis**, so wear gloves and wash before eating, drinking, or smoking. Some cleaners and bath conditioners carry their own hazards. The **safety data sheet (SDS)** is the governing document for every product in the booth - read it before first use, not after a reaction.\n\n**Flammability.** Petroleum bath vehicles are combustible. Specifications for MT oil vehicles require flash points comfortably above shop temperature - commonly on the order of 200 °F - precisely so normal use stays well below ignition. Protect that margin: keep open flames, welding spatter, grinding sparks, and smoking away from the bath and storage area; never lower a hot part into an oil bath; store carriers and aerosol cans in approved containers away from heat. Water-based carriers reduce the fire hazard but bring conditioners and rust inhibitors with their own SDS requirements.\n\nA Level II is expected to know these hazards and to brief the Level I working beside them."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt2-1-2-fig-b",
+   "caption": "Hazard map of a wet horizontal MT station: electrical, UV, flammability, inhalation, and mechanical hazards, each with its first-line control."
+  },
+  {
+   "type": "text",
+   "heading": "Training and Certification: Where Level II Fits",
+   "body": "Your qualification has a paper trail, and you should know it.\n\nMost industrial programs in the United States follow **SNT-TC-1A**, a *recommended practice*: it provides guidelines, and your **employer** issues a **written practice** tailored to its work, then qualifies and certifies its own personnel against it. **ANSI/ASNT CP-189** recasts the framework as an enforceable standard, and **NAS 410** governs aerospace personnel. Central certification schemes (such as ACCP or ISO 9712-based programs) certify the individual through a central body rather than the employer. Whichever applies, qualification rests on the same legs: documented **training hours**, documented **experience**, **examinations** - general, specific, and practical - and **vision** requirements, near-vision acuity checked at least annually plus a color/shade discrimination check.\n\nThe levels divide the work. A **trainee** works only under direct supervision. A **Level I** performs calibrations and tests per written instructions and records results. A **Level II** additionally sets up and standardizes equipment, chooses techniques within the procedure, **interprets and evaluates** results against codes and specifications, supervises trainees and Level Is, and prepares and signs reports. A **Level III** establishes procedures, qualifies them to the governing standards, and administers the program. Recertification runs on fixed intervals per the written practice. The signature you are earning in this course carries that whole structure behind it."
+  }
+ ],
+ "figures": [
+  {
+   "id": "mt2-1-2-fig-a",
+   "title": "Test factors between a discontinuity and a readable indication",
+   "file": "mt2-1-2-fig-a.svg"
+  },
+  {
+   "id": "mt2-1-2-fig-b",
+   "title": "Hazard map of the MT station",
+   "file": "mt2-1-2-fig-b.svg"
+  }
+ ],
+ "interactive": null,
+ "checkQuestions": [
+  {
+   "question": "Which sequence correctly describes how a Level II processes a particle accumulation found during an examination?",
+   "options": [
+    "Evaluation, then interpretation, then reporting as a defect",
+    "Indication, then interpretation as relevant/nonrelevant/false, then evaluation of relevant indications against acceptance criteria",
+    "Indication, then immediate rejection if it is longer than 1/16 inch",
+    "Interpretation, then demagnetization, then evaluation of all indications including false ones"
+   ],
+   "correct": 1,
+   "explanation": "The chain is indication (the accumulation), interpretation (deciding the cause), and evaluation (only relevant indications, judged against the governing acceptance criteria). Only a rejectable discontinuity is called a defect."
+  },
+  {
+   "question": "A sharp particle line appears exactly at the edge of a press-fitted bushing in a housing - the same place on every part, with the same appearance. The most likely classification is:",
+   "options": [
+    "Relevant indication - a crack at the bushing interface",
+    "False indication - particles trapped by drainage",
+    "Nonrelevant indication - a real leakage field created by the geometry/permeability change at the fit, not by a flaw",
+    "A defect requiring rejection of all housings"
+   ],
+   "correct": 2,
+   "explanation": "A press fit creates a genuine leakage field at the interface on every part - a nonrelevant indication. It involves real leakage flux (unlike a false indication) but no discontinuity, and it should be recognized, explained, and documented per procedure."
+  },
+  {
+   "question": "A customer asks you to inspect machinery welds through a fresh coat of paint. What does the test-factor review say?",
+   "options": [
+    "Paint has no effect because magnetism passes through it",
+    "Any coating automatically requires switching to the residual method",
+    "The coating weakens particle response to leakage fields, so it must be removed or the procedure must demonstrate the required sensitivity through that thickness",
+    "Painting improves contrast, so inspection should always be done after painting"
+   ],
+   "correct": 2,
+   "explanation": "A nonmagnetic coating separates the particles from the leakage field and can hide flaws entirely as thickness grows. Procedures require removal or a documented demonstration (for example with QQI shims) that flaws can still be detected."
+  },
+  {
+   "question": "Which statement about MT material hazards is correct?",
+   "options": [
+    "Fluorescent particles are highly toxic and require a respirator at all times",
+    "Petroleum bath vehicles are combustible, so specifications require high flash points and the bath must be kept away from flames, sparks, and hot parts",
+    "Water-based carriers eliminate all health and fire concerns",
+    "Safety data sheets are only required for cleaning solvents, not particles"
+   ],
+   "correct": 1,
+   "explanation": "Oil vehicles are chosen with flash points well above shop temperature - commonly on the order of 200 °F - and that margin is protected by excluding ignition sources and hot parts. Particles are low-toxicity but every product still has a governing SDS."
+  },
+  {
+   "question": "Under SNT-TC-1A, who actually certifies an MT Level II, and on what basis?",
+   "options": [
+    "ASNT headquarters, based on a single national exam",
+    "The equipment manufacturer, based on a hands-on demonstration",
+    "The employer, per its own written practice covering training, experience, examinations, and vision requirements",
+    "Any Level III, regardless of employer, based on a verbal review"
+   ],
+   "correct": 2,
+   "explanation": "SNT-TC-1A is a recommended practice: the employer issues a written practice and certifies its own personnel against documented training, experience, exams, and vision checks. Standards like CP-189 and NAS 410 formalize similar frameworks where invoked."
+  }
+ ],
+ "references": [
+  "CP-105-2024 MT Topical Outline §1.4 (terminology), §1.5 (test factors), §1.6 (safety)",
+  "CP-105-2024 MT Topical Outline §6.1 (toxicity), §6.3 (flammability)",
+  "CP-105-2024 MT Topical Outline §1.7 (training and certification processes)",
+  "SNT-TC-1A (recommended practice; employer written practice context)",
+  "ANSI/ASNT CP-189 and NAS 410 (certification standard context)",
+  "Practices such as ASTM E709/E1444 (lighting, bath, and material requirements)"
+ ]
+}

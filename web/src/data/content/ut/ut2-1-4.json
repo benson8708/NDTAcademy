@@ -1,0 +1,174 @@
+{
+ "lessonId": "ut2-1-4",
+ "title": "Standardization Review: Straight Beam, Angle Beam, Resonance, and Special Applications",
+ "narrationScript": "An ultrasonic instrument out of the case is just a voltmeter with a screen. Standardization is what turns it into a measuring tool, and at Level two you own that process. Two words first. Calibration, strictly speaking, is what a lab does to the instrument on a bench, verifying linearity against references. Standardization is what you do in the field, setting the distance scale and the sensitivity on reference reflectors so the procedure's numbers mean something. Working inspectors say calibration for both, but your paperwork should keep the ideas straight. Before any setup, confirm the instrument itself can be trusted. Vertical linearity means amplitude ratios hold as gain changes. Set two echoes at a two to one ratio, swing the gain, and the ratio must stay two to one. Horizontal linearity means equal distances stay equal across the screen, which you confirm with multiple back echoes from a uniform block. And leave the reject control off for amplitude work, because reject distorts vertical linearity. Now straight beam. Distance first. Put the probe on a known thickness, bring up several back echoes, and set them on the right screen divisions. A twenty five millimeter path gives echoes at twenty five, fifty, seventy five, and one hundred. If they will not all line up at once, your zero is wrong. Zero shifts everything together, range stretches the spacing. Then sensitivity. Codes built on workmanship criteria use reference reflectors, flat bottom holes in area amplitude and distance amplitude sets, or side drilled holes. You peak the reference echo, set it to a screen height like eighty percent, record the gain, and mark the curve of echo height versus distance. That curve is your distance amplitude correction, the line every indication is judged against. If the part's surface is rougher than the block, measure the difference and add transfer correction. Angle beam adds geometry to the same two jobs. On an IIW type block, the sequence is fixed. First the beam exit point. Maximize the echo from the hundred millimeter radius and mark where the block's focal line crosses the wedge. Every distance you ever plot is measured from that mark, so it comes first. Second, the refracted angle. Peak the echo from the plastic insert or the reference hole and read the degree scale at your exit point. Wedges wear, and a marked seventy can become a sixty eight by Friday. Third, the distance range, using the radius echoes. A miniature block with twenty five and fifty millimeter radii gives a repeating pattern, twenty five, one hundred, one seventy five from one side, fifty, one twenty five, two hundred from the other. Fourth, sensitivity, from the reference reflector your code calls for. Many weld codes use side drilled holes at one quarter, one half, and three quarters of the thickness to draw the DAC. Geometry first, then sensitivity. Angle and exit point wrong means everything after is wrong. Resonance standardization is the old timer of the family. Drive a plate with a continuous wave and sweep the frequency. When the thickness equals half a wavelength, or any whole multiple of it, the plate sings. The fundamental equals velocity divided by twice the thickness. Ten millimeters of steel resonates at about two hundred ninety six kilohertz, and harmonics repeat at that same spacing, so the spacing between adjacent peaks gives thickness directly. Dedicated resonance thickness gauges are museum pieces now, but the physics still earns its keep in bond testers and resonance based gauging, and the exam still asks. You standardize a resonance setup the same way you standardize anything, against samples of known thickness in the same material. Last, special applications, which really means standardizing when conditions stop being ideal. Curved surfaces. A flat wedge rocks on a small radius pipe, so wedges get contoured, and the reference block should match the curvature. Common code practice calls for curved blocks once the surface diameter drops below roughly five hundred millimeters, with one curved block covering parts from about nine tenths to one and a half times its own diameter. Coarse grained and austenitic parts. Standardize on a block of the same metallurgical condition, because velocity and attenuation both shift, and drop the frequency before you fight the grass. Hot parts. Velocity falls as steel heats, roughly one percent per hundred degrees Celsius, so a cold standardization makes hot readings run thick. Standardize hot or correct the numbers. And always, when surface or curvature differs between block and part, measure and apply transfer correction. Standardize, verify on schedule, and re verify at the end. If the final check fails, everything since the last good check gets examined again. That is not bureaucracy. That is what makes your numbers worth signing.",
+ "imagePrompt": "A technician holds an angle-beam probe on the radius end of a well-worn IIW calibration block, couplant glistening on the steel, while the flaw detector beside it displays a tall peaked echo.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Standardization, Calibration, and a Trustworthy Instrument",
+   "body": "Strictly speaking, **calibration** is the laboratory act of verifying an instrument against references; **standardization** is the field act of setting the distance scale and sensitivity on reference reflectors so a procedure's numbers mean something. The shop says 'calibration' for both — your records should keep the concepts straight.\n\nBefore any setup, prove the instrument deserves trust:\n\n- **Vertical linearity** — amplitude ratios must hold as gain changes. Classic check: set two echoes at a 2:1 ratio and step the gain through its range; the ratio must stay 2:1 within procedure tolerance.\n- **Horizontal linearity** — equal sound paths must occupy equal screen distance, confirmed with multiple back echoes from a uniform block falling on evenly spaced divisions.\n- **Reject off** — on analog instruments the reject (suppression) control distorts vertical linearity, so it stays off for amplitude evaluation unless the procedure explicitly allows and accounts for it.\n\nThen re-verify on schedule: at intervals your procedure sets, after probe, cable, or operator changes, after temperature shifts — and **at the end of the examination**. A failed final check invalidates everything back to the last good one, and codes such as ASME Section V Article 4 say exactly that."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-1-4-fig-a",
+   "caption": "Straight-beam standardization: back-echo multiples from a known thickness set the distance scale, then a DAC drawn through SDH responses sets sensitivity."
+  },
+  {
+   "type": "text",
+   "heading": "Straight Beam: Distance, Then Sensitivity",
+   "body": "**Distance.** Couple to a known thickness and bring up several back echoes. On a 25-mm path with a 125-mm range, echoes belong at 25, 50, 75, and 100 mm — evenly spaced. Use **zero/delay** to slide the whole pattern (it corrects for wear plate and couplant) and **range/velocity** to stretch the spacing. If the first echo is right but the fourth is off, the range is wrong, not the zero.\n\n**Sensitivity.** Workmanship-based codes evaluate amplitude against reference reflectors:\n\n- **Area-amplitude sets** — flat-bottom holes (FBH) of increasing diameter (e.g., 3/64, 5/64, 8/64 in.) at one depth: echo height versus reflector area.\n- **Distance-amplitude sets** — one FBH size at many depths: echo height versus distance.\n- **Side-drilled holes (SDH)** — drilled parallel to the surface, equally reflective at any beam angle; the standard DAC reflector in weld work.\n\nPeak the reference echo, set it to a defined screen height (commonly **80% FSH**), record the gain, and plot echo height versus distance: the **DAC curve**. Modern instruments do the same electronically as **TCG**, flattening the response.\n\n**Transfer correction** closes the gap between block and part: if the part's surface is rougher or its attenuation higher, measure the dB difference (typically comparing back-echo or pitch-catch responses on block and part) and add it to the gain."
+  },
+  {
+   "type": "text",
+   "heading": "Angle Beam: Geometry First, Then Sensitivity",
+   "body": "Angle-beam standardization on an IIW-type block follows a fixed order, because each step depends on the one before it:\n\n1. **Beam exit (index) point.** Maximize the echo from the **100-mm radius**; the block's focal line now crosses the wedge at the true exit point — mark it. Every distance you plot is measured from this mark.\n2. **Refracted angle.** Peak the echo from the plastic insert or reference hole and read the engraved **degree scale** against your exit-point mark. Wedges wear; a marked 70° can scrub down to 68°, and procedures set the tolerance (commonly within about ±2°).\n3. **Distance range.** Use the radius echoes. The V1 radius returns a 100-mm reference; a miniature (V2/DSC-type) block gives repeating sequences — facing the 25-mm radius: **25, 100, 175 mm**; facing the 50-mm radius: **50, 125, 200 mm** — convenient for the short ranges of weld work.\n4. **Sensitivity.** Set the reference level on the reflector your code specifies. ASME-style basic calibration blocks put **SDHs at T/4, T/2, and 3T/4**; the highest response is set to the reference height (typically 80% FSH) and the DAC is drawn through all three. Notches standardize surface-zone response on pipe.\n\nGet steps 1 and 2 wrong and every location, depth, and amplitude that follows is wrong with them — which is why the exit point is checked first and rechecked often."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-1-4-fig-b",
+   "caption": "IIW-type block features used in the angle-beam sequence: exit point on the 100-mm radius, refracted angle on the degree scale at the insert, distance from radius echoes, sensitivity from the reference hole."
+  },
+  {
+   "type": "table",
+   "caption": "Reference standards and what each one standardizes.",
+   "headers": ["Block / set", "Key features", "Used for"],
+   "rows": [
+    ["IIW Type 1 (V1)", "100-mm radius, degree scale, plastic insert, 1.5-mm SDH, 25-mm width", "Exit point, refracted angle, range, sensitivity; straight-beam multiples"],
+    ["Miniature / V2, DSC", "25- and 50-mm radii (V2); DSC combines distance + sensitivity", "Short-range angle-beam standardization in the field"],
+    ["Area-amplitude set", "FBHs of increasing diameter at fixed depth", "Echo height vs reflector size; instrument/probe evaluation"],
+    ["Distance-amplitude set", "One FBH size at increasing depths", "Echo height vs distance; DAC construction"],
+    ["ASME-style basic block", "SDHs at T/4, T/2, 3T/4 in matching material", "DAC/TCG reference for code weld examination"],
+    ["Notched pipe samples", "ID/OD notches", "Surface-zone sensitivity on tubular work"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Resonance Standardization",
+   "body": "Drive a plate with a continuous wave and sweep the frequency: when the thickness equals a half wavelength — or any whole multiple of it — standing waves build and the part **resonates**. The fundamental is:\n\n**f = v/(2t)**\n\nFor 10 mm of steel: f = 5,920 m/s ÷ (2 × 0.010 m) ≈ **296 kHz**, with harmonics at 592, 888 kHz, and so on. Adjacent harmonics are spaced by the fundamental, which gives the working equation for thickness from any two neighboring peaks: **t = v/(2·Δf)**. Peaks at 1.480 and 1.776 MHz are 296 kHz apart — a 10-mm plate, no guessing which harmonic you found.\n\nDedicated resonance thickness gauges are largely museum pieces, displaced by pulse-echo digital gauges — but the physics still earns its keep in **bond testers**, resonance-based gauging, and thin-section work, and certification exams still expect it. Standardizing a resonance setup follows the universal rule: verify the frequency-to-thickness relationship against **known-thickness samples of the same material and velocity** before measuring anything unknown."
+  },
+  {
+   "type": "text",
+   "heading": "Special Applications: When Conditions Stop Being Ideal",
+   "body": "**Curved surfaces.** A flat wedge rocks on a small-radius part, the contact patch shrinks, and the effective refracted angle shifts. Wedges are **contoured** to the part, and the reference block should match the curvature: common code practice requires curved calibration blocks once the examination surface diameter drops below roughly **500 mm (20 in.)**, with a single curved block covering parts from about **0.9 to 1.5 times** its own diameter.\n\n**Coarse-grained and austenitic material.** Velocity and attenuation both shift with grain structure, so standardize on a block of the **same metallurgical condition** (cast standardizes cast), drop the frequency before fighting grain noise with gain, and expect angle-beam plots to need verification on reference reflectors in the actual material.\n\n**High temperature.** Velocity in steel falls as the part heats — on the order of **1% per 100 °C** — so a cold standardization makes hot thickness readings run **high**. Standardize on heated blocks, use the instrument's temperature correction per procedure, and respect probe dwell limits.\n\n**Rough or coated surfaces.** Measure block-to-part **transfer correction** in dB and add it; an unpainted block cannot stand in for a painted vessel without it.\n\nIn every special case the principle is identical: the reference condition must represent the test condition, or the numbers lie."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "The code sets the reference — your procedure rules",
+   "body": "Block design, reflector sizes, DAC points, reference screen height, re-verification intervals, and what a failed check invalidates are all specified by the governing code and your written procedure — codes such as ASME Section V Article 4 define the basic calibration block and linearity checks in detail. A Level II standardizes **to the document**, records gain, temperature, block, and probe data, and never substitutes a convenient block for the specified one without an approved procedure change."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-1-4-fig-a",
+   "title": "Straight-beam standardization: range and DAC",
+   "file": "ut2-1-4-fig-a.svg"
+  },
+  {
+   "id": "ut2-1-4-fig-b",
+   "title": "IIW-type block: angle-beam standardization features",
+   "file": "ut2-1-4-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Find It on the Block",
+  "intro": "You are beginning an angle-beam standardization on an IIW-type block. Click the feature used for the FIRST step — verifying the probe's beam exit (index) point.",
+  "figureId": "ut2-1-4-fig-b",
+  "regions": [
+   {
+    "x": 110,
+    "y": 165,
+    "w": 195,
+    "h": 200,
+    "label": "100-mm radius surface",
+    "isTarget": true,
+    "feedback": "Correct. Maximize the echo from the 100-mm radius, then mark the block's focal line position on the wedge — that is the true exit point, the origin for every distance and angle measurement that follows."
+   },
+   {
+    "x": 575,
+    "y": 318,
+    "w": 75,
+    "h": 70,
+    "label": "Degree scale",
+    "isTarget": false,
+    "feedback": "The engraved degree scale verifies the refracted angle — step two. It is read against the exit-point mark, so the exit point must be found first."
+   },
+   {
+    "x": 470,
+    "y": 210,
+    "w": 100,
+    "h": 100,
+    "label": "Plastic insert (50-mm hole)",
+    "isTarget": false,
+    "feedback": "Peaking the echo from the plastic insert against the degree scale checks the actual refracted angle — after the exit point is marked, not before."
+   },
+   {
+    "x": 585,
+    "y": 165,
+    "w": 70,
+    "h": 55,
+    "label": "1.5-mm side-drilled hole",
+    "isTarget": false,
+    "feedback": "The small SDH is a sensitivity reference, set after the geometry — exit point and angle — has been confirmed."
+   },
+   {
+    "x": 655,
+    "y": 230,
+    "w": 120,
+    "h": 100,
+    "label": "Block end (25-mm width)",
+    "isTarget": false,
+    "feedback": "The block's 25-mm width provides straight-beam back-echo multiples for range checks — useful, but not part of exit-point verification."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Using the reject (suppression) control on an analog instrument during amplitude evaluation primarily risks:",
+   "options": [
+    "Distorting vertical linearity, so amplitude comparisons against the DAC become invalid",
+    "Shifting the zero point of the time base",
+    "Overheating the pulser",
+    "Doubling the displayed frequency"
+   ],
+   "correct": 0,
+   "explanation": "Reject suppresses low-level signals nonlinearly: the screen no longer shows true amplitude ratios. Since DAC evaluation is built on ratios, reject stays off unless the procedure explicitly accounts for it."
+  },
+  {
+   "question": "Facing the 25-mm radius of a miniature (V2-type) block, the angle-beam distance sequence appears at:",
+   "options": ["25, 100, and 175 mm", "25, 50, and 75 mm", "25, 125, and 225 mm", "50, 125, and 200 mm"],
+   "correct": 0,
+   "explanation": "The geometry re-circulates the beam between the two radii, repeating at their 75-mm sum: 25, 100, 175 mm. Facing the 50-mm radius gives 50, 125, 200 mm — the distractor."
+  },
+  {
+   "question": "An ASME-style basic calibration block for weld examination provides side-drilled holes at depths of:",
+   "options": ["T/4, T/2, and 3T/4", "T/8 only", "T/3 and 2T/3", "The surface and T"],
+   "correct": 0,
+   "explanation": "SDHs at quarter, half, and three-quarter thickness let you set the reference level on the highest response and draw the DAC across the full examination depth."
+  },
+  {
+   "question": "The fundamental resonance frequency of a 5-mm steel plate (v = 5,920 m/s) is about:",
+   "options": ["592 kHz", "1.18 MHz", "296 kHz", "2.96 MHz"],
+   "correct": 0,
+   "explanation": "f = v/(2t) = 5,920 ÷ (2 × 0.005) = 592 kHz. Forgetting the factor of two gives 1.18 MHz; using 10 mm gives 296 kHz."
+  },
+  {
+   "question": "A gauge standardized at 20 °C is used on a line running at 200 °C with no correction. Thickness readings will:",
+   "options": [
+    "Read high, because velocity drops with temperature and the instrument converts the longer transit time to extra metal",
+    "Read low, because hot steel transmits sound faster",
+    "Be unaffected — velocity is temperature independent",
+    "Read zero — couplant cannot work hot"
+   ],
+   "correct": 0,
+   "explanation": "Sound slows in hot steel by roughly 1% per 100 °C. The instrument, still assuming the cold velocity, interprets the longer round-trip time as greater thickness — so uncorrected hot readings run thick."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Evaluation Course §1.4 (standardization), §1.4.1–1.4.4 (straight beam, angle beam, resonance, special applications)",
+  "Codes such as ASME BPVC Section V, Article 4 (basic calibration blocks, linearity verification, calibration confirmation)",
+  "General reference: IIW V1/V2 block geometry; resonance relation f = v/(2t)"
+ ]
+}

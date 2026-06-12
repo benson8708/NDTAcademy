@@ -1,0 +1,178 @@
+{
+ "lessonId": "ut2-1-3",
+ "title": "Testing Techniques Review",
+ "narrationScript": "Technique selection is where a Level two earns the title. The physics is the same on every job. What changes is the access you have, the geometry of the part, the kind of discontinuity you are hunting, and how the results will be judged. So let's review the toolbox with selection in mind. First, the three ways to use a beam. Pulse echo sends sound from one probe and listens with the same probe. One side access, depth from echo time, and the workhorse of the trade. Through transmission uses two probes facing each other on opposite surfaces. A flaw between them blocks energy, and the receiver sees the loss. It punches through attenuative material because the sound only travels one way, and it catches thin disbonds beautifully. But it gives no depth information, and the two probes must stay aligned, which means fixturing. Pitch catch puts the transmitter and receiver on the same side as separate elements. Dual element probes, creeping wave probes, and tandem setups all live in this family. Now contact techniques. A straight beam single element probe is the default for thickness, laminations, and forging work. Its weakness is the dead zone, the blind region just under the surface where the screen is still ringing from the transmit pulse. When the action is near the surface, reach for a dual element probe. Its separate transmit and receive crystals are tilted toward a crossover, giving a pseudo focus that sees corrosion pitting and near surface flaws a single element would miss. A delay line probe puts a plastic standoff between the element and the part, pushing the dead zone into the plastic. That makes it the choice for thin sections, precision thickness, and brief contact on hot surfaces. Angle beam probes refract a shear wave into the part for weld work, because welds fail along planes that a straight beam hits edge on. The rule that drives everything is orientation. You get the strongest response when the beam strikes the flaw face square on. Surface waves cover smooth surfaces for surface breaking cracks, ride around gentle curves, and die wherever couplant smear, grease, or a fingerprint sits on the path, which is both their weakness and a handy way to confirm what you are seeing. For mid wall planar flaws standing vertical in thick welds, the tandem technique stacks two angle probes on the same surface, one firing, one catching the reflection that a single probe would never receive. Then there is immersion. Put the part and the probe in water, or feed a water column through a squirter, and the coupling problem disappears. The water path is constant, the probe never wears, any angle is available by tilting the probe, and focused probes concentrate energy for fine sensitivity. Immersion is the production answer, feeding automated C scans of plate, composite, and aerospace forgings. It has one setup rule you must know cold. Sound crawls in water at about a quarter of its speed in steel, so set the water path so the second front surface echo lands beyond the first back wall echo. In practice, at least one quarter of the part thickness, plus about six millimeters of margin. For an eighty millimeter steel forging, that means roughly twenty six millimeters of water or more. One more immersion habit. A focused beam shortens when it enters metal, by roughly the velocity ratio, so a focus set in water lands much shallower in steel. Finally, limitations. Every technique buys its advantages with blind spots, and evaluation is only honest if those blind spots are on the record. Contact straight beam is blind in the dead zone. Angle beam coverage depends on skip geometry, and surfaces that block full skips leave unexamined volume. Through transmission cannot say how deep. Surface waves only see the surface and a wavelength or so beneath it. Immersion needs the part in a tank or under a squirter, and complex geometry can steer water path echoes into the gate. When you write a technique into a report, write its limitations next to it. The code wants to know what you examined, and a Level two also documents what the technique could not see. That is the difference between scanning a part and evaluating one.",
+ "imagePrompt": "A gantry-mounted transducer glides above a polished aerospace forging submerged in a glass-walled immersion tank, ripples spreading across the water while a technician watches the scan from a control console.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Technique Selection Is an Evaluation Decision",
+   "body": "Every job opens with the same questions, and the technique falls out of the answers:\n\n- **Access** — one surface or two? Can the part go in a tank or under a water column?\n- **Geometry** — flat plate, curved shell, nozzle, weld crown ground or not?\n- **Discontinuity type and orientation** — the governing rule of UT: **the strongest response comes when the beam strikes the flaw face perpendicular.** Laminations lie flat (straight beam); weld fusion flaws stand on the bevel (angle beam); surface cracks break the surface (surface waves or creeping waves).\n- **Depth zone of interest** — near-surface work pushes you toward duals, delay lines, or immersion focus.\n- **Surface condition and temperature** — scale, paint, and 250 °C lines all veto certain probes.\n- **Speed and records** — one weld by hand, or two hundred plates with a saved map?\n\nThree beam arrangements underlie everything: **pulse-echo** (one probe sends and listens — depth from echo time, single-side access), **through-transmission** (separate sender and receiver on opposite faces — detects energy *loss*), and **pitch-catch** (sender and receiver on the same side — duals, creeping-wave probes, tandem)."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-1-3-fig-a",
+   "caption": "The three beam arrangements: pulse-echo reads echo time for depth, through-transmission reads energy loss with no depth information, and tandem pitch-catch catches reflections from vertical mid-wall flaws."
+  },
+  {
+   "type": "text",
+   "heading": "Contact Techniques",
+   "body": "**Straight beam, single element** — the default for thickness, laminations, forgings, and castings. Its built-in limit is the **dead zone**: the region just under the surface masked by the transmit pulse's ringdown. Anything shallow lives in that blind spot.\n\n**Dual element** — separate transmit and receive crystals tilted toward a crossover point form a **pseudo-focus** below the surface. The receiver never hears the transmit pulse, so near-surface resolution improves dramatically — the corrosion-survey and pitting probe. Its quirk: the V-shaped internal path makes very thin readings slightly nonlinear, so standardize on the thicknesses you will measure.\n\n**Delay line** — a plastic standoff moves the interface ringdown out of the metal entirely; with multiple-echo timing it delivers precision thickness on thin sections and tolerates brief contact on hot parts.\n\n**Angle beam** — refracts shear into the part for weld examination, where fusion-line flaws stand roughly vertical on the bevel. Coverage runs on skip geometry (skip distance = 2T·tanθ), and the wedge angle is chosen so the beam meets the expected flaw plane as square as possible.\n\n**Surface (Rayleigh) wave** — sweeps smooth surfaces for surface-breaking cracks, follows gentle curvature, penetrates about one wavelength deep. Anything sitting on the surface — couplant smear, grease, a damp fingerprint — damps it; touching the surface ahead of the probe and watching the echo drop is the classic confirmation trick.\n\n**High-temperature contact** — delay lines or high-temp probes, high-temperature couplant, short dwell times with cooling between readings, and a velocity correction, because velocity falls as steel heats."
+  },
+  {
+   "type": "text",
+   "heading": "Through-Transmission, Pitch-Catch, and Tandem",
+   "body": "**Through-transmission (TT)** puts a transmitter on one face and an aligned receiver on the opposite face. A discontinuity between them intercepts energy, and the receiver reads the **drop**. Because sound crosses the part only once, TT survives highly attenuative materials — honeycomb composites, rubber, coarse castings — and it detects very thin planar disbonds that reflect poorly back toward a pulse-echo probe. The costs are structural: **no depth information**, alignment that must be fixtured (yokes, squirter pairs, robotic frames), and no single-side option.\n\n**Pitch-catch** keeps both elements on the same surface. Dual-element probes are pitch-catch in one housing; creeping-wave and TRL (transmit-receive longitudinal) probes use the geometry to kill the dead zone and fight grain noise in austenitic material.\n\n**Tandem** is pitch-catch with two angle-beam probes in line on the same surface — one transmits, the other rides behind where the geometry says a reflection must land. A **vertical planar flaw at mid-wall** (think lack of fusion in a thick double-V or narrow-gap weld) reflects a single probe's beam away from it; the tandem partner is parked exactly where that deflected beam returns. Probe separation is set from the wall thickness and the depth zone under examination."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-1-3-fig-b",
+   "caption": "Immersion setup: the water path is set so the second front-surface echo falls beyond the first back-wall echo — at least a quarter of the steel thickness plus about 6 mm."
+  },
+  {
+   "type": "text",
+   "heading": "Immersion and Squirter Techniques",
+   "body": "Replace the couplant film with a water column and the contact problem disappears: coupling becomes perfectly uniform, the probe never touches the part, any refracted angle is available by tilting the manipulator, and **focused probes** concentrate the beam for small-flaw sensitivity and sharp near-surface resolution. That is why immersion owns production scanning — plate, bar, aerospace forgings, and composite panels under automated C-scan.\n\nThe setup rule every Level II must know cold: sound in water travels at about **one quarter** of its speed in steel, so choose the water path so the **second front-surface echo** (the water-path multiple) arrives **after the first back-wall echo**. That means a water path of at least the part thickness divided by the steel-to-water velocity ratio (≈ 4), **plus a margin of about 6 mm (¼ in.)**:\n\n- 80 mm steel forging → 80/4 + 6 = **26 mm minimum water path**.\n\nTwo more habits: a focused beam **shortens in metal** by roughly the velocity ratio, so a focus set in water lands far shallower in steel — plan the focal depth, don't discover it. And for parts too large to dunk, **squirter (water-jet) and bubbler** columns carry the same technique onto gantry systems, with coupling monitored continuously."
+  },
+  {
+   "type": "table",
+   "caption": "Matching technique to inspection problem — and the limitation that rides along.",
+   "headers": ["Problem", "First-choice technique", "Why", "Technique-induced limitation"],
+   "rows": [
+    ["Laminations in 200 plates (production)", "Immersion / squirter C-scan", "Uniform coupling, speed, saved map", "Part must fit the system; gate discipline"],
+    ["Weld sidewall fusion flaws", "Contact angle beam (shear)", "Beam meets bevel-plane flaws near-perpendicular", "Coverage tied to skip geometry and access"],
+    ["Near-surface pitting / corrosion", "Dual element", "Pseudo-focus beats the dead zone", "Nonlinear very-thin readings; standardize carefully"],
+    ["Thin sheet / hot-line thickness", "Delay line, multiple-echo", "Ringdown stays in the plastic; brief hot contact", "Delay material limits temperature and dwell"],
+    ["Surface-breaking cracks, smooth part", "Rayleigh (surface) wave", "Full-surface sweep, follows gentle curves", "Only ~1λ deep; killed by surface contamination"],
+    ["Disbonds in attenuative honeycomb", "Through-transmission", "One-way path through lossy structure", "No depth data; two-side access and alignment"],
+    ["Vertical mid-wall fusion flaw, thick weld", "Tandem angle beam", "Receiver sits where the deflected beam lands", "Setup per depth zone; slower scanning"]
+   ]
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "Limitations belong in the record",
+   "body": "Codes ask what you examined; a Level II also records what the technique **could not** examine — dead-zone depth, unscanned volume where skips were blocked, areas where geometry or surface condition degraded coverage. An accept based on a technique blind to the relevant flaw orientation is not an accept; it is a gap in the examination, and the report must say so."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-1-3-fig-a",
+   "title": "Pulse-echo, through-transmission, and tandem pitch-catch",
+   "file": "ut2-1-3-fig-a.svg"
+  },
+  {
+   "id": "ut2-1-3-fig-b",
+   "title": "Immersion water-path rule",
+   "file": "ut2-1-3-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Match the Technique to the Job",
+  "intro": "Four real inspection problems. Choose the technique a Level II should reach for, weighing access, geometry, discontinuity type and orientation, and production realities.",
+  "steps": [
+   {
+    "prompt": "Incoming inspection: 200 sheets of 6-mm aluminum plate must be screened for laminations at production speed, with a permanent record for the customer.",
+    "options": [
+     "Manual contact straight beam on a full grid",
+     "Immersion or squirter C-scan with a gated lamination alarm",
+     "Manual angle beam from both plate edges",
+     "Rayleigh waves along each edge"
+    ],
+    "correct": 1,
+    "feedback": "Thin plate + volume + record = automated immersion/squirter C-scan. Hand-scanning 200 sheets is slow with variable coupling, and angle or surface techniques are mismatched to flat mid-wall laminations."
+   },
+   {
+    "prompt": "A live process line at roughly 250 °C needs spot thickness readings at marked locations.",
+    "options": [
+     "Standard contact probe with ordinary gel",
+     "Immersion tank",
+     "High-temperature delay-line probe, high-temp couplant, brief contact dwell, velocity correction",
+     "Through-transmission with clamped probes"
+    ],
+    "correct": 2,
+    "feedback": "The delay line protects the element, high-temperature couplant survives the surface, dwell is limited with cooling between readings — and since velocity drops with temperature, you correct or re-standardize hot, or the readings run high."
+   },
+   {
+    "prompt": "Suspected vertical lack-of-fusion at mid-wall in a 60-mm double-V weld. Single-probe angle beam gives weak, unrepeatable responses.",
+    "options": [
+     "Tandem technique — two angle probes in line, one transmitting, one receiving",
+     "More gain on the single probe",
+     "Straight beam through the weld crown",
+     "Surface waves along the cap"
+    ],
+    "correct": 0,
+    "feedback": "A vertical planar flaw deflects a single probe's beam away from it — gain cannot fix geometry. The tandem partner sits where that deflected beam lands, which is precisely why the technique exists."
+   },
+   {
+    "prompt": "A honeycomb composite panel with suspected skin-to-core disbonds; the structure attenuates heavily and pulse-echo returns a confusion of internal reflections.",
+    "options": [
+     "Raise pulse-echo frequency to 10 MHz",
+     "Through-transmission with aligned probes — yoke or squirter pair",
+     "70° shear angle beam",
+     "Single-element contact at higher gain"
+    ],
+    "correct": 1,
+    "feedback": "Through-transmission crosses the lossy sandwich once and reads any disbond as a clean loss of received energy. You give up depth information — but for disbond mapping, presence and area are the questions."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Corrosion pitting is suspected within the first 2 mm under the surface of a vessel wall. The best contact probe choice is:",
+   "options": [
+    "A dual-element probe, because its crossed transmit/receive beams pseudo-focus near the surface and eliminate transmit-pulse ringdown",
+    "A large single-element 1 MHz probe for maximum penetration",
+    "A 70° shear-wave wedge",
+    "Any probe, provided gain is raised 12 dB"
+   ],
+   "correct": 0,
+   "explanation": "A single element is blind in its dead zone exactly where the pitting lives. The dual's separate receiver never hears the transmit pulse, and the crossover geometry concentrates sensitivity just below the surface."
+  },
+  {
+   "question": "The principal evaluation limitation of through-transmission testing is that it:",
+   "options": [
+    "Provides no depth information — a flaw is detected only as a loss of transmitted energy",
+    "Cannot detect planar discontinuities",
+    "Works only on welds",
+    "Requires no probe alignment"
+   ],
+   "correct": 0,
+   "explanation": "TT reads the shadow a flaw casts, so it tells you something is in the path but not where in the thickness it sits — and it needs two-side access with maintained alignment."
+  },
+  {
+   "question": "For immersion testing of a 100-mm thick steel block, the minimum water path should be about:",
+   "options": ["31 mm", "12 mm", "100 mm", "400 mm"],
+   "correct": 0,
+   "explanation": "Water path ≥ thickness ÷ velocity ratio (≈ 4 for steel) plus ~6 mm margin: 100/4 + 6 = 31 mm. This keeps the second front-surface echo beyond the first back-wall echo."
+  },
+  {
+   "question": "Midway along a Rayleigh-wave examination the signal abruptly dies. The most likely cause is:",
+   "options": [
+    "Couplant smear, grease, or dirt on the surface damping the wave",
+    "The wave converted to a longitudinal mode",
+    "PRF set too low",
+    "The part is too thick for surface waves"
+   ],
+   "correct": 0,
+   "explanation": "Rayleigh waves travel within about one wavelength of the surface, so anything resting on the surface absorbs them — the classic check is touching a wetted finger ahead of the probe and watching the echo collapse."
+  },
+  {
+   "question": "The tandem angle-beam arrangement exists specifically to detect:",
+   "options": [
+    "Vertical planar flaws at mid-wall, such as lack of fusion in thick welds",
+    "Surface-breaking cracks on the scanning surface",
+    "Laminations parallel to the surface",
+    "Porosity clusters anywhere in the volume"
+   ],
+   "correct": 0,
+   "explanation": "A vertical planar reflector deflects a single angle beam away from its probe. Tandem places a second, receiving probe where that deflected energy arrives, recovering the response a lone probe loses."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Evaluation Course §1.3 (testing techniques)",
+  "Codes such as ASME BPVC Section V, Article 4 and AWS D1.1 (technique and scanning requirements for welds)",
+  "General immersion practice: water path ≥ part thickness ÷ 4 (steel) plus ≈ 6 mm margin"
+ ]
+}

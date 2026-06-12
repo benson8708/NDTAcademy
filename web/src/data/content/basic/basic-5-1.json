@@ -1,0 +1,152 @@
+{
+  "lessonId": "basic-5-1",
+  "title": "Radiographic Testing: Fundamentals and Safety Essentials",
+  "narrationScript": "Radiographic testing makes a shadow picture with radiation the eye cannot see. Pass X-rays or gamma rays through a part, and thick or dense regions absorb the beam while voids and thin spots let it through; a detector on the far side records the difference as a two-dimensional image of everything in the path. This lesson builds the fundamentals. First, sources: X-ray tubes, which stop radiating the instant power is removed, and gamma isotopes such as iridium-192 and cobalt-60, which never stop and are controlled only by shielding. Then detectors: imaging, meaning film, storage-phosphor plates, and digital arrays, and nonimaging, from ion-chamber survey meters to the badge, pocket dosimeter, and alarming ratemeter every radiographer wears at once. We follow photons into matter through photoelectric absorption, Compton scattering, and pair production, and compress attenuation into the half-value layer. We close with the habits that keep radiographers alive: time, distance, shielding, the inverse square law, federal dose limits, and a survey after every single exposure. Master these fundamentals and the imaging and application lessons that follow rest on solid ground.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "The Shadow Picture: How Radiography Works",
+      "body": "Radiographic testing (RT) sends **penetrating radiation** — X-rays or gamma rays — through a part and records what survives the trip. Radiation crossing thick or dense material is heavily absorbed; radiation crossing a void, a thin region, or a low-density inclusion arrives nearly intact. A detector on the far side — film, a storage-phosphor plate, or a digital array — converts those intensity differences into a visible image: the **radiograph**, a two-dimensional shadow of everything in the beam path. On a conventional film radiograph, *more* transmitted radiation means a *darker* image, so a gas pore in a weld prints as a dark spot while a dense tungsten inclusion prints light.\n\nThree working truths define the method:\n\n- **RT is volumetric.** It interrogates the entire thickness, not just the surface — internal shrinkage in a casting, porosity buried mid-wall in a weld, a missing or misassembled component inside a closed unit.\n- **The image is a projection.** Everything between source and detector is superimposed onto one plane, so depth information is lost unless additional exposures from other angles are made.\n- **Orientation matters for planar flaws.** A volumetric discontinuity (a pore, an inclusion) shows from almost any direction, but a tight crack or a lack-of-fusion plane produces usable contrast only when the beam runs nearly parallel to it. A crack lying square across the beam can be invisible.\n\nRT requires **access to both sides** of the part and yields a permanent, reviewable record — two reasons aerospace specifications lean on it for castings, weldments, and assembled hardware moving through FAA Part 145 repair stations."
+    },
+    {
+      "type": "text",
+      "heading": "Sources: X-ray Machines and Gamma-Ray Isotopes",
+      "body": "**X-ray machines** make radiation electrically. Inside an evacuated tube, a heated filament (the **cathode**) emits electrons, a potential measured in **kilovolts (kV)** accelerates them, and they slam into a tungsten **anode (target)**. The violent deceleration converts a sliver of their energy — on the order of **1%** at typical tube voltages, the other 99% becoming heat the anode must shed — into **bremsstrahlung**: a continuous spectrum of photon energies whose maximum equals the tube voltage, topped with a few characteristic tungsten lines. The operator holds two levers: **kilovoltage sets energy** — penetrating ability up, subject contrast down — while **milliamperage × time sets quantity**, the exposure. Portable units of roughly 160–300 kV handle steel to about 75 mm (3 in.); fixed installations reach about 450 kV; **linear accelerators and betatrons** in the MeV range take on very thick sections. The defining safety property is electrical: **remove the power and emission stops instantly.**\n\n**Gamma-ray sources** are sealed capsules of radioactive isotope whose decaying nuclei emit photons at **discrete, fixed energies** — no electricity, no cooling, no tube head, which is why gamma radiography climbs pipe racks, enters pressure vessels, and works remote sites. The cost is absolute: **a gamma source can never be turned off.** It lives inside an **exposure device (camera)** — a shielded container, typically depleted uranium — and is pushed out through a guide tube to the exposure position by a crank-driven cable, then cranked back in. Source strength (**activity**) is measured in **becquerels** (one disintegration per second) or **curies** (3.7 × 10¹⁰ Bq) and falls continuously with radioactive decay — exposure times stretch week by week until the source is exchanged. The workhorse isotopes: **Iridium-192** (half-life 73.8 days), **Cobalt-60** (5.27 years), and **Selenium-75** (about 120 days) for thinner sections."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-5-1-fig-a",
+      "caption": "Radiograph formation: from either source type, the diverging beam crosses the part, the thick step absorbs most of it, the gas void absorbs least, and the detector records the differences — lighter under thick metal, a dark spot under the void."
+    },
+    {
+      "type": "table",
+      "caption": "Common industrial RT sources: energy, reach in steel, and how each is controlled.",
+      "headers": ["Source", "Photon energy", "Typical steel range", "Control and notes"],
+      "rows": [
+        ["X-ray tube, 160–300 kV (portable)", "Continuous spectrum up to the set kV", "Up to ~75 mm (3 in.)", "Emission stops when de-energized; kV sets penetration, mA·min sets exposure"],
+        ["X-ray tube, to 450 kV (fixed)", "Continuous spectrum up to 450 kV", "To ~100 mm (4 in.)", "Shielded exposure room or cabinet; anode heat limits duty cycle"],
+        ["Selenium-75", "0.066–0.40 MeV (avg ≈ 0.21 MeV)", "~4–30 mm", "Half-life ~120 days; finer image quality than Ir-192 on thin sections"],
+        ["Iridium-192", "0.2–0.6 MeV (avg ≈ 0.35 MeV)", "~12–65 mm", "Half-life 73.8 days; the field-radiography workhorse; always emitting — shielding only"],
+        ["Cobalt-60", "1.17 and 1.33 MeV", "~50–200 mm", "Half-life 5.27 years; thick sections; heavy, often fixed shielding"],
+        ["Linear accelerator / betatron", "1–25 MeV", "Above ~200 mm", "Very thick sections; like all machine sources, off means off"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Imaging Detectors: Film to Digital Arrays",
+      "body": "**Industrial radiographic film** remains the reference detector. A polyester base carries a gelatin emulsion of **silver halide** crystals on both sides; transmitted photons — and the electrons they knock loose — create a **latent image** that chemical development reduces to black metallic silver. Blackening is quantified as **film density**, D = log₁₀(I₀/Iₜ), the logarithm of incident to transmitted viewing light: a density of 2.0 passes 1% of the viewer's light, and codes typically require roughly **1.8 to 4.0** through the area of interest. Film systems are classified by **ASTM E1815** — finer grain buys better definition at the price of longer exposure — and industrial film is almost always exposed between **lead intensifying screens**, commonly about 0.005 in. front and 0.010 in. back, which add image-forming photoelectrons *and* filter out low-energy scatter.\n\nThe digital successors:\n\n- **Computed radiography (CR)** replaces film with a reusable **photostimulable storage-phosphor plate**. Exposure traps energy in the phosphor; a laser scanner releases it as light, a photomultiplier digitizes it, and the erased plate returns to service.\n- **Digital detector arrays (DDAs)** are flat panels that deliver an image in seconds: a scintillator (commonly cesium iodide) converts radiation to light over an amorphous-silicon photodiode matrix, or amorphous selenium converts directly to charge. Wide dynamic range and immediate feedback make DDAs the production choice where geometry allows.\n- **Radioscopy (real-time radiography)** images continuously while the part moves — the screening tool for assemblies and foreign-object searches.\n\nDifferent physics, same question: every imaging detector reports how much radiation arrived, point by point."
+    },
+    {
+      "type": "text",
+      "heading": "Nonimaging Detectors: Measuring Instead of Picturing",
+      "body": "Nonimaging detectors reduce radiation to a number — dose rate or accumulated dose — and they are the backbone of radiation safety.\n\n- **Ion chamber survey meters** collect the charge radiation liberates in a gas volume. Accurate across a wide range of intensities, the ion chamber is the radiographer's standard instrument for measuring **exposure rate** at boundaries and around the exposure device.\n- **Geiger-Müller (GM) counters** run at high voltage so a single ionizing event triggers a full discharge — extremely sensitive, fast, and audible. The caution every radiographer learns: in a very intense field a GM tube can **saturate and read low or near zero**, a potentially lethal failure mode if it is the only instrument in hand.\n- **Scintillation detectors** (a sodium iodide crystal coupled to a photomultiplier) are the most sensitive of all — the instrument for low-level surveys and for hunting a lost or disconnected source.\n- **Personal dosimetry** records what the *person* received. A passive **film badge, TLD, or OSL badge** is the legal dose of record, exchanged and processed periodically. A **direct-reading pocket dosimeter** (typically 0–200 mR) is read and logged daily. An **electronic alarming ratemeter** chirps faster as the field climbs and alarms at a set threshold.\n\nFor industrial radiography, U.S. NRC rules (10 CFR 34) require the radiographer to wear **all three at once** — badge, direct-reading dosimeter, and operating alarming ratemeter — and to keep a calibrated, operable survey meter at the job. In aerospace shops, RT personnel typically hold a radiation-safety credential such as a state or IRRSP radiographer card *in addition to* their NAS410 or SNT-TC-1A method certification — the two qualifications answer different questions."
+    },
+    {
+      "type": "text",
+      "heading": "The Nature of Penetrating Radiation — and How It Interacts with Matter",
+      "body": "X-rays and gamma rays are **electromagnetic photons**: no mass, no charge, traveling at the speed of light. They differ only in birthplace — X-rays from electron interactions at a target, gamma rays from the nucleus of a decaying isotope. Both are **ionizing**: each photon carries enough energy to strip electrons from atoms, which is simultaneously how images form, how detectors respond, and why tissue is damaged. They travel in straight lines, cannot be focused by ordinary optics, and at industrial energies **do not make the inspected part radioactive**.\n\nA beam crossing matter is attenuated **exponentially**: I = I₀e^(−μt), where the linear attenuation coefficient μ depends on photon energy and on the absorber's density and atomic number. The working shorthand is the **half-value layer (HVL)** — the thickness that cuts intensity in half. Each additional HVL halves it again: three HVLs pass 12.5%, ten pass about 0.1%. One tenth-value layer (TVL) ≈ 3.3 HVL.\n\nThree photon interactions do the attenuating:\n\n- **Photoelectric absorption.** The photon gives *all* its energy to a bound inner-shell electron and vanishes. Probability rises steeply as photon energy falls and as atomic number rises (≈ Z⁴–Z⁵) — the mechanism that makes low-kV radiography high in contrast and makes lead such an efficient shield.\n- **Compton scattering.** The photon strikes a loosely bound electron, surrenders part of its energy to it, and continues in a new direction at lower energy. Dominant in steel across most industrial energies (roughly 0.1 to several MeV), Compton scatter is the fog on the radiograph and the dose around corners — scattered photons go everywhere, not just down the beam line.\n- **Pair production.** A photon of at least **1.022 MeV** passing near a nucleus converts into an electron–positron pair; the positron promptly annihilates into two 0.511 MeV photons. Significant only at MeV energies and high atomic number — the realm of Co-60, linacs, and betatrons.\n\nIn every case the liberated electrons do the actual ionizing along their short tracks. That ionization *is* the dose."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-5-1-fig-b",
+      "caption": "The three attenuation mechanisms. Photoelectric absorption swallows the photon whole at low energies; Compton scattering redirects it at lower energy across the industrial range; pair production opens above 1.022 MeV. The energy axis shows who dominates where."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Time, distance, shielding — the only three levers",
+      "body": "Dose is proportional to **time**: halve the minutes, halve the dose. Dose rate falls with the **square of distance** — I₁d₁² = I₂d₂² — so stepping back from 1 m to 4 m cuts 80 mR/h to 5 mR/h. **Shielding** attenuates exponentially: every half-value layer cuts the field in half. And **ALARA** (As Low As Reasonably Achievable, 10 CFR 20.1101) is not a slogan — it is the regulatory obligation to keep pulling these three levers even when you are already below the limits."
+    },
+    {
+      "type": "text",
+      "heading": "Essentials of Radiation Safety",
+      "body": "Radiation cannot be seen, heard, or felt, and serious overexposures in industrial radiography trace overwhelmingly to one failure: **approaching a source that was assumed — not surveyed — to be shielded.** The protective system stands on units, limits, and discipline.\n\n**Units.** Exposure in air is the **roentgen (R)**. Absorbed dose is the **rad** or **gray** (1 Gy = 100 rad). Dose equivalent — absorbed dose weighted for biological effect — is the **rem** or **sievert** (1 Sv = 100 rem). For X- and gamma radiation the weighting factor is 1, so rad and rem are numerically interchangeable in RT work.\n\n**Limits (10 CFR 20).** Occupational whole-body limit: **5 rem (50 mSv) per year**, with 15 rem to the lens of the eye and 50 rem to the skin and extremities. Members of the public: **0.1 rem (1 mSv) per year**. A declared pregnant worker: 0.5 rem over the gestation period. These are ceilings, not allowances — ALARA governs everything beneath them.\n\n**Discipline (10 CFR 34).** Field radiography is a controlled operation: boundaries are established and posted — a **Radiation Area** where 5 mrem could be received in an hour, a **High Radiation Area** at 100 mrem in an hour — and surveillance is maintained so no one crosses them. Away from a permanent shielded installation, radiography is a **two-person operation**. The radiographer wears the badge, pocket dosimeter, and alarming ratemeter together, and carries a survey meter calibrated at intervals of **six months or less**. And the iron rule of gamma work: **survey the exposure device, the guide tube, and the full crank-back path after every single exposure.** The meter — never the crank handle, never the alarm's silence — is the only proof the source is home."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-5-1-fig-c",
+      "caption": "The inverse square law in working numbers — 80 mR/h at 1 m falls to 20 at 2 m and 5 at 4 m — beside the three levers of exposure control: time, distance, and shielding."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-5-1-fig-a",
+      "title": "How a radiograph forms",
+      "file": "basic-5-1-fig-a.svg"
+    },
+    {
+      "id": "basic-5-1-fig-b",
+      "title": "Radiation interactions with matter",
+      "file": "basic-5-1-fig-b.svg"
+    },
+    {
+      "id": "basic-5-1-fig-c",
+      "title": "Inverse square law and the three levers of exposure control",
+      "file": "basic-5-1-fig-c.svg"
+    }
+  ],
+  "interactive": null,
+  "checkQuestions": [
+    {
+      "question": "The fundamental safety difference between an X-ray machine and a gamma-ray source is that:",
+      "options": [
+        "Gamma sources emit lower-energy radiation than any X-ray machine can produce",
+        "An X-ray tube stops emitting the instant it is de-energized, while a gamma source emits continuously and is controlled only by shielding",
+        "X-ray machines emit discrete photon energies, while gamma sources emit a continuous spectrum",
+        "Gamma sources require external electrical power, while X-ray tubes do not"
+      ],
+      "correct": 1,
+      "explanation": "X-rays exist only while tube current flows — remove the power and emission stops instantly. A radioisotope decays continuously regardless of anything the operator does, so it is controlled only by returning it to its shielded exposure device. The spectra are the reverse of option three: tubes produce a continuous bremsstrahlung spectrum, isotopes discrete energies — and Co-60 at 1.17 and 1.33 MeV out-penetrates a 450 kV tube."
+    },
+    {
+      "question": "Pair production can occur only when the incoming photon energy is at least:",
+      "options": [
+        "1.022 MeV — the energy equivalent of an electron–positron pair",
+        "0.511 MeV — the energy of a single annihilation photon",
+        "100 keV — the threshold where Compton scattering ends",
+        "Any energy, provided the absorber has a high atomic number"
+      ],
+      "correct": 0,
+      "explanation": "Creating an electron–positron pair costs the rest-mass energy of both particles, 2 × 0.511 = 1.022 MeV; the 0.511 MeV figure is what each photon carries after the positron annihilates. Below that threshold, attenuation proceeds only by photoelectric absorption and Compton scattering, no matter the absorber's atomic number."
+    },
+    {
+      "question": "A gamma beam passes through a steel wall three half-value layers thick. The transmitted intensity is approximately:",
+      "options": [
+        "33% of the incident intensity",
+        "25% of the incident intensity",
+        "12.5% of the incident intensity",
+        "3% of the incident intensity"
+      ],
+      "correct": 2,
+      "explanation": "Attenuation is exponential, so each half-value layer halves whatever arrives at it: 100% becomes 50%, then 25%, then 12.5% after the third HVL. Three HVLs do not subtract three halves — they multiply ½ × ½ × ½."
+    },
+    {
+      "question": "The exposure rate 1 m from a gamma source is 80 mR/h. At 4 m from the source it will be approximately:",
+      "options": [
+        "20 mR/h",
+        "40 mR/h",
+        "10 mR/h",
+        "5 mR/h"
+      ],
+      "correct": 3,
+      "explanation": "The inverse square law, I₁d₁² = I₂d₂²: quadrupling the distance spreads the same radiation over sixteen times the area, so 80 mR/h ÷ 16 = 5 mR/h. Distance is the cheapest shield on any job site — 20 mR/h would be the answer at 2 m, not 4 m."
+    },
+    {
+      "question": "Under 10 CFR 34, an industrial radiographer operating a gamma exposure device must wear, at the same time:",
+      "options": [
+        "A film badge or TLD/OSL badge only — the legal dose of record",
+        "A combination of a personnel dosimeter (film, TLD, or OSL badge), a direct-reading pocket dosimeter, and an operating alarming ratemeter",
+        "A direct-reading pocket dosimeter and an alarming ratemeter, with the badge optional",
+        "A calibrated survey meter clipped to the belt in place of personal dosimetry"
+      ],
+      "correct": 1,
+      "explanation": "Each device covers a different failure: the badge is the legal record but is processed later; the pocket dosimeter is read and logged daily; the alarming ratemeter warns in real time before an overexposure accumulates. All three are worn together — and the survey meter is required at the job in addition to, never instead of, personal dosimetry."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §2.7.1 (RT fundamentals: sources, imaging and nonimaging detectors, nature of penetrating radiation and interactions with matter, essentials of safety)",
+    "ASTM E94/E94M, Standard Guide for Radiographic Examination Using Industrial Radiographic Film (source selection, film density ranges, intensifying screens)",
+    "ASTM E1815, Standard Test Method for Classification of Film Systems for Industrial Radiography",
+    "U.S. NRC, 10 CFR Part 20, Standards for Protection Against Radiation, and 10 CFR Part 34, Licenses for Industrial Radiography (dose limits, ALARA, personnel monitoring, survey requirements)"
+  ]
+}

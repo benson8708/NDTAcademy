@@ -1,0 +1,91 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="32" text-anchor="middle" font-size="23" font-weight="bold" fill="#0B1F3A">Reading AE Results: Activity, Intensity, Location</text>
+  <text x="400" y="55" text-anchor="middle" font-size="15" fill="#1E66F5">a stable structure falls silent at constant load &#8212; an active one keeps talking</text>
+
+  <!-- left panel: cumulative emission vs load schedule -->
+  <rect x="30" y="75" width="380" height="305" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="220" y="99" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">cumulative emission vs load schedule</text>
+
+  <!-- axes -->
+  <line x1="62" y1="115" x2="62" y2="350" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="62" y1="350" x2="392" y2="350" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="50" y="240" text-anchor="middle" font-size="12" fill="#0B1F3A" transform="rotate(-90 50 240)">cumulative counts</text>
+  <text x="227" y="368" text-anchor="middle" font-size="12" fill="#0B1F3A">time</text>
+
+  <!-- load schedule staircase -->
+  <polyline fill="none" stroke="#9BC4FF" stroke-width="3" points="62,340 122,300 182,300 242,260 302,260 362,220"/>
+  <text x="375" y="222" font-size="11" fill="#1E66F5">load</text>
+  <line x1="122" y1="300" x2="122" y2="356" stroke="#9BC4FF" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="182" y1="300" x2="182" y2="356" stroke="#9BC4FF" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="242" y1="260" x2="242" y2="356" stroke="#9BC4FF" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="302" y1="260" x2="302" y2="356" stroke="#9BC4FF" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="152" y="345" text-anchor="middle" font-size="11" font-style="italic" fill="#1E66F5">hold 1</text>
+  <text x="272" y="345" text-anchor="middle" font-size="11" font-style="italic" fill="#1E66F5">hold 2</text>
+
+  <!-- sound structure curve: flat during holds -->
+  <polyline fill="none" stroke="#0B1F3A" stroke-width="2.5" points="62,338 122,318 182,318 242,296 302,296 362,272"/>
+  <text x="368" y="276" font-size="11" font-weight="bold" fill="#0B1F3A">sound</text>
+
+  <!-- active source curve: climbs through holds, accelerates -->
+  <polyline fill="none" stroke="#1E66F5" stroke-width="2.5" stroke-dasharray="7,4" points="62,336 122,308 182,284 242,248 302,200 362,134"/>
+  <text x="368" y="136" font-size="11" font-weight="bold" fill="#1E66F5">active</text>
+
+  <!-- annotation: hold emission -->
+  <line x1="272" y1="160" x2="272" y2="218" stroke="#1E66F5" stroke-width="1.5"/>
+  <text x="252" y="138" font-size="12" font-weight="bold" fill="#1E66F5">emission through the hold</text>
+  <text x="252" y="153" font-size="12" fill="#1E66F5">= active damage</text>
+
+  <!-- right panel: location clustering -->
+  <rect x="430" y="75" width="340" height="305" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="600" y="99" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">located events on the vessel</text>
+
+  <!-- vessel shell -->
+  <rect x="455" y="150" width="290" height="110" rx="46" fill="#9BC4FF" fill-opacity="0.3" stroke="#0B1F3A" stroke-width="2.5"/>
+  <!-- nozzle -->
+  <rect x="618" y="124" width="34" height="28" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="676" y="120" font-size="12" fill="#0B1F3A">nozzle weld</text>
+
+  <!-- sensors -->
+  <rect x="487" y="144" width="22" height="12" fill="#0B1F3A"/>
+  <rect x="557" y="144" width="22" height="12" fill="#0B1F3A"/>
+  <rect x="687" y="144" width="22" height="12" fill="#0B1F3A"/>
+  <rect x="487" y="254" width="22" height="12" fill="#0B1F3A"/>
+  <rect x="687" y="254" width="22" height="12" fill="#0B1F3A"/>
+  <text x="498" y="139" text-anchor="middle" font-size="11" fill="#0B1F3A">S1</text>
+  <text x="568" y="139" text-anchor="middle" font-size="11" fill="#0B1F3A">S2</text>
+  <text x="698" y="139" text-anchor="middle" font-size="11" fill="#0B1F3A">S3</text>
+  <text x="498" y="280" text-anchor="middle" font-size="11" fill="#0B1F3A">S4</text>
+  <text x="698" y="280" text-anchor="middle" font-size="11" fill="#0B1F3A">S5</text>
+
+  <!-- cluster at nozzle -->
+  <circle cx="630" cy="170" r="4" fill="#1E66F5"/>
+  <circle cx="638" cy="178" r="4" fill="#1E66F5"/>
+  <circle cx="626" cy="182" r="4" fill="#1E66F5"/>
+  <circle cx="634" cy="190" r="4" fill="#1E66F5"/>
+  <circle cx="642" cy="168" r="4" fill="#1E66F5"/>
+  <circle cx="622" cy="172" r="4" fill="#1E66F5"/>
+  <circle cx="636" cy="160" r="4" fill="#1E66F5"/>
+  <circle cx="628" cy="196" r="4" fill="#1E66F5"/>
+  <circle cx="644" cy="184" r="4" fill="#1E66F5"/>
+  <circle cx="618" cy="188" r="4" fill="#1E66F5"/>
+
+  <!-- scattered singles -->
+  <circle cx="500" cy="210" r="3" fill="#9BC4FF"/>
+  <circle cx="540" cy="235" r="3" fill="#9BC4FF"/>
+  <circle cx="590" cy="225" r="3" fill="#9BC4FF"/>
+  <circle cx="710" cy="215" r="3" fill="#9BC4FF"/>
+  <circle cx="660" cy="240" r="3" fill="#9BC4FF"/>
+
+  <!-- annotations -->
+  <line x1="630" y1="200" x2="588" y2="240" stroke="#1E66F5" stroke-width="1.5"/>
+  <text x="560" y="258" text-anchor="middle" font-size="12" font-weight="bold" fill="#1E66F5">repeating cluster</text>
+  <text x="520" y="305" font-size="12" fill="#0B1F3A">scattered singles &#8212; filtered or low grade</text>
+
+  <rect x="455" y="320" width="290" height="44" rx="4" fill="#0B1F3A"/>
+  <text x="600" y="338" text-anchor="middle" font-size="13" font-weight="bold" fill="#FFFFFF">zone grade: follow-up required</text>
+  <text x="600" y="356" text-anchor="middle" font-size="12" fill="#9BC4FF">UT goes to the located cluster to size it</text>
+
+  <text x="400" y="412" text-anchor="middle" font-size="14" fill="#1E66F5">activity = how often &#183; intensity = how strong &#183; location = where &#8212; judged against the code's criteria</text>
+  <text x="400" y="438" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">AE locates and grades active sources &#8212; follow-up NDT sizes them</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Proving the Technique: QQI Shim + Hall Probe</text>
+
+  <!-- part surface (top view) -->
+  <rect x="60" y="150" width="460" height="220" rx="14" fill="#D9E0E8" stroke="#0A2342" stroke-width="3"/>
+  <text x="100" y="352" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#5A6B7E">PART SURFACE (top view)</text>
+
+  <!-- flux direction arrows across part -->
+  <line x1="90" y1="190" x2="200" y2="190" stroke="#1B82E8" stroke-width="3"/>
+  <polygon points="200,183 216,190 200,197" fill="#1B82E8"/>
+  <line x1="90" y1="330" x2="200" y2="330" stroke="#1B82E8" stroke-width="3"/>
+  <polygon points="200,323 216,330 200,337" fill="#1B82E8"/>
+  <text x="148" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">Flux direction</text>
+
+  <!-- QQI shim -->
+  <rect x="250" y="210" width="100" height="100" rx="6" fill="#E8F1FB" stroke="#0A2342" stroke-width="2.5"/>
+  <!-- etched circle and cross notches -->
+  <circle cx="300" cy="260" r="28" fill="none" stroke="#5A6B7E" stroke-width="3"/>
+  <line x1="272" y1="260" x2="328" y2="260" stroke="#5A6B7E" stroke-width="3"/>
+  <line x1="300" y1="232" x2="300" y2="288" stroke="#5A6B7E" stroke-width="3"/>
+  <!-- particle bloom on segments perpendicular to flux: vertical bar + circle arcs facing flux -->
+  <line x1="300" y1="234" x2="300" y2="286" stroke="#1E9E6A" stroke-width="6"/>
+  <path d="M 300 232 A 28 28 0 0 1 300 288" fill="none" stroke="#1E9E6A" stroke-width="5"/>
+  <path d="M 300 232 A 28 28 0 0 0 300 288" fill="none" stroke="#1E9E6A" stroke-width="5"/>
+  <!-- tape corners -->
+  <rect x="242" y="200" width="36" height="16" rx="3" fill="#F2A33C" transform="rotate(-35 260 208)"/>
+  <rect x="322" y="200" width="36" height="16" rx="3" fill="#F2A33C" transform="rotate(35 340 208)"/>
+  <rect x="242" y="304" width="36" height="16" rx="3" fill="#F2A33C" transform="rotate(35 260 312)"/>
+  <rect x="322" y="304" width="36" height="16" rx="3" fill="#F2A33C" transform="rotate(-35 340 312)"/>
+
+  <!-- shim labels -->
+  <line x1="300" y1="210" x2="330" y2="118" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="336" y="112" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">QQI artificial-flaw shim,</text>
+  <text x="336" y="132" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">notch side DOWN against part</text>
+  <line x1="300" y1="262" x2="208" y2="262" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="202" y="250" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#1E9E6A">Notches crossing the flux</text>
+  <text x="202" y="270" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#1E9E6A">bloom = field adequate</text>
+  <text x="202" y="290" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#1E9E6A">at THIS location</text>
+
+  <!-- Hall probe -->
+  <rect x="430" y="226" width="16" height="84" rx="5" fill="#0A2342" transform="rotate(28 438 268)"/>
+  <line x1="416" y1="306" x2="404" y2="318" stroke="#0A2342" stroke-width="4"/>
+  <text x="470" y="328" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Hall probe flat on surface,</text>
+  <text x="470" y="348" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">sensing tangential field</text>
+
+  <!-- gaussmeter -->
+  <rect x="560" y="120" width="190" height="130" rx="10" fill="#0A2342"/>
+  <rect x="578" y="140" width="154" height="56" rx="6" fill="#E8F1FB"/>
+  <text x="655" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="#0A2342">42 G</text>
+  <text x="655" y="226" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF">Hall-effect gaussmeter</text>
+  <!-- cable from meter to probe -->
+  <path d="M 560 200 Q 480 220 452 240" fill="none" stroke="#5A6B7E" stroke-width="4"/>
+
+  <!-- target window note -->
+  <rect x="560" y="268" width="190" height="64" rx="8" fill="#FFFFFF" stroke="#1B82E8" stroke-width="2.5"/>
+  <text x="655" y="294" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">Typical target window:</text>
+  <text x="655" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">30–60 G tangential</text>
+
+  <!-- bottom note -->
+  <rect x="60" y="396" width="690" height="40" rx="6" fill="#0A2342"/>
+  <text x="405" y="413" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF">Validate at worst-case locations — fillets, section changes, coil-shot ends —</text>
+  <text x="405" y="431" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#F2A33C">then record the demonstrated values with tolerances</text>
+</svg>

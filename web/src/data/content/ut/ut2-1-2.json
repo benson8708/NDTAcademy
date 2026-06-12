@@ -1,0 +1,176 @@
+{
+ "lessonId": "ut2-1-2",
+ "title": "Equipment Review: A-scan, B-scan, C-scan, and Computerized Systems",
+ "narrationScript": "Every ultrasonic display you will ever read is built from the same chain of hardware, so let's walk that chain once, cleanly, and then look at the three ways the data gets presented. It starts with the pulser. The pulser fires a short electrical kick into the transducer, either a spike or a square wave, and the square wave type lets you tune the pulse width to the probe for more energy. The crystal rings, sound goes into the part, and whatever comes back is converted to a small voltage. The receiver amplifies that voltage, and the gain control is marked in decibels because amplitude evaluation is a ratio game. Six decibels is a factor of two in amplitude. Twenty decibels is a factor of ten. Filters clean the signal, and rectification folds the radio frequency waveform into the familiar envelope. Keep one distinction straight. The unrectified display preserves phase, the positive and negative swing of the wave, and some sizing and diffraction techniques depend on it. The rectified display is easier to read for everyday amplitude work. Gates watch a chosen slice of the time base and report what happens inside it, an amplitude, a time of flight, an alarm. And the pulse repetition frequency decides how many times per second the whole cycle runs. Set it too high on a long sound path and echoes from the previous pulse are still in flight when the next one fires. They land on the screen at meaningless positions. Those are wrap around ghosts, and the test is simple. Change the repetition rate, and the ghost moves while every honest echo stays put. Now the displays. The A-scan is the waveform itself, amplitude on the vertical axis and time on the horizontal, at one probe position. It is the evaluation workhorse. Depth comes from echo time multiplied by velocity, halved for the round trip. Size and severity judgments come from amplitude against a reference, like a distance amplitude correction curve. The way an echo rises and falls as you sweep the probe, the echo dynamics, tells you about the reflector's shape. Almost every accept or reject decision in conventional ultrasonics is made on an A-scan. The B-scan stacks A-scans collected along one line of travel into a cross section, depth on one axis and probe position on the other. Think of it as a slice through the part. Corrosion survey crews live on it, because it draws the remaining wall profile along a pipe in one image. Its blind spot is shadowing. The first reflector the beam meets intercepts the energy, so anything directly beneath it may simply not appear. The C-scan takes a different cut entirely. The probe rasters over an area, a gate grabs one value at each position, amplitude or time of flight, and the system paints that value on a plan view map, like looking down at the part from above. Composite skins, bonded panels, plate scanning, anywhere you need the footprint and area of a flaw documented, the C-scan is the answer. Remember what it is not. A single C-scan pixel holds only what the gate captured, so the image is only as honest as the gate settings, and depth information is gone unless you gated time of flight. Behind all three sits the computerized system. The signal path runs from the probe through the pulser and receiver into an analog to digital converter, which samples the waveform several times faster than the probe frequency so the digits faithfully represent the analog reality. An encoder, a wheel or an arm or a motorized axis, stamps every A-scan with the position where it was collected. Software applies the gates, builds the images, and stores the raw waveforms. That storage changes the job. With full waveform capture you can re-gate and re-analyze the data after the scan, long after the part has shipped, and an auditor can replay exactly what you saw. But computers add their own failure modes. If the encoder slips, the geometry of every image is wrong. If coupling drops out mid scan, you get blank lines that must be flagged and rescanned, not ignored. Data quality checks are part of the examination, not an afterthought. So when you choose a display, you are really choosing a question. What is this echo, at this spot. Ask the A-scan. How deep does the damage run along this line. Ask the B-scan. How much area does it cover. Ask the C-scan. And whichever image you start from, the final evaluation call almost always comes back to the waveform.",
+ "imagePrompt": "An inspector studies a color-coded corrosion map on a rugged laptop wired to a motorized ultrasonic scanner crawling across a large steel plate inside a fabrication shop.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Chain Behind Every Display",
+   "body": "Every UT image — waveform, cross-section, or map — is produced by the same instrument chain, and evaluation starts with knowing what each block does to your data.\n\n- **Pulser** — fires a short electrical excitation (spike or tunable square wave) into the element. Pulse energy and damping settings trade penetration against resolution.\n- **Receiver** — amplifies returning signals; **gain is in dB** (6 dB = 2× amplitude, 20 dB = 10×). Filters shape bandwidth; rectification converts the RF waveform to a display envelope.\n- **Gates** — monitor a chosen slice of the time base and output amplitude, time-of-flight, or alarms. Everything a B- or C-scan records passes through a gate first.\n- **PRF (pulse repetition frequency)** — how often the cycle fires. Too high on a long sound path and echoes from the *previous* pulse are still in flight, landing as **wrap-around ghosts** at false ranges. Vary the PRF: ghosts move, real echoes stay.\n\nInstrument health is part of equipment knowledge: **vertical linearity** (amplitude ratios hold as gain changes) and **horizontal linearity** (equal distances display equally) are verified periodically, and the **reject** control is kept off for amplitude work because it distorts vertical linearity."
+  },
+  {
+   "type": "text",
+   "heading": "A-scan: The Evaluation Workhorse",
+   "body": "The **A-scan** plots echo amplitude (vertical) against time (horizontal) at a single probe position. It is the native language of conventional UT, and nearly every accept/reject decision is made on it.\n\nWhat it gives you:\n\n- **Depth/position** — echo time × velocity ÷ 2, once the range is standardized.\n- **Amplitude versus a reference** — percent of full screen height compared against a DAC curve or reference level, the basis of most code evaluations.\n- **Echo dynamics** — how the signal rises, holds, and falls as the probe sweeps tells a trained eye whether the reflector is point-like, planar, or multi-faceted.\n- **Waveform character** — a clean single peak versus a ragged cluster separates geometry from porosity fields more reliably than amplitude alone.\n\nChoose the right presentation of it, too: the **RF (unrectified)** display preserves phase — needed for diffraction-based sizing and useful near the dead zone — while the **full-wave rectified** display is the everyday choice for amplitude reading. The A-scan's limitation is obvious: it shows one position at a time, and it leaves no map unless you record it."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-1-2-fig-a",
+   "caption": "The same mid-wall flaw presented three ways: waveform at one position (A-scan), cross-section along the scan line (B-scan), and plan-view map of gated data (C-scan)."
+  },
+  {
+   "type": "text",
+   "heading": "B-scan: The Cross-Section",
+   "body": "Stack A-scans collected along one line of travel and you get a **B-scan**: probe position on one axis, depth (time) on the other — a slice through the part as if it were cut open along the scan line.\n\nIt needs **position encoding** to be honest; without an encoder the horizontal axis is just elapsed time and the geometry is guesswork. With encoding, the B-scan excels at:\n\n- **Corrosion mapping** — the remaining-wall profile of a pipe or tank course drawn in one image, with pit depth read directly.\n- **Lamination profiling** — how deep a lamination sits and how it undulates along a plate.\n- **Flaw length and depth extent** along the scan direction.\n\nIts structural weakness is **shadowing**: the beam reports the *first* reflector it meets, so a shallow lamination can hide deeper pitting directly beneath it, and a large flaw can mask a second one below. Image resolution is set by the sample spacing along the scan and by beam width — a coarse step can skip a narrow pit entirely."
+  },
+  {
+   "type": "text",
+   "heading": "C-scan: The Plan View",
+   "body": "The **C-scan** rasters the probe over an area — mechanically in an immersion tank, or with an encoded manual scanner — and paints one gated value per X-Y position: a plan-view map, as if looking down on the part.\n\nTwo flavors dominate. An **amplitude C-scan** maps the gated echo (or through-signal) strength — the standard for disbonds, delaminations, and porosity in composites and bonded panels. A **time-of-flight C-scan** maps depth — the standard for corrosion floors and thickness surveys.\n\nThe discipline is in the gate: **the image shows only what the gate captured.** A gate set too shallow misses deep flaws; one parked on the back wall hides mid-wall reflectors; a threshold set high erases weak but real indications. Index step (line spacing) sets coverage — a step wider than the effective beam leaves unscanned stripes between lines.\n\nThe C-scan's strengths are area coverage, intuitive reporting, and repeatability for periodic comparison. Its limit: a pixel is one number, not a waveform — so confirmation and final evaluation of anything the map flags happens back on the A-scan."
+  },
+  {
+   "type": "table",
+   "caption": "Choosing the display format for the evaluation question at hand.",
+   "headers": ["Display", "Axes", "What is recorded", "Strongest at", "Watch out for"],
+   "rows": [
+    ["A-scan", "Amplitude vs time", "Full live waveform at one spot", "Accept/reject evaluation, depth, echo dynamics", "No map; operator must be present or record it"],
+    ["B-scan", "Depth vs position along a line", "Gated/stacked A-scans with encoder position", "Corrosion profiles, lamination depth along a line", "Shadowing by the first reflector; step size gaps"],
+    ["C-scan", "Plan view over an area", "One gated value (amplitude or TOF) per X-Y point", "Areal extent, disbond/porosity mapping, records", "Gate and threshold hide what they are not set for"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Computerized Systems: Data Flow and Data Integrity",
+   "body": "Modern acquisition systems wrap that chain in digital electronics, and a Level II should be able to narrate the **data flow** from crystal to image:\n\n1. **Probe → pulser/receiver** — analog excitation and amplification, as always.\n2. **Analog-to-digital converter** — samples the waveform; the digitizing rate must be several times the probe frequency or amplitudes and times are misrepresented.\n3. **Encoder input** — a wheel, arm, or motorized axis stamps each A-scan with its collection position.\n4. **Software gating and imaging** — gates applied in software build B- and C-scans in real time.\n5. **Storage** — full raw A-scans, plus calibration, velocity, and gate metadata.\n\nFull-waveform storage is the quiet revolution: data can be **re-gated and re-analyzed offline**, second-guessed by a Level III, and replayed for an auditor years later.\n\nComputers also add failure modes the analog world never had: encoder slip corrupting image geometry, **coupling dropouts** leaving blank scan lines, files saved over the wrong calibration. Production systems run coupling monitors and missed-line alarms — and procedure-driven data-quality review (coverage complete, no dead lines, encoder verified against a known distance) is part of the examination record, not an optional extra."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-1-2-fig-b",
+   "caption": "Data flow in a computerized UT system, from probe to digitizer to position-stamped storage and the rendered displays."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Same data, three questions",
+   "body": "Pick the display by the question, not by habit. *What is this echo at this spot?* — **A-scan**. *How deep does it run along this line?* — **B-scan**. *How much area does it cover?* — **C-scan**. And whatever the map shows, the final accept/reject evaluation comes back to the waveform — confirm every C-scan indication on the A-scan before you write it down."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-1-2-fig-a",
+   "title": "One flaw, three displays",
+   "file": "ut2-1-2-fig-a.svg"
+  },
+  {
+   "id": "ut2-1-2-fig-b",
+   "title": "Computerized UT system data flow",
+   "file": "ut2-1-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Right Display for the Job",
+  "intro": "Classify each evaluation task under the display format that answers it most directly.",
+  "buckets": ["A-scan", "B-scan", "C-scan"],
+  "items": [
+   {
+    "label": "Compare an echo's height against the DAC curve",
+    "bucket": 0,
+    "why": "Amplitude evaluation against a reference happens on the live waveform at the probe position."
+   },
+   {
+    "label": "Measure flaw depth from echo time at one location",
+    "bucket": 0,
+    "why": "Time-to-depth conversion is read directly off the A-scan time base."
+   },
+   {
+    "label": "Judge a reflector's character from how its echo rises and falls during a sweep",
+    "bucket": 0,
+    "why": "Echo dynamics are a live waveform behavior — pure A-scan work."
+   },
+   {
+    "label": "Draw the remaining-wall profile along one line of a corroded pipe",
+    "bucket": 1,
+    "why": "Depth versus position along a scan line is exactly the B-scan cross-section."
+   },
+   {
+    "label": "Show how deep a lamination undulates across a plate width",
+    "bucket": 1,
+    "why": "A depth profile along a traverse is a cross-sectional — B-scan — presentation."
+   },
+   {
+    "label": "Map the plan-view footprint of a disbond in a bonded panel",
+    "bucket": 2,
+    "why": "Areal mapping of gated data over an X-Y raster is the C-scan's defining job."
+   },
+   {
+    "label": "Report what percentage of a composite skin's area shows porosity",
+    "bucket": 2,
+    "why": "Area statistics come from the plan-view map — an amplitude C-scan."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Which display presentation preserves the phase (positive/negative swing) of the received signal?",
+   "options": [
+    "RF (unrectified) A-scan",
+    "Full-wave rectified A-scan",
+    "Amplitude C-scan",
+    "Encoded B-scan"
+   ],
+   "correct": 0,
+   "explanation": "Rectification folds the waveform into an envelope and discards phase. The RF display keeps the true positive/negative signal, which diffraction-based and near-surface techniques rely on."
+  },
+  {
+   "question": "A C-scan image is built from:",
+   "options": [
+    "One gated value — amplitude or time-of-flight — recorded at each X-Y position",
+    "The entire unrectified waveform displayed simultaneously",
+    "A single averaged A-scan for the whole part",
+    "The encoder's error signal plotted over the part"
+   ],
+   "correct": 0,
+   "explanation": "At every raster position the gate captures one number, and the system paints it on a plan-view map. The image is only as honest as the gate settings that fed it."
+  },
+  {
+   "question": "An indication appears at an impossible range on a long forging. When you change the pulse repetition frequency, it shifts position; real echoes do not move. It is:",
+   "options": [
+    "A wrap-around ghost — echoes from the previous pulse arriving after the next one fired",
+    "A mode-converted Rayleigh wave",
+    "A near-field interference lobe",
+    "Receiver saturation"
+   ],
+   "correct": 0,
+   "explanation": "When PRF is too high for the sound path, late echoes from pulse N display against pulse N+1's time base. Changing PRF moves only these ghosts — the standard diagnostic."
+  },
+  {
+   "question": "In a B-scan of corroded plate, a shallow lamination lies directly above a region of deep pitting. The B-scan will most likely:",
+   "options": [
+    "Show the lamination but hide the pitting beneath it, because the first reflector shadows what is below",
+    "Show both with equal clarity",
+    "Show only the pitting, because deeper reflectors dominate",
+    "Average the two into one mid-depth indication"
+   ],
+   "correct": 0,
+   "explanation": "The beam reports the first boundary it meets; energy never reaches what lies in that reflector's shadow. Shadowing is the B-scan's structural blind spot and must be considered during evaluation."
+  },
+  {
+   "question": "If the position encoder fails during a computerized scan, the system can still record:",
+   "options": [
+    "A-scans, but with no valid B- or C-scan geometry, because waveforms are no longer position-stamped",
+    "A perfect C-scan from interpolation",
+    "Nothing at all — acquisition stops automatically on every system",
+    "B-scans only, since they need no position data"
+   ],
+   "correct": 0,
+   "explanation": "Waveform capture is independent of position, but B- and C-scan images are built by pairing each A-scan with an encoder position. No encoder, no trustworthy image geometry."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Evaluation Course §1.2 (equipment), §1.2.1–1.2.4 (A-scan, B-scan, C-scan, computerized systems)",
+  "Codes such as ASME BPVC Section V, Article 4 (instrument linearity verification, screen height evaluation)",
+  "General instrument practice: 6 dB = 2× amplitude; 20 dB = 10× amplitude"
+ ]
+}

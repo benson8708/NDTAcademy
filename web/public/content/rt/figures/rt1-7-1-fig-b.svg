@@ -1,0 +1,77 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#0A2342">Inherent Unsharpness: Electron Range Blurs the Edge</text>
+
+  <!-- LEFT: emulsion cross-section -->
+  <!-- part edge above -->
+  <rect x="210" y="56" width="180" height="34" fill="#5A6B7E"/>
+  <text x="300" y="79" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#FFFFFF">part (sharp edge)</text>
+
+  <!-- radiation arrows (open beam left of edge) -->
+  <line x1="90" y1="62" x2="90" y2="180" stroke="#F2A33C" stroke-width="3"/>
+  <polygon points="84,178 90,192 96,178" fill="#F2A33C"/>
+  <line x1="130" y1="62" x2="130" y2="180" stroke="#F2A33C" stroke-width="3"/>
+  <polygon points="124,178 130,192 136,178" fill="#F2A33C"/>
+  <line x1="170" y1="62" x2="170" y2="180" stroke="#F2A33C" stroke-width="3"/>
+  <polygon points="164,178 170,192 176,178" fill="#F2A33C"/>
+  <text x="118" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#F2A33C">radiation</text>
+
+  <!-- true edge dashed line -->
+  <line x1="210" y1="90" x2="210" y2="300" stroke="#0A2342" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="218" y="120" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">true edge of shadow</text>
+
+  <!-- emulsion + base -->
+  <rect x="40" y="200" width="360" height="56" fill="#E8F1FB" stroke="#0A2342" stroke-width="2"/>
+  <rect x="40" y="256" width="360" height="26" fill="#D9E0E8" stroke="#0A2342" stroke-width="2"/>
+  <text x="34" y="232" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">emulsion</text>
+  <text x="34" y="275" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">base</text>
+
+  <!-- exposed grains (dark) left of edge, fading past edge -->
+  <circle cx="70" cy="218" r="5" fill="#0A2342"/>
+  <circle cx="100" cy="238" r="5" fill="#0A2342"/>
+  <circle cx="128" cy="216" r="5" fill="#0A2342"/>
+  <circle cx="155" cy="240" r="5" fill="#0A2342"/>
+  <circle cx="182" cy="220" r="5" fill="#0A2342"/>
+  <circle cx="205" cy="240" r="5" fill="#0A2342"/>
+  <circle cx="224" cy="218" r="5" fill="#5A6B7E"/>
+  <circle cx="240" cy="240" r="5" fill="#8FA2B5"/>
+  <circle cx="256" cy="220" r="5" fill="#B8C5D2"/>
+  <circle cx="300" cy="238" r="5" fill="#D9E0E8" stroke="#5A6B7E" stroke-width="1"/>
+  <circle cx="340" cy="220" r="5" fill="#D9E0E8" stroke="#5A6B7E" stroke-width="1"/>
+  <circle cx="375" cy="240" r="5" fill="#D9E0E8" stroke="#5A6B7E" stroke-width="1"/>
+
+  <!-- electron track spreading past edge -->
+  <polyline points="198,200 212,214 226,210 242,226 258,222" fill="none" stroke="#1B82E8" stroke-width="2.5"/>
+  <polygon points="254,216 266,224 252,230" fill="#1B82E8"/>
+  <text x="262" y="206" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">electron range</text>
+  <text x="262" y="186" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#1B82E8">exposes grains past the edge</text>
+
+  <!-- density profile under section -->
+  <line x1="40" y1="396" x2="400" y2="396" stroke="#5A6B7E" stroke-width="2"/>
+  <polyline points="40,316 210,316 210,388 400,388" fill="none" stroke="#5A6B7E" stroke-width="2" stroke-dasharray="6 4"/>
+  <path d="M 40 316 L 170 316 C 210 318, 215 384, 260 388 L 400 388" fill="none" stroke="#1B82E8" stroke-width="3"/>
+  <text x="46" y="336" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">ideal step</text>
+  <text x="266" y="370" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">actual: smeared over Ui</text>
+  <text x="40" y="420" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">film density across the edge</text>
+
+  <!-- RIGHT: Ui vs energy bar chart -->
+  <text x="615" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#0A2342">Ui grows with energy (mm)</text>
+  <line x1="450" y1="360" x2="780" y2="360" stroke="#5A6B7E" stroke-width="2"/>
+
+  <rect x="470" y="327" width="55" height="33" fill="#1B82E8"/>
+  <rect x="548" y="294" width="55" height="66" fill="#1B82E8"/>
+  <rect x="626" y="248" width="55" height="112" fill="#F2A33C"/>
+  <rect x="704" y="130" width="55" height="230" fill="#D14343"/>
+
+  <text x="497" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">0.05</text>
+  <text x="575" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">0.10</text>
+  <text x="653" y="239" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">0.17</text>
+  <text x="731" y="121" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">0.35</text>
+
+  <text x="497" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">100 kV</text>
+  <text x="575" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">300 kV</text>
+  <text x="653" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Ir-192</text>
+  <text x="731" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Co-60</text>
+
+  <text x="615" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" font-weight="bold" fill="#0A2342">Ut ≈ √(Ug² + Ui²)</text>
+</svg>

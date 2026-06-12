@@ -1,0 +1,54 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#0A2342"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">Computerized UT: Data Flow</text>
+
+  <!-- row 1 blocks -->
+  <rect x="50" y="100" width="150" height="60" rx="8" fill="#E8F1FB"/>
+  <text x="125" y="136" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Transducer</text>
+
+  <rect x="240" y="100" width="170" height="60" rx="8" fill="#E8F1FB"/>
+  <text x="325" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Pulser /</text>
+  <text x="325" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Receiver</text>
+
+  <rect x="450" y="100" width="150" height="60" rx="8" fill="#E8F1FB"/>
+  <text x="525" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">A/D converter</text>
+  <text x="525" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">(digitizer)</text>
+
+  <rect x="640" y="100" width="140" height="60" rx="8" fill="#E8F1FB"/>
+  <text x="710" y="126" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Gates +</text>
+  <text x="710" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">software</text>
+
+  <!-- row1 arrows -->
+  <line x1="200" y1="130" x2="232" y2="130" stroke="#1B82E8" stroke-width="3"/>
+  <polygon points="240,130 228,124 228,136" fill="#1B82E8"/>
+  <line x1="410" y1="130" x2="442" y2="130" stroke="#1B82E8" stroke-width="3"/>
+  <polygon points="450,130 438,124 438,136" fill="#1B82E8"/>
+  <line x1="600" y1="130" x2="632" y2="130" stroke="#1B82E8" stroke-width="3"/>
+  <polygon points="640,130 628,124 628,136" fill="#1B82E8"/>
+
+  <!-- encoder feeding software -->
+  <rect x="240" y="210" width="170" height="55" rx="8" fill="#E8F1FB"/>
+  <text x="325" y="243" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Position encoder</text>
+  <polyline points="410,237 560,237 560,150 630,150" fill="none" stroke="#F2A33C" stroke-width="3"/>
+  <polygon points="640,150 628,144 628,156" fill="#F2A33C"/>
+  <text x="430" y="228" font-family="Arial, sans-serif" font-size="16" fill="#F2A33C">position stamp</text>
+
+  <!-- storage and displays -->
+  <rect x="640" y="210" width="140" height="60" rx="8" fill="#E8F1FB"/>
+  <text x="710" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Raw A-scan</text>
+  <text x="710" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">archive</text>
+  <line x1="710" y1="160" x2="710" y2="202" stroke="#1B82E8" stroke-width="3"/>
+  <polygon points="710,210 704,198 716,198" fill="#1B82E8"/>
+
+  <rect x="640" y="320" width="140" height="60" rx="8" fill="#E8F1FB"/>
+  <text x="710" y="346" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">A &#183; B &#183; C</text>
+  <text x="710" y="368" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">displays</text>
+  <line x1="710" y1="270" x2="710" y2="312" stroke="#1B82E8" stroke-width="3"/>
+  <polygon points="710,320 704,308 716,308" fill="#1B82E8"/>
+
+  <!-- notes -->
+  <text x="50" y="330" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">&#8226; Digitize at several times the probe frequency</text>
+  <text x="50" y="358" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">&#8226; Every A-scan stored with position + calibration metadata</text>
+  <text x="50" y="386" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">&#8226; Re-gate and re-analyze offline; auditors can replay the scan</text>
+  <text x="50" y="414" font-family="Arial, sans-serif" font-size="16" fill="#F2A33C">&#8226; Encoder slip or coupling dropout corrupts the images &#8212; check data quality</text>
+</svg>

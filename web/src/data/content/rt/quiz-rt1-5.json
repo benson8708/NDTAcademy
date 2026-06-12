@@ -1,0 +1,95 @@
+{
+ "moduleId": "rt1-5",
+ "questions": [
+  {
+   "question": "The dose rate is 120 mR/h at 5 feet from an exposed source. Ignoring scatter, the rate at 10 feet is about:",
+   "options": ["240 mR/h", "60 mR/h", "30 mR/h", "15 mR/h"],
+   "correct": 2,
+   "explanation": "Doubling the distance cuts the rate by 2² = 4: 120 ÷ 4 = 30 mR/h. Inverse square: I₁d₁² = I₂d₂²."
+  },
+  {
+   "question": "Using the rule of thumb of about 0.5 R/h per curie at 1 meter for Ir-192, an unshielded 80 Ci source produces about:",
+   "options": ["40 R/h at 1 m", "8 R/h at 1 m", "80 R/h at 1 m", "160 R/h at 1 m"],
+   "correct": 0,
+   "explanation": "80 Ci × 0.5 R/h per Ci ≈ 40 R/h at 1 meter - a reminder of why distance and shielding are managed so aggressively around working sources."
+  },
+  {
+   "question": "Bringing a dose rate down by a factor of 100 requires about:",
+   "options": ["2 HVLs", "2 TVLs (about 6.6 HVLs)", "10 TVLs", "100 HVLs"],
+   "correct": 1,
+   "explanation": "Each tenth-value layer divides the rate by 10, so two TVLs give a factor of 100; since one TVL ≈ 3.32 HVL, that is about 6.6 half-value layers."
+  },
+  {
+   "question": "Restricted-area boundaries for a radiographic exposure are typically posted:",
+   "options": [
+    "at a fixed 25 feet from the device on every job",
+    "wherever the barrier rope conveniently reaches",
+    "where the survey meter confirms about 2 mR/h or less",
+    "only when members of the public are nearby"
+   ],
+   "correct": 2,
+   "explanation": "The boundary is a measured line: inverse-square math predicts where it will fall, but the posted line is set and verified with the survey meter at about 2 mR/h (typical practice), and re-surveyed when the setup changes."
+  },
+  {
+   "question": "Which choice reflects ALARA thinking, rather than a bare regulatory minimum?",
+   "options": [
+    "Stopping work only when a dose limit is exceeded",
+    "Wearing the badge because the license requires it",
+    "Posting the boundary exactly where the procedure minimum allows",
+    "Re-rigging the collimator and re-walking the crank position to cut a routine shot's dose, even though current doses are already legal"
+   ],
+   "correct": 3,
+   "explanation": "ALARA means avoiding every reasonably avoidable millirem even when doses are already under the limits - limits are ceilings, not targets, and cheap reductions like collimation and crank placement are expected on every shot."
+  },
+  {
+   "question": "Standing for 12 minutes at a position where the dose rate is 10 mR/h gives a dose of:",
+   "options": ["2 mR", "1.2 mR", "10 mR", "120 mR"],
+   "correct": 0,
+   "explanation": "Dose = rate × time = 10 mR/h × (12/60) h = 2 mR. Time spent in a field converts directly to dose, which is why waiting happens outside the boundary."
+  },
+  {
+   "question": "During radiographic operations, typical regulations require each radiographer to wear:",
+   "options": [
+    "a processed badge only",
+    "a pocket dosimeter and a badge, with a survey meter somewhere on site",
+    "an alarming ratemeter only, when a survey meter is in use",
+    "a direct-reading dosimeter, an alarming ratemeter, and a processed badge - all three"
+   ],
+   "correct": 3,
+   "explanation": "The typical 10 CFR 34-style rule is all three worn together: the ratemeter guards this second, the direct-reading dosimeter scores today, and the processed badge becomes the legal dose of record."
+  },
+  {
+   "question": "Your pocket dosimeter is found off-scale at midday. The required response is to:",
+   "options": [
+    "re-zero it and keep working",
+    "stop radiographic work, report it, and have the processed badge read promptly - your true dose is unknown",
+    "average the reading with yesterday's value",
+    "swap in a spare dosimeter and continue the shot list"
+   ],
+   "correct": 1,
+   "explanation": "An off-scale direct-reading dosimeter means the accumulated dose is unknown; work ceases until the processed badge establishes the actual dose, per typical radiography regulations."
+  },
+  {
+   "question": "In a gamma projector, the stored source capsule is shielded primarily by:",
+   "options": [
+    "the steel outer shell",
+    "the collimator mounted at the exit port",
+    "a depleted-uranium or tungsten shield surrounding the capsule at the center of the S-tube",
+    "the lead lining of the transport case"
+   ],
+   "correct": 2,
+   "explanation": "The dense DU or tungsten block does the shielding; the S-tube geometry keeps the capsule surrounded in every direction with no straight-line path to the outside. The thin outer shell is mostly structure."
+  },
+  {
+   "question": "For an accurate boundary survey at radiography dose rates, the preferred instrument is:",
+   "options": [
+    "a scintillation counter",
+    "an ion-chamber survey meter",
+    "a GM pancake probe",
+    "an alarming ratemeter"
+   ],
+   "correct": 1,
+   "explanation": "The ion chamber is linear and accurate across radiography-level fields. GM instruments can saturate and read low, scintillators are for very low levels and source searches, and the alarming ratemeter is a warning device, not a measuring instrument."
+  }
+ ]
+}

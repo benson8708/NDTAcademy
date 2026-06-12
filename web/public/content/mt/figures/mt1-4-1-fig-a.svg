@@ -1,0 +1,50 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Right-Hand Rule: Field Around a Straight Conductor</text>
+
+  <!-- left panel: conductor with circular flux -->
+  <rect x="60" y="218" width="300" height="26" rx="6" fill="#D9E0E8" stroke="#0A2342" stroke-width="2"/>
+  <!-- current arrow through conductor -->
+  <line x1="80" y1="231" x2="320" y2="231" stroke="#D14343" stroke-width="4"/>
+  <polygon points="320,223 340,231 320,239" fill="#D14343"/>
+  <text x="200" y="208" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">Current I (thumb)</text>
+
+  <!-- flux circles around conductor (ellipses) -->
+  <ellipse cx="130" cy="231" rx="20" ry="58" fill="none" stroke="#1B82E8" stroke-width="3"/>
+  <ellipse cx="210" cy="231" rx="20" ry="58" fill="none" stroke="#1B82E8" stroke-width="3"/>
+  <ellipse cx="290" cy="231" rx="20" ry="58" fill="none" stroke="#1B82E8" stroke-width="3"/>
+  <!-- rotation arrowheads on flux circles -->
+  <polygon points="122,170 136,176 124,186" fill="#1B82E8"/>
+  <polygon points="202,170 216,176 204,186" fill="#1B82E8"/>
+  <polygon points="282,170 296,176 284,186" fill="#1B82E8"/>
+  <text x="210" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">Flux circles the current (fingers)</text>
+
+  <!-- right-hand rule note box -->
+  <rect x="60" y="350" width="310" height="64" rx="8" fill="#E8F1FB" stroke="#1B82E8" stroke-width="2"/>
+  <text x="215" y="376" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">Right hand: thumb = current direction,</text>
+  <text x="215" y="398" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">curled fingers = flux direction</text>
+
+  <!-- right panel: field strength vs distance graph -->
+  <line x1="450" y1="390" x2="760" y2="390" stroke="#0A2342" stroke-width="2"/>
+  <line x1="450" y1="390" x2="450" y2="110" stroke="#0A2342" stroke-width="2"/>
+  <text x="612" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Distance from conductor center</text>
+  <text x="438" y="105" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Field H</text>
+
+  <!-- conductor region shading -->
+  <rect x="450" y="110" width="110" height="280" fill="#E8F1FB"/>
+  <line x1="560" y1="110" x2="560" y2="390" stroke="#5A6B7E" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="505" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">inside</text>
+  <text x="660" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">outside (air)</text>
+
+  <!-- field curve: linear rise to surface, then falloff -->
+  <polyline points="450,390 560,160" fill="none" stroke="#F2A33C" stroke-width="4"/>
+  <path d="M 560 160 Q 620 300 755 352" fill="none" stroke="#F2A33C" stroke-width="4"/>
+
+  <!-- annotations -->
+  <circle cx="560" cy="160" r="7" fill="#D14343"/>
+  <text x="575" y="158" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">Max at surface (R)</text>
+  <circle cx="450" cy="390" r="6" fill="#1E9E6A"/>
+  <text x="462" y="378" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1E9E6A">Zero at center</text>
+  <text x="600" y="240" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Falls off with distance</text>
+  <text x="505" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">R = radius</text>
+</svg>

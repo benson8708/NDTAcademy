@@ -1,0 +1,215 @@
+{
+ "lessonId": "et1-3-5",
+ "title": "Geometrical Effects",
+ "narrationScript": "Eddy currents need room. Under a surface probe they fill a footprint about one coil diameter wide and roughly three standard depths deep. While the part looks uniform from inside that volume, the signal sits still. The moment shape intrudes, it moves — no flaw required. Approach an edge and the loops compress against the boundary, because current cannot cross into air. That edge response begins about a probe diameter out and can bury a crack signal completely. Let the wall thin to less than the effective depth and the back surface joins the test — tapers, chem-milled steps, and corrosion thinning all move the operating point. Curvature changes coupling, so a flat probe rocking over a radius makes lift-off noise. The defense is planning. Geometry follows the drawing: its signals repeat at the same place on every like part. Calibrate on standards that match the part's shape, scan parallel to edges at a fixed offset so geometry stays constant, and treat any signal that breaks the pattern as a discontinuity until proven otherwise.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Geometry: The Third Part-Side Variable",
+   "body": "The control map from earlier in this module split every test variable into two families: test-system parameters you set, and test-part characteristics the part brings. You have now worked through two of the part's contributions — conductivity and permeability. The third is **geometry**: the shape of the part near and under the probe.\n\nWhy shape matters follows directly from the properties of eddy currents. The currents occupy a definite volume: a footprint roughly the **diameter of the coil**, and a depth of about **three standard depths of penetration (3δ)** — the effective depth, below which only about 5% of the surface current density remains. Call that the probe's **interrogation volume**. As long as the part looks like an infinite, uniform plate from inside that volume, the signal holds still. The moment any boundary intrudes — an edge, a back wall, a curve, a hole, a hidden doubler — the current loops are constrained or distorted, their secondary field changes, and the coil impedance moves.\n\nHere is the uncomfortable part: the instrument cannot tell on its own whether the loops were disturbed by a crack or by the part's own shape. Electrically, both are the same kind of event. CP-105 lists geometrical effects (§2.1.4.9) as required Level I theory for a blunt reason — geometry produces some of the largest signals you will ever see, in exactly the places where aircraft structure cracks first: edges, holes, radii, and thickness steps."
+  },
+  {
+   "type": "text",
+   "heading": "Edge Effect: The Loudest Signal on the Part",
+   "body": "Bring a surface probe toward the edge of a plate and watch the signal climb. Eddy currents must flow in closed loops, and **current cannot cross the boundary into air** — so as the edge enters the probe's field, the circular paths are compressed, crowded, and bent to run along the boundary. At the same time, part of the coil's flux spills past the edge and finds no metal at all. Both effects unbalance the coil strongly. ASTM E1316 calls this the **edge effect**; the same phenomenon at the end of a bar or tube entering an encircling coil is called **end effect**.\n\nTwo facts make it a first-order problem:\n\n- **It starts early.** The coil's field extends well beyond the windings, so an unshielded probe typically begins responding while it is still about **one probe diameter** from the edge.\n- **It is enormous.** The edge is, electrically, the largest 'discontinuity' on the part. Its response is usually far larger than a crack signal, so a crack hiding in the rising edge response can be completely masked.\n\nThat combination is bad news, because skin edges, cutouts, and the fastener rows that run beside them concentrate stress — the last few millimeters before an edge are prime fatigue-crack territory on aircraft structure. The standard tools: **shielded probes**, whose ferrite cup confines the field so the coil can work close to a boundary; **smaller-diameter probes**; and scan plans that hold the probe-to-edge distance constant so the edge contribution becomes a steady, balanceable baseline."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-3-5-fig-a",
+   "caption": "Edge effect in plan view. Away from the edge the current loops are symmetric and the signal is steady. As the boundary enters the probe's field, the loops compress against it and flux spills into air — a response that begins about one probe diameter out and can dwarf crack signals."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Geometry follows the drawing",
+   "body": "A geometry signal is **predictable and repeatable**: it appears at the same station on this part, on the last part, and on every like part, and it corresponds to a feature you can point to on the drawing — an edge, a step, a radius, a hole, a doubler. A discontinuity respects no drawing. A signal where no feature exists, or one that differs from the same location on a known-good part, is treated as a **possible discontinuity until evaluated**. When in doubt, compare: same probe, same null, same scan path on a conforming area or a reference part."
+  },
+  {
+   "type": "text",
+   "heading": "Thickness Changes: When the Back Wall Joins the Test",
+   "body": "As long as the part is thicker than the effective depth of penetration, the back surface sits below the current zone and contributes nothing. When the wall is **thinner than about 3δ**, the eddy currents are squeezed between the two surfaces — and from then on, **every change in thickness changes the signal**. Aircraft structure is full of such changes: design tapers, **chem-milled pockets and lands** in fuselage skins, lands around cutouts, bonded doublers — and the one you are paid to find, **corrosion thinning**.\n\nWhether thickness response is noise or signal depends on the technique:\n\n- **Crack-hunting on thin sheet.** Choose a test frequency **high enough that 3δ is less than the minimum part thickness**. The currents never reach the back wall, and far-side steps and tapers go quiet — the inspection sees only the near-surface zone where the cracks are.\n- **Thickness and corrosion surveys.** Deliberately choose a **lower frequency so the currents do reach the back wall** — now the thickness response is the measurement. Low-frequency eddy current corrosion surveys of lap joints and skins work exactly this way.\n\nOne more discriminator helps in dynamic scanning: design tapers change the signal **slowly** as the probe travels, while cracks and pits change it **abruptly**. Instrument filtering can be set to suppress the slow geometry drift and pass the sharp response — but filtering only works if the scan speed is held steady, which is one more reason scan technique is written into the procedure."
+  },
+  {
+   "type": "text",
+   "heading": "Curvature, Radii, Holes: Geometry Acting Through Coupling",
+   "body": "Geometry also speaks through **coupling** — how tightly the coil's field links the part. Lift-off is the coupling variable for surface probes, fill factor for encircling coils, and shape changes both even when nothing is wrong with the metal:\n\n- **Convex and concave surfaces.** A flat-faced probe on a curved surface couples fully only at the tangent point; effective lift-off grows across the rest of the coil face, and the probe **rocks** as it scans — continuous lift-off noise. The cures are mechanical: **contoured probe shoes** matched to the surface, spring-loaded probes, and calibration on a **reference standard with the part's curvature**. Aerospace practice is explicit: the reference standard should match the part in **alloy, temper, and geometry**.\n- **Fillet radii.** Probe wobble through a radius is lift-off noise in its purest form; radius probes and guides hold the coil attitude constant.\n- **Fastener holes and countersinks.** A hole is an edge wrapped in a circle. Surface scans around hole edges use **circle templates** to keep the path concentric, and bore inspection belongs to **rotating bolt-hole probes**, which hold the geometry constant by design. A **steel fastener** beside the scan path on aluminum structure adds a large permeability response — predictable, but only if you knew the fastener material before you scanned.\n- **Diameter changes and ovality.** In bar and tube testing with encircling or bobbin coils, dents, swells, and ovality change the **fill factor** and produce signals with no metallurgical meaning. Centering and matched sizing keep coupling steady."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-3-5-fig-b",
+   "caption": "Four geometry signal sources you will meet on aircraft structure: edges and part ends, thickness changes where the wall is thinner than about 3δ, curvature that varies coupling across the coil face, and holes, countersinks, and hidden substructure edges."
+  },
+  {
+   "type": "table",
+   "caption": "Common geometry features, what the currents experience, and the standard defense.",
+   "headers": [
+    "Geometry feature",
+    "What the currents experience",
+    "Standard defense"
+   ],
+   "rows": [
+    [
+     "Edge or end of part",
+     "Loops compressed at the boundary; flux spills into air — response begins about one probe diameter out",
+     "Shielded or small-diameter probes; guided scans parallel to the edge at a fixed offset"
+    ],
+    [
+     "Thickness change (taper, chem-mill step, thinning)",
+     "Back wall inside the ≈3δ current zone — the signal moves with every thickness change",
+     "Raise frequency to confine currents for crack tests; lower it deliberately to measure thickness"
+    ],
+    [
+     "Convex / concave curvature",
+     "Coupling (lift-off) varies across the coil face; probe rocks while scanning",
+     "Contoured shoes, spring-loaded probes, reference standards with matching curvature"
+    ],
+    [
+     "Fillet radius",
+     "Probe wobble — continuous lift-off noise",
+     "Radius probes and mechanical guides"
+    ],
+    [
+     "Fastener hole / countersink",
+     "A circular edge; adjacent steel fasteners add a permeability response",
+     "Circle templates for surface scans; rotating probes in the bore; know the fastener material"
+    ],
+    [
+     "Diameter change or ovality (encircling / bobbin coil)",
+     "Fill factor changes — coupling signal with no metallurgical meaning",
+     "Centering, matched coil sizing, reference standards of the same diameter"
+    ]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Planning the Scan: Make Geometry Constant",
+   "body": "You cannot remove geometry, so the technique is designed to make it **constant** — because a constant signal can be balanced out, and whatever then breaks the steady baseline has earned evaluation. The working rules:\n\n- **Scan parallel to edges, never across them.** Hold a fixed probe-to-edge offset with a mechanical guide or template. The edge contribution becomes a steady baseline; a crack appears as a sharp break in it. Scanning toward an edge buries every flaw in a climbing edge response.\n- **Null where you will scan.** Balance the probe on the part, at a location with the same geometry as the inspection zone — not on a thick flat pad when the work is a thin curved land.\n- **Match the standard to the part.** The reference standard should reproduce the alloy, temper, and the governing geometry — and its EDM notches should sit at the critical feature, such as a notch at the fastener-row edge distance, so the setup proves the flaw is detectable in the geometry where it will actually occur.\n- **Brief the geometry before scanning.** Mark the expected geometry responses from the drawing — steps, doublers, substructure — so each one is anticipated, and compare against like parts or previous inspections.\n- **Verify suspect indications.** Re-scan at a different offset or orientation. Geometry responses change predictably as the probe's relationship to the feature changes; a discontinuity stays put.\n\nIn FAA Part 145 practice all of this lives on the technique card: probe, frequency, scan paths, offsets, and reference standard are specified, and the Level I's duty under SNT-TC-1A is to execute them as written and report whatever breaks the pattern."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-3-5-fig-a",
+   "title": "Edge effect: current loops compressed at the part boundary",
+   "file": "et1-3-5-fig-a.svg"
+  },
+  {
+   "id": "et1-3-5-fig-b",
+   "title": "Common geometry signal sources: edges, thickness changes, curvature, holes",
+   "file": "et1-3-5-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Geometry or Discontinuity?",
+  "intro": "Every signal below came off real aircraft structure. Decide which are expected geometry responses you plan around, and which must be treated as possible discontinuities and evaluated. Remember the rule: geometry follows the drawing and repeats on every like part.",
+  "buckets": [
+   "Expected geometry response — plan around it",
+   "Possible discontinuity — evaluate it"
+  ],
+  "items": [
+   {
+    "label": "Signal rises the same way at the end of every scan line as the probe nears the skin edge",
+    "bucket": 0,
+    "why": "Edge effect: the loops compress at the boundary, starting about a probe diameter out. It is identical on every pass — hold a fixed offset so it becomes a steady, balanceable baseline."
+   },
+   {
+    "label": "Sharp indication mid-bay, 80 mm from any edge, hole, or substructure, found on one panel only",
+    "bucket": 1,
+    "why": "No drawing feature exists there and like panels are clean. A localized signal that does not repeat across like parts is treated as a discontinuity until evaluated."
+   },
+   {
+    "label": "Slow signal drift exactly where the drawing shows a chem-milled step on the far side of 1.0 mm skin",
+    "bucket": 0,
+    "why": "The wall is thinner than about 3δ, so the back wall sits inside the current zone. A drawing feature producing a repeatable, slowly varying signal is geometry — or raise the frequency and silence it."
+   },
+   {
+    "label": "Indication at one fastener hole that the other forty holes in the same row do not show",
+    "bucket": 1,
+    "why": "Every hole in the row shares the same geometry, so the geometry response should repeat hole to hole. A response unique to one hole is exactly how a bolt-hole crack presents."
+   },
+   {
+    "label": "Lift-off noise as the probe rocks crossing a fillet radius",
+    "bucket": 0,
+    "why": "Curvature varies the coupling across the coil face. A contoured shoe, spring-loaded probe, or radius probe holds the coil attitude — and the coupling — constant."
+   },
+   {
+    "label": "Large response over a row where the drawing shows steel fasteners in aluminum structure",
+    "bucket": 0,
+    "why": "Ferromagnetic fasteners add a strong permeability response at every fastener location — predictable from the drawing and the same on every like part."
+   },
+   {
+    "label": "With a constant-offset scan parallel to the edge balanced to a steady baseline, the signal breaks sharply at one spot",
+    "bucket": 1,
+    "why": "The scan plan made the geometry constant, so geometry can no longer be the cause. A sharp break in the steady edge baseline is the classic presentation of an edge crack."
+   },
+   {
+    "label": "Signal at the same station on every like part, where a bonded doubler edge lies beneath the skin",
+    "bucket": 0,
+    "why": "Hidden substructure edges inside the interrogation volume answer the probe too. Repeating at the same drawing location on every like part marks it as geometry."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Scanning toward the edge of an aluminum skin panel, a surface probe's signal begins to change strongly well before the coil reaches the edge, even though the metal contains no flaw. The primary cause is:",
+   "options": [
+    "Eddy current loops are compressed and distorted because current cannot flow beyond the part boundary, while part of the coil's flux spills into air",
+    "Machining at the edge raises the local conductivity of the alloy",
+    "The edge concentrates the magnetic field deeper into the part, increasing penetration",
+    "Edges are always ferromagnetic, so permeability dominates the response"
+   ],
+   "correct": 0,
+   "explanation": "This is edge effect (ASTM E1316): the closed current loops must follow the boundary, so they crowd and distort as the edge enters the probe's field — typically beginning about one probe diameter out for an unshielded probe — and the strongly unbalanced coil produces a response large enough to mask crack signals."
+  },
+  {
+   "question": "A fastener row runs 15 mm from a skin edge, and cracks are expected to grow from the holes toward the edge. The best scan plan is to:",
+   "options": [
+    "Scan straight toward the edge and evaluate signal amplitude as the probe crosses it",
+    "Scan parallel to the edge at a fixed offset using a mechanical guide, so the constant edge response can be balanced out and a crack appears as a break in a steady baseline",
+    "Increase instrument gain until flaw signals become larger than the edge signal",
+    "Use the largest available probe so its field averages out the edge response"
+   ],
+   "correct": 1,
+   "explanation": "Holding the probe-to-edge distance constant makes the edge contribution steady, so it can be balanced and anything that breaks the baseline is evaluated. Scanning across the edge buries flaws in a climbing edge response, gain amplifies edge and flaw alike, and a larger coil makes edge effect start farther away — small or shielded probes are the fix."
+  },
+  {
+   "question": "Surface crack inspection on 1.0 mm aluminum sheet keeps producing nuisance signals from chem-milled steps on the far side. Per this lesson, the correct fix is to:",
+   "options": [
+    "Lower the test frequency so the currents penetrate the steps more completely",
+    "Magnetically saturate the sheet before scanning",
+    "Raise the test frequency so the effective depth of penetration (about 3δ) is less than the sheet thickness, keeping the currents away from the back wall",
+    "Null the probe in air instead of on the part"
+   ],
+   "correct": 2,
+   "explanation": "Thickness features answer only when the wall is thinner than about 3δ. Raising the frequency shrinks δ and confines the currents to the near-surface zone, so far-side steps go quiet. Lowering the frequency is the deliberate setup for thickness and corrosion surveys — the opposite goal — and saturation addresses ferromagnetic permeability, which aluminum does not have."
+  },
+  {
+   "question": "During a wing-skin inspection you get an indication near a panel edge. Which observation most strongly suggests geometry rather than a discontinuity?",
+   "options": [
+    "The signal is large in amplitude",
+    "The signal disappears when the instrument gain is reduced",
+    "The signal occurs on only one of the eight like panels inspected",
+    "The signal appears at the same station on every like panel and corresponds to a doubler edge shown on the drawing"
+   ],
+   "correct": 3,
+   "explanation": "Geometry follows the drawing: it is predictable and repeats at the same location on every like part. Amplitude proves nothing — edge and fastener responses are among the largest signals in the method — reducing gain hides flaws and geometry alike, and a response unique to one panel points toward a discontinuity, not away from one."
+  },
+  {
+   "question": "An eddy current technique is calibrated on a flat reference standard, then used on a small-radius convex leading edge. The most likely consequence is:",
+   "options": [
+    "Coupling no longer matches the calibration — effective lift-off varies across the coil face and the probe rocks — so responses cannot be compared to the standard until a standard with matching curvature is used",
+    "No change, because curvature affects only ferromagnetic parts",
+    "Penetration increases because the curved surface concentrates the field into the part",
+    "The curvature permanently changes the alloy's conductivity"
+   ],
+   "correct": 0,
+   "explanation": "Curvature acts through coupling: a flat-faced probe touches a convex surface only at the tangent point, effective lift-off grows across the rest of the coil face, and rocking adds lift-off noise. Aerospace practice requires the reference standard to match the part in alloy, temper, and geometry — including curvature — with contoured shoes or spring-loaded probes to hold coupling steady."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Theory Course §2.1.4.9 (geometrical effects)",
+  "ASTM E1316, Standard Terminology for Nondestructive Examinations (edge effect, end effect, lift-off, fill factor)",
+  "ASNT Nondestructive Testing Handbook, Vol. 5: Electromagnetic Testing (geometry and coupling effects on coil impedance; edge effect and probe shielding)",
+  "ASNT SNT-TC-1A (2024), Level I responsibilities — performing examinations to written instructions and recording results"
+ ]
+}

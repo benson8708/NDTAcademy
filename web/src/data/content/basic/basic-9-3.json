@@ -1,0 +1,137 @@
+{
+  "lessonId": "basic-9-3",
+  "title": "Forming, Powdered Metals, Heat Treatment, Surface Finishing, and Adhesive Joining",
+  "narrationScript": "This lesson finishes the metals-processing story. Forming first. The dividing line is the recrystallization temperature: cold working below it strain-hardens the metal, trading ductility for strength and tight tolerances while storing residual stress; hot working above it lets new grains form as fast as the old ones deform, refining coarse cast structure and welding shut internal porosity. Powdered metal processes press blended powder into a green compact and sinter it below the melting point, where solid-state diffusion bonds the particles — and leaves the porosity penetrant inspectors must respect. Heat treatment sets properties on purpose: anneal slowly for softness, normalize in air for uniform fine grain, quench to hard, brittle martensite, then temper the toughness back; aluminum is solution treated, quenched, and aged. Surface finishing protects what fabrication built — shot peening hammers in a compressive layer that fights fatigue, while plating, paint, and conversion coatings hold off corrosion, with a mandatory embrittlement-relief bake after plating high-strength steel. Adhesive joining closes the lesson: uniform load paths whose actual strength no NDT method can measure.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Forming: The Recrystallization Line Divides the Trade",
+      "body": "Casting freezes a shape, welding fuses one, machining cuts one away. **Forming** makes shape by **plastic deformation** — forcing solid metal to flow under rolls, dies, and punches — and every forming process falls on one side of a line drawn not at room temperature but at the metal's **recrystallization temperature** (roughly 0.4 of the absolute melting point): the temperature above which deformed, strain-hardened grains spontaneously reform into new, strain-free ones. Work lead at room temperature and you are *hot working* it; lead recrystallizes below 70 °F.\n\n**Cold working** deforms below that line. Dislocations multiply and tangle faster than the metal can heal, so the part **strain hardens**: tensile and yield strength and hardness climb while **ductility falls**, and continued deformation eventually demands an **intermediate anneal** or the metal cracks. What cold work buys is precision — **excellent surface finish, tight dimensional tolerance**, thin sections, and added strength with no alloying — at the price of **residual stresses** and directional properties. The family includes **cold rolling** of sheet, **wire and tube drawing** through dies, **deep drawing** and stamping of sheet into cups and panels, **bending, spinning, stretch forming** of skins over dies, **coining, swaging,** and **hydroforming**.\n\n**Hot working** deforms above the line, so the metal **recrystallizes as fast as it is deformed**: no strain hardening accumulates, forces stay low, and enormous reductions are possible in one heat. Hot working is how cast ingot structure becomes **wrought** structure — coarse as-cast grains are refined, internal shrinkage and gas porosity are **welded shut under pressure**, and inclusions are strung out into **stringers** that give the product directional **grain flow** (forgings are strongest when flow lines follow the loading direction). The costs: oxide **scale**, decarburization on steel surfaces, and looser tolerances. The family: **hot rolling**, **forging** (open-die under flat tools, impression/closed-die in shaped cavities, upset forging of bolt heads), and **extrusion** of billets through shaped dies.\n\nThe NDT inventory follows the process: rolling and drawing leave **seams** (elongated surface discontinuities rolled out of ingot defects) and plate **laminations** (flattened pipe and inclusions, found by UT); forging leaves **laps** (surface folds without fusion, found by MT and PT) and internal **bursts** (ruptures from working too cold or too fast, found by UT); severe cold forming leaves cracks where ductility ran out."
+    },
+    {
+      "type": "text",
+      "heading": "Powdered Metal Processes: Press, Sinter, Densify",
+      "body": "Powder metallurgy (PM) skips melting-to-shape entirely. The conventional **press-and-sinter** route has four steps:\n\n1. **Powder production** — most commonly **atomization**, where a molten stream is broken into droplets by gas or water jets; also oxide reduction and electrolysis.\n2. **Blending** — powders are mixed with alloying additions and a **die lubricant**.\n3. **Compaction** — the blend is pressed in rigid dies at roughly 10 to 50 tons per square inch into a **green compact**: the part's net shape, held together only by mechanical interlocking and cold welding of particles, strong enough to handle and nothing more.\n4. **Sintering** — the compact is heated in a **controlled-atmosphere furnace below the melting point** of the principal metal (about 2050 °F for iron against a 2800 °F melting point). **Solid-state diffusion** bonds the particles into a metallurgical whole, the lubricant burns off, and the part shrinks predictably toward density.\n\nSecondary operations finish the job: **repressing or sizing** for tolerance, **oil impregnation** of bearings (a self-lubricating bronze bushing holds oil in its connected pores), **resin impregnation** to seal porosity before plating or pressure service, **copper infiltration** for strength, and conventional heat treatment.\n\nThe defining residue of press-and-sinter PM is **porosity** — typical parts reach only **80 to 95% of theoretical density**, and the pores are often interconnected to the surface. The NDT consequence is immediate: an unsealed PM part is generally a **poor candidate for liquid penetrant testing**, because the surface-connected porosity drinks penetrant everywhere and floods the read with background; the same pores scatter and attenuate ultrasound. Where full density is required — premium aerospace hardware — **hot isostatic pressing (HIP)** applies inert-gas pressure on the order of 15 ksi at temperatures near 2200 °F to collapse and diffusion-bond internal voids, producing near-100% density. HIP consolidates PM superalloy and titanium billets and turbine disks, and the same process is used to heal internal shrinkage porosity in premium castings."
+    },
+    {
+      "type": "text",
+      "heading": "Heat Treatment: Owning the Microstructure",
+      "body": "Heat treatment is **controlled heating and cooling to set properties on purpose** — the same steel can be soft enough to machine freely or hard enough to cut glass, depending entirely on its thermal history.\n\nFor steel, the treatments are variations on one theme: heat into the **transformation range** (above roughly 1340–1650 °F depending on carbon content) so the structure becomes **austenite**, then choose the cooling rate:\n\n- **Full annealing** — cool slowly *in the furnace*. The product is coarse pearlite: the **softest, most ductile, most stress-free** condition, ideal for machining and forming.\n- **Normalizing** — cool *in still air*. Finer pearlite: slightly stronger and harder than annealed, with a **uniform, refined grain structure**; the standard conditioning after forging or welding.\n- **Hardening** — **quench** in water, oil, or polymer faster than the steel's critical cooling rate. Carbon is trapped in a distorted lattice called **martensite**: very hard, very brittle, and highly stressed. Quenching is violent — unequal contraction around section changes can split the surface in jagged, hardness-following **quench cracks**, prime quarry for MT and PT.\n- **Tempering** — reheat the quenched part *below* the transformation range (300 to 1100 °F or more), hold, and cool. Some hardness is traded away to **restore toughness and relieve quench stresses**; quench-and-temper is the standard route to high-strength structural steel.\n- **Stress relieving** — heat below the transformation range (typically 1100–1250 °F), hold, cool slowly. Residual stresses from welding, machining, and forming relax **without changing the microstructure**.\n- **Case hardening** — give a part a hard skin on a tough core: **carburizing** diffuses carbon into low-carbon steel at about 1700 °F before quenching; **nitriding** at about 975 °F forms an extremely hard case with no quench and minimal distortion; **induction and flame hardening** austenitize and quench only the surface of medium-carbon steel.\n\nAluminum hardens by a different mechanism entirely — **precipitation (age) hardening**. Heat-treatable alloys (2xxx, 6xxx, 7xxx) are **solution treated** near 900–1000 °F to dissolve alloying elements, **quenched** to trap them in solution, then **aged** — at room temperature (natural aging, as in 2024-T3) or a few hundred degrees (artificial aging, as in 7075-T6) — so fine precipitates form and block dislocation motion. Because each temper has a characteristic **electrical conductivity in %IACS**, eddy current conductivity testing verifies aluminum heat treatment and exposes heat damage — a daily NDT task in FAA Part 145 hangars after fire or overheat events."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-9-3-fig-a",
+      "caption": "One austenitizing soak, four destinies. Furnace cooling anneals to soft coarse pearlite; air cooling normalizes to uniform fine pearlite; quenching traps hard, brittle, stressed martensite, and tempering below the transformation range buys the toughness back. Stress relief never enters the transformation range at all — and aluminum follows its own solution-quench-age script."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Inspect before the surface closes — or is covered",
+      "body": "Fabrication sequence is an NDT issue. **Shot peening and grit blasting plastically smear the surface and can close crack openings** — penetrant inspection belongs *before* peening, or after a chemical **etch** reopens what the hammering shut. **Plating, paint, and anodic films mask surface flaws** from PT and VT, so final fluorescent penetrant inspection of critical hardware is performed at the bare-metal stage, in the drawing-specified order. And after electroplating high-strength steel, the **hydrogen embrittlement relief bake must begin within hours** — an inspection that finds the delayed crack later is the expensive way to learn the oven was skipped."
+    },
+    {
+      "type": "text",
+      "heading": "Surface Finishing and Corrosion Protection",
+      "body": "A finished part meets its environment at the surface, and the outline's finishing processes either **strengthen** that surface or **shield** it.\n\n**Shot peening** strengthens. Controlled streams of cast-steel shot, conditioned cut wire, or glass and ceramic bead hammer the surface with millions of overlapping dimples. Each impact yields a thin skin in tension; the elastic material beneath pushes back, leaving a **residual compressive stress layer** typically 0.005 to 0.030 in. deep. Fatigue cracks and stress-corrosion cracks need surface tension to start and grow — held in compression, they largely cannot — so peening multiplies fatigue life and is mandatory on springs, landing-gear steels, and before hard chrome plating (to buy back the fatigue strength the plating costs). Process control is indirect: **intensity** is verified by the arc height of standardized **Almen strips** peened alongside the work, and **coverage** is verified visually, per SAE AMS 2430.\n\n**Grit blasting** cleans. Angular abrasive — aluminum oxide, garnet, steel grit — strips scale, old paint, and corrosion product and leaves an **anchor-tooth profile** that coatings and thermal spray grip. It is a cleaning and roughening tool, not a controlled stress treatment, and two cautions ride with it: blasting **smears soft alloys** over flaw openings (the PT etch argument again), and media that has touched steel must never be reused on aluminum, because embedded iron particles become corrosion sites.\n\n**Painting** shields by barrier: degrease and deoxidize, apply a **corrosion-inhibiting primer** (epoxy primers carrying inhibitive pigments — historically chromates), then a **polyurethane topcoat** for weather, fluids, and UV.\n\n**Plating** deposits metal on metal, usually electrolytically with the part as cathode. **Sacrificial coatings** — cadmium on aerospace steel, zinc commercially — protect galvanically even when scratched, the coating corroding so the steel does not. **Barrier and engineering coatings** — nickel, and **hard chromium** built up on wear surfaces such as landing-gear axles — protect only while intact. **Electroless nickel** deposits chemically, with uniform thickness over complex shapes. The shadow over all of it is **hydrogen embrittlement**: cleaning, pickling, and plating generate atomic hydrogen that diffuses into steel, and at strength levels above roughly 180 ksi it causes **delayed, brittle cracking** under static load. The defense is a mandatory **embrittlement-relief bake** — commonly 375 °F, started within about four hours of plating and held up to 23 hours for the highest-strength steels, per ASTM B850 and AMS 2759/9.\n\n**Chemical conversion coatings** are not deposited at all — they are **grown from the base metal** by chemical or electrochemical reaction. **Anodizing** (MIL-A-8625: chromic Type I, sulfuric Type II, hard-coat Type III) thickens aluminum's natural oxide into a dense, sealable, electrically nonconductive film. **Chemical-film (chromate) treatment** per MIL-DTL-5541 gives aluminum corrosion protection and a paint base while staying conductive enough for electrical bonding. **Phosphate coatings** on steel hold oil and anchor paint."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-9-3-fig-b",
+      "caption": "Why peening works: overlapping dimples yield the skin, the core pushes back, and the surface is left holding residual compression through the depth where fatigue cracks would otherwise start. The stress-depth curve shows peak compression just below the surface, balanced by mild tension deeper in the section."
+    },
+    {
+      "type": "table",
+      "caption": "Surface finishing processes summary — what each does, and what the inspector should remember.",
+      "headers": ["Process", "How it works", "What it provides", "Cautions and NDT notes"],
+      "rows": [
+        ["Shot peening", "Controlled shot stream cold-works the surface in overlapping dimples", "Residual compressive layer ~0.005–0.030 in.; fatigue and stress-corrosion resistance", "Intensity by Almen strip, coverage verified (AMS 2430); peen before plating high-strength steel; PT before peening or after etch — dimpling closes flaw openings"],
+        ["Grit blasting", "Angular abrasive impacts strip scale, paint, corrosion; roughen for adhesion", "Clean surface with anchor-tooth profile for coatings and thermal spray", "Smears soft alloys over flaw openings (etch before PT); never reuse steel-contaminated media on aluminum"],
+        ["Painting", "Organic primer plus topcoat applied over prepared surface", "Barrier protection; inhibitive primer pigments fight corrosion at scratches", "Hides surface flaws from VT/PT — inspect before coating; surface prep governs adhesion"],
+        ["Plating (Cd, Cr, Ni)", "Electrolytic (or electroless) metal deposition, part as cathode", "Sacrificial protection (Cd, Zn) or wear/barrier surface (hard Cr, Ni)", "Hydrogen embrittlement of steel ≥ ~180 ksi — relief bake ~375 °F within hours of plating (ASTM B850/AMS 2759/9); plating masks flaws; hard chrome costs fatigue strength — peen first"],
+        ["Chemical conversion coatings", "Film grown from the base metal: anodize, chromate film, phosphate", "Corrosion resistance, paint base; anodize adds hard, nonconductive oxide; chromate film stays conductive for bonding", "Anodic films are brittle and can craze; perform penetrant inspection before anodize or after stripping; phosphate is for steel, anodize/chromate for aluminum"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Adhesive Joining: Strength You Cannot Measure In Place",
+      "body": "**Adhesive joining** bonds parts through a thin polymer layer — in aerospace, usually **epoxy film adhesive** laid between prepared surfaces and cured under simultaneous **heat and pressure in an autoclave**, with thermocouples proving the cure cycle. It is how metal-to-metal **bonded doublers** stiffen skins and how face sheets join honeycomb core in **sandwich panels**.\n\nThe advantages are structural and aerodynamic at once. A bonded joint loads the **entire faying surface uniformly** instead of funneling everything through fastener holes — no drilled stress concentrations, superior fatigue behavior, and thin sheets joined without the knife-edge bearing problems rivets impose. Bonding joins **dissimilar materials** (metal to composite) while electrically isolating them, seals the joint against moisture, damps vibration, and leaves a **smooth external surface**. The limitations mirror the chemistry: service temperature is bounded by the polymer, joints are designed for shear because **peel strength is poor**, and long-term durability lives or dies on environmental resistance of the interface.\n\nThat interface is the whole game. A structural bond is only as good as its **surface preparation** — solvent degrease, alkaline clean and deoxidize, then for critical aluminum bonding an electrochemical treatment such as **phosphoric acid anodizing**, followed promptly by a corrosion-inhibiting **bond primer** that protects the prepared surface until layup. Skip or contaminate any step and the adhesive may cure perfectly while gripping nothing.\n\nThe NDT boundary must be stated plainly, because Level IIIs write the procedures that live inside it. Ultrasonic methods (through-transmission and pulse-echo), bond testers, and the venerable tap test on honeycomb reliably find **voids, porosity, disbonds, and crushed core** — geometric absences of material or contact. **No NDT method measures adhesive strength**, and a **kissing bond** — surfaces in intimate contact with essentially zero strength, as from a contaminated faying surface — can pass every instrument on the shelf. Bond quality is therefore guaranteed the only way it can be: **process control** — certified surface prep, in-date adhesive, proven cure cycles — verified destructively by **traveler coupons** (lap-shear specimens prepared and cured with the production part) rather than nondestructively on the part itself."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-9-3-fig-a",
+      "title": "Heat treatment cycles and the microstructures they leave",
+      "file": "basic-9-3-fig-a.svg"
+    },
+    {
+      "id": "basic-9-3-fig-b",
+      "title": "Shot peening: residual compression versus depth",
+      "file": "basic-9-3-fig-b.svg"
+    }
+  ],
+  "interactive": null,
+  "checkQuestions": [
+    {
+      "question": "A forging operation is classified as hot working rather than cold working because the deformation takes place:",
+      "options": [
+        "At any temperature above room temperature",
+        "Above the metal's recrystallization temperature, so new strain-free grains form as fast as the metal is deformed",
+        "After the metal has first been fully annealed",
+        "Below the transformation range, with the part warmed only for easier handling"
+      ],
+      "correct": 1,
+      "explanation": "The dividing line is the recrystallization temperature — roughly 0.4 of the absolute melting point — not the shop thermometer: lead worked at room temperature is being hot worked because it recrystallizes below 70 °F. Above that line, deformed grains continuously reform strain-free, so no strain hardening accumulates; below it, dislocations pile up and the metal strengthens, loses ductility, and stores residual stress."
+    },
+    {
+      "question": "After quenching a medium-carbon steel part to form martensite, the part is tempered in order to:",
+      "options": [
+        "Increase hardness beyond the as-quenched value",
+        "Transform the structure back to austenite for further forming",
+        "Add carbon back into the surface lost during austenitizing",
+        "Restore toughness and relieve quenching stresses, accepting some loss of hardness"
+      ],
+      "correct": 3,
+      "explanation": "As-quenched martensite is very hard but brittle and highly stressed — unusable for most structural service. Tempering reheats the part below the transformation range (300 to 1100 °F or more), trading a controlled amount of hardness for toughness and stress relief. It does not add hardness or carbon, and it deliberately stays below the temperature at which austenite would re-form."
+    },
+    {
+      "question": "During sintering of a pressed powdered-metal compact, the particles bond into a solid part primarily by:",
+      "options": [
+        "Solid-state diffusion at a temperature below the melting point of the principal metal",
+        "Complete melting and resolidification of the powder in the furnace",
+        "The compacting lubricant curing into a permanent adhesive",
+        "Rapid quenching of the compact from the compaction press"
+      ],
+      "correct": 0,
+      "explanation": "Sintering is a solid-state process: an iron compact is furnace-heated to about 2050 °F — well below iron's 2800 °F melting point — in a controlled atmosphere, and diffusion bonds the particle contacts into a metallurgical whole while the lubricant burns off. Because press-and-sinter parts retain 5–20% porosity, often surface-connected, unsealed PM parts are poor penetrant testing candidates and HIP is used where full density is required."
+    },
+    {
+      "question": "Shot peening improves the fatigue life of a part primarily by:",
+      "options": [
+        "Polishing the surface smooth to remove stress risers",
+        "Work-hardening the part uniformly through its entire cross-section",
+        "Inducing a layer of residual compressive stress at the surface, where fatigue cracks start",
+        "Removing the decarburized layer left by heat treatment"
+      ],
+      "correct": 2,
+      "explanation": "Each shot impact yields a thin skin that the elastic core then squeezes back into compression, leaving a residual compressive layer typically 0.005 to 0.030 in. deep. Fatigue and stress-corrosion cracks need surface tension to initiate and grow, so the compressive blanket suppresses them. Peening roughens rather than polishes, affects only a shallow layer, and its intensity is verified by Almen strip arc height, not by surface finish."
+    },
+    {
+      "question": "Within hours after cadmium plating, a 280 ksi landing-gear steel component must be baked at approximately 375 °F because the bake:",
+      "options": [
+        "Hardens and brightens the cadmium deposit",
+        "Drives off atomic hydrogen absorbed during cleaning and plating before it causes delayed brittle cracking",
+        "Tempers the steel to its final strength level",
+        "Cures the organic sealer applied over the plating"
+      ],
+      "correct": 1,
+      "explanation": "Pickling and electroplating generate atomic hydrogen that diffuses into the steel, and above roughly 180 ksi strength it can cause delayed, brittle cracking under static load — hydrogen embrittlement. The relief bake (ASTM B850, AMS 2759/9) must start promptly, commonly within about four hours, and runs up to 23 hours for the highest-strength steels. It is far below any tempering temperature and has nothing to do with the deposit's appearance."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §3.2.2.7–3.2.2.11 (forming, powdered metal processes, heat treatment, surface finishing and corrosion protection, adhesive joining)",
+    "SAE AMS 2759, Heat Treatment of Steel Parts, and SAE AMS 2770, Heat Treatment of Wrought Aluminum Alloy Parts (treatment cycles and tempers, summarized)",
+    "SAE AMS 2430, Shot Peening, Automatic (Almen intensity and coverage verification, summarized)",
+    "ASTM B850, Standard Guide for Post-Coating Treatments of Steel for Reducing the Risk of Hydrogen Embrittlement, and SAE AMS 2759/9, Hydrogen Embrittlement Relief (Baking) of Steel Parts",
+    "MIL-A-8625, Anodic Coatings for Aluminum and Aluminum Alloys, and MIL-DTL-5541, Chemical Conversion Coatings on Aluminum and Aluminum Alloys (conversion coating types, summarized)"
+  ]
+}

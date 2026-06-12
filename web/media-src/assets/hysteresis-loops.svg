@@ -1,0 +1,90 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="hysGlowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="hysGlowR" filterUnits="userSpaceOnUse" x="-24" y="-39" width="638" height="377">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ===== STATIC BASE: glass panels + faint axes skeleton ===== -->
+  <rect x="24" y="44" width="268" height="252" rx="12" fill="rgba(10,30,60,.55)" stroke="#8fb6e0" stroke-opacity=".25"/>
+  <rect x="308" y="44" width="268" height="252" rx="12" fill="rgba(10,30,60,.55)" stroke="#8fb6e0" stroke-opacity=".25"/>
+  <g stroke="#8fb6e0" stroke-width="1.4" fill="none" opacity=".18">
+    <line x1="78" y1="164" x2="262" y2="164"/>
+    <line x1="170" y1="254" x2="170" y2="80"/>
+    <line x1="362" y1="164" x2="546" y2="164"/>
+    <line x1="454" y1="254" x2="454" y2="80"/>
+  </g>
+
+  <!-- ===== AXES (fade @0.6): H / B mini axes on both panels ===== -->
+  <g id="hysAxes" opacity="0">
+    <g stroke="#8fb6e0" stroke-width="1.6" fill="none">
+      <line x1="78" y1="164" x2="262" y2="164"/>
+      <line x1="170" y1="254" x2="170" y2="80"/>
+      <line x1="362" y1="164" x2="546" y2="164"/>
+      <line x1="454" y1="254" x2="454" y2="80"/>
+    </g>
+    <g fill="#8fb6e0">
+      <path d="M270 164 L261 160.4 L261 167.6 Z"/>
+      <path d="M170 72 L166.4 81 L173.6 81 Z"/>
+      <path d="M554 164 L545 160.4 L545 167.6 Z"/>
+      <path d="M454 72 L450.4 81 L457.6 81 Z"/>
+    </g>
+    <g font-size="11" fill="#9fe6ff" opacity=".85">
+      <text x="180" y="85">B</text>
+      <text x="266" y="152" text-anchor="middle">H</text>
+      <text x="464" y="85">B</text>
+      <text x="550" y="152" text-anchor="middle">H</text>
+    </g>
+    <g font-size="10" fill="#9fe6ff" opacity=".45">
+      <text x="176" y="178">0</text>
+      <text x="460" y="178">0</text>
+    </g>
+    <g font-size="11" fill="#9fe6ff" opacity=".6" text-anchor="middle" letter-spacing="1">
+      <text x="170" y="288">H — MAGNETIZING FORCE</text>
+      <text x="454" y="288">H — MAGNETIZING FORCE</text>
+      <text transform="rotate(-90 40 170)" x="40" y="170">B — FLUX DENSITY</text>
+      <text transform="rotate(-90 324 170)" x="324" y="170">B — FLUX DENSITY</text>
+    </g>
+  </g>
+
+  <!-- ===== WIDE LOOP (draw @2.0): hard steel, near-rectangular, CCW arrows ===== -->
+  <g id="hysWide" fill="none" stroke="#5fe0ff" stroke-width="2.2" stroke-linejoin="round" stroke-dasharray="100 102" stroke-dashoffset="100" filter="url(#hysGlowC)">
+    <path pathLength="100" d="M228 94 C202 94.8 184 96.5 170 100 C140 108 130 130 128 164 C126.5 198 120 222 112 234 C138 233.2 156 231.5 170 228 C200 220 210 198 212 164 C213.5 130 220 106 228 94 Z"/>
+    <path pathLength="100" d="M201 92.6 L193 97.2 L200.4 101.4" stroke-width="2"/>
+    <path pathLength="100" d="M139.6 235.4 L147.5 230.8 L140.2 226.6" stroke-width="2"/>
+  </g>
+
+  <!-- ===== HARD TAG (fade @3.2) ===== -->
+  <g id="hysHard" opacity="0">
+    <circle cx="40" cy="26" r="3.5" fill="#5fe0ff" filter="url(#hysGlowR)"/>
+    <text x="50" y="30" font-size="13" fill="#9fe6ff" letter-spacing="1.5">HARD · HEAT-TREATED</text>
+  </g>
+
+  <!-- ===== RETENTIVITY MARKER (fade @4.6): dot + tick at +Br on B axis ===== -->
+  <g id="hysRet" opacity="0">
+    <line x1="159" y1="100" x2="181" y2="100" stroke="#ffc24b" stroke-width="2" filter="url(#hysGlowR)"/>
+    <circle cx="170" cy="100" r="4" fill="#ffc24b" filter="url(#hysGlowR)"/>
+    <circle cx="170" cy="100" r="1.6" fill="#eaf6ff"/>
+    <line x1="166.5" y1="96.5" x2="159" y2="88.5" stroke="#ffc24b" stroke-width="1" opacity=".7"/>
+    <text x="157" y="86" text-anchor="end" font-size="12" fill="#ffc24b" letter-spacing=".5">HIGH RETENTIVITY</text>
+  </g>
+
+  <!-- ===== NARROW LOOP (draw @6.0): soft annealed, slim sliver on the diagonal ===== -->
+  <path id="hysNarrow" d="M512 94 C487 96 466 118 454 157 C446 183 420 228 396 234 C421 232 442 210 454 171 C462 145 488 100 512 94 Z" fill="none" stroke="#9fe6ff" stroke-width="2" stroke-linejoin="round" pathLength="100" stroke-dasharray="100 102" stroke-dashoffset="100" filter="url(#hysGlowC)"/>
+
+  <!-- ===== SOFT TAG + FIELD GONE TICK (fade @6.9) ===== -->
+  <g id="hysSoft" opacity="0">
+    <circle cx="324" cy="26" r="3.5" fill="#9fe6ff" filter="url(#hysGlowR)"/>
+    <text x="334" y="30" font-size="13" fill="#9fe6ff" letter-spacing="1.5">SOFT · ANNEALED</text>
+    <line x1="448" y1="157" x2="460" y2="157" stroke="#9fe6ff" stroke-width="1.5" filter="url(#hysGlowR)"/>
+    <circle cx="454" cy="157" r="2.2" fill="#eaf6ff"/>
+    <line x1="450.5" y1="153" x2="443" y2="140" stroke="#9fe6ff" stroke-width="1" opacity=".6"/>
+    <text x="441" y="124" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".95">FIELD GONE</text>
+    <text x="441" y="137" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".95">AT ONCE</text>
+  </g>
+</svg>

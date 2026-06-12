@@ -1,0 +1,129 @@
+{
+  "lessonId": "ut1-8-1",
+  "title": "Calibration Equipment and System Components",
+  "narrationScript": "Every number you report in ultrasonic testing comes off a display, and that display is only as honest as the equipment chain behind it. Calibration is how we make the chain honest. In this module we deal with calibration in two layers. Electronic calibration proves the instrument itself measures time and amplitude correctly. Functional standardization ties the whole system, instrument, cable, probe, couplant, and reference blocks, to the actual test. This first lesson walks through the equipment involved, starting at the screen and working back to the probe. Start with the display. The basic ultrasonic presentation is the A scan. The horizontal axis is the sweep. It represents elapsed time, and once we calibrate it against a known thickness, time becomes distance into the part. The vertical axis is amplitude, how strong each returning echo is, normally read as a percentage of full screen height. So an echo at eighty percent of full screen height halfway across a calibrated screen tells you two things at once, how strong the reflector response is and how deep it sits. Most flaw detection uses a rectified display, where the signal is flipped so everything points up. The radio frequency display shows the raw positive and negative waveform, useful for some sizing and bonding work. Two other presentations build on the A scan. The B scan plots depth against probe travel and draws a cross section, which is why corrosion mapping loves it. The C scan plots gated signals over the scanned area and draws a plan view map of the part, the standard output of immersion production scanning. Now the gate. A gate is an electronic window placed over a chosen portion of the sweep. The instrument watches only what happens inside that window. Gates drive the two outputs that matter most in production work, alarms and recorders. An alarm fires when a signal inside the gate crosses a threshold. Positive logic alarms trigger when an echo rises above the threshold. That is a flaw alarm. Negative logic alarms trigger when a signal falls below a threshold, and that is how we monitor loss of back wall echo, loss of coupling, or a thickness below minimum. Recorders capture the gated output permanently. Older systems used strip chart recorders, paper moving in step with the probe. Modern systems record digitally, with every gated amplitude or thickness stamped with the probe position from an encoder. The calibration point is this. The alarm threshold and the recorder channel are part of the system. A functional calibration is not complete until the reference reflector that sets your sensitivity also fires the alarm and appears on the record. Automatic and semiautomatic systems wrap all of this into machinery. A typical immersion system has a tank, a scanning bridge that travels over it, and a manipulator that holds the search tube and lets you set the probe angle precisely. An encoder reports position. A pulser receiver drives the probe, gates watch the returns, and a computer builds the C scan and fires alarms or marking devices. Semiautomatic systems put a motorized scanner on the part, a weld scanner crawling a track for example, while the operator watches the display. One hard rule comes with machines. Scanning speed and pulse repetition frequency are linked. Each flaw must be hit by enough pulses to register, so every automated procedure sets a maximum scan speed for the pulse repetition frequency in use. Push the speed and you can drive right over a defect between pulses. Next, electronic distance amplitude correction. Two identical reflectors at different depths do not give equal echoes. The deeper one is weaker, because the beam spreads and the material attenuates. Electronic distance amplitude correction, also called swept gain or time corrected gain, fixes that. The instrument adds gain that increases with time, so by the moment the deep echo arrives, it has been boosted just enough to match the shallow one. Set it up with identical reference reflectors at several depths, and afterward equal reflectors read equal height anywhere on the screen, one flat evaluation level instead of a falling curve. Finally, the transducer. The probe is not an accessory. It is the front end of the calibrated system. Its frequency, element size, and damping set the near field length, the beam spread, and the dead zone, and those decide where your amplitude readings can be trusted. Probes wear, age, and drift, so calibration records identify the exact probe by serial number. Change the probe, the cable, or the couplant, and your standardization is gone until you rebuild it.",
+  "imagePrompt": "A technician adjusts the gate controls on a digital ultrasonic flaw detector beside a large immersion tank where a gantry-mounted transducer scans an aluminum forging underwater, a C-scan map building on a nearby monitor.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Two Layers of Calibration",
+      "body": "In this module, *calibration* covers two distinct activities, and keeping them separate will keep your paperwork — and your thinking — straight.\n\n- **Electronic calibration (standardization of the instrument electronics)** proves the instrument itself: that the horizontal sweep measures time linearly and the vertical scale displays amplitude linearly. It is done on the bench, at fixed intervals, against known signals and reflectors.\n- **Functional (inspection) standardization** ties the *whole system* — instrument, cable, search unit, couplant, and reference standard — to a specific examination, setting range and sensitivity for the job.\n\nBoth depend on the same equipment chain, and that chain is longer than the flaw detector alone. Energy starts at the pulser, drives the transducer, crosses the couplant into the part, returns, and is amplified, gated, displayed, recorded, and alarmed. Every link can change the answer. This lesson walks the chain link by link: displays, recorders, alarms, automated scanning hardware, electronic distance-amplitude correction, and the transducer itself — the components you must understand before you can calibrate any of them."
+    },
+    {
+      "type": "text",
+      "heading": "Monitor Displays: Sweep and Amplitude",
+      "body": "The **A-scan** is the foundation display: every other presentation is built from it. The **horizontal axis is the sweep** — elapsed time after the initial pulse. Calibrate it against known thicknesses and time becomes **sound-path distance** in the part. The **vertical axis is amplitude**, read as **percent of full screen height (% FSH)**: an echo peaking at 80% FSH at half screen width on a 250 mm range reports a reflector response of 80% at a sound path of 125 mm — two measurements from one echo.\n\nThree controls govern the sweep: **delay (zero offset)** slides the whole trace left or right to compensate for the probe's own delay; **range** sets how much material the full screen represents; and on digital instruments the **material velocity** setting converts time to distance — leave it on steel's 5,920 m/s while testing aluminum at 6,320 m/s and every depth reading is wrong.\n\nMost flaw detection uses the **full-wave rectified** display, which flips the negative half-cycles upward into a clean envelope. The **RF display** preserves the true positive-and-negative waveform, valuable for phase-sensitive work such as bond testing. Two mapped presentations extend the A-scan: the **B-scan** plots depth against probe travel — a cross-section, the natural view for corrosion profiling — and the **C-scan** plots gated amplitude or time-of-flight over the scanned area, a plan-view map and the standard record of automated immersion scanning."
+    },
+    {
+      "type": "figure",
+      "figureId": "ut1-8-1-fig-a",
+      "caption": "Anatomy of a calibrated A-scan: the sweep carries distance, the vertical scale carries amplitude in percent of full screen height, and the gate watches a chosen depth window with an alarm threshold."
+    },
+    {
+      "type": "text",
+      "heading": "Recorders and Alarms: The Gated Outputs",
+      "body": "A **gate** is an electronic window laid over a chosen portion of the sweep, defined by a **start**, a **width**, and a **threshold** level. The instrument continuously monitors only what happens inside the window — and the two outputs that make automated inspection possible both hang on it.\n\n**Alarms** come in two logics. **Positive logic** triggers when a gated echo **rises above** the threshold — the classic flaw alarm on a weld or forging line. **Negative logic** triggers when the gated signal **falls below** the threshold — the watchdog for loss of back-wall echo, loss of coupling, or wall thickness under minimum. Outputs can be a lamp or horn for an operator, or a relay that fires a paint marker, kicks out a part, or stops a drive.\n\n**Recorders** make the gated result permanent. Strip-chart recorders historically plotted gated amplitude or thickness against probe travel; facsimile-style recorders printed early C-scan maps. Modern systems record digitally — gated peak values or complete waveforms, each stamped with probe position from an encoder.\n\nFor calibration, the point is this: gate positions, alarm thresholds, and recorder settings are **settings of record**. A functional calibration is not finished until the reference reflector demonstrably fires the alarm and appears on the recording, end to end."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Calibrate to the output that makes the call",
+      "body": "In a manual exam the operator's eye makes the call; in an automated system the **gate, alarm, and recorder** make it. So calibrate what decides: prove that the reference reflector, passed at scanning speed, trips the alarm and lands on the record. A system whose screen shows the hole but whose alarm stays silent is **not calibrated** — it is decoration."
+    },
+    {
+      "type": "text",
+      "heading": "Automatic and Semiautomatic Systems",
+      "body": "**Semiautomatic** systems motorize the motion but keep the operator in the loop: a weld scanner crawling a guide band, a magnetic-wheel crawler walking a shell course, a stepper-driven raster frame on a nozzle. The operator still watches coupling and the display; the machine supplies steady speed and repeatable indexing.\n\n**Automatic** systems close the loop. A production immersion installation combines a **tank**, a traveling **scanning bridge**, and a **manipulator** that holds the search tube and sets probe angle precisely for normalization; a **turntable** spins round stock under a fixed beam, and **squirter (water-jet)** columns couple large aerospace skins too big to dunk. **Position encoders** report probe location, a couplant system maintains the path, and the pulser-receiver, gates, alarms, recorder, and C-scan computer do the judging at machine speed.\n\nMachines add one calibration variable people forget: **pulse density**. The probe interrogates the part only when the pulser fires, so scanning speed and **PRF** are linked. At 1,000 pulses per second and 100 mm/s, the part is sampled every 0.1 mm; raise the speed to 500 mm/s and samples land every 0.5 mm — a small reflector under a 3 mm effective beam gets six looks instead of thirty. Procedures therefore fix a **maximum scanning speed for the PRF in use**, and the functional calibration must be demonstrated at scanning speed."
+    },
+    {
+      "type": "figure",
+      "figureId": "ut1-8-1-fig-b",
+      "caption": "Block diagram of an automated immersion system: bridge, manipulator, and encoder deliver the probe; pulser-receiver, gate, alarm, and recorder judge and document the result."
+    },
+    {
+      "type": "text",
+      "heading": "Electronic Distance-Amplitude Correction",
+      "body": "Send the same size reflector deeper into the part and its echo shrinks — every time. Two mechanisms guarantee it: **beam spread** dilutes the same energy over a growing footprint, and **attenuation** bleeds energy into the material on both the outbound and return trips. Left uncorrected, a 3 mm reflector at 20 mm depth out-shouts an identical one at 80 mm, and amplitude-based acceptance would judge the same flaw differently depending on where it sits.\n\n**Electronic distance-amplitude correction** — also sold as swept gain, time-corrected gain (TCG), time-varied gain, or sensitivity-time control — fixes this inside the receiver. The instrument applies a programmed gain that **increases with elapsed time** after the initial pulse, adding just enough boost at each depth that **equal reflectors read equal screen height anywhere on the sweep**. You teach it with identical reference reflectors — side-drilled or flat-bottom holes — at several depths: the instrument records the gain needed to bring each to the reference height and interpolates between them.\n\nThe manual alternative leaves gain fixed and **draws the falling curve** on the screen (the DAC curve, covered fully in a later lesson of this module); electronic DAC simply flattens that curve into one horizontal evaluation level. Mind its limits: correction range and slope are finite, it cannot repair coupling or transfer differences, and correction points inside the near field — where amplitude oscillates — need care."
+    },
+    {
+      "type": "text",
+      "heading": "Transducers: The Front End of the Calibrated System",
+      "body": "Every signal the system judges was born in the probe, so the transducer is calibrated equipment — not an accessory. Three of its parameters set the physics your calibration rides on. **Frequency** and **element diameter** fix the **near field**: N = D²f/4v. A 10 mm element at 5 MHz in steel (5,920 m/s) gives N ≈ 21 mm — and inside that zone amplitude oscillates unpredictably, so reference reflectors and amplitude evaluations belong beyond it where possible. The same two parameters set **beam spread** (larger diameter or higher frequency → narrower beam), which controls where the beam actually interrogates. **Damping** sets pulse length: heavy backing gives a short, broadband pulse with fine axial resolution and a short dead zone; light damping gives a long, narrowband, more penetrating pulse.\n\nCalibration treats the probe accordingly. Angle-beam units get their **exit point** and **actual refracted angle** verified — wedges wear. Every unit gets its **sensitivity** compared against the recorded reference response, plus resolution and dead-zone checks where the procedure requires them. And the calibration record identifies the probe by **serial number**, because two probes of the same model are not the same probe. Change the probe — or even the cable — and the standardization it anchored is void until rebuilt."
+    }
+  ],
+  "figures": [
+    {
+      "id": "ut1-8-1-fig-a",
+      "title": "Anatomy of a calibrated A-scan",
+      "file": "ut1-8-1-fig-a.svg"
+    },
+    {
+      "id": "ut1-8-1-fig-b",
+      "title": "Automated immersion scanning system",
+      "file": "ut1-8-1-fig-b.svg"
+    }
+  ],
+  "interactive": null,
+  "checkQuestions": [
+    {
+      "question": "On a screen ranged to 250 mm with 10 divisions, an echo peaks at 60% of full screen height at division 5.0. What has the display told you?",
+      "options": [
+        "Sound path 250 mm and amplitude 60 dB",
+        "Sound path 125 mm and echo amplitude 60% of full screen height",
+        "Depth 60 mm and amplitude 125% of full screen height",
+        "Sound path 5 mm and a gain of 60 dB"
+      ],
+      "correct": 1,
+      "explanation": "Half of a 250 mm range is a 125 mm sound path, and the vertical scale reads amplitude as a percentage of full screen height — not in decibels."
+    },
+    {
+      "question": "An automated corrosion-mapping line must alarm the moment coupling is lost or the wall thins below minimum. The correct configuration is:",
+      "options": [
+        "A positive-logic gate on the initial pulse",
+        "A positive-logic gate on the back-wall echo — alarm when it exceeds the threshold",
+        "A negative-logic gate on the back-wall echo — alarm when the gated signal falls below the threshold",
+        "No gate; the operator watches the screen for changes"
+      ],
+      "correct": 2,
+      "explanation": "Loss of coupling and wall thinning both show up as the back-wall echo dropping or vanishing, so the alarm must trigger when the gated signal falls below the threshold — negative logic."
+    },
+    {
+      "question": "The purpose of electronic distance-amplitude correction (swept gain / TCG) is to:",
+      "options": [
+        "apply time-varying gain so that equal reflectors display equal amplitude regardless of depth",
+        "increase the pulse repetition frequency as the probe moves faster",
+        "straighten a nonlinear sweep on the horizontal axis",
+        "remove couplant noise from inside the gate"
+      ],
+      "correct": 0,
+      "explanation": "Electronic DAC adds gain that increases with elapsed time, compensating beam spread and attenuation so identical reflectors read the same screen height at any sound path."
+    },
+    {
+      "question": "An operator doubles the scanning speed of an automated weld scanner without changing the PRF. The calibration-relevant consequence is:",
+      "options": [
+        "The refracted angle of the probe increases",
+        "The near-field length of the probe doubles",
+        "The gate threshold automatically rises",
+        "Half as many pulses interrogate each unit of scan length, so a small reflector can pass undetected"
+      ],
+      "correct": 3,
+      "explanation": "Pulse density is PRF divided by scan speed; doubling speed halves the number of pulses striking each increment of the part, which is why procedures fix a maximum speed for the PRF in use."
+    },
+    {
+      "question": "Which presentation produces a plan-view map of gated amplitude over the scanned surface — the standard record of automated immersion scanning?",
+      "options": [
+        "A-scan",
+        "B-scan",
+        "C-scan",
+        "RF display"
+      ],
+      "correct": 2,
+      "explanation": "The C-scan plots the gated signal (amplitude or time-of-flight) against the X-Y scan position, producing a plan-view map; the B-scan is a cross-section and the A-scan a single waveform."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, UT Technique Course §2.1 (equipment for calibration: monitor displays, recorders, alarms, automatic and semiautomatic systems, electronic distance/amplitude correction, transducers)",
+    "Codes such as ASME BPVC Section V, Article 4 (instrument and system calibration requirements, general practice)",
+    "General UT instrumentation references: A-, B-, and C-scan presentations, gate logic, TCG/swept gain"
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "moduleId": "basic-4",
+  "questions": [
+    {
+      "question": "A job traveler calls for magnetic particle testing on four different parts. Which part can actually be examined by MT?",
+      "options": [
+        "An austenitic stainless steel pump fitting",
+        "An aluminum alloy bracket",
+        "A copper bus bar",
+        "A 4140 low-alloy steel shaft"
+      ],
+      "correct": 3,
+      "explanation": "MT works only on ferromagnetic materials — iron, nickel, cobalt, and most carbon and low-alloy steels — whose domains align with and multiply an applied field. Austenitic stainless steel and aluminum are paramagnetic and copper is diamagnetic, with relative permeabilities near 1; no amperage setting can make them produce a usable flux leakage field."
+    },
+    {
+      "question": "A 10 in. long, 2 in. diameter part is magnetized longitudinally against the inside wall of a low fill-factor coil using the rule NI ≈ 45,000 ÷ (L/D). The approximate coil requirement is:",
+      "options": [
+        "225,000 ampere-turns",
+        "45,000 ampere-turns",
+        "9,000 ampere-turns",
+        "4,500 ampere-turns"
+      ],
+      "correct": 2,
+      "explanation": "L/D = 10 ÷ 2 = 5, and 45,000 ÷ 5 = 9,000 ampere-turns — amperage times the number of turns, so a five-turn coil would carry 1,800 A. Multiplying by L/D (225,000) and dividing by length alone (4,500) are the classic slips. The rule serves parts with L/D roughly between 2 and 15, and the strong field zone reaches only about 9 in. either side of coil center."
+    },
+    {
+      "question": "After demagnetizing a batch of circularly magnetized parts, a technician reads nearly zero on a field indicator. Why is this reading, by itself, weak evidence that demagnetization succeeded?",
+      "options": [
+        "Field indicators respond only to fields stronger than 10 gauss",
+        "A circular residual field closes its flux loop almost entirely inside the metal, so little external field reaches the meter",
+        "Residual fields can be measured only while the magnetizing current is still flowing",
+        "The Earth's field cancels the residual reading unless the part is oriented north–south"
+      ],
+      "correct": 1,
+      "explanation": "A circularly magnetized part has no external poles — the flux loop stays within the metal — so even a strong residual field leaks almost nothing for a meter to read. Longitudinal residual fields, by contrast, show at the part ends. East–west orientation during demagnetization prevents the Earth's ~0.5 gauss field from re-magnetizing long parts; it has nothing to do with enabling the measurement."
+    },
+    {
+      "question": "A fluorescent wet-method examination is set up in a darkened area. The lighting conditions generally required at the part surface are:",
+      "options": [
+        "UV-A of at least 1000 µW/cm² with ambient white light held to 2 fc or less",
+        "UV-A of at least 100 µW/cm² with ambient white light below 20 fc",
+        "White light of at least 100 fc, with no UV-A requirement",
+        "UV-A of at least 1000 fc with white light below 100 µW/cm²"
+      ],
+      "correct": 0,
+      "explanation": "Fluorescent examination requires UV-A (nominal 365 nm) of at least 1000 µW/cm² at the surface with ambient white light at 2 fc or less, so indications glow against a dark background. The 100 fc white-light minimum belongs to visible-particle examination — a different technique with its own lighting rule — and the last option scrambles the units."
+    },
+    {
+      "question": "Blotchy, scrawled particle marks appear where a part lay in contact with another magnetized component. After demagnetizing and reprocessing, the marks do not return. These indications were:",
+      "options": [
+        "False indications, proven by their disappearance on retest",
+        "Relevant indications that the demagnetization erased",
+        "Nonrelevant indications — magnetic writing, a real leakage field with the wrong source",
+        "Evidence of grinding cracks removed by handling"
+      ],
+      "correct": 2,
+      "explanation": "Magnetic writing is held by a genuine leakage field, so it is not false — but the field's source is contact with another magnetized part, not a discontinuity, which makes it nonrelevant. Its tell is exactly this: demagnetize, reprocess, and it is gone. A relevant indication re-forms, because the discontinuity is still there to leak flux on the next shot."
+    },
+    {
+      "question": "Very fine, shallow grinding cracks are suspected on a smooth, machined and ground steel surface. The particle system most likely to reveal them is:",
+      "options": [
+        "Dry visible powder dusted on with a squeeze bulb",
+        "Dry powder with half-wave DC for deeper penetration",
+        "Visible wet particles examined in daylight",
+        "Wet fluorescent particles viewed under UV-A"
+      ],
+      "correct": 3,
+      "explanation": "The fine suspended particles of a wet bath plus the contrast of fluorescence under UV-A give the highest sensitivity to fine, shallow surface cracks on smooth surfaces — the grinding-crack problem exactly, and one that is easy to miss with dry powder. Dry powder's territory is rough as-welded and as-cast surfaces and hot parts; HWDC's added penetration targets near-surface flaws, not finer surface ones."
+    },
+    {
+      "question": "Compared with magnetic particle testing, the defining advantage that electronic sensing gives magnetic flux leakage testing is:",
+      "options": [
+        "Higher sensitivity to tight surface cracks in any orientation",
+        "A fast, position-indexed, recordable signal that lets surveys be repeated and compared over time",
+        "The ability to examine nonferromagnetic alloys such as austenitic stainless steel",
+        "Exact measurement of the remaining wall thickness at each defect"
+      ],
+      "correct": 1,
+      "explanation": "Trading particles for sensors is what lets MFL move — a pipeline tool surveys hundreds of kilometers in one run — and log every signal against distance, so this year's data can be laid over last year's to measure corrosion growth. MFL is still ferromagnetic-only and metal-loss-first: tight cracks show only under favorable conditions, and sizing is approximate, which is why UT does the thickness measurement."
+    },
+    {
+      "question": "Which metal-loss condition produces the WEAKEST magnetic flux leakage signal relative to the amount of metal missing?",
+      "options": [
+        "Gradual, saucer-shaped thinning spread over a long distance",
+        "A sharp-walled, abrupt corrosion pit",
+        "A cluster of deep, steep-sided pits",
+        "A gouge with sharply defined edges"
+      ],
+      "correct": 0,
+      "explanation": "Abruptness concentrates leakage: a sharp-walled pit forces flux out over a short distance and prints a strong, narrow signal. Gradual thinning spreads the same metal loss along a gentle profile, so the flux redistributes with little local leakage — the classic hard case for MFL and one reason screening results are proved up with ultrasonic thickness measurement."
+    },
+    {
+      "question": "Wire rope is examined with MFL rather than by visual inspection alone primarily because:",
+      "options": [
+        "Visual inspection cannot be performed while the rope is moving",
+        "MFL measures the rope's breaking strength directly",
+        "Lubricant must always be stripped before a visual inspection",
+        "MFL reads the entire metallic cross-section, including internal broken wires and deterioration deep in the strands that no eye can reach"
+      ],
+      "correct": 3,
+      "explanation": "Most of a rope's wires are hidden inside the strands, and ropes commonly degrade from the inside through inter-wire fretting and trapped moisture. The test head saturates the full cross-section: the LMA channel tracks gradual loss of metallic area from wear and corrosion while the LF channel flags broken wires, internal as well as external. MFL infers condition from missing cross-section — it does not measure breaking strength."
+    },
+    {
+      "question": "High product flow pushes an MFL in-line inspection pig well above its qualified speed window. The expected effect on the recorded data is:",
+      "options": [
+        "None, because Hall sensors read flux density at any speed",
+        "Stronger signals, because faster motion induces more voltage in the sensors",
+        "Distorted, weakened leakage signals, because the moving magnetizer induces eddy currents in the pipe wall that oppose the field",
+        "Loss of odometer data only, with the leakage signals unaffected"
+      ],
+      "correct": 2,
+      "explanation": "Motion of a strong magnetizer induces eddy currents in the wall that oppose and distort the magnetizing field, so above the qualified window — typically a few meters per second — the leakage signatures degrade regardless of sensor type. Hall elements do read B at any speed, but they can only report the distorted field that excessive velocity creates; that is why run speed is controlled."
+    }
+  ]
+}

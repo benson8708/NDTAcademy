@@ -1,0 +1,188 @@
+{
+ "lessonId": "rt1-8-2",
+ "title": "Definition, Graininess, and Image Quality Indicators",
+ "narrationScript": "In the last lesson we said sensitivity stands on two legs, contrast and definition. We covered contrast. Now we take on definition, the sharpness of the image, and then the small device that proves the whole technique worked, the image quality indicator. Definition is how crisply each edge in the image is drawn, how abruptly the density changes where an image stops and the background begins. A crack is a fine line. If the edges of that line smear, it melts into the background and you never see it. The first enemy of definition is geometry. Your source is not a point. An iridium one ninety two source can easily measure an eighth of an inch or more across. Because radiation leaves from every point on that source, the shadow of any edge in the part is not a clean line. It carries a fuzzy border called the penumbra, and the width of that border is geometric unsharpness. The formula is simple. Geometric unsharpness equals the source size, times the distance from the source side of the part to the film, divided by the distance from the source to the part. Run the numbers once. The source is fifteen hundredths of an inch across. The film hugs the back surface of a one inch thick plate, so the film sits one inch behind the source side of the part. The source stands twenty four inches away. Fifteen hundredths times one, divided by twenty four, gives about six thousandths of an inch. Codes put hard ceilings on this number, commonly twenty thousandths of an inch for steel under two inches thick, with looser limits as the material gets thicker. The formula also hands you the three fixes. Use the smallest source or focal spot you can get. Press the film tight against the part. And back the source up, because doubling the distance cuts the unsharpness in half. Distance is never free, since the inverse square law makes you pay four times the exposure for every doubling, so a technique is always a negotiation between sharpness and time. Motion is geometry's partner in crime. If the source, the part, or the film shifts during the exposure, every edge in the image smears at once. Rig everything rock solid before you shoot. There is also unsharpness you cannot rig away. When radiation interacts in the film, it releases electrons that travel a short distance before they stop, and that travel blurs the image slightly. This inherent unsharpness grows with radiation energy, one more reason not to shoot hotter than the job needs. The second enemy of definition lives inside the film itself. The image is built from microscopic silver grains, and they develop in clumps. When the clumps grow large enough to see, the image looks pebbly. We call that graininess. Fast films owe their speed to bigger grains, so the price of a short exposure is a noisier picture, and higher energy radiation makes graininess worse as well. For critical work you choose a slower, finer grained film class and accept the longer exposure. Screens add their own noise. Lead screens, the standard for code work, intensify the exposure with electrons, filter scatter, and add essentially no visible mottle. Fluorescent screens are different. They convert radiation into light and can slash exposure times, but the image they build is blotchy. Part of that is the phosphor structure itself. Most of it is quantum mottle, the statistical patchiness that appears when relatively few absorbed photons carry the whole image. The faster the screen, the fewer photons do the work, and the worse the mottle. That is why fluorescent screens rarely appear on high sensitivity code radiography. Now for the proof. Nearly every code radiograph carries an image quality indicator, a small standard device whose image tells the interpreter whether the technique delivered the required quality. The hole type indicator is a thin plaque, normally two percent of the part thickness, with three drilled holes sized at one, two, and four times the plaque thickness. Lead numbers on the plaque give its thickness in thousandths of an inch. The wire type holds six straight wires of stepped diameters in a plastic envelope, and it lies across the weld. The code states a required quality level, and the standard one reads two dash two T. The first two says the plaque is two percent of the part thickness. The two T says the hole with a diameter of twice the plaque thickness must be clearly visible. With wires, the procedure names an essential wire, and that wire must show clearly across the area of interest. Placement matters. The indicator belongs on the source side whenever you can reach it, because that is the position where image quality is hardest to achieve. If the source side is truly inaccessible, it goes on the film side with a lead letter F beside it so the interpreter knows. On a weld with reinforcement, the plaque sits on a shim that matches the reinforcement, so the indicator is judged against the full metal path the radiation actually crossed. One last point that matters in the field. Seeing the two T hole does not promise you would see a crack of the same size. A drilled hole is the easiest target there is. The indicator proves technique quality. Finding the flaw is still the interpreter's job.",
+ "imagePrompt": "A radiographer's gloved hands position a small rectangular metal plaque with three tiny drilled holes onto a shim beside a pipe weld seam, a wire IQI envelope and taped film cassette ready on the workbench of a fabrication shop.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Definition: The Sharpness Half of Sensitivity",
+   "body": "Contrast decides whether an image is dark enough to notice; **definition** decides whether its edges are drawn crisply enough to recognize. Formally, definition is the abruptness of the density transition at the boundary of an image - sharp transition, good definition; gradual smear, poor definition. Fine, linear indications suffer first: a crack image only a few thousandths of an inch wide simply dissolves into the background when its edges blur.\n\nEverything that blurs a radiograph lands in one of a few bins:\n\n- **Geometric unsharpness (Ug)** - the penumbra cast because the source has finite size.\n- **Motion unsharpness** - source, part, or film shifting during the exposure.\n- **Inherent (film) unsharpness** - electrons liberated in the film travel a short distance before stopping, smearing the image slightly; it grows with radiation energy.\n- **Screen unsharpness and poor contact** - light spreading sideways in fluorescent screens, or a film bowed away from its screens.\n\nGraininess and mottle pile noise on top of whatever sharpness survives - we deal with them below. First the geometry, because it is the part you control with a tape measure."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-8-2-fig-a",
+   "caption": "Rays from a finite-size source create a penumbra at every edge - geometric unsharpness grows with source size and object-to-film distance, and shrinks as source-to-object distance grows."
+  },
+  {
+   "type": "text",
+   "heading": "Geometric Unsharpness by the Numbers",
+   "body": "Because the source has real width, every edge in the part casts a shadow with a fuzzy border - the **penumbra**. Its width is the geometric unsharpness:\n\n**Ug = F × t / d**\n\nwhere **F** is the source or focal-spot size, **t** is the distance from the **source side of the part** to the film (the worst-case plane, and the one codes use), and **d** is the distance from the source to the source side of the part.\n\nWork one: a 0.150 in. Ir-192 source, film in contact with the back of a 1 in. plate (t = 1 in.), source 24 in. away. Ug = 0.150 × 1 / 24 ≈ **0.006 in.** Typical code ceilings run about **0.020 in. for material under 2 in.**, 0.030 in. for 2-3 in., 0.040 in. for 3-4 in., and 0.070 in. above 4 in. - this setup passes with room to spare.\n\nThe formula hands you the three remedies: a **smaller source**, the **film tight against the part** (small t), and a **longer stand-off** (big d - doubling d halves Ug). Distance costs, though: the inverse square law demands four times the exposure for each doubling, so every technique balances sharpness against time. And remember motion - the most elegant geometry is wasted if the rig shifts mid-exposure. Anchor the source, the part, and the cassette."
+  },
+  {
+   "type": "text",
+   "heading": "Film Graininess and Screen Mottle",
+   "body": "The developed image is built from microscopic silver grains that develop in clumps, and when those clumps get big enough to see, the image looks pebbly - that is **graininess**. It rises with:\n\n- **Film speed** - fast films owe their speed to larger grains; the fine-grain film classes used for critical work are slow precisely because their grains are small.\n- **Radiation energy** - each higher-energy photon deposits more energy per interaction, exposing larger clumps; the same film looks grainier under Co-60 than at 150 kV.\n- **Processing excess** - overdevelopment pushes grain clumping (and fog) upward.\n\nScreens add their own texture. **Lead foil screens** - the standard 0.005-0.010 in. front and back - intensify by emitting electrons, filter out low-energy scatter, and contribute essentially **no visible mottle**. **Fluorescent screens** convert radiation to light and can cut exposures dramatically, but they pay in **screen mottle**: a small share is *structure mottle* from the phosphor coating itself, and the larger share is **quantum mottle** - statistical patchiness that appears when relatively few absorbed photons must carry the whole image. The faster the screen, the fewer photons share the work and the worse the mottle. That noise floor is why fluorescent screens are generally excluded from high-sensitivity code radiography, and why film-screen **contact** is checked: a gap lets screen light spread sideways and smear detail."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-8-2-fig-b",
+   "caption": "The same faint crack image seen through fine-grain film, coarse-grain film, and fluorescent-screen mottle - system noise sets the limit on what you can call."
+  },
+  {
+   "type": "text",
+   "heading": "Image Quality Indicators: Hole Type and Wire Type",
+   "body": "You cannot calibrate a weld, so codes put a known object - the **image quality indicator** - on the part and judge the technique by its image. Two families dominate.\n\n**Hole-type plaques.** A thin rectangular plaque of material radiographically similar to the part, with thickness **T** normally set at **2% of the part thickness**, carrying three drilled holes of diameters **1T, 2T, and 4T**. Lead identification numbers on the plaque state its thickness in mils - a \"25\" plaque is 0.025 in. thick, sized for about 1.25 in. of steel at the 2% level.\n\n**Wire-type sets.** Six straight wires of stepped diameters sealed in a plastic envelope, in overlapping sets that span the thickness range, with wire material matched to the part's alloy group. The set lies on the part with the wires crossing the weld.\n\nThe procedure specifies a **quality level**: the first number is the plaque thickness as a percentage of part thickness, the second the hole that must be clearly visible. Common levels and their equivalent sensitivity:\n\n- 1-1T ≈ 0.7% · 1-2T = 1.0% · 2-1T ≈ 1.4%\n- **2-2T = 2.0% - the standard working level**\n- 2-4T ≈ 2.8% · 4-2T = 4.0%\n\nFor wire work, the procedure names the **essential wire** that must show across the area of interest, and codes publish equivalence tables tying wire diameters to hole-type levels."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-8-2-fig-c",
+   "caption": "A simulated weld radiograph with a shimmed hole-type plaque (2% T) and a wire-type IQI laid across the weld, both placed source side."
+  },
+  {
+   "type": "text",
+   "heading": "Placement, Shims, and Reading the IQI",
+   "body": "**Source side is the default.** The IQI belongs on the side of the part facing the source, because that is where image quality is hardest to achieve - an IQI on the film side rides closer to the detector and images more sharply than the part's far-side features. When the source side is genuinely inaccessible (inside a closed vessel, for example), the IQI may go on the **film side with a lead letter \"F\"** adjacent to it, so the interpreter knows exactly what was demonstrated.\n\n**Shim under the plaque on welds.** A hole-type plaque is sized as a percentage of the *total* metal path - base metal plus reinforcement. Setting the plaque on a **shim** of radiographically similar material, matching the reinforcement height and extending beyond the plaque, keeps the demonstration honest. The plaque sits adjacent to the weld in the area of interest, not on top of a crown it cannot represent.\n\n**Reading the result.** At the viewer, confirm three things: required density in the area of interest; density through the IQI within the usual tolerance relative to the area of interest (commonly about −15% to +30%); and the required hole or essential wire **clearly visible**. Panoramic shots need multiple IQIs - typically at least three, spaced about 120° apart - so quality is proven around the full circumference. If the required feature does not show, the radiograph is rejected and the technique gets fixed, not the paperwork."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The IQI proves the technique - not the flaw",
+   "body": "Seeing the 2T hole does **not** mean a crack of the same size would be visible. A drilled hole is an ideal target: round, sharp-walled, oriented straight through the thickness. Real discontinuities - especially tight cracks at an angle to the beam - can be far harder to image. The IQI certifies that contrast, definition, and density met the standard. Finding and judging the discontinuity is still the interpreter's craft."
+  }
+ ],
+ "figures": [
+  {
+   "id": "rt1-8-2-fig-a",
+   "title": "Geometric unsharpness",
+   "file": "rt1-8-2-fig-a.svg"
+  },
+  {
+   "id": "rt1-8-2-fig-b",
+   "title": "Graininess and screen mottle at magnification",
+   "file": "rt1-8-2-fig-b.svg"
+  },
+  {
+   "id": "rt1-8-2-fig-c",
+   "title": "IQIs on a weld radiograph",
+   "file": "rt1-8-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "IQI Sensitivity Reading Practice",
+  "intro": "Your procedure calls for hole-type quality level 2-2T, and the plaque on this radiograph is 2% of the part thickness. Click the feature that must be clearly visible before you can accept the technique.",
+  "figureId": "rt1-8-2-fig-c",
+  "regions": [
+   {
+    "x": 188,
+    "y": 153,
+    "w": 34,
+    "h": 34,
+    "label": "4T hole",
+    "isTarget": false,
+    "feedback": "This is the largest, easiest hole. If only the 4T hole shows, you have 2-4T quality - coarser than the required 2-2T."
+   },
+   {
+    "x": 230,
+    "y": 155,
+    "w": 30,
+    "h": 30,
+    "label": "2T hole",
+    "isTarget": true,
+    "feedback": "Correct. 2-2T means a plaque 2% of part thickness with the hole of diameter twice the plaque thickness clearly visible in the area of interest."
+   },
+   {
+    "x": 262,
+    "y": 157,
+    "w": 22,
+    "h": 26,
+    "label": "1T hole",
+    "isTarget": false,
+    "feedback": "Seeing the 1T hole means the technique exceeded the requirement (2-1T territory), but the hole that decides acceptance at 2-2T is the 2T hole."
+   },
+   {
+    "x": 154,
+    "y": 158,
+    "w": 30,
+    "h": 26,
+    "label": "Lead ID number",
+    "isTarget": false,
+    "feedback": "The lead number identifies plaque thickness in mils (25 = 0.025 in.). It confirms the right plaque was used - it does not demonstrate sensitivity."
+   },
+   {
+    "x": 482,
+    "y": 150,
+    "w": 166,
+    "h": 146,
+    "label": "Wire-type IQI",
+    "isTarget": false,
+    "feedback": "Wire sets prove sensitivity through a designated essential wire - but this procedure specified the hole-type 2-2T level, so the 2T hole is the deciding feature."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A 0.200 in. source sits 30 in. from the source side of the part, and the film is 1.5 in. behind that surface. What is the geometric unsharpness?",
+   "options": [
+    "0.010 in.",
+    "0.030 in.",
+    "0.100 in.",
+    "0.0025 in."
+   ],
+   "correct": 0,
+   "explanation": "Ug = F × t / d = 0.200 × 1.5 / 30 = 0.010 in. - inside a typical 0.020 in. code cap for thin material."
+  },
+  {
+   "question": "Keeping the same source and part setup, which single change cuts geometric unsharpness in half?",
+   "options": [
+    "Halve the source-to-object distance",
+    "Double the source-to-object distance",
+    "Double the object-to-film distance",
+    "Switch to a finer-grain film"
+   ],
+   "correct": 1,
+   "explanation": "Ug is inversely proportional to d, so doubling the source-to-object distance halves it (at the cost of four times the exposure). Film class affects graininess, not Ug."
+  },
+  {
+   "question": "Film graininess gets noticeably worse when you:",
+   "options": [
+    "Use a slower, finer-grain film class",
+    "Lower the radiation energy",
+    "Use a faster film and higher-energy radiation",
+    "Improve film-screen contact"
+   ],
+   "correct": 2,
+   "explanation": "Fast films have larger grains, and higher-energy photons expose larger grain clumps per interaction - both increase the visible graininess of the image."
+  },
+  {
+   "question": "Quantum mottle - the statistical blotchiness of the image - is chiefly associated with:",
+   "options": [
+    "Lead foil screens",
+    "High-speed fluorescent screens",
+    "Fine-grain Class I films",
+    "Excessive source-to-film distance"
+   ],
+   "correct": 1,
+   "explanation": "Fluorescent screens build the image from relatively few absorbed photons, so statistical fluctuation shows as mottle; the faster the screen, the fewer the photons and the worse the mottle. Lead screens add essentially none."
+  },
+  {
+   "question": "A hole-type IQI quality level of 2-2T requires:",
+   "options": [
+    "A plaque 2% of part thickness with the 1T hole visible",
+    "A plaque 4% of part thickness with the 2T hole visible",
+    "Two plaques with all holes visible",
+    "A plaque 2% of part thickness with the hole of diameter twice the plaque thickness clearly visible"
+   ],
+   "correct": 3,
+   "explanation": "The first number is the plaque thickness as a percentage of part thickness; the second names the required hole - here the 2T hole, whose diameter is twice the plaque thickness."
+  }
+ ],
+ "references": [
+  "CP-105-2024 RT Topical Outline, Radiography Technique 4.5 (definition)",
+  "CP-105-2024 RT Topical Outline, Radiography Technique 4.6 (film graininess and screen mottle effects)",
+  "CP-105-2024 RT Topical Outline, Radiography Technique 4.7 (image quality indicators)",
+  "ASTM E1025 / E747 (hole-type and wire-type IQI design, general reference)",
+  "ASME BPVC Section V, Article 2 (IQI selection and placement, general practice)"
+ ]
+}

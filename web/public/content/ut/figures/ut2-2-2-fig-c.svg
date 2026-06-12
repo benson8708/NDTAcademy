@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Grid Scanning and the Containment-Circle Rule</text>
+  <text x="400" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">Straight-beam plate scan — plan view of areas with complete back-reflection loss</text>
+
+  <!-- plate -->
+  <rect x="70" y="95" width="660" height="280" fill="#E8F1FB" stroke="#0A2342" stroke-width="3"/>
+
+  <!-- edge zone -->
+  <rect x="70" y="95" width="40" height="280" fill="#F2A33C" opacity="0.3"/>
+
+  <!-- grid lines -->
+  <line x1="180" y1="95" x2="180" y2="375" stroke="#5A6B7E" stroke-width="1.2"/>
+  <line x1="290" y1="95" x2="290" y2="375" stroke="#5A6B7E" stroke-width="1.2"/>
+  <line x1="400" y1="95" x2="400" y2="375" stroke="#5A6B7E" stroke-width="1.2"/>
+  <line x1="510" y1="95" x2="510" y2="375" stroke="#5A6B7E" stroke-width="1.2"/>
+  <line x1="620" y1="95" x2="620" y2="375" stroke="#5A6B7E" stroke-width="1.2"/>
+  <line x1="70" y1="188" x2="730" y2="188" stroke="#5A6B7E" stroke-width="1.2"/>
+  <line x1="70" y1="281" x2="730" y2="281" stroke="#5A6B7E" stroke-width="1.2"/>
+
+  <!-- grid spacing dimension -->
+  <line x1="180" y1="110" x2="290" y2="110" stroke="#0A2342" stroke-width="1.5"/>
+  <polygon points="180,110 190,106 190,114" fill="#0A2342"/>
+  <polygon points="290,110 280,106 280,114" fill="#0A2342"/>
+  <text x="235" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">≈ 225 mm</text>
+
+  <!-- scan direction arrow on a grid line -->
+  <line x1="620" y1="350" x2="620" y2="140" stroke="#F2A33C" stroke-width="3"/>
+  <polygon points="613,140 627,140 620,124" fill="#F2A33C"/>
+  <text x="632" y="152" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">scan along grid lines</text>
+
+  <!-- indication 1: acceptable -->
+  <ellipse cx="235" cy="240" rx="28" ry="18" fill="#1E9E6A" opacity="0.5"/>
+  <ellipse cx="235" cy="240" rx="28" ry="18" fill="none" stroke="#1E9E6A" stroke-width="2"/>
+  <circle cx="235" cy="240" r="45" fill="none" stroke="#1E9E6A" stroke-width="2" stroke-dasharray="7,6"/>
+  <line x1="235" y1="195" x2="235" y2="172" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="235" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">75 mm circle</text>
+  <text x="225" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1E9E6A">fits the circle → acceptable (record)</text>
+
+  <!-- indication 2: rejectable -->
+  <ellipse cx="545" cy="240" rx="85" ry="22" fill="#D14343" opacity="0.45"/>
+  <ellipse cx="545" cy="240" rx="85" ry="22" fill="none" stroke="#D14343" stroke-width="2"/>
+  <circle cx="545" cy="240" r="45" fill="none" stroke="#D14343" stroke-width="2" stroke-dasharray="7,6"/>
+  <text x="545" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">cannot be contained → rejectable</text>
+
+  <!-- edge zone label -->
+  <line x1="90" y1="375" x2="120" y2="400" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="126" y="406" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#F2A33C" font-weight="bold">edge zone — 100% scan where weld bevels are planned</text>
+
+  <!-- bottom note -->
+  <text x="400" y="436" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Map boundaries by 6 dB drop or back-wall recovery; report size, depth, and location of every area</text>
+</svg>

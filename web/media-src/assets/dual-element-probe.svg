@@ -1,0 +1,134 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="depG" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="depGu" filterUnits="userSpaceOnUse" x="0" y="0" width="600" height="340">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="depSteel" x1="0" y1="200" x2="0" y2="332" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c5a8a"/><stop offset=".3" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <pattern id="depCorkPat" width="7" height="9" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2.5" r="0.9" fill="#ffc24b" opacity=".8"/>
+      <circle cx="5" cy="6.5" r="0.7" fill="#ffc24b" opacity=".6"/>
+    </pattern>
+  </defs>
+
+  <!-- ===== STEEL SECTION (cutaway, bottom ~40%) ===== -->
+  <rect x="36" y="200" width="528" height="132" fill="url(#depSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".12">
+    <line x1="42" y1="233" x2="558" y2="233"/>
+    <line x1="42" y1="266" x2="558" y2="266"/>
+    <line x1="42" y1="299" x2="558" y2="299"/>
+  </g>
+  <text x="48" y="320" font-size="10" letter-spacing="1" fill="#9fe6ff" opacity=".45">STEEL SECTION</text>
+
+  <!-- ===== PSEUDO-FOCAL ZONE (reveal: depCross) ===== -->
+  <g id="depCross" opacity="0">
+    <path d="M290,212 C310,228 321,248 321,266 C321,284 306,300 296,310 L284,310 C274,300 259,284 259,266 C259,248 270,228 290,212 Z" fill="#5fe0ff" fill-opacity=".26" stroke="#eaf6ff" stroke-width="1.4" opacity=".95" filter="url(#depG)"/>
+    <ellipse cx="290" cy="255" rx="10" ry="26" fill="#eaf6ff" opacity=".14"/>
+    <text x="402" y="256" font-size="10.5" letter-spacing="1" fill="#9fe6ff">PSEUDO-FOCAL ZONE</text>
+    <line x1="398" y1="252" x2="325" y2="262" stroke="#9fe6ff" stroke-width="1" opacity=".6"/>
+    <circle cx="323" cy="262.5" r="1.8" fill="#9fe6ff" opacity=".9"/>
+  </g>
+
+  <!-- ===== NEAR-SURFACE PIT (static) ===== -->
+  <circle cx="290" cy="222" r="6.5" fill="none" stroke="#ffc24b" stroke-width="1" opacity=".25"/>
+  <circle cx="290" cy="222" r="3" fill="#08152b" stroke="#ffc24b" stroke-width="1.5" filter="url(#depGu)"/>
+
+  <!-- ===== COUPLANT FILM ===== -->
+  <line x1="205" y1="201" x2="375" y2="201" stroke="#5fe0ff" stroke-width="2" opacity=".7" filter="url(#depGu)"/>
+
+  <!-- ===== PROBE HOUSING (cutaway) ===== -->
+  <path d="M211,62 H369 Q377,62 377,70 V200 H203 V70 Q203,62 211,62 Z" fill="rgba(10,30,60,.55)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="210" y="76" width="160" height="124" fill="#08152b" opacity=".9"/>
+
+  <!-- delay lines (plastic) -->
+  <polygon points="214,132 283,118 283,200 214,200" fill="#9fe6ff" fill-opacity=".13" stroke="#9fe6ff" stroke-opacity=".55" stroke-width="1.2"/>
+  <polygon points="297,118 366,132 366,200 297,200" fill="#9fe6ff" fill-opacity=".13" stroke="#9fe6ff" stroke-opacity=".55" stroke-width="1.2"/>
+  <line x1="226" y1="194" x2="258" y2="138" stroke="#eaf6ff" stroke-width="1" opacity=".1"/>
+  <line x1="306" y1="142" x2="338" y2="196" stroke="#eaf6ff" stroke-width="1" opacity=".1"/>
+
+  <!-- cork acoustic barrier -->
+  <rect x="286.5" y="78" width="7" height="122" fill="#ffc24b" opacity=".3"/>
+  <rect x="286.5" y="78" width="7" height="122" fill="url(#depCorkPat)" opacity=".55"/>
+  <rect x="286.5" y="78" width="7" height="122" fill="none" stroke="#ffc24b" stroke-opacity=".85" stroke-width="1.2"/>
+
+  <!-- piezo elements (tilted toward each other - roof angle) -->
+  <polygon points="220.9,130.6 278.1,119 276.7,112.1 219.5,123.7" fill="#5fe0ff" opacity=".9" stroke="#eaf6ff" stroke-width=".8" filter="url(#depG)"/>
+  <polygon points="301.9,119 359.1,130.6 360.5,123.7 303.3,112.1" fill="#9fe6ff" opacity=".9" stroke="#eaf6ff" stroke-width=".8" filter="url(#depG)"/>
+
+  <!-- damping blocks -->
+  <polygon points="223.4,122.9 272.8,112.9 270.4,101.1 221,111.1" fill="#14304f" stroke="#8fb6e0" stroke-opacity=".5" stroke-width="1"/>
+  <polygon points="307.2,112.9 356.6,122.9 359,111.1 309.6,101.1" fill="#14304f" stroke="#8fb6e0" stroke-opacity=".5" stroke-width="1"/>
+
+  <!-- wires to connectors -->
+  <path d="M246,101 C246,84 248,74 248,64" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".6"/>
+  <path d="M336,101 C336,84 342,74 342,64" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".6"/>
+
+  <!-- dual connectors + cables -->
+  <rect x="238" y="48" width="20" height="16" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+  <rect x="332" y="48" width="20" height="16" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+  <path d="M248,48 C248,32 234,26 216,22" fill="none" stroke="#8fb6e0" stroke-width="2.5" stroke-linecap="round" opacity=".85"/>
+  <path d="M342,48 C342,32 356,26 374,22" fill="none" stroke="#8fb6e0" stroke-width="2.5" stroke-linecap="round" opacity=".85"/>
+  <text x="248" y="60" text-anchor="middle" font-size="9" fill="#9fe6ff" opacity=".9">T</text>
+  <text x="342" y="60" text-anchor="middle" font-size="9" fill="#9fe6ff" opacity=".9">R</text>
+
+  <!-- ===== BEAM CONES + ROOF-ANGLE ANNOTATION (reveal: depTilt) ===== -->
+  <g id="depTilt" opacity="0">
+    <!-- transmit cone (left, angled inward-right) -->
+    <polygon points="222,201 284,201 346,310 284,310" fill="#5fe0ff" opacity=".10"/>
+    <line x1="222" y1="201" x2="284" y2="310" stroke="#5fe0ff" stroke-width="1.2" opacity=".45"/>
+    <line x1="284" y1="201" x2="346" y2="310" stroke="#5fe0ff" stroke-width="1.2" opacity=".45"/>
+    <line x1="253" y1="201" x2="315" y2="310" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="4 5" opacity=".5"/>
+    <!-- receive cone (right, angled inward-left) -->
+    <polygon points="296,201 358,201 296,310 234,310" fill="#1E66F5" opacity=".16"/>
+    <line x1="296" y1="201" x2="234" y2="310" stroke="#9fe6ff" stroke-width="1.2" opacity=".4"/>
+    <line x1="358" y1="201" x2="296" y2="310" stroke="#9fe6ff" stroke-width="1.2" opacity=".4"/>
+    <line x1="327" y1="201" x2="265" y2="310" stroke="#9fe6ff" stroke-width="1.2" stroke-dasharray="4 5" opacity=".5"/>
+    <!-- direction chevrons: transmit down, receive up -->
+    <path d="M273.5,228 L274,238 L265.7,232.4" fill="none" stroke="#5fe0ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
+    <path d="M311.1,238 L311.6,228 L303.3,233.6" fill="none" stroke="#9fe6ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
+    <!-- roof-angle datums + wedge arcs -->
+    <line x1="222" y1="130.6" x2="280" y2="130.6" stroke="#eaf6ff" stroke-width="1" stroke-dasharray="3 3" opacity=".65"/>
+    <line x1="301" y1="130.6" x2="358" y2="130.6" stroke="#eaf6ff" stroke-width="1" stroke-dasharray="3 3" opacity=".65"/>
+    <path d="M220.9,130.6 L272.9,130.6 A52,52 0 0 0 271.9,120.3 Z" fill="#eaf6ff" opacity=".12"/>
+    <path d="M359.1,130.6 L307.1,130.6 A52,52 0 0 1 308.1,120.3 Z" fill="#eaf6ff" opacity=".12"/>
+    <path d="M272.9,130.6 A52,52 0 0 0 271.9,120.3" fill="none" stroke="#eaf6ff" stroke-width="1.8" opacity=".95"/>
+    <path d="M307.1,130.6 A52,52 0 0 1 308.1,120.3" fill="none" stroke="#eaf6ff" stroke-width="1.8" opacity=".95"/>
+    <text x="449" y="144" font-size="11" letter-spacing="1" fill="#9fe6ff">ROOF ANGLE</text>
+    <path d="M445,140 L382,140 L354,131.5" fill="none" stroke="#9fe6ff" stroke-width="1" opacity=".6"/>
+    <circle cx="352" cy="131" r="1.8" fill="#9fe6ff" opacity=".9"/>
+  </g>
+
+  <!-- ===== ECHO RETURN (reveal: depEcho, draw) ===== -->
+  <path id="depEcho" d="M291,219 L302,200 L328,131 L320.6,137.8 L328,131 L329,141" fill="none" stroke="#ffc24b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#depG)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== STATIC LABEL: DELAY LINES ===== -->
+  <text x="58" y="170" font-size="11" letter-spacing="1" fill="#9fe6ff">DELAY LINES</text>
+  <line x1="148" y1="166" x2="220" y2="174" stroke="#9fe6ff" stroke-width="1" opacity=".6"/>
+  <circle cx="222" cy="174.5" r="1.8" fill="#9fe6ff" opacity=".9"/>
+
+  <!-- ===== SPLIT LABELS + HIGHLIGHT (reveal: depSplit) ===== -->
+  <g id="depSplit" opacity="0">
+    <polygon points="220.9,130.6 278.1,119 276.7,112.1 219.5,123.7" fill="none" stroke="#eaf6ff" stroke-width="1.6" filter="url(#depG)"/>
+    <polygon points="301.9,119 359.1,130.6 360.5,123.7 303.3,112.1" fill="none" stroke="#eaf6ff" stroke-width="1.6" filter="url(#depG)"/>
+    <rect x="286.5" y="78" width="7" height="122" fill="#ffc24b" fill-opacity=".22" stroke="#ffc24b" stroke-width="1.6" filter="url(#depGu)"/>
+    <text x="58" y="124" font-size="11" letter-spacing="1" fill="#9fe6ff">TRANSMIT</text>
+    <line x1="124" y1="120.5" x2="215" y2="123" stroke="#9fe6ff" stroke-width="1" opacity=".6"/>
+    <circle cx="217.5" cy="123.5" r="1.8" fill="#9fe6ff" opacity=".9"/>
+    <text x="455" y="104" font-size="11" letter-spacing="1" fill="#9fe6ff">RECEIVE</text>
+    <line x1="451" y1="100.5" x2="364" y2="122" stroke="#9fe6ff" stroke-width="1" opacity=".6"/>
+    <circle cx="362" cy="122.8" r="1.8" fill="#9fe6ff" opacity=".9"/>
+    <text x="290" y="34" text-anchor="middle" font-size="11" letter-spacing="1" fill="#9fe6ff">CORK BARRIER</text>
+    <line x1="290" y1="40" x2="290" y2="74" stroke="#9fe6ff" stroke-width="1" opacity=".6"/>
+    <circle cx="290" cy="77" r="1.8" fill="#9fe6ff" opacity=".9"/>
+  </g>
+
+  <!-- ===== PINGS ===== -->
+  <circle id="depSplitPing" cx="290" cy="139" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#depGu)"/>
+  <circle id="depEchoPing" cx="290" cy="222" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#depGu)"/>
+</svg>

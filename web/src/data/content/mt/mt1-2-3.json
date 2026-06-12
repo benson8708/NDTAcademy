@@ -1,0 +1,211 @@
+{
+ "lessonId": "mt1-2-3",
+ "title": "Field Properties, Flux Leakage, and Hysteresis",
+ "narrationScript": "This is the lesson where magnetic theory turns into a working inspection method. We cover four things. The ground rules magnetic fields obey. What happens when a discontinuity interrupts flux. The hysteresis loop, which is the personality profile of a steel. And how we actually measure fields on the shop floor. First, the ground rules. Lines of flux are closed loops. They never cross. Side by side lines running the same direction push apart from each other, which is why flux spreads out in open space. And flux always seeks the path of least magnetic resistance, a quantity we call reluctance. High permeability steel is a freeway for flux. Air is a swamp. Given any choice, flux stays inside the metal. Every point in a field has a direction, and the crowding of the lines at any point is the flux density we read in gauss. Now put a crack in the freeway. Flux is traveling through a part and meets a tight surface crack. The air gap in that crack is a high reluctance obstacle, so the flux does three things at once. Some of it squeezes through the metal remaining below the crack. Some crosses the thin air gap directly. And because the metal around the flaw is already carrying about all the flux it can hold, some flux is forced out of the part surface entirely. It bulges into the air, jumps the crack, and dives back in. That escaping bulge is the leakage field, and it forms a tiny north pole on one edge of the crack and a south pole on the other. Dust ferromagnetic particles over the surface and they are pulled into that leakage field, bridging the crack and building a visible line many times wider than the crack itself. The particles are an amplifier. A crack you could never see becomes a mark you cannot miss. Geometry decides how strong that leakage is. The effect is strongest when flux crosses the discontinuity at ninety degrees, and it stays usable down to about forty five degrees. Run flux parallel to a crack and it slips right alongside without being interrupted, giving little or no indication. That is why one shot is never enough, and why every procedure magnetizes in two roughly perpendicular directions. Depth matters too. A surface crack interrupts flux right where the particles are, so it draws a sharp, dense, tightly held indication. A discontinuity just below the surface still distorts the field, but the leakage spreads and weakens on the way up, so the indication arrives broad, fuzzy, and faint. Go much deeper and the leakage never reaches the surface at all. Magnetic particle testing is a surface and near surface method. Period. Next, hysteresis. Plot flux density B against magnetizing force H for a virgin piece of steel and you draw its magnetic biography. From zero, B climbs slowly, then steeply as domains align in waves, then flattens as the steel saturates. Now reduce H back to zero. B does not retrace its path. It hangs high, and when the magnetizing force is completely gone, the steel still holds a residual flux density called retentivity. To force B to zero you must apply a reversed magnetizing force, and the amount required is called the coercive force. Keep pushing in reverse and the steel saturates the other way. Cycle the force again and the curve traces a closed loop, the hysteresis loop. The shape of that loop tells you how a steel will behave in service. A wide, fat loop means a magnetically hard material, typically hardened high carbon steel. High retentivity, high coercive force. It holds a strong residual field, which makes it a candidate for the residual inspection method, and it takes deliberate work to demagnetize. A narrow, thin loop means a magnetically soft material like annealed low carbon steel. It magnetizes easily, forgets quickly, and must be inspected with the continuous method because it keeps almost nothing. The area inside the loop is the energy spent on each magnetization cycle, lost as heat. Finally, measurement. You cannot see gauss, so we use instruments. The Hall effect gaussmeter reads field strength directly through a small probe, and when its sensor is laid against the part it reads the tangential field at the surface. Many procedures look for a tangential field on the order of thirty to sixty gauss during magnetization. Treat numbers like that as typical procedure values. Your written procedure always governs. The pocket field indicator is a simpler tool, a little pivoting vane instrument used mostly to verify demagnetization, where a common limit is three gauss or less. And remember the instruments live in the earth's background field of about half a gauss. Devices like the pie gauge and shim standards show field direction and adequacy rather than a number, and we will spend real time on them later in the course. Measure the field, mind the angle, and you control the two things that decide whether a crack shows itself.",
+ "imagePrompt": "Under ultraviolet light in a darkened inspection booth, glowing green-yellow particle indications cling to a crack on a magnetized steel ring while a technician presses the probe of a handheld gaussmeter against the part surface.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Ground Rules of Magnetic Fields",
+   "body": "Magnetic fields follow a short list of properties, and MT exploits every one of them:\n\n- **Flux lines are closed loops.** They never start, stop, or cross one another.\n- **Parallel lines running the same direction repel** each other, which is why flux spreads out in air instead of bunching.\n- **Flux seeks the path of least reluctance** — the magnetic equivalent of resistance. High-permeability steel is a freeway; air is a swamp. Given the choice, flux stays in the metal.\n- **A field has direction and density at every point.** Direction decides which flaws you can see; density (in gauss) decides how strongly you see them.\n\nKeep reluctance in mind especially. The whole drama of magnetic particle testing comes from forcing flux to make a bad choice: when a crack interrupts its low-reluctance path through steel, the flux must either crowd into the remaining metal or break out into the air."
+  },
+  {
+   "type": "text",
+   "heading": "Flux Leakage: The Working Principle",
+   "body": "Send flux through a part and let it meet a tight surface crack. The crack's air gap is a high-reluctance obstacle, and the flux responds three ways at once:\n\n- some **compresses into the sound metal** beneath the crack,\n- some **jumps the thin air gap** directly,\n- and — because the surrounding metal is already carrying nearly all the flux it can hold — some is **forced out of the surface**, bulging into the air to bypass the crack before diving back in.\n\nThat escaping bulge is the **leakage field**. It creates a tiny north pole on one edge of the discontinuity and a south pole on the other. Ferromagnetic particles dusted over the surface are pulled into the leakage field and **bridge the gap**, building a visible line many times wider than the crack itself — the particles act as an amplifier.\n\n**Geometry controls everything.** Leakage is strongest when flux crosses the discontinuity at **90°** and remains effective down to about **45°**; flux running parallel to a crack slips past with little disturbance and little or no indication. Full coverage therefore always requires **two roughly perpendicular magnetizations**.\n\n**Depth controls appearance.** Surface cracks produce sharp, dense, tightly held indications; near-surface flaws produce broad, fuzzy, weak ones; deep flaws produce nothing. MT is a surface and near-surface method."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt1-2-3-fig-a",
+   "caption": "A surface crack forces a strong, sharp leakage field that traps particles, while a near-surface discontinuity produces a broader, weaker leakage at the surface."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The 45–90 degree rule",
+   "body": "A discontinuity shows best when flux crosses it at **90°**, and acceptably down to about **45°**. Parallel to the flux, it is essentially invisible. One magnetizing direction can never clear a part — every examination needs **two shots, roughly perpendicular** (typically one circular, one longitudinal)."
+  },
+  {
+   "type": "text",
+   "heading": "Hysteresis: The Steel's Memory Curve",
+   "body": "Plot flux density **B** against magnetizing force **H** for a never-magnetized steel and you record its magnetic biography.\n\nFrom zero, B rises along the **virgin curve** — slowly at first, then steeply as domains align in waves, then flattening into **saturation** when nearly all domains point with the field. Now reduce H to zero: B does **not** retrace its path. The steel keeps a residual flux density called **retentivity**. To drive B to zero you must apply reversed magnetizing force; the amount needed is the **coercive force**. Push further and the steel saturates in the opposite direction. Cycling H now traces a closed loop — the **hysteresis loop** — and the area inside it is the energy spent (as heat) on every magnetization cycle.\n\nThe loop's shape is a material's personality profile:\n\n- **Wide, fat loop — magnetically hard.** Hardened, high-carbon and many alloy steels: high retentivity, high coercive force. Candidates for the **residual method**; deliberate demagnetization usually required.\n- **Narrow, thin loop — magnetically soft.** Annealed low-carbon steel: magnetizes easily, forgets immediately. Must be inspected by the **continuous method**, with particles applied while the current is on."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt1-2-3-fig-b",
+   "caption": "The B–H hysteresis loop: virgin curve to saturation, retentivity where H returns to zero, and coercive force where reversed H drives B to zero."
+  },
+  {
+   "type": "table",
+   "caption": "Key landmarks on the hysteresis loop and what they mean on the shop floor.",
+   "headers": [
+    "Landmark",
+    "What it is",
+    "Why the technician cares"
+   ],
+   "rows": [
+    [
+     "Virgin curve",
+     "First magnetization of an unmagnetized part, from zero toward saturation",
+     "Its slope is the permeability — how easily the part accepts flux"
+    ],
+    [
+     "Saturation",
+     "Essentially all domains aligned; more H adds almost no B",
+     "Driving past it just pushes flux out of the surface and furs the part with false background"
+    ],
+    [
+     "Retentivity",
+     "Residual flux density remaining when H returns to zero",
+     "Makes the residual method possible — and demagnetization necessary"
+    ],
+    [
+     "Coercive force",
+     "Reversed H required to drive B back to zero",
+     "Measures how hard the part will fight demagnetization"
+    ],
+    [
+     "Loop area",
+     "Energy lost as heat per magnetization cycle",
+     "Fat loop = magnetically hard steel; thin loop = soft steel"
+    ]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Measuring Fields on the Job",
+   "body": "You cannot see gauss, so field control rests on instruments and indicators:\n\n- **Hall-effect gaussmeter.** The workhorse for quantitative readings: a thin probe senses the field through the Hall voltage it generates. Laid flat against the part, it reads the **tangential surface field**, and many procedures look for a value on the order of **30–60 gauss** during magnetization — a typical procedure range; your written procedure governs.\n- **Pocket field indicator.** A simple pivoting-vane meter used mostly to verify **demagnetization**, where a common limit is **3 gauss or less**. Remember it sits in the earth's roughly 0.5-gauss background while you read it.\n- **Pie (octagon) gauge and artificial-flaw shims (QQIs).** These show **field direction and adequacy** qualitatively — particle lines form across their slots when the field is strong enough and properly oriented. They answer \"is the field right?\", not \"how many gauss?\". Later modules cover their use in detail.\n\nField strength and field direction are the two variables that decide whether a discontinuity shows itself. Measure both; assume neither."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "Typical numbers — your procedure governs",
+   "body": "Practices such as **ASTM E709/E1444 and ASME Section V, Article 7** require the field to be established as adequate in strength and direction — by shims, pie gauge, gaussmeter readings, or specified amperage formulas. The values quoted in this lesson (tangential field on the order of 30–60 gauss; residual verification at 3 gauss or less) are typical procedure values, not universal limits. The written procedure for your job is always the governing document."
+  }
+ ],
+ "figures": [
+  {
+   "id": "mt1-2-3-fig-a",
+   "title": "Flux leakage at surface and near-surface discontinuities",
+   "file": "mt1-2-3-fig-a.svg"
+  },
+  {
+   "id": "mt1-2-3-fig-b",
+   "title": "The B–H hysteresis loop",
+   "file": "mt1-2-3-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Walking the Hysteresis Loop",
+  "intro": "You place a never-magnetized, annealed steel bar in a coil and slowly raise the magnetizing current while watching flux density on a gaussmeter. Walk through what the steel does at each stage.",
+  "steps": [
+   {
+    "prompt": "You raise the magnetizing force H from zero. What does the flux density B in the bar do?",
+    "options": [
+     "Stays at zero until H becomes enormous, then jumps instantly to maximum",
+     "Rises along the virgin curve — slowly, then steeply, then flattening as the bar saturates",
+     "Rises in a perfectly straight line for as long as you add current",
+     "Falls below zero before recovering"
+    ],
+    "correct": 1,
+    "feedback": "B climbs the virgin (initial) magnetization curve: a slow start, a steep middle as domains align in waves, then a flattening approach to saturation — once nearly every domain is aligned, more H buys almost no more B."
+   },
+   {
+    "prompt": "At saturation you switch the current off, so H returns to zero. What does the gaussmeter show on the bar?",
+    "options": [
+     "Zero — no current means no flux",
+     "Exactly the saturation value, unchanged",
+     "A residual value — the retentivity of the steel",
+     "A negative value equal to the coercive force"
+    ],
+    "correct": 2,
+    "feedback": "B does not retrace its path down the curve. With H at zero the steel keeps a residual flux density — its retentivity. Residual fields are why the residual inspection method exists, and why demagnetization is sometimes required."
+   },
+   {
+    "prompt": "You now want to drive the residual flux density in the bar to exactly zero. What does that take?",
+    "options": [
+     "Wait — residual fields drain away on their own within minutes",
+     "Apply a reversed magnetizing force equal to the coercive force",
+     "Apply more magnetizing force in the original direction",
+     "Tap the bar with a hammer while it sits in the earth's field"
+    ],
+    "correct": 1,
+    "feedback": "Only a reversed field drives B back to zero, and the reversed H required is the coercive force. Materials with high coercive force resist demagnetization — that is what makes them magnetically hard."
+   },
+   {
+    "prompt": "You repeat the whole test on a hardened, high-carbon bearing steel and the recorded loop comes out much wider and fatter. As an inspector, what does that tell you?",
+    "options": [
+     "The steel is magnetically soft and will not hold an indication",
+     "The steel cannot be magnetized to saturation at all",
+     "Its permeability is too low for MT to work",
+     "High retentivity and coercive force — a residual-method candidate that will need deliberate demagnetization"
+    ],
+    "correct": 3,
+    "feedback": "A fat loop means the material holds a strong residual field (high retentivity) and fights its removal (high coercive force). That profile can support residual-method inspection — and it is exactly the part you should expect to demagnetize deliberately after testing."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Why does magnetic flux stay inside a steel part rather than escaping through the surface?",
+   "options": [
+    "Steel offers a far lower-reluctance path than the surrounding air",
+    "Air completely blocks magnetic fields",
+    "Flux cannot exist outside of metal",
+    "The part's surface finish seals the flux in"
+   ],
+   "correct": 0,
+   "explanation": "Flux follows the path of least reluctance. High-permeability steel carries flux far more easily than air, so flux leaves the metal only where something — like a discontinuity — forces it out."
+  },
+  {
+   "question": "A crack lies parallel to the flux lines in a magnetized part. What indication should you expect?",
+   "options": [
+    "A strong, sharp indication",
+    "A broad, fuzzy indication",
+    "Little or none — the flux is not interrupted, so a second magnetization roughly perpendicular to the first is required",
+    "The same indication as a perpendicular crack, only wider"
+   ],
+   "correct": 2,
+   "explanation": "Flux running parallel to a discontinuity slips past without being interrupted, producing little or no leakage. Leakage is strongest at 90 degrees and usable down to about 45 — which is why full coverage always takes two roughly perpendicular field directions."
+  },
+  {
+   "question": "On the hysteresis loop, retentivity is:",
+   "options": [
+    "The reversed magnetizing force needed to bring flux density to zero",
+    "The flux density remaining in the part when the magnetizing force returns to zero",
+    "The maximum flux density the material can reach",
+    "The slope of the virgin curve"
+   ],
+   "correct": 1,
+   "explanation": "Retentivity (residual flux density) is the B value left after H drops to zero. The reversed H needed to remove it is the coercive force, and the maximum B is saturation."
+  },
+  {
+   "question": "To remove the residual field from a part, you must:",
+   "options": [
+    "Apply additional magnetizing force in the original direction",
+    "Ground the part to drain the field",
+    "Let the part rest for 24 hours",
+    "Apply a reversed magnetizing force equal to the coercive force"
+   ],
+   "correct": 3,
+   "explanation": "Only a reversed field drives B to zero, and the reverse H required is the coercive force. This is the principle behind demagnetization methods that reverse and progressively reduce the field."
+  },
+  {
+   "question": "Which instrument gives a quantitative tangential surface-field reading during magnetization, and what is a typical procedure target?",
+   "options": [
+    "A Hall-effect gaussmeter — on the order of 30 to 60 gauss, per the written procedure",
+    "A pie gauge — exactly 1,000 gauss",
+    "A pocket field indicator — 500 gauss",
+    "A light meter — 100 footcandles"
+   ],
+   "correct": 0,
+   "explanation": "The Hall-effect gaussmeter reads tangential surface field quantitatively, and many procedures target on the order of 30–60 gauss. The pie gauge shows direction and adequacy qualitatively, and the pocket field indicator is mainly for residual checks such as 3 gauss or less."
+  }
+ ],
+ "references": [
+  "CP-105-2024 MT Topical Outline §2.2.5–2.2.8 (field properties, flux leakage, hysteresis, measurement of fields)",
+  "Practices such as ASTM E709, ASTM E1444, and ASME Section V, Article 7 address field adequacy and verification (generic reference)",
+  "Reference values: tangential surface field commonly 30–60 gauss during magnetization; residual verification commonly ≤ 3 gauss; earth's field ≈ 0.5 gauss"
+ ]
+}

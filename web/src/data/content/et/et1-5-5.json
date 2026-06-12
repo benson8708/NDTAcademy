@@ -1,0 +1,193 @@
+{
+ "lessonId": "et1-5-5",
+ "title": "Factors Affecting Choice of Sensing Elements",
+ "narrationScript": "You can now name every sensing element in the eddy current toolbox. This lesson decides between them. CP-105 lists five factors, and they work like a funnel. First, the type of part: geometry and access rule arrangements in or out before anything else is considered. Flat aircraft skin takes a surface probe, round stock on a production line feeds through an encircling coil, and an installed tube offers nothing but its bore. Second, the type of discontinuity: the flaw must cut across the induced currents, so expected orientation selects the arrangement, and flaw character selects the mode. Absolute channels follow gradual wall loss. Differential channels catch small, abrupt flaws at speed. Third and fourth, speed and amount of testing: line throughput demands feed-through coils, while one hundred percent coverage of an area means overlapping passes at a defined index. Fifth, probable location: depth sets frequency, and deep targets push you toward low-frequency reflection probes with Hall detection. Work the five questions in order, and the selection nearly makes itself.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Five Questions That Pick the Probe",
+   "body": "The last four lessons stocked the toolbox: coil **arrangements** that match part geometry, **operating modes** that decide what the signal shows and hides, the **Hall element** for fields a coil cannot hear, and an honest list of what eddy current testing can and cannot do. This lesson is where the toolbox gets used. CP-105 closes the sensing-element outline with **five factors that govern selection**, and they work best asked as questions, in order:\n\n- **Type of part** — what geometry, material, and access does the job offer?\n- **Type of discontinuity** — what flaw am I hunting, and which way does it run?\n- **Speed of testing** — how fast must the part move through the test?\n- **Amount of testing** — is this 100 % coverage, or a sampling percentage?\n- **Probable location** — where will the flaw live: which surface, what depth, which feature?\n\nWorked in order, the factors behave like a funnel: the part eliminates arrangements, the flaw picks the current direction and the mode, speed and coverage set the scanning mechanics, and probable location fixes frequency and detector. By the end, one or two sensible candidates remain.\n\nA word about authority. In an FAA Part 145 repair station the selection usually arrives already made — written into the airframe manufacturer's NDT manual procedure or an employer technique approved by a Level III; under NAS 410 and SNT-TC-1A you execute it as written. So why learn the reasoning? Because qualification examinations ask you to justify selections, and because an inspector must recognize the day the specified probe cannot work on the part actually in front of them — and report it up the chain instead of forcing the test."
+  },
+  {
+   "type": "text",
+   "heading": "Factor 1 — Type of Part to Be Inspected",
+   "body": "The part speaks first, and it mostly talks about **access and geometry**:\n\n- **Flat or contoured accessible surfaces** — skins, webs, machined features, weld zones — take **surface probes**, with housings shaped to hold lift-off constant on radii and contours.\n- **Round product moving on a line** — bar, rod, wire, tubing — feeds through an **encircling coil**.\n- **A tube or bore whose only access is the ID** — condenser tubes buried in a bundle, fastener holes — takes an **inside (bobbin) coil** or a rotating bolt-hole probe.\n\nGeometry also sets hard physical limits you learned with each arrangement. Eddy current density is **zero at the center of a solid bar**, so no encircling-coil setup inspects a bar's core. As product diameter grows, a small flaw competes against the response of the whole 360° slice and sensitivity falls. **Fill factor** — η = (d/D)² — must stay high for encircling and inside coils to couple well, which is why coil sizes are matched to the part rather than taken from the shelf.\n\nThe part's **material** weighs in next. Ferromagnetic steels lay large, variable **permeability** signals on top of everything else; production examination of steel tubular products is therefore run under **magnetic saturation** (ASTM E309) to suppress them, while nonmagnetic copper alloys and aluminum need no such measure (ASTM E243, E690). Finally, **surface condition** matters: paint and cladding add lift-off the technique must tolerate, rough or scaly surfaces wobble the probe, and part edges and fastener heads distort the field — the reason shielded surface probes exist."
+  },
+  {
+   "type": "text",
+   "heading": "Factor 2 — Type of Discontinuity to Be Detected",
+   "body": "Every decision about the flaw starts from the **orientation rule**: a discontinuity signals only in proportion to how strongly it **interrupts the induced current paths**. So ask which way the expected flaw runs, then drive currents across it:\n\n- **Longitudinal seams, laps, and cracks in round product** cut squarely across the circumferential currents of encircling and bobbin coils — those arrangements are built for them.\n- **Circumferential cracks in tubing** lie parallel to those same currents and may pass a standard bobbin silently; detecting them takes small **surface coils carried on a rotating probe**, whose currents flow in a different direction.\n- **Laminar separations parallel to the surface** run parallel to a surface probe's circular loops and respond poorly — often the honest answer is a different method, such as ultrasonics.\n\nThe flaw's **character** then picks the operating mode. **Gradual** conditions — wall thinning, conductivity drift, heat-treatment variation — survive only on an **absolute** channel; a self-comparing differential pair cancels them. **Abrupt, localized** flaws — pits, short fatigue cracks — are exactly what a **differential** pair resolves crisply, even at speed.\n\nFinally, the flaw's **size** sizes the coil. Sensitivity tracks coil diameter: a small coil concentrates the field and resolves a short, tight crack, while a large coil averages over more material — wrong for crack hunting, right for bulk property measurements such as conductivity sorting and coating thickness. As a working rule, keep the coil's footprint comparable to the smallest flaw the technique requires you to find."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "There is no universal probe",
+   "body": "Every sensing element optimizes some factors at the expense of others — the small surface coil that resolves a 1 mm crack covers almost nothing per pass; the encircling coil that screens a kilometer of wire an hour cannot say where around the circumference a seam sits. Selection means matching the induced currents to the expected flaw, then accepting the trade-offs the five factors expose. And when no combination of arrangement, mode, frequency, and detector can put interruptible current onto the probable flaw, the right move is to change the technique — or the method — and say so. That call, documented and escalated, is the mark of a qualified inspector."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-5-5-fig-a",
+   "caption": "The five factors as a funnel: part and access eliminate arrangements, flaw type and probable location pick the mode, frequency, and detector, speed and coverage set the scanning mechanics — and the written technique records the result."
+  },
+  {
+   "type": "text",
+   "heading": "Factors 3 and 4 — Speed of Testing and Amount Required",
+   "body": "**Speed** separates the production floor from the hangar.\n\n- **Production lines** — tubing, bar, and wire at the mill — demand **feed-through encircling coils**: the conveyor does the scanning, a full 360° slice is tested at every instant, and examination keeps pace with manufacture (the arrangement behind ASTM E243 and E309 practice). At line speed the **differential mode earns its keep**: with gradual variation and thermal drift cancelled, the baseline stays at null and gain can run high without constant re-nulling.\n- **In-service tube bundles** run at pull speed: thousands of tubes per outage, one bobbin pass each, at the **controlled speed the procedure specifies** — pull too fast and short indications smear past the instrument's response and recording rates.\n- **Hand scanning with a surface probe is the slowest option there is**, reserved for small, defined areas: a fastener row, a weld toe, a radius. Rotating scanners mechanize the bore of a fastener hole, and array technology — a later topic — widens the swath a single pass covers.\n\n**Amount of testing** is the percentage question, and the governing document answers it. Safety-critical aerospace features get **100 % coverage** of the defined area: overlapping passes with the **index — the step between adjacent passes — smaller than the coil's effective width**, because any larger step leaves untested stripes. Production and outage work may instead specify a **sampling percentage** — a fraction of the lot or of the tube bundle, selected per the specification, with expansion rules when indications appear. Either way, coverage has known holes the procedure must address: **end effect** leaves a bar's extreme ends untested, and a skipped or lifted pass is a rescan, not a judgment call."
+  },
+  {
+   "type": "text",
+   "heading": "Factor 5 — Probable Location of the Discontinuity",
+   "body": "Where the flaw lives fixes the last two choices: **frequency and detector**.\n\n- **Depth.** Eddy currents thin with depth according to the standard depth of penetration, **δ = 1/√(πfμσ)**. A surface-breaking crack on the near side tolerates a high frequency, which concentrates current at the surface and sharpens sensitivity. A target one or more layers down forces the frequency low enough for meaningful current to reach it — in 30 %IACS aluminum, roughly 500 Hz puts δ near 5 mm. At those frequencies a sensing coil's output has collapsed, so deep-penetration work pairs **low frequency with a reflection (driver–pickup) probe and Hall-element detection** — the crossover logic from the Hall lesson.\n- **Which surface.** In tubing, damage may originate at the **ID or the OD**. A bobbin examination's frequency is chosen for the wall thickness so that OD-origin flaws still influence the signal; choose too high a frequency and the far wall is simply out of reach.\n- **Which feature.** Probable location is rarely \"anywhere.\" Service history concentrates cracking at **fastener holes, wheel bead seats, radii, weld toes, and tube support plates** — and each feature steers hardware: a rotating probe for the bore of a hole, a shielded probe beside a fastener head or an edge, a technique that anticipates the support-plate signal mixing with a flaw's.\n\nRead the factor literally: it is *probable* location. The technique targets where flaws are expected from failure history and engineering analysis — which is why coverage areas, scan directions, and frequencies differ zone-to-zone across the same structure."
+  },
+  {
+   "type": "table",
+   "caption": "The five selection factors — the question each asks and what it decides.",
+   "headers": ["Factor", "The question", "What it decides", "Typical outcome"],
+   "rows": [
+    ["1 · Type of part", "What geometry, access, and material?", "Coil arrangement; coil size and fill factor; saturation for steels", "Skin → surface probe; line stock → encircling; bore-only → bobbin"],
+    ["2 · Type of discontinuity", "Which way does it run — and is it gradual or abrupt?", "Current direction (arrangement) and operating mode; coil diameter", "Seams → encircling differential; wall thinning → absolute channel"],
+    ["3 · Speed of testing", "Must the test keep pace with production?", "Feed-through vs. pull vs. hand scan; differential stability at speed", "Mill bar → feed-through differential at line speed"],
+    ["4 · Amount of testing", "100 % coverage or a sampling percentage?", "Scan plan, index and overlap, sampling pattern, expansion rules", "Fastener row → 100 %, overlapping indexed passes"],
+    ["5 · Probable location", "Which surface, what depth, which feature?", "Test frequency, detector type, special probe hardware", "Second-layer crack → low frequency, reflection probe + Hall"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Justifying the Selection: Two Worked Examples",
+   "body": "**An installed condenser, outage scope: 20 % of tubes.** Part: nonmagnetic tubing buried in a bundle — ID access only, so an **inside (bobbin) coil** (factor 1). Flaws: pitting *and* gradual thinning — record **differential and absolute channels** together (factor 2). Speed: thousands of tubes — one pull each at the procedure's speed (factor 3). Amount: the **20 % sampling pattern comes from the governing specification**, with expansion if indications appear (factor 4). Location: damage of ID and OD origin — **frequency chosen for the wall thickness**, per ASTM E690 practice (factor 5). Every choice traces to a factor; that traceability is what \"justify your selection\" means.\n\n**An aluminum wheel half in a Part 145 shop.** Part: a contoured, accessible forging — a **surface probe** in a holder matched to the bead-seat radius, with the wheel turned on a powered turntable (factor 1). Flaw: service-induced **fatigue cracks running circumferentially around the bead seat** — short and surface-breaking, so a small coil whose circular currents the crack line cuts (factor 2). Speed and amount: the turntable paces the scan, and coverage is **100 % of the bead-seat circumference** in indexed passes (factors 3–4). Location: surface-breaking on an accessible face — a **mid-to-high frequency** concentrates current right where the cracks live (factor 5).\n\nIn both cases the finished decision lives in a **written technique** — probe type and part number, mode, frequency, reference standard, scan pattern, and coverage — approved under the employer's written practice. You will execute many such techniques long before you write one. Understand the five factors behind each line, and you will execute them better — and catch the day the part in front of you no longer matches the sheet."
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-5-5-fig-a",
+   "title": "Sensing element selection flowchart — the five-factor funnel",
+   "file": "et1-5-5-fig-a.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Probe Selection Decision Tool",
+  "intro": "You are building the technique sheet. For each job, work the five factors in order — part, flaw, speed, amount, location — then commit to a sensing element.",
+  "steps": [
+   {
+    "prompt": "A fuselage fastener row must be checked for short surface fatigue cracks breaking from the hole edges, with access from outside the aircraft. Which sensing element do the factors select?",
+    "options": [
+     "A small-diameter shielded surface probe, scanned around each fastener in overlapping passes",
+     "An encircling coil sized to the fuselage frame",
+     "A bobbin coil pulled along the lap joint",
+     "A large pancake coil wide enough to cover several fasteners per pass"
+    ],
+    "correct": 0,
+    "feedback": "Flat, accessible skin admits only a surface coil (factor 1). Short cracks demand a small coil, because sensitivity tracks coil diameter — the large pancake coil averages them away — and shielding controls the field distortion next to the fastener heads (factors 2 and 5). Encircling and bobbin coils have no geometry to couple to here."
+   },
+   {
+    "prompt": "Copper-alloy condenser tubing is screened at the mill, at full line speed, for longitudinal seams (ASTM E243). What do the speed and flaw factors demand?",
+    "options": [
+     "A differential encircling coil the tubing feeds through at line speed",
+     "An absolute surface probe scanned by hand in a helix along each length",
+     "A bobbin probe pulled through every tube after cutting to length",
+     "A Hall-element gaussmeter held beside the line"
+    ],
+    "correct": 0,
+    "feedback": "Production throughput means the conveyor must do the scanning — feed-through (factor 3). Longitudinal seams cut squarely across the encircling coil's circumferential currents (factor 2), and the differential mode cancels gradual dimensional variation and drift so the baseline holds null at speed. Hand scanning cannot keep pace, and a gaussmeter measures static fields, not seams."
+   },
+   {
+    "prompt": "An installed feedwater heater is scoped for this outage: the owner requires 20 % of the tubes examined, flagging both gradual wall thinning and isolated pitting. Your selection?",
+    "options": [
+     "A bobbin (inside) probe recorded on absolute and differential channels, pulled through tubes chosen per the procedure's sampling pattern",
+     "An encircling coil placed around each tube in the bundle",
+     "A surface probe scanned across the face of the tubesheet",
+     "A differential-only bobbin probe, to keep the setup simple"
+    ],
+    "correct": 0,
+    "feedback": "The bundle hides every OD — the bore is the only access, so an inside coil (factor 1). Two flaw characters need two channels: differential for the abrupt pits, absolute for the gradual thinning that a self-comparing pair cancels (factor 2). The 20 % scope and tube-selection pattern come from the governing specification (factor 4), with frequency set for the wall thickness per ASTM E690 practice (factor 5)."
+   },
+   {
+    "prompt": "Fatigue cracks are suspected in the third layer of a thick aluminum doubler stack, roughly 6 mm below the probe. Which combination survives the probable-location factor?",
+    "options": [
+     "A 2 MHz pencil probe for the finest possible resolution",
+     "A low-frequency reflection (driver–pickup) probe with a Hall-element detector",
+     "A standard differential bobbin probe",
+     "Any surface coil, provided the instrument gain is doubled"
+    ],
+    "correct": 1,
+    "feedback": "Depth sets frequency: currents must reach 6 mm, so the test runs at a few hundred hertz — at 2 MHz the skin effect confines current to the first layer, and no gain setting recovers currents that never reach the flaw. At those low frequencies a sensing coil's output collapses, while a Hall element stays flat down to DC — the reflection-probe-plus-Hall combination from the Hall lesson. A bobbin has no bore to ride in."
+   },
+   {
+    "prompt": "Heat-exchanger tubes are cracking circumferentially at the support plates, and the standard bobbin examination found nothing. Why — and what do you select instead?",
+    "options": [
+     "The fill factor was too high — select a smaller-diameter bobbin",
+     "The cracks are too deep for any eddy current technique",
+     "Rewire the same bobbin from differential to absolute mode",
+     "Bobbin currents flow circumferentially, parallel to these cracks — select a rotating probe whose small surface coils drive currents that cut them"
+    ],
+    "correct": 3,
+    "feedback": "The orientation rule decides this one: a bobbin's circumferential currents run parallel to a circumferential crack, so little current is interrupted regardless of mode — rewiring absolute changes what the signal shows, not where the currents flow. A smaller bobbin lowers fill factor and makes coupling worse. Rotating small surface coils drive differently-oriented currents that the crack must cut."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Why does the type of part come first among the five selection factors?",
+   "options": [
+    "Because part geometry and access decide which coil arrangements can couple to the part at all, eliminating options before any other factor is weighed",
+    "Because larger parts always require lower test frequencies",
+    "Because the part's alloy determines whether absolute or differential mode is permitted",
+    "Because surface condition controls the choice between coil and Hall detection"
+   ],
+   "correct": 0,
+   "explanation": "The factors work as a funnel, and the part screens the toolbox first: an installed condenser tube offers nothing but its bore, so only an inside coil is even possible. Frequency, mode, and detector are chosen later, by the flaw and its probable location — not by part size, alloy, or surface finish alone."
+  },
+  {
+   "question": "A technique must detect both gradual wall thinning and small isolated pits in heat-exchanger tubing in a single pull. The sensing-element decision that follows is:",
+   "options": [
+    "A differential bobbin at maximum gain, since it detects everything an absolute coil can",
+    "A bobbin probe recorded on both an absolute channel and a differential channel",
+    "An encircling coil, because it surrounds the tube completely",
+    "A Hall element, because coils cannot respond to gradual changes"
+   ],
+   "correct": 1,
+   "explanation": "The flaw's character picks the mode: a self-comparing differential pair cancels gradual thinning no matter the gain, while the absolute channel follows it — and the differential channel crisply marks the abrupt pits. Both channels run together. An encircling coil cannot reach a tube buried in a bundle, and absolute coils respond to gradual change just fine."
+  },
+  {
+   "question": "Bar stock must be screened for longitudinal seams at full production line speed. Which selection best satisfies the speed factor?",
+   "options": [
+    "A small surface probe scanned by hand in overlapping passes",
+    "An absolute surface probe carried on a rotating scanner",
+    "A differential encircling coil the bar feeds through — a full 360° slice tested at once, with the baseline held at null at line speed",
+    "A through-transmission pair with one coil on each side of the bar"
+   ],
+   "correct": 2,
+   "explanation": "Feed-through geometry lets the conveyor do the scanning, so length coverage comes free at line speed, and longitudinal seams cut the circumferential currents. The differential mode cancels gradual variation and drift, so gain stays high without re-nulling. Hand scanning cannot match mill throughput, and through-transmission is a thin-sheet, two-side-access technique."
+  },
+  {
+   "question": "A procedure requires 100 % coverage of a flat skin area with a surface probe. The scan plan must specify:",
+   "options": [
+    "A single pass along the area's centerline at reduced speed",
+    "A fill factor as close to 1.0 as practical",
+    "Random spot checks totaling at least 10 % of the area",
+    "Overlapping parallel passes with the index — the step between adjacent passes — smaller than the coil's effective width"
+   ],
+   "correct": 3,
+   "explanation": "A surface probe inspects only its footprint, so area coverage is built from overlapping passes; if the index equals or exceeds the coil's effective width, untested stripes remain between passes. Fill factor is the coupling term for encircling and inside coils — it has no meaning for a surface probe on a flat skin."
+  },
+  {
+   "question": "Fatigue cracks are suspected in the second layer of an aluminum lap joint, about 5 mm below the probe. The probable-location factor points to:",
+   "options": [
+    "A low test frequency with a reflection (driver–pickup) probe using Hall-element detection",
+    "A high-frequency pencil probe for maximum surface resolution",
+    "An encircling coil with the highest available fill factor",
+    "A standard bobbin coil connected differentially"
+   ],
+   "correct": 0,
+   "explanation": "Depth sets frequency through δ = 1/√(πfμσ): in 30 %IACS aluminum, a frequency near 500 Hz is needed for the currents to reach about 5 mm. A high frequency confines current to the first layer. At such low frequencies a sensing coil's output is tiny while a Hall element's response stays flat, so the reflection probe with Hall detection is the working combination; encircling and bobbin coils cannot couple to lap-joint geometry."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105 (2024), ET Level I Topical Outline §1.2 (factors affecting choice of sensing elements: part type, discontinuity type, speed, amount of testing, probable location)",
+  "NAS 410, Certification and Qualification of Nondestructive Test Personnel — techniques approved by Level 3; examinations performed per approved written procedures",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — employer written practice governs technique approval and Level I/II performance per written instructions",
+  "ASTM E243, Standard Practice for Electromagnetic (Eddy Current) Examination of Copper and Copper-Alloy Tubes (production feed-through practice)",
+  "ASTM E690, Standard Practice for In Situ Electromagnetic (Eddy Current) Examination of Nonmagnetic Heat Exchanger Tubes (bobbin practice; absolute and differential channels)"
+ ]
+}

@@ -1,0 +1,101 @@
+<svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, monospace">
+  <defs>
+    <linearGradient id="flSteelGrad" gradientUnits="userSpaceOnUse" x1="0" y1="135" x2="0" y2="288">
+      <stop offset="0" stop-color="rgba(20,50,98,0.62)"/>
+      <stop offset="1" stop-color="rgba(9,26,54,0.58)"/>
+    </linearGradient>
+    <pattern id="flHatch" patternUnits="userSpaceOnUse" width="9" height="9" patternTransform="rotate(45)">
+      <path d="M4.5 0 V9" stroke="rgba(159,230,255,0.06)" stroke-width="0.8"/>
+    </pattern>
+    <filter id="flGlow" filterUnits="userSpaceOnUse" x="-40" y="-40" width="680" height="420">
+      <feGaussianBlur stdDeviation="2" result="flb"/>
+      <feMerge><feMergeNode in="flb"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="flGlowSoft" filterUnits="userSpaceOnUse" x="-40" y="-40" width="680" height="420">
+      <feGaussianBlur stdDeviation="4" result="flb2"/>
+      <feMerge><feMergeNode in="flb2"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ============ BASE ART ============ -->
+  <g id="flBase">
+    <!-- steel section -->
+    <path d="M50 135 H550 V288 H50 Z" fill="url(#flSteelGrad)"/>
+    <path d="M50 135 H550 V288 H50 Z" fill="url(#flHatch)"/>
+    <path d="M50 135 V288 H550 V135" fill="none" stroke="rgba(95,224,255,0.38)" stroke-width="1.5" stroke-linejoin="round"/>
+    <!-- test surface (broken by the crack mouth) -->
+    <path d="M50 135 H291" stroke="#9fe6ff" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+    <path d="M309 135 H550" stroke="#9fe6ff" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+    <!-- captions -->
+    <text x="58" y="126" font-size="9" letter-spacing="2" fill="#9fe6ff" opacity="0.5">AIR</text>
+    <text x="58" y="281" font-size="9" letter-spacing="1.5" fill="#9fe6ff" opacity="0.5">FERROMAGNETIC STEEL — SECTION</text>
+    <!-- surface-breaking crack, dim until revealed -->
+    <path d="M291 135 L300 190 L309 135 Z" fill="#07142b" stroke="rgba(159,230,255,0.3)" stroke-width="1" stroke-linejoin="round"/>
+    <!-- deep flaw, faint until revealed -->
+    <ellipse cx="440" cy="231" rx="24" ry="13" fill="rgba(7,20,43,0.85)" stroke="rgba(159,230,255,0.22)" stroke-width="1" stroke-dasharray="4 3"/>
+  </g>
+
+  <!-- ============ REVEAL 1: flux lines (draw, group offset inherited) ============ -->
+  <g id="flFlux" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="round" opacity="0.92" filter="url(#flGlow)" stroke-dashoffset="100">
+    <path pathLength="100" stroke-dasharray="100" d="M58 156 H252 C270 156 282 151 292 145"/>
+    <path pathLength="100" stroke-dasharray="100" d="M308 145 C318 151 330 156 348 156 H530 L522 150 L530 156 L522 162"/>
+    <path pathLength="100" stroke-dasharray="100" d="M58 174 H530 L522 168 L530 174 L522 180"/>
+    <path pathLength="100" stroke-dasharray="100" d="M58 198 H256 C272 198 284 194.5 300 194.5 C316 194.5 328 198 344 198 H530 L522 192 L530 198 L522 204"/>
+    <path pathLength="100" stroke-dasharray="100" d="M58 220 H262 C278 220 288 217 300 217 C312 217 322 220 338 220 H402 C416 220 426 211 440 211 C454 211 464 220 478 220 H530 L522 214 L530 220 L522 226"/>
+    <path pathLength="100" stroke-dasharray="100" d="M58 242 H398 C414 242 424 252 440 252 C456 252 466 242 482 242 H530 L522 236 L530 242 L522 248"/>
+    <path pathLength="100" stroke-dasharray="100" d="M58 262 H530 L522 256 L530 262 L522 268"/>
+  </g>
+
+  <!-- ============ REVEAL 2: crack brightens (fade) ============ -->
+  <g id="flCrack" opacity="0">
+    <path d="M291 135 L300 190 L309 135" fill="none" stroke="#5fe0ff" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" filter="url(#flGlow)"/>
+  </g>
+
+  <!-- ============ REVEAL 3: leakage field arcs (draw, group offset inherited) ============ -->
+  <g id="flLeak" fill="none" stroke="#8ceaff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="round" opacity="0.95" filter="url(#flGlow)" stroke-dashoffset="100">
+    <path pathLength="100" stroke-dasharray="100" d="M292.5 143 C266 104 334 104 307.5 143"/>
+    <path pathLength="100" stroke-dasharray="100" d="M288 137 C240 84 360 84 312 137 L314.5 128.4 L312 137 L320.4 133.7"/>
+  </g>
+
+  <!-- ============ REVEAL 4: pole pair + leak label (fade) ============ -->
+  <g id="flLeakLbl" opacity="0">
+    <rect x="261.5" y="114.5" width="13" height="13" rx="3" fill="rgba(10,30,60,0.92)" stroke="rgba(95,224,255,0.55)" stroke-width="1"/>
+    <text x="268" y="124.5" font-size="10" font-weight="700" text-anchor="middle" fill="#eaf6ff">N</text>
+    <rect x="325.5" y="114.5" width="13" height="13" rx="3" fill="rgba(10,30,60,0.92)" stroke="rgba(95,224,255,0.55)" stroke-width="1"/>
+    <text x="332" y="124.5" font-size="10" font-weight="700" text-anchor="middle" fill="#eaf6ff">S</text>
+    <text x="226" y="73" font-size="11" letter-spacing="1.5" text-anchor="end" fill="#9fe6ff">LEAKAGE FIELD</text>
+    <path d="M230 76 L275 95" stroke="rgba(159,230,255,0.55)" stroke-width="1"/>
+  </g>
+
+  <!-- ============ REVEAL 5: particles bridge the leak (fade) ============ -->
+  <g id="flParticles" opacity="0">
+    <ellipse cx="300" cy="128" rx="22" ry="8" fill="rgba(95,224,255,0.22)" filter="url(#flGlowSoft)"/>
+    <g fill="#cef4ff">
+      <circle cx="284" cy="131.5" r="2.2"/><circle cx="289.3" cy="131.5" r="2.2"/><circle cx="294.7" cy="131.5" r="2.2"/><circle cx="300" cy="131.5" r="2.2"/><circle cx="305.3" cy="131.5" r="2.2"/><circle cx="310.7" cy="131.5" r="2.2"/><circle cx="316" cy="131.5" r="2.2"/>
+      <circle cx="286.5" cy="127.5" r="2"/><circle cx="291.9" cy="127.5" r="2"/><circle cx="297.3" cy="127.5" r="2"/><circle cx="302.7" cy="127.5" r="2"/><circle cx="308.1" cy="127.5" r="2"/><circle cx="313.5" cy="127.5" r="2"/>
+      <circle cx="290" cy="123.5" r="1.9"/><circle cx="295" cy="123.5" r="1.9"/><circle cx="300" cy="123.5" r="1.9"/><circle cx="305" cy="123.5" r="1.9"/><circle cx="310" cy="123.5" r="1.9"/>
+      <circle cx="295" cy="120" r="1.7"/><circle cx="300" cy="120" r="1.7"/><circle cx="305" cy="120" r="1.7"/>
+    </g>
+    <!-- stray particles drifting off the bar: held nowhere but the leak -->
+    <circle cx="140" cy="131.5" r="1.4" fill="#cef4ff" opacity="0.3"/>
+    <circle cx="196" cy="130.5" r="1.3" fill="#cef4ff" opacity="0.28"/>
+    <circle cx="376" cy="131" r="1.4" fill="#cef4ff" opacity="0.3"/>
+    <circle cx="508" cy="130.5" r="1.3" fill="#cef4ff" opacity="0.28"/>
+    <circle cx="182" cy="106" r="1.2" fill="#cef4ff" opacity="0.22"/>
+    <circle cx="468" cy="98" r="1.2" fill="#cef4ff" opacity="0.2"/>
+    <text x="218" y="133" font-size="11" letter-spacing="1.5" text-anchor="end" fill="#9fe6ff">INDICATION</text>
+    <path d="M222 129.5 H281" stroke="rgba(159,230,255,0.55)" stroke-width="1"/>
+  </g>
+  <circle id="flPing" cx="300" cy="126" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0"/>
+
+  <!-- ============ REVEAL 6: too-deep flaw, no surface leak (fade) ============ -->
+  <g id="flDeep" opacity="0">
+    <ellipse cx="440" cy="231" rx="24" ry="13" fill="none" stroke="#9fe6ff" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.6"/>
+    <path d="M416 218 C428 213 452 213 464 218" fill="none" stroke="#9fe6ff" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+    <path d="M414 244 C426 250 454 250 466 244" fill="none" stroke="#9fe6ff" stroke-width="1" stroke-dasharray="2 3" opacity="0.5"/>
+    <!-- quiet surface bracket above the deep flaw -->
+    <path d="M418 128 V131 H462 V128" fill="none" stroke="rgba(159,230,255,0.4)" stroke-width="1"/>
+    <path d="M445 85 V215" stroke="rgba(159,230,255,0.35)" stroke-width="1" stroke-dasharray="3 4"/>
+    <text x="445" y="80" font-size="11" letter-spacing="1.5" text-anchor="middle" fill="#9fe6ff" opacity="0.85">TOO DEEP — NO SURFACE LEAK</text>
+  </g>
+</svg>

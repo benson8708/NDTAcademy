@@ -1,0 +1,150 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="izGlow" filterUnits="userSpaceOnUse" x="-20" y="-20" width="640" height="380">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="izSteel" x1="0" y1="72" x2="0" y2="308" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c5784"/><stop offset=".45" stop-color="#1a3c63"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="izMetal" x1="0" y1="52" x2="0" y2="290" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1E66F5" stop-opacity=".20"/>
+      <stop offset=".45" stop-color="#102c52" stop-opacity=".62"/>
+      <stop offset="1" stop-color="#0a1e3c" stop-opacity=".72"/>
+    </linearGradient>
+    <radialGradient id="izHotG" cx="300" cy="94" r="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eaf6ff" stop-opacity=".85"/>
+      <stop offset=".4" stop-color="#5fe0ff" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="izInsul" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M0 0H9" stroke="#8fb6e0" stroke-width=".9" opacity=".4"/>
+    </pattern>
+  </defs>
+
+  <!-- ============ BASE: cast-iron mold + stool + faint hot top + dim ingot ============ -->
+  <g stroke-linejoin="round" stroke-linecap="round">
+    <!-- stool (bottom plate) -->
+    <rect x="150" y="290" width="300" height="18" rx="2.5" fill="url(#izSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <!-- mold walls (tapered, big end up) -->
+    <path d="M172 72 H210 L238 290 H200 Z" fill="url(#izSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M390 72 H428 L400 290 H362 Z" fill="url(#izSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <!-- lifting lugs -->
+    <path d="M175 90 H162 Q158 90 158 94 V110 Q158 114 162 114 H178" fill="url(#izSteel)" stroke="#8fb6e0" stroke-width="1.3"/>
+    <path d="M425 90 H438 Q442 90 442 94 V110 Q442 114 438 114 H422" fill="url(#izSteel)" stroke="#8fb6e0" stroke-width="1.3"/>
+    <!-- faint insulated hot-top cap -->
+    <g opacity=".6">
+      <rect x="172" y="36" width="72" height="36" rx="2" fill="rgba(10,30,60,.55)" stroke="#8fb6e0" stroke-width="1.4"/>
+      <rect x="172" y="36" width="72" height="36" fill="url(#izInsul)"/>
+      <rect x="356" y="36" width="72" height="36" rx="2" fill="rgba(10,30,60,.55)" stroke="#8fb6e0" stroke-width="1.4"/>
+      <rect x="356" y="36" width="72" height="36" fill="url(#izInsul)"/>
+    </g>
+    <!-- ingot metal (dim) -->
+    <path d="M244 56 V72 H210 L238 285 Q239 290 245 290 H355 Q361 290 362 285 L390 72 H356 V56 Q300 64 244 56 Z" fill="url(#izMetal)"/>
+    <!-- dim ingot outline + sunken meniscus -->
+    <path d="M244 56 V72 H210 L238 285 Q239 290 245 290 H355 Q361 290 362 285 L390 72 H356 V56" fill="none" stroke="#8fb6e0" stroke-width="1.8" opacity=".8"/>
+    <path d="M244 56 Q300 64 356 56" fill="none" stroke="#8fb6e0" stroke-width="1.4" opacity=".7"/>
+  </g>
+
+  <!-- ============ REVEAL 1: chill zone ============ -->
+  <g id="izChill" opacity="0" stroke-linecap="round">
+    <path d="M212 78 L238.5 284 Q239.5 286.5 245 286.5 H355 Q360.5 286.5 361.5 284 L388 78" fill="none" stroke="#5fe0ff" stroke-width="7" opacity=".16"/>
+    <path d="M212 78 L238.5 284 Q239.5 286.5 245 286.5 H355 Q360.5 286.5 361.5 284 L388 78" fill="none" stroke="#5fe0ff" stroke-width="1.6" opacity=".9" filter="url(#izGlow)"/>
+    <path d="M218.2 82.8L215.5 84.3M385.7 83.6L382.4 85.8M217.2 91.8L214.6 93.5M382.8 89.2L380.1 91.9M219.7 100.9L216.8 103.2M383 99.1L381.6 102.4M218 106.6L221.2 109M379.3 107.2L382 107.3M221 117.2L222.7 119.1M381.2 116.2L381.2 119.2M220 124L222.7 124.5M379.9 123.7L376.1 124.9M224 133.6L223.9 136M376.9 131.1L379.3 132M224.8 139.4L221.8 140.4M375.7 140.9L376.9 143M221.3 150L225.7 150.6M376.7 146.8L375.1 150.9M227.1 159.1L223.1 159.3M373.2 155.8L371.9 158.2M229.7 165.3L227.7 167.6M372.4 165.2L372.7 169M230.3 175.5L228.2 176.7M373.7 173L371 174.4M228.7 181L229.2 184.4M368.5 183.3L372.3 184.4M228.9 189.2L231.7 192.4M370.2 191.2L373.2 192.9M230.2 195.7L230.1 199M370.1 197.1L368.4 200.1M232.5 206.4L229.8 207M366.8 205.2L366.1 209M232.8 214.5L232.5 218.4M367.6 212L369.1 216M233.4 224.4L236.3 224.9M363.5 220.3L364.5 223.4M236.4 231L232.7 232.2M365.2 231.6L363 234.5M237.2 237L238.3 239.7M363.9 238.1L363.7 241.1M237.2 247.8L235.4 249.5M362.1 246L364.8 247.8M237.5 256.4L241.6 257.4M363.5 257.1L360.8 259M241.3 265L237.9 266.3M362.7 261.2L361.2 264.9M238.9 273L241.3 276.1M360.9 269.9L360.4 272.9M247.3 283.8L246.7 286.6M256.6 283.9L258 288M262.7 283.8L264 286.2M272 285.1L276 285.5M284.8 283.8L280.8 285.2M290 284.4L288.2 286.2M297.6 284.1L297.5 287.3M304.5 284.9L306.9 287.1M315 282.9L313.3 286.9M324.5 283.1L323.3 286.1M331.6 284.8L335.3 287.1M339.7 284.8L343.6 286.5M348 285.2L350.7 286.7" stroke="#eaf6ff" stroke-width="1.1" opacity=".9" fill="none"/>
+    <g fill="#9fe6ff" opacity=".85">
+      <circle cx="215.3" cy="89.2" r=".8"/>
+      <circle cx="381" cy="95.2" r=".8"/>
+      <circle cx="219.5" cy="113.8" r=".8"/>
+      <circle cx="381.4" cy="119.8" r=".8"/>
+      <circle cx="221.6" cy="138.4" r=".8"/>
+      <circle cx="376.5" cy="144.4" r=".8"/>
+      <circle cx="227.4" cy="163" r=".8"/>
+      <circle cx="374.5" cy="169" r=".8"/>
+      <circle cx="228.4" cy="187.6" r=".8"/>
+      <circle cx="370.2" cy="193.6" r=".8"/>
+      <circle cx="232.2" cy="212.2" r=".8"/>
+      <circle cx="366.4" cy="218.2" r=".8"/>
+      <circle cx="236.3" cy="236.8" r=".8"/>
+      <circle cx="363.4" cy="242.8" r=".8"/>
+      <circle cx="240.1" cy="261.4" r=".8"/>
+      <circle cx="362.1" cy="267.4" r=".8"/>
+      <circle cx="250" cy="283.7" r=".8"/>
+      <circle cx="275.2" cy="284" r=".8"/>
+      <circle cx="300.4" cy="284.5" r=".8"/>
+      <circle cx="325.6" cy="284.5" r=".8"/>
+      <circle cx="350.8" cy="284.5" r=".8"/>
+    </g>
+    <g font-size="12" letter-spacing="1.2">
+      <path d="M156 228 L233 228" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+      <text x="152" y="232" text-anchor="end" fill="#9fe6ff">CHILL ZONE</text>
+    </g>
+  </g>
+
+  <!-- ============ REVEAL 2: columnar grains ============ -->
+  <g id="izColumnar" opacity="0" stroke-linecap="round">
+    <path d="M219.1 92L249.4 88.1M380.9 92L344.7 87.3M220.7 105L253.1 100.8M379.3 105L337.7 99.7M222.4 118L258.7 113.3M377.6 118L343.1 113.6M224.1 131L270.3 125.1M375.9 131L339.8 126.4M225.7 144L258.1 139.8M374.3 144L333 138.7M227.4 157L263 152.4M372.6 157L327.3 151.2M229.1 170L268.1 165M370.9 170L343.1 166.4M230.8 183L272 177.7M369.2 183L331.2 178.1M232.4 196L260.4 192.4M367.6 196L330.8 191.3M234.1 209L270.3 204.4M365.9 209L319.6 203.1M235.8 222L276.1 216.8M364.2 222L335.3 218.3M237.4 235L282.2 229.2M362.6 235L327.2 230.5M239.1 248L269.8 244.1M360.9 248L324.9 243.4M240.8 261L278.7 256.1M359.2 261L316.7 255.5M242.4 274L281.3 269M357.6 274L323.8 269.7M252 283L252 259.5M264 283L264 258.2M276 283L276 250.5M288 283L288 260.6M300 283L300 254.6M312 283L312 252.6M324 283L324 260.3M336 283L336 255.1M348 283L348 250.8" stroke="#9fe6ff" stroke-width="1.2" opacity=".8" fill="none"/>
+    <g fill="#5fe0ff" opacity=".95">
+      <polygon points="265.7,112.4 259.1,116.7 258.3,110"/>
+      <polygon points="326,137.8 333.4,135.3 332.5,142.1"/>
+      <polygon points="275.1,164.1 268.6,168.4 267.7,161.6"/>
+      <polygon points="323.8,190.4 331.2,187.9 330.3,194.6"/>
+      <polygon points="283,215.9 276.5,220.2 275.6,213.5"/>
+      <polygon points="318,242.5 325.4,240 324.5,246.8"/>
+      <polygon points="288.3,268.1 281.8,272.4 280.9,265.6"/>
+      <polygon points="276,243.5 279.4,250.5 272.6,250.5"/>
+      <polygon points="324,253.3 327.4,260.3 320.6,260.3"/>
+    </g>
+    <g font-size="12" letter-spacing="1.2">
+      <path d="M442 196 L362 196" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+      <text x="446" y="200" fill="#9fe6ff">COLUMNAR</text>
+    </g>
+  </g>
+
+  <!-- ============ REVEAL 3: equiaxed core ============ -->
+  <g id="izEquiaxed" opacity="0" stroke-linejoin="round">
+    <ellipse cx="300" cy="172" rx="50" ry="80" fill="#1E66F5" opacity=".1"/>
+    <g stroke="#9fe6ff" stroke-width="1.1" fill="#1E66F5" fill-opacity=".28" opacity=".9">
+      <path d="M281 119.4L277.8 128.6L268 130L258.6 118.3L265.1 106.7L278.6 108.7Z"/>
+      <path d="M315.4 122.9L307.8 138.2L296.5 132.9L288.5 122L294.9 115.2L310.7 112.6Z"/>
+      <path d="M345.5 116L338.6 125.4L327.5 123.6L324 118.5L328.8 105.4L340.6 108.1Z"/>
+      <path d="M271.1 146.6L267.2 158.5L255.3 156.5L252.4 145.9L259.1 140L267.9 140Z"/>
+      <path d="M302.1 153.1L300.5 161.3L286.3 161.2L279.1 154.4L288.3 141.7L296.1 139.6Z"/>
+      <path d="M331 146.9L328.8 156.4L317.1 156.3L310.5 146.5L314.5 137.3L328.3 136.6Z"/>
+      <path d="M346.9 169.1L342.7 174.2L335.5 174.5L332.1 168.6L333.7 160.9L342.9 162.4Z"/>
+      <path d="M277.8 179.8L275.5 187.2L267.1 189L261.5 178.8L265.5 174.3L275 171.6Z"/>
+      <path d="M308.3 184.1L306.3 191L296.4 193.7L290 185.2L296.2 172.5L304.5 176.9Z"/>
+      <path d="M334.8 192L331.1 199.2L323.3 199.6L318.4 193.1L321.4 184.5L330.7 185.9Z"/>
+      <path d="M290.1 209.6L285.8 217.2L280.4 218.4L276.3 209.1L280.8 203L285.4 202.6Z"/>
+      <path d="M320.3 210.8L313.9 222.7L305.1 219.1L299 214.1L305.4 203.5L316.2 204Z"/>
+      <path d="M300.2 239.4L295.8 243.4L287 244.8L284.3 237.8L288.8 232.5L297 232.5Z"/>
+      <path d="M322.7 234.6L320.6 239.5L313.4 240.5L310.8 233.1L312.3 227.2L319.6 228.2Z"/>
+    </g>
+    <g font-size="12" letter-spacing="1.2">
+      <path d="M442 128 L338 128" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+      <text x="446" y="132" fill="#9fe6ff">EQUIAXED</text>
+    </g>
+  </g>
+
+  <!-- ============ REVEAL 4: last to freeze (top center) ============ -->
+  <g id="izTrouble" opacity="0">
+    <path d="M300 44 V296" stroke="#5fe0ff" stroke-width="1.4" stroke-dasharray="10 4 3 4" opacity=".75" fill="none"/>
+    <ellipse cx="300" cy="94" rx="46" ry="42" fill="url(#izHotG)">
+      <animate attributeName="opacity" values=".55;1;.55" dur="2.2s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="300" cy="88" rx="22" ry="19" fill="url(#izHotG)">
+      <animate attributeName="opacity" values=".4;.95;.4" dur="2.2s" begin=".35s" repeatCount="indefinite"/>
+    </ellipse>
+    <g font-size="12" letter-spacing="1.2">
+      <path d="M156 96 L256 92" stroke="#5fe0ff" stroke-width="1" opacity=".55" fill="none"/>
+      <text x="152" y="100" text-anchor="end" fill="#eaf6ff" font-weight="700">LAST TO FREEZE</text>
+    </g>
+  </g>
+
+  <!-- base labels -->
+  <g font-size="12" letter-spacing="1.2" fill="#9fe6ff">
+    <path d="M442 46 L420 50" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="446" y="50" opacity=".85">HOT TOP</text>
+    <path d="M156 150 L195 150" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="152" y="154" text-anchor="end" opacity=".85">MOLD WALL</text>
+  </g>
+</svg>

@@ -1,0 +1,59 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrNavyB" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L8,4.5 L0,9 Z" fill="#0B1F3A"/>
+    </marker>
+    <marker id="arrBlueB" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L8,4.5 L0,9 Z" fill="#1E66F5"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Same Notch, Two Speeds &#8212; the Filter Must Follow</text>
+
+  <line x1="400" y1="50" x2="400" y2="405" stroke="#6B7A90" stroke-width="1" opacity="0.35"/>
+
+  <!-- LEFT PANEL: standardized speed -->
+  <text x="215" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B1F3A">Line speed v &#8212; as standardized</text>
+  <text x="70" y="92" text-anchor="start" font-family="Arial, sans-serif" font-size="11.5" fill="#6B7A90">signal vs. time</text>
+  <path d="M70,130 L180,130 C195,130 200,85 215,85 C230,85 235,130 250,130 L360,130" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="180" y1="142" x2="180" y2="152" stroke="#6B7A90" stroke-width="1.5"/>
+  <line x1="250" y1="142" x2="250" y2="152" stroke="#6B7A90" stroke-width="1.5"/>
+  <line x1="180" y1="147" x2="250" y2="147" stroke="#6B7A90" stroke-width="1.5"/>
+  <text x="215" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6B7A90">duration t</text>
+
+  <text x="195" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E66F5">bandpass filter</text>
+  <rect x="140" y="250" width="110" height="100" fill="#1E66F5" fill-opacity="0.12" stroke="#1E66F5" stroke-width="1.5"/>
+  <line x1="70" y1="350" x2="365" y2="350" stroke="#0B1F3A" stroke-width="1.5" marker-end="url(#arrNavyB)"/>
+  <text x="360" y="372" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#6B7A90">frequency</text>
+  <line x1="195" y1="350" x2="195" y2="272" stroke="#0B1F3A" stroke-width="3"/>
+  <circle cx="195" cy="266" r="4" fill="#0B1F3A"/>
+  <text x="195" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0B1F3A">signal frequency</text>
+  <text x="215" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1F9D55">inside the passband &#8212; full amplitude</text>
+
+  <!-- RIGHT PANEL: doubled speed -->
+  <text x="585" y="64" text-anchor="middle" font-family="Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#0B1F3A">Line speed 2v &#8212; same notch</text>
+  <text x="455" y="92" text-anchor="start" font-family="Arial, sans-serif" font-size="11.5" fill="#6B7A90">signal vs. time</text>
+  <path d="M455,130 L555,130 C563,130 567,85 577,85 C587,85 591,130 599,130 L740,130" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="555" y1="142" x2="555" y2="152" stroke="#6B7A90" stroke-width="1.5"/>
+  <line x1="599" y1="142" x2="599" y2="152" stroke="#6B7A90" stroke-width="1.5"/>
+  <line x1="555" y1="147" x2="599" y2="147" stroke="#6B7A90" stroke-width="1.5"/>
+  <text x="577" y="166" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6B7A90">t &#247; 2 &#8594; frequency &#215;2</text>
+
+  <text x="705" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="12.5" font-weight="bold" fill="#1E66F5">speed-following filter</text>
+  <text x="705" y="239" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" fill="#1E66F5">re-centered by encoder feedback</text>
+  <rect x="525" y="250" width="110" height="100" fill="#6B7A90" fill-opacity="0.06" stroke="#6B7A90" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="580" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" fill="#6B7A90">fixed filter</text>
+  <text x="580" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="11.5" fill="#6B7A90">(old speed)</text>
+  <rect x="650" y="250" width="110" height="100" fill="#1E66F5" fill-opacity="0.12" stroke="#1E66F5" stroke-width="2"/>
+  <line x1="612" y1="300" x2="646" y2="300" stroke="#1E66F5" stroke-width="2" marker-end="url(#arrBlueB)"/>
+  <line x1="455" y1="350" x2="750" y2="350" stroke="#0B1F3A" stroke-width="1.5" marker-end="url(#arrNavyB)"/>
+  <line x1="705" y1="350" x2="705" y2="272" stroke="#0B1F3A" stroke-width="3"/>
+  <circle cx="705" cy="266" r="4" fill="#0B1F3A"/>
+  <text x="705" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#0B1F3A">signal frequency &#215;2</text>
+  <text x="560" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#D7263D">fixed band misses it &#8212; amplitude lost</text>
+  <text x="705" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1F9D55">re-centered band catches it</text>
+
+  <text x="400" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6B7A90">Signal duration = sensing-zone width &#247; speed, so a defect signal&#8217;s frequency content is proportional to line speed.</text>
+  <text x="400" y="445" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#6B7A90">Encoder feedback keeps the passband centered on it at any qualified speed.</text>
+</svg>

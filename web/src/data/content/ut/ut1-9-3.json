@@ -1,0 +1,186 @@
+{
+ "lessonId": "ut1-9-3",
+ "title": "Angle-Beam Examination: Parameters and Test Standards",
+ "narrationScript": "Straight beam finds what lies flat. Welds fail differently. Cracks, lack of fusion, and incomplete penetration tend to stand vertical or near vertical in the joint, edge on to a straight beam and nearly invisible to it. So weld procedures send the sound in at an angle, as a shear wave refracted into the part through a plastic wedge, and this lesson is about executing that examination the way the procedure writes it. First, the angle itself. Common wedges refract at forty five, sixty, or seventy degrees in steel. Those angles are not arbitrary. An acrylic wedge on steel works between the two critical angles, where the longitudinal wave has been refracted away and only the shear wave remains in the part. One clean mode, one velocity, one set of calculations. The procedure picks the angle to suit the joint. Seventy degrees gives a long reach along thin sections and a beam nearly broadside to vertical flaws, so it is the workhorse for thinner welds. Sixty degrees covers the middle range. Forty five suits thick sections where a seventy degree path would grow too long and too weak. Many procedures tabulate the angle against thickness, and some require a second angle for certain joints. Frequency for weld work is commonly two and a quarter megahertz, sometimes five for thin, fine grained material. Lower frequency rides through weld metal noise better. Higher frequency sizes more sharply. The procedure decides, not your preference. Now the geometry you must carry in your head. The beam enters at the index point, travels down through the thickness, bounces off the far surface, and comes back up. The distance along the surface from the index point to where the beam returns to the scanning surface is the skip distance, two times the thickness times the tangent of the refracted angle. The sound path from entry down to the far surface is the first leg, thickness divided by the cosine of the angle. Bounce to surface again is the second leg. Work one example. Half inch plate, sixty degree wedge. The tangent of sixty degrees is about one point seven three, so the skip distance is two times one half times one point seven three, about one and three quarter inches. The cosine of sixty degrees is one half, so each leg is one inch of sound path. Those two numbers let you plan coverage. To sweep the entire weld volume in the first and second legs, the procedure has you mark a scan band on each side of the weld, typically from the edge of the weld out to a bit beyond one full skip, and move the probe in and out across that band while advancing along the weld, adding a small swivel of ten or fifteen degrees to catch tilted reflectors. Where access allows, you scan from both sides of the weld so misoriented flaws get hit from two directions. Before any of that, you prove the tools. The wedge stencil says seventy degrees, but wedges wear, so the procedure sends you to a calibration standard. On the familiar I I W block you find the actual beam index point against the engraved mark at the hundred millimeter radius, then check the true refracted angle against the degree scale, usually with a tolerance of about plus or minus two degrees. Distance calibration comes from the same block or from a D S C or similar block, putting the radius echoes at known sweep positions so the screen reads sound path truly. Then sensitivity. For weld work to construction codes, the reference is usually a basic calibration block, same material specification as the weldment, with side drilled holes at one quarter, one half, and three quarters of the thickness. You peak the hole that gives the strongest response, set it to eighty percent of full screen height, record the reference gain, then without touching the gain peak the other holes and mark each peak on the screen. Connect the marks and you have drawn the distance amplitude correction curve, the line that says what an equal reflector looks like at every depth. Modern instruments do the same thing electronically with time corrected gain. Notches in a block of the part thickness serve as references for surface connected flaws in some piping and plate procedures. And as with straight beam, if the part surface is rougher or more attenuating than the block, the procedure requires a measured transfer correction added to the gain. Scanning gain goes on top, commonly six to fourteen decibels over reference, and comes back off for evaluation. Calibration gets confirmed at the start, at the end, on any system change, and on the clock in between. Get the angle verified, the distance true, the curve drawn, and the band marked, and the hard part of angle beam work is already done.",
+ "imagePrompt": "A technician slides an amber acrylic angle-beam wedge along a chalk-marked scan band beside a long submerged-arc butt weld on a pressure vessel shell, flaw detector showing a calibrated DAC curve.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Why Welds Get an Angle Beam",
+   "body": "The dangerous discontinuities in a butt weld — cracks, lack of sidewall fusion, incomplete penetration — tend to stand **vertical or near-vertical** in the joint. To a straight beam they present edge-on, returning almost nothing. An angle beam refracted into the part strikes those same planes **broadside**, which is why procedures for weld examination are written around shear-wave wedges.\n\nThe physics sets the menu. With an acrylic wedge (longitudinal velocity about 2,730 m/s) on steel, the usable incident angles sit **between the first critical angle (≈27.5°) and the second (≈57°)**: the refracted longitudinal wave has been eliminated and only a single shear wave (3,240 m/s) works in the part — one mode, one velocity, unambiguous arithmetic. Standard wedges refract at **45°, 60°, or 70°** in steel.\n\nThe written procedure — not operator taste — assigns the angle, the frequency, the probe size, the couplant, the reference standard, and the scan plan for each joint configuration. Your job is the same as in straight-beam work: execute exactly, verify everything, and escalate anything outside scope."
+  },
+  {
+   "type": "text",
+   "heading": "Selection of Parameters: Angle, Frequency, Probe",
+   "body": "What the procedure weighs when it fixes the parameters:\n\n- **Refracted angle vs. thickness.** 70° gives long surface reach and hits vertical flaws most squarely — the workhorse for thinner sections (commonly up to about 0.75 in.). 60° serves mid-range thickness; 45° suits heavy sections, where a 70° path would be long, weak, and poorly resolved. Many procedures tabulate angle against thickness and require a **second angle** for some joints or for flaw confirmation.\n- **Frequency.** Weld examination commonly runs at **2.25 MHz** — tolerant of weld-metal structure and longer sound paths. 5 MHz appears for thin, fine-grained work where sharper sizing matters. Higher frequency means shorter wavelength and more scatter; the procedure has already made that trade.\n- **Element size.** Common weld probes are about 0.5 × 0.5 in. to 1 × 1 in.; size sets beam spread and how much energy survives the trip.\n- **Couplant and surface.** Same rule as straight beam: the named couplant, a scan surface cleared of spatter, scale, and ripple, and a **transfer correction** when block and part surfaces differ."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-9-3-fig-a",
+   "caption": "Angle-beam geometry for a 60° wedge on 0.5 in. plate: each leg is T/cos θ = 1.0 in. of sound path and the full skip distance is 2T·tan θ ≈ 1.73 in. along the surface."
+  },
+  {
+   "type": "text",
+   "heading": "Skip Distance, Legs, and the Scan Band",
+   "body": "Three formulas plan every angle-beam examination of a plate-type joint (thickness T, refracted angle θ):\n\n- **Skip distance** (index point to where the beam returns to the scanning surface): **2T·tan θ**\n- **Leg length** (sound path surface-to-surface): **T/cos θ**\n- **Surface distance** to any reflector: **sound path × sin θ**\n\nWorked example — T = 0.5 in., θ = 60°: tan 60° = 1.732, so skip = 2 × 0.5 × 1.732 = **1.73 in.**; cos 60° = 0.5, so each leg = **1.0 in.** of sound path.\n\nCoverage follows. Scanning in the **first leg** examines the lower part of the weld; the **second leg** (after the back-wall bounce) examines the upper part. To sweep the full volume, the procedure marks a **scan band** beside the weld — typically from the weld edge out to slightly beyond one full skip plus half the probe length — and the probe rasters in and out across it while advancing along the joint, with a **10–15° swivel** added to catch tilted reflectors. Passes overlap like straight-beam work, and the weld is scanned **from both sides** where access allows, so misoriented flaws are interrogated from two directions."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Verify the exit point and angle before anything else",
+   "body": "Wedges wear, and a worn wedge lies about both its **beam index point** and its **refracted angle**. Every standardization starts on the reference block: find the true index point at the 100 mm radius, then read the actual angle on the degree scale — most procedures allow about **±2°** from nominal. Every skip, depth, and surface-distance calculation you make afterward rides on those two checks."
+  },
+  {
+   "type": "text",
+   "heading": "Test Standards for Angle Beam",
+   "body": "The procedure names the blocks, and each one has a defined job:\n\n- **IIW block (Type 1/Type 2).** The all-purpose field standard: the engraved mark at the **100 mm radius** locates the true beam index (exit) point; the degree scale verifies **refracted angle**; the radius echoes calibrate the **sweep for sound path**; reference notches and holes give repeatability checks.\n- **DSC (distance and sensitivity calibration) block.** Compact field block doing distance and sensitivity duty for common angles.\n- **SC (sensitivity calibration) block.** Small block carrying a side-drilled hole for sensitivity setting at a known path.\n- **Basic calibration block.** For code weld work: same material specification and comparable heat treatment as the weldment, thickness keyed to the part, with **side-drilled holes (SDHs) at T/4, T/2, and 3T/4** — the reflectors that anchor the DAC.\n- **Notches.** Machined surface notches (commonly 10% of wall in piping work) reference surface-connected reflectors on the ID and OD.\n\nA SDH presents the same cylindrical reflector to any beam angle, which is why codes choose it for distance-amplitude work. As always: block acoustically equivalent to the part, or a measured transfer correction."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-9-3-fig-b",
+   "caption": "Building the DAC: the strongest side-drilled-hole response is set to 80% FSH at reference gain, the remaining holes are peaked without gain changes, and the curve through the peaks corrects amplitude for distance."
+  },
+  {
+   "type": "table",
+   "caption": "Planning factors by refracted angle (plate thickness T).",
+   "headers": ["Refracted angle", "tan θ", "Skip distance 2T·tan θ", "Leg length T/cos θ", "Typical procedure use"],
+   "rows": [
+    ["45°", "1.000", "2.00 × T", "1.41 × T", "Heavy sections; short, strong paths"],
+    ["60°", "1.732", "3.46 × T", "2.00 × T", "Mid-range thickness; general weld work"],
+    ["70°", "2.747", "5.49 × T", "2.92 × T", "Thin sections; near-vertical flaw detection"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Standardizing Distance and Sensitivity",
+   "body": "A typical procedure sequence, start to finish:\n\n1. **Linearity current** — vertical and horizontal screen linearity checks within their interval.\n2. **Index point and angle** verified on the IIW or equivalent block; record the measured angle and use it in calculations.\n3. **Distance (sweep) calibration** — set a sound-path range that covers the full examination, at least one full V-path; for 1 in. plate at 60° (leg = 2.0 in.), a 5 in. screen comfortably shows both legs.\n4. **Sensitivity** — peak the SDH giving the strongest response, set it to **80% FSH**, and record the reference gain in dB.\n5. **DAC** — without touching the gain, peak the remaining holes (T/4, T/2, 3T/4, and second-leg points where required) and mark each peak; the connected curve is the DAC. Electronic **TCG** flattens the same data to one level.\n6. **Scanning gain** — add the procedure's increment (commonly **+6 to +14 dB**) for scanning; remove it to evaluate.\n7. **Confirmations** — recheck calibration at the start and end, on any system change, and at the stated interval; out-of-tolerance checks send you back to re-examine everything since the last good one.\n\nOnly after all seven boxes are ticked does the probe touch the weld."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-9-3-fig-a",
+   "title": "Angle-beam geometry: skip distance and legs",
+   "file": "ut1-9-3-fig-a.svg"
+  },
+  {
+   "id": "ut1-9-3-fig-b",
+   "title": "DAC construction from side-drilled holes",
+   "file": "ut1-9-3-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Angle-Beam Setup to Procedure UT-AB-7",
+  "intro": "Procedure UT-AB-7 covers single-V butt welds in carbon steel, 0.375 to 1.0 in. thick. It tabulates 70° for T under 0.75 in. and 60° for 0.75 in. and over, requires angle verification within ±2°, DAC from SDHs at T/4, T/2, and 3T/4 with reference at 80% FSH, and scan bands giving full first- and second-leg coverage from both sides. Today's joint: 0.5 in. plate.",
+  "steps": [
+   {
+    "prompt": "Which wedge does the procedure put on the 0.5 in. joint?",
+    "options": [
+     "45° — strongest signal, shortest path",
+     "60° — splits the difference",
+     "70° — the tabulated angle for T under 0.75 in.",
+     "Any wedge, provided the frequency is 2.25 MHz"
+    ],
+    "correct": 2,
+    "feedback": "The procedure's table controls: 70° for thickness under 0.75 in. It reaches well along thin sections and strikes near-vertical fusion-line flaws most squarely. Angle choice is not operator preference."
+   },
+   {
+    "prompt": "On the IIW block, your '70°' wedge actually reads 73° on the degree scale. What now?",
+    "options": [
+     "Use it — the stencil says 70°",
+     "It fails the ±2° tolerance: replace or dress the wedge and re-verify before any scanning",
+     "Use it and mentally subtract 3° from every reading",
+     "Skip angle checks; they only apply to new wedges"
+    ],
+    "correct": 1,
+    "feedback": "73° is outside 70° ±2°. Every skip, depth, and surface-distance number depends on the true angle, so the wedge is unusable as-is. Replace it (or restore it) and verify again — and record the measured angle of the wedge you finally use."
+   },
+   {
+    "prompt": "With a compliant 70° wedge (tan 70° = 2.747) on the 0.5 in. plate, the full skip distance is about:",
+    "options": [
+     "1.37 in.",
+     "2.75 in.",
+     "1.73 in.",
+     "5.49 in."
+    ],
+    "correct": 1,
+    "feedback": "Skip = 2T·tan θ = 2 × 0.5 × 2.747 ≈ 2.75 in. That number sets how far the scan band must extend from the weld for full second-leg coverage."
+   },
+   {
+    "prompt": "Which reflector does UT-AB-7 use to establish reference sensitivity and the DAC?",
+    "options": [
+     "The 100 mm radius of the IIW block",
+     "The side-drilled holes at T/4, T/2, and 3T/4 in the basic calibration block",
+     "The weld root of the first production joint",
+     "The back wall of any convenient plate"
+    ],
+    "correct": 1,
+    "feedback": "The IIW radius calibrates distance and locates the index point; sensitivity and the DAC come from the SDHs at quarter-thickness depths in part-equivalent material. The strongest hole goes to 80% FSH at reference gain, and the rest are peaked to draw the curve."
+   },
+   {
+    "prompt": "Where do you mark the scan band on each side of this weld?",
+    "options": [
+     "Directly on top of the weld crown only",
+     "From the weld edge out to slightly beyond one full skip distance plus half the probe length",
+     "Exactly one leg length from the weld centerline",
+     "Anywhere within arm's reach of the joint"
+    ],
+    "correct": 1,
+    "feedback": "Rastering between the weld edge and just beyond the full skip sweeps the entire volume in the first and second legs. Repeating from the opposite side catches reflectors oriented unfavorably to the first direction."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "For a 45° shear wave in 0.75 in. plate, the full skip distance is:",
+   "options": ["0.75 in.", "1.06 in.", "1.50 in.", "3.00 in."],
+   "correct": 2,
+   "explanation": "Skip = 2T·tan θ = 2 × 0.75 × 1.000 = 1.50 in. At 45° the skip is always twice the thickness."
+  },
+  {
+   "question": "Using a 70° wedge (cos 70° ≈ 0.342) on 1.0 in. plate, the sound-path length of one leg is approximately:",
+   "options": ["1.06 in.", "2.92 in.", "2.00 in.", "5.49 in."],
+   "correct": 1,
+   "explanation": "Leg = T/cos θ = 1.0 ÷ 0.342 ≈ 2.92 in. Long legs are why 70° is reserved for thinner sections — path length and attenuation grow quickly."
+  },
+  {
+   "question": "On an IIW block, the engraved mark at the 100 mm radius is used to:",
+   "options": [
+    "set the reject control",
+    "locate the transducer's true beam index (exit) point",
+    "measure couplant thickness",
+    "establish the DAC reference level"
+   ],
+   "correct": 1,
+   "explanation": "Maximizing the echo from the 100 mm radius and reading the wedge position against the engraved mark locates the actual exit point — the origin for every skip and surface-distance measurement. Sensitivity comes from other reflectors."
+  },
+  {
+   "question": "Common 45°/60°/70° acrylic wedges produce only a shear wave in steel because their incident angles lie:",
+   "options": [
+    "below the first critical angle, where both modes coexist",
+    "between the first (≈27.5°) and second (≈57°) critical angles, where the refracted longitudinal wave has been eliminated",
+    "beyond the second critical angle, where only surface waves exist",
+    "at exactly 0°, where mode conversion is impossible"
+   ],
+   "correct": 1,
+   "explanation": "Past the first critical angle the refracted longitudinal wave disappears; past the second, the shear wave goes too. Working between them leaves a single shear mode — one velocity, unambiguous plotting."
+  },
+  {
+   "question": "While drawing a DAC from SDHs at T/4, T/2, and 3T/4, the correct gain handling is:",
+   "options": [
+    "re-set each hole to 80% FSH by adjusting gain at every depth",
+    "set the strongest hole response to 80% FSH at reference gain, then peak the others without changing gain and mark their amplitudes",
+    "add 6 dB after each hole",
+    "use whatever gain makes all three holes equal"
+   ],
+   "correct": 1,
+   "explanation": "The DAC's whole purpose is to show how a constant reflector's amplitude falls with distance at fixed gain. Adjusting gain per hole would erase exactly the information the curve exists to capture."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Technique Course §4.0 (angle-beam examination to specific procedures), §4.1 (selection of parameters), §4.2 (test standards)",
+  "Codes such as ASME BPVC Section V, Article 4 (basic calibration blocks, SDHs at T/4, T/2, 3T/4; calibration confirmation)",
+  "Structural welding codes (general practice): IIW-block index point and angle verification, tabulated angles by thickness",
+  "Snell's law and critical angles for acrylic-on-steel wedges (reference values: ≈27.5° and ≈57°)"
+ ]
+}

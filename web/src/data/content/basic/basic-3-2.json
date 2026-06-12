@@ -1,0 +1,141 @@
+{
+  "lessonId": "basic-3-2",
+  "title": "Leak Testing: Interpretation, Safety, Equipment, and Applications",
+  "narrationScript": "Finding the leak is only half the job; this lesson teaches you to read the result. You will work in leak-rate units, pascal cubic meters per second and standard cubic centimeters per second, respect the response time set by volume over pumping speed, and accept no reading until a calibrated standard leak gives the system scale. You will unmask the impostors: virtual leaks from trapped gas that flatten a rate-of-rise curve, helium soaking through O-rings by permeation, and the five parts per million of helium riding in ordinary air. Safety gets equal weight, because compressed gas is stored energy: pneumatic tests demand relief protection, stepped pressurization, and distance, oxygen never serves as a test gas, and ammonia and halogenated tracers carry their own warnings. Then the equipment, from bubble tanks and vacuum boxes to halogen sniffers and the mass spectrometer leak detector tuned to mass four. Finally, applications: piping and pressure vessels, evacuated chambers, fuel tanks, helium-bombed hermetic packages, and electronic components whose sealed-in dryness decides their service life.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "From Indication to Leak Rate: Giving the Reading Meaning",
+      "body": "A leak test delivers two answers: **where** the leak is and **how big** it is. Size is expressed as **leakage rate** — the quantity of gas flowing through the leak per unit time at stated conditions. The SI unit is the **pascal cubic meter per second (Pa·m³/s)**; shop practice still runs largely on the **standard cubic centimeter per second (std cm³/s**, essentially the atmosphere cubic centimeter per second), and vacuum work often uses the torr-liter per second. The conversions worth memorizing: **1 Pa·m³/s ≈ 9.87 std cm³/s ≈ 7.5 Torr·L/s**. Develop a feel for magnitudes: 10⁻⁴ std cm³/s makes a brisk bubble stream, while **10⁻⁹ std cm³/s passes about one cubic centimeter of gas in thirty years** — and helium mass spectrometry measures it routinely.\n\nNo reading carries meaning until the system is standardized against a **calibrated (standard) leak** — a glass-permeation or capillary device delivering a certified rate, the LT counterpart of the reference standards used in eddy current and ultrasonic testing. Codes such as ASME Section V, Article 10 require a **system sensitivity check before and after the examination**; fail the closing check, and every accept decision since the last good check is suspect and is repeated.\n\nInterpretation also has a clock. A detector connected to a volume **V** pumped at speed **S** responds with a time constant **τ = V/S**: the signal reaches about **63% of its final value in 1τ** and roughly 95% in 3τ. A 500-liter chamber pumped at 10 L/s answers in 50-second time constants — sweep the spray probe faster than that and the leak is behind you before the meter moves. And every instrument has a floor: the **minimum detectable leak** is set by background plus noise, and a deflection must stand clearly above that noise before it counts as an indication."
+    },
+    {
+      "type": "text",
+      "heading": "Reading the Classic Techniques — and Unmasking the Impostors",
+      "body": "**Bubble testing.** A leak announces itself as a **continuous stream of bubbles growing from a single point** — regularly spaced, persistent, originating where the gas exits. Isolated bubbles clinging to threads, crevices, or rough surfaces are usually **trapped air**, and froth from sloppy solution application is noise. Two traps: a **very large leak can blow the solution film away** and never form a bubble, and a very small one needs the full examination time the procedure specifies before the joint is called tight.\n\n**Pressure-change testing.** The leak rate falls out of the hold data as **Q = V × Δp/Δt**, but only after the readings are honest: work in **absolute pressure**, and correct for temperature with the gas law, because at constant volume pressure tracks absolute temperature. A 3 °C drift on a system near 293 K shifts pressure about **1%** — easily mistaken for, or easily masking, a real leak on a tight system. Record gas temperature with every pressure reading, and account for water-vapor changes in humid systems.\n\n**The impostors.** A **virtual leak** is trapped gas — blind tapped holes, double O-ring grooves, unvented voids — bleeding into an evacuated system. A rate-of-rise plot unmasks it: a real through-wall leak admits gas at a constant rate, so pressure climbs **linearly**, while a virtual leak's curve **flattens** as the trapped pocket depletes — and helium spray never produces a response anywhere on the boundary. **Permeation** is gas soaking *through* intact material — helium passes through elastomer O-rings in hours — and appears as a slow, un-locatable background rise long after spraying. Finally, remember the air itself: atmospheric helium runs about **5 ppm**, which sets the background floor for every sniffer test."
+    },
+    {
+      "type": "text",
+      "heading": "Essentials of Safety: Stored Energy, Tracer Gases, and Oxygen Discipline",
+      "body": "Leak testing's worst accidents come from the **stored energy of compressed gas**. Water is nearly incompressible, so a hydrostatic test stores comparatively little energy; the same vessel holding gas at the same pressure stores enormously more, and a rupture releases it as a blast wave and missiles. The reflexes that keep pneumatic testing safe:\n\n- **Never exceed the specified test pressure**, and protect the item under test with a **pressure-relief device** set at or slightly above it.\n- **Pressurize in steps** with holds, starting with a preliminary low-pressure check; read gauges from a distance, keep nonessential personnel clear, and never approach suspect joints at full pressure.\n- Use **calibrated gauges** with dial ranges suited to the test — preferably about **twice the test pressure**.\n\nTracer gases bring their own rules. **Never use oxygen** as a pressurizing or tracer gas — it reacts violently with oils and greases — and aircraft oxygen-system components demand oxygen-clean equipment and oxygen-compatible leak solutions. **Helium and nitrogen are asphyxiants**: in tanks and confined spaces they displace breathable air without warning, so ventilate and monitor. **Ammonia** is toxic and corrosive at low concentrations and flammable in air at roughly 16–25%. **Halogenated tracers** are largely nontoxic in use but **decompose on flames and glowing metal into toxic products** — one reason the open-flame halide torch has faded from use — and environmental rules restrict venting many of them. Add the physical hazards — glass vacuum vessels that can implode (use guards), bonding and vapor control inside integral fuel tanks — and the safety briefing earns its place in every LT procedure."
+    },
+    {
+      "type": "callout",
+      "variant": "safety",
+      "title": "The leak tester's reflexes",
+      "body": "Relief device set for the test pressure. Stepwise pressurization, read from a distance. No oxygen, ever, as a test gas. Ventilate and monitor confined spaces when helium or nitrogen is flowing. Respect ammonia, and keep halogenated tracers away from flames and glowing surfaces. For the duration of the test, the item under examination is a charged pressure vessel — treat it like one."
+    },
+    {
+      "type": "text",
+      "heading": "Test Equipment at a Familiarity Level",
+      "body": "**Bubble testing hardware.** Immersion tanks with good lighting, **wetting-agent solutions** formulated to cling where applied — controlled for **low halogens and sulfur** when austenitic stainless, nickel-alloy, or titanium hardware is tested, the same materials discipline penetrant testing applies — and **vacuum boxes**: transparent-topped, gasketed frames placed over a solution-coated weld so joints accessible from one side only can be tested against a partial vacuum.\n\n**Pressure and vacuum measurement.** Bourdon-tube test gauges and manometers; for precision pressure-change work, **quartz Bourdon and capacitance sensors** paired with temperature probes and data loggers. On the vacuum side: **thermal-conductivity gauges** (Pirani, thermocouple) from atmosphere down to about 10⁻³ Torr, gas-species-independent **capacitance manometers**, and **ionization gauges** for the high vacuum below that.\n\n**Halogen leak detectors.** The **heated-anode (platinum diode) sniffer** responds to halogen-bearing tracer gas at roughly 10⁻⁵–10⁻⁶ std cm³/s; **electron-capture** instruments extend sensitivity using sulfur hexafluoride tracer.\n\n**The mass spectrometer leak detector** is the sensitivity king — 10⁻⁹ std cm³/s is routine, and hood techniques reach 10⁻¹¹ or better. It serves two complementary practices: the **tracer-probe (spray) technique** on evacuated objects, where helium sprayed outside enters through the leak (ASTM E498), and the **detector-probe (sniffer) technique** on pressurized objects, where a capillary probe hunts escaping helium (ASTM E499). **Counterflow** designs let the test port run at rougher vacuum, shortening cycle time. Tying the whole kit to meaning: **calibrated standard leaks** — permeation types around 10⁻⁷–10⁻¹⁰ std cm³/s, capillary types for larger rates — standardize every one of these instruments."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-3-2-fig-a",
+      "caption": "Inside the MSLD: gas from the test port is ionized by a hot filament, accelerated into a magnetic field, and fanned out by mass-to-charge ratio. Only helium's mass-4 ions thread the resolving slit to the collector; the electrometer converts that ion current into a leak-rate reading. A high-vacuum pump holds the spectrometer tube near 10⁻⁵ Torr."
+    },
+    {
+      "type": "text",
+      "heading": "Applications: Piping, Pressure Vessels, Evacuated Systems, and Low-Pressure Containment",
+      "body": "**Piping and pressure vessels.** After the code strength test comes the leak check: solution-film bubble testing at flanged joints, threaded connections, valve packing, and welds during a pneumatic hold; **pressure-change (decay or rise) tests** where overall tightness is the question; and helium or halogen **detector-probe sweeps** when the specification demands sensitivity a soap film cannot deliver — the 'sensitive leak test' route piping codes take through ASME Section V, Article 10. In the hangar, the same toolbox checks bleed-air ducts, fuel and hydraulic fittings, oxygen lines, and cabin-pressurization decay.\n\n**Evacuated systems.** Vacuum furnaces, electron-beam welding chambers, space-simulation chambers, and cryogenic dewars are tested in their working state: a **rate-of-rise** measurement screens overall tightness — its curve shape separating leakage from outgassing — and then the MSLD watches while a fine **helium spray probe** walks the suspect welds, feedthroughs, and seals outside, arrival time and signal height pointing to the entry.\n\n**Low-pressure fluid containment.** Storage tanks, radiators, condensers, heat-exchanger tubing, and integral fuel tanks rarely tolerate high test pressures, so the techniques lean gentle: immersion or solution-film bubble tests at fractions of an atmosphere, **ammonia-sensitized papers or paints** that stain at trace tracer concentrations, the **dye leak-through** technique covered in the penetrant lessons, and halogen or helium sniffing of charged refrigeration and air-conditioning circuits."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-3-2-fig-b",
+      "caption": "Hermetic seal testing in three acts. Bombing soaks sealed packages in pressurized helium so any leak path charges the internal cavity; the fine-leak test measures helium escaping inside an MSLD vacuum chamber; the gross-leak test immerses the package in heated fluorocarbon liquid and watches for a bubble stream. A gross leaker dumps its helium before the fine-leak reading — only the pair of tests is conclusive."
+    },
+    {
+      "type": "text",
+      "heading": "Hermetic Seals and Electronic Components",
+      "body": "A hermetically sealed device — relay, crystal oscillator, hybrid microcircuit, pressure sensor, sealed connector — carries its internal atmosphere for life. Moisture that gets in **condenses and corrodes** through every altitude and temperature cycle, so hermeticity is a reliability requirement with hard numeric limits, typically expressed in **atm·cm³/s of helium** and scaled to package volume.\n\nThe standard sequence — **MIL-STD-883, Test Method 1014 (Seal)** for microcircuits, with a MIL-STD-750 counterpart for semiconductor devices:\n\n- **Helium bombing** — packages sit in a chamber of helium at several atmospheres for hours, forcing tracer through any leak path into the internal cavity.\n- **Fine-leak measurement** — each package goes into a small vacuum chamber on an MSLD, and escaping helium reads directly against the acceptance limit.\n- **Gross-leak test** — packages are pressure-soaked in fluorocarbon liquid, then immersed in a **hotter fluorocarbon bath near 125 °C**; vaporizing liquid streams bubbles from a gross leaker. (Radioisotope tracer testing with krypton-85 is an alternative quantitative route.)\n\nThe pairing matters because of the **gross-leaker paradox**: a package with a large leak fills with helium instantly — and empties just as fast, so by the time of the fine-leak test its signal is gone. The gross-leak test exists to catch exactly the leaker the fine-leak test misses. The same logic guards lithium cells, sealed switches, transformer cases, and the sealed avionics boxes a repair station returns to service — where the hermeticity record is part of the airworthiness story."
+    },
+    {
+      "type": "table",
+      "caption": "Where leak testing earns its keep: the five CP-105 application families.",
+      "headers": ["Application family", "Typical techniques", "Notes and examples"],
+      "rows": [
+        ["Piping and pressure vessels", "Bubble solution at joints during pneumatic hold; pressure-change tests; helium/halogen detector-probe sweeps", "Code-driven via ASME Section V, Article 10; bleed-air ducts, oxygen and hydraulic lines, cabin decay checks"],
+        ["Evacuated systems", "Rate-of-rise screening; helium tracer-probe (spray) with MSLD on the system", "Vacuum furnaces, EB welding and space-simulation chambers, cryogenic dewars"],
+        ["Low-pressure fluid containment", "Immersion or solution-film bubble tests; ammonia-sensitized indicators; dye leak-through", "Storage tanks, radiators, heat-exchanger tubing, integral fuel tanks"],
+        ["Hermetic seals", "Helium bombing + MSLD fine leak; heated-fluorocarbon gross leak; Kr-85 alternative", "MIL-STD-883 Method 1014; relays, microcircuits, sealed instruments"],
+        ["Electrical and electronic components", "Fine/gross helium leak testing per device specification; sniffing of filled units", "Moisture ingress is the failure driver; limits in atm·cm³/s helium, scaled to cavity volume"]
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-3-2-fig-a",
+      "title": "Mass spectrometer leak detector schematic",
+      "file": "basic-3-2-fig-a.svg"
+    },
+    {
+      "id": "basic-3-2-fig-b",
+      "title": "Hermetic seal testing: bombing, fine leak, gross leak",
+      "file": "basic-3-2-fig-b.svg"
+    }
+  ],
+  "interactive": null,
+  "checkQuestions": [
+    {
+      "question": "A rate-of-rise test on an evacuated chamber shows pressure climbing quickly at first, then flattening toward a steady value as the test continues — and helium sprayed over every joint produces no MSLD response. The most likely interpretation is:",
+      "options": [
+        "A through-wall leak, since real leaks always slow down as the chamber fills",
+        "A virtual leak or outgassing — trapped gas from blind holes, double seals, or unvented voids depleting over time",
+        "A failed ionization gauge reading high",
+        "Atmospheric helium background entering through the pump exhaust"
+      ],
+      "correct": 1,
+      "explanation": "A real through-wall leak admits gas at an essentially constant rate, so the rate-of-rise plot climbs linearly; a trapped internal gas pocket depletes, so its curve flattens. The clincher is the helium spray: a virtual leak has no path to the outside, so no point on the boundary ever produces a tracer response."
+    },
+    {
+      "question": "At the same test pressure and internal volume, a pneumatic leak test is treated as far more hazardous than a hydrostatic test primarily because:",
+      "options": [
+        "Compressed gas stores enormously more energy than nearly incompressible water, so a rupture releases it as a blast and missiles",
+        "Test gauges read falsely low on gas service",
+        "Pneumatic tests must always run at higher pressures than hydrostatic tests",
+        "Bubble-forming leak solutions become flammable in compressed air"
+      ],
+      "correct": 0,
+      "explanation": "Water barely compresses, so a hydrostatic test stores little energy and a failure dribbles. Gas at the same pressure stores vastly more energy, released explosively at rupture. That is why pneumatic testing demands a relief device set for the test pressure, stepwise pressurization, and distance — and why codes prefer hydrostatic strength tests where practical."
+    },
+    {
+      "question": "Inside a mass spectrometer leak detector, helium is distinguished from all the other gases entering the spectrometer tube because:",
+      "options": [
+        "A heated platinum anode emits positive ions only when helium is present",
+        "Helium uniquely changes the thermal conductivity measured by a Pirani element",
+        "The ionized gas is deflected by a magnetic field, and only ions with helium's mass-to-charge ratio curve through the resolving slit to the collector",
+        "Helium causes a visible color change in the tube's flame"
+      ],
+      "correct": 2,
+      "explanation": "The MSLD is a magnetic-sector mass spectrometer tuned to mass 4: the filament ionizes incoming gas, the magnetic field bends each ion on a radius set by its mass-to-charge ratio, and the resolving slit passes only the helium trajectory to the collector. Heated-anode detectors respond to halogens, Pirani gauges measure total pressure, and flame color is the old halide torch."
+    },
+    {
+      "question": "Sealed avionics relays are pressurized in a helium chamber for several hours (bombing) and then fine-leak tested in a vacuum chamber on an MSLD. A relay with a very large (gross) leak can still pass this fine-leak test because:",
+      "options": [
+        "Helium atoms are too large to enter a gross leak path",
+        "The MSLD saturates and reads zero at high helium concentrations",
+        "Gross leak paths seal themselves under vacuum",
+        "The helium that entered during bombing escapes almost immediately afterward, so little remains by the time the fine-leak measurement is made"
+      ],
+      "correct": 3,
+      "explanation": "That is the gross-leaker paradox: a large leak charges the package with helium instantly and empties it just as fast, so the fine-leak reading looks tight. MIL-STD-883 Method 1014 therefore pairs the fine-leak test with a separate gross-leak test — heated fluorocarbon immersion with a bubble watch — to catch exactly the leaker the MSLD misses."
+    },
+    {
+      "question": "An MSLD is connected to a 500-liter vacuum chamber evacuated at an effective pumping speed of 10 L/s. After helium spray reaches a leak, the signal will climb to about 63% of its final value in approximately:",
+      "options": [
+        "5 seconds",
+        "50 seconds — the time constant τ = V/S",
+        "500 seconds",
+        "The response is instantaneous regardless of chamber size"
+      ],
+      "correct": 1,
+      "explanation": "The response time constant is τ = V/S = 500 L ÷ 10 L/s = 50 s, with the signal at roughly 63% of final after one time constant and about 95% after three. Practically, the spray probe must dwell on each suspect joint on that timescale, or the leak's response arrives after the probe has moved on."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §2.3.3–2.3.6 (LT test result interpretation, essentials of safety, test equipment, applications)",
+    "ASME Boiler and Pressure Vessel Code, Section V, Article 10, Leak Testing (calibrated leaks, system sensitivity checks, and technique appendices, summarized)",
+    "ASTM E498/E498M and E499/E499M, Standard Practices for Leaks Using the Mass Spectrometer Leak Detector (tracer probe and detector probe modes, summarized)",
+    "MIL-STD-883, Test Method 1014, Seal (fine- and gross-leak testing of hermetically sealed microelectronic packages, summarized)"
+  ]
+}

@@ -1,0 +1,110 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="imsGlowC" filterUnits="userSpaceOnUse" x="-40" y="-10" width="680" height="360">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.1" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="imsGlowR" filterUnits="userSpaceOnUse" x="10" y="170" width="580" height="100">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="imsSteelG" x1="0" y1="70" x2="0" y2="288" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".35" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="imsWaterG" x1="0" y1="70" x2="0" y2="288" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0e4f74"/><stop offset=".5" stop-color="#0a335a"/><stop offset="1" stop-color="#072543"/>
+    </linearGradient>
+    <pattern id="imsDots" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="4" cy="4" r="1" fill="#5fe0ff" opacity=".15"/>
+    </pattern>
+    <linearGradient id="imsScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+    <clipPath id="imsClipL"><rect x="22" y="70" width="268" height="218" rx="12"/></clipPath>
+    <clipPath id="imsClipR"><rect x="310" y="70" width="268" height="218" rx="12"/></clipPath>
+  </defs>
+
+  <!-- ===== STAGE: two section panels, materials + Z values (fade 0.5) ===== -->
+  <g id="imsStage" opacity="0">
+    <!-- left panel: STEEL | WATER -->
+    <g clip-path="url(#imsClipL)">
+      <rect x="22" y="70" width="134" height="218" fill="url(#imsSteelG)"/>
+      <rect x="156" y="70" width="134" height="218" fill="url(#imsWaterG)"/>
+      <g stroke="#8fb6e0" stroke-width="1" opacity=".12">
+        <line x1="26" y1="152" x2="152" y2="152"/>
+        <line x1="26" y1="260" x2="152" y2="260"/>
+      </g>
+      <g fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".14">
+        <path d="M158 150 q10 -4 20 0 t20 0 t20 0 t20 0 t20 0 t20 0"/>
+        <path d="M158 260 q10 -4 20 0 t20 0 t20 0 t20 0 t20 0 t20 0"/>
+      </g>
+    </g>
+    <rect x="22" y="70" width="268" height="218" rx="12" fill="#0a1e3c" fill-opacity=".18" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".4"/>
+    <line x1="156" y1="78" x2="156" y2="282" stroke="#5fe0ff" stroke-width="6" opacity=".14"/>
+    <line x1="156" y1="78" x2="156" y2="282" stroke="#7fd8ff" stroke-width="2" opacity=".9" filter="url(#imsGlowC)"/>
+    <text x="89" y="103" text-anchor="middle" font-size="12" letter-spacing="1" fill="#9fe6ff" opacity=".95">STEEL</text>
+    <text x="89" y="120" text-anchor="middle" font-size="10.5" fill="#9fe6ff" opacity=".75">Z<tspan dy="2.5" font-size="8">1</tspan><tspan dy="-2.5"> = 46.5 MRAYL</tspan></text>
+    <text x="222" y="103" text-anchor="middle" font-size="12" letter-spacing="1" fill="#9fe6ff" opacity=".95">WATER</text>
+    <text x="222" y="120" text-anchor="middle" font-size="10.5" fill="#9fe6ff" opacity=".75">Z<tspan dy="2.5" font-size="8">2</tspan><tspan dy="-2.5"> = 1.48 MRAYL</tspan></text>
+
+    <!-- right panel: STEEL | AIR -->
+    <g clip-path="url(#imsClipR)">
+      <rect x="310" y="70" width="134" height="218" fill="url(#imsSteelG)"/>
+      <rect x="444" y="70" width="134" height="218" fill="url(#imsDots)"/>
+      <g stroke="#8fb6e0" stroke-width="1" opacity=".12">
+        <line x1="314" y1="152" x2="440" y2="152"/>
+        <line x1="314" y1="260" x2="440" y2="260"/>
+      </g>
+    </g>
+    <rect x="310" y="70" width="268" height="218" rx="12" fill="#0a1e3c" fill-opacity=".18" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".4"/>
+    <line x1="444" y1="78" x2="444" y2="282" stroke="#5fe0ff" stroke-width="6" opacity=".14"/>
+    <line x1="444" y1="78" x2="444" y2="282" stroke="#7fd8ff" stroke-width="2" opacity=".9" filter="url(#imsGlowC)"/>
+    <text x="377" y="103" text-anchor="middle" font-size="12" letter-spacing="1" fill="#9fe6ff" opacity=".95">STEEL</text>
+    <text x="377" y="120" text-anchor="middle" font-size="10.5" fill="#9fe6ff" opacity=".75">Z<tspan dy="2.5" font-size="8">1</tspan><tspan dy="-2.5"> = 46.5 MRAYL</tspan></text>
+    <text x="511" y="103" text-anchor="middle" font-size="12" letter-spacing="1" fill="#9fe6ff" opacity=".95">AIR</text>
+    <text x="511" y="120" text-anchor="middle" font-size="10.5" fill="#9fe6ff" opacity=".75">Z<tspan dy="2.5" font-size="8">2</tspan><tspan dy="-2.5"> = 0.0004 MRAYL</tspan></text>
+  </g>
+
+  <!-- ===== incident beams (draw 1.2) ===== -->
+  <g id="imsBeam" fill="none" stroke="#5fe0ff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#imsGlowC)">
+    <path d="M36 192 H147 M147 192 l-10 -6 M147 192 l-10 6" pathLength="100"/>
+    <path d="M324 192 H435 M435 192 l-10 -6 M435 192 l-10 6" pathLength="100"/>
+  </g>
+
+  <!-- ===== formula chip (fade 2.8) ===== -->
+  <g id="imsFormula" opacity="0">
+    <rect x="208" y="8" width="184" height="52" rx="10" fill="#0e2848" fill-opacity=".72" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".75"/>
+    <text x="248" y="38" text-anchor="end" font-size="13" fill="#eaf6ff">R =</text>
+    <path d="M262 17 Q255 34 262 51" fill="none" stroke="#9fe6ff" stroke-width="1.2"/>
+    <path d="M346 17 Q353 34 346 51" fill="none" stroke="#9fe6ff" stroke-width="1.2"/>
+    <text x="304" y="29" text-anchor="middle" font-size="12" fill="#9fe6ff">Z<tspan dy="2.5" font-size="8">2</tspan><tspan dy="-2.5"> − Z</tspan><tspan dy="2.5" font-size="8">1</tspan></text>
+    <line x1="271" y1="33.5" x2="337" y2="33.5" stroke="#9fe6ff" stroke-width="1.2"/>
+    <text x="304" y="51" text-anchor="middle" font-size="12" fill="#9fe6ff">Z<tspan dy="2.5" font-size="8">2</tspan><tspan dy="-2.5"> + Z</tspan><tspan dy="2.5" font-size="8">1</tspan></text>
+    <text x="354" y="24" font-size="10" fill="#eaf6ff">2</text>
+  </g>
+
+  <!-- ===== steel->water split: 88% back, 12% across (draw+fade 5.0) ===== -->
+  <g id="imsWater" opacity="0" stroke-dasharray="100" stroke-dashoffset="100">
+    <path d="M149 199 L134 217 L48 217 M48 217 l11 -6.5 M48 217 l11 6.5" fill="none" stroke="#ff6b6b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" pathLength="100" filter="url(#imsGlowR)"/>
+    <path d="M163 192 H264 M264 192 l-9 -5.5 M264 192 l-9 5.5" fill="none" stroke="#7fd8ff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" pathLength="100"/>
+    <text x="98" y="240" text-anchor="middle" font-size="11" fill="#ff6b6b" opacity=".92">88% REFLECTS</text>
+    <text x="216" y="176" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".9">12% CROSSES</text>
+    <text x="156" y="309" text-anchor="middle" font-size="11" fill="#5fe0ff" opacity=".8">R = 0.88</text>
+  </g>
+
+  <!-- ===== steel->air: ~100% back, ~0% ghost (draw+fade 7.4) ===== -->
+  <g id="imsAir" opacity="0" stroke-dasharray="100" stroke-dashoffset="100">
+    <path d="M437 199 L422 217 L336 217 M336 217 l11 -6.5 M336 217 l11 6.5" fill="none" stroke="#ff6b6b" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" pathLength="100" filter="url(#imsGlowR)"/>
+    <path d="M451 192 H542" fill="none" stroke="#7fd8ff" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="4 5" opacity=".45" pathLength="100"/>
+    <text x="386" y="240" text-anchor="middle" font-size="11" fill="#ff6b6b" opacity=".92">~100% REFLECTS</text>
+    <text x="496" y="176" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".75">~0%</text>
+    <text x="444" y="309" text-anchor="middle" font-size="11" fill="#5fe0ff" opacity=".8">R ≈ 1.0</text>
+  </g>
+
+  <!-- ===== scan glint (renderer positions) ===== -->
+  <g id="imsscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#imsScanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#imsGlowC)" opacity=".9"/>
+  </g>
+</svg>

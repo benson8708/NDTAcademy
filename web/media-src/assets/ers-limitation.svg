@@ -1,0 +1,171 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="ersGlow" filterUnits="userSpaceOnUse" x="-30" y="-30" width="660" height="400">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="ersSteel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2c5a86"/><stop offset=".35" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="ersProbe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a5180"/><stop offset="1" stop-color="#122c4e"/>
+    </linearGradient>
+    <linearGradient id="ersBarC" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9feaff" stop-opacity=".95"/><stop offset="1" stop-color="#1E66F5" stop-opacity=".5"/>
+    </linearGradient>
+    <linearGradient id="ersBarO" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffb39f" stop-opacity=".95"/><stop offset="1" stop-color="#c2503a" stop-opacity=".5"/>
+    </linearGradient>
+    <marker id="ersAhC" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5.2" markerHeight="5.2" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#5fe0ff"/>
+    </marker>
+    <marker id="ersAhP" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#9fe6ff"/>
+    </marker>
+  </defs>
+
+  <!-- ============ LEFT PANEL · IDEAL TARGET (reveal ersIdeal) ============ -->
+  <g id="ersIdeal" opacity="0">
+    <rect x="10" y="12" width="226" height="204" rx="10" fill="rgba(10,30,60,.55)" stroke="#5fe0ff" stroke-opacity=".28" stroke-width="1"/>
+    <circle cx="23" cy="27" r="3" fill="#5fe0ff" filter="url(#ersGlow)"/>
+    <text x="33" y="31" font-size="12" fill="#9fe6ff" letter-spacing="1.5">IDEAL TARGET</text>
+
+    <!-- probe: connector + housing + element + couplant -->
+    <rect x="74" y="36" width="12" height="10" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.3"/>
+    <rect x="62" y="46" width="36" height="40" rx="3" fill="url(#ersProbe)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="66" y="76" width="28" height="7" fill="#5fe0ff" opacity=".3"/>
+    <line x1="66" y1="76" x2="94" y2="76" stroke="#8fb6e0" stroke-width="1" opacity=".6"/>
+    <rect x="62" y="86" width="36" height="6" fill="#5fe0ff" opacity=".28"/>
+    <text x="106" y="56" font-size="10" fill="#9fe6ff" opacity=".65">PROBE</text>
+
+    <!-- steel block, scan surface y92, back wall y190 -->
+    <rect x="24" y="92" width="136" height="98" fill="url(#ersSteel)"/>
+    <line x1="26" y1="118" x2="158" y2="118" stroke="#8fb6e0" stroke-width="1" opacity=".12"/>
+    <line x1="26" y1="162" x2="64" y2="162" stroke="#8fb6e0" stroke-width="1" opacity=".12"/>
+    <line x1="96" y1="162" x2="158" y2="162" stroke="#8fb6e0" stroke-width="1" opacity=".12"/>
+    <line x1="24" y1="92" x2="160" y2="92" stroke="#8fb6e0" stroke-width="1.8"/>
+    <line x1="24" y1="190" x2="68" y2="190" stroke="#8fb6e0" stroke-width="1.3"/>
+    <line x1="92" y1="190" x2="160" y2="190" stroke="#8fb6e0" stroke-width="1.3"/>
+    <line x1="24" y1="92" x2="24" y2="190" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+    <line x1="160" y1="92" x2="160" y2="190" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+
+    <!-- flat-bottom hole, drilled from back wall, air-backed -->
+    <rect x="68" y="138" width="24" height="52" fill="#04101f"/>
+    <line x1="68" y1="138" x2="68" y2="190" stroke="#8fb6e0" stroke-width="1.2" opacity=".7"/>
+    <line x1="92" y1="138" x2="92" y2="190" stroke="#8fb6e0" stroke-width="1.2" opacity=".7"/>
+    <line x1="68" y1="138" x2="92" y2="138" stroke="#5fe0ff" stroke-width="2.5" stroke-linecap="round" filter="url(#ersGlow)"/>
+    <text x="80" y="170" font-size="9" fill="#9fe6ff" opacity=".55" text-anchor="middle">AIR</text>
+    <text x="92" y="206" font-size="10" fill="#9fe6ff" opacity=".8" text-anchor="middle">FBH &#216; 3 mm &#183; AIR-BACKED</text>
+
+    <!-- incident beam + strong specular return -->
+    <line x1="72" y1="96" x2="72" y2="130" stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" marker-end="url(#ersAhC)" opacity=".85"/>
+    <line x1="88" y1="134" x2="88" y2="100" stroke="#5fe0ff" stroke-width="2.4" stroke-linecap="round" marker-end="url(#ersAhC)" filter="url(#ersGlow)"/>
+
+    <!-- mini echo display: bar peaks exactly at dashed REF line -->
+    <rect x="170" y="100" width="58" height="92" rx="4" fill="rgba(5,15,33,.6)" stroke="#8fb6e0" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="174" y1="151" x2="224" y2="151" stroke="#8fb6e0" stroke-width="1" opacity=".12"/>
+    <rect x="190" y="116" width="18" height="70" fill="url(#ersBarC)" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".7"/>
+    <line x1="174" y1="116" x2="224" y2="116" stroke="#ffc24b" stroke-width="1.3" stroke-dasharray="4 3" filter="url(#ersGlow)"/>
+    <text x="224" y="111" font-size="9.5" fill="#ffc24b" text-anchor="end">REF</text>
+    <path d="M174 186 l4 -2 4 2 4 -3 4 3 3 -2 4 2 22 0 4 -2 1 2" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".4"/>
+    <line x1="174" y1="186" x2="224" y2="186" stroke="#8fb6e0" stroke-width="1" opacity=".5"/>
+    <text x="199" y="206" font-size="10" fill="#9fe6ff" opacity=".7" text-anchor="middle">ECHO</text>
+  </g>
+
+  <!-- ============ RIGHT PANEL · NATURAL FLAW ============ -->
+  <!-- frame + header + shared REF line + vignette 1 (reveal ersTilt) -->
+  <g id="ersTilt" opacity="0">
+    <rect x="244" y="12" width="346" height="204" rx="10" fill="rgba(10,30,60,.55)" stroke="#5fe0ff" stroke-opacity=".28" stroke-width="1"/>
+    <circle cx="257" cy="27" r="3" fill="#ff8c7a" filter="url(#ersGlow)"/>
+    <text x="267" y="31" font-size="12" fill="#9fe6ff" letter-spacing="1.5">NATURAL FLAW</text>
+    <line x1="362" y1="40" x2="362" y2="202" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="2 5" opacity=".14"/>
+    <line x1="472" y1="40" x2="472" y2="202" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="2 5" opacity=".14"/>
+    <line x1="262" y1="160" x2="560" y2="160" stroke="#ffc24b" stroke-width="1.2" stroke-dasharray="4 3" opacity=".85"/>
+    <text x="582" y="164" font-size="9.5" fill="#ffc24b" text-anchor="end">REF</text>
+
+    <!-- vignette 1: crack tilted off square, return deflected away -->
+    <rect x="302" y="32" width="10" height="9" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <rect x="293" y="40" width="28" height="16" rx="2" fill="url(#ersProbe)" stroke="#8fb6e0" stroke-width="1.4"/>
+    <rect x="293" y="56" width="28" height="3" fill="#5fe0ff" opacity=".28"/>
+    <rect x="265" y="59" width="84" height="79" fill="url(#ersSteel)" opacity=".85"/>
+    <line x1="265" y1="59" x2="349" y2="59" stroke="#8fb6e0" stroke-width="1.5"/>
+    <line x1="265" y1="138" x2="349" y2="138" stroke="#8fb6e0" stroke-width="1" opacity=".55"/>
+    <line x1="285" y1="103" x2="329" y2="93" stroke="#ff8c7a" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="302" y1="62" x2="302" y2="92" stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" marker-end="url(#ersAhC)" opacity=".9"/>
+    <line x1="304" y1="96" x2="285" y2="58" stroke="#9fe6ff" stroke-width="2" stroke-linecap="round" marker-end="url(#ersAhP)" opacity=".9"/>
+    <rect x="285" y="152" width="44" height="46" rx="3" fill="rgba(5,15,33,.55)" stroke="#8fb6e0" stroke-opacity=".3" stroke-width="1"/>
+    <line x1="289" y1="194" x2="325" y2="194" stroke="#8fb6e0" stroke-width="1" opacity=".5"/>
+    <rect x="300" y="174" width="14" height="20" fill="url(#ersBarC)" stroke="#5fe0ff" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="307" y="211" font-size="10.5" fill="#9fe6ff" opacity=".85" text-anchor="middle">TILTED 12&#176;</text>
+  </g>
+
+  <!-- vignette 2: ragged rough face scatters in all directions (reveal ersRough) -->
+  <g id="ersRough" opacity="0">
+    <rect x="412" y="32" width="10" height="9" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <rect x="403" y="40" width="28" height="16" rx="2" fill="url(#ersProbe)" stroke="#8fb6e0" stroke-width="1.4"/>
+    <rect x="403" y="56" width="28" height="3" fill="#5fe0ff" opacity=".28"/>
+    <rect x="375" y="59" width="84" height="79" fill="url(#ersSteel)" opacity=".85"/>
+    <line x1="375" y1="59" x2="459" y2="59" stroke="#8fb6e0" stroke-width="1.5"/>
+    <line x1="375" y1="138" x2="459" y2="138" stroke="#8fb6e0" stroke-width="1" opacity=".55"/>
+    <path d="M395 102 L402 94 L409 103 L416 95 L423 102 L430 94 L437 101" fill="none" stroke="#ff8c7a" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/>
+    <line x1="412" y1="62" x2="412" y2="88" stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" marker-end="url(#ersAhC)" opacity=".9"/>
+    <g stroke="#9fe6ff" stroke-width="1.5" stroke-linecap="round" opacity=".85">
+      <line x1="402" y1="92" x2="389" y2="81" marker-end="url(#ersAhP)"/>
+      <line x1="405" y1="91" x2="400" y2="74" marker-end="url(#ersAhP)"/>
+      <line x1="419" y1="92" x2="423" y2="75" marker-end="url(#ersAhP)"/>
+      <line x1="424" y1="96" x2="437" y2="86" marker-end="url(#ersAhP)"/>
+      <line x1="420" y1="103" x2="428" y2="114" marker-end="url(#ersAhP)" opacity=".55"/>
+    </g>
+    <rect x="395" y="152" width="44" height="46" rx="3" fill="rgba(5,15,33,.55)" stroke="#8fb6e0" stroke-opacity=".3" stroke-width="1"/>
+    <line x1="399" y1="194" x2="435" y2="194" stroke="#8fb6e0" stroke-width="1" opacity=".5"/>
+    <rect x="410" y="181" width="14" height="13" fill="url(#ersBarC)" stroke="#5fe0ff" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="417" y="211" font-size="10.5" fill="#9fe6ff" opacity=".85" text-anchor="middle">ROUGH FACE</text>
+  </g>
+
+  <!-- vignette 3: tightly closed crack, beam passes through (reveal ersTight) -->
+  <g id="ersTight" opacity="0">
+    <rect x="522" y="32" width="10" height="9" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <rect x="513" y="40" width="28" height="16" rx="2" fill="url(#ersProbe)" stroke="#8fb6e0" stroke-width="1.4"/>
+    <rect x="513" y="56" width="28" height="3" fill="#5fe0ff" opacity=".28"/>
+    <rect x="485" y="59" width="84" height="79" fill="url(#ersSteel)" opacity=".85"/>
+    <line x1="485" y1="59" x2="569" y2="59" stroke="#8fb6e0" stroke-width="1.5"/>
+    <line x1="485" y1="138" x2="569" y2="138" stroke="#8fb6e0" stroke-width="1" opacity=".55"/>
+    <line x1="505" y1="98" x2="549" y2="98" stroke="#ff8c7a" stroke-width="1.2" opacity=".9"/>
+    <line x1="515" y1="95.5" x2="515" y2="100.5" stroke="#ff8c7a" stroke-width="1" opacity=".7"/>
+    <line x1="527" y1="95.5" x2="527" y2="100.5" stroke="#ff8c7a" stroke-width="1" opacity=".7"/>
+    <line x1="539" y1="95.5" x2="539" y2="100.5" stroke="#ff8c7a" stroke-width="1" opacity=".7"/>
+    <line x1="522" y1="62" x2="522" y2="91" stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" marker-end="url(#ersAhC)" opacity=".9"/>
+    <line x1="522" y1="102" x2="522" y2="123" stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" marker-end="url(#ersAhC)" opacity=".75"/>
+    <line x1="532" y1="94" x2="532" y2="76" stroke="#9fe6ff" stroke-width="1.2" stroke-linecap="round" marker-end="url(#ersAhP)" opacity=".55"/>
+    <rect x="505" y="152" width="44" height="46" rx="3" fill="rgba(5,15,33,.55)" stroke="#8fb6e0" stroke-opacity=".3" stroke-width="1"/>
+    <line x1="509" y1="194" x2="545" y2="194" stroke="#8fb6e0" stroke-width="1" opacity=".5"/>
+    <rect x="520" y="188" width="14" height="6" fill="url(#ersBarC)" stroke="#5fe0ff" stroke-width=".8" stroke-opacity=".6"/>
+    <text x="527" y="211" font-size="10.5" fill="#9fe6ff" opacity=".85" text-anchor="middle">TIGHTLY CLOSED</text>
+  </g>
+
+  <!-- ============ VERDICT STRIP (reveal ersVerdict) ============ -->
+  <g id="ersVerdict" opacity="0">
+    <rect x="10" y="228" width="580" height="96" rx="10" fill="rgba(10,30,60,.55)" stroke="#5fe0ff" stroke-opacity=".28" stroke-width="1"/>
+    <text x="24" y="247" font-size="10" fill="#ffc24b" letter-spacing="2" opacity=".9">VERDICT</text>
+
+    <!-- equal-height echo bars -->
+    <rect x="50" y="258" width="28" height="48" fill="url(#ersBarC)" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".7"/>
+    <rect x="124" y="258" width="28" height="48" fill="url(#ersBarO)" stroke="#ff8c7a" stroke-width="1" stroke-opacity=".7"/>
+    <line x1="40" y1="258" x2="162" y2="258" stroke="#ffc24b" stroke-width="1.2" stroke-dasharray="4 3" filter="url(#ersGlow)"/>
+    <text x="101" y="288" font-size="15" fill="#ffc24b" text-anchor="middle">=</text>
+    <line x1="32" y1="306.5" x2="170" y2="306.5" stroke="#8fb6e0" stroke-width="1" opacity=".6"/>
+    <text x="64" y="319" font-size="10" fill="#9fe6ff" text-anchor="middle">REF 3 mm</text>
+    <text x="138" y="319" font-size="10" fill="#9fe6ff" text-anchor="middle">INDICATION</text>
+
+    <line x1="200" y1="240" x2="200" y2="312" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="2 5" opacity=".15"/>
+
+    <!-- size silhouettes: 3 mm disc vs probable real flaw -->
+    <text x="392" y="248" font-size="11" fill="#eaf6ff" letter-spacing="2" opacity=".92" text-anchor="middle">EQUAL ECHO &#8800; EQUAL SIZE</text>
+    <circle cx="258" cy="284" r="9" fill="rgba(95,224,255,.12)" stroke="#5fe0ff" stroke-width="2"/>
+    <text x="258" y="319" font-size="10" fill="#9fe6ff" text-anchor="middle">ERS &#216; 3 mm</text>
+    <text x="296" y="289" font-size="15" fill="#ffc24b" text-anchor="middle">&#8804;</text>
+    <path d="M332 285 L354 276 L380 281 L406 272 L438 278 L470 269 L502 277 L532 273 L556 283 L534 292 L502 289 L470 297 L436 292 L404 299 L374 293 L352 296 Z" fill="rgba(255,140,122,.1)" stroke="#ff8c7a" stroke-width="2" stroke-linejoin="round"/>
+    <text x="444" y="319" font-size="10" fill="#9fe6ff" text-anchor="middle">LIKELY TRUE FLAW</text>
+    <circle id="ersVerdictPing" cx="444" cy="284" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0"/>
+  </g>
+</svg>

@@ -1,0 +1,100 @@
+{
+ "moduleId": "ut1-6",
+ "questions": [
+  {
+   "question": "A 70° shear-wave indication appears at 30 mm soundpath on the first leg (sin 70° = 0.940). How far ahead of the exit point does the reflector lie along the surface?",
+   "options": ["10.3 mm", "28.2 mm", "30 mm", "82.4 mm"],
+   "correct": 1,
+   "explanation": "Surface distance = soundpath × sin θ = 30 × 0.940 ≈ 28.2 mm. The 10.3 mm figure is the depth (soundpath × cos 70°), not the surface distance."
+  },
+  {
+   "question": "An angle-beam weld scan must extend from near the weld toe back to one full skip plus the cap width because:",
+   "options": [
+    "The couplant needs that much area to spread",
+    "The first leg only covers the lower half of the weld — the second leg, reached by pulling the probe back, covers the upper half",
+    "Codes require scanning twice the heat-affected zone",
+    "The dead zone hides the root unless the probe starts far away"
+   ],
+   "correct": 1,
+   "explanation": "With the probe close in, the beam's first leg interrogates the lower weld; as the probe rasters back toward the full-skip line, the rebounding second leg sweeps up through the upper weld and cap region."
+  },
+  {
+   "question": "Which combination describes accepted practice for a manual contact scan?",
+   "options": [
+    "Single passes with no overlap, at any comfortable speed",
+    "Overlapping passes (commonly at least 10–15% of the element width) at no more than about 150 mm (6 in.) per second",
+    "50% overlap at a minimum of 300 mm per second",
+    "Random scanning until an indication appears"
+   ],
+   "correct": 1,
+   "explanation": "Overlap guarantees no strip of material goes uninspected, and the speed cap ensures the pulser interrogates every location several times — both are standard procedural requirements."
+  },
+  {
+   "question": "A surface-wave examination must respond only to flaws within about 0.6 mm of the surface of a steel part (Rayleigh velocity ≈ 2.98 mm/µs). Which probe frequency fits best?",
+   "options": ["1 MHz", "2.25 MHz", "5 MHz", "0.5 MHz"],
+   "correct": 2,
+   "explanation": "A Rayleigh wave penetrates about one wavelength: λ = 2.98 ÷ 5 ≈ 0.6 mm at 5 MHz. Lower frequencies would reach deeper than the requirement (about 1.3 mm at 2.25 MHz, about 3 mm at 1 MHz)."
+  },
+  {
+   "question": "Lamination screening of thin rolled sheet, where one probe position must cover a wide strip quickly, is a classic application of:",
+   "options": [
+    "Plate (Lamb) waves",
+    "Surface (Rayleigh) waves",
+    "45° shear waves",
+    "Straight-beam multiple-echo thickness reading"
+   ],
+   "correct": 0,
+   "explanation": "Lamb waves fill the whole thickness of a thin section and travel long distances along it, so a discontinuity anywhere in the sheet disturbs the mode — ideal for fast production screening."
+  },
+  {
+   "question": "Compared with through-transmission, the pulse-echo technique offers:",
+   "options": [
+    "Immunity to coupling variations",
+    "Reflector depth from echo timing and access from a single side",
+    "Better performance in extremely attenuating material",
+    "No dependence on flaw orientation"
+   ],
+   "correct": 1,
+   "explanation": "Pulse-echo reads round-trip time, locating reflectors in depth, and needs only one surface. Its weaknesses are the opposite of through-transmission's strengths: it has a dead zone and depends on the flaw reflecting energy back to the probe."
+  },
+  {
+   "question": "The tandem technique exists primarily to detect:",
+   "options": [
+    "Laminations parallel to the scanning surface",
+    "Surface-breaking cracks at the weld toe",
+    "Vertical planar flaws (such as sidewall lack of fusion) in the mid-wall of thick sections",
+    "Porosity clusters near the back wall"
+   ],
+   "correct": 2,
+   "explanation": "A vertical face deflects an angled beam away from a single probe. The tandem pair — same angle, same direction, spaced 2(T−d)·tan θ — catches that deflected energy after it rebounds from the back wall."
+  },
+  {
+   "question": "A dual-element probe resolves reflectors almost at the entry surface mainly because:",
+   "options": [
+    "Its elements operate at a higher frequency than single-element probes",
+    "The receiving element never hears the transmit pulse's ringing, eliminating the dead zone",
+    "The roof angle converts the beam to a surface wave",
+    "Its delay lines double the sound velocity"
+   ],
+   "correct": 1,
+   "explanation": "Separating transmission and reception (with an acoustic barrier between elements) means the receiver is not saturated by transmit ring-down — the cause of the single-element dead zone."
+  },
+  {
+   "question": "Above approximately what diameter do common code practices allow a curved examination surface to be treated as flat?",
+   "options": ["100 mm (4 in.)", "250 mm (10 in.)", "500 mm (20 in.)", "1,000 mm (40 in.)"],
+   "correct": 2,
+   "explanation": "At roughly 500 mm (20 in.) diameter and above, the wedge footprint sees an essentially flat surface, so flat calibration blocks and standard plotting are commonly permitted."
+  },
+  {
+   "question": "On 4 in. schedule 40 pipe (ID/OD ≈ 0.89), a circumferential scan is attempted with a 70° probe (sin 70° = 0.940). The beam will:",
+   "options": [
+    "Reach the bore at exactly 70 degrees",
+    "Reach the bore at a shallower angle than 70 degrees",
+    "Never reach the inside surface — its closest approach stays within the wall",
+    "Mode-convert to a longitudinal wave at the bore"
+   ],
+   "correct": 2,
+   "explanation": "The chord geometry only lets the beam touch the bore if sin θ ≤ ID/OD. Since 0.940 > 0.89, the 70° beam's closest approach (R·sin θ) lies inside the wall and it skims back to the OD — one reason pipe procedures select angle by diameter and wall thickness."
+  }
+ ]
+}

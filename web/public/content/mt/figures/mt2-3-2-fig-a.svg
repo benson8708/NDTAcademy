@@ -1,0 +1,66 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Longitudinal vs. Circular Residual Fields</text>
+
+  <!-- ===== Top: longitudinal residual ===== -->
+  <text x="60" y="78" text-anchor="start" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#0A2342">LONGITUDINAL residual — external poles, easy to detect</text>
+
+  <!-- bar with poles -->
+  <rect x="150" y="100" width="320" height="64" rx="8" fill="#E8F1FB" stroke="#0A2342" stroke-width="3"/>
+  <text x="175" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#D14343">N</text>
+  <text x="445" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1B82E8">S</text>
+
+  <!-- external flux arcs through air -->
+  <path d="M 150 108 C 60 40 560 40 470 108" fill="none" stroke="#1B82E8" stroke-width="2.5" stroke-dasharray="7 5"/>
+  <path d="M 150 156 C 80 230 540 230 470 156" fill="none" stroke="#1B82E8" stroke-width="2.5" stroke-dasharray="7 5"/>
+  <text x="310" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#1B82E8">flux exits the steel and returns through air</text>
+
+  <!-- chips clinging at pole -->
+  <g fill="#5A6B7E">
+    <rect x="136" y="96" width="9" height="4" transform="rotate(-30 140 98)"/>
+    <rect x="130" y="116" width="10" height="4" transform="rotate(15 135 118)"/>
+    <rect x="134" y="138" width="9" height="4" transform="rotate(-12 138 140)"/>
+    <rect x="131" y="156" width="10" height="4" transform="rotate(28 136 158)"/>
+  </g>
+  <text x="118" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">chips cling</text>
+
+  <!-- field indicator deflecting -->
+  <circle cx="560" cy="128" r="34" fill="#FFFFFF" stroke="#0A2342" stroke-width="3"/>
+  <line x1="560" y1="128" x2="584" y2="106" stroke="#D14343" stroke-width="3.5"/>
+  <circle cx="560" cy="128" r="4" fill="#0A2342"/>
+  <text x="560" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1E9E6A">indicator DEFLECTS</text>
+  <line x1="498" y1="128" x2="526" y2="128" stroke="#5A6B7E" stroke-width="1.5"/>
+
+  <!-- divider -->
+  <line x1="40" y1="222" x2="760" y2="222" stroke="#D9E0E8" stroke-width="2"/>
+
+  <!-- ===== Bottom: circular residual ===== -->
+  <text x="60" y="256" text-anchor="start" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#0A2342">CIRCULAR residual — contained inside, hides from the meter</text>
+
+  <!-- bar -->
+  <rect x="150" y="278" width="320" height="64" rx="8" fill="#E8F1FB" stroke="#0A2342" stroke-width="3"/>
+
+  <!-- contained flux rings (inside the bar) -->
+  <ellipse cx="210" cy="310" rx="10" ry="24" fill="none" stroke="#1B82E8" stroke-width="2.5"/>
+  <ellipse cx="280" cy="310" rx="10" ry="24" fill="none" stroke="#1B82E8" stroke-width="2.5"/>
+  <ellipse cx="350" cy="310" rx="10" ry="24" fill="none" stroke="#1B82E8" stroke-width="2.5"/>
+  <text x="310" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#1B82E8">flux loops close entirely within the part — no external poles</text>
+
+  <!-- keyway cut releasing leakage -->
+  <rect x="412" y="278" width="26" height="18" fill="#FFFFFF" stroke="#0A2342" stroke-width="2.5"/>
+  <path d="M 412 278 C 408 262 442 262 438 278" fill="none" stroke="#D14343" stroke-width="2.5" stroke-dasharray="5 4"/>
+  <line x1="438" y1="270" x2="480" y2="246" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="540" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#D14343">machining a keyway releases leakage later</text>
+
+  <!-- field indicator reading zero -->
+  <circle cx="560" cy="306" r="34" fill="#FFFFFF" stroke="#0A2342" stroke-width="3"/>
+  <line x1="560" y1="306" x2="560" y2="274" stroke="#1E9E6A" stroke-width="3.5"/>
+  <circle cx="560" cy="306" r="4" fill="#0A2342"/>
+  <text x="560" y="364" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">indicator reads ZERO</text>
+  <text x="560" y="384" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#D14343">while the part stays magnetized</text>
+  <line x1="498" y1="306" x2="526" y2="306" stroke="#5A6B7E" stroke-width="1.5"/>
+
+  <!-- bottom note -->
+  <rect x="60" y="402" width="680" height="36" rx="8" fill="#0A2342"/>
+  <text x="400" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#E8F1FB">Critical parts: magnetize longitudinally to make the field measurable, then demagnetize and verify.</text>
+</svg>

@@ -1,0 +1,137 @@
+{
+ "lessonId": "ut2-7-1",
+ "title": "Comparison Procedures: Standards and References",
+ "narrationScript": "Here is an uncomfortable truth about ultrasonic testing. The height of an echo on your screen, by itself, means nothing. Turn the gain up six decibels and every signal doubles. Swap to a different probe, a different cable, a different instrument, and the same flaw paints a different picture. Press the couplant out a little harder and the numbers move again. So when a code asks whether an indication is acceptable, it never asks how many screen divisions tall the echo is in absolute terms. It asks how the indication compares to a known reference, established on a known standard, under the same setup you are using on the part. That comparison is the entire foundation of ultrasonic evaluation, and this lesson is about doing it right. The references we compare against are machined reflectors in calibration standards, and three families do most of the work. Flat bottom holes are discs machined up from the bottom of a block so the flat face squares up to a straight beam. Their echo strength tracks the area of the disc, which makes them the basis of area amplitude sets and of sensitivity calibration in many straight beam specifications. Side drilled holes are long cylinders drilled parallel to the scanning surface and struck broadside. Because a cylinder presents the same curved face to a beam arriving from any angle in the cross sectional plane, the same hole works for a forty five, a sixty, or a seventy degree wedge. That is why side drilled holes are the standard reflector for distance amplitude correction in weld work, and why a typical basic calibration block carries them at one quarter, one half, and three quarters of the thickness. Notches are machined slots that break the surface. They give a corner reflection like a surface breaking crack, and they matter most on pipe, where inside and outside surface notches set sensitivity for flaws a drilled hole cannot represent. The block itself has to deserve your trust. It should be acoustically similar to the part, meaning comparable velocity and attenuation, in a comparable product form and heat treat condition. Its reflectors are certified to dimension, it carries a serial number, and its paperwork ties your reference level back to something an auditor can trace. Take care of it, too. A side drilled hole full of rust or dried couplant is no longer the reflector it was on the day it was certified. And when the part surface is rougher or more attenuating than the block, you measure the difference and apply a transfer correction in decibels, so the comparison stays honest. Now the hard part, the limitation every Level Two needs to carry around. A machined reflector is an ideal target. It is smooth, it is air backed, and it faces the beam exactly. Natural flaws are none of those things. A real crack may be tilted away from the beam, rough enough to scatter sound in every direction, or squeezed so tightly closed that part of the energy passes straight through it. Every one of those effects steals amplitude. So when your indication rings in at the level of a three millimeter reference hole, the honest statement is that it has an equivalent reflector size of three millimeters. Its true size is almost certainly larger, sometimes much larger, and almost never smaller, because a natural flaw is hardly ever a better reflector than a perfect machined target of the same size. Amplitude comparison ranks indications on a reproducible scale. It does not measure flaws. That is why codes pair amplitude limits with length measurement, location rules, and, in critical work, supplemental sizing techniques. Finally, keep the comparison alive in the field. Calibration is verified at the start and end of the examination and at regular intervals between, and any change of probe, cable, operator, or part temperature is a reason to check again. Scanning gain is fine for finding, but evaluation happens at the reference level. Record the block serial number, the reference gain, the range setting, and the probe details, because the only thing that makes your comparison meaningful tomorrow is that someone else can rebuild it exactly. Measured against the standard. That is what evaluation means in ultrasonic testing.",
+ "imagePrompt": "A technician couples an angle-beam transducer to a machined steel calibration block with side-drilled holes on a workbench, flaw detector beside it displaying a tall reference echo, weld test plates waiting in the background of the shop.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Evaluation Means Comparison",
+   "body": "An echo's absolute height carries no meaning. Screen amplitude depends on instrument gain, pulser energy, probe efficiency, cable length, couplant film, and surface condition — change any one and the same reflector reads differently. Ultrasonic evaluation solves this the only way it can be solved: by **comparison**. You establish a *reference level* from a machined reflector in a calibrated standard, using the exact setup you will scan with, and then express every indication relative to that reference — as a percentage of DAC, or as decibels above or below the reference level.\n\nThat one move makes the numbers portable. \"Forty percent of full screen height\" is meaningless without context; \"fifty percent of DAC at a 48 mm soundpath, probe and block identified\" can be reproduced by another technician, on another instrument, next year. Every acceptance decision you will make as a Level II hangs on the validity of that comparison — same setup, same range, same reference, documented. Lose any link in that chain and the evaluation is opinion, not measurement."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-7-1-fig-a",
+   "caption": "The three working reference reflectors — flat-bottom hole, side-drilled hole, and surface notch — and the beam geometry each one is designed to answer."
+  },
+  {
+   "type": "text",
+   "heading": "The Reference Reflector Family",
+   "body": "Three machined reflectors do almost all comparison work:\n\n- **Flat-bottom holes (FBH)** are drilled up from the back of a block so the flat disc faces a straight beam squarely. In the far field the echo amplitude is proportional to the disc **area**, which is what makes area-amplitude sets work and why FBH diameter (in 1/64-inch numbers) is the classic sensitivity unit for straight-beam specifications on forgings, plate, and billet.\n- **Side-drilled holes (SDH)** run parallel to the scanning surface and are hit broadside. The cylindrical surface returns sound to **any** beam angle in the cross-sectional plane, so one set of holes calibrates a 45°, 60°, or 70° wedge alike — the reason ASME-style basic calibration blocks place SDHs at **T/4, T/2, and 3T/4** for building a DAC curve in weld examination.\n- **Notches** (square or V) are machined into the surface and reflect like the corner of a surface-breaking crack. ID and OD notches govern sensitivity in pipe and tubing work, where near-surface flaws are the concern and a drilled hole is the wrong geometry.\n\nRange-and-angle standards such as the IIW Type 1 and Type 2 blocks and the DSC block round out the kit — they verify exit point, refracted angle, and distance calibration, though AWS-style weld work does set reference sensitivity on the IIW block's 1.5 mm hole."
+  },
+  {
+   "type": "table",
+   "caption": "Working reference reflectors and what each is for.",
+   "headers": ["Reflector", "Geometry presented to beam", "Typical use", "Key property"],
+   "rows": [
+    ["Flat-bottom hole (FBH)", "Flat disc, square to beam", "Straight-beam sensitivity; area-amplitude sets (forgings, plate)", "Echo amplitude tracks disc area"],
+    ["Side-drilled hole (SDH)", "Cylinder, struck broadside", "Angle-beam DAC curves; ASME-style blocks at T/4, T/2, 3T/4", "Same response at any beam angle in the plane"],
+    ["Surface notch", "Corner at ID or OD surface", "Pipe/tube sensitivity; surface-breaking flaw simulation", "Corner reflection like a surface crack"],
+    ["IIW / DSC blocks", "Radii, holes, scales", "Range, exit point, refracted-angle verification", "Geometry standard, not a DAC reference"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Standards, Traceability, and Block Care",
+   "body": "A reference is only as good as the standard that carries it. The calibration block must be **acoustically similar** to the part — comparable longitudinal and shear velocity, comparable attenuation, similar product form and heat-treat condition — or the comparison is biased before you start. Blocks are serialized, their reflector dimensions certified, and the certificates kept on file: that is what lets an auditor trace your reference level from the report, through the block, back to a documented standard.\n\nTwo field disciplines protect that traceability. First, **block condition**: a corroded or couplant-clogged SDH, a dinged notch, or a gouged scanning surface changes the reference response — clean, dry, and protect the block. Second, **transfer correction**: when the part's surface finish, curvature, or attenuation differs from the block's, measure the difference (commonly by comparing through-thickness or pitch-catch responses on block and part) and add the difference in dB to the reference gain. Skipping transfer correction on a rough, scaled part means every indication is being judged against a standard the sound never actually experienced."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "Same block, same setup, same answer",
+   "body": "Codes such as ASME Section V, Article 4 hang the entire evaluation on reproducibility: a serialized, material-matched basic calibration block, a documented reference level, calibration verified at defined intervals and at any system change, and evaluation performed at **reference gain** — not scanning gain. Record block serial number, instrument, probe, range, and reference dB in every report so the comparison can be rebuilt exactly."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-7-1-fig-b",
+   "caption": "Evaluation by comparison: the reference level set on a certified block, the indication judged against it at the same range, and the traceability chain that makes the number defensible."
+  },
+  {
+   "type": "text",
+   "heading": "What Comparison Cannot Tell You",
+   "body": "A machined reflector is an *ideal* target — smooth, air-backed, facing the beam squarely. A natural flaw is not, and the differences all push one way:\n\n- **Orientation**: a crack tilted even 10–15° off square returns dramatically less energy to the probe.\n- **Roughness**: a ragged fracture face scatters sound away instead of mirroring it back.\n- **Tightness**: a compressed, tightly closed crack transmits part of the beam straight through, weakening the reflection.\n- **Shape**: irregular, branched flaws never present one clean reflecting face.\n\nSo when an indication matches the response of a 3 mm FBH, you have measured an **equivalent reflector size (ERS)** of 3 mm — and the flaw's true size is almost certainly *larger*, occasionally much larger, and almost never smaller, because a natural flaw is rarely a better reflector than a perfect machined target of equal size. Amplitude comparison gives a reproducible *ranking*, not a flaw dimension. That is exactly why codes pair amplitude limits with recorded **length**, **location**, and, where the stakes justify it, supplemental sizing (6 dB drop, tip diffraction, TOFD, phased-array imaging)."
+  },
+  {
+   "type": "text",
+   "heading": "Keeping the Comparison Alive in the Field",
+   "body": "The reference level you set at 7 a.m. is only valid while the system that produced it is unchanged. Working rules:\n\n- **Verify calibration** at the start and end of each examination and at periodic intervals between (governing codes commonly require checks every few hours of continuous use), and after **any** change of probe, cable, couplant, operator, power source, or a significant change in part temperature.\n- If a verification check fails, indications examined since the last *good* check are re-examined — which is the practical argument for checking often.\n- Use **scanning gain** (commonly reference plus 6 dB or more) to find indications, then drop back to **reference level** to evaluate them. Evaluating at scanning gain inflates every indication against the acceptance line.\n- Watch **temperature**: velocity and couplant behavior drift with heat; keep block and part within the temperature window your procedure allows.\n\nNone of this is bureaucracy. It is the difference between a measurement and a guess."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-7-1-fig-a",
+   "title": "Reference reflectors: FBH, SDH, and notch",
+   "file": "ut2-7-1-fig-a.svg"
+  },
+  {
+   "id": "ut2-7-1-fig-b",
+   "title": "Evaluation by comparison and the traceability chain",
+   "file": "ut2-7-1-fig-b.svg"
+  }
+ ],
+ "interactive": null,
+ "checkQuestions": [
+  {
+   "question": "Why do ultrasonic codes require indications to be evaluated against a reference reflector instead of by absolute screen height?",
+   "options": [
+    "Reference reflectors make the instrument more sensitive",
+    "Absolute echo height depends on instrument, probe, couplant, and surface, so only a comparison made with the same setup is reproducible",
+    "Screen height cannot be read accurately above 50% full screen height",
+    "Codes require it only when the part is thicker than 25 mm"
+   ],
+   "correct": 1,
+   "explanation": "Amplitude by itself reflects the whole measuring chain, not just the flaw. Comparing against a known reflector with the identical setup removes those variables and makes the evaluation reproducible and traceable."
+  },
+  {
+   "question": "For building a DAC curve for angle-beam weld examination, the preferred reference reflector is the side-drilled hole because:",
+   "options": [
+    "Its flat bottom faces the beam squarely",
+    "It breaks the surface like a real crack",
+    "Its cylindrical surface returns the same response to any refracted angle in the cross-sectional plane",
+    "It is the only reflector permitted in any code"
+   ],
+   "correct": 2,
+   "explanation": "A cylinder struck broadside looks the same to a 45°, 60°, or 70° beam, so one set of SDHs (typically at T/4, T/2, 3T/4) serves every wedge angle — an FBH would have to face each beam, and a notch only represents surface flaws."
+  },
+  {
+   "question": "An indication in a forging gives the same amplitude as a 3 mm flat-bottom hole at the same depth. The correct statement about the flaw is:",
+   "options": [
+    "The flaw is exactly 3 mm in diameter",
+    "The flaw is no larger than 3 mm",
+    "The flaw has an equivalent reflector size of 3 mm; its true size is probably larger and almost never smaller",
+    "The flaw must be a crack"
+   ],
+   "correct": 2,
+   "explanation": "Natural flaws are tilted, rough, and sometimes partly transparent, so they reflect less efficiently than an ideal machined disc. Matching a 3 mm FBH means ERS = 3 mm — a floor, not a measurement of true size."
+  },
+  {
+   "question": "Which set of records makes a reference level traceable for audit purposes?",
+   "options": [
+    "Calibration block serial number and certification, instrument and probe identification, range and reference gain recorded in the report",
+    "The technician's certification number only",
+    "A photograph of the screen at scanning gain",
+    "The couplant brand and batch number only"
+   ],
+   "correct": 0,
+   "explanation": "Traceability means someone else can rebuild the comparison: a serialized, certified block plus the documented instrument, probe, range, and reference gain. The other items alone reproduce nothing."
+  },
+  {
+   "question": "The part you are examining has a rough, scaled surface, while your calibration block is machined smooth. Before evaluating indications you should:",
+   "options": [
+    "Lower the reference gain so echoes look the same",
+    "Measure and apply a transfer correction in dB to compensate for the coupling and attenuation difference between block and part",
+    "Switch to a higher frequency probe to add sensitivity",
+    "Evaluate at scanning gain to make up the loss"
+   ],
+   "correct": 1,
+   "explanation": "Transfer correction measures how much signal the part's surface and attenuation cost relative to the block and adds that many dB to the reference level, keeping the comparison honest. Guessing with gain or frequency changes destroys the calibration basis."
+  }
+ ],
+ "references": [
+  "CP-105-2024 UT Evaluation Course §6.1 (comparison procedures)",
+  "CP-105-2024 UT Evaluation Course §6.1.1 (standards and references)",
+  "ASME BPVC Section V, Article 4 (basic calibration blocks with SDHs at T/4, T/2, 3T/4) — cited generically",
+  "ASTM E127 / E428 area-amplitude and distance-amplitude FBH reference block practices — cited generically",
+  "IIW Type 1 / Type 2 and DSC blocks for range and angle verification — general practice"
+ ]
+}

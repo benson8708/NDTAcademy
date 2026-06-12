@@ -1,0 +1,212 @@
+{
+  "lessonId": "ut1-8-3",
+  "title": "Inspection Standardization with Reference Blocks",
+  "narrationScript": "Electronic standardization proved the instrument. Inspection standardization goes further. It ties the whole working system, instrument, cable, probe, wedge, and couplant, to the job in front of you. Two things get set, and you should be able to name them in your sleep. Range, so the horizontal axis reads true distance in the part. Sensitivity, so amplitude means the same thing today as it did when the acceptance criteria were written. Both are set by comparison, against reference blocks with reflectors of known size at known positions, in material that behaves like the part. That word comparison is the heart of it. Ultrasonic testing has no absolute scale. An echo is just a voltage. It becomes information only when compared with the echo from a known reflector, a side drilled hole, a flat bottom hole, a notch, or a machined radius, in a block with known velocity and attenuation. That is why blocks matter so much, and why the block must be acoustically similar to the part, same general material class, similar heat treatment, similar surface. Standard families cover most work. The IIW block handles angle beam setup and a dozen other checks. Area amplitude sets carry flat bottom holes stepped in diameter, in sixty fourths of an inch, while distance amplitude sets hold the diameter constant and step the metal travel. And basic calibration blocks of the code type carry side drilled holes at one quarter, one half, and three quarters of the thickness. Run a straight beam setup first. Couple to the block and set the range with multiple back echoes. On a twenty five millimeter block with a one hundred millimeter range, echoes belong at one quarter, one half, three quarters, and full screen. Use the delay control to put the first echo on its mark and the range control for the spacing, then go back and forth until both sit true. Now sensitivity. Find the reference reflector, peak the response by moving the probe slowly, and bring it to a defined screen height, eighty percent of full screen height is the common choice, with the gain control. Write that gain down. It is your primary reference level, and every indication on the job will be compared against it. One reflector is rarely enough, because the same size reflector gives a weaker echo as it gets deeper. So we map the falloff. Peak the response from the hole at one quarter thickness and mark the screen. Without touching the gain, peak the hole at half thickness and mark it. Then three quarters. Connect the marks and you have a distance amplitude correction curve, a DAC. From now on, an indication is judged against the curve at its own depth, fifty percent of DAC, one hundred percent of DAC, and so on. If your instrument applies time corrected gain electronically, it is doing the same comparison for you, and the curve simply becomes a flat line. Angle beam setup adds geometry. Before range and sensitivity, verify the probe itself on the IIW block. Maximize the echo from the one hundred millimeter radius, and the point on the wedge sitting over the engraved zero line is your beam exit point, the index point. Then aim at the reference hole and read the engraved degree scale to find the actual refracted angle. A seventy degree wedge that measures sixty eight degrees changes every plot you will make, so use the measured value. Set the range off the radius echoes, on a Type one block they repeat at one hundred, two hundred twenty five, and three hundred fifty millimeters, then build the DAC from the same side drilled holes, peaked over the first and second legs. Only then is the system ready for a weld. All of this holds only while the pulse echo variables hold. The same instrument settings, gain, pulser, frequency, filter, with reject off or exactly as standardized. The same probe and cable, by serial number. The same couplant. Surface and temperature close to the block conditions, because velocity and attenuation move with temperature, and a hot part judged against a cold block calibration reads wrong. Scanning speed within procedure limits. Change any of these and the comparison chain breaks, and standardization has to be checked or rebuilt. Last, match the reference setup to the planned test. A lamination scan of plate references back wall echoes. A thickness survey references a step wedge. A weld examination references the IIW block plus a side drilled hole DAC. A surface wave check references a surface notch. Immersion work references flat bottom holes at the test metal travel. The block on the bench should always answer one question. What will the screen show me when the part contains exactly what the acceptance standard cares about?",
+  "imagePrompt": "A technician slides an angle-beam probe along the machined radius of an IIW calibration block on a workbench, marking points of a DAC curve on the flaw detector screen beside a welded steel test plate.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Two Numbers Every Job Starts With",
+      "body": "Electronic standardization proved the instrument; **inspection standardization** ties the complete working system — instrument, cable, search unit, wedge, couplant — to the examination in front of you. Exactly two things get established:\n\n- **Range (distance) calibration:** the sweep must read true sound-path distance *in the test material*, so an echo at 6.2 divisions means what you say it means.\n- **Sensitivity (reference level):** the gain is set so a defined reference reflector produces a defined response — commonly its peaked echo at **80% of full screen height**. That recorded gain is the **primary reference level**, and every indication on the job is evaluated against it.\n\nBoth are set **by comparison** — against reference blocks carrying reflectors of known size at known positions, in material that behaves acoustically like the part. And both live or die on documentation: the calibration record carries the instrument and probe serial numbers, block identification, couplant, settings, and reference gain, because someone must be able to rebuild your setup, exactly, tomorrow. Standardization happens before examination begins, at intervals during it, after any system change, and at the end — the closing check is what validates the day's work."
+    },
+    {
+      "type": "text",
+      "heading": "Comparison with Reference Blocks",
+      "body": "UT has no absolute scale. An echo is a voltage; it becomes information only when compared with the echo from a **known reflector in known material**. Reference blocks supply that known. The standard families:\n\n- **IIW blocks** (Type 1 and the smaller Type 2): the angle-beam workhorse — exit-point check on the 100 mm radius, refracted-angle verification against the engraved degree scale, range calibration from radius echoes, plus resolution and sensitivity references.\n- **DSC and miniature angle-beam blocks:** field-portable distance and sensitivity references for weld work.\n- **Area-amplitude sets:** flat-bottom holes stepped in diameter (1/64-inch increments, #1 through #8) at constant metal travel — they map echo amplitude against reflector *area*.\n- **Distance-amplitude sets:** the same FBH diameter at stepped metal travels — they map amplitude against *distance* (the data behind DAC).\n- **Basic calibration blocks** of the code type: side-drilled holes at **T/4, T/2, and 3T/4** of the block thickness, plus surface notches — made from material of the same product form and acoustic class as the part.\n\nThat last point is the rule governing all of them: the block must be **acoustically similar** to the part — comparable velocity, attenuation, surface condition, and heat-treatment class. Calibrate carbon-steel range and sensitivity on a carbon-steel block, then examine a coarse austenitic casting, and both numbers are quietly wrong."
+    },
+    {
+      "type": "figure",
+      "figureId": "ut1-8-3-fig-a",
+      "caption": "Two workhorse references: the IIW block for exit point, refracted angle, and range; and a code-style basic calibration block with side-drilled holes at quarter-thickness depths for sensitivity and DAC."
+    },
+    {
+      "type": "text",
+      "heading": "Straight-Beam Setup and the DAC",
+      "body": "A straight-beam standardization runs range first, sensitivity second.\n\n**Range.** Couple to the block and bring up multiple back-wall echoes. For a 100 mm screen on a 25 mm block, echoes belong at divisions 2.5, 5.0, 7.5, and 10. Use **delay (zero)** to put the first echo on its mark and **range/velocity** to set the spacing, iterating until both hold — delay moves the whole train, range stretches it.\n\n**Sensitivity.** Find the specified reference reflector — say a side-drilled hole at quarter thickness. **Peak** the response by scrubbing the probe slowly (maximize it, don't accept the first sight of it), bring the peak to **80% FSH** with the gain, and **record that gain**: the primary reference level.\n\nOne reflector can't speak for every depth, so map the falloff into a **distance-amplitude correction (DAC) curve**: with the gain untouched, peak the T/4 hole and mark its echo tip on the screen; peak the T/2 hole, mark it; then 3T/4, mark it; connect the marks. Indications are now judged against the curve at their own sound path — *50% of DAC*, *100% of DAC* — so a deep flaw isn't under-called just for being deep. An instrument with electronic TCG performs the identical comparison internally and shows a flat reference line instead. Either way, the physics being captured is the same: beam spread plus attenuation, measured on reflectors you trust."
+    },
+    {
+      "type": "figure",
+      "figureId": "ut1-8-3-fig-b",
+      "caption": "Building a DAC: with the reference gain fixed, the peaked responses of identical side-drilled holes at T/4, T/2, and 3T/4 are marked and joined into the evaluation curve."
+    },
+    {
+      "type": "text",
+      "heading": "Angle-Beam Setup on the IIW Block",
+      "body": "Angle-beam standardization verifies the **probe's geometry** before touching range or sensitivity, because every plot you make assumes you know where the beam leaves the wedge and at what angle.\n\n- **Exit (index) point:** couple on the block aimed at the **100 mm radius** and maximize the echo. The point on the wedge directly over the block's engraved zero line is the true exit point — mark it. Wedges wear, and the mark moves.\n- **Refracted angle:** aim at the specified reference hole and peak the echo; the engraved degree scale under the exit point reads the **actual** angle. A nominal 70° wedge measuring 68° changes every depth and surface-distance calculation, so the measured value is the one you use.\n- **Range:** the radius gives a clean 100 mm sound path; on a Type 1 block the slot geometry returns repeats at 225 and 350 mm, letting you set longer ranges without moving the probe.\n- **Sensitivity and DAC:** build them from the **side-drilled holes** of the basic calibration block, peaking each hole over the first leg — and over the second leg for full-V coverage — exactly as in the straight-beam case.\n\nOnly after exit point, angle, range, and reference level are established — and written down — is the system ready to interrogate a weld."
+    },
+    {
+      "type": "text",
+      "heading": "Pulse-Echo Variables You Must Control",
+      "body": "A standardization is a snapshot of a system. It remains valid only while the **pulse-echo variables** that shaped it stay put:\n\n- **Instrument:** gain at reference, pulser energy and damping, frequency and filter selections, PRF, reject off (or exactly as standardized).\n- **Search unit and cable:** the same probe and wedge *by serial number*, the same cable type and length — 'an identical 5 MHz probe' is not the same probe.\n- **Couplant:** same type, applied the same way; couplant is a transmission element, not a convenience.\n- **Surfaces:** block and part surface condition comparable; rust, scale, and paint change energy transfer.\n- **Temperature:** velocity and wedge angles drift with temperature — codes commonly require block and part within about 14 °C (25 °F) of each other.\n- **Technique:** scanning speed at or below the standardized speed; the same scanning surface and beam directions the reference setup assumed.\n\nChange any of these and the comparison chain back to the reference block breaks: the change either triggers **re-standardization** or, where the procedure allows, a measured **transfer correction** (next lesson). The calibration sheet exists precisely to freeze this list — it is the system's birth certificate, and auditors read it that way."
+    },
+    {
+      "type": "table",
+      "caption": "Match the reference setup to the planned test: the block should show the screen exactly what the acceptance standard cares about.",
+      "headers": [
+        "Planned test",
+        "Typical reference standard",
+        "What gets established"
+      ],
+      "rows": [
+        [
+          "Straight-beam lamination scan (plate)",
+          "Parallel block or clean area of the part; FBH block where specified",
+          "Range from multiple back echoes; sensitivity from first back echo or FBH at reference height"
+        ],
+        [
+          "Thickness / corrosion survey",
+          "Step wedge spanning the expected thickness range",
+          "Zero and velocity by two-point calibration; verified at thin and thick steps"
+        ],
+        [
+          "Angle-beam weld examination",
+          "IIW block (exit point, angle, range) + basic block SDHs",
+          "Measured refracted angle; range; primary reference level and DAC or TCG"
+        ],
+        [
+          "Surface (Rayleigh) wave check",
+          "Surface notch of specified depth",
+          "Sensitivity to surface-breaking reflectors over the scan zone"
+        ],
+        [
+          "Immersion scan",
+          "FBH distance-amplitude set at the test metal travel",
+          "Water path and normalization; gates; sensitivity and electronic DAC at depth"
+        ]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "No absolute scale",
+      "body": "Every UT evaluation is a comparison. The block answers the only question that matters before scanning: *what does a known reflector, at the depths I care about, look like on this system today?* If the block doesn't acoustically resemble the part — material class, attenuation, surface, temperature — the comparison is broken before the first indication ever appears."
+    }
+  ],
+  "figures": [
+    {
+      "id": "ut1-8-3-fig-a",
+      "title": "IIW block and basic calibration block",
+      "file": "ut1-8-3-fig-a.svg"
+    },
+    {
+      "id": "ut1-8-3-fig-b",
+      "title": "DAC construction from side-drilled holes",
+      "file": "ut1-8-3-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "hotspot",
+    "title": "Set the Primary Reference",
+    "intro": "Find the reference echo. This screen shows a DAC standardization in progress on a basic calibration block with side-drilled holes at T/4, T/2, and 3T/4. Click the echo you peak and set to 80% of full screen height as the primary reference level.",
+    "figureId": "ut1-8-3-fig-b",
+    "regions": [
+      {
+        "x": 100,
+        "y": 110,
+        "w": 46,
+        "h": 240,
+        "label": "Initial pulse",
+        "isTarget": false,
+        "feedback": "That's the initial pulse — the transmitter firing, not a reflector. Nothing here gets evaluated; in fact the dead zone around it is where you can't evaluate at all."
+      },
+      {
+        "x": 232,
+        "y": 120,
+        "w": 58,
+        "h": 230,
+        "label": "T/4 side-drilled hole",
+        "isTarget": true,
+        "feedback": "Correct. The hole nearest the surface gives the strongest response of the set, so it is peaked and brought to 80% FSH with the gain — that recorded gain is the primary reference level, and the deeper holes are then marked without touching it."
+      },
+      {
+        "x": 374,
+        "y": 186,
+        "w": 54,
+        "h": 164,
+        "label": "T/2 side-drilled hole",
+        "isTarget": false,
+        "feedback": "This is the half-thickness hole — the same size reflector on a longer sound path, so its echo is weaker. It becomes the second point on the DAC after the reference is set, with the gain left alone."
+      },
+      {
+        "x": 518,
+        "y": 238,
+        "w": 56,
+        "h": 112,
+        "label": "3T/4 side-drilled hole",
+        "isTarget": false,
+        "feedback": "The deepest hole of the set — the third DAC point. Its lower amplitude is exactly the beam-spread-plus-attenuation falloff the curve exists to capture, not a reason to add gain."
+      },
+      {
+        "x": 440,
+        "y": 212,
+        "w": 70,
+        "h": 40,
+        "label": "DAC curve",
+        "isTarget": false,
+        "feedback": "The curve itself is drawn through the peaked hole responses — it's the evaluation reference you compare indications against, not an echo you set with the gain control."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "Inspection standardization establishes which two properties of the test system?",
+      "options": [
+        "Distance (range) calibration and reference-level sensitivity",
+        "Horizontal and vertical linearity",
+        "Probe frequency and element diameter",
+        "Gate logic and recorder paper speed"
+      ],
+      "correct": 0,
+      "explanation": "Inspection standardization sets the sweep to read true distance in the part and sets the gain so a known reference reflector gives a defined response — range and sensitivity. Linearity was proven earlier, electronically."
+    },
+    {
+      "question": "The exit (index) point of an angle-beam search unit is found on the IIW block by:",
+      "options": [
+        "Measuring the wedge dimensions with calipers",
+        "Peaking the echo from the side-drilled hole at T/2",
+        "Maximizing the echo from the 100 mm radius and reading the wedge position over the engraved zero line",
+        "Setting the first back-wall echo to 80% FSH"
+      ],
+      "correct": 2,
+      "explanation": "With the beam aimed at the radius, the echo peaks when the beam centerline travels exactly 100 mm to the arc — the point on the wedge over the block's zero line is then the true beam exit point."
+    },
+    {
+      "question": "The purpose of a DAC curve is to allow an indication at any depth to be:",
+      "options": [
+        "converted directly into a flaw length",
+        "compared with the response of a same-size reference reflector at the same sound path",
+        "displayed without couplant",
+        "evaluated without setting a reference gain"
+      ],
+      "correct": 1,
+      "explanation": "The DAC traces how a known reflector's amplitude falls with distance; judging an indication against the curve at its own sound path removes distance as a bias in the comparison."
+    },
+    {
+      "question": "You calibrate range on a 25 mm parallel block with the screen set to represent 100 mm. The first two back-wall echoes should appear at screen divisions:",
+      "options": [
+        "1.0 and 2.0",
+        "2.0 and 4.0",
+        "5.0 and 10.0",
+        "2.5 and 5.0"
+      ],
+      "correct": 3,
+      "explanation": "Back echoes arrive at 25 mm intervals; on a 100 mm range across 10 divisions, 25 mm falls at division 2.5 and 50 mm at division 5.0."
+    },
+    {
+      "question": "A system is standardized on a wrought carbon-steel block, then used to examine a coarse-grained austenitic casting with no further action. The most likely result is:",
+      "options": [
+        "Improved sensitivity, because castings transmit sound better",
+        "Under-calling or missing flaws, because the casting's higher attenuation and different velocity invalidate the comparison",
+        "No effect, because standardization depends only on the instrument",
+        "Ghost echoes from the pulse repetition frequency"
+      ],
+      "correct": 1,
+      "explanation": "The block must be acoustically similar to the part: coarse austenitic material scatters and attenuates far more and has a different velocity, so both sensitivity and range built on the wrought block are wrong for the casting."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, UT Technique Course §2.3.1–2.3.3 (inspection standardization: comparison with reference blocks, pulse-echo variables, references for planned tests)",
+    "Codes such as ASME BPVC Section V, Article 4 (basic calibration blocks with SDHs at T/4, T/2, 3T/4; DAC construction, general practice)",
+    "IIW reference block practice (exit point, refracted angle, range checks): general industry usage"
+  ]
+}

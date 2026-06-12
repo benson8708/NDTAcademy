@@ -1,0 +1,115 @@
+{
+  "moduleId": "basic-6",
+  "questions": [
+    {
+      "question": "During a Rayleigh (surface) wave examination of a fillet radius, an inspector wants to confirm that a screen signal is really traveling along the surface path. The accepted quick check is to:",
+      "options": [
+        "Raise the gain 6 dB and confirm the signal doubles in screen height",
+        "Switch to a higher test frequency, which surface waves cannot follow",
+        "Place a couplant-wetted fingertip on the surface ahead of the wave and watch for the signal to drop",
+        "Flood the part surface with couplant to strengthen the surface-wave signal"
+      ],
+      "correct": 2,
+      "explanation": "Rayleigh waves carry their energy in a skin about one wavelength deep, which makes them famously easy to damp: a fingertip or a drop of couplant placed ahead of the wave absorbs energy and knocks the signal down — a property inspectors use to confirm and even locate surface indications. Gain changes affect every signal on the screen equally, and couplant on the sound path damps the wave rather than strengthening it."
+    },
+    {
+      "question": "Compared with a lightly damped search unit, a transducer built with a heavily damped tungsten-loaded epoxy backing produces:",
+      "options": [
+        "A long, ringing, narrowband pulse with maximum penetrating sensitivity",
+        "A short, broadband pulse with fine axial (distance) resolution, at some cost in sensitivity",
+        "A longer near field for the same element diameter and frequency",
+        "A higher Curie temperature, allowing use on hot surfaces"
+      ],
+      "correct": 1,
+      "explanation": "The backing's damping sets the pulse character: heavy damping stops the element quickly, giving a short pulse, broad bandwidth, and fine axial resolution at the cost of sensitivity, while light damping gives the long, ringing, narrowband pulse with maximum punch. Near-field length is fixed by element diameter and frequency (N = D²f/4v), and the Curie temperature belongs to the piezoelectric element material, not the backing."
+    },
+    {
+      "question": "In immersion testing, the water path between the transducer and an aluminum part is set to at least one-quarter of the part thickness plus a small margin (commonly about 6 mm) so that:",
+      "options": [
+        "The second echo of the front surface arrives beyond the back-wall echo, outside the inspection range — sound travels about four times faster in the metal than in water",
+        "The water column attenuates grain noise before the beam enters the part",
+        "Shear waves have room to develop in the water column before reaching the part",
+        "The transducer's dead zone falls inside the part instead of the water"
+      ],
+      "correct": 0,
+      "explanation": "Sound crosses steel or aluminum about four times faster than it crosses water, so a water path of at least a quarter of the part thickness plus a margin pushes the repeating front-surface echo past the back-wall echo, keeping the metal range of the display clean. Water does not filter grain noise, shear waves cannot exist in liquids at all, and the water delay already separates the part from the initial pulse rather than moving the dead zone into it."
+    },
+    {
+      "question": "Setting up for angle-beam weld examination, an inspector maximizes the echo from the 100 mm radius of an IIW (V1) block and marks the wedge where that signal peaks. This step establishes:",
+      "options": [
+        "The reference sensitivity level for the DAC curve",
+        "The instrument's vertical linearity",
+        "The wedge's actual refracted angle in steel",
+        "The transducer's beam exit (index) point"
+      ],
+      "correct": 3,
+      "explanation": "The 100 mm radius returns its echo through the point where the beam actually leaves the wedge, so peaking that signal locates the beam exit (index) point — the reference for all subsequent distance plotting. The actual refracted angle is verified separately against the block's engraved degree scales and side-drilled hole, sensitivity comes from reference reflectors such as the side-drilled holes of ASME Section V, Article 4, and linearity is an instrument verification performed per practices such as ASTM E317."
+    },
+    {
+      "question": "A distance-amplitude correction (DAC) curve is drawn through the peak responses of identical reference reflectors at several metal-travel distances. The curve is necessary because:",
+      "options": [
+        "Deeper reflectors return progressively larger echoes that must be normalized downward",
+        "Attenuation and beam spread shrink the echo from a same-size reflector as depth increases, so the curve provides a depth-corrected evaluation level",
+        "The reference holes in a distance-amplitude block set increase in diameter with depth",
+        "Instrument gain drifts during the time the deeper echoes take to return"
+      ],
+      "correct": 1,
+      "explanation": "Identical reflectors at increasing depth answer with progressively smaller echoes because beam spread thins the energy and the material attenuates it, so a fixed screen threshold would judge deep reflectors more leniently than shallow ones. The DAC curve restores fairness: an indication at 60% of DAC means the same thing at half an inch as at four inches. Distance-amplitude blocks hold the flat-bottom hole size constant while metal travel varies — stepping the diameter is the area-amplitude set's job."
+    },
+    {
+      "question": "Pulse-echo bond testing of an adhesively bonded aluminum skin shows, over one area, the skin's multiple echoes persisting — ringing on — much longer than over the surrounding panel. The correct call is:",
+      "options": [
+        "A well-bonded area, because good adhesive prolongs the ring-down",
+        "Coarse grain in the skin raising the baseline noise",
+        "A disbond — the sound energy stays trapped in the skin instead of passing into the bonded structure",
+        "Excessive couplant thickness under the probe"
+      ],
+      "correct": 2,
+      "explanation": "A sound bond conducts energy out of the skin into the structure, so the skin's multiples die away quickly; over a disbond the energy is trapped in the thin skin and the multiples ring on — the signature is the reverse of the first option. Production parts are mapped for the same condition by through-transmission C-scan, where a disbond simply blocks transmission, and field bond testers read the impedance change at the bond line."
+    },
+    {
+      "question": "For surveying targets near room temperature (about 300 K), longwave (8–14 μm) thermal imagers are preferred primarily because:",
+      "options": [
+        "Wien's displacement law (λmax ≈ 2898 μm·K ÷ T) puts the radiation peak of a 300 K surface near 10 μm, squarely inside the longwave atmospheric window",
+        "Longwave detectors require no emissivity setting",
+        "The Stefan-Boltzmann law applies only at wavelengths longer than 8 μm",
+        "The midwave band lies outside both atmospheric windows"
+      ],
+      "correct": 0,
+      "explanation": "Wien's law locates the spectral peak: 2898 ÷ 300 ≈ 9.7 μm, which falls inside the 8–14 μm LWIR window, so an LWIR camera collects ambient-temperature radiation where it is most plentiful. Hotter targets shift shortward — an 800 K engine component peaks near 3.6 μm, midwave territory — and MWIR (3–5 μm) is itself a genuine atmospheric window. Emissivity must be set on any radiometric instrument, and the Stefan-Boltzmann law totals power across all wavelengths."
+    },
+    {
+      "question": "A heat flux indicator differs from thermocouples, RTDs, and thermistors in that it directly measures:",
+      "options": [
+        "Absolute temperature, via the Seebeck EMF of dissimilar metals",
+        "Surface emissivity, for correcting radiometric readings",
+        "The mean kinetic energy of surface molecules by direct contact",
+        "Heat flow rate per unit area (W/m²), from the temperature drop across a thin layer of known thermal resistance"
+      ],
+      "correct": 3,
+      "explanation": "A heat flux indicator spans a thin barrier of known thermal resistance with a differential thermopile; the temperature drop across that layer is proportional to the heat flowing through it, so the output is in W/m² — heat transfer itself, the quantity the temperature devices only imply. The Seebeck EMF is the thermocouple's principle, and temperature, the mean kinetic energy of the molecules, is what the other contact sensors report."
+    },
+    {
+      "question": "The uniformly painted steel shell of an operating kiln shows a sharply bounded hot region that stays fixed on the shell as the thermographer changes viewing position. The most likely condition is:",
+      "options": [
+        "A solar reflection from a low-emissivity area of the shell",
+        "Thinned or worn refractory lining — lower thermal resistance lets more heat flux through to the shell",
+        "A locally thicker lining storing extra heat",
+        "An emissivity difference making that area merely appear hotter"
+      ],
+      "correct": 1,
+      "explanation": "This is a thermal resistance investigation: with the process supplying sustained heat flow through the section, less refractory means less resistance, more heat flux, and a hotter shell — and trending shell thermograms schedules relines before burn-through. The move test has already ruled out a reflection, which slides with viewing position while a real anomaly stays fixed, the uniform paint removes the emissivity-variation artifact, and a thicker lining would read cooler, not hotter."
+    },
+    {
+      "question": "A post-taxi ramp check finds one main-gear brake assembly running far hotter than the aircraft's other brake assemblies after the same stop. In CP-105 application-family terms, this finding is:",
+      "options": [
+        "An exothermic investigation — the brake is generating chemical reaction heat",
+        "A thermal capacitance investigation — the hot assembly simply stores more heat",
+        "A friction investigation — mechanical energy converting to heat, judged by comparison with identical assemblies under the same duty",
+        "A fluid flow investigation — hydraulic fluid is carrying heat into the assembly"
+      ],
+      "correct": 2,
+      "explanation": "Brakes belong to the friction family: a dragging or seized brake converts mechanical energy to heat and runs hotter than its mates after the same stop, and comparing identical assemblies under identical duty is the backbone of the interpretation. Exothermic investigations cover heat the object generates itself, such as I²R joints and reaction heat; capacitance patterns are storage lags that appear only during thermal transients; and the hydraulic system is not the heat source here."
+    }
+  ]
+}

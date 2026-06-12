@@ -1,0 +1,49 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#0A2342">Evaluation Screen: What Crosses the Recording Level?</text>
+
+  <!-- screen panel -->
+  <rect x="70" y="80" width="690" height="320" fill="#0A2342"/>
+
+  <!-- horizontal grid: 20/40/60/80/100 % FSH (baseline y=370, 2.8 px per %) -->
+  <line x1="70" y1="314" x2="760" y2="314" stroke="#5A6B7E" stroke-width="0.8"/>
+  <line x1="70" y1="258" x2="760" y2="258" stroke="#5A6B7E" stroke-width="0.8"/>
+  <line x1="70" y1="202" x2="760" y2="202" stroke="#5A6B7E" stroke-width="0.8"/>
+  <line x1="70" y1="146" x2="760" y2="146" stroke="#5A6B7E" stroke-width="0.8"/>
+  <line x1="70" y1="90" x2="760" y2="90" stroke="#5A6B7E" stroke-width="0.8"/>
+  <!-- vertical grid -->
+  <line x1="208" y1="80" x2="208" y2="400" stroke="#5A6B7E" stroke-width="0.8"/>
+  <line x1="346" y1="80" x2="346" y2="400" stroke="#5A6B7E" stroke-width="0.8"/>
+  <line x1="484" y1="80" x2="484" y2="400" stroke="#5A6B7E" stroke-width="0.8"/>
+  <line x1="622" y1="80" x2="622" y2="400" stroke="#5A6B7E" stroke-width="0.8"/>
+
+  <!-- % scale labels -->
+  <text x="62" y="319" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">20</text>
+  <text x="62" y="263" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">40</text>
+  <text x="62" y="207" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">60</text>
+  <text x="62" y="151" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">80</text>
+  <text x="62" y="95" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">100</text>
+
+  <!-- reference level 80% dashed amber -->
+  <line x1="70" y1="146" x2="760" y2="146" stroke="#F2A33C" stroke-width="2.5" stroke-dasharray="9,5"/>
+  <text x="752" y="136" text-anchor="end" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#F2A33C">reference (80% FSH)</text>
+
+  <!-- recording level 40% dashed red -->
+  <line x1="70" y1="258" x2="760" y2="258" stroke="#D14343" stroke-width="2.5" stroke-dasharray="9,5"/>
+  <text x="752" y="248" text-anchor="end" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">recording level (40% FSH)</text>
+
+  <!-- trace: IP, grass, indication 62%, BW 85% -->
+  <polyline points="78,370 100,370 106,96 112,370 118,300 124,370 200,370 215,338 225,370 240,332 252,370 268,341 278,370 295,336 308,370 330,370 398,370 405,196 412,370 470,370 530,370 638,370 645,132 652,370 700,370 740,370" fill="none" stroke="#E8F1FB" stroke-width="2"/>
+
+  <!-- labels on signals -->
+  <text x="112" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">initial pulse</text>
+  <text x="262" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">grass ~12%</text>
+  <text x="405" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">indication 62%</text>
+  <text x="645" y="418" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#1E9E6A">back wall 85%</text>
+
+  <!-- arrow from indication peak to recording line -->
+  <line x1="405" y1="196" x2="405" y2="184" stroke="#D14343" stroke-width="0"/>
+  <text x="405" y="178" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#E8F1FB">record this</text>
+
+  <text x="400" y="444" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">recording level = 50% of reference &#183; 6 dB below 80% FSH is 40% FSH</text>
+</svg>

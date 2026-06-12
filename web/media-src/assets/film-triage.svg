@@ -1,0 +1,181 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="ftrGlowC" filterUnits="userSpaceOnUse" x="-58" y="20" width="116" height="300">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ftrGlowR" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ftrSoft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6"/>
+    </filter>
+    <linearGradient id="ftrIllumG" x1="0" y1="88" x2="0" y2="252" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9fd0f2"/><stop offset=".5" stop-color="#5b97d4"/><stop offset="1" stop-color="#3a72ad"/>
+    </linearGradient>
+    <linearGradient id="ftrFilmG" x1="0" y1="102" x2="0" y2="238" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1a3458"/><stop offset=".5" stop-color="#142b4a"/><stop offset="1" stop-color="#0e2240"/>
+    </linearGradient>
+    <linearGradient id="ftrWeldG" x1="0" y1="149" x2="0" y2="191" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bfe2ff" stop-opacity=".08"/>
+      <stop offset=".5" stop-color="#cfe9ff" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#bfe2ff" stop-opacity=".08"/>
+    </linearGradient>
+    <radialGradient id="ftrSpatG">
+      <stop offset="0" stop-color="#eaf6ff" stop-opacity=".9"/>
+      <stop offset=".55" stop-color="#bfe2ff" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#bfe2ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ftrVigG" cx="300" cy="170" r="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9fd4ff" stop-opacity=".05"/>
+      <stop offset=".6" stop-color="#9fd4ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#010815" stop-opacity=".4"/>
+    </radialGradient>
+    <linearGradient id="ftrScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+    <clipPath id="ftrFilmClip">
+      <path d="M56 102 H544 L558 116 V224 L544 238 H56 L42 224 V116 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- caption -->
+  <text x="40" y="24" font-size="11" fill="#9fe6ff" opacity=".7" letter-spacing="1">GIRTH-WELD FILM // ON THE VIEWER</text>
+
+  <!-- ===== LIGHT FIELD (illuminator strip) ===== -->
+  <rect x="22" y="84" width="556" height="172" rx="16" fill="#6fb2e8" opacity=".25" filter="url(#ftrSoft)"/>
+  <rect x="26" y="88" width="548" height="164" rx="14" fill="url(#ftrIllumG)" opacity=".5"/>
+  <rect x="26" y="88" width="548" height="164" rx="14" fill="none" stroke="#dff2ff" stroke-width="1" opacity=".25"/>
+
+  <!-- ===== FILM STRIP (clipped corners) ===== -->
+  <path d="M56 102 H544 L558 116 V224 L544 238 H56 L42 224 V116 Z" fill="url(#ftrFilmG)"/>
+  <g clip-path="url(#ftrFilmClip)">
+    <!-- faint scan-line texture -->
+    <g stroke="#bfe2ff" stroke-width="1" opacity=".05">
+      <line x1="42" y1="114" x2="558" y2="114"/><line x1="42" y1="128" x2="558" y2="128"/>
+      <line x1="42" y1="142" x2="558" y2="142"/><line x1="42" y1="156" x2="558" y2="156"/>
+      <line x1="42" y1="170" x2="558" y2="170"/><line x1="42" y1="184" x2="558" y2="184"/>
+      <line x1="42" y1="198" x2="558" y2="198"/><line x1="42" y1="212" x2="558" y2="212"/>
+      <line x1="42" y1="226" x2="558" y2="226"/>
+    </g>
+
+    <!-- WELD IMAGE: thicker cap prints lighter, ripply edges -->
+    <path d="M42 151 C120 148 200 153 300 150 C400 147 480 152 558 149 L558 190 C480 193 400 188 300 191 C200 194 120 189 42 192 Z" fill="url(#ftrWeldG)"/>
+    <path d="M42 151 C120 148 200 153 300 150 C400 147 480 152 558 149" fill="none" stroke="#cfe9ff" stroke-width="1" opacity=".25"/>
+    <path d="M42 192 C120 189 200 194 300 191 C400 188 480 193 558 190" fill="none" stroke="#cfe9ff" stroke-width="1" opacity=".25"/>
+    <!-- root pass prints as a narrow lighter stripe down the middle -->
+    <path d="M42 167 C140 165 260 169 380 167 C440 166 500 168 558 166 L558 175 C500 177 440 175 380 176 C260 178 140 174 42 176 Z" fill="#dff2ff" opacity=".09"/>
+    <!-- faint transverse cap ripple -->
+    <g stroke="#dff2ff" stroke-width="3" opacity=".06" fill="none">
+      <path d="M70 153 Q77 170 70 189"/><path d="M104 152 Q111 170 104 190"/>
+      <path d="M138 152 Q145 170 138 190"/><path d="M172 153 Q179 170 172 191"/>
+      <path d="M206 152 Q213 170 206 191"/><path d="M240 151 Q247 170 240 191"/>
+      <path d="M274 151 Q281 170 274 191"/><path d="M308 150 Q315 170 308 191"/>
+      <path d="M342 150 Q349 170 342 190"/><path d="M376 150 Q383 169 376 190"/>
+      <path d="M410 149 Q417 169 410 189"/><path d="M444 150 Q451 169 444 190"/>
+      <path d="M478 150 Q485 170 478 190"/><path d="M512 150 Q519 170 512 190"/>
+    </g>
+
+    <!-- MARK 1 · CRIMP: crescent kink, upper-left, OFF the weld -->
+    <g id="ftrCrimpMark">
+      <path d="M110 134 A16 16 0 0 1 133 119 A24 24 0 0 0 110 134 Z" fill="#03101f" opacity=".85"/>
+      <path d="M113 138 A19 19 0 0 1 137 122" fill="none" stroke="#03101f" stroke-width="1" opacity=".4"/>
+    </g>
+
+    <!-- MARK 2 · SPATTER: small rounded light blobs at the weld toe -->
+    <g id="ftrSpatMark">
+      <circle cx="281" cy="199" r="2.4" fill="url(#ftrSpatG)"/>
+      <circle cx="294" cy="205" r="3.2" fill="url(#ftrSpatG)"/>
+      <circle cx="288" cy="193" r="1.7" fill="url(#ftrSpatG)"/>
+      <circle cx="308" cy="197" r="2.1" fill="url(#ftrSpatG)"/>
+      <circle cx="318" cy="204" r="2.8" fill="url(#ftrSpatG)"/>
+      <circle cx="303" cy="211" r="1.8" fill="url(#ftrSpatG)"/>
+      <circle cx="330" cy="199" r="2.2" fill="url(#ftrSpatG)"/>
+    </g>
+
+    <!-- MARK 3 · SLAG LINE: fine wandering dark line along the weld image -->
+    <g id="ftrSlagMark">
+      <path d="M368 176 C378 170 388 179 398 175 C408 171 414 165 424 169 C434 173 440 178 450 174 C460 170 466 163 476 167 C486 171 494 173 505 168" fill="none" stroke="#03101f" stroke-width="2" stroke-linecap="round" opacity=".8"/>
+      <path d="M424 169 l5 -4 M450 174 l4 4 M476 167 l3 -4" fill="none" stroke="#03101f" stroke-width="1.1" stroke-linecap="round" opacity=".55"/>
+    </g>
+
+    <!-- film ID tag (lead characters print light) -->
+    <text x="540" y="230" text-anchor="end" font-size="10" fill="#cfe9ff" opacity=".5" letter-spacing="1">W-204 · GW 7 · 0–1</text>
+    <rect x="42" y="102" width="516" height="136" fill="url(#ftrVigG)"/>
+  </g>
+  <!-- film rim light -->
+  <path d="M56 102 H544 L558 116 V224 L544 238 H56 L42 224 V116 Z" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".5" filter="url(#ftrGlowR)"/>
+
+  <!-- ===== REVEAL 1 · CRIMP RING ===== -->
+  <g id="ftrCrimp" opacity="0">
+    <circle cx="122" cy="127" r="18" fill="none" stroke="#9fe6ff" stroke-width="1.6" opacity=".9" filter="url(#ftrGlowR)"/>
+  </g>
+
+  <!-- ===== REVEAL 2 · CRIMP TAG (dim / stays on the film) ===== -->
+  <g id="ftrCrimpTag" opacity="0">
+    <line x1="122" y1="62" x2="122" y2="102" stroke="#9fe6ff" stroke-width="1.2" opacity=".6"/>
+    <path d="M122 107 L118.6 100.5 L125.4 100.5 Z" fill="#9fe6ff" opacity=".7"/>
+    <rect x="46" y="36" width="218" height="24" rx="5" fill="rgba(10,30,60,.72)" stroke="#9fe6ff" stroke-width="1" opacity=".95" stroke-opacity=".4"/>
+    <path d="M55 41 h8 l4 4 v10 h-12 z" fill="none" stroke="#9fe6ff" stroke-width="1" opacity=".7"/>
+    <path d="M63 41 v4 h4" fill="none" stroke="#9fe6ff" stroke-width="1" opacity=".7"/>
+    <text x="74" y="52" font-size="11" fill="#9fe6ff" opacity=".8" letter-spacing=".5">FALSE // LIVES ON THE FILM</text>
+  </g>
+
+  <!-- ===== REVEAL 3 · SPATTER RING ===== -->
+  <g id="ftrSpatter" opacity="0">
+    <ellipse cx="305" cy="202" rx="42" ry="17" fill="none" stroke="#9fe6ff" stroke-width="1.5" stroke-dasharray="5 4" opacity=".9"/>
+  </g>
+
+  <!-- ===== REVEAL 4 · PART INSET (verify on the pipe) ===== -->
+  <g id="ftrPartInset" opacity="0">
+    <path d="M263 202 H180 V248" fill="none" stroke="#9fe6ff" stroke-width="1.2" opacity=".6"/>
+    <path d="M180 253 L176.6 246.5 L183.4 246.5 Z" fill="#9fe6ff" opacity=".7"/>
+    <rect x="56" y="256" width="170" height="76" rx="8" fill="rgba(10,30,60,.72)" stroke="#9fe6ff" stroke-width="1" stroke-opacity=".4"/>
+    <!-- pipe surface sketch -->
+    <path d="M68 272 Q134 265 200 272" fill="none" stroke="#9fe6ff" stroke-width="1.5" opacity=".75"/>
+    <path d="M68 302 Q134 309 200 302" fill="none" stroke="#9fe6ff" stroke-width="1.5" opacity=".75"/>
+    <path d="M68 272 A9 15 0 0 0 68 302" fill="none" stroke="#9fe6ff" stroke-width="1.5" opacity=".75"/>
+    <path d="M200 272 A9 15 0 0 1 200 302" fill="none" stroke="#9fe6ff" stroke-width="1.2" opacity=".45"/>
+    <!-- girth bead crossing the pipe -->
+    <path d="M104 269 Q109 287 104 305 L118 305 Q113 287 118 269 Z" fill="#cfe9ff" opacity=".14"/>
+    <path d="M104 269 Q109 287 104 305 M118 269 Q113 287 118 305" fill="none" stroke="#cfe9ff" stroke-width="1.4" opacity=".8"/>
+    <!-- the same spatter, physically on the part -->
+    <circle cx="130" cy="283" r="2.2" fill="#dff2ff" opacity=".95"/>
+    <circle cx="140" cy="291" r="2.8" fill="#dff2ff" opacity=".95"/>
+    <circle cx="151" cy="280" r="2" fill="#dff2ff" opacity=".95"/>
+    <circle cx="158" cy="293" r="2.4" fill="#dff2ff" opacity=".95"/>
+    <circle cx="147" cy="299" r="1.7" fill="#dff2ff" opacity=".95"/>
+    <circle cx="166" cy="285" r="1.9" fill="#dff2ff" opacity=".95"/>
+    <!-- verified check -->
+    <circle cx="200" cy="318" r="8" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".95"/>
+    <path d="M196 318 l3 3 l5.5 -6.5" fill="none" stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="68" y="322" font-size="10" fill="#9fe6ff" opacity=".85" letter-spacing=".5">ON THE PART</text>
+  </g>
+
+  <!-- ===== REVEAL 5 · SPATTER TAG (dim / part feature) ===== -->
+  <g id="ftrSpatterTag" opacity="0">
+    <rect x="238" y="258" width="212" height="24" rx="5" fill="rgba(10,30,60,.72)" stroke="#9fe6ff" stroke-width="1" stroke-opacity=".4"/>
+    <text x="248" y="274" font-size="11" fill="#9fe6ff" opacity=".8" letter-spacing=".5">NONRELEVANT // PART FEATURE</text>
+  </g>
+
+  <!-- ===== REVEAL 6 · SLAG DRAWS BRIGHT ===== -->
+  <path id="ftrSlag" d="M368 176 C378 170 388 179 398 175 C408 171 414 165 424 169 C434 173 440 178 450 174 C460 170 466 163 476 167 C486 171 494 173 505 168" fill="none" stroke="#5fe0ff" stroke-width="2.4" filter="url(#ftrGlowR)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <circle id="ftrSlagPing" cx="436" cy="172" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#ftrGlowR)"/>
+
+  <!-- ===== REVEAL 7 · RELEVANT TAG (hot — moves forward) ===== -->
+  <g id="ftrSlagTag" opacity="0">
+    <line x1="436" y1="62" x2="436" y2="140" stroke="#5fe0ff" stroke-width="1.2" opacity=".85"/>
+    <path d="M436 146 L432.6 139.5 L439.4 139.5 Z" fill="#5fe0ff"/>
+    <rect x="368" y="34" width="192" height="26" rx="5" fill="rgba(14,40,72,.9)" stroke="#5fe0ff" stroke-width="1.6" filter="url(#ftrGlowR)"/>
+    <text x="380" y="51" font-size="11" fill="#eaf6ff" letter-spacing=".5">RELEVANT // EVALUATE</text>
+    <path d="M534 47 h14 m0 0 l-4.5 -4 m4.5 4 l-4.5 4" fill="none" stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ===== scan sweep ===== -->
+  <g id="ftrscanG" transform="translate(60,0)">
+    <rect x="-30" y="88" width="30" height="164" fill="url(#ftrScanFade)"/>
+    <line x1="0" y1="84" x2="0" y2="256" stroke="#5fe0ff" stroke-width="2" filter="url(#ftrGlowC)" opacity=".9"/>
+  </g>
+</svg>

@@ -1,0 +1,128 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="artGlow" filterUnits="userSpaceOnUse" x="-40" y="-40" width="680" height="420">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="artSoft" filterUnits="userSpaceOnUse" x="-40" y="-40" width="680" height="420">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+    </filter>
+    <linearGradient id="artIllumG" x1="0" y1="54" x2="0" y2="228" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9fd0f2"/><stop offset=".5" stop-color="#5b97d4"/><stop offset="1" stop-color="#3a72ad"/>
+    </linearGradient>
+    <linearGradient id="artFilmG" x1="0" y1="64" x2="0" y2="218" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#21446d"/><stop offset=".5" stop-color="#1a3a5e"/><stop offset="1" stop-color="#132d4e"/>
+    </linearGradient>
+    <linearGradient id="artBandG" x1="0" y1="112" x2="0" y2="168" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bfe2ff" stop-opacity="0"/><stop offset=".3" stop-color="#bfe2ff" stop-opacity=".15"/>
+      <stop offset=".7" stop-color="#bfe2ff" stop-opacity=".15"/><stop offset="1" stop-color="#bfe2ff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="artVigG" cx="300" cy="141" r="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9fd4ff" stop-opacity=".05"/>
+      <stop offset=".6" stop-color="#9fd4ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#010815" stop-opacity=".38"/>
+    </radialGradient>
+    <radialGradient id="artBellG">
+      <stop offset="0" stop-color="#f2faff" stop-opacity=".95"/><stop offset=".62" stop-color="#cfe9ff" stop-opacity=".8"/><stop offset="1" stop-color="#9fcdf0" stop-opacity=".15"/>
+    </radialGradient>
+    <clipPath id="artStripClip"><rect x="30" y="64" width="540" height="154" rx="8"/></clipPath>
+    <!-- crescent (kink) lune: sharp tips at +-9,0 -->
+    <path id="artCrescP" d="M -9 0 A 9.5 8.6 0 0 1 9 0 A 10.5 2.6 0 0 0 -9 0 Z"/>
+  </defs>
+
+  <!-- caption -->
+  <text x="30" y="16" font-size="12" fill="#9fe6ff" opacity=".7" letter-spacing="1">READING ROOM // ARTIFACT SIGNATURES</text>
+
+  <!-- ===== ILLUMINATOR (static viewer awaiting film) ===== -->
+  <rect x="18" y="50" width="564" height="182" rx="16" fill="#6fb2e8" opacity=".22" filter="url(#artSoft)"/>
+  <rect x="22" y="54" width="556" height="174" rx="13" fill="url(#artIllumG)" opacity=".4"/>
+  <rect x="22" y="54" width="556" height="174" rx="13" fill="none" stroke="#dff2ff" stroke-width="1" opacity=".28"/>
+  <!-- steel film clips -->
+  <g fill="#14304f" stroke="#8fb6e0" stroke-width="1.2">
+    <rect x="140" y="48" width="26" height="20" rx="3"/>
+    <rect x="434" y="48" width="26" height="20" rx="3"/>
+  </g>
+  <line x1="145" y1="58" x2="161" y2="58" stroke="#8fb6e0" stroke-width="1" opacity=".6"/>
+  <line x1="439" y1="58" x2="455" y2="58" stroke="#8fb6e0" stroke-width="1" opacity=".6"/>
+
+  <!-- ===== REVEAL 1: BASE FILM STRIP with faint weld image ===== -->
+  <g id="artStrip" opacity="0">
+    <rect x="30" y="64" width="540" height="154" rx="8" fill="url(#artFilmG)"/>
+    <g clip-path="url(#artStripClip)">
+      <!-- faint longitudinal weld image: lighter reinforcement band + wavy toe lines -->
+      <rect x="30" y="112" width="540" height="56" fill="url(#artBandG)"/>
+      <path d="M30 117 C90 113, 150 120, 215 116 S340 119, 415 115 S540 119, 570 116" fill="none" stroke="#bfe2ff" stroke-width="1.3" opacity=".26"/>
+      <path d="M30 163 C90 166, 150 160, 215 164 S340 161, 415 165 S540 161, 570 164" fill="none" stroke="#bfe2ff" stroke-width="1.3" opacity=".26"/>
+      <!-- faint film grain scan lines -->
+      <g stroke="#bfe2ff" stroke-width="1" opacity=".04">
+        <line x1="30" y1="80" x2="570" y2="80"/><line x1="30" y1="100" x2="570" y2="100"/>
+        <line x1="30" y1="120" x2="570" y2="120"/><line x1="30" y1="140" x2="570" y2="140"/>
+        <line x1="30" y1="160" x2="570" y2="160"/><line x1="30" y1="180" x2="570" y2="180"/>
+        <line x1="30" y1="200" x2="570" y2="200"/>
+      </g>
+      <rect x="30" y="64" width="540" height="154" fill="url(#artVigG)"/>
+      <!-- lead ID prints light -->
+      <text x="168" y="208" text-anchor="middle" font-size="10" fill="#cfe9ff" opacity=".42" letter-spacing="1">FILM 12 - W6</text>
+    </g>
+    <rect x="30" y="64" width="540" height="154" rx="8" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".7"/>
+    <rect x="30" y="64" width="540" height="154" rx="8" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".35"/>
+  </g>
+
+  <!-- ===== REVEAL 2: CRIMP BEFORE EXPOSURE - LIGHT crescents ===== -->
+  <g id="artCrimpLight" opacity="0">
+    <g filter="url(#artGlow)">
+      <use href="#artCrescP" transform="translate(86,106) rotate(-30) scale(1.4)" fill="#e9f6ff" fill-opacity=".92" stroke="#f4fbff" stroke-width=".6"/>
+      <use href="#artCrescP" transform="translate(110,132) rotate(150) scale(1.05)" fill="#e9f6ff" fill-opacity=".88" stroke="#f4fbff" stroke-width=".6"/>
+      <use href="#artCrescP" transform="translate(90,156) rotate(55) scale(.85)" fill="#e9f6ff" fill-opacity=".85" stroke="#f4fbff" stroke-width=".6"/>
+    </g>
+    <ellipse cx="96" cy="130" rx="38" ry="50" fill="none" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="4 4" opacity=".5"/>
+    <line x1="96" y1="180" x2="96" y2="232" stroke="#5fe0ff" stroke-width="1" opacity=".45"/>
+    <rect x="10" y="232" width="172" height="38" rx="6" fill="#0a1e3c" fill-opacity=".8" stroke="#5fe0ff" stroke-opacity=".45" stroke-width="1"/>
+    <text x="96" y="247" text-anchor="middle" font-size="11" fill="#9fe6ff">CRIMP - BEFORE EXPOSURE</text>
+    <circle cx="78" cy="259" r="3.2" fill="#eaf6ff"/>
+    <text x="101" y="263" text-anchor="middle" font-size="10" fill="#eaf6ff" opacity=".95">LIGHT</text>
+  </g>
+
+  <!-- ===== REVEAL 3: CRIMP AFTER EXPOSURE - matching DARK crescents ===== -->
+  <g id="artCrimpDark" opacity="0">
+    <use href="#artCrescP" transform="translate(230,106) rotate(-30) scale(1.4)" fill="#020a18" fill-opacity=".96" stroke="#01060f" stroke-width=".6"/>
+    <use href="#artCrescP" transform="translate(254,132) rotate(150) scale(1.05)" fill="#020a18" fill-opacity=".94" stroke="#01060f" stroke-width=".6"/>
+    <use href="#artCrescP" transform="translate(234,156) rotate(55) scale(.85)" fill="#020a18" fill-opacity=".92" stroke="#01060f" stroke-width=".6"/>
+    <ellipse cx="240" cy="130" rx="38" ry="50" fill="none" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="4 4" opacity=".5"/>
+    <line x1="240" y1="180" x2="240" y2="232" stroke="#5fe0ff" stroke-width="1" opacity=".45"/>
+    <rect x="188" y="232" width="104" height="38" rx="6" fill="#0a1e3c" fill-opacity=".8" stroke="#5fe0ff" stroke-opacity=".45" stroke-width="1"/>
+    <text x="240" y="247" text-anchor="middle" font-size="11" fill="#9fe6ff">CRIMP - AFTER</text>
+    <circle cx="224" cy="259" r="3.2" fill="#050f1f" stroke="#8fb6e0" stroke-width=".8"/>
+    <text x="245" y="263" text-anchor="middle" font-size="10" fill="#7f9cc4" opacity=".95">DARK</text>
+  </g>
+
+  <!-- ===== REVEAL 4: STATIC - dark branching filaments (draw-on) ===== -->
+  <g id="artStatic" opacity="0">
+    <path id="artStaticTrace" d="M374 86 L380 102 L375 118 L383 136 L378 152 L383 168 M380 102 L392 111 L400 123 M392 111 L401 107 M375 118 L362 128 L356 141 M362 128 L353 125 M383 136 L396 145 L401 157 M396 145 L403 141 M378 152 L366 161 L360 169 M383 168 L390 176" fill="none" stroke="#020b18" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <ellipse cx="380" cy="130" rx="42" ry="50" fill="none" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="4 4" opacity=".5"/>
+    <line x1="380" y1="180" x2="380" y2="232" stroke="#5fe0ff" stroke-width="1" opacity=".45"/>
+    <rect x="344" y="232" width="72" height="38" rx="6" fill="#0a1e3c" fill-opacity=".8" stroke="#5fe0ff" stroke-opacity=".45" stroke-width="1"/>
+    <text x="380" y="247" text-anchor="middle" font-size="11" fill="#9fe6ff">STATIC</text>
+    <circle cx="364" cy="259" r="3.2" fill="#050f1f" stroke="#8fb6e0" stroke-width=".8"/>
+    <text x="385" y="263" text-anchor="middle" font-size="10" fill="#7f9cc4" opacity=".95">DARK</text>
+  </g>
+
+  <!-- ===== REVEAL 5: AIR BELLS - light round spots ===== -->
+  <g id="artAirBells" opacity="0">
+    <g filter="url(#artGlow)">
+      <circle cx="490" cy="104" r="3.2" fill="url(#artBellG)"/>
+      <circle cx="512" cy="97" r="2.6" fill="url(#artBellG)"/>
+      <circle cx="526" cy="116" r="4.4" fill="url(#artBellG)"/>
+      <circle cx="496" cy="132" r="5" fill="url(#artBellG)"/>
+      <circle cx="518" cy="143" r="3.5" fill="url(#artBellG)"/>
+      <circle cx="502" cy="159" r="2.9" fill="url(#artBellG)"/>
+      <circle cx="532" cy="155" r="2.3" fill="url(#artBellG)"/>
+    </g>
+    <ellipse cx="508" cy="130" rx="42" ry="48" fill="none" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="4 4" opacity=".5"/>
+    <line x1="508" y1="178" x2="508" y2="232" stroke="#5fe0ff" stroke-width="1" opacity=".45"/>
+    <rect x="466" y="232" width="84" height="38" rx="6" fill="#0a1e3c" fill-opacity=".8" stroke="#5fe0ff" stroke-opacity=".45" stroke-width="1"/>
+    <text x="508" y="247" text-anchor="middle" font-size="11" fill="#9fe6ff">AIR BELLS</text>
+    <circle cx="490" cy="259" r="3.2" fill="#eaf6ff"/>
+    <text x="513" y="263" text-anchor="middle" font-size="10" fill="#eaf6ff" opacity=".95">LIGHT</text>
+  </g>
+</svg>

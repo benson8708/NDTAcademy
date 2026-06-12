@@ -1,0 +1,179 @@
+{
+ "lessonId": "ut2-7-2",
+ "title": "Amplitude-Area-Distance Relationships and Other NDT Results",
+ "narrationScript": "Every echo you evaluate is the product of three things. How big the reflector is, how far away it is, and everything else, which calibration is supposed to hold constant. This lesson is about the first two, the amplitude, area, and distance relationships that let you fairly compare an indication deep in a weld with a reference hole at a different depth, and then about what to do when ultrasound alone cannot finish the story. Start with size. For a small flat reflector in the far field, one smaller than the beam, the echo amplitude is proportional to the reflector's area. Double the diameter of a flat bottom hole and you quadruple its area, and the echo comes back four times taller. In decibel language that is twelve decibels per doubling of diameter, or six decibels per doubling of area. This area law is the engine behind area amplitude block sets, and behind every equivalent reflector size statement you will ever write. But remember the floor from your Level One training. Reflectors much smaller than half a wavelength stop returning useful energy at all, so there is a physical limit underneath the arithmetic. Now distance. Echoes fall as the beam spreads and as the metal attenuates. In the far field, geometry alone gives simple rules of thumb. A large flat reflector like a back wall intercepts the whole beam, and its echo falls roughly in proportion to one over the distance, about six decibels per doubling. A side drilled hole is a cylinder. It spreads the reflected energy in one extra dimension and falls roughly nine decibels per doubling of distance. A small disc shaped reflector, a flat bottom hole or a compact flaw, falls fastest, roughly twelve decibels per doubling, one over distance squared. On top of the geometry, material attenuation takes its cut in decibels per millimeter, charged both directions, and in coarse grained material that term can dominate everything else. Here is why this matters. The same flaw at three quarters of the thickness reads far lower than it would at one quarter thickness. If you judged raw screen height, you would systematically pass deep flaws and fail shallow ones. The fix is distance amplitude correction. Shoot the same reference reflector at several depths, side drilled holes at one quarter, one half, and three quarters of the thickness, mark each peak on the screen, and connect the marks. That curve, the DAC, is your acceptance line sliding down the screen with distance, and an indication is judged against the curve at its own soundpath, as a percentage of DAC. Time corrected gain does the same job electronically. It adds gain with time so that equal reflectors read equal height at any depth, a flat line instead of a falling curve. The DGS method takes a third route. It uses a published diagram for your specific probe that ties together distance, gain, and reflector size, so you can set sensitivity for a chosen equivalent flat bottom hole size starting from a back wall echo, with attenuation and transfer corrections added in decibels. Whatever the tool, the principle is identical. Amplitude is only meaningful after distance has been corrected away. Run one example in your head. Your reference sets eighty percent screen height. At the indication's depth the DAC has fallen to sixty four percent. The indication peaks at thirty two percent, exactly half the curve value. Twenty times the log of one half is minus six, so you record fifty percent of DAC, six decibels below the curve. That number, with location and length, is what the acceptance table wants to see. Finally, no single method sees everything. Ultrasound excels at planar flaws facing the beam and gives you depth, which radiography cannot. Radiography images volume, slag and porosity, and shows what a reflector actually looks like in plan view. Magnetic particle and penetrant settle whether something is open to the surface, which often changes the acceptance class entirely. Mature evaluation reads them together. A strong planar ultrasonic response with a clean radiograph usually does not mean the radiograph wins. It usually means a tight crack the x rays could not see. A modest ultrasonic indication that radiography shows as a smooth slag line moves to the volumetric clause. When methods disagree, you never average them. You ask which method is blind in this particular situation, lean toward the conservative reading that explains all the evidence, and document the results of every method in the record. The disposition belongs to the evidence, not to one screen.",
+ "imagePrompt": "A technician marks a distance-amplitude correction curve across a flaw detector screen with a grease pencil while an angle-beam probe rests on a thick calibration block with drilled holes, weld coupons and a radiographic film viewer nearby in the lab.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Size: Echo Amplitude Tracks Area",
+   "body": "Hold distance and setup constant, and the echo from a small reflector — one smaller than the beam — is governed by the **area** it presents to the beam. In the far field a flat disc returns amplitude proportional to its area: double an FBH's diameter, the area quadruples, and the echo rises four-fold, which is **+12 dB** (ΔdB = 20·log₁₀(A₂/A₁) = 20·log₁₀(4) ≈ 12). Equivalently, **+6 dB per doubling of area**. That area law is what makes area-amplitude block sets meaningful, and it is the arithmetic inside every equivalent-reflector-size statement you will write.\n\nTwo cautions. First, the law applies while the reflector stays *small relative to the beam*. Once a reflector intercepts essentially the whole beam — a back wall, a gross lamination — the response saturates, and further size growth raises length, not height. That is why 6 dB-drop length sizing exists for flaws bigger than the beam. Second, the **λ/2 floor** still stands: reflectors much smaller than half a wavelength return little useful energy no matter what the area arithmetic promises."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-7-2-fig-a",
+   "caption": "Far-field rules of thumb: back wall falls about 6 dB, a side-drilled hole about 9 dB, and a small disc reflector about 12 dB per doubling of distance — while doubling an FBH diameter raises its echo 12 dB."
+  },
+  {
+   "type": "text",
+   "heading": "Distance: How Echoes Fall",
+   "body": "Past the near field, beam spread dilutes the energy that reaches a reflector and returns from it. The far-field rules of thumb, before attenuation:\n\n- **Large plane reflector** (back wall): amplitude falls about as 1/d — roughly **−6 dB per doubling** of distance. It intercepts the whole spreading beam, so only the one-way-style spreading shows.\n- **Side-drilled hole** (cylinder): the reflection spreads in one extra dimension — roughly **−9 dB per doubling**.\n- **Small disc reflector** (FBH, compact flaw): spreading applies both ways — amplitude falls about as 1/d², roughly **−12 dB per doubling**.\n\nOn top of geometry, **material attenuation** charges so many dB per millimeter, *both directions*, and in coarse-grained austenitic or cast material the scattering term (rising steeply with frequency) can dwarf the geometric loss.\n\nThe evaluation consequence is blunt: the same flaw reads far lower at 3T/4 than at T/4. Judge raw screen height and you will systematically accept deep flaws and reject shallow ones. Every legitimate amplitude evaluation therefore corrects for distance first."
+  },
+  {
+   "type": "text",
+   "heading": "DAC, TCG, and DGS",
+   "body": "Three standard tools perform the distance correction:\n\n- **DAC (distance-amplitude correction)**: shoot the *same* reference reflector at several soundpaths — SDHs at **T/4, T/2, 3T/4** in an ASME-style basic calibration block — peak each response, and connect the points across the screen. The curve is the reference level sliding down with distance; indications are evaluated **as a percentage of DAC at their own soundpath**, with supplementary points added where the curve must cover longer ranges.\n- **TCG (time-corrected gain)**: the instrument adds gain as a function of time so equal reflectors read equal height at every depth — the DAC flattened into a horizontal line. Identical physics, more convenient screen, standard in digital instruments and phased-array work.\n- **DGS/AVG**: a probe-specific published diagram relating normalized **distance**, **gain**, and equivalent reflector **size**. Set sensitivity from a back-wall echo, dial in the gain the diagram demands for the chosen equivalent FBH diameter, and read indications as ERS without drilling a curve's worth of holes. It demands the correct diagram for the exact probe and explicit **attenuation and transfer corrections** in dB.\n\nAll three answer the same question: *what would this echo be if distance were not in the way?*"
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-7-2-fig-b",
+   "caption": "A DAC screen in use: two indications and a back-wall echo — the taller indication sits under the curve at its range while the shorter one at longer soundpath breaks it."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Judge amplitude at the indication's own distance",
+   "body": "Never compare two echoes by raw height at different ranges. Indication height means nothing until it is read **against the DAC/TCG/DGS reference at its own soundpath**, with attenuation and transfer corrections applied. The tallest echo on the screen is frequently not the worst flaw in the weld."
+  },
+  {
+   "type": "text",
+   "heading": "Working the Corrections",
+   "body": "A disposition-grade amplitude statement is built in dB, step by step. Example: reference SDH set to 80% FSH. At the indication's soundpath the DAC has fallen to **64% FSH**; the indication peaks at **32% FSH**. Then 32/64 = 0.5, and 20·log₁₀(0.5) ≈ **−6 dB**: record \"50% of DAC (−6 dB)\" — *not* \"32% FSH,\" which is meaningless without the curve.\n\nNow add the real-world terms. If transfer measurement showed the part's surface costs **4 dB** relative to the calibration block, that 4 dB is added to the reference gain before evaluation — otherwise every indication in the part is silently under-read by 4 dB. If the procedure's attenuation survey shows the part attenuates more per millimeter than the block, the extra loss is credited at the indication's metal path. The corrections always move in the conservative direction for detection: when the part steals signal, you give the gain back. An evaluator who can show each dB in the chain — reference, transfer, attenuation, indication reading — has an evaluation that survives audit."
+  },
+  {
+   "type": "text",
+   "heading": "Reading UT Alongside Other NDT Methods",
+   "body": "CP-105 expects an evaluator to fold the **results of other NDT methods** into the ultrasonic disposition, because every method has blind spots and the flaw does not care which method you like:\n\n- **UT** detects planar flaws facing the beam superbly and measures **depth** — but characterizes shape poorly and can under-call unfavorably oriented or transparent flaws.\n- **RT** images **volumetric** flaws (slag, porosity, shrink) in plan view and identifies what a discontinuity *is* — but is notoriously weak on tight planar flaws misaligned with the radiation beam, and gives little depth information.\n- **MT/PT** establish whether a discontinuity is **open to the surface** — which frequently moves it to a harsher acceptance class.\n- **ET** finds surface-breaking flaws in nonferrous and thin material where MT cannot go.\n\nThe combining rules: corroborate, never average. A strong planar UT response with a clean radiograph usually means a **tight crack RT could not see** — the UT call stands. A modest UT indication that RT shows as a smooth continuous slag line is evaluated under the **volumetric** clause. MT confirmation of surface connection overrides a \"subsurface\" assumption. Record every method's result in the evaluation file; the disposition must explain *all* the evidence, not just the most convenient screen."
+  },
+  {
+   "type": "table",
+   "caption": "What each method contributes to an integrated disposition.",
+   "headers": ["Method", "Strongest at", "Blind or weak at", "Typical role in UT disposition"],
+   "rows": [
+    ["UT", "Planar flaws facing the beam; depth and through-wall position", "Shape/identity; badly oriented or tight-transparent flaws", "Primary detection, location, and sizing"],
+    ["RT", "Volumetric flaws; plan-view shape and identity", "Tight planar flaws off the beam axis; depth", "Characterize the reflector (slag vs crack-like)"],
+    ["MT / PT", "Surface-breaking flaws (MT: ferromagnetic; PT: any nonporous)", "Subsurface flaws", "Confirm or rule out surface connection"],
+    ["ET", "Surface flaws in nonferrous/thin sections", "Deep subsurface; ferromagnetic noise", "Surface confirmation where MT/PT impractical"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-7-2-fig-a",
+   "title": "Amplitude vs distance and reflector size (far field)",
+   "file": "ut2-7-2-fig-a.svg"
+  },
+  {
+   "id": "ut2-7-2-fig-b",
+   "title": "DAC screen with indications and back-wall echo",
+   "file": "ut2-7-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Which indication breaks the DAC?",
+  "intro": "The screen shows a DAC built from side-drilled holes, two indications found during scanning, and the back-wall echo. Raw height lies — read each echo against the curve at its own range. Click the indication that must be evaluated as exceeding DAC.",
+  "figureId": "ut2-7-2-fig-b",
+  "regions": [
+   {
+    "x": 72,
+    "y": 120,
+    "w": 46,
+    "h": 270,
+    "label": "Initial pulse",
+    "isTarget": false,
+    "feedback": "That is the initial pulse at the entry surface — the dead zone, not an indication."
+   },
+   {
+    "x": 272,
+    "y": 190,
+    "w": 58,
+    "h": 200,
+    "label": "Indication A",
+    "isTarget": false,
+    "feedback": "Tallest echo on the screen, but at its short soundpath the DAC sits higher still — A peaks at about 90% of DAC. Absolute height fooled you; compare to the curve at its range."
+   },
+   {
+    "x": 512,
+    "y": 228,
+    "w": 58,
+    "h": 162,
+    "label": "Indication B",
+    "isTarget": true,
+    "feedback": "Correct. B is shorter than A in screen height, but at its longer soundpath the DAC has fallen well below its peak — B exceeds the curve and goes to evaluation against the acceptance criteria."
+   },
+   {
+    "x": 672,
+    "y": 155,
+    "w": 56,
+    "h": 235,
+    "label": "Back-wall echo",
+    "isTarget": false,
+    "feedback": "That is the back-wall echo at full thickness — geometry, not a flaw. Its fixed position at the known back-wall range identifies it."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "At a fixed depth in the far field, a flat-bottom hole's diameter is increased from 2 mm to 4 mm. The echo amplitude changes by about:",
+   "options": [
+    "+3 dB",
+    "+6 dB",
+    "+12 dB",
+    "+20 dB"
+   ],
+   "correct": 2,
+   "explanation": "Doubling the diameter quadruples the area, and small-reflector amplitude is proportional to area: 20·log₁₀(4) ≈ 12 dB."
+  },
+  {
+   "question": "Neglecting material attenuation, moving from a back-wall echo at 50 mm to one at 100 mm in the far field drops the amplitude by about:",
+   "options": [
+    "3 dB",
+    "6 dB",
+    "9 dB",
+    "12 dB"
+   ],
+   "correct": 1,
+   "explanation": "A large plane reflector intercepts the whole beam, so amplitude falls roughly as 1/d — about 6 dB per doubling of distance. (An SDH falls about 9 dB and a small disc about 12 dB per doubling.)"
+  },
+  {
+   "question": "An indication peaks at 30% FSH at a soundpath where the DAC curve reads 60% FSH. The correct evaluation statement is:",
+   "options": [
+    "30% of DAC — well below reference",
+    "50% of DAC, about 6 dB below the curve",
+    "Exceeds DAC by 30%",
+    "Cannot be evaluated without moving the reflector to T/2"
+   ],
+   "correct": 1,
+   "explanation": "The comparison is made at the indication's own range: 30/60 = 50% of DAC, and 20·log₁₀(0.5) ≈ −6 dB. Raw screen percentage means nothing without the curve value at that soundpath."
+  },
+  {
+   "question": "What does the DGS/AVG method provide that a field-built DAC does not?",
+   "options": [
+    "The true physical size of natural flaws",
+    "Sensitivity set from a back-wall echo and a probe-specific diagram, reading indications as equivalent reflector size without drilling multiple reference holes",
+    "Immunity to attenuation and transfer differences",
+    "A higher probability of detection for surface flaws"
+   ],
+   "correct": 1,
+   "explanation": "DGS uses a published distance-gain-size diagram for the specific probe, so sensitivity can be established from a back wall and indications expressed as equivalent FBH size — but it still requires attenuation and transfer corrections, and ERS is not true flaw size."
+  },
+  {
+   "question": "UT shows a sharp, strong planar response at a weld fusion line, but the radiograph of the same area is clean. The most defensible interpretation is:",
+   "options": [
+    "The radiograph proves the UT indication is false — accept the weld",
+    "Average the two results and accept if the mean is below reference",
+    "A tight planar flaw unfavorably oriented for RT is likely — the UT result stands and the indication is evaluated as planar",
+    "Re-shoot the radiograph until it agrees with UT"
+   ],
+   "correct": 2,
+   "explanation": "RT is weak on tight planar flaws misaligned with the radiation beam — exactly what UT detects best. Methods corroborate; they are never averaged, and a clean film does not erase a valid planar UT response."
+  }
+ ],
+ "references": [
+  "CP-105-2024 UT Evaluation Course §6.1.2 (amplitude, area, and distance relationship)",
+  "CP-105-2024 UT Evaluation Course §6.1.3 (application of results of other NDT methods)",
+  "ASME BPVC Section V, Article 4 (DAC from basic calibration block SDHs) — cited generically",
+  "DGS/AVG sizing practice per probe manufacturers' diagrams and standards such as ISO 16811 — cited generically"
+ ]
+}

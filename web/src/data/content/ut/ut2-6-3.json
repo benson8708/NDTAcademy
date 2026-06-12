@@ -1,0 +1,187 @@
+{
+ "lessonId": "ut2-6-3",
+ "title": "Determining Discontinuity Size",
+ "narrationScript": "Now we get to the question every inspector is really being asked. How big is it. Sizing is harder than detecting, because echo height alone does not give you size. A small flaw squared up to the beam can out echo a large flaw tilted away, and a rounded pore returns far less than a flat crack of the same width. So we use two families of methods, and we choose between them based on whether the flaw is smaller or larger than the beam. The first family is amplitude comparison. When a flaw is smaller than the beam, its echo height rises and falls with its size, so we can compare that height against a known reference reflector at the same depth. We set sensitivity on a side drilled hole or a flat bottomed hole, build a distance amplitude correction curve so equal reflectors read equal at every depth, and then report the flaw as a fraction or multiple of that reference, often in decibels. Remember the decibel math. Twenty times the log of the amplitude ratio. Six decibels is a factor of two in height, twenty decibels is a factor of ten. Amplitude comparison is fast and it is the backbone of code sizing for small reflectors, but it is only as good as the assumption that the flaw reflects like the reference, which rounded and tilted flaws do not. The second family is transducer movement, also called probe motion sizing, and this is where you size by moving rather than by reading a number. The classic is the six decibel drop method. You find the peak echo from the flaw, then move the probe until the echo falls to half its peak height, which is six decibels down. At that half amplitude point the beam center line is taken to be at the edge of the reflector. Mark that probe position. Move the other way through the peak until the echo drops six decibels again, and mark that. The distance the probe traveled between the two half amplitude points is the flaw length, in that direction. The six decibel drop works well when the flaw is larger than the beam. For flaws near or below the beam width, the drop method overstates size, because you are really measuring the beam, not the flaw, so technicians often switch to a twenty decibel drop, or to tip diffraction, where you time the faint signal that diffracts off the very tip of a crack to measure its height directly. Now connect probe movement to the display. As you move the probe, watch how the indication behaves on the screen. A signal that rises smoothly to a single sharp peak and falls away symmetrically behaves like a small, clean reflector. A signal that holds its height across a span of travel, or that breaks into several peaks that come and go, behaves like an extended or multi faceted flaw such as a rough crack or a cluster of porosity. These signal patterns are diagnostic. The way an echo lives and dies as you scan tells you as much as its height. Real flaws are not points, they have length and through wall height, so we size in two dimensions. We measure length by moving the probe along the flaw, and we measure through wall height by moving the probe to change the beam path, or by using tip diffraction, or by reading depth from different angles. On welds we often combine an angle beam length scan with a depth estimate from soundpath and angle. The display you use follows the job. An A scan gives amplitude and time at one position. A B scan stacks positions into a side view that shows depth profile. A C scan maps the plan view footprint. Match the display to the dimension you are trying to report. Sizing is judgment built on method. Pick amplitude comparison or probe movement based on flaw size relative to the beam, read the signal patterns as you scan, and always report size in the dimensions the code asks for, length and through wall extent, not just a single echo height.",
+ "imagePrompt": "An NDT technician marks two pencil lines on a steel plate beside an angle-beam probe while watching the flaw detector screen show an echo dropping to half height, a calibration block with side-drilled holes nearby in an industrial inspection bay.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Why Echo Height Is Not Size",
+   "body": "Sizing is harder than detection, and the trap is assuming a tall echo means a big flaw. It does not. From the last lessons:\n\n- A **small crack** squared up to the beam can out-echo a **large flaw** tilted away.\n- A **rounded pore** returns far less energy than a **flat crack** of the same width, because it scatters.\n- Inside the **near field** or without depth correction, the same reflector reads different heights at different depths.\n\nSo we never size from raw amplitude alone. Two method families do the job, and the choice between them turns on one question: **is the flaw smaller or larger than the beam?**\n\n- **Amplitude comparison** — for reflectors **smaller** than the beam, where echo height tracks size.\n- **Transducer-movement (probe-motion) sizing** — for reflectors **larger** than the beam, where you measure extent by how far the probe moves while the echo holds up.\n\nGetting the regime right is the difference between a defensible size and a guess."
+  },
+  {
+   "type": "text",
+   "heading": "Amplitude Comparison and the Decibel",
+   "body": "When a flaw is smaller than the beam, its echo height rises and falls with its size, so we compare that height against a **known reference reflector** at the same depth — a side-drilled hole (SDH), flat-bottom hole (FBH), or notch. The workflow:\n\n- Set sensitivity on the reference reflector.\n- Build a **distance-amplitude correction (DAC)** curve so equal reflectors read equal at every depth, or apply **time-corrected gain (TCG)**.\n- Report the flaw amplitude as a fraction or multiple of the reference — usually in **decibels**.\n\nKeep the dB math automatic: **ΔdB = 20·log₁₀(A₂/A₁)**. So **+6 dB doubles** amplitude, **+20 dB is ten times**, and **−6 dB is half**. If a flaw echo sits 6 dB below the DAC reference, it is half the reference height; 12 dB below is one quarter.\n\nAmplitude comparison is fast and is the backbone of code sizing for small reflectors — but it is only as valid as the assumption that the flaw reflects **like the reference**, which tilted and rounded flaws do not. That limit is exactly why probe-motion methods exist."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-6-3-fig-a",
+   "caption": "The 6 dB-drop method: the probe moves until the echo falls to half (−6 dB) of its peak, placing the beam centre at each edge; probe travel between the half-amplitude points equals flaw length."
+  },
+  {
+   "type": "text",
+   "heading": "Transducer Movement: The 6 dB-Drop Method",
+   "body": "Probe-motion sizing measures a flaw by **moving the probe**, not by reading a number off one position. The classic is the **6 dB-drop (half-amplitude) method**, used when the flaw is **larger than the beam**:\n\n- Find the **peak** echo from the flaw and note the gain.\n- Move the probe one way until the echo falls to **half its peak height (−6 dB)**. At that point the beam centreline is taken to be at the **edge** of the reflector. Mark the probe position.\n- Move back through the peak and out the other side until the echo drops **6 dB** again, and mark that position.\n- The **distance the probe travelled between the two half-amplitude marks is the flaw extent** in that direction.\n\nThe method rests on the idea that the beam centre is over the reflector edge when the echo is half-height. It works well only when the flaw is **larger than the beam**. For flaws near or below beam width it **overstates** size — you are measuring the beam, not the flaw — so technicians switch to the **20 dB-drop** method (using the −20 dB beam edge) or to **tip diffraction**, where the faint signal diffracting off a crack tip is timed to measure through-wall height directly."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Match the sizing method to the flaw-to-beam ratio",
+   "body": "**Smaller than the beam** → size by **amplitude comparison** against a DAC/reference (echo height tracks size). **Larger than the beam** → size by **probe movement** (6 dB-drop for length, 20 dB-drop or tip diffraction for tighter work). Using the 6 dB-drop on a flaw smaller than the beam reports the **beam width**, not the flaw — a common way to grossly oversize a small reflector. Know which regime you are in before you pick the tool."
+  },
+  {
+   "type": "text",
+   "heading": "Transducer Movement Versus the Display",
+   "body": "As you move the probe, the **way the indication behaves on the screen** is itself diagnostic. Watch the dynamics:\n\n- A signal that rises smoothly to a **single sharp peak** and falls away **symmetrically** behaves like a **small, clean, favourably oriented** reflector — a gas pore, a small inclusion.\n- A signal that **holds its height** across a span of probe travel behaves like an **extended** reflector longer than the beam — a crack or a fusion-line flaw.\n- A signal that **breaks into several peaks** that come and go as the probe moves behaves like a **multi-faceted or clustered** reflector — a rough crack or a porosity cluster, each facet reflecting at a different probe position.\n\nThis is the link between transducer movement and display: amplitude at a single position is one data point, but the **trajectory** of the echo as the probe scans tells you about extent, roughness, and orientation. A Level II reads the echo's life — how it grows, holds, splits, and dies — not just its peak height frozen at one spot."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-6-3-fig-b",
+   "caption": "A-scan during a probe-motion size scan: the peak echo and its half-height (−6 dB) reference line, with a smaller secondary peak revealing a second facet of an irregular reflector."
+  },
+  {
+   "type": "text",
+   "heading": "Two-Dimensional Sizing and Signal Patterns",
+   "body": "Real flaws are not points — they have **length** and **through-wall height** — so sizing is a **two-dimensional** task:\n\n- **Length** is measured by moving the probe **along** the flaw (a 6 dB-drop length scan).\n- **Through-wall height** is measured by changing the **beam path** — moving the probe to read depth at the flaw's upper and lower edges, using **tip diffraction**, or comparing depths from **different angles**.\n\nOn welds this often means an angle-beam **length scan** combined with a **depth estimate** from soundpath and refracted angle (depth = soundpath × cos θ on the first leg). Combining the two gives a flaw map, not a single number.\n\nThe **display** follows the dimension you are reporting. The **A-scan** gives amplitude and depth at one position. The **B-scan** stacks positions into a side view that shows the **depth profile** along a line — ideal for through-wall extent and corrosion profiling. The **C-scan** maps the **plan-view footprint** for areal extent. Match the display to the dimension: never try to report a through-wall profile from a plan-view map, or an area from a single A-scan."
+  },
+  {
+   "type": "table",
+   "caption": "Sizing methods, when they apply, and what they actually measure.",
+   "headers": ["Method", "Use when", "Measures", "Watch out for"],
+   "rows": [
+    ["Amplitude comparison (DAC/reference)", "Flaw smaller than beam", "Size via echo height vs reference (dB)", "Invalid if flaw is tilted or rounded unlike the reference"],
+    ["6 dB-drop (half-amplitude)", "Flaw larger than beam", "Length / extent from probe travel", "Oversizes flaws near or below beam width"],
+    ["20 dB-drop", "Flaw near beam width", "Tighter extent estimate", "Uses the weaker −20 dB beam edge; needs good SNR"],
+    ["Tip diffraction", "Cracks, through-wall height", "Through-wall height from tip signal timing", "Tip signals are faint; needs resolution and care"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-6-3-fig-a",
+   "title": "The 6 dB-drop sizing method",
+   "file": "ut2-6-3-fig-a.svg"
+  },
+  {
+   "id": "ut2-6-3-fig-b",
+   "title": "A-scan during a probe-motion size scan",
+   "file": "ut2-6-3-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Find the Half-Amplitude Point",
+  "intro": "You are sizing a reflector larger than the beam with the 6 dB-drop method. The peak echo reached the top reference line. Click the point on this A-scan that marks a flaw EDGE — where the echo has dropped to half (−6 dB) of its peak height.",
+  "figureId": "ut2-6-3-fig-b",
+  "regions": [
+   {
+    "x": 300,
+    "y": 150,
+    "w": 80,
+    "h": 90,
+    "label": "Peak of main echo",
+    "isTarget": false,
+    "feedback": "That is the peak — full amplitude. The peak marks the probe position over the strongest part of the reflector, not its edge. The edge is where the echo falls to half this height."
+   },
+   {
+    "x": 392,
+    "y": 235,
+    "w": 70,
+    "h": 95,
+    "label": "Half-height (-6 dB) point on the falling slope",
+    "isTarget": true,
+    "feedback": "Correct. At half the peak amplitude (−6 dB) the beam centreline is taken to be at the reflector edge. Mark this probe position; the travel between the two half-height points is the flaw length."
+   },
+   {
+    "x": 520,
+    "y": 250,
+    "w": 70,
+    "h": 80,
+    "label": "Secondary peak",
+    "isTarget": false,
+    "feedback": "That smaller secondary peak reveals a second facet of an irregular reflector — useful for character, but it is not the −6 dB edge point used for the length measurement."
+   },
+   {
+    "x": 90,
+    "y": 110,
+    "w": 90,
+    "h": 30,
+    "label": "Top reference line",
+    "isTarget": false,
+    "feedback": "That is the 100% reference (DAC/peak) line the echo was set to. The sizing edge is at 50% of it, on the falling slope of the echo."
+   },
+   {
+    "x": 630,
+    "y": 350,
+    "w": 110,
+    "h": 40,
+    "label": "Baseline",
+    "isTarget": false,
+    "feedback": "That is the baseline (zero amplitude). The 6 dB-drop edge is at half the peak height, well above the baseline."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A flaw echo sits 6 dB below the DAC reference line. Its amplitude compared with the reference is:",
+   "options": [
+    "About one quarter",
+    "About one half",
+    "Equal",
+    "About double"
+   ],
+   "correct": 1,
+   "explanation": "ΔdB = 20·log₁₀(A₂/A₁); −6 dB corresponds to a ratio of 0.5, so the echo is about half the reference amplitude. −12 dB would be one quarter."
+  },
+  {
+   "question": "The 6 dB-drop (half-amplitude) method is most appropriate for sizing a reflector that is:",
+   "options": [
+    "Smaller than the beam, by comparing echo height to a reference",
+    "Larger than the beam, by measuring probe travel between half-amplitude points",
+    "Rounded, by counting the number of peaks",
+    "At the exact center of the near field"
+   ],
+   "correct": 1,
+   "explanation": "The 6 dB-drop measures extent from probe travel and assumes the beam centre is at the reflector edge at half amplitude. It is valid when the flaw is larger than the beam; on smaller flaws it measures the beam and oversizes."
+  },
+  {
+   "question": "While sizing, you move the probe and the echo holds nearly constant height over a span of travel rather than peaking sharply. This signal pattern most likely indicates:",
+   "options": [
+    "A small point reflector such as a single gas pore",
+    "An extended reflector longer than the beam, such as a crack or fusion-line flaw",
+    "Electrical noise unrelated to a reflector",
+    "A reflector outside the near field only"
+   ],
+   "correct": 1,
+   "explanation": "An echo that maintains height across probe travel comes from a reflector larger than the beam. A small point reflector instead rises to a single sharp peak and falls away symmetrically."
+  },
+  {
+   "question": "Why can amplitude comparison against a side-drilled-hole reference give a misleading size for a real crack?",
+   "options": [
+    "Because dB math does not apply to cracks",
+    "Because a tilted or rough crack does not reflect like the smooth reference reflector, so its amplitude no longer maps cleanly to size",
+    "Because side-drilled holes are larger than any crack",
+    "Because cracks always read exactly at the reference level"
+   ],
+   "correct": 1,
+   "explanation": "Amplitude comparison assumes the flaw reflects like the reference. A crack that is tilted or rough returns a different fraction of energy, so its echo height no longer corresponds to the reference-based size — which is why probe-motion and tip methods are used for cracks."
+  },
+  {
+   "question": "To report a flaw's through-wall height (its second dimension) rather than its length, the most suitable approach is:",
+   "options": [
+    "A plan-view C-scan footprint",
+    "A single A-scan peak amplitude at one position",
+    "Tip-diffraction timing or comparing depth readings at the flaw's upper and lower edges, often shown on a B-scan",
+    "Counting the dead-zone width"
+   ],
+   "correct": 2,
+   "explanation": "Through-wall height is a depth dimension. Tip diffraction times the signal from a crack tip, and depth-at-edges or a B-scan cross-section shows the profile; a C-scan gives plan-view area and a single A-scan peak gives neither dimension directly."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Evaluation Course §5.3 (determination of discontinuity size)",
+  "dB relationship: ΔdB = 20·log₁₀(A₂/A₁); +6 dB = 2×, +20 dB = 10× amplitude",
+  "Codes such as ASME BPVC Section V, Article 4 (DAC, reference reflectors, sizing practice)"
+ ]
+}

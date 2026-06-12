@@ -1,0 +1,199 @@
+{
+  "lessonId": "basic-6-2",
+  "title": "Ultrasonic Testing: Equipment, Standards, Interpretation, and Applications",
+  "narrationScript": "The first ultrasonic lesson put sound into the metal; this one turns the echoes into decisions. We start inside the instrument: a clock, a pulser, a receiver, and gates, drawing the A-scan that plots every echo as amplitude against sound-path distance, with B-scan profiles and C-scan maps built from it. Then the discipline that gives echoes meaning: reference standards. The IIW block proves beam exit point and refracted angle, while area-amplitude and distance-amplitude blocks with flat-bottom holes, numbered in sixty-fourths of an inch, set sensitivity and build the distance-amplitude correction curve. Interpretation asks three questions in order: where the echo sits on the sweep, how tall it stands against the reference, and how it behaves as the probe moves. Laminations, porosity, slag, lack of fusion, and cracks each leave a signature, and a lost back-wall echo is an indication all by itself. System factors, frequency above all, explain why the same flaw reads differently. We close with six applications: flaw detection, thickness surveys, bond evaluation, process control, castings, and angle-beam weld examination.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "The Instrument: Pulser, Receiver, Clock, and Gate",
+      "body": "Nearly all industrial UT runs on the **pulse-echo** principle from the wave-propagation lesson: a transducer sends a short burst into the part and listens for whatever returns. The instrument that orchestrates this — the **flaw detector** — is four functions in one box:\n\n- The **clock (timer)** triggers each cycle and supplies the time base, so elapsed time can be displayed as distance.\n- The **pulser** fires a short electrical spike or square wave into the transducer, which converts it to mechanical vibration.\n- The **receiver-amplifier** takes the tiny voltages the transducer generates from returning echoes, amplifies them through a **gain control calibrated in decibels**, filters them, and (usually) rectifies them for display.\n- **Gates** electronically watch chosen spans of the time base and trip an alarm, log an amplitude, or output a thickness whenever a signal crosses a threshold inside them — the basis of every automated UT system.\n\nThe fundamental display is the **A-scan**: echo **amplitude on the vertical axis, time — therefore sound-path distance — on the horizontal**. Once the sweep is calibrated on a known thickness, every horizontal position reads directly in inches or millimeters of metal path. Two presentations are assembled from it: the **B-scan**, a cross-sectional profile built as the probe travels a line (the familiar corrosion-mapping view), and the **C-scan**, a plan-view map of gated amplitude or depth produced by raster scanning — the standard permanent record for immersion testing and for bond inspection of aerospace panels.\n\nBeyond the basic flaw detector: **through-transmission** arrangements use separate sending and receiving transducers on opposite faces and judge only the *drop* in received energy — no depth information, but effective in highly attenuating bonded structures. **Immersion systems** couple through a water column or squirter, enabling focused beams and fully automated scanning. Dedicated **digital thickness gauges**, usually with dual-element probes, reduce the whole instrument to a numeric readout. And **phased-array instruments** pulse a multi-element probe with programmed delays, steering and focusing the beam electronically — many refracted angles from a single probe position."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-6-2-fig-a",
+      "caption": "The A-scan grammar: the initial pulse marks the entry surface, an echo at 0.60 in. of sound path reports the inclusion at 0.60 in. depth, and the back-wall echo at 1.00 in. confirms the calibrated sweep. Horizontal position is depth; height means nothing until it is compared with a reference."
+    },
+    {
+      "type": "text",
+      "heading": "Reference Standards: Giving the Echo a Meaning",
+      "body": "An ultrasonic instrument measures only two things — elapsed time and signal amplitude. Everything else is comparison, and the basis of comparison is the **reference standard**: a block of known material containing **artificial reflectors of known size at known depth**. Standardizing on these does three jobs: it calibrates **distance** (the sweep), establishes **sensitivity** (the reference gain), and proves the system still performs the way it did when the procedure was qualified.\n\n- The **IIW (V1) block** is the angle-beam workhorse: its 100 mm radius locates the transducer's **beam exit (index) point**, engraved degree scales against its side-drilled hole verify the actual **refracted angle**, and its known dimensions calibrate the sweep for straight and angle beams. The miniature **V2** and **DSC** blocks do the same jobs in a pocket-sized package for field work.\n- **Area-amplitude blocks** — aluminum per **ASTM E127**, other metals per **ASTM E428** — contain **flat-bottom holes (FBH)**: ideal disk reflectors aimed squarely back at the transducer. Within a set the metal travel is constant while the hole diameter steps from **1/64 to 8/64 in., and the block number is the hole diameter in 64ths** — a No. 5 block carries a 5/64 in. FBH, so a procedure written to a \"#5 FBH\" sensitivity means exactly that response. These blocks establish the relation between reflector *area* and echo height.\n- **Distance-amplitude blocks** hold the hole diameter constant (commonly 3/64, 5/64, or 8/64 in.) while metal travel steps from 1/16 in. to several inches, mapping how the echo from the *same* reflector shrinks with depth.\n- **Side-drilled holes (SDH)** and **notches** serve weld and tubular work: ASME Section V, Article 4 builds its calibration from SDHs at one-quarter, one-half, and three-quarter thickness, and EDM notches set sensitivity for surface-breaking flaws in tube and pipe.\n- **Step wedges** and plates of the product material calibrate thickness gauges.\n\nThe **distance-amplitude correction (DAC) curve** deserves emphasis: identical reflectors at increasing depth return progressively smaller echoes because of **attenuation and beam spread**. The curve drawn through their peak responses becomes a depth-corrected evaluation level, so an echo reported as 60% of DAC means the same thing at half an inch and at four inches. Block and part must match in **material, velocity, attenuation, and surface condition** — or a measured **transfer correction** must account for the difference."
+    },
+    {
+      "type": "table",
+      "caption": "Common UT reference standards: the reflector each contains and what it calibrates.",
+      "headers": ["Standard / block", "Reflector(s)", "What it calibrates"],
+      "rows": [
+        ["IIW V1 (miniature V2, DSC)", "100 mm radius, side-drilled hole, engraved angle scales", "Beam exit point, refracted angle, and sweep distance for angle- and straight-beam work"],
+        ["Area-amplitude set (ASTM E127 aluminum; E428 other metals)", "Flat-bottom holes, 1/64–8/64 in. diameter, constant metal travel; block number = diameter in 64ths", "Sensitivity — relates reflector area to echo height"],
+        ["Distance-amplitude set (E127 / E428)", "Constant FBH (3/64, 5/64, or 8/64 in.) at metal travels from 1/16 in. up", "Echo height versus depth; basis for DAC"],
+        ["ASME Section V, Article 4 basic calibration block", "Side-drilled holes at 1/4T, 1/2T, 3/4T, plus notches", "DAC curve and scanning sensitivity for weld examination"],
+        ["Notched tube and pipe standards", "EDM notches, ID and OD, axial and circumferential", "Sensitivity to surface-breaking flaws in tubular product"],
+        ["Step wedge / product-material plate", "Known thickness steps", "Thickness-gauge zero, velocity, and range"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Interpretation: Position, Amplitude, and Behavior",
+      "body": "Interpreting an A-scan is a three-question routine, asked in order:\n\n- **Where is it?** The echo's sweep position is its **sound path**. In straight-beam work that is depth directly; in angle-beam work the sound path and the known refracted angle resolve into surface distance and depth. The first check is always whether that location lands on a **geometric reflector** — a root, a crown, a counterbore, a fillet — before anyone calls it a flaw. Geometry sits exactly where the drawing says it must.\n- **How high is it?** Amplitude is read **against the reference level** — the DAC curve or the specified FBH response — never as an absolute. Indications are logged as a percentage of DAC or in decibels above or below reference.\n- **What does it do?** A real discontinuity gives a repeatable echo that rises, peaks, and falls smoothly as the probe moves across it — the behavior behind 6 dB-drop sizing. Electrical transients do not repeat; loose couplant noise wanders.\n\nThe familiarity-level signatures:\n\n- **Lamination** (rolled plate): a sharp echo at constant depth — typically mid-wall — persisting over a wide area, with the back-wall echo replaced by **multiples of the shallower reflector**. Finding them is the standard pre-scan before angle-beam weld testing, because a lamination can block the angled beam's path.\n- **Porosity**: a cluster of low, grassy, shifting peaks, with the back wall knocked down by scatter and no single dominant echo.\n- **Slag inclusions** (welds): ragged, multi-peaked echoes that persist over some probe movement and answer from more than one direction.\n- **Lack of fusion**: a sharp, strong, planar response standing on the fusion face — often loud from one side of the weld and nearly silent from the other. Orientation is everything.\n- **Cracks**: sharp, often multi-faceted echoes with several running peaks as the beam walks along the crack face, found where service stresses concentrate.\n- **Loss of back reflection** is an indication in its own right: fine porosity, coarse structure, or an unbonded interface can shrink the back-wall echo even when no discrete flaw echo appears, and many forging and bond specifications carry a percent-loss-of-back-reflection rejection criterion."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-6-2-fig-b",
+      "caption": "Four screens, four stories: clean back-wall multiples from sound plate; a mid-wall lamination substituting its own multiples for the back wall; the grassy cluster and suppressed back wall of porosity; and the single sharp wall of a planar reflector under an angle beam, where no back-wall reference exists."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Amplitude is not size",
+      "body": "A small reflector squarely facing the beam can out-shout a large crack tilted a few degrees away; a rough, branched crack scatters energy while a tight one mirrors it. Treat amplitude as **evidence ranked against a reference**, never as a flaw dimension. Position and behavior over several probe positions carry at least as much weight — and the accept/reject decision belongs to the written procedure's evaluation level, not to the tallest spike of the day."
+    },
+    {
+      "type": "text",
+      "heading": "System Factors: Why the Same Flaw Reads Differently",
+      "body": "The number on the screen belongs to the **system** — instrument, cable, transducer, couplant, surface, and material together. The Basic outline expects you to know the levers:\n\n- **Frequency** is the master trade-off. Raising it shortens the wavelength, improving **sensitivity** (the smallest detectable reflector — rule of thumb, about half a wavelength) and **resolution** (the ability to separate echoes arriving close together), while increasing scattering and attenuation losses. Fine-grained wrought aluminum tolerates 10 MHz and above; coarse-grained castings and austenitic welds may force 1–2.25 MHz; general weld and forging work commonly runs 2.25–5 MHz.\n- **Near field and dead zone.** Within the transducer's near field, constructive and destructive interference make amplitude an unreliable size indicator, which is why calibration reflectors and evaluations favor the far field. The initial pulse's ring-down blinds the first fraction of an inch in contact testing — the **dead zone** — which dual-element and delay-line probes shrink.\n- **Beam spread** widens the interrogated volume with depth: useful for coverage, costly for locating precision, and a source of spurious wall echoes in small-diameter parts.\n- **Coupling and surface condition.** Rough, scaled, or curved surfaces cost echo height; the difference between the smooth calibration block and the real part is measured and applied as a **transfer correction**. The couplant must wet the surface, tolerate the part temperature, and be the same type used during calibration.\n- **Material structure.** Grain scatter raises the noise floor (\"grass\") and consumes penetration; attenuation differences between block and part skew every amplitude comparison unless corrected.\n- **Instrument health.** Vertical (amplitude) and horizontal (sweep) linearity are verified at scheduled intervals using practices such as **ASTM E317** — a nonlinear amplifier quietly corrupts every DAC comparison made with it.\n- **The scan plan.** Index, overlap (commonly at least 10–15% of the element dimension per pass), and scan speed determine whether the calibrated beam actually interrogated the volume the report claims."
+    },
+    {
+      "type": "text",
+      "heading": "Applications: Six Jobs for One Method",
+      "body": "**Flaw detection and evaluation.** Forgings, bar, and rolled products are examined straight-beam for laminations, bursts, and inclusions — flaws that flatten parallel to the surface during working and face the beam squarely. Rotor- and disk-grade aerospace billet is screened in **immersion** systems against demanding FBH sensitivities, with loss-of-back-reflection limits backing up the discrete-echo criteria.\n\n**Thickness measurement.** Pulse-echo thickness gauging needs **access to only one side**, which makes it the corrosion-survey tool of airframe and powerplant maintenance: fuselage skins, floor structure, and tubing are measured per **ASTM E797** practice with dual-element probes, and **multiple-echo (echo-to-echo) techniques** read the metal alone, ignoring paint and primer — routine work in an FAA Part 145 corrosion program.\n\n**Bond evaluation.** In adhesive-bonded skins and honeycomb panels, a well-bonded skin passes energy into the structure, so its ring-down dies quickly; over a **disbond** the energy stays trapped in the skin and the multiples ring on. Production parts are mapped by **through-transmission C-scan**, where a disbond simply blocks transmission; in the field, low-frequency **resonance and pitch-catch bond testers** read the impedance change at the bond line. Brazed and diffusion-bonded joints are evaluated with the same logic.\n\n**Process control.** Automated immersion and squirter stations test plate, tube, and bar at line speed, with gates firing markers and sorters. As with eddy current, the alarm-rate trend reads the **process**: a climbing reject rate flags the mill or the weld station before a shift of scrap exists.\n\n**Castings.** Coarse, variable grain scatters sound and bends the rules: lower frequencies, longitudinal waves, and generous transfer corrections are the standard accommodations. Fine-grained aluminum and investment castings respond well; heavy-section, coarse-grained steel castings often go to radiography instead — the methods are complementary, RT favoring volumetric flaws and UT favoring planar ones.\n\n**Weldments.** The flagship application. The crown prevents coupling directly over the weld, and the dangerous planar flaws — **lack of fusion, incomplete penetration, cracks** — stand roughly normal to the surface, so the examination uses **angle-beam shear waves** (typically 45°, 60°, or 70°) skipped into the weld from beside it. The beam is walked through **half-skip and full-skip** legs so the V-path covers the full volume from both sides where access allows; sensitivity comes from the SDH-based DAC of ASME Section V, Article 4, or the calibration scheme of the governing code, and every indication is **plotted against the joint geometry** before it is dispositioned."
+    },
+    {
+      "type": "table",
+      "caption": "UT application families named in the Basic outline, with the typical technique and what the signal reports.",
+      "headers": ["Application", "Typical technique", "What the echo — or its loss — reports"],
+      "rows": [
+        ["Flaw detection and evaluation", "Straight beam on wrought product; immersion screening of billet; DAC or FBH reference levels", "Discrete reflectors located by sweep position and ranked against the reference; back-reflection loss as a backup criterion"],
+        ["Thickness measurement", "Dual-element contact gauge per ASTM E797; echo-to-echo through coatings", "Remaining wall from one side — corrosion surveys of skins, structure, and tubing"],
+        ["Bond evaluation", "Pulse-echo ring-down, through-transmission C-scan, resonance bond testers", "Disbonds: persistent skin multiples, blocked transmission, or a bond-line impedance shift"],
+        ["Process control", "Automated immersion / squirter lines with alarm gates on plate, tube, and bar", "100% screening at line speed; alarm-rate trends flag process drift"],
+        ["Castings", "Lower-frequency straight beam where grain and geometry allow", "Shrinkage and porosity in fine-grained alloys; coarse grain pushes the job toward RT"],
+        ["Weldments", "Angle-beam shear waves, half- and full-skip coverage, SDH calibration per code", "Planar fusion-zone flaws located by plotted sound path and evaluated against DAC"]
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-6-2-fig-a",
+      "title": "Anatomy of an A-scan",
+      "file": "basic-6-2-fig-a.svg"
+    },
+    {
+      "id": "basic-6-2-fig-b",
+      "title": "Echo signatures: lamination, porosity, planar flaw",
+      "file": "basic-6-2-fig-b.svg"
+    },
+    {
+      "id": "basic-6-2-fig-c",
+      "title": "Read the A-scan: locate the reflector",
+      "file": "basic-6-2-fig-c.svg"
+    }
+  ],
+  "interactive": {
+    "type": "hotspot",
+    "title": "Read the A-Scan: Locate the Reflector",
+    "intro": "A straight-beam probe sits on a 2.00 in. steel plate and the sweep is calibrated for 2.50 in. of steel. One signal on this screen reports a discontinuity. Click it.",
+    "figureId": "basic-6-2-fig-c",
+    "regions": [
+      {
+        "x": 50,
+        "y": 95,
+        "w": 60,
+        "h": 272,
+        "label": "A — tall spike at zero sound path",
+        "isTarget": false,
+        "feedback": "That is the initial pulse — the instrument's own excitation, present on every screen with or without a part. It says nothing about the metal; its ring-down is what creates the near-surface dead zone."
+      },
+      {
+        "x": 114,
+        "y": 296,
+        "w": 108,
+        "h": 72,
+        "label": "B — low grassy peaks just past the pulse",
+        "isTarget": false,
+        "feedback": "Grass: low-level scatter from surface roughness and grain structure. It shifts peak by peak as the probe moves and never rises toward the evaluation level — noise floor, not a reflector."
+      },
+      {
+        "x": 330,
+        "y": 165,
+        "w": 72,
+        "h": 201,
+        "label": "C — sharp echo at 1.40 in. of sound path",
+        "isTarget": true,
+        "feedback": "Correct. An echo at 1.40 in. in a 2.00 in. plate can only come from a reflector inside the metal at 1.40 in. depth — and the knocked-down back-wall echo behind it corroborates the call, because the flaw shadows the far surface. Next step: compare its height with the reference level."
+      },
+      {
+        "x": 452,
+        "y": 210,
+        "w": 74,
+        "h": 156,
+        "label": "D — echo at 2.00 in. of sound path",
+        "isTarget": false,
+        "feedback": "Its sound path equals the plate thickness: this is the back-wall echo, the far surface itself. It is a healthy reference signal — and the fact that it sits below its height on adjacent sound metal is evidence for the reflector at C, not a flaw of its own."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "Which display presentation is a plan-view map of gated echo amplitude or depth, built up by raster scanning, and the standard permanent record for immersion testing and bond inspection of aerospace panels?",
+      "options": [
+        "A-scan",
+        "B-scan",
+        "C-scan",
+        "RF waveform display"
+      ],
+      "correct": 2,
+      "explanation": "The A-scan shows amplitude versus time at a single probe position, and the B-scan assembles a cross-sectional profile along one scan line. The C-scan rasters the probe over an area and maps what the gate captures at each point — the plan-view record used for immersion and bond work. An RF display is simply an unrectified A-scan."
+    },
+    {
+      "question": "In an ASTM E127 area-amplitude reference block set, the number identifying each block (1 through 8) gives:",
+      "options": [
+        "The flat-bottom hole diameter in sixty-fourths of an inch",
+        "The metal-travel distance in inches",
+        "The hole depth in sixty-fourths of an inch",
+        "The block's position along the DAC curve"
+      ],
+      "correct": 0,
+      "explanation": "Area-amplitude blocks hold metal travel constant and step the flat-bottom hole diameter from 1/64 to 8/64 in.; the block number is that diameter in 64ths, so a No. 5 block carries a 5/64 in. FBH. Varying the metal travel at constant hole size is the job of the distance-amplitude set."
+    },
+    {
+      "question": "Straight-beam examination of 1.00 in. rolled plate shows a sharp echo at 0.50 in. of sound path that persists over a wide area, multiples of that echo behind it, and no echo at 1.00 in. This most likely indicates:",
+      "options": [
+        "A cluster of porosity",
+        "Coarse-grain scatter raising the noise floor",
+        "A mid-wall lamination",
+        "Loss of couplant under the transducer"
+      ],
+      "correct": 2,
+      "explanation": "A planar lamination at mid-wall reflects essentially the whole beam, so it produces a sharp echo at half thickness with its own multiples while the true back wall disappears — and it persists over a wide area because laminations are extensive. Porosity prints as a low grassy cluster, grain scatter stays near the baseline, and lost couplant would kill every echo including the one at 0.50 in."
+    },
+    {
+      "question": "When a coarse-grained casting is examined, the test frequency is usually lowered because the longer wavelength:",
+      "options": [
+        "Shrinks the dead zone beneath the initial pulse",
+        "Improves resolution of closely spaced reflectors",
+        "Eliminates the need for a transfer correction",
+        "Reduces grain-boundary scattering, cutting noise and attenuation at the cost of small-flaw sensitivity"
+      ],
+      "correct": 3,
+      "explanation": "Grains scatter sound strongly once their size becomes a meaningful fraction of the wavelength, so lengthening the wavelength (lowering frequency) quiets the grass and restores penetration. The price is sensitivity and resolution, which improve with higher frequency — the opposite of options one and two — and transfer corrections for surface and attenuation differences are still required."
+    },
+    {
+      "question": "Production welds are normally examined with angle-beam shear waves rather than a straight beam primarily because:",
+      "options": [
+        "Shear waves travel faster than longitudinal waves, shortening the examination",
+        "The weld crown prevents coupling directly over the weld, and the critical planar flaws are oriented unfavorably for a straight beam",
+        "Angle beams provide a back-wall echo for reference during scanning",
+        "Shear waves are unaffected by attenuation in the weld metal"
+      ],
+      "correct": 1,
+      "explanation": "The crown blocks probe placement over the weld itself, and lack of fusion, incomplete penetration, and cracks stand roughly normal to the surface — nearly invisible to a straight beam but squarely facing a 45–70° shear wave skipped in from beside the weld. Shear waves actually travel at about half the longitudinal velocity, an angle beam has no back-wall reference, and attenuation affects every mode."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Topical Outline §2.9.2 (UT survey: basic equipment, reference standards, test result interpretation, system factors, applications)",
+    "ASTM E127, Standard Practice for Fabrication and Control of Aluminum Alloy Ultrasonic Standard Reference Blocks",
+    "ASTM E164, Standard Practice for Contact Ultrasonic Testing of Weldments",
+    "ASTM E797/E797M, Standard Practice for Measuring Thickness by Manual Ultrasonic Pulse-Echo Contact Method",
+    "ASME Boiler and Pressure Vessel Code, Section V, Article 4, Ultrasonic Examination Methods for Welds"
+  ]
+}

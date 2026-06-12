@@ -1,0 +1,139 @@
+{
+ "lessonId": "rt1-8-1",
+ "title": "Radiographic Sensitivity and Contrast",
+ "narrationScript": "Pull a radiograph off the dryer, put it on the viewer, and ask the only question that matters. Can I see what I need to see. The formal name for that ability is radiographic sensitivity, and this lesson is about the levers that control it. Sensitivity means the smallest change in the part that the image can show you. The smaller the detail you can make out, the higher the sensitivity. We prove it on every film with an image quality indicator, and we usually talk about it as a percentage of the part thickness. The common working target is two percent. On a one inch weld, that means a thickness change of about twenty thousandths of an inch should be visible. Here is the key idea of this whole module. Sensitivity is not one thing. It is two things working together. Contrast, the difference in darkness between one area of the film and the next. And definition, the sharpness of the edges of each image. A radiograph can fail on either one. Plenty of contrast with smeared edges will hide a fine crack. Razor sharp edges with no contrast will hide it just as well. This lesson takes contrast apart. The next lesson does the same for definition. Radiographic contrast means the difference in film density between two areas you care about, say the image of a gas pore against the sound metal around it. If that difference is large, the pore jumps off the film. If it is small, you walk right past it. Radiographic contrast is the combined result of two separate contributions, and you control them with different knobs. They are called subject contrast and film contrast. Subject contrast lives in the part and in the beam. It is the ratio of the radiation passing through one section of the part to the radiation passing through a neighboring section. A step in thickness, a void, a slag inclusion, each one changes how much radiation reaches the film at that spot. Three things decide how big those differences are. First, the thickness and density differences themselves, which come with the part. Second, the energy of the radiation, which you choose. Drop the kilovoltage and the transmission difference between thick and thin sections grows, so subject contrast rises. Raise the kilovoltage and the beam punches through everything more evenly, so subject contrast falls, but latitude grows, meaning a wider range of thickness records at a usable density on one film. That is the fundamental trade in technique design. Use the lowest energy that still gives a workable exposure time and you get the best subject contrast that part can deliver. Third, scatter. Scattered radiation arrives at the film from every direction and lays a gray veil over the image, filling in exactly the density differences you are trying to build. Masking, collimation, filtration, and lead screens all exist largely to cut scatter, and every bit you remove buys back subject contrast. Film contrast is a different animal. It belongs to the film, the exposure level, and the processing, not to the part. Expose a film across a range of exposures and plot density against the logarithm of exposure, and you get the characteristic curve. Down low the curve is nearly flat, riding on base plus fog. That flat start bends upward through the toe, climbs a steep straight section, and finally rolls over at the shoulder. Film contrast is the slope of that curve at the density where you are working. A steep slope means a small exposure difference becomes a large density difference, which is exactly what you want. Here is the practical part. For industrial radiographic film, the slope keeps increasing as density rises through the whole working range. The same exposure difference that is nearly invisible at a density of one becomes obvious at a density of two and a half or three. That is the real reason codes set a minimum density, typically around one point eight to two point zero in the area of interest. Below that, the film is working on the lazy part of its curve, and its contrast is poor no matter how good the rest of the technique was. The upper limit, commonly around four point zero, exists because ordinary viewing equipment cannot push enough light through anything darker. Remember that density is a logarithm. A density of two passes one percent of the viewing light. A density of three passes one tenth of one percent. So when you design or troubleshoot a technique, think in two layers. Energy, masking, and collimation set subject contrast in the part. Film class, density aim point, and disciplined processing set film contrast on the bench. Get both layers right, prove it with the image quality indicator, and sensitivity takes care of itself.",
+ "imagePrompt": "A film interpreter in a darkened reading room leans over a glowing high-intensity film illuminator comparing two weld radiographs side by side, a densitometer and calibrated step tablet resting at his elbow.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Sensitivity: The Bottom Line of Image Quality",
+   "body": "Radiographic sensitivity is the measure of how small a change in the part your radiograph can actually show - the smaller the detail revealed, the higher the sensitivity. It is the bottom-line figure of merit for the whole technique chain: source and energy, geometry, film, screens, processing, and viewing all leave their fingerprints on it. Because we cannot fill a weld with calibrated defects, we demonstrate sensitivity with an **image quality indicator (IQI)** placed on the part: if the required IQI feature is visible, the technique is judged capable. Working codes commonly demand a quality level equivalent to about **2% of part thickness** - on a 1 in. weld, a thickness change of roughly 0.020 in. should be detectable.\n\nHere is the organizing idea for this module: sensitivity stands on **two pillars**. **Radiographic contrast** is the density difference between an image and its background. **Definition** is the sharpness of the image's edges. A radiograph can fail either way - a contrasty image with smeared edges hides a fine crack just as surely as a sharp image with no density difference. This lesson dissects contrast; the next handles definition."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-8-1-fig-a",
+   "caption": "Radiographic sensitivity splits into contrast and definition, each driven by its own set of technique variables."
+  },
+  {
+   "type": "text",
+   "heading": "Radiographic Contrast: One Result, Two Causes",
+   "body": "Radiographic contrast is simply the difference in film density between two areas of the image - a pore against the surrounding weld metal, a thin section against a thick one. Large differences make detection easy; small ones let discontinuities hide.\n\nWhat makes contrast manageable in the field is that it factors cleanly into two independent contributions:\n\n- **Subject contrast** - created in the part and the beam: the ratio of radiation intensities transmitted through neighboring sections.\n- **Film contrast** - created at the film: how strongly the film converts a given exposure difference into a density difference.\n\nRadiographic contrast is the combined product of the two. That separation is your troubleshooting map. A flat, gray radiograph could mean the beam was too penetrating or scatter washed out the transmission differences (subject side), or it could mean the film was underdeveloped or exposed to too low a density (film side). The two families respond to completely different knobs, so diagnose before you re-shoot."
+  },
+  {
+   "type": "text",
+   "heading": "Subject Contrast",
+   "body": "Subject contrast is the ratio of transmitted radiation intensities through different sections of the specimen. Three things govern it.\n\n**Thickness and material differences.** Every step, void, or inclusion changes the metal path the beam must cross. The bigger the difference in absorption between adjacent sections, the bigger the difference in radiation reaching the film. This part comes with the job - you do not choose the flaw.\n\n**Radiation energy.** This is your main knob. At low kilovoltage the attenuation difference between thick and thin paths is large, so transmission ratios - and subject contrast - are high, but the recordable thickness range (**latitude**) is narrow. Raising kV, or stepping up from Ir-192 toward Co-60, flattens those differences: subject contrast drops and latitude grows. The classic rule follows: **use the lowest energy that still penetrates the part in a practical exposure time.**\n\n**Scatter.** Scattered radiation arrives from everywhere, carries no image information, and lays a uniform fog over the film that fills in the very density differences you are trying to create. Masking, collimation, filters, and lead screens are all scatter weapons - every bit removed buys subject contrast back. Codes obsess over scatter control for exactly this reason."
+  },
+  {
+   "type": "text",
+   "heading": "Film Contrast and the Characteristic Curve",
+   "body": "Film contrast describes how aggressively a film turns exposure differences into density differences, and it is read straight off the **characteristic (H&D) curve** - the plot of density against the logarithm of relative exposure. The curve has four landmarks: **base-plus-fog** (the density of unexposed, processed film, typically near 0.2-0.3), the **toe**, the steep **straight-line region**, and the **shoulder** where the film saturates. Film contrast at any working point is the **slope (gradient)** of the curve there: steeper slope, more density change per unit of exposure change.\n\nFor industrial direct-exposure films the gradient keeps rising with density across the whole usable range. The same exposure difference that is barely visible at density 1.0 becomes obvious at 2.5-3.0. That is why codes set **minimum densities around 1.8-2.0**, with typical single-film windows of about 1.8-4.0 for X-ray and 2.0-4.0 for gamma: below the minimum, the film operates on its lazy toe and contrast collapses. The ceiling near 4.0 reflects viewing hardware - density is logarithmic, D = log10(I0/It), so a D = 2.0 area passes 1% of the illuminator's light and D = 4.0 passes only 0.01%.\n\nFilm class matters too: finer-grain, slower films ride steeper curves. So does processing - underdevelopment flattens the gradient - and screens: fluorescent screens sacrifice film contrast for speed, while lead screens preserve it."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-8-1-fig-b",
+   "caption": "The same exposure step produces a tiny density change on the toe but a large one on the steep straight-line region - the reason codes set a minimum density."
+  },
+  {
+   "type": "table",
+   "caption": "Which knob moves which contrast.",
+   "headers": ["Variable", "Acts on", "Practical effect"],
+   "rows": [
+    ["Radiation energy (kV / isotope)", "Subject contrast", "Lower energy widens transmission differences: more contrast, less latitude"],
+    ["Thickness / density differences", "Subject contrast", "Bigger steps in the part produce bigger exposure differences at the film"],
+    ["Scattered radiation", "Subject contrast", "Fogs the film and fills in density differences - fight it with masks, collimation, filters"],
+    ["Film class (grain)", "Film contrast", "Finer-grain, slower films sit on a steeper characteristic curve"],
+    ["Density aim point", "Film contrast", "Gradient rises with density - expose toward the upper part of the code window"],
+    ["Degree of development", "Film contrast", "Underdevelopment flattens the curve; follow the time-temperature chart"],
+    ["Screen type", "Film contrast", "Lead screens preserve contrast; fluorescent screens trade it for speed"]
+   ]
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Two layers, two sets of knobs",
+   "body": "**Subject contrast** is set before the radiation reaches the film: energy (kV or isotope choice) and scatter control. **Film contrast** is set at and after the film: film class, density aim point, and processing discipline. When a radiograph reads flat and gray, decide which layer failed before you change anything - turning the wrong knob wastes the re-shoot."
+  },
+  {
+   "type": "text",
+   "heading": "Contrast Versus Latitude: Picking Your Trade",
+   "body": "Contrast and latitude pull in opposite directions. **Latitude** is the range of part thickness that records within the acceptable density window on a single film; high-contrast techniques compress that range, while high-energy (low-contrast) techniques stretch it.\n\nA stepped or tapered part forces the choice. Shoot a casting that runs from 0.5 in. to 1.5 in. at the low kV that flatters the thin section, and the thick end may come out under minimum density. Your options:\n\n- **Raise the energy.** Accept lower subject contrast everywhere to fit the whole thickness range inside the density window.\n- **Double-film technique.** Load two films of different speed in one cassette: the fast film reads the thick sections, the slow film the thin ones - full contrast at both ends from one exposure.\n\nWhichever you choose, the technique must still prove itself: every thickness zone of interest needs its required density and its required IQI sensitivity. Contrast is never free, and neither is latitude - a Level II's job is knowing which one the job can afford to spend."
+  }
+ ],
+ "figures": [
+  {
+   "id": "rt1-8-1-fig-a",
+   "title": "What controls radiographic sensitivity",
+   "file": "rt1-8-1-fig-a.svg"
+  },
+  {
+   "id": "rt1-8-1-fig-b",
+   "title": "Characteristic curve and film contrast",
+   "file": "rt1-8-1-fig-b.svg"
+  }
+ ],
+ "interactive": null,
+ "checkQuestions": [
+  {
+   "question": "Which statement best defines radiographic sensitivity?",
+   "options": [
+    "The speed of the film system used for the exposure",
+    "The smallest detail or thickness change the radiograph can reveal, demonstrated with an IQI",
+    "The total density of the radiograph in the area of interest",
+    "The output of the source measured at one meter"
+   ],
+   "correct": 1,
+   "explanation": "Sensitivity is the figure of merit for detail visibility - commonly about 2% of part thickness - and it is proven on each radiograph by the required IQI feature being visible."
+  },
+  {
+   "question": "Radiographic contrast - the density difference between two areas of the image - is the combined result of:",
+   "options": [
+    "Source activity and exposure time",
+    "Film density and source-to-film distance",
+    "Subject contrast and film contrast",
+    "Geometric unsharpness and film graininess"
+   ],
+   "correct": 2,
+   "explanation": "Subject contrast (transmission differences created in the part and beam) and film contrast (how the film converts exposure differences to density differences) multiply together to produce the contrast you see."
+  },
+  {
+   "question": "You raise the tube kilovoltage substantially and adjust exposure to hold the same film density. What happens?",
+   "options": [
+    "Subject contrast increases and latitude decreases",
+    "Subject contrast decreases and latitude increases",
+    "Both subject contrast and latitude increase",
+    "Film contrast increases because the film receives more radiation"
+   ],
+   "correct": 1,
+   "explanation": "Higher-energy radiation penetrates thick and thin sections more evenly, shrinking transmission differences (less subject contrast) while letting a wider thickness range record at usable density (more latitude). Film contrast at the same density is unchanged."
+  },
+  {
+   "question": "Codes typically require a minimum density of about 1.8-2.0 in the area of interest primarily because:",
+   "options": [
+    "Higher-density films are less affected by scatter",
+    "Densitometers cannot read below density 1.8",
+    "Lower densities are too bright for the interpreter's eyes",
+    "Film gradient - film contrast - is too low at lower densities"
+   ],
+   "correct": 3,
+   "explanation": "Below roughly 1.8 the film is operating near the toe of its characteristic curve, where the slope (gradient) is small and a given exposure difference produces little density difference."
+  },
+  {
+   "question": "An area of a radiograph measures density 3.0. What fraction of the illuminator's light passes through it?",
+   "options": [
+    "30%",
+    "3%",
+    "1%",
+    "0.1%"
+   ],
+   "correct": 3,
+   "explanation": "Density is logarithmic: D = log10(I0/It), so D = 3.0 means the area passes 1 part in 10^3 - one tenth of one percent of the viewing light."
+  }
+ ],
+ "references": [
+  "CP-105-2024 RT Topical Outline, Radiography Technique 4.1 (radiographic sensitivity)",
+  "CP-105-2024 RT Topical Outline, Radiography Technique 4.2-4.4 (radiographic, film, and subject contrast)",
+  "ASME BPVC Section V, Article 2 (film density requirements, general practice)",
+  "Film characteristic (H&D) curve and D = log10(I0/It) (reference principles)"
+ ]
+}

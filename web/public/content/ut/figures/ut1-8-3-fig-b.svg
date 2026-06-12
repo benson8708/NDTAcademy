@@ -1,0 +1,48 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Building the DAC from Side-Drilled Holes</text>
+
+  <!-- screen -->
+  <rect x="90" y="80" width="620" height="300" fill="#0A2342"/>
+
+  <!-- amplitude grid -->
+  <line x1="90" y1="100" x2="710" y2="100" stroke="#5A6B7E" stroke-width="0.8"/>
+  <line x1="90" y1="150" x2="710" y2="150" stroke="#5A6B7E" stroke-width="0.8"/>
+  <line x1="90" y1="200" x2="710" y2="200" stroke="#5A6B7E" stroke-width="0.8"/>
+  <line x1="90" y1="250" x2="710" y2="250" stroke="#5A6B7E" stroke-width="0.8"/>
+  <line x1="90" y1="300" x2="710" y2="300" stroke="#5A6B7E" stroke-width="0.8"/>
+  <text x="82" y="105" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">100</text>
+  <text x="82" y="155" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">80</text>
+  <text x="82" y="205" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">60</text>
+  <text x="82" y="255" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">40</text>
+  <text x="82" y="305" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">20</text>
+  <text x="36" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342" transform="rotate(-90 36 225)">% full screen height</text>
+
+  <!-- trace: IP + three SDH echoes -->
+  <polyline points="98,350 104,350 112,350 117,128 123,350 132,342 138,350 245,350 251,348 258,150 265,348 271,350 390,350 396,348 402,212 408,348 414,350 535,350 541,348 547,262 553,348 559,350 700,350" fill="none" stroke="#E8F1FB" stroke-width="2"/>
+
+  <!-- DAC curve through the peaks -->
+  <path d="M 258,150 Q 330,180 402,212 Q 475,238 547,262" fill="none" stroke="#F2A33C" stroke-width="3"/>
+  <path d="M 547,262 L 645,286" fill="none" stroke="#F2A33C" stroke-width="3" stroke-dasharray="7,5"/>
+  <circle cx="258" cy="150" r="5" fill="#F2A33C" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="402" cy="212" r="5" fill="#F2A33C" stroke="#FFFFFF" stroke-width="1.5"/>
+  <circle cx="547" cy="262" r="5" fill="#F2A33C" stroke="#FFFFFF" stroke-width="1.5"/>
+
+  <!-- labels -->
+  <text x="117" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#E8F1FB">IP</text>
+  <text x="262" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#F2A33C">T/4 SDH — set to 80% FSH</text>
+  <text x="262" y="132" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#F2A33C">(primary reference level)</text>
+  <text x="402" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#E8F1FB">T/2 SDH</text>
+  <text x="547" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#E8F1FB">3T/4 SDH</text>
+  <text x="478" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#F2A33C">DAC curve</text>
+
+  <!-- sound-path ticks -->
+  <text x="258" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">T/4</text>
+  <text x="402" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">T/2</text>
+  <text x="547" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">3T/4</text>
+  <text x="700" y="372" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">sound path →</text>
+
+  <!-- notes -->
+  <text x="400" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Indications are evaluated against the curve at their own sound path (e.g., 50% DAC)</text>
+  <text x="400" y="432" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">gain untouched after the T/4 reference is set</text>
+</svg>

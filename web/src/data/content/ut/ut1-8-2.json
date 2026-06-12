@@ -1,0 +1,179 @@
+{
+  "lessonId": "ut1-8-2",
+  "title": "Standardizing the Instrument Electronics",
+  "narrationScript": "Your flaw detector is a measuring instrument, and like any measuring instrument it can lie. The screen makes two claims with every echo. The horizontal position claims to measure time, which becomes distance. The vertical height claims to measure amplitude. Standardizing the instrument electronics means proving both claims before the system ever touches a calibration block for a real job. Codes require it on a calendar basis, every three months is a common interval, and any time you suspect the instrument has been damaged or repaired. Start with the horizontal axis, what we call horizontal linearity or sweep linearity. Couple a straight beam probe to a flat block with parallel faces and bring up a string of back wall echoes. Sound bounces between the faces at fixed intervals, so the echoes must land at equal spacing across the screen. Set a twenty five millimeter block on a one hundred and twenty five millimeter range and the echoes belong at two, four, six, eight, and ten divisions. Now read where each one actually sits. A common tolerance is about two percent of full screen width. If the third echo lands three percent off its mark, every depth and every sound path you report with that instrument is suspect, and on an analog set the sweep circuit needs service. Modern digital instruments generate the sweep mathematically and rarely fail this check, but you still verify it, because the same check also catches a wrong velocity entry or a stale zero setting, and those errors are common. Now the vertical axis, amplitude linearity. The standard approach uses two echoes with a fixed ratio. Position a probe on a block so two reflectors, side drilled holes work well, give echoes at eighty percent and forty percent of full screen height, a two to one ratio. Then change the gain in steps so the larger echo reads one hundred, ninety, eighty, on down to twenty percent. At every step the smaller echo must still read half the larger one, within about five percent of full screen height. If the ratio collapses at the top of the screen or the bottom, the receiver is compressing, and amplitude comparisons made there are fiction. Closely related is the accuracy of the gain control itself. Decibels are the language of sensitivity, so the control had better speak it correctly. Set an echo to eighty percent of full screen height and remove six decibels. Six decibels is exactly half the amplitude, so the echo must drop to about forty percent. Remove twelve decibels and it must sit near twenty percent. Run the checks in the other direction too. Typical tolerances are within about one decibel. If your gain control is off, every sensitivity setting, every transfer correction, and every amplitude comparison built on it is off by the same amount. One control can quietly destroy all of this, the reject or suppression control. Reject cuts off the bottom of the signal to clean up grass on the screen. On analog instruments it makes the vertical scale nonlinear. A forty percent echo and an eighty percent echo no longer hold a true two to one relationship. That is why linearity is verified with reject off, and why many codes prohibit or tightly restrict reject during calibrated examinations. What else can push the electronics around? Pulser energy and damping change the pulse shape and amplitude. The pulse repetition frequency, set too high for the range, sends a new pulse before the last one dies, and ghost echoes from the previous pulse wrap into the next trace. Filter and frequency selections change amplitude and resolution. Long cables load the probe and drop sensitivity. Cold electronics drift while warming up, and a dying battery can sag the display. The rule that covers all of it, standardize with the instrument set exactly as it will be used, same pulser settings, same filter, same pulse repetition frequency, same cable, and let the instrument warm up first. Finally, the reflectors used for these electronic checks. They are not flaw simulators. They need known, reproducible geometry, nothing more. Parallel faces of a uniform block give the multiple echoes for horizontal linearity. A pair of side drilled holes gives the fixed amplitude ratio for vertical linearity. Machined notches and radii fill the same role for other checks. Keep them clean, keep them identified, and record every result. The screen earns trust on paper, with numbers, on a schedule, before the job starts.",
+  "imagePrompt": "A technician at a calibration bench verifies amplitude linearity on a digital ultrasonic flaw detector, probe coupled to a steel block with side-drilled holes while a row of evenly spaced echoes stands across the bright screen.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "The Screen Makes Two Claims",
+      "body": "Every echo on your screen asserts two numbers: **where** (its horizontal position, claiming to measure elapsed time and therefore distance) and **how big** (its height, claiming to measure amplitude). Standardizing the instrument electronics means putting both claims on trial — on the bench, against known references, before the instrument earns a place on a job.\n\nThree properties are proven:\n\n- **Horizontal (sweep) linearity** — equal time intervals must occupy equal screen distance.\n- **Vertical (amplitude) linearity** — a 2:1 amplitude relationship must display as 2:1 everywhere on the screen.\n- **Amplitude-control (dB) accuracy** — the calibrated gain control must change displayed amplitude by exactly what it says.\n\nCodes such as ASME Section V, Article 4 require these verifications at fixed intervals — every three months is a common requirement for instruments in regular service — and after any repair or suspected damage. The results go on a dated record with the instrument's serial number, because an examination performed on an instrument with no current linearity verification is, in audit terms, an examination that never happened. This electronic layer is separate from the daily standardization on reference blocks: that comes next lesson, and it assumes the instrument passed this one."
+    },
+    {
+      "type": "text",
+      "heading": "Horizontal (Sweep) Linearity",
+      "body": "Sweep linearity is verified with **multiple back-wall echoes** from a flat block with parallel faces. Sound shuttles between the faces at a fixed period, so the echo sequence is a built-in ruler: each repeat must land exactly one thickness farther along the screen.\n\nSet a 25 mm block on a 125 mm range and the echoes belong at 25, 50, 75, 100, and 125 mm — screen divisions 2, 4, 6, 8, and 10. Read each echo's position at its peak, bringing each to a consistent mid-screen height with the gain before reading (tall, saturated echoes broaden and blur the reading). Then compare against the marks. A common acceptance limit is a deviation within about **2% of full screen width** at each position.\n\nA failed check on an analog instrument means the sweep circuit is distorting time itself — service before code work. Modern digital instruments generate the time base mathematically and almost never fail *linearity*; what the check catches on them is **setup error**: a wrong velocity entry, a stale zero offset, a range never re-verified after the last job. That distinction matters: linearity is the instrument's problem; accuracy is yours. The multiple-echo pattern exposes both, which is why the check survives in the digital age."
+    },
+    {
+      "type": "figure",
+      "figureId": "ut1-8-2-fig-a",
+      "caption": "Horizontal linearity check: back-wall echoes from a parallel block must land at equal intervals across the sweep, each within about 2% of full screen width of its mark."
+    },
+    {
+      "type": "text",
+      "heading": "Vertical Linearity and dB Control Accuracy",
+      "body": "Vertical linearity is proven with **two echoes locked in a 2:1 ratio**. Position the probe on a block so two reflectors — a pair of side-drilled holes works well — display simultaneously, and set the larger to **80% FSH** with the smaller falling near **40%**. Without moving the probe, step the gain so the larger echo reads 100, 90, 80, on down to 20% of full screen height. At every step the smaller echo must remain **half the larger, within about ±5% of full screen height**. If the ratio collapses near the top of the screen, the receiver is saturating; if it falls apart near the bottom, low-level response is being clipped — either way, amplitude comparisons in that region are fiction.\n\nThe **gain (dB) control** gets its own trial, because decibels are the currency of every sensitivity setting and transfer correction you will ever apply. Amplitude follows ΔdB = 20·log₁₀(A₂/A₁), so:\n\n- **−6 dB** must halve a displayed echo: 80% → 40% FSH\n- **−12 dB** must quarter it: 80% → 20% FSH\n- **+6 dB** must double 40% back to 80%\n\nRun several steps across the control's range; typical procedures accept agreement within about **1 dB** (a few percent of screen height). An instrument that passes both checks has earned the right to compare amplitudes — which is most of what UT does."
+    },
+    {
+      "type": "figure",
+      "figureId": "ut1-8-2-fig-b",
+      "caption": "Vertical linearity: two echoes set at 80% and 40% FSH must hold their 2:1 ratio at every gain step — here, removing 6 dB halves both."
+    },
+    {
+      "type": "callout",
+      "variant": "standard",
+      "title": "Reject: the linearity killer",
+      "body": "The **reject (suppression)** control cleans grass off the baseline by cutting off low-amplitude signal — and on analog instruments it destroys vertical linearity while doing it: a displayed 2:1 ratio is no longer a true 2:1 ratio. Verify linearity with reject **off**, and treat any use of reject during a calibrated examination as prohibited unless the governing code explicitly allows it and linearity is demonstrated in that condition."
+    },
+    {
+      "type": "text",
+      "heading": "Variable Effects on the Electronic Chain",
+      "body": "The electronics behave only as well as the conditions around them, and a list of innocuous-looking variables can quietly shift a standardized instrument. Treat each as a control to be **fixed at standardization and left alone**:\n\n- **Pulser energy and damping** reshape the transmitted pulse; more energy means more amplitude but a longer, lower-resolution pulse and a longer dead zone.\n- **PRF** set too high for the range doesn't let one pulse die before the next fires — echoes from the previous shot **wrap around** into the next trace as ghost indications that move strangely when the range or PRF changes.\n- **Frequency and filter selections** alter both amplitude and pulse shape; a 2.25 MHz probe run through a 5 MHz filter loses signal and gains distortion.\n- **Smoothing / video filtering** rounds peaks — convenient to view, dangerous when peak amplitude is the acceptance quantity.\n- **Cable type and length** load the probe: a long or wrong-impedance cable can cost several dB and ring the pulse.\n- **Temperature and power:** electronics drift during warm-up — give the instrument its stabilization time — and a sagging battery near shutdown is not a calibrated instrument.\n\nThe discipline: standardize with every one of these in its examination state — same pulser settings, same filter, same PRF, same cable — then don't touch them."
+    },
+    {
+      "type": "text",
+      "heading": "Transmission Accuracy and Standardization Requirements",
+      "body": "**Transmission accuracy** is the faithfulness of the whole electronic translation — pulse out, signal in, number displayed. On the time axis it depends on the **velocity setting** and the **zero (probe delay)**, and the two-point check separates them. Measure a thin and a thick step of a known block: a **zero error** shifts every reading by the same constant amount (it dominates thin readings), while a **velocity error** scales with distance (it dominates deep readings). Adjust zero on the thin step, velocity on the thick, then re-check both. On the amplitude axis, transmission accuracy rests on the verified dB control and on a receiver whose **frequency response matches the probe**. Digital instruments add **sampling**: the digitizer must sample fast enough that the displayed peak is the real peak — one reason to use peak-capture readings rather than eyeballing a sparse trace.\n\n**Standardization requirements** wrap the program in rules: verification at fixed calendar intervals and after repair or suspected damage; checks performed with the **same type of search unit and cable** the instrument runs in service; reject off; results **documented** — date, instrument serial number, block identification, readings, technician. Between formal verifications, the instrument is still re-proven functionally every working day against reference blocks. The paperwork is not bureaucracy: it is the only evidence that the numbers in last month's reports were real."
+    },
+    {
+      "type": "text",
+      "heading": "Standardization Reflectors",
+      "body": "Reflectors for electronic checks have one job: **reproducibility**. They are not flaw simulators — they are signal sources of known, stable geometry.\n\n- **Parallel faces** of a uniform block — the multiple-echo ruler for horizontal linearity and for velocity/zero setting.\n- **A side-drilled hole pair** at staggered positions — the locked 2:1 amplitude ratio for vertical linearity (a purpose-made two-hole block keeps the ratio honest and repeatable).\n- **A single SDH or flat-bottom hole** — the steady echo for exercising the dB control through its range.\n- **Machined notches and radii** (the IIW block's 100 mm radius, for example) — stable references for checks that need one strong, repeatable echo.\n\nWhatever the choice, the rules are the same: machined and dimensioned reference geometry, stable fine-grained material, surfaces kept clean and rust-free, and the block identified on the record. A corroded, dinged 'shop block' that has been dropped twice is not a standardization reflector — it is a random number generator with a handle."
+    }
+  ],
+  "figures": [
+    {
+      "id": "ut1-8-2-fig-a",
+      "title": "Horizontal linearity: multiple back echoes",
+      "file": "ut1-8-2-fig-a.svg"
+    },
+    {
+      "id": "ut1-8-2-fig-b",
+      "title": "Vertical linearity: the 2:1 ratio check",
+      "file": "ut1-8-2-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "scenario",
+    "title": "Quarterly Electronics Verification",
+    "intro": "The lab's portable flaw detector is due its quarterly electronic standardization before it goes back in the truck. You have a 25 mm parallel steel block, a two-SDH amplitude block, and the instrument's record book. Work the verification like a Level II.",
+    "steps": [
+      {
+        "prompt": "First check is horizontal linearity. What's the right setup?",
+        "options": [
+          "Couple to a weld sample and confirm a flaw echo appears",
+          "Couple a straight-beam probe to the 25 mm parallel block, display five back-wall echoes across a 125 mm range, and compare each against its grid mark",
+          "Maximize the gain and confirm the baseline fills with grass",
+          "Skip the probe and inject an electronic pulse — couplant only adds error"
+        ],
+        "correct": 1,
+        "feedback": "Multiple back echoes from parallel faces are the time ruler: equal thickness, equal spacing. Five echoes at 25 mm intervals should land at divisions 2, 4, 6, 8, and 10 of a 125 mm range."
+      },
+      {
+        "prompt": "Echoes one, two, four, and five sit on their marks; echo three peaks 0.35 divisions — about 3.5% of full screen width — past its mark. Call it.",
+        "options": [
+          "Pass — most echoes are on their marks",
+          "Pass — only the first echo position matters",
+          "Fail — the deviation exceeds the common 2%-of-screen-width limit; the instrument needs service before code work",
+          "Adjust the velocity setting until echo three lands correctly"
+        ],
+        "correct": 2,
+        "feedback": "Each position must individually meet the limit — about 2% of full screen width is the common acceptance. Chasing one echo with the velocity control would only drag the others off their marks; the sweep itself is nonlinear."
+      },
+      {
+        "prompt": "Vertical linearity next: two SDH echoes set at 80% and 40% FSH. You remove 6 dB. What must the screen show for a pass?",
+        "options": [
+          "Larger echo about 40% FSH, smaller about 20% — the 2:1 ratio held",
+          "Larger echo at 74% — 6 dB means 6% less",
+          "Both echoes unchanged — gain doesn't affect displayed amplitude",
+          "Larger echo at 20%, smaller at 10%"
+        ],
+        "correct": 0,
+        "feedback": "Minus 6 dB is exactly half amplitude: 80% falls to about 40%, 40% to about 20%, and the pair must hold its 2:1 relationship within roughly ±5% FSH at every step."
+      },
+      {
+        "prompt": "While recording results you notice the reject control was set at 10% the whole time. What now?",
+        "options": [
+          "Note it on the record — reject only affects the look of the baseline",
+          "Turn reject off and repeat the amplitude linearity checks; reject distorts vertical linearity",
+          "Leave it — 10% is below the 20% evaluation level, so it can't matter",
+          "Add 10% more gain to compensate and accept the readings"
+        ],
+        "correct": 1,
+        "feedback": "Reject cuts off the bottom of every signal, so displayed ratios are no longer true ratios — the amplitude checks are invalid with it on. Switch it off, re-run the vertical linearity and dB checks, and record the rerun."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "An echo stands at 80% of full screen height. You remove 6 dB of gain. A linear display will now show the echo at approximately:",
+      "options": [
+        "74% FSH",
+        "20% FSH",
+        "40% FSH",
+        "8% FSH"
+      ],
+      "correct": 2,
+      "explanation": "Six decibels is a factor of two in amplitude (ΔdB = 20·log₁₀ of the ratio), so removing 6 dB halves 80% to about 40% of full screen height."
+    },
+    {
+      "question": "Horizontal (sweep) linearity is most commonly verified by:",
+      "options": [
+        "Setting one back echo at full screen and reading its height",
+        "Displaying multiple back-wall echoes from a parallel-faced block and checking that they fall at equal intervals",
+        "Building a DAC curve from side-drilled holes at three depths",
+        "Comparing the responses of two different probes on the same block"
+      ],
+      "correct": 1,
+      "explanation": "Equal thicknesses produce equal time intervals, so a train of back echoes from parallel faces must land at equal screen spacing — deviations reveal sweep nonlinearity or wrong velocity/zero settings."
+    },
+    {
+      "question": "On an analog instrument, the reject (suppression) control:",
+      "options": [
+        "cleans up the baseline but destroys vertical linearity, so amplitude ratios become untrue",
+        "increases the pulse repetition frequency",
+        "shortens the probe's dead zone",
+        "has no effect on displayed amplitude relationships"
+      ],
+      "correct": 0,
+      "explanation": "Reject cuts off the low-amplitude portion of every signal, so displayed heights no longer hold true ratios — which is why linearity is verified with reject off and codes restrict its use."
+    },
+    {
+      "question": "Ghost indications that appear at odd screen positions and shift when the range or PRF setting changes are typically caused by:",
+      "options": [
+        "Mode conversion inside the wedge",
+        "Reflections in the probe cable",
+        "Vertical nonlinearity of the receiver",
+        "A PRF set too high, so echoes from the previous pulse wrap around into the next trace"
+      ],
+      "correct": 3,
+      "explanation": "If a new pulse fires before the last one's echoes die out, leftover echoes display against the wrong time base — wrap-around ghosts that move when PRF or range changes."
+    },
+    {
+      "question": "During a vertical linearity check, with the larger echo set to 60% FSH the smaller echo reads 45% instead of the expected 30%. The correct conclusion is:",
+      "options": [
+        "The probe is worn and must be replaced",
+        "The display is nonlinear — the 2:1 ratio is outside the ±5% FSH allowance, and amplitude comparisons in this range are unreliable",
+        "The side-drilled hole has enlarged from use",
+        "This is normal behavior near mid-screen"
+      ],
+      "correct": 1,
+      "explanation": "The pair was locked at 2:1, so at 60% the smaller echo must read 30% within about ±5% FSH; 45% is a gross ratio failure that indicates receiver nonlinearity, not a probe or block problem."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, UT Technique Course §2.2 (standardization of equipment electronics: variable effects, transmission accuracy, standardization requirements, standardization reflectors)",
+    "Codes such as ASME BPVC Section V, Article 4 (screen height linearity and amplitude control linearity verifications, general practice)",
+    "dB relationship: ΔdB = 20·log₁₀(A₂/A₁); −6 dB = half amplitude (reference value)"
+  ]
+}

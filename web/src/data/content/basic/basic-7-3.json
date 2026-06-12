@@ -1,0 +1,200 @@
+{
+  "lessonId": "basic-7-3",
+  "title": "Visual Testing: Interpretation and Evaluation",
+  "narrationScript": "Finding an indication is only half the job; this lesson covers the half that decides what happens next. Interpretation classifies each visual indication as false, nonrelevant, or relevant. Evaluation takes the relevant ones and judges them against acceptance criteria, and those criteria are never the inspector's opinion. They live in codes, standards, and specifications: structural welding codes that put numbers on undercut and porosity, the ASME code that tells you how to examine in Section Five and whether to accept in the referencing section, casting standards built on reference photographs, and, in aviation, the structural repair manual and approved data of a Part 145 repair station. A discontinuity becomes a defect only when it fails those written limits. Then the environment gets a vote: at least one hundred footcandles at the surface, an eye within twenty-four inches at no less than thirty degrees, oblique light to shadow shallow relief, a clean surface, and an inspector with verified near vision. Control the conditions, quote the document, and your disposition defends itself.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Two Decisions: What It Is, Then Whether It Stays",
+      "body": "Visual testing produces **indications** — anything seen during the examination that requires explanation. What happens next is two separate mental acts, and the Basic examination expects you to keep them separate. **Interpretation** decides *what the indication is*: **false** (an artifact of the viewing conditions — a shadow line, a glare streak, smeared compound, a scratch in an inspection mirror), **nonrelevant** (a real feature of the part that comes from design or processing — a machining step, weld ripple within workmanship limits, a casting parting line), or **relevant** (caused by a discontinuity). **Evaluation** then takes only the relevant indications and judges each one against **acceptance criteria** to reach a **disposition**: accept or reject.\n\nThe vocabulary carries legal weight. A **discontinuity** is any interruption in the normal structure of a part — and it may be perfectly acceptable. A **defect** is a discontinuity that evaluation has shown to exceed the applicable acceptance criteria: rejectable by definition. Writing \"defect\" in a report for every discontinuity is more than sloppy language; it documents a rejection that may never have been justified, and the same discontinuity can be a defect under one code and acceptable under another.\n\nThe hinge between the two acts is the source of the criteria. Interpretation leans on the inspector's training and the part's drawing; evaluation leans on a **document** — a code, standard, specification, or approved repair data invoked by the contract. The inspector's authority is to measure honestly and apply the written limit faithfully. It is never to invent the limit. When no criterion covers the condition, the finding is reported and routed to engineering — not dispositioned from experience."
+    },
+    {
+      "type": "text",
+      "heading": "Codes and Standards: Where Acceptance Criteria Live",
+      "body": "The criteria arrive through a chain of documents, and the chain matters as much as the numbers.\n\n- **Codes** are bodies of requirements that acquire the force of law when a jurisdiction adopts them or a contract invokes them — the **ASME Boiler and Pressure Vessel Code** and **AWS D1.1**, *Structural Welding Code — Steel*, are the classic examples. Their language is **shall**.\n- **Standards and specifications** (ASTM, SAE/AMS, ISO, customer specifications) define requirements for products, processes, and tests, becoming binding when cited by a code, drawing, or purchase order.\n- **Recommended practices and guides** advise in **should** language — the same distinction Module 1 built around SNT-TC-1A versus CP-189. And keep the division of labor straight: SNT-TC-1A and NAS 410 qualify the *inspector*; the documents in this lesson judge the *hardware*.\n\nThree patterns recur across industries. **AWS D1.1** tabulates visual acceptance criteria directly: cracks prohibited, craters filled, undercut limited on the order of **1/32 in. (1 mm)** for most statically loaded members — tightening to as little as **0.01 in. (0.25 mm)** on cyclically loaded members stressed transverse to the weld — plus piping porosity and weld-profile limits. **ASME Section V, Article 9** supplies only *methodology* — how the examination is performed and demonstrated — while the acceptance criteria live in the **referencing code section**: Section VIII for new vessels, the B31 sections for piping, and, in service, **API 510, 570, and 653**. Castings are evaluated by **comparison**: MSS SP-55's reference photographs and ASTM A802's graded comparator plates define the acceptable surface visually instead of numerically.\n\nAviation runs the same logic under FAA rules. In a **14 CFR Part 145 repair station**, visual findings on an airframe are evaluated against the OEM's **structural repair manual (SRM)** allowable damage limits, component maintenance manuals, and other **FAA-approved or acceptable data** such as **AC 43.13-1B** — and the edition in force is the one the work order invokes. Always confirm **document and edition** before evaluating: limits move between editions, and an evaluation to the wrong revision is a nonconformance of its own."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-7-3-fig-a",
+      "caption": "Interpretation sorts every visual indication — false, nonrelevant, or relevant — and only relevant indications proceed to evaluation against written acceptance criteria. Acceptance comes from the invoked documents; rejection makes the discontinuity a defect, and repaired items return for re-examination to the same criteria."
+    },
+    {
+      "type": "table",
+      "caption": "Where VT acceptance criteria come from: representative documents and the form their criteria take.",
+      "headers": ["Document / family", "What it governs", "What the VT criteria look like"],
+      "rows": [
+        ["AWS D1.1, Structural Welding Code — Steel", "New structural steel weldments", "Tabulated visual criteria: cracks prohibited, craters filled, undercut and porosity limits, weld profile requirements; statically and cyclically loaded members treated differently"],
+        ["ASME BPVC Section V, Article 9", "How visual examinations are performed", "Methodology only: direct viewing within 24 in. (600 mm) at no less than 30°, minimum illumination, procedure demonstration — acceptance criteria come from the referencing code"],
+        ["ASME Section VIII / B31 piping codes", "New pressure vessels and process piping", "The acceptance criteria the Section V examination is judged against: weld surface condition, undercut, reinforcement, alignment"],
+        ["API 510 / 570 / 653", "In-service vessels, piping, storage tanks", "Evaluation of corrosion, distortion, and mechanical damage against remaining-thickness and fitness-for-service rules"],
+        ["MSS SP-55 / ASTM A802", "Casting surface quality", "Comparison with published reference photographs (SP-55) or graded comparator plates (A802); cracks and hot tears not acceptable in any degree"],
+        ["OEM SRM / CMM, AC 43.13-1B, engineering orders", "Civil aircraft structure and components (14 CFR Part 145 context)", "Allowable damage limits by zone — depth, area, edge distance — blended and re-inspected; damage beyond limits requires FAA-approved repair data"],
+        ["Engineering drawing / purchase order", "The specific part in front of you", "Invokes the documents and editions above, adds part-specific requirements, and is the first place evaluation looks"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Applying the Criteria: Measure, Compare, Document",
+      "body": "Written criteria come in two styles, and each imposes its own discipline.\n\n**Dimensional limits are measured, never estimated.** Undercut depth, porosity diameter and spacing, reinforcement height, misalignment, pit depth — when the document states a number, the evaluation uses a calibrated aid: undercut and pit-depth gauges, bridge-cam and fillet gauges, optical comparators with measuring reticles, a straightedge and feeler. Many criteria also hinge on classification before measurement: a **linear** indication is conventionally one whose length exceeds **three times its width**, and linear indications almost always face tighter limits than rounded ones. One limit is universal — **cracks are prohibited**. No fabrication code grants a crack an allowable size, in part because the visible length of a crack says little about its true extent.\n\n**Comparison references are compared, not recalled.** Reference photographs, comparator plates, and shop workmanship samples are used side by side with the part, under similar lighting, viewing distance, and angle. Judging a casting surface \"from memory\" of the photograph defeats the purpose of having one.\n\nEvery evaluation ends in **documentation**: what was examined, to which procedure, the criteria document and edition, the indication's location, type, and size, the measured or compared result, the lighting verification, and the disposition by personnel certified for that responsibility under the written practice. A rejected item goes to repair or rework — and then **back through the same examination to the same criteria**. And when a condition exceeds or escapes the published limits, the disposition belongs to **engineering**: a material review board in manufacturing, or OEM and FAA-approved repair data in a Part 145 hangar."
+    },
+    {
+      "type": "text",
+      "heading": "Environmental Factors: Lighting, Surface, and Setting",
+      "body": "CP-105 names **environmental factors** as the second half of VT evaluation because the environment sets what the eye can resolve before judgment even begins.\n\n**Illumination quantity.** The working floor for visual examination is **100 fc (about 1,000 lux)** at the examination surface — verified with a **calibrated light meter at the surface**, never assumed from the lamp's rating. Distance ruins illuminance quickly: double the lamp-to-surface distance and the reading falls to a quarter.\n\n**Illumination quality.** Direction and character matter as much as quantity. **Diffuse** light suppresses the specular glare that hides indications on machined and polished surfaces; **directional light at a grazing angle** throws shadows from shallow relief — the standard hangar technique of holding a flashlight nearly parallel to a fuselage skin to expose dents, hail strikes, and the corrosion \"pillowing\" of lap joints. Color rendering counts when the judgment is itself about color, such as evaluating heat tint on stainless weldments.\n\n**Surface condition.** Criteria presuppose a viewable surface: slag, spatter, scale, dirt, and — unless the procedure says otherwise — coatings come off before the call is made. Surface preparation is part of the examination, not a courtesy.\n\n**Setting.** Field work adds rain, dust, low sun, heat shimmer above hot surfaces, condensation fogging optics, vibration, and awkward access from ladders and staging. Access drives geometry: when the eye cannot get within **24 in. (600 mm)** of the surface at an angle of at least **30°**, mirrors change the angle, and borescopes or cameras substitute — provided the remote system demonstrates **resolution at least equivalent to direct viewing**. An examination performed outside these conditions is not conservative; it is invalid, and the remedy is to restore the conditions and examine again."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-7-3-fig-b",
+      "caption": "Two conditions make a direct visual examination valid. Left: the eye within 24 in. (600 mm) of the surface, viewing at an angle no less than 30 degrees. Right: at least 100 fc (about 1,000 lux) verified at the surface with a calibrated meter — with low-angle directional light added when shallow relief needs a shadow to be seen."
+    },
+    {
+      "type": "callout",
+      "variant": "standard",
+      "title": "Numbers an auditor will ask for",
+      "body": "Direct viewing: eye within **24 in. (600 mm)** of the surface, at an angle **not less than 30°**. Illumination: minimum **100 fc (about 1,000 lux)** at the examination surface, verified with a calibrated meter. Procedure capability: demonstrated by resolving a **fine line no wider than 1/32 in. (0.8 mm)** on an 18% neutral gray card or equivalent. Remote systems: resolution **at least equivalent to direct viewing**. The inspector: near-vision acuity verified **at least annually** with a Jaeger-type chart per the written practice — NAS 410 and SNT-TC-1A both require it — with color perception or gray-scale differentiation checked per the program."
+    },
+    {
+      "type": "text",
+      "heading": "The Inspector in the Loop: Vision, Fatigue, and Judgment",
+      "body": "The final environmental factor is the inspector. Visual testing's detector is a human visual system, and a sound program treats it like any other instrument: **qualified, verified, and operated within its limits**.\n\n**Verification.** Near-vision acuity is examined at least annually with a Jaeger-type chart — corrective lenses are fine, but then they become required equipment on the job — and color perception or gray-scale differentiation is verified per the written practice. An inspector working without the lenses recorded on the vision exam is, in audit terms, uncalibrated equipment.\n\n**Adaptation and fatigue.** Eyes need time when moving between a bright ramp and a dim interior; glare recovery is real, and procedures for tank and fuselage-interior work build in adjustment time. Vigilance decays across a long shift — the miss rate on the four-hundredth fastener is not the miss rate on the fourth — so disciplined scan patterns, planned breaks, and second-pass coverage of critical zones are inspection engineering, not coddling.\n\n**Bias.** Expectation is the quiet enemy: the part that \"always passes,\" the end-of-shift finding nobody wants, the schedule pressure to see less. The defenses are procedural — independent re-examination of repairs, findings documented either way, and the standing rule this lesson keeps repeating: criteria are quoted, not invented, and conditions are met, not approximated.\n\nIn a Part 145 repair station all of this converges on one signature: the inspection record behind a **return to service**. The record shows what was examined, under what conditions, against which approved data, and by whom — and that chain is what makes a visual call defensible years later."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-7-3-fig-a",
+      "title": "From visual indication to disposition",
+      "file": "basic-7-3-fig-a.svg"
+    },
+    {
+      "id": "basic-7-3-fig-b",
+      "title": "Direct visual examination conditions",
+      "file": "basic-7-3-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "scenario",
+    "title": "Accept or Reject: Apply the Criteria",
+    "intro": "Five findings from a week of visual inspection. For each one, the governing criteria are on the bench in front of you. Make the call the document supports — no more, no less.",
+    "steps": [
+      {
+        "prompt": "A fillet weld on a statically loaded structural bracket shows undercut along one edge. The governing welding code limits undercut on this member to 1/32 in. (1 mm). Your calibrated undercut gauge reads 0.6 mm at the deepest point.",
+        "options": [
+          "Reject — any visible undercut is a stress riser and must be removed",
+          "Accept — the measured depth is within the 1 mm limit; record the location and the reading",
+          "Accept, but only after the undercut is blended smooth",
+          "Refer the weld to engineering for disposition"
+        ],
+        "correct": 1,
+        "feedback": "Quantitative criteria are applied by measuring, not by eyeballing or by adding personal margin. At 0.6 mm against a 1 mm limit, the weld meets the invoked code; the disposition is accept, documented with location, reading, and the criteria edition. Over-rejection is as much an evaluation failure as under-rejection — it scraps acceptable hardware and erodes trust in the program."
+      },
+      {
+        "prompt": "Under compliant lighting, a tight, jagged line crosses the toe of a repaired groove weld. With a 10x magnifier it is clearly a crack, about 3 mm long. The acceptance table you are working to puts no number next to 'cracks' — only the word 'prohibited.'",
+        "options": [
+          "Accept — 3 mm is shorter than the limit applied to other linear indications",
+          "Classify it as nonrelevant because it sits at a geometric stress concentration",
+          "Reject — cracks are prohibited regardless of length in essentially every fabrication code",
+          "Record it as a 'linear indication' and apply the porosity spacing rules"
+        ],
+        "correct": 2,
+        "feedback": "Cracks carry zero tolerance: AWS D1.1, the ASME code sections, and aerospace acceptance data all prohibit them outright, because a crack is a planar, propagating flaw whose visible length understates its severity. Limits written for other indication types never transfer to cracks. The weld is rejected, repaired — and then re-examined to the same criteria."
+      },
+      {
+        "prompt": "A pump casing casting shows general surface roughness and scattered shallow depressions. The purchase order invokes a visual standard that evaluates casting surfaces by comparison with published reference photographs, and this surface is visibly better than the 'acceptable' photo for its irregularity type. Personally, you think it looks ugly.",
+        "options": [
+          "Reject — a trained inspector's judgment overrides a photograph",
+          "Accept — compared under similar lighting and distance, the surface meets the invoked comparison standard",
+          "Reject, applying the weld undercut limits to the rough areas",
+          "Quarantine the casting until a borescope examination can be arranged"
+        ],
+        "correct": 1,
+        "feedback": "Comparison standards such as MSS SP-55 and the comparator plates of ASTM A802 exist precisely to take 'ugly' out of the vocabulary: the boundary between acceptable and rejectable is the published reference, viewed under comparable conditions. The surface beats the referenced photo, so it is acceptable. Your aesthetic opinion — in either direction — is not a criterion."
+      },
+      {
+        "prompt": "Finishing your paperwork after examining welds inside a tank, you discover the drop light you used delivered only 40 fc at the surface — the procedure, following ASME Section V, Article 9, requires a minimum of 100 fc verified with a calibrated meter. Every weld you examined 'passed.'",
+        "options": [
+          "The results stand — no rejectable indications were seen, so the lighting made no difference",
+          "Reject every weld examined under the deficient lighting",
+          "Note the discrepancy in the report and let the reviewer decide",
+          "Void the affected examinations and re-examine under compliant, verified lighting before any disposition"
+        ],
+        "correct": 3,
+        "feedback": "An examination performed outside its essential conditions is not a valid examination — those welds neither passed nor failed, because the test that could have failed them never properly happened. Deficient illumination silently lowers detection capability, so 'nothing was seen' proves nothing. Restore the conditions, re-examine, then disposition."
+      },
+      {
+        "prompt": "In a Part 145 repair station, you find a gouge at a fastener hole edge on a wing skin. The structural repair manual's allowable damage limits for that zone permit blended damage up to 0.030 in. deep; after cleanup, your depth gauge reads 0.045 in.",
+        "options": [
+          "Accept — an inspector may extend SRM limits by 50% for isolated damage",
+          "Keep blending until the gouge polishes out, then accept",
+          "Beyond the published limits the inspector cannot accept: the condition requires an engineering disposition based on OEM or other FAA-approved data",
+          "Reject the aircraft permanently — damage beyond allowable limits cannot be repaired"
+        ],
+        "correct": 2,
+        "feedback": "Allowable damage limits are acceptance criteria, and 0.045 in. exceeds them — so acceptance authority leaves the inspector's hands. That does not scrap the wing: it routes the finding to an engineering disposition, typically an OEM repair scheme or other FAA-approved data. Blending deeper without approved instructions only enlarges the nonconformance. The inspector's job is the accurate measurement, the honest report, and the refusal to invent criteria."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "An inspector confirms a relevant linear indication at a weld toe, measures it, and compares the measurement with the limits tabulated in the governing code to decide whether the weld can be accepted. That comparison step is properly called:",
+      "options": [
+        "Interpretation — deciding whether the indication is false, nonrelevant, or relevant",
+        "Evaluation — judging a relevant indication against the applicable acceptance criteria",
+        "Standardization — adjusting the examination system before use",
+        "Verification — confirming the inspector's visual acuity"
+      ],
+      "correct": 1,
+      "explanation": "Interpretation sorts indications into false, nonrelevant, or relevant; evaluation then takes the relevant ones and judges them against the acceptance criteria of the governing code or specification. Comparing a measured indication with tabulated limits is evaluation, and it ends in a documented disposition — accept or reject."
+    },
+    {
+      "question": "Under standard NDT terminology, a discontinuity found during visual testing is properly called a defect when:",
+      "options": [
+        "it can be seen without magnification",
+        "it is longer than 1/16 in. (1.6 mm) in any direction",
+        "evaluation shows it exceeds the acceptance criteria of the governing document, making it rejectable",
+        "the inspector judges that it spoils the appearance of the part"
+      ],
+      "correct": 2,
+      "explanation": "'Defect' is a disposition word, not a description: it means a discontinuity that evaluation has shown to be rejectable under the applicable criteria. The same discontinuity can be a defect under one code and acceptable under another — which is why the governing document and edition must be identified before evaluation begins."
+    },
+    {
+      "question": "A visual examination procedure for a new pressure vessel is written to ASME Section V, Article 9. What Article 9 supplies is:",
+      "options": [
+        "the acceptance criteria for the vessel's welds",
+        "the personnel certification requirements that replace the employer's written practice",
+        "the repair procedures for any welds that are rejected",
+        "the examination methodology — viewing distance and angle, illumination, and procedure demonstration — with acceptance criteria coming from the referencing code"
+      ],
+      "correct": 3,
+      "explanation": "Section V is the methods book: Article 9 defines how a visual examination is performed and demonstrated. Whether what you see is acceptable comes from the referencing document — Section VIII for new vessels, the B31 sections for piping, API documents in service. Personnel qualification still flows from the employer's written practice and its governing standard."
+    },
+    {
+      "question": "For direct visual examination under ASME Section V, Article 9, the standard conditions are:",
+      "options": [
+        "eye within 24 in. (600 mm) of the surface, viewing angle not less than 30°, and at least 100 fc (about 1,000 lux) at the surface",
+        "eye within 36 in. (900 mm) of the surface, viewing angle not less than 15°, and at least 50 fc at the surface",
+        "eye within 24 in. (600 mm) of the surface, any viewing angle, and at least 10 fc at the surface",
+        "eye within 12 in. (300 mm) of the surface, viewing angle not less than 45°, and at least 500 fc measured at the lamp face"
+      ],
+      "correct": 0,
+      "explanation": "Direct visual examination places the eye within 24 in. (600 mm) of the surface at an angle of at least 30°, with a minimum of 100 fc (about 1,000 lux) verified at the examination surface — not at the lamp. Mirrors may improve the viewing angle, and remote aids such as borescopes must deliver resolution at least equivalent to direct viewing."
+    },
+    {
+      "question": "A fuselage skin inspection procedure directs the inspector to hold a flashlight so its beam strikes the skin at a very low, grazing angle. The purpose is to:",
+      "options": [
+        "raise the measured illuminance at the surface to the required minimum",
+        "make shallow surface relief — dents, bulges, and corrosion 'pillowing' — cast visible shadows that increase contrast",
+        "reduce inspector eye fatigue caused by bright reflected light",
+        "verify the inspector's color perception under field conditions"
+      ],
+      "correct": 1,
+      "explanation": "Directional light at a grazing angle exaggerates surface topography: every shallow dent or bulge throws a shadow many times wider than its depth, which is how lap-joint corrosion pillowing and hail damage are found. The technique actually lowers the lux reading at the surface, so the procedure pairs it with general illumination that still meets the 100 fc minimum."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Topical Outline §2.10.3 (VT interpretation and evaluation: codes and standards, environmental factors)",
+    "ASME Boiler and Pressure Vessel Code, Section V, Article 9, Visual Examination (direct and remote examination conditions, summarized)",
+    "AWS D1.1/D1.1M, Structural Welding Code — Steel (visual inspection acceptance criteria, summarized)",
+    "MSS SP-55 and ASTM A802, visual acceptance standards for steel casting surfaces (reference photograph and comparator practice)",
+    "FAA AC 43.13-1B, Acceptable Methods, Techniques, and Practices — Aircraft Inspection and Repair, and 14 CFR Part 145 (aviation acceptance data context)"
+  ]
+}

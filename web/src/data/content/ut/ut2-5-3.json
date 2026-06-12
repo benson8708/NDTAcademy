@@ -1,0 +1,191 @@
+{
+ "lessonId": "ut2-5-3",
+ "title": "Bonded Structure Acceptance Standards",
+ "narrationScript": "You can find a disbond all day long, but the job is not finished until that finding is measured, compared to written criteria, and dispositioned on paper. This lesson is about the rules, who writes them, what they say, and how you turn a screen full of indications into a defensible report. First, who sets the rules. Bonded structures live mostly in the aerospace world, and there the engineering authority owns the criteria. The aircraft or component manufacturer issues process and inspection specifications, and the engineering drawing for each bonded assembly assigns bond classifications, zones where a disbond threatens flight safety and zones where it mostly costs durability. Industry documents back this up, standard practices for ultrasonic examination of flat composite and sandwich panels, aerospace standards for honeycomb structure inspection, and the general requirement that personnel hold appropriate certification. Outside aerospace you will meet the same logic in wind blades, rail, and bonded vehicle structures. The names change, the skeleton does not. A written procedure, a reference standard, recording thresholds, acceptance limits by zone, and a report. Second, reference standards, because in bond work the reference panel is the calibration block. Codes for welds give you drilled holes and notches. Bond specifications give you reference panels built with the same skins, the same adhesive, the same core, and engineered disbonds, usually thin inserts or machined reliefs, placed at each interface that matters, in several sizes. You standardize sensitivity so the smallest rejectable disbond at the deepest bondline gives a clear, repeatable response, and you recheck that setup at set intervals and whenever anything in the chain changes. No reference panel, no valid evaluation. Third, the criteria themselves. Nearly every bond specification builds its acceptance rules from the same four bricks. One, a recording threshold, the smallest indication you must measure and log, commonly a quarter inch or six millimeters across, or any signal change beyond a set decibel limit. Two, a maximum single size, the largest disbond or void allowed anywhere in the zone, often expressed as a diameter or an area. Three, a density or cumulative limit, the total disbonded area allowed within a defined window, often written as a percentage of the bond area, a few percent is typical. Four, location rules, no defect allowed within a set distance of a panel edge, a doubler edge, a fastener row, or inside a designated critical zone, and rules about how close two indications may sit before you must treat them as one. Sizing for these comparisons follows the methods you already know. Move the probe until the response falls by six decibels and call that the edge, walk the boundary, and compute the area from the map. On a C-scan the software thresholds the image and totals the pixels for you, but you are still responsible for checking that the threshold matches the procedure. And here is the discipline that keeps you out of trouble. The technician evaluates against the written criteria, accept, record, reject. The technician never waives a criterion. Anything outside the limits goes to the engineering authority, a material review board or a designated engineer, and any repair comes back for re-inspection to the same standard. Fourth, the report. A bonded-structure evaluation report stands alone years later, so it carries the part number and serial number, the procedure and revision, the instrument, probe, frequency, couplant, and technique, pulse-echo, through-transmission, or resonance, the reference standard identification and the standardization results, the surfaces scanned and any areas not accessible, and then the findings, each indication with its location from a stated datum, its size and how it was sized, its amplitude or transmission loss relative to the reference level, and the bondline or layer involved when the technique can tell. Attach the C-scan image or a sketch with the acceptance overlay. Close with the disposition for each indication and the totals against the density limits, then sign it with your certification level and date. One last habit separates good bond inspectors from average ones. Read the acceptance section of the governing specification before the probe touches the part, and write your scan plan to answer exactly the questions the criteria will ask. If the limit is a percentage of doubler area, you need the doubler dimensions in the report. If the limit counts defects near edges, you need a datum scheme that locates edges precisely. Evaluation is not something that happens after inspection. Done right, it designs the inspection.",
+ "imagePrompt": "An inspector at a review station compares a color C-scan map of a bonded aircraft panel on a monitor against a printed acceptance grid, calipers and a marked-up honeycomb test panel lying on the desk beside the keyboard.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Who Writes the Rules",
+   "body": "Bonded-structure evaluation is dominated by aerospace practice, and there the **engineering authority owns the criteria**. The airframe or component manufacturer issues the governing process and inspection specifications, and the **engineering drawing** for each bonded assembly assigns bond classifications — critical zones where a disbond threatens structural integrity, and less critical zones where the concern is durability. Your procedure implements those documents; it does not replace them.\n\nIndustry documents supply the common technical backbone: standard practices for ultrasonic examination of flat composite laminates and sandwich panels (documents such as ASTM E2580), aerospace standards for honeycomb-structure NDI (the NAS-series heritage), general UT practice standards, and personnel-certification requirements per SNT-TC-1A or NAS 410. Outside aerospace — wind-turbine blades, rail vehicles, bonded automotive and marine structures — the document names change but the skeleton repeats: a **written procedure**, a **representative reference standard**, **recording thresholds**, **acceptance limits by zone**, and a **report**. Learn the skeleton and you can work to any of them."
+  },
+  {
+   "type": "text",
+   "heading": "Reference Standards Anchor the Evaluation",
+   "body": "In weld UT the calibration block carries drilled holes and notches. In bond work, the equivalent is a **reference panel built to the same stack-up as the part**: same skin alloy and thickness, same adhesive, same core, with **engineered disbonds** — typically thin polymer-film inserts or machined flat-bottom reliefs — placed at **each interface of interest** and in **several sizes** bracketing the rejectable limit.\n\nStandardization means setting sensitivity so the **smallest rejectable disbond at the least favorable depth** produces a clear, repeatable response — for example, a defined ring pattern in pulse-echo, a defined dB loss in through-transmission, or a defined meter deflection on a resonance tester nulled over good bond. The setup is verified at procedure-defined intervals and after **any change** in probe, cable, instrument, settings, or operator. Findings are then reported **relative to that reference response**, which is what makes results reproducible between technicians and between shops. No representative reference standard, no valid bond evaluation — if the part's stack-up isn't represented, stop and get the right panel."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-5-3-fig-a",
+   "caption": "Through-transmission C-scan of a bonded doubler with the acceptance overlay: recordable indications, a rejectable single disbond, and an edge-zone violation."
+  },
+  {
+   "type": "text",
+   "heading": "Recording and Acceptance Criteria",
+   "body": "Nearly every bond specification assembles its acceptance rules from four bricks:\n\n- **Recording threshold.** The smallest indication you must size and log — commonly anything 6 mm (0.25 in.) or larger across, or any response change beyond a stated dB or meter limit. Below threshold: not recorded. At or above: measured and entered, even if acceptable.\n- **Maximum single size.** The largest disbond or void permitted in the zone, stated as a diameter or area — e.g., no single disbond over 25 mm (1.0 in.) in a general zone, much less (or none detectable) in a critical zone.\n- **Density / cumulative limit.** The total disbonded area allowed in a defined window, usually a **percentage of the bond area** (a few percent is typical), so many small acceptable voids cannot quietly add up to a weak joint.\n- **Location and proximity rules.** No indication within a set distance of panel or doubler edges, core splices, or fastener rows; indications closer together than a stated gap are evaluated as **one combined defect**.\n\nSizing uses the tools you already own: probe-displacement sizing with the **6 dB drop** to walk the indication boundary, or thresholded **C-scan area measurement** — with you, not the software, responsible for confirming the threshold matches the procedure."
+  },
+  {
+   "type": "table",
+   "caption": "Representative acceptance-criteria structure for a bonded assembly (illustrative values — the governing specification rules).",
+   "headers": ["Zone", "Recording threshold", "Max single disbond", "Cumulative limit", "Edge rule"],
+   "rows": [
+    ["Critical (Class A) — primary load path", "All detectable indications", "None permitted", "None permitted", "Entire zone critical"],
+    ["General (Class B) — secondary structure", "≥ 6 mm (0.25 in.)", "≤ 25 mm (1.0 in.) diameter", "≤ 5% of bond area in any 300 mm square", "None within 13 mm (0.5 in.) of doubler edge"],
+    ["Non-structural (Class C) — fairings, trim", "≥ 13 mm (0.5 in.)", "Per drawing note", "≤ 10% of bond area", "Per drawing note"]
+   ]
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "Evaluate — never waive",
+   "body": "The technician's authority is to **compare findings against the written criteria** and disposition accept, record, or reject. Anything outside the limits goes to the **engineering authority** (MRB or designated engineer) — the technician never waives a criterion, never 'passes' a marginal call, and re-inspects every repair to the same standard before it closes."
+  },
+  {
+   "type": "text",
+   "heading": "The Evaluation Report",
+   "body": "A bonded-structure report must stand alone years later, in front of someone who never saw the part. It carries:\n\n- **Identification:** part and serial number, assembly drawing and bond classification, procedure number and revision, date, and the inspector's name and certification level.\n- **Technique record:** method (pulse-echo, through-transmission, resonance), instrument and probe with frequency, couplant or squirter setup, **reference standard ID** and standardization results, sensitivity settings.\n- **Coverage:** surfaces scanned, scan pattern and index, and — explicitly — any **areas not accessible** or not examined.\n- **Findings:** each recordable indication with location from a stated **datum**, size and the **sizing method** used, amplitude or dB loss **relative to the reference level**, and the bondline or layer involved where the technique resolves it. Attach the C-scan image or a sketch with the acceptance overlay.\n- **Disposition:** accept/record/reject per indication, cumulative-area totals against the density limit, and referral status for anything rejected.\n\nRead the acceptance section **before** scanning and design the examination to answer exactly the questions the criteria will ask — if the limit is a percentage of doubler area, the report needs the doubler dimensions; if edge zones matter, the datum scheme must locate edges precisely. Done right, evaluation designs the inspection."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-5-3-fig-b",
+   "caption": "The complete evaluation loop: standardize, scan, record, size, compare to criteria, disposition, report — with repairs re-entering the same loop."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-5-3-fig-a",
+   "title": "C-scan disbond map with acceptance overlay",
+   "file": "ut2-5-3-fig-a.svg"
+  },
+  {
+   "id": "ut2-5-3-fig-b",
+   "title": "Bonded-structure evaluation workflow",
+   "file": "ut2-5-3-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Disposition the Doubler",
+  "intro": "You are evaluating a through-transmission C-scan of a bonded aluminum doubler, 200 mm × 240 mm (bond area 480 cm²), general Class B zone. The governing specification requires: record all indications ≥ 6 mm across with ≥ 12 dB transmission loss; reject any single disbond > 25 mm across; reject if cumulative disbond area exceeds 5% of the bond area; no indication permitted within 13 mm of the doubler edge.",
+  "steps": [
+   {
+    "prompt": "The C-scan shows dozens of speckles at 3–4 mm with 6–8 dB loss, plus five distinct indications 8–20 mm across with 14–18 dB loss. What do you record?",
+    "options": [
+     "Everything visible on the C-scan, including the speckles",
+     "Only the five indications that meet both the 6 mm size and 12 dB loss recording thresholds",
+     "Nothing — record only rejectable defects",
+     "Only the largest single indication"
+    ],
+    "correct": 1,
+    "feedback": "The recording threshold is the gate: ≥ 6 mm AND ≥ 12 dB loss. The fine speckle falls below it and is not logged; all five qualifying indications are sized and recorded even if they turn out acceptable. Recording everything buries the report; recording only rejects hides the density picture."
+   },
+   {
+    "prompt": "One recorded indication in the middle of the doubler measures 22 mm across at its 6 dB-drop boundary. As a single indication, how do you disposition it?",
+    "options": [
+     "Reject — anything over 20 mm is always rejectable",
+     "Acceptable against the 25 mm single-disbond limit, but it still counts toward the cumulative area",
+     "Acceptable and excluded from all further evaluation",
+     "Reject — it exceeds the recording threshold"
+    ],
+    "correct": 1,
+    "feedback": "At 22 mm it is under the 25 mm single-size limit, so it passes that test — but every recorded indication's area still feeds the cumulative 5% check. Exceeding the recording threshold makes it recordable, not rejectable."
+   },
+   {
+    "prompt": "Another indication measures 9 mm across, but its boundary comes within 8 mm of the doubler edge. Disposition?",
+    "options": [
+     "Accept — it is far below the 25 mm single-size limit",
+     "Accept if the cumulative total stays under 5%",
+     "Reject / refer to engineering — it violates the 13 mm edge-zone rule regardless of size",
+     "Re-scan at lower sensitivity until it no longer records"
+    ],
+    "correct": 2,
+    "feedback": "Location rules are independent of size: doubler edges carry the peel stresses, so the 13 mm edge zone admits no indications. It fails the edge criterion and goes to the engineering authority. Desensitizing the test to lose an indication is falsification."
+   },
+   {
+    "prompt": "The five recorded indications total 26 cm² of disbonded area on the 480 cm² doubler. What is the cumulative disposition?",
+    "options": [
+     "Accept — 26 cm² is a small number",
+     "Reject / refer — 26/480 ≈ 5.4%, which exceeds the 5% cumulative limit",
+     "Accept — only single-size limits matter once each indication passes",
+     "Average the areas and compare the average to 5%"
+    ],
+    "correct": 1,
+    "feedback": "26 ÷ 480 = 0.054, about 5.4% of the bond area — over the 5% density limit, so the doubler is rejectable on cumulative area even though each indication individually passed the single-size test. That is exactly what density limits exist to catch."
+   },
+   {
+    "prompt": "Writing the report, which set of items is mandatory for each recorded indication?",
+    "options": [
+     "Location from a stated datum, size with sizing method, dB loss versus the reference level, and disposition",
+     "Only the disposition — accept or reject",
+     "The probable manufacturing cause of each disbond",
+     "The repair scheme you recommend to engineering"
+    ],
+    "correct": 0,
+    "feedback": "The report must let a stranger relocate and re-measure every finding: datum-referenced location, size and method, response relative to the standardization reference, and the disposition. Root cause and repair design belong to engineering, not the NDT report."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "In aerospace bonded-structure work, acceptance criteria for disbonds are ultimately set by:",
+   "options": [
+    "The NDT technician based on experience",
+    "The instrument manufacturer's default gate settings",
+    "The engineering authority through the drawing and governing specification",
+    "Whatever the previous inspection report used"
+   ],
+   "correct": 2,
+   "explanation": "The drawing assigns bond classifications and the governing specification states the limits; the technician evaluates against them and refers anything outside the limits to engineering."
+  },
+  {
+   "question": "A proper reference standard for evaluating a honeycomb panel with composite face sheets is:",
+   "options": [
+    "An IIW Type 1 block with its 100 mm radius",
+    "A panel of the same stack-up containing engineered disbonds at the interfaces of interest in several sizes",
+    "Any aluminum plate with side-drilled holes at T/4, T/2, and 3T/4",
+    "A bare sample of the cured adhesive"
+   ],
+   "correct": 1,
+   "explanation": "Bond responses depend on the exact skin, adhesive, and core, so sensitivity is standardized on a representative panel with built-in disbonds — weld-style blocks don't represent the structure."
+  },
+  {
+   "question": "A specification reads: 'Record all indications 6 mm or larger; no single disbond may exceed 25 mm; cumulative disbonded area shall not exceed 5% of the bond area.' A 15 mm disbond is found in the doubler interior. It is:",
+   "options": [
+    "Rejectable, because it exceeds the recording threshold",
+    "Recordable and individually acceptable, with its area counted toward the 5% cumulative limit",
+    "Not recordable, because it is under 25 mm",
+    "Cause to stop the inspection immediately"
+   ],
+   "correct": 1,
+   "explanation": "Recording thresholds trigger documentation, not rejection. At 15 mm it must be sized and logged, passes the 25 mm single-size limit, and still contributes to the cumulative-area total."
+  },
+  {
+   "question": "A bonded doubler has a bond area of 600 cm² and recorded disbonds totaling 24 cm². Against a 5% cumulative limit, the assembly is:",
+   "options": [
+    "Rejectable, at 8% of the bond area",
+    "Acceptable, at 4% of the bond area",
+    "Acceptable, because cumulative limits apply only to critical zones",
+    "Rejectable, because more than three indications were recorded"
+   ],
+   "correct": 1,
+   "explanation": "24 ÷ 600 = 0.04, or 4% — under the 5% density limit, so the cumulative criterion is met (each indication must still pass the single-size and location rules)."
+  },
+  {
+   "question": "Which item could be omitted from a bonded-structure evaluation report without invalidating it?",
+   "options": [
+    "The reference standard identification and standardization results",
+    "The inspector's recommended adhesive brand for the repair",
+    "Areas of the assembly that could not be examined",
+    "Each indication's location from a stated datum"
+   ],
+   "correct": 1,
+   "explanation": "Repair design and material selection belong to engineering. The reference standard, coverage limitations, and datum-referenced findings are all mandatory for a report that must stand alone."
+  }
+ ],
+ "references": [
+  "CP-105-2024 UT Evaluation Course §4.5 (bonded structures: applicable codes and standards)",
+  "Standard practices for ultrasonic examination of composite and sandwich panels, such as ASTM E2580 (cited generically)",
+  "Aerospace honeycomb and bonded-structure inspection standards and OEM process specifications (cited generically)",
+  "Personnel certification per SNT-TC-1A and NAS 410 (cited generically)"
+ ]
+}

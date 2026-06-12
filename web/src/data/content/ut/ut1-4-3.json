@@ -1,0 +1,129 @@
+{
+ "lessonId": "ut1-4-3",
+ "title": "Transducer Construction, Types, and Performance",
+ "narrationScript": "Open a probe catalog and you will see hundreds of models, but they are all variations on one sandwich. Let's take it apart from the connector down. At the top is the connector, usually a B N C or a microdot, feeding a short coaxial lead to the element. Then comes the backing, a heavy block of tungsten loaded epoxy bonded to the back face of the element. The backing has two jobs. It absorbs the sound that leaves the rear of the element so it cannot rattle around the case and come back as a false signal, and it damps the ringing of the element itself, the way a finger laid on a bell shortens its tone. Then the element, the thin piezoelectric disc we met last lesson, with a conductive electrode on each face. Below it sits the wear face. On a direct contact probe this is a hard ceramic or metal plate that takes the abrasion of sliding on steel. On immersion probes it is often a quarter wave matching layer, a thin coating engineered to ease the jump between the element and water. Around it all is a metal or plastic case with internal shielding against electrical noise. Elements come round, square, and rectangular. Long narrow rectangles go into paintbrush probes that sweep a wide swath for fast screening of plate. Immersion probes can carry an acoustic lens that focuses the beam to a tight spot for maximum sensitivity. Now the family tree. The straight beam contact probe drives longitudinal waves straight down. It is the tool for thickness, laminations, and forgings. The angle beam assembly mounts the element on a plastic wedge, usually acrylic, cut so the refracted shear wave enters the part at forty five, sixty, or seventy degrees. That is the weld inspector's standard kit. The dual element probe carries two crystals in one case, one transmitting and one receiving, separated by an acoustic barrier and tilted slightly toward each other at what we call the roof angle. The tilt makes the transmit and receive beams cross just under the surface, creating a pseudo focused zone with excellent near surface response. That is why duals own corrosion survey work and why the dead zone that blinds single element probes barely bothers them. The delay line probe puts a replaceable plastic standoff between the element and the part, moving the initial pulse and much of the near field out of the metal, ideal for thin sections and precision thickness. Immersion probes work through a water column, flat or focused, and they are the heart of automated scanning systems. Three performance words you must use precisely. Sensitivity is the ability to detect small reflectors, seen as echo height from a small target. Resolution is the ability to separate signals that arrive close together in time, two reflectors at nearly the same depth, or a shallow flaw against the ringing of the entry surface. Damping is the knob that trades one for the other. Heavy backing kills the ringing quickly. That gives a short, broadband pulse, crisp resolution, and a clean near surface, at the price of sensitivity, because energy that would have rung out into the part is absorbed instead. Light damping lets the element ring, producing a long, narrowband pulse with high sensitivity but smeared resolution. You buy probes along that spectrum to fit the job. And remember how little energy actually gets in. The element never shakes the part directly. Its push must cross the wear face and a film of couplant, and at a typical couplant to steel interface most of the energy bounces straight back. Only roughly a tenth of the sound crosses into the part, and the same toll gets charged again on the way out. The method works anyway because receivers amplify by factors of thousands. Finally, two transducers that throw away the piezoelectric contact recipe altogether. The electromagnetic acoustic transducer, E M A T, holds a magnet and a coil just above the surface and induces the ultrasonic vibration directly in the metal itself. No couplant at all, so it runs on hot, moving, oily, or painted product, and it generates some wave modes that piezo probes find difficult. The cost is efficiency. Signals are weak and need serious gain, and the trick only works on conductive materials. Laser ultrasonics goes further, firing a pulsed laser to generate sound in the surface and reading the returning vibration with a second laser interferometer. No contact at any distance, which suits glowing hot steel and complex aerospace shapes. Exotic today, but you will meet them.",
+ "imagePrompt": "An organized foam tray of ultrasonic transducers — stubby straight-beam probes, yellow angle-beam wedges, a dual-element corrosion probe, and slim delay-line pencil probes — beside a flaw detector on a workshop bench.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Sandwich Inside Every Probe",
+   "body": "Every conventional probe is the same stack of parts, top to bottom:\n\n- **Connector and lead** — BNC, LEMO, or microdot, feeding a shielded coaxial line to the element electrodes.\n- **Backing (damping) block** — typically tungsten-loaded epoxy bonded to the element's rear face. It absorbs the energy radiated backward (so it cannot bounce around the case and return as a false echo) and damps the element's ringing, controlling pulse length.\n- **Piezoelectric element** — the λ/2-thick disc, with thin conductive **electrodes** plated on both faces.\n- **Wear face** — on contact probes, a hard ceramic or metal plate that survives sliding on steel; on immersion and many composite probes, an engineered **quarter-wave matching layer** that eases the impedance jump from element to water or wedge and boosts transmitted energy.\n- **Case and shielding** — a grounded metal or metalized housing that keeps electrical noise out of a receiver chain working with millivolt signals.\n\nA damaged wear face, a cracked element, or a delaminated backing all show up as changed sensitivity, a stretched pulse, or baseline noise — which is why probe condition checks are part of routine calibration practice."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-4-3-fig-a",
+   "caption": "Cutaway of a straight-beam contact probe: backing block, electroded element, and wear face stacked inside a shielded case, coupled to the part through a thin couplant film."
+  },
+  {
+   "type": "text",
+   "heading": "Shapes and Special Geometries",
+   "body": "Elements are made **round** (most common), **square**, and **rectangular**. Geometry follows the job:\n\n- **Round** elements give the symmetrical beam assumed by the near-field and beam-spread formulas of the last lesson.\n- **Rectangular** elements are standard in angle-beam work — they pack more area onto a wedge and shape the beam differently in the two planes.\n- **Paintbrush probes** carry a long, narrow rectangular element (or a mosaic of elements) that sweeps a wide swath in one pass — a fast screening tool for plate, with poor lateral precision: indications found are re-examined with a small probe.\n- **Focused immersion probes** add an acoustic lens (or a curved element) that concentrates the beam to a small spot, raising sensitivity and lateral resolution at the chosen depth. Remember from immersion theory that the focal distance shortens dramatically once the beam enters metal, by roughly the velocity ratio.\n\nProbe markings state element size, nominal frequency, and type; serial numbers tie each unit to its calibration and characterization records. Two probes with identical labels can behave measurably differently — which is why critical procedures call for documented probe characterization rather than label trust."
+  },
+  {
+   "type": "text",
+   "heading": "The Probe Family Tree",
+   "body": "Six types cover most field UT:\n\n- **Straight-beam contact** — longitudinal waves at 0°; thickness, laminations, forgings, castings.\n- **Angle-beam assembly** — element clamped to an interchangeable acrylic wedge cut for a refracted shear wave of 45°, 60°, or 70° in steel; the standard weld kit. The wedge angle sits between the first and second critical angles, so only shear enters the part.\n- **Dual-element (TR) probe** — separate transmit and receive crystals over an acoustic barrier (often cork), each tilted slightly inward at the **roof angle** so the beams cross in a **pseudo-focused** zone just below the surface. Outstanding near-surface response and immunity to the single-element dead zone; the corrosion-survey workhorse. Its quirk: a slightly V-shaped sound path that makes very thin readings read marginally high without a dual-mode correction.\n- **Delay-line probe** — replaceable plastic standoff moves the initial pulse and much of the near field out of the metal; precision thickness on thin sections, hot-surface work with high-temp delay materials.\n- **Immersion probe** — flat or focused, working through a water column in tanks, squirters, and bubblers; the basis of automated production scanning.\n- **Paintbrush** — the wide screening element described above."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-4-3-fig-b",
+   "caption": "A dual-element probe's roof angle crosses the transmit and receive beams in a near-surface focus zone, while an angle-beam wedge refracts a shear wave into the plate at the marked angle."
+  },
+  {
+   "type": "text",
+   "heading": "Sensitivity, Resolution, and Damping",
+   "body": "Three specification words, used precisely:\n\n- **Sensitivity** — the ability to detect small reflectors; in practice, the echo amplitude returned from a specified small target (e.g., a flat-bottomed hole) at a given gain.\n- **Resolution** — the ability to separate signals close together in time/depth: two reflectors at nearly the same depth (axial resolution), or a shallow reflector distinct from the entry-surface signal (near-surface resolution).\n- **Damping** — how quickly the element's ringing is killed by the backing; it sets pulse length and bandwidth.\n\nThe trade is fundamental. **Heavy damping** → short pulse, broad bandwidth, excellent axial and near-surface resolution, smaller dead zone — but lower sensitivity, because energy that could have rung into the part is absorbed by the backing. **Light damping** → long narrowband pulse, maximum punch and penetration — but echoes smear together and the dead zone grows.\n\nA short pulse occupies less distance in the metal: a 2-cycle pulse at 5 MHz spans about 2.4 mm of steel, so reflectors more than ~1.2 mm apart in depth separate cleanly. The same logic in reverse explains why a ringy, narrowband probe cannot resolve a near-surface flaw from the initial pulse."
+  },
+  {
+   "type": "text",
+   "heading": "Getting the Vibration into the Part",
+   "body": "The element never shakes the test piece directly. Its motion must cross the wear face (or matching layer and wedge) and a thin couplant film before it becomes a stress wave in the metal — and every interface charges a toll set by the acoustic impedance mismatch.\n\nAt a typical couplant–steel interface, only on the order of **10–12%** of the incident energy crosses; the rest reflects back into the probe. The same toll applies to the returning echo. Matching layers exist to soften this: a quarter-wavelength layer of intermediate impedance can multiply the transmitted energy compared with a bare element face.\n\nPractical consequences:\n\n- **Coupling consistency is part of your calibration.** Amplitude comparisons assume the same couplant, surface condition, and contact pressure as the reference setup; the difference between a calibration block and a rough part is handled by **transfer correction**.\n- **Pressure matters** — rock or vary the force on a contact probe and watch the back-wall echo breathe. Scan with steady, moderate pressure.\n- The received echo may be a thousandth of the transmitted amplitude or less; the receiver's tens of decibels of gain are what make the method workable."
+  },
+  {
+   "type": "text",
+   "heading": "Beyond Piezo Contact: EMAT and Laser UT",
+   "body": "Two transducer families abandon the piezoelectric-contact recipe entirely.\n\n**EMAT (electromagnetic acoustic transducer).** A strong magnet and a coil sit just above the surface. Pulsed current in the coil induces eddy currents in the part; the magnetic field exerts forces on those currents (plus magnetostriction in ferromagnetic material), so the ultrasonic vibration is generated **in the part itself**. No couplant at all — EMATs run on hot, moving, oily, painted, or rough product, and they conveniently generate horizontally polarized shear (SH) and guided waves that piezo probes struggle to launch. Costs: works only on conductive materials, small liftoff tolerance, and low conversion efficiency — signals need substantial gain.\n\n**Laser UT.** A pulsed laser heats a tiny spot, and the rapid thermal expansion (or controlled ablation) launches a broadband ultrasonic pulse; a second laser with an interferometer reads the returning surface vibration. Fully non-contact at standoff distances, so it suits red-hot steel, curved aerospace composites, and parts that cannot be touched. Equipment cost and complexity keep it in production lines and labs rather than field kits.\n\nAir-coupled and wheel (captive-water) probes round out the no-gel toolbox — all solving the same problem: getting energy in without a liquid couplant."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Pick the probe like a Level II",
+   "body": "Backing sets the personality: **heavy damping = short pulse, sharp resolution, less punch; light damping = the reverse.** Duals for near-surface and corrosion, delay lines for thin precision work, wedges for welds, immersion for automation, EMAT/laser when couplant is impossible. And remember only ~10% of your energy enters the part — protect it with good coupling and consistent pressure."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-4-3-fig-a",
+   "title": "Cutaway of a straight-beam contact probe",
+   "file": "ut1-4-3-fig-a.svg"
+  },
+  {
+   "id": "ut1-4-3-fig-b",
+   "title": "Dual-element and angle-beam probe geometry",
+   "file": "ut1-4-3-fig-b.svg"
+  }
+ ],
+ "interactive": null,
+ "checkQuestions": [
+  {
+   "question": "The tungsten-loaded backing block bonded to the rear of the element exists primarily to:",
+   "options": [
+    "Increase the element's output voltage",
+    "Absorb rearward energy and damp the element's ringing to control pulse length",
+    "Focus the beam to a smaller spot",
+    "Raise the probe's resonant frequency"
+   ],
+   "correct": 1,
+   "explanation": "The backing soaks up sound radiated backward (preventing spurious echoes inside the case) and shortens the ring-down, which sets pulse length and bandwidth."
+  },
+  {
+   "question": "In a dual-element probe, the slight inward tilt of the two crystals (the roof angle) produces:",
+   "options": [
+    "A refracted 45° shear wave for weld scanning",
+    "A pseudo-focused zone just below the surface where transmit and receive beams cross",
+    "A longer near field in the test material",
+    "Mode conversion to surface waves"
+   ],
+   "correct": 1,
+   "explanation": "The roof angle crosses the transmit and receive beams in a shallow zone, giving excellent near-surface sensitivity — the reason duals dominate corrosion and remaining-wall surveys."
+  },
+  {
+   "question": "Compared with a lightly damped probe of the same element and frequency, a heavily damped probe gives:",
+   "options": [
+    "A shorter, broadband pulse with better axial resolution but lower sensitivity",
+    "A longer pulse with both better resolution and better sensitivity",
+    "A narrowband pulse with maximum penetration",
+    "Identical performance — damping only affects durability"
+   ],
+   "correct": 0,
+   "explanation": "Heavy backing kills the ring-down quickly: short pulse, broad bandwidth, crisp resolution and near-surface performance — but some energy is absorbed instead of transmitted, so sensitivity drops."
+  },
+  {
+   "question": "The key operating advantage of an EMAT over a conventional piezoelectric contact probe is that it:",
+   "options": [
+    "Produces much stronger signals at the same gain",
+    "Works on non-conductive plastics and composites",
+    "Needs no couplant, because the ultrasound is generated in the part itself",
+    "Eliminates the need for a receiver amplifier"
+   ],
+   "correct": 2,
+   "explanation": "EMATs induce the vibration electromagnetically in the (conductive) part surface, so they run couplant-free on hot, moving, or coated product. Their weakness is the opposite of the first option: low efficiency demanding high gain."
+  },
+  {
+   "question": "An inspector must distinguish two reflectors lying at nearly the same depth as separate indications. The probe property that governs this ability is:",
+   "options": [
+    "Sensitivity",
+    "Resolution",
+    "Curie temperature",
+    "Beam spread half-angle"
+   ],
+   "correct": 1,
+   "explanation": "Resolution is the ability to separate signals closely spaced in time/depth; it improves with shorter (more heavily damped, broadband) pulses. Sensitivity is about detecting small reflectors, not separating them."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, Basic UT Course §3.3.6–3.3.7, §3.3.9–3.3.11 (construction, types, performance, energy transfer, EMAT/laser UT)",
+  "Acoustic impedance and interface transmission values from standard UT references (couplant–steel ≈ 10–12% energy transmission)",
+  "Acrylic wedge velocity ≈ 2,730 m/s; standard refracted shear angles 45°/60°/70° in steel"
+ ]
+}

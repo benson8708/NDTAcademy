@@ -1,0 +1,179 @@
+{
+  "lessonId": "ut1-8-4",
+  "title": "Transmission Factors: Transducer, Couplant, and Material",
+  "narrationScript": "You standardized carefully on the block, and then you walked over to the part, and the part is not the block. Its surface is rougher. Its grain structure may be coarser. It may be hotter, curved, or painted. Your couplant film behaves differently on it. Every one of those differences changes how much sound energy actually crosses the interface, travels the part, and returns. We call these transmission factors, and they are the reason a perfect standardization can still produce a wrong call. Start with what the reference gain actually promised. When you set the side drilled hole to eighty percent of full screen height, the system captured everything at once, the probe's efficiency, the couplant transfer, and the block's surface and attenuation. Use the same system on a part that transmits less energy, and a real flaw echoes back smaller than its twin in the block would. The fix is transfer correction. Compare the same measurement on block and part, a back wall echo with one probe, or a pitch and catch signal between two angle beam probes on welds. Say the block gives a back echo at eighty percent and the part, at the same gain, gives only forty percent. That difference is six decibels. Add six decibels to your reference gain when evaluating on the part, and the comparison is fair again. Codes commonly require this check, and many set limits, if the difference grows large you must measure it and correct for it, never guess at it. Now the transducer, the first link. Probes age and wear. The wear face grinds down, and on an angle beam wedge that wear is rarely even. The front wears faster, the exit point creeps forward, and the refracted angle drifts. A two degree angle shift relocates every flaw you plot. Elements crack, backing degrades, cables fail internally, and sensitivity quietly slides. So we verify. Exit point and angle on the block at standardization, and sensitivity against the recorded reference response. And remember that two probes of the same model are not the same probe. Frequency, element size, and damping vary within manufacturing tolerance, which is why the calibration record carries the probe serial number, and why swapping probes means standardizing again, never just continuing. Couplant is the variable everyone forgets because it costs the least. Its job is to displace air, because an air gap at the interface reflects essentially all of the energy. But couplants are not equal. Water, gel, glycerin, and oil each transfer differently, and a change of couplant type between block and part can shift sensitivity by several decibels. Film thickness matters on rough surfaces, where a viscous couplant fills the valleys and a thin one drains away. Temperature changes viscosity. The discipline is simple. Same couplant, used the same way, on block and part, and recheck if it changes. One more thing, chemistry. On nickel alloys, austenitic stainless steel, and titanium, codes restrict sulfur and halogen content in couplants because residues can attack the metal. Read the procedure before you squeeze the bottle. The material itself is the last factor. Surface roughness scatters energy at the interface, and loose scale or flaking paint can block it entirely. Curvature shrinks the contact patch of a flat shoe, which is why procedures require contoured wedges past a certain mismatch. Inside the part, coarse grains scatter sound, and scattering rises steeply with frequency, so a casting may need a lower frequency than the block work suggested. Alloy, heat treatment, and temperature shift velocity, which moves both your range accuracy and your refracted angle. A common code rule keeps the block within about fourteen degrees Celsius, twenty five degrees Fahrenheit, of the part temperature, and high temperature work gets a heated block, special couplant, and corrected velocity. So when must you re standardize? At fixed intervals set by the procedure. Whenever any system element changes, probe, wedge, cable, couplant, or instrument settings. Whenever damage or drift is suspected. And at the end of the examination period, because the closing check is what validates everything since the last good one. The consequences are not symmetric, and this matters. Recheck and find the reference response has dropped, the system lost sensitivity somewhere along the way, you may have missed flaws, so everything tested since the last valid check gets retested. Find it has risen, you were over sensitive, nothing was missed, but recorded indications were measured against the wrong yardstick, so they get re evaluated. Either way the rule is the same. The calibration is never yours to assume. It is yours to prove, again and again, until the report is signed.",
+  "imagePrompt": "A technician compares back-wall echo heights between a smooth calibration block and a rough mill-scaled steel plate on a fabrication shop bench, holding the angle-beam probe wedge up to examine its worn contact face.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "What Transmission Factors Are",
+      "body": "Your reference gain is a promise with conditions. When the side-drilled hole peaked at 80% FSH, that number bundled together the probe's efficiency, the couplant's transfer, the block's surface, and the block's attenuation. Carry the system to a part where **any of those transfer conditions differ** and the same flaw returns a different echo — usually smaller. Everything that governs how much energy crosses into the part, survives the round trip, and gets back out is a **transmission factor**:\n\n- the **transducer** — its condition, wear, and identity;\n- the **couplant** — type, film, temperature, chemistry;\n- the **material** — surface, curvature, grain structure, temperature.\n\nThe danger is that it's invisible: the instrument still looks calibrated, the screen still draws crisp echoes, and the gain control still sits on the recorded number. But the *system* is no longer the system you standardized. This lesson covers each factor, the measured fix — **transfer correction** — and the rules for when nothing short of full re-standardization will do."
+    },
+    {
+      "type": "text",
+      "heading": "Transfer Correction: Making the Comparison Fair",
+      "body": "When block and part legitimately differ — rougher surface, higher attenuation, different product form — you don't guess; you **measure the difference and add it to the gain**.\n\nThe straight-beam version: with the reference gain set, peak the **back-wall echo** on the calibration block and note its height. Move to a flaw-free, representative area of the part, same gain, and read the back-wall echo again. Block: 80% FSH. Part: 40% FSH. The ratio is 2:1, and ΔdB = 20·log₁₀(80/40) = **6 dB**. Add 6 dB to the primary reference level when evaluating on the part, and a flaw in the part now competes on equal terms with the reference reflector in the block.\n\nFor angle-beam work, where no convenient back wall faces the beam, use **two probes in pitch-catch**: face them toward each other on the block, one skip apart, and record the through-transmitted signal; repeat on the part and compare. Same arithmetic.\n\nRun the comparison at several locations — parts aren't uniform — and apply the procedure's rules: many codes require checking transfer and correcting when the difference exceeds a stated allowance, and they cap how large a correction may grow before the part is declared untestable as-is. Record the measured values, not just the correction."
+    },
+    {
+      "type": "figure",
+      "figureId": "ut1-8-4-fig-a",
+      "caption": "Transfer correction: the same gain that puts the block's back echo at 80% FSH yields only 40% on the rough part — a measured 6 dB difference added to the reference gain."
+    },
+    {
+      "type": "text",
+      "heading": "The Transducer: Wear, Drift, and Identity",
+      "body": "The probe is the first transmission factor because it is the one guaranteed to change: it drags across steel for a living.\n\n- **Wear-face erosion** on contact probes thins the protective face and changes sensitivity and resolution.\n- **Wedge wear** is worse because it is uneven — the front of an angle-beam wedge wears faster, so the **exit point creeps forward and the refracted angle drifts**. A couple of degrees relocates every flaw you plot, and the error grows with sound path.\n- **Internal aging:** elements crack, backing debonds, cables fail intermittently — usually surfacing as lost sensitivity, a stretched pulse, or a noisy baseline.\n\nThe defenses are checks you already own. Verify **exit point and measured angle** on the IIW block at standardization and at the procedure's intervals. Compare **sensitivity** against the recorded reference response — same block, same hole, same gain — and investigate any drift of more than a couple of dB. Keep wedges flat (dress them on abrasive paper over a surface plate where the procedure permits), and retire probes that can't hold their numbers. Above all, respect identity: the record names the probe by **serial number**, and swapping in 'the same model' voids the standardization until it is rebuilt around the new unit."
+    },
+    {
+      "type": "figure",
+      "figureId": "ut1-8-4-fig-b",
+      "caption": "Wedge wear in action: a worn front face shifts the true exit point ahead of the engraved mark and steepens the refracted angle — re-verify both on the IIW block."
+    },
+    {
+      "type": "text",
+      "heading": "Couplants: Small Bottle, Big Variable",
+      "body": "Couplant exists because a steel-air interface reflects essentially **all** of the energy — the impedance mismatch is nearly total. The liquid film bridges probe to part; how well it bridges is a calibrated quantity.\n\n- **Type matters.** Water, gel, glycerin, and oil transfer differently; switching couplant type between block and part — or mid-job — can shift system sensitivity by **several dB**. The procedure names the couplant; standardization and examination use the same one.\n- **Film and surface interact.** On rough surfaces a viscous couplant fills the valleys and keeps the probe coupled; a thin watery film drains and the signal breathes with probe pressure. On smooth vertical surfaces, heavy gel is what stays put.\n- **Temperature changes everything:** viscosity, film thickness, even the couplant's own velocity. Hot work uses purpose-made high-temperature couplants — ordinary gel boils, glazes, or vanishes.\n- **Pressure and patience:** consistent probe pressure and a settled film give repeatable amplitudes; pumping the probe gives numbers that wander.\n\nTreat couplant exactly like a setting: recorded on the calibration sheet, unchanged through the job, rechecked if anything about it changes. It is the cheapest component in the system and one of the most common reasons two technicians pull two different amplitudes from one flaw."
+    },
+    {
+      "type": "callout",
+      "variant": "standard",
+      "title": "Couplant chemistry is a code item",
+      "body": "On austenitic stainless steels and nickel alloys, residual **sulfur and halogens** (chlorides) from couplants can promote corrosion and cracking; titanium has similar sensitivities. Codes and customer specifications commonly restrict couplant **sulfur and halogen content** on these materials and require certification of it. Check the procedure before the bottle touches the part — and use the same certified couplant on the calibration block."
+    },
+    {
+      "type": "text",
+      "heading": "Materials: Surface, Curvature, Grain, and Temperature",
+      "body": "The part itself completes the transmission chain, and four of its properties move your calibration:\n\n- **Surface condition.** Roughness scatters energy at the interface and demands a thicker couplant film; loose scale, flaking paint, and weld spatter can block transmission outright. Tightly adherent paint may be testable — with the loss measured and corrected — but the rougher the surface, the larger the transfer difference from your machined block.\n- **Curvature.** A flat shoe on a curved part touches along a line, not a face: contact area shrinks, amplitude falls, and the beam can steer. Procedures set the mismatch limit beyond which **contoured wedges** are required — and the contoured wedge then becomes part of the standardized system.\n- **Grain structure and attenuation.** Coarse grains — castings, austenitic welds — scatter the beam, and scattering climbs steeply with frequency (roughly with its fourth power in the fine-grain regime). When the part hisses with grass the block never showed, the honest fixes are a lower frequency, a measured transfer correction, and evaluation made with the noise floor in mind.\n- **Temperature.** Velocity falls as metal heats, ranges and refracted angles shift, and wedge materials change their own velocity too. Codes commonly require the block within about **14 °C (25 °F)** of the part; beyond that, standardize hot — heated block, high-temperature couplant, corrected velocity."
+    },
+    {
+      "type": "text",
+      "heading": "When to Re-standardize — and What a Drift Means",
+      "body": "Re-standardization is triggered by **change, suspicion, and the clock**:\n\n- any change of probe, wedge, cable, couplant, or instrument settings;\n- a new examination surface, a different material, a significantly different temperature;\n- suspected damage — the probe was dropped, the cable pinched, readings turned strange;\n- the procedure's fixed intervals — and always a **closing check** at the end of the examination period, because that check validates everything since the last good one.\n\nThe closing check's verdict matters in two directions, and they are not symmetric. Recheck the reference reflector and find the response has **dropped** beyond the procedure's allowance: the system lost sensitivity at some unknown point, flaws may have slipped past — **everything examined since the last valid check is re-examined**. Find the response has **risen**: the system was over-sensitive, nothing was missed, but recorded indications were measured against the wrong yardstick — **re-evaluate the recorded indications** at the corrected level.\n\nThat asymmetry is the whole logic of calibration discipline. Checks cost minutes; a failed closing check can cost a day of rework. So verify at every natural pause — probe changes, breaks, suspicious signals — not just when the procedure forces you. The calibration is never yours to assume. It is yours to prove, repeatedly, until the report is signed."
+    }
+  ],
+  "figures": [
+    {
+      "id": "ut1-8-4-fig-a",
+      "title": "Transfer correction between block and part",
+      "file": "ut1-8-4-fig-a.svg"
+    },
+    {
+      "id": "ut1-8-4-fig-b",
+      "title": "Wedge wear shifts exit point and angle",
+      "file": "ut1-8-4-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "sort",
+    "title": "Re-standardize or Transfer-Correct?",
+    "intro": "Classify each mid-job situation: does it void the standardization (rebuild or re-verify the setup), or is it a legitimate block-to-part difference handled with a measured transfer correction?",
+    "buckets": [
+      "Re-standardize / re-verify the system",
+      "Handle with a measured transfer correction"
+    ],
+    "items": [
+      {
+        "label": "The probe cable failed and was replaced with a spare of the same type",
+        "bucket": 0,
+        "why": "The cable is part of the calibrated system; replacing it changes loading and sensitivity, so the standardization must be re-verified before work continues."
+      },
+      {
+        "label": "The test part's surface is noticeably rougher than the calibration block",
+        "bucket": 1,
+        "why": "A legitimate block-to-part difference: measure the back-wall (or pitch-catch) response on both, take the dB difference, and add it to the reference gain."
+      },
+      {
+        "label": "The couplant was switched from gel to oil for the afternoon shift",
+        "bucket": 0,
+        "why": "Couplant type is a recorded part of the setup — changing it can shift transfer by several dB, so re-standardize with the couplant actually in use."
+      },
+      {
+        "label": "The part's cast material attenuates more than the wrought calibration block",
+        "bucket": 1,
+        "why": "An attenuation difference between block and part is the classic transfer-correction case — measured, documented, and added to the evaluation gain."
+      },
+      {
+        "label": "Gain and range settings were found altered after the lunch break",
+        "bucket": 0,
+        "why": "The settings no longer match the calibration record; the system must be re-standardized, and everything since the last valid check is in question."
+      },
+      {
+        "label": "The part is 30 °C hotter than the block used this morning",
+        "bucket": 0,
+        "why": "Beyond the common 14 °C (25 °F) block-to-part allowance, velocity and wedge angle have shifted — re-standardize at temperature with a heated block and suitable couplant."
+      },
+      {
+        "label": "A uniformly lower back echo on a curved part scanned with the procedure's contoured wedge",
+        "bucket": 1,
+        "why": "Geometry-driven transmission loss on a compliant setup: quantify it against the block and carry it as a transfer correction."
+      },
+      {
+        "label": "The angle wedge shows a flat-worn front and the index mark looks doubtful",
+        "bucket": 0,
+        "why": "Wedge wear moves the exit point and refracted angle — re-verify both on the IIW block and re-standardize before plotting another flaw."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "At the reference gain, the calibration block's back echo stands at 80% FSH; a flaw-free area of the part gives 40% FSH. The transfer correction to apply is:",
+      "options": [
+        "2 dB",
+        "3 dB",
+        "6 dB",
+        "12 dB"
+      ],
+      "correct": 2,
+      "explanation": "The amplitude ratio is 80/40 = 2, and 20·log₁₀(2) ≈ 6 dB — so 6 dB is added to the reference gain when evaluating on the part."
+    },
+    {
+      "question": "Uneven wear concentrated at the front of an angle-beam wedge most directly causes:",
+      "options": [
+        "The exit point to shift forward and the refracted angle to change, mislocating every plotted flaw",
+        "A shorter near field and wider beam",
+        "Higher pulse repetition frequency",
+        "Improved coupling on rough surfaces"
+      ],
+      "correct": 0,
+      "explanation": "Front-biased wear changes the wedge geometry under the element, moving the true beam exit point ahead of the engraved mark and drifting the refracted angle — both must be re-verified on the IIW block."
+    },
+    {
+      "question": "Halfway through an examination, the technician runs out of gel couplant and continues with oil. The correct action is:",
+      "options": [
+        "Continue — couplant choice never affects amplitude",
+        "Add 6 dB to be safe and continue",
+        "Note it on the report and continue at the same gain",
+        "Stop and re-standardize with the new couplant before continuing"
+      ],
+      "correct": 3,
+      "explanation": "Couplant is part of the calibrated system: a type change can shift sensitivity by several dB, so the standardization must be re-established with the couplant actually in use."
+    },
+    {
+      "question": "A coarse-grained casting shows heavy baseline noise (grass) that the fine-grained calibration block never produced. The soundest response is to:",
+      "options": [
+        "Increase the gain until the grass reaches the reference level",
+        "Select a lower test frequency and apply a measured transfer correction, since scattering rises steeply with frequency",
+        "Switch the display to RF mode to hide the noise",
+        "Turn on reject and continue at the calibrated settings"
+      ],
+      "correct": 1,
+      "explanation": "Grain scattering increases roughly with the fourth power of frequency in this regime — dropping frequency cuts the noise, and the block-to-part attenuation difference is then handled as a measured transfer correction. Reject would just distort linearity."
+    },
+    {
+      "question": "The end-of-shift calibration check shows the reference reflector responding 6 dB BELOW the recorded reference level. The required disposition is:",
+      "options": [
+        "Re-set the gain and sign the report — the morning calibration governs",
+        "Re-evaluate only the indications that were recorded during the shift",
+        "Re-examine everything tested since the last valid calibration check — sensitivity was lost and flaws may have been missed",
+        "Add 6 dB and re-scan only the last weld"
+      ],
+      "correct": 2,
+      "explanation": "A sensitivity drop means the system may have under-called or missed reflectors at an unknown point after the last good check, so all work since that check must be repeated. (A rise would instead require re-evaluating recorded indications.)"
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, UT Technique Course §2.3.4–2.3.7 (transmission factors: transducer, couplants, materials)",
+    "Codes such as ASME BPVC Section V, Article 4 (transfer correction practice; block-to-part temperature limits; recalibration triggers, general practice)",
+    "dB relationship for transfer measurement: ΔdB = 20·log₁₀(A₂/A₁) (reference value)"
+  ]
+}

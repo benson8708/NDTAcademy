@@ -1,0 +1,207 @@
+{
+ "lessonId": "mt1-4-4",
+ "title": "Technique Practice: Choosing and Applying Field Direction",
+ "narrationScript": "Everything in the last three lessons collapses into one working question. Which way do I need the flux to run, and what do I use to make it run that way? This lesson is pure practice, the decision habit you will use on every magnetic particle job for the rest of your career. The logic chain has three links. First, ask where cracks are likely and which way they run. Fatigue cracks grow across the direction of bending or torsion stress, so shafts crack transversely at shoulders and fillets. Seams and laps come from rolling and forging, so they run along the length of bars and along the grain of forgings. Thread roots crack circumferentially. Welds crack along the toe, across the bead, and at starts and stops. Second, point the flux across those flaws. Flux must cross a discontinuity at forty-five to ninety degrees to force good leakage. Third, pick the technique that produces that flux direction in that geometry, and the current type that puts the field at the right depth. Run the worked examples with me. A two-inch drive shaft, sixteen inches long, cracked in service at a shoulder fillet. Fatigue under rotation means a transverse, circumferential crack. Transverse flaws need flux running along the axis, so longitudinal magnetization, a coil shot. L over D is eight, so the rule of thumb says about fifty-six hundred ampere-turns, call it eleven hundred amperes in a five-turn coil. Prove it with a shim at the fillet. Now a rolled bar suspected of seams. Seams run along the bar, so we need flux around the circumference, circular magnetization, a head shot end to end. If we also care about transverse grinding cracks on the same bar, that is the second, perpendicular shot, the coil. Two shots, full coverage. Next, a hollow bushing with axial scoring and suspected lengthwise cracks on the inside surface. Lengthwise ID flaws need a circular field strongest at the bore, and that is the central conductor, threaded through, no contact, no burns. If the bore is big, offset the bar against the wall, cover about four conductor diameters of circumference per shot, rotate with overlap. And a structural weld in the field, no bench in sight. The yoke is your field source, flux pole to pole. Put the legs across the weld so flux runs along the part and crosses transverse cracks... then rotate the yoke ninety degrees so flux crosses the longitudinal toe cracks. Each placement finds the flaws lying across its flux path, so the two placements together cover the area between the poles. AC for surface fatigue cracks, lift-tested at ten pounds. If slightly subsurface lack of fusion worries you and the procedure allows, half-wave DC with dry powder is the deeper tool. Always the same chain. Flaw direction, flux across it, technique to make that flux. Now verification, because choosing right means nothing until you prove the field. The pie gauge sits on the surface during the shot, and its segmented joints catch particles to show you which way the field runs and roughly whether it is working, quick and reusable, best on flat-ish surfaces with the continuous method. The QQI shim tapes flaw side against the part and behaves like a real flaw, the cleanest proof that field strength and direction are adequate right where you put it, which is why aerospace work leans on shims. A Hall-effect gaussmeter reads tangential field strength in gauss, and many procedures look for a number on the order of thirty to sixty gauss at the surface, measured, recorded, done. Remember the trap from lesson one, a circular field hides inside the part, so external indicators stay silent, while a longitudinal field shows poles you can feel with a field indicator. Use the right detector for the field you made. Last, current type rides along on every one of these choices. Surface cracks, AC and its skin effect. Slightly subsurface, half-wave DC. Deep as the method goes on the bench, full-wave DC. The numbers in this lesson are typical procedure values, the kind you will see again on the Level Two exam, and on real travelers. Your written procedure always has the final word. Train the chain until it is reflex. Flaw, flux, technique, current, prove it, then inspect.",
+ "imagePrompt": "An inspector kneels on a steel fabrication floor repositioning a yoke ninety degrees on a large welded joint, a pie gauge and gaussmeter probe resting beside chalk marks on the plate.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Three-Link Decision Chain",
+   "body": "Every MT technique decision runs the same chain:\n\n1. **Predict the flaw direction.** Fatigue cracks grow across the dominant stress - shafts crack **transversely** at shoulders, fillets, and thread roots. Rolling and forging produce **seams and laps running along** the length. Welds crack along the toe (longitudinal) and across the bead (transverse), plus starts and stops.\n2. **Point the flux across the flaw.** Leakage demands flux crossing the discontinuity at **45-90 degrees**. Flux along the part finds transverse flaws; flux around the part finds longitudinal flaws.\n3. **Pick the technique and current that deliver it.** Head shot or central conductor for circular flux; coil, cable wrap, or yoke for longitudinal flux. AC for surface, HWDC for slight subsurface with dry powder, FWDC for the deepest bench work.\n\nWhen flaw orientation is **unknown** - which is the honest default on most work - the chain ends the same way every time: **two magnetizations roughly perpendicular to each other**, each verified. One shot is half an inspection."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt1-4-4-fig-a",
+   "caption": "Field-direction selection map: transverse flaws call for longitudinal flux (coil or yoke), longitudinal and ID axial flaws call for circular flux (head shot or central conductor)."
+  },
+  {
+   "type": "text",
+   "heading": "Worked Example 1: Shaft with a Fillet Crack",
+   "body": "A 16 in. x 2 in. drive shaft comes in after a service failure on a sister unit - fatigue cracking at the shoulder fillet. Rotation bending makes the expected crack **circumferential**, running around the fillet.\n\n- **Flaw direction:** transverse/circumferential.\n- **Flux needed:** along the axis - **longitudinal magnetization**.\n- **Technique:** coil shot. L/D = 8, so the low fill-factor rule of thumb gives NI = 45,000/8, about 5,600 ampere-turns - roughly 1,100 A in a 5-turn coil, part against the coil wall. Typical values; the procedure governs.\n- **Prove it:** QQI shim taped flaw-side down **at the fillet**, indicating during a trial shot.\n\nIf the job also requires screening for longitudinal heat-treat cracks along the shaft body, add the perpendicular shot: a **head shot** for circular flux. Same part, two fields, full orientation coverage - and both shots, amperages, and verification results go on the report."
+  },
+  {
+   "type": "text",
+   "heading": "Worked Example 2: Bushing with ID Axial Cracking",
+   "body": "A hollow bronze-backed steel bushing shows axial scoring, and the customer fears **lengthwise cracks on the inside diameter**.\n\n- **Flaw direction:** longitudinal, on the **ID surface**.\n- **Flux needed:** around the circumference - **circular magnetization** - and strongest at the bore.\n- **Technique:** **central conductor**. A head shot is wrong twice: its field is weakest at the ID, and current through a press-fit composite part invites contact damage. The conductor threads the bore, carries the current, and puts maximum field exactly at the ID with **no electrical contact**.\n- **Coverage:** if the bore is much larger than the bar, offset the conductor against the wall and treat each shot as covering about **4x the conductor diameter** of circumference; rotate with roughly 10 percent overlap.\n- **Prove it:** shim on the ID surface if accessible, or per the procedure's demonstrated-technique requirements.\n\nThe lesson inside the lesson: *where* the flaw lives (OD vs ID) picks the technique just as strongly as which way it runs."
+  },
+  {
+   "type": "text",
+   "heading": "Worked Example 3: Structural Weld with a Yoke",
+   "body": "A field weld on structural steel - no bench, no cables, just an AC yoke that lifted its **10-pound** check block this morning (a DC yoke would owe you 40 pounds).\n\nThe yoke drives flux **pole to pole** through the metal between its legs, so each placement finds the discontinuities lying **across** that flux path:\n\n- **Legs straddling the weld** (flux running across the weld axis): finds **longitudinal** flaws - toe cracks, centerline cracks, seams along the bead.\n- **Legs in line with the weld** (flux running along the weld axis): finds **transverse** cracks across the bead.\n\nWork the joint in overlapping zones, two roughly perpendicular placements per zone, particles applied while the yoke is energized (continuous method). **AC** is the usual choice for surface fatigue and hydrogen cracking; where the procedure allows and slightly subsurface lack of fusion is the worry, **HWDC with dry powder** reaches deeper. A pie gauge laid in the inspection zone gives a quick read of field direction at each placement."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The two-shot reflex",
+   "body": "Flux finds only what it crosses at **45-90 degrees**. Unless the procedure documents a single known flaw orientation, **every area gets two roughly perpendicular magnetizations** - circular plus longitudinal on the bench, or two yoke placements about 90 degrees apart in the field. Each shot is verified, and each shot is recorded."
+  },
+  {
+   "type": "text",
+   "heading": "Proving Direction and Adequacy",
+   "body": "Choosing the right field means nothing until you **prove** it. Match the detector to the job:\n\n- **Pie (octagon) gauge** - laid on the surface during particle application; particle lines across its segment joints show **field direction** and a rough go/no-go on strength. Fast, reusable, best on reasonably flat surfaces with the continuous method.\n- **QQI artificial-flaw shims** - taped **flaw-side toward the part**, they respond like real discontinuities and prove **both direction and adequacy at that exact location**. The standard for technique development and aerospace work; place them where the flaws are expected (fillets, toes, far edge of coil coverage), not just where taping is easy.\n- **Hall-effect gaussmeter** - measures the tangential surface field; many procedures target on the order of **30-60 gauss**, measured and recorded.\n- **Field indicator (pocket type)** - responds to **external poles**, so it confirms residual longitudinal fields and demagnetization (commonly 3 gauss or less after demag), but stays **silent next to a contained circular field**. Knowing which fields it can and cannot see is the difference between verification and self-deception."
+  },
+  {
+   "type": "table",
+   "caption": "Quick reference - scenario to technique to current (typical practice; the written procedure governs).",
+   "headers": [
+    "Scenario",
+    "Expected flaw",
+    "Field direction / technique",
+    "Typical current"
+   ],
+   "rows": [
+    [
+     "Shaft shoulder, rotating-bending service",
+     "Circumferential fatigue crack",
+     "Longitudinal - coil shot, NI = 45,000/(L/D)",
+     "FWDC or AC per procedure"
+    ],
+    [
+     "Rolled bar stock",
+     "Longitudinal seams",
+     "Circular - head shot",
+     "FWDC on bench"
+    ],
+    [
+     "Bushing or hollow cylinder, ID axial cracks",
+     "Longitudinal at the bore",
+     "Circular - central conductor (offset if large bore)",
+     "FWDC on bench"
+    ],
+    [
+     "Field weld, surface cracks",
+     "Toe (longitudinal) and transverse cracks",
+     "Yoke - two placements about 90 degrees apart",
+     "AC; HWDC with dry powder for slight subsurface"
+    ],
+    [
+     "Threaded fastener, thread-root cracking",
+     "Circumferential at roots",
+     "Longitudinal - coil shot",
+     "AC or FWDC per procedure"
+    ]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "mt1-4-4-fig-a",
+   "title": "Choosing field direction from flaw orientation",
+   "file": "mt1-4-4-fig-a.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Flaw vs. Field: Sort the Setup",
+  "intro": "For each job, decide which magnetization direction does the work. Remember: flux must cross the flaw at 45-90 degrees - circular flux finds flaws running along the part, longitudinal flux finds flaws running across or around it.",
+  "buckets": [
+   "Circular magnetization (head shot / central conductor / prods)",
+   "Longitudinal magnetization (coil / cable wrap / yoke)"
+  ],
+  "items": [
+   {
+    "label": "Seam running the length of a rolled bar",
+    "bucket": 0,
+    "why": "A lengthwise seam is crossed by flux circling the bar - circular magnetization via head shot."
+   },
+   {
+    "label": "Transverse fatigue crack at a shaft fillet",
+    "bucket": 1,
+    "why": "A crack across the shaft needs flux running along the axis - a coil shot's longitudinal field crosses it at about 90 degrees."
+   },
+   {
+    "label": "Axial (lengthwise) cracks on the ID of a hollow cylinder",
+    "bucket": 0,
+    "why": "Axial ID cracks need circular flux strongest at the bore - a central conductor, with no contact on the part."
+   },
+   {
+    "label": "Circumferential crack at a threaded fastener's thread root",
+    "bucket": 1,
+    "why": "A crack running around the part is crossed by longitudinal flux from a coil shot along the fastener axis."
+   },
+   {
+    "label": "Lap running parallel to the axis of a forged stud",
+    "bucket": 0,
+    "why": "Forging laps along the axis lie parallel to longitudinal flux but are crossed by a circular field - head shot."
+   },
+   {
+    "label": "Grinding checks running across the width of a machined journal",
+    "bucket": 1,
+    "why": "Cracks across the journal are crossed by flux running along the part - coil or yoke placed for longitudinal flux."
+   },
+   {
+    "label": "Lengthwise spline cracks inside a splined bore",
+    "bucket": 0,
+    "why": "Lengthwise flaws at a bore call for circular flux concentrated at the ID - central conductor through the spline."
+   },
+   {
+    "label": "Crack around the circumference at a pressed-on bearing seat shoulder",
+    "bucket": 1,
+    "why": "A circumferential crack is perpendicular to longitudinal flux - coil shot along the shaft finds it."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A camshaft is expected to crack transversely at a journal radius. Which setup crosses that flaw correctly?",
+   "options": [
+    "Head shot - circular field around the shaft",
+    "Coil shot - longitudinal field along the shaft",
+    "Central conductor - the camshaft has no bore, but force it anyway",
+    "No magnetization - transverse cracks self-indicate"
+   ],
+   "correct": 1,
+   "explanation": "A transverse crack lies across the part, so it needs flux running along the axis - longitudinal magnetization from a coil. A circular field would run parallel to the crack and produce little or no leakage."
+  },
+  {
+   "question": "During a yoke inspection of a weld, the legs are placed straddling the weld so flux runs across the bead. That placement best detects:",
+   "options": [
+    "Cracks running along the weld toe",
+    "Cracks running across the weld bead",
+    "Subsurface flaws ten inches deep",
+    "Nothing - yokes produce no usable field"
+   ],
+   "correct": 0,
+   "explanation": "Flux pole to pole runs across the weld axis, so it crosses longitudinal discontinuities like toe and centerline cracks; the 90-degree rotated placement covers transverse cracks."
+  },
+  {
+   "question": "Which verification tool proves field adequacy AND direction at the exact spot where cracks are expected?",
+   "options": [
+    "The ammeter reading on the power pack",
+    "A QQI shim taped flaw-side toward the surface at that spot",
+    "A pocket field indicator held near a circularly magnetized part",
+    "The lifting test on the yoke"
+   ],
+   "correct": 1,
+   "explanation": "A QQI behaves like a real flaw at its location, proving both strength and direction where it is placed. Ammeter readings and lift tests qualify the equipment, not the field at the point of interest."
+  },
+  {
+   "question": "A procedure calls for a measured tangential surface field during technique development. A commonly targeted range is on the order of:",
+   "options": [
+    "1 to 2 gauss",
+    "30 to 60 gauss",
+    "500 to 800 gauss",
+    "10,000 gauss"
+   ],
+   "correct": 1,
+   "explanation": "Hall-effect gaussmeter checks in many procedures look for roughly 30-60 gauss tangential at the surface - a typical value; the written procedure governs. One to two gauss is demagnetization-check territory."
+  },
+  {
+   "question": "Rough as-welded surface in the field, dry powder, and concern for slightly subsurface lack of fusion. The current type that fits is:",
+   "options": [
+    "AC, because the skin effect drives the field deep",
+    "Half-wave DC, for penetration plus particle mobility",
+    "Battery DC, because only batteries penetrate",
+    "Any current - depth is set by the particles, not the current"
+   ],
+   "correct": 1,
+   "explanation": "HWDC combines a one-directional average field (penetration) with pulsation (dry powder mobility) - the classic pairing for near-subsurface flaws on rough welds. AC's skin effect limits it to the surface."
+  }
+ ],
+ "references": [
+  "CP-105-2024 MT Topical Outline §4.2.3, 4.6, 5.2.3, 5.4, 6.2 (applied practice)",
+  "ASTM E709 (field verification devices - general practice)",
+  "ASTM E1444/E1444M (QQI usage and measured field values - general practice)",
+  "ASME BPVC Section V, Article 7 (yoke and weld technique - general practice)"
+ ]
+}

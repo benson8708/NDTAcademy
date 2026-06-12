@@ -1,0 +1,186 @@
+{
+ "lessonId": "ut1-3-2",
+ "title": "Instrument Standardization and Reference Blocks",
+ "narrationScript": "Here is an uncomfortable truth about your flaw detector. It does not measure distance, and it does not measure flaw size. It measures time, and it measures voltage. Standardization is the process that converts those two raw quantities into numbers an engineer can act on, distance in the part and amplitude against a known reference. Until that conversion is locked in, everything on the screen is just a pretty waveform. That is why every code-compliant procedure puts standardization before data collection, full stop. Standardization has two halves. The first half is range, sometimes called distance or sweep calibration. We teach the time base what a millimeter is. Couple a straight beam probe to a block of known thickness, say twenty five millimeters of the same steel as the part. Set the velocity for longitudinal waves in steel, about five thousand nine hundred twenty meters per second. Set the range to one hundred millimeters. Now the screen should show the back wall echo at one quarter of the way across, and behind it a train of repeat echoes at fifty, seventy five, and one hundred millimeters, because the sound keeps bouncing. Adjust zero so the first echo sits exactly on twenty five, and check that the multiples land on their marks. Here is the diagnostic skill. If all the echoes are shifted by the same amount, your zero is wrong. If the spacing between them is wrong, your velocity is wrong. Zero is an offset. Velocity is a scale factor. Two different knobs, two different errors. With an angle beam probe there is a step before range. You first find the actual beam exit point on the wedge, and the actual refracted angle, because wedges wear. The classic tool is the IIW block. Maximize the echo from its one hundred millimeter radius and the exit point on the wedge lines up with the engraved center mark. Then aim at the side drilled hole and read the true angle off the engraved degree scale. Only then do you calibrate range using the radius echoes. The second half of standardization is sensitivity. We set the gain so that a known reflector gives a known echo height, commonly eighty percent of full screen height, and we write that gain down as the reference level. From then on, every indication in the part can be compared to that reference in decibels, plus six, minus ten, and the comparison means the same thing tomorrow as it does today, on your instrument or on mine. That known reflector lives in a reference block. Learn the family. The IIW block we met, for exit point, angle, and range. The distance and sensitivity block, DSC, does similar work in a smaller package for field angle beam work. Area amplitude sets are blocks with flat bottom holes of increasing diameter, number one through number eight, in sixty fourths of an inch, all at the same depth. They show how echo height grows with reflector area. Distance amplitude sets keep the hole diameter constant and change the metal travel, showing how echo height falls with distance. Construction code calibration blocks, like those used under the ASME rules, carry side drilled holes at one quarter, one half, and three quarters of the part thickness. You peak the echo from each and draw a line through the points. That line is the distance amplitude correction curve, the DAC, and it becomes your acceptance reference across the whole thickness. Step wedges give a row of known thicknesses for thickness range work. And notches cut into plate or pipe stand in for surface breaking flaws. One rule ties all of these together. The block must match the part, in alloy and acoustic velocity, in surface condition, and where the code requires it, in product form and heat treatment. Calibrating on a smooth block and testing a rough casting without a transfer correction is how good instruments produce bad data. Last thing. Standardization is perishable. A different probe or cable, a temperature swing, a dropped instrument, a bumped knob, any of these can quietly invalidate it. So we verify at set intervals and at the end of the job. And if the final check shows the calibration drifted out of tolerance, the code answer is painful but simple. Every examination since the last good check is suspect, and gets done again. Ten minutes of standardization is cheap insurance against re-inspecting a day of welds.",
+ "imagePrompt": "An inspector slides an angle-beam transducer along a machined IIW calibration block on a workbench, flaw detector beside it showing calibration echoes on screen.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Instrument Measures Time and Voltage - You Need Distance and Amplitude",
+   "body": "A flaw detector knows only two raw quantities: **elapsed time** since the pulse fired and **voltage** returned by the probe. **Standardization** (calibration) converts them into inspection quantities:\n\n- **Range standardization** ties screen position to sound-path distance in the test material.\n- **Sensitivity standardization** ties echo height to a documented reference reflector at a recorded gain.\n\nUntil both are set, the display is just a waveform - you can neither locate a reflector nor judge it against acceptance criteria. That is why procedures sequence standardization **before data collection**, require **re-verification at intervals and at the end of the examination**, and treat results as invalid if the check fails: if final verification shows the setup drifted beyond tolerance, everything inspected since the last good check is re-examined.\n\nStandardization sits on top of a healthy instrument. Periodic **screen-height (vertical) linearity** and **amplitude-control linearity** checks - required by codes such as ASME Section V, Article 4 - confirm that a 6 dB change really halves or doubles an echo and that the dB control is true. Standardize a non-linear instrument and you have simply calibrated a liar."
+  },
+  {
+   "type": "text",
+   "heading": "Range Standardization, Step by Step",
+   "body": "Straight beam on plate is the cleanest example. Suppose the job is 90 mm thick steel and you choose a 100 mm screen range:\n\n1. Set **velocity** to longitudinal steel, about 5,920 m/s (0.233 in/µs).\n2. Set **range** to 100 mm.\n3. Couple to a 25 mm thick calibration block of acoustically similar steel. The sound bounces repeatedly, so you should see **multiple back echoes** at 25, 50, 75, and 100 mm.\n4. Adjust **zero/delay** until the first back echo reads exactly 25 mm, then confirm the multiples land on 50, 75, and 100.\n\nThe diagnostic logic: **all echoes shifted by the same amount = zero error** (an offset); **echo spacing wrong = velocity error** (a scale factor). Fix velocity with the spacing, then fix zero with the first echo.\n\nAngle beam adds a prerequisite: wedges wear, so before range work you verify the **beam exit point** (maximize the echo from the IIW block's 100 mm radius; the exit point aligns with the engraved center mark) and the **actual refracted angle** (peak the echo from the block's reference hole and read the engraved degree scale). Then calibrate range on the radius echoes. Delay-line and immersion setups likewise need their water or plastic travel removed with the delay control so zero is the part surface."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-3-2-fig-a",
+   "caption": "Range standardization on a 25 mm block: multiple back echoes must land on 25, 50, 75, and 100 mm - a uniform shift means zero error, wrong spacing means velocity error."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "Standardization is perishable",
+   "body": "Codes and written practices require standardization **before** examination and re-verification **at set intervals, at any system change, and at completion**. Changing the probe, cable, or couplant type, a significant temperature shift, a battery swap on some instruments, or a bumped control all invalidate the setup. If a verification check fails, the rule is unforgiving: **all examinations since the last valid check are suspect and must be repeated.**"
+  },
+  {
+   "type": "text",
+   "heading": "Reference Blocks: Types and What Each Is For",
+   "body": "A reference block is a machined piece of known material containing **known reflectors at known positions**. The main families:\n\n- **IIW blocks (Type 1 and Type 2)**: the angle-beam workhorse - beam exit point via the 100 mm radius, refracted-angle check against an engraved degree scale, and range calibration; also usable for straight-beam range and resolution checks.\n- **DSC (distance and sensitivity calibration) block**: a compact field block giving angle-beam distance calibration and a repeatable sensitivity reference.\n- **Area-amplitude sets**: blocks with **flat-bottom holes (FBHs)** of increasing diameter - numbers 1 through 8, the number being the diameter in 64ths of an inch - at a fixed metal travel. They demonstrate how echo amplitude scales with reflector **area** and set sensitivity in terms of an equivalent reflector size.\n- **Distance-amplitude sets**: the **same FBH diameter at different metal travels**, mapping how amplitude falls with **distance** (the basis of distance-amplitude curves in immersion and aerospace practice).\n- **Basic calibration blocks** per construction codes: **side-drilled holes (SDHs) at T/4, T/2, and 3T/4** of the block thickness, used to build the **DAC curve** for weld examination.\n- **Step wedges** for thickness-range calibration, and **notches** (surface reference for pipe and plate, representing surface-breaking flaws).\n\nThe block must match the part: same or acoustically similar alloy (velocity and attenuation), comparable surface finish, and - where the code says so - same product form and heat treatment. Mismatch is handled by a measured **transfer correction**, never by guesswork."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-3-2-fig-b",
+   "caption": "The reference-block family: IIW Type 1 for exit point, angle, and range; area-amplitude and distance-amplitude FBH sets; an ASME-style SDH block for DAC; and a step wedge."
+  },
+  {
+   "type": "table",
+   "caption": "Common reference blocks and their primary uses.",
+   "headers": ["Block", "Key features", "Primary use"],
+   "rows": [
+    ["IIW Type 1 / Type 2", "100 mm radius, degree scale, reference hole, slots", "Exit point, refracted angle, angle/straight-beam range"],
+    ["DSC", "Two radii and notch in a compact block", "Field angle-beam distance + sensitivity reference"],
+    ["Area-amplitude set", "FBHs #1-#8 (diameter in 1/64 in.), fixed travel", "Amplitude vs reflector area; sensitivity in equivalent FBH size"],
+    ["Distance-amplitude set", "Same FBH diameter, varied metal travel", "Amplitude vs distance; distance-amplitude curves"],
+    ["ASME-style basic block", "SDHs at T/4, T/2, 3T/4", "DAC reference for weld examination"],
+    ["Step wedge", "4-5 machined thickness steps", "Thickness range calibration and gauge verification"],
+    ["Notched block / pipe", "Surface notches, ID and OD", "Surface-breaking flaw reference, pipe techniques"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Sensitivity: Setting and Recording the Reference Level",
+   "body": "Sensitivity standardization makes amplitude mean something. Pick the reference reflector your procedure names - an SDH at T/2, a #5 FBH, a notch - maximize its echo, and adjust gain until it stands at a defined height, commonly **80% of full screen height** (high enough to read precisely, with headroom before saturation). Record that gain: it is your **reference level**, e.g. 46 dB.\n\nNow every indication can be expressed relative to reference: an echo peaking at 40% FSH is **-6 dB relative to the reference reflector**; one needing 8 dB less gain to reach 80% is +8 dB. Acceptance criteria in amplitude-based codes are written exactly this way - percentages of DAC or dB relative to reference - which only works because the reference is reproducible on any properly standardized instrument.\n\nWhere the code requires it, add **scanning gain** (extra dB above reference while searching, removed for evaluation) and a **transfer correction** measured between the calibration block and the rougher, more attenuating production part. Write all of it on the report: block ID, reflector, reference gain, scanning gain, and the times of each calibration verification. A reading without its reference level is a number without units."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-3-2-fig-a",
+   "title": "Range standardization with multiple back echoes",
+   "file": "ut1-3-2-fig-a.svg"
+  },
+  {
+   "id": "ut1-3-2-fig-b",
+   "title": "Common ultrasonic reference blocks",
+   "file": "ut1-3-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Which Job Does It Do?",
+  "intro": "Standardization tasks fall into three buckets: teaching the time base distance (range), giving amplitude a reproducible meaning (sensitivity), or characterizing the probe itself. Sort each block feature or task into the job it performs.",
+  "buckets": [
+   "Range / distance standardization",
+   "Sensitivity / amplitude reference",
+   "Probe characterization"
+  ],
+  "items": [
+   {
+    "label": "Multiple back echoes from a 25 mm block set to land at 25, 50, 75, 100 mm",
+    "bucket": 0,
+    "why": "Repeat back echoes at known spacing are the classic straight-beam range calibration - velocity sets the spacing, zero sets the first echo."
+   },
+   {
+    "label": "Echoes from the IIW block's 100 mm radius used to set sweep marks",
+    "bucket": 0,
+    "why": "The known 100 mm radius gives fixed sound-path distances for angle-beam range calibration."
+   },
+   {
+    "label": "Step wedge thicknesses used to set a thickness-measurement range",
+    "bucket": 0,
+    "why": "Known machined steps tie screen time to thickness across the working range."
+   },
+   {
+    "label": "Adjusting gain until the T/2 side-drilled hole peaks at 80% FSH and recording the dB",
+    "bucket": 1,
+    "why": "That recorded gain is the reference level all indications are compared against."
+   },
+   {
+    "label": "Flat-bottom holes #1 through #8, same metal travel, increasing diameter",
+    "bucket": 1,
+    "why": "An area-amplitude set relates echo height to reflector area - a sensitivity reference in equivalent FBH size."
+   },
+   {
+    "label": "Peaking the same-size FBH at several metal travels and plotting the heights",
+    "bucket": 1,
+    "why": "That is a distance-amplitude relationship - the basis for DAC-style amplitude correction with distance."
+   },
+   {
+    "label": "Maximizing the 100 mm radius echo and marking where the wedge lines up with the center mark",
+    "bucket": 2,
+    "why": "That locates the true beam exit (index) point on a worn wedge - a property of the probe, not the part."
+   },
+   {
+    "label": "Peaking the reference hole and reading the engraved degree scale",
+    "bucket": 2,
+    "why": "That verifies the actual refracted angle of the wedge, which wear can change by several degrees."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Why must standardization be completed before any examination data is collected?",
+   "options": [
+    "Because the instrument warms up faster with a block attached",
+    "Because the instrument only measures time and voltage - without range and sensitivity references, indications can be neither located nor compared to acceptance criteria",
+    "Because reference blocks are only available at the start of a shift",
+    "Because gain controls drift unless exercised first"
+   ],
+   "correct": 1,
+   "explanation": "Standardization converts raw time into distance and raw amplitude into a comparison against a known reflector; data taken without those references cannot be evaluated and is invalid under code rules."
+  },
+  {
+   "question": "During range calibration on a 25 mm block with a 100 mm screen, all four back echoes sit 3 mm to the right of their marks, but the spacing between them is exactly 25 mm. What is wrong?",
+   "options": [
+    "The velocity setting is too high",
+    "The zero (delay) setting is off - a constant offset shifts every echo equally",
+    "The block is the wrong thickness",
+    "The PRF is set too high"
+   ],
+   "correct": 1,
+   "explanation": "A uniform shift with correct spacing is the signature of a zero/delay error. A velocity error would change the spacing between multiples, growing with distance."
+  },
+  {
+   "question": "Which set of checks is the IIW block specifically designed to support for angle-beam probes?",
+   "options": [
+    "Beam exit point, refracted angle, and range calibration",
+    "Vertical linearity, PRF, and pulser voltage",
+    "Equivalent flaw sizing by flat-bottom hole area",
+    "Couplant viscosity and surface roughness correction"
+   ],
+   "correct": 0,
+   "explanation": "The IIW block's 100 mm radius locates the exit point and calibrates range, and its engraved degree scale with reference hole verifies the true refracted angle."
+  },
+  {
+   "question": "What distinguishes an area-amplitude block set from a distance-amplitude block set?",
+   "options": [
+    "Area-amplitude sets use side-drilled holes; distance-amplitude sets use notches",
+    "Area-amplitude sets vary FBH diameter at fixed metal travel; distance-amplitude sets keep the FBH size fixed and vary the metal travel",
+    "Area-amplitude sets are for angle beam only",
+    "There is no difference - the names are interchangeable"
+   ],
+   "correct": 1,
+   "explanation": "Area-amplitude sets (FBH #1-#8 at one depth) show amplitude versus reflector area; distance-amplitude sets (one FBH size, several depths) show amplitude versus sound-path distance."
+  },
+  {
+   "question": "An ASME-style basic calibration block for a weld examination carries side-drilled holes at which depths, and for what purpose?",
+   "options": [
+    "T/8, T/3, and T - to verify screen linearity",
+    "Only at T/2 - to set the PRF",
+    "T/4, T/2, and 3T/4 - to peak each echo and construct the DAC curve used as the amplitude reference",
+    "At the surface only - to simulate surface-breaking flaws"
+   ],
+   "correct": 2,
+   "explanation": "SDHs at quarter, half, and three-quarter thickness give reference amplitudes through the volume; the curve drawn through their peaked echoes is the distance-amplitude correction (DAC) curve."
+  }
+ ],
+ "references": [
+  "CP-105-2024 UT Topical Outline §3.1.3 (standardization)",
+  "CP-105-2024 UT Topical Outline §3.1.3.1 (basic instrument standardization)",
+  "CP-105-2024 UT Topical Outline §3.1.3.2 (reference blocks, types and use)",
+  "ASME BPVC Section V, Article 4 (calibration blocks, DAC construction, linearity checks - general practice)",
+  "ASTM E164 / E317 (contact examination and instrument performance characteristics - general practice)"
+ ]
+}

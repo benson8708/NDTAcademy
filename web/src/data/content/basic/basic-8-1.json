@@ -1,0 +1,190 @@
+{
+  "lessonId": "basic-8-1",
+  "title": "Properties of Materials",
+  "narrationScript": "Every NDT method interrogates a material property, so material technology opens the Basic body of knowledge. Pull a tensile specimen and the stress-strain curve tells the mechanical story: a straight elastic line whose slope is the modulus of elasticity — stiffness, not strength — then the proportional limit, the 0.2 percent offset yield, ultimate tensile strength, necking, and fracture. Elongation and reduction of area report ductility. Charpy energy reports toughness, and in steels it collapses below the ductile-to-brittle transition temperature. Heat treatment moves strength dramatically but barely touches the modulus. Physical properties are the levers of method selection: density sets radiographic absorption, electrical conductivity makes eddy current testing possible, magnetic permeability decides whether magnetic particle testing is physically possible at all, and the elastic moduli with density set ultrasonic velocity and acoustic impedance. Destructive tests — tensile, hardness, impact, fatigue, creep — establish properties on sacrificial coupons. Nondestructive proxies then verify every article, the way conductivity and hardness verify aluminum heat treatment. Know the property, and the method shortlist almost writes itself.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Why Material Properties Come First",
+      "body": "Open any method lesson in this course and you will find a material property doing the real work: ultrasonic waves ride on elastic moduli and density, eddy currents flow because of conductivity, magnetic particle indications exist because of permeability, and radiographic contrast is bought with density and atomic number. That is why the CP-105 Basic outline (§3.1) puts material technology ahead of everything else: **you cannot select a method, write a procedure, or defend an acceptance criterion without knowing what the material is and how it behaves.**\n\nEngineering properties divide into two working families:\n\n- **Mechanical properties** describe the response to applied load — the strength and elastic properties of §3.1.1.1: elastic modulus, yield strength, ultimate strength, ductility, hardness, toughness, fatigue and creep resistance. These are what the designer buys and what failure analysis interrogates.\n- **Physical properties** belong to the material and its condition independent of load — density, electrical conductivity, magnetic permeability, thermal properties, melting point (§3.1.1.2). **These are what NDT instruments actually measure.**\n\nThe connection between the two families is the quiet engine of this module: no instrument reads yield strength through a part's surface, but yield strength and electrical conductivity both depend on alloy content and heat treatment — so a conductivity meter can flag a bad temper. An FAA Part 145 repair station floor makes the stakes concrete: 4340 steel landing-gear members, 7075-T6 spar fittings, Ti-6Al-4V engine hardware, and carbon-fiber skins sit in the same work queue, and no single NDT method serves them all. The material decides."
+    },
+    {
+      "type": "text",
+      "heading": "Stress, Strain, and Elastic Behavior",
+      "body": "**Stress** is load intensity: force divided by the area carrying it, σ = F/A, in psi or MPa. The same 10,000 lb that a 1 in.² tie rod carries as a mild 10 ksi becomes 40 ksi in a 0.25 in.² rod — geometry and load together, not load alone, decide a part's fate. Stress comes in tension, compression, and shear, and real hardware sees combinations.\n\n**Strain** is the response: change in length over original length, ε = ΔL/L₀ — dimensionless (in/in), often quoted in percent.\n\nLoad a metal gently and it behaves like a spring. Below the **proportional limit**, stress and strain track a straight line — **Hooke's law**, σ = Eε — and below the nearby **elastic limit**, every bit of strain is recovered on unloading. The slope of that straight line is the **modulus of elasticity (Young's modulus), E** — the material's **stiffness**:\n\n- Steel: about 30 × 10⁶ psi (207 GPa)\n- Titanium alloys: about 16.5 × 10⁶ psi (114 GPa)\n- Aluminum alloys: about 10 × 10⁶ psi (69–73 GPa)\n\nTwo companions complete the elastic picture. **Poisson's ratio** (ν ≈ 0.3 for most metals) is the ratio of lateral contraction to axial stretch — pull a bar longer and it gets proportionally thinner. The **shear modulus G** plays Hooke's role in twist and shear; for metals G = E / [2(1 + ν)], about 11.5 × 10⁶ psi for steel.\n\nTwo facts here carry exam weight. First, **stiffness is not strength**: E is set by interatomic bonding, so heat treatment and modest alloying barely move it even while strength doubles. Second, the elastic constants and density together set every **ultrasonic velocity** — change the elastic state of the material and the sound speed answers, which is precisely how UT reads materials and not just flaws."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-8-1-fig-a",
+      "caption": "The annotated stress-strain curve. The straight elastic line (slope E) gives way at the proportional limit; the 0.2% offset construction defines yield strength; the peak of the curve is ultimate tensile strength, where necking begins; fracture ends the story. Everything left of the offset line is recoverable spring — everything beyond is permanent."
+    },
+    {
+      "type": "text",
+      "heading": "Strength, Ductility, Toughness — and Time",
+      "body": "Past the elastic limit, the metal keeps the strain — **plastic (permanent) deformation**. The named milestones:\n\n- **Yield strength.** Most alloys leave the straight line gradually rather than at a sharp point, so the standard defines yield by the **0.2% offset method**: draw a line parallel to the elastic slope starting at 0.002 strain; where it crosses the curve is the yield strength. A part stressed past yield is dimensionally changed forever — the basis of many overload remove-from-service criteria.\n- **Ultimate tensile strength (UTS).** The highest engineering stress on the curve. In ductile metals it is also where **necking** begins — deformation localizes into an hourglass waist that thins until **fracture**.\n- **Ductility.** Reported as **percent elongation** and **percent reduction of area** measured from the broken tensile specimen. Ductile metals (annealed aluminum, austenitic stainless) stretch and give warning; **brittle** materials (gray cast iron, glass, many ceramics) fracture with little or no plastic deformation — and little warning.\n- **Hardness.** Resistance to localized plastic deformation — in practice, to indentation. Because the same microstructure resists an indenter and a tensile pull, hardness tracks strength: for carbon and low-alloy steels, **UTS (psi) ≈ 500 × Brinell hardness number** — a correlation, useful and approximate, not a law of physics.\n- **Toughness.** Energy absorbed to fracture — strength *and* ductility working together. The **Charpy V-notch** impact test reads it directly, and in body-centered-cubic steels it exposes the **ductile-to-brittle transition temperature (DBTT)**: the same alloy that absorbs 90 J at room temperature may absorb 12 J at −40 °C. Face-centered-cubic metals — aluminum, austenitic stainless, nickel — show no such cliff.\n- **Fatigue.** Under repeated cyclic stress, cracks initiate and grow at stresses **far below yield**. The S-N curve maps stress amplitude against cycles to failure; ferrous alloys show an **endurance limit** — roughly half of UTS — below which life is effectively infinite. **Aluminum alloys have no true endurance limit**, which is why airframes live on finite-life and damage-tolerance logic, and why scheduled NDT exists at all.\n- **Creep.** Above roughly **0.4 of the absolute melting temperature**, metal under steady stress strains slowly with time — the life-limiting behavior of turbine hot sections and a reason engine hardware carries cycle and time limits together."
+    },
+    {
+      "type": "text",
+      "heading": "Physical Properties: The Levers of NDT Method Selection",
+      "body": "Physical properties belong to the material and its condition, not to the applied load — and each major NDT method exists because one of them can be exploited.\n\n- **Density (ρ).** Mass per unit volume: aluminum 2.70, titanium 4.51, steel 7.85, lead 11.3, tungsten 19.3 g/cm³. Together with atomic number, density governs **radiographic attenuation** — thick and dense absorbs the beam. A gas pore passes more radiation and prints dark on film; a tungsten inclusion in an aluminum weld absorbs more and prints light.\n- **Electrical conductivity.** Quoted in **%IACS** — the International Annealed Copper Standard, with annealed pure copper defined as 100%. Pure aluminum runs about 61% IACS, 7075-T6 about 32%, titanium alloys near 1%. Conductivity is the working medium of **eddy current testing**, and because alloying elements in and out of solid solution scatter electrons differently, it shifts measurably with **alloy and temper** — the basis of ET alloy sorting and heat-treat verification.\n- **Magnetic permeability (µ).** Ferromagnetic materials — iron, nickel, cobalt, and most of their alloys, including carbon and low-alloy steels and the martensitic and ferritic stainless grades — concentrate magnetic flux hundreds to thousands of times better than air. **Magnetic particle testing exists only for them.** Aluminum, magnesium, titanium, copper, and the austenitic stainless grades have a relative permeability of essentially 1: no flux concentration, no leakage field, no MT — penetrant or eddy current takes the job. Permeability also throttles ET, crowding eddy currents into a thin skin on magnetic steels.\n- **Acoustic velocity and impedance.** Sound speed is set by the elastic moduli and density — longitudinal waves run about 5,900 m/s in steel and 6,320 m/s in aluminum, with shear waves at roughly half. **Acoustic impedance Z = ρV**, and sound reflects wherever Z changes abruptly: a metal-to-air interface — a crack face — reflects essentially all of the energy. That impedance mismatch is the founding fact of UT.\n- **Thermal properties.** Conductivity and diffusivity set how heat spreads — the contrast mechanism of thermographic inspection. The coefficient of thermal expansion drives the differential-expansion stresses that crack dissimilar-metal joints, and melting point bounds service temperature and welding behavior.\n\nWith the property table in hand, method selection stops being a menu and becomes a deduction."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-8-1-fig-b",
+      "caption": "Method selection starts in the material datasheet. Each physical property is the working medium of a method: density and atomic number buy radiographic contrast, conductivity carries eddy currents, permeability concentrates magnetic flux, and the elastic moduli with density set the sound velocities and impedances ultrasonics lives on."
+    },
+    {
+      "type": "text",
+      "heading": "Material Properties Testing: Destructive Benchmarks, Nondestructive Proxies",
+      "body": "Properties come from tests, and §3.1.1.3 expects familiarity with the canon.\n\n- **Tension test (ASTM E8/E8M).** A machined specimen is pulled at a controlled rate while an extensometer tracks strain; out come E, yield strength by the 0.2% offset, UTS, elongation, and reduction of area — the curve this lesson is built on.\n- **Hardness tests.** **Brinell (ASTM E10)** presses a 10 mm carbide ball, typically at 3,000 kgf for steels, and measures the impression diameter. **Rockwell (ASTM E18)** reads depth of penetration directly on the machine — HRC (diamond cone, 150 kgf) for hardened steel, HRB (1/16 in. ball, 100 kgf) for softer alloys — fast enough for production floors. **Vickers and Knoop (ASTM E92, E384)** use small diamond indenters down to microindentation loads for thin sections, coatings, and case-depth surveys, and portable testers carry the check to assembled hardware.\n- **Impact (ASTM E23).** A pendulum breaks a notched bar and the machine reports absorbed energy in joules or ft·lbf; run across a temperature range, the results locate the DBTT.\n- **Fatigue (ASTM E466) and creep/stress-rupture (ASTM E139).** Cyclic machines build the S-N curve; furnace frames under sustained load measure time-dependent strain at temperature.\n\nEvery one of these is **destructive** — it certifies the coupon, the lot, or the heat, never the article that flies. The complement is the NDT proxy measurement made on **every** part:\n\n- **Conductivity plus hardness per AMS 2658** verifies the heat-treat condition of wrought aluminum: each alloy and temper owns a specified %IACS band, and a 7075 fitting reading far from its ≈32% IACS band is quarantined for improper temper before it ever reaches assembly.\n- **Ultrasonic velocity** falls as the graphite in cast iron degrades from nodules toward flakes — a stiffness change read as a sound-speed change, used to grade nodularity without sectioning.\n- **Hardness comparators and eddy current sorting** separate mixed stock and catch the wrong alloy before it is installed.\n\nThe discipline that keeps proxies honest: a proxy is a **correlation**, valid only for the alloy system and condition it was established on. It supplements the destructive benchmark — it never silently replaces one a specification requires."
+    },
+    {
+      "type": "table",
+      "caption": "The property-testing toolbox: destructive benchmarks and the nondestructive proxies that ride on them.",
+      "headers": ["Test", "Governing standard", "Properties measured", "What it tells the program"],
+      "rows": [
+        ["Tension test", "ASTM E8/E8M", "E, yield (0.2% offset), UTS, elongation, reduction of area", "The baseline mechanical data for the alloy and temper — destructive, coupon by coupon"],
+        ["Hardness — Brinell, Rockwell, Vickers, Knoop", "ASTM E10, E18, E92, E384", "Resistance to indentation (localized plastic deformation)", "Fast heat-treat check; for carbon and low-alloy steels, UTS (psi) ≈ 500 × HB"],
+        ["Charpy V-notch impact", "ASTM E23", "Impact toughness; ductile-to-brittle transition temperature", "Screens steels for low-temperature embrittlement; FCC alloys show no sharp transition"],
+        ["Fatigue testing", "ASTM E466", "S-N curve; endurance limit (ferrous alloys)", "Feeds safe-life and inspection-interval logic — aluminum has no true endurance limit"],
+        ["Creep / stress-rupture", "ASTM E139", "Time-dependent strain under load at temperature", "Qualifies hot-section alloys operating above ~0.4 of absolute melting temperature"],
+        ["Eddy current conductivity + hardness", "ASTM E1004; AMS 2658", "Electrical conductivity (%IACS) with hardness", "Nondestructive temper and heat-treat verification of wrought aluminum, on every article"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Strength is not stiffness — and NDT measures neither directly",
+      "body": "Quench and temper 4340 steel from roughly 100 ksi annealed to 260–280 ksi UTS and its modulus stays about 30 × 10⁶ psi: the part is nearly three times stronger and not one bit stiffer, and its elastic deflections under load do not change. NDT lives one step further removed: instruments read **physical** properties — conductivity, permeability, velocity, attenuation — and reach mechanical condition only through established correlations such as the AMS 2658 conductivity bands or the 500 × HB rule for steel. Quote the correlation's pedigree, not just its number, and never let a proxy quietly replace a required destructive test."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-8-1-fig-a",
+      "title": "Annotated engineering stress-strain curve",
+      "file": "basic-8-1-fig-a.svg"
+    },
+    {
+      "id": "basic-8-1-fig-b",
+      "title": "Physical properties mapped to NDT methods",
+      "file": "basic-8-1-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "sort",
+    "title": "Property Match: Material vs. Behavior",
+    "intro": "Nine behaviors from the hangar floor and the test lab. Sort each one to the property family doing the work: elastic, strength-and-toughness, or physical.",
+    "buckets": ["Elastic property at work", "Strength, ductility, or toughness at work", "Physical property at work"],
+    "items": [
+      {
+        "label": "A wing flexes upward in gust load and returns exactly to its original dihedral when the air smooths out",
+        "bucket": 0,
+        "why": "Below the elastic limit, strain is fully recoverable — Hooke's law territory. The spar springs back because stress never left the straight-line region of the curve."
+      },
+      {
+        "label": "Same load, same cross-section: a steel tie rod stretches only about a third as much as the aluminum rod beside it",
+        "bucket": 0,
+        "why": "Same stress, different strain — that is stiffness, the modulus of elasticity: about 30 × 10⁶ psi for steel versus about 10 × 10⁶ psi for aluminum, set by atomic bonding rather than heat treatment."
+      },
+      {
+        "label": "A torsion-bar spring twists in proportion to applied torque and unwinds completely on every cycle",
+        "bucket": 0,
+        "why": "Shear stress and shear strain track through the shear modulus G — Hooke's law in twist. Full recovery every cycle is the signature of purely elastic behavior."
+      },
+      {
+        "label": "An overtorqued bolt measures 0.010 in. longer after removal than it did before installation",
+        "bucket": 1,
+        "why": "Length that remains after unloading is plastic strain: the preload pushed the shank past its yield strength — the 0.2% offset milestone — and the deformation is permanent."
+      },
+      {
+        "label": "A tensile specimen necks to an hourglass, shows 18% elongation, and leaves a cup-and-cone fracture face",
+        "bucket": 1,
+        "why": "Necking begins at ultimate tensile strength, and percent elongation with reduction of area are the standard ductility numbers from the broken specimen; cup-and-cone is the classic ductile fracture signature."
+      },
+      {
+        "label": "Charpy bars of the same steel absorb 90 J at room temperature but only 12 J at −40 °C",
+        "bucket": 1,
+        "why": "That collapse in absorbed energy is the ductile-to-brittle transition of a body-centered-cubic steel — toughness, the strength-plus-ductility property the Charpy V-notch test exists to measure."
+      },
+      {
+        "label": "Magnetic particle testing is approved for the 4340 steel lug but is physically impossible on the 7075 aluminum fitting next to it",
+        "bucket": 2,
+        "why": "MT runs on magnetic permeability: ferromagnetic 4340 concentrates flux and leaks it at a crack, while aluminum at a relative permeability of about 1 gives the method nothing to work with."
+      },
+      {
+        "label": "On a radiograph of an aluminum weld, a tungsten inclusion prints light while a gas pore prints dark",
+        "bucket": 2,
+        "why": "Radiographic attenuation rides on density and atomic number — 19.3 g/cm³ tungsten absorbs far more beam than 2.7 g/cm³ aluminum, and the gas-filled pore absorbs least of all."
+      },
+      {
+        "label": "An eddy current meter reads 38.5% IACS on a 2024 part whose temper band is specified near 30% IACS",
+        "bucket": 2,
+        "why": "Conductivity in %IACS shifts with alloy and temper because solute atoms in and out of solution scatter electrons differently; a reading outside the specified band flags improper heat treatment under AMS 2658."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "On a stress-strain curve, the modulus of elasticity is:",
+      "options": [
+        "the stress at which 0.2% permanent strain remains after unloading",
+        "the slope of the initial straight-line portion — the ratio of stress to strain, a measure of stiffness",
+        "the maximum engineering stress the material carries before necking begins",
+        "the total energy absorbed by the specimen before fracture"
+      ],
+      "correct": 1,
+      "explanation": "E = σ/ε in the elastic region — the slope of the Hooke's-law line, about 30 × 10⁶ psi for steel and roughly a third of that for aluminum. It measures stiffness, not strength, and heat treatment barely moves it. The first option describes yield strength by the offset method, the third describes ultimate tensile strength, and the last describes toughness."
+    },
+    {
+      "question": "Most aluminum alloys leave the elastic line gradually rather than at a sharp point, so their yield strength is reported as the stress at which:",
+      "options": [
+        "the specimen fractures completely",
+        "necking first becomes visible on the gauge length",
+        "a line drawn parallel to the elastic slope, offset by 0.2% strain, intersects the stress-strain curve",
+        "the curve first departs measurably from the straight elastic line"
+      ],
+      "correct": 2,
+      "explanation": "The 0.2% offset method of ASTM E8/E8M: start at 0.002 strain, draw a line parallel to the elastic slope, and take the intersection with the curve as yield. The last option describes the proportional limit, which is real but too hard to pin down repeatably; necking does not begin until ultimate tensile strength, and fracture comes later still."
+    },
+    {
+      "question": "A repair station receives a 7075-T6 aluminum fitting and a 4340 steel lug for crack inspection. Magnetic particle testing is applicable to:",
+      "options": [
+        "both parts, provided magnetizing current is increased on the aluminum",
+        "the aluminum only, because its electrical conductivity is higher",
+        "neither part until all surface coatings are chemically stripped",
+        "the steel lug only — MT requires a ferromagnetic material, and aluminum's relative permeability is essentially 1"
+      ],
+      "correct": 3,
+      "explanation": "Magnetic particle testing depends on magnetic permeability: flux must concentrate in the part and leak at a discontinuity. Iron, nickel, cobalt, and most of their alloys qualify; aluminum, titanium, and austenitic stainless do not, and no amount of current changes that physics. Conductivity is eddy current's property, not MT's — the aluminum fitting goes to penetrant or ET instead."
+    },
+    {
+      "question": "The longitudinal ultrasonic velocity in a metal is set primarily by its:",
+      "options": [
+        "elastic moduli and density",
+        "tensile strength and hardness",
+        "electrical conductivity and magnetic permeability",
+        "surface roughness and part thickness"
+      ],
+      "correct": 0,
+      "explanation": "Sound speed is governed by the ratio of elastic stiffness to density — about 5,900 m/s longitudinal in steel and 6,320 m/s in aluminum. That is why UT velocity can grade cast iron nodularity: graphite shape changes the effective modulus. Strength and hardness changes barely shift velocity because E stays nearly constant through heat treatment, and conductivity and permeability are eddy current's and MT's properties."
+    },
+    {
+      "question": "Under AMS 2658, eddy current conductivity readings combined with hardness checks verify the heat treatment of wrought aluminum parts because:",
+      "options": [
+        "conductivity in %IACS shifts measurably with alloy and temper, so a reading outside the specified band flags an improper heat-treat condition",
+        "eddy current instruments measure yield strength directly through the part surface",
+        "conductivity is identical for all aluminum alloys, so any deviation must be a crack",
+        "the eddy currents anneal the part surface to a known baseline condition"
+      ],
+      "correct": 0,
+      "explanation": "Precipitation state changes how solute atoms scatter electrons, so each alloy and temper owns a conductivity band — 7075-T6 near 32% IACS, pure aluminum near 61%. The instrument reads a physical property and infers the mechanical condition through that established correlation; nothing measures strength directly through the surface, and the destructive tensile test of ASTM E8 remains the benchmark the proxy is anchored to."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §3.1.1 (properties of materials: strength and elastic properties, physical properties, material properties testing)",
+    "ASTM E8/E8M, Standard Test Methods for Tension Testing of Metallic Materials (stress-strain behavior, offset yield, elongation, reduction of area)",
+    "ASTM E10 / E18 / E92 / E384, Standard Test Methods for Brinell, Rockwell, Vickers, and Knoop/Microindentation Hardness of Metallic Materials",
+    "ASTM E23, Standard Test Methods for Notched Bar Impact Testing of Metallic Materials (Charpy toughness and transition-temperature behavior)",
+    "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method, and SAE AMS 2658, Hardness and Conductivity Inspection of Wrought Aluminum Alloy Parts"
+  ]
+}

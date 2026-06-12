@@ -1,0 +1,180 @@
+{
+ "lessonId": "rt1-4-2",
+ "title": "Low-Energy Electronic Radiation Sources (500 keV and Less)",
+ "narrationScript": "This lesson is about the industrial X ray tube and the machine that drives it, the kind of equipment that works up to about five hundred thousand volts. Unlike a gamma source, an X ray tube only makes radiation when you switch it on, which is a real safety advantage, but it also means you have to understand the electrical machine behind the beam. Let us build it up piece by piece. Every X ray tube is a sealed vacuum tube with two electrodes. The cathode holds a small wire filament. We pass a current through that filament and it heats up and boils off electrons, the same way a light bulb filament glows. Across the tube is the anode, the positive electrode, which carries the target. When we put a high voltage between cathode and anode, the cloud of electrons at the filament is pulled across the vacuum and slams into the target at enormous speed. Most of that energy turns into heat, and a small fraction, only about one percent, comes out as X rays. So we have two knobs, and they do completely different things. The first knob is the tube current, measured in milliamps. More filament heating means more electrons crossing per second, which means a more intense beam, more X rays per second, but it does not change how penetrating they are. The second knob is the tube voltage, the kilovolts peak, or kVp. Raising the kilovoltage makes the electrons hit harder, which produces higher energy, more penetrating X rays. So milliamps control quantity and kilovolts control quality and penetration. There is a trade off built into kilovoltage. Low kilovoltage gives a beam with high contrast but narrow latitude, good when the part is a single thickness. High kilovoltage penetrates more and gives wider latitude, so a single film can capture a range of thicknesses, but with lower contrast. Now the high voltage has to come from somewhere. Wall power is a few hundred volts of alternating current, so a generator uses a step up transformer to raise it to tens or hundreds of thousands of volts, and then rectifiers, which are one way valves for current, to turn that alternating current into the direct voltage the tube needs. Simple machines are self rectified, where the tube itself only conducts on the useful half of the cycle. Better machines use full wave rectification or constant potential circuits that hold a steady voltage, which makes more efficient, more consistent radiation. The control circuits let the operator set the kilovolts and the milliamps, set the exposure timer, and step the voltage up slowly during warm up. Let us talk about the target. It is almost always tungsten, set into a copper backing. Tungsten is chosen for two reasons, a very high atomic number, which makes X ray production more efficient, and an extremely high melting point, because that spot gets brutally hot. The target face is angled, typically around twenty degrees, so that the actual heated area can be large to spread the heat while the beam, looking back along its axis, sees a small effective focal spot. A small focal spot is what gives a sharp image, so target design is a constant fight between making the spot small for sharpness and large enough to survive the heat. That heat is the real limit on the machine. Remember that about ninety nine percent of the input becomes heat, not X rays. The copper anode conducts heat away, fins or oil or water carry it off, and in high output tubes the anode actually spins so no single spot stays under the beam too long. Because of all this heat, every tube has a duty cycle, the fraction of time it can run before it must rest and cool. Push past the duty cycle and you crack the target or fail the tube. That is also why we warm a tube up slowly after it has been idle, stepping the kilovoltage up in stages so the target is not thermally shocked. Finally, filtration. The raw beam contains a lot of low energy, soft X rays that cannot get through the part. They only add scatter and dose without helping the image, so we place a thin metal filter, often a sheet of aluminum or copper, right at the tube window to absorb the softest rays. This hardens the beam, leaving a cleaner, more penetrating spectrum. Switch on, warm up, set your factors, respect the duty cycle, and filter the beam.",
+ "imagePrompt": "A close-up of an industrial X-ray tube head mounted on a stand in a shielded bay, cooling fins and high-voltage cable visible, aimed at a steel weld coupon on a film cassette, control console with kV and mA dials glowing in the foreground.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "X-rays On Demand",
+   "body": "A low-energy **electronic radiation source** - an industrial X-ray tube operating at **500 keV (kVp) and less** - covers the great majority of shop and field X-ray work. Its defining advantage over a radioisotope is control: it emits radiation **only when energized**, so when the power is off the hazard is off. The trade is that you must understand the electrical system that produces and shapes the beam.\n\nAt heart, an X-ray tube converts the kinetic energy of fast electrons into X-rays. A heated **filament** releases electrons; a high voltage accelerates them across a vacuum into a metal **target**; the sudden deceleration emits a continuous **bremsstrahlung** spectrum, and inner-shell ionization adds sharp **characteristic** lines unique to the target metal. Crucially, only about **1%** of the input energy becomes X-rays - the other **~99% becomes heat**, which is why heat management dominates tube design. The sections below build the system from the generator through the tube, its controls, the accelerating potential, the target, heat handling, duty cycle, and finally beam filtration."
+  },
+  {
+   "type": "text",
+   "heading": "Generator and High-Voltage Rectifiers",
+   "body": "An X-ray tube needs tens to hundreds of thousands of volts of **direct** potential, but line power is a few hundred volts of **alternating current (AC)**. The **generator** bridges that gap. A **step-up transformer** raises the line voltage to the required high voltage; a separate low-voltage circuit supplies the filament. Because AC reverses direction every half cycle while the tube must be driven one way (cathode negative, anode positive), the high voltage is **rectified** - passed through **rectifiers**, one-way valves for current.\n\nSeveral circuit designs exist:\n\n- **Self-rectified**: the tube itself conducts only on the half cycle that drives electrons the correct way; simple but produces radiation only half the time and stresses the tube.\n- **Full-wave rectified**: rectifiers flip both half cycles to the useful polarity, doubling the productive fraction.\n- **Constant potential**: smoothing holds a nearly steady DC voltage, giving the most efficient and consistent output.\n\nMore efficient rectification means more X-ray output per unit of input and a steadier beam quality."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-4-2-fig-a",
+   "caption": "Schematic of an X-ray tube and its generator: filament circuit, high-voltage step-up transformer, rectifier, cathode, and angled target on the copper anode."
+  },
+  {
+   "type": "text",
+   "heading": "Tube Design, Control Circuits, and Accelerating Potential",
+   "body": "The **tube** is an evacuated envelope - glass or metal-ceramic - holding two electrodes. The **cathode** carries the **filament** (a small tungsten coil) inside a **focusing cup** that shapes the emitted electrons into a narrow stream aimed at the target. The **anode** is the positive electrode that holds the target and conducts heat away. The vacuum is essential: any gas would scatter the electrons and let the tube arc.\n\nThe **control circuits** put the operator in command of two settings that do very different jobs, and confusing them is a classic beginner error:\n\n- **Tube current (mA)**, set by **filament heating**: more heating boils off more electrons per second, raising the **quantity** of X-rays (the **intensity**) but not their penetrating power.\n- **Tube voltage (kVp)** - the **accelerating potential** between cathode and anode: raising it makes each electron strike harder, producing **higher-energy, more penetrating** X-rays. This sets beam **quality**.\n\nAn **exposure timer** controls how long the beam is on; a stepped **warm-up** sequence, interlocks, and protective cut-outs round out the panel. Kilovoltage carries a built-in trade-off: **lower kV** gives **high contrast** but **narrow latitude** (best for a single thickness), while **higher kV** penetrates more and gives **wider latitude** - a single radiograph spanning a range of thicknesses - at **lower contrast**. The radiographer picks kV for thickness and the contrast/latitude balance, then sets mA and time for the right film density."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "mA is quantity; kV is quality",
+   "body": "Think of it as two independent knobs: **mA** (tube current) controls **how many** X-rays you get - intensity and film density - while **kVp** controls **how penetrating** they are - and the contrast-versus-latitude trade. Increase kV to get through a thicker part; increase mA or time to darken the film."
+  },
+  {
+   "type": "text",
+   "heading": "Target Material and Configuration",
+   "body": "The **target** (the focal track on the anode) is almost always **tungsten**, often as an insert brazed into a **copper** anode. Tungsten is chosen for two reasons: a **high atomic number** (Z = 74), which makes bremsstrahlung X-ray production more efficient, and a very **high melting point** (about 3400 C), because the impact spot reaches extreme temperatures.\n\nThe target face is set at an **angle** to the electron beam - commonly around **20 degrees**. This is the **line-focus principle**: the electrons strike a comparatively large area to spread the heat, while the beam viewed along its useful axis sees a much smaller **effective focal spot**. A small focal spot is what produces a sharp radiograph (it minimizes **geometric unsharpness**), so target geometry is a constant compromise between making the spot small for sharpness and keeping the heated area large enough to survive. **Stationary** anodes are typical of industrial directional tubes; **panoramic (rod-anode) tubes** project the beam 360 degrees for shooting circumferential welds from inside a pipe."
+  },
+  {
+   "type": "text",
+   "heading": "Heat Dissipation and Duty Cycle",
+   "body": "Because roughly **99%** of the tube's input becomes **heat**, removing that heat is the controlling limit on output. The **copper anode** conducts heat from the tungsten target; from there it is carried off by **cooling fins, circulating oil, or water**, and in high-output equipment the anode is **rotated** so no single point stays under the beam long enough to melt.\n\nEvery tube therefore has a **duty cycle**: the fraction of time it may operate before it must rest and cool - for example, an on/off ratio that allows a few minutes of exposure followed by a cooling period. Exceeding the duty cycle overheats and **cracks the target** or fails the tube. The same thermal concern drives the **warm-up** routine: after the tube has been idle or cold, the operator steps the kV up in stages per the manufacturer's chart so the target is not thermally shocked. Respecting duty cycle and warm-up is not optional housekeeping - it is what keeps an expensive tube alive and the output consistent."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-4-2-fig-b",
+   "caption": "Line-focus target geometry and heat path: the angled tungsten focal track spreads heat over a large area while presenting a small effective focal spot, with the copper anode and cooling carrying heat away."
+  },
+  {
+   "type": "text",
+   "heading": "Beam Filtration",
+   "body": "The raw beam leaving the target is **polyenergetic** - it contains a broad range of energies, including a large fraction of **low-energy, soft X-rays**. Those soft rays are too weak to pass through the part; they are absorbed in the first material they meet, contributing **scatter and dose** without adding useful image information.\n\n**Filtration** removes them. A thin sheet of metal - commonly **aluminum** for lower kV, or **copper** for higher kV - is placed at the tube window (and sometimes added externally). The filter preferentially absorbs the soft rays while passing the more penetrating ones, an effect called **hardening** the beam: it raises the average energy and yields a cleaner spectrum. The benefits are real - less scatter (better contrast and clarity) and lower operator dose from useless radiation - at the cost of some overall intensity, which is recovered with a little more exposure. Correct filtration is part of an established technique, not an afterthought."
+  }
+ ],
+ "figures": [
+  {
+   "id": "rt1-4-2-fig-a",
+   "title": "X-ray tube and generator schematic",
+   "file": "rt1-4-2-fig-a.svg"
+  },
+  {
+   "id": "rt1-4-2-fig-b",
+   "title": "Line-focus target geometry and heat path",
+   "file": "rt1-4-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Running the tube without cooking it",
+  "intro": "You are set up with a 300 kVp directional X-ray tube to shoot a series of weld coupons. Work through the operating decisions a Level II makes during the shift.",
+  "steps": [
+   {
+    "prompt": "The tube has been switched off overnight and is cold. Your technique calls for 280 kVp. What do you do first?",
+    "options": [
+     "Set 280 kVp immediately and start exposing",
+     "Run the manufacturer's stepped warm-up, raising kV in stages before full output",
+     "Raise the mA to maximum to heat the tube faster",
+     "Skip warm-up because X-ray tubes do not need it"
+    ],
+    "correct": 1,
+    "feedback": "A cold target must be warmed in steps to avoid thermal shock that cracks it. Follow the warm-up chart before going to full kV."
+   },
+   {
+    "prompt": "Your radiographs are properly penetrated but slightly too light (low density). Which factor should you change?",
+    "options": [
+     "Increase kVp to push more energy through",
+     "Increase mA or exposure time to add more X-rays",
+     "Add more beam filtration",
+     "Decrease the source-to-film distance only"
+    ],
+    "correct": 1,
+    "feedback": "Penetration is adequate, so leave kV alone. Density is driven by quantity - raise mA or time to darken the film without changing contrast."
+   },
+   {
+    "prompt": "After several back-to-back exposures the tube's thermal indicator is near its limit. What is the correct action?",
+    "options": [
+     "Keep shooting; duty cycle is only a guideline",
+     "Increase cooling by raising kV",
+     "Stop and let the tube cool per its duty cycle before continuing",
+     "Switch to a smaller focal spot to reduce heat"
+    ],
+    "correct": 2,
+    "feedback": "Exceeding the duty cycle cracks the target. Pause and let it cool within the rated on/off ratio - the heat must be carried away before the next run."
+   },
+   {
+    "prompt": "Scatter is degrading contrast on a thin aluminum part shot at low kV. A reasonable beam-quality fix is to:",
+    "options": [
+     "Remove all filtration to maximize intensity",
+     "Add appropriate beam filtration to absorb soft, scatter-prone radiation",
+     "Lower the kV well below penetration needs",
+     "Increase focal-spot size"
+    ],
+    "correct": 1,
+    "feedback": "A thin filter hardens the beam, removing soft rays that mostly produce scatter, which cleans up the image at the cost of a little intensity."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "In an industrial X-ray tube, what controls the QUANTITY (intensity) of X-rays produced?",
+   "options": [
+    "The kilovoltage (kVp) between cathode and anode",
+    "The tube current (mA), set by filament heating",
+    "The thickness of the beam filter",
+    "The target's atomic number"
+   ],
+   "correct": 1,
+   "explanation": "Filament heating sets the mA - the number of electrons crossing per second - which governs X-ray quantity/intensity; kVp sets energy and penetration, not quantity."
+  },
+  {
+   "question": "Why is the high voltage from the transformer passed through rectifiers before reaching the tube?",
+   "options": [
+    "To convert alternating current into the one-directional (DC) potential the tube requires",
+    "To increase the focal-spot size",
+    "To cool the anode",
+    "To filter soft X-rays out of the beam"
+   ],
+   "correct": 0,
+   "explanation": "The tube must be driven one way (cathode negative, anode positive); rectifiers act as one-way valves, turning AC into the DC high voltage, and better rectification gives steadier output."
+  },
+  {
+   "question": "Tungsten is the standard target material primarily because it has:",
+   "options": [
+    "A low atomic number and low melting point",
+    "A high atomic number for efficient X-ray production and a high melting point to withstand heat",
+    "Excellent transparency to X-rays",
+    "A naturally small focal spot regardless of design"
+   ],
+   "correct": 1,
+   "explanation": "High Z makes bremsstrahlung production more efficient, and a ~3400 C melting point lets the focal track survive the intense localized heating."
+  },
+  {
+   "question": "Roughly what fraction of the energy delivered to an X-ray tube is converted into X-rays, and what does this imply?",
+   "options": [
+    "About 99%, so cooling is unimportant",
+    "About 50%, so duty cycle does not matter",
+    "About 1%, so the remaining heat dominates tube design and limits duty cycle",
+    "About 25%, so filtration is unnecessary"
+   ],
+   "correct": 2,
+   "explanation": "Only ~1% becomes X-rays; the ~99% that becomes heat is why anodes use copper, cooling, and rotation, and why every tube has a duty cycle."
+  },
+  {
+   "question": "A radiographer adds a thin aluminum sheet at the tube window. The primary purpose is to:",
+   "options": [
+    "Increase the quantity of soft X-rays reaching the part",
+    "Absorb low-energy soft radiation, hardening the beam and reducing scatter",
+    "Raise the kVp automatically",
+    "Reduce the effective focal-spot size"
+   ],
+   "correct": 1,
+   "explanation": "Filtration removes weak soft rays that only add scatter and dose without forming useful image, raising the beam's average energy (hardening it)."
+  }
+ ],
+ "references": [
+  "CP-105-2024 RT Topical Outline, Basic RT Physics 6.3 (electronic sources, 500 keV and less)",
+  "CP-105-2024 RT Topical Outline, Basic RT Physics 6.3.1-6.3.3 (generator/rectifiers, tube design, control circuits)",
+  "CP-105-2024 RT Topical Outline, Basic RT Physics 6.3.4-6.3.8 (accelerating potential, target, heat dissipation, duty cycle, filtration)",
+  "General X-ray physics: bremsstrahlung and characteristic radiation (reference principle)"
+ ]
+}

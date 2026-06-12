@@ -1,0 +1,115 @@
+{
+  "moduleId": "rs-2",
+  "questions": [
+    {
+      "question": "Pushed into an extremely high radiation field, a GM survey meter without anti-saturation circuitry can read near zero. What causes this failure?",
+      "options": [
+        "The energy-compensating sleeve blocks low-energy scatter, which makes up most of the field close to a source",
+        "Events arrive faster than the tube's dead time allows it to recover, so pulses pile into a continuous blur the circuit cannot count and the reading folds back toward zero",
+        "The strong field drops the tube into the ionization region, where the chamber is too insensitive to deflect the needle",
+        "The halogen quench gas is consumed within seconds, leaving the tube unable to produce any pulses"
+      ],
+      "correct": 1,
+      "explanation": "Every GM pulse is followed by roughly 100 microseconds of dead time. In an extreme field, events arrive faster than the tube can reset, pulses merge into a continuous discharge, and the displayed reading collapses — saturation, or fold-back. That is why you switch the meter on and verify response before approaching, and treat a climb-then-collapse reading as a signal to retreat immediately."
+    },
+    {
+      "question": "A boundary must be set and a stay time calculated near an exposure device. Why is the ionization chamber the instrument of record for those numbers?",
+      "options": [
+        "Its avalanche guarantees that every single event registers, so no dose is missed",
+        "Its NaI(Tl) crystal and photomultiplier give it the greatest sensitivity of any field instrument",
+        "It collects only the primary ion pairs, so its current is proportional to true exposure rate, its energy response is flat, and it does not fold back at radiography dose rates",
+        "It is the only instrument that responds to both photons and neutrons"
+      ],
+      "correct": 2,
+      "explanation": "Operating in the ionization (saturation) region, the chamber adds no gas amplification: the tiny electrometer current is directly proportional to the energy deposited. That buys accuracy in strong fields with a flat energy response — exactly what you need when the number itself drives a boundary or stay-time decision. Avalanches belong to GM tubes and crystals to scintillators, both search instruments."
+    },
+    {
+      "question": "Inside a neutron rem meter, what is the role of the boron-10 or helium-3 in the central proportional tube?",
+      "options": [
+        "To capture slow neutrons and convert each capture into energetic charged particles — an alpha plus lithium-7, or a proton — that ionize the tube's gas",
+        "To slow incoming fast neutrons down to thermal speeds before they are counted",
+        "To absorb gamma photons so that only neutron events can reach the detector",
+        "To scintillate, converting neutron energy into light flashes for a photomultiplier"
+      ],
+      "correct": 0,
+      "explanation": "Neutrons carry no charge and cannot ionize gas directly, so detection runs through capture reactions: boron-10 splits into an energetic alpha plus lithium-7, and helium-3 emits a proton. Those charged particles ionize the gas. Slowing the neutrons is the polyethylene moderator's job, and gamma rejection is done electronically by pulse-height discrimination — not by absorption."
+    },
+    {
+      "question": "Under 10 CFR 34.25, an instrument used to make radiographic surveys must be capable of measuring a range of:",
+      "options": [
+        "0.1 mrem per hour through 50 mrem per hour",
+        "2 mrem per hour through 100 mrem per hour",
+        "1 rem per hour through 10 rem per hour",
+        "2 mrem per hour through 1 rem per hour"
+      ],
+      "correct": 3,
+      "explanation": "The required span is 2 mrem/h through 1 rem/h (0.02 mSv/h through 0.01 Sv/h). The low end covers boundary and posting decisions; the high end covers readings near the device when something has gone wrong. An instrument that cannot cover that whole range is not a radiography survey meter, whatever its other virtues."
+    },
+    {
+      "question": "Approaching the device after an exposure, your analog meter's needle settles on 1.4 on the 0–2 mR/h scale with the range selector at ×100. The dose rate at your position is:",
+      "options": [
+        "1.4 mR/h",
+        "14 mR/h",
+        "140 mR/h",
+        "1,400 mR/h"
+      ],
+      "correct": 2,
+      "explanation": "An analog reading is always needle times range multiplier: 1.4 × 100 = 140 mR/h. Reporting the needle alone would understate the field one hundred times over — the classic survey-meter error, and always in the dangerous direction when the range switch is high."
+    },
+    {
+      "question": "Which of the following does NOT require a radiography survey meter to be recalibrated before it is used again?",
+      "options": [
+        "Replacing its batteries during a routine pre-use check",
+        "Repair of the range selector switch by the instrument shop",
+        "Passing the 6-month anniversary of its last calibration",
+        "Replacement of the detector tube"
+      ],
+      "correct": 0,
+      "explanation": "10 CFR 34.25(b) requires calibration at intervals not to exceed 6 months and after each instrument servicing — with battery changes named as the single exception. After a battery change you still re-run the battery check and confirm the meter responds to a known field, but no recalibration is triggered. Any other servicing leaves accuracy unverified until the instrument is recalibrated."
+    },
+    {
+      "question": "Which statement correctly gives the defining threshold of a very high radiation area?",
+      "options": [
+        "An area where an individual could receive more than 100 mrem in 1 hour at 30 cm",
+        "An area where the absorbed dose could exceed 500 rad (5 Gy) in 1 hour at 1 meter",
+        "An area where an individual could receive more than 500 mrem dose equivalent in 1 hour at 30 cm",
+        "Any area reading more than 5 mrem in 1 hour at 30 cm from the source"
+      ],
+      "correct": 1,
+      "explanation": "The very-high-radiation-area threshold changes quantity, unit, and distance all at once: 500 rad absorbed dose in 1 hour measured at 1 meter — not a dose equivalent at 30 cm. The 100 mrem figure defines a high radiation area and 5 mrem a radiation area, both in 1 hour at 30 cm. The required posting is GRAVE DANGER, VERY HIGH RADIATION AREA."
+    },
+    {
+      "question": "During each hour of operation the source is exposed for a total of 15 minutes. A spot just outside the restricted-area boundary reads 8 mR/h during exposures and background the rest of the time. Under the public dose limits of 10 CFR 20.1301, that spot is:",
+      "options": [
+        "Out of compliance — no unrestricted-area location may ever read above 2 mR/h on the meter",
+        "Out of compliance — the public limit at the boundary is 100 mrem in any one hour",
+        "Acceptable only if the spot is posted CAUTION, RADIATION AREA",
+        "Within the limit — the rule caps dose received in any one hour at 2 mrem, and 8 mR/h for 15 minutes delivers 2 mrem"
+      ],
+      "correct": 3,
+      "explanation": "The unrestricted-area limit is 2 mrem in any one hour — a dose, not an instantaneous dose rate. With the source out only 15 minutes per hour, 8 mR/h × 0.25 h = 2 mrem, which does not exceed the limit (100 mrem is the annual public limit). Many companies still rope off at the 2 mR/h-during-exposure line because it is conservative and simple to verify; your license and procedures state which approach you use."
+    },
+    {
+      "question": "You crank the source in after a shot: the crank turned smoothly and the cable counter shows full retraction. Under 10 CFR 34.49, what must still happen before anyone exchanges film or dismantles equipment?",
+      "options": [
+        "A survey with a calibrated, operable instrument covering the exposure device and the entire length of the guide tube, made while approaching them",
+        "Nothing further — smooth retraction plus the device's source-position indicator verifies shielding",
+        "A short wait for residual radiation in the area to die down before walking in",
+        "A single reading taken from the crank position to confirm the field has dropped"
+      ],
+      "correct": 0,
+      "explanation": "A drive cable can disconnect and a source can hang up in the tube while the crank feels normal and the indicators look right. 10 CFR 34.49 requires a post-exposure survey of the device and guide tube — full circumference of the device and the whole tube out to the exposure head — proving the source is shielded before film, hands, or breakdown. There is no residual radiation to wait out: if the source is shielded the field is already down."
+    },
+    {
+      "question": "Your RSO assigns a 30 mR dose budget for a task at a position where the survey meter reads 120 mR/h. The maximum stay time is:",
+      "options": [
+        "4 minutes",
+        "15 minutes",
+        "25 minutes",
+        "2.5 hours"
+      ],
+      "correct": 1,
+      "explanation": "Stay time = allowed dose ÷ measured dose rate = 30 mR ÷ 120 mR/h = 0.25 h = 15 minutes. The dose rate must be measured at the actual working position, a timekeeper enforces the limit, and any change in source, shielding, or position forces a re-survey and a fresh calculation. A stay time is a ceiling — ALARA means coming in under it."
+    }
+  ]
+}

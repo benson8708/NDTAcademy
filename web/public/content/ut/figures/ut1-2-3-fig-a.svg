@@ -1,0 +1,47 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Reflection at an Impedance Mismatch</text>
+
+  <!-- two media -->
+  <rect x="60" y="80" width="280" height="250" fill="#D9E0E8" stroke="#0A2342" stroke-width="2"/>
+  <rect x="340" y="80" width="280" height="250" fill="#E8F1FB" stroke="#0A2342" stroke-width="2"/>
+  <line x1="340" y1="80" x2="340" y2="330" stroke="#0A2342" stroke-width="4"/>
+  <text x="200" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#0A2342">STEEL</text>
+  <text x="200" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Z₁ = 46.5 MRayl</text>
+  <text x="480" y="108" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#0A2342">WATER</text>
+  <text x="480" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Z₂ = 1.48 MRayl</text>
+
+  <!-- incident / reflected / transmitted -->
+  <line x1="90" y1="200" x2="322" y2="200" stroke="#1B82E8" stroke-width="6"/>
+  <polygon points="322,191 322,209 338,200" fill="#1B82E8"/>
+  <text x="190" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">incident — 100%</text>
+  <line x1="322" y1="255" x2="110" y2="255" stroke="#1B82E8" stroke-width="5"/>
+  <polygon points="110,247 110,263 94,255" fill="#1B82E8"/>
+  <text x="210" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">reflected ≈ 88%</text>
+  <line x1="352" y1="200" x2="560" y2="200" stroke="#1E9E6A" stroke-width="3"/>
+  <polygon points="560,193 560,207 576,200" fill="#1E9E6A"/>
+  <text x="470" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1E9E6A">transmitted ≈ 12%</text>
+  <text x="200" y="312" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">same split in either direction</text>
+
+  <!-- formula panel -->
+  <rect x="60" y="350" width="430" height="76" rx="8" fill="#E8F1FB" stroke="#0A2342" stroke-width="2"/>
+  <text x="275" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#0A2342">R = ((Z₂ − Z₁) ÷ (Z₂ + Z₁))²</text>
+  <text x="275" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">steel–water: (45.0 ÷ 48.0)² ≈ 0.88 → 88% reflected</text>
+
+  <!-- impedance ladder -->
+  <text x="708" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">Z (MRayl)</text>
+  <text x="638" y="118" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">steel 46.5</text>
+  <rect x="638" y="123" width="140" height="12" fill="#1B82E8"/>
+  <text x="638" y="156" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">aluminum 17.1</text>
+  <rect x="638" y="161" width="51" height="12" fill="#1B82E8"/>
+  <text x="638" y="194" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">acrylic 3.2</text>
+  <rect x="638" y="199" width="10" height="12" fill="#1B82E8"/>
+  <text x="638" y="232" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">water 1.48</text>
+  <rect x="638" y="237" width="5" height="12" fill="#1B82E8"/>
+  <text x="638" y="270" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">air 0.0004</text>
+  <rect x="638" y="275" width="1.5" height="12" fill="#1B82E8"/>
+  <text x="708" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">steel–air: R ≈ 100%</text>
+  <text x="708" y="344" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#D14343">couplant is mandatory</text>
+  <text x="708" y="394" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">a gas-filled crack is</text>
+  <text x="708" y="416" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">the same mirror</text>
+</svg>

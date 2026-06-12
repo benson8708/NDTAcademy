@@ -1,0 +1,182 @@
+{
+ "lessonId": "ut1-3-3",
+ "title": "Digital Thickness Instrumentation",
+ "narrationScript": "A digital thickness gauge looks like the simplest instrument in the kit. Press the probe on the part, read a number, write it down. But that number is the end of a chain of assumptions, and a technician who does not know the chain will happily record wrong walls all day. So let's open the box. Inside, a thickness gauge is a small pulse-echo instrument with the display replaced by arithmetic. It fires a pulse, times how long the echo takes to come back, and computes thickness as velocity times time divided by two. Divided by two, because the sound crosses the wall twice, down and back. Work one example. In steel, longitudinal sound travels about five point nine two millimeters every microsecond. Suppose the gauge times a round trip of eight point four five microseconds. Multiply and divide by two and you get just about twenty five millimeters of steel. That is the entire measurement. Everything else in this lesson is about what can corrupt the time, or the velocity, that goes into that little formula. Where does the gauge start and stop its stopwatch? There are three common answers, called measurement modes. Mode one times from the excitation pulse to the first back echo. It is the everyday corrosion-survey mode used with dual element probes. Mode two times from the echo off the end of a delay line, or off the water path in immersion, to the first back echo. It removes the probe's own travel and is good for thin, hot, or curved parts. Mode three times between two successive back echoes. The sound has already entered the steel, so anything sitting on top of the steel, paint, epoxy, the delay line itself, drops out of the measurement. That is the through-coating mode, and it is the honest way to measure painted plate without stripping it. Now the probes. Corrosion gauges almost always use dual element probes, one crystal transmitting, the other receiving, tilted slightly toward each other. The tilt gives a focus a little below the surface, exactly where pitting lives, and because the receiver never hears the transmit pulse directly there is very little dead zone. The price is a small V shaped path in the metal that makes very thin readings slightly nonlinear. Good gauges correct for it. Precision gauges for machined parts use single element or delay line probes at higher frequencies and resolve a hundredth of a millimeter or better. Setup is two adjustments, and you must understand that they are different. Zero removes the fixed offsets, the wear plate, the couplant film, cable and electronics delay. Velocity scales time into distance for your actual material. The gauge maker gives you a zero disc on the instrument for probe zero. Better practice for real work is a two point calibration on a step wedge of the same material, one step thinner than anything you expect, one thicker. Two known points let the gauge solve for zero and velocity together, and a check on a middle step proves it. Calibrate on steel and measure brass and you can be off by ten percent or more, because the velocities differ that much. Finally, the failure modes, and this is where surveys are won or lost. First, doubling. Every gauge has a minimum range. Push below it and the gauge can miss the first back echo and trigger on the second, displaying twice the true wall. A badly corroded spot can read comfortably thick. If a thin area reads suspiciously close to double a believable number, check it with a different probe or an instrument with a live waveform display. Second, coatings. In mode one, paint adds its own travel time, and since paint is slower than steel, a millimeter of coating can add more than two millimeters to the displayed reading. Use echo to echo, or strip the spot. Third, temperature. Velocity in steel drops as the metal heats, roughly one percent for every fifty five degrees Celsius, so a gauge calibrated cold reads thick on a hot line. Use high temperature couplant and probes, touch briefly, and apply the correction your procedure gives. Fourth, geometry and surface. Rough scale, curvature, and a misaligned dual probe all stretch or scatter the path. And remember a sudden thin reading might be real, or it might be a lamination splitting the wall partway down. The gauge cannot tell you which. The technician can.",
+ "imagePrompt": "A technician presses a dual-element probe onto a corroded pipe elbow at an outdoor refinery rack, handheld digital thickness gauge displaying a wall-thickness readout.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "From Echo to Number: T = vt/2",
+   "body": "A digital thickness gauge is a pulse-echo instrument with the A-scan replaced (or supplemented) by arithmetic. It fires a pulse, times the round trip to the back wall, and computes:\n\n**Thickness = velocity x time / 2**\n\nThe divide-by-two matters: the measured time covers the trip down **and** back. Worked example in steel (longitudinal velocity about 5,920 m/s, i.e. **5.92 mm/µs** or 0.233 in/µs): the gauge clocks a round trip of 8.45 µs.\n\nT = 5.92 mm/µs x 8.45 µs / 2 = **25.0 mm**\n\nThat one line is the whole instrument. A modern gauge adds a stable clock that resolves nanoseconds (0.01 mm resolution needs timing to a few nanoseconds), automatic echo detection, and memory/datalogging - but every displayed digit still rests on two inputs: the **measured time** and the **assumed velocity**. Corrupt either one and the gauge will display a confident, wrong number. The rest of this lesson is about protecting those two inputs."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-3-3-fig-a",
+   "caption": "The three timing modes: mode 1 from excitation pulse to first back echo, mode 2 from delay-line echo to back echo, mode 3 between successive back echoes (coating drops out)."
+  },
+  {
+   "type": "text",
+   "heading": "Measurement Modes and Probe Types",
+   "body": "Gauges differ in **where the stopwatch starts and stops**:\n\n- **Mode 1** - excitation pulse to first back echo. The standard corrosion-survey mode with dual-element probes. Anything between probe and steel (couplant film, coating) is inside the measurement.\n- **Mode 2** - delay-line (or water-path) interface echo to first back echo. Subtracts the probe's own travel; suits thin, curved, or hot parts and scanning applications.\n- **Mode 3** - first back echo to second back echo. The sound is already in the metal, so **coatings and the delay line drop out**: the through-coating (echo-to-echo) mode. Needs a clean repeat echo, so it favors good surfaces and low-attenuation material.\n\nProbe choice follows the job. **Dual-element probes** dominate corrosion work: separate transmit and receive crystals, slightly angled toward each other, give a pseudo-focus just below the surface (where pitting lives) and near-zero dead zone on rough, pitted backs. Their small **V-shaped sound path** makes very thin readings slightly nonlinear - quality gauges apply a V-path correction. **Single-element and delay-line probes** at higher frequencies serve precision gauges, resolving 0.01 mm (0.001 in.) on machined parts. Many corrosion gauges also offer a live **A-scan or B-scan display** - worth using whenever a reading looks suspicious, because it shows which echo the gauge actually gated."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Zero and velocity are different adjustments",
+   "body": "**Zero** removes fixed offsets - wear-plate, couplant film, cable and electronics delay. It shifts every reading by the same amount. **Velocity** is the scale factor that turns time into distance - its error grows with thickness. A gauge can be zeroed perfectly and still read 10% off because the velocity is set for the wrong alloy. Two known thicknesses are needed to pin down both."
+  },
+  {
+   "type": "text",
+   "heading": "Setup: Probe Zero and Two-Point Calibration",
+   "body": "A defensible gauge setup takes five minutes:\n\n1. **Probe zero.** Couple to the built-in zero disc (a small reference of known thickness on the gauge body) and let the instrument null the probe's fixed delays. Repeat when the probe warms up or wears - wear changes the offset.\n2. **Two-point velocity calibration.** On a **step wedge of the same material** as the part (a typical wedge runs 2.5 to 12.5 mm in five steps), measure one step **thinner** than the thinnest expected wall and one **thicker** than the thickest. Enter the known values; the gauge solves zero and velocity together.\n3. **Verify mid-range.** Read an intermediate step. It should land within the gauge's stated accuracy (commonly ±0.1 mm for corrosion gauges). If not, recalibrate.\n4. **Re-verify periodically** - start and end of shift at minimum, and after probe changes or big temperature swings, exactly as with a flaw detector. A failed end-of-day check throws the day's readings into question.\n\nMaterial matters: calibrate on steel (5,920 m/s) and measure austenitic stainless, brass, or cast iron and the velocity error transfers directly into every reading - several percent, sometimes more than ten. Use a calibration standard of the actual alloy, or enter the documented velocity for it."
+  },
+  {
+   "type": "text",
+   "heading": "Error Sources in the Field",
+   "body": "The classic ways a thickness reading goes wrong:\n\n- **Doubling.** Below the probe's minimum range the gauge can miss back echo 1 and trigger on back echo 2, reading **twice the true wall**. A 1.2 mm corroded web can display 2.4 mm - dangerously unconservative. Suspect any thin-area reading that sits near double a plausible value; confirm with a waveform display or a thin-range probe.\n- **Coatings (mode 1).** Paint and epoxy are slow (roughly 2,300-2,700 m/s), so the gauge converts coating time at steel velocity: ~1 mm of paint adds roughly 2 mm or more of indicated steel. Switch to **echo-to-echo mode 3** or remove the coating locally.\n- **Temperature.** Steel's velocity falls about **1% per 55 °C (100 °F)** rise, so a cold-calibrated gauge reads **thick** on hot metal; couplant boils off and contact time must be short. Use high-temperature probes/couplant and the correction in your procedure.\n- **Surface and geometry.** Scale and roughness scatter the entry; curvature misaligns dual probes (orient the acoustic barrier **across** the pipe axis); excessive couplant on a rough surface can add a film delay in mode 1.\n- **The material itself.** A mid-wall **lamination** returns an early echo and reads as sudden thinning; inclusions and coarse grain (castings) weaken or shift echoes. A gauge reports a number - deciding whether it is remaining wall or a lamination is the technician's job, usually by checking the waveform and the surrounding pattern."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-3-3-fig-b",
+   "caption": "Two classic gauge errors: doubling on a wall below minimum range (gauge gates the second echo) and coating error in mode 1 versus a correct echo-to-echo reading."
+  },
+  {
+   "type": "table",
+   "caption": "Troubleshooting digital thickness readings.",
+   "headers": ["Symptom", "Likely cause", "Action"],
+   "rows": [
+    ["Thin area reads about double a believable wall", "Doubling - first back echo missed below minimum range", "Verify with A-scan display or thin-range/delay-line probe"],
+    ["Reading jumps 2-3 mm high on painted plate", "Mode 1 timing includes slow coating travel", "Use echo-to-echo (mode 3) or strip coating locally"],
+    ["Readings drift high on hot piping", "Velocity drops about 1% per 55 °C; couplant degrading", "High-temp probe/couplant, brief contact, apply correction"],
+    ["Stable but offset readings on all steps", "Probe zero error (wear, no re-zero after warm-up)", "Re-zero on the reference disc, repeat two-point cal"],
+    ["Error grows with thickness across the wedge", "Velocity set for the wrong material", "Calibrate on the actual alloy or enter its velocity"],
+    ["Sudden isolated thin spot, smooth surface", "Possible mid-wall lamination, not wall loss", "Examine waveform, scan around the spot, report for evaluation"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-3-3-fig-a",
+   "title": "Thickness gauge timing modes",
+   "file": "ut1-3-3-fig-a.svg"
+  },
+  {
+   "id": "ut1-3-3-fig-b",
+   "title": "Doubling and coating errors",
+   "file": "ut1-3-3-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Corrosion Survey: Trust or Verify?",
+  "intro": "You are running a wall-thickness survey on a nominally 12.7 mm carbon-steel process line with a dual-element corrosion gauge. Several moments in the day test whether you understand what the gauge is really doing.",
+  "steps": [
+   {
+    "prompt": "Before the first reading, what is the correct setup sequence?",
+    "options": [
+     "Couple to the pipe and start logging - the factory calibration handles the rest",
+     "Probe-zero on the gauge's reference disc, then two-point calibrate on a carbon-steel step wedge bracketing the expected range, then verify a mid step",
+     "Enter the steel velocity from the manual; zeroing is only needed for new probes",
+     "Calibrate on any convenient aluminum block - velocity is close enough"
+    ],
+    "correct": 1,
+    "feedback": "Zero removes the probe's fixed delays; the two bracketing points solve zero and velocity together for the actual material; the mid-step check proves the setup. Factory settings know nothing about your worn probe or this alloy's velocity."
+   },
+   {
+    "prompt": "At a heavily pitted area the gauge displays 6.2 mm steadily, but nearby readings are 2.9-3.4 mm. Your gauge's dual probe is rated to a 3 mm minimum. What should you suspect?",
+    "options": [
+     "The pitted area is simply thicker - record 6.2 mm and move on",
+     "Doubling: the true wall (~3.1 mm) is near or below minimum range and the gauge is gating the second back echo",
+     "Coating error from paint on the surface",
+     "The PRF is too high for the sound path"
+    ],
+    "correct": 1,
+    "feedback": "6.2 is almost exactly double the surrounding 2.9-3.4 mm walls, right at the probe's minimum-range limit - the doubling signature. Confirm with a live waveform or a thin-range probe before recording anything."
+   },
+   {
+    "prompt": "A section of the line carries 0.8 mm of intact epoxy coating that the client will not allow you to strip. Best measurement approach?",
+    "options": [
+     "Mode 1 as usual - epoxy is thin enough to ignore",
+     "Add 0.8 mm to every reading",
+     "Echo-to-echo (mode 3): time between successive back echoes so the coating drops out of the measurement",
+     "Double the gain so the gauge reads through the coating"
+    ],
+    "correct": 2,
+    "feedback": "In mode 1 the slow epoxy would add roughly 2 mm of indicated steel - and simply subtracting is guesswork because coating thickness varies. Mode 3 times only inside the steel, so the coating vanishes from the result."
+   },
+   {
+    "prompt": "The last segment runs at about 180 °C. The gauge was calibrated on a room-temperature wedge. What do you expect, and what do you do?",
+    "options": [
+     "Readings will be slightly thick because velocity falls with temperature - use high-temp couplant and probe, touch briefly, and apply the procedure's correction",
+     "Readings will be thin - add gain to compensate",
+     "Temperature has no effect on ultrasonic velocity in steel",
+     "Cool each reading point with water immediately before measuring"
+    ],
+    "correct": 0,
+    "feedback": "Hot steel is slower (about 1% per 55 °C), so round-trip time grows and a cold-calibrated gauge over-reads. High-temperature probe and couplant, short contact, and the documented correction keep readings honest - improvised water quenching is neither safe nor controlled."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A gauge measures a round-trip time of 4.0 µs in carbon steel (longitudinal velocity about 5.92 mm/µs). What thickness does it display?",
+   "options": [
+    "23.7 mm",
+    "11.8 mm",
+    "5.9 mm",
+    "2.96 mm"
+   ],
+   "correct": 1,
+   "explanation": "T = vt/2 = 5.92 mm/µs x 4.0 µs / 2 = 11.84, or about 11.8 mm. Forgetting the divide-by-two gives the 23.7 mm distractor."
+  },
+  {
+   "question": "Which timing mode lets a gauge measure steel thickness through intact paint, and why?",
+   "options": [
+    "Mode 1, because paint is too thin to matter",
+    "Mode 2, because the delay line absorbs the coating echo",
+    "Mode 3 (echo-to-echo), because it times between successive back echoes after the sound is already inside the steel, so coating travel drops out",
+    "Any mode, provided gain is doubled"
+   ],
+   "correct": 2,
+   "explanation": "Measuring between back echo 1 and back echo 2 uses only time spent inside the metal; mode 1 would convert the slow coating travel at steel velocity and read several millimeters thick."
+  },
+  {
+   "question": "On a line where surrounding walls measure about 1.5 mm, one spot steadily reads 3.0 mm with a dual probe rated to 2 mm minimum. The most likely explanation is:",
+   "options": [
+    "Local weld buildup",
+    "Doubling - the gauge missed the first back echo below its minimum range and gated the second, reading twice the true wall",
+    "Coating on the inside surface",
+    "A velocity setting error of exactly 100%"
+   ],
+   "correct": 1,
+   "explanation": "Below minimum range the first echo can be lost in the dead zone, and triggering on the second back echo displays exactly double the true thickness - the classic, unconservative doubling error."
+  },
+  {
+   "question": "Why does proper gauge calibration use two known thicknesses rather than one?",
+   "options": [
+    "Two points let the gauge solve both zero offset and material velocity; one point cannot separate them",
+    "The second point doubles the display resolution",
+    "One point is enough, but two is a code formality",
+    "Two points are needed to set the PRF"
+   ],
+   "correct": 0,
+   "explanation": "Zero is a constant offset and velocity is a scale factor - two unknowns. Bracketing the expected range with a thin and a thick known step determines both; a single point leaves one unknown free to be wrong."
+  },
+  {
+   "question": "A gauge calibrated at room temperature is used on piping at 200 °C without correction. Its readings will tend to be:",
+   "options": [
+    "Thin, because hot steel transmits sound faster",
+    "Unchanged - temperature does not affect velocity",
+    "Thick, because velocity in steel falls (about 1% per 55 °C), lengthening the round-trip time",
+    "Random, because couplant cannot transmit sound above 100 °C"
+   ],
+   "correct": 2,
+   "explanation": "Lower velocity means longer measured time, and the gauge converts that time using its cold (faster) velocity setting, so displayed thickness exceeds the true wall - which is why procedures specify hot-surface corrections."
+  }
+ ],
+ "references": [
+  "CP-105-2024 UT Topical Outline §3.2 (digital thickness instrumentation)",
+  "ASTM E797 (ultrasonic thickness measurement by manual contact - general practice)",
+  "ASME BPVC Section V, Article 23 (thickness gauging adoption of SE-797 - general practice)"
+ ]
+}

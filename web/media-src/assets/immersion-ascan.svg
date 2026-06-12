@@ -1,0 +1,99 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="iaGlow" filterUnits="userSpaceOnUse" x="-60" y="-60" width="720" height="460">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="iaGlowW" filterUnits="userSpaceOnUse" x="-60" y="-60" width="720" height="460">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="iaPanelGrad" x1="0" y1="6" x2="0" y2="314" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16345a" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#0a1e3c" stop-opacity=".62"/>
+    </linearGradient>
+    <radialGradient id="iaScr" cx=".5" cy=".42" r=".95">
+      <stop offset="0" stop-color="#0c2747"/><stop offset=".75" stop-color="#071528"/><stop offset="1" stop-color="#050f1f"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ===== scope panel ===== -->
+  <rect x="8" y="6" width="584" height="308" rx="14" fill="url(#iaPanelGrad)" stroke="#8fb6e0" stroke-width="1.5" opacity=".95"/>
+  <rect x="12" y="10" width="576" height="300" rx="11" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".16"/>
+
+  <!-- header: title + velocity chips -->
+  <text x="28" y="29" font-size="12" letter-spacing="2" fill="#9fe6ff" opacity=".9">IMMERSION A-SCAN</text>
+  <g font-size="11">
+    <rect x="338" y="13" width="106" height="18" rx="4" fill="#0e2848" stroke="#8fb6e0" stroke-width="1" opacity=".9"/>
+    <text x="391" y="26" text-anchor="middle" fill="#9fe6ff" opacity=".85">WATER 1480 M/S</text>
+    <rect x="458" y="13" width="106" height="18" rx="4" fill="#0e2848" stroke="#8fb6e0" stroke-width="1" opacity=".9"/>
+    <text x="511" y="26" text-anchor="middle" fill="#9fe6ff" opacity=".85">STEEL 5920 M/S</text>
+  </g>
+
+  <!-- ===== CRT screen ===== -->
+  <rect x="36" y="40" width="528" height="200" rx="8" fill="url(#iaScr)" stroke="#8fb6e0" stroke-width="1.2" opacity=".95"/>
+  <rect x="36" y="40" width="528" height="200" rx="8" fill="none" stroke="#020912" stroke-width="3" opacity=".5"/>
+  <path d="M52 46 L240 46 L140 120 L52 152 Z" fill="#9fd0ff" opacity=".04"/>
+
+  <!-- faint graticule 10x4 -->
+  <path d="M60 56 V216 M108 56 V216 M156 56 V216 M204 56 V216 M252 56 V216 M300 56 V216 M348 56 V216 M396 56 V216 M444 56 V216 M492 56 V216 M540 56 V216 M60 56 H540 M60 96 H540 M60 136 H540 M60 176 H540 M60 216 H540" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".15"/>
+  <!-- time-base ruler ticks under baseline -->
+  <path d="M60 216 V222 M108 216 V222 M156 216 V222 M204 216 V222 M252 216 V222 M300 216 V222 M348 216 V222 M396 216 V222 M444 216 V222 M492 216 V222 M540 216 V222 M84 216 V219.5 M132 216 V219.5 M180 216 V219.5 M228 216 V219.5 M276 216 V219.5 M324 216 V219.5 M372 216 V219.5 M420 216 V219.5 M468 216 V219.5 M516 216 V219.5" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".4"/>
+
+  <!-- amplitude axis hint -->
+  <g opacity=".5">
+    <line x1="48" y1="200" x2="48" y2="86" stroke="#5fe0ff" stroke-width="1"/>
+    <path d="M48 78 L44.8 87 L51.2 87 Z" fill="#5fe0ff"/>
+    <text x="48" y="70" text-anchor="middle" font-size="11" fill="#9fe6ff">%</text>
+  </g>
+
+  <!-- ===== static dim trace: IP, quiet water stretch, FS, flaw, BW (panel must read before reveals) ===== -->
+  <path d="M60 215 L62 96 L64 78 L66 124 L68 192 L70 112 L72 198 L75 170 L78 208 L81 196 L84 212 L88 214.5 L96 214.6 L104 215.4 L112 214.2 L120 215.6 L128 214.8 L136 215.5 L144 214 L152 215.3 L160 214.5 L168 215.6 L176 214.3 L184 215.2 L192 214.7 L200 215.5 L208 214.2 L216 215.4 L224 214.6 L232 215.3 L240 214.4 L248 215.5 L256 214.8 L264 215.2 L272 214.5 L280 215.4 L286 214.9 L290 214.5 L292 213 L296 150 L300 80 L303 62 L306 118 L309 184 L312 150 L315 205 L318 192 L321 211 L324 214.5 L332 213.6 L340 215.2 L348 213.2 L356 215 L364 213.8 L372 214.8 L380 213.4 L388 214.6 L392 214.5 L394 213 L398 168 L401 142 L404 138 L407 172 L410 198 L413 186 L416 210 L419 214 L426 213.5 L434 214.8 L442 213.2 L450 214.7 L458 213.6 L466 214.9 L474 213.4 L482 214.6 L490 213.8 L494 214.5 L496 212 L500 140 L504 96 L507 88 L510 142 L513 196 L516 172 L519 206 L522 213 L528 214.6 L534 214 L540 214.8" fill="none" stroke="#5fe0ff" stroke-width="1.5" stroke-linejoin="round" opacity=".3"/>
+
+  <!-- static dim labels so the still frame reads -->
+  <text x="72" y="70" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".55">IP</text>
+  <text x="303" y="52" text-anchor="middle" font-size="13" fill="#eaf6ff" opacity=".6">FS</text>
+  <text x="404" y="128" text-anchor="middle" font-size="11" fill="#ffc24b" opacity=".55">FLAW</text>
+  <text x="507" y="78" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".6">BW</text>
+
+  <!-- static dim water-path bracket -->
+  <g opacity=".28">
+    <path d="M90 248 V254 H290 V248 M190 254 V258" fill="none" stroke="#9fe6ff" stroke-width="1.5"/>
+    <text x="190" y="272" text-anchor="middle" font-size="11.5" letter-spacing="1.5" fill="#9fe6ff">WATER PATH</text>
+  </g>
+
+  <!-- time axis, bottom-right (bottom-center stays clear for note chip) -->
+  <g opacity=".75">
+    <text x="462" y="264" text-anchor="end" font-size="11" letter-spacing="1.5" fill="#9fe6ff">TIME</text>
+    <line x1="470" y1="260" x2="541" y2="260" stroke="#5fe0ff" stroke-width="1.2"/>
+    <path d="M552 260 L541 256.4 L541 263.6 Z" fill="#5fe0ff"/>
+  </g>
+
+  <!-- ===== REVEAL: initial pulse (fade ~0.7s) ===== -->
+  <g id="iaPulse" opacity="0">
+    <path d="M60 215 L62 96 L64 78 L66 124 L68 192 L70 112 L72 198 L75 170 L78 208 L81 196 L84 212 L88 214.5" fill="none" stroke="#5fe0ff" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" filter="url(#iaGlow)"/>
+    <text x="72" y="70" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".95">IP</text>
+  </g>
+
+  <!-- ===== REVEAL: water-path bracket (fade ~1.7s) ===== -->
+  <g id="iaWater" opacity="0">
+    <path d="M90 248 V254 H290 V248 M190 254 V258" fill="none" stroke="#9fe6ff" stroke-width="1.6"/>
+    <text x="190" y="272" text-anchor="middle" font-size="11.5" letter-spacing="1.5" fill="#9fe6ff">WATER PATH</text>
+  </g>
+
+  <!-- ===== REVEAL: front-surface echo, tallest + brightest (draw ~3.6s) ===== -->
+  <path id="iaFront" d="M288 214.8 L290 214.5 L292 213 L296 150 L300 80 L303 62 L306 118 L309 184 L312 150 L315 205 L318 192 L321 211 L324 214.5" fill="none" stroke="#eaf6ff" stroke-width="2.6" stroke-linejoin="round" filter="url(#iaGlow)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== REVEAL: shaded metal zone (fade ~6.2s) ===== -->
+  <g id="iaMetal" opacity="0">
+    <rect x="326" y="56" width="214" height="160" fill="#1E66F5" opacity=".13"/>
+    <line x1="326" y1="56" x2="326" y2="216" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="4 4" opacity=".35"/>
+    <text x="433" y="70" text-anchor="middle" font-size="11.5" letter-spacing="1.5" fill="#9fe6ff" opacity=".9">IN THE METAL</text>
+  </g>
+
+  <!-- ===== REVEAL: flaw echo, mid-height (draw ~7.0s) ===== -->
+  <path id="iaFlaw" d="M390 214.6 L392 214.5 L394 213 L398 168 L401 142 L404 138 L407 172 L410 198 L413 186 L416 210 L419 214" fill="none" stroke="#ffc24b" stroke-width="2.4" stroke-linejoin="round" filter="url(#iaGlowW)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== REVEAL: back-wall echo near right edge (draw ~7.8s) ===== -->
+  <path id="iaBack" d="M492 214.6 L494 214.5 L496 212 L500 140 L504 96 L507 88 L510 142 L513 196 L516 172 L519 206 L522 213" fill="none" stroke="#5fe0ff" stroke-width="2.4" stroke-linejoin="round" filter="url(#iaGlow)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+</svg>

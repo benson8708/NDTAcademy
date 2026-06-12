@@ -1,0 +1,57 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#0A2342"/>
+  <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#E8F1FB">Flux Leakage at Discontinuities</text>
+
+  <!-- part cross-section -->
+  <rect x="40" y="215" width="720" height="160" fill="#D9E0E8" stroke="#5A6B7E" stroke-width="2"/>
+  <text x="68" y="362" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">part cross-section</text>
+
+  <!-- flux direction arrow -->
+  <line x1="60" y1="196" x2="130" y2="196" stroke="#1B82E8" stroke-width="4"/>
+  <polygon points="130,188 148,196 130,204" fill="#1B82E8"/>
+  <text x="156" y="202" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">flux direction</text>
+
+  <!-- flux lines inside the part: deflect under the surface crack at x=300, bow around subsurface flaw at x=560 -->
+  <path d="M 50 245 C 240 245 265 268 300 270 C 335 268 360 245 530 243 C 545 240 575 240 590 243 C 680 245 700 245 755 245" fill="none" stroke="#1B82E8" stroke-width="2.5"/>
+  <path d="M 50 285 C 250 285 275 296 300 298 C 325 296 350 285 520 284 C 545 296 575 296 600 284 C 690 283 710 283 755 283" fill="none" stroke="#1B82E8" stroke-width="2.5"/>
+  <path d="M 50 325 C 250 325 280 328 310 328 C 480 328 520 332 560 332 C 640 332 700 325 755 325" fill="none" stroke="#1B82E8" stroke-width="2.5"/>
+  <polygon points="740,238 754,245 740,252" fill="#1B82E8"/>
+  <polygon points="740,276 754,283 740,290" fill="#1B82E8"/>
+  <polygon points="740,318 754,325 740,332" fill="#1B82E8"/>
+
+  <!-- ===== surface crack at x=300 ===== -->
+  <path d="M 292 215 L 300 262 L 308 215 Z" fill="#0A2342" stroke="#0A2342" stroke-width="1"/>
+  <!-- leakage field above the surface -->
+  <path d="M 278 215 Q 300 178 322 215" fill="none" stroke="#D14343" stroke-width="2.5"/>
+  <path d="M 264 215 Q 300 162 336 215" fill="none" stroke="#D14343" stroke-width="2.5"/>
+  <path d="M 252 215 Q 300 146 348 215" fill="none" stroke="#D14343" stroke-width="2.5"/>
+  <polygon points="316,205 326,219 310,217" fill="#D14343"/>
+  <!-- particles bridging the crack -->
+  <circle cx="288" cy="208" r="4" fill="#F2A33C"/>
+  <circle cx="296" cy="204" r="4" fill="#F2A33C"/>
+  <circle cx="305" cy="205" r="4" fill="#F2A33C"/>
+  <circle cx="312" cy="209" r="4" fill="#F2A33C"/>
+  <circle cx="292" cy="212" r="4" fill="#F2A33C"/>
+  <circle cx="300" cy="210" r="4" fill="#F2A33C"/>
+  <circle cx="308" cy="212" r="4" fill="#F2A33C"/>
+  <text x="300" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#E8F1FB">surface crack</text>
+  <text x="300" y="139" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#D9E0E8">strong leakage — sharp, dense indication</text>
+
+  <!-- ===== subsurface discontinuity at x=560 ===== -->
+  <ellipse cx="560" cy="288" rx="30" ry="13" fill="#0A2342"/>
+  <!-- weak, broad leakage at the surface -->
+  <path d="M 505 215 Q 560 184 615 215" fill="none" stroke="#D14343" stroke-width="2" stroke-dasharray="7 5"/>
+  <!-- sparse particles -->
+  <circle cx="528" cy="208" r="3.5" fill="#F2A33C"/>
+  <circle cx="548" cy="203" r="3.5" fill="#F2A33C"/>
+  <circle cx="566" cy="202" r="3.5" fill="#F2A33C"/>
+  <circle cx="584" cy="206" r="3.5" fill="#F2A33C"/>
+  <circle cx="599" cy="210" r="3.5" fill="#F2A33C"/>
+  <text x="560" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#E8F1FB">near-surface discontinuity</text>
+  <text x="560" y="139" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#D9E0E8">weaker leakage — broad, fuzzy indication</text>
+  <line x1="560" y1="275" x2="560" y2="252" stroke="#D9E0E8" stroke-width="1.5"/>
+
+  <!-- bottom note -->
+  <text x="400" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#F2A33C">Leakage is strongest when flux crosses the flaw at 90° — usable down to about 45°</text>
+  <text x="400" y="437" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#D9E0E8">flux parallel to a crack produces little or no indication: magnetize in two perpendicular directions</text>
+</svg>

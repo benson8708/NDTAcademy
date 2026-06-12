@@ -1,0 +1,39 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Vertical Linearity: The 2:1 Ratio Check</text>
+
+  <!-- amplitude scale (left of first screen) -->
+  <text x="60" y="115" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">100</text>
+  <text x="60" y="155" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">80</text>
+  <text x="60" y="195" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">60</text>
+  <text x="60" y="235" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">40</text>
+  <text x="60" y="275" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">20</text>
+  <text x="60" y="315" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">0</text>
+
+  <!-- screen 1: as set -->
+  <rect x="70" y="90" width="280" height="240" fill="#0A2342"/>
+  <line x1="70" y1="150" x2="350" y2="150" stroke="#5A6B7E" stroke-width="0.8" stroke-dasharray="4,4"/>
+  <line x1="70" y1="230" x2="350" y2="230" stroke="#5A6B7E" stroke-width="0.8" stroke-dasharray="4,4"/>
+  <polyline points="78,310 156,310 165,150 174,310 251,310 260,230 269,310 344,310" fill="none" stroke="#E8F1FB" stroke-width="2"/>
+  <text x="165" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#F2A33C">A = 80%</text>
+  <text x="260" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#1E9E6A">B = 40%</text>
+  <text x="210" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">as set: A = 80%, B = 40% (ratio 2:1)</text>
+
+  <!-- minus 6 dB arrow -->
+  <line x1="360" y1="205" x2="432" y2="205" stroke="#F2A33C" stroke-width="6"/>
+  <polygon points="430,195 446,205 430,215" fill="#F2A33C"/>
+  <text x="400" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#F2A33C">−6 dB</text>
+
+  <!-- screen 2: after −6 dB -->
+  <rect x="450" y="90" width="280" height="240" fill="#0A2342"/>
+  <line x1="450" y1="230" x2="730" y2="230" stroke="#5A6B7E" stroke-width="0.8" stroke-dasharray="4,4"/>
+  <line x1="450" y1="270" x2="730" y2="270" stroke="#5A6B7E" stroke-width="0.8" stroke-dasharray="4,4"/>
+  <polyline points="458,310 536,310 545,230 554,310 631,310 640,270 649,310 724,310" fill="none" stroke="#E8F1FB" stroke-width="2"/>
+  <text x="545" y="218" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#F2A33C">A = 40%</text>
+  <text x="640" y="258" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#1E9E6A">B = 20%</text>
+  <text x="590" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">after −6 dB: A = 40%, B = 20% (still 2:1)</text>
+
+  <!-- bottom notes -->
+  <text x="400" y="402" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">At every gain step, B must remain half of A within about ±5% of full screen height —</text>
+  <text x="400" y="424" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">and each −6 dB step must halve the displayed amplitude (verify with reject OFF)</text>
+</svg>

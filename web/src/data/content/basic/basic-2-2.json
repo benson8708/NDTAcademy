@@ -1,0 +1,194 @@
+{
+  "lessonId": "basic-2-2",
+  "title": "Acoustic Emission: Technique Selection, Instrumentation, and Evaluation",
+  "narrationScript": "An acoustic emission test is designed backward from two questions: what must be detected, and what will try to drown it out. Technique selection answers both. Sensor frequency and array spacing are traded against attenuation, because a higher frequency band escapes background noise but shortens every sensor's reach. The instrumentation chain is identical on every channel: sensor, preamplifier providing roughly forty decibels of gain plus bandpass filtering, then shielded coaxial cable to the system, where signal conditioning, a detection threshold, and hit timing windows reduce each burst to features. A floating threshold rides a set margin above shifting background noise. Noise is defeated in layers: frequency filtering, guard sensors that veto arrivals from outside the array, damping materials on known rubbing points, time gates around pump strokes, and post-test data filters keyed to rise time, duration, and location. What survives is judged by activity, intensity, and location: how often a cluster emits, how energetic it is, and whether it keeps emitting during a constant-load hold. AE grades active sources; other methods size them.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Designing the Test: Selecting the AE Technique",
+      "body": "An AE examination is engineered backward from its objective and its enemies. The fundamentals lesson gave you the physics; technique selection turns it into a test plan, and every choice is a trade.\n\n- **Test objective.** Global screening of a vessel during a controlled pressurization, long-term monitoring of a known crack, or leak detection — each drives different sensors, channel counts, loading, and data strategy. The same logic that screens refinery vessels puts AE on composite-overwrapped pressure vessels in aerospace service.\n- **Sensor and frequency band.** The working band is a negotiation. **Attenuation rises with frequency**, so a high-frequency sensor hears a shorter distance; **plant background noise concentrates at low frequency**, so a low-frequency sensor hears more of everything else. Standard structural work sits near the **150 kHz** resonant workhorse; long-range pipeline and leak work drops toward **30–60 kHz** and accepts more noise; small parts in noisy cells push to **300–500 kHz** and accept short range. Resonant sensors buy sensitivity; broadband sensors buy waveform fidelity for signal analysis.\n- **Array and location technique.** Attenuation measured on the actual structure — not a textbook value — sets **sensor spacing**, and the spacing must guarantee that a detectable source anywhere reaches enough sensors to locate: one sensor per zone for **zone location**, two bracketing a pipe run for **linear location**, three or more for **planar triangulation** on a shell. Channel count follows from coverage, not convenience.\n- **Loading schedule.** The Kaiser effect demands a stimulus above recent service stress, so test pressure climbs in programmed steps with **constant-load holds** — the holds separate load-correlated noise from genuine emission and expose the most damning behavior a structure can show: emission that refuses to stop.\n- **Noise survey.** A pre-test background measurement in the chosen band sets the achievable detection threshold — and a bad survey result sends you back to re-choose frequency, sensors, or test timing before wasting a pressurization."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-2-2-fig-a",
+      "caption": "The AE signal-processing chain. The sensor's microvolt output is amplified and band-filtered at the preamplifier, driven down shielded coaxial cable, and conditioned in the main amplifier — but it only becomes data when it crosses the detection threshold. Everything downstream is feature extraction, ΔT location, and display."
+    },
+    {
+      "type": "text",
+      "heading": "Cables and Signal Conditioning: Protecting Microvolts",
+      "body": "A burst leaves the sensor as **microvolts**. Every design rule in the front end exists to keep that signal recognizable after a trip through an electrically hostile plant.\n\n- **Sensor to preamplifier.** The run between sensor and preamplifier uses **low-noise coaxial cable** and is kept **short — a meter or two at most** — because every meter of unamplified line adds noise and capacitance directly onto the weakest signal in the system. Many modern sensors eliminate the run entirely by building the preamplifier **inside the sensor housing** (integral-preamp sensors).\n- **Preamplifier.** Typically a fixed gain of **40 dB** (20 or 60 dB selectable on many units) plus a **bandpass filter** matched to the sensor's band. Once boosted, the signal can drive a long line. Power arrives as **phantom DC — typically 28 V — fed up the same coaxial conductor** that carries the signal back, so one cable does both jobs.\n- **Signal cable.** **Shielded coaxial cable** is the standard signal line, with practical runs on the order of **100–300 m**; cable capacitance accumulates with length and progressively shaves the high-frequency end, which is one of the quiet reasons the preamplifier sits at the sensor and not at the instrument. Multiconductor cable serves power and auxiliary lines, and **fiber-optic links** carry AE data where electromagnetic interference is severe, runs are very long, or electrical isolation is required.\n- **Signal conditioning.** At the system, the **main amplifier** applies adjustable gain in decibel steps with further bandpass filtering, scaling each channel into the measurement range of the detection circuitry. Amplitude is reported in **dB referenced to 1 microvolt at the sensor** — 0 dB = 1 µV, with every 20 dB a factor of ten — a scale that subtracts out the gain settings so results compare across channels, systems, and tests."
+    },
+    {
+      "type": "text",
+      "heading": "Signal Detection: The Threshold and the Clock",
+      "body": "Detection is a decision made by a comparator: a **hit** exists when the conditioned signal crosses the **detection threshold**, and nothing below the threshold ever becomes data.\n\n- **Fixed threshold.** Set in dB — commonly in the **35–45 dB** range for structural tests, just above the surveyed background. Set it too low and grass floods the storage and the location processor; set it too high and real emission is silently deleted. The threshold is the single most consequential number in the setup.\n- **Floating (automatic) threshold.** In environments where background rises and falls — pumps cycling, weather, plant traffic — a floating threshold **tracks the measured background and holds a set margin above it**, keeping the detection decision consistent instead of drowning every time the noise floor breathes.\n- **Hit timing windows.** Three clocks define each hit: the **peak definition time (PDT)** decides how long the system waits to be sure it has the true peak (and therefore the true rise time); the **hit definition time (HDT)** decides when the hit has ended; the **hit lockout time (HLT)** holds the channel closed briefly so reflections and slow wave modes do not retrigger it. Mis-set windows split one burst into several hits or weld two bursts into one — corrupting counts, duration, and location statistics.\n- **The time stamp rides on detection.** The first threshold crossing is the arrival time that feeds **ΔT source location**, so location accuracy is inherited from clean detection.\n- **Continuous emission** — leaks, plastic deformation — never resolves into discrete hits, so the system measures it as **RMS voltage or average signal level (ASL)** instead; rising ASL at a fitting is the leak detector's signal."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-2-2-fig-b",
+      "caption": "Two threshold strategies against the same shifting background. A fixed threshold floods with false hits once noise climbs into it; a floating threshold rides a set margin above the measured background so only genuine bursts cross. Hit-timing windows — PDT, HDT, HLT — then define each hit's peak, end point, and re-arm."
+    },
+    {
+      "type": "text",
+      "heading": "Noise Discrimination: Layers of Defense",
+      "body": "Noise control is not one trick; it is a layered strategy, and each layer is matched to a noise family by its **signature** — rise time, duration, timing, and location behavior.\n\n**Know the enemy.** *Mechanical and frictional* noise — supports, hangers, slings, crack faces rubbing, rain on a shell — shows **long rise times and long durations** and tracks the load cycle. *Hydraulic* noise — pump turbulence, flow, cavitation — is **continuous** and starts and stops with the machinery. *Electromagnetic interference (EMI)* — arc welding, switchgear, motors — needs no travel time, so it appears on **many channels at the same instant with near-zero rise time**.\n\n**Electronic technique (front-end defenses).** Applied in hardware, before data exists: the **frequency band and bandpass filters** chosen at technique selection; the **detection threshold**; **guard sensors** in a master–slave arrangement — guards placed outside the measurement array whose first-hit arrival **vetoes the event as external** (spatial filtering by arrival order); coincidence logic that discards simultaneous all-channel spikes as EMI; and **load-keyed gating** that accepts data only during the meaningful parts of the load schedule.\n\n**Attenuation materials.** When a noise source cannot be switched off, kill its path into the structure: **viscoelastic damping compound, rubber sheet, or mastic** applied at supports, hangers, and impingement points absorbs the mechanical noise before it enters the shell, and isolating pads decouple the loading rig from the test article.\n\n**Data-filtering techniques (software, post-test).** Stored data can be screened again, reversibly: **graphical filters** keyed to feature ranges (long rise time + long duration = friction; near-zero rise time across channels = EMI), **time filters** that cut windows around pump starts and known disturbances, and **location filters** that keep clustered, repeating sources and drop unlocatable orphans. The discipline that makes this defensible: **front-end rejection discards forever, software filtering does not** — so raw data is preserved and every filter applied is documented in the report."
+    },
+    {
+      "type": "table",
+      "caption": "Noise families, the signatures that betray them, and the countermeasure matched to each.",
+      "headers": ["Noise source", "Signature", "Countermeasure"],
+      "rows": [
+        ["Electromagnetic interference — welding, switchgear, motor starts", "Hits on many channels at the same instant; near-zero rise time; no ΔT pattern", "Coincidence rejection, shielding and grounding, post-test rise-time/duration filter"],
+        ["Friction — supports, slings, crack faces, loose attachments", "Long rise time, long duration; comes and goes with the load cycle", "Damping (attenuation) materials at contact points, guard sensors, graphical filters"],
+        ["Hydraulic — pumps, flow, cavitation during pressurization", "Continuous signal that starts and stops with the machinery", "Hold periods with pumps off, frequency band above the noise, time gates"],
+        ["Sources outside the array — adjacent machinery, valve chatter down the line", "First hit lands on a perimeter guard sensor, not a measurement sensor", "Master–slave spatial veto (guard sensors)"],
+        ["Environmental impacts — rain, blowing debris on exposed shells", "Random bursts concentrated on exposed surfaces, weather-correlated", "Reschedule or shelter the test, guard sensors, location filters"],
+        ["Elevated background grass — general plant activity", "Raised continuous noise floor that varies through the test", "Floating threshold riding a set margin above background"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Interpretation and Evaluation of Test Results",
+      "body": "After screening, what remains is presumed genuine emission. **Interpretation** turns it into a structural statement along three axes:\n\n- **Activity** — how *often* a source emits: hits or events per load step or per unit time. Activity that **rises as load rises** is the behavior of a flaw being driven.\n- **Intensity** — how *strong* the emission is: the amplitude distribution and energy of the hits. A cluster whose amplitudes climb is escalating.\n- **Location** — *where*: emission that locates repeatedly to one spot — a nozzle weld, a repair, a head-to-shell seam — outranks scattered, unlocatable singles.\n\nFour behaviors carry the most diagnostic weight: **emission continuing through a constant-load hold** (a stable structure falls silent at constant load); **count or event rate accelerating** with increasing load; a **Felicity ratio below 1.0** on reloading; and a **persistent located cluster** with rising amplitude.\n\n**Evaluation** is the formal comparison of those measured quantities against the referencing code's acceptance criteria. ASME Boiler and Pressure Vessel Code, Section V gives the canonical examples: **Article 11** for fiber-reinforced plastic vessels and **Article 12** for metallic vessels during pressure testing, with criteria written in exactly the lesson's terms — emission during holds, counts above a reference amplitude, Felicity ratio, historical comparison. Zone-intensity grading assigns each instrumented zone a severity grade, and graded zones receive **follow-up NDT — typically ultrasonic testing — to size and characterize** what AE located.\n\nThe test report closes the loop: sensor layout and spacing rationale, gains, threshold and timing settings, the noise log, every filter applied, the load schedule, located clusters, and their grades. An AE conclusion is only as defensible as the screening that produced it — which is why the settings travel with the result."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-2-2-fig-c",
+      "caption": "Interpretation displays. Left: cumulative emission against the stepped load schedule — a sound structure falls silent during constant-load holds, while an active source keeps emitting and accelerates on rising load. Right: events locating repeatedly to a nozzle weld form a cluster that earns a code grade and follow-up ultrasonic sizing."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "AE locates and grades — it does not size",
+      "body": "An AE examination ends with a map of **active** source areas, each graded against criteria such as emission during holds, count rate versus load, and Felicity ratio — not with flaw dimensions. Sizing belongs to the follow-up method, typically UT, sent to the locations AE flagged. And because front-end rejection is irreversible, the defensibility of every grade rests on the recorded settings: threshold, timing windows, filters, and the noise log travel with the result."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-2-2-fig-a",
+      "title": "AE signal processing block diagram",
+      "file": "basic-2-2-fig-a.svg"
+    },
+    {
+      "id": "basic-2-2-fig-b",
+      "title": "Fixed vs floating detection thresholds",
+      "file": "basic-2-2-fig-b.svg"
+    },
+    {
+      "id": "basic-2-2-fig-c",
+      "title": "Interpreting AE results: activity, holds, and location clusters",
+      "file": "basic-2-2-fig-c.svg"
+    }
+  ],
+  "interactive": {
+    "type": "sort",
+    "title": "Filter the Noise: AE Data Screening Exercise",
+    "intro": "Post-test review of a vessel pressurization. Eight data signatures are on your screen — decide which are genuine emission to keep for evaluation and which are noise to filter out.",
+    "buckets": ["Genuine AE — keep for evaluation", "Noise — filter it out"],
+    "items": [
+      {
+        "label": "Fast-rise-time bursts locating repeatedly to one nozzle weld, count rate climbing as pressure rises",
+        "bucket": 0,
+        "why": "Short rise time plus a tight location cluster that intensifies with load is the signature of an active flaw being driven — exactly what the test exists to find."
+      },
+      {
+        "label": "Hits recorded on every channel at the same instant, with near-zero rise time and no arrival-time pattern",
+        "bucket": 1,
+        "why": "A stress wave needs travel time between sensors. Simultaneous arrival everywhere is an electromagnetic spike — reject by coincidence logic and a rise-time/duration filter, then check grounding."
+      },
+      {
+        "label": "Signals whose first hit lands on the perimeter guard sensors before any measurement sensor",
+        "bucket": 1,
+        "why": "First-hit-on-guard means the source sits outside the zone of interest — the master–slave spatial veto exists precisely to discard these external mechanical sources."
+      },
+      {
+        "label": "Long-rise-time, long-duration signals that appear and disappear at the same load level on every cycle",
+        "bucket": 1,
+        "why": "That is friction — supports, slings, or crack faces rubbing as the load changes. Long rise time and load-cycle correlation give it away; damping materials and graphical filters remove it."
+      },
+      {
+        "label": "Emission continuing from one located cluster all the way through the constant-pressure hold",
+        "bucket": 0,
+        "why": "A stable structure falls silent at constant load. Located emission that persists through a hold is a code-level red flag for active damage — keep it and grade it."
+      },
+      {
+        "label": "Continuous low-frequency signal that starts and stops exactly with the fill pump",
+        "bucket": 1,
+        "why": "Hydraulic noise tracks the machinery, not the structure. Gate it out in time, schedule holds with pumps off, or work in a frequency band above it."
+      },
+      {
+        "label": "On reloading, burst emission reappearing from the same cluster at 70% of the previous maximum load",
+        "bucket": 0,
+        "why": "Emission returning below the previous maximum is a Felicity ratio of 0.7 — load-memory breakdown that marks progressing damage. It is data, not noise."
+      },
+      {
+        "label": "Burst activity beginning only after the previous maximum pressure is exceeded, spread at modest amplitude across the shell",
+        "bucket": 0,
+        "why": "Kaiser-consistent onset above the prior maximum is genuine material response to new loading territory — it belongs in the evaluation, even if it grades benign."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "In a multichannel AE system, the preamplifier is mounted at — often inside — the sensor housing primarily because:",
+      "options": [
+        "it applies the detection threshold so that only valid hits are sent down the signal cable",
+        "the sensor's microvolt output must be amplified and band-filtered before it can drive a long cable run without being lost in cable noise",
+        "the piezoelectric element requires a DC bias voltage to generate charge",
+        "remote mounting would shift the sensor's resonant frequency"
+      ],
+      "correct": 1,
+      "explanation": "The PZT element delivers microvolts, and every meter of unamplified cable adds noise and capacitance onto that weakest signal. Roughly 40 dB of gain plus bandpass filtering at the sensor lets the signal survive runs of 100 m or more. Threshold detection and feature extraction happen later, in the main system — and the sensor's resonance is set by the element, not the cable."
+    },
+    {
+      "question": "A vessel must be tested in a plant with heavy low-frequency mechanical background noise. Selecting sensors that operate in a higher frequency band will generally:",
+      "options": [
+        "reduce noise pickup but increase attenuation losses, so the sensors must be spaced more closely",
+        "reduce noise pickup and extend each sensor's listening range",
+        "increase noise pickup but allow wider sensor spacing",
+        "have no effect, because noise is removed only by the detection threshold"
+      ],
+      "correct": 0,
+      "explanation": "Plant background concentrates at low frequency, so moving the band up escapes much of it — but attenuation rises with frequency, shortening every sensor's reach and forcing a denser array. Frequency selection is the first layer of noise defense, traded directly against coverage; the threshold is a later, separate layer."
+    },
+    {
+      "question": "Compared with a fixed detection threshold, a floating (automatic) threshold:",
+      "options": [
+        "is set once at 0 dB so that every signal becomes a hit",
+        "removes the need for bandpass filtering in the preamplifier",
+        "automatically tracks the measured background noise and holds a set margin above it, keeping detection consistent as conditions change",
+        "increases the system gain whenever emission stops"
+      ],
+      "correct": 2,
+      "explanation": "A fixed threshold floods with false hits the moment background climbs into it and buries real data. The floating threshold rides the measured noise floor at a set margin, so the detection decision stays consistent through pump cycles, weather, and plant traffic. It changes the comparator level only — gain and filtering are separate settings."
+    },
+    {
+      "question": "Guard sensors in a master–slave arrangement discriminate against noise by:",
+      "options": [
+        "mechanically damping vibration at pipe supports and hangers",
+        "rejecting every signal below a preset amplitude",
+        "raising the measurement channels' gain while the structure is under load",
+        "vetoing events whose first arrival lands on a guard sensor placed outside the measurement array, marking the source as external"
+      ],
+      "correct": 3,
+      "explanation": "Arrival order tells direction: a wave from outside the array reaches the perimeter guards first, so the system discards the event as external — spatial filtering by first-hit logic. Mechanical damping is the job of attenuation materials, and amplitude rejection is the detection threshold's job; guards work purely on which channel heard it first."
+    },
+    {
+      "question": "After noise filtering, AE test results are evaluated primarily on:",
+      "options": [
+        "the measured length and through-wall depth of each located flaw",
+        "the activity, intensity, and location of sources — emission during constant-load holds, count rate versus load, and Felicity ratio — against the referencing code's criteria",
+        "the absolute sensor voltage compared between different vessels",
+        "waveform matching of each hit against a library of known flaw types"
+      ],
+      "correct": 1,
+      "explanation": "AE evaluation grades how often, how strongly, and where a structure emits — with criteria such as hold emission, count rate, and Felicity ratio written into documents like ASME Section V, Articles 11 and 12. AE does not measure flaw length or depth; graded locations are sized by follow-up methods, typically UT."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §2.1.2–2.1.3 (proper selection of AE technique: instrumentation and signal processing, cables, signal conditioning, signal detection, noise discrimination, electronic technique, attenuation materials, data-filtering techniques; interpretation and evaluation of test results)",
+    "ASTM E1316, Standard Terminology for Nondestructive Examinations — Section B, Acoustic Emission (hit, evaluation threshold, Felicity ratio)",
+    "ASTM E750, Standard Practice for Characterizing Acoustic Emission Instrumentation (gain, threshold, and system verification)",
+    "ASME Boiler and Pressure Vessel Code, Section V, Article 11 (AE examination of fiber-reinforced plastic vessels) and Article 12 (AE examination of metallic vessels during pressure testing) — evaluation criteria"
+  ]
+}

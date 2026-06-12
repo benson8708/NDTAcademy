@@ -1,0 +1,198 @@
+{
+ "lessonId": "rt2-8-3",
+ "title": "Triangulation, Localized Magnification, and Film Handling",
+ "narrationScript": "A radiograph collapses a solid part onto a flat sheet of film. Length and width survive the trip. Depth does not. When you find porosity in a four inch casting wall, the film alone cannot tell you whether it sits near the top surface, dead center, or just above the film side. And depth matters. The welder wants to know which side to excavate from. The engineer wants to know whether the flaw lives in a critical zone. The ultrasonic crew wants a starting depth for their follow up. This lesson gives you the tools to answer them, and then covers two habits of professional film work, sensible magnification at the viewer and proper film handling. The workhorse for depth is the tube shift method, also called the parallax method. The idea is the same one your own eyes use. Look at your thumb with one eye, then the other, and it jumps against the background. Things close to you jump farther than things far away. In radiography we make two exposures on one film, each at about half the normal exposure time, moving the source sideways a known distance between them. The part and the film must not move at all. Only the source moves. Every internal feature then prints twice, and the distance between its two images depends on how high that feature sits above the film. A flaw lying right against the film barely shifts. A flaw near the source side surface shifts the most. The arithmetic is one line. The height of the flaw above the film equals the image shift, times the source to film distance, divided by the sum of the source shift and the image shift. Try it with real numbers. Source to film distance, thirty inches. We shift the source four and a half inches between exposures. On the processed film the two flaw images sit half an inch apart. Half an inch times thirty is fifteen. Four and a half plus one half is five. Fifteen divided by five is three, so the flaw floats three inches above the film. In a four inch wall sitting on the cassette, that puts it one inch below the source side surface. Tell the repair crew to come in from the top. Good practice makes those numbers trustworthy. Clamp the part and the cassette so nothing moves between exposures. Make the shift generous, around fifteen or twenty percent of the source to film distance, because a bigger shift produces a bigger, more measurable image displacement. Lay a small lead marker on the film side surface and another on the source side surface. The film side marker should not shift at all, which proves your registration held. The source side marker shifts the most, bracketing every possible depth in between. And when access allows, there are simpler routes. A second exposure at right angles turns depth into plain position on the new film. Stereo radiography shoots two views a few inches apart and lets a special viewer fuse them into a single image with real depth, useful for crowded assemblies and electronics. Now magnification at the reading bench. A low power lens over a small area of film is a legitimate tool. Two to three power helps you split a porosity cluster from a film artifact, trace the tail of a fine crack, or confirm a faint wire. But film has grain, and grain sets a floor. Push past about five power and the image dissolves into pepper. You are studying the emulsion, not the flaw. If a region truly needs more detail than the film holds, the answer is not a stronger lens. It is a new exposure, a localized shot of that area with projection enlargement and a very small focal spot, which adds real information instead of magnifying noise. Last, handle the film like the legal record it is. Clean dry hands, or better, cotton gloves. Touch edges and corners only. One film out of its envelope at a time, never sliding films over each other, nothing to eat or drink at the bench. Kink a film between your fingers and you print a crescent shaped mark, dark if the film was bent after exposure, light if bent before, and you may turn a clean weld into an argument. For storage, the enemies are chemistry and climate. Fixer left in the emulsion by a short wash will stain the film and fade the image years later. Store radiographs in inert envelopes, cool and dry, with humidity around thirty to fifty percent, no pressure loads, no rubber bands, and full identification so anyone can trace job, weld, date, and station decades from now. Find the flaw, fix its depth, protect the film that proves it. That is the craft of this lesson.",
+ "imagePrompt": "In a darkened film reading room, an interpreter wearing white cotton gloves holds a weld radiograph by its edges over a masked high-intensity illuminator, examining one small area through a handheld low-power magnifier.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Missing Dimension",
+   "body": "A radiograph is a two-dimensional projection of a three-dimensional part. Position along the film's length and width reads directly, but **depth - the flaw's position through the thickness - is invisible** on a single exposure. A pore one quarter inch above the film and one three inches above it can print in exactly the same spot.\n\nDepth matters for real decisions:\n\n- **Repair planning** - which surface does the welder excavate from, and how far down before reaching the flaw?\n- **Engineering evaluation** - acceptance criteria can treat a flaw near a fusion line, a cladding interface, or a surface differently from one at mid-wall.\n- **Follow-up NDT** - an ultrasonic crew works far faster when handed a starting depth.\n\nThe techniques that recover the third dimension all use the same idea: **change the viewing direction and watch how the image moves**. Options run from simply shooting a second view at right angles, to the tube-shift parallax method with its one-line depth formula, to stereo radiography viewed through a fusing stereoscope. A Level II should know when each applies and how to run the numbers."
+  },
+  {
+   "type": "text",
+   "heading": "The Tube-Shift Parallax Method",
+   "body": "The parallax (double-exposure tube-shift) method puts depth measurement on any film you can shoot twice. The procedure:\n\n- **Fix everything but the source.** Clamp the part and cassette; any movement between exposures voids the measurement.\n- **Expose twice on one film**, each at about half the normal exposure, shifting the source a known distance **a** parallel to the film between exposures. (A fresh film swapped between full exposures works too, if registration is positively controlled.)\n- **Measure the image shift b** between the flaw's two images on the processed film.\n\nThe geometry of similar triangles gives the flaw height above the film plane:\n\n**h = b × SFD / (a + b)**\n\nWorked example: SFD = 30 in., source shift a = 4.5 in., measured image shift b = 0.5 in. Then h = 0.5 × 30 / (4.5 + 0.5) = 15 / 5 = **3.0 in. above the film**. In a 4.0-in. wall resting on the cassette, the flaw lies 1.0 in. below the source-side surface - excavate from the top.\n\nAccuracy hygiene: make the shift generous (roughly **15 to 20 percent of SFD**) so b is large enough to measure well; a flaw near the film barely shifts, so small b values carry large relative error. Measure b with a comparator or fine scale, between corresponding image edges."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt2-8-3-fig-a",
+   "caption": "Two exposures with the source shifted a known distance print the flaw twice - the image shift, the source shift, and the SFD give the flaw's height above the film from similar triangles."
+  },
+  {
+   "type": "text",
+   "heading": "Right-Angle Views, Stereo, and Surface Markers",
+   "body": "When geometry and access cooperate, simpler methods beat arithmetic:\n\n- **Right-angle (orthogonal) second view.** Shoot the part again with the beam rotated 90 degrees. Depth in the first view becomes plain lateral position in the second; two views fully locate the flaw in three dimensions. The limits are access, the new thickness the beam must penetrate, and overlapping detail in complex shapes.\n- **Stereo radiography.** Two exposures with the source shifted about an eye-base apart, viewed together in a stereoscope so the brain fuses a single image with genuine depth perception. Qualitative rather than numeric, but quick for crowded assemblies, potting, and electronics.\n- **Reference markers.** In any shifted-view work, lay a small lead marker on the **film-side surface** and another on the **source-side surface**. The film-side marker should not shift between exposures - it proves the part and film never moved. The source-side marker shows the maximum possible shift, bracketing every depth in the part. The pair turns a bare measurement into a self-checking one.\n\nAll of these are documented as supplementary exposures: log the shift distance, SFD, and marker positions on the technique record so the depth call can be audited later."
+  },
+  {
+   "type": "text",
+   "heading": "Localized Magnification at the Viewer",
+   "body": "Once the film is on the illuminator, **modest optical magnification over a small area** is a standard interpretation aid. A 1.5x to 3x loupe or stand magnifier helps you separate a porosity cluster from dust or processing spots, trace the fine tail of a crack, confirm a faint essential wire, or judge whether a linear image has the ragged edges of a tear or the smooth line of a cold shut.\n\nKnow the limit: **film grain sets the floor**. The film's granularity and inherent unsharpness contain a fixed amount of information, and a stronger lens adds none of it back. Push past about 5x and the image dissolves into grain - you are studying emulsion structure, not the flaw. High magnification also shrinks your field of view and slows scanning, which is why whole-film reading is done at 1x and the loupe comes out only for the localized question.\n\nWhen a region genuinely needs more detail than the film holds, the remedy is a **new localized exposure**, not more glass: re-shoot the small area of interest with projection enlargement and a microfocus spot (as covered in the geometry lesson), or with a finer-grain film class. Pair the loupe with the rest of the bench discipline - masked illuminator, darkened room, densitometer spot checks on the exact area being called."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt2-8-3-fig-b",
+   "caption": "The reading bench: masked illuminator, low-power loupe over the area of interest, gloved edge-only handling, and the crescent crimp mark every interpreter must recognize."
+  },
+  {
+   "type": "text",
+   "heading": "Film Handling During Evaluation and Storage",
+   "body": "The radiograph is the permanent objective record of the examination - often the only evidence that a weld met code. Handle it accordingly:\n\n- **Clean, dry hands or white cotton gloves; touch edges and corners only.** Skin oils print fingerprints that etch the emulsion over time.\n- **One film out of its envelope at a time**, returned before the next comes out. Never slide films across each other or across the bench - emulsion scratches read as false linear indications.\n- **No kinking.** Bending film sharply between the fingers prints a crescent-shaped crimp mark: **dark if the film was bent after exposure, light if bent before**. On an unprocessed film that is an artifact waiting to confuse someone; on a processed film rough handling still creases and scratches the record.\n- **Nothing to eat or drink at the bench**, and keep the illuminator glass clean - a smudge on the glass mimics a low-density indication.\n\nFor archival storage, the enemies are residual chemistry and climate. **Thiosulfate (fixer) left by an inadequate wash slowly stains the film yellow-brown and fades the silver image** - archival washing and testing exist precisely to protect record life. Store films in chemically inert envelopes, cool and dry - **relative humidity around 30 to 50 percent**, moderate temperature - without pressure loads, rubber bands, or clips, and with full traceability (job, weld or part, date, station) marked on the envelope and matching the film identification."
+  },
+  {
+   "type": "table",
+   "caption": "Handling and storage artifacts the interpreter must recognize and rule out.",
+   "headers": ["Artifact", "Cause", "What you see"],
+   "rows": [
+    ["Crescent (crimp) mark - dark", "Film kinked AFTER exposure", "Sharp dark half-moon, anywhere on the film"],
+    ["Crescent (crimp) mark - light", "Film kinked BEFORE exposure", "Light half-moon of reduced density"],
+    ["Fingerprint", "Skin oils or chemicals on bare hands", "Ridged oval smudge; may darken or lighten with time"],
+    ["Scratch", "Films slid over each other or a rough bench", "Fine straight light or dark line - can mimic a crack"],
+    ["Yellow-brown stain and fading", "Residual fixer from inadequate washing", "Overall discoloration and a weakening image, appearing months to years later"],
+    ["Mottle or stuck films", "Hot, humid storage; pressure loads", "Blotchy patches; emulsion damage where films separated"]
+   ]
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "The radiograph is the record",
+   "body": "Codes require radiographs to remain identifiable, traceable, and legible for the contract's required retention period - often many years. A depth determination, a repair, or a dispute can hinge on a film read long after everyone on the job has moved on. **Wash it well, store it dry, label it fully, and handle it by the edges** - the technique that found the flaw is only as good as the record that survives."
+  }
+ ],
+ "figures": [
+  {
+   "id": "rt2-8-3-fig-a",
+   "title": "Tube-shift parallax depth determination",
+   "file": "rt2-8-3-fig-a.svg"
+  },
+  {
+   "id": "rt2-8-3-fig-b",
+   "title": "Reading-bench magnification and film handling",
+   "file": "rt2-8-3-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Parallax Shift Depth Locator",
+  "intro": "A 3.0-in.-thick cast steel hub sits directly on the cassette. Yesterday's radiograph shows a linear indication, and engineering needs its depth before approving an excavation. You will locate it with the double-exposure tube-shift method at SFD = 24 in.",
+  "steps": [
+   {
+    "prompt": "Setting up the two exposures - what moves and what stays fixed?",
+    "options": [
+     "Shift the film slightly between exposures so the images separate",
+     "Clamp the part and cassette so nothing moves; only the source shifts between the two half-exposures",
+     "Rotate the part 90 degrees between exposures",
+     "Move both source and film together to keep the beam centered"
+    ],
+    "correct": 1,
+    "feedback": "The entire measurement rides on the part and film holding perfectly still - the image shift must come from the source motion alone. Each exposure runs at about half the normal time so the double-printed film stays in the density window."
+   },
+   {
+    "prompt": "How far should you shift the source between exposures?",
+    "options": [
+     "About 0.5 in. - small shifts keep the images from overlapping",
+     "About 4.4 in. - roughly 15 to 20 percent of the SFD",
+     "About 24 in. - equal to the SFD for maximum effect",
+     "It does not matter as long as you measure it"
+    ],
+    "correct": 1,
+    "feedback": "A generous shift, around 15 to 20 percent of SFD, produces an image displacement large enough to measure accurately. Tiny shifts bury the answer in measurement error; an extreme shift distorts and can throw the images off the film."
+   },
+   {
+    "prompt": "You placed lead reference markers on both surfaces. After processing, which marker's pair of images should show NO shift, and what does it prove?",
+    "options": [
+     "The source-side marker - it proves the source moved correctly",
+     "The film-side marker - zero shift proves the part and cassette never moved between exposures",
+     "Both markers shift equally if the setup was correct",
+     "Neither marker shifts; only internal flaws shift"
+    ],
+    "correct": 1,
+    "feedback": "A marker on the film-side surface sits essentially at the film plane (height near zero), so its images should coincide - any visible shift means registration was lost and the measurement is void. The source-side marker shifts the most, bracketing all possible flaw depths."
+   },
+   {
+    "prompt": "With source shift a = 4.4 in. and SFD = 24 in., the indication's two images measure b = 0.4 in. apart. How high above the film is the flaw?",
+    "options": [
+     "2.0 in. - h = 0.4 x 24 / (4.4 + 0.4)",
+     "2.4 in. - h = 0.4 x 24 / 4.0",
+     "1.1 in. - h = 4.4 x 0.4 / 1.6",
+     "0.4 in. - the image shift equals the depth"
+    ],
+    "correct": 0,
+    "feedback": "h = b x SFD / (a + b) = 0.4 x 24 / 4.8 = 9.6 / 4.8 = 2.0 in. above the film plane."
+   },
+   {
+    "prompt": "The hub is 3.0 in. thick and sat directly on the cassette. Engineering asks which surface to excavate from. Your call?",
+    "options": [
+     "The film-side surface - the flaw is 2.0 in. down from there",
+     "The source-side surface - the flaw is only 1.0 in. down from the top",
+     "Either side - the flaw is at mid-wall",
+     "Neither - depth cannot be referenced to a surface"
+    ],
+    "correct": 1,
+    "feedback": "At 2.0 in. above the film in a 3.0-in. wall, the flaw lies 1.0 in. below the source-side surface versus 2.0 in. from the film side. Excavating from the source side reaches it with half the metal removal."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "In a tube-shift depth check, SFD = 20 in., the source is shifted 3.6 in., and the flaw's two images measure 0.4 in. apart. The flaw sits how far above the film?",
+   "options": [
+    "2.0 in.",
+    "2.2 in.",
+    "0.9 in.",
+    "4.0 in."
+   ],
+   "correct": 0,
+   "explanation": "h = b x SFD / (a + b) = 0.4 x 20 / (3.6 + 0.4) = 8 / 4 = 2.0 in. above the film plane."
+  },
+  {
+   "question": "On a tube-shift film, one pore's image pair is 0.10 in. apart and another's is 0.45 in. apart. Which pore is nearer the source-side surface?",
+   "options": [
+    "The 0.45-in. pair - the larger the parallax shift, the higher the flaw sits above the film",
+    "The 0.10-in. pair - small shifts mean shallow depth from the top",
+    "Both are at the same depth; shift depends only on pore size",
+    "It cannot be determined without a third exposure"
+   ],
+   "correct": 0,
+   "explanation": "Parallax shift grows with height above the film: features at the film barely move, features near the source-side surface move the most - so the 0.45-in. pair lies higher in the wall, nearer the source side."
+  },
+  {
+   "question": "For examining a suspect area of film on the illuminator, the appropriate magnification is about:",
+   "options": [
+    "1.5x to 3x - beyond roughly 5x, film grain dominates and adds no flaw information",
+    "10x to 20x - more magnification always reveals more detail",
+    "Exactly 1x - magnifiers are prohibited during interpretation",
+    "50x metallurgical magnification for crack tips"
+   ],
+   "correct": 0,
+   "explanation": "Low-power magnification helps resolve the localized question, but the film's granularity sets an information floor - strong lenses only magnify grain. More detail requires a new exposure, not more glass."
+  },
+  {
+   "question": "A sharp dark crescent-shaped mark appears on a processed radiograph. Its cause was:",
+   "options": [
+    "The film was kinked or crimped after exposure",
+    "The film was kinked or crimped before exposure",
+    "Residual fixer from poor washing",
+    "Backscatter from behind the cassette"
+   ],
+   "correct": 0,
+   "explanation": "Crimp marks are crescent-shaped: dark when the bend happened after exposure, light when it happened before - one reason film is handled flat, by the edges, at every stage."
+  },
+  {
+   "question": "Years after acceptance, archived radiographs show yellow-brown staining and a fading image. The most likely cause is:",
+   "options": [
+    "Residual thiosulfate (fixer) left by inadequate washing, aggravated by warm humid storage",
+    "Excessive original film density",
+    "Storing the films vertically instead of flat",
+    "Reading the films too often on a bright illuminator"
+   ],
+   "correct": 0,
+   "explanation": "Fixer chemistry left in the emulsion attacks the silver image over time - archival washing limits residual thiosulfate, and cool, dry storage at roughly 30 to 50 percent relative humidity protects the record."
+  }
+ ],
+ "references": [
+  "CP-105-2024 RT Topical Outline, Radiographic Interpretation and Evaluation Course 2.0, IE 2.4-2.6",
+  "Classic double-exposure (tube-shift) parallax depth determination practice (general reference)",
+  "Guides such as ASTM E94 for radiographic film handling, processing quality, and storage (general reference)"
+ ]
+}

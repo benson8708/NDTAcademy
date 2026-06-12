@@ -1,0 +1,185 @@
+{
+ "lessonId": "rt1-7-2",
+ "title": "Exposure Arithmetic and Exposure Charts",
+ "narrationScript": "This lesson is the working math of exposure. Nothing here is harder than multiplying, dividing, and squaring a ratio, but you will use it on every shot for the rest of your career, so we are going to drill it until it is reflex. Start with the number every code judges your film by, density. Photographic density is the logarithm to base ten of the light hitting the front of the film divided by the light making it through. Density one means one tenth of the viewing light gets through. Density two means one percent. Density three means one tenth of one percent, and density four means one ten thousandth. Each whole step of density is another factor of ten. Typical code windows for single film viewing run from about one point eight to four with X-rays, and two to four with gamma rays, measured with a calibrated densitometer. Density is the target. Exposure is how you hit it. For an X-ray machine, exposure is milliamperage times time, milliampere minutes. Ten milliamperes for five minutes is fifty milliampere minutes. For a gamma source, it is source activity times time, curie hours. The reciprocity law says the product is what matters, not the pieces. Fifty milliampere minutes lays down the same density whether you run ten milliamperes for five minutes or five milliamperes for ten. That holds for film exposed directly by X-rays and gamma rays, with or without lead screens. It fails when film is exposed by the visible light of fluorescent intensifying screens, where very long dim exposures lose efficiency, so be careful applying it there. Distance is the third lever, and it follows the inverse square law. Radiation from a compact source spreads over an area that grows with the square of distance, so intensity falls with the square of distance. Double the distance and intensity drops to one quarter, which means exposure goes up four times to hold the same density. The bookkeeping form says intensity one times distance one squared equals intensity two times distance two squared. For technique work, new exposure equals old exposure times the square of the ratio of new distance to old distance. Say your technique calls for eight milliampere minutes at twenty four inches and you move back to forty eight inches for better geometry. The ratio is two, squared is four, so you need thirty two milliampere minutes. Now the charts. An X-ray exposure chart is built for one specific machine, and it answers one question. How many milliampere minutes at a given kilovoltage will produce the target density through a given thickness? Thickness runs along the bottom. Exposure runs up the side on a logarithmic scale, and a family of lines fans across the chart, one for each kilovoltage. Every chart is valid only for the conditions printed on it, the film system, the target density, the source to film distance, the screens, and the processing. Change any one of those and you correct for it or you re-derive the chart. Reading it is simple. Enter at the part thickness, rise to the kilovoltage line you intend to use, and read across to the exposure. Pick a kilovoltage that puts you in the middle of the chart, with enough exposure to average out timing errors but not so long that production stalls. A gamma ray exposure chart works the same way except kilovoltage is off the table, because the energy is fixed by the isotope. The chart gives curie hours against thickness for a stated source to film distance, film, and density. Your exposure time is simply the curie hours divided by the curies in your source today. Today matters. Sources decay, so pull the current activity from the decay chart or calculate it with the half life before you compute time. Run one complete gamma example. The chart says one and a half inches of steel at a twenty four inch source to film distance needs eighty curie hours. Your iridium source assayed at forty curies, so eighty divided by forty is two hours. Suppose the setup forces you out to thirty six inches. Thirty six over twenty four is one and a half, squared is two and a quarter, so you now need one hundred eighty curie hours, which is four and a half hours with that source. And if the job waits seventy four days, one half life for iridium, the source is down to twenty curies and that same shot takes nine hours. That is the whole game. Chart value, inverse square correction, divide by today's curies. Finally, density corrections. If your film comes back light, at density one and a half against a minimum of two, do not guess. On the straight line part of the film's characteristic curve, density tracks exposure, and doubling the exposure typically buys roughly one step up the curve. The film's characteristic data gives the exact factor, and the next lesson teaches you to read it.",
+ "imagePrompt": "A radiographer in a fabrication shop traces a laminated exposure chart taped beside an X-ray control panel with one hand on the timer dial, while a steel weldment sits staged in front of the tube head behind him.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Density: The Number the Code Reads",
+   "body": "Every exposure calculation aims at one target: **photographic density**, defined as D = log₁₀(I₀ / I_t) - the log of the viewing light striking the film over the light transmitted through it. Because the scale is logarithmic, each whole step is a factor of ten:\n\n- **D = 1** transmits 10% of the viewing light\n- **D = 2** transmits 1%\n- **D = 3** transmits 0.1%\n- **D = 4** transmits 0.01%\n\nTypical code windows for single-film viewing run about **1.8-4.0 for X-ray** techniques and **2.0-4.0 for gamma**, verified with a **densitometer** checked against a calibrated step tablet. Densities below the floor live in the low-contrast toe of the film curve and hide discontinuities; densities above the ceiling exceed what an ordinary illuminator can punch through. Everything in this lesson - milliampere-minutes, curie-hours, distance corrections, chart reading - exists to land the film inside that window on the first shot."
+  },
+  {
+   "type": "text",
+   "heading": "Exposure and the Reciprocity Law",
+   "body": "Radiographic exposure is **intensity × time**. For an X-ray machine the working unit is **milliampere-minutes (mA·min)**: 10 mA for 5 minutes = 50 mA·min. For a gamma source it is **curie-hours (Ci·hr)**: a 40 Ci source for 2 hours = 80 Ci·hr.\n\nThe **reciprocity law** says the *product* is what exposes the film, not the individual factors. 50 mA·min produces the same density whether you run 10 mA × 5 min or 5 mA × 10 min - useful when a small focal spot forces a lower mA, or when you trade tube loading against schedule. The milliamperage-distance-time relationship generalizes this across setups: **(mA₁ × t₁) / d₁² = (mA₂ × t₂) / d₂²** holds density constant when anything changes.\n\nOne caution: reciprocity holds for film exposed **directly by X-rays or gamma rays**, with or without lead screens. It *fails* for the visible light from **fluorescent intensifying screens** - very long, low-intensity light exposures lose efficiency (reciprocity-law failure), so a chart built at one intensity misleads at another when fluorescent screens are in play."
+  },
+  {
+   "type": "text",
+   "heading": "The Inverse Square Law in Technique Work",
+   "body": "Radiation from a compact source diverges, spreading its energy over an area that grows with the **square of distance** - so intensity falls with the square of distance. The bookkeeping form is **I₁d₁² = I₂d₂²**.\n\nFor technique adjustments, use the exposure form:\n\n- **New exposure = old exposure × (d₂ / d₁)²**\n\nExample: a technique calls for **8 mA·min at a 24 in. SFD**. Geometry demands you move to 48 in. The ratio is 48/24 = 2, squared is 4, so the new exposure is **32 mA·min**. Moving *closer* works in reverse - halving the distance cuts the required exposure to one quarter.\n\nDistance is the most powerful variable on the table: a modest-looking SFD change of 1.5× swings exposure by 2.25×. Every chart is built at one stated SFD, so any time your setup distance differs from the chart's, the inverse square correction is mandatory - it is the single most common arithmetic step in daily radiography."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-7-2-fig-c",
+   "caption": "The same beam spreads over four times the area at twice the distance, so intensity drops to one quarter and exposure time rises fourfold."
+  },
+  {
+   "type": "text",
+   "heading": "Reading an X-ray Exposure Chart",
+   "body": "An **X-ray exposure chart** is built for one specific machine and answers one question: how many mA·min at a given kV produce the target density through a given thickness? Material thickness runs along the bottom; exposure runs up the side on a **logarithmic scale**; a family of kV lines fans across the plot. Because attenuation is exponential, each kV line is roughly straight on the semi-log grid - and lower-kV lines are steeper, since soft radiation loses intensity faster per inch of metal.\n\nThe chart is valid **only for its printed conditions**: film system, target density, SFD, screen type and thickness, and processing. Change any one and you must correct (inverse square for distance, film factors for a different film) or re-derive the chart.\n\nTo use it: enter the bottom axis at the part thickness, rise to the kV line you plan to use, read across to the exposure. Prefer a kV that lands you mid-chart - exposures so short that timer error matters, or so long that production stalls, are both signs to move to a different line. When thickness varies across the part, check that one kV holds the whole range inside the density window."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-7-2-fig-a",
+   "caption": "A typical X-ray exposure chart for steel: enter at thickness, rise to the chosen kilovoltage line, read the required exposure - here 0.75 in. at 180 kV needs about 16 mA·min under the printed conditions."
+  },
+  {
+   "type": "text",
+   "heading": "Gamma Exposure Charts and Time Calculations",
+   "body": "A **gamma exposure chart** works the same way with one lever removed: energy is fixed by the isotope, so there is no kV family - just exposure in **curie-hours** against thickness for the printed film, density, and SFD (some shops use nomograms or slide-rule calculators that fold the inverse square correction in).\n\nThe time calculation is division: **time = required Ci·hr ÷ source activity today**. *Today* is the operative word - Ir-192 loses half its strength every ~74 days, so pull current activity from the decay chart before you compute.\n\nWorked example, start to finish:\n\n- Chart: 1.5 in. of steel at 24 in. SFD needs **80 Ci·hr**\n- Source: 40 Ci at assay → 80 ÷ 40 = **2 hours**\n- Setup forces SFD to 36 in.: (36/24)² = 2.25 → 180 Ci·hr → **4.5 hours**\n- Same shot 74 days later (one half-life, source now 20 Ci): 180 ÷ 20 = **9 hours**\n\nIf film returns light - say density 1.5 against a 2.0 minimum - correct from the film's characteristic curve rather than guessing: on the straight-line region, density tracks exposure, and **doubling the exposure raises density roughly one step** up the curve."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-7-2-fig-b",
+   "caption": "A typical Ir-192 exposure chart for steel: read curie-hours at the part thickness for the chart SFD, then divide by today's source activity to get exposure time."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The exposure-time recipe",
+   "body": "1. Read the **chart value** at the part thickness (mA·min or Ci·hr) for the printed conditions.\n2. Correct for your actual distance: **× (your SFD ÷ chart SFD)²**.\n3. Correct for film or density differences using the film's characteristic data.\n4. Gamma only: divide by **today's** source activity - never the assay-date value.\n\nIf any printed chart condition (film, density, screens, processing) does not match your setup, stop and correct for it - a chart used outside its conditions is just a guess with gridlines."
+  }
+ ],
+ "figures": [
+  {
+   "id": "rt1-7-2-fig-a",
+   "title": "Typical X-ray exposure chart for steel",
+   "file": "rt1-7-2-fig-a.svg"
+  },
+  {
+   "id": "rt1-7-2-fig-b",
+   "title": "Typical Ir-192 gamma exposure chart",
+   "file": "rt1-7-2-fig-b.svg"
+  },
+  {
+   "id": "rt1-7-2-fig-c",
+   "title": "Inverse square law geometry",
+   "file": "rt1-7-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Exposure Calculation Under Pressure",
+  "intro": "You are shooting single-wall girth welds on 1.5 in. thick steel with an Ir-192 exposure device. The crew's gamma exposure chart is built for Class II film, density 2.0, at a 24 in. source-to-film distance. Work each decision the way a Level II would - chart value, corrections, then time.",
+  "steps": [
+   {
+    "prompt": "The chart reads 80 Ci·hr for 1.5 in. of steel at the 24 in. chart SFD. Your source assayed at 40 Ci this morning. What exposure time do you set?",
+    "options": [
+     "30 minutes",
+     "1 hour",
+     "2 hours",
+     "4 hours"
+    ],
+    "correct": 2,
+    "feedback": "Time = required exposure ÷ source activity = 80 Ci·hr ÷ 40 Ci = 2 hours. The chart gives curie-hours; your source strength converts that to clock time."
+   },
+   {
+    "prompt": "A fit-up clamp forces you to raise the source to a 36 in. SFD. What happens to the required exposure?",
+    "options": [
+     "Nothing - the chart already accounts for distance",
+     "It increases 1.5× to 120 Ci·hr",
+     "It increases (36/24)² = 2.25× to 180 Ci·hr",
+     "It decreases, because a longer SFD reduces scatter"
+    ],
+    "correct": 2,
+    "feedback": "The chart is valid only at its printed 24 in. SFD. Intensity falls with the square of distance, so exposure scales by (36/24)² = 2.25 → 180 Ci·hr, which is 4.5 hours with the 40 Ci source. Distance corrections scale with the ratio squared, never the ratio."
+   },
+   {
+    "prompt": "The job slips 74 days and nobody re-checks the source. The radiographer sets 4.5 hours again, and the film comes back around density 1.0 - far too light. What happened?",
+    "options": [
+     "Reciprocity failure on the long exposure",
+     "The source decayed one half-life to 20 Ci, so the film received only half the intended exposure",
+     "The film class was too slow for gamma work",
+     "The inverse square correction was applied twice"
+    ],
+    "correct": 1,
+    "feedback": "Ir-192's half-life is about 74 days: the 40 Ci source is now 20 Ci, and 20 Ci × 4.5 hr = 90 Ci·hr - half of the 180 needed. Always compute time from today's activity; the correct setting was 180 ÷ 20 = 9 hours."
+   },
+   {
+    "prompt": "Back at the 24 in. chart SFD with the decayed 20 Ci source, the next 1.5 in. weld needs the chart's 80 Ci·hr. What time do you set?",
+    "options": [
+     "2 hours",
+     "3 hours",
+     "4 hours",
+     "8 hours"
+    ],
+    "correct": 2,
+    "feedback": "80 Ci·hr ÷ 20 Ci = 4 hours. Same weld, same chart value - twice the time of the first shot because the source is one half-life older."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A radiograph reads density 2.0 on the densitometer. What fraction of the viewing light passes through that area of the film?",
+   "options": [
+    "10%",
+    "1%",
+    "0.1%",
+    "2%"
+   ],
+   "correct": 1,
+   "explanation": "Density is log₁₀(I₀/I_t), so D = 2 means the film transmits 1/10² = 1% of the incident viewing light. Each whole density step is another factor of ten."
+  },
+  {
+   "question": "Under the reciprocity law, which exposure produces the same film density as 20 mA for 3 minutes - and where does the law break down?",
+   "options": [
+    "10 mA for 6 minutes; it breaks down with fluorescent intensifying screens",
+    "10 mA for 3 minutes; it breaks down with lead screens",
+    "60 mA for 3 minutes; it breaks down at high kilovoltage",
+    "20 mA for 6 minutes; it never breaks down"
+   ],
+   "correct": 0,
+   "explanation": "20 × 3 = 60 mA·min = 10 × 6, and the mA·time product is what matters for direct X-ray or gamma exposure. The law fails for the visible light of fluorescent screens, where long dim exposures lose efficiency."
+  },
+  {
+   "question": "A technique requires 12 mA·min at a 30 in. SFD. The setup must move to a 60 in. SFD. The new exposure is:",
+   "options": [
+    "24 mA·min",
+    "6 mA·min",
+    "48 mA·min",
+    "12 mA·min - distance does not change exposure"
+   ],
+   "correct": 2,
+   "explanation": "New exposure = 12 × (60/30)² = 12 × 4 = 48 mA·min. Intensity falls with the square of distance, so doubling the SFD quadruples the required exposure."
+  },
+  {
+   "question": "Which of the following is NOT fixed by the printed conditions of an X-ray exposure chart?",
+   "options": [
+    "The film system class",
+    "The target density",
+    "The part thickness",
+    "The source-to-film distance"
+   ],
+   "correct": 2,
+   "explanation": "Thickness is the input variable you enter the chart with. Film, density, SFD, screens, and processing are the fixed conditions - if any of them differ from your setup, you must correct or re-derive."
+  },
+  {
+   "question": "A gamma chart calls for 120 Ci·hr. Your Ir-192 source assayed at 60 Ci, but the assay was 74 days ago. What exposure time is required today?",
+   "options": [
+    "2 hours",
+    "4 hours",
+    "8 hours",
+    "1 hour"
+   ],
+   "correct": 1,
+   "explanation": "One half-life (≈74 days) has passed, so the source is now 30 Ci. Time = 120 Ci·hr ÷ 30 Ci = 4 hours. Computing from the assay value would underexpose the film by half."
+  }
+ ],
+ "references": [
+  "CP-105-2024 RT Topical Outline, Radiography Technique 3.3-3.3.7",
+  "Codes such as ASME BPVC Section V, Article 2 (density requirements, general practice)",
+  "Standard guides such as ASTM E94 (radiographic examination practice, general)",
+  "Film manufacturer exposure charts and characteristic data (generic examples)"
+ ]
+}

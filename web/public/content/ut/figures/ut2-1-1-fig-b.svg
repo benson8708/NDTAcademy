@@ -1,0 +1,38 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#0A2342"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">Near Field and Beam Spread</text>
+
+  <!-- element -->
+  <rect x="70" y="180" width="26" height="100" fill="#E8F1FB" stroke="#1B82E8" stroke-width="2"/>
+  <line x1="58" y1="180" x2="58" y2="280" stroke="#E8F1FB" stroke-width="1.5"/>
+  <line x1="53" y1="180" x2="63" y2="180" stroke="#E8F1FB" stroke-width="1.5"/>
+  <line x1="53" y1="280" x2="63" y2="280" stroke="#E8F1FB" stroke-width="1.5"/>
+  <text x="44" y="237" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">D</text>
+  <text x="60" y="160" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">Element D = 10 mm, f = 5 MHz</text>
+
+  <!-- beam envelope -->
+  <polygon points="96,180 380,216 740,150 740,310 380,244 96,280" fill="#1B82E8" fill-opacity="0.15"/>
+  <polyline points="96,180 380,216 740,150" fill="none" stroke="#1B82E8" stroke-width="2.5"/>
+  <polyline points="96,280 380,244 740,310" fill="none" stroke="#1B82E8" stroke-width="2.5"/>
+  <line x1="96" y1="230" x2="740" y2="230" stroke="#5A6B7E" stroke-width="1.5" stroke-dasharray="7 6"/>
+
+  <!-- near field marker -->
+  <line x1="380" y1="140" x2="380" y2="330" stroke="#F2A33C" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="380" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#F2A33C">N &#8776; 21 mm</text>
+
+  <!-- N bracket -->
+  <line x1="96" y1="320" x2="380" y2="320" stroke="#E8F1FB" stroke-width="1.5"/>
+  <polygon points="96,320 108,315 108,325" fill="#E8F1FB"/>
+  <polygon points="380,320 368,315 368,325" fill="#E8F1FB"/>
+  <text x="238" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">Near field  N = D&#178;f / 4v</text>
+
+  <!-- beam spread label -->
+  <text x="740" y="120" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">Beam spread: sin &#947; = 1.22 v / (D f)  &#8594;  &#947; &#8776; 8.3&#176;</text>
+  <text x="500" y="222" font-family="Arial, sans-serif" font-size="16" fill="#F2A33C">&#947;</text>
+
+  <!-- on-axis amplitude plot -->
+  <line x1="96" y1="420" x2="740" y2="420" stroke="#5A6B7E" stroke-width="1.5"/>
+  <polyline points="96,408 120,378 140,405 165,372 190,406 215,368 245,404 275,364 310,400 345,360 380,355 430,368 490,381 560,392 650,400 740,406" fill="none" stroke="#F2A33C" stroke-width="2.5"/>
+  <text x="98" y="440" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">On-axis amplitude: oscillates inside N, smooth decay beyond</text>
+  <text x="560" y="345" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1E9E6A">evaluate and size beyond N</text>
+</svg>

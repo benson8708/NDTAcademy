@@ -1,0 +1,84 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#0B1F3A">Emissivity: What an IR Instrument Actually Receives</text>
+  <text x="400" y="52" text-anchor="middle" font-size="14" fill="#1E66F5">emitted (ε) + reflected (ρ) + transmitted (τ) = 1</text>
+  <line x1="400" y1="66" x2="400" y2="368" stroke="#D9E0E8" stroke-width="2"/>
+
+  <!-- LEFT: radiation balance -->
+  <text x="210" y="82" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">One surface, three contributions</text>
+
+  <!-- part wall -->
+  <rect x="70" y="110" width="44" height="190" fill="#9BC4FF" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="92" y="318" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0B1F3A">part wall</text>
+  <text x="92" y="334" text-anchor="middle" font-size="12.5" fill="#0B1F3A">T = 100 °C</text>
+
+  <!-- radiometer -->
+  <rect x="306" y="172" width="56" height="40" rx="4" fill="#0B1F3A"/>
+  <circle cx="304" cy="192" r="9" fill="#E8F1FB" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="334" y="230" text-anchor="middle" font-size="12.5" font-weight="bold" fill="#0B1F3A">radiometer</text>
+
+  <!-- emitted arrow -->
+  <line x1="118" y1="150" x2="288" y2="177" stroke="#F2A33C" stroke-width="3"/>
+  <polygon points="285,171 296,178 284,183" fill="#F2A33C"/>
+  <text x="212" y="142" text-anchor="middle" font-size="13" font-weight="bold" fill="#F2A33C">emitted · ε</text>
+
+  <!-- surroundings source + reflected arrow -->
+  <circle cx="168" cy="98" r="7" fill="#1E66F5"/>
+  <line x1="168" y1="86" x2="168" y2="78" stroke="#1E66F5" stroke-width="1.8"/>
+  <line x1="156" y1="98" x2="148" y2="98" stroke="#1E66F5" stroke-width="1.8"/>
+  <line x1="159" y1="89" x2="153" y2="83" stroke="#1E66F5" stroke-width="1.8"/>
+  <line x1="177" y1="89" x2="183" y2="83" stroke="#1E66F5" stroke-width="1.8"/>
+  <text x="208" y="78" text-anchor="start" font-size="11.5" fill="#1E66F5">surroundings, 25 °C</text>
+  <line x1="166" y1="106" x2="120" y2="198" stroke="#1E66F5" stroke-width="2.2"/>
+  <line x1="120" y1="198" x2="288" y2="191" stroke="#1E66F5" stroke-width="2.2"/>
+  <polygon points="284,185 296,191 284,197" fill="#1E66F5"/>
+  <text x="206" y="214" text-anchor="middle" font-size="13" font-weight="bold" fill="#1E66F5">reflected · ρ</text>
+
+  <!-- transmitted arrow -->
+  <line x1="30" y1="246" x2="288" y2="205" stroke="#0B1F3A" stroke-width="2" stroke-dasharray="5,4"/>
+  <polygon points="285,199 296,204 286,211" fill="#0B1F3A"/>
+  <text x="158" y="268" text-anchor="middle" font-size="12.5" fill="#0B1F3A">transmitted · τ ≈ 0 (opaque)</text>
+
+  <text x="210" y="356" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">ε + ρ + τ = 1 → opaque: ρ = 1 − ε</text>
+
+  <!-- RIGHT: same temperature, different reading -->
+  <text x="600" y="82" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">Same temperature, different reading</text>
+
+  <!-- black paint block -->
+  <rect x="445" y="124" width="130" height="86" rx="4" fill="#0B1F3A"/>
+  <text x="510" y="160" text-anchor="middle" font-size="12.5" fill="#FFFFFF">flat black paint</text>
+  <text x="510" y="180" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#FFFFFF">ε ≈ 0.95</text>
+  <line x1="470" y1="122" x2="470" y2="102" stroke="#F2A33C" stroke-width="2.5"/>
+  <polygon points="465,104 470,92 475,104" fill="#F2A33C"/>
+  <line x1="510" y1="122" x2="510" y2="98" stroke="#F2A33C" stroke-width="2.5"/>
+  <polygon points="505,100 510,88 515,100" fill="#F2A33C"/>
+  <line x1="550" y1="122" x2="550" y2="102" stroke="#F2A33C" stroke-width="2.5"/>
+  <polygon points="545,104 550,92 555,104" fill="#F2A33C"/>
+
+  <!-- aluminum block -->
+  <rect x="625" y="124" width="130" height="86" rx="4" fill="#E8F1FB" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="690" y="160" text-anchor="middle" font-size="12.5" fill="#0B1F3A">polished aluminum</text>
+  <text x="690" y="180" text-anchor="middle" font-size="13.5" font-weight="bold" fill="#0B1F3A">ε ≈ 0.05</text>
+  <line x1="648" y1="122" x2="648" y2="108" stroke="#F2A33C" stroke-width="2"/>
+  <polygon points="644,110 648,100 652,110" fill="#F2A33C"/>
+  <line x1="610" y1="94" x2="664" y2="124" stroke="#1E66F5" stroke-width="2.2"/>
+  <line x1="664" y1="124" x2="716" y2="94" stroke="#1E66F5" stroke-width="2.2"/>
+  <polygon points="722,88 715,99 709,89" fill="#1E66F5"/>
+
+  <text x="600" y="232" text-anchor="middle" font-size="13" font-weight="bold" fill="#0B1F3A">both surfaces actually at 100 °C</text>
+
+  <!-- readouts -->
+  <rect x="445" y="248" width="130" height="68" rx="8" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="510" y="270" text-anchor="middle" font-size="11.5" fill="#0B1F3A">camera reads</text>
+  <text x="510" y="292" text-anchor="middle" font-size="17" font-weight="bold" fill="#F2A33C">≈ 100 °C</text>
+  <text x="510" y="308" text-anchor="middle" font-size="10.5" fill="#0B1F3A">true reading</text>
+  <rect x="625" y="248" width="130" height="68" rx="8" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="690" y="270" text-anchor="middle" font-size="11.5" fill="#0B1F3A">camera reads</text>
+  <text x="690" y="292" text-anchor="middle" font-size="17" font-weight="bold" fill="#1E66F5">≈ 30 °C</text>
+  <text x="690" y="308" text-anchor="middle" font-size="10.5" fill="#0B1F3A">mostly the 25 °C hangar</text>
+
+  <!-- takeaway bar -->
+  <rect x="90" y="392" width="620" height="48" rx="8" fill="#0B1F3A"/>
+  <text x="400" y="412" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">An instrument cannot tell emitted from reflected radiation — set ε and reflected</text>
+  <text x="400" y="431" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">temperature, or add a high-ε patch (tape or flat paint) and measure that.</text>
+</svg>

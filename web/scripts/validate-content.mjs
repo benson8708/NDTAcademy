@@ -129,7 +129,7 @@ for (const level of curriculum.levels) {
   }
 }
 
-const MANIFESTS = new Set(["videos.json", "explainers.json", "slide-audio.json"]);
+const MANIFESTS = new Set(["videos.json", "explainers.json", "slide-audio.json", "trainers.json"]);
 const orphans = readdirSync(contentDir).filter((f) => f.endsWith(".json") && !MANIFESTS.has(f))
   .filter((f) => {
     const id = f.replace(".json", "");

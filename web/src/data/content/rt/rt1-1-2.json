@@ -1,0 +1,208 @@
+{
+ "lessonId": "rt1-1-2",
+ "title": "Basic Math Review for Radiography",
+ "narrationScript": "Radiography runs on arithmetic. Every shift, somebody has to figure an exposure time, correct for a decayed source, work out how far back the boundary ropes go, or convert between units. None of it is hard math, but it has to be right, because the same numbers that set your image quality also set your dose. This lesson is a working review of the four tools you will use constantly. Exponents, square roots, scientific notation, and rearranging a formula to solve for the number you actually need. Start with exponents. An exponent is shorthand for repeated multiplication. Two to the third power means two times two times two, which is eight. The small raised number counts how many times the base is multiplied by itself. When you multiply powers of the same base, you add the exponents. Two squared times two cubed is two to the fifth power, which is thirty two. When you divide, you subtract the exponents. A negative exponent means one divided by that power, so ten to the minus two is one over ten squared, which is one hundredth, or zero point zero one. And any number raised to the zero power is one. Radiography leans on one exponent pattern above all others, the halving pattern. Every half life, a source's activity falls to one half. After two half lives it is down to one quarter. After three, one eighth. The decay factor is one half raised to the number of half lives that have passed, and you will use that single idea for the rest of your career. A square root runs the other direction. The square root of a number is the value that, multiplied by itself, gives the number back. The square root of one hundred forty four is twelve, because twelve times twelve is one hundred forty four. Square roots show up whenever we solve the inverse square law for distance, and that is exactly the calculation that sets radiation safety boundaries. If you know the intensity at one distance and you need the distance where the intensity drops to some target value, you will end up taking a square root. Get comfortable with the perfect squares up to about twenty, because they let you sanity check in your head whatever the calculator tells you. Scientific notation exists because radiography deals in absurd numbers. One curie is thirty seven billion disintegrations every second. Written out, that is a three and a seven followed by nine zeros, easy to miscopy and hopeless to compute with. In scientific notation it is three point seven times ten to the tenth power. One number between one and ten, multiplied by ten raised to a power. To convert, slide the decimal point and count the places. Slide it left and the exponent goes up. Slide it right and the exponent goes down. To multiply two numbers in scientific notation, multiply the front numbers and add the exponents. To divide, divide the fronts and subtract the exponents. That is all there is to it, and it keeps your millicurie, becquerel, and dose rate conversions honest. Finally, rearranging formulas. A formula is a balance. Whatever you do to one side, you must do to the other, and that single rule lets you solve any equation in this course for any variable in it. The inverse square law says intensity one times distance one squared equals intensity two times distance two squared. As written, it hands you a new intensity. But on the job you usually need a distance instead. So divide both sides by the known intensity, then take the square root of both sides. Geometric unsharpness equals source size times the object to film distance, divided by the source to object distance. Need that distance instead. Multiply both sides by it, divide both sides by the unsharpness, done. Practice until rearranging feels mechanical rather than clever. Work the practice problems in this lesson slowly and show every step. Speed arrives on its own. Accuracy has to be built deliberately, and in this trade an arithmetic mistake is not a red mark on homework. It can mean a retake at midnight, a ruined film, or a boundary set too close and a dose you cannot take back.",
+ "imagePrompt": "A radiographic technician sits on the tailgate of a work truck at a refinery job site at dawn, working exposure calculations on a clipboard beside a survey meter, a calculator, and a dog-eared laminated exposure chart.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Math Is a Field Tool",
+   "body": "Every working radiographer computes daily: exposure times from source decay, boundary distances from the inverse square law, geometric unsharpness from shot geometry, unit conversions between curies and becquerels or roentgens and rem. The math itself never goes past exponents, square roots, and one-variable algebra - but it must be **fast and right**, often at 2 a.m. on a tailgate.\n\nThe stakes are double. A wrong exposure calculation costs **image quality**: a film shot to the wrong density gets rejected and reshot. A wrong distance calculation costs **dose**: a boundary roped at the wrong radius exposes people. So treat this lesson as tool maintenance. We review four tools - **exponents**, **square roots**, **scientific notation**, and **formula rearrangement** - each tied directly to the radiographic formulas you will meet later in the course."
+  },
+  {
+   "type": "text",
+   "heading": "Exponents: Repeated Multiplication",
+   "body": "An exponent counts how many times a base is multiplied by itself: 2³ = 2 × 2 × 2 = 8. The rules you need:\n\n- **Multiplying** powers of the same base: add exponents. 2² × 2³ = 2⁵ = 32.\n- **Dividing**: subtract exponents. 10⁶ ÷ 10² = 10⁴.\n- **Power of a power**: multiply exponents. (10²)³ = 10⁶.\n- **Negative exponent**: take the reciprocal. 10⁻² = 1/10² = 0.01.\n- **Zero exponent**: any base to the zero power equals 1.\n\nThe exponent pattern radiography uses most is the **halving pattern** of radioactive decay. Each half-life multiplies activity by ½, so after n half-lives the remaining fraction is (½)ⁿ: one half-life leaves 1/2, two leave 1/4, three leave 1/8, seven leave less than 1 percent. A 100 Ci iridium-192 source is down to 100 × (½)² = 25 Ci after 148 days - two 74-day half-lives. The same exponential shape returns later as attenuation through half-value layers, so master it now."
+  },
+  {
+   "type": "table",
+   "caption": "Exponent rules - quick reference with radiography-flavored examples.",
+   "headers": [
+    "Rule",
+    "In symbols",
+    "Example"
+   ],
+   "rows": [
+    [
+     "Multiply same base: add exponents",
+     "aᵐ × aⁿ = aᵐ⁺ⁿ",
+     "2² × 2³ = 2⁵ = 32"
+    ],
+    [
+     "Divide same base: subtract exponents",
+     "aᵐ ÷ aⁿ = aᵐ⁻ⁿ",
+     "10⁶ ÷ 10² = 10⁴"
+    ],
+    [
+     "Power of a power: multiply exponents",
+     "(aᵐ)ⁿ = aᵐⁿ",
+     "(10²)³ = 10⁶"
+    ],
+    [
+     "Negative exponent: reciprocal",
+     "a⁻ⁿ = 1/aⁿ",
+     "10⁻³ = 0.001 (milli-)"
+    ],
+    [
+     "Decay halving",
+     "fraction left = (½)ⁿ",
+     "3 half-lives → 1/8 of original activity"
+    ]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Square Roots",
+   "body": "A square root undoes squaring: √144 = 12 because 12 × 12 = 144. In radiography, square roots appear every time you solve the **inverse square law for a distance** - which is precisely the boundary calculation that protects people.\n\nKnow your perfect squares cold: 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400. They let you bracket any calculator answer with a mental estimate. If you need √200, you know it sits between √196 = 14 and √225 = 15, so an answer of 14.1 is believable and an answer of 41 means a fat-fingered keystroke. In safety math, that habit of **sanity-checking the magnitude** catches more errors than any formula ever will."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-1-2-fig-a",
+   "caption": "The inverse square law: doubling the distance spreads the same radiation over four times the area, cutting intensity to one quarter."
+  },
+  {
+   "type": "text",
+   "heading": "Scientific Notation",
+   "body": "Radiography's numbers are extreme. One curie is **37,000,000,000 disintegrations per second**; an electron's charge is about a six-billion-billionth of a coulomb. Scientific notation tames both: a single digit-bearing number from 1 up to (but not including) 10, times a power of ten. One curie = **3.7 × 10¹⁰ dps**; 1 becquerel = 1 dps, so 1 Ci = 3.7 × 10¹⁰ Bq = 37 GBq.\n\nConverting: slide the decimal point and count places. Slide **left**, exponent goes **up** (37,000,000,000 → 3.7 × 10¹⁰). Slide **right**, exponent goes **down** (0.00052 → 5.2 × 10⁻⁴).\n\nComputing:\n\n- **Multiply**: multiply the front numbers, add the exponents. (2 × 10³) × (3 × 10⁴) = 6 × 10⁷.\n- **Divide**: divide the fronts, subtract the exponents. (8 × 10⁶) ÷ (4 × 10²) = 2 × 10⁴.\n- Re-normalize if the front leaves the 1-to-10 range: 74 × 10¹⁰ = 7.4 × 10¹¹.\n\nThe metric prefixes are just named exponents: milli- = 10⁻³, kilo- = 10³, mega- = 10⁶, giga- = 10⁹."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt1-1-2-fig-b",
+   "caption": "Powers of ten a radiographer uses daily, from milli- prefixes to the 3.7 × 10¹⁰ disintegrations per second in one curie."
+  },
+  {
+   "type": "text",
+   "heading": "Rearranging Formulas",
+   "body": "Every formula in this course is a balance: whatever you do to one side, do to the other, and you can isolate any variable.\n\n**Worked example 1 - inverse square for distance.** I₁d₁² = I₂d₂². You read 32 mR/h at 10 ft and must find where the field falls to 2 mR/h. Divide both sides by I₂, then take the square root:\n\nd₂ = d₁ × √(I₁/I₂) = 10 × √(32/2) = 10 × √16 = **40 ft**.\n\n**Worked example 2 - geometric unsharpness for distance.** Ug = F·t/d gives unsharpness from source size F, object-to-film distance t, and source-to-object distance d. To find the d that holds a required Ug: multiply both sides by d, divide both sides by Ug:\n\nd = F·t/Ug. With F = 0.12 in., t = 1 in., Ug limit = 0.020 in.: d = 0.12 × 1/0.020 = **6 in. minimum**.\n\nCheck every rearrangement by substituting your answer back into the original formula - if the two sides don't balance, the algebra slipped. Units ride along through every step: feet stay feet, inches stay inches, and mixing them is the classic field error."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The halving table beats guesswork",
+   "body": "For any decay problem, write a two-column table: half-lives elapsed (0, 1, 2, 3...) against activity (A₀, A₀/2, A₀/4, A₀/8...). Divide elapsed time by the half-life to find n, then read the row - or use fraction = (½)ⁿ directly. **Never estimate decay by eye**: a 74-day half-life means an iridium source loses about 1 percent of its activity every day, and exposure times stretch accordingly."
+  }
+ ],
+ "figures": [
+  {
+   "id": "rt1-1-2-fig-a",
+   "title": "Inverse square law geometry",
+   "file": "rt1-1-2-fig-a.svg"
+  },
+  {
+   "id": "rt1-1-2-fig-b",
+   "title": "Powers of ten in radiography",
+   "file": "rt1-1-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Night-Shift Source Math",
+  "intro": "You arrive at a pipeline crossing with an iridium-192 camera, a decayed source, and a boundary to rope. Work the numbers the way a Level II works them - one step at a time, no guessing.",
+  "steps": [
+   {
+    "prompt": "The source certificate reads 80 Ci, assayed 148 days ago. Ir-192's half-life is about 74 days. What is the activity tonight?",
+    "options": [
+     "40 Ci",
+     "20 Ci",
+     "10 Ci"
+    ],
+    "correct": 1,
+    "feedback": "148 ÷ 74 = 2 half-lives. 80 Ci → 40 Ci after one, → 20 Ci after two: A = 80 × (½)² = 20 Ci. Build the halving table before you build the exposure."
+   },
+   {
+    "prompt": "With the source exposed, your survey meter reads 60 mR/h at 10 ft. Estimate the reading at 20 ft.",
+    "options": [
+     "30 mR/h",
+     "15 mR/h",
+     "7.5 mR/h"
+    ],
+    "correct": 1,
+    "feedback": "Distance doubled, so intensity drops to one quarter, not one half: 60 × (10/20)² = 15 mR/h. Radiation follows the inverse SQUARE of distance."
+   },
+   {
+    "prompt": "Your boundary must sit where the field is 2 mR/h. The meter reads 32 mR/h at 10 ft. How far out does the rope go?",
+    "options": [
+     "40 ft",
+     "160 ft",
+     "20 ft",
+     "80 ft"
+    ],
+    "correct": 0,
+    "feedback": "Rearrange I₁d₁² = I₂d₂²: d₂ = d₁ × √(I₁/I₂) = 10 × √(32/2) = 10 × √16 = 40 ft. Then verify with the meter - the calculation locates the rope, the survey confirms it."
+   },
+   {
+    "prompt": "The job paperwork wants tonight's 20 Ci activity expressed in disintegrations per second, in scientific notation.",
+    "options": [
+     "7.4 × 10¹¹ dps",
+     "7.4 × 10¹⁰ dps",
+     "2.0 × 10¹⁰ dps",
+     "3.7 × 10¹¹ dps"
+    ],
+    "correct": 0,
+    "feedback": "1 Ci = 3.7 × 10¹⁰ dps, so 20 Ci = 20 × 3.7 × 10¹⁰ = 74 × 10¹⁰ = 7.4 × 10¹¹ dps. Multiply the fronts, then re-normalize so the front number sits between 1 and 10."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Simplify: 2³ × 2⁴",
+   "options": [
+    "128",
+    "4096",
+    "14",
+    "64"
+   ],
+   "correct": 0,
+   "explanation": "Multiplying powers of the same base adds the exponents: 2³ × 2⁴ = 2⁷ = 128."
+  },
+  {
+   "question": "What is √225?",
+   "options": [
+    "25",
+    "15",
+    "12.5",
+    "112.5"
+   ],
+   "correct": 1,
+   "explanation": "15 × 15 = 225. Knowing perfect squares through 20 lets you sanity-check inverse square distance answers in your head."
+  },
+  {
+   "question": "Write 0.00052 in scientific notation.",
+   "options": [
+    "5.2 × 10⁻⁴",
+    "5.2 × 10⁴",
+    "52 × 10⁻⁵",
+    "0.52 × 10⁻³"
+   ],
+   "correct": 0,
+   "explanation": "Slide the decimal right four places to get 5.2, so the exponent is −4. The front number must be at least 1 and less than 10, which rules out 52 and 0.52."
+  },
+  {
+   "question": "A source produces 144 mR/h at 5 ft. Using the inverse square law, what is the intensity at 15 ft?",
+   "options": [
+    "48 mR/h",
+    "16 mR/h",
+    "432 mR/h",
+    "9 mR/h"
+   ],
+   "correct": 1,
+   "explanation": "I₂ = I₁ × (d₁/d₂)² = 144 × (5/15)² = 144 × 1/9 = 16 mR/h. Tripling the distance cuts intensity by a factor of nine, not three."
+  },
+  {
+   "question": "Geometric unsharpness is Ug = F·t/d. Rearranged to solve for the source-to-object distance d, the formula becomes:",
+   "options": [
+    "d = F·t/Ug",
+    "d = Ug/(F·t)",
+    "d = Ug·F·t",
+    "d = F/(t·Ug)"
+   ],
+   "correct": 0,
+   "explanation": "Multiply both sides by d, then divide both sides by Ug: d = F·t/Ug. Substituting back into the original equation confirms the balance."
+  }
+ ],
+ "references": [
+  "CP-105-2024 RT Topical Outline, Basic Radiographic Physics 1.4 (basic math review - exponents, square root, etc.)",
+  "Activity unit definitions: 1 Ci = 3.7 × 10¹⁰ dps; 1 Bq = 1 dps (reference values)",
+  "Inverse square law and geometric unsharpness relationships as applied in codes such as ASME BPVC Section V"
+ ]
+}

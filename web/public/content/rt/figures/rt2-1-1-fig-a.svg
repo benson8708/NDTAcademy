@@ -1,0 +1,63 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Attenuation Builds the Image, Scatter Degrades It</text>
+
+  <!-- source -->
+  <circle cx="400" cy="78" r="9" fill="#F2A33C" stroke="#0A2342" stroke-width="2"/>
+  <text x="420" y="74" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">Source</text>
+
+  <!-- collimator -->
+  <rect x="330" y="96" width="58" height="9" fill="#0A2342"/>
+  <rect x="412" y="96" width="58" height="9" fill="#0A2342"/>
+  <text x="478" y="106" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">Collimator</text>
+
+  <!-- beam fan -->
+  <polygon points="388,105 412,105 560,168 280,168" fill="#E8F1FB"/>
+
+  <!-- primary rays: equal incident width, transmitted width falls with thickness -->
+  <line x1="398" y1="106" x2="348" y2="250" stroke="#1B82E8" stroke-width="3.5"/>
+  <line x1="348" y1="250" x2="322" y2="328" stroke="#1B82E8" stroke-width="3"/>
+  <polygon points="316,326 322,334 328,325" fill="#1B82E8"/>
+  <line x1="400" y1="106" x2="412" y2="250" stroke="#1B82E8" stroke-width="3.5"/>
+  <line x1="412" y1="250" x2="419" y2="328" stroke="#1B82E8" stroke-width="1.8"/>
+  <polygon points="413,327 420,334 424,325" fill="#1B82E8"/>
+  <line x1="403" y1="106" x2="472" y2="250" stroke="#1B82E8" stroke-width="3.5"/>
+  <line x1="472" y1="250" x2="508" y2="328" stroke="#1B82E8" stroke-width="0.9"/>
+  <polygon points="502,327 510,333 508,323" fill="#1B82E8"/>
+
+  <!-- steel step block (thickness increases left to right) -->
+  <path d="M 280 210 L 373 210 L 373 190 L 466 190 L 466 168 L 560 168 L 560 250 L 280 250 Z" fill="#5A6B7E" stroke="#0A2342" stroke-width="2"/>
+  <text x="572" y="200" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">Steel step block</text>
+  <text x="572" y="220" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">thicker → fewer</text>
+  <text x="572" y="240" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">photons transmitted</text>
+
+  <!-- Compton scatter rays -->
+  <line x1="370" y1="225" x2="295" y2="336" stroke="#D14343" stroke-width="2" stroke-dasharray="7 5"/>
+  <polygon points="290,332 293,344 300,336" fill="#D14343"/>
+  <line x1="450" y1="228" x2="596" y2="338" stroke="#D14343" stroke-width="2" stroke-dasharray="7 5"/>
+  <polygon points="592,330 602,342 590,342" fill="#D14343"/>
+  <line x1="430" y1="200" x2="540" y2="120" stroke="#D14343" stroke-width="2" stroke-dasharray="7 5"/>
+  <polygon points="534,116 546,116 538,128" fill="#D14343"/>
+  <text x="548" y="112" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#D14343">backscatter</text>
+  <text x="604" y="320" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">Compton scatter</text>
+  <text x="604" y="340" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#D14343">= fog on film</text>
+
+  <!-- film strip with density zones -->
+  <rect x="270" y="332" width="300" height="30" fill="#E8F1FB" stroke="#0A2342" stroke-width="2"/>
+  <rect x="280" y="336" width="93" height="22" fill="#0A2342" opacity="0.95"/>
+  <rect x="373" y="336" width="93" height="22" fill="#0A2342" opacity="0.6"/>
+  <rect x="466" y="336" width="94" height="22" fill="#0A2342" opacity="0.3"/>
+  <text x="240" y="352" text-anchor="end" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">Film</text>
+  <text x="326" y="384" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">darkest</text>
+  <text x="420" y="384" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">mid density</text>
+  <text x="513" y="384" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">lightest</text>
+  <text x="420" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#1B82E8">Differential absorption = subject contrast</text>
+
+  <!-- attenuation notes -->
+  <text x="55" y="170" text-anchor="start" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#0A2342">I = I₀ e^(−µx)</text>
+  <text x="55" y="198" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Each HVL cuts intensity</text>
+  <text x="55" y="218" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">in half. For Ir-192:</text>
+  <text x="55" y="238" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">HVL ≈ 0.5 in. steel</text>
+  <text x="55" y="258" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">≈ 4.8 mm lead</text>
+  <text x="55" y="285" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">TVL ≈ 3.32 × HVL</text>
+</svg>

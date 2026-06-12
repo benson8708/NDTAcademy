@@ -1,0 +1,133 @@
+{
+ "lessonId": "ut1-5-3",
+ "title": "Air-Coupled Testing Overview",
+ "narrationScript": "Air-coupled testing is the method that throws away the couplant entirely. No gel, no water, nothing wet touches the part. The sound travels through air from the probe to the part and through air again on the way out. That sounds like the dream, no mess, no contamination, no surface prep. But air fights back hard, and understanding why is the whole lesson. Go back to impedance. Acoustic impedance is density times velocity, and it measures how hard a material resists being pushed by a sound wave. Air has an extremely low impedance because it is light and sound moves through it slowly, only about three hundred thirty meters per second. A solid like steel has an impedance tens of thousands of times higher. When sound tries to cross a boundary between two materials with wildly different impedances, almost all of it reflects and only a sliver gets through. We saw this with steel and air in contact testing, where the air gap reflects nearly one hundred percent and that is why we need couplant. Air coupling runs straight into that same wall, twice. The beam loses enormous energy entering the part and loses it again leaving the part. The total transmission loss across two air to solid interfaces can be over one hundred decibels. To put that in perspective, one hundred decibels is a factor of one hundred thousand in amplitude, gone. So how does anyone make this work? Three moves. First, lower the frequency, way down. Most air coupled work runs well below one megahertz, often in the tens to a few hundred kilohertz, because low frequency sound travels through air with far less attenuation. Second, use specially built transducers designed to launch energy into air efficiently, with matching layers tuned for air rather than for metal. Third, and most important, abandon pulse echo and use through transmission. One probe on one side sends, a second probe on the far side receives, and you watch how much energy makes it through. You are not timing an echo, you are measuring the shadow that a flaw casts by blocking the sound. Because there is no echo round trip, through transmission gives you no depth information, and it needs access to both sides and careful alignment of the two probes. Now the catch that decides everything. Air coupling only works when the part itself does not add too much loss on top of the interface loss. That rules out thick metal. It works beautifully on materials that are light, low impedance, and not too attenuating in thin sections, which means composites, honeycomb sandwich panels, foam core, plywood, paper, cardboard, food products, rubber, and some plastics. In aerospace, air coupled through transmission scans large composite skins and bonded honeycomb for disbonds and delaminations, and it does it without touching the part with water that the composite might absorb. That no contact, no couplant, no contamination advantage is the entire reason the method exists. It is fast over big flat areas, it suits porous or water sensitive materials, and it automates easily for production lines. Compare the three methods we have covered. Contact uses a thin couplant film and a steady hand, single sided, portable, the field workhorse. Immersion uses a water path for constant coupling, angle steering, focusing, and full imaging, the shop floor production tool. Air coupling uses no couplant at all but pays a steep energy penalty, so it is limited to low impedance, low attenuation materials in through transmission, where its no contact nature is worth the loss. Each method is just a different answer to the same question, how do we get sound across the gap between the probe and the part. Contact bridges the gap with gel. Immersion bridges it with water. Air coupling refuses to bridge it and engineers around the loss instead. Know which one the job calls for and why.",
+ "imagePrompt": "Two air-coupled ultrasonic transducers mounted on a C-frame above and below a large white aerospace composite honeycomb panel on a production scanning line, a clear air gap between each probe and the panel surface, no liquid present, a screen showing a through-transmission C-scan.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Coupling Through Air",
+   "body": "**Air-coupled testing** removes the couplant entirely. No gel, no water, nothing wet touches the part — the sound travels through **air** from the probe to the part, and through air again on the way back out. The appeal is obvious: **no mess, no contamination, no liquid the part can absorb, and minimal surface preparation**.\n\nThe difficulty is just as obvious once you remember the physics. In contact testing we spend real effort defeating a tiny trapped air layer with couplant, because a **solid-to-air interface reflects nearly all of the sound**. Air-coupled testing chooses to send the sound through air on purpose — and it pays for that choice with a severe energy penalty at every interface.\n\nThe entire method is therefore an exercise in **engineering around loss**: special transducers, very low frequencies, and a through-transmission arrangement instead of pulse-echo. Understanding *why* the loss is so large is the key to understanding where air coupling can and cannot be used."
+  },
+  {
+   "type": "text",
+   "heading": "The Impedance Problem",
+   "body": "**Acoustic impedance** is **Z = ρ × v** (density times velocity) — a measure of how strongly a material resists the motion a sound wave tries to impose. Air has an **extremely low** impedance: it is light, and sound crawls through it at only about **330 m/s**. A solid such as steel has an impedance **tens of thousands of times higher**.\n\nWhen sound crosses a boundary between two materials of very different impedance, the reflection follows **R = ((Z₂ − Z₁) ÷ (Z₂ + Z₁))²**. With air on one side, Z₁ and Z₂ are wildly mismatched, so **R is almost 1** — nearly all the energy reflects and only a sliver transmits. This is the same effect that makes a steel-to-air gap reflect close to 100% in contact work.\n\nAir coupling runs into that wall **twice**: the beam loses enormous energy **entering** the part and loses it again **leaving** the part. The combined transmission loss across **two air-to-solid interfaces can exceed 100 dB** — and since +20 dB is a factor of ten, **100 dB is a factor of about 100,000 in amplitude** simply gone to the two interfaces. That single number explains every design choice that follows."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-5-3-fig-a",
+   "caption": "Through-transmission air coupling: the beam crosses two huge air-to-solid impedance steps, so only a tiny fraction of the energy reaches the receiver — and a flaw casts a shadow."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Why air coupling is so lossy",
+   "body": "Acoustic impedance **Z = ρv** is tiny for air and enormous for solids. At each air-to-solid interface the reflection **R = ((Z₂−Z₁)/(Z₂+Z₁))²** is nearly 1, so almost nothing crosses. Two interfaces in series can lose **over 100 dB** — roughly a factor of **100,000** in amplitude. Everything about air-coupled UT is a workaround for that loss."
+  },
+  {
+   "type": "text",
+   "heading": "How the Method Is Made to Work",
+   "body": "Three engineering moves make air coupling practical despite the loss:\n\n- **Drop the frequency — far.** Most air-coupled work runs **well below 1 MHz**, often from the **tens of kilohertz to a few hundred kilohertz**. Low frequencies travel through air with far less loss and attenuation than the megahertz frequencies used in contact and immersion — air absorption climbs steeply with frequency.\n- **Use purpose-built transducers.** These probes carry **matching layers tuned for air** (not for metal) and high-efficiency designs that launch as much energy as possible into such a low-impedance medium.\n- **Abandon pulse-echo for through-transmission.** A **transmitter on one side** and a **receiver on the opposite side** measure how much energy makes it **through** the part.\n\nBecause through-transmission watches transmitted energy rather than a returning echo, it has two consequences you must accept: it gives **no depth information** (only that something is blocking the path), and it requires **access to both sides** with the two probes **carefully aligned**. A flaw is found as a **drop in transmitted signal** — the shadow it casts — exactly the principle Sokolov first proposed for metals, here adapted to coupling through air."
+  },
+  {
+   "type": "text",
+   "heading": "What Air Coupling Is Good For",
+   "body": "Air coupling only works when the **part itself** does not pile too much attenuation on top of the interface loss. That **rules out thick metal**, which both reflects almost everything at the surface and attenuates what little enters.\n\nIt works well on materials that are **light, low in impedance, and not too attenuating in thin sections** — where the impedance step from air is smaller and the part lets the weak signal through:\n\n- **Composites** and **bonded honeycomb sandwich** panels\n- **Foam core**, **rubber**, and some **plastics**\n- **Plywood, paper, cardboard**, textiles, and even **food products**\n\nIn **aerospace**, air-coupled through-transmission scans large **composite skins and honeycomb structures** for **disbonds and delaminations** — without wetting a part that might absorb water. That **no-contact, no-couplant, no-contamination** character is the whole reason the method exists: it is fast over large flat areas, ideal for **porous or water-sensitive** materials, and easy to **automate** on a production line. Its honest limits are the loss budget (thin, low-attenuation parts only), the need for **two-sided access**, and **no depth reading**."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-5-3-fig-b",
+   "caption": "The same problem, three answers: contact bridges the gap with gel, immersion with a water path, and air coupling engineers around the loss with low frequency and through-transmission."
+  },
+  {
+   "type": "table",
+   "caption": "Choosing among the basic coupling methods.",
+   "headers": ["Feature", "Contact", "Immersion", "Air-coupled"],
+   "rows": [
+    ["Couplant", "Thin gel/oil film", "Water path", "None — air"],
+    ["Typical technique", "Pulse-echo, 1 side", "Pulse-echo or through-trans.", "Through-transmission, 2 sides"],
+    ["Frequency range", "1–10 MHz typical", "1–25 MHz", "Tens of kHz to <1 MHz"],
+    ["Depth information", "Yes", "Yes", "No"],
+    ["Best materials", "Metals, welds, pipe", "Metals: forgings, plate", "Composites, honeycomb, foam, paper"],
+    ["Key advantage", "Portable, fast, single-side", "Constant coupling, imaging", "No contact, no contamination"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Same Question, Three Answers",
+   "body": "Step back and the three basic methods are simply different answers to one question: **how do we get sound across the gap between the probe and the part?**\n\n- **Contact** bridges the gap with a thin film of **couplant** — portable and single-sided, the field workhorse for metals and welds.\n- **Immersion** bridges the gap with a **water path** — constant coupling, beam steering, focusing, and full C-scan imaging, the shop-floor tool for production volume.\n- **Air coupling** refuses to bridge the gap and instead **engineers around the loss** with very low frequency, efficient transducers, and through-transmission — accepting a huge energy penalty in exchange for **no contact and no contamination**, limited to thin, low-impedance, low-attenuation materials.\n\nNone of these is 'best.' Each is the right tool for a particular job, and a competent technician chooses by matching the part, the material, the access, and the information needed against what each method can deliver. Know which one the job calls for — and, just as importantly, **why**."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-5-3-fig-a",
+   "title": "Air-coupled through-transmission and the impedance barrier",
+   "file": "ut1-5-3-fig-a.svg"
+  },
+  {
+   "id": "ut1-5-3-fig-b",
+   "title": "Three coupling methods compared",
+   "file": "ut1-5-3-fig-b.svg"
+  }
+ ],
+ "interactive": null,
+ "checkQuestions": [
+  {
+   "question": "Why is coupling ultrasound through air so much harder than through water or gel?",
+   "options": [
+    "Air has too high an acoustic impedance",
+    "Air has an extremely low acoustic impedance, so the mismatch with a solid reflects nearly all the energy at each interface",
+    "Sound travels too fast in air",
+    "Air absorbs only high-frequency sound, never low-frequency"
+   ],
+   "correct": 1,
+   "explanation": "Acoustic impedance Z = ρv is tiny for air and huge for solids; the large mismatch makes R ≈ 1 at each air-to-solid interface, so almost all the energy reflects and very little crosses."
+  },
+  {
+   "question": "The combined transmission loss across two air-to-solid interfaces in air-coupled UT can exceed 100 dB. In amplitude terms, 100 dB corresponds to a factor of about:",
+   "options": ["100", "1,000", "100,000", "10"],
+   "correct": 2,
+   "explanation": "Each 20 dB is a factor of ten in amplitude, so 100 dB is 10⁵ = 100,000. That enormous loss is why air coupling needs low frequencies, special probes, and through-transmission."
+  },
+  {
+   "question": "Air-coupled testing almost always uses which technique, and why?",
+   "options": [
+    "Pulse-echo, because it gives precise depth readings",
+    "Through-transmission, because measuring transmitted energy tolerates the huge interface losses better than waiting for a weak return echo",
+    "Immersion, because water improves air coupling",
+    "Surface-wave, because it avoids both interfaces"
+   ],
+   "correct": 1,
+   "explanation": "A transmitter and a receiver on opposite sides measure transmitted energy; a flaw shows up as a drop (shadow). The trade-offs are no depth information and the need for two-sided access with aligned probes."
+  },
+  {
+   "question": "Which group of materials is air-coupled UT best suited to inspect?",
+   "options": [
+    "Thick carbon-steel forgings",
+    "Composites, bonded honeycomb, foam core, and paper or cardboard",
+    "Cast iron engine blocks",
+    "Heavy-wall pressure-vessel welds"
+   ],
+   "correct": 1,
+   "explanation": "Air coupling works only where the part adds little extra loss on top of the interface loss — thin, light, low-impedance, low-attenuation materials such as composites, honeycomb, foam, and paper. Thick metal reflects and attenuates too much."
+  },
+  {
+   "question": "Compared with contact and immersion, the defining advantage of air-coupled testing is that it:",
+   "options": [
+    "Provides the most accurate depth measurement",
+    "Requires no couplant and no contact, avoiding contamination of porous or water-sensitive parts",
+    "Uses the highest frequencies for the finest resolution",
+    "Penetrates the greatest thickness of steel"
+   ],
+   "correct": 1,
+   "explanation": "Air coupling's whole reason for existing is no-contact, no-couplant, no-contamination inspection — valuable for composites and other water-sensitive materials, at the cost of a large energy penalty and no depth reading."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, Basic UT Course §4.3 (Air coupling)",
+  "Acoustic impedance Z = ρv; interface reflection R = ((Z₂−Z₁)/(Z₂+Z₁))²; air ≈ 330 m/s",
+  "dB relationship: 20 dB per factor of ten in amplitude (100 dB ≈ 10⁵)",
+  "General practice: air-coupled through-transmission of composites, honeycomb, and porous materials in aerospace"
+ ]
+}

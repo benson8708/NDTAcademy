@@ -1,0 +1,141 @@
+{
+  "lessonId": "basic-5-3",
+  "title": "Neutron Radiographic Testing: Fundamentals",
+  "narrationScript": "Neutron radiography keeps everything you learned about radiographic imaging — a source, a specimen, a detector, and a shadow image built from differential attenuation — and swaps the radiation. Neutrons carry no charge, so they ignore the electron cloud that stops X-rays and interact only with nuclei. Attenuation no longer climbs with atomic number: hydrogen, boron, lithium, cadmium, and gadolinium stop thermal neutrons cold, while lead, bismuth, and steel pass them almost untouched. That inversion lets a neutron beam image an O-ring, adhesive, corrosion product, or explosive charge sealed inside metal. You will follow the beam from source to image: reactors for flux and quality, accelerators that switch off, and isotopes like californium-252 that never do; moderators that slow fission-fast neutrons to thermal speed; collimators whose L over D ratio sets sharpness. Then detection: gadolinium screens exposing film directly, transfer foils of dysprosium or indium that carry the image out of a gamma-contaminated beam, and scintillators. Safety closes the lesson, with layered shielding, activation surveys, and dosimetry built for neutrons.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "The Radiograph, Inverted: Same Geometry, New Radiation",
+      "body": "Neutron radiography (NR) keeps the architecture you built across the last two lessons — a radiation source, a test object, differential attenuation, and a detector recording the transmitted shadow — and changes only the radiation. The exponential attenuation law still governs, and image sharpness is still a geometry problem. What changes is *how the radiation and the material interact*, and that change inverts the contrast rules.\n\nAn X-ray photon is stopped mainly by the **electron cloud**: attenuation climbs steadily with atomic number and density, which is why lead shields well and steel images dark. A **neutron carries no electric charge** and has about the mass of a proton, so the electron cloud is invisible to it. Neutrons interact with **nuclei**, and the probability of interaction — the **cross section**, measured in **barns (10⁻²⁴ cm²)** — is a property of the particular nuclide, not of its place in the periodic table. Hydrogen, lithium, boron, cadmium, and gadolinium present enormous cross sections to slow neutrons; lead, bismuth, and most structural metals present small ones.\n\nThe practical consequence: a neutron beam photographs **hydrogenous and certain absorber materials inside metal** — an elastomer O-ring sealed in a stainless valve body, adhesive in a bonded joint, corrosion product in a honeycomb panel, the explosive train in an ejection-seat cartridge — exactly the targets X-radiography loses in the glare of the surrounding metal. Thermal NR is the workhorse practice: **thermal neutrons** are in thermal equilibrium with room-temperature matter, with a most probable energy near **0.025 eV** and a speed of about **2200 m/s**. The next lesson covers imaging practice and applications; this one builds the fundamentals — interactions, sources, detectors, and safety."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-5-3-fig-a",
+      "caption": "Why NR exists: X-ray attenuation (blue) rises smoothly with atomic number, but thermal-neutron attenuation (red) is set nucleus by nucleus. Hydrogen, lithium, boron, cadmium, and gadolinium tower over the trend while lead and bismuth fall far below it — so neutrons image rubber, adhesive, and explosives through metal walls."
+    },
+    {
+      "type": "text",
+      "heading": "How Neutrons Interact with Matter",
+      "body": "Every neutron–matter event belongs to one of two families.\n\n- **Scattering.** In **elastic scattering** the neutron rebounds from a nucleus billiard-ball fashion, the pair keeping their total kinetic energy. The lighter the struck nucleus, the larger the energy transfer — a neutron can hand nearly all its energy to a hydrogen nucleus of almost equal mass. Hydrogen's large scattering cross section is both why hydrogenous materials image so strongly and why they make the best **moderators**. **Inelastic scattering** matters for fast neutrons: part of the kinetic energy briefly excites the nucleus, which sheds it as a gamma ray.\n- **Absorption (capture).** The nucleus swallows the neutron. **Radiative capture (n,γ)** leaves an excited nucleus that emits prompt gamma rays — the reaction behind gadolinium converter screens, activation foils, and the induced radioactivity discussed under safety. Some light nuclides eject a charged particle instead: **¹⁰B(n,α)** and **⁶Li(n,α)** power most neutron counters and scintillators, and **³He(n,p)** powers proportional counters. Fission in uranium-235 is capture's energetic extreme.\n\nAttenuation keeps its familiar form, **I = I₀e^(−Σt)**, where the **macroscopic cross section Σ = Nσ** — atoms per cubic centimeter times the cross section — plays exactly the role the attenuation coefficient μ played in RT.\n\nNeutrons are classified by kinetic energy, and absorption cross sections generally **fall as speed rises** (the 1/v rule): **cold** below about 0.01 eV, **thermal** near 0.025 eV, **epithermal** from roughly 0.4 eV to 10 keV, and **fast** above that — up to the 14 MeV of a D-T generator. Cadmium absorbs voraciously below about **0.4 eV** and turns nearly transparent above it; that **cadmium cutoff** lets a pair of activation foils, one bare and one cadmium-covered, measure a beam's thermal content as the **cadmium ratio**. And because every practical source is born fast, every thermal-NR facility must **moderate**: repeated elastic collisions in hydrogen-rich material — water, polyethylene, paraffin — or in graphite, beryllium, or heavy water walk MeV neutrons down to thermal energy."
+    },
+    {
+      "type": "text",
+      "heading": "Sources: Reactors, Accelerators, and Isotopes",
+      "body": "No source emits thermal neutrons directly, so a thermal-NR facility is always **source + moderator + collimator**, with filters and a gamma shield as the beam requires.\n\n- **Nuclear reactors.** Uranium-235 fission releases neutrons averaging about 2 MeV; the moderated core feeds a beam tube with an intense thermal population. Reactors deliver the **highest image-plane thermal flux — on the order of 10⁵ to 10⁸ n/cm²·s** — buying short exposures and the finest radiographic quality. The price is a fixed, licensed facility: parts travel to the beam.\n- **Accelerators.** Sealed-tube **D-T generators** make 14 MeV neutrons by the ³H(d,n)⁴He reaction; Van de Graaff and similar machines use (d,Be) and related reactions. Yields are moderate, and the decisive virtue is operational: **switch it off and the radiation stops**, simplifying storage, transport, and access control.\n- **Isotopic sources.** **Californium-252** dominates: it emits about **2.3 × 10¹² n/s per gram** by spontaneous fission, with a fission-spectrum average energy near 2.1 MeV and a **2.65-year half-life**, all from a capsule small enough to moderate efficiently. **Americium-241/beryllium** trades low (α,n) yield for a 432-year service life; **antimony-124/beryllium** (γ,n) emits unusually low-energy (~24 keV) neutrons that thermalize easily, but its 60-day half-life means scheduling around reactor re-activation. Isotopic facilities are compact and field-portable, but fluxes are orders of magnitude below a reactor's — exposures stretch to hours — and the source **never turns off**.\n\nThe **collimator** turns the moderated cloud into a usable beam, and its **L/D ratio** — collimator length over inlet aperture diameter — is the most quoted figure of beam quality. It limits geometric unsharpness exactly as focal-spot size did in RT: **U_g ≈ ℓ(D/L)** for an object-to-detector separation ℓ. Working beams run from L/D of a few tens (portable isotopic units) to several hundred (reactor beams), measured per **ASTM E803**; raising L/D sharpens the image and starves it of flux. Complete beam characterization adds thermal content (cadmium ratio) and **gamma contamination**, since every capture and every fission source contaminates the beam with photons the detector may also record."
+    },
+    {
+      "type": "table",
+      "caption": "Thermal-NR source families compared at the familiarity level.",
+      "headers": ["Source", "How neutrons are produced", "Typical character", "Operational notes"],
+      "rows": [
+        ["Nuclear reactor", "U-235 fission; moderated core feeds a beam tube", "Highest image-plane flux (~10⁵–10⁸ n/cm²·s); best image quality; minutes-scale exposures", "Fixed, licensed facility — the work comes to the beam"],
+        ["Accelerator (D-T tube, Van de Graaff)", "³H(d,n)⁴He at 14 MeV; (d,Be) reactions", "Moderate flux; good quality with longer exposures", "Switches off — simplest storage, transport, and access control"],
+        ["Californium-252", "Spontaneous fission; ~2.3 × 10¹² n/s per gram; t½ = 2.65 yr", "Low flux; exposures run to hours; modest L/D", "Physically tiny and portable; always on; replaced as it decays"],
+        ["Americium-241/beryllium", "(α,n) on beryllium; t½ = 432 yr", "Lowest yield of the common choices", "Decades of service life; always on"],
+        ["Antimony-124/beryllium", "(γ,n) on beryllium; t½ = 60 d", "Low-energy (~24 keV) neutrons — easiest to thermalize", "Short-lived; re-activated by reactor irradiation; always on"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Imaging Detectors: Direct, Transfer, Scintillator, Track-Etch",
+      "body": "Film barely notices neutrons, so every imaging detector pairs a **converter** — a material whose huge capture cross section turns neutrons into something recordable — with the recording medium.\n\n- **Direct exposure.** A **gadolinium screen** (a thin foil or vapor-deposited layer, around 25 µm) sits in intimate vacuum-cassette contact with **single-emulsion film**, both in the beam. Natural gadolinium's thermal cross section of roughly **49,000 barns** — about 255,000 barns for the Gd-157 isotope — is the highest of any natural element; each capture ejects **internal-conversion electrons near 70 keV** that expose the adjacent emulsion. Direct exposure gives NR's **finest resolution**, but the film records beam gammas too, so it demands a clean, low-gamma beam and a non-radioactive object.\n- **Transfer (indirect) exposure.** A foil of **dysprosium** or **indium** goes into the beam **alone**. Capture activates it — **Dy-165 (t½ = 2.34 h)** or **In-116m (t½ = 54 min)** — building an activation image in the metal. The foil is then carried to a darkroom cassette and pressed against film, which its decay radiation exposes over a few half-lives. Because the film never sees the beam, the technique is **completely insensitive to gamma radiation** — the method of choice for **radioactive specimens** such as irradiated reactor fuel and activated hardware.\n- **Scintillator screens.** **⁶LiF/ZnS(Ag)** converts the capture reaction's alpha and triton into light, exposing film one to two orders of magnitude faster than direct gadolinium at some cost in resolution — and, paired with cameras, imaging plates, and flat panels (with gadolinium oxysulfide as the other common phosphor), it is the gateway to real-time and digital NR.\n- **Track-etch detectors.** A nitrocellulose sheet against a boron or lithium converter records charged-particle damage trails that chemical etching makes visible — no darkroom, and utterly blind to beta and gamma radiation, which suits nuclear-fuel work.\n\nImage quality is verified with the **ASTM E545** devices — the **beam purity indicator (BPI)** and **sensitivity indicator (SI)** exposed alongside the object — NR's counterpart of the penetrameter discipline you carry through RT."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-5-3-fig-b",
+      "caption": "Direct exposure puts the gadolinium screen and single-emulsion film in the beam together: capture electrons expose the film immediately, giving the finest resolution but inheriting any gamma in the beam. Transfer exposure activates a dysprosium or indium foil alone, then lets the foil expose film in a darkroom — the gamma-blind route for radioactive objects."
+    },
+    {
+      "type": "text",
+      "heading": "Nonimaging Detectors: Counting Without a Picture",
+      "body": "Beams must be measured, facilities surveyed, and doses tracked — work done by detectors that count rather than picture.\n\n- **Gas-filled counters.** **³He proportional counters** exploit ³He(n,p), and **BF₃ tubes** exploit ¹⁰B(n,α); each capture becomes a large charged-particle pulse easily discriminated from gamma background. They are the thermal-flux workhorses for beam measurement and area monitoring. **Fission chambers**, lined with uranium-235, tolerate the extreme fluxes near a reactor core.\n- **Scintillation counters.** Lithium-6-loaded glass and LiI(Eu) crystals count neutrons through the same (n,α) conversion, read by photomultipliers.\n- **Activation foils.** Gold and indium foils acquire radioactivity in proportion to the neutron fluence they received and are counted afterward — flux mapping with nothing but metal in the beam. Exposed **bare and cadmium-covered in pairs**, they yield the cadmium ratio that grades a beam's thermal content.\n- **Moderated survey meters.** A thermal counter buried in a polyethylene sphere — the 'rem ball' — responds to fast through thermal neutrons with a weighting that approximates **dose equivalent**, making it the instrument for boundary surveys and shielding-leak checks."
+    },
+    {
+      "type": "callout",
+      "variant": "safety",
+      "title": "The neutron radiographer's reflexes",
+      "body": "Lead alone is a gamma answer to a neutron problem — moderate first, absorb second, and shield the capture gammas last. Anything that sat in the beam is presumed radioactive until a survey clears it. An isotopic source never switches off. And wear dosimetry that can actually see neutrons — an albedo TLD or CR-39 track-etch badge — because a beta-gamma badge alone will not."
+    },
+    {
+      "type": "text",
+      "heading": "Essentials of Safety: Weighting Factors, Layered Shields, and Activation",
+      "body": "Everything from RT safety carries over — time, distance, shielding, posted boundaries, dose limits — but neutrons rewrite the details.\n\n- **Biological effectiveness.** Neutrons deposit energy through recoil protons and capture products: dense ionization that damages tissue far more per unit absorbed dose than photons do. The **radiation weighting factor runs from about 2.5 for thermal neutrons to about 20 near 1 MeV**, against 1 for X- and gamma rays — the same absorbed dose can mean an order of magnitude more dose equivalent.\n- **Layered shielding.** Lead, the reflex shield of RT, is **nearly transparent to fast neutrons**. Effective neutron shielding works in sequence: a **hydrogenous moderator** (water, polyethylene, paraffin, concrete) slows them; a **thermal absorber** (boron, cadmium, lithium) captures them; and a **gamma shield** handles the capture gammas the first two stages create — hydrogen capture emits a 2.2 MeV photon and cadmium's capture photons are harsher still, which is why **borated polyethylene** (boron's capture gamma is a mild 0.48 MeV) is the favorite practical compound, with lead outboard.\n- **Activation.** A neutron beam can make the test object, fixtures, and tools **radioactive** — the same (n,γ) physics the transfer technique exploits on purpose. Nothing leaves the exposure area until it is **surveyed**, and short-lived activity is held for decay before parts return to the shop floor or the aircraft.\n- **Source control.** Reactor and accelerator beams close behind shutters and interlocks, and an accelerator simply switches off. An **isotopic source emits every second of its life**, so it lives in a moderating, borated, gamma-shielded container and moves only under licensed, documented control.\n- **Monitoring.** Dose rates are surveyed with moderated rem meters, and personnel wear neutron-capable dosimetry — **albedo TLDs and CR-39 track-etch badges** — because standard beta-gamma dosimeters underrespond to fast neutrons. The regulatory dose-limit framework you met in RT applies unchanged; what changes is how neutron dose is measured and shielded."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-5-3-fig-a",
+      "title": "Neutron vs. X-ray attenuation by element",
+      "file": "basic-5-3-fig-a.svg"
+    },
+    {
+      "id": "basic-5-3-fig-b",
+      "title": "Direct vs. transfer neutron imaging",
+      "file": "basic-5-3-fig-b.svg"
+    }
+  ],
+  "interactive": null,
+  "checkQuestions": [
+    {
+      "question": "An assembled stainless-steel valve must be examined for a missing internal elastomer O-ring. Neutron radiography can show the O-ring where X-radiography cannot because:",
+      "options": [
+        "Neutrons are charged particles that are steered around the steel housing by its magnetic field",
+        "Thermal-neutron attenuation is set by nuclear cross sections — enormous for hydrogen, modest for steel — so the hydrogenous O-ring attenuates strongly while the metal stays comparatively transparent",
+        "Neutrons travel faster than X-ray photons and therefore penetrate any thickness of metal",
+        "The elastomer fluoresces visibly under neutron bombardment"
+      ],
+      "correct": 1,
+      "explanation": "Neutrons are uncharged and ignore the electron cloud that governs X-ray attenuation, interacting instead with nuclei. Cross sections vary nuclide by nuclide rather than climbing with atomic number, so hydrogen-rich rubber stops thermal neutrons while iron passes them — the inverse of X-ray contrast, and the entire reason NR exists."
+    },
+    {
+      "question": "In neutron radiography, 'thermal' neutrons are neutrons that:",
+      "options": [
+        "Are emitted by sources heated to several hundred degrees Celsius",
+        "Have reached thermal equilibrium with room-temperature matter — a most probable energy near 0.025 eV and a speed of about 2200 m/s",
+        "Carry kinetic energies above 10 keV, up to the 14 MeV of a D-T generator",
+        "Radiate infrared energy detectable by thermographic cameras"
+      ],
+      "correct": 1,
+      "explanation": "Thermal neutrons have been moderated until they share the kinetic energy of the surrounding room-temperature atoms — about 0.025 eV, or 2200 m/s. They dominate NR practice because absorption cross sections generally rise as neutrons slow (the 1/v rule), giving rich contrast and efficient converter-screen response. Energies above 10 keV are fast neutrons."
+    },
+    {
+      "question": "Which neutron source produces neutrons by spontaneous fission, packs an output near 2.3 × 10¹² n/s per gram into a physically tiny capsule, and decays with a half-life of about 2.65 years?",
+      "options": [
+        "Americium-241/beryllium",
+        "Antimony-124/beryllium",
+        "Californium-252",
+        "A deuterium-tritium sealed-tube generator"
+      ],
+      "correct": 2,
+      "explanation": "Cf-252 is the dominant isotopic NR source: spontaneous fission gives it enormous specific yield from a capsule small enough to moderate efficiently, at the price of a 2.65-year half-life and a source that never switches off. Am-241/Be is a long-lived, low-yield (α,n) source; Sb-124/Be is a short-lived (γ,n) source; a D-T generator is an accelerator, not an isotope."
+    },
+    {
+      "question": "An irradiated, gamma-emitting component must be neutron radiographed. The transfer (indirect) imaging technique is preferred because:",
+      "options": [
+        "Only the dysprosium or indium foil enters the beam; it carries the image as induced activity and exposes the film later in a darkroom, so gamma radiation from the beam and the specimen never reaches the film",
+        "The transfer foil amplifies the gamma radiation, shortening the exposure",
+        "Transfer foils provide higher resolution than vapor-deposited gadolinium screens",
+        "The film and foil are exposed together inside a lead-lined cassette that blocks all gamma rays"
+      ],
+      "correct": 0,
+      "explanation": "In the transfer method the activation foil — Dy-165 (t½ 2.34 h) or In-116m (t½ 54 min) — is exposed alone, then pressed against film away from the beam. Since film never sees the beam or the specimen, the image is completely free of gamma fog, which is exactly what a radioactive object demands. Direct gadolinium-screen exposure gives finer resolution but puts the film in the gamma field."
+    },
+    {
+      "question": "A Cf-252 source must be stored in the laboratory between exposures. The correct shielding approach is:",
+      "options": [
+        "A thick lead pig alone — the same container used for an iridium-192 gamma source",
+        "A bare steel vault, relying on inelastic scattering to absorb the neutrons",
+        "A thin cadmium sheet alone, since cadmium has an enormous thermal-neutron cross section",
+        "A hydrogenous moderator to slow the fast fission neutrons, a boron or cadmium layer to capture them, and a gamma shield for the capture gamma rays"
+      ],
+      "correct": 3,
+      "explanation": "Neutron shielding is layered: lead is nearly transparent to fast neutrons, and cadmium only absorbs neutrons that are already thermal — Cf-252 emits them fast, near 2 MeV. So hydrogenous material (water, polyethylene, paraffin) moderates first, boron or cadmium captures second, and a gamma shield handles the capture photons — hydrogen's 2.2 MeV line and cadmium's harsher spectrum — which is why borated polyethylene plus outboard lead is the standard recipe."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §2.6.1 (NR fundamentals: sources — isotopic and neutron; detectors — imaging and nonimaging; nature of penetrating radiation and interactions with matter; essentials of safety)",
+    "ASTM E748, Standard Practices for Thermal Neutron Radiography of Materials (sources, moderation, collimation and L/D, direct and transfer detection methods, summarized)",
+    "ASTM E545, Standard Test Method for Determining Image Quality in Direct Thermal Neutron Radiographic Examination (beam purity indicator and sensitivity indicator)",
+    "ASTM E803, Standard Test Method for Determining the L/D Ratio of Neutron Radiography Beams"
+  ]
+}

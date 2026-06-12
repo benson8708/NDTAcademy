@@ -1,0 +1,100 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="gmfG" filterUnits="userSpaceOnUse" x="-20" y="-20" width="640" height="380">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="gmfHatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <line x1="0" y1="0" x2="0" y2="9" stroke="#ff6b6b" stroke-width="1.1" opacity=".5"/>
+    </pattern>
+    <linearGradient id="gmfFoldGrad" gradientUnits="userSpaceOnUse" x1="341" y1="163" x2="520" y2="278">
+      <stop offset="0" stop-color="#5fe0ff"/>
+      <stop offset=".4" stop-color="#ffc24b"/>
+      <stop offset=".85" stop-color="#ff6b6b"/>
+      <stop offset="1" stop-color="#ff6b6b"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== danger band + zeroed meter glyph (fade 7.4) — painted first, sits behind curve ===== -->
+  <g id="gmfDanger" opacity="0">
+    <rect x="430" y="46" width="136" height="238" fill="#ff6b6b" opacity=".06"/>
+    <rect x="430" y="46" width="136" height="238" fill="url(#gmfHatch)" opacity=".22"/>
+    <line x1="430" y1="46" x2="430" y2="284" stroke="#ff6b6b" stroke-width="1.2" stroke-dasharray="4 5" opacity=".35"/>
+    <text x="500" y="64" text-anchor="middle" font-size="10" letter-spacing="1.5" fill="#ff9a9a" opacity=".9">INTENSE FIELD</text>
+    <!-- survey-meter face, needle pinned at 0 -->
+    <rect x="466" y="108" width="72" height="66" rx="7" fill="rgba(10,30,60,.72)" stroke="#8fb6e0" stroke-opacity=".5" stroke-width="1.3"/>
+    <path d="M478 138 A34 34 0 0 1 526 138" fill="none" stroke="#9fe6ff" stroke-width="1.5" stroke-linecap="round" opacity=".85"/>
+    <g stroke="#9fe6ff" stroke-width="1.3" stroke-linecap="round" opacity=".75">
+      <line x1="478" y1="138" x2="481.5" y2="141.5"/>
+      <line x1="489" y1="130.6" x2="490.9" y2="135.2"/>
+      <line x1="502" y1="128" x2="502" y2="133"/>
+      <line x1="515" y1="130.6" x2="513.1" y2="135.2"/>
+      <line x1="526" y1="138" x2="522.5" y2="141.5"/>
+    </g>
+    <text x="475" y="134" text-anchor="end" font-size="8.5" fill="#ff9a9a">0</text>
+    <line x1="502" y1="162" x2="483" y2="143" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="502" cy="162" r="2.6" fill="#ff6b6b"/>
+  </g>
+
+  <!-- ===== axes (draw 0.6) ===== -->
+  <path id="gmfAxes" d="M72 284 L72 42 M67.5 50 L72 42 L76.5 50 M72 284 L566 284 M558 279.5 L566 284 L558 288.5 M104 284 L104 290 M520 284 L520 290"
+    fill="none" stroke="#8fb6e0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" opacity=".85"
+    pathLength="100" stroke-dasharray="100 110" stroke-dashoffset="100"/>
+
+  <!-- static axis labels (appear with panel) -->
+  <g fill="#9fe6ff">
+    <text x="34" y="163" transform="rotate(-90 34 163)" text-anchor="middle" font-size="11.5" letter-spacing="1.2" opacity=".9">METER READING</text>
+    <text x="305" y="307" text-anchor="middle" font-size="11.5" letter-spacing="1.2" opacity=".9">TRUE DOSE RATE</text>
+    <text x="104" y="305" text-anchor="middle" font-size="10.5" letter-spacing="1" opacity=".75">LOW</text>
+    <text x="520" y="305" text-anchor="middle" font-size="10.5" letter-spacing="1" opacity=".75">EXTREME</text>
+  </g>
+
+  <!-- ===== ideal linear response, dashed (draw 1.2) ===== -->
+  <path id="gmfIdeal" d="M72.0 284.0 L79.8 279.6 M85.9 276.1 L93.7 271.7 M99.8 268.2 L107.7 263.8 M113.7 260.3 L121.6 255.9 M127.7 252.4 L135.5 248.0 M141.6 244.5 L149.4 240.1 M155.5 236.6 L163.3 232.2 M169.4 228.7 L177.2 224.3 M183.3 220.8 L191.1 216.4 M197.2 212.9 L205.0 208.5 M211.1 205.0 L219.0 200.6 M225.0 197.1 L232.9 192.6 M239.0 189.2 L246.8 184.7 M252.9 181.3 L260.7 176.8 M266.8 173.4 L274.6 168.9 M280.7 165.5 L288.5 161.0 M294.6 157.6 L302.4 153.1 M308.5 149.7 L316.4 145.2 M322.4 141.8 L330.3 137.3 M336.4 133.9 L344.2 129.4 M350.3 126.0 L358.1 121.5 M364.2 118.1 L372.0 113.6 M378.1 110.2 L385.9 105.7 M392.0 102.3 L399.8 97.8 M405.9 94.4 L413.7 89.9 M419.8 86.5 L427.7 82.0 M433.7 78.6 L441.6 74.1 M447.7 70.7 L455.5 66.2"
+    fill="none" stroke="#8fb6e0" stroke-width="1.5" stroke-linecap="round" opacity=".65"
+    pathLength="100" stroke-dasharray="100 110" stroke-dashoffset="100"/>
+  <text id="gmfIdealLbl" x="208" y="190" transform="rotate(-29.6 208 190)" font-size="10" letter-spacing="1" fill="#8fb6e0" opacity="0">IDEAL RESPONSE</text>
+
+  <!-- ===== pulse-train inset: discrete spikes smear into a blur (fade 2.8) ===== -->
+  <g id="gmfPulses" opacity="0">
+    <rect x="92" y="44" width="170" height="64" rx="8" fill="rgba(10,30,60,.55)" stroke="#8fb6e0" stroke-opacity=".35" stroke-width="1.2"/>
+    <text x="102" y="58" font-size="9" letter-spacing="1.2" fill="#9fe6ff" opacity=".85">PULSE TRAIN</text>
+    <line x1="100" y1="100" x2="254" y2="100" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+    <g stroke="#5fe0ff" stroke-width="1.7" stroke-linecap="round" opacity=".95">
+      <line x1="106" y1="100" x2="106" y2="72"/>
+      <line x1="120" y1="100" x2="120" y2="73"/>
+      <line x1="134" y1="100" x2="134" y2="72"/>
+      <line x1="148" y1="100" x2="148" y2="74"/>
+      <line x1="159" y1="100" x2="159" y2="73"/>
+      <line x1="168" y1="100" x2="168" y2="75"/>
+      <line x1="176" y1="100" x2="176" y2="73"/>
+      <line x1="182" y1="100" x2="182" y2="76"/>
+      <line x1="187" y1="100" x2="187" y2="74"/>
+      <line x1="191" y1="100" x2="191" y2="76"/>
+    </g>
+    <path d="M194 100 L194 79 Q201 72 208 76 Q216 70 224 75 Q231 69 238 74 Q245 71 250 78 L250 100 Z"
+      fill="#5fe0ff" fill-opacity=".45" stroke="#5fe0ff" stroke-width="1.4" stroke-linejoin="round" filter="url(#gmfG)"/>
+    <path d="M238 100 L238 74 Q245 71 250 78 L250 100 Z" fill="#ff6b6b" opacity=".45"/>
+    <text x="120" y="121" text-anchor="middle" font-size="8.5" letter-spacing="1" fill="#9fe6ff" opacity=".75">DISCRETE</text>
+    <text x="222" y="121" text-anchor="middle" font-size="8.5" letter-spacing="1" fill="#9fe6ff" opacity=".75">SMEARED</text>
+  </g>
+
+  <!-- ===== GM response: rise + roll-over (draw 3.8) ===== -->
+  <path id="gmfCurve" d="M72 284 C102 267 130 252.5 160 236.5 C190 220.5 214 206 240 192 C262 180 284 152 310 152 C327 152 335 156.5 341 163"
+    fill="none" stroke="#5fe0ff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#gmfG)"
+    pathLength="100" stroke-dasharray="100 110" stroke-dashoffset="100"/>
+
+  <!-- ===== fold-back: collapse toward zero (draw 5.2) ===== -->
+  <path id="gmfFold" d="M341 163 C352 175 376 211 402 238 C420 257 446 269 472 273.5 C494 276.5 522 277 552 277"
+    fill="none" stroke="url(#gmfFoldGrad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#gmfG)"
+    pathLength="100" stroke-dasharray="100 110" stroke-dashoffset="100"/>
+
+  <!-- ===== READS ~0 tag on the flattened tail (ping 6.4 + fade) ===== -->
+  <circle id="gmfZero" cx="490" cy="277" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0"/>
+  <g id="gmfZeroTag" opacity="0">
+    <rect x="424" y="228" width="94" height="20" rx="5" fill="rgba(10,30,60,.85)" stroke="#ff6b6b" stroke-opacity=".7" stroke-width="1.2"/>
+    <text x="471" y="242" text-anchor="middle" font-size="11" letter-spacing="1" fill="#ff9a9a">READS ~0</text>
+    <line x1="478" y1="248" x2="489" y2="270" stroke="#ff6b6b" stroke-width="1.2" opacity=".7"/>
+    <circle cx="490" cy="272.5" r="1.8" fill="#ff6b6b"/>
+  </g>
+</svg>

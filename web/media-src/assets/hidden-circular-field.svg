@@ -1,0 +1,179 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="hcfG" filterUnits="userSpaceOnUse" x="-30" y="-30" width="660" height="400">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="hcfGsoft" filterUnits="userSpaceOnUse" x="-30" y="-30" width="660" height="400">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="hcfSteelT" x1="0" y1="76" x2="0" y2="112" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".38" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="hcfSteelB" x1="0" y1="234" x2="0" y2="270" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".38" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <!-- pocket field indicator dial, pivot at (0,7) -->
+    <g id="hcfMeterBody">
+      <circle r="26" fill="#0e2848" fill-opacity=".95" stroke="#8fb6e0" stroke-width="1.5"/>
+      <circle r="21.5" fill="#0a1e3c" fill-opacity=".55" stroke="#8fb6e0" stroke-opacity=".3" stroke-width="1"/>
+      <path d="M-14.12 -5.71 A19 19 0 0 1 14.12 -5.71" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".8"/>
+      <path d="M-1.99 -11.9 A19 19 0 0 1 1.99 -11.9" fill="none" stroke="#5fe0ff" stroke-width="3" opacity=".55"/>
+      <g stroke="#8fb6e0" stroke-width="1.1" opacity=".8">
+        <path d="M-14.12 -5.71 L-16.72 -8.05" fill="none"/>
+        <path d="M-7.73 -10.36 L-9.16 -13.56" fill="none"/>
+        <path d="M0 -12 L0 -16.5" fill="none"/>
+        <path d="M7.73 -10.36 L9.16 -13.56" fill="none"/>
+        <path d="M14.12 -5.71 L16.72 -8.05" fill="none"/>
+      </g>
+      <text x="-19.5" y="-11" text-anchor="middle" font-size="6.5" fill="#9fe6ff" opacity=".75">-10</text>
+      <text x="0" y="-19" text-anchor="middle" font-size="6.5" fill="#9fe6ff" opacity=".75">0</text>
+      <text x="19.5" y="-11" text-anchor="middle" font-size="6.5" fill="#9fe6ff" opacity=".75">+10</text>
+      <text x="0" y="20" text-anchor="middle" font-size="5.5" letter-spacing="1" fill="#9fe6ff" opacity=".6">GAUSS</text>
+    </g>
+  </defs>
+
+  <!-- static divider -->
+  <line x1="24" y1="172" x2="576" y2="172" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="3 6" opacity=".18"/>
+
+  <!-- ===== REVEAL 1 (fade 0.5): top shaft + LONGITUDINAL label ===== -->
+  <g id="hcfLongBar" opacity="0">
+    <rect x="142" y="14" width="156" height="22" rx="5" fill="#0e2848" fill-opacity=".85" stroke="#8fb6e0" stroke-opacity=".5"/>
+    <text x="220" y="29" text-anchor="middle" font-size="11" letter-spacing=".5" fill="#9fe6ff">LONGITUDINAL RESIDUAL</text>
+    <rect x="84" y="76" width="272" height="36" fill="url(#hcfSteelT)"/>
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".15">
+      <line x1="92" y1="88" x2="348" y2="88"/>
+      <line x1="92" y1="96" x2="348" y2="96"/>
+      <line x1="92" y1="104" x2="348" y2="104"/>
+    </g>
+    <line x1="88" y1="81" x2="350" y2="81" stroke="#cfe7ff" stroke-width="1.2" opacity=".22"/>
+    <g stroke="#8fb6e0" stroke-width="1.5" opacity=".65" fill="none">
+      <line x1="84" y1="76" x2="356" y2="76"/>
+      <line x1="84" y1="112" x2="356" y2="112"/>
+    </g>
+    <ellipse cx="84" cy="94" rx="7" ry="18" fill="#122e50" stroke="#8fb6e0" stroke-width="1.3" opacity=".9"/>
+    <ellipse cx="356" cy="94" rx="7" ry="18" fill="#1d4a78" stroke="#8fb6e0" stroke-width="1.3" opacity=".95"/>
+  </g>
+
+  <!-- ===== REVEAL 2 (draw 0.9): internal flux + external return loops ===== -->
+  <path id="hcfLongFlux" fill="none" stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#hcfG)" opacity=".95"
+    pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"
+    d="M100 86 H334 M328 81.5 L337 86 L328 90.5
+       M100 94 H334 M328 89.5 L337 94 L328 98.5
+       M100 102 H334 M328 97.5 L337 102 L328 106.5
+       M363 82 C420 56 378 44 284 43 C242 42.4 198 42.4 156 43 C62 44 20 56 77 82
+       M230 39.3 L220 43 L230 46.7
+       M363 88 C400 70 370 60 290 59 C244 58.4 196 58.4 152 59 C50 60 32 70 77 88
+       M222 55.3 L212 59 L222 62.7
+       M363 98 C400 105 388 132 302 137 C252 140.5 188 140.5 138 137 C52 132 40 105 77 98
+       M228 135.3 L218 139 L228 142.7
+       M363 103 C412 112 398 146 306 150.5 C252 154 188 154 134 150.5 C42 146 28 112 77 103
+       M236 148.6 L226 152.3 L236 156
+       M363 108 C426 120 410 158 310 163 C252 167 188 167 130 163 C30 158 14 120 77 108
+       M244 161.5 L234 165.2 L244 168.9
+       M366 90 C396 82 412 82 422 89 M414 83.5 L423 89 L413 93.5
+       M77 90 C46 82 30 82 20 89 M66 84.5 L76 90 L66 95.5"/>
+
+  <!-- ===== REVEAL 3 (fade 1.3): N / S pole tags + pole halos ===== -->
+  <g id="hcfLongPoles" opacity="0">
+    <ellipse cx="359" cy="94" rx="11" ry="22" fill="#ffc24b" opacity=".1"/>
+    <ellipse cx="81" cy="94" rx="11" ry="22" fill="#9fe6ff" opacity=".08"/>
+    <circle cx="382" cy="56" r="8.5" fill="#0e2848" fill-opacity=".92" stroke="#ffc24b" stroke-width="1.4"/>
+    <text x="382" y="60" text-anchor="middle" font-size="11" font-weight="700" fill="#ffc24b">N</text>
+    <circle cx="58" cy="56" r="8.5" fill="#0e2848" fill-opacity=".92" stroke="#9fe6ff" stroke-width="1.4"/>
+    <text x="58" y="60" text-anchor="middle" font-size="11" font-weight="700" fill="#9fe6ff">S</text>
+  </g>
+
+  <!-- ===== REVEAL 4 (fade 2.2): pocket indicator near pole, needle deflected ===== -->
+  <g id="hcfLongMeter" opacity="0">
+    <g transform="translate(448,94)">
+      <use href="#hcfMeterBody"/>
+      <path d="M-3.69 11.73 L12.31 -8.76" stroke="#ffc24b" stroke-width="2.2" stroke-linecap="round" filter="url(#hcfGsoft)"/>
+      <circle cx="0" cy="7" r="2.3" fill="#eaf6ff"/>
+    </g>
+    <rect x="423" y="127" width="50" height="19" rx="4.5" fill="#0e2848" fill-opacity=".9" stroke="#ffc24b" stroke-opacity=".5"/>
+    <text x="448" y="140.5" text-anchor="middle" font-size="12" fill="#ffc24b">+8 G</text>
+    <text x="448" y="162" text-anchor="middle" font-size="10" letter-spacing=".5" fill="#ffc24b" opacity=".9">METER DEFLECTS</text>
+  </g>
+
+  <!-- ===== REVEAL 9a (fade 6.6): coil back strands, behind the shaft ===== -->
+  <g id="hcfConvertBk" opacity="0" fill="none" stroke="#7c4b20" stroke-width="2.6">
+    <ellipse cx="112" cy="252" rx="9" ry="33" transform="rotate(7 112 252)" opacity=".75"/>
+    <ellipse cx="146" cy="252" rx="9" ry="33" transform="rotate(7 146 252)" opacity=".75"/>
+    <ellipse cx="180" cy="252" rx="9" ry="33" transform="rotate(7 180 252)" opacity=".75"/>
+  </g>
+
+  <!-- ===== REVEAL 5 (fade 3.6): bottom shaft + CIRCULAR label + cutaway wedge ===== -->
+  <g id="hcfCircBar" opacity="0">
+    <rect x="95" y="178" width="130" height="22" rx="5" fill="#0e2848" fill-opacity=".85" stroke="#8fb6e0" stroke-opacity=".5"/>
+    <text x="160" y="193" text-anchor="middle" font-size="11" letter-spacing=".5" fill="#9fe6ff">CIRCULAR RESIDUAL</text>
+    <rect x="84" y="234" width="272" height="36" fill="url(#hcfSteelB)"/>
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".15">
+      <line x1="92" y1="246" x2="348" y2="246"/>
+      <line x1="92" y1="254" x2="348" y2="254"/>
+      <line x1="92" y1="262" x2="348" y2="262"/>
+    </g>
+    <line x1="88" y1="239" x2="350" y2="239" stroke="#cfe7ff" stroke-width="1.2" opacity=".22"/>
+    <g stroke="#8fb6e0" stroke-width="1.5" opacity=".65" fill="none">
+      <line x1="84" y1="234" x2="356" y2="234"/>
+      <line x1="84" y1="270" x2="356" y2="270"/>
+    </g>
+    <ellipse cx="84" cy="252" rx="7" ry="18" fill="#122e50" stroke="#8fb6e0" stroke-width="1.3" opacity=".9"/>
+    <ellipse cx="356" cy="252" rx="7" ry="18" fill="#1d4a78" stroke="#8fb6e0" stroke-width="1.3" opacity=".95"/>
+    <!-- cutaway wedge window -->
+    <path d="M196 236.5 L288 236.5 L264 267.5 L221 267.5 Z" fill="#06142a" fill-opacity=".96" stroke="#8fb6e0" stroke-opacity=".35" stroke-width="1"/>
+    <line x1="196" y1="236.5" x2="288" y2="236.5" stroke="#9fe6ff" stroke-width="1" opacity=".4"/>
+    <!-- exposed cross-section disc -->
+    <ellipse cx="240" cy="252" rx="9.5" ry="14.5" fill="#0d2746" stroke="#8fb6e0" stroke-width=".6" opacity=".85"/>
+  </g>
+
+  <!-- ===== REVEAL 6 (draw 4.0): contained hoop flux rings ===== -->
+  <path id="hcfCircFlux" fill="none" stroke="#5fe0ff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#hcfGsoft)" opacity=".95"
+    pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"
+    d="M233.8 252 a6.2 13 0 1 0 12.4 0 a6.2 13 0 1 0 -12.4 0
+       M236 252 a4 8.4 0 1 0 8 0 a4 8.4 0 1 0 -8 0
+       M238.1 252 a1.9 3.9 0 1 0 3.8 0 a1.9 3.9 0 1 0 -3.8 0"/>
+
+  <!-- ===== REVEAL 7 (fade 4.4): NO EXTERNAL POLES microtag ===== -->
+  <g id="hcfCircTag" opacity="0">
+    <text x="448" y="221" text-anchor="middle" font-size="10" letter-spacing=".5" fill="#9fe6ff" opacity=".9">NO EXTERNAL POLES</text>
+    <path d="M438 226 L402 236" fill="none" stroke="#9fe6ff" stroke-width="1" stroke-dasharray="3 3" opacity=".45"/>
+  </g>
+
+  <!-- ===== REVEAL 8 (fade 5.2): identical indicator on the surface, 0 G ===== -->
+  <g id="hcfCircMeter" opacity="0">
+    <line x1="300" y1="228" x2="296" y2="234" stroke="#8fb6e0" stroke-width="1.5" opacity=".8"/>
+    <line x1="320" y1="228" x2="324" y2="234" stroke="#8fb6e0" stroke-width="1.5" opacity=".8"/>
+    <g transform="translate(310,204)">
+      <use href="#hcfMeterBody"/>
+      <path d="M0 11 L0 -13" stroke="#ffc24b" stroke-width="2.2" stroke-linecap="round" filter="url(#hcfGsoft)"/>
+      <circle cx="0" cy="7" r="2.3" fill="#eaf6ff"/>
+    </g>
+    <rect x="344" y="186" width="46" height="21" rx="5" fill="#0e2848" fill-opacity=".9" stroke="#5fe0ff" stroke-opacity=".7"/>
+    <text x="367" y="201" text-anchor="middle" font-size="13" fill="#5fe0ff" filter="url(#hcfGsoft)">0 G</text>
+  </g>
+
+  <!-- ===== REVEAL 9 (fade 6.6): conversion coil + sprouting poles ===== -->
+  <g id="hcfConvert" opacity="0">
+    <g fill="none" stroke="#ff9b4b" stroke-width="3" stroke-linecap="round" opacity=".95">
+      <path d="M108 280 C94 268 94 236 114 224"/>
+      <path d="M142 280 C128 268 128 236 148 224"/>
+      <path d="M176 280 C162 268 162 236 182 224"/>
+    </g>
+    <g fill="none" stroke="#ff9b4b" stroke-width="2.4" stroke-linecap="round" opacity=".7">
+      <path d="M108 280 C102 290 92 295 82 293"/>
+      <path d="M182 224 C190 214 200 211 208 213"/>
+    </g>
+    <g fill="none" stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#hcfG)" opacity=".9">
+      <path d="M366 240 C386 226 398 238 390 256"/>
+      <path d="M395 249.5 L389.5 257 L384 250.5"/>
+      <path d="M76 240 C56 226 44 238 52 256"/>
+      <path d="M57.5 249.5 L52.5 257 L47 250.5"/>
+    </g>
+    <text x="403" y="266" text-anchor="middle" font-size="9" font-weight="700" fill="#ffc24b" opacity=".9">N</text>
+    <text x="38" y="266" text-anchor="middle" font-size="9" font-weight="700" fill="#9fe6ff" opacity=".9">S</text>
+    <rect x="188" y="306" width="224" height="22" rx="5" fill="#0e2848" fill-opacity=".88" stroke="#ffc24b" stroke-opacity=".45"/>
+    <text x="300" y="321" text-anchor="middle" font-size="11" letter-spacing=".5" fill="#ffc24b">MAGNETIZE LONGITUDINALLY FIRST</text>
+  </g>
+</svg>

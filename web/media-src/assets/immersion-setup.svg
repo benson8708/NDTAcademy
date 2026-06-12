@@ -1,0 +1,189 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <linearGradient id="imWaterG" x1="0" y1="120" x2="0" y2="299" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".16"/>
+      <stop offset=".45" stop-color="#2b86ff" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#1E66F5" stop-opacity=".06"/>
+    </linearGradient>
+    <linearGradient id="imCoupG" x1="0" y1="120" x2="0" y2="299" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#2b86ff" stop-opacity=".10"/>
+    </linearGradient>
+    <linearGradient id="imSteelG" x1="0" y1="232" x2="0" y2="272" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c5c8c"/><stop offset=".4" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="imProbeG" x1="258" y1="0" x2="286" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0e2848"/><stop offset=".3" stop-color="#2c5c8c"/><stop offset=".55" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="imCrysG" x1="0" y1="180" x2="0" y2="187" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#aef0ff"/><stop offset="1" stop-color="#3f9bff"/>
+    </linearGradient>
+    <linearGradient id="imBeamG" x1="0" y1="188" x2="0" y2="270" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".7"/>
+      <stop offset=".53" stop-color="#5fe0ff" stop-opacity=".45"/>
+      <stop offset=".56" stop-color="#9fe6ff" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#1E66F5" stop-opacity=".3"/>
+    </linearGradient>
+    <filter id="imGlow" filterUnits="userSpaceOnUse" x="230" y="160" width="90" height="130">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="imGlowS" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="imArr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#5fe0ff"/>
+    </marker>
+  </defs>
+
+  <!-- ===== TANK + WATER (base art) ===== -->
+  <g id="imTank">
+    <rect x="71" y="120" width="458" height="179" fill="url(#imWaterG)"/>
+    <!-- tank shell (open top U) -->
+    <path d="M62 88 H71 V299 H529 V88 H538 V308 H62 Z" fill="rgba(10,30,60,.55)"/>
+    <path d="M62 88 V308 H538 V88" fill="none" stroke="#8fb6e0" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M71 88 V299 H529 V88" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".55"/>
+    <!-- rim flanges -->
+    <rect x="54" y="82" width="26" height="7" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.4"/>
+    <rect x="520" y="82" width="26" height="7" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.4"/>
+    <!-- waterline -->
+    <line x1="71" y1="120" x2="529" y2="120" stroke="#9fe6ff" stroke-width="1.5" opacity=".7"/>
+    <g stroke="#9fe6ff" stroke-width="1" opacity=".25">
+      <line x1="96" y1="126" x2="130" y2="126"/><line x1="168" y1="129" x2="196" y2="129"/>
+      <line x1="330" y1="127" x2="368" y2="127"/><line x1="430" y1="129" x2="462" y2="129"/>
+      <line x1="476" y1="125" x2="506" y2="125"/>
+    </g>
+  </g>
+
+  <!-- ===== WATER = COUPLANT glow (reveal) ===== -->
+  <g id="imCouplant" opacity="0">
+    <rect x="71" y="120" width="458" height="179" fill="url(#imCoupG)"/>
+    <line x1="71" y1="120" x2="529" y2="120" stroke="#5fe0ff" stroke-width="2" opacity=".85"/>
+    <rect x="84" y="128" width="146" height="22" rx="11" fill="#5fe0ff" fill-opacity=".12" stroke="#5fe0ff" stroke-width="1"/>
+    <text x="157" y="143" text-anchor="middle" font-size="11" letter-spacing="1.5" fill="#c4f4ff">WATER = COUPLANT</text>
+  </g>
+
+  <!-- ===== PART on support stools (base art) ===== -->
+  <g id="imPart">
+    <rect x="168" y="232" width="280" height="40" fill="url(#imSteelG)" stroke="#8fb6e0" stroke-width="1.8"/>
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".14">
+      <line x1="178" y1="246" x2="438" y2="246"/><line x1="178" y1="259" x2="438" y2="259"/>
+    </g>
+    <line x1="168" y1="272" x2="448" y2="272" stroke="#8fb6e0" stroke-width="2.2" opacity=".9"/>
+    <!-- stools -->
+    <g fill="#14304f" stroke="#8fb6e0" stroke-width="1.4">
+      <rect x="194" y="272" width="34" height="5"/>
+      <rect x="205" y="277" width="12" height="17"/>
+      <rect x="194" y="294" width="34" height="5"/>
+      <rect x="386" y="272" width="34" height="5"/>
+      <rect x="397" y="277" width="12" height="17"/>
+      <rect x="386" y="294" width="34" height="5"/>
+    </g>
+    <text x="186" y="259" font-size="12" letter-spacing="2" fill="#9fe6ff">PART</text>
+  </g>
+
+  <!-- ===== SOUND BEAM column (draw reveal) ===== -->
+  <path id="imBeam" d="M272 188 V270" fill="none" stroke="url(#imBeamG)" stroke-width="19" filter="url(#imGlow)"
+        pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== PULSE wavefronts (reveal, looping) ===== -->
+  <g id="imPulse" opacity="0">
+    <line x1="272" y1="189" x2="272" y2="268" stroke="#c4f4ff" stroke-width="1.4" opacity=".55"/>
+    <ellipse cx="272" cy="232" rx="15" ry="4" fill="#c4f4ff" opacity=".7" filter="url(#imGlowS)">
+      <animate attributeName="opacity" values=".45;.85;.45" dur="1.6s" repeatCount="indefinite"/>
+    </ellipse>
+    <!-- wavefronts in water (short wavelength = tight spacing) -->
+    <g fill="none" stroke="#9fe6ff" stroke-width="1.6" stroke-linecap="round">
+      <path d="M262.0 196.4 A13 13 0 0 0 282.0 196.4" opacity=".1">
+        <animate attributeName="opacity" values="0;.95;0;0" keyTimes="0;.18;.5;1" dur="1.6s" begin="-1.6s" repeatCount="indefinite"/>
+      </path>
+      <path d="M252.1 204.7 A26 26 0 0 0 291.9 204.7" opacity=".1">
+        <animate attributeName="opacity" values="0;.95;0;0" keyTimes="0;.18;.5;1" dur="1.6s" begin="-1.28s" repeatCount="indefinite"/>
+      </path>
+      <path d="M242.1 213.1 A39 39 0 0 0 301.9 213.1" opacity=".1">
+        <animate attributeName="opacity" values="0;.9;0;0" keyTimes="0;.18;.5;1" dur="1.6s" begin="-0.96s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    <!-- wavefronts in steel (faster = wider spacing) -->
+    <g fill="none" stroke="#7fd8ff" stroke-width="1.4" stroke-linecap="round">
+      <path d="M260.2 243.0 A16 16 0 0 0 283.8 243.0" opacity=".1">
+        <animate attributeName="opacity" values="0;.85;0;0" keyTimes="0;.18;.5;1" dur="1.6s" begin="-0.72s" repeatCount="indefinite"/>
+      </path>
+      <path d="M247.7 255.7 A33 33 0 0 0 296.3 255.7" opacity=".1">
+        <animate attributeName="opacity" values="0;.8;0;0" keyTimes="0;.18;.5;1" dur="1.6s" begin="-0.56s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- ===== BRIDGE + MANIPULATOR + PROBE (reveal) ===== -->
+  <g id="imProbe" opacity="0">
+    <!-- bridge end trucks riding the tank rim rails -->
+    <g fill="#14304f" stroke="#8fb6e0" stroke-width="1.5">
+      <rect x="59" y="46" width="16" height="26"/>
+      <rect x="525" y="46" width="16" height="26"/>
+    </g>
+    <g fill="#0e2848" stroke="#9fe6ff" stroke-width="1.3">
+      <circle cx="67" cy="77" r="5"/>
+      <circle cx="533" cy="77" r="5"/>
+    </g>
+    <!-- bridge box beam -->
+    <rect x="58" y="30" width="484" height="16" fill="rgba(10,30,60,.55)" stroke="#8fb6e0" stroke-width="1.8"/>
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".18">
+      <line x1="96" y1="43" x2="106" y2="33"/><line x1="132" y1="43" x2="142" y2="33"/>
+      <line x1="168" y1="43" x2="178" y2="33"/><line x1="204" y1="43" x2="214" y2="33"/>
+      <line x1="318" y1="43" x2="328" y2="33"/><line x1="354" y1="43" x2="364" y2="33"/>
+      <line x1="390" y1="43" x2="400" y2="33"/><line x1="426" y1="43" x2="436" y2="33"/>
+      <line x1="462" y1="43" x2="472" y2="33"/>
+    </g>
+    <!-- carriage -->
+    <rect x="250" y="24" width="44" height="30" rx="4" fill="#14304f" stroke="#9fe6ff" stroke-width="1.7"/>
+    <circle cx="258" cy="31" r="1.7" fill="#9fe6ff" opacity=".7"/>
+    <circle cx="286" cy="31" r="1.7" fill="#9fe6ff" opacity=".7"/>
+    <!-- probe cable -->
+    <path d="M262 148 C250 140 252 116 256 96 C259 80 260 66 264 56" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".55"/>
+    <!-- manipulator mast -->
+    <rect x="268" y="54" width="8" height="86" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <!-- waterline ripples at mast entry -->
+    <g fill="none" stroke="#9fe6ff">
+      <ellipse cx="272" cy="120" rx="9" ry="1.8" stroke-width="1.2" opacity=".55"/>
+      <ellipse cx="272" cy="120" rx="17" ry="2.6" stroke-width="1.1" opacity=".32"/>
+      <ellipse cx="272" cy="120" rx="26" ry="3.4" stroke-width="1" opacity=".18"/>
+    </g>
+    <!-- collar + transducer body -->
+    <rect x="262" y="138" width="20" height="8" rx="2" fill="#1b3e66" stroke="#8fb6e0" stroke-width="1.4"/>
+    <rect x="258" y="146" width="28" height="36" rx="3" fill="url(#imProbeG)" stroke="#8fb6e0" stroke-width="1.6"/>
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".3">
+      <line x1="259" y1="156" x2="285" y2="156"/><line x1="259" y1="164" x2="285" y2="164"/>
+    </g>
+    <rect x="260" y="182" width="24" height="5" fill="url(#imCrysG)" stroke="#c9f6ff" stroke-width=".8"/>
+    <!-- labels -->
+    <text x="82" y="20" font-size="11" letter-spacing="1.5" fill="#9fe6ff">SCANNING BRIDGE</text>
+    <text x="206" y="76" text-anchor="end" font-size="11" letter-spacing="1.5" fill="#9fe6ff">MANIPULATOR</text>
+    <path d="M210 72 H236 L264 88" fill="none" stroke="#9fe6ff" stroke-width="1" opacity=".5"/>
+  </g>
+
+  <!-- ===== WATER PATH gap + NO CONTACT (reveal) ===== -->
+  <g id="imGap" opacity="0">
+    <!-- dashed highlight around standoff gap -->
+    <rect x="250" y="182" width="48" height="54" rx="9" fill="none" stroke="#ff9b4b" stroke-width="1.5" stroke-dasharray="5 4" opacity=".9"/>
+    <!-- NO CONTACT tag -->
+    <rect x="308" y="197" width="94" height="22" rx="11" fill="#ff9b4b" fill-opacity=".1" stroke="#ff9b4b" stroke-width="1"/>
+    <text x="355" y="212" text-anchor="middle" font-size="11" letter-spacing="1.5" fill="#ffc69a">NO CONTACT</text>
+    <!-- dimension bracket -->
+    <line x1="254" y1="187" x2="224" y2="187" stroke="#9fe6ff" stroke-width="1" opacity=".6"/>
+    <line x1="230" y1="190" x2="230" y2="229" stroke="#5fe0ff" stroke-width="1.5"/>
+    <g fill="#5fe0ff">
+      <path d="M230 187 L226 194 L234 194 Z"/>
+      <path d="M230 232 L226 225 L234 225 Z"/>
+      <animate attributeName="opacity" values=".6;1;.6" dur="1.8s" repeatCount="indefinite"/>
+    </g>
+    <text x="218" y="206" text-anchor="end" font-size="11" letter-spacing="1.5" fill="#9fe6ff">WATER PATH</text>
+  </g>
+
+  <!-- ===== RASTER scan arrows (reveal) ===== -->
+  <g id="imRaster" opacity="0">
+    <line x1="244" y1="38" x2="174" y2="38" stroke="#5fe0ff" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#imArr)"/>
+    <line x1="300" y1="38" x2="370" y2="38" stroke="#5fe0ff" stroke-width="1.8" stroke-dasharray="6 4" marker-end="url(#imArr)"/>
+  </g>
+</svg>

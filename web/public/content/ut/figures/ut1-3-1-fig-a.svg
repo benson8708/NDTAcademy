@@ -1,0 +1,82 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#0A2342"/>
+  <text x="400" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#E8F1FB">Pulse-Echo Instrument Block Diagram</text>
+
+  <!-- clock box -->
+  <rect x="60" y="80" width="160" height="64" rx="6" fill="#E8F1FB" stroke="#1B82E8" stroke-width="2"/>
+  <text x="140" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Clock / Timer</text>
+  <text x="140" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">sets PRF</text>
+
+  <!-- time base box -->
+  <rect x="330" y="80" width="170" height="64" rx="6" fill="#E8F1FB" stroke="#1B82E8" stroke-width="2"/>
+  <text x="415" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Time base</text>
+  <text x="415" y="128" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">horizontal sweep</text>
+
+  <!-- display box with mini A-scan -->
+  <rect x="580" y="70" width="180" height="130" rx="6" fill="#E8F1FB" stroke="#1B82E8" stroke-width="2"/>
+  <text x="670" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">Display - A-scan</text>
+  <rect x="592" y="100" width="156" height="88" fill="#0A2342"/>
+  <polyline points="598,180 604,112 610,180 660,180 666,148 672,180 730,180 736,128 742,180" fill="none" stroke="#1E9E6A" stroke-width="2"/>
+
+  <!-- pulser box -->
+  <rect x="60" y="220" width="160" height="64" rx="6" fill="#E8F1FB" stroke="#1B82E8" stroke-width="2"/>
+  <text x="140" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Pulser</text>
+  <text x="140" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">spike / square wave</text>
+
+  <!-- receiver box -->
+  <rect x="320" y="220" width="190" height="64" rx="6" fill="#E8F1FB" stroke="#1B82E8" stroke-width="2"/>
+  <text x="415" y="246" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Receiver</text>
+  <text x="415" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">amplify, filter, rectify</text>
+
+  <!-- sync arrows -->
+  <line x1="220" y1="112" x2="318" y2="112" stroke="#1B82E8" stroke-width="3"/>
+  <polygon points="318,106 330,112 318,118" fill="#1B82E8"/>
+  <text x="272" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">sync</text>
+
+  <line x1="500" y1="112" x2="568" y2="112" stroke="#1B82E8" stroke-width="3"/>
+  <polygon points="568,106 580,112 568,118" fill="#1B82E8"/>
+  <text x="538" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">sweep</text>
+
+  <!-- clock to pulser -->
+  <line x1="140" y1="144" x2="140" y2="208" stroke="#1B82E8" stroke-width="3"/>
+  <polygon points="134,208 140,220 146,208" fill="#1B82E8"/>
+  <text x="158" y="182" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">fire</text>
+
+  <!-- pulser to transducer -->
+  <line x1="120" y1="284" x2="120" y2="333" stroke="#F2A33C" stroke-width="3"/>
+  <polygon points="114,333 120,345 126,333" fill="#F2A33C"/>
+  <text x="30" y="316" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#F2A33C">HV pulse</text>
+
+  <!-- transducer to receiver -->
+  <polyline points="200,345 200,310 415,310 415,296" fill="none" stroke="#1E9E6A" stroke-width="3"/>
+  <polygon points="409,296 415,284 421,296" fill="#1E9E6A"/>
+  <text x="230" y="302" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#1E9E6A">echo signal</text>
+
+  <!-- receiver to display -->
+  <polyline points="510,252 670,252 670,212" fill="none" stroke="#1E9E6A" stroke-width="3"/>
+  <polygon points="664,212 670,200 676,212" fill="#1E9E6A"/>
+  <text x="560" y="240" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#1E9E6A">to screen</text>
+
+  <!-- transducer -->
+  <rect x="80" y="345" width="136" height="50" rx="4" fill="#E8F1FB" stroke="#1B82E8" stroke-width="2"/>
+  <text x="148" y="375" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Transducer</text>
+
+  <!-- couplant film -->
+  <rect x="216" y="345" width="6" height="50" fill="#F2A33C"/>
+  <text x="219" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#F2A33C">couplant</text>
+
+  <!-- test part -->
+  <rect x="222" y="330" width="518" height="84" fill="#5A6B7E" stroke="#D9E0E8" stroke-width="2"/>
+  <text x="640" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">test part</text>
+  <line x1="738" y1="330" x2="738" y2="414" stroke="#1B82E8" stroke-width="5"/>
+  <text x="700" y="434" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#1B82E8">back wall</text>
+
+  <!-- flaw and beam -->
+  <circle cx="480" cy="372" r="9" fill="#D14343"/>
+  <text x="480" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#D14343">flaw</text>
+  <line x1="228" y1="362" x2="458" y2="362" stroke="#F2A33C" stroke-width="3"/>
+  <polygon points="458,356 470,362 458,368" fill="#F2A33C"/>
+  <line x1="462" y1="382" x2="240" y2="382" stroke="#1E9E6A" stroke-width="3"/>
+  <polygon points="240,376 228,382 240,388" fill="#1E9E6A"/>
+  <text x="330" y="356" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#F2A33C">sound out</text>
+</svg>

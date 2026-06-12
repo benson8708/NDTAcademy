@@ -1,0 +1,57 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#0A2342">The Characteristic (Hurter and Driffield) Curve</text>
+
+  <!-- useful density window band (D 2.0 - 4.0) -->
+  <rect x="100" y="107" width="520" height="146" fill="#E8F1FB"/>
+  <text x="112" y="127" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">useful density window 2.0-4.0</text>
+
+  <!-- axes -->
+  <line x1="100" y1="70" x2="100" y2="400" stroke="#0A2342" stroke-width="2.5"/>
+  <line x1="100" y1="400" x2="620" y2="400" stroke="#0A2342" stroke-width="2.5"/>
+
+  <!-- y ticks (density) -->
+  <text x="92" y="405" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">0</text>
+  <text x="92" y="332" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">1</text>
+  <text x="92" y="258" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">2</text>
+  <text x="92" y="185" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">3</text>
+  <text x="92" y="112" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">4</text>
+  <text transform="rotate(-90 40 235)" x="40" y="235" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Density</text>
+
+  <!-- x ticks (log E) -->
+  <text x="100" y="422" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">0</text>
+  <text x="273" y="422" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">1</text>
+  <text x="447" y="422" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">2</text>
+  <text x="620" y="422" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">3</text>
+  <text x="360" y="444" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">log relative exposure</text>
+
+  <!-- base + fog line -->
+  <line x1="100" y1="378" x2="620" y2="378" stroke="#5A6B7E" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="540" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">base + fog ≈ 0.3</text>
+
+  <!-- characteristic curve -->
+  <path d="M 100 378 C 150 376, 200 362, 273 334 C 310 320, 335 308, 360 290 C 395 264, 425 240, 447 210 C 470 178, 485 158, 500 140 C 520 116, 540 106, 560 100 C 580 94, 595 90, 610 88" fill="none" stroke="#0A2342" stroke-width="3.5"/>
+
+  <!-- region labels -->
+  <text x="235" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#5A6B7E">toe</text>
+  <text x="280" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">working region</text>
+  <line x1="330" y1="168" x2="420" y2="228" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="616" y="72" text-anchor="start" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#5A6B7E">shoulder</text>
+
+  <!-- shallow gradient triangle (toe) -->
+  <line x1="290" y1="324" x2="335" y2="324" stroke="#D14343" stroke-width="2.5"/>
+  <line x1="335" y1="324" x2="335" y2="303" stroke="#D14343" stroke-width="2.5"/>
+  <text x="340" y="340" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">shallow slope = low contrast</text>
+
+  <!-- steep gradient triangle (working region) -->
+  <line x1="455" y1="199" x2="495" y2="199" stroke="#1E9E6A" stroke-width="2.5"/>
+  <line x1="495" y1="199" x2="495" y2="146" stroke="#1E9E6A" stroke-width="2.5"/>
+  <text x="505" y="180" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1E9E6A">steep slope = high contrast</text>
+
+  <!-- side note -->
+  <rect x="640" y="140" width="150" height="120" rx="10" fill="#FFFFFF" stroke="#0A2342" stroke-width="2"/>
+  <text x="715" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">0.3 on the log axis</text>
+  <text x="715" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">= ×2 exposure</text>
+  <text x="715" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">slope = gradient</text>
+  <text x="715" y="244" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">= film contrast</text>
+</svg>

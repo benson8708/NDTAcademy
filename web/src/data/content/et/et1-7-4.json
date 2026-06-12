@@ -1,0 +1,193 @@
+{
+ "lessonId": "et1-7-4",
+ "title": "Automation and Feedback",
+ "narrationScript": "The rest of this module gave the alarm gate hands — recorders, lights, markers, gates, and saws. This final lesson closes the loop. An automated eddy current system feeds the product, runs the test, and dispositions every piece without a person in the loop. Feedback keeps that machinery honest at speed. An open-loop setting is correct at one operating condition. A closed-loop system measures what is actually happening, compares it with the intended value, and corrects the difference. A shaft encoder reports true product travel, so output delays and the filter passband track every speed change instead of drifting off the flaw. Automatic balance re-nulls each channel between pieces, and self-monitoring watches coil excitation and the noise floor, because a dead channel looks exactly like clean product. On schedule, the system proves itself by running the reference standard through at line speed, and a failed check sends everything back to the last good check. Your job remains: verify on schedule, watch the counters and consumables, and stop the line when any loop hits its limit.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Automation: The Operator Steps Out of the Per-Piece Loop",
+   "body": "This module has walked the signal outward from the coil: meters and impedance-plane displays for your eyes, recorders and alarms for the record, markers, gates, and saws for the product. **Automation** is what happens when those pieces are assembled into a system that no longer needs a person in the loop for each piece: material handling feeds and centers the product through the coil, the instrument judges every signal against its alarm gates, and the disposition hardware marks, sorts, or crops — at line speed, all shift, every piece.\n\nEddy current automates more readily than any other major NDT method, and the reasons are built into its physics:\n\n- **Non-contact.** An encircling coil needs no couplant and never touches the product — nothing wears or drags at speed.\n- **Electrical from end to end.** The raw result is already a voltage, so judging it, recording it, and acting on it all happen at electronic speed.\n- **Fast.** Detection, gating, and the alarm decision finish in milliseconds, which is why 100% testing of tube, bar, and wire is routine where slower methods must sample.\n\nWhat automation does not do is run itself. Every automated system stands on **feedback loops** that hold it on its standardized setup, and on an operator who proves those loops are working. That pair — the feedback and the operator — is this lesson."
+  },
+  {
+   "type": "text",
+   "heading": "Feedback: Measure, Compare, Correct",
+   "body": "An **open-loop** control applies a preset action and hopes conditions have not changed. The fixed-timer marker delay from the last lesson is the textbook case: timed for 1.0 m/s, it is exactly right at 1.0 m/s and wrong at every other speed. A **closed-loop** (feedback) control measures the actual operating condition, **compares** it with the intended value, and **corrects** the difference automatically — the encoder-tracked delay that replaced the fixed timer.\n\nThat one idea — *measure, compare, correct* — appears all over an automated test line:\n\n- **Speed feedback.** An encoder or tachometer wheel reports true product travel, and the system slaves its output delays and filter settings to it.\n- **Baseline feedback.** Automatic balance re-nulls each channel between pieces, holding the standardized operating point against drift.\n- **Health feedback.** The instrument monitors its own coil excitation and channel noise floor, so a hardware failure announces itself instead of hiding.\n- **Verification feedback.** Scheduled checks on the reference standard confirm the whole chain still detects what it was standardized to detect — and stop the line when it does not.\n- **Process feedback.** Test results flow back upstream: a rising reject rate tells the mill its manufacturing process is drifting.\n\nThe sections that follow take these loops in turn, because each one has a failure mode the operator is expected to catch."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-7-4-fig-a",
+   "caption": "The automated line as a set of nested loops: the coil feeds the instrument, the encoder feeds true line speed to the delay and filter corrections, the alarm gate drives the marker and sorting gate, and reject-rate trends flow back to the upstream process."
+  },
+  {
+   "type": "text",
+   "heading": "Speed Feedback: Delays and Filters That Track the Line",
+   "body": "Two parts of the test depend directly on line speed, and feedback keeps both honest.\n\n**Output timing.** Every downstream device fires after the product travels the coil-to-device distance — the transport-delay rule from the last lesson. The encoder closes this loop by counting actual travel, so the mark stays centered on the flaw through every acceleration, deceleration, and creep.\n\n**Filtering.** The subtler dependency. A discontinuity produces a signal only while it is inside the coil's sensing zone, so the signal's duration is sensing-zone width ÷ line speed — and its **frequency content is proportional to speed**. Double the speed and the same notch produces a signal half as long with twice the frequency content. The bandpass filter that cleaned up the signal at standardization speed now sits in the wrong place: run faster and the signal climbs above the passband; run slower and it falls into the high-pass cut below. Either way the displayed amplitude drops — the screen actually looks *cleaner* while the test goes blind.\n\nThe feedback fix is the **speed-following filter**: the encoder signal continuously re-centers the passband, so the reference notch reads the same amplitude at any speed within the qualified range. Systems without it must hold line speed inside the tolerance band the procedure qualified — and a speed change outside that band means stop and re-standardize. Either way, the governing practices (ASTM E309, E426) demand that the reference standard be proven **at production speed**, because delays, filters, and signal response all live or die by it."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-7-4-fig-b",
+   "caption": "The same notch at two line speeds. Signal duration is sensing-zone width divided by speed, so doubling the speed doubles the signal's frequency content — out of a fixed passband. Encoder feedback re-centers the filter, and the reference notch reads the same at any qualified speed."
+  },
+  {
+   "type": "text",
+   "heading": "Baseline and Health Feedback: The Instrument Watches Itself",
+   "body": "**Automatic balance.** The null you set on defect-free material does not stay put: coil and cable warm up, ambient temperature moves, and the operating point drifts. Automated instruments re-balance automatically — typically in the gap between pieces, when the coil sees empty space or known-good material. The compensation is **bounded**: it exists to hold the standardized condition, and when drift exceeds its range, a compliant system raises a balance fault instead of quietly stretching further. Treat that fault as information — something physical (temperature, a failing component, a damaged coil) is moving your test.\n\n**Self-monitoring.** Think about what a broken coil wire looks like on screen: nothing. No baseline jitter, no nuisance alarms — a flat, perfectly *clean-looking* channel that would happily pass every piece on the line, defects and all. The most dangerous failure on an automated line is the **silent** one. So production systems watch their own vitals — coil excitation current, channel continuity, noise floor — and force failures to announce themselves with a fault alarm and a line stop. It is the same **fail-safe** philosophy as the sorting gate that fails to reject: no fault may ever default to *accept*.\n\nOne caution closes the topic. Automatic adjustment has limits set by the written procedure. A system that silently widened gates or cut gain to ride through a problem would not be compensating — it would be detuning the test. Compensation holds the standardized setup; it never relaxes it."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Feedback maintains the test — it never relaxes it",
+   "body": "Every loop in this lesson exists to hold the system on the setup that was proven on the reference standard: the delay that keeps paint on the flaw, the filter that follows line speed, the balance that holds the null, the monitor that refuses to let a dead channel pass product. When any loop reaches its limit, the system's job is to alarm and stop — and yours is to respond, not to bypass the interlock, widen a gate, or silence the horn so the line keeps moving."
+  },
+  {
+   "type": "text",
+   "heading": "Automatic Verification — and Feedback to the Process",
+   "body": "**The system proves itself on schedule.** Feedback can hold settings, but only a **dynamic check** proves detection: the reference standard, run through at production speed, every artificial discontinuity alarmed, marked, and dispositioned. Automated lines build this into the routine — at startup, at the procedure's set intervals, at the end of the run, and after any fault or adjustment. Some systems automate part of the check itself: **electronic functional checks** inject a known signal into the channel between pieces to confirm the electronics still respond. Useful — but an electronic check exercises the instrument, not the coupling between coil and product, so it **supplements** the physical reference standard and never replaces it.\n\nThe rule when a check fails has not changed since the last lesson, and it never will: everything tested since the last successful check is **untested**, and it is re-examined after the system again passes.\n\n**Feedback to the process.** A line that tests 100% of product is also the best process monitor in the plant. The alarm counters and data logs trend in real time: a slow climb in weld-zone rejects on a tube mill says the welding process is drifting — electrode wear, heat input, fit-up — while there is still time to correct it instead of scrapping a shift's output. That information flows upstream only if it is reported. The reject counter is feedback for *fixing the process* — never a nuisance to be quieted by widening the gate."
+  },
+  {
+   "type": "text",
+   "heading": "Your Job on an Automated Line",
+   "body": "SNT-TC-1A scopes a Level I to perform tests and record results per written instructions, under Level II/III supervision — automation does not move that line; it changes what performing the test looks like. On an automated station your responsibilities are:\n\n- **Set up to the letter.** Frequencies, gate positions, delays, filter settings, and check intervals come from the written technique. Alarm thresholds are set and changed only by Level II/III.\n- **Prove the system, dynamically.** Run the reference standard through at line speed at every required interval. Where the line sorts, prove both directions — a seeded reject master into the reject path *and* a known-good master into accept.\n- **Watch the health feedback.** Fault lamps, balance and channel alarms, encoder function, check-station results, alarm counters — plus the consumables no feedback loop can create: paint in the marker, air to the gates.\n- **Respond — never bypass.** A fault or a failed check means stop, segregate product back to the last good check, and call the Level II. Bypassing an interlock or detuning an alarm to keep the line moving turns an automated test into automated shipping of untested product.\n- **Record.** Counts, check results, faults, and dispositions are the test record.\n\nThe machine makes the per-piece decisions. You answer for whether the machine was working. That is what your signature on the shift log means."
+  },
+  {
+   "type": "table",
+   "caption": "The feedback loops of an automated eddy current line — what each one senses, what it holds, and what its failure should look like.",
+   "headers": ["Feedback loop", "What it senses", "What it holds", "When it fails, you should see"],
+   "rows": [
+    ["Speed feedback", "Encoder pulses — true product travel", "Output delays and the filter passband correct at any line speed", "Check-standard marks landing off the notches after speed changes"],
+    ["Automatic balance", "Drift of the channel null", "The standardized operating point, re-zeroed between pieces", "A balance-limit fault — not a baseline quietly walking away"],
+    ["Self-monitoring", "Coil excitation, continuity, noise floor", "A dead channel can never look like clean product", "A channel fault and a line stop — never a silent, flat trace"],
+    ["Automatic verification", "Response to the reference standard at set intervals", "Proof the whole chain still detects, at production speed", "A failed check halts the line; re-examine to the last good check"],
+    ["Process feedback", "Reject-rate trends from counters and logs", "Early warning that the upstream process is drifting", "A climbing reject counter — report it, never detune the alarm"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-7-4-fig-a",
+   "title": "Automated ET line and its feedback loops",
+   "file": "et1-7-4-fig-a.svg"
+  },
+  {
+   "id": "et1-7-4-fig-b",
+   "title": "Speed-following filters: same notch, two speeds",
+   "file": "et1-7-4-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Automated Test Line Walkthrough",
+  "intro": "This bar line runs an encircling coil, a paint marker, and an accept/reject gate, with the mill's process upstream. Line speed changes constantly with stock changes — yet the paint stays centered on the flaws and the filter stays centered on the signals. Click the component that closes the speed-feedback loop by telling the instrument how fast the product is actually moving.",
+  "figureId": "et1-7-4-fig-a",
+  "regions": [
+   {
+    "x": 22,
+    "y": 240,
+    "w": 102,
+    "h": 104,
+    "label": "Upstream mill / process",
+    "isTarget": false,
+    "feedback": "The mill receives the other feedback loop — the reject-rate trend flowing back along the dashed line, warning that the process is drifting. Important feedback, but it is not what keeps delays and filters tracking line speed."
+   },
+   {
+    "x": 148,
+    "y": 250,
+    "w": 66,
+    "h": 160,
+    "label": "Encircling test coil",
+    "isTarget": false,
+    "feedback": "The coil senses impedance changes — discontinuities, dimension, material — but it has no idea how fast the product is moving. Its signal is what the speed feedback exists to protect."
+   },
+   {
+    "x": 240,
+    "y": 205,
+    "w": 84,
+    "h": 92,
+    "label": "Wheel riding on the product",
+    "isTarget": true,
+    "feedback": "Correct. The encoder wheel rides the product and sends a pulse per increment of travel. The instrument counts those pulses to fire each output after true travel distance and to re-center the speed-following filter — measure, compare, correct, at any line speed."
+   },
+   {
+    "x": 330,
+    "y": 56,
+    "w": 220,
+    "h": 96,
+    "label": "ET instrument and alarm gate",
+    "isTarget": false,
+    "feedback": "The instrument applies the corrections — delay timing, filter centering — but it can only correct what it can measure. Without the encoder's pulses it is running open-loop on an assumed speed."
+   },
+   {
+    "x": 396,
+    "y": 215,
+    "w": 72,
+    "h": 88,
+    "label": "Paint marker",
+    "isTarget": false,
+    "feedback": "The paint marker is an output device: it fires when the delayed alarm tells it to. It benefits from speed feedback — that is why its mark stays on the flaw — but it does not provide it."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "In an automated eddy current system, a closed-loop (feedback) control differs from an open-loop setting in that it:",
+   "options": [
+    "applies a correction calculated once at setup and never changed afterward",
+    "eliminates the need for periodic verification on a reference standard",
+    "measures the actual operating condition, compares it with the intended value, and corrects the difference automatically",
+    "raises the alarm threshold automatically whenever the reject rate climbs"
+   ],
+   "correct": 2,
+   "explanation": "Feedback means measure, compare, correct: the encoder-tracked delay measures true product travel and stays right at any speed, where a fixed timer (open loop) is right at exactly one. Feedback never replaces reference-standard verification, and automatically raising a threshold would detune the test, not maintain it."
+  },
+  {
+   "question": "Line speed on a bar line doubles. Without speed-following (encoder-fed) filtering, the signal from a given short discontinuity will:",
+   "options": [
+    "double in duration and fall below the filter passband",
+    "halve in duration, doubling its frequency content, so the fixed passband attenuates it",
+    "be unaffected, because filters respond to amplitude rather than frequency",
+    "increase in amplitude and cause nuisance alarms"
+   ],
+   "correct": 1,
+   "explanation": "The signal lasts as long as the discontinuity is inside the coil's sensing zone — duration is sensing-zone width ÷ speed — so doubling speed halves the duration and doubles the frequency content. A bandpass filter centered for the old speed now clips the signal, and the displayed amplitude drops while the screen looks deceptively clean."
+  },
+  {
+   "question": "Mid-run, an automated system's automatic balance reaches the end of its range and can no longer hold the standardized null. A properly designed system responds by:",
+   "options": [
+    "widening the alarm gate so testing can continue",
+    "reducing the gain until the baseline looks stable again",
+    "raising a balance fault and stopping the line (or diverting product to reject/retest) until the cause is corrected",
+    "ignoring the condition, since the null position does not affect detection"
+   ],
+   "correct": 2,
+   "explanation": "Compensation is bounded: it exists to hold the standardized condition, and at its limit the system must announce the failure — alarm, stop, or divert — never silently widen gates or cut gain. Quietly detuning the test would keep the line moving while the test stopped working."
+  },
+  {
+   "question": "Automated systems continuously monitor coil excitation current and channel noise floor primarily because:",
+   "options": [
+    "a broken coil or cut cable produces a quiet, clean-looking channel that would otherwise pass defective product",
+    "excitation current must be recorded in the customer's final test report",
+    "the noise floor sets the timing of the paint marker's delayed output",
+    "self-monitoring removes the need to run the reference standard at intervals"
+   ],
+   "correct": 0,
+   "explanation": "The most dangerous failure is the silent one: a dead channel shows a flat trace that looks exactly like defect-free product. Health monitoring forces that failure to announce itself with a fault and a line stop — the fail-safe principle. It supplements, and never replaces, scheduled reference-standard checks."
+  },
+  {
+   "question": "The reject counter on a welded-tube mill's eddy current station climbs steadily through the shift. The correct use of this feedback is to:",
+   "options": [
+    "raise the alarm threshold so the count returns to its normal rate",
+    "reset the counter at each verification check so the trend starts over",
+    "slow the line down until the counter stops advancing",
+    "report the trend so the welding process can be investigated and corrected upstream"
+   ],
+   "correct": 3,
+   "explanation": "A line testing 100% of product is a real-time process monitor: a climbing weld-zone reject rate signals the welding process is drifting while there is still time to correct it. Raising the threshold or resetting the counter hides the defects without removing them, and line speed is not the variable at fault."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Basic Technique Course §3.9 (readout mechanisms: automation and feedback)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — Level I duties: perform tests and record results per written instructions under Level II/III supervision",
+  "ASTM E309, Standard Practice for Eddy-Current Examination of Steel Tubular Products Using Magnetic Saturation (automated examination; standardization at production speed; re-examination after a failed check)",
+  "ASTM E426, Standard Practice for Electromagnetic (Eddy Current) Examination of Seamless and Welded Tubular Products, Titanium, Austenitic Stainless Steel and Similar Alloys (periodic standardization verification during production runs)"
+ ]
+}

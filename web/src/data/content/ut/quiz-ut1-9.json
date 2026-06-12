@@ -1,0 +1,95 @@
+{
+ "moduleId": "ut1-9",
+ "questions": [
+  {
+   "question": "A straight-beam procedure was qualified with a 1 in., 2.25 MHz transducer. Swapping in a 0.5 in., 5 MHz unit without authorization is prohibited primarily because the substitution changes:",
+   "options": [
+    "only the cable connector type",
+    "the near field, beam spread, and sensitivity the procedure was qualified with",
+    "the color of the displayed waveform",
+    "nothing measurable — probes are interchangeable"
+   ],
+   "correct": 1,
+   "explanation": "Element size and frequency are essential variables: they set near-field length, beam spread, and response to small reflectors. The examination is only valid with the parameters the procedure was qualified with, or a documented Level III-approved change."
+  },
+  {
+   "question": "Using N = D²f/4v, the near field of a 0.5 in. (12.7 mm), 5 MHz probe in steel (5,920 m/s) is approximately:",
+   "options": ["8 mm", "34 mm", "68 mm", "136 mm"],
+   "correct": 1,
+   "explanation": "N = (0.0127 m)² × 5×10⁶ ÷ (4 × 5,920) ≈ 0.034 m — about 34 mm (1.3 in.). Reflectors inside that zone sit in the oscillating near field where amplitude evaluation is unreliable."
+  },
+  {
+   "question": "A procedure directs you to verify sensitivity on a set of blocks with identical flat-bottom holes at increasing metal-travel distances. This set exists to:",
+   "options": [
+    "relate echo amplitude to reflector size at one depth",
+    "map how a constant-size reflector's amplitude falls with depth, supporting DAC construction",
+    "verify the wedge's refracted angle",
+    "measure couplant viscosity"
+   ],
+   "correct": 1,
+   "explanation": "Constant hole size with varying travel is a distance-amplitude set: it characterizes amplitude versus depth for an equal reflector, which is exactly the information a DAC or TCG captures. Varying hole size at constant travel would be an area-amplitude set."
+  },
+  {
+   "question": "During a lamination scan, the back-wall echo set at 80% FSH on sound material reads 36% FSH over one region after coupling is confirmed. Against a record-at-50%-loss criterion, the region:",
+   "options": [
+    "is recordable — 36% is 45% of reference, a 55% loss",
+    "is not recordable — 36% is more than 20% FSH",
+    "is recordable only if a flaw echo also appears",
+    "requires no action because the back wall is still visible"
+   ],
+   "correct": 0,
+   "explanation": "Remaining back reflection = 36 ÷ 80 = 45%, so the loss is 55% — past the 50% threshold. Back-reflection-loss criteria exist precisely because tilted or scattering laminations may produce no direct echo."
+  },
+  {
+   "question": "An indication peaks at 64% FSH. Applying the 6 dB drop to trace its boundary, you mark the probe centerline where the echo falls to:",
+   "options": ["58% FSH", "32% FSH", "16% FSH", "8% FSH"],
+   "correct": 1,
+   "explanation": "Six decibels is half amplitude: 64% ÷ 2 = 32% FSH. At that point the beam centerline sits approximately over the reflector's edge, and working around the indication traces its extent."
+  },
+  {
+   "question": "A code inspector asks how your straight-beam report supports repeatability. The strongest answer is that it records:",
+   "options": [
+    "the examiner's overall impression of weld quality",
+    "instrument, transducer, and calibration-block identification, reference gain, procedure revision, coverage, and datum-referenced results",
+    "only indications that exceeded the acceptance criteria",
+    "the time the shift started and ended"
+   ],
+   "correct": 1,
+   "explanation": "A report must let another qualified technician duplicate the examination: full system identification, settings, governing documents, coverage achieved, and locations measured from a permanent datum. Findings alone reproduce nothing."
+  },
+  {
+   "question": "For a 70° shear wave (tan 70° = 2.747) examining 0.625 in. plate, the full skip distance is approximately:",
+   "options": ["1.72 in.", "2.46 in.", "3.43 in.", "6.87 in."],
+   "correct": 2,
+   "explanation": "Skip = 2T·tan θ = 2 × 0.625 × 2.747 ≈ 3.43 in. The scan band must extend roughly this far from the weld for full second-leg coverage."
+  },
+  {
+   "question": "On the IIW block, maximizing the echo from the 100 mm radius and reading the wedge against the engraved reference mark accomplishes what?",
+   "options": [
+    "Sets the DAC reference level",
+    "Locates the true beam index (exit) point, the origin for all skip and surface-distance measurements",
+    "Measures the instrument's vertical linearity",
+    "Verifies the shear-wave velocity of the part"
+   ],
+   "correct": 1,
+   "explanation": "The radius returns a maximum when the beam exits directly at the block's focal mark, exposing the wedge's actual index point. Wedge wear moves that point, and every location measurement is referenced to it."
+  },
+  {
+   "question": "With a 60° wedge on 1.0 in. plate, an echo appears at 2.60 in. sound path. One leg is 2.00 in., so the reflector lies at a depth of:",
+   "options": ["1.30 in.", "0.70 in.", "2.25 in.", "0.30 in."],
+   "correct": 1,
+   "explanation": "2.60 in. exceeds one leg (1.0 ÷ cos 60° = 2.00 in.), so the beam is in its second leg: depth = 2T − s·cos θ = 2.00 − 2.60 × 0.5 = 0.70 in. below the scanning surface."
+  },
+  {
+   "question": "A repeatable signal runs the full length of a single-V pipe weld, plots at the far surface slightly offset from the weld centerline, and weakens markedly when scanned from the opposite side. The most likely source is:",
+   "options": [
+    "a continuous centerline crack in the root",
+    "counterbore or root geometry — confirmed by plotting against the joint detail before any disposition",
+    "porosity scattered through the weld volume",
+    "a lamination in the base material at mid-wall"
+   ],
+   "correct": 1,
+   "explanation": "Far-surface position, constant offset, full-length consistency, and side-to-side asymmetry are the signature of machined counterbore or root geometry. It is proven nonrelevant by plotting against the drawing — and documented, not ignored."
+  }
+ ]
+}

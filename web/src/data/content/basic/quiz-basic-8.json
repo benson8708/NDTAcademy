@@ -1,0 +1,115 @@
+{
+  "moduleId": "basic-8",
+  "questions": [
+    {
+      "question": "A 4340 steel landing-gear member is quenched and tempered, raising its ultimate tensile strength from roughly 100 ksi to about 270 ksi. Its modulus of elasticity:",
+      "options": [
+        "increases nearly threefold, in proportion to the strength gain",
+        "remains essentially unchanged at about 30 × 10⁶ psi, because stiffness is set by interatomic bonding",
+        "decreases, because hardened steel is more brittle and therefore less stiff",
+        "cannot be estimated without pulling a new tensile specimen at the higher hardness"
+      ],
+      "correct": 1,
+      "explanation": "Heat treatment moves strength dramatically but barely touches the modulus: E is fixed by interatomic bonding, not by microstructure, so the part becomes nearly three times stronger without becoming one bit stiffer, and its elastic deflections under load do not change. Brittleness is a matter of ductility and toughness, not stiffness — steel's modulus stays near 30 × 10⁶ psi at any temper."
+    },
+    {
+      "question": "A Brinell test on a carbon-steel forging reads 300 HB. Using the accepted correlation for carbon and low-alloy steels, its ultimate tensile strength is approximately:",
+      "options": [
+        "60,000 psi",
+        "300,000 psi",
+        "150,000 psi",
+        "30 × 10⁶ psi"
+      ],
+      "correct": 2,
+      "explanation": "For carbon and low-alloy steels, UTS (psi) ≈ 500 × Brinell hardness number — here 500 × 300 = 150,000 psi. Hardness tracks strength because the same microstructure resists an indenter and a tensile pull, but the rule is an approximate correlation valid for that alloy family, not a law of physics. 30 × 10⁶ psi is steel's modulus of elasticity — a different property entirely."
+    },
+    {
+      "question": "Scheduled NDT for fatigue cracks is especially critical in aluminum airframe structure because aluminum alloys:",
+      "options": [
+        "have no true endurance limit, so finite fatigue life must be managed through damage-tolerance inspection",
+        "show an endurance limit at roughly half their UTS, below which life is effectively infinite",
+        "are stiffer than steel and therefore accumulate cyclic strain faster",
+        "pass through a sharp ductile-to-brittle transition at altitude temperatures"
+      ],
+      "correct": 0,
+      "explanation": "Ferrous alloys show an endurance limit — roughly half of UTS — below which fatigue life is effectively infinite, but aluminum alloys have no such floor: every cyclic stress consumes life. Airframes therefore live on finite-life and damage-tolerance logic, with inspections timed to catch cracks before they grow to critical size. Aluminum is also only about one-third as stiff as steel, and as an FCC metal it shows no ductile-to-brittle transition."
+    },
+    {
+      "question": "Tight, straight, longitudinal seams on the surface of rolled bar stock most likely originated as:",
+      "options": [
+        "grinding cracks introduced during final surface finishing",
+        "fatigue cracks initiated by vibration during shipping",
+        "shrinkage pipe at the centerline of the ingot",
+        "surface blowholes or cracks on the ingot, drawn out during hot working"
+      ],
+      "correct": 3,
+      "explanation": "Primary working renames inherent discontinuities rather than erasing them: oxidized surface blowholes and cracks cannot weld shut under reduction, so they draw out into tight longitudinal seams — just as inclusions string into stringers and pipe flattens into laminations. Pipe remnant stays internal at the bar centerline, and grinding cracks form fine networks perpendicular to the grind direction. Seams' pressed-together faces are why they indicate so faintly in magnetic particle testing."
+    },
+    {
+      "question": "Ultrasonic testing of a forged billet reveals an internal burst that does not extend to the surface. Which statement about detecting this discontinuity is correct?",
+      "options": [
+        "Magnetic particle testing would also find it if the magnetizing current were increased",
+        "Penetrant testing is preferred because bursts are relatively large",
+        "Only volumetric methods such as UT or RT can find it, because it never reaches the surface",
+        "Visual inspection with magnification is adequate once the billet is machined"
+      ],
+      "correct": 2,
+      "explanation": "Bursts are internal ruptures from forging at improper temperature or with too aggressive a reduction. A burst that never breaks the surface is invisible to penetrant, which needs a surface opening, and lies far beyond the shallow near-surface reach of magnetic particle testing regardless of current. Only methods that interrogate the full volume — ultrasonics and radiography — can find it, which is why critical forgings receive ultrasonic inspection."
+    },
+    {
+      "question": "Stress-corrosion cracking of a formed austenitic stainless steel part requires which combination of conditions acting simultaneously?",
+      "options": [
+        "Cyclic loading, low temperature, and a sharp notch",
+        "A susceptible alloy, sustained tensile stress, and the specific corrodent for that alloy — chlorides in this case",
+        "High hardness, charged atomic hydrogen, and cadmium plating",
+        "Steady load at temperatures above roughly 0.4 of the absolute melting point"
+      ],
+      "correct": 1,
+      "explanation": "SCC stands on three legs at once: a susceptible alloy, sustained tensile stress (applied or residual — forming and assembly stresses count), and the alloy-specific corrodent — chlorides for austenitic stainless, ammonia for brass, caustic for carbon steel. Remove any one leg and the mechanism stops, which is how SCC is engineered against. Its cracks are fine, branched, and tight with little deformation. Cyclic load defines fatigue, hydrogen plus plating defines hydrogen embrittlement, and sustained load at high temperature defines creep."
+    },
+    {
+      "question": "A steel bracket fractures suddenly with no visible deformation; the face is flat, bright, and granular and carries a herringbone (chevron) pattern. The chevron V-points:",
+      "options": [
+        "converge back at the fracture origin, handing the investigator a map to where failure started",
+        "point toward the final-fracture zone, away from the origin",
+        "record one load cycle each, like fatigue striations",
+        "mark ductile microvoid coalescence inside the 45° shear lip"
+      ],
+      "correct": 0,
+      "explanation": "Chevron marks decorate brittle fractures, and their points converge back at the origin — often a notch, arc strike, or weld flaw — so the pattern is read like a map. The bright, granular, deformation-free face distinguishes brittle cleavage from ductile overload (dull, fibrous, necked, dimpled) and from fatigue, whose beach marks and striations record progressive growth cycle by cycle."
+    },
+    {
+      "question": "On a properly demonstrated POD curve, the upper asymptote flattens just below 100% because:",
+      "options": [
+        "the regression software cannot plot probabilities at exactly 100%",
+        "specimens containing large flaws are excluded from demonstration sets",
+        "POD values are normalized against the false call rate",
+        "even gross flaws are occasionally missed — blocked access, freak orientation, or a human lapse — so no flaw size earns 100% POD"
+      ],
+      "correct": 3,
+      "explanation": "'Too big to miss' is not a statistical category: wrong access, an unfavorable orientation, or a lapse in attention occasionally defeats even large flaws, so the curve never touches 100%. That is also why capability is quoted as a₉₀/₉₅ — a probability with a confidence level demonstrated under stated conditions — rather than as some size above which detection is assumed certain."
+    },
+    {
+      "question": "For a MIL-HDBK-1823A POD demonstration of a crack-detection procedure, the specimens should contain laboratory-grown fatigue cracks rather than EDM notches because:",
+      "options": [
+        "fatigue cracks are cheaper to produce than EDM notches",
+        "EDM notches cannot be sized accurately enough for the regression analysis",
+        "EDM notches are wide-open slots that penetrant, particles, and sound all find more easily than a tight service crack, so notch-based results flatter the system",
+        "fatigue cracks can be reused indefinitely, while notches wear out with repeated inspection"
+      ],
+      "correct": 2,
+      "explanation": "The demonstrated curve must describe how the inspection will perform against real service flaws. A tight fatigue crack barely admits penetrant and barely disturbs a sound beam, while an EDM notch is an open slot every method finds easily — so a notch-based demonstration overstates capability. The same realism rule requires running the demonstration under production conditions with production-qualified personnel."
+    },
+    {
+      "question": "A damage-tolerance program sets the NDT inspection interval at one-half of the crack-growth life between the reliably detectable flaw size and the critical size. The purpose of that one-half factor is to:",
+      "options": [
+        "double the POD achieved by each individual inspection",
+        "give a crack passing detectable size at least two inspection opportunities before it can reach critical size, so a single missed detection is survivable by design",
+        "permit alternate inspections to be skipped when maintenance workload is high",
+        "guarantee the crack is repaired before it ever reaches detectable size"
+      ],
+      "correct": 1,
+      "explanation": "Fracture mechanics grows the assumed flaw from the reliably detectable size (a₉₀/₉₅) to critical size, and the interval is set as a fraction — commonly one-half — of that growth life so a crack crossing detectable size gets looked at at least twice before it can become critical. Because detection is probabilistic, the design deliberately budgets for one miss; POD itself belongs to the inspection system, not the schedule, and no inspection can act on a crack before it is detectable."
+    }
+  ]
+}

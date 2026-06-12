@@ -1,0 +1,176 @@
+{
+ "lessonId": "ut1-6-2",
+ "title": "Surface Waves, Plate Waves, and Pulse-Echo Transmission",
+ "narrationScript": "So far we have worked with waves that travel through the body of the metal. This lesson covers two special modes that live at boundaries, surface waves and plate waves, and then squares up the two basic ways of using any wave, pulse echo and through transmission. Start with the surface wave, also called the Rayleigh wave. Push the incident angle on the wedge past the second critical angle, around the mid sixties for a plastic wedge on steel, and the shear wave vanishes into the surface. What remains is a wave that grips the top surface and rolls along it. It travels a little slower than shear, about ninety two percent of shear velocity, which in steel works out to roughly two thousand nine hundred eighty meters per second. The useful part is where the energy lives. Nearly all of it is packed within about one wavelength of the surface. At two and a quarter megahertz that is only about one point three millimeters deep, and at five megahertz about zero point six. So a surface wave is a skin inspector. It will follow a gentle radius around a curve as long as the radius is much larger than the wavelength, which makes it ideal for parts you cannot lay a normal beam on, like fillets, machined radii, and blade roots. But a sharp surface crack cuts straight across its path and throws back a strong echo. There is a classic field trick that proves what you are looking at. Wet your fingertip and press it on the surface ahead of the probe. If the signal collapses, you have a surface wave, because anything sitting on the surface, couplant smears, grease, scale, even an oily fingerprint, absorbs it. That sensitivity cuts both ways. It finds shallow surface cracks beautifully, and it also means a dirty surface fills your screen with junk. Now shrink the part. When a plate is only a few wavelengths thick, the top and bottom surfaces are so close together that the whole thickness vibrates as one system. These are plate waves, called Lamb waves. They come in two families. Symmetric modes breathe, meaning the plate gets thicker and thinner about its centerline. Asymmetric modes flex, meaning the whole plate snakes up and down. And here is the strange part. Their velocity is not a constant of the material. It changes with the product of frequency and thickness, a behavior called dispersion. So setting up a Lamb wave test means choosing a mode and an incident angle from dispersion data for that exact plate, not just grabbing a wedge. The payoff is speed. A Lamb wave fills the whole thickness of a thin sheet and travels a long way down it, so one probe position screens a wide strip for laminations, and the method suits sheet, strip, thin tube, and bonded skins. Last topic, the two basic ways to use any of these waves. Pulse echo is the everyday method. One transducer sends the pulse and then listens for whatever comes back. The screen gives you two facts about a reflector. How far away it is, from the arrival time. And something about its size and orientation, from the amplitude. You only need access to one side of the part. The price is a dead zone right under the probe while the crystal stops ringing, and you depend on the flaw bouncing energy back toward you. Through transmission splits the job between two transducers. One sends from one face, the other listens on the opposite face, and you watch the strength of the signal that gets through. Set it to a steady level on clean material, maybe eighty percent of screen height, and then scan. A discontinuity in the path casts a shadow, and the received signal drops. It is simple, and it works in materials so attenuating or so thin that pulse echo struggles. But notice what you give up. There is no echo, so there is no depth reading. A drop tells you something is in the path, not how deep it sits. And the two probes must stay lined up on a common axis with steady coupling on both faces, because misalignment or a dry spot looks exactly like a defect. Keep the pairing straight in your head. Pulse echo gives location and depth from one side. Through transmission gives a go or no go shadow and needs two sides. Surface waves own the skin. Lamb waves own thin sheet. Four tools, four jobs.",
+ "imagePrompt": "An inspector holds a steep-wedge surface-wave probe against the radiused fillet of a machined steel turbine component, watching the A-scan on a portable flaw detector resting on the workbench.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Making a Wave Hug the Surface",
+   "body": "Refraction has a limit. As the incident angle in the wedge grows, the refracted shear wave in steel leans farther from the normal, and at the **second critical angle** (about 57° incidence for acrylic on steel) it lies down in the surface. Push slightly past that — to roughly the mid-60s of incidence — and the energy reorganizes into a **Rayleigh (surface) wave**: a rolling, elliptical particle motion that grips the surface and travels along it. Surface-wave wedges are sold exactly for this, steeper than any shear-wave wedge.\n\nThe Rayleigh wave is the slowest of the common modes — about **92% of the shear velocity**, which in steel is roughly 0.92 × 3,240 ≈ **2,980 m/s**. Its defining feature is confinement: nearly all of its energy travels within about **one wavelength of the surface**. Compute that for steel: at 2.25 MHz, λ = 2.98 mm/µs ÷ 2.25 MHz ≈ **1.3 mm**; at 5 MHz, about **0.6 mm**. Frequency therefore sets your inspection depth — a surface wave is a skin inspector, and you choose how thick a skin."
+  },
+  {
+   "type": "text",
+   "heading": "Rayleigh Behavior on Real Parts",
+   "body": "Three behaviors make surface waves valuable — and tricky:\n\n- **They follow gentle curves.** As long as the radius is much larger than the wavelength, the wave rides around fillets, radii, and contoured surfaces with little loss. That puts ultrasound onto geometry no straight or angle beam can reach — blade roots, thread relief radii, machined transitions.\n- **They reflect hard from sharp surface discontinuities.** A surface-breaking crack interrupts the wave's home territory and returns a strong echo, with sensitivity to cracks shallower than a millimeter at typical frequencies.\n- **Anything on the surface is in the test.** Couplant smears, grease, scale, weld spatter — even a fingerprint of oil — absorb or reflect the wave and produce signals or losses.\n\nThat last point gives the classic field check: touch a couplant-wetted **fingertip to the surface ahead of the probe**. If the signal collapses, you have confirmed a surface wave (and you can walk a fingertip along the path to locate where a reflector sits). The same sensitivity means the inspection surface must be clean and dry beyond the probe, and that surface waves rarely survive rough as-welded surfaces."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-6-2-fig-a",
+   "caption": "A Rayleigh wave confines its energy within about one wavelength of the surface, follows gentle radii, and reflects strongly from a sharp surface crack."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The fingertip check",
+   "body": "A damped fingertip placed ahead of the probe that kills the signal **proves** you are working with a surface wave — and dragging it along the path is a quick way to bracket a reflector's location. Corollary: every smear of couplant or dirt in the scan path is a false indication waiting to happen, so keep the surface ahead of the probe clean and dry."
+  },
+  {
+   "type": "text",
+   "heading": "Lamb (Plate) Waves",
+   "body": "Shrink the section until it is only **a few wavelengths thick** and the top and bottom surfaces couple together: the entire plate vibrates as a unit. These resonant-plate modes are **Lamb waves**, and they come in two families. **Symmetric (S) modes** breathe — the plate thickens and thins about its centerline. **Asymmetric (A) modes** flex — the whole plate snakes. Several modes of each family can exist at once.\n\nLamb waves are **dispersive**: their velocity is not a material constant but depends on the **frequency × thickness** product, plotted on dispersion curves. Change the plate thickness or the probe frequency and the same mode travels at a different speed — or stops existing. Generating a chosen mode means selecting the incident angle from dispersion data for that exact plate, not just grabbing a wedge off the shelf.\n\nWhy bother? **Coverage.** A Lamb wave fills the entire thickness and travels long distances down the sheet, so a single probe position screens a wide strip. Classic applications: lamination screening of **sheet and strip** (often immersion or squirter-coupled in production), thin-wall **tubing**, and **bond/skin inspection** of layered structures. A discontinuity anywhere in the thickness disturbs the mode and shows as a reflection or a loss of transmitted signal."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-6-2-fig-b",
+   "caption": "Symmetric Lamb modes breathe about the plate centerline while asymmetric modes flex the whole plate; both exist only in thin sections and travel at velocities set by frequency times thickness."
+  },
+  {
+   "type": "text",
+   "heading": "Pulse-Echo: Round-Trip Information",
+   "body": "However the wave is generated, there are two fundamental ways to use it. In **pulse-echo**, one transducer both transmits and receives. The pulse travels out, and anything in its path — a flaw, the back wall — reflects energy home. The display tells you two things about each reflector: **where it is**, from the round-trip time (converted to soundpath using the calibrated velocity), and **how it reflects**, from the echo amplitude compared with a reference.\n\nPulse-echo needs access to only **one side**, locates reflectors in depth, and is the basis of nearly all manual contact work — which is why the previous lesson's straight-beam and angle-beam techniques are pulse-echo by default. Its costs: a **dead zone** just under the surface while the element stops ringing, and total dependence on the flaw reflecting energy **back toward the probe** — an unfavorably tilted flaw can hide."
+  },
+  {
+   "type": "text",
+   "heading": "Through-Transmission: Watching the Shadow",
+   "body": "**Through-transmission** uses two transducers: a transmitter on one face and a receiver aligned directly opposite on the other. You monitor the **strength of the signal that gets through**. Set it to a steady reference on known-good material — say 80% full screen height — then scan both probes together. A discontinuity in the path scatters or blocks energy and casts a **shadow**: the received amplitude drops, and the procedure defines how much drop (often expressed in dB or percent) is recordable.\n\nWhat you gain: it works in **highly attenuating or very thin** material where a pulse-echo round trip dies, there is no dead zone, and no dependence on the flaw reflecting sound back. What you give up:\n\n- **No depth information** — a 90% drop says something is in the path, not where in the thickness it sits.\n- **Two-sided access** and continuous **alignment** on a common axis (yokes, bridges, or fixtures hold the pair).\n- **Coupling discipline on both faces** — a dry spot or a misaligned probe drops the signal exactly like a defect.\n\nMany production systems run pulse-echo and through-transmission together, using each to confirm the other."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-6-2-fig-c",
+   "caption": "Pulse-echo reads reflector depth from echo arrival time with one-side access, while through-transmission watches for an amplitude drop between two aligned probes and gives no depth."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-6-2-fig-a",
+   "title": "Rayleigh surface wave behavior",
+   "file": "ut1-6-2-fig-a.svg"
+  },
+  {
+   "id": "ut1-6-2-fig-b",
+   "title": "Symmetric and asymmetric Lamb modes",
+   "file": "ut1-6-2-fig-b.svg"
+  },
+  {
+   "id": "ut1-6-2-fig-c",
+   "title": "Pulse-echo versus through-transmission",
+   "file": "ut1-6-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Rayleigh or Lamb?",
+  "intro": "Classify each statement under the wave mode it describes.",
+  "buckets": ["Surface (Rayleigh) wave", "Plate (Lamb) wave"],
+  "items": [
+   {
+    "label": "Travels at about 92% of shear velocity — roughly 2,980 m/s in steel",
+    "bucket": 0,
+    "why": "The Rayleigh velocity is a near-constant fraction of the shear velocity in the same metal."
+   },
+   {
+    "label": "Energy confined within about one wavelength of the surface",
+    "bucket": 0,
+    "why": "That confinement is the defining property of a surface wave — it inspects only the skin."
+   },
+   {
+    "label": "Velocity changes with the frequency × thickness product",
+    "bucket": 1,
+    "why": "Lamb waves are dispersive: the same mode runs at different speeds as f·t changes, which is why setup uses dispersion curves."
+   },
+   {
+    "label": "Comes in symmetric and asymmetric mode families",
+    "bucket": 1,
+    "why": "S modes breathe about the centerline; A modes flex the whole plate."
+   },
+   {
+    "label": "Follows gentle radii but reflects strongly from a sharp surface crack",
+    "bucket": 0,
+    "why": "A Rayleigh wave rides curves whose radius is much larger than its wavelength, while a surface-breaking crack cuts its path."
+   },
+   {
+    "label": "Best tool for fast lamination screening of thin sheet and strip",
+    "bucket": 1,
+    "why": "A Lamb wave fills the whole thin section and travels far, so one probe position covers a wide strip."
+   },
+   {
+    "label": "A couplant-wetted fingertip ahead of the probe kills the signal",
+    "bucket": 0,
+    "why": "Anything resting on the surface absorbs a surface wave — the classic confirmation check."
+   },
+   {
+    "label": "Exists only when the part is just a few wavelengths thick",
+    "bucket": 1,
+    "why": "The two surfaces must couple into one vibrating system, which requires a thin section."
+   },
+   {
+    "label": "Generated just beyond the second critical angle",
+    "bucket": 0,
+    "why": "Past the second critical angle the shear wave vanishes and the remaining energy travels as a surface wave."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "The shear velocity of steel is 3,240 m/s. The Rayleigh (surface) wave velocity in steel is approximately:",
+   "options": ["1,620 m/s", "2,980 m/s", "3,240 m/s", "5,920 m/s"],
+   "correct": 1,
+   "explanation": "A Rayleigh wave travels at about 92% of the shear velocity: 0.92 × 3,240 ≈ 2,980 m/s. It is the slowest of the common modes — slightly under shear, far under longitudinal."
+  },
+  {
+   "question": "A 5 MHz surface wave is used on steel (Rayleigh velocity ≈ 2.98 mm/µs). Roughly how deep does the inspection reach?",
+   "options": ["About 0.6 mm", "About 3 mm", "About 6 mm", "The full part thickness"],
+   "correct": 0,
+   "explanation": "Penetration is about one wavelength: λ = 2.98 ÷ 5 ≈ 0.6 mm. Raising frequency thins the inspected skin; lowering it deepens it."
+  },
+  {
+   "question": "Lamb waves are called dispersive because:",
+   "options": [
+    "They scatter from grain boundaries more than other modes",
+    "Their velocity depends on the frequency × thickness product rather than being a material constant",
+    "They disperse into shear waves at the plate edges",
+    "Their amplitude decreases with distance"
+   ],
+   "correct": 1,
+   "explanation": "A Lamb mode's velocity shifts as frequency or plate thickness changes, which is why mode and incident angle are chosen from dispersion data for the specific plate."
+  },
+  {
+   "question": "During a through-transmission test the received signal drops from 80% to 15% FSH. What can you conclude?",
+   "options": [
+    "A discontinuity about 65% of the way through the thickness",
+    "Something is interrupting the sound path, but its depth is unknown — and alignment/coupling must be ruled out",
+    "The flaw is laminar and lies at mid-wall",
+    "The transmitter frequency has drifted"
+   ],
+   "correct": 1,
+   "explanation": "Through-transmission gives amplitude only — no depth. A drop flags an interruption in the path, and because misalignment or a dry probe face mimics it, those must be checked before calling a defect."
+  },
+  {
+   "question": "While evaluating an indication during a surface-wave exam, the technician presses a couplant-wetted fingertip on the surface between the probe and the indication, and the echo disappears. This shows that:",
+   "options": [
+    "The indication was caused by an internal flaw",
+    "The signal is carried by a surface wave traveling along that path",
+    "The instrument gain is set too high",
+    "The wave has mode-converted to longitudinal"
+   ],
+   "correct": 1,
+   "explanation": "Only a wave whose energy rides the surface is absorbed by a fingertip resting on it — the standard field confirmation of a Rayleigh wave, also usable to bracket a reflector's position."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Technique Course §1.1.3, §1.1.4 (surface and plate waves; pulse-echo transmission)",
+  "Rayleigh wave relationships: v_R ≈ 0.92 × v_S (≈ 2,980 m/s in steel); penetration depth ≈ one wavelength",
+  "Lamb wave behavior: dispersive modes governed by the frequency × thickness product (dispersion curves)"
+ ]
+}

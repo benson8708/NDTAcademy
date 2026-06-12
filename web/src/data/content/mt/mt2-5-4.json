@@ -1,0 +1,187 @@
+{
+  "lessonId": "mt2-5-4",
+  "title": "Quality Control of Equipment and Processes",
+  "narrationScript": "Magnetic particle testing fails quietly. The machine still hums, the lamp still glows, the bath still flows, and none of it tells you that sensitivity has drifted away. Particles wear out and break down. Bulbs age. Ammeters drift. Contact pads burn. The only thing standing between a healthy system and a system that merely looks healthy is the quality control routine, and at Level Two that routine is yours. Start with the equipment itself. Preventive maintenance runs on a schedule. The machine's ammeter is compared with a calibrated reference, commonly at least every six months and after any repair, with agreement typically expected within about ten percent. Timers that control shot duration are verified. Machines that rely on a quick break of current for coil shots get that feature tested, because losing quick break quietly costs you field at the ends of the part. Yokes get the dead weight test, lifting about ten pounds with alternating current, or about forty pounds with direct current, at the pole spacing you actually use. And look after the hardware your hands know. Copper braid contact pads that are worn or missing strands invite arc burns. Cables with broken clamps drop current. Nozzles and pumps that no longer agitate evenly starve the bath of particles. The wet bath itself is a living system and it needs daily attention. Concentration is measured with the settling test. Run the agitation long enough to mix the bath completely, commonly about thirty minutes after any additions. Flush the delivery line, then draw a one hundred milliliter sample from the hose into a pear shaped centrifuge tube. Some procedures have you demagnetize the sample so the particles settle freely instead of clumping. Let the tube stand undisturbed, about thirty minutes for water based baths and about sixty for oil, then read the settled volume in the graduated stem. Typical procedure windows are one tenth to four tenths of a milliliter per hundred milliliters for fluorescent baths, and one point two to two point four milliliters for visible baths. Reading low, add particles. Reading high, add carrier. Either way, re agitate and run the test again before testing parts. Concentration is not the whole story, so look at what settled. If the column shows distinct bands, dirt, lint, and oil are riding above the particles, and by common practice a contamination layer approaching a third of the particle volume condemns the bath. Put the tube under the ultraviolet lamp. If the carrier liquid itself fluoresces noticeably, dye has broken loose from the particles and contrast is dying. Water based baths also get a water break check. Flow the bath over a clean part and watch the film. It should sheet smoothly and continuously. Beading water means the wetting agent is failing. And the whole system gets a performance check with a test piece, a ring specimen or a shim panel, to prove that machine, bath, and lights together still find what they found yesterday. Lights drift too, so we measure them. The ultraviolet lamp warms up for several minutes, then a calibrated meter verifies at least one thousand microwatts per square centimeter at the examination surface, checked each shift and after every bulb or filter change. A cracked filter takes the lamp out of service immediately. The booth is checked for darkness, with ambient white light held to about two footcandles. For visible particle work the requirement flips, at least one hundred footcandles of white light at the examination surface. The meters themselves go out for calibration on their own cycle, commonly every six months. Field strength gets verified with purpose built devices. The pie gauge, an octagon of brazed segments on a handle, sits on the part and shows field direction and rough adequacy. Notched shims taped notch side down validate a technique on real geometry. A Hall effect gaussmeter puts a number on the tangential field, with procedures commonly targeting on the order of thirty to sixty gauss. And the ring specimen with drilled holes grades the whole system by how many holes show at a given amperage. Finally, residual fields. After demagnetization, a pocket field indicator or a calibrated gaussmeter verifies the part is at or below the procedure limit, commonly about three gauss. Check parts before testing too, because a part that arrives magnetized can throw arc blow at the contacts and paint false patterns. For perspective, the earth's field is only about half a gauss. Run the routine every shift, write down every reading, and the system never gets a chance to lie to you.",
+  "imagePrompt": "A gloved technician holds a pear-shaped settling tube of dark particle suspension up to eye level to read the graduated tip, a wet horizontal magnetic particle bench and glowing ultraviolet lamp behind him in a dim shop.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Process Control: Catch the Drift Before It Costs You",
+      "body": "An MT system degrades invisibly — nothing looks different when the bath is exhausted or the ammeter reads 15% high. **Equipment preventive maintenance (8.1)** is the scheduled defense:\n\n- **Ammeter verification.** The machine's meter is compared against a calibrated reference (shunt or meter), commonly at least **every six months** and after any repair, with agreement typically expected within about **±10%**.\n- **Timer check.** Shot-duration timers are verified so a called-out half-second shot really lasts half a second.\n- **Quick-break verification.** Equipment that depends on a fast collapse of current (notably for coil shots on FWDC machines) gets the quick-break circuit tested — losing it silently weakens the field at part ends.\n- **Yoke dead-weight checks.** Lifting power of about **10 lb (AC)** or about **40 lb (DC)** at the pole spacing used.\n- **The hardware your hands know.** Worn copper-braid contact pads invite arc burns; loose clamps and damaged cables drop current; tired pumps and clogged nozzles starve the bath's agitation.\n\nEvery check gets a date, a result, and a signature — PM that is not documented does not exist to an auditor."
+    },
+    {
+      "type": "text",
+      "heading": "The Particle Bath: A Living System",
+      "body": "**Vehicle and bath maintenance (8.2)** treats the suspension as the consumable instrument it is. The **carrier (vehicle)** is either conditioned water — with wetting agents, corrosion inhibitors, and antifoam — or a low-viscosity, low-fluorescence oil. Both degrade: particles fracture and lose fluorescent dye with pump cycling, oils pick up contamination, water baths lose wetting agent and grow biological gunk.\n\nGood bath discipline:\n\n- **Agitate before everything.** Particles settle fast; run the agitation system long enough to fully suspend the bath — commonly around 30 minutes after additions — before sampling or testing.\n- **Sample honestly.** Flush the delivery hose first, then draw the sample from the hose — the bath the part actually sees — never dipped off the tank top.\n- **Respect temperature limits.** Hot parts and hot baths evaporate carrier, shift concentration, and (for oil) raise fire risk.\n- **Replace on condition, not on guesswork.** The settling test and contamination checks below are the evidence.\n\nA starved or contaminated bath produces beautiful-looking tests that find nothing — the most dangerous failure mode in the method."
+    },
+    {
+      "type": "figure",
+      "figureId": "mt2-5-4-fig-a",
+      "caption": "The settling test: a 100 mL sample drawn from the delivery hose settles in a pear-shaped centrifuge tube, and the graduated stem reads particle concentration and reveals contamination banding."
+    },
+    {
+      "type": "text",
+      "heading": "The Settling Test, Step by Step",
+      "body": "The **settling test (8.2.1)** is the daily concentration check, run before first use and after any bath adjustment.\n\n1. **Agitate** the bath thoroughly (commonly ~30 minutes after additions) so the sample represents the tank.\n2. **Flush** the hose, then draw **100 mL** into a pear-shaped (ASTM-style) centrifuge tube.\n3. **Demagnetize the sample** where the procedure requires it — clumped, magnetized particles settle fast and read high.\n4. **Let it stand undisturbed** — typically about **30 minutes for water-based** carriers, about **60 minutes for oil**.\n5. **Read the settled volume** in the graduated stem at eye level.\n\nTypical procedure windows: **fluorescent 0.1–0.4 mL per 100 mL; visible 1.2–2.4 mL per 100 mL**. Below range: add particles. Above range: add carrier. After any adjustment, re-agitate and **re-run the test** before parts are examined — never test on an unverified bath. Log every reading; the trend line warns you the bath is dying long before it fails outright."
+    },
+    {
+      "type": "text",
+      "heading": "Beyond Concentration: Contamination and Performance",
+      "body": "**Other bath-strength and condition tests (8.2.2)** look at quality, not just quantity:\n\n- **Contamination banding.** A settled column that shows **two distinct layers** — dirt, lint, oil, or sand riding above the magnetic particles — signals contamination. Common practice condemns the bath when the contaminant layer approaches **30% of the settled particle volume**.\n- **Carrier fluorescence.** Under UV, the liquid above the settled particles should stay dark. A noticeably fluorescent carrier means dye has stripped from the particles — contrast is collapsing and the bath is due for replacement.\n- **Brightness comparison.** Compare the bath's indication brightness against a reference sample of new suspension or a kept reference part.\n- **Water-break test.** For aqueous baths: flow bath over a clean part — a smooth, continuous film means wetting is good; beading means wetting agent is depleted.\n- **System performance verification.** A test piece with known flaws — a ring specimen run on a central conductor, a shim panel, or a kept defect part — proves the **whole chain** (machine, bath, lighting, and eyes) still performs, typically each shift.\n\nConcentration in range plus contamination out of control is still a failed bath. Both checks rule."
+    },
+    {
+      "type": "text",
+      "heading": "Lighting Intensity Checks",
+      "body": "**Lighting checks (8.3)** keep the part visible, and they are meter checks, not eyeball checks.\n\n**UV-A (8.3.1).** Warm the lamp up (several minutes for mercury-vapor types; LED units stabilize faster but still get verified). Then measure with a calibrated UV-A meter: at least **1,000 µW/cm² at the examination surface** — many shops verify at 15 inches from the filter face as their standard distance. Check **each shift** and **after every bulb or filter change**. Inspect the filter: a cracked or missing filter takes the lamp out of service immediately. Keep lamp housings and filters clean — grime can cut output dramatically.\n\n**Ambient darkness.** In the fluorescent booth, ambient white light at or below about **2 fc (≈ 20 lux)**, measured with a white-light meter at the examination position.\n\n**White light (8.3.2).** For visible-particle work, at least **100 fc (≈ 1,000 lux)** at the examination surface.\n\nThe meters themselves are calibrated instruments on their own cycle — commonly every six months. All readings go on the shift log; these are typical procedure values, and your written procedure governs."
+    },
+    {
+      "type": "callout",
+      "variant": "safety",
+      "title": "UV-A and electrical safety during QC",
+      "body": "Never look into an energized UV lamp or aim it at anyone's eyes or skin — and treat a **cracked filter** as an immediate stop: unfiltered output includes hazardous shorter wavelengths. Wear UV-rated protection where the procedure requires it, and remember photochromic lenses are prohibited in the booth. During electrical PM — pads, cables, internal checks — de-energize and lock out the machine, and never break contact at heads or prods while current flows: the arc flash burns parts and people."
+    },
+    {
+      "type": "figure",
+      "figureId": "mt2-5-4-fig-b",
+      "caption": "Field verification and residual-field devices: pie gauge for direction, QQI shim for technique validation, Hall-effect gaussmeter for tangential field strength, and the pocket field indicator for residual checks."
+    },
+    {
+      "type": "text",
+      "heading": "Field Strength and Residual-Field Devices",
+      "body": "**Field strength validation devices (8.4)** answer 'is there enough field, in the right direction?'\n\n- **Pie (octagon) gauge** — eight brazed segments on a handle, laid on the part during magnetization. Particle lines form across segment boundaries that cross the flux: a fast, qualitative read of **field direction and presence**, well suited to weld work with yokes and prods.\n- **QQI artificial-flaw shims** — taped notch-side down on the actual part; the validation workhorse from procedure development, equally useful for periodic technique verification.\n- **Hall-effect gaussmeter** — the quantitative tool: a tangential probe flat on the surface, with procedures commonly targeting on the order of **30–60 G** during the shot.\n- **Ring specimen** (Ketos-type, with drilled holes at increasing depth) — run on a central conductor at specified amperages; the **number of hole indications visible** grades overall system sensitivity.\n\n**Residual field checking devices (8.5)** answer 'did the demag work?' The pocket **field indicator** — a calibrated-spring magnetometer — or a gaussmeter verifies residual field at or below the procedure limit, commonly about **3 G** (the earth's field, for scale, is about 0.5 G). Check incoming parts too: a part that arrives magnetized causes arc blow at contacts and false patterns, and needs demagnetization **before** examination."
+    }
+  ],
+  "figures": [
+    {
+      "id": "mt2-5-4-fig-a",
+      "title": "The wet-bath settling test",
+      "file": "mt2-5-4-fig-a.svg"
+    },
+    {
+      "id": "mt2-5-4-fig-b",
+      "title": "Field verification and residual-field devices",
+      "file": "mt2-5-4-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "scenario",
+    "title": "Run the Daily QC Routine",
+    "intro": "First shift on the wet fluorescent bench. The procedure requires the full daily system check before any production part is examined. Work through what the checks throw at you.",
+    "steps": [
+      {
+        "prompt": "The UV lamp has been on for thirty seconds when your coworker says 'good enough, meter it.' What is the correct intensity check?",
+        "options": [
+          "Read it now — warm-up does not matter",
+          "Let the lamp warm up several minutes, then verify at least 1,000 µW/cm² at the examination surface with a calibrated UV-A meter, and log the reading",
+          "Skip the meter — the lamp looks plenty bright"
+        ],
+        "correct": 1,
+        "feedback": "Mercury-vapor lamps need minutes to reach stable output, and intensity is a measured value — at least 1,000 microwatts per square centimeter at the surface, each shift and after bulb or filter changes, recorded on the log."
+      },
+      {
+        "prompt": "Your settling test on the fluorescent bath reads 0.6 mL per 100 mL against a 0.1–0.4 window. What now?",
+        "options": [
+          "Test parts anyway — more particles means more sensitivity",
+          "Add carrier to dilute the bath, re-agitate, and re-run the settling test before examining parts",
+          "Add more particles to be safe"
+        ],
+        "correct": 1,
+        "feedback": "Over-concentration causes excessive background that masks indications. Dilute with carrier, re-agitate, and prove the correction with another settling test — never examine on an unverified bath."
+      },
+      {
+        "prompt": "The settled column shows a distinct second layer above the particles, nearly a third of the particle volume, and the liquid glows under UV. Your call?",
+        "options": [
+          "Replace the bath — contamination near 30% of particle volume or a fluorescent carrier condemns it",
+          "Stir it harder so the layers mix back in",
+          "Just add fresh particles on top"
+        ],
+        "correct": 0,
+        "feedback": "Banding shows contamination, and a fluorescing carrier means dye has stripped from the particles — contrast is gone. By common practice either condition replaces the bath; stirring only hides the evidence."
+      },
+      {
+        "prompt": "Next, the AC yoke gets its periodic check. What proves it?",
+        "options": [
+          "It hums when energized, so it works",
+          "It lifts a 10-pound steel weight at the pole spacing used in examinations",
+          "It lifts a 40-pound weight with AC"
+        ],
+        "correct": 1,
+        "feedback": "The dead-weight check: about 10 lb for AC yokes, about 40 lb for DC, at the spacing actually used. The hum proves power, not field."
+      },
+      {
+        "prompt": "After demagnetizing the first finished part, the pocket field indicator reads 5 G against a procedure limit of 3 G. What do you do?",
+        "options": [
+          "Ship it — 5 is close to 3",
+          "Re-demagnetize (higher initial field, slower step-down or withdrawal), then re-verify with the indicator until the reading is at or below the limit",
+          "Rub the part with a rag to remove the magnetism"
+        ],
+        "correct": 1,
+        "feedback": "Residual field is verified, not estimated. Re-demag starting above the part's magnetization level and decay it down, then prove the result — commonly 3 G or less, per your procedure."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "A settling test on a fluorescent bath reads 0.6 mL per 100 mL. Against the typical 0.1–0.4 mL window, the correct action is to:",
+      "options": [
+        "Add particles — the reading is low",
+        "Add carrier to dilute, re-agitate, and re-run the settling test before testing parts",
+        "Run parts immediately — high concentration only helps",
+        "Discard the tube and skip the check"
+      ],
+      "correct": 1,
+      "explanation": "0.6 mL is above the typical fluorescent window; excess particles raise background and mask indications, so the bath is diluted with carrier and the correction proven with a fresh settling test."
+    },
+    {
+      "question": "Which sampling and settling practice gives a valid concentration reading?",
+      "options": [
+        "Dip a sample off the top of the tank and read it after five minutes",
+        "Agitate the bath thoroughly, flush and draw 100 mL from the delivery hose, then let it settle undisturbed — about 30 minutes for water-based or about 60 for oil — before reading the stem",
+        "Sample only after the bath has sat overnight unagitated",
+        "Read the tube while the particles are still swirling"
+      ],
+      "correct": 1,
+      "explanation": "The sample must represent what the hose delivers to the part — fully agitated, drawn from the line — and the particles need their full settling time (about 30 min water, about 60 min oil, by common practice) before the stem is read."
+    },
+    {
+      "question": "The periodic dead-weight check for yokes typically requires lifting:",
+      "options": [
+        "About 10 lb with AC, or about 40 lb with DC, at the pole spacing used",
+        "About 40 lb with AC, or about 10 lb with DC, at any spacing",
+        "About 100 lb regardless of current type",
+        "No weight — an audible hum verifies the yoke"
+      ],
+      "correct": 0,
+      "explanation": "Common practice: an AC yoke demonstrates about 10 pounds of lifting power and a DC (or permanent-magnet) yoke about 40 pounds, at the spacing actually used in examinations."
+    },
+    {
+      "question": "Which statement about UV-A intensity checks is correct?",
+      "options": [
+        "Check once a year; bulbs rarely change output",
+        "After lamp warm-up, verify at least 1,000 µW/cm² at the examination surface with a calibrated meter — each shift and after every bulb or filter change",
+        "A visual brightness judgment by a dark-adapted inspector is acceptable",
+        "UV intensity only matters for dry powder work"
+      ],
+      "correct": 1,
+      "explanation": "UV output degrades with bulb age, dirty filters, and supply variation, so a calibrated meter verifies at least 1,000 microwatts per square centimeter at the surface each shift and after changes — and a cracked filter removes the lamp from service."
+    },
+    {
+      "question": "After demagnetization, a pocket field indicator on the part reads 5 G; the procedure limit is 3 G. What does this mean and what follows?",
+      "options": [
+        "The part passes — 5 G is below the earth's field",
+        "The residual field is over the limit: re-demagnetize with a higher initial field and gradual decay, then re-verify with the indicator",
+        "The indicator must be broken, since demag always works",
+        "Wipe the part down and re-measure without demagnetizing"
+      ],
+      "correct": 1,
+      "explanation": "Typical procedures require residual fields of about 3 G or less (the earth's field is only ~0.5 G); an over-limit reading means demagnetize again — starting above the part's magnetization level and decaying down — and verify with the device."
+    }
+  ],
+  "references": [
+    "CP-105-2024 MT Topical Outline §8.1 (equipment preventive maintenance)",
+    "CP-105-2024 MT Topical Outline §8.2 (bath maintenance, settling test, other bath-strength tests)",
+    "CP-105-2024 MT Topical Outline §8.3 (UV and white light intensity checks)",
+    "CP-105-2024 MT Topical Outline §8.4–8.5 (field strength validation and residual field checking devices)",
+    "Practices such as ASTM E709/E1444 and ASME Section V, Article 7 (system checks, bath concentration, lighting verification — general practice)"
+  ]
+}

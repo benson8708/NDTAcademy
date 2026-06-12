@@ -1,0 +1,144 @@
+{
+ "lessonId": "ut1-2-2",
+ "title": "Velocity, Frequency, Wavelength, and Attenuation",
+ "narrationScript": "Three numbers run every ultrasonic setup. Velocity, frequency, and wavelength. One simple equation chains them together, and one quiet enemy, attenuation, decides how much signal survives the trip. Let's get fluent in all four. Velocity first. How fast sound crosses a material is set by the material itself, by its stiffness and its density, and by the wave mode. It is not set by the probe. Longitudinal sound crosses carbon steel at about five thousand nine hundred twenty meters per second, which is five point nine two millimeters per microsecond. Shear waves in the same steel travel at about three thousand two hundred forty meters per second, roughly half. Aluminum runs a little faster than steel. Water is far slower, about one thousand four hundred eighty meters per second, and air slower still. Temperature matters too. Heat a part and the velocity drops, which is why hot thickness work gets recalibrated at temperature. Frequency is the probe's contribution. A two and a quarter megahertz probe vibrates two and a quarter million times each second, and that number rides along unchanged when the sound crosses into the part or into the next material. So when sound passes from one material to another, frequency holds still and something else must give. That something is wavelength. Wavelength equals velocity divided by frequency. Run that habit until it is automatic. At two and a quarter megahertz, longitudinal sound in steel has a wavelength of five point nine two divided by two and a quarter, about two point six three millimeters. The same probe driving shear waves gives three point two four divided by two and a quarter, about one point four four millimeters. Aim that probe through water and the wavelength shrinks to about zero point six six millimeters, because water is so slow. Why care? Sensitivity. The working rule says reflectors smaller than about half a wavelength are unreliable to detect. Half of two point six three is about one point three millimeters. If the flaw you are hunting is smaller than that, you need a higher frequency or a slower mode. So why not run everything at fifteen megahertz? Attenuation. As sound travels it loses amplitude, and the loss comes from two mechanisms inside the material. The first is absorption. Internal friction converts a little of the vibration to heat on every cycle, and the more cycles per second, the more loss. The second, usually the bigger player in metals, is scattering. Every grain boundary, pore, and inclusion is a tiny impedance change that bounces energy off in random directions. That stolen energy never comes home to the probe, and some of it sprays back early as the hash we call grass along the bottom of the screen. Here is the brutal part. When the grains are much smaller than the wavelength, scattering grows with the fourth power of frequency. Double the frequency and the scattering loss multiplies about sixteen times. That is why a coarse grained casting or an austenitic stainless weld that tests beautifully at one megahertz can turn into a wall of noise at five. Beam spread also thins the energy with distance, but that is geometry, not material loss, and we treat it separately in the next module. Attenuation is expressed in decibels per unit of travel, decibels per millimeter or per inch, and you can compare materials in the field by watching how fast the string of multiple back echoes dies out. A long, slowly shrinking string means quiet material. A string that dies in two echoes means lossy material. Now the trade you will make on every job. High frequency buys sensitivity to small flaws, sharper resolution between close reflectors, and a narrower, better behaved beam. Low frequency buys penetration and a quieter screen in coarse material. Fine grained wrought plate is happy at five or ten megahertz. A big coarse casting may demand one megahertz or lower. Most contact weld work settles around two and a quarter megahertz in shear. And when the back wall echo of a coarse part sinks into the grass, the fix is not more gain. Gain amplifies the noise exactly as much as the signal, so the picture gets louder but no clearer. The fix is a lower frequency, a longer wavelength, and a beam that ignores the grains. Choose frequency deliberately, write it down, and be ready to defend the choice, because that one number sets both what you can find and what you are guaranteed to miss.",
+ "imagePrompt": "Gloved hands couple a small ultrasonic probe to a rough sand-cast steel housing while a portable flaw detector screen shows a noisy baseline of scattered low-level echoes.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Velocity Is the Material Talking",
+   "body": "Sound velocity is a **material property**: it rises with stiffness and falls with density, and it differs by **wave mode** — in any metal, shear runs at roughly half the longitudinal speed. Within the testing range, velocity in fine-grained metal is essentially **independent of frequency**: a 1 MHz pulse and a 10 MHz pulse cross the same steel at the same speed.\n\nTwo practical wrinkles:\n\n- **Temperature.** Velocity falls as a part heats up — in carbon steel, on the order of 1% per 100 °C. Thickness readings calibrated cold will read wrong on hot piping; recalibrate at temperature, a point we return to in thickness gauging.\n- **Mode bookkeeping.** Every velocity you enter into an instrument carries a mode label. Punching the longitudinal 5,920 m/s into a shear-wave setup misplaces every indication by nearly a factor of two — a classic, avoidable error.\n\nThe table below is your working reference set. Memorize steel and water; the rest you can look up, but you should know roughly where each sits."
+  },
+  {
+   "type": "table",
+   "caption": "Working velocity reference — liquids and gases carry no shear waves.",
+   "headers": ["Material", "Longitudinal (m/s)", "Longitudinal (in/µs)", "Shear (m/s)"],
+   "rows": [
+    ["Carbon steel", "5,920", "0.233", "3,240"],
+    ["Aluminum", "6,320", "0.249", "3,130"],
+    ["Acrylic (wedge plastic)", "2,730", "0.107", "—"],
+    ["Glycerin (couplant)", "1,920", "0.076", "none — liquid"],
+    ["Water", "1,480", "0.058", "none — liquid"],
+    ["Air", "330", "0.013", "none — gas"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "λ = v ÷ f: the Number That Sets Sensitivity",
+   "body": "Frequency belongs to the probe and **does not change** when sound enters the part; velocity belongs to the material and mode. Wavelength is the adjustable term: **λ = v ÷ f**. The field shortcut: wavelength in millimeters equals velocity in **mm/µs** divided by frequency in **MHz**.\n\nWork the habit with one 2.25 MHz probe:\n\n- Steel, longitudinal: 5.92 ÷ 2.25 = **2.63 mm**\n- Steel, shear: 3.24 ÷ 2.25 = **1.44 mm**\n- Water: 1.48 ÷ 2.25 = **0.66 mm**\n\nSame probe, three wavelengths — the material and mode did that, not the crystal.\n\nWavelength is the method's sensitivity yardstick. The working rule of thumb: **reflectors smaller than about λ/2 are unreliable to detect**. At 2.25 MHz longitudinal in steel that floor is about 1.3 mm; at 5 MHz it tightens to about 0.6 mm; shear at 2.25 MHz gives about 0.7 mm. If the acceptance criteria care about 1 mm flaws, the wavelength must be short enough to see them — frequency selection starts from the flaw size, not from habit."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-2-2-fig-a",
+   "caption": "Frequency rides through the interface unchanged, so wavelength stretches or shrinks in proportion to each material's velocity."
+  },
+  {
+   "type": "text",
+   "heading": "Attenuation: Absorption Plus Scattering",
+   "body": "Attenuation is the progressive **loss of amplitude as sound travels**, quoted in **dB per unit path** (dB/mm or dB/in.). Two mechanisms inside the material drive it.\n\n- **Absorption** converts vibration to heat through internal friction, cycle by cycle. Loss grows with frequency — more cycles per second, more friction.\n- **Scattering** is usually the dominant loss in metals. Every grain boundary, pore, and inclusion is a small impedance change that deflects energy out of the beam. Some of that energy sprays back at the probe as **grass** (hash) along the baseline; the rest is simply gone. When grains are much smaller than the wavelength — the **Rayleigh scattering regime** — scattering rises with the **fourth power of frequency** and roughly the cube of grain size. Double the frequency: about **16×** the scattering loss. That is why a coarse casting or austenitic stainless weld that scans cleanly at 1 MHz can be an unreadable wall of noise at 5 MHz.\n\n**Beam spread** also thins on-axis energy with distance, but it is geometry (next module), not material loss — keep the two ideas separate.\n\nField check: bring up the **multiple back echoes** on a parallel-sided part. In low-attenuation material the echo string decays slowly; in lossy material it dies in two or three. Comparing that decay against a known reference part is a quick, practical attenuation comparison."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-2-2-fig-b",
+   "caption": "Grain boundaries scatter energy out of the beam and absorption converts it to heat, so each successive back echo stands shorter."
+  },
+  {
+   "type": "text",
+   "heading": "Choosing Frequency on Purpose",
+   "body": "Every job is a negotiation between **sensitivity** and **penetration**:\n\n- **Raise frequency** → shorter λ → smaller detectable flaws, finer resolution between close reflectors, narrower beam — but heavier scattering and absorption losses.\n- **Lower frequency** → longer λ → deeper penetration and a quieter baseline in coarse material — but small flaws vanish below the λ/2 floor.\n\nTypical pairings: fine-grained wrought plate and machined parts run happily at **5–10 MHz**; precision thin-wall thickness work goes higher still; contact shear-wave weld testing commonly sits near **2.25 MHz**; large coarse-grained castings and austenitic welds may force **1 MHz or below**.\n\nWhen the back-wall echo of a coarse part sinks into grass, the wrong move is the gain knob — **gain amplifies grain noise exactly as much as signal**, so signal-to-noise does not improve. The right moves change the physics: drop the frequency, use a larger element (a narrower beam through the grain field), or both. The reverse error matters just as much: running a procedure that demands 0.5 mm sensitivity with a 1 MHz probe (λ/2 ≈ 3 mm in steel) is a paper test that finds nothing. Frequency is a recorded, defendable technique variable — choose it from the material and the acceptance criteria, then write it down."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The trade in one line",
+   "body": "Higher frequency buys sensitivity and resolution; lower frequency buys penetration and a quiet screen. In the Rayleigh regime scattering scales with **f⁴**, so a small frequency change moves the noise floor a lot — when grass swallows the signal, change the frequency, not the gain."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-2-2-fig-a",
+   "title": "Same frequency, different material: wavelength adapts",
+   "file": "ut1-2-2-fig-a.svg"
+  },
+  {
+   "id": "ut1-2-2-fig-b",
+   "title": "Attenuation: absorption and scattering",
+   "file": "ut1-2-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Frequency Call: Fine Plate, Coarse Casting",
+  "intro": "Morning queue: a 25 mm fine-grained rolled plate specified for 1 mm flaw sensitivity, then a large coarse-grained steel casting. One flaw detector, a probe kit from 1 to 10 MHz. Make the calls.",
+  "steps": [
+   {
+    "prompt": "For the plate you pick a 5 MHz straight-beam probe. Longitudinal velocity in steel is 5.92 mm/µs. What is the wavelength?",
+    "options": ["0.59 mm", "1.18 mm", "2.63 mm"],
+    "correct": 1,
+    "feedback": "λ = v ÷ f = 5.92 ÷ 5 = 1.18 mm. The 2.63 mm figure belongs to 2.25 MHz and 0.59 mm to 10 MHz."
+   },
+   {
+    "prompt": "Using the λ/2 rule of thumb, is 5 MHz adequate for the 1 mm sensitivity requirement?",
+    "options": ["No — the smallest reliable reflector is about 2.4 mm", "Yes — the smallest reliable reflector is about 0.6 mm", "Only if the gain is doubled"],
+    "correct": 1,
+    "feedback": "Half of 1.18 mm is about 0.6 mm, comfortably below the 1 mm requirement. Gain has nothing to do with the wavelength limit."
+   },
+   {
+    "prompt": "On the casting, the 5 MHz probe shows heavy grass and no back-wall echo. First corrective move?",
+    "options": ["Add 12 dB of gain", "Switch to a 1 MHz probe", "Switch to a 10 MHz probe for a tighter beam"],
+    "correct": 1,
+    "feedback": "Grain scattering rises roughly with f⁴ in the Rayleigh regime. Gain lifts noise and signal together, and 10 MHz multiplies the scattering — the longer wavelength is what ignores the grains."
+   },
+   {
+    "prompt": "At 1 MHz the back echo returns cleanly. What did the change cost you?",
+    "options": ["Nothing — sensitivity is set by gain", "The smallest reliable reflector is now about 3 mm", "The smallest reliable reflector is now about 0.3 mm"],
+    "correct": 1,
+    "feedback": "λ = 5.92 ÷ 1 = 5.92 mm, so λ/2 ≈ 3 mm. Penetration was bought with sensitivity — record the technique change and check it against the acceptance criteria."
+   },
+   {
+    "prompt": "The casting's attenuation needs documenting. Quick comparative check with the gear on hand?",
+    "options": ["Compare how fast the string of multiple back echoes decays against a reference part", "Read the dB value off the gain control", "Measure the couplant temperature"],
+    "correct": 0,
+    "feedback": "Each extra round trip loses the same number of dB, so a fast-dying echo string is the signature of lossy material. The gain setting alone says nothing about path losses."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A 2.25 MHz longitudinal wave enters aluminum (6,320 m/s = 6.32 mm/µs). Its wavelength is approximately:",
+   "options": ["1.44 mm", "2.63 mm", "2.81 mm", "5.62 mm"],
+   "correct": 2,
+   "explanation": "λ = v ÷ f = 6.32 ÷ 2.25 ≈ 2.81 mm. The 2.63 mm distractor uses the steel velocity instead of aluminum's."
+  },
+  {
+   "question": "Which attenuation mechanism converts sound energy directly into heat?",
+   "options": ["Scattering at grain boundaries", "Absorption through internal friction", "Beam spread", "Mode conversion"],
+   "correct": 1,
+   "explanation": "Absorption is internal friction turning vibration into heat, cycle by cycle. Scattering redirects energy; beam spread is geometric thinning, not a material loss."
+  },
+  {
+   "question": "In the Rayleigh scattering regime (grains much smaller than λ), doubling the test frequency multiplies the scattering loss by about:",
+   "options": ["2×", "4×", "8×", "16×"],
+   "correct": 3,
+   "explanation": "Rayleigh-regime scattering scales with the fourth power of frequency: 2⁴ = 16. This is why coarse material that scans cleanly at 1 MHz can be unreadable at 5 MHz."
+  },
+  {
+   "question": "A coarse-grained casting shows heavy baseline grass and a weak back echo at 5 MHz. The best corrective action is:",
+   "options": ["Increase the gain until the back echo reaches 80% screen height", "Switch to a lower-frequency probe", "Switch to a higher-frequency probe", "Use the reject control to clean up the baseline"],
+   "correct": 1,
+   "explanation": "Lower frequency means longer wavelength, which scatters far less off the grain structure. Gain amplifies grass and signal equally, higher frequency multiplies the scattering, and reject merely hides the evidence while distorting linearity."
+  },
+  {
+   "question": "Using the λ/2 rule, the smallest reflector a 10 MHz longitudinal beam can reliably detect in steel (5.92 mm/µs) is about:",
+   "options": ["0.3 mm", "0.6 mm", "1.2 mm", "3.0 mm"],
+   "correct": 0,
+   "explanation": "λ = 5.92 ÷ 10 = 0.59 mm, and half of that is roughly 0.3 mm. Each doubling of frequency halves the detectable-flaw floor — at the cost of penetration."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, Basic UT Course §2.3 (velocity, frequency, and wavelength of sound waves)",
+  "ANSI/ASNT CP-105-2024, Basic UT Course §2.4 (attenuation of sound waves)",
+  "Standard relationship: λ = v ÷ f; sensitivity rule of thumb ≈ λ/2",
+  "Reference velocities: steel 5,920 / 3,240 m/s; aluminum 6,320 m/s; water 1,480 m/s"
+ ]
+}

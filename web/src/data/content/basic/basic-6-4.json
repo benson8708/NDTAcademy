@@ -1,0 +1,204 @@
+{
+  "lessonId": "basic-6-4",
+  "title": "Thermal/Infrared Testing: Applications and Evaluation",
+  "narrationScript": "The previous lesson built the instrument ladder; this one puts the camera to work. Every thermographic application answers one of five questions. Does the object generate or absorb heat itself? That is an exothermic or endothermic investigation: a high-resistance electrical connection glowing with I-squared-R heat, a composite cure exotherm, a compressed-gas leak chilled by expansion. Is mechanical energy becoming heat? Friction investigations catch failing bearings, misaligned couplings, slipping belts, and dragging brakes. Is a moving fluid painting the pattern? Fluid-flow investigations expose plugged exchanger tubes, leaking valves, failed steam traps, and bleed-air duct leaks. Does heat flow through the object unevenly? Thermal resistance investigations map worn refractory and missing insulation under a sustained temperature difference. Does the object store heat unevenly? Thermal capacitance investigations reveal tank levels and water in honeycomb during a transient, before equilibrium erases the evidence. Then the discipline. Interpretation separates real anomalies from reflections, emissivity differences, solar loading, and wind. Evaluation grades what survives against delta-T criteria at a known load, documents it, and verifies it. Pattern first, artifact check second, severity last.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Five Questions, One Camera: Classifying IR Applications",
+      "body": "The previous lesson climbed the equipment ladder — contact indicators, pyrometers, line scanners, thermal imagers. This lesson is about what a qualified thermographer points them at. The CP-105 outline classifies IR applications not by industry but by **what creates the thermal pattern**, and that classification is the most useful sorting tool the method owns, because naming the family tells you how to stage the test before the first image is taken.\n\nThe five families:\n\n- **Exothermic or endothermic investigations** — the object generates or absorbs heat itself.\n- **Friction investigations** — mechanical energy converts to heat at moving contacts.\n- **Fluid flow investigations** — a moving fluid carries heat, and the pattern maps where it goes or fails to go.\n- **Thermal resistance investigations** — heat flowing through the object meets uneven opposition.\n- **Thermal capacitance investigations** — regions that store different amounts of heat lag behind during temperature change.\n\nTwo staging decisions follow from the family. **Passive thermography** observes heat the object already has — energized switchgear, running machinery, process equipment at temperature — and covers the first three families almost entirely. **Active thermography** supplies heat deliberately (flash lamps, quartz lamps, heat guns, even sunlight used on schedule) when the object will not write its own pattern — the normal approach to composite and bonded structures in an aerospace shop. The third decision is timing, and it splits the last two families: resistance patterns need **sustained heat flow**; capacitance patterns need a **transient**. Get the family right and the camera, staging, viewpoint, and clock all follow."
+    },
+    {
+      "type": "text",
+      "heading": "Exothermic and Endothermic: The Object Makes (or Absorbs) Its Own Heat",
+      "body": "**Exothermic** investigations image heat the object generates. The defining example is the **high-resistance electrical connection**: every joint dissipates power as P = I²R, so a loose, corroded, or under-torqued connection with elevated resistance becomes a point heater glowing against its neighbors — found on lugs, splices, breakers, bus stabs, and control cabinets from the substation to the hangar wall. The square matters. Because heat generation scales with the **square of the current**, a circuit surveyed at half load produces only **one quarter** of the full-load heat at the same defect, which is why programs commonly require a minimum survey load — about **40% of normal** is a widely used floor — and why the recorded load goes in the report beside every ΔT.\n\nOther exothermic subjects: operating electronics and circuit boards, battery cells under charge and discharge, combustion equipment, curing concrete, and the **cure exotherm of thick composite layups**, where trapped reaction heat can damage a part the autoclave thermocouples never saw. Even a growing fatigue crack self-heats measurably under cyclic load.\n\n**Endothermic** investigations image heat the object absorbs. The everyday case is the **compressed-gas leak**: most gases cool as they expand through a leak orifice (hydrogen and helium are the notable exceptions), so the leak site and its expanding plume print as a crisp **cold spot** on fittings, valves, and vessels. Evaporating moisture chills wet surfaces the same way — useful when hunting leaks, and a trap when it mimics one."
+    },
+    {
+      "type": "text",
+      "heading": "Friction and Fluid Flow: Moving Parts and Moving Fluids",
+      "body": "**Friction investigations.** Wherever mechanical energy rubs itself into heat, the camera sees the conversion directly:\n\n- **Bearings** — lubrication breakdown, overload, or misalignment shows as a localized hot spot at the bearing housing, judged by comparing identical bearings on identical machines under the same duty.\n- **Couplings** — a misaligned shaft works the coupling element every revolution, and the coupling glows.\n- **Belts and sheaves** — a slipping belt heats itself and its pulley; a seized idler heats the belt.\n- **Brakes** — a dragging or seized brake runs hotter than its mates after the same stop. Ramp checks of aircraft wheel and brake assemblies after taxi-in apply exactly this comparison: one assembly standing out from the others is the indication.\n- **Gear mesh** — gearbox hot spots flag tooth wear and oil starvation.\n\n**Fluid flow investigations.** Here the fluid is the heat carrier and the pattern maps the circuit:\n\n- A **plugged or fouled heat-exchanger tube** is not swept by the process stream, so its face at the tubesheet reads plainly different from its flowing neighbors.\n- A **leaking isolation valve** betrays itself with a warm line downstream of a valve that is supposed to be shut.\n- **Steam traps**: failed open blows live steam through — hot downstream piping; failed closed backs condensate up — cold.\n- **Blockages, sludge beds, and deposit levels** in piping and vessels print where flow and fill actually are.\n- In aviation, **bleed-air duct leaks** — hot, high-pressure engine air escaping a joint during a ground run — heat the surrounding structure and show the camera precisely where the clamp or seal let go."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-6-4-fig-a",
+      "caption": "The five families by pattern source. Exothermic/endothermic: a loose connection heats itself while a gas leak chills itself. Friction: a failing bearing converts motion to heat. Fluid flow: one plugged tube reads against its flowing neighbors. Thermal resistance: worn lining leaks heat through the furnace shell. Thermal capacitance: the liquid level appears only while temperatures move."
+    },
+    {
+      "type": "table",
+      "caption": "Five families: what makes the pattern, how the test is staged, and where each earns its keep.",
+      "headers": ["Family", "What creates the pattern", "Staging", "Representative applications"],
+      "rows": [
+        ["Exothermic / endothermic", "Object generates or absorbs heat itself (I²R, reaction heat, expansion cooling)", "Passive; equipment energized or process running — record the load", "Electrical connections and switchgear, electronics, battery packs, composite cure exotherm, compressed-gas leak location"],
+        ["Friction", "Mechanical energy converted to heat at moving contacts", "Passive; machine at normal speed and duty, compared against identical units", "Bearings, misaligned couplings, slipping belts, dragging brakes, gearboxes"],
+        ["Fluid flow", "Moving fluid transports heat; the pattern maps where it goes — or fails to", "Passive; process at temperature and flowing", "Plugged heat-exchanger tubes, valve leak-through, steam traps, bleed-air duct leaks, blockage and sludge levels"],
+        ["Thermal resistance", "Uneven opposition to heat flowing through the object", "Sustained ΔT across the section — process heat, weather, or active lamps", "Furnace and kiln refractory wear, building insulation voids, disbonds and delaminations by flash thermography (ASTM E2582)"],
+        ["Thermal capacitance", "Regions storing different amounts of heat lag during temperature change", "Transient — diurnal cycle or deliberate heating/cooling; image while temperatures move", "Tank and vessel liquid level, entrapped water in honeycomb core, hidden structure behind panels"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Thermal Resistance: Patterns That Need Heat Flow",
+      "body": "A wall conducts heat the way a circuit conducts current: for a given temperature difference, the heat flux through each region depends on its **thermal resistance**, and the surface temperature pattern maps that resistance — but **only while heat is flowing**. No ΔT across the section, no pattern.\n\n- **Refractory and insulation in service.** A furnace, kiln, or ladle shell shows a **hot spot wherever the lining has thinned**: less refractory means less resistance, more heat flux, hotter shell. Trending shell thermograms schedules relines before burn-through, with the process itself supplying the heat flow.\n- **Building envelopes.** With a sustained indoor–outdoor difference — common practice wants roughly **10 °C (18 °F) or more, held for several hours** — missing or slumped insulation, thermal bridges, and air-leakage paths print through walls and roofs (ASTM C1060 covers the framed-cavity survey). Wet insulation conducts more than dry, so moisture-soaked regions read as resistance anomalies too.\n- **Active thermography of bonded structure.** When nothing usefully flows on its own, the thermographer supplies the flow. In **flash thermography** per **ASTM E2582**, lamps dump a brief pulse onto a composite skin and the camera watches the cooldown: heat conducts into the thickness until an air-filled **disbond, delamination, or void** blocks it, leaving the surface above the flaw **warmer, longer**. An FAA Part 145 composite shop uses exactly this to screen honeycomb panels and bonded repair patches quickly, then sizes what it finds per the OEM NDT manual — usually with ultrasonics."
+    },
+    {
+      "type": "text",
+      "heading": "Thermal Capacitance: Patterns That Need a Transient",
+      "body": "**Thermal capacitance** is heat storage — mass × specific heat. Regions that store more heat change temperature more slowly, so capacitance differences are invisible at equilibrium and appear **only while the temperature is moving**. The test rides a transient: sunrise, sunset, a process swing, or heating and cooling the surface on purpose.\n\n- **Tank and vessel levels.** After sunset, the thin, gas-backed **vapor space** sheds heat quickly while the massive liquid below lags warm; after sunrise the roles reverse. Either way the camera draws the **liquid level** as a sharp line on an ordinary tank shell — and a settled **sludge blanket** as a second, slower band beneath it. The same trick reads liquid levels in storage cylinders and checks floating-roof position.\n- **Water in honeycomb core** — the aviation flagship. Water-filled cells add enormous heat capacity to a featherweight structure. Image the panel during a warm-up — after the aircraft lands cold-soaked, or under heat lamps in the hangar — and the **wet cells lag** their dry neighbors, mapping the trapped water cell by cell. Finding it matters: entrained water adds weight, corrodes the core, and pries skin from core as it freezes and thaws every flight cycle. Indications are confirmed and mapped per the OEM manual, traditionally with radiography as the partner method.\n- **Hidden structure.** Studs, stiffeners, ribs, and flooded compartments all store and conduct heat differently from the panels covering them, so a gentle transient outlines framing that no visual inspection can see."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "No heat flow, no resistance pattern — no transient, no capacitance pattern",
+      "body": "Thermal resistance indications exist only while heat flows **through** the section: survey refractory with the furnace hot, envelopes with a sustained indoor–outdoor ΔT, composites with lamps supplying the pulse. Thermal capacitance indications exist only while temperature is **changing**: at equilibrium a half-full tank and a waterlogged panel look perfectly uniform. Stage the test at the right thermal moment — or make the moment with active heating — because the most common reason a real condition yields no indication is a survey scheduled when nothing was flowing and nothing was changing."
+    },
+    {
+      "type": "text",
+      "heading": "Interpretation: Pattern or Artifact?",
+      "body": "Exactly as in penetrant testing, **interpretation decides what made the pattern; evaluation judges the survivors**. Infrared's imposters are optical and environmental rather than chemical:\n\n- **Reflections.** Shiny, low-emissivity metal is a **thermal mirror**: the 'hot spot' on a polished cabinet may be the inspector's own face, a lamp, the sun — or, outdoors, the cold sky reading implausibly cold. The field check is the **move test**: shift your position and a reflection slides across the surface, while a real anomaly stays fixed to its component.\n- **Emissivity variation.** Apparent temperature depends on emissivity, so bare metal beside paint at the *same true temperature* reads very differently — the low-emissivity surface mostly reflects its surroundings. The fix is a **high-emissivity reference patch** (tape or paint, ε ≈ 0.95) applied where measurement matters, with the camera's emissivity and reflected-temperature inputs set to match.\n- **Solar loading.** Sun-soaked surfaces carry hours of stored solar heat that masks or mimics anomalies; outdoor electrical work is scheduled for early morning, night, or overcast skies for this reason.\n- **Wind and convection.** Moving air strips heat from a hot spot — a connection ΔT measured in a strong breeze can be a fraction of its calm-day value — so wind speed is recorded and low-wind conditions are preferred.\n- **Spot size.** A target smaller than the instrument's measurement spot averages with its background and reads low; close the distance or change optics until the target fills the spot.\n\nThe backbone of interpretation is **comparison**: like against like. Adjacent phases under the same load, sister machines on the same duty, this month's image against last quarter's baseline."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-6-4-fig-b",
+      "caption": "Interpretation in two images. From position 1 the lug and the polished door both 'glow'; from position 2 the real anomaly stays on the lug while the reflection slides — the door is a thermal mirror. Below: a uniform-temperature bar reads hot under high-emissivity paint and cool on bare metal — the emissivity trap a reference patch defeats."
+    },
+    {
+      "type": "text",
+      "heading": "Evaluation: Severity, Documentation, and Follow-Up",
+      "body": "Evaluation converts a confirmed anomaly into a disposition, and in thermography the working currency is **ΔT** — the temperature rise over a defined reference under known conditions.\n\n- **Criteria.** Electrical and mechanical programs grade severity against ΔT bands measured either **over a similar component under similar load** or **over ambient air**. One widely used table (the ANSI/NETA maintenance testing specifications) treats a similar-component ΔT of 1–3 °C as a possible deficiency to investigate, 4–15 °C as a deficiency to correct as scheduling permits, and **anything above 15 °C — or above roughly 40 °C over ambient — as a major discrepancy for immediate repair**. ISO 18434-1 frames the same logic for machinery condition monitoring.\n- **Corrections before classing.** Severity is judged at conditions, not raw numbers: scale for **load** (heat goes with I², so a modest ΔT at one-third load is not modest at full load), account for **wind**, and trust quantitative values only where emissivity and reflected temperature were properly set.\n- **Documentation.** A defensible report pairs each **thermogram with a visible-light photograph** and records instrument and lens, emissivity and reflected-temperature settings, distance, ambient temperature, wind, circuit load, location, the measured ΔT, the severity class, and the recommended action — trended against baseline surveys so degradation has a history.\n- **Follow-up.** Repairs are verified by **re-imaging under comparable load**, and subsurface structural indications are handed to a sizing method — ultrasonics first among them — the same screen-then-size discipline every scanning method obeys.\n\nIn an FAA Part 145 environment the package rides on a **written procedure with acceptance criteria from the OEM or cognizant engineering authority**, executed by personnel certified in the IR method under **NAS410 or SNT-TC-1A**. Familiarity with the five families and this interpretation-evaluation discipline is exactly what the Basic examination expects of the Level III who signs that procedure."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-6-4-fig-a",
+      "title": "The five IR investigation families",
+      "file": "basic-6-4-fig-a.svg"
+    },
+    {
+      "id": "basic-6-4-fig-b",
+      "title": "The move test and the emissivity trap",
+      "file": "basic-6-4-fig-b.svg"
+    },
+    {
+      "id": "basic-6-4-fig-c",
+      "title": "Practice thermogram: pump-room survey",
+      "file": "basic-6-4-fig-c.svg"
+    }
+  ],
+  "interactive": {
+    "type": "hotspot",
+    "title": "Interpret the Thermogram",
+    "intro": "A pump-room survey rendered as a schematic thermogram: feeder panel, polished cabinet door, motor-pump skid, and a sunlit wall. Five patterns are marked. Four are artifacts or normal operating heat — click the ONE real anomaly that should move on to evaluation.",
+    "figureId": "basic-6-4-fig-c",
+    "regions": [
+      {
+        "x": 146,
+        "y": 94,
+        "w": 68,
+        "h": 66,
+        "label": "Point 1 - phase B lug far hotter than the identical lugs on A and C",
+        "isTarget": true,
+        "feedback": "Correct. Three identical connections sharing the same load, and one lug glowing: comparative interpretation says phase B has a high-resistance joint generating its own I²R heat — a genuine exothermic anomaly. Record the load and the ΔT over its sister lugs, class the severity, and write it up."
+      },
+      {
+        "x": 340,
+        "y": 104,
+        "w": 66,
+        "h": 84,
+        "label": "Point 2 - bright patch on the polished cabinet door",
+        "isTarget": false,
+        "feedback": "A thermal mirror. The dashed sight line traces this patch to the inspection lamp: polished, low-emissivity steel reflects whatever faces it. Apply the move test — step sideways and this 'hot spot' slides across the door, while a real anomaly stays fixed to its component."
+      },
+      {
+        "x": 92,
+        "y": 302,
+        "w": 138,
+        "h": 88,
+        "label": "Point 3 - motor housing uniformly warm",
+        "isTarget": false,
+        "feedback": "Normal operating heat. Motors run warm by design; a frame that is evenly warm, at its rated temperature, and matching its sister machines is baseline — trend it and move on. A failing bearing would print a localized hot spot at the shaft end, not an even glow."
+      },
+      {
+        "x": 430,
+        "y": 288,
+        "w": 210,
+        "h": 28,
+        "label": "Point 4 - warm discharge line leaving the pump",
+        "isTarget": false,
+        "feedback": "Normal fluid-flow heat: the pump is moving warm process fluid and the line reads accordingly. The fluid-flow patterns that matter are the unexpected ones — a warm line downstream of a closed valve, or one cold tube among flowing neighbors at a tubesheet."
+      },
+      {
+        "x": 545,
+        "y": 174,
+        "w": 150,
+        "h": 62,
+        "label": "Point 5 - warm wash on the wall below the window",
+        "isTarget": false,
+        "feedback": "Solar loading. The sun has been charging that patch of wall through the window all afternoon — stored environmental heat, not a component condition. Outdoor and sunlit surveys are scheduled for early morning, night, or overcast skies for exactly this reason."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "Scanning a compressed-nitrogen manifold, a thermographer finds a sharply defined cold spot at a fitting. In the CP-105 application families, locating this leak is:",
+      "options": [
+        "A friction investigation — gas rubbing the orifice generates heat",
+        "An exothermic investigation — the leaking gas releases chemical energy",
+        "An endothermic investigation — the gas absorbs heat as it expands, chilling the leak site",
+        "A thermal resistance investigation — the fitting opposes heat flow more than the pipe"
+      ],
+      "correct": 2,
+      "explanation": "Most compressed gases cool as they expand through a leak orifice (hydrogen and helium are the notable exceptions), so the escaping gas absorbs heat from the fitting and the plume — an endothermic investigation that prints the leak as a cold spot. Friction or chemical heating would read warm, and thermal resistance patterns require heat flowing through a section, not a self-cooling source."
+    },
+    {
+      "question": "A feeder circuit is surveyed while carrying half its normal current. Compared with full load, the heat a high-resistance connection generates is approximately:",
+      "options": [
+        "Half — heat is proportional to current",
+        "One quarter — heat is proportional to the square of the current",
+        "The same — the connection's resistance has not changed",
+        "Twice — lower current allows the joint to retain more heat"
+      ],
+      "correct": 1,
+      "explanation": "Joint heating follows P = I²R: with the resistance fixed, halving the current quarters the heat. That square law is why programs set a minimum survey load — commonly around 40% of normal — and why a ΔT that looks modest at low load must be load-corrected before it is graded; the same defect runs roughly four times hotter when the current doubles."
+    },
+    {
+      "question": "The liquid level in an uninsulated storage tank is most reliably imaged:",
+      "options": [
+        "During a thermal transient, such as just after sunset, when the low-capacitance vapor space changes temperature quickly and the liquid lags",
+        "At midafternoon equilibrium, when all temperatures are steady",
+        "Only while liquid is actively flowing into the tank",
+        "Under steady-state heat flow maintained through the shell for several hours"
+      ],
+      "correct": 0,
+      "explanation": "Liquid level is a thermal capacitance pattern: the massive liquid lags while the thin, gas-backed vapor space leads, and that difference exists only while temperatures are moving. At equilibrium the shell reads uniform and the level line vanishes. Sustained steady-state heat flow is the staging for thermal resistance work such as refractory and insulation surveys, not capacitance."
+    },
+    {
+      "question": "During an indoor switchgear survey, an apparent hot spot on a polished panel shifts position when the thermographer takes two steps to the side. The correct interpretation is:",
+      "options": [
+        "A real I²R anomaly that is physically migrating along the bus",
+        "A reflection of a warm object in the low-emissivity surface — the panel is acting as a thermal mirror",
+        "Solar loading stored in the panel steel",
+        "A thermal capacitance lag in the panel paint"
+      ],
+      "correct": 1,
+      "explanation": "Specular reflections ride the viewing geometry: move, and the 'hot spot' slides across the polished, low-emissivity surface — a thermal mirror showing the camera a lamp, a person, or the sun. A genuine I²R anomaly stays fixed to its component no matter where the camera stands, which is exactly what the move test checks before any evaluation begins."
+    },
+    {
+      "question": "Under widely used electrical thermography guidance such as the ANSI/NETA maintenance testing specifications, the severity of a connection anomaly is classified primarily by:",
+      "options": [
+        "Its absolute temperature alone, with no regard to load or ambient",
+        "The color it displays in the camera's default palette",
+        "Its size in pixels on the thermogram",
+        "Its temperature rise (ΔT) above a similar component under similar load — or above ambient — corrected for survey conditions"
+      ],
+      "correct": 3,
+      "explanation": "Thermographic severity is graded on ΔT against a defined reference — a similar component under similar load, or ambient air — with corrections for load, wind, and emissivity before classing; widely used tables escalate from 'investigate' at a few degrees to 'repair immediately' above roughly 15 °C over a similar component. Absolute temperature alone ignores load and ambient, and palette colors are an arbitrary display choice."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Topical Outline §2.8.3–2.8.4 (IR applications: exothermic/endothermic, friction, fluid flow, thermal resistance, and thermal capacitance investigations; interpretation and evaluation)",
+    "ANSI/NETA MTS, Standard for Maintenance Testing Specifications for Electrical Power Equipment and Systems (ΔT severity classification tables, summarized)",
+    "ASTM E2582, Standard Practice for Infrared Flash Thermography of Composite Panels and Repair Patches Used in Aerospace Applications",
+    "ASTM C1060, Standard Practice for Thermographic Inspection of Insulation Installations in Envelope Cavities of Frame Buildings (envelope survey conditions, summarized)",
+    "ISO 18434-1, Condition Monitoring and Diagnostics of Machine Systems — Thermography — Part 1: General Procedures (comparative thermography and severity assessment, summarized)"
+  ]
+}

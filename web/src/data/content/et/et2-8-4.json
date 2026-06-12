@@ -1,0 +1,197 @@
+{
+ "lessonId": "et2-8-4",
+ "title": "Conductivity Sorting and Thickness Evaluation",
+ "narrationScript": "This module ends with the coil measuring the material itself. Electrical conductivity, in percent IACS against the copper standard, is set by how freely electrons cross the lattice — and every solute atom that heat treatment holds in solution scatters them. Solution treating lowers conductivity. Aging pulls solute into precipitates and raises it. Overaging raises it further, and anneal sits highest. Each alloy and temper therefore owns a window: 7075-T6 near thirty-three percent, T73 thirty-eight and above, with a no-man's land between that you refer, never average away. Verify the meter on two standards that bracket the window, equalize temperatures, keep three standard depths of metal under the probe, and pair conductivity with hardness before calling heat damage. Then thickness. Nonconductive coatings ride the lift-off curve: zero on bare substrate, span with shims. Metal thinning rotates phase once you place the wall near one standard depth. Conductive cladding drags the apparent conductivity toward the clad value as frequency rises. Match the reference standard to the job — that is the whole craft.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Measuring the Metal Itself: Conductivity in %IACS",
+   "body": "Everything in this module so far disposed of flaws — criteria, classification, detection, sizing. The last two topics point the coil at the material itself: **sorting for properties related to conductivity** (2.6) and **thickness evaluation** (2.7). Same impedance plane, new question — not *is there a crack?* but *is this the right metal, in the right condition, at the right thickness?*\n\nThe currency is **percent IACS** — the International Annealed Copper Standard. Annealed copper at 20 °C defines **100 %IACS** (58.0 MS/m; resistivity 1.7241 µΩ·cm), and every other metal is quoted against it: silver about 105, pure aluminum about 61, aerospace aluminum alloys roughly 25–50, austenitic stainless near 2.5, titanium alloys near 1.\n\nA **conductivity meter** is an eddy current instrument that never leaves the conductivity locus: with frequency fixed and lift-off compensated, the operating point's position along the curve maps one-to-one to conductivity, and the instrument reads out %IACS directly. Dedicated meters commonly run at **60 kHz**, with a **480 kHz** range for thin material; **ASTM E1004** is the governing test method.\n\nWhy a Part 145 shop reaches for one:\n\n- **Temper verification** — is this unmarked 7075 sheet T6 or T73?\n- **Heat-damage surveys** after fire or overheat events, paired with hardness testing\n- **Mixed-stock recovery** — sorting alloys that look identical on the rack\n- **Thickness work** — coatings, thinning, cladding — the second half of this lesson"
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-4-fig-a",
+   "caption": "The conductivity spectrum in %IACS, and the aluminum temper windows a Part 145 shop lives in. Aging marches conductivity upward — T6, then overaged T73, then annealed O — and 36–38 %IACS on a 7075 part belongs to no window at all. Representative training values; the written procedure's table governs."
+  },
+  {
+   "type": "text",
+   "heading": "Sorting by Heat Treatment: Windows, Not Points",
+   "body": "Conductivity tracks heat treatment because **electrons feel microstructure**. Solute atoms dissolved in the lattice are point scatterers: solution treating loads the matrix with copper or zinc atoms and conductivity drops. **Aging pulls that solute out into precipitates**, the matrix cleans up, and conductivity climbs. **Overaging** (the T73 family) coarsens the precipitates and climbs further; a full **anneal** leaves the matrix cleanest and most conductive of all. Strength runs the other way — the electron twin of the domain-wall story waiting in the next lesson.\n\nEach alloy-temper combination therefore owns a **window**, not a point. Representative training values — your procedure's table governs:\n\n- 2024-T3/T4: ≈28.5–32.5 %IACS\n- 7075-T6: 30.5–36.0 %IACS\n- 7075-T73: 38.0–42.5 %IACS\n- 7075-O (annealed): ≈44–48 %IACS\n- 2024-O (annealed): ≈46–51 %IACS\n\nRead the geometry of those numbers like a Level II:\n\n- **The famous floor at 38.** 7075-T73 is deliberately overaged to resist stress-corrosion cracking, and the proof that the overage actually happened is conductivity **at or above 38 %IACS** with hardness in range. A 7075 part reading 36.8 sits in **no window at all** — above T6, below T73 — and is quarantined for laboratory verification, never rounded up.\n- **Windows overlap across alloys.** 2024-T3 and 7075-T6 share 30.5–32.5 %IACS. Conductivity names the temper only when the alloy is already known; sorting truly mixed stock needs known samples of every candidate and a demonstrated separation — the logic of **ASTM E703**, the nonferrous twin of the E566 practice you will apply to steels."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Pair it with hardness — and refer, never re-zero",
+   "body": "A conductivity meter measures electromagnetic response, not airworthiness. Aerospace practice (**AMS 2658**) pairs every conductivity call on wrought aluminum with **hardness**: conductivity *above* the window with hardness *below* minimum is the classic overheat signature — aging continued in service — while conductivity below the window can flag an uncontrolled re-solution. In a heat-damage survey, grid the structure, map readings until they return in-band, and hand the contour map to engineering. Out-of-band parts are **segregated and referred**. Re-zeroing the meter, averaging spots, or letting a sun-warmed skin drift a reading into the window is falsification, not technique."
+  },
+  {
+   "type": "text",
+   "heading": "Standardizing the Measurement: The E1004 Discipline",
+   "body": "1. **Verify on two certified standards that bracket the expected value** — for 7075 temper work, blocks near ≈29 and ≈42 %IACS. Check before use, at the intervals the written procedure sets, and after any temperature change.\n2. **Equalize temperature.** Aluminum conductivity moves roughly **0.1 %IACS per °C**, so a skin in direct sun and standards from an air-conditioned cabinet can disagree by a full percent — wider than the 36-to-38 gap you are trying to resolve. Meter, standards, and part soak together; readings are referenced to 20 °C.\n3. **Respect minimum thickness.** The reading represents solid metal only when **t ≥ 3δ**, with δ = 660/√(f·µᵣ·σ) mm. For 2024-T3 (σ ≈ 30 %IACS) at 60 kHz, δ ≈ 0.49 mm — a 60 kHz floor of about **1.5 mm**. Thinner sheet moves to **480 kHz** (δ ≈ 0.17 mm; floor ≈ 0.5 mm). **Never stack sheets** to fake thickness — interfaces are not solid metal.\n4. **Stay clear of edges, fasteners, and adjacent structure** — at least a probe diameter, proven by sliding the probe toward the edge of the reference standard until the reading moves.\n5. **Account for coatings.** Meters hold accuracy through thin, uniform nonconductive coatings only within their verified lift-off compensation — prove it with a shim on the standard. Thick or unknown paint: measure it first (next section) or strip locally.\n6. **Match curvature** between standard and part, or apply the procedure's correction.\n7. **Beware cladding.** Alclad's pure-aluminum skin (≈60 %IACS) biases readings high; procedures provide separate alclad acceptance tables or call for local clad removal."
+  },
+  {
+   "type": "text",
+   "heading": "Nonconductive Coatings: Lift-Off Becomes the Ruler",
+   "body": "For the whole flaw-detection arc, lift-off was the enemy. Point the relationship the other way and it becomes a coating gauge: with the substrate fixed, **probe-to-metal distance is the measurement**, and a layer of paint, primer, or anodize is simply lift-off that will not go away.\n\nThe physics asks for the opposite of the deep-penetration setups: run **high frequency**, concentrating the response at the substrate surface and steepening the lift-off curve so each micrometre of coating moves the operating point a long way.\n\nWhere it earns its keep in a hangar:\n\n- **Anodic coatings** — a few micrometres of chromic to tens of micrometres of sulfuric or hard anodize\n- **Paint and primer systems** — including flight-control surfaces, where total paint thickness is limited for **mass balance**\n- **Primer verification before adhesive bonding**\n\nStandardize per **ASTM E376**:\n\n- **Zero on the bare substrate** — same alloy *and temper* (temper changes conductivity, which shifts the whole curve), same curvature, full thickness.\n- **Span with certified nonconductive shims** that bracket the expected thickness, laid flat on that same substrate.\n- **Substrate at least one effective depth thick** (≈3δ); thinner parts are backed with the same alloy or calibrated on matching thickness.\n- Take **several readings and average** — single readings ride surface roughness.\n\nThe same lift-off scale is what lets a conductivity meter read through thin paint in the last section — two measurements, one curve, read in opposite directions."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-4-fig-b",
+   "caption": "Lift-off becomes the ruler: with the substrate fixed, probe-to-metal distance reads as coating thickness along the lift-off curve. Standardization per ASTM E376 — zero on bare substrate matching the part in alloy, temper, and curvature, then span with certified shims bracketing the expected thickness."
+  },
+  {
+   "type": "text",
+   "heading": "Metal Thinning and Conductive Coatings",
+   "body": "**Thinning.** Once wall thickness drops below about 3δ, the far surface intrudes on the current distribution, and further thinning walks the operating point along a **thickness locus** — read by **phase**, the same far-surface messenger as the last two lessons. Set frequency so the **nominal wall sits near 1δ**: f = (660/t)² ÷ (µᵣ·σ). For a 1.6 mm 2024-T3 skin (σ ≈ 30 %IACS) that lands near **6 kHz**. Standardize on a **step wedge of the same alloy** — machined steps at, say, 100/90/80/70% of nominal wall — and hidden-face corrosion in a faying surface becomes a phase reading taken from the outside, through paint, with no couplant. That is why low-frequency eddy current survives alongside ultrasonic thickness gauging in corrosion programs.\n\n**Conductive coatings and cladding.** A conductive layer over a base of different conductivity returns an **apparent conductivity between the two values**, weighted by how much of the current lives in each. Frequency sets the weighting: raise f and δ shrinks into the coating, dragging the reading toward the coating's value; lower f and the base dominates. Used deliberately, that is a thickness gauge — choose f so **δ is comparable to the coating thickness** for maximum sensitivity, build a curve from **coating standards of known thickness on the production base metal**, and read unknowns: cladding on alclad sheet (≈60 %IACS over a ≈30 %IACS core), silver or cadmium plating, flame-sprayed metal. Used accidentally, it is the alclad bias from the sorting section — the same physics wearing a different hat."
+  },
+  {
+   "type": "figure",
+   "figureId": "et2-8-4-fig-c",
+   "caption": "Two more thickness jobs. Left — thinning walks the operating point along the thickness locus once the wall is within reach of the current; set frequency so nominal thickness sits near 1δ and read phase against a same-alloy step wedge. Right — a conductive clad layer drags apparent conductivity toward its own value as frequency rises: a thickness gauge when deliberate, the alclad bias when not."
+  },
+  {
+   "type": "table",
+   "caption": "Four property-and-thickness jobs, one discipline: the reference standard must match the part — alloy, temper, curvature, thickness — and the frequency must put the current where the answer lives.",
+   "headers": ["Job", "Frequency logic", "Reference standards", "Level II traps"],
+   "rows": [
+    ["Heat-treat / alloy sorting (conductivity)", "Meter at 60 kHz; 480 kHz when t < 3δ (60 kHz floor ≈1.5 mm in 2024-T3)", "Two certified conductivity blocks bracketing the window; known samples of every candidate alloy for mixed stock (ASTM E703)", "Temperature mismatch (≈0.1 %IACS/°C); alclad bias; readings in no window rounded into one"],
+    ["Heat-damage survey", "Same as sorting — grid the structure and map the contours", "Conductivity blocks plus hardness testing per AMS 2658", "Calling damaged T6 acceptable as T73 because the number landed in 38–42.5; skipping the hardness pair"],
+    ["Nonconductive coating thickness", "High frequency — steep lift-off response concentrated at the substrate surface", "Bare substrate of same alloy, temper, and curvature; certified shims bracketing the expected thickness (ASTM E376)", "Zeroing on the wrong alloy or temper; substrate thinner than ≈3δ without same-alloy backing; single-reading calls"],
+    ["Metal thinning (far-side corrosion)", "Place the nominal wall near 1δ — f = (660/t)² ÷ (µᵣ·σ); ≈6 kHz for 1.6 mm 2024-T3", "Step wedge of the same alloy spanning the expected thinning range", "Running so high the far surface lies past 3δ; conductivity or temper variation read as thinning"],
+    ["Conductive coating / cladding thickness", "δ comparable to the coating thickness; higher f weights the reading toward the coating's conductivity", "Coating-on-base standards of known thickness in the production material combination", "Treating apparent conductivity as the base alloy's true value; uncontrolled plating conductivity"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et2-8-4-fig-a",
+   "title": "Conductivity spectrum and aluminum temper windows (%IACS)",
+   "file": "et2-8-4-fig-a.svg"
+  },
+  {
+   "id": "et2-8-4-fig-b",
+   "title": "Nonconductive coating thickness from the lift-off curve",
+   "file": "et2-8-4-fig-b.svg"
+  },
+  {
+   "id": "et2-8-4-fig-c",
+   "title": "Thickness locus for thinning; apparent conductivity of clad metal",
+   "file": "et2-8-4-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Hangar Day: Fire Survey, Unmarked Sheet, Anodize Check",
+  "intro": "A Part 145 hangar after an overheat event: a 7075-T6 fuselage skin scorched near an APU fire, an unmarked sheet of 7075 on the rack, and a reworked 2024 fitting fresh out of anodize. On the cart: a 60 kHz conductivity meter, certified blocks at 29.2 and 41.9 %IACS, nonconductive shims, and a portable hardness tester. Work each call before you click.",
+  "steps": [
+   {
+    "prompt": "Before the first reading on the skin, the meter check that counts is:",
+    "options": [
+     "Zero in air — the blocks are only for the annual calibration",
+     "Verify on both blocks — 29.2 and 41.9 %IACS bracket every window in play — with meter, blocks, and skin soaked to the same temperature",
+     "Verify on a copper block at 100 %IACS for maximum span",
+     "Zero the meter on an undamaged-looking area of the skin itself"
+    ],
+    "correct": 1,
+    "feedback": "ASTM E1004's logic: two standards that bracket the expected range, checked at the working temperature, prove the meter exactly where the decisions happen. The skin cannot calibrate the survey — its condition is the question — and a 100 %IACS block proves nothing about accuracy at 30–42."
+   },
+   {
+    "prompt": "Undamaged bays read 32.8–33.6 %IACS. Adjacent to the scorch you log 40.6 %IACS, and hardness there is below the 7075-T6 minimum. Your call:",
+    "options": [
+     "40.6 falls inside the T73 window (38.0–42.5), so the skin is acceptable",
+     "Re-zero the meter — the jump must be drift",
+     "Heat damage: service heat continued the aging — conductivity above the T6 window with hardness below minimum. Grid outward until readings return in-band and refer the mapped area to engineering",
+     "The paint is thicker near the scorch; add lift-off compensation and accept"
+    ],
+    "correct": 2,
+    "feedback": "The T73 window belongs to parts heat treated to T73, not to overheated T6. Coarsened precipitates raise conductivity and drop strength together — the AMS 2658 conductivity-plus-hardness pairing exists exactly to catch this. The deliverable is a contour map of out-of-band readings, not a re-zeroed meter."
+   },
+   {
+    "prompt": "The unmarked 7075 sheet is wanted for a repair that requires T73 for stress-corrosion resistance. Five well-spaced readings: 36.7–36.9 %IACS. Disposition:",
+    "options": [
+     "Close enough to 38 — the meter's tolerance covers it",
+     "It is T6; use it, since T6 is stronger anyway",
+     "Average more spots until the mean clears 38.0",
+     "No window claims 36.8 — above T6's 36.0, below T73's 38.0. Quarantine the sheet; only documented heat treatment or laboratory verification can qualify it"
+    ],
+    "correct": 3,
+    "feedback": "Windows, not points: 36.8 belongs to no 7075 temper, which usually means a nonstandard or interrupted thermal history. The 38.0 floor is the stress-corrosion-resistance verification itself — and where SCC is the failure mode, the stronger T6 is not better, it is wrong."
+   },
+   {
+    "prompt": "Last job: sulfuric-acid anodize thickness on the reworked 2024 fitting, curved surface. You standardize by:",
+    "options": [
+     "Zeroing on bare 2024 of matching temper and curvature, then spanning with certified shims that bracket the expected thickness — and averaging several readings on the part",
+     "Zeroing on the handy steel block — metal is metal",
+     "Using a single shim ten times thicker than the expected coating, for headroom",
+     "Measuring through the topcoat and subtracting a typical paint thickness from memory"
+    ],
+    "correct": 0,
+    "feedback": "ASTM E376: the calibration substrate must match the part in conductivity (alloy and temper), curvature, and effective thickness, with shims bracketing the expected range. Steel is a different conductivity regime entirely, an unbracketed span point leaves the working range uncalibrated, and a remembered paint thickness is not a measurement."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Solution heat treating a 7075 part lowers its electrical conductivity because:",
+   "options": [
+    "Quenching introduces moisture into the alloy",
+    "The thicker oxide layer after heat treatment insulates the surface",
+    "Eddy current instruments cannot penetrate solution-treated metal",
+    "Alloying atoms held in solid solution distort the lattice and scatter conduction electrons; later aging precipitates them out and conductivity rises again"
+   ],
+   "correct": 3,
+   "explanation": "Conductivity is set by how freely electrons cross the lattice. Dissolved solute atoms are point scatterers, so solution treatment drops conductivity; aging sweeps solute into precipitates and cleans the matrix, so conductivity climbs — further still for overaged T73 and annealed O tempers. That inverse march of conductivity and strength is what makes temper sorting possible."
+  },
+  {
+   "question": "A 7075 fitting that should be T6 (30.5–36.0 %IACS) reads 40.8 %IACS, and its hardness is below the T6 minimum. The supportable conclusion is:",
+   "options": [
+    "The part meets T73 and may be accepted to that temper",
+    "Overheat damage — exposure continued the aging, raising conductivity and lowering strength; segregate the part and refer it with a mapped survey",
+    "The meter must be out of calibration",
+    "Normal scatter for T6 material"
+   ],
+   "correct": 1,
+   "explanation": "Conductivity above the expected window paired with hardness below minimum is the classic overaging signature — the AMS 2658 pairing. A number inside 38.0–42.5 does not make a damaged T6 part T73: that window applies to parts actually processed to T73, with hardness in range."
+  },
+  {
+   "question": "You must verify temper on 1.0 mm 2024-T3 sheet (σ ≈ 30 %IACS). At 60 kHz, δ ≈ 0.49 mm. The correct move is:",
+   "options": [
+    "Measure at 60 kHz anyway — the meter compensates for thickness",
+    "Stack two sheets to reach 2.0 mm and measure at 60 kHz",
+    "Switch to the 480 kHz range, where δ ≈ 0.17 mm puts the ≈3δ thickness floor near 0.5 mm — safely inside the sheet",
+    "Wet the back face so the currents can complete their path"
+   ],
+   "correct": 2,
+   "explanation": "A conductivity reading represents solid metal only when thickness is at least about 3δ — roughly 1.5 mm at 60 kHz for this alloy, so 1.0 mm sheet fails the rule there. Raising frequency shrinks δ until the sheet again looks infinitely thick to the coil. Stacked sheets do not behave as solid metal: the interface interrupts the eddy current path."
+  },
+  {
+   "question": "Measuring anodize thickness on an aluminum fitting with an eddy current coating gauge works because:",
+   "options": [
+    "With the substrate response fixed, a nonconductive coating is pure lift-off — the operating point's position along the lift-off curve maps to coating thickness, calibrated with shims on the bare substrate per ASTM E376",
+    "The anodic layer conducts better than the base alloy and adds signal",
+    "The coating reflects the magnetic field back into the coil",
+    "Anodize is ferromagnetic, so it raises the coil's inductance in proportion to thickness"
+   ],
+   "correct": 0,
+   "explanation": "Anodize, paint, and primer are nonconductive: they do not answer the coil, they simply hold it away from the metal. Zero on the bare substrate (same alloy, temper, curvature), span with certified shims bracketing the expected thickness, and the lift-off scale reads the coating directly. Anodic films are neither conductive nor magnetic."
+  },
+  {
+   "question": "To detect far-side corrosion thinning in a 1.6 mm 2024-T3 skin (σ ≈ 30 %IACS), the frequency choice consistent with this lesson is:",
+   "options": [
+    "2 MHz, for maximum near-surface resolution",
+    "60 kHz, because that is what conductivity meters use",
+    "About 6 kHz — placing the full wall near one standard depth so loss of far-surface metal rotates the signal phase — standardized on a same-alloy step wedge",
+    "Any frequency, provided gain is raised until thickness changes become visible"
+   ],
+   "correct": 2,
+   "explanation": "f = (660/t)² ÷ (µᵣ·σ) = (660/1.6)² ÷ 30 ≈ 5.7 kHz puts the 1.6 mm wall at about 1δ — the far surface still carries usable current, and thinning walks the operating point along the thickness locus, read by phase. At 60 kHz the wall is over 3δ and the far side is nearly silent; at 2 MHz it is invisible; and gain amplifies noise and signal alike."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ET Level II Inspection System Output and Evaluation Course §2.6–2.7 (sorting for properties related to conductivity; thickness evaluation)",
+  "ASNT SNT-TC-1A (2024), Eddy Current Testing method — Level II topical outline basis",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method",
+  "ASTM E376, Standard Practice for Measuring Coating Thickness by Magnetic-Field or Eddy Current (Electromagnetic) Testing Methods",
+  "SAE AMS 2658, Hardness and Conductivity Inspection of Wrought Aluminum Alloy Parts"
+ ]
+}

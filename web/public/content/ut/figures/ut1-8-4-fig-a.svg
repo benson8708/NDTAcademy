@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Transfer Correction: Block vs Part at the Same Gain</text>
+
+  <!-- left mini screen (block) -->
+  <rect x="70" y="80" width="200" height="150" fill="#0A2342"/>
+  <line x1="70" y1="130" x2="270" y2="130" stroke="#1E9E6A" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <polyline points="78,210 90,210 95,150 100,210 180,210 186,208 190,130 194,208 200,210 262,210" fill="none" stroke="#E8F1FB" stroke-width="2"/>
+  <text x="78" y="124" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1E9E6A">80% FSH</text>
+
+  <!-- right mini screen (part) -->
+  <rect x="530" y="80" width="200" height="150" fill="#0A2342"/>
+  <line x1="530" y1="170" x2="730" y2="170" stroke="#D14343" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <polyline points="538,210 550,210 555,150 560,210 640,210 646,208 650,170 654,208 660,210 722,210" fill="none" stroke="#E8F1FB" stroke-width="2"/>
+  <text x="538" y="164" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">40% FSH</text>
+
+  <!-- same-gain link -->
+  <line x1="284" y1="150" x2="516" y2="150" stroke="#5A6B7E" stroke-width="2" stroke-dasharray="7,5"/>
+  <polygon points="292,144 280,150 292,156" fill="#5A6B7E"/>
+  <polygon points="508,144 520,150 508,156" fill="#5A6B7E"/>
+  <text x="400" y="136" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">same reference gain</text>
+
+  <!-- left probe + smooth block -->
+  <rect x="130" y="252" width="50" height="22" fill="#0A2342"/>
+  <rect x="130" y="274" width="50" height="4" fill="#F2A33C"/>
+  <rect x="70" y="278" width="200" height="110" fill="#E8F1FB" stroke="#0A2342" stroke-width="2.5"/>
+  <line x1="148" y1="284" x2="148" y2="374" stroke="#1B82E8" stroke-width="3"/>
+  <polygon points="142,368 154,368 148,380" fill="#1B82E8"/>
+  <line x1="164" y1="378" x2="164" y2="290" stroke="#1E9E6A" stroke-width="3"/>
+  <polygon points="158,294 170,294 164,284" fill="#1E9E6A"/>
+  <text x="170" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">calibration block — smooth, 80% FSH</text>
+
+  <!-- right probe + rough part -->
+  <rect x="590" y="252" width="50" height="22" fill="#0A2342"/>
+  <rect x="584" y="274" width="62" height="10" fill="#F2A33C"/>
+  <polygon points="530,290 545,282 560,292 575,283 590,291 605,284 620,292 635,283 650,291 665,284 680,292 695,283 710,291 730,286 730,388 530,388" fill="#D9E0E8" stroke="#0A2342" stroke-width="2.5"/>
+  <line x1="608" y1="290" x2="608" y2="374" stroke="#1B82E8" stroke-width="3"/>
+  <polygon points="602,368 614,368 608,380" fill="#1B82E8"/>
+  <line x1="624" y1="378" x2="624" y2="296" stroke="#1E9E6A" stroke-width="2"/>
+  <polygon points="619,300 629,300 624,290" fill="#1E9E6A"/>
+  <text x="630" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">test part — rough, 40% FSH</text>
+
+  <!-- delta-dB box -->
+  <rect x="300" y="240" width="200" height="72" fill="#E8F1FB" stroke="#1B82E8" stroke-width="2.5"/>
+  <text x="400" y="268" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">ΔdB = 20·log₁₀(80/40)</text>
+  <text x="400" y="298" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1B82E8">= 6 dB</text>
+
+  <text x="400" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">add +6 dB to the reference gain</text>
+  <text x="400" y="362" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">when evaluating on the part</text>
+
+  <text x="400" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">Angle-beam version: measure with two probes in pitch-catch on the block, then on the part</text>
+</svg>

@@ -1,0 +1,145 @@
+{
+  "lessonId": "basic-6-3",
+  "title": "Thermal/Infrared Testing: Fundamentals and Equipment",
+  "narrationScript": "Every object above absolute zero radiates infrared energy, and thermal infrared testing turns that radiation into inspection data. This lesson builds the physics first. The Stefan-Boltzmann law says total radiated power climbs with the fourth power of absolute temperature; Wien's law says hotter surfaces radiate at shorter wavelengths, which puts room-temperature targets near ten micrometers, squarely in the long-wave camera band. Emissivity is the gatekeeper: a real surface emits only a fraction of blackbody radiation, and what it does not emit, it reflects. Polished aluminum at emissivity zero point zero five is nearly a mirror — set the instrument wrong and you measure the surroundings, not the part. From there the equipment ladder runs from contact to noncontact: temperature-indicating crayons and labels, thermocouples and resistance temperature detectors, heat flux gauges, spot pyrometers with their distance-to-spot ratio, ratio pyrometers that cancel emissivity, line scanners that map moving product, and focal-plane-array thermal imagers that deliver a full thermogram at video rates. Choose passive or active heating to match the problem, and the heat pattern becomes a picture of hidden condition.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Heat as a Signal: What Infrared Testing Measures",
+      "body": "Thermal/infrared testing (IR) reads the one signal every object broadcasts continuously: **infrared radiation**, electromagnetic energy lying between visible light and microwaves, from about **0.75 μm to 1000 μm** in wavelength. Anything warmer than absolute zero emits it, and hotter surfaces emit more — so an instrument that measures infrared radiation from a distance is measuring **temperature without touching the part**.\n\nThe method's logic has two halves:\n\n- **Radiation carries the signal out.** Of the three heat-transfer mechanisms — **conduction** (diffusion through solids and stationary fluids), **convection** (heat carried by moving fluid), and **radiation** (electromagnetic emission that needs no medium at all) — radiation is the only one an IR instrument actually measures.\n- **Conduction writes the pattern.** Heat flowing through the part must detour around anything that changes the thermal path: a disbond, an air void, water trapped in honeycomb core, wall thinning, a high-resistance electrical joint. The detour appears at the surface as a warm or cool pattern, and that pattern — not the absolute temperature — is usually the inspection result.\n\nPractical instruments view the two **atmospheric windows** where air transmits infrared freely: **midwave (MWIR, 3–5 μm)** and **longwave (LWIR, 8–14 μm)**. Room-temperature work lives in the longwave band, as the next section's physics will show.\n\nThe method's character follows directly: **noncontact, full-field, and fast** — an imager maps thousands of temperatures per frame at safe standoff — but strictly **line of sight**, directly sensitive only to the **surface**, with everything subsurface inferred through heat flow. In an FAA Part 145 shop you will meet both faces of it: a flash lamp pulsing heat across a bonded composite repair, and a camera sweep of a just-landed aircraft hunting cold-soaked water in a rudder core."
+    },
+    {
+      "type": "text",
+      "heading": "The Radiation Physics: Three Laws and Emissivity",
+      "body": "A **blackbody** is the ideal radiator — it absorbs every photon that strikes it and emits the theoretical maximum for its temperature. Three laws describe it, and every IR instrument is built on them:\n\n- **Planck's law** gives the full spectral curve: how much energy a blackbody radiates at each wavelength for a given temperature. The other two laws are its summary statistics.\n- **The Stefan-Boltzmann law** totals the curve: radiated power per unit area is **M = εσT⁴**, with σ = 5.67 × 10⁻⁸ W/(m²·K⁴) and T in **absolute** units. The fourth power is the method's leverage — double the absolute temperature and radiated energy multiplies **sixteenfold** — and it is why a few degrees of difference stands out clearly to a sensitive detector.\n- **Wien's displacement law** locates the curve's peak: **λmax ≈ 2898 μm·K ÷ T**. A 300 K room-temperature surface peaks near **9.7 μm**, which is why LWIR cameras own ambient-temperature work; an 800 K engine component peaks near 3.6 μm, MWIR territory; the 5800 K sun peaks at 0.5 μm, in visible light.\n\nReal surfaces fall short of the ideal. **Emissivity (ε)** is the ratio of what a surface actually emits to what a blackbody at the same temperature would emit — 1.0 for the ideal, less for everything real. By **Kirchhoff's law**, a good absorber is an equally good emitter, and for any surface the incident-energy fractions balance: **ε + ρ + τ = 1** (emitted, reflected, transmitted). For an opaque part τ = 0, so **ρ = 1 − ε**: whatever a surface does not emit, it reflects.\n\nWorking values tell the story: flat black paint ≈ 0.95, PVC electrical tape ≈ 0.95, human skin ≈ 0.98, heavily oxidized steel ≈ 0.85 — and **bare polished aluminum 0.03–0.1**. That last number is the trap that runs through all of thermography: a shiny metal surface emits almost nothing and mirrors almost everything around it."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-6-3-fig-a",
+      "caption": "An IR instrument receives three contributions from every surface — emitted (ε), reflected (ρ), and transmitted (τ), summing to 1. Two blocks at the same 100 °C tell the story: flat black paint reads true, while polished aluminum (ε ≈ 0.05) mostly mirrors the 25 °C hangar and reads near 30 °C."
+    },
+    {
+      "type": "text",
+      "heading": "Temperature Measurement Principles: Contact and Radiometric",
+      "body": "Temperature expresses the mean kinetic energy of a material's molecules; instruments reach it by two distinct routes.\n\n**Contact measurement** brings a sensor into **thermal equilibrium** with the object by conduction — strictly speaking, every contact device reports its own temperature and trusts that it matches the part. Three disciplines follow:\n\n- **Intimate contact.** An air gap insulates; thermal paste, clamping, or welding the junction closes it.\n- **Time.** Every sensor has a **response time constant**; read it before equilibrium and you read the history, not the part.\n- **Loading.** The sensor's own mass and its leads conduct heat away. On a thin composite skin or a small electronic component, a heavy probe measurably changes the very temperature it reports.\n\n**Noncontact (radiometric) measurement** captures radiation and computes temperature from the blackbody laws. For the displayed number to be true, the instrument must be told — or compensated for — four things:\n\n- **Emissivity** of the surface, set from tables or measured in place (ASTM E1933 gives the practice: compare against a contact reading or a high-ε reference patch).\n- **Reflected apparent temperature** — the surroundings the surface mirrors, measured and entered per ASTM E1862; on low-ε surfaces this term can dominate the reading.\n- **Atmosphere and distance** — long paths, humidity, and combustion gases attenuate the signal.\n- **Spot size** — the target must fill the measurement spot, or the reading averages in background.\n\nOne unit discipline binds both routes: the radiation laws use **absolute temperature** — kelvin (°C + 273.15) or rankine (°F + 459.67). Instruments display celsius or fahrenheit, but every radiometric computation underneath runs in absolute units."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Before you trust a radiometric reading",
+      "body": "**Set the emissivity** for the actual surface — paint, oxide, and bare metal on the same part can differ by a factor of ten. **Measure and enter the reflected apparent temperature**, especially indoors near lamps, heaters, and people, or outdoors under the sun. **Fix low-ε surfaces** by adding a high-emissivity reference — PVC electrical tape or a spot of flat paint (ε ≈ 0.95) — and measuring that. **Fill the spot**: a 12:1 distance-to-spot thermometer at 600 mm averages a 50 mm circle, and a smaller target blends into whatever is behind it. Skip any of the four and the instrument will confidently report a number that is not the part's temperature."
+    },
+    {
+      "type": "text",
+      "heading": "Proper Selection of IR Technique",
+      "body": "The first question of technique selection: **does the target produce or move heat on its own?**\n\n- **Passive thermography** observes temperature differences the part generates in service: a high-resistance terminal heating under load, a dragging brake, a bearing running hot, heat exchangers, furnace walls. It also exploits **natural transients** — an aircraft descends from altitude cold-soaked, and water trapped in honeycomb core, with its large thermal capacitance, lags the skin's warm-up and prints as a cool patch in a post-flight scan.\n- **Active thermography** supplies the heat deliberately, because a part in thermal equilibrium shows no pattern at all. **Flash (pulsed) thermography** fires a millisecond xenon pulse at the surface and images the cooldown: heat trapped above a disbond or delamination makes a warm spot, appearing earlier for shallower defects — echo time grows with depth squared divided by the material's **thermal diffusivity**. ASTM E2582 standardizes the practice for aerospace composite panels and repair patches. **Step heating** soaks the part for seconds when defects lie deeper, and **lock-in thermography** modulates the heat sinusoidally and computes a **phase image**, largely immune to uneven heating and surface emissivity variation, with depth selected by modulation frequency.\n\nWith the heating decided, match the instrument to the job:\n\n- **Temperature range and required sensitivity** — resolving a 0.1 °C pattern needs a low-NETD imager, not a dial thermometer.\n- **Spectral band** — LWIR for ambient targets and outdoor work; MWIR for hot, fast, or high-sensitivity work.\n- **Spatial resolution** — the instantaneous field of view or D:S ratio against target size and standoff distance.\n- **Speed** — a flash transient on thin composite skin is gone in fractions of a second; uncooled cameras at 30–60 Hz catch it on thin laminates, while cooled cameras running to kilohertz rates own the fastest events.\n- **Environment and access** — wind strips surface heat, solar reflections masquerade as hot spots on low-ε metal, and line of sight must exist at a workable angle."
+    },
+    {
+      "type": "text",
+      "heading": "Contact Equipment: Indicators, Sensors, and Heat Flux Gauges",
+      "body": "The contact side of the equipment spectrum trades coverage for simplicity and price:\n\n- **Contact temperature indicators.** Temperature-indicating **crayons, lacquers, and pellets** melt sharply at a rated temperature (accuracy on the order of ±1%) — the classic check that a weldment has reached preheat or stayed under interpass limits. **Irreversible labels** carry a row of windows that blacken permanently as their ratings are passed, leaving a record of the maximum reached. **Cholesteric liquid crystals**, applied as sheets or sprays, play through colors reversibly over a band a few degrees wide — a low-cost, full-field map once used for bond inspection, demanding contact and careful temperature control.\n- **Liquid-in-glass and bimetallic dial thermometers** remain the plant's simple, robust point readers.\n- **Thermocouples** exploit the **Seebeck effect**: two dissimilar metal wires joined at a measuring junction generate a small EMF that depends on the temperature difference between that junction and the reference junction — about **41 μV/°C for Type K** (chromel-alumel), the general-purpose workhorse. Rugged, tiny, inexpensive, and wide-ranging, they are the default for logging discrete points.\n- **Resistance temperature detectors (RTDs)** read the predictable rise of a platinum element's resistance — a **Pt100** measures 100.0 Ω at 0 °C and climbs about 0.39 Ω per °C. More accurate and stable than thermocouples, but slower, more fragile, and carrying a self-heating error from their excitation current.\n- **Thermistors** are semiconductor beads whose resistance falls steeply (typically) as temperature rises — extremely sensitive over narrow spans, and nonlinear.\n- **Heat flux indicators** measure something different: not temperature but **heat flow rate per unit area (W/m²)**. A differential thermopile spans a thin layer of known thermal resistance; the temperature drop across it is proportional to the flux through it. Bonded to a furnace wall, an insulated surface, or a curing repair, they quantify heat transfer directly — the quantity the temperature devices only imply."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-6-3-fig-b",
+      "caption": "The equipment spectrum from contact to noncontact: indicators answer a threshold at a spot, sensors log a point, pyrometers read radiance at a distance, line scanners map moving product, and focal-plane-array imagers deliver a full radiometric thermogram every frame."
+    },
+    {
+      "type": "text",
+      "heading": "Noncontact Equipment: Pyrometers, Line Scanners, and Thermal Imagers",
+      "body": "- **Spot pyrometers (infrared thermometers)** convert single-band radiance to temperature for one spot defined by the **distance-to-spot (D:S) ratio** — a 12:1 unit views a 25 mm circle at 300 mm. The laser dot marks aim, not the measured area, and the emissivity setting governs the answer.\n- **Optical (disappearing-filament) pyrometers** are the historic instrument: the operator matches the brightness of a calibrated lamp filament against the glowing target at 0.65 μm until the filament vanishes. They need incandescence — practical above roughly 700 °C — and put a human eye in the loop.\n- **Total radiation pyrometers** focus broadband radiation onto a thermopile — rugged, fixed monitors for furnaces and process lines.\n- **Ratio (two-color) pyrometers** compute temperature from the **ratio** of radiance in two closely spaced bands. For a gray body — emissivity equal in both bands — ε cancels out of the ratio, and partial blockage by smoke, dust, or a dirty window attenuates both bands together, leaving the reading intact. They mismeasure only when emissivity differs between the two bands.\n- **Line scanners** sweep a single detector (or small array) across a line at up to several kilohertz using a **rotating mirror**; the second image axis comes free from **product motion**. Paper webs, steel strip, and rotary kilns get continuous full-width thermal maps from a one-dimensional instrument.\n- **Thermal imagers** are the method's flagship: a **focal plane array (FPA)** of thousands to millions of detector elements behind **germanium optics**, since ordinary glass is opaque across the LWIR band. Two detector families divide the work. **Uncooled microbolometers** (vanadium oxide or amorphous silicon) sense the minute heating of each pixel — LWIR 8–14 μm, thermal sensitivity (**NETD**, noise-equivalent temperature difference) around 30–60 mK, frame rates of 9–60 Hz — the maintenance and field workhorse. **Cooled photon detectors** (indium antimonide in the MWIR, mercury cadmium telluride) count photons directly from a cryocooled focal plane near 77 K: NETD near 20 mK and kilohertz windowed frame rates, the choice for fast transients and laboratory active thermography. Either way the product is the **thermogram** — a calibrated map of apparent surface temperature, and the raw material the next lesson's applications and interpretation work is built on."
+    },
+    {
+      "type": "table",
+      "caption": "The IR equipment ladder, contact to noncontact: what each device measures and where it earns its place.",
+      "headers": ["Device", "Contact?", "Operating principle", "Typical role"],
+      "rows": [
+        ["Temperature-indicating crayons, paints, labels", "Contact", "Sharp melt or irreversible color change at a rated temperature", "Go/no-go thresholds: weld preheat and interpass checks, overtemperature witness"],
+        ["Cholesteric liquid crystals", "Contact", "Reversible color play over a band a few degrees wide", "Low-cost qualitative full-field mapping of small areas"],
+        ["Thermocouple (Type K)", "Contact", "Seebeck EMF at a junction of dissimilar metals, ≈41 μV/°C", "Rugged, wide-range point measurement and logging"],
+        ["RTD (Pt100)", "Contact", "Platinum resistance rises predictably from 100 Ω at 0 °C", "Stable, accurate process and laboratory points"],
+        ["Heat flux indicator", "Contact", "Differential thermopile across a thin barrier reads W/m²", "Measures heat flow rate, not temperature: insulation, furnace walls, cure monitoring"],
+        ["Spot pyrometer (IR thermometer)", "Noncontact", "Single-band radiance with set emissivity; D:S defines the spot", "Fast point checks where contact is unsafe or impractical"],
+        ["Ratio (two-color) pyrometer", "Noncontact", "Radiance ratio of two bands cancels gray-body emissivity", "Hot, small, or partially obscured targets: furnaces, molten metal"],
+        ["Line scanner", "Noncontact", "Rotating mirror sweeps one detector; product motion adds the second axis", "Continuous maps of moving webs, strip, and rotary kilns"],
+        ["Thermal imager (FPA)", "Noncontact", "Microbolometer (uncooled, LWIR) or cooled photon array (MWIR)", "Full-field thermograms for passive surveys and active NDT"]
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-6-3-fig-a",
+      "title": "Emissivity and the radiometric measurement",
+      "file": "basic-6-3-fig-a.svg"
+    },
+    {
+      "id": "basic-6-3-fig-b",
+      "title": "IR equipment spectrum: contact to thermal imaging",
+      "file": "basic-6-3-fig-b.svg"
+    }
+  ],
+  "interactive": null,
+  "checkQuestions": [
+    {
+      "question": "A component heats from 300 K to 600 K — its absolute temperature doubles. According to the Stefan-Boltzmann law, the total infrared energy it radiates per unit area:",
+      "options": [
+        "Doubles, since radiated power is proportional to temperature",
+        "Increases about fourfold",
+        "Increases about eightfold",
+        "Increases about sixteenfold, because radiated power scales with the fourth power of absolute temperature"
+      ],
+      "correct": 3,
+      "explanation": "M = εσT⁴: doubling the absolute temperature multiplies radiated power by 2⁴ = 16. The law runs on absolute temperature — kelvin, not celsius — which is why every radiometric instrument computes in absolute units even while displaying °C."
+    },
+    {
+      "question": "An LWIR camera set to ε = 0.95 views a polished aluminum hydraulic fitting that is actually at 90 °C in a 25 °C hangar. The most likely reading is:",
+      "options": [
+        "Slightly above 90 °C, because metals radiate more strongly than nonmetals",
+        "Accurate, because the emissivity setting does not affect radiometric readings",
+        "Far below 90 °C — near 30 °C — because the low-emissivity surface emits little and mostly reflects the 25 °C surroundings",
+        "Exactly 25 °C, because polished metal cannot emit infrared radiation at all"
+      ],
+      "correct": 2,
+      "explanation": "Bare polished aluminum has ε ≈ 0.03–0.1, and for an opaque surface ρ = 1 − ε, so over 90% of what the camera receives is reflected hangar radiation at 25 °C. The fix is a high-emissivity patch — electrical tape or flat paint at ε ≈ 0.95 — measured with the emissivity and reflected apparent temperature set correctly. The metal does emit a little; it just emits far less than the setting assumes."
+    },
+    {
+      "question": "A ratio (two-color) pyrometer is preferred over a single-band radiation pyrometer when:",
+      "options": [
+        "The target's emissivity is uncertain or the sight path is partially obscured, because forming the ratio of two wavelengths cancels gray-body emissivity and common attenuation",
+        "The target is below room temperature, where single-band devices cannot respond",
+        "A full two-dimensional thermogram of the surface is required",
+        "The measurement must be made in contact with the part for the record"
+      ],
+      "correct": 0,
+      "explanation": "Temperature comes from the ratio of radiance in two closely spaced bands: a gray body's emissivity appears in both numerator and denominator and cancels, and smoke, dust, or a dirty window attenuates both bands together. Residual error appears only when emissivity differs between the bands. It remains a point instrument — full-field imaging needs a focal-plane-array camera."
+    },
+    {
+      "question": "Which statement correctly pairs the contact device with its operating principle?",
+      "options": [
+        "Thermocouple — the resistance of a platinum element rises predictably with temperature",
+        "A thermocouple generates a small temperature-dependent EMF at the junction of two dissimilar metals (the Seebeck effect), while an RTD reads the predictable resistance rise of a platinum element",
+        "RTD — a semiconductor bead whose resistance falls steeply as temperature rises",
+        "Heat flux indicator — a crayon that melts sharply at its rated surface temperature"
+      ],
+      "correct": 1,
+      "explanation": "The Seebeck EMF (about 41 μV/°C for Type K) is the thermocouple's signal; the Pt100 RTD reads 100 Ω at 0 °C and climbs about 0.39 Ω per °C. The steeply falling semiconductor bead describes a thermistor, and a heat flux indicator measures heat flow rate per unit area (W/m²) with a differential thermopile — not temperature at all."
+    },
+    {
+      "question": "A composite rudder panel sitting at uniform hangar temperature must be screened for near-surface disbonds. The appropriate IR approach is:",
+      "options": [
+        "Passive imaging, since disbonds radiate strongly on their own",
+        "A spot pyrometer survey, since point readings resolve subsurface flaws",
+        "Active thermography — apply a controlled heat pulse and image the cooldown, where heat trapped above a disbond appears as a warm spot",
+        "A grid of temperature-indicating crayons, which change color over each disbond"
+      ],
+      "correct": 2,
+      "explanation": "A part in thermal equilibrium presents no pattern, so passive observation shows nothing — the heat must be supplied. Flash thermography per ASTM E2582 pulses the surface and images the cooldown: a disbond interrupts heat flow into the depth, the surface above it stays warm, and shallower defects appear earlier. Point readings and threshold crayons cannot map a transient subsurface pattern."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §2.8 (IR fundamentals: principles/theory, temperature measurement principles, proper selection of IR technique; equipment from heat flux indicators and contact temperature devices to noncontact pyrometers, line scanners, and thermal imaging)",
+    "ASTM E1316, Standard Terminology for Nondestructive Examinations — infrared/thermal examination terms (thermogram, emissivity, infrared radiometer)",
+    "ASTM E1933, Standard Practice for Measuring and Compensating for Emissivity Using Infrared Imaging Radiometers, and ASTM E1862, Standard Practice for Measuring and Compensating for Reflected Temperature Using Infrared Imaging Radiometers",
+    "ASTM E2582, Standard Practice for Infrared Flash Thermography of Composite Panels and Repair Patches Used in Aerospace Applications"
+  ]
+}

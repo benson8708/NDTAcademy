@@ -1,0 +1,150 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="edcGlowC" filterUnits="userSpaceOnUse" x="-20" y="-20" width="640" height="380">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="edcGlowA" filterUnits="userSpaceOnUse" x="-20" y="-20" width="640" height="380">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="edcShieldG" x1="0" y1="126" x2="0" y2="218" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2b4a6e"/><stop offset=".5" stop-color="#1a3656"/><stop offset="1" stop-color="#102742"/>
+    </linearGradient>
+    <linearGradient id="edcPipeG" x1="556" y1="0" x2="574" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3a6da0"/><stop offset=".55" stop-color="#1f4a78"/><stop offset="1" stop-color="#122c4c"/>
+    </linearGradient>
+    <linearGradient id="edcWeldG" x1="556" y1="0" x2="574" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3f9bff"/><stop offset=".5" stop-color="#2b86ff"/><stop offset="1" stop-color="#1E66F5"/>
+    </linearGradient>
+    <linearGradient id="edcConeG" x1="528" y1="0" x2="556" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffc24b" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#ff9b4b" stop-opacity=".1"/>
+    </linearGradient>
+    <pattern id="edcHatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="9" stroke="#0a1c33" stroke-width="1.6" stroke-opacity=".5"/>
+    </pattern>
+    <clipPath id="edcShieldClip"><rect x="122" y="126" width="158" height="92" rx="10"/></clipPath>
+  </defs>
+
+  <!-- ===== corner tag ===== -->
+  <text x="14" y="24" font-size="11" letter-spacing=".08em" fill="#9fe6ff" opacity=".5">GAMMA EXPOSURE DEVICE // SIDE CUTAWAY</text>
+
+  <!-- ===== STATIC: housing shell, handle, feet, lock, ports ===== -->
+  <line x1="66" y1="242" x2="334" y2="242" stroke="#8fb6e0" stroke-width="1" opacity=".15"/>
+  <!-- carry handle -->
+  <path d="M 136 110 C 136 92 264 92 264 110" fill="none" stroke="#16365c" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 136 110 C 136 92 264 92 264 110" fill="none" stroke="#8fb6e0" stroke-width="1.5" stroke-linecap="round" opacity=".7"/>
+  <!-- shell -->
+  <rect x="64" y="110" width="272" height="122" rx="14" fill="rgba(10,30,60,.55)" stroke="#9fe6ff" stroke-width="2"/>
+  <rect x="70" y="116" width="260" height="110" rx="10" fill="none" stroke="#2a527f" stroke-width="1" opacity=".6"/>
+  <!-- skid feet -->
+  <rect x="84" y="232" width="30" height="6" rx="2" fill="#16365c" stroke="#8fb6e0" stroke-width="1"/>
+  <rect x="286" y="232" width="30" height="6" rx="2" fill="#16365c" stroke="#8fb6e0" stroke-width="1"/>
+  <!-- lock indicator (static detail) -->
+  <rect x="74" y="148" width="46" height="17" rx="4" fill="rgba(10,30,60,.7)" stroke="#2a527f" stroke-width="1.2"/>
+  <circle cx="81" cy="156.5" r="2.2" fill="#ffc24b"/>
+  <text x="103" y="160.5" font-size="11" letter-spacing=".08em" fill="#9fe6ff" text-anchor="middle">LOCK</text>
+  <!-- rear drive-cable port (low, knurled locking collar) -->
+  <rect x="38" y="195" width="28" height="14" rx="3" fill="#16365c" stroke="#9fe6ff" stroke-width="1.5"/>
+  <rect x="46" y="192" width="9" height="20" rx="2" fill="#0e2848" stroke="#9fe6ff" stroke-width="1.2"/>
+  <line x1="48.6" y1="193" x2="48.6" y2="211" stroke="#2a527f" stroke-width="1"/>
+  <line x1="52.2" y1="193" x2="52.2" y2="211" stroke="#2a527f" stroke-width="1"/>
+  <ellipse cx="39.5" cy="202" rx="2.4" ry="4" fill="#081626" stroke="#5fe0ff" stroke-width="1" opacity=".9"/>
+  <!-- front guide-tube port (high, flanged outlet) -->
+  <rect x="332" y="130" width="8" height="20" rx="2" fill="#0e2848" stroke="#9fe6ff" stroke-width="1.5"/>
+  <rect x="340" y="133" width="20" height="14" rx="3" fill="#16365c" stroke="#9fe6ff" stroke-width="1.5"/>
+
+  <!-- ===== STATIC: guide tube arcs to collimator at the pipe weld ===== -->
+  <path d="M 360 140 C 418 134 470 144 490 190" fill="none" stroke="#8fb6e0" stroke-width="8" opacity=".4"/>
+  <path d="M 360 140 C 418 134 470 144 490 190" fill="none" stroke="#16365c" stroke-width="5.5"/>
+  <path d="M 360 140 C 418 134 470 144 490 190" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".3"/>
+  <!-- collimator block -->
+  <rect x="490" y="178" width="38" height="32" rx="4" fill="#16365c" stroke="#9fe6ff" stroke-width="1.5"/>
+  <path d="M 528 189 L 511 192.5 L 511 195.5 L 528 199 Z" fill="#08182c" stroke="#2a527f" stroke-width="1"/>
+  <!-- pipe-weld section + film cassette behind -->
+  <rect x="578" y="170" width="7" height="48" rx="1.5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+  <rect x="556" y="158" width="18" height="72" fill="url(#edcPipeG)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="556" y="187" width="18" height="14" fill="url(#edcWeldG)"/>
+  <path d="M 556 185 Q 549 194 556 203" fill="#3f9bff" stroke="#7fd8ff" stroke-width="1.2"/>
+  <path d="M 574 187 Q 580 194 574 201" fill="#1E66F5" stroke="#7fd8ff" stroke-width="1"/>
+  <line x1="556" y1="187" x2="574" y2="187" stroke="#7fd8ff" stroke-width="1" opacity=".6"/>
+  <line x1="556" y1="201" x2="574" y2="201" stroke="#7fd8ff" stroke-width="1" opacity=".6"/>
+
+  <!-- ===== edcShield: depleted-uranium shield block (fade) ===== -->
+  <g id="edcShield" opacity="0">
+    <rect x="122" y="126" width="158" height="92" rx="10" fill="url(#edcShieldG)" stroke="#9fe6ff" stroke-width="1.5"/>
+    <rect x="122" y="126" width="158" height="92" rx="10" fill="url(#edcHatch)" clip-path="url(#edcShieldClip)"/>
+    <rect x="127" y="131" width="148" height="82" rx="7" fill="none" stroke="#2a527f" stroke-width="1" stroke-dasharray="5 4" opacity=".7"/>
+    <text x="137" y="143" font-size="11" letter-spacing=".08em" fill="#9fe6ff" paint-order="stroke" stroke="#0c2340" stroke-width="3.5">DU SHIELD</text>
+  </g>
+
+  <!-- ===== edcSTubeKit: bore walls + parked capsule + pigtail + labels (fade) ===== -->
+  <g id="edcSTubeKit" opacity="0">
+    <path d="M 40 202 L 122 202 C 172 202 158 171 203 171 C 248 171 234 140 284 140 L 360 140" fill="none" stroke="#2a527f" stroke-width="10" opacity=".85"/>
+    <path d="M 40 202 L 122 202 C 172 202 158 171 203 171 C 248 171 234 140 284 140 L 360 140" fill="none" stroke="#081626" stroke-width="7"/>
+    <!-- pigtail cable + connector behind the capsule -->
+    <path d="M 196 171 C 188 171.3 181 174 173 179.5" fill="none" stroke="#9fd0ff" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="173" cy="179.5" r="2" fill="#9fd0ff"/>
+    <!-- source capsule parked at S center -->
+    <rect x="196" y="167.5" width="13" height="7" rx="2.5" fill="#ffc24b" stroke="#b97f1f" stroke-width="1" filter="url(#edcGlowA)"/>
+    <circle cx="202.5" cy="171" r="1.6" fill="#fff3d6"/>
+    <!-- labels -->
+    <text x="137" y="158" font-size="11" letter-spacing=".08em" fill="#9fe6ff" paint-order="stroke" stroke="#0c2340" stroke-width="3.5">S-TUBE</text>
+    <path d="M 184 154 L 176 177" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="212" y="262" font-size="11" letter-spacing=".08em" fill="#9fe6ff" text-anchor="middle">PARK POSITION</text>
+    <path d="M 205 180 L 210 252" stroke="#5fe0ff" stroke-width="1" opacity=".45" fill="none"/>
+  </g>
+
+  <!-- ===== edcSTube: S-channel centerline (draw) ===== -->
+  <path id="edcSTube" d="M 40 202 L 122 202 C 172 202 158 171 203 171 C 248 171 234 140 284 140 L 360 140" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" filter="url(#edcGlowC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== edcBlockRay: straight rays absorbed in shield mass (fade) ===== -->
+  <g id="edcBlockRay" opacity="0">
+    <path d="M 208 164 L 224 141" stroke="#ffc24b" stroke-width="1.5" stroke-dasharray="4 3" fill="none" opacity=".75"/>
+    <path d="M 222 137 L 228 143 M 228 137 L 222 143" stroke="#ff8a5f" stroke-width="1.5" fill="none"/>
+    <path d="M 211 171 L 256 171" stroke="#ffc24b" stroke-width="1.5" stroke-dasharray="4 3" fill="none" opacity=".75"/>
+    <path d="M 256 168 L 262 174 M 262 168 L 256 174" stroke="#ff8a5f" stroke-width="1.5" fill="none"/>
+    <path d="M 208 177 L 224 197" stroke="#ffc24b" stroke-width="1.5" stroke-dasharray="4 3" fill="none" opacity=".75"/>
+    <path d="M 223 195 L 229 201 M 229 195 L 223 201" stroke="#ff8a5f" stroke-width="1.5" fill="none"/>
+  </g>
+
+  <!-- ===== edcCrankOut: drive cable in, source cranked out to collimator (fade) ===== -->
+  <g id="edcCrankOut" opacity="0">
+    <!-- drive cable entering rear port from the crank (off-frame, lower left) -->
+    <path d="M 8 278 C 38 268 16 224 38 203" fill="none" stroke="#9fd0ff" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M -4 -4 L 4 0 L -4 4" transform="translate(27,240) rotate(-66)" stroke="#ffc24b" stroke-width="1.5" fill="none"/>
+    <text x="10" y="300" font-size="11" letter-spacing=".08em" fill="#9fe6ff" opacity=".75">TO CRANK</text>
+    <!-- park position now empty -->
+    <path d="M 170.5 181 C 177.3 175.5 185.9 171 203 171 L 215 171" fill="none" stroke="#081626" stroke-width="7"/>
+    <ellipse cx="203" cy="171" rx="7.5" ry="4.5" fill="none" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="3 2.4" opacity=".55"/>
+    <!-- travel path: rear port through S-tube, down guide tube, into collimator -->
+    <path d="M 40 202 L 122 202 C 172 202 158 171 203 171 C 248 171 234 140 284 140 L 360 140 C 418 134 470 144 490 190 L 502 193" fill="none" stroke="#ffc24b" stroke-width="1.5" stroke-dasharray="5 4" opacity=".75"/>
+    <path d="M -4 -4 L 4 0 L -4 4" transform="translate(88,202)" stroke="#ffc24b" stroke-width="1.5" fill="none"/>
+    <path d="M -4 -4 L 4 0 L -4 4" transform="translate(316,140)" stroke="#ffc24b" stroke-width="1.5" fill="none"/>
+    <path d="M -4 -4 L 4 0 L -4 4" transform="translate(469,162) rotate(40)" stroke="#ffc24b" stroke-width="1.5" fill="none"/>
+    <!-- source seated in collimator + narrow cone onto the weld -->
+    <rect x="500" y="190.5" width="11" height="7" rx="2.5" fill="#ffc24b" stroke="#b97f1f" stroke-width="1" filter="url(#edcGlowA)"/>
+    <path d="M 528 190 L 556 180 L 556 208 L 528 198 Z" fill="url(#edcConeG)"/>
+    <path d="M 528 190 L 556 180 M 528 198 L 556 208" stroke="#ffc24b" stroke-width="1" opacity=".45" fill="none"/>
+    <path d="M 530 194 L 555 194" stroke="#ffc24b" stroke-width="1.2" stroke-dasharray="4 3" opacity=".6" fill="none"/>
+    <text x="510" y="166" font-size="11" letter-spacing=".08em" fill="#ffc24b" text-anchor="middle">EXPOSED</text>
+  </g>
+
+  <!-- ===== edcSeatPing: ping at the collimator seat ===== -->
+  <circle id="edcSeatPing" cx="512" cy="194" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0"/>
+
+  <!-- ===== STATIC labels ===== -->
+  <g font-size="11" letter-spacing=".08em" fill="#9fe6ff">
+    <text x="62" y="262" text-anchor="middle">REAR PORT</text>
+    <text x="62" y="276" text-anchor="middle" opacity=".65">DRIVE CABLE</text>
+    <path d="M 50 212 L 58 252" stroke="#5fe0ff" stroke-width="1" opacity=".45" fill="none"/>
+    <text x="366" y="110" text-anchor="middle">FRONT PORT</text>
+    <path d="M 352 128 L 362 116" stroke="#5fe0ff" stroke-width="1" opacity=".45" fill="none"/>
+    <text x="452" y="124" text-anchor="middle">GUIDE TUBE</text>
+    <path d="M 442 142 L 448 130" stroke="#5fe0ff" stroke-width="1" opacity=".45" fill="none"/>
+    <text x="508" y="262" text-anchor="middle">COLLIMATOR</text>
+    <path d="M 509 214 L 508 252" stroke="#5fe0ff" stroke-width="1" opacity=".45" fill="none"/>
+    <text x="562" y="148" text-anchor="middle">PIPE WELD</text>
+  </g>
+</svg>

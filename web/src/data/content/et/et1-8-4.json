@@ -1,0 +1,191 @@
+{
+ "lessonId": "et1-8-4",
+ "title": "Lab: Generating a Z-Curve with Conductivity Standards",
+ "narrationScript": "The theory course had you draw a Z-curve to learn its shape. This final lab makes the curve earn its keep as a measuring tool. You will build it again at sixty kilohertz, titanium near one percent IACS through copper at one hundred — and then refuse to trust it until it is verified. Re-touch the known standards: every dot must land back on its recorded position. Bracket the range you expect to measure with a low and a high standard, and confirm a mid-range check standard on its certified spot. Only then do the unmarked samples come out. An unknown parks on the locus between two knowns, and its position along the curve reads its conductivity — remember the spacing is not linear, so read position, not midpoints. One staged sample will climb above the comma: ferromagnetic, permeability talking, reading invalid. Another is too thin for sixty kilohertz, so its dot mixes conductivity with whatever sits behind it. Knowns prove the setup. Position reads the metal. Discipline decides whether the number is real.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "This Lab: The Curve Becomes an Instrument",
+   "body": "Three labs in this module taught you to keep a flaw signal honest — filters bracketed to the notch, lift-off pinned down by probe technique, scan speed held inside its qualified window. The module closes with a different job: not detecting a discontinuity, but **measuring a material property and defending the number**.\n\nYou drew a Z-curve once before, in the theory course, to learn what the comma-shaped conductivity locus *is*. This lab treats the curve as a working instrument — which means it gets treated like every other instrument in a repair station: standardized, **verified against knowns**, and only then trusted with an unknown.\n\nOn the bench:\n\n- An eddy current instrument with an **impedance-plane display** and an **absolute surface probe** operating at **60 kHz** — the classic conductivity-measurement frequency\n- A **full kit of certified conductivity standards** — eight to twelve nonmagnetic flats from Ti-6Al-4V near **1 %IACS** to annealed copper at **100**, each with its certified value marked\n- **Three unmarked samples** from your instructor — U1, U2, and U3 — and at least one of them is a trap\n- The **conductivity standards lab worksheet** for dot positions, certified values, verification checks, and your unknown evaluations\n\nNinety minutes from now you will have generated the full curve, proven the standardization twice, and put a defensible conductivity value — or a defensible refusal — against every unknown."
+  },
+  {
+   "type": "text",
+   "heading": "Bench Exercises 1 and 2: Build the Full Curve, Then Prove It",
+   "body": "**Exercise 1 — build the full curve.** The drill is the one you learned in the theory lab, run faster and recorded tighter:\n\n1. **Stabilize.** Standards, unknowns, and probe at the same room temperature — certified values are 20 °C values, and conductivity falls as metal warms.\n2. **Configure and balance.** 60 kHz, absolute surface probe, null in air with the air point parked upper-left so the whole comma fits on screen.\n3. **Range-check the extremes.** Titanium, then copper; trim gain until both dots stay on screen, re-balancing after any change.\n4. **Measure in conductivity order.** Probe flat and centered, at least one probe diameter from every edge; let the dot settle; record each position with its certified %IACS beside it.\n5. **Connect the dots.** The comma appears — titanium high near the air point, the aluminum alloys spread around the knee, copper far down the tail.\n\n**Exercise 2 — verify the standardization.** A curve you drew is a picture; a curve you verified is an instrument. Three checks turn one into the other:\n\n- **Repeat.** Re-touch at least two knowns: each dot must land on its recorded position. Certified metal cannot change between touches, so a moved dot means the *setup* moved — null drift, temperature, probe tilt or wear.\n- **Bracket.** Confirm the two standards that straddle the range your unknowns should occupy — for aluminum work, commonly one near **30 %IACS** (2024-T3) and one near **59** (1100-O). These are your standardization anchors, the same bracketing logic ASTM E1004 applies to conductivity meters.\n- **Check the middle.** A mid-range standard — 6061-T6 at **43 %IACS** here — must land on its certified spot between the brackets, within the tolerance your worksheet states.\n\nFail any check and the rule is absolute: stop, find the cause, fix it, re-verify — and re-measure everything done since the last good verification."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-8-4-fig-a",
+   "caption": "The full-kit Z-curve at 60 kHz with the verification drill marked: re-touched knowns must repeat on their recorded positions, the 2024-T3 and 1100-O brackets anchor the working range, and the 6061-T6 check standard must land on its certified spot before any unknown is read."
+  },
+  {
+   "type": "text",
+   "heading": "Bench Exercise 3: Read the Unknowns",
+   "body": "Bring out U1 and give it exactly the discipline the standards got: stabilized at room temperature, probe flat and centered, edges clear. The dot parks **on the locus**, between the 7075-T6 dot (32 %IACS) and the 6061-T6 dot (43 %IACS), about three-quarters of the way along the arc toward 6061-T6.\n\nNow read it:\n\n- **Position along the curve is the measurement.** Between two verified knowns, the dot's fraction of the arc reads its conductivity — here, roughly **40 %IACS**.\n- **The spacing is not linear.** The knee spreads its %IACS generously; toward the ends the graduations crowd together. The arithmetic average of the brackets (37.5) is *not* the midpoint of the arc, and a ruler across the chord is worse — read along the curve, against the dots you actually plotted.\n- **Never extrapolate.** A dot beyond your outermost verified standard is a flag to re-standardize with wider brackets, not a number to report.\n- **Know what the number is.** Conductivity is not chemistry: ≈40 %IACS is what a 7075 part overaged to the **T73** temper reads — and what some entirely different material might read too. Paired with the part's documentation, the reading verifies heat treatment, the logic MIL-STD-1537 formalizes for aerospace aluminum; alone, it is just a property value.\n\nA dedicated conductivity meter compresses this whole exercise into two standardization touches and a digital %IACS readout — and after this lab you know exactly what those digits mean: a dot position on a curve, interpolated between certified standards. The level boundary stands here as everywhere: you generate and record the values; **disposition of hardware against acceptance criteria is a Level II or III signature**."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-8-4-fig-b",
+   "caption": "Reading U1 by position: between the verified 32 and 43 %IACS dots, the unknown sits about three-quarters along the arc — ≈40 %IACS. The %IACS graduations tighten toward higher conductivity, so read along the curve, never with a ruler across the chord, and never past the last verified standard."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "A dot is only as honest as its variables",
+   "body": "Before you write down any unknown's value, run the validity list. **Nonmagnetic** — the curve exists only for μr ≈ 1. **Thick enough** — at least about 3δ, which at 60 kHz is ≈1.2 mm for a 43 %IACS aluminum, under 1 mm for copper, but ≈8 mm for Ti-6Al-4V. **Edges clear** — at least one probe diameter. **Flat, still contact** — tilt is lift-off, and lift-off drags the dot toward the air point. **Same temperature as the standards** — certified values are 20 °C values. **Same probe and frequency that built the curve.** Break any one and the instrument still parks the dot somewhere — it just is no longer measuring conductivity."
+  },
+  {
+   "type": "text",
+   "heading": "When the Dot Lies: Three Staged Failures",
+   "body": "U2 and U3 are the traps, staged so you meet them first on a bench instead of on an airplane.\n\n**U2 — the dot climbs.** Probe down, and the dot ignores the comma entirely, rising **above the air point** into normalized reactance greater than 1. Every standard in the kit is nonmagnetic (μr ≈ 1) precisely so that conductivity is the only variable; U2 is **ferromagnetic**, and permeability concentrates flux so powerfully that it buries the conductivity response. There is no reading to salvage — log it as outside this technique. Magnetic materials get their own methods.\n\n**U3 — the backing test.** A 1.0 mm sheet that reads like an aluminum alloy — until you slide a thick aluminum block underneath and the dot **moves**. That motion is the diagnosis: eddy currents are still alive at the far surface. Run the arithmetic: δ ≈ 660/√(60,000 × 1 × 43) ≈ **0.41 mm**, so a valid bulk reading needs about 3δ ≈ **1.2 mm** of metal — and the sheet is 1.0. At 60 kHz its dot mixes conductivity with thickness and backing. The cure is frequency: at **480 kHz**, the thin-material mode on conductivity meters, δ ≈ 0.15 mm and 3δ ≈ 0.44 mm fits inside the sheet with margin.\n\n**The third trap you spring on yourself.** Re-measure a known fresh from a warm hand or a sunny windowsill: it reads **low** — several %IACS for a few tens of degrees — and the value creeps back up as the sample cools to room temperature. Conductivity falls as metal warms, which is why the worksheet records temperature and why standards live on the bench, not in your pocket."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-8-4-fig-c",
+   "caption": "Three staged failures and the catch for each: a ferromagnetic sample climbs above the air point, off the curve entirely; a sheet thinner than 3δ shifts its dot when the backing changes; a warm sample slides back along the locus and reads low until it stabilizes."
+  },
+  {
+   "type": "table",
+   "caption": "Conductivity-bench troubleshooting — symptom, likely cause, corrective move.",
+   "headers": ["Symptom at the bench", "Likely cause", "Your move"],
+   "rows": [
+    ["Re-touched known parks off its recorded position", "Standardization no longer holds — null drift, temperature change, probe tilt or wear", "Stop; find and fix the cause, re-verify brackets and check standard, then re-measure everything since the last good verification"],
+    ["Unknown's dot climbs above the air point, off the comma", "Ferromagnetic sample — permeability dominates the response", "No conductivity reading exists on this curve; log it as outside the technique and route to methods for magnetic material"],
+    ["Thin sample's reading shifts when you change what is behind it", "Thickness below about 3δ at 60 kHz — the field reaches the far surface", "Re-measure at a frequency whose 3δ fits inside the sheet (e.g., a 480 kHz thin-material mode), or report it as not measurable at 60 kHz"],
+    ["Reading creeps upward for minutes after the sample is placed", "Sample arrived warmer than the bench — conductivity falls as metal warms and recovers as it cools", "Stabilize standards and unknowns at room temperature, handle by the edges, re-measure once the value holds steady"],
+    ["Two different unknowns park on the same dot", "Same conductivity — which is not the same thing as same alloy", "Report the %IACS for each; identification needs documentation or another method, because conductivity is not a unique fingerprint"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-8-4-fig-a",
+   "title": "The verified Z-curve: brackets, check standard, repeat touches",
+   "file": "et1-8-4-fig-a.svg"
+  },
+  {
+   "id": "et1-8-4-fig-b",
+   "title": "Evaluating an unknown by position along the locus",
+   "file": "et1-8-4-fig-b.svg"
+  },
+  {
+   "id": "et1-8-4-fig-c",
+   "title": "Three ways a dot lies — and the catch for each",
+   "file": "et1-8-4-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Run the Conductivity Bench",
+  "intro": "Your bench: impedance-plane instrument at 60 kHz, absolute surface probe, full certified kit from Ti-6Al-4V (1.0 %IACS) to annealed copper (100), brackets verified at 2024-T3 (30) and 1100-O (59) with the 6061-T6 (43) check standard — and three unmarked samples. Make each call before you click.",
+  "steps": [
+   {
+    "prompt": "The curve is built and signed off through Exercise 1. After a break, the procedure demands a re-touch of two knowns before anything else — and the 6061-T6 check standard now parks visibly off its recorded position. Your move?",
+    "options": [
+     "Proceed to the unknowns — the curve was built carefully less than an hour ago",
+     "Add gain until the dot is easier to see, then continue",
+     "Stop: find and fix the cause — null drift, temperature change, probe tilt or wear — then re-verify the brackets and check standard before any unknown is measured",
+     "Move the recorded mark to the new dot position and continue"
+    ],
+    "correct": 2,
+    "feedback": "Verification exists to catch exactly this. The certified metal has not changed, so the setup has — drift, temperature, or coupling. Anything measured between the last good verification and this failure is suspect and gets re-measured once the system proves itself again. Editing the record to match a drifting instrument is the one move worse than ignoring the failure."
+   },
+   {
+    "prompt": "U1 parks on the locus between the 7075-T6 dot (32 %IACS) and the 6061-T6 dot (43 %IACS), about three-quarters of the way along the arc toward 6061-T6. Your best estimate?",
+    "options": [
+     "37.5 %IACS — the average of the two bracketing values",
+     "About 40 %IACS — read from the dot's position along the curve between the two verified knowns",
+     "43 %IACS — round to the nearest standard",
+     "No estimate is possible between standards; only exact dot matches count"
+    ],
+    "correct": 1,
+    "feedback": "Position along the locus is the measurement: three-quarters of the way from 32 toward 43 reads about 40 %IACS. The arithmetic midpoint is wrong twice over — the dot is not at the midpoint, and the curve's %IACS spacing is not linear anyway. A reading near 40 is consistent with 7075 in the T73 temper, but the curve measures conductivity, not alloy identity — pair the number with the paperwork."
+   },
+   {
+    "prompt": "U2 ignores the comma entirely — its dot climbs above the air point, into normalized reactance greater than 1. What is U2?",
+    "options": [
+     "A superconductor — conductivity beyond copper's 100 %IACS",
+     "A cracked sample — the flaw response is overriding the conductivity response",
+     "Nonconductive — the probe sees nothing at all",
+     "Ferromagnetic — permeability raises inductive reactance and swamps the conductivity response, so this curve cannot evaluate it"
+    ],
+    "correct": 3,
+    "feedback": "The conductivity locus you built is valid only for nonmagnetic material (μr ≈ 1). Permeability concentrates flux and drives the coil's reactance up — the dot leaves the comma and climbs above the balance point. Higher conductivity would move it farther along the curve, not above it, and a nonconductive sample would leave the dot at the air point. Route U2 out of this technique."
+   },
+   {
+    "prompt": "U3 is a 1.0 mm sheet that reads like an aluminum alloy — but when you slide a thick aluminum block underneath it, the dot moves. Diagnosis?",
+    "options": [
+     "The reading is valid — 1.0 mm exceeds one standard depth (≈0.4 mm), so the surface reading is pure",
+     "The block magnetized the sheet",
+     "The sheet is thinner than the ~3δ the measurement needs (≈1.2 mm at 60 kHz for this alloy class), so the reading mixes conductivity with thickness and backing — re-measure at a frequency whose 3δ fits inside 1.0 mm, such as a 480 kHz thin-material mode",
+     "The probe drive is too high — lower the gain and the dot will settle"
+    ],
+    "correct": 2,
+    "feedback": "Moving the backing moved the dot — that is the experiment proving eddy currents are still alive at the far surface. δ ≈ 660/√(60,000 × 1 × 43) ≈ 0.41 mm, so 3δ ≈ 1.2 mm against a 1.0 mm sheet: too thin at 60 kHz. At 480 kHz, δ ≈ 0.15 mm and 3δ ≈ 0.44 mm — the measurement fits inside the sheet with room to spare. One standard depth is not enough: about 37% of the surface current density still flows at 1δ."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "After the Z-curve is complete, the technique requires re-touching known standards and confirming each dot lands on its recorded position before any unknown is evaluated. This step exists to:",
+   "options": [
+    "Confirm the certified values printed on the standards are still correct",
+    "Demagnetize the standards between measurements",
+    "Prove the instrument–probe–setup combination still reproduces its standardized response — catching null drift, temperature shifts, and coupling changes before they contaminate an evaluation",
+    "Raise the instrument's gain to its maximum usable value"
+   ],
+   "correct": 2,
+   "explanation": "Certified standards do not change between morning and afternoon — the setup does. Re-touching knowns is standardization verification: if the dots repeat, drift, temperature, and coupling are under control; if one lands off its recorded spot, everything measured since the last good verification is suspect and is re-measured after the cause is fixed."
+  },
+  {
+   "question": "Unknown samples should fall between the certified standards chosen to bracket the working range because:",
+   "options": [
+    "Reading by position is interpolation between verified points — beyond the outermost verified standard the curve is unproven, so an extrapolated value cannot be defended",
+    "Eddy currents cannot be induced in material outside the bracketed conductivity range",
+    "The brackets keep the probe from overheating on high-conductivity metal",
+    "Instrument gain is only linear between the two brackets"
+   ],
+   "correct": 0,
+   "explanation": "A dot between two verified knowns is anchored from both sides; past the last standard there is nothing to anchor it. That is why this lab — like ASTM E1004 practice for conductivity meters — verifies with standards straddling the expected range (commonly near 30 and 59 %IACS for aluminum work) and treats any dot outside the brackets as a trigger to re-standardize with wider ones, not as data."
+  },
+  {
+   "question": "U1's dot sits on the conductivity locus between the 7075-T6 standard (32 %IACS) and the 6061-T6 standard (43 %IACS), noticeably closer to 6061-T6. The defensible reading comes from:",
+   "options": [
+    "Averaging the two certified values to get 37.5 %IACS",
+    "Snapping the value to the nearer standard: 43 %IACS",
+    "Measuring the straight-line screen distance between the two dots with a ruler",
+    "The dot's position along the curve between the two bracketing standards — about 40 %IACS here — remembering that %IACS spacing along the locus is not linear"
+   ],
+   "correct": 3,
+   "explanation": "The locus itself is the scale: position along the arc between bracketing knowns reads conductivity. Spacing is non-linear — generous near the knee, crowded toward the ends — so neither the arithmetic average nor a ruler across the chord matches the curve. A dot three-quarters of the way toward 43 reads near 40 %IACS, the kind of value a 7075 part overaged to T73 would show."
+  },
+  {
+   "question": "A test sample places its dot above the air point — normalized reactance greater than 1 — far off the comma the standards traced. The correct conclusion is:",
+   "options": [
+    "Its conductivity is higher than copper's",
+    "The sample is ferromagnetic: permeability raises the coil's inductive reactance and dominates the response, so the nonmagnetic conductivity curve cannot evaluate it",
+    "The probe has failed open-circuit",
+    "The sample is colder than the standards"
+   ],
+   "correct": 1,
+   "explanation": "Every standard in the kit is nonmagnetic (μr ≈ 1) precisely so that conductivity is the only variable. A ferromagnetic part concentrates flux and increases inductive reactance, driving the operating point upward off the conductivity locus — higher conductivity would instead move it farther along the comma. Permeability effects overwhelm conductivity effects, which is why magnetic materials get their own techniques."
+  },
+  {
+   "question": "Using δ (mm) ≈ 660/√(f · μr · σ), the minimum thickness for a valid bulk-conductivity reading (about 3δ) on a 43 %IACS aluminum sample at 60 kHz is approximately:",
+   "options": [
+    "0.4 mm",
+    "8 mm",
+    "1.2 mm",
+    "0.15 mm"
+   ],
+   "correct": 2,
+   "explanation": "δ ≈ 660/√(60,000 × 1 × 43) ≈ 0.41 mm, and the sample must be about three standard depths thick — roughly 1.2 mm — so the eddy currents die out before the far surface and the dot reads bulk conductivity rather than thickness and backing. 8 mm is the Ti-6Al-4V (≈1 %IACS) requirement, and 0.15 mm is one δ at 480 kHz — the thin-material cure, not the 60 kHz minimum."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Basic Technique Course §4.0, 4.5 (lab demonstration: generate a Z-curve with conductivity standards)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — basis for ET Level I training outlines",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method",
+  "MIL-STD-1537, Electrical Conductivity Test for Verification of Heat Treatment of Aluminum Alloys, Eddy Current Method"
+ ]
+}

@@ -1,0 +1,177 @@
+{
+ "lessonId": "ut2-5-2",
+ "title": "Ultrasonic Response of Bondline Discontinuities",
+ "narrationScript": "Last lesson we built the structure. Now we put sound into it and read what comes back. The first thing to fix in your mind is orientation. In weld work we chase discontinuities at every angle, and we drag angle beams around to hit them square. Bonded structures are kinder. Almost every bondline discontinuity, a disbond, a void, a porosity layer, a skin-to-core separation, lies flat, parallel to the surface, right at a known depth. That is because the defects live in the adhesive layer or at its interfaces, and those layers follow the part surface. So straight-beam, normal-incidence sound is the tool, and the geometry problem of weld testing mostly disappears. The new problem is thinness. A face sheet might be one millimeter of aluminum. The echoes you care about are crowded close to the initial pulse, so bond work runs high frequencies, short pulses, delay lines or immersion coupling, and a sharp eye on the pattern of multiple echoes rather than one lone reflector. Start with pulse-echo on a metal-to-metal bond, say a skin with a bonded doubler. Couple to the skin over a good bond and you see the front echo followed by a train of multiples that die out quickly. Why quickly. Because at each round trip, part of the sound crosses the adhesive into the doubler, and the adhesive itself absorbs energy. The bond drains the ring. Now slide over a disbond at that first bondline. The adhesive contact is gone, and the back of the skin becomes a metal-to-air interface, reflecting essentially everything. The skin rings like a bell. The multiples sharpen, multiply, and stretch far down the screen, spaced at the skin thickness. That persistent ring at the thin-sheet spacing is the classic near-side disbond signature. A far-side problem reads differently. Suppose the first bondline is sound but the second one, doubler to inner sheet, is broken. Sound crosses the first bond, so the top-skin ring still decays, but the echo from the second bondline depth grows, and the echo from the full assembly thickness weakens or vanishes. You are reading depth now, which pulse-echo gives you and other bond methods do not. Voids inside the adhesive show up as reflectors at bondline depth too, and scattered porosity raises the grass and chews up the back echo without one clean signal. Honeycomb changes the picture. Over a well-bonded skin, sound crosses into the fillets and dribbles into the core, so the skin multiples decay fast, and there is usually no clean return from the far side through the cells. Over a skin-to-core disbond, the energy has nowhere to go, and you get that same long ring of skin multiples. With honeycomb, ringing means bad. Now through-transmission. Put a transducer on each side, or run two water jets in a squirter rig, and pass sound straight through the panel. A good panel transmits a known signal. Any disbond, void, or crushed core in the path blocks it, and the received signal drops. We measure that drop in decibels. Remember the math, twenty times the log of the amplitude ratio. A drop to half amplitude is six decibels, to one quarter is twelve, to one tenth is twenty. Through-transmission is the production workhorse for sandwich panels because it interrogates every layer at once and maps beautifully into a C-scan. Its limits, it needs access to both sides, the probes must stay aligned, and it tells you nothing about depth. A signal loss says something is wrong somewhere in the stack, and it cannot say which interface. Third family, resonance and impedance bond testers. A continuous-wave probe rests on the surface and the panel becomes part of a vibrating system. Over a good bond, the structure loads the probe and damps it. Over a disbond, the free skin vibrates easily, and the probe sees a shift in resonant frequency, amplitude, or mechanical impedance. The instrument is nulled on a known good area or a reference standard, and you watch the needle or the dot move as you scan. These testers are dry-coupled or lightly coupled, fast over large areas, and they reach defects that pulse-echo struggles with in very thin or very damped skins. The crude ancestor is the tap test, a coin or tap hammer, where a disbond turns a sharp tick into a dull thud. Same physics, a free skin vibrates differently from a supported one. Two cautions to carry out of this lesson. Every bond method needs reference standards with built-in disbonds at the right depths, because signatures vary with stack-up. And no ultrasonic response certifies strength. A kissing bond in intimate contact transmits sound and stays invisible. Find the geometry, report the geometry, and let the records speak for the chemistry.",
+ "imagePrompt": "A technician holds a small delay-line transducer against the smooth aluminum face sheet of a honeycomb flight-control panel on a padded bench, watching a flaw detector screen filled with a long train of evenly spaced echoes.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Origin Sets Orientation — and Orientation Is Flat",
+   "body": "Every bondline discontinuity inherits its geometry from the layer that created it. Contaminated surface prep produces a disbond *at the interface*. Trapped air and volatiles produce voids and porosity *within the adhesive layer*. Impact and moisture produce skin-to-core separations *at the fillet line*. Since adhesive layers follow the part surface, virtually all of these defects are **planar, thin, and parallel to the surface**, sitting at a known depth in the stack-up.\n\nThat single fact drives the whole technique. There is no need to chase orientation with angle beams as in weld work: **normal-incidence (straight-beam) sound hits bondline defects square on**. The challenge moves elsewhere — the layers are thin. A face sheet may be 0.5–2 mm of aluminum, so the echoes of interest crowd against the initial pulse. Bond evaluation therefore favors **high frequencies (commonly 5–15 MHz)**, heavily damped short-pulse probes, **delay lines or immersion coupling** to clear the dead zone, and reading **patterns of multiple echoes** rather than a single discrete reflector. Know your stack-up before you scan: each interface lives at a depth you can predict from layer thicknesses and velocities."
+  },
+  {
+   "type": "text",
+   "heading": "Pulse-Echo on Metal-to-Metal Bonds",
+   "body": "Couple a straight-beam probe to a skin-and-doubler assembly over a **good bond** and watch the multiple-echo train from the skin. The multiples **decay quickly**, because on every round trip part of the energy crosses the adhesive into the doubler and the adhesive absorbs more. The bond drains the ring.\n\nOver a **near-side disbond** (first bondline broken), the back of the skin becomes a metal-to-air interface — reflecting essentially 100% of the sound, just as the impedance mismatch predicts. The skin rings: a **long, persistent train of multiples spaced at the skin thickness**, often sharper and more numerous than over good bond. That ring is the classic disbond signature in thin-sheet work.\n\nA **far-side disbond** (say, doubler-to-inner-sheet in a three-sheet stack) reads differently: the top-skin ring still decays normally because the first bond is sound, but an **echo at the second bondline depth grows** while the echo from full assembly thickness weakens or disappears. Pulse-echo is the only common bond technique that gives you this **depth information**. Voids in the adhesive appear as reflectors at bondline depth; scattered **porosity** raises baseline noise and erodes the far-side echo without producing one clean signal."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-5-2-fig-a",
+   "caption": "Pulse-echo multiple-echo patterns on a skin-and-doubler bond: rapid decay over good bond versus a persistent thin-sheet ring over a near-side disbond."
+  },
+  {
+   "type": "text",
+   "heading": "Honeycomb Sandwich: Ringing Means Bad",
+   "body": "On honeycomb the logic inverts from plate testing. Over a **well-bonded face sheet**, sound crosses the adhesive fillets and leaks into the core cell walls, where it scatters and dies — so the skin multiples **decay fast** and there is normally no usable return from the far side through the cells. Over a **skin-to-core disbond**, the energy is trapped in the free skin and you get the same **long ring of skin multiples** as a metal-to-metal disbond.\n\nRemember the rule of thumb: in honeycomb pulse-echo work, **a quiet, fast-decaying screen is healthy; a ringing screen is a defect**. Crushed or condensed core under an intact bond is subtler — the fillet contact may survive, so pulse-echo from the near side can look normal while the panel has lost its core strength; through-transmission or far-side access catches it. Water in the cells loads the core locally and shows as a transmission change and sometimes as unexpected echoes at core depth. Because the far face sheet is acoustically out of reach through the cells, sandwich panels are routinely evaluated **from both sides** or by through-transmission."
+  },
+  {
+   "type": "text",
+   "heading": "Through-Transmission: One Number per Point",
+   "body": "Through-transmission testing (TTU) places a transmitter on one side and a receiver on the other — in production, usually two aligned **water-jet (squirter) columns** carrying the sound, with the panel scanned between them to build a **C-scan**. A good panel transmits a reference signal; any disbond, void, or crushed core in the path **blocks transmission**, and the received amplitude drops.\n\nThe drop is measured in decibels: ΔdB = 20·log₁₀(A₂/A₁). A fall to half amplitude is **−6 dB**, to one quarter **−12 dB**, to one tenth **−20 dB**. Acceptance schemes typically flag any point with loss beyond a set threshold (commonly in the 6–18 dB range, set on reference standards).\n\nTTU's strengths: it interrogates **every layer at once**, works on highly attenuating stacks where pulse-echo runs out of energy, and maps naturally into plan-view images. Its limits: it needs **access to both sides**, transmitter and receiver must stay **aligned**, and a loss tells you something is wrong **somewhere** in the stack — it carries **no depth information** to say which interface."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-5-2-fig-b",
+   "caption": "Through-transmission squirter setup and a resonance bond probe: signal loss over a blocked path, and the impedance shift over a free skin."
+  },
+  {
+   "type": "text",
+   "heading": "Resonance and Impedance Bond Testers",
+   "body": "The third family drives the structure with continuous or tone-burst vibration and watches how the structure **loads the probe**. A resonance bond tester couples a probe (often with a light couplant or dry tip) to the surface; the probe-plus-structure system has a resonant frequency, amplitude, and phase. Over a **good bond**, the skin is backed by adhesive and structure — the system is heavily damped. Over a **disbond**, the skin is free to vibrate, and the probe sees a distinct **shift in resonant frequency, amplitude, or mechanical impedance**. The instrument is **nulled over a known-good area or reference standard**, and the operator watches the meter or flying dot deviate while scanning. Pitch-catch swept-frequency units and mechanical impedance analysis (MIA) probes work on the same principle.\n\nThese testers excel at **fast, large-area screening** of thin skins and honeycomb, including some far-side and composite cases where pulse-echo struggles. Their crude ancestor is the **tap test** — a coin or calibrated tap hammer; a supported skin answers with a sharp tick, a disbonded skin with a dull thud. Same physics: a free skin vibrates differently from a supported one. Resonance methods give **no depth information** and modest sizing precision, so findings are typically confirmed and sized with pulse-echo where geometry allows."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Reference standards rule — and strength stays invisible",
+   "body": "Every bond technique is standardized on **reference panels of the same stack-up with engineered disbonds** (inserts or flat-bottom reliefs) at each interface of interest, because signatures change with skin thickness, adhesive, and core. And no response on any of these instruments certifies **strength**: a kissing bond in intimate contact transmits sound and stays invisible. Report detectable separations; leave strength to process records."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-5-2-fig-c",
+   "caption": "Four pulse-echo screen presentations from a bonded skin-and-doubler panel — only one shows a near-side disbond."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-5-2-fig-a",
+   "title": "Pulse-echo signatures: good bond vs near-side disbond",
+   "file": "ut2-5-2-fig-a.svg"
+  },
+  {
+   "id": "ut2-5-2-fig-b",
+   "title": "Through-transmission and resonance bond testing",
+   "file": "ut2-5-2-fig-b.svg"
+  },
+  {
+   "id": "ut2-5-2-fig-c",
+   "title": "Four A-scan presentations over a bonded panel",
+   "file": "ut2-5-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "hotspot",
+  "title": "Spot the Near-Side Disbond",
+  "intro": "You are scanning a two-sheet metal-to-metal bonded panel with a straight-beam probe from the skin side, watching the multiple-echo pattern. Click the screen presentation that indicates a disbond at the first (near-side) bondline.",
+  "figureId": "ut2-5-2-fig-c",
+  "regions": [
+   {
+    "x": 30,
+    "y": 75,
+    "w": 350,
+    "h": 160,
+    "label": "Screen 1 — multiples decay rapidly",
+    "isTarget": false,
+    "feedback": "Rapid decay of the skin multiples means energy is crossing the adhesive into the doubler — this is the healthy, well-bonded pattern."
+   },
+   {
+    "x": 420,
+    "y": 75,
+    "w": 350,
+    "h": 160,
+    "label": "Screen 2 — long persistent ring at skin spacing",
+    "isTarget": true,
+    "feedback": "Correct. The skin's back surface has become a metal-to-air reflector, so the thin sheet rings: many sharp multiples spaced at the skin thickness, persisting far down the screen — the classic near-side disbond signature."
+   },
+   {
+    "x": 30,
+    "y": 270,
+    "w": 350,
+    "h": 160,
+    "label": "Screen 3 — normal skin decay plus a grown echo deeper in the stack",
+    "isTarget": false,
+    "feedback": "The top-skin ring decays normally, so the first bondline is sound; the grown echo at the second bondline depth with a weakened full-thickness echo points to a far-side disbond, not a near-side one."
+   },
+   {
+    "x": 420,
+    "y": 270,
+    "w": 350,
+    "h": 160,
+    "label": "Screen 4 — raised grass, eroded far echo",
+    "isTarget": false,
+    "feedback": "Elevated baseline noise and a chewed-up far-side echo without one clean reflector suggests scattered porosity in the adhesive, not a discrete near-side disbond."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Why is straight-beam, normal-incidence ultrasound the standard choice for bondline evaluation?",
+   "options": [
+    "Bondline discontinuities are planar and parallel to the surface, so normal incidence hits them square on",
+    "Angle beams cannot exist in aluminum",
+    "Bond defects are randomly oriented, and straight beam averages all angles",
+    "Normal incidence avoids the need for couplant"
+   ],
+   "correct": 0,
+   "explanation": "Defects in the adhesive layer follow the part surface, so they lie flat at known depths — ideal targets for normal-incidence sound, unlike randomly oriented weld discontinuities."
+  },
+  {
+   "question": "Scanning a thin aluminum skin bonded to a doubler, your multiple-echo train suddenly becomes a long, persistent ring spaced at the skin thickness. The most likely cause is:",
+   "options": [
+    "A thicker adhesive layer absorbing more sound",
+    "A near-side disbond turning the skin's back surface into a metal-to-air reflector",
+    "Improved coupling increasing all echoes equally",
+    "A far-side disbond at the bottom of the stack"
+   ],
+   "correct": 1,
+   "explanation": "With the adhesive contact lost, nearly all energy reflects at the metal-air interface and the free skin rings. Good bond drains the ring; a near-side disbond sustains it."
+  },
+  {
+   "question": "In a through-transmission C-scan, the received signal over one zone falls from 100% to 25% of the reference amplitude. The transmission loss is:",
+   "options": [
+    "4 dB",
+    "6 dB",
+    "12 dB",
+    "25 dB"
+   ],
+   "correct": 2,
+   "explanation": "ΔdB = 20·log₁₀(100/25) = 20·log₁₀(4) ≈ 12 dB. Each halving of amplitude is 6 dB, and 25% is two halvings."
+  },
+  {
+   "question": "Which statement correctly contrasts through-transmission with pulse-echo for bonded panels?",
+   "options": [
+    "Through-transmission gives precise depth information; pulse-echo does not",
+    "Through-transmission needs access to only one side; pulse-echo needs both",
+    "Through-transmission interrogates the whole stack at once but cannot say which interface is bad; pulse-echo can identify the defective bondline depth",
+    "Pulse-echo cannot detect disbonds in metal-to-metal bonds"
+   ],
+   "correct": 2,
+   "explanation": "A TTU loss flags a problem somewhere in the sound path with no depth data; pulse-echo reads echo arrival times, so it can sort near-side from far-side bondlines."
+  },
+  {
+   "question": "A resonance bond tester is nulled over a known-good area of a honeycomb panel. Moving onto a skin-to-core disbond, you should expect:",
+   "options": [
+    "No change, because resonance testers only respond to core crush",
+    "A distinct shift in resonant frequency, amplitude, or impedance as the free skin vibrates more easily",
+    "A doubling of the through-thickness back echo",
+    "The instrument to display the disbond's exact depth"
+   ],
+   "correct": 1,
+   "explanation": "Over a disbond the skin is no longer damped by the structure, so the probe-structure system's resonance shifts off the null. Resonance methods detect this change but give no depth information."
+  }
+ ],
+ "references": [
+  "CP-105-2024 UT Evaluation Course §4.3 (bonded structures: origin and typical orientation of discontinuities)",
+  "CP-105-2024 UT Evaluation Course §4.4 (bonded structures: response of discontinuities to ultrasound)",
+  "Bond-testing practice for adhesive joints and sandwich panels (pulse-echo, through-transmission, resonance/impedance methods), cited generically"
+ ]
+}

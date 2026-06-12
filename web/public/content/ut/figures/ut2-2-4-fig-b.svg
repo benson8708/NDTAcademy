@@ -1,0 +1,59 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Circumferential Shear Wave in the Pipe Wall</text>
+
+  <!-- main pipe ring -->
+  <circle cx="280" cy="250" r="150" fill="#E8F1FB" stroke="#0A2342" stroke-width="3"/>
+  <circle cx="280" cy="250" r="95" fill="#FFFFFF" stroke="#0A2342" stroke-width="3"/>
+  <text x="280" y="256" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">bore</text>
+
+  <!-- wedge on OD -->
+  <polygon points="250,100 310,100 310,72 266,72" fill="#F2A33C" stroke="#0A2342" stroke-width="2"/>
+  <text x="244" y="88" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">wedge</text>
+
+  <!-- radial reference + refracted angle -->
+  <line x1="280" y1="100" x2="280" y2="250" stroke="#5A6B7E" stroke-width="1.2" stroke-dasharray="5,5"/>
+  <text x="300" y="132" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">refracted angle θ</text>
+
+  <!-- V-path: entry -> ID (half V) -> OD (full V), then continuing dashed -->
+  <line x1="280" y1="100" x2="353" y2="189" stroke="#1B82E8" stroke-width="2.5"/>
+  <polygon points="318,140 330,148 320,156" fill="#1B82E8"/>
+  <line x1="353" y1="189" x2="429" y2="263" stroke="#1B82E8" stroke-width="2.5"/>
+  <line x1="429" y1="263" x2="341" y2="323" stroke="#1B82E8" stroke-width="1.8" stroke-dasharray="6,6"/>
+
+  <!-- ID notch tick + label -->
+  <line x1="353" y1="189" x2="344" y2="198" stroke="#D14343" stroke-width="4"/>
+  <line x1="376" y1="158" x2="356" y2="184" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="380" y="154" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">ID notch — ½ V</text>
+
+  <!-- OD notch tick + label -->
+  <line x1="429" y1="263" x2="441" y2="267" stroke="#D14343" stroke-width="4"/>
+  <line x1="432" y1="316" x2="431" y2="270" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="425" y="336" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">OD notch — full V</text>
+
+  <!-- closest approach circle -->
+  <circle cx="280" cy="250" r="106" fill="none" stroke="#F2A33C" stroke-width="1.8" stroke-dasharray="7,6"/>
+  <line x1="280" y1="418" x2="280" y2="358" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="280" y="436" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#F2A33C">closest approach = R · sin θ</text>
+
+  <!-- scan both directions -->
+  <path d="M 175 155 A 125 125 0 0 1 232 98" fill="none" stroke="#1E9E6A" stroke-width="2.5"/>
+  <polygon points="226,92 240,96 230,108" fill="#1E9E6A"/>
+  <path d="M 385 155 A 125 125 0 0 0 328 98" fill="none" stroke="#1E9E6A" stroke-width="2.5"/>
+  <polygon points="334,92 320,96 330,108" fill="#1E9E6A"/>
+  <text x="148" y="120" text-anchor="end" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1E9E6A">scan CW + CCW</text>
+
+  <!-- right panel: heavy wall miss -->
+  <circle cx="645" cy="205" r="80" fill="#E8F1FB" stroke="#0A2342" stroke-width="2.5"/>
+  <circle cx="645" cy="205" r="43" fill="#FFFFFF" stroke="#0A2342" stroke-width="2.5"/>
+  <circle cx="645" cy="205" r="57" fill="none" stroke="#F2A33C" stroke-width="1.5" stroke-dasharray="6,5"/>
+  <line x1="645" y1="125" x2="725" y2="205" stroke="#D14343" stroke-width="2.5"/>
+  <polygon points="684,158 695,166 685,175" fill="#D14343"/>
+  <line x1="725" y1="205" x2="676" y2="254" stroke="#D14343" stroke-width="1.8" stroke-dasharray="6,6"/>
+  <text x="645" y="316" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">heavy wall: 45° chord misses the bore</text>
+  <text x="645" y="338" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">t/OD ≈ 0.23 — the ID goes untested</text>
+
+  <!-- rules -->
+  <text x="645" y="380" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">Beam reaches the bore only while sin θ &lt; 1 − 2t/OD</text>
+  <text x="645" y="404" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">at 45°, keep t/OD below ≈ 0.15 — else use a lower angle</text>
+</svg>

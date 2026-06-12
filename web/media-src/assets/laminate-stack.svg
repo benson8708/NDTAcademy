@@ -1,0 +1,146 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="lstGlow" filterUnits="userSpaceOnUse" x="-20" y="-20" width="640" height="380">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="lstProbeG" x1="0" y1="104" x2="0" y2="136" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a5180"/><stop offset="1" stop-color="#122c4e"/>
+    </linearGradient>
+    <linearGradient id="lstBeamG" x1="0" y1="138" x2="0" y2="194" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".30"/><stop offset="1" stop-color="#5fe0ff" stop-opacity=".05"/>
+    </linearGradient>
+    <pattern id="lstH45" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="4.5" y1="0" x2="4.5" y2="9" stroke="#9fe6ff" stroke-width="1.1"/>
+    </pattern>
+    <pattern id="lstH45n" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <line x1="4.5" y1="0" x2="4.5" y2="9" stroke="#9fe6ff" stroke-width="1.1"/>
+    </pattern>
+    <pattern id="lstH90a" x="136" y="230" width="8" height="15" patternUnits="userSpaceOnUse">
+      <line x1="1" y1="0" x2="1" y2="9" stroke="#9fe6ff" stroke-width="1.1"/>
+    </pattern>
+    <pattern id="lstH90b" x="136" y="170" width="8" height="15" patternUnits="userSpaceOnUse">
+      <line x1="1" y1="0" x2="1" y2="9" stroke="#9fe6ff" stroke-width="1.1"/>
+    </pattern>
+  </defs>
+
+  <!-- ===== BUILD PLATFORM (tool plate) — base art ===== -->
+  <line x1="100" y1="272" x2="500" y2="272" stroke="#8fb6e0" stroke-width="2"/>
+  <g stroke="#5fe0ff" stroke-width="1.2" opacity=".32">
+    <line x1="116" y1="274" x2="107" y2="283"/><line x1="140" y1="274" x2="131" y2="283"/>
+    <line x1="164" y1="274" x2="155" y2="283"/><line x1="188" y1="274" x2="179" y2="283"/>
+    <line x1="212" y1="274" x2="203" y2="283"/><line x1="236" y1="274" x2="227" y2="283"/>
+    <line x1="260" y1="274" x2="251" y2="283"/><line x1="284" y1="274" x2="275" y2="283"/>
+    <line x1="308" y1="274" x2="299" y2="283"/><line x1="332" y1="274" x2="323" y2="283"/>
+    <line x1="356" y1="274" x2="347" y2="283"/><line x1="380" y1="274" x2="371" y2="283"/>
+    <line x1="404" y1="274" x2="395" y2="283"/><line x1="428" y1="274" x2="419" y2="283"/>
+    <line x1="452" y1="274" x2="443" y2="283"/><line x1="476" y1="274" x2="467" y2="283"/>
+  </g>
+  <text x="300" y="301" text-anchor="middle" font-size="11" letter-spacing="2" fill="#9fe6ff" opacity=".75">TOOL PLATE</text>
+
+  <!-- ===== WAVE 1: plies 1-3 (bottom) ===== -->
+  <g id="lstPlies" opacity="0">
+    <!-- ply 1 · 0° -->
+    <rect x="130" y="257" width="310" height="15" fill="#142f52"/>
+    <g stroke="#9fe6ff" stroke-width="1.1" opacity=".32">
+      <line x1="136" y1="262" x2="404" y2="262"/><line x1="136" y1="267" x2="404" y2="267"/>
+    </g>
+    <line x1="130" y1="257" x2="440" y2="257" stroke="#5fe0ff" stroke-width="1" opacity=".22"/>
+    <text x="423" y="268" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".8">0&#176;</text>
+    <!-- ply 2 · +45° -->
+    <rect x="130" y="242" width="310" height="15" fill="#0f2746"/>
+    <rect x="136" y="243.5" width="268" height="12" fill="url(#lstH45)" opacity=".35"/>
+    <line x1="130" y1="242" x2="440" y2="242" stroke="#5fe0ff" stroke-width="1" opacity=".22"/>
+    <text x="423" y="253" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".8">+45&#176;</text>
+    <!-- ply 3 · 90° -->
+    <rect x="130" y="227" width="310" height="15" fill="#142f52"/>
+    <rect x="136" y="228.5" width="268" height="12" fill="url(#lstH90a)" opacity=".4"/>
+    <line x1="130" y1="227" x2="440" y2="227" stroke="#5fe0ff" stroke-width="1" opacity=".22"/>
+    <text x="423" y="238" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".8">90&#176;</text>
+    <!-- side edges, wave 1 -->
+    <line x1="130" y1="227" x2="130" y2="272" stroke="#8fb6e0" stroke-width="1.4" opacity=".5"/>
+    <line x1="440" y1="227" x2="440" y2="272" stroke="#8fb6e0" stroke-width="1.4" opacity=".5"/>
+  </g>
+
+  <!-- ===== WAVE 2: plies 4-6 (middle, holds the inter-ply gap) ===== -->
+  <g id="lstPlies2" opacity="0">
+    <!-- ply 4 · -45° -->
+    <rect x="130" y="212" width="310" height="15" fill="#0f2746"/>
+    <rect x="136" y="213.5" width="268" height="12" fill="url(#lstH45n)" opacity=".35"/>
+    <line x1="130" y1="212" x2="440" y2="212" stroke="#5fe0ff" stroke-width="1" opacity=".22"/>
+    <text x="423" y="223" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".8">-45&#176;</text>
+    <!-- ply 5 · 0° -->
+    <rect x="130" y="197" width="310" height="15" fill="#142f52"/>
+    <g stroke="#9fe6ff" stroke-width="1.1" opacity=".32">
+      <line x1="136" y1="202" x2="404" y2="202"/><line x1="136" y1="207" x2="404" y2="207"/>
+    </g>
+    <line x1="130" y1="197" x2="440" y2="197" stroke="#5fe0ff" stroke-width="1" opacity=".22"/>
+    <text x="423" y="208" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".8">0&#176;</text>
+    <!-- ply 6 · -45° -->
+    <rect x="130" y="182" width="310" height="15" fill="#0f2746"/>
+    <rect x="136" y="183.5" width="268" height="12" fill="url(#lstH45n)" opacity=".35"/>
+    <line x1="130" y1="182" x2="440" y2="182" stroke="#5fe0ff" stroke-width="1" opacity=".22"/>
+    <text x="423" y="193" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".8">-45&#176;</text>
+    <!-- dim resting flaw: thin flat lens gap on the ply5/ply6 interface -->
+    <path d="M255 197 Q300 192.4 345 197 Q300 201.6 255 197 Z" fill="#07142a"/>
+    <path d="M255 197 Q300 192.4 345 197 Q300 201.6 255 197 Z" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".3"/>
+    <!-- side edges, wave 2 -->
+    <line x1="130" y1="182" x2="130" y2="227" stroke="#8fb6e0" stroke-width="1.4" opacity=".5"/>
+    <line x1="440" y1="182" x2="440" y2="227" stroke="#8fb6e0" stroke-width="1.4" opacity=".5"/>
+  </g>
+
+  <!-- ===== WAVE 3: plies 7-9 (top) + surface + probe ===== -->
+  <g id="lstPlies3" opacity="0">
+    <!-- ply 7 · 90° -->
+    <rect x="130" y="167" width="310" height="15" fill="#142f52"/>
+    <rect x="136" y="168.5" width="268" height="12" fill="url(#lstH90b)" opacity=".4"/>
+    <line x1="130" y1="167" x2="440" y2="167" stroke="#5fe0ff" stroke-width="1" opacity=".22"/>
+    <text x="423" y="178" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".8">90&#176;</text>
+    <!-- ply 8 · +45° -->
+    <rect x="130" y="152" width="310" height="15" fill="#0f2746"/>
+    <rect x="136" y="153.5" width="268" height="12" fill="url(#lstH45)" opacity=".35"/>
+    <line x1="130" y1="152" x2="440" y2="152" stroke="#5fe0ff" stroke-width="1" opacity=".22"/>
+    <text x="423" y="163" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".8">+45&#176;</text>
+    <!-- ply 9 · 0° -->
+    <rect x="130" y="137" width="310" height="15" fill="#142f52"/>
+    <g stroke="#9fe6ff" stroke-width="1.1" opacity=".32">
+      <line x1="136" y1="142" x2="404" y2="142"/><line x1="136" y1="147" x2="404" y2="147"/>
+    </g>
+    <text x="423" y="148" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".8">0&#176;</text>
+    <!-- top surface -->
+    <line x1="130" y1="137" x2="440" y2="137" stroke="#9fe6ff" stroke-width="2"/>
+    <!-- side edges, wave 3 -->
+    <line x1="130" y1="137" x2="130" y2="182" stroke="#8fb6e0" stroke-width="1.4" opacity=".5"/>
+    <line x1="440" y1="137" x2="440" y2="182" stroke="#8fb6e0" stroke-width="1.4" opacity=".5"/>
+    <!-- stack bracket + count -->
+    <path d="M127 139 H121 V270 H127" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".55"/>
+    <text transform="translate(108 204) rotate(-90)" text-anchor="middle" font-size="11" letter-spacing="2" fill="#9fe6ff" opacity=".85">9 PLIES</text>
+    <text x="452" y="150" font-size="10" fill="#9fe6ff" opacity=".6">PLY ~0.2 mm</text>
+    <!-- 0° normal-incidence probe seated on the surface -->
+    <line x1="274" y1="136.4" x2="326" y2="136.4" stroke="#5fe0ff" stroke-width="1.5" opacity=".5"/>
+    <rect x="276" y="104" width="48" height="32" rx="3" fill="url(#lstProbeG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="293" y="91" width="14" height="13" rx="2" fill="#122c4e" stroke="#8fb6e0" stroke-width="1.2"/>
+    <path d="M300 91 C300 74 264 66 232 60" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".8"/>
+    <text x="300" y="125" text-anchor="middle" font-size="12" fill="#9fe6ff">0&#176;</text>
+  </g>
+
+  <!-- ===== FLAW GLOW: thin flat gap between plies, under the probe ===== -->
+  <g id="lstFlaw" opacity="0">
+    <path d="M255 197 Q300 192.4 345 197 Q300 201.6 255 197 Z" fill="#5fe0ff" opacity=".16"/>
+    <path d="M255 197 Q300 192.4 345 197 Q300 201.6 255 197 Z" fill="none" stroke="#5fe0ff" stroke-width="2" filter="url(#lstGlow)" opacity=".95"/>
+    <path d="M310 203 L436 231 L448 231" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".5"/>
+    <text x="452" y="234" font-size="11" fill="#9fe6ff" opacity=".92">INTER-PLY GAP</text>
+    <text x="452" y="248" font-size="10" fill="#9fe6ff" opacity=".68">PARALLEL TO SURFACE</text>
+  </g>
+
+  <!-- ===== BEAM: probe pulse + straight 0° beam onto the flat face ===== -->
+  <g id="lstBeamEnv" opacity="0">
+    <rect x="284" y="138" width="32" height="56" fill="url(#lstBeamG)"/>
+    <line x1="284" y1="138" x2="284" y2="194" stroke="#5fe0ff" stroke-width="1" opacity=".35"/>
+    <line x1="316" y1="138" x2="316" y2="194" stroke="#5fe0ff" stroke-width="1" opacity=".35"/>
+    <line x1="276" y1="137.4" x2="324" y2="137.4" stroke="#5fe0ff" stroke-width="2.5" filter="url(#lstGlow)" opacity=".9"/>
+    <path d="M368 80 L322 100" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".5"/>
+    <text x="372" y="78" font-size="11" fill="#9fe6ff" opacity=".92">0&#176; STRAIGHT BEAM</text>
+  </g>
+  <path id="lstBeam" d="M300 140 V193 M300 193.5 L295.4 186.1 M300 193.5 L304.6 186.1 M300 187.8 H305.4 V194.2" fill="none" stroke="#5fe0ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#lstGlow)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+</svg>

@@ -1,0 +1,151 @@
+{
+ "lessonId": "ut2-1-1",
+ "title": "Principles of Ultrasonics: Level II Review",
+ "narrationScript": "Level one taught you to run a calibrated test. Level two is the evaluation level. You sign for what an indication is, and that means every signal on the screen has to be explainable from first principles. Velocity, geometry, and impedance. So let's rebuild the foundation fast, and then push it harder than a first course would. Sound is mechanical vibration passed from particle to particle. It needs a medium, and a vacuum, or even a thin film of air, stops it cold. In metals we work with several wave modes. Longitudinal waves vibrate along the direction of travel and move through solids, liquids, and gases. Shear waves vibrate across the direction of travel, exist only in solids, and run at roughly half the longitudinal speed in the same metal. Rayleigh waves hug the surface to a depth of about one wavelength and will follow gentle curves. Lamb waves fill thin plates, and their speed changes with frequency and thickness. Keep the working numbers in your head. Longitudinal in steel, five thousand nine hundred twenty meters per second. Shear in steel, three thousand two hundred forty. Aluminum runs six thousand three hundred twenty longitudinal and three thousand one hundred thirty shear. Water carries only longitudinal sound, at about one thousand four hundred eighty. The acrylic in your wedges runs about two thousand seven hundred thirty. Wavelength equals velocity divided by frequency. A five megahertz longitudinal beam in steel has a wavelength of about one point two millimeters. The same frequency in shear is shorter, about zero point six five millimeters. A useful rule of thumb says a reflector smaller than about half a wavelength is unreliable to detect, so frequency choice is sensitivity choice. Acoustic impedance is density times velocity, and it decides what happens at every boundary. The bigger the mismatch between the two impedances, the more energy reflects. Steel against air reflects essentially everything. That is why a dry probe tells you nothing, why a tight crack is such a strong reflector, and why couplant exists at all. Steel against water reflects about eighty eight percent, which sounds terrible until you remember that twelve percent gets in, the gain control is generous, and immersion testing works beautifully. A slag filled flaw reflects less than an air filled crack, because the impedance step at its boundary is smaller. That difference in echo strength is real diagnostic information. Refraction follows Snell's law. When a beam crosses into a new material at an angle, it bends, and at a solid interface part of the energy can change mode from longitudinal to shear. Your standard angle beam wedges live in the window between two critical angles. On steel, the longitudinal wave disappears beyond an incident angle of about twenty seven and a half degrees in acrylic, and the shear wave disappears beyond about fifty seven degrees. Between those angles only shear remains in the part. One clean mode at a known angle, which is exactly what we want. Push past the second critical angle and the energy runs along the surface as a Rayleigh wave. Move the same wedge to a different metal and the refracted angle changes, because Snell's law cares about the velocity ratio, not the label printed on the wedge. Beams also have shape. Close to the element, interference makes the amplitude rise and fall through the near field, so sizing and amplitude comparisons are unreliable there. Near field length equals the element diameter squared times frequency, divided by four times velocity. A ten millimeter, five megahertz probe in steel has a near field of about twenty one millimeters. Beyond it the beam spreads at a half angle you can calculate, and a larger element or a higher frequency gives a narrower beam. Finally, real materials fight back. Coarse grained castings and austenitic welds scatter sound strongly, and scattering climbs steeply with frequency, so the cure is usually a lower frequency and a shorter pulse. Columnar grains can even skew the beam so it does not go where the wedge says it goes. When a signal makes no sense, walk the chain. What mode is it. What velocity applies. Where does it sit in time. What geometry could put a reflector there. And what does its amplitude say about the impedance step that made it. That habit, applied signal by signal, is the real difference between level one and level two.",
+ "imagePrompt": "A technician adjusts the gain on an ultrasonic flaw detector while three acrylic angle-beam wedges and a thick steel calibration block sit on the workbench beside coiled probe cables in a dim industrial NDT shop.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Modes and Velocities: The Numbers You Reason With",
+   "body": "Level I taught you to run a calibrated test. Level II is the **evaluation** level: you sign for what an indication *is*, and that requires explaining every signal from first principles — velocity, geometry, and impedance. Start with the modes and their working numbers:\n\n- **Longitudinal (compression)** — particle motion parallel to travel; propagates in solids, liquids, and gases. Steel ≈ **5,920 m/s** (0.233 in/µs), aluminum 6,320, water 1,480, acrylic wedge plastic 2,730, air 330.\n- **Shear (transverse)** — particle motion perpendicular to travel; **solids only** — liquids and gases cannot support it. Steel ≈ **3,240 m/s** (0.128 in/µs), aluminum 3,130 — roughly half the longitudinal velocity in the same metal.\n- **Rayleigh (surface)** — runs along the surface to a depth of about **one wavelength**, follows gentle curves, and is damped by anything sitting on the surface.\n- **Lamb (plate)** — fills thin sections; dispersive, so velocity depends on the frequency-thickness product.\n\nVelocity is never decoration. It converts time to distance on every reading you make, and using the wrong mode's velocity is one of the classic Level II evaluation errors."
+  },
+  {
+   "type": "text",
+   "heading": "Wavelength Discipline",
+   "body": "Wavelength ties frequency to capability: **λ = v/f**. Work two examples until they feel automatic.\n\n- 5 MHz longitudinal in steel: λ = 5.92 mm/µs ÷ 5 MHz = **1.18 mm**.\n- 2.25 MHz shear in steel: λ = 3.24 ÷ 2.25 = **1.44 mm**.\n\nThe practical sensitivity rule of thumb: reflectors smaller than about **λ/2** are unreliable to detect. So that 5 MHz longitudinal beam is credible down to roughly 0.6 mm; the 2.25 MHz shear beam to roughly 0.7 mm. Notice the shear advantage: at the **same frequency**, shear wavelength is about half the longitudinal value, which buys sensitivity without raising frequency.\n\nThe trade-off never goes away: raising frequency shortens wavelength and tightens the beam, but it also raises attenuation and grain scattering. Frequency selection is therefore an evaluation decision — it sets what your test can and cannot see, and a Level II should be able to defend the choice in one sentence."
+  },
+  {
+   "type": "table",
+   "caption": "Working velocities and acoustic impedances for the materials this course leans on.",
+   "headers": ["Material", "v longitudinal (m/s)", "v shear (m/s)", "Z = ρv (MRayl)"],
+   "rows": [
+    ["Steel", "5,920", "3,240", "≈ 46"],
+    ["Aluminum", "6,320", "3,130", "≈ 17"],
+    ["Water", "1,480", "— (no shear)", "≈ 1.5"],
+    ["Acrylic (wedge)", "2,730", "rarely used", "≈ 3.2"],
+    ["Air", "330", "— (no shear)", "≈ 0.0004"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Impedance: Predict Every Interface",
+   "body": "Acoustic impedance **Z = ρv** (density × velocity) controls what each boundary does to your beam. The reflected energy fraction at a flat interface is:\n\n**R = ((Z₂ − Z₁)/(Z₂ + Z₁))²**\n\nRun the cases that matter:\n\n- **Steel–air:** R ≈ **100%**. Air gaps are near-perfect mirrors — which is why couplant is mandatory, why a tight crack is a strong reflector, and why a lamination blanks everything behind it.\n- **Steel–water:** R ≈ **88%**. Only ~12% enters at the surface — yet immersion testing thrives, because the receiver gain makes up the loss and the interface is perfectly repeatable.\n- **Wedge-to-steel, couplant-to-steel:** each transition costs energy; the thin couplant film transmits well because it is thin compared with the wavelength.\n\nNow apply it to flaws. A slag-filled inclusion has a smaller impedance step against steel than an air-filled crack does, so it returns a **weaker echo from the same size reflector**. Echo amplitude is carrying impedance information, not just size information — one reason amplitude alone never fully sizes a flaw."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-1-1-fig-a",
+   "caption": "Snell's law refraction of an acrylic wedge on steel, with the first and second critical angles bounding the pure shear-wave working window."
+  },
+  {
+   "type": "text",
+   "heading": "Refraction, Mode Conversion, and Critical Angles",
+   "body": "When the beam crosses an interface at an angle, **Snell's law** governs: sin θ₁/v₁ = sin θ₂/v₂. At a solid boundary, part of the energy also **mode converts** between longitudinal and shear.\n\nWork the standard wedge: to produce 45° shear in steel, the incident angle in acrylic must satisfy sin θ₁ = (2,730/3,240) × sin 45° = 0.596, so θ₁ ≈ **36.6°**. The common 45°/60°/70° wedges use incident angles of about 36.6°, 46.9°, and 52.4° — all inside the window between the **first critical angle ≈ 27.5°** (the refracted longitudinal wave disappears) and the **second critical angle ≈ 57.4°** (shear disappears). Inside that window only shear exists in the steel: one mode, one velocity, one clean geometry. Push past the second critical angle and the energy travels as a **Rayleigh surface wave**.\n\nIn immersion the same physics applies with water velocities: critical angles on steel of about **14.5°** and **27°**.\n\nTwo Level II consequences. First, a wedge is material-specific: that 45° steel wedge on aluminum refracts at about 43°, because the velocity ratio changed. Second, **mode conversion at part surfaces creates spurious signals** — a shear beam striking a far wall can launch a longitudinal wave that arrives at an unexpected time. If a signal's arrival time fits no geometry at the working velocity, try the other mode's velocity before calling it a flaw."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-1-1-fig-b",
+   "caption": "Near-field length and beam-spread half-angle for a 10-mm diameter, 5-MHz probe in steel — evaluate and size beyond the near field."
+  },
+  {
+   "type": "text",
+   "heading": "Beam Shape and Difficult Material",
+   "body": "A transducer does not fire a laser line. Close to the element, wave interference makes the on-axis amplitude oscillate through the **near field**:\n\n**N = D²f/(4v) = D²/(4λ)**\n\nFor a 10-mm, 5-MHz longitudinal probe in steel: N = (10 mm)² × 5 MHz ÷ (4 × 5.92 mm/µs) ≈ **21 mm**. Inside N, identical reflectors at different depths can give wildly different amplitudes — so size and compare amplitudes **beyond the near field** whenever geometry allows.\n\nBeyond N the beam diverges with a half-angle of **sin γ = 1.22 v/(D f)** — for the same probe, γ ≈ 8.3°. Larger diameter or higher frequency narrows the beam; small, low-frequency probes flood the part with sound and blur location accuracy.\n\nThen the material weighs in. Coarse-grained castings and **anisotropic austenitic weld metal** scatter the beam at grain boundaries — in the Rayleigh scattering regime, scattering rises roughly with **f⁴**, which is why dropping from 5 MHz to 2.25 or 1 MHz transforms a noisy test. Columnar austenitic grains go further: velocity varies with direction, so the beam **skews** and your plotted soundpath lies. The countermeasures are lower frequency, shorter (broadband) pulses, larger elements, and verifying beam paths on reference reflectors in the same material condition."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The Level II habit: walk the chain",
+   "body": "Every screen signal must survive five first-principles questions: **What mode** could it be? **What velocity** applies to that mode? **Where in time** does it sit, and what real geometry puts a reflector there? **What impedance step** explains its amplitude? **Does it move correctly** when the probe moves? Dead-zone clutter, PRF wrap-around ghosts, mode-converted arrivals, and grain noise all fail one of those questions. A reportable indication passes all five."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-1-1-fig-a",
+   "title": "Refraction and mode conversion: acrylic wedge on steel",
+   "file": "ut2-1-1-fig-a.svg"
+  },
+  {
+   "id": "ut2-1-1-fig-b",
+   "title": "Near field and beam spread",
+   "file": "ut2-1-1-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Principles Under Pressure: Rapid-Fire Drill",
+  "intro": "Four field problems, each solvable with one or two first-principles steps. Work each on paper before you click. Velocities: steel 5,920/3,240 m/s, aluminum 6,320/3,130 m/s, water 1,480 m/s, acrylic 2,730 m/s.",
+  "steps": [
+   {
+    "prompt": "You are scanning fine-grained steel with a 5 MHz longitudinal probe. Roughly the smallest flaw you can reliably expect to detect is:",
+    "options": ["About 0.3 mm", "About 0.6 mm", "About 1.2 mm", "About 2.4 mm"],
+    "correct": 1,
+    "feedback": "λ = 5.92 ÷ 5 = 1.18 mm, and the λ/2 rule of thumb puts reliable detection near 0.6 mm. Anything smaller is a gamble at any gain setting."
+   },
+   {
+    "prompt": "Your 45° wedge, marked for steel, goes onto an aluminum weldment. The actual refracted shear angle is:",
+    "options": ["About 43°", "Exactly 45° — the wedge sets the angle", "About 47°", "No shear wave is generated"],
+    "correct": 0,
+    "feedback": "Snell's law: sin θ = (3,130/3,240) × sin 45° = 0.68, so θ ≈ 43°. Aluminum's slightly lower shear velocity bends the beam slightly less. Wedge markings are material-specific — recompute or re-verify on the new metal."
+   },
+   {
+    "prompt": "On a coarse-grained austenitic casting, the baseline is full of grass and the back wall has vanished at 5 MHz. Best first move?",
+    "options": ["Add 12 dB of gain", "Switch to a lower-frequency, larger-element probe", "Switch to 10 MHz for better resolution", "Apply more couplant"],
+    "correct": 1,
+    "feedback": "Grain scattering rises steeply with frequency — roughly with the fourth power in the Rayleigh scattering regime. Gain amplifies the grass as much as the signal; lowering frequency attacks the cause."
+   },
+   {
+    "prompt": "Testing a 1.5-m shaft, you see a stable echo beyond the back-wall position. When you lower the PRF, the echo shifts and then disappears. It was:",
+    "options": ["A mode-converted shear echo", "A real flaw beyond the back wall", "A wrap-around ghost from the previous pulse", "Electrical interference"],
+    "correct": 2,
+    "feedback": "Echoes still in flight when the next pulse fires are displayed against the wrong time base. Only wrap-around ghosts move when PRF changes — a real reflector stays put. Long parts need a low PRF."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A 2.25 MHz shear-wave beam travels through steel (shear velocity 3,240 m/s). Its wavelength is approximately:",
+   "options": ["1.44 mm", "2.63 mm", "0.72 mm", "5.04 mm"],
+   "correct": 0,
+   "explanation": "λ = v/f = 3.24 mm/µs ÷ 2.25 MHz = 1.44 mm. Using the longitudinal velocity (5.92) by mistake gives the distractor 2.63 mm."
+  },
+  {
+   "question": "An immersion test on steel requires a 45° refracted shear wave. With water at 1,480 m/s and steel shear at 3,240 m/s, the required incident angle in water is about:",
+   "options": ["19°", "45°", "27°", "14.5°"],
+   "correct": 0,
+   "explanation": "Snell's law: sin θ₁ = (1,480/3,240) × sin 45° = 0.323, so θ₁ ≈ 18.8°. The 14.5° and 27° options are the water-to-steel critical angles, not the answer."
+  },
+  {
+   "question": "Two planar flaws of identical size and depth: one is a tight air-filled crack, the other is filled with slag. Compared with the crack, the slag-filled flaw will:",
+   "options": [
+    "Reflect less energy, because the impedance mismatch at its boundary is smaller",
+    "Reflect more energy, because slag is denser than air",
+    "Reflect no energy at all",
+    "Appear at a noticeably shallower depth"
+   ],
+   "correct": 0,
+   "explanation": "Reflection follows R = ((Z₂−Z₁)/(Z₂+Z₁))². Steel-to-air is nearly a perfect mirror; steel-to-slag is a smaller impedance step, so less energy returns from the same size reflector."
+  },
+  {
+   "question": "A 10-mm diameter, 5 MHz longitudinal probe is used on steel (5,920 m/s). Its near-field length is about:",
+   "options": ["21 mm", "5 mm", "42 mm", "84 mm"],
+   "correct": 0,
+   "explanation": "N = D²f/(4v) = (10 mm)² × 5 MHz ÷ (4 × 5.92 mm/µs) ≈ 21 mm. Amplitude oscillates inside this zone, so evaluate and size beyond it when possible."
+  },
+  {
+   "question": "While testing a coarse-grained austenitic casting at 5 MHz you see heavy grass-like baseline noise and no back-wall echo. The first-principles diagnosis and fix is:",
+   "options": [
+    "Grain scattering, which rises steeply with frequency — move to a lower-frequency probe",
+    "The part has no back wall — report a through-wall flaw",
+    "Couplant failure — simply add gain",
+    "PRF set too low — increase it"
+   ],
+   "correct": 0,
+   "explanation": "Scattering in the Rayleigh regime climbs roughly with f⁴, raising noise and killing penetration. Lower frequency (often with a larger element and shorter pulse) attacks the cause; gain amplifies noise and signal alike."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Evaluation Course §1.1 (principles of ultrasonics)",
+  "General acoustics reference values: steel 5,920/3,240 m/s; aluminum 6,320/3,130 m/s; water 1,480 m/s; acrylic 2,730 m/s",
+  "Codes such as ASME BPVC Section V, Article 4 (ultrasonic examination practice)"
+ ]
+}

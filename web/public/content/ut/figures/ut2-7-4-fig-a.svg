@@ -1,0 +1,76 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="330" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Locating a Reflector with a 60° Angle Beam</text>
+
+  <!-- formula box -->
+  <rect x="560" y="46" width="226" height="118" rx="8" fill="#E8F1FB" stroke="#0A2342" stroke-width="2"/>
+  <text x="572" y="72" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">θ = 60° · T = 20 mm</text>
+  <text x="572" y="94" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">SP = 55 mm → 2nd leg</text>
+  <text x="572" y="116" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">depth = 40 − 27.5 = 12.5 mm</text>
+  <text x="572" y="138" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">surf. dist ≈ 47.6 mm</text>
+
+  <!-- plate -->
+  <rect x="60" y="200" width="680" height="120" fill="#E8F1FB" stroke="#0A2342" stroke-width="3"/>
+  <!-- weld (single V) -->
+  <polygon points="430,200 530,200 495,320 465,320" fill="#D9E0E8" stroke="#0A2342" stroke-width="2"/>
+  <text x="480" y="226" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">weld</text>
+
+  <!-- T dimension -->
+  <line x1="44" y1="200" x2="44" y2="320" stroke="#5A6B7E" stroke-width="2"/>
+  <polygon points="38,206 44,196 50,206" fill="#5A6B7E"/>
+  <polygon points="38,314 44,324 50,314" fill="#5A6B7E"/>
+  <text x="36" y="266" text-anchor="end" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">T</text>
+
+  <!-- probe wedge -->
+  <polygon points="126,160 196,160 196,200 138,200" fill="#0A2342"/>
+  <text x="161" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">60° probe</text>
+  <!-- index point -->
+  <circle cx="166" cy="200" r="5" fill="#F2A33C"/>
+  <line x1="160" y1="206" x2="112" y2="236" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="108" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">index point</text>
+
+  <!-- beam: first leg -->
+  <line x1="166" y1="200" x2="374" y2="320" stroke="#F2A33C" stroke-width="3"/>
+  <text x="232" y="284" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#F2A33C">1st leg</text>
+  <!-- skip point -->
+  <circle cx="374" cy="320" r="6" fill="#1E9E6A"/>
+  <text x="332" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#1E9E6A">back-wall bounce</text>
+  <!-- second leg to flaw -->
+  <line x1="374" y1="320" x2="452" y2="275" stroke="#F2A33C" stroke-width="3"/>
+  <polygon points="442,276 456,272 446,286" fill="#F2A33C"/>
+  <text x="432" y="312" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#F2A33C">2nd leg</text>
+  <!-- continuation dashed -->
+  <line x1="452" y1="275" x2="582" y2="200" stroke="#F2A33C" stroke-width="2" stroke-dasharray="7 5"/>
+
+  <!-- flaw on fusion line -->
+  <circle cx="452" cy="275" r="7" fill="#D14343"/>
+  <line x1="458" y1="268" x2="540" y2="246" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="546" y="244" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">reflector, SP = 55 mm</text>
+  <text x="546" y="264" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#D14343">on the fusion line</text>
+
+  <!-- surface distance dimension -->
+  <line x1="166" y1="180" x2="452" y2="180" stroke="#1B82E8" stroke-width="2"/>
+  <polygon points="174,174 162,180 174,186" fill="#1B82E8"/>
+  <polygon points="444,174 456,180 444,186" fill="#1B82E8"/>
+  <line x1="452" y1="186" x2="452" y2="266" stroke="#1B82E8" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="309" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">surface distance = SP·sinθ ≈ 47.6 mm</text>
+
+  <!-- depth dimension -->
+  <line x1="452" y1="275" x2="650" y2="275" stroke="#1B82E8" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="650" y1="200" x2="650" y2="275" stroke="#1B82E8" stroke-width="2"/>
+  <polygon points="644,208 650,196 656,208" fill="#1B82E8"/>
+  <polygon points="644,267 650,279 656,267" fill="#1B82E8"/>
+  <text x="660" y="232" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">depth (2nd leg)</text>
+  <text x="660" y="252" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#1B82E8">2T − SP·cosθ = 12.5 mm</text>
+
+  <!-- skip distance dimension below plate -->
+  <line x1="166" y1="352" x2="582" y2="352" stroke="#5A6B7E" stroke-width="2"/>
+  <polygon points="174,346 162,352 174,358" fill="#5A6B7E"/>
+  <polygon points="574,346 586,352 574,358" fill="#5A6B7E"/>
+  <line x1="166" y1="326" x2="166" y2="352" stroke="#5A6B7E" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <line x1="582" y1="206" x2="582" y2="352" stroke="#5A6B7E" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="374" y="378" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#5A6B7E">skip distance = 2T·tanθ ≈ 69 mm</text>
+
+  <!-- bottom note -->
+  <text x="400" y="424" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Depth + surface distance plot the reflector on the joint sketch — here, the bevel fusion face.</text>
+</svg>

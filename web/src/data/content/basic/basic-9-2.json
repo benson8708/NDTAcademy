@@ -1,0 +1,190 @@
+{
+  "lessonId": "basic-9-2",
+  "title": "Welding, Brazing, Soldering, and Machining",
+  "narrationScript": "Every joining and cutting process leaves a signature, and an inspector who knows the process can predict the flaw before the first scan. This lesson walks the fabrication chain. Fusion welding melts base metal: stick welding leaves slag lines, short-circuit MIG leaves lack of fusion, TIG can shed dense tungsten inclusions that print light on film, and every fusion weld carries a heat-affected zone where hardening and hydrogen cracking hide. Hard-surfacing lays wear-resistant alloy over a tougher base. Solid-state processes such as friction, friction stir, diffusion, and explosion welding join below the melting point, with no fusion zone and one critical bond plane. Brazing and soldering never melt the base metal at all: capillary action pulls filler through a few thousandths of clearance, above 450 degrees Celsius for brazing, below it for soldering, so inspection asks how much area is actually joined. Machining closes the lesson: turning, boring, drilling, milling, and grinding, where abusive grinding burns and cracks hardened steel, then electrochemical and chemical removal, which cut without tool contact but bring intergranular attack and hydrogen risks.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Welding: Fusion Joining and the Anatomy of a Weld",
+      "body": "**Welding** produces coalescence — the parts become one continuous piece of metal — by heating, by pressure, or by both, with or without filler metal. In the **fusion welding** family, an intense heat source melts the edges of the joint (and usually a filler) into a shared pool that solidifies as a single casting in place. Two definitions from AWS A3.0 anchor this whole lesson: welding melts base metal; **brazing and soldering never do** — they appear later with their own physics.\n\nA finished fusion weld is not one material but a band of distinct zones, and a Level III reads a weld the way a geologist reads strata:\n\n- **Weld metal (fusion zone).** Metal that was molten — melted base metal plus filler — solidified with a cast, columnar-dendritic grain structure growing inward from the fusion boundary. Volumetric discontinuities live here: gas porosity, slag and tungsten inclusions, crater and solidification cracks.\n- **Fusion line (weld interface).** The boundary between melted and unmelted metal. Planar discontinuities favor it: **lack of fusion** where the pool failed to melt the joint sidewall, and cold laps at the toe.\n- **Heat-affected zone (HAZ).** Base metal that never melted but was driven through a violent thermal cycle by the passing arc: grain growth next to the fusion line, and in hardenable steels, cooling fast enough to quench the HAZ to brittle **untempered martensite**. **Hydrogen (underbead) cracking** and **toe cracks** concentrate here — and can be delayed for hours or days, which is why many specifications impose a waiting period (commonly 48 hours on susceptible steels) before final inspection.\n- **Unaffected base metal.** Beyond the reach of the thermal cycle.\n\nThe practical consequence drives every weld-inspection procedure in an FAA Part 145 shop: the examination must cover the weld metal **and** the HAZ band beside it. A crack three millimeters from the bead is still a weld defect."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-9-2-fig-a",
+      "caption": "Cross-section of a single-V butt weld. The fusion zone was molten; the fusion line is the melted/unmelted boundary where lack of fusion hides; the HAZ never melted but had its microstructure rewritten — home of hardening, hydrogen cracking, and toe cracks. Inspection coverage includes the weld metal and the HAZ band beside it."
+    },
+    {
+      "type": "text",
+      "heading": "The Common Arc Processes — and What Each Leaves Behind",
+      "body": "Five arc processes do most of industry's fusion welding, and each leaves a recognizable signature on the radiograph or the test surface.\n\n- **Shielded metal arc welding (SMAW, \"stick\").** A flux-coated consumable electrode; the coating decomposes into shielding gas and a protective **slag** crust that must be chipped off between passes. Signatures: **slag inclusions** along incompletely cleaned passes and **porosity** from damp electrodes — low-hydrogen electrodes are baked and stored in heated ovens precisely to starve the arc of hydrogen.\n- **Gas metal arc welding (GMAW, \"MIG\").** A continuous solid wire fed through the gun under external shielding gas; no slag system. In low-heat **short-circuiting transfer** the puddle can fail to melt the joint sidewall, making **lack of fusion (cold lap)** the GMAW signature; a draft that strips the gas coverage adds porosity.\n- **Flux cored arc welding (FCAW).** A tubular wire with flux inside — GMAW's wire-feed productivity with SMAW's slag system, which puts slag inclusions back on the list.\n- **Gas tungsten arc welding (GTAW, \"TIG\").** A **nonconsumable tungsten electrode** under argon or helium, with filler fed separately. The cleanest, most controllable arc process — the aerospace default for thin sections, tubing, and engine hardware — but dip the electrode into the pool and dense **tungsten inclusions** result, printing as sharply defined **light spots** on a film radiograph.\n- **Submerged arc welding (SAW).** The arc runs invisibly beneath a blanket of granular flux: high deposition, deep penetration, mechanized — pressure vessels, ship hulls, line pipe — with slag entrapment possible in deep grooves.\n\nTwo **high-energy-density** processes complete the fusion family. **Electron beam welding (EBW)**, usually in vacuum, and **laser beam welding (LBW)** make extraordinarily deep, narrow welds with thin HAZs — rotating engine parts, gears, hermetic aerospace assemblies. Their narrowness is also their risk: a slightly misaligned beam can miss the joint entirely (**missed seam**), and the deep keyhole can trap **root porosity** — which is why critical EB welds receive radiographic or ultrasonic scrutiny aimed at exactly that geometry."
+    },
+    {
+      "type": "table",
+      "caption": "Common fusion welding processes, how each works, and the discontinuities each tends to leave.",
+      "headers": ["Process", "Electrode / heat source", "Shielding", "Signature discontinuities"],
+      "rows": [
+        ["SMAW (stick)", "Flux-coated consumable electrode", "Gas and slag from the decomposing coating", "Slag inclusions between passes; porosity from damp electrodes"],
+        ["GMAW (MIG)", "Continuous solid-wire consumable", "External shielding gas, no slag", "Lack of fusion in short-circuiting transfer; porosity if drafts strip the gas"],
+        ["FCAW", "Tubular wire with internal flux", "Flux core, with or without added gas", "Slag inclusions; porosity from moisture in the core"],
+        ["GTAW (TIG)", "Nonconsumable tungsten electrode, separate filler", "Inert argon or helium", "Tungsten inclusions (light spots on film); contamination porosity"],
+        ["SAW", "Bare wire under a granular flux blanket", "Flux blanket buries the arc", "Slag entrapment in deep grooves; uniform, mechanized quality"],
+        ["EBW / LBW", "Focused electron beam (vacuum) or laser", "Vacuum or inert gas", "Missed seam from beam misalignment; keyhole/root porosity in a very narrow weld"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Hard-Surfacing and Solid-State Welding",
+      "body": "**Hard-surfacing (hardfacing)** is welding used as a coating process: a layer of wear-resistant alloy — cobalt-base alloys such as Stellite on valve seats and turbine-blade interlocks, nickel-base alloys, tungsten-carbide composites — deposited by arc or oxyfuel welding onto a tougher, cheaper base. The inspection questions shift from joint strength to **overlay integrity**: bond (disbond) at the overlay-to-base interface, **dilution** of the overlay by melted base metal that drags its hardness down, and cracking. One caution unique to this corner of welding: some hardfacing alloys are *expected* to **check-crack** — fine relief cracks across the deposit are acceptable under some specifications because the hard deposit cannot stretch — so the governing acceptance criteria, not reflex, decide what is rejectable.\n\n**Solid-state welding** joins metal **below its melting point**, pressure doing what fusion cannot: no molten pool, no filler, no cast fusion zone, and a small or absent HAZ.\n\n- **Friction welding** (direct-drive and **inertia**): one part spins against the other under axial force; frictional heat plasticizes the interface, and the final upset squeezes hot metal — and surface contaminants — out as a curl of **flash**. Drive shafts, engine valves, dual-alloy turbine wheels.\n- **Friction stir welding (FSW):** a rotating, shouldered pin tool plasticizes and mechanically stirs the joint line — no arc, no filler, no melting. Its prize is joining high-strength 2xxx and 7xxx aluminum alloys that crack under fusion welding; airframe panels and propellant tanks use it.\n- **Diffusion bonding:** clean surfaces pressed together hot until atoms migrate across the interface — titanium aerospace structure, often paired with superplastic forming.\n- **Explosion welding:** a controlled detonation drives plates together, cladding dissimilar metals — tube-sheet overlays and transition joints no fusion process could make.\n- **Ultrasonic welding:** high-frequency shear joins foils and fine wires in electronics and thin-gauge work.\n\nFor NDT, a solid-state joint concentrates everything on **one known plane**: the bond line. The feared flaw is the **kissing (cold) bond** — surfaces in intimate contact but not metallurgically joined — tight, planar, and far harder to detect than a volumetric pore. That is why friction and diffusion joints lean on ultrasonic examination normal to the bond plane, tight process records, and the morphology of the expelled flash."
+    },
+    {
+      "type": "text",
+      "heading": "Brazing and Soldering: Capillary Joining Below the Base Metal's Melting Point",
+      "body": "**Brazing and soldering never melt the base metal.** Both join with a filler whose melting range lies below the base metal's, distributed through the joint by **capillary action** — and one number separates them. **Brazing** fillers have a liquidus **above 450 °C (840 °F)**; **soldering** fillers melt **below it**. AWS A3.0 draws that line.\n\nBecause the base metal stays solid, everything depends on the filler **wetting** the joint surfaces and on **joint design**:\n\n- **Clearance is the engineering variable.** Capillary action is strongest in close-fitting joints — typically about **0.025–0.13 mm (0.001–0.005 in.)** at brazing temperature. Too tight and the filler cannot flow; too open and the capillary force collapses, leaving voids and a weak, filler-strength joint.\n- **Lap joints rule.** A brazed joint develops strength from wetted **area**, so design practice favors laps with generous overlap — a common rule of thumb is at least **three times the thickness** of the thinner member.\n- **Surfaces must be clean**, protected by **flux** or by a vacuum or controlled-atmosphere furnace — the route taken for aerospace honeycomb panels, fuel-system assemblies, and carbide tool tips.\n\nThe signature discontinuities follow the physics: **voids and lack of fill** where capillary flow stalled, **flux entrapment** and inclusions, **erosion** of thin base metal by over-aggressive filler alloying, and **unbonds** where wetting failed. So the NDT question is rarely \"is there a crack\" and usually \"**how much of the faying area is actually joined**\" — answered by radiography of brazed honeycomb and fittings and by ultrasonic mapping of braze coverage.\n\n**Soldering** is the same capillary physics at lower temperature and lower strength — tin-based fillers wetting copper in electronics and plumbing. Solder joints carry electrical and sealing duty, not structure: strength is modest and creep under sustained load is a real design limit."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-9-2-fig-b",
+      "caption": "Three joining families side by side. Welding melts the base metal and creates a fusion zone plus HAZ. Brazing and soldering leave the base metal solid and pull filler through a close-fitting clearance by capillary action — separated from each other only by the 450 °C (840 °F) filler-liquidus line."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "One number, three definitions",
+      "body": "**Welding** melts the base metal. **Brazing** does not — its filler flows by capillary action with a liquidus **above 450 °C (840 °F)**. **Soldering** is the same capillary joint with filler melting **below 450 °C**. The NDT consequence: weld inspection hunts cracks and fusion defects in metal that was molten; braze and solder inspection maps **coverage** — how much of the joint area the filler actually wetted."
+    },
+    {
+      "type": "text",
+      "heading": "Machining and Material Removal: Chips, Abrasives, and Heat",
+      "body": "Machining shapes a part by removing material, and the chip-making family is defined by **what moves**:\n\n- **Turning** — the workpiece rotates against a single-point tool on a lathe: cylinders, faces, tapers, threads. **Boring** is internal turning — enlarging and truing an *existing* hole with a single-point tool, the route to accurate large bores. **Drilling** creates the hole in the first place with a rotating twist drill — fast, but the least accurate of the three, which is why precision holes are drilled, then bored or **reamed** to size.\n- **Milling** — now the *tool* rotates: a multi-tooth cutter sweeps flats, slots, pockets, and profiles as the work feeds past. Most machined aerospace structure — spars, fittings, bulkheads hogged from plate — is milled.\n- **Grinding** — a bonded abrasive wheel takes the finest cuts, holding the tightest tolerances and finishes on **hardened** material no cutting tool touches economically: bearing races, landing-gear journals, gage surfaces.\n\nMachining matters to NDT in two directions. First, cutting **exposes** what manufacturing buried: a lap, seam, or pocket of porosity uncovered by metal removal becomes a fresh surface indication — one reason penetrant and magnetic particle inspections are sequenced **after** final machining. Second, machining **creates** damage of its own. Dull tools tear and smear metal, and smeared metal can seal fine cracks against penetrant entry — the reason an etch often precedes PT on machined high-strength parts. The serious offender is **abusive grinding**: friction heat spikes the surface of hardened steel, locally **overtempering** it into soft spots or re-austenitizing and quenching it into brittle **untempered martensite**. The brittle skin then relieves itself as **grinding cracks** — tight, shallow, typically running **perpendicular to the grinding direction or in a craze-like network**. MT or PT finds the cracks; **temper etch** inspection (nital-etch practice per AMS 2649) finds the burns behind them on high-strength steel such as landing gear."
+    },
+    {
+      "type": "text",
+      "heading": "Electrochemical and Chemical Material Removal",
+      "body": "Two families remove metal with no cutting edge at all.\n\n**Electrochemical machining (ECM)** runs electroplating in reverse. The workpiece is the **anode** in a flowing electrolyte; a shaped cathode tool advances toward it, and metal leaves the work by **anodic dissolution**, ion by ion. The consequences define the process: the tool **never touches** the part, so removal rate is **independent of hardness**; there are **no burrs** and no tool marks; and because nothing deformed or overheated, the surface carries **no work-hardened layer, no recast, and virtually no residual stress**. ECM shapes superalloy turbine airfoils and deburrs holes in hardened components. Two cautions: some alloy-and-electrolyte pairs suffer **selective or intergranular attack** at the new surface, and a stress-free surface also lacks the **protective compressive layer** machining or peening leaves — fatigue-critical parts are commonly shot peened afterward. Do not confuse ECM with **EDM** (electrical discharge machining), which removes metal by *melting* it with spark discharges and leaves a **recast layer** prone to microcracks — a layer often required to be removed or inspected on rotating aerospace hardware.\n\n**Chemical machining (chemical milling)** dissolves metal with an etchant while a rubbery **maskant** protects everything not to be cut. Aircraft skins are the classic case: dip a masked aluminum panel in hot sodium-hydroxide etchant and unmasked pockets thin to gauge — weight removed with no clamping, no cutting forces, no limit from part flexibility. The cautions mirror the chemistry: **intergranular attack** and surface roughening from a mis-run bath; **undercut** beneath the maskant edge, because the etch works sideways as well as down; and on high-strength steel and titanium, **hydrogen pickup** during etching — managed with controlled bath chemistry and, on susceptible steels, a post-process **embrittlement-relief bake**. One gift to NDT: a properly etched surface is free of smeared metal, which is exactly why etching is used to *prepare* machined surfaces for penetrant inspection."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-9-2-fig-a",
+      "title": "Weld joint zones: base metal, HAZ, fusion zone",
+      "file": "basic-9-2-fig-a.svg"
+    },
+    {
+      "id": "basic-9-2-fig-b",
+      "title": "Welding, brazing, and soldering compared",
+      "file": "basic-9-2-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "sort",
+    "title": "Name That Process: Joining and Machining",
+    "intro": "Eight shop-floor descriptions from the fabrication chain. File each one under the process family it describes.",
+    "buckets": ["Fusion welding", "Solid-state welding", "Brazing / soldering", "Machining / material removal"],
+    "items": [
+      {
+        "label": "A flux-coated stick electrode melts into the joint; the slag crust must be chipped off between passes",
+        "bucket": 0,
+        "why": "SMAW is fusion welding — the arc melts base metal and the consumable electrode together, and slag trapped between passes is its signature inclusion."
+      },
+      {
+        "label": "A nonconsumable tungsten electrode arcs under argon; a dip into the puddle sheds dense particles that print light on film",
+        "bucket": 0,
+        "why": "GTAW melts the base metal, so it is fusion welding — and tungsten inclusions, denser than the surrounding weld, are its radiographic signature."
+      },
+      {
+        "label": "Two bar ends spin against each other under axial force until a collar of flash extrudes; the interface never melts",
+        "bucket": 1,
+        "why": "Friction welding (direct-drive or inertia) joins by frictional heat plus pressure below the melting point — the expelled flash carries out surface contaminants."
+      },
+      {
+        "label": "A rotating, shouldered pin tool plasticizes and stirs an aluminum butt joint together with no arc and no filler",
+        "bucket": 1,
+        "why": "Friction stir welding is solid-state: mechanical stirring below the melting point, which is why it can join 2xxx and 7xxx aluminum alloys that crack under fusion welding."
+      },
+      {
+        "label": "Silver-alloy filler with a liquidus above 450 °C is drawn through a 0.08 mm lap-joint clearance by capillary action",
+        "bucket": 2,
+        "why": "Filler above 450 °C, base metal unmelted, capillary distribution — that is the AWS definition of brazing, and the close clearance is what makes the capillary force work."
+      },
+      {
+        "label": "Tin-based filler melting well below 450 °C wets component leads to a circuit board; the base metals stay solid",
+        "bucket": 2,
+        "why": "Same capillary joining physics with a filler liquidus below 450 °C (840 °F) — that single number reclassifies the joint as soldering."
+      },
+      {
+        "label": "A single-point tool peels chips from a rotating shaft on a lathe to bring the diameter to final size",
+        "bucket": 3,
+        "why": "Turning: the workpiece rotates against a single-point tool — the defining kinematics of lathe work in the machining family."
+      },
+      {
+        "label": "A maskant-covered wing skin is dipped in hot etchant to dissolve unprotected pockets down to a thinner gauge",
+        "bucket": 3,
+        "why": "Chemical milling removes material by dissolution — no tool contact, no cutting forces — with undercut, intergranular attack, and hydrogen pickup as its cautions."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "In a fusion weld, the heat-affected zone (HAZ) is the region that:",
+      "options": [
+        "melted and resolidified with a cast, columnar grain structure",
+        "was deposited entirely by the filler metal",
+        "was never molten but had its microstructure altered by the weld's thermal cycle",
+        "lies beyond the reach of the heat and is unchanged by welding"
+      ],
+      "correct": 2,
+      "explanation": "The HAZ is solid base metal cooked by the passing arc: grain growth next to the fusion line, and in hardenable steels, quenching to brittle untempered martensite. Hydrogen (underbead) cracking and toe cracks concentrate there — which is why weld inspection covers the weld metal plus the HAZ band, not just the bead. The melted-and-resolidified region is the fusion zone, a separate zone."
+    },
+    {
+      "question": "Sharply defined inclusions that appear lighter than the surrounding weld metal on a film radiograph are most characteristic of which welding process?",
+      "options": [
+        "Shielded metal arc welding (SMAW)",
+        "Gas tungsten arc welding (GTAW)",
+        "Submerged arc welding (SAW)",
+        "Friction stir welding (FSW)"
+      ],
+      "correct": 1,
+      "explanation": "GTAW uses a nonconsumable tungsten electrode; touching it to the puddle sheds tungsten particles into the weld. Tungsten is far denser than steel or aluminum, absorbs more radiation, and exposes the film less — printing light. SMAW and SAW leave slag inclusions, which are less dense and print dark; FSW has no arc, no filler, and no molten pool at all."
+    },
+    {
+      "question": "Which statement correctly distinguishes brazing from welding?",
+      "options": [
+        "In brazing the base metal never melts; a filler with a liquidus above 450 °C is distributed through a close-fitting joint clearance by capillary action",
+        "Brazing melts a thin skin of the base metal to guarantee fusion at the interface",
+        "Brazing uses a filler that melts below 450 °C, which is what separates it from welding",
+        "A brazed joint develops its strength from the coarse columnar fusion zone the filler forms"
+      ],
+      "correct": 0,
+      "explanation": "Per AWS A3.0, brazing joins with filler whose liquidus exceeds 450 °C (840 °F) while the base metal stays solid, the filler drawn in by capillary action through clearances of roughly 0.025–0.13 mm. A filler below 450 °C makes the joint soldering, not brazing — and since nothing melts but the filler, strength comes from wetted lap area and joint design, not from a fusion zone."
+    },
+    {
+      "question": "Abusive grinding of a hardened steel landing-gear journal is most likely to produce:",
+      "options": [
+        "deep lamellar tearing through the part's mid-thickness",
+        "coarse spherical porosity just beneath the surface",
+        "a burr-free, stress-free surface equivalent to electrochemical machining",
+        "localized burns and tight, shallow cracks, typically perpendicular to the grinding direction or in a craze-like network"
+      ],
+      "correct": 3,
+      "explanation": "Grinding friction can spike the surface temperature, overtempering it into soft spots or re-hardening it into brittle untempered martensite; the brittle skin relieves itself as tight, shallow grinding cracks across the grind direction or in a network. MT or PT finds the cracks, and temper-etch (nital etch, AMS 2649 practice) reveals the burns. Lamellar tearing and porosity are welding-related; a stress-free ECM-like surface is the opposite of ground, abused steel."
+    },
+    {
+      "question": "Compared with conventional cutting, electrochemical machining (ECM) removes metal by:",
+      "options": [
+        "severe localized cold work that hardens and stresses the surface",
+        "anodic dissolution with no tool contact, leaving a burr-free surface with virtually no residual stress or thermal damage",
+        "melting the surface with spark discharges, leaving a recast layer prone to microcracking",
+        "abrasion, so removal rate falls sharply as workpiece hardness rises"
+      ],
+      "correct": 1,
+      "explanation": "ECM is electroplating in reverse: the anodic workpiece dissolves ion by ion into a flowing electrolyte while the shaped cathode tool never touches it — so hardness is irrelevant, no burrs or cold-worked layer form, and the surface is essentially stress-free. The spark-discharge recast layer describes EDM, not ECM. The cautions are different: possible intergranular attack, and the lack of a compressive surface layer, which is why fatigue-critical parts are often shot peened afterward."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §3.2.2.3–3.2.2.6 (welding: common processes, hard-surfacing, solid-state; brazing; soldering; machining and material removal: turning, boring, drilling, milling, grinding, electrochemical, chemical)",
+    "AWS A3.0M/A3.0, Standard Welding Terms and Definitions (definitions of welding, brazing, and soldering; the 450 °C / 840 °F brazing–soldering dividing line)",
+    "AWS D17.1/D17.1M, Specification for Fusion Welding for Aerospace Applications (weld zones and acceptance of weld discontinuities in aerospace hardware)",
+    "SAE AMS 2649, Etch Inspection of High Strength Steel Parts (temper-etch detection of grinding burns)",
+    "ASNT, Materials and Processes for NDT Technology, 2nd ed. (fabrication processes: welding, brazing, soldering, and machining for the NDT engineer)"
+  ]
+}

@@ -1,0 +1,50 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#0A2342"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#E8F1FB">Which Interaction Dominates?</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#D9E0E8">Regions where each interaction is the most probable (approximate)</text>
+
+  <!-- axes -->
+  <line x1="90" y1="390" x2="760" y2="390" stroke="#D9E0E8" stroke-width="2"/>
+  <line x1="90" y1="80" x2="90" y2="390" stroke="#D9E0E8" stroke-width="2"/>
+
+  <!-- x tick labels (log scale) -->
+  <text x="90" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">0.01</text>
+  <text x="257" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">0.1</text>
+  <text x="425" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">1</text>
+  <text x="592" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">10</text>
+  <text x="760" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">100</text>
+  <text x="425" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">Photon energy, MeV (log scale)</text>
+
+  <!-- y tick labels -->
+  <text x="80" y="395" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">0</text>
+  <text x="80" y="240" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">50</text>
+  <text x="80" y="90" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB">100</text>
+  <text x="34" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#E8F1FB" transform="rotate(-90 34 240)">Atomic number Z</text>
+
+  <!-- boundary: photoelectric / Compton -->
+  <path d="M 140,365 Q 175,345 207,322 Q 250,295 280,262 Q 315,224 337,198 Q 360,168 375,136 Q 395,108 425,95" fill="none" stroke="#E8F1FB" stroke-width="3"/>
+
+  <!-- boundary: Compton / pair production -->
+  <path d="M 526,111 Q 537,122 542,136 Q 560,185 576,235 Q 588,262 606,288 Q 622,310 643,334 Q 665,352 693,365" fill="none" stroke="#E8F1FB" stroke-width="3"/>
+
+  <!-- material reference lines -->
+  <line x1="90" y1="309" x2="760" y2="309" stroke="#5A6B7E" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="752" y="303" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#D9E0E8">Steel Z = 26</text>
+  <line x1="90" y1="136" x2="760" y2="136" stroke="#5A6B7E" stroke-width="2" stroke-dasharray="4 4"/>
+  <text x="752" y="130" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#D9E0E8">Lead Z = 82</text>
+
+  <!-- source energy lines -->
+  <line x1="349" y1="80" x2="349" y2="390" stroke="#F2A33C" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="338" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#F2A33C">Ir-192</text>
+  <line x1="441" y1="80" x2="441" y2="390" stroke="#F2A33C" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="462" y="74" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#F2A33C">Co-60</text>
+
+  <!-- region labels -->
+  <text x="185" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#F2A33C">PHOTOELECTRIC</text>
+  <text x="185" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#F2A33C">dominant</text>
+  <text x="470" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1E9E6A">COMPTON</text>
+  <text x="470" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#1E9E6A">dominant</text>
+  <text x="692" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#D14343">PAIR</text>
+  <text x="692" y="202" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#D14343">PRODUCTION</text>
+  <text x="692" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#D14343">dominant</text>
+</svg>

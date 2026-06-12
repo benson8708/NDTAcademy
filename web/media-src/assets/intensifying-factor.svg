@@ -1,0 +1,164 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="ifxGlow" filterUnits="userSpaceOnUse" x="-10" y="-10" width="620" height="360">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ifxBloom" filterUnits="userSpaceOnUse" x="445" y="70" width="150" height="135">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4"/>
+    </filter>
+    <filter id="ifxSoft" filterUnits="userSpaceOnUse" x="436" y="28" width="164" height="284">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+    </filter>
+    <linearGradient id="ifxBarG" x1="0" y1="252" x2="0" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1E66F5" stop-opacity=".75"/>
+      <stop offset=".7" stop-color="#3fa8ff" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".95"/>
+    </linearGradient>
+    <linearGradient id="ifxWeldL" x1="360" y1="0" x2="386" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#11304f"/><stop offset=".5" stop-color="#3f78ab"/><stop offset="1" stop-color="#11304f"/>
+    </linearGradient>
+    <linearGradient id="ifxWeldF" x1="504" y1="0" x2="530" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#11304f"/><stop offset=".5" stop-color="#3f78ab"/><stop offset="1" stop-color="#11304f"/>
+    </linearGradient>
+    <radialGradient id="ifxPhosR" cx="517" cy="138" r="68" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ================= STATIC: zone labels + frames ================= -->
+  <text x="20" y="32" font-size="11" fill="#9fe6ff" opacity=".8" letter-spacing="1.5">EXPOSURE RATIO</text>
+  <text x="584" y="32" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".8" letter-spacing="1.5">SCREEN TYPES</text>
+
+  <!-- formula card frame -->
+  <rect x="15" y="42" width="276" height="254" rx="10" fill="#0e2848" opacity=".5"/>
+  <rect x="15" y="42" width="276" height="254" rx="10" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".85"/>
+  <!-- ghost slot for ratio chip -->
+  <rect x="216" y="142" width="66" height="92" rx="8" fill="none" stroke="#2b86ff" stroke-width="1" stroke-dasharray="4 4" opacity=".3"/>
+  <!-- ghost outlines of the two screen cards -->
+  <rect x="306" y="42" width="134" height="254" rx="10" fill="none" stroke="#2b86ff" stroke-width="1" stroke-dasharray="4 4" opacity=".3"/>
+  <rect x="450" y="42" width="134" height="254" rx="10" fill="none" stroke="#2b86ff" stroke-width="1" stroke-dasharray="4 4" opacity=".3"/>
+
+  <!-- ================= REVEAL 1: formula + axis + bar labels ================= -->
+  <g id="ifxFormula" opacity="0">
+    <text x="38" y="84" font-size="18" font-weight="700" fill="#eaffff" filter="url(#ifxGlow)">IF</text>
+    <text x="66" y="83" font-size="14" fill="#9fe6ff">=</text>
+    <text x="188" y="68" text-anchor="middle" font-size="9.5" fill="#dff2ff">EXPOSURE WITHOUT SCREENS</text>
+    <line x1="112" y1="76" x2="264" y2="76" stroke="#5fe0ff" stroke-width="1.5" opacity=".9"/>
+    <text x="188" y="92" text-anchor="middle" font-size="9.5" fill="#9fe6ff">EXPOSURE WITH SCREENS</text>
+    <!-- exposure axis -->
+    <line x1="40" y1="252" x2="40" y2="126" stroke="#8fb6e0" stroke-width="1.2" opacity=".6"/>
+    <path d="M40 118 L36.6 127 L43.4 127 Z" fill="#8fb6e0" opacity=".6"/>
+    <text x="31" y="220" font-size="9" fill="#9fe6ff" opacity=".6" transform="rotate(-90 31 220)">EXPOSURE</text>
+    <!-- baseline -->
+    <line x1="40" y1="252" x2="210" y2="252" stroke="#8fb6e0" stroke-width="1.5" opacity=".8"/>
+    <!-- bar labels -->
+    <text x="92" y="266" text-anchor="middle" font-size="9.5" fill="#dff2ff" opacity=".95">WITHOUT</text>
+    <text x="92" y="278" text-anchor="middle" font-size="9.5" fill="#dff2ff" opacity=".95">SCREENS</text>
+    <text x="168" y="266" text-anchor="middle" font-size="9.5" fill="#9fe6ff" opacity=".85">WITH</text>
+    <text x="168" y="278" text-anchor="middle" font-size="9.5" fill="#9fe6ff" opacity=".85">SCREENS</text>
+  </g>
+
+  <!-- ================= REVEAL 2: the two exposure bars draw on ================= -->
+  <path id="ifxBars" d="M92 252 V124 M168 252 V210" fill="none" stroke="url(#ifxBarG)" stroke-width="38" stroke-linecap="butt" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ================= REVEAL 3: ratio chip + leaders ================= -->
+  <g id="ifxRatio" opacity="0">
+    <path d="M113 130 H140 V185 H208" fill="none" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="4 3" opacity=".55"/>
+    <path d="M208 181.8 L215 185 L208 188.2 Z" fill="#5fe0ff" opacity=".7"/>
+    <path d="M190 215 H208" fill="none" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="4 3" opacity=".55"/>
+    <path d="M208 211.8 L215 215 L208 218.2 Z" fill="#5fe0ff" opacity=".7"/>
+    <rect x="216" y="142" width="66" height="92" rx="8" fill="#14304f" opacity=".85"/>
+    <rect x="216" y="142" width="66" height="92" rx="8" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".9"/>
+    <text x="249" y="164" text-anchor="middle" font-size="14" font-weight="700" fill="#eaffff" filter="url(#ifxGlow)">IF</text>
+    <!-- mini fraction: tall bar over short bar -->
+    <rect x="243" y="172" width="12" height="26" fill="#5fe0ff" opacity=".9"/>
+    <line x1="233" y1="204" x2="265" y2="204" stroke="#9fe6ff" stroke-width="1.5" opacity=".8"/>
+    <rect x="243" y="210" width="12" height="10" fill="#2b86ff" opacity=".9"/>
+  </g>
+
+  <!-- ================= REVEAL 4: LEAD FOIL card ================= -->
+  <g id="ifxLead" opacity="0">
+    <rect x="306" y="42" width="134" height="254" rx="10" fill="#0e2848" opacity=".55"/>
+    <rect x="306" y="42" width="134" height="254" rx="10" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".9"/>
+    <text x="373" y="62" text-anchor="middle" font-size="12.5" font-weight="700" fill="#dff2ff" letter-spacing="1">LEAD FOIL</text>
+    <text x="373" y="76" text-anchor="middle" font-size="9" fill="#9fe6ff" opacity=".65">ELECTRON EMISSION</text>
+    <!-- crisp mini-radiograph -->
+    <rect x="318" y="86" width="110" height="104" rx="4" fill="#04101f"/>
+    <rect x="318" y="86" width="110" height="104" rx="4" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".8"/>
+    <rect x="360" y="87" width="26" height="102" fill="url(#ifxWeldL)"/>
+    <line x1="360.5" y1="87" x2="360.5" y2="189" stroke="#9fe6ff" stroke-width=".8" opacity=".5"/>
+    <line x1="385.5" y1="87" x2="385.5" y2="189" stroke="#9fe6ff" stroke-width=".8" opacity=".5"/>
+    <!-- sharp crack + porosity (dark on the lighter weld band) -->
+    <path d="M372 96 L374 108 L370 120 L375 134 L371 148 L374 162 L372 176" fill="none" stroke="#06182e" stroke-width="1.6" stroke-linejoin="round"/>
+    <circle cx="366" cy="112" r="1.8" fill="#06182e"/>
+    <circle cx="380" cy="150" r="1.5" fill="#06182e"/>
+    <circle cx="368" cy="168" r="1.3" fill="#06182e"/>
+    <text x="373" y="204" text-anchor="middle" font-size="9.5" fill="#5fe0ff" opacity=".95">SHARP DETAIL</text>
+    <!-- IF badge -->
+    <rect x="337" y="214" width="72" height="24" rx="12" fill="#14304f" opacity=".95"/>
+    <rect x="337" y="214" width="72" height="24" rx="12" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".95"/>
+    <text x="373" y="230" text-anchor="middle" font-size="12" font-weight="700" fill="#eaffff" filter="url(#ifxGlow)">IF 2–4</text>
+    <line x1="318" y1="252" x2="428" y2="252" stroke="#2b86ff" stroke-width="1" stroke-dasharray="3 3" opacity=".5"/>
+    <text x="373" y="268" text-anchor="middle" font-size="8.5" fill="#9fe6ff" opacity=".6">FRONT FOIL .005 IN</text>
+    <text x="373" y="281" text-anchor="middle" font-size="8.5" fill="#9fe6ff" opacity=".6">BACK FOIL .010 IN</text>
+  </g>
+
+  <!-- ================= REVEAL 5: FLUORESCENT card ================= -->
+  <g id="ifxFluoro" opacity="0">
+    <rect x="450" y="42" width="134" height="254" rx="10" fill="none" stroke="#5fe0ff" stroke-width="3" opacity=".25" filter="url(#ifxSoft)"/>
+    <rect x="450" y="42" width="134" height="254" rx="10" fill="#0e2848" opacity=".55"/>
+    <rect x="450" y="42" width="134" height="254" rx="10" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".9"/>
+    <text x="517" y="62" text-anchor="middle" font-size="12.5" font-weight="700" fill="#dff2ff" letter-spacing="1">FLUORESCENT</text>
+    <text x="517" y="76" text-anchor="middle" font-size="9" fill="#9fe6ff" opacity=".65">LIGHT EMISSION</text>
+    <!-- mini-radiograph (phosphor-tinted) -->
+    <rect x="462" y="86" width="110" height="104" rx="4" fill="#04101f"/>
+    <rect x="462" y="86" width="110" height="104" rx="4" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".8"/>
+    <rect x="504" y="87" width="26" height="102" fill="url(#ifxWeldF)"/>
+    <line x1="504.5" y1="87" x2="504.5" y2="189" stroke="#9fe6ff" stroke-width=".8" opacity=".5"/>
+    <line x1="529.5" y1="87" x2="529.5" y2="189" stroke="#9fe6ff" stroke-width=".8" opacity=".5"/>
+    <path d="M516 96 L518 108 L514 120 L519 134 L515 148 L518 162 L516 176" fill="none" stroke="#06182e" stroke-width="1.6" stroke-linejoin="round"/>
+    <circle cx="510" cy="112" r="1.8" fill="#06182e"/>
+    <circle cx="524" cy="150" r="1.5" fill="#06182e"/>
+    <circle cx="512" cy="168" r="1.3" fill="#06182e"/>
+    <rect x="463" y="87" width="108" height="102" fill="url(#ifxPhosR)"/>
+    <!-- IF badge -->
+    <rect x="475" y="214" width="84" height="24" rx="12" fill="#14304f" opacity=".95"/>
+    <rect x="475" y="214" width="84" height="24" rx="12" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".95"/>
+    <text x="517" y="230" text-anchor="middle" font-size="12" font-weight="700" fill="#eaffff" filter="url(#ifxGlow)">IF 10–100</text>
+    <line x1="462" y1="252" x2="572" y2="252" stroke="#2b86ff" stroke-width="1" stroke-dasharray="3 3" opacity=".5"/>
+    <text x="517" y="268" text-anchor="middle" font-size="8.5" fill="#9fe6ff" opacity=".6">CALCIUM TUNGSTATE</text>
+    <text x="517" y="281" text-anchor="middle" font-size="8.5" fill="#9fe6ff" opacity=".6">PHOSPHOR SCREEN</text>
+  </g>
+
+  <!-- ================= REVEAL 6: fluorescent image blooms soft ================= -->
+  <g id="ifxBlur" opacity="0">
+    <!-- halation around the weld band + crack -->
+    <rect x="500" y="88" width="34" height="100" fill="#9fe6ff" opacity=".4" filter="url(#ifxBloom)"/>
+    <path d="M516 96 L518 108 L514 120 L519 134 L515 148 L518 162 L516 176" fill="none" stroke="#eaf6ff" stroke-width="3" opacity=".55" filter="url(#ifxBloom)"/>
+    <!-- sideways light rays -->
+    <g stroke="#9fe6ff" stroke-width="1.1" stroke-linecap="round" opacity=".55" fill="none">
+      <path d="M504 104 L468 99"/>
+      <path d="M504 124 L464 121"/>
+      <path d="M504 144 L468 149"/>
+      <path d="M504 164 L472 170"/>
+      <path d="M530 100 L566 95"/>
+      <path d="M530 122 L568 119"/>
+      <path d="M530 142 L566 147"/>
+      <path d="M530 166 L562 172"/>
+    </g>
+    <!-- mottle grain -->
+    <g fill="#eaf6ff" opacity=".32">
+      <circle cx="472" cy="98" r=".9"/><circle cx="486" cy="142" r="1.2"/><circle cx="478" cy="170" r=".8"/>
+      <circle cx="494" cy="112" r="1"/><circle cx="510" cy="182" r=".9"/><circle cx="522" cy="92" r="1"/>
+      <circle cx="534" cy="178" r="1.1"/><circle cx="544" cy="108" r=".9"/><circle cx="552" cy="136" r="1.2"/>
+      <circle cx="560" cy="166" r=".8"/><circle cx="548" cy="92" r=".7"/><circle cx="470" cy="130" r=".7"/>
+      <circle cx="488" cy="186" r="1"/><circle cx="500" cy="156" r=".8"/><circle cx="556" cy="120" r=".9"/>
+      <circle cx="540" cy="152" r=".8"/>
+    </g>
+    <!-- soft veil lowering contrast -->
+    <rect x="463" y="87" width="108" height="102" rx="3" fill="#9fe6ff" opacity=".07"/>
+    <text x="517" y="204" text-anchor="middle" font-size="9.5" fill="#ffc24b" opacity=".95">SOFT · MOTTLED</text>
+  </g>
+</svg>

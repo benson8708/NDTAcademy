@@ -1,0 +1,123 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="fcaGc" filterUnits="userSpaceOnUse" x="-60" y="-60" width="720" height="460">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fcaGw" filterUnits="userSpaceOnUse" x="-60" y="-60" width="720" height="460">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fcaGr" filterUnits="userSpaceOnUse" x="-60" y="-60" width="720" height="460">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="fcaPlate" gradientUnits="userSpaceOnUse" x1="78" y1="56" x2="522" y2="272">
+      <stop offset="0" stop-color="#1c4166"/><stop offset=".5" stop-color="#122f52"/><stop offset="1" stop-color="#0c2444"/>
+    </linearGradient>
+    <linearGradient id="fcaPole" gradientUnits="userSpaceOnUse" x1="0" y1="80" x2="0" y2="248">
+      <stop offset="0" stop-color="#1c4068"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== header ===== -->
+  <text x="78" y="36" font-size="11" letter-spacing="1" fill="#9fe6ff" opacity=".8">TOP VIEW &#8212; MAGNETIZED STEEL PLATE</text>
+  <g stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" fill="none" opacity=".9" filter="url(#fcaGc)">
+    <path d="M502 32 L540 32 M531 27 L540 32 L531 37"/>
+  </g>
+  <text x="494" y="36" text-anchor="end" font-size="11" letter-spacing="1" fill="#5fe0ff" opacity=".9">FLUX</text>
+
+  <!-- ===== pole pieces ===== -->
+  <rect x="44" y="80" width="26" height="168" rx="6" fill="url(#fcaPole)" stroke="#8fb6e0" stroke-width="1.3" opacity=".9"/>
+  <rect x="530" y="80" width="26" height="168" rx="6" fill="url(#fcaPole)" stroke="#8fb6e0" stroke-width="1.3" opacity=".9"/>
+  <text x="57" y="169" text-anchor="middle" font-size="14" font-weight="700" fill="#9fe6ff">N</text>
+  <text x="543" y="169" text-anchor="middle" font-size="14" font-weight="700" fill="#9fe6ff">S</text>
+
+  <!-- ===== steel plate (top view) ===== -->
+  <rect x="78" y="56" width="444" height="216" rx="8" fill="url(#fcaPlate)" stroke="#8fb6e0" stroke-width="1.5" stroke-opacity=".65"/>
+  <g fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".3">
+    <circle cx="94" cy="72" r="2.6"/><circle cx="506" cy="72" r="2.6"/>
+    <circle cx="94" cy="256" r="2.6"/><circle cx="506" cy="256" r="2.6"/>
+  </g>
+
+  <!-- ===== flux lines (draw reveal: group carries dash, children carry pathLength) ===== -->
+  <g id="fcaFlux" fill="none" stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" opacity=".85"
+     filter="url(#fcaGc)" stroke-dasharray="100" stroke-dashoffset="100">
+    <path pathLength="100" d="M70 94 L528 94 M291 88.5 L302 94 L291 99.5 M517 88.5 L528 94 L517 99.5"/>
+    <path pathLength="100" d="M70 122 L528 122 M291 116.5 L302 122 L291 127.5 M517 116.5 L528 122 L517 127.5"/>
+    <path pathLength="100" d="M70 150 L528 150 M291 144.5 L302 150 L291 155.5 M517 144.5 L528 150 L517 155.5"/>
+    <path pathLength="100" d="M70 178 L528 178 M291 172.5 L302 178 L291 183.5 M517 172.5 L528 178 L517 183.5"/>
+    <path pathLength="100" d="M70 206 L528 206 M291 200.5 L302 206 L291 211.5 M517 200.5 L528 206 L517 211.5"/>
+    <path pathLength="100" d="M70 234 L528 234 M291 228.5 L302 234 L291 239.5 M517 228.5 L528 234 L517 239.5"/>
+  </g>
+
+  <!-- ===== crack A: vertical, perpendicular to flux (static) ===== -->
+  <path d="M210 136 L214 144 L208 153 L213 162 L209 171 L214 180 L210 192" fill="none"
+        stroke="#ff6b6b" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" filter="url(#fcaGr)"/>
+
+  <!-- ===== crack A indication: dense particle build-up + 90 deg marker ===== -->
+  <g id="fcaCross" opacity="0">
+    <ellipse cx="211" cy="164" rx="14" ry="38" fill="#ffc24b" opacity=".12"/>
+    <path d="M210 136 L214 144 L208 153 L213 162 L209 171 L214 180 L210 192" fill="none"
+          stroke="#ffc24b" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity=".35" filter="url(#fcaGw)"/>
+    <g fill="#ffd87f">
+      <circle cx="208" cy="134" r="1.2"/><circle cx="213" cy="135" r="1"/>
+      <circle cx="206" cy="138" r="1.4"/><circle cx="203" cy="143" r=".9"/>
+      <circle cx="209" cy="143" r="1.1"/><circle cx="204" cy="135" r="1.3"/>
+      <circle cx="205" cy="147" r="1.6"/><circle cx="202" cy="156" r="1.2"/>
+      <circle cx="203" cy="151" r="1.2"/><circle cx="208" cy="151" r="1.8"/><circle cx="219" cy="152" r=".9"/>
+      <circle cx="206" cy="155" r="1"/><circle cx="212" cy="156" r="1.5"/>
+      <circle cx="208" cy="159" r="1.2"/><circle cx="220" cy="160" r=".9"/>
+      <circle cx="205" cy="163" r="1.5"/><circle cx="217" cy="164" r="1.3"/>
+      <circle cx="207" cy="167" r="1"/><circle cx="213" cy="168" r="1.6"/>
+      <circle cx="204" cy="171" r="1.2"/><circle cx="216" cy="172" r="1"/>
+      <circle cx="206" cy="175" r="1.4"/><circle cx="218" cy="176" r="1.2"/>
+      <circle cx="203" cy="179" r="1"/><circle cx="209" cy="179" r="1.7"/><circle cx="220" cy="180" r="1"/>
+      <circle cx="207" cy="184" r="1.3"/><circle cx="214" cy="185" r="1"/>
+      <circle cx="209" cy="189" r="1.5"/><circle cx="215" cy="190" r="1.1"/>
+      <circle cx="210" cy="194" r="1.2"/>
+    </g>
+    <g fill="#ffc24b">
+      <circle cx="211" cy="140" r="1.1"/><circle cx="214" cy="151" r="1.2"/>
+      <circle cx="210" cy="161" r="1.3"/><circle cx="212" cy="173" r="1.1"/>
+      <circle cx="211" cy="182" r="1.2"/><circle cx="206" cy="187" r="1"/>
+    </g>
+    <g fill="#eaf6ff">
+      <circle cx="206" cy="151" r=".8"/><circle cx="209" cy="156" r=".8"/>
+      <circle cx="215" cy="166" r=".8"/><circle cx="208" cy="176" r=".8"/><circle cx="212" cy="190" r=".8"/>
+    </g>
+    <path d="M209 139 L220 139 L220 150" fill="none" stroke="#eaf6ff" stroke-width="1.4" opacity=".9"/>
+    <text x="226" y="140" font-size="12" fill="#eaf6ff" paint-order="stroke" stroke="#0c2340" stroke-width="3">90&#176;</text>
+    <path d="M210 196 L210 208" stroke="#ffc24b" stroke-width="1" opacity=".4"/>
+    <rect x="129" y="210" width="162" height="20" rx="6" fill="#0e2848" fill-opacity=".92" stroke="#ffc24b" stroke-opacity=".45"/>
+    <text x="210" y="224" text-anchor="middle" font-size="11" letter-spacing=".8" fill="#ffd87f">90&#176; &#8212; STRONG INDICATION</text>
+  </g>
+  <circle id="fcaCrossPing" cx="210" cy="164" r="6" fill="none" stroke="#ffc24b" stroke-width="2.2" opacity="0" filter="url(#fcaGw)"/>
+
+  <!-- ===== 45-90 deg detection window badge ===== -->
+  <g id="fcaWindow" opacity="0">
+    <rect x="90" y="96" width="108" height="110" rx="9" fill="#0a1e3c" fill-opacity=".6" stroke="#8fb6e0" stroke-opacity=".45"/>
+    <text x="144" y="112" text-anchor="middle" font-size="9" letter-spacing=".5" fill="#9fe6ff" opacity=".85">DETECTION WINDOW</text>
+    <path d="M108 186 L146.2 147.8 A54 54 0 0 0 108 132 Z" fill="#5fe0ff" opacity=".2"/>
+    <path d="M162 186 A54 54 0 0 0 108 132" fill="none" stroke="#8fb6e0" stroke-width="1.2" stroke-opacity=".45" stroke-dasharray="2 3"/>
+    <line x1="108" y1="186" x2="162" y2="186" stroke="#8fb6e0" stroke-width="1.2" stroke-opacity=".5"/>
+    <line x1="108" y1="186" x2="146.2" y2="147.8" stroke="#9fe6ff" stroke-width="1.4" stroke-opacity=".8"/>
+    <line x1="108" y1="186" x2="108" y2="132" stroke="#5fe0ff" stroke-width="1.8" filter="url(#fcaGc)"/>
+    <line x1="162" y1="186" x2="167" y2="186" stroke="#8fb6e0" stroke-width="1.2" stroke-opacity=".6"/>
+    <line x1="146.2" y1="147.8" x2="149.7" y2="144.3" stroke="#9fe6ff" stroke-width="1.2" stroke-opacity=".7"/>
+    <line x1="108" y1="132" x2="108" y2="127" stroke="#5fe0ff" stroke-width="1.2" stroke-opacity=".8"/>
+    <text x="171" y="189" font-size="9" fill="#8fb6e0">0&#176;</text>
+    <text x="152" y="142" font-size="9" fill="#9fe6ff">45&#176;</text>
+    <text x="112" y="128" font-size="9" fill="#5fe0ff">90&#176;</text>
+    <text x="140" y="201" text-anchor="middle" font-size="13" letter-spacing="1" fill="#9fe6ff">45&#8211;90&#176;</text>
+  </g>
+
+  <!-- ===== crack B: horizontal, parallel to flux — ghost, no particles ===== -->
+  <g id="fcaParallel" opacity="0">
+    <path d="M372 164 L380 168 L389 162 L398 167 L407 163 L416 168 L428 164" fill="none"
+          stroke="#8fb6e0" stroke-width="2.2" stroke-opacity=".5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 4"/>
+    <path d="M400 172 L400 208" stroke="#8fb6e0" stroke-width="1" opacity=".35"/>
+    <rect x="332" y="210" width="136" height="20" rx="6" fill="#0e2848" fill-opacity=".85" stroke="#8fb6e0" stroke-opacity=".3"/>
+    <text x="400" y="224" text-anchor="middle" font-size="11" letter-spacing=".8" fill="#8fb6e0">0&#176; &#8212; NO INDICATION</text>
+  </g>
+</svg>

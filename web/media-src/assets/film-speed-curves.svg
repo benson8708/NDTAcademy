@@ -1,0 +1,125 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="fspGlow" filterUnits="userSpaceOnUse" x="-30" y="-30" width="660" height="400">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="fspGlowSm" filterUnits="userSpaceOnUse" x="-30" y="-30" width="660" height="400">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="fspGradF" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7fd8ff"/>
+      <stop offset="1" stop-color="#5fe0ff"/>
+    </linearGradient>
+    <linearGradient id="fspGradS" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#eaf6ff"/>
+      <stop offset="1" stop-color="#9fe6ff"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===================== TITLE ===================== -->
+  <text x="30" y="30" font-size="13" fill="#9fe6ff" opacity=".85" letter-spacing=".06em">FILM SPEED — H&amp;D CURVES COMPARED</text>
+
+  <!-- ===================== AXES + GRID (always on) ===================== -->
+  <!-- plot frame: x 90..566, y 48..272 ; density 0..4 (54 px per D), log E 0..3 (150 px per decade) -->
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".12">
+    <line x1="92" y1="218" x2="558" y2="218"/>
+    <line x1="92" y1="110" x2="558" y2="110"/>
+    <line x1="92" y1="56"  x2="558" y2="56"/>
+    <line x1="240" y1="50" x2="240" y2="270"/>
+    <line x1="390" y1="50" x2="390" y2="270"/>
+    <line x1="540" y1="50" x2="540" y2="270"/>
+  </g>
+  <g stroke="#8fb6e0" stroke-width="2" fill="none">
+    <path d="M90 48 V272"/>
+    <path d="M90 272 H566"/>
+  </g>
+  <path d="M90 44 L86 54 L94 54 Z" fill="#8fb6e0"/>
+  <path d="M570 272 L560 268 L560 276 Z" fill="#8fb6e0"/>
+  <g stroke="#8fb6e0" stroke-width="1.5">
+    <line x1="85" y1="218" x2="90" y2="218"/>
+    <line x1="85" y1="164" x2="90" y2="164"/>
+    <line x1="85" y1="110" x2="90" y2="110"/>
+    <line x1="85" y1="56"  x2="90" y2="56"/>
+    <line x1="240" y1="272" x2="240" y2="277"/>
+    <line x1="390" y1="272" x2="390" y2="277"/>
+    <line x1="540" y1="272" x2="540" y2="277"/>
+  </g>
+  <g font-size="11" fill="#9fe6ff" opacity=".9">
+    <text x="80" y="276" text-anchor="end">0</text>
+    <text x="80" y="222" text-anchor="end">1</text>
+    <text x="80" y="168" text-anchor="end">2</text>
+    <text x="80" y="114" text-anchor="end">3</text>
+    <text x="80" y="60"  text-anchor="end">4</text>
+    <text x="90"  y="290" text-anchor="middle">0</text>
+    <text x="240" y="290" text-anchor="middle">1</text>
+    <text x="390" y="290" text-anchor="middle">2</text>
+    <text x="540" y="290" text-anchor="middle">3</text>
+  </g>
+  <text transform="translate(58,160) rotate(-90)" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85" letter-spacing=".08em">FILM DENSITY</text>
+  <text x="328" y="308" text-anchor="middle" font-size="11.5" fill="#9fe6ff" opacity=".85" letter-spacing=".08em">LOG RELATIVE EXPOSURE</text>
+
+  <!-- ===================== REVEAL: FAST curve (draw) ===================== -->
+  <!-- same sigmoid as SLOW, sitting 1.0 log E (150 px) further LEFT: less exposure for the same density -->
+  <path id="fspFast" d="M95 255 L140 254 C180 252 210 233 222 210 L261 130 C276 101 293 82 322 68 C352 62 390 60 430 59"
+        fill="none" stroke="url(#fspGradF)" stroke-width="3" stroke-linejoin="round"
+        filter="url(#fspGlow)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="fspFastTag" opacity="0">
+    <rect x="180" y="175" width="42" height="16" rx="4" fill="rgba(10,30,60,.55)" stroke="#5fe0ff" stroke-width="1" opacity=".95"/>
+    <text x="201" y="187" text-anchor="middle" font-size="10.5" fill="#5fe0ff" letter-spacing=".08em">FAST</text>
+  </g>
+
+  <!-- ===================== REVEAL: SLOW curve (draw) ===================== -->
+  <path id="fspSlow" d="M95 260 L290 259 C330 257 360 238 372 215 L411 135 C426 106 443 87 472 73 C502 67 529 65 560 64"
+        fill="none" stroke="url(#fspGradS)" stroke-width="3" stroke-linejoin="round"
+        filter="url(#fspGlow)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="fspSlowTag" opacity="0">
+    <rect x="408" y="175" width="42" height="16" rx="4" fill="rgba(10,30,60,.55)" stroke="#eaf6ff" stroke-width="1" opacity=".95"/>
+    <text x="429" y="187" text-anchor="middle" font-size="10.5" fill="#eaf6ff" letter-spacing=".08em">SLOW</text>
+  </g>
+
+  <!-- ===================== REVEAL: DENSITY 2.0 cut (draw, sequential subpaths) ===================== -->
+  <!-- ref line -> left drop tick + foot -> right drop tick + foot -> gap arrowheads -->
+  <path id="fspCut" d="M94 164 H558 M244 168 V271 M238 271.5 H250 M397 168 V271 M391 271.5 H403 M256 158.5 L250.5 164 L256 169.5 M385 158.5 L390.5 164 L385 169.5"
+        fill="none" stroke="#ffc24b" stroke-width="1.7" stroke-linejoin="round" opacity=".92"
+        pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="fspCutLbl" opacity="0">
+    <text x="96" y="157" font-size="10.5" fill="#ffc24b" opacity=".95">DENSITY 2.0</text>
+    <g filter="url(#fspGlowSm)">
+      <circle cx="244" cy="164" r="4.5" fill="none" stroke="#ffc24b" stroke-width="1.6"/>
+      <circle cx="244" cy="164" r="1.8" fill="#ffc24b"/>
+      <circle cx="397" cy="164" r="4.5" fill="none" stroke="#ffc24b" stroke-width="1.6"/>
+      <circle cx="397" cy="164" r="1.8" fill="#ffc24b"/>
+    </g>
+    <text x="320" y="141" text-anchor="middle" font-size="11.5" fill="#ffc24b" letter-spacing=".04em">EXPOSURE GAP</text>
+    <text x="320" y="155" text-anchor="middle" font-size="11.5" fill="#ffc24b" letter-spacing=".04em">= SPEED</text>
+  </g>
+
+  <!-- ===================== REVEAL: grain-size inset (fade) ===================== -->
+  <g id="fspGrain" opacity="0">
+    <rect x="98" y="54" width="138" height="86" rx="8" fill="rgba(10,30,60,.55)" stroke="#5fe0ff" stroke-opacity=".35" stroke-width="1"/>
+    <text x="167" y="67" text-anchor="middle" font-size="9.5" fill="#9fe6ff" opacity=".85" letter-spacing=".05em">SILVER-HALIDE GRAIN</text>
+    <!-- FAST cell: coarse tabular grains -->
+    <rect x="106" y="72" width="58" height="44" rx="3" fill="rgba(6,20,42,.7)" stroke="#8fb6e0" stroke-opacity=".25"/>
+    <g fill="#9fe6ff" fill-opacity=".8" stroke="#eaf6ff" stroke-opacity=".5" stroke-width=".6">
+      <path d="M112 84 L120 78 L128 83 L126 92 L115 93 Z"/>
+      <path d="M132 80 L141 76 L147 84 L142 91 L133 89 Z"/>
+      <path d="M118 99 L127 96 L133 103 L128 110 L118 108 Z"/>
+      <path d="M138 96 L148 94 L153 102 L146 109 L137 105 Z"/>
+      <path d="M150 78 L158 80 L157 88 L150 87 Z"/>
+    </g>
+    <!-- SLOW cell: fine grains -->
+    <rect x="172" y="72" width="58" height="44" rx="3" fill="rgba(6,20,42,.7)" stroke="#8fb6e0" stroke-opacity=".25"/>
+    <g fill="#9fe6ff" fill-opacity=".85">
+      <circle cx="178" cy="80" r="1.5"/><circle cx="190" cy="77" r="1.3"/><circle cx="201" cy="81" r="1.6"/><circle cx="212" cy="78" r="1.4"/><circle cx="223" cy="82" r="1.5"/>
+      <circle cx="180" cy="90" r="1.4"/><circle cx="191" cy="88" r="1.6"/><circle cx="202" cy="91" r="1.3"/><circle cx="213" cy="89" r="1.5"/><circle cx="221" cy="92" r="1.4"/>
+      <circle cx="178" cy="100" r="1.6"/><circle cx="189" cy="98" r="1.4"/><circle cx="200" cy="101" r="1.5"/><circle cx="211" cy="99" r="1.3"/><circle cx="222" cy="101" r="1.6"/>
+      <circle cx="181" cy="110" r="1.3"/><circle cx="192" cy="108" r="1.5"/><circle cx="203" cy="111" r="1.4"/><circle cx="214" cy="109" r="1.6"/><circle cx="224" cy="107" r="1.4"/>
+    </g>
+    <text x="135" y="128" text-anchor="middle" font-size="9.5" fill="#5fe0ff" letter-spacing=".06em">FAST</text>
+    <text x="201" y="128" text-anchor="middle" font-size="9.5" fill="#eaf6ff" letter-spacing=".06em">SLOW</text>
+    <text x="135" y="138" text-anchor="middle" font-size="8" fill="#9fe6ff" opacity=".6">COARSE</text>
+    <text x="201" y="138" text-anchor="middle" font-size="8" fill="#9fe6ff" opacity=".6">FINE</text>
+  </g>
+</svg>

@@ -1,0 +1,193 @@
+{
+  "lessonId": "basic-2-4",
+  "title": "Electromagnetic Testing: Applications and Interpretation",
+  "narrationScript": "The previous lesson built the toolkit: coils, instruments, and reference standards. This one puts it to work in the four application families the Basic outline names. Flaw detection comes first: surface probes sweeping skins and fastener holes, rotating probes inside bolt holes, and differential bobbin coils racing through heat-exchanger tubing, where the phase angle of a figure-eight signal estimates how deep a flaw penetrates the wall and which surface it started from. Then sorting. Conductivity meters read aluminum in percent IACS and verify alloy and temper in seconds, because solution treatment lowers conductivity while aging, annealing, and heat damage raise it. Comparator coils do the same job on steel through permeability, which tracks hardness. Thickness gauging exploits the variables crack hunters suppress: calibrated lift-off becomes a paint and anodize gauge, and low frequencies that reach the far surface measure corrosion thinning. Finally, process control wires the method into the production line: encircling coils testing every piece, alarm gates firing paint markers, alarm-rate trends flagging process drift. Phase tells you what; amplitude tells you how much.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Interpretation: Reading a Relative Signal",
+      "body": "The equipment lesson ended on a discipline: an eddy current response is **relative**, meaningful only against the system's standardization. Interpretation starts there. When the dot moves, the operator asks three questions in order:\n\n- **Which direction?** Phase angle separates the families of causes. With the display rotated so lift-off runs horizontal, a surface crack rises at a distinctly different angle, and a conductivity or permeability shift moves along a third direction. Phase tells you *what*.\n- **How far?** Amplitude scales with the size of whatever moved the dot, judged against the response of the machined notches and holes in the reference standard. Amplitude tells you *how much*.\n- **Does it repeat?** A real discontinuity produces the same signal at the same location on every pass. An electrical transient, a probe bump, or a speck of conductive debris does not survive a rescan.\n\nTwo physical rules sit under every call. The **orientation rule** carries over from the sensors lesson: a discontinuity registers only to the degree it interrupts the eddy current path, so the probe and technique chosen decide which flaws are even allowed to speak. The **depth rule** is new: eddy currents flowing deeper in the material lag further in phase — roughly one radian (about 57°) of additional lag per standard depth of penetration. Deeper damage therefore announces itself not just with weaker amplitude but with **later phase**, and that phase shift is the lever nearly every ET depth-estimating technique pulls.\n\nThe four application families in this lesson — flaw detection, conductivity and permeability sorting, thickness gauging, and process control — are four arrangements of the same physics, each set up so that exactly **one variable** carries the information while the rest are suppressed, held constant, or rotated out of the way."
+    },
+    {
+      "type": "text",
+      "heading": "Flaw Detection: Fastener Holes, Tubing, and Mill Product",
+      "body": "**Surface crack detection.** High test frequencies — hundreds of kilohertz to a few megahertz — concentrate the currents in the first fraction of a millimeter, exactly where fatigue cracks start. Because a thin nonconductive paint film merely adds a little lift-off, eddy current finds cracks **through intact coatings**: a decisive advantage over penetrant on painted aircraft structure, and the reason ET dominates surface inspection of airframe skins, wheels, and engine hardware. The classic aerospace task is the **fastener hole**. A pencil or shielded probe circles the countersink, or, with the fastener removed, a **rotating bolt-hole probe** spins a small coil against the bore while the display unrolls the hole wall — a corner crack prints once per revolution, sharply separated in phase from lift-off and from the response of the hole edge itself.\n\n**Tubing inspection.** In-service heat-exchanger and condenser tubing is tested from the ID with **differential bobbin coils**. Each of the two opposed coils crosses a flaw in turn, writing the **figure-eight** signature on the impedance plane. Interpretation leans on the standardization: the phase angles of the drilled holes and EDM notches in the reference tube build a **phase-depth curve**, and a flaw signal's angle is read against it to estimate **through-wall extent** and to tell **ID-origin from OD-origin** damage. Amplitude alone misleads — a deep flaw of small volume can produce a modest signal — which is why tubing analysts size by phase first. Support-plate and dent responses are suppressed by **multifrequency mixing**, as introduced in the equipment lesson.\n\n**Mill product.** Encircling coils screen tube, bar, and wire at line speed for **longitudinal** seams, laps, and weld-line defects — the flaws that interrupt their circumferential currents — while **rotating-probe** stations add coverage for transverse and short flaws. Ferromagnetic product runs under **magnetic saturation** so permeability noise cannot bury the flaw signals."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-2-4-fig-a",
+      "caption": "Left: a differential bobbin coil sweeping a tube writes a figure-eight as each of its two opposed coils crosses the flaw in turn. Right: the phase-depth calibration built from the reference tube — phase angle rotates with through-wall depth and separates ID-origin from OD-origin damage; amplitude alone would mislead."
+    },
+    {
+      "type": "text",
+      "heading": "Conductivity and Permeability Sorting",
+      "body": "**Conductivity sorting (nonferrous).** A conductivity meter with an absolute surface probe reads directly in **%IACS** per ASTM E1004. The metallurgy is what makes the number useful: **solute atoms held in solid solution scatter electrons**, so solution treatment *lowers* conductivity, while precipitation — from artificial aging, annealing, or unintended overheating — *raises* it. Each aluminum alloy-and-temper combination therefore owns a published band: 2024-T3 reads roughly 28-33 %IACS, 7075-T6 about 31-36, 7075-T73 about 38-43, and annealed 2024-O climbs to roughly 46-51. The applications follow directly:\n\n- **Heat-treat verification** — confirm each part's reading falls inside its specified band. Aerospace practice per **AMS 2658** pairs the conductivity reading with a **hardness test**, because the two together discriminate tempers that either number alone cannot.\n- **Heat and fire damage assessment** — structure exposed to fire or exhaust impingement drifts *above* its temper band toward annealed values, mapping metallurgical damage no visual inspection can see.\n- **Mixed-stock separation** — receiving inspection catches an alloy substitution in seconds.\n\nDiscipline matters: bands **overlap** (2024-T3 and 7075-T6 share readings near the low thirties), so a reading alone cannot always name an alloy and temper. The part and the calibration blocks must be at the **same, stable temperature**, and readings are taken away from edges on clean, reasonably smooth surfaces.\n\n**Permeability sorting (ferromagnetic).** In steel, magnetic **permeability** dominates the coil's response, and permeability tracks microstructure — hardness, case depth, alloy content, heat-treat condition. The standard arrangement is the **external-reference comparator** from the equipment lesson: a known-good part sits in one encircling coil, each production part passes through the other, and the bridge unbalance flags the parts that differ. ASTM **E566** governs the practice, and its conditions are strict: the populations must be **identical in size, shape, and processing except for the one property being sorted**, and the setup must be proven with known samples of *both* the accept and reject groups before sorting begins."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-2-4-fig-b",
+      "caption": "Typical conductivity bands for common airframe aluminum alloys on the %IACS scale. Solution treatment pushes conductivity down; aging, annealing, and heat damage push it back up. Note the overlap — 2024-T3 and 7075-T6 share readings near the low thirties, which is why AMS 2658 pairs conductivity with hardness before declaring a temper verified."
+    },
+    {
+      "type": "text",
+      "heading": "Thickness Gauging: Three Jobs for One Probe",
+      "body": "**Nonconductive coating on a conductive base.** Paint, anodize, and plastic films carry no eddy currents — they simply space the coil away from the metal. That spacing is **lift-off**, the same variable the crack hunter rotates out of the way, here promoted to the measurement itself. Standardized against plastic foils or shims of known thickness laid on a bare sample of the production material — the practice of ASTM E376 — the technique reads paint and anodize thickness over aluminum skins in mils, with no contact fluid and no surface preparation beyond cleanliness.\n\n**Conductive coating on a different conductive base.** Cladding and plating — alclad on 2024 sheet, silver plate on a copper bus bar — produce a signal that travels between the responses of the two pure materials as the layer thickens. The frequency is chosen so the standard depth of penetration **spans the interface**: shallow enough to feel the coating, deep enough to still feel the base.\n\n**Metal thickness itself.** A wall registers only while the eddy currents can **reach the far surface** — in practice the remaining wall must lie within the effective depth of penetration, about **3δ**. The operator therefore selects a frequency *low* enough for the full thickness, then reads the signal's position along a curve standardized on **thickness steps of the same material**. This is the basis of **corrosion-thinning surveys** on aircraft skin and lap joints: scanning from the accessible side, gradual hidden thinning walks the signal along the thinning curve, mapping material loss without disassembly. The trade is the skin-effect bargain in reverse — the low frequencies that buy reach surrender the surface sensitivity that finds tight cracks, which is why thinning surveys and crack searches are **separate setups**, not one pass."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-2-4-fig-c",
+      "caption": "Thickness gauging two ways. Left: a nonconductive coating spaces the coil off the metal, and that calibrated lift-off reads paint or anodize thickness directly. Right: at a frequency low enough that the effective depth (about 3δ) spans the wall, the far surface influences the signal — the basis of corrosion-thinning surveys from one side."
+    },
+    {
+      "type": "text",
+      "heading": "Process Control: The Inspection Inside the Machine",
+      "body": "The fourth family is less a different physics than a different **role**: the eddy current station becomes part of the manufacturing process, testing **100% of product at line speed** and feeding its verdicts back to the operation.\n\n- **Welded tube mills** place an encircling-coil station just downstream of the welder. A weld-line defect fires the alarm gate within feet of where it was made; a paint marker or cut-off gate disposes of the bad length automatically. The **alarm-rate trend** is the process signal — a rising rate flags electrode wear, contamination, or drifting weld parameters before a full shift of scrap exists.\n- **Bar and wire drawing lines** watch for the seams and slivers that announce die wear, with the same logic: the inspection result is read as information *about the process*, not just about the piece.\n- **Heat-treat lines** verify the product property directly. A conductivity check at the quench exit confirms each aluminum extrusion or sheet lot was actually solution treated before it moves on to aging; comparator coils confirm each steel part saw the hardening furnace.\n- **Receiving and kitting stations** sort incoming stock so a mixed lot never reaches the shop floor — cheap insurance against the alloy substitution that no downstream inspection is looking for.\n\nNone of this relaxes the standardization discipline. In-line systems are standardized on reference standards before the run and re-checked at planned intervals, and every threshold crossing traces back to an artificial discontinuity of known size. What process control adds is the feedback loop — and the statistics that make a thousand individual accept/reject decisions readable as the health of the process itself."
+    },
+    {
+      "type": "table",
+      "caption": "The four ET application families: the question each answers, the hardware that asks it, and how the signal is read.",
+      "headers": ["Application family", "Question it answers", "Typical sensor and technique", "How the signal is read"],
+      "rows": [
+        ["Flaw detection", "Is there a crack, seam, or pit — and how deep?", "High-frequency surface and rotating bolt-hole probes; differential bobbin coils in tubing; encircling coils on mill product", "Phase angle separates flaws from lift-off and estimates depth; amplitude scales severity against reference notches"],
+        ["Conductivity / permeability sorting", "Is this the right alloy, temper, or hardness?", "Absolute-probe conductivity meter reading %IACS; external-reference comparator coils for ferromagnetic parts", "Reading compared with the published alloy/temper band; comparator unbalance judged against known samples of each group"],
+        ["Thickness gauging", "How thick is the coating, cladding, or remaining wall?", "Calibrated lift-off for nonconductive coatings; low-frequency probes where currents must reach the far surface", "Signal position along a calibration curve built from foils or thickness steps of known size"],
+        ["Process control", "Is the process still making good product?", "In-line encircling-coil and rotating-probe stations with alarm gates; conductivity checks at heat-treat stations", "Threshold crossings mark or divert product; alarm-rate trends flag process drift before scrap accumulates"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Four families, one discipline",
+      "body": "Every ET application isolates **one variable** and suppresses the rest. Flaw detection rotates lift-off out of the way so a crack's phase stands alone; sorting holds geometry and coupling constant so conductivity or permeability speaks; thickness gauging deliberately measures what the crack hunter nulls; process control automates any of the three at line speed. And one number is never proof by itself — conductivity bands overlap between alloy-temper combinations, which is why aerospace practice (AMS 2658) pairs **conductivity with hardness** before declaring a heat treatment good."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-2-4-fig-a",
+      "title": "Reading flaw signals: differential bobbin and phase-depth calibration",
+      "file": "basic-2-4-fig-a.svg"
+    },
+    {
+      "id": "basic-2-4-fig-b",
+      "title": "Conductivity sorting bands for aluminum alloys",
+      "file": "basic-2-4-fig-b.svg"
+    },
+    {
+      "id": "basic-2-4-fig-c",
+      "title": "Thickness gauging: calibrated lift-off and far-surface reach",
+      "file": "basic-2-4-fig-c.svg"
+    }
+  ],
+  "interactive": {
+    "type": "sort",
+    "title": "Match the ET Application to the Signal",
+    "intro": "Eight signals and readings from a week of electromagnetic testing. File each one under the application family it represents.",
+    "buckets": ["Flaw detection", "Conductivity / permeability sorting", "Thickness gauging", "Process control"],
+    "items": [
+      {
+        "label": "Differential bobbin coil traces a figure-eight at one axial position in a condenser tube; its phase angle reads 60% through-wall, OD origin",
+        "bucket": 0,
+        "why": "A local impedance excursion analyzed for depth and origin is flaw detection — the phase-depth calibration from the reference tube turns the signal into a call."
+      },
+      {
+        "label": "Rotating probe in a wing-spar fastener hole throws a sharp signal once per revolution, well separated in phase from lift-off",
+        "bucket": 0,
+        "why": "Bolt-hole scanning for fatigue cracks is classic aerospace flaw detection; the once-per-revolution repeat and the phase separation from lift-off are what make it a crack call."
+      },
+      {
+        "label": "Digital meter reads 35.8 %IACS on a 7075 forging certified as T73, below the published minimum of about 38",
+        "bucket": 1,
+        "why": "Reading a %IACS value against the alloy-and-temper band is conductivity sorting for heat-treat verification — this part reads down toward the T6 band and goes to metallurgical review."
+      },
+      {
+        "label": "Two encircling coils, a known-good part in one and each production part in the other; the bridge unbalance flags parts that missed the hardening furnace",
+        "bucket": 1,
+        "why": "An external-reference comparator sorting steel by the permeability shift that tracks hardness — ASTM E566 territory, proven with known samples of both groups."
+      },
+      {
+        "label": "Probe standardized on plastic foils converts its reading to 5.2 mils of primer and topcoat over an aluminum skin",
+        "bucket": 2,
+        "why": "A nonconductive coating carries no eddy currents — it is pure lift-off, and calibrated lift-off is the coating-thickness gauge of ASTM E376."
+      },
+      {
+        "label": "Low-frequency scan over a lap joint walks the signal along a curve standardized on 1.0, 0.9, and 0.8 mm steps of the same alloy",
+        "bucket": 2,
+        "why": "When the currents reach the far surface, position along a known-thickness curve reads remaining wall — corrosion-thinning gauging from the accessible side."
+      },
+      {
+        "label": "Encircling-coil station under magnetic saturation tests every welded steel tube leaving the welder; the alarm rate is charted shift by shift",
+        "bucket": 3,
+        "why": "One hundred percent in-line testing whose alarm-rate trend feeds back on the welder is process control — the inspection is reading the process, not just the piece."
+      },
+      {
+        "label": "Conductivity check at the quench-tank exit confirms each extrusion was solution treated before the lot moves on to aging",
+        "bucket": 3,
+        "why": "The measurement gates a manufacturing step in real time — verifying the process output piece by piece before the next operation is process control."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "During differential bobbin-coil inspection of nonferromagnetic heat-exchanger tubing, the phase angle of a flaw signal is used primarily to:",
+      "options": [
+        "set the magnetizing current needed for saturation",
+        "estimate the discontinuity's through-wall depth and whether it originates on the ID or OD",
+        "measure the tube material's conductivity in %IACS",
+        "compensate automatically for probe wobble"
+      ],
+      "correct": 1,
+      "explanation": "The phase-depth curve built from the drilled holes and EDM notches in the reference tube lets the analyst convert a signal's phase angle into estimated through-wall extent and ID- versus OD-origin. Amplitude alone misleads, saturation applies to ferromagnetic product, and conductivity measurement is a sorting application, not tubing flaw analysis."
+    },
+    {
+      "question": "A 2024 aluminum fitting specified as solution treated and naturally aged (T4) reads several %IACS above the top of its published conductivity band, toward the annealed range. The most likely interpretation is:",
+      "options": [
+        "the part contains a fatigue crack beneath the probe",
+        "the part was overheated or improperly heat treated, precipitating solute out of solid solution",
+        "the conductivity meter is responding to lift-off",
+        "the part was made from commercially pure copper"
+      ],
+      "correct": 1,
+      "explanation": "Solute atoms held in solid solution scatter electrons and keep conductivity low; precipitation from annealing, overaging, or heat damage raises conductivity toward the annealed (O-condition) values. A stable high reading across the part is a metallurgical-condition signal — a crack would produce a local flaw indication, not a uniform band shift."
+    },
+    {
+      "question": "Measuring paint thickness over an aluminum skin with an eddy current instrument relies on:",
+      "options": [
+        "eddy currents induced within the paint layer itself",
+        "magnetically saturating the aluminum beneath the paint",
+        "the calibrated lift-off effect — the coil-to-metal spacing created by the nonconductive coating",
+        "the phase lag of currents reflected from the back surface of the skin"
+      ],
+      "correct": 2,
+      "explanation": "Paint is nonconductive, so it carries no eddy currents — it simply spaces the coil away from the metal. That lift-off, standardized with foils or shims of known thickness per ASTM E376 practice, becomes the measurement. Saturation applies to ferromagnetic materials, and far-surface phase effects belong to wall-thickness gauging, not coating measurement."
+    },
+    {
+      "question": "To gauge hidden corrosion thinning of a 1.0 mm aluminum sheet from the accessible side, the test frequency must be chosen so that:",
+      "options": [
+        "the standard depth of penetration is as small as possible",
+        "the eddy currents are confined entirely to the near surface",
+        "the frequency exceeds the probe's resonance for maximum amplitude",
+        "the effective depth of penetration (about 3δ) spans the full wall, so the far surface influences the signal"
+      ],
+      "correct": 3,
+      "explanation": "Thickness changes can only register if the eddy currents interact with the far surface, so the remaining wall must lie within the effective penetration of roughly three standard depths — which means choosing a frequency low enough for the full thickness. High frequencies confine the currents to the near surface: ideal for tight cracks, blind to thinning."
+    },
+    {
+      "question": "An ERW tube mill passes every length through an encircling-coil ET station just downstream of the welder; an alarm gate paint-marks any signal over threshold, and the alarm rate is charted each shift. Beyond catching individual defects, this qualifies as process control because:",
+      "options": [
+        "the alarm-rate trend feeds back to the welding operation, flagging drift such as electrode wear before scrap accumulates",
+        "encircling coils detect transverse cracks better than any other sensor",
+        "the testing is performed after the product has received final acceptance",
+        "in-line operation removes the requirement for periodic re-standardization"
+      ],
+      "correct": 0,
+      "explanation": "Process control means the inspection result is read as information about the process: 100% in-line testing whose alarm-rate trend reveals weld-parameter drift while it can still be corrected. Encircling coils actually favor longitudinal flaws, the station sits inside production rather than after acceptance, and nothing ever removes the reference-standard and re-standardization discipline."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Topical Outline §2.2.4 (ET applications and test result interpretation: flaw detection, conductivity and permeability sorting, thickness gauging, process control)",
+    "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method",
+    "ASTM E376, Standard Practice for Measuring Coating Thickness by Magnetic-Field or Eddy Current (Electromagnetic) Testing Methods",
+    "ASTM E566, Standard Practice for Electromagnetic (Eddy Current) Sorting of Ferrous Metals",
+    "SAE AMS 2658, Hardness and Conductivity Inspection of Wrought Aluminum Alloy Parts"
+  ]
+}

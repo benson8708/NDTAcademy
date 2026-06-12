@@ -1,0 +1,62 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#0A2342">Angle-Beam Coverage of a Butt Weld — 60° on 12 mm Plate</text>
+
+  <!-- skip dimension brackets -->
+  <text x="480" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">full skip = 2T·tan 60° = 41.6 mm</text>
+  <line x1="272" y1="92" x2="688" y2="92" stroke="#0A2342" stroke-width="1.8"/>
+  <line x1="272" y1="85" x2="272" y2="99" stroke="#0A2342" stroke-width="1.8"/>
+  <line x1="688" y1="85" x2="688" y2="99" stroke="#0A2342" stroke-width="1.8"/>
+  <text x="376" y="124" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#5A6B7E">½ skip = T·tan 60° = 20.8 mm</text>
+  <line x1="272" y1="136" x2="480" y2="136" stroke="#5A6B7E" stroke-width="1.4"/>
+  <line x1="272" y1="130" x2="272" y2="142" stroke="#5A6B7E" stroke-width="1.4"/>
+  <line x1="480" y1="130" x2="480" y2="142" stroke="#5A6B7E" stroke-width="1.4"/>
+
+  <!-- plate -->
+  <rect x="70" y="210" width="690" height="120" fill="#E8F1FB" stroke="#0A2342" stroke-width="3"/>
+
+  <!-- weld -->
+  <polygon points="400,210 560,210 480,330" fill="#FFFFFF" stroke="#5A6B7E" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <path d="M 400 210 Q 480 188 560 210" fill="#D9E0E8" stroke="#0A2342" stroke-width="1.5"/>
+  <text x="480" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">weld cap</text>
+  <circle cx="480" cy="328" r="4" fill="#D14343"/>
+  <text x="498" y="352" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#D14343" font-weight="bold">root</text>
+
+  <!-- ghost probe (pulled back) -->
+  <polygon points="128,210 208,210 128,166" fill="none" stroke="#5A6B7E" stroke-width="1.6" stroke-dasharray="5,4"/>
+  <line x1="168" y1="210" x2="376" y2="330" stroke="#1B82E8" stroke-width="2" stroke-dasharray="7,5"/>
+  <line x1="376" y1="330" x2="584" y2="210" stroke="#1B82E8" stroke-width="2" stroke-dasharray="7,5"/>
+
+  <!-- solid probe at half-skip from root -->
+  <polygon points="232,210 312,210 232,166" fill="#D9E0E8" stroke="#0A2342" stroke-width="2"/>
+  <text x="226" y="158" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">60° wedge</text>
+
+  <!-- exit point + normal + angle -->
+  <circle cx="272" cy="210" r="5" fill="#F2A33C" stroke="#0A2342" stroke-width="1.5"/>
+  <line x1="272" y1="210" x2="272" y2="330" stroke="#5A6B7E" stroke-width="1.4" stroke-dasharray="6,4"/>
+  <path d="M 272 256 A 46 46 0 0 0 312 233" fill="none" stroke="#F2A33C" stroke-width="2.5"/>
+  <text x="322" y="262" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">θ = 60°</text>
+  <line x1="268" y1="206" x2="232" y2="148" stroke="#5A6B7E" stroke-width="1.2"/>
+  <text x="228" y="142" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#5A6B7E">exit point</text>
+
+  <!-- solid beam legs -->
+  <line x1="272" y1="210" x2="480" y2="330" stroke="#1B82E8" stroke-width="3.5"/>
+  <line x1="480" y1="330" x2="688" y2="210" stroke="#1B82E8" stroke-width="3.5"/>
+  <polygon points="382,267 382,281 394,274" fill="#1B82E8" transform="rotate(30 388 274)"/>
+  <polygon points="592,259 592,273 604,266" fill="#1B82E8" transform="rotate(-30 598 266)"/>
+  <text x="346" y="252" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1B82E8" transform="rotate(30 346 252)">leg 1 = 24 mm</text>
+  <text x="608" y="248" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#1B82E8" transform="rotate(-30 608 248)">leg 2</text>
+
+  <!-- thickness dimension -->
+  <line x1="42" y1="210" x2="42" y2="330" stroke="#0A2342" stroke-width="1.5"/>
+  <line x1="35" y1="210" x2="49" y2="210" stroke="#0A2342" stroke-width="1.5"/>
+  <line x1="35" y1="330" x2="49" y2="330" stroke="#0A2342" stroke-width="1.5"/>
+  <text x="26" y="276" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342" transform="rotate(-90 26 276)">T = 12 mm</text>
+
+  <!-- annotations -->
+  <text x="248" y="376" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">probe forward: 1st leg hits the root</text>
+  <text x="248" y="396" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#5A6B7E">(solid beam)</text>
+  <text x="586" y="396" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#5A6B7E">(dashed beam — probe pulled back)</text>
+  <text x="586" y="376" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">rastering back: 2nd leg sweeps the upper weld</text>
+  <text x="400" y="432" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">leg = T ÷ cos 60° = 24 mm&#160;&#160;&#160;·&#160;&#160;&#160;scan zone: weld toe back to one full skip + cap width</text>
+</svg>

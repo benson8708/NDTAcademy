@@ -1,0 +1,199 @@
+{
+  "lessonId": "basic-3-1",
+  "title": "Leak Testing Fundamentals and Techniques",
+  "narrationScript": "No pressure boundary is absolutely tight — every weld, seal, and fitting leaks something. Leak testing asks whether that leakage stays below the maximum the service can tolerate. A leak is a physical passage; leakage is the flow through it; leak rate is quantity per time, in pascal cubic meters per second or standard cubic centimeters per second. Four fundamental techniques cover the working range. Bubble testing turns escaping gas into visible bubbles under a solution film or an immersion bath, locating leaks to about ten to the minus five. Pressure change testing watches a gauge over hours, integrating total leakage from the whole boundary — honest only after temperature compensation. Halogen detectors sniff refrigerant tracer escaping pressurized joints near ten to the minus six. And the helium mass spectrometer owns the fine end: tracer probe locating leaks on evacuated systems, detector probe sniffing pressurized ones, and hood tests measuring total rates down to ten to the minus eleven. Sensitivity, system factors, and a calibrated standard leak turn those readings into defensible numbers.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "A Flow, Not a Flaw",
+      "body": "Leak testing (LT) is the odd member of the NDT family: what it detects is not the geometry of a discontinuity but a **flow in progress**. The vocabulary keeps that straight. A **leak** is a physical passage through a pressure boundary — a pinhole, a tight crack, a porous weld bead, an imperfect gasket seat. **Leakage** is the fluid that moves through it. **Leak rate** is the quantity of fluid per unit time at stated conditions of pressure and temperature, expressed in SI as **pascal cubic meters per second (Pa·m³/s)** or, in everyday shop units, **standard cubic centimeters per second (std cm³/s)** — 1 Pa·m³/s is very nearly 10 std cm³/s.\n\nThe method's first principle: **no boundary is absolutely tight**. Measure finely enough and every vessel, valve, duct, and weldment leaks. The engineering question is never *does it leak?* but **does it leak less than the maximum allowable leakage rate** — a number the service dictates. A truck tire tolerates leakage that would scrap a hermetically sealed avionics relay by six orders of magnitude.\n\nThree pieces of physics run through every technique:\n\n- **Pressure differential drives the flow.** Leakage always moves from the high-pressure side toward the low-pressure side; raise the differential and the signal grows. Which side of the boundary holds the test fluid defines the two great technique families — pressurized and evacuated.\n- **Flow regime sets the arithmetic.** Through larger leaks the gas flows **viscously**, at a rate governed by the gas's viscosity and roughly by the difference of the squared pressures. The finest leaks pass molecules one at a time — **molecular flow** — where the rate follows the pressure difference and favors light, fast molecules. That is one reason helium excels at finding what nothing else can.\n- **A plugged leak is an invisible leak.** Water, oil, paint, plating, and cleaning residues can block a fine passage completely. Parts are leak tested **clean and dry**, before painting or priming — and before any liquid-based test such as hydrostatic or penetrant testing wets the very passages you are hunting."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-3-1-fig-a",
+      "caption": "The four fundamentals at a glance: bubble testing makes leakage visible, pressure change totals it on a gauge, the heated-anode halogen sniffer recognizes refrigerant tracer at a joint, and the helium mass spectrometer counts mass-4 ions from the finest leaks of all."
+    },
+    {
+      "type": "text",
+      "heading": "Bubble and Pressure Change: See It or Total It",
+      "body": "**Bubble leak testing** (ASTM E515) is the direct approach: put gas pressure inside the boundary and let escaping gas advertise itself as bubbles.\n\n- **Immersion technique.** Pressurize the object and submerge it in water — or, for small hermetic parts, in a fluorocarbon liquid. A stream of bubbles traces straight back to the leak. Warm liquid, a wetting agent to cut surface tension, and reduced pressure above the bath all sharpen sensitivity, to roughly **10⁻⁴ and, with care, 10⁻⁵ std cm³/s**. Know what the limit looks like: at 10⁻⁵ a half-millimeter bubble grows only every several seconds — the limiting instrument is operator vigilance.\n- **Solution-film technique.** Where immersion is impractical — piping joints, valve flanges, an installed fitting — brush or spray a leak-detection (soap) solution over the surface and watch for growing foam clusters: about **10⁻³ to 10⁻⁴ std cm³/s**.\n- **Vacuum-box technique.** When only one side is accessible — storage tank floor seams are the classic — wet the weld with solution, clamp a windowed box over it, and evacuate the box; the differential pulls air through any through-leak and bubbles the film.\n\nBubble testing locates leaks exactly, costs little, and screens whole surfaces fast. Its limits: it is qualitative, operator-dependent, and surface films or trapped air pockets can confuse the read.\n\n**Pressure change testing** trades location for a number. Seal the boundary, pressurize (or evacuate) it, isolate it from the source, and record instrumented pressure against time.\n\n- **Pressure decay** integrates **total leakage from the entire boundary at once** — every pinhole, seal, and fitting summed — and says nothing about where any of it is. The cabin pressurization check on an aircraft is this test at fuselage scale.\n- **Temperature is the honest broker.** At constant volume, absolute pressure tracks absolute temperature: a swing of about 3 °C near ambient moves pressure about 1% with no leakage at all — easily mistaken for a leak, or masking one. Readings are converted to absolute pressure and corrected with recorded temperatures, or taken differentially against a sealed reference volume.\n- **Sensitivity scales with patience and shrinks with volume.** The smallest detectable rate is set by gauge resolution times volume divided by hold time: a small manifold with a fine transducer can resolve 10⁻⁴ std cm³/s, while a large tank overnight may honestly resolve only 10⁻¹.\n- **Pressure rise (rate-of-rise)** is the vacuum-side mirror: isolate the pumped system and watch pressure climb. A **real leak rises linearly without end; outgassing flattens toward an asymptote** — the standard way to tell them apart before any leak hunting begins."
+    },
+    {
+      "type": "text",
+      "heading": "Tracer Gases: The Halogen Diode and the Mass Spectrometer",
+      "body": "When the allowable rate falls below what bubbles and gauges can see, add a **tracer fluid** — a gas rare in ordinary air — and an instrument built to recognize it.\n\n**Halogen detector leak testing.** The object is pressurized with a halogen-bearing tracer — historically refrigerant R-12, today commonly **R-134a or sulfur hexafluoride (SF₆)**, often blended with air or nitrogen. The classic instrument is the **heated-anode (halogen diode) detector**: a platinum element heated to roughly 800–900 °C emits positive ions, and that emission **rises sharply when halogen compounds reach it**. The operator draws the sniffer probe along each joint at a controlled traverse speed and standoff; sensitivity runs around **10⁻⁵ to 10⁻⁶ std cm³/s**. Refrigeration and air-conditioning work is the natural application — the product ships already charged with tracer — and the electron-capture detector extends the technique for SF₆. Watch the background: solvent vapors and propellants carry halogens that fire the detector with no leak present.\n\n**Mass spectrometer leak testing** owns the fine end of the scale, and **helium** is its near-universal tracer:\n\n- **mass 4** — cleanly separated from every other species by a small magnetic-sector spectrometer tuned to it\n- **rare** — about **5 ppm of the atmosphere**, so the natural background is low\n- **inert, nontoxic, nonflammable** — safe around people, product, and process\n- **small and fast** — it slips through fine passages and pumps away quickly afterward\n\nThe **mass spectrometer leak detector (MSLD)** carries its own high-vacuum system for the analyzer. Sampled gas is ionized; the ions accelerate, a magnetic field bends their paths, and only mass 4 reaches the collector — an ion current that reads directly in leak rate once the system is standardized. Total-leakage arrangements reach **10⁻⁹ to 10⁻¹¹ std cm³/s** — the territory of hermetic avionics packages and space hardware. MIL-STD-883-style fine-leak tests pair the helium measurement with a fluorocarbon-bubble **gross-leak** check, because a grossly leaking package can vent its helium charge before the fine-leak reading and pass falsely."
+    },
+    {
+      "type": "table",
+      "caption": "The working techniques compared. Whether the job needs the leak located or the boundary totaled is the first selection question; sensitivity is the second.",
+      "headers": ["Technique", "How it works", "Locates or totals?", "Typical sensitivity (std cm³/s)"],
+      "rows": [
+        ["Bubble — solution film", "Leak-detection solution brushed over pressurized joints; growing foam marks the leak", "Locates", "10⁻³ to 10⁻⁴"],
+        ["Bubble — immersion", "Pressurized part submerged; the bubble stream traces back to the leak", "Locates", "10⁻⁴ to 10⁻⁵"],
+        ["Pressure change (decay / rise)", "Isolate the boundary and track pressure against time, temperature-corrected", "Totals the boundary", "10⁻¹ to 10⁻⁴ — set by volume, hold time, and gauge"],
+        ["Halogen detector probe", "Heated-anode diode sniffs halogen tracer (R-134a, SF₆) escaping pressurized joints", "Locates", "about 10⁻⁵ to 10⁻⁶"],
+        ["Helium detector probe (sniffer)", "MSLD samples air drawn over pressurized, helium-charged joints", "Locates", "10⁻⁶ to 10⁻⁷, background-limited"],
+        ["Helium tracer probe", "Fine helium jet played over an evacuated system; MSLD on the pumping line", "Locates", "about 10⁻⁷ to 10⁻⁸"],
+        ["Helium hood / inside-out", "Evacuated object enveloped in helium — or a helium-backfilled part read in a vacuum chamber", "Totals the boundary", "10⁻⁹ to 10⁻¹¹"]
+      ]
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-3-1-fig-b",
+      "caption": "The sensitivity ladder. Bars span typical minimum detectable leak rates in std cm³/s: pressure change depends heavily on volume and hold time, sniffer techniques are background-limited, and only the helium total-leakage modes reach below 10⁻⁹. Blue bars locate individual leaks; navy bars total the whole boundary."
+    },
+    {
+      "type": "text",
+      "heading": "System Factors and Relative Sensitivity",
+      "body": "The **sensitivity** of a leak test is its **minimum detectable leak rate** — and the values quoted for each technique are ceilings, reached only when the system factors cooperate.\n\n- **Pressure differential.** Signal scales with it. Test at the highest differential the part and safety allow, in the direction the specification requires.\n- **Tracer concentration.** Dilute the tracer and the response falls in proportion: a part charged with 10% helium shows one-tenth the signal of pure helium, and the measured rate must be corrected accordingly.\n- **Volume and pumping speed set response time.** When an MSLD watches a system of volume V pumped at speed S, the signal builds with a time constant **τ = V/S** — about 63% of full response after one τ. Spray briefly, then wait at least that long; scan a sniffer no faster than the response allows, or leaks pass under the probe unseen.\n- **Background.** Atmospheric helium (5 ppm) sets the floor for sniffing; a helium-fogged room after generous spraying raises it further; solvent vapors fire halogen detectors. Ventilation and patience are instrumentation here.\n- **Temperature.** Every pressure-based quantity is a gas-law quantity — uncorrected temperature drift forges leaks or hides them.\n- **Surface condition.** Films plug leaks. Test before paint and primer, and before bubble solution or penetrant fluids contaminate the passages a finer tracer test must later find — sequence the most sensitive test onto the cleanest part.\n\n**Relative sensitivity** is the selection logic, and ASTM E432 frames it: start from the **maximum allowable leakage rate** in the governing specification, then choose the technique whose minimum detectable rate clears it **with margin** — and no more. Each added decade of sensitivity is bought with cost, time, cleanliness, and skill. The second selection question is what the answer must look like: **totaling techniques** (pressure change, hood) prove compliance with one number; **locating techniques** (bubble, sniffer, tracer probe) find what to fix. Mature programs run them in pairs — total first, locate only when the total fails, then repair and retest."
+    },
+    {
+      "type": "text",
+      "heading": "Evacuated or Pressurized — and Proving the Number",
+      "body": "Every technique belongs to one of two families, set by **which side of the boundary holds the test fluid**.\n\n**Evacuated systems (outside-in).** The object is pumped down; leakage flows inward.\n\n- **Tracer probe.** The MSLD tees into the pumping line while a fine helium jet plays over each suspect weld, flange, and feedthrough. **Start at the highest point and work down**: helium rises, and gas drifting up past unprobed joints would point to the wrong location. Short bursts, then a pause of at least one response time, keep the calls clean. Locates leaks to roughly **10⁻⁷ to 10⁻⁸ std cm³/s**.\n- **Hood test.** Envelop the evacuated object — or a whole section of it — in a helium-filled bag or hood: every leak in the covered boundary feeds the spectrometer at once, yielding **total leakage** in the most sensitive arrangement leak testing offers. For small sealed parts the mirror-image **inside-out** test backfills the part with helium and reads it inside an evacuated chamber.\n- **Pressure rise** checks overall tightness with no tracer at all — and its linear-versus-flattening signature separates leakage from outgassing first.\n\n**Pressurized systems (inside-out).** The object sits above atmospheric pressure; leakage flows outward.\n\n- **Ambient fluids.** Test with what the system already holds — air, nitrogen, water: pressure decay, hydrostatic examination with visual inspection, bubble solution at the joints. Cheap and direct, with modest sensitivity.\n- **Tracer fluids.** Charge with helium or a halogen blend at a known concentration, then **detector-probe (sniff)** each joint to locate leaks — or surround the part with an enclosure and measure tracer build-up over time, the **accumulation technique**, a semi-quantitative total with simple gear.\n\n**Standardization** turns all of it from indication into measurement. A **calibrated standard leak** — a **capillary** standard for larger rates, a helium **permeation** standard (diffusion through a quartz or glass membrane) for roughly 10⁻⁷ to 10⁻¹⁰ std cm³/s — is measured **before and after** each test session. It sets the system's sensitivity, converts ion current or meter divisions into std cm³/s, and disciplines the program: fail the post-check, and every result since the last good standardization is suspect and repeated. No standard leak, no leak rate — only a meter wiggle."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-3-1-fig-c",
+      "caption": "Which side holds the tracer decides the family. Evacuated: the tracer probe locates (spray top-down — helium rises) and the hood totals at maximum sensitivity. Pressurized: the detector probe locates whatever leaks out, working against the 5 ppm helium already in the air."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "The specification picks the technique",
+      "body": "Selection starts at the end: the **maximum allowable leakage rate**. Choose the technique whose minimum detectable leak rate clears that number with margin, decide whether the answer must **locate** the leak or **total** the boundary, and prove the system against a **calibrated standard leak** before and after testing. Sensitivity beyond the specification buys cost, not quality."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-3-1-fig-a",
+      "title": "Four ways to find a leak",
+      "file": "basic-3-1-fig-a.svg"
+    },
+    {
+      "id": "basic-3-1-fig-b",
+      "title": "Leak testing sensitivity ladder",
+      "file": "basic-3-1-fig-b.svg"
+    },
+    {
+      "id": "basic-3-1-fig-c",
+      "title": "Evacuated and pressurized technique families",
+      "file": "basic-3-1-fig-c.svg"
+    }
+  ],
+  "interactive": {
+    "type": "scenario",
+    "title": "Choose the LT Technique for the Required Sensitivity",
+    "intro": "Four jobs arrive with four different allowable leakage rates. For each, pick the technique whose minimum detectable leak rate meets the requirement — and whose answer, locate or total, matches what the job actually needs.",
+    "steps": [
+      {
+        "prompt": "A shop air receiver loses pressure slowly overnight. The acceptance limit is a generous 1×10⁻³ std cm³/s, and maintenance needs to know which fitting to tighten — today.",
+        "options": [
+          "Helium hood test in a vacuum chamber",
+          "Solution-film bubble testing over the fittings and weld seams",
+          "Pressure decay test with temperature compensation",
+          "Halogen detector probe after an SF₆ backfill"
+        ],
+        "correct": 1,
+        "feedback": "Solution-film bubble testing locates the leak to the exact fitting at 10⁻³–10⁻⁴ std cm³/s — squarely on the requirement — for the price of soap solution. The overnight loss already proved leakage exists; another totaling test like pressure decay can never say where, and the tracer techniques buy decades of sensitivity this limit never asked for."
+      },
+      {
+        "prompt": "An air-conditioning condenser comes off the line already charged with R-134a refrigerant. The limit is 1×10⁻⁵ std cm³/s per joint, and production needs each leaking braze joint identified for repair.",
+        "options": [
+          "Pressure decay across the whole assembly",
+          "Heated-anode halogen detector probe drawn along each braze joint",
+          "Hydrostatic test with visual examination",
+          "Helium hood test of the complete condenser"
+        ],
+        "correct": 1,
+        "feedback": "The assembly already carries a halogen tracer, and the heated-anode sniffer locates individual joints at about 10⁻⁵–10⁻⁶ std cm³/s — requirement met with the gas already in the box. Pressure decay and the hood each produce one total number and point at nothing, and a hydrostatic test wets the part, risking plugged passages and a false pass on retest."
+      },
+      {
+        "prompt": "A hermetically sealed avionics relay must demonstrate total leakage no greater than 1×10⁻⁸ std cm³/s before delivery.",
+        "options": [
+          "Helium inside-out test — backfill with helium and read the package in an evacuated chamber on the MSLD",
+          "Helium detector probe around the seam weld",
+          "Bubble immersion in warm water with a wetting agent",
+          "Precision pressure decay with a 24-hour hold"
+        ],
+        "correct": 0,
+        "feedback": "Only the mass spectrometer in a total-leakage mode reaches 10⁻⁸ with margin: the inside-out (or hood) arrangement reads 10⁻⁹ to 10⁻¹¹ and yields the single total number the specification demands. Sniffing is background-limited near 10⁻⁶–10⁻⁷ and reads point by point; bubble immersion is the companion gross-leak check, not the fine-leak measurement; pressure decay is volume-limited decades short."
+      },
+      {
+        "prompt": "A vacuum brazing furnace will not reach base pressure. A rate-of-rise check climbs linearly with time, hour after hour. You must find the leak on the large chamber.",
+        "options": [
+          "Helium tracer probe — MSLD on the pumping line, short helium bursts on each seal, starting at the top",
+          "Helium detector probe sniffing along the outside of the chamber",
+          "Solution-film bubble testing of the door seal",
+          "Bag the entire furnace in helium and read the MSLD"
+        ],
+        "correct": 0,
+        "feedback": "The linear rise already separated a real leak from outgassing, which flattens toward an asymptote. On an evacuated chamber the flow is outside-in, so locating means the tracer probe: brief sprays point by point, top-down because helium rises, with the spectrometer answering through the pumping line after each response time. Nothing flows outward for a sniffer or bubble film to catch, and hooding the whole furnace would only total what you already know."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "In leak testing terminology, a 'leak' is properly defined as:",
+      "options": [
+        "The quantity of gas escaping a boundary per unit time",
+        "A physical passage through a pressure boundary — a pinhole, crack, or imperfect seal — that fluid can pass through",
+        "Any test indication that produces visible bubbles",
+        "The pressure differential that drives flow across a boundary"
+      ],
+      "correct": 1,
+      "explanation": "The terms divide cleanly: the leak is the passageway itself, leakage is the fluid flowing through it, and leak rate is the quantity per unit time at stated conditions, in Pa·m³/s or std cm³/s. Because no boundary is absolutely tight, acceptance is always written as a maximum allowable leakage rate — never as 'no leaks.'"
+    },
+    {
+      "question": "An overnight pressure-decay test on a large receiver shows the gauge reading lower this morning. Before reporting leakage, the operator must first:",
+      "options": [
+        "Correct the readings for temperature, because at constant volume absolute pressure tracks absolute temperature",
+        "Repaint the suspect welds and repeat the hold",
+        "Convert the result to a helium-equivalent leak rate",
+        "Nothing — pressure in a closed volume can only fall through a leak"
+      ],
+      "correct": 0,
+      "explanation": "A closed volume obeys the gas laws: cooling about 3 °C near ambient drops absolute pressure roughly 1% with no leakage at all. Pressure change testing is honest only when readings are converted to absolute pressure and corrected with recorded temperatures — or taken differentially against a sealed reference volume. Painting before a leak test is exactly backwards: it plugs leaks."
+    },
+    {
+      "question": "A sealed aerospace sensor housing must demonstrate total leakage no greater than 1×10⁻⁹ std cm³/s. Which technique can demonstrate compliance?",
+      "options": [
+        "Solution-film bubble testing with a wetting agent",
+        "A heated-anode halogen sniffer with SF₆ backfill",
+        "A helium mass spectrometer test in a total-leakage (hood or inside-out) mode",
+        "Pressure decay with a precision transducer and a 24-hour hold"
+      ],
+      "correct": 2,
+      "explanation": "Read the sensitivity ladder: solution-film bubble testing reaches about 10⁻³–10⁻⁴ std cm³/s, the halogen sniffer about 10⁻⁵–10⁻⁶, and pressure decay is limited by volume and gauge resolution far above this requirement. Only the mass spectrometer in a total-leakage mode reads 10⁻⁹–10⁻¹¹ — and it delivers the single total number the specification asks for."
+    },
+    {
+      "question": "An MSLD is connected to the pumping line of an evacuated chamber while an operator plays a fine helium jet over each flange, starting at the highest one. This technique is:",
+      "options": [
+        "Detector probe mode, which measures the chamber's total leakage",
+        "The hood test, which locates individual flange leaks",
+        "The accumulation technique, using ambient fluids",
+        "Tracer probe mode, which locates individual leaks on an evacuated system"
+      ],
+      "correct": 3,
+      "explanation": "With the object evacuated, flow is outside-in: helium sprayed at a leaking flange is drawn through to the spectrometer, so each response pins the leak to the point being sprayed — tracer probe mode, a locating technique. Probing runs top-down because helium rises and would drift past unprobed upper joints. The detector probe sniffs pressurized objects, and the hood totals rather than locates."
+    },
+    {
+      "question": "Before and after a helium leak testing session, the operator measures the system's response to a calibrated standard leak. The purpose is to:",
+      "options": [
+        "Measure the ultimate vacuum the pumping system can reach",
+        "Verify system sensitivity and convert instrument response into a quantitative leak rate — with the post-test check validating every result since the last good check",
+        "Charge the system with enough helium background to stabilize the readings",
+        "Confirm the test gauge agrees with the barometer"
+      ],
+      "correct": 1,
+      "explanation": "A capillary or permeation standard leak delivers a certified rate, letting the operator set sensitivity and scale ion current or meter divisions into std cm³/s. Checking it before and after the session is what makes the numbers defensible: fail the post-check and every measurement since the last good standardization is suspect and repeated. Without it, a reading is only a meter wiggle."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §2.3.1–2.3.2 (LT fundamentals: bubble, pressure, halogen detector, and mass spectrometer leak testing; procedures and techniques)",
+    "ASTM E1316, Standard Terminology for Nondestructive Examinations (leak testing terms: leak, leakage, leak rate, standard leak)",
+    "ASTM E515, Standard Practice for Leaks Using Bubble Emission Techniques",
+    "ASTM E432, Standard Guide for Selection of a Leak Testing Method",
+    "ASTM E493/E493M, E498/E498M, and E499/E499M, Standard Practices for Leaks Using the Mass Spectrometer Leak Detector (inside-out, tracer probe, and detector probe modes, summarized)"
+  ]
+}

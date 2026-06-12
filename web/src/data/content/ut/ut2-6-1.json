@@ -1,0 +1,177 @@
+{
+ "lessonId": "ut2-6-1",
+ "title": "Sensitivity to Reflections",
+ "narrationScript": "Every echo on your screen is the answer to a question the beam asked the part. How loud that answer comes back depends on five things working together, and a Level two who can name them can explain almost any signal. Those five are the size of the reflector, its type, where it sits in the part, the character of the wave you sent, and the material and velocity you are working in. Let's take them in order. Size first. As a rough guide, a reflector returns more energy as it grows, but only up to the point where it fills the beam. Below about half a wavelength a flaw is unreliable to find at any gain, because the sound diffracts around it instead of bouncing back. Above the beam width, making the flaw bigger no longer makes the echo taller. It just makes the echo stay tall over a longer probe travel. That is the single most important idea in sizing, and we will use it hard in a later lesson. Type next. A flaw reflects according to the impedance step at its boundary and according to how its face is shaped and aimed. A tight, air filled crack is almost a perfect mirror, because steel against air reflects essentially all the energy. A slag filled inclusion reflects less, because the impedance step against the slag is smaller. A round gas pore scatters sound in all directions and sends only a weak fraction back to a single probe. So a planar crack and a rounded pore of the very same size give completely different echoes, and that difference is real information about what you are looking at. Now location, and this is where many technicians lose echoes they should have caught. Orientation rules everything for a flat reflector. A planar flaw squared up to the beam reflects like a mirror and lights up the screen. Tip that same flaw just ten or fifteen degrees and most of the energy reflects away from the probe, and the indication can collapse to nothing. This is why we attack welds with angle beams and from more than one direction. A crack invisible from one side can be obvious from the other. Location also means depth. Inside the near field, amplitude swings up and down with interference, so a reflector there can read falsely high or low. Beyond the near field the beam has spread and weakened, so a deep flaw gives a smaller echo than the same flaw near the surface. We correct for that with distance amplitude curves and time corrected gain, which we cover later. Fourth, wave characteristics. Frequency sets wavelength, and wavelength sets the smallest flaw you can trust. A higher frequency sees smaller flaws and gives a tighter beam, but it attenuates faster and lights up grain noise. A shorter pulse, from heavier damping, separates close reflectors and sharpens depth reading, while a long ringing pulse smears them together. Beam shape matters too. A narrow, well focused beam concentrates energy and finds small flaws, while a broad beam floods the part and blurs both size and position. Wave mode counts as well. At the same frequency a shear wave has roughly half the wavelength of a longitudinal wave, which buys sensitivity. Fifth and last, material and velocity. Velocity converts echo time into depth, so using the wrong mode's velocity puts the flaw in the wrong place. The material also fights the beam. Coarse grained castings and austenitic welds scatter sound at every grain boundary, and that scattering climbs steeply with frequency, so a noisy test usually calls for a lower frequency, not more gain. Attenuation also robs amplitude with distance, which is why a transfer correction between your calibration block and the actual part keeps your sensitivity honest. Put the five together as a habit. Before you accept or dismiss any signal, ask what size, type, and location of reflector could produce it, with the wave you chose, in the material you are testing. That question, asked signal by signal, is the heart of evaluation.",
+ "imagePrompt": "A technician sweeps an angle-beam transducer across a thick steel weld coupon from two opposing directions, the flaw detector screen showing a tall sharp echo, with a calibration block and couplant bottle on the bench in a dim NDT shop.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "What Decides How Loud an Echo Comes Back",
+   "body": "At Level II you no longer just record a signal — you must explain *why* it has the height, shape, and position it has. Echo response, the **sensitivity to reflections**, is governed by five factors acting together:\n\n- **Size** of the reflector relative to the beam and the wavelength.\n- **Type** of reflector — planar crack, volumetric inclusion, rounded pore — which sets the impedance step and how the face reflects.\n- **Location** — depth in the part and, above all, **orientation** to the beam.\n- **Wave characteristics** — frequency, wavelength, pulse length, beam shape, and mode.\n- **Material and velocity** — what the sound travels through, how fast, and how much it loses on the way.\n\nNone of these acts alone. A large flaw oriented away from the beam can read smaller than a tiny one squared up to it. A high-amplitude echo in coarse grain may be noise, not a flaw. The skill is holding all five in mind at once, so that every indication is judged against what *could* physically produce it. This lesson builds that mental model; the rest of the module turns it into sizing and location procedure."
+  },
+  {
+   "type": "text",
+   "heading": "Size: Reflector Versus Beam and Wavelength",
+   "body": "Two thresholds bound what size means for detection.\n\n- **The small end** is set by wavelength. A reflector smaller than about **λ/2** diffracts sound around itself and returns an unreliable echo at any gain. For a 5 MHz longitudinal beam in steel, λ = 5.92 ÷ 5 = **1.18 mm**, so reliable detection bottoms out near **0.6 mm**. Want to find smaller flaws? Raise frequency to shorten the wavelength — within the limits of attenuation and noise.\n- **The large end** is set by the **beam width**. While a flaw is *smaller* than the beam, growing it returns more energy and a taller echo. Once the flaw is *larger* than the beam, the echo stops growing taller — instead it stays tall over a longer span of probe travel.\n\nThat second rule is the foundation of sizing. For reflectors smaller than the beam, amplitude tracks size (the basis of amplitude comparison). For reflectors larger than the beam, you measure **extent** by how far the probe moves while the echo holds up — the basis of the 6 dB-drop method covered later, while tip diffraction sizes such flaws from their tip echoes. Knowing which regime you are in tells you which sizing tool is valid."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-6-1-fig-a",
+   "caption": "Echo amplitude rises with reflector size only until the flaw fills the beam; beyond that, added size lengthens the indication across probe travel rather than raising its height."
+  },
+  {
+   "type": "text",
+   "heading": "Type: Impedance Step and Reflector Shape",
+   "body": "Reflector type controls echo strength through two effects: the **acoustic impedance step** at the flaw boundary, and the **shape** of the reflecting face.\n\nImpedance follows **Z = ρv**, and the reflected energy at a flat interface is **R = ((Z₂ − Z₁)/(Z₂ + Z₁))²**. The cases that matter:\n\n- **Tight, air-filled crack** — steel-to-air reflects ≈ **100%**, a near-perfect mirror. Strong echo.\n- **Slag-filled inclusion** — the impedance step against slag is smaller, so it returns a **weaker** echo than an air-filled flaw of the same size.\n- **Rounded gas pore** — its curved surface **scatters** sound in all directions, so only a small fraction returns to a single probe. Weak, and the echo barely changes as you move the probe around it.\n\nThe consequence is direct: **amplitude alone never identifies a flaw**. A small, well-aimed crack can out-echo a large pore. Echo height is carrying impedance and geometry information, not a tape-measure reading of size — which is exactly why we evaluate against reference reflectors and watch how the signal behaves as the probe moves."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Orientation can erase a real flaw",
+   "body": "A **planar** reflector returns its strongest echo when its face is **perpendicular to the beam**. Tilt that face just **10–15°** away and most of the energy reflects off to the side, away from the probe — the indication can collapse toward the baseline. This is why a serious crack can be nearly invisible from one direction and obvious from another. The defense is procedural: scan welds with **angle beams from both sides** and rotate the probe (skewing) so a tilted flaw eventually faces the beam. Never accept a quiet screen from a single look."
+  },
+  {
+   "type": "text",
+   "heading": "Location: Orientation and Depth",
+   "body": "Location splits into two ideas, and the first dominates detection.\n\n**Orientation.** As the callout warns, a flat flaw is a directional mirror. The whole strategy of weld inspection — angle beams, two-sided coverage, full-skip and half-skip legs, and probe skewing — exists to put the beam square to flaws that lie in unknown directions. A lack-of-fusion plane parallel to the weld bevel may be silent to a beam coming straight in but ring loudly to one arriving along the bevel angle.\n\n**Depth.** Where the reflector sits along the beam changes its echo even if size and orientation are fixed:\n\n- **Inside the near field**, on-axis amplitude oscillates with interference, so a reflector there can read falsely high or low. Size and compare beyond the near field whenever geometry allows.\n- **Beyond the near field**, the beam spreads and weakens, so a deep flaw returns a smaller echo than an identical shallow one. **Distance-amplitude correction (DAC)** and **time-corrected gain (TCG)** exist to cancel this depth effect so equal flaws read equal regardless of range."
+  },
+  {
+   "type": "text",
+   "heading": "Wave Characteristics: Frequency, Pulse, Beam, and Mode",
+   "body": "The wave you launch sets the ceiling on what you can resolve and detect.\n\n- **Frequency / wavelength.** Higher frequency = shorter wavelength = smaller detectable flaws and a tighter beam — but faster attenuation and more grain noise. Frequency selection is the central sensitivity trade-off.\n- **Pulse length (damping).** A heavily damped, **short broadband pulse** separates closely spaced reflectors and sharpens depth reading. A lightly damped, **long ringing pulse** is more sensitive but smears close echoes together and worsens the dead zone.\n- **Beam shape.** A narrow or focused beam concentrates energy and finds small flaws; a broad beam floods the part and blurs both size and position. Larger element diameter or higher frequency narrows the beam (**sin γ = 1.22 v/(D f)**).\n- **Mode.** At the **same** frequency a shear wave has roughly half the wavelength of a longitudinal wave in the same metal, so shear inspection buys sensitivity — one reason angle-beam shear is the workhorse for welds.\n\nMatch the wave to the flaw you expect: fine cracks call for higher frequency and short pulses; coarse, scattering material calls for lower frequency and a forgiving beam."
+  },
+  {
+   "type": "text",
+   "heading": "Material and Velocity: The Medium Fights Back",
+   "body": "Finally, the material itself shapes the echo.\n\n**Velocity** converts echo time into depth. Steel runs **5,920 m/s** longitudinal and **3,240 m/s** shear (about half); aluminum 6,320 and 3,130; acrylic wedge plastic 2,730; water 1,480, with no shear in liquids. Use the **wrong mode's velocity** and every depth you report is wrong — a classic Level II error when a mode-converted signal is mistaken for the main beam.\n\n**Attenuation and scattering** rob amplitude with distance. In coarse-grained castings and **anisotropic austenitic welds**, sound scatters at every grain boundary; in the Rayleigh scattering regime this loss rises roughly with **f⁴**, so a screen full of grass usually calls for a **lower frequency**, not more gain — gain amplifies the grass as much as the flaw. Because the test part is rarely as clean as the calibration block, a **transfer correction** measures the difference in attenuation and surface coupling between block and part and adjusts gain so your reference sensitivity stays honest on the real component."
+  },
+  {
+   "type": "table",
+   "caption": "The five factors governing echo response, and the practical lever each gives the inspector.",
+   "headers": ["Factor", "Effect on echo", "Inspector's lever"],
+   "rows": [
+    ["Size", "Taller until flaw fills beam, then longer not taller", "Amplitude sizing below beam width; extent sizing above it"],
+    ["Type", "Crack > inclusion > rounded pore for the same size", "Read amplitude vs reference; watch echo dynamics"],
+    ["Location / orientation", "Planar flaw bright square-on, lost when tilted 10–15°", "Angle beam, two sides, skew the probe"],
+    ["Wave characteristics", "Frequency, pulse length, beam, and mode set resolution and reach", "Choose frequency, damping, and mode for the flaw"],
+    ["Material / velocity", "Velocity sets depth; grain scatter and attenuation cut amplitude", "Right velocity, lower frequency in grain, transfer correction"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-6-1-fig-a",
+   "title": "Echo amplitude versus reflector size relative to the beam",
+   "file": "ut2-6-1-fig-a.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Will the Echo Rise or Fall?",
+  "intro": "For each change to a test situation, decide whether the expected echo from a given flaw gets STRONGER, gets WEAKER, or stays about the SAME. Assume everything else is held constant.",
+  "buckets": [
+   "Echo gets stronger",
+   "Echo gets weaker",
+   "Echo about the same"
+  ],
+  "items": [
+   {
+    "label": "A planar crack is rotated from square-on to 15° off the beam axis",
+    "bucket": 1,
+    "why": "A flat reflector is a directional mirror; tilting it 10–15° sends most energy away from the probe and the echo collapses."
+   },
+   {
+    "label": "The same-size flaw is moved from deep in the part to just beyond the near field, with DAC/TCG off",
+    "bucket": 0,
+    "why": "Without depth correction, a shallower reflector sits in a less-spread, stronger beam and returns a taller echo."
+   },
+   {
+    "label": "An air-filled crack is compared with a slag-filled flaw of identical size and orientation",
+    "bucket": 0,
+    "why": "Steel-to-air is near-100% reflection; the smaller impedance step at a slag boundary returns less, so the air-filled crack echoes stronger."
+   },
+   {
+    "label": "Frequency is raised on a flaw already much larger than the beam",
+    "bucket": 2,
+    "why": "Once a reflector exceeds the beam width, it already returns the full reflection; raising frequency mainly tightens the beam, not the peak height of an over-sized reflector."
+   },
+   {
+    "label": "Gain is increased by 12 dB while scanning a coarse-grained austenitic casting",
+    "bucket": 2,
+    "why": "Gain lifts grain noise and signal together, so the flaw's echo does not stand out any better — the signal-to-noise ratio is unchanged. The fix is lower frequency, not more gain."
+   },
+   {
+    "label": "A rounded gas pore is compared with a flat crack of the same projected size, square to the beam",
+    "bucket": 1,
+    "why": "A curved pore scatters sound in all directions and returns only a small fraction; the flat crack reflects far more, so the pore's echo is weaker."
+   },
+   {
+    "label": "Wave mode is switched from longitudinal to shear at the same frequency on a small flaw",
+    "bucket": 0,
+    "why": "Shear wavelength is roughly half the longitudinal value at the same frequency, improving sensitivity to a small reflector."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A flaw is already much larger than the cross-section of the beam. If the flaw were larger still, the most direct effect on the A-scan would be:",
+   "options": [
+    "The echo grows taller in proportion to the added size",
+    "The echo height stays about the same but the indication holds up over a longer span of probe travel",
+    "The echo disappears because the flaw exceeds the beam",
+    "The echo moves to a shallower depth"
+   ],
+   "correct": 1,
+   "explanation": "Once a reflector exceeds the beam width it already returns the full reflection, so added size does not raise peak height — it extends how far the probe can move while the echo stays up, which is the basis of extent (6 dB-drop) sizing."
+  },
+  {
+   "question": "Two flaws of identical size and depth sit square to the beam: one is an air-filled crack, the other a slag-filled inclusion. Compared with the crack, the slag inclusion will:",
+   "options": [
+    "Return a stronger echo because slag is solid",
+    "Return a weaker echo because the impedance step at its boundary is smaller",
+    "Return an identical echo because size and depth match",
+    "Return no echo at all"
+   ],
+   "correct": 1,
+   "explanation": "Reflection follows R = ((Z₂−Z₁)/(Z₂+Z₁))². Steel-to-air is nearly a perfect mirror; steel-to-slag is a smaller impedance step, so the slag inclusion returns less energy from the same size reflector."
+  },
+  {
+   "question": "A serious planar lack-of-fusion flaw gives almost no signal when scanned from one side of a weld. The most likely reason and the correct response is:",
+   "options": [
+    "The flaw is too small to detect; raise the gain 20 dB",
+    "The flaw face is tilted away from the beam; scan from the other side and skew the probe",
+    "The couplant has dried out; reapply and rescan from the same side only",
+    "The velocity setting is wrong; recalibrate the time base"
+   ],
+   "correct": 1,
+   "explanation": "A flat reflector reflects strongly only when its face is roughly perpendicular to the beam. A flaw tilted away can be nearly silent from one direction yet obvious from another, so two-sided scanning and probe skewing are essential."
+  },
+  {
+   "question": "Why does simply adding gain fail to improve detection on a coarse-grained austenitic casting that shows heavy 'grass' on the baseline?",
+   "options": [
+    "Gain only affects the horizontal time base, not amplitude",
+    "Gain raises the grain noise and the flaw echo together, so signal-to-noise does not improve",
+    "Austenitic steel cannot transmit ultrasound at any gain",
+    "Higher gain shifts the flaw echo into the dead zone"
+   ],
+   "correct": 1,
+   "explanation": "Grain scattering noise and the flaw signal both rise with gain, leaving signal-to-noise unchanged. Scattering climbs steeply with frequency (about f⁴ in the Rayleigh regime), so the real fix is a lower-frequency probe, not more gain."
+  },
+  {
+   "question": "Using a 2.25 MHz shear wave in steel (shear velocity 3,240 m/s), the practical smallest reliably detectable reflector is closest to:",
+   "options": [
+    "About 0.7 mm",
+    "About 0.1 mm",
+    "About 2.6 mm",
+    "About 5 mm"
+   ],
+   "correct": 0,
+   "explanation": "λ = v/f = 3.24 mm/µs ÷ 2.25 MHz = 1.44 mm. The λ/2 rule of thumb puts reliable detection near 0.7 mm; the 2.6 mm distractor is the full wavelength computed with the longitudinal velocity (5.92 ÷ 2.25)."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Evaluation Course §5.1 (sensitivity to reflections)",
+  "General acoustics reference values: steel 5,920/3,240 m/s; aluminum 6,320/3,130 m/s; water 1,480 m/s; acrylic 2,730 m/s",
+  "Codes such as ASME BPVC Section V, Article 4 (ultrasonic examination practice)"
+ ]
+}

@@ -1,0 +1,183 @@
+{
+  "lessonId": "basic-4-4",
+  "title": "Magnetic Flux Leakage: Applications",
+  "narrationScript": "Magnetic flux leakage earns its keep on assets too long, too dirty, or too buried for particles and spot checks. This lesson tours the three applications the Basic outline names. First, wire rope: a test head saturates the rope as it runs through, and two channels read the result. Loss of metallic area tracks slow thinning from wear and corrosion, while the local-fault channel spikes at every broken wire, including those hidden deep in the strands where no eye can go. Second, pipe body: free-swimming inspection pigs ride the product flow for hundreds of kilometers, magnetizing the wall between pole rings and mapping corrosion on both surfaces, while rotating mill units and drill-pipe scanners do the same work in the yard. Third, tank floors: a walk-behind scanner sweeps lane by lane and finds the soil-side corrosion nobody can see from inside. The common thread, and the exam answer: MFL signal amplitude tracks the volume of missing metal, so MFL screens and marks, and ultrasonic testing sizes what it finds.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "One Physics, Three Job Sites",
+      "body": "The previous lesson built the MFL machine in the abstract: drive a ferromagnetic part to **near saturation**, let any loss of cross-section force flux out of the surface, and read that leakage electronically with **Hall-effect sensors** (field-strength, speed-independent) or **coils** (rate-of-change, motion-dependent). This lesson is about where that machine earns a living. Magnetic particle testing answers the same physics with powder, one part and one operator at a time; MFL trades the particles for sensors precisely so the examination can **move** — down kilometers of pipeline, up a mine hoist rope, across an acre of tank bottom — and leave a recorded signal behind.\n\nThe assets that suit MFL share a profile:\n\n- **Ferromagnetic steel**, always — the method needs flux to leak.\n- **Long or large, with uniform cross-section**, so one magnetizer-and-sensor package fits the geometry and rides it end to end: a head clamped around a rope, a pig filling a pipe bore, a magnet bridge rolling over plate.\n- **Surfaces that defeat particle and visual methods** — greased and dirty rope, buried pipe, product-stained floor plates, thin coatings still in place.\n- **A premium on speed and a permanent record** — percent cross-section versus distance, corrosion maps by odometer station, floor plans marked plate by plate.\n\nThe CP-105 Basic outline names three applications that fit this profile exactly: **wire rope inspection**, **pipe body inspection**, and **tank floor/steel plate inspection**. Each pairs the same physics with a different chassis — and each ends the same way, handing its indications to another method for sizing."
+    },
+    {
+      "type": "text",
+      "heading": "Wire Rope: Two Channels Read the Whole Cross-Section",
+      "body": "A wire rope hides most of itself. Dozens to hundreds of wires are laid into strands around a core, so the wires you can see from outside are a minority — and ropes commonly degrade **from the inside**, where inter-wire fretting, nicking, and trapped moisture do their work. Visual inspection reads only the outer surface; MFL reads the **entire metallic cross-section**.\n\nThe instrument is a **test head** — usually a hinged permanent-magnet circuit with guide bushings — clamped around the rope. The rope travels through the head (or the head rides the rope), and the length between the poles is magnetized to near saturation. Per **ASTM E1571**, the practice for electromagnetic examination of ferromagnetic steel wire rope, instruments report through two complementary channels:\n\n- **LMA — loss of metallic area.** A quantitative measure of how much steel cross-section is missing, read from the total axial flux the rope carries and expressed as a **percentage relative to a reference section** of the same rope in new or best condition. LMA is the signature of the slow killers: abrasive wear at sheaves and drums, and uniform or pitting corrosion.\n- **LF — local faults.** Differential sensors flag abrupt discontinuities — **broken wires, external and internal** — and corrosion pits, each printing the sharp dipole signature of a small, sudden flux leak. Broken-wire counts per lay length feed retirement criteria directly.\n\nBoth channels plot against **distance** from an encoder wheel, so every flagged event can be found again for visual confirmation. Two cautions carry over from the sensor lesson: coil-based heads need reasonably **steady rope speed**, because coil output depends on rate of change, while Hall-based heads do not; and every head has **dead zones** near terminations and end fittings that it cannot straddle — those zones get visual and other methods. The customers are everywhere steel rope carries life and load: mine hoists, cranes, elevators, ski lifts and aerial tramways, drilling lines, and offshore lifting and mooring gear."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-4-4-fig-a",
+      "caption": "One pass, two traces. The head saturates the rope between its poles; the LF channel prints a sharp dipole at the broken wire, while the LMA channel steps down through the worn, corroded length. Both plot against distance along the rope, so the crew can find each event again."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Amplitude is volume — screen with MFL, size with UT",
+      "body": "An MFL signal grows with the **volume and shape** of the missing metal, not simply its depth: a deep pinhole and a broad shallow saucer can print similar amplitudes, and no MFL channel reads remaining wall directly. Programs therefore **calibrate on reference defects** — machined pits and notches in plate or pipe, a rope length of known metallic area — and treat every result as a **screen**: detect, locate, classify. **Ultrasonic testing sizes what MFL flags**, and on tank floors it also settles which surface the metal left from."
+    },
+    {
+      "type": "text",
+      "heading": "Pipe Body: Smart Pigs in the Line, Rotating Heads in the Mill",
+      "body": "**In-line inspection (ILI).** Transmission pipelines are examined from the inside by free-swimming instrumented tools — **smart pigs** — launched and received through pig traps while the line keeps pumping. The product flow itself propels the tool. Ahead of the MFL run come **cleaning pigs** and a **gauging run** to prove the bore is clear; then the MFL tool rides through at a controlled **few meters per second** — run it too fast and motion-induced eddy currents distort and weaken the leakage signals.\n\nThe tool's anatomy mirrors the bench physics: circumferential rings of **permanent magnets** with wire-brush pole shoes couple an **axial field** into the pipe wall between two pole rings; a ring of **Hall-effect sensors** between the poles reads leakage around the full circumference; **odometer wheels** log distance, with girth welds and above-ground markers as reference points; everything is recorded onboard for post-run analysis. Standard axial-field MFL maps **metal loss — corrosion on either surface, gouges, grinding** — and a secondary near-surface sensor provides **ID/OD discrimination**, telling internal loss from external. The orientation rule never sleeps: an axial field is nearly blind to **narrow axial flaws** such as seam-weld cracks and axial grooving, which is why **transverse-field inspection (TFI)** tools magnetize circumferentially when axial defects are the target. **API 1163** governs how ILI system performance — detection, identification, and sizing accuracy — is specified and verified, and excavation-site UT measurements close the loop.\n\n**Mill and yard inspection.** New tube and pipe, and used oil-country tubulars, are screened by stationary MFL systems under **ASTM E570**, the practice for flux leakage examination of ferromagnetic steel tubular products: **rotating magnet-and-sensor heads** scan helically for longitudinal flaws (seams, laps), while **encircling-coil magnetization** with fixed sensor shoes catches transverse defects. Used **drill pipe** gets particular attention in the slip and upset areas, where fatigue cracks and corrosion pits concentrate. Marked indications are proved up by visual and ultrasonic examination before a joint ships or returns to the string."
+    },
+    {
+      "type": "text",
+      "heading": "Tank Floors and Steel Plate: Finding the Corrosion You Cannot See",
+      "body": "An aboveground storage tank bottom corrodes from **both sides** — the product side you can see during an internal inspection, and the **soil side you cannot see at all** without cutting plate. Ultrasonic spot readings sample a tiny fraction of the floor area, and corrosion does not agree to occur at the spots. The MFL **floor scanner** exists to close that gap during **out-of-service internal inspections** under an **API 653** program, after the tank is emptied, cleaned, and gas-freed.\n\nThe scanner is a walk-behind (sometimes motorized) cart: a **magnet bridge** saturates the plate through its full thickness between two poles, and a **sensor bar** — typically a Hall-effect array — rides between them a few millimeters off the surface, reading a swath roughly **250–300 mm (10–12 in.) wide**. The operator drives **lane by lane with overlap**, plate by plate, and the system or a paint marker records every response above threshold onto a **floor map**. Because the plate is saturated through its thickness, the scanner responds to metal loss on **either surface** — top-side pitting and soil-side corrosion alike — but the basic signal does not say which surface, and amplitude tracks volume, not remaining wall. **Every flagged spot is proved up with UT**, which measures true remaining thickness and resolves the surface.\n\nWorking limits define the technique. Sensitivity falls as plate thickens — most walk-behind scanners are specified to roughly **12 mm (1/2 in.)**, with reduced performance beyond — and falls again with coating thickness, although thin coatings and linings are routinely scanned through. The bridge cannot ride over **lap welds**, reach the **shell-to-floor corner and annular-zone edges**, or fit under heating coils, sump edges, and nozzles: those dead zones get **hand-held scanners and manual UT**. The same scanner technology screens comparable flat product — new floor plate before installation, and other steel plate of similar thickness — which is why the outline names the application tank floor/steel plate inspection."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-4-4-fig-b",
+      "caption": "Coverage is the point. The scanner walks overlapping lanes plate by plate while the magnet bridge saturates the floor and the sensor bar reads leakage from loss on either surface. Lap welds, the annular zone, and the shell junction are dead zones for the bridge — hand scanners and manual UT finish the floor."
+    },
+    {
+      "type": "table",
+      "caption": "Three MFL applications: the chassis changes; the physics and the hand-off do not.",
+      "headers": ["Application", "Tool and field", "What it finds", "What completes the job"],
+      "rows": [
+        ["Wire rope", "Clamp-around permanent-magnet head; rope passes through; Hall and/or coil sensing per ASTM E1571", "LMA — gradual cross-section loss from wear and corrosion; LF — broken wires (internal and external) and pits", "Distance log for relocation; visual confirmation; terminations and dead zones examined by other means; retirement criteria from the governing standard"],
+        ["Pipe body — in service", "Free-swimming ILI pig propelled by product flow; axial field between pole rings; full-circumference Hall array; odometer location", "Internal and external metal loss with ID/OD discrimination; nearly blind to narrow axial cracks — TFI tool for those", "Excavation verification and UT sizing; ILI system performance per API 1163"],
+        ["Pipe body — mill and yard", "Stationary units per ASTM E570: rotating heads for longitudinal flaws; encircling-coil magnetization for transverse flaws", "Seams, laps, and pits in new tubulars; fatigue cracks in used drill pipe slip and upset areas", "Visual and UT prove-up at marked locations"],
+        ["Tank floor / steel plate", "Walk-behind magnet bridge with Hall sensor bar; ~250–300 mm swath; overlapping lanes, plate by plate", "Top-side and soil-side metal loss through plate to roughly 12 mm", "UT prove-up for remaining thickness and which surface; hand scanner and manual UT at edges, lap welds, and shell junction; API 653 program"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Pick the Tool: Geometry First, Then the Hand-Off",
+      "body": "Selecting MFL equipment is mostly a geometry question — the physics is fixed; the **chassis** changes:\n\n- **Round and moving lengthwise?** A clamp-around **test head**: wire rope, and by extension strand and small tubulars pulled through stationary heads.\n- **A bore you can ride?** A **pig**: pipelines inspected in service, propelled by the product they carry.\n- **Flat and walkable?** A **scanner bridge**: tank bottoms and steel plate.\n\nWhatever the chassis, the discipline repeats. Magnetize to **near saturation** — an unsaturated wall hides metal loss. Hold **liftoff** constant — sensor distance is part of the signal. Record **position** — an indication you cannot find again is worthless. **Calibrate on reference defects** before the run and verify after. Respect **dead zones** — rope terminations, fittings and bends a pig cannot pass (and unpiggable lines that need other approaches entirely), tank edges and lap welds — and fill every one of them with another method. Then make the hand-off: MFL buys **near-100% coverage at screening speed**; ultrasonics buys **thickness numbers** at the marked spots. A Level III who keeps those two purchases straight — and never reports an MFL amplitude as a remaining-wall measurement — is using the method exactly as designed."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-4-4-fig-a",
+      "title": "Wire rope MFL: LMA and LF channels",
+      "file": "basic-4-4-fig-a.svg"
+    },
+    {
+      "id": "basic-4-4-fig-b",
+      "title": "Tank floor scanner coverage pattern",
+      "file": "basic-4-4-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "sort",
+    "title": "Pick the MFL Tool for the Asset",
+    "intro": "Eight inspection jobs, three MFL chassis. Sort each asset to the tool that fits its geometry: clamp-around rope head, pipe-body system (free-swimming pig or mill unit), or tank floor scanner.",
+    "buckets": ["Wire rope test head", "Pipe body MFL (pig or mill unit)", "Tank floor scanner"],
+    "items": [
+      {
+        "label": "Mine hoist rope examined in place while it winds at steady speed",
+        "bucket": 0,
+        "why": "A clamp-around head saturates the moving rope and reads LMA and LF — including broken wires deep in the strands that no visual inspection reaches. Steady speed keeps coil-based sensing honest."
+      },
+      {
+        "label": "Buried 30 in. gas transmission line, hundreds of kilometers long, that cannot be taken out of service",
+        "bucket": 1,
+        "why": "A free-swimming MFL pig launched through pig traps rides the product flow, magnetizing the wall between pole rings and recording metal loss on both surfaces against odometer distance."
+      },
+      {
+        "label": "Bottom plates of an 80 m diameter crude oil tank, emptied and cleaned for its API 653 internal inspection",
+        "bucket": 2,
+        "why": "The walk-behind floor scanner sweeps lane by lane with overlap and flags top-side and soil-side loss for UT prove-up — full-floor coverage no spot-check program can match."
+      },
+      {
+        "label": "Ski-lift haul rope due for its periodic electromagnetic examination",
+        "bucket": 0,
+        "why": "Aerial ropeway ropes are classic wire rope MFL work: the head clamps around the rope, and LF events plus the LMA percentage feed the retirement criteria."
+      },
+      {
+        "label": "Racks of used drill pipe back from the rig, screened for fatigue cracks and corrosion pits",
+        "bucket": 1,
+        "why": "Stationary pipe-body units per ASTM E570 — rotating heads for longitudinal flaws, encircling coils for transverse — screen tubulars in the yard, with attention to the slip and upset areas."
+      },
+      {
+        "label": "Storage tank floor suspected of soil-side corrosion that cannot be seen from inside",
+        "bucket": 2,
+        "why": "Soil-side loss is the floor scanner's reason for existing: the through-saturated plate leaks flux at metal loss on either surface, and UT then tells you which surface and how much wall remains."
+      },
+      {
+        "label": "New seamless casing on the mill conveyor, screened for seams and laps before shipment",
+        "bucket": 1,
+        "why": "Mill MFL under ASTM E570 uses rotating magnet-and-sensor heads to catch longitudinal seams and laps at production speed; transverse checks use encircling-coil magnetization."
+      },
+      {
+        "label": "Elevator suspension ropes inspected in the hoistway without removing them",
+        "bucket": 0,
+        "why": "The rope passes through the head as the car travels, so the full metallic cross-section is screened in place — dead zones at the terminations still get visual examination."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "During a wire rope examination per ASTM E1571, the LMA trace steps down about 10% over a long section while the LF channel stays quiet. The most likely condition is:",
+      "options": [
+        "A cluster of broken wires concentrated at one point on the rope",
+        "Distributed wear or corrosion gradually reducing the rope's metallic cross-section",
+        "A dead zone where the test head passed an end termination",
+        "Sensor liftoff caused by the head opening momentarily"
+      ],
+      "correct": 1,
+      "explanation": "LMA reads the total axial flux the rope carries, so a slow, sustained drop means cross-section is leaving gradually — the signature of wear and corrosion. Broken wires are abrupt discontinuities that print sharp dipole events on the LF channel, and terminations or head disturbances do not produce a clean, sustained percentage step."
+    },
+    {
+      "question": "A standard axial-field MFL pig is LEAST likely to detect which condition in a pipe body?",
+      "options": [
+        "An isolated external corrosion pit",
+        "A patch of general internal metal loss",
+        "A circumferential groove near a girth weld",
+        "A tight, narrow crack running axially along the seam weld"
+      ],
+      "correct": 3,
+      "explanation": "Flux must cross a flaw to leak. The pig's field runs axially, so a narrow axial crack lies parallel to the flux and barely disturbs it — the reason transverse-field inspection (TFI) tools magnetize circumferentially when axial defects are the target. Volumetric metal loss in any orientation, internal or external, is the axial tool's bread and butter."
+    },
+    {
+      "question": "During an out-of-service API 653 internal inspection, the primary role of the MFL floor scanner is to:",
+      "options": [
+        "Rapidly screen nearly the entire floor for metal loss on both surfaces — including soil-side corrosion invisible from inside — and mark indications for UT prove-up",
+        "Measure remaining plate thickness directly, with greater accuracy than ultrasonics",
+        "Inspect the floor from outside the tank so it does not have to be emptied",
+        "Demagnetize the floor plates after magnetic particle testing of the lap welds"
+      ],
+      "correct": 0,
+      "explanation": "The scanner's value is coverage: lane-by-lane sweeps screen the whole walkable floor for loss on either surface, which UT spot readings cannot economically do. It reads leakage amplitude, not thickness — every flagged spot is sized by UT — and it works from inside a tank that has been emptied, cleaned, and gas-freed."
+    },
+    {
+      "question": "A free-swimming MFL in-line inspection tool travels through a transmission pipeline:",
+      "options": [
+        "Towed on a wire rope payed out from the launcher",
+        "Crawling on motorized wheels steered by GPS",
+        "Propelled by the product flow, magnetizing the wall between pole rings and recording sensor data onboard against odometer distance",
+        "Pulled along by an external magnet bridge driven down the right-of-way"
+      ],
+      "correct": 2,
+      "explanation": "The pig is launched and received through traps while the line keeps operating, and the pumped product pushes it along. Permanent magnets with brush pole shoes couple an axial field into the wall, Hall sensors between the pole rings read leakage around the full circumference, and odometer wheels tie every signal to a location. GPS does not reach inside buried steel pipe, and no cable or external carriage is involved."
+    },
+    {
+      "question": "Every indication an MFL floor scanner flags is proved up with ultrasonic testing primarily because the MFL signal:",
+      "options": [
+        "Responds only to soil-side loss, so UT must check the product side",
+        "Scales with the volume and shape of the missing metal rather than reporting remaining wall thickness — and does not say which surface the loss is on",
+        "Is valid only on bare, uncoated plate",
+        "Cannot detect pitting smaller than the scanner swath width"
+      ],
+      "correct": 1,
+      "explanation": "MFL is a screening signal: amplitude tracks how much metal is gone and how it is shaped, not the wall that remains, and a through-saturated plate leaks similarly for top-side and soil-side loss. UT at the marked spot measures true remaining thickness and resolves the surface. The scanner does respond to both surfaces, tolerates thin coatings, and finds pits far smaller than its swath."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Topical Outline §2.11.3 (MFL applications: wire rope inspection, pipe body inspection, tank floor/steel plate inspection)",
+    "ASTM E1571, Standard Practice for Electromagnetic Examination of Ferromagnetic Steel Wire Rope (LMA and LF measurement practice, summarized)",
+    "ASTM E570, Standard Practice for Flux Leakage Examination of Ferromagnetic Steel Tubular Products",
+    "API 653, Tank Inspection, Repair, Alteration, and Reconstruction (tank bottom inspection context, summarized)",
+    "API 1163, In-Line Inspection Systems Qualification (ILI performance specification context, summarized)"
+  ]
+}

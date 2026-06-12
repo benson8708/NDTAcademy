@@ -1,0 +1,87 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <defs>
+    <linearGradient id="penL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#14365C"/>
+      <stop offset="1" stop-color="#D9E6F2"/>
+    </linearGradient>
+    <linearGradient id="penR" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#D9E6F2"/>
+      <stop offset="1" stop-color="#14365C"/>
+    </linearGradient>
+  </defs>
+  <text x="400" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#0A2342">Geometric Unsharpness: Ug = F &#215; t &#247; d</text>
+
+  <!-- F bracket above source -->
+  <line x1="372" y1="58" x2="372" y2="66" stroke="#F2A33C" stroke-width="2"/>
+  <line x1="428" y1="58" x2="428" y2="66" stroke="#F2A33C" stroke-width="2"/>
+  <line x1="372" y1="62" x2="428" y2="62" stroke="#F2A33C" stroke-width="2"/>
+  <text x="400" y="54" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#F2A33C">F</text>
+
+  <!-- rays from source edges past part edges (drawn before part so part covers them) -->
+  <line x1="372" y1="84" x2="540" y2="352" stroke="#F2A33C" stroke-width="2" opacity="0.9"/>
+  <line x1="428" y1="84" x2="500" y2="352" stroke="#F2A33C" stroke-width="2" opacity="0.9"/>
+  <line x1="428" y1="84" x2="260" y2="352" stroke="#F2A33C" stroke-width="2" opacity="0.9"/>
+  <line x1="372" y1="84" x2="300" y2="352" stroke="#F2A33C" stroke-width="2" opacity="0.9"/>
+
+  <!-- source -->
+  <rect x="372" y="70" width="56" height="14" rx="4" fill="#F2A33C" stroke="#0A2342" stroke-width="1.5"/>
+  <text x="444" y="82" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Source (size F)</text>
+
+  <!-- part -->
+  <rect x="330" y="240" width="140" height="36" fill="#5A6B7E" stroke="#0A2342" stroke-width="2"/>
+  <text x="400" y="263" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">PART</text>
+
+  <!-- film -->
+  <rect x="180" y="352" width="440" height="10" fill="#0A2342"/>
+  <text x="632" y="362" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Film</text>
+
+  <!-- image density strip below film -->
+  <rect x="180" y="370" width="80" height="16" fill="#14365C"/>
+  <rect x="260" y="370" width="40" height="16" fill="url(#penL)"/>
+  <rect x="300" y="370" width="200" height="16" fill="#D9E6F2"/>
+  <rect x="500" y="370" width="40" height="16" fill="url(#penR)"/>
+  <rect x="540" y="370" width="80" height="16" fill="#14365C"/>
+  <rect x="180" y="370" width="440" height="16" fill="none" stroke="#5A6B7E" stroke-width="1"/>
+  <text x="632" y="384" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">image edge profile</text>
+
+  <!-- Ug brackets -->
+  <line x1="260" y1="388" x2="260" y2="396" stroke="#D14343" stroke-width="2"/>
+  <line x1="300" y1="388" x2="300" y2="396" stroke="#D14343" stroke-width="2"/>
+  <line x1="260" y1="392" x2="300" y2="392" stroke="#D14343" stroke-width="2"/>
+  <text x="280" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#D14343">Ug</text>
+  <line x1="500" y1="388" x2="500" y2="396" stroke="#D14343" stroke-width="2"/>
+  <line x1="540" y1="388" x2="540" y2="396" stroke="#D14343" stroke-width="2"/>
+  <line x1="500" y1="392" x2="540" y2="392" stroke="#D14343" stroke-width="2"/>
+  <text x="520" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#D14343">Ug</text>
+
+  <!-- penumbra label -->
+  <text x="640" y="336" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#D14343">penumbra</text>
+  <line x1="636" y1="332" x2="524" y2="348" stroke="#D14343" stroke-width="1.5"/>
+
+  <!-- dimension reference dashes -->
+  <line x1="158" y1="84" x2="372" y2="84" stroke="#5A6B7E" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="158" y1="240" x2="330" y2="240" stroke="#5A6B7E" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="158" y1="352" x2="180" y2="352" stroke="#5A6B7E" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- d arrow -->
+  <line x1="158" y1="84" x2="158" y2="240" stroke="#1B82E8" stroke-width="2"/>
+  <polygon points="154,92 158,84 162,92" fill="#1B82E8"/>
+  <polygon points="154,232 158,240 162,232" fill="#1B82E8"/>
+  <text x="140" y="168" text-anchor="end" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1B82E8">d</text>
+
+  <!-- t arrow -->
+  <line x1="158" y1="240" x2="158" y2="352" stroke="#1E9E6A" stroke-width="2"/>
+  <polygon points="154,248 158,240 162,248" fill="#1E9E6A"/>
+  <polygon points="154,344 158,352 162,344" fill="#1E9E6A"/>
+  <text x="140" y="302" text-anchor="end" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1E9E6A">t</text>
+
+  <!-- reduction tips -->
+  <text x="760" y="96" text-anchor="end" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">To reduce Ug:</text>
+  <text x="760" y="120" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">smaller source F</text>
+  <text x="760" y="144" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">longer distance d</text>
+  <text x="760" y="168" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">film tight to part (small t)</text>
+
+  <!-- worked example -->
+  <text x="400" y="436" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Example: F = 0.150 in, t = 1 in, d = 24 in &#8594; Ug = 0.150 &#215; 1 &#247; 24 &#8776; 0.006 in</text>
+</svg>

@@ -1,0 +1,193 @@
+{
+  "lessonId": "basic-9-4",
+  "title": "Nonmetals, Composites, and Dimensional Metrology",
+  "narrationScript": "This lesson closes the fabrication story with the materials that are not metal, and with the measurement science behind every inspection. A composite laminate is created at the same moment as the part, so quality lives in process control: prepreg kept frozen and its out-time logged, plies laid to the orientation chart, vacuum and autoclave pressure suppressing porosity, thermocouples recording the cure, and witness coupons proving it. Lost vacuum, leftover backing film, and wrinkled plies become the voids, inclusions, and delaminations that ultrasonic inspection hunts later. Adhesive joining obeys a hard rule: inspection can find voids and disbonds, but no NDT method measures bond strength, and a kissing bond can pass every test. Strength comes from surface preparation and process discipline. Dimensional metrology then anchors it all: the meter defined by the speed of light, an unbroken traceability chain from national standards through gauge blocks to the shop floor, instruments chosen by the ten to one rule, and optical flats reading flatness in millionths of an inch with fringes of light.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Materials Made with the Part: Polymers, Ceramics, and Composites",
+      "body": "The Basic outline closes its fabrication coverage with the materials that are not metal — and with them the rules change. **Polymers** divide into two families by what heat does to them. **Thermoplastics** — nylon, polycarbonate, PEEK — soften and melt when reheated and harden again on cooling, as many times as you like: they can be thermoformed, fusion-welded, and reprocessed. **Thermosets** — epoxy, polyester, phenolic, bismaleimide — cure by **crosslinking**: heat or a catalyst drives an irreversible chemical reaction that ties the polymer chains into one networked molecule. A cured thermoset never melts again; overheat it and it chars. **Elastomers** stretch elastically and recover (seals, O-rings), and **ceramics** are hard, brittle, temperature-resistant solids consolidated from powders by firing or sintering.\n\nA **composite** combines two constituents into something neither is alone: a **reinforcement** that carries the load — carbon, glass, or aramid fiber, as unidirectional tape or woven fabric — bound in a **matrix** that fixes fiber position, transfers shear between fibers, and protects them. Epoxy dominates airframe service; bismaleimides and polyimides take the hotter zones. Properties are **directional**: a ply is strong along its fibers and matrix-weak across them, so designers stack plies at 0°, ±45°, and 90° to build exactly the strength the part needs — which means a layup error literally changes the material.\n\nMost aerospace laminates start as **prepreg**: fiber pre-impregnated with resin advanced to a tacky, partially reacted **B-stage**. The clock starts at the mixer. Prepreg lives in a freezer at about 0 °F (−18 °C), carries a finite **shelf life**, and accumulates **out-time** every hour it spends at room temperature — both logged roll by roll, because expired resin flows poorly and cures into a porous, weak laminate.\n\nHere is the fact that drives everything else in this lesson: **the material is manufactured at the same moment as the part.** A machined forging arrives with its properties certified before the first chip is cut; a laminate's strength does not exist until the cure ends. **Process control is therefore the inspection**: material certifications and receiving batch tests, freezer and out-time logs, contamination control in the layup room, ply count and orientation verified against the ply book before bagging, vacuum-bag **leak checks**, the cure cycle recorded from **thermocouples on the part itself**, and **witness (traveler) coupons** cured alongside the part and tested destructively to prove the batch."
+    },
+    {
+      "type": "text",
+      "heading": "Composites Fabrication: Layup Through Cure — and What Each Step Can Leave Behind",
+      "body": "**Fabrication routes.** **Hand layup** — plies cut, oriented, and laid into a tool by hand — remains the repair-shop standard. Production adds machines: **automated tape laying and automated fiber placement** lay unidirectional courses onto large skins and spars with machine-verified orientation; **filament winding** wraps resin-wetted fiber around a rotating mandrel for tubes and pressure vessels; **resin transfer molding** injects liquid resin into a dry fiber preform inside a closed mold; **pultrusion** draws fiber and resin continuously through a heated die for constant cross sections; **compression molding** squeezes chopped-fiber compounds between matched dies. **Sandwich construction** bonds thin laminate skins over a **honeycomb or foam core** for stiffness at minimum weight. Assembly strategy has its own vocabulary: **co-curing** (details cured together in one shot), **co-bonding** (a cured detail bonded during the cure of an uncured one), and **secondary bonding** (two cured parts joined with adhesive).\n\n**The bag and the autoclave.** Over the laminate go a **peel ply** (leaves a clean, textured bonding surface), a perforated **release film**, a **bleeder** that absorbs metered excess resin, a **breather** that gives air a path, and the **vacuum bag**, sealed to the tool with tape. Pulling vacuum extracts air and volatiles and lets the atmosphere press the stack together; an **autoclave** adds heated gas pressure — commonly 85–100 psi for epoxy prepregs cured at 250 or 350 °F (121 or 177 °C) — so the resin flows, the plies consolidate, and voids collapse before the resin gels.\n\n**The defect catalog, each tied to its origin:**\n\n- **Porosity and voids** — trapped air, moisture, and volatiles the vacuum failed to remove, or consolidation pressure lost to a bag leak or a low autoclave.\n- **Delaminations** — interlaminar separations from debris between plies, from impact after cure, or from drilling and trimming damage at holes and edges.\n- **Inclusions / foreign object debris** — the classic is a piece of **backing film** or peel ply left between plies, invisible from outside.\n- **Wrinkles and fiber waviness** — plies bridging a radius or steered too hard, robbing compressive strength.\n- **Resin-rich and resin-starved zones** — bleed control gone wrong in either direction.\n- **Wrong ply count or orientation** — largely invisible to NDT after cure, which is exactly why layup verification is an in-process hold point.\n- **Sandwich defects** — crushed core, node disbonds, skin-to-core disbonds, and water ingress later in service.\n- **Under-cure** — a cure-cycle deviation, or runaway exotherm in thick sections.\n\nMost of these flaws are **planar and lie parallel to the surface** — ideal targets for pulse-echo and through-transmission ultrasonics, bond testers, and the humble tap test. That is why composite NDT leans so heavily on UT, and why a Level III reads cure charts as carefully as C-scans."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-9-4-fig-a",
+      "caption": "The composite process in one view. Left: the vacuum-bag stack — peel ply, perforated release film, bleeder, breather, and bag over the laminate — with vacuum extracting volatiles while autoclave pressure consolidates the plies. Right: the recorded cure cycle — controlled ramp, hold at temperature, pressure applied before the resin gels — measured by thermocouples on the part itself."
+    },
+    {
+      "type": "text",
+      "heading": "Adhesive Joining of Nonmetallic and Composite Structures",
+      "body": "Bonding is how nonmetallic and composite structure prefers to be joined. An adhesive joint spreads load across the entire **faying surface** instead of concentrating it at fastener holes — holes that, in a laminate, sever load-carrying fibers. Bonding joins thin skins that fasteners would crush, mates dissimilar materials, seals as it joins, and damps vibration. The price: joint strength is built by a **chain of process steps**, and the finished joint hides almost every sin.\n\n- **Surface preparation — the single most critical step in adhesive bonding.** On composites: remove the peel ply immediately before bonding, lightly abrade, solvent-wipe, and keep the surface untouched afterward. On aluminum: degrease, deoxidize, and for critical structure apply **phosphoric acid anodize** plus a corrosion-inhibiting **bond primer**; a **water-break test** verifies cleanliness — water sheeting evenly means clean, beading means contamination. Silicone, release agent, or a fingerprint at this stage creates a weak interface that nothing downstream can detect.\n- **Adhesive selection and handling.** **Film adhesives** — sheet epoxy on a woven **carrier (scrim)** that also controls **bondline thickness** — do most structural work; **paste adhesives** fill gaps and serve repair. Both follow prepreg rules: freezer storage, shelf life, logged out-time.\n- **Fit-up and pressure.** Bondline thickness and contact are proven before cure (a verifilm check in critical work), then fixtures, vacuum bags, or the autoclave hold uniform pressure through cure.\n- **Cure and evidence.** The cure cycle is recorded, and **witness coupons** — lap-shear and peel specimens processed with the joint — are destructively tested. Those coupons are the only direct strength numbers the joint will ever produce.\n\nThe inspection limit is sharp and worth stating exactly: ultrasonic methods and bond testers reliably find **voids, porosity, and disbonds** — places where adhesive is missing or contact is broken. They cannot grade **adhesion**. A **kissing bond** — surfaces in intimate contact but carrying little or no strength because the prep was contaminated — transmits sound and passes inspection. Strength is assured by qualified surface preparation, controlled materials, a recorded cure, and destructive coupons; NDT then confirms the geometry of what was built."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "No NDT method measures bond strength",
+      "body": "Ultrasonics and bond testers verify bondline **geometry** — adhesive present, no voids, no disbonds. They cannot verify **adhesion**. A kissing bond — full contact, no strength, courtesy of a contaminated faying surface — passes every production NDT method. Bond strength is assured the only way it can be: qualified surface preparation, in-date materials, a recorded cure, and destructive witness coupons. When a bonded-repair procedure seems obsessive about prep steps and paperwork, this is why."
+    },
+    {
+      "type": "text",
+      "heading": "Dimensional Metrology: Units, Standards, and Traceability",
+      "body": "**Dimensional metrology** is the science of measurement, and it is the quiet half of every inspection department: each accept/reject call ends as a number compared with a tolerance, and the number is only as good as its pedigree.\n\n**Fundamental units.** Length in the SI is the **meter**, defined since 1983 as the distance light travels in vacuum in **1/299,792,458 of a second**. The definition is realized with stabilized lasers and is reproducible in any national laboratory — it replaced the krypton-86 wavelength definition (1960), which had replaced the platinum-iridium prototype bar (1889). The inch is defined from it: exactly **25.4 mm**.\n\n**Reference temperature.** Dimensional specifications apply at **20 °C (68 °F)** per ISO 1. Materials expand: steel about 6.4 µin per inch per °F and aluminum roughly double that, so a 10 in. steel part measured 10 °F above reference is about 0.0006 in. long — invisible to a rule, fatal at the tenths level. Precision work soaks part and gauge together so both sit at the same temperature.\n\n**Traceability.** A measurement is **traceable** when an unbroken, documented chain of calibrations — each step with a stated uncertainty — connects the instrument in your hand back to the national standard (**NIST** in the United States). The chain runs: national primary standards → a calibration laboratory's **reference- and calibration-grade gauge blocks** → the shop's **working standards** → the micrometer on the bench. **Gauge blocks** are the workhorse link: hardened steel, ceramic, or carbide blocks lapped flat and parallel within millionths, graded by accuracy per ASME B89.1.9, and **wrung** together — surfaces so fine they adhere — to build any length from a small set.\n\n**The Part 145 hook.** 14 CFR 145.109(b) requires a repair station's test and inspection equipment to be **calibrated to a standard acceptable to the FAA** — in practice, traceable to NIST or an equivalent national standard. The same calibration system that controls micrometers controls the NDT bench: the UT thickness gauge, its step wedge, the light meter, the gaussmeter.\n\n**Choosing the instrument.** The **gauge-maker's 10:1 rule**: the instrument should discriminate to about **one-tenth of the tolerance** it checks, so instrument error consumes a trivial share of the tolerance. Where 10:1 is impractical, calibration practice (ANSI/NCSL Z540.3) commonly accepts a **4:1** test uncertainty ratio as the floor."
+    },
+    {
+      "type": "text",
+      "heading": "Gauging: Variable Instruments and Fixed-Limit Gauges",
+      "body": "Gauging splits into instruments that produce a **number** (variable gauging) and gauges that produce only a **verdict** (fixed-limit or attribute gauging).\n\n**Variable gauging, in order of discrimination.** The **steel rule** reads to 1/64 in. (0.5 mm) — layout and rough-cut work. **Calipers** — vernier, dial, or digital — read outside, inside, depth, and step dimensions to 0.001 in. (0.02 mm) with long-jawed convenience. **Micrometers** read 0.001 in. directly and **0.0001 in. with a vernier scale**, over a one-inch range per frame size; they are the default for blend-out thickness checks and bushing diameters. **Dial and test indicators** on a **surface plate** with a height gauge make comparison measurements — flatness, parallelism, runout — against a set master. **Air gauges** read back-pressure between a nozzle and the work for tight bores, resolving tens of millionths without contact. The **coordinate measuring machine (CMM)** probes point coordinates in three axes across complex geometry, software-fitting features that no hand instrument could reach.\n\n**Fixed-limit gauging.** A **go/no-go** pair embodies the tolerance physically: the **GO** member is made at the maximum-material limit and must enter or assemble; the **NO-GO** member is made at the least-material limit and must not. **Taylor's principle** shapes them: the GO member is **full form** — it checks size and form together, the way the mating part will — while the NO-GO checks each dimension point by point. Plug gauges check holes, ring and snap gauges check shafts, thread gauges check threads. No reading, no interpretation, production speed — but also no number to trend.\n\nSelection is the 10:1 rule plus reach: match the instrument's discrimination to the tolerance, and its form to the feature."
+    },
+    {
+      "type": "table",
+      "caption": "Matching the instrument to the tolerance: typical discrimination and everyday repair-station use.",
+      "headers": ["Instrument", "Typical discrimination", "Typical use"],
+      "rows": [
+        ["Steel rule", "1/64 in. (0.5 mm)", "Layout, rough-cutting repair plies and blanks"],
+        ["Caliper (vernier/dial/digital)", "0.001 in. (0.02 mm)", "Edge distance, OD/ID/depth quick checks on tolerances of about 0.010 in. and coarser"],
+        ["Micrometer (with vernier)", "0.0001 in.", "Blend-out remaining thickness, bushing and pin diameters toleranced in thousandths"],
+        ["Dial/test indicator on surface plate", "0.001–0.0001 in.", "Runout, flatness, parallelism by comparison to a master"],
+        ["Gauge blocks", "Millionths class (grade dependent)", "Calibrating micrometers and calipers, setting snap gauges and sine bars"],
+        ["Go/no-go plug, ring, snap, thread gauges", "Attribute — no number", "Accept/reject of holes, shafts, and threads at production speed"],
+        ["Air gauge", "Tens of millionths", "Tight-tolerance bores, non-contact"],
+        ["Optical flat / laser interferometer", "About 11.6 µin per fringe / sub-µin", "Flatness of anvils and gauge faces; CMM and machine calibration"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Interferometry: Measuring with Light",
+      "body": "When tolerances reach millionths, the measuring stick becomes **light itself**. Two overlapped light waves **interfere**: in step they reinforce into brightness; half a wavelength out of step they cancel into darkness.\n\n**The optical flat.** A quartz or glass disk lapped flat to a few millionths rests on the surface to be checked, forming a thin **air wedge**. Under **monochromatic light** — traditionally a helium lamp at about 587 nm — a dark fringe appears at every point where the gap changes by **half a wavelength**, so each fringe interval represents about **11.6 millionths of an inch (0.29 µm)** of height change. The pattern is the measurement:\n\n- **Straight, parallel, evenly spaced fringes** — the surface is flat; the fringes only map the air wedge.\n- **Curved fringes** — out-of-flatness equal to the curvature expressed as a fraction of the fringe spacing, times 11.6 µin. A fringe bowed by half its spacing means about 6 millionths.\n- **Closed rings** — a high or low spot, about 11.6 µin per ring counted outward.\n\nOptical flats certify micrometer anvils, gauge block faces, valve and seal faces — and at primary laboratories, interferometry measures gauge block **length** itself, tying the working standards of every calibration chain to the wavelength of light.\n\n**Laser interferometry** turns the same physics into a long-range instrument: a photodetector counts fringes as a retroreflector travels, accumulating distance in half-wavelength increments — sub-microinch resolution over meters of travel. That is how CMMs and machine tools are calibrated, and it is how the light-defined meter is realized in practice. The loop closes: the wavelength that defines the unit also certifies the gauge block, that certifies the micrometer, that accepts the part."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-9-4-fig-b",
+      "caption": "Reading an optical flat under monochromatic helium light. Straight, parallel, evenly spaced fringes mean flat; curved fringes quantify out-of-flatness as the curvature divided by the fringe spacing, times 11.6 µin; closed rings mark a high or low spot at about 11.6 µin per ring. Below: the air wedge that writes the fringes — one dark band per half-wavelength change in gap."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-9-4-fig-a",
+      "title": "Composite layup and cure process flow",
+      "file": "basic-9-4-fig-a.svg"
+    },
+    {
+      "id": "basic-9-4-fig-b",
+      "title": "Optical flat fringe patterns and the air wedge",
+      "file": "basic-9-4-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "sort",
+    "title": "Metrology Tools: Match Instrument to Tolerance",
+    "intro": "Eight measurement jobs from a composite and machine shop week. Using the gauge-maker's 10:1 rule — discriminate to about one-tenth of the tolerance — file each job under the right tool.",
+    "buckets": ["Steel rule (1/64 in.)", "Caliper (0.001 in.)", "Micrometer with vernier (0.0001 in.)", "Gauge blocks & optical flat (millionths)"],
+    "items": [
+      {
+        "label": "Rough-cut composite repair plies oversize to a marked outline before final trim, ±1/16 in.",
+        "bucket": 0,
+        "why": "A coarse layout tolerance needs only the rule's 1/64 in. graduations — ample margin for a rough cut, and no precision instrument survives long at the ply-cutting table."
+      },
+      {
+        "label": "Check the cut length of an extruded angle stiffener blank, 36 ± 1/8 in.",
+        "bucket": 0,
+        "why": "An eighth-inch tolerance against 1/64 in. graduations is an 8:1 margin — rule territory. A caliper could not even span the part."
+      },
+      {
+        "label": "Verify fastener edge distance on a repair doubler, toleranced to ±0.010 in.",
+        "bucket": 1,
+        "why": "The caliper's 0.001 in. discrimination is one-tenth of the 0.010 in. tolerance — the 10:1 rule satisfied exactly, and the jaws reach an edge dimension easily."
+      },
+      {
+        "label": "Measure a hydraulic tube OD called out at 1.250 ± 0.015 in.",
+        "bucket": 1,
+        "why": "0.001 in. discrimination against a 0.015 in. tolerance beats 10:1 with margin, and an outside measurement over a tube is exactly what caliper jaws are shaped for."
+      },
+      {
+        "label": "Verify remaining skin thickness after a corrosion blend-out, minimum thickness toleranced to ±0.001 in.",
+        "bucket": 2,
+        "why": "A ±0.001 in. limit demands 0.0001 in. discrimination for 10:1 — the vernier micrometer. A caliper's 0.001 in. resolution equals the tolerance: no margin at all."
+      },
+      {
+        "label": "Measure a bushing OD machined to 0.7500 ± 0.0010 in.",
+        "bucket": 2,
+        "why": "Tenths discrimination against a one-thousandth tolerance is the 10:1 rule on the nose, and the micrometer's anvil-and-spindle contact suits a precision diameter."
+      },
+      {
+        "label": "Calibrate the shop's 0–1 in. micrometers against known lengths traceable to NIST",
+        "bucket": 3,
+        "why": "Gauge blocks are the working length standards of the traceability chain — wrung stacks supply known lengths whose calibration traces, step by documented step, to the national standard."
+      },
+      {
+        "label": "Check a micrometer anvil for flatness during its calibration",
+        "bucket": 3,
+        "why": "Flatness in millionths is optical-flat work: under monochromatic helium light, straight parallel fringes mean flat, and every fringe of curvature is about 11.6 µin."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "During an autoclave cure of an epoxy prepreg laminate, the vacuum bag develops a leak and autoclave pressure also drops below the specified value during the hold. The most likely result in the finished laminate is:",
+      "options": [
+        "excessive crosslinking, leaving the laminate brittle",
+        "widespread porosity and voids, because volatiles were not extracted and consolidation pressure was lost before the resin gelled",
+        "fiber orientation errors in the outer plies",
+        "conversion of the thermoset matrix into a thermoplastic"
+      ],
+      "correct": 1,
+      "explanation": "Vacuum extracts air and volatiles; autoclave pressure consolidates the plies and collapses voids before gel. Losing both is the classic recipe for distributed porosity — the process-induced defect ultrasonic attenuation later flags. Crosslink density is set by the time-temperature cycle, orientation errors happen at layup, and thermosets and thermoplastics are different chemistries, not different cure outcomes."
+    },
+    {
+      "question": "Ultrasonic inspection of a secondarily bonded composite doubler shows a continuous bondline with no voids or disbonds. According to this lesson, that result proves:",
+      "options": [
+        "the joint has full design strength",
+        "the faying surfaces were properly prepared before bonding",
+        "the witness coupons no longer require destructive testing",
+        "the bondline geometry is sound — but not its strength, because no NDT method measures adhesive bond strength"
+      ],
+      "correct": 3,
+      "explanation": "NDT verifies that adhesive is present and contact is unbroken; it cannot grade adhesion. A kissing bond — intimate contact with little strength from a contaminated surface — transmits sound and passes inspection. Strength assurance comes from qualified surface preparation, controlled materials, the recorded cure, and destructive witness coupons."
+    },
+    {
+      "question": "Since 1983, the SI meter has been defined as:",
+      "options": [
+        "the length of the international platinum-iridium prototype bar at 0 °C",
+        "1,650,763.73 wavelengths of the orange-red radiation of krypton-86",
+        "the distance light travels in vacuum in 1/299,792,458 of a second",
+        "exactly 39.37 inches"
+      ],
+      "correct": 2,
+      "explanation": "The 1983 definition fixes the meter to the speed of light and is realized with stabilized lasers, reproducible in any national laboratory. The krypton-86 wavelength was the 1960 definition and the prototype bar the 1889 definition. The relationship with the inch runs the other way: the inch is defined as exactly 25.4 mm."
+    },
+    {
+      "question": "A repair drawing tolerances a bushing bore at ±0.001 in. Applying the gauge-maker's 10:1 rule, the measuring instrument selected for the job should discriminate to about:",
+      "options": [
+        "0.01 in.",
+        "0.001 in.",
+        "0.0001 in.",
+        "one fringe interval of helium light (about 11.6 µin)"
+      ],
+      "correct": 2,
+      "explanation": "The 10:1 rule asks for discrimination of about one-tenth of the tolerance — here 0.0001 in., a vernier micrometer or air gauge. An instrument reading 0.001 in. equals the tolerance and leaves no margin, and millionths-level interferometry is calibration-lab overkill for a thousandth-tolerance bore. Where 10:1 is impractical, calibration practice accepts 4:1 as the floor."
+    },
+    {
+      "question": "An optical flat under a monochromatic helium lamp (about 587 nm) shows fringes on a micrometer anvil curved by one-half of the fringe spacing. The flatness error is approximately:",
+      "options": [
+        "6 millionths of an inch — half of the 11.6 µin represented by one full fringe interval",
+        "23 millionths of an inch — two full fringe intervals",
+        "0.006 in. — half a fringe in thousandths",
+        "indeterminate unless the diameter of the optical flat is known"
+      ],
+      "correct": 0,
+      "explanation": "Each fringe interval corresponds to half the wavelength of the light — about 11.6 millionths of an inch for helium. Out-of-flatness equals the fringe curvature expressed as a fraction of the fringe spacing times that value: 0.5 × 11.6 ≈ 6 µin. The flat's diameter sets the field of view, not the per-fringe value."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §3.2.3–3.2.4 (nonmetals and composite materials processing, adhesive joining, dimensional metrology)",
+    "ASTM E2533, Standard Guide for Nondestructive Testing of Polymer Matrix Composites Used in Aerospace Applications",
+    "14 CFR Part 145, §145.109(b) (calibration of repair station test and inspection equipment to a standard acceptable to the FAA)",
+    "ASME B89.1.9, Gage Blocks (grades, lengths, and calibration)",
+    "ANSI/NCSL Z540.3, Requirements for the Calibration of Measuring and Test Equipment",
+    "ISO 1, Geometrical Product Specifications — Standard Reference Temperature (20 °C)"
+  ]
+}

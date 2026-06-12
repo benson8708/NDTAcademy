@@ -1,0 +1,189 @@
+{
+ "lessonId": "et1-5-4",
+ "title": "Applications, Advantages, and Limitations",
+ "narrationScript": "Everything an eddy current system can ever report arrives as one quantity — a change in coil impedance. This lesson maps the three families of work that single measurement supports, then weighs the method honestly. First, material properties: conductivity tracks alloy and temper, so a meter reading in percent IACS sorts mixed stock, verifies heat treatment, and exposes fire damage in aluminum structure, while the lift-off effect gauges paint thickness without a single flake removed. Second, flaw detection: fatigue cracks at fastener holes, corrosion hidden in lap joints, and seams in production bar and tubing, found wherever a discontinuity interrupts the induced currents. Third, geometrical features: thin-wall thickness, coating and cladding thickness, and product diameter. The advantages explain the method's reach — no couplant, no required contact, inspection through paint, immediate results, and easy automation. The limitations draw its boundary: the part must conduct electricity, the skin effect confines the test to the surface and near surface, laminar flaws lying parallel to the currents hide, and because so many variables move the signal, reference standards and qualified operators are not optional.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Three Jobs for One Impedance Change",
+   "body": "This module has handed you the sensing elements — surface probes, encircling and inside coils, absolute and differential wiring, and the Hall element. All of them funnel into the same output: a **change in coil impedance** (or pickup voltage) whenever something about the part changes the induced eddy currents. The question this lesson answers is what that one measurement is *for*.\n\nCP-105 sorts the applications of eddy current sensing elements into three families:\n\n- **Measurement of material properties** — conductivity and permeability, and everything they reveal: alloy, temper, heat treatment, heat damage, coating thickness.\n- **Flaw detection** — cracks, corrosion, seams, and laps: discontinuities that interrupt the induced current paths.\n- **Geometrical features** — thickness, diameter, and spacing: dimensions that change how the field couples to the part.\n\nHold one idea while you read: the coil cannot tell you *which* of these moved the signal. The same impedance change might be a crack, a soft spot, or a thin wall. Every successful application works because the technique **controls or separates the variables you are not measuring** — by frequency choice, phase rotation, and reference standards — so the one you care about stands alone. That is also why this lesson ends with limitations. Knowing what eddy current *cannot* do is working knowledge that NAS 410 and SNT-TC-1A programs expect of every certificate holder — it is how you recognize a misapplied test before it misses something."
+  },
+  {
+   "type": "text",
+   "heading": "Measuring Material Properties",
+   "body": "**Electrical conductivity** is the workhorse property. It is reported in **%IACS** — percent of the International Annealed Copper Standard, where 100 %IACS is the conductivity of annealed copper (58.0 MS/m). An eddy current conductivity meter, standardized on two reference blocks that bracket the expected value, reads it in seconds from one side of the part; ASTM E1004 governs the measurement.\n\nWhat makes a number that easy to get so valuable is everything that rides on it:\n\n- **Alloy sorting.** Different alloys conduct differently, so mixed or unmarked stock is separated at the bench without cutting a single coupon.\n- **Temper and heat-treatment verification.** Aging changes conductivity. The classic aerospace case is 7075 aluminum: the T6 temper reads about 30.5–36 %IACS, while the overaged, stress-corrosion-resistant T73 temper reads about 38–42.5 %IACS — AMS 2658 pairs those conductivity ranges with hardness limits, and the meter separates the tempers cleanly.\n- **Heat-damage surveys.** Fire or overheat exposure overages the structure: conductivity climbs above the normal range as hardness falls. Structural repair manuals call out conductivity surveys to map the boundary of the damaged zone after a fire event.\n\n**Coating thickness** comes straight from the lift-off effect you have already studied: a nonconductive layer — paint, primer, anodize — holds the coil away from the conductive base by exactly its own thickness, and a calibrated instrument reads that spacing as thickness (ASTM B244). Conductive layers can be measured too — the pure-aluminum cladding on Alclad 2024 sheet is the familiar example — because the layer's different conductivity shifts the signal as the field penetrates it.\n\n**Permeability-based sorting** rounds out the family: in ferromagnetic parts, magnetic properties track hardness and microstructure closely enough to sort for heat-treat condition — though permeability will reappear later in this lesson as a liability."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-5-4-fig-a",
+   "caption": "The three application families: material properties read through conductivity and permeability, discontinuities that interrupt the induced current paths, and dimensions read through field coupling."
+  },
+  {
+   "type": "text",
+   "heading": "Flaw Detection: The Franchise Application",
+   "body": "Flaw detection is what most people mean by 'eddy current,' and it runs on the orientation rule from the first lesson of this module: **a discontinuity signals in proportion to how strongly it interrupts the induced currents**. A tight fatigue crack that cuts across the current loops diverts them and registers clearly; a laminar separation lying parallel to them barely disturbs the flow.\n\nThe aviation franchise applications:\n\n- **Fastener holes.** Bolt-hole inspection with a small rotating surface coil finds fatigue cracks in the hole bore at sizes well below visual or penetrant detection — a staple of airframe structural inspection programs.\n- **Surface scans.** Pencil and spot probes work the stress risers: skin around fastener heads (often right through the paint), machined radii, weld toes, wheel bead-seat areas on aircraft wheels, and blade roots and disk features in engine overhaul.\n- **Subsurface and second layer.** Low-frequency techniques — often using reflection probes or the Hall detection from the previous lesson — find corrosion thinning and second-layer cracking in lap joints without disassembly.\n- **In-service tubing.** Bobbin probes examine nonmagnetic heat-exchanger tubing from the bore (ASTM E690).\n- **Production screening.** Encircling-coil systems test bar, rod, wire, and tubing at line speed for seams, laps, and cracks — ASTM E243 for copper-alloy tube, E309 for steel tube under magnetic saturation.\n\nKeep the Level I scope straight: the indication gives you **detection and location**. Amplitude relates to how much current the flaw interrupted, and phase carries depth information — but turning those into sizing and accept/reject decisions against a procedure's reference notches is Level II work."
+  },
+  {
+   "type": "text",
+   "heading": "Geometrical Features: Measuring with the Field",
+   "body": "The third family measures **dimensions** — using the very coupling effects that elsewhere count as noise.\n\n- **Thickness of thin conductive sections.** When sheet, foil, or tube wall is thin enough that the field reaches the far side — within the effective depth of penetration, roughly three standard depths — coil impedance responds to how much metal is present. One-side-access thickness measurement of thin skins, and mapping of corrosion thinning, follow directly.\n- **Coating and cladding thickness.** Nonconductive coatings read as lift-off; conductive cladding reads as a layered-conductivity signal. Both were introduced under material properties, and both are equally geometric measurements.\n- **Diameter and fill factor.** In an encircling-coil test the signal moves with fill factor, (d/D)², so diameter variation in bar, wire, and tube is monitored continuously during production — the same physics that makes centering wobble a noise source makes the coil a gauge.\n- **Proximity and spacing.** Because lift-off response is steep at small spacings, eddy current sensors serve as non-contact position and proximity gauges on rotating machinery.\n\nThe flip side: geometry the technique did *not* intend to measure — edges, thickness steps, an adjacent fastener — produces signals of its own. You met these in the geometry-effects lesson; here, simply note that one technique's measurement is another's interference, and the written technique decides which is which."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The Two Gate Questions",
+   "body": "Before eddy current is proposed for any job, ask: **(1) Is the material electrically conductive?** No conduction means no eddy currents and no test — plastics, ceramics, and glass-fiber composite are out. **(2) Is the target within reach of the currents?** The skin effect concentrates current at the surface and density decays exponentially with depth; detection beyond roughly **three standard depths of penetration** is unrealistic. If either answer is no, the method is wrong no matter how attractive its other advantages — the inspection belongs to UT, RT, or another method."
+  },
+  {
+   "type": "text",
+   "heading": "Advantages: Why ET Is Everywhere in Aviation",
+   "body": "The advantages below are why eddy current appears on so many task cards in a Part 145 repair station:\n\n- **No couplant and no required contact.** Coupling is electromagnetic — mutual induction — so there is no liquid bridge to apply and clean off, and the probe can work across a thin wear cap or standoff.\n- **Inspection through nonconductive coatings.** Skins are examined through paint and primer, with no strip-and-repaint cycle just to look. (Thick coatings cost sensitivity as lift-off grows — the technique states the allowable coating thickness.)\n- **Immediate results.** The impedance change is read in real time — no film, no developer dwell, no waiting. Indications are evaluated on the spot.\n- **Speed and automation.** Real-time response is what makes encircling-coil production lines and automated tube pullers possible; eddy current is among the easiest NDT methods to automate.\n- **Sensitivity where fatigue lives.** Eddy current density is maximum at the surface — exactly where fatigue cracks start — so very small, tight surface cracks produce clear signals.\n- **Portability and minimal preparation.** Hand-held battery instruments work on the hangar floor and the ramp, and most surfaces need only loose debris removed. No radiation hazard, no consumables.\n- **Versatility.** One method measures conductivity, sorts alloys, gauges coatings, and finds cracks — often with the same instrument on the same shift."
+  },
+  {
+   "type": "text",
+   "heading": "Limitations: Where the Method Stops",
+   "body": "Now the boundary lines — the items written exams and auditors expect you to state, because each one has caused a missed defect somewhere:\n\n- **Conductive materials only.** The method needs charge carriers to push. Nonconductive materials cannot be examined at all.\n- **Surface and near-surface only.** The skin effect limits depth. At common crack-detection frequencies in aluminum, the standard depth of penetration is a fraction of a millimeter; even deliberate low-frequency techniques reach only a few millimeters. Steel is harsher still — high magnetic permeability shrinks penetration to hundredths of a millimeter unless the part is magnetically saturated. Deep volumetric inspection belongs to UT and RT.\n- **Orientation blindness.** Flaws lying parallel to the induced current paths — laminar separations under a surface coil, purely circumferential cracks under a bobbin — produce weak signals or none.\n- **Many variables, one signal.** Lift-off, edge effect, wall steps, conductivity shifts, and permeability all move the same dot on the display. Spurious signals can mimic or mask flaws, which is why **standardization on reference standards** before, during, and after examination — and a qualified operator interpreting the result — are mandatory, not optional.\n- **Ferromagnetic noise.** Permeability variation in steels can swamp small flaw signals unless suppressed by magnetic saturation.\n- **Small coverage per pass.** A surface probe inspects only its own footprint; scanning large areas is slow compared with penetrant's whole-surface coverage. That is why ET is usually aimed at known critical locations rather than used for broad-area search.\n- **Surface condition matters.** Rough machining marks raise noise, and conductive debris or smeared metal can produce false indications."
+  },
+  {
+   "type": "figure",
+   "figureId": "et1-5-4-fig-b",
+   "caption": "The boundary of the method: current density decays exponentially with depth, so detection ends near three standard depths of penetration — and where there is no conductivity, there are no eddy currents at all."
+  },
+  {
+   "type": "table",
+   "caption": "ET applications, advantages, and limitations — the summary table.",
+   "headers": ["Area", "Core principle", "Representative examples"],
+   "rows": [
+    ["Material properties", "Conductivity and permeability shift coil impedance", "Alloy and temper sorting, 7075-T6 vs. T73 verification, heat-damage surveys (ASTM E1004, AMS 2658), coating thickness (ASTM B244)"],
+    ["Flaw detection", "A discontinuity interrupts the induced current paths", "Fastener-hole and surface fatigue cracks, lap-joint corrosion, in-service tubing (E690), production bar and tube screening (E243, E309)"],
+    ["Geometrical features", "Thickness and dimensions change field coupling", "Thin-wall and sheet thickness, cladding thickness, diameter via fill factor, non-contact proximity gauging"],
+    ["Advantages", "Dry, fast, surface-sensitive, automatable", "No couplant or contact, inspection through paint, immediate results, portable instruments, high-speed automation"],
+    ["Limitations", "Conductive materials, surface and near-surface only", "No nonconductors, skin-effect depth limit (~3δ), parallel laminar flaws missed, many variables demand standards and skill, ferromagnetic noise"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "et1-5-4-fig-a",
+   "title": "The three application families of eddy current sensing",
+   "file": "et1-5-4-fig-a.svg"
+  },
+  {
+   "id": "et1-5-4-fig-b",
+   "title": "What eddy current reaches — and what it cannot",
+   "file": "et1-5-4-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Advantage or Limitation?",
+  "intro": "Sort each statement into the column it belongs to. Be ready to defend every placement with the physics — conduction, skin effect, orientation, or the many-variables problem.",
+  "buckets": ["Advantage of eddy current testing", "Limitation of eddy current testing"],
+  "items": [
+   {
+    "label": "Requires no couplant and can operate without touching the part",
+    "bucket": 0,
+    "why": "Coupling is electromagnetic — mutual induction across the air gap — so no liquid bridge is needed and the probe can work across a small standoff."
+   },
+   {
+    "label": "Inspects through paint and other thin nonconductive coatings",
+    "bucket": 0,
+    "why": "The magnetic field passes through nonconductors; the coating simply adds a known lift-off. Aircraft skins are examined without stripping, within the coating thickness the technique allows."
+   },
+   {
+    "label": "Works only on electrically conductive materials",
+    "bucket": 1,
+    "why": "Eddy currents are conduction currents. With no charge carriers — plastics, ceramics, glass-fiber composite — nothing is induced and there is nothing to test."
+   },
+   {
+    "label": "The skin effect confines examination to the surface and near surface",
+    "bucket": 1,
+    "why": "Current density decays exponentially with depth; beyond roughly three standard depths of penetration there is too little current left to disturb. Deep flaws belong to UT or RT."
+   },
+   {
+    "label": "Results are immediate, so the method automates readily for production lines",
+    "bucket": 0,
+    "why": "The impedance change is read in real time — the basis of encircling-coil bar and tube lines running at full production speed with automatic marking and sorting."
+   },
+   {
+    "label": "Laminar discontinuities lying parallel to the current paths are poorly detected",
+    "bucket": 1,
+    "why": "The orientation rule: a flaw signals only in proportion to the current it interrupts. A separation parallel to the circular loops diverts almost none."
+   },
+   {
+    "label": "Lift-off, geometry, and permeability changes can mimic or mask flaw signals",
+    "bucket": 1,
+    "why": "Many variables move the same signal, so spurious responses are a constant risk — the reason standardization on reference standards and qualified interpretation are mandatory."
+   },
+   {
+    "label": "Maximum sensitivity sits at the surface, exactly where fatigue cracks start",
+    "bucket": 0,
+    "why": "Eddy current density is highest at the surface, so small, tight surface-breaking cracks — the dominant aviation fatigue concern — produce strong, clean signals."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Which of the following is NOT one of the three principal application families of eddy current sensing elements?",
+   "options": [
+    "Measurement of material properties such as conductivity",
+    "Detection of discontinuities that interrupt the induced currents",
+    "Measurement of geometrical features such as thickness and diameter",
+    "Full-volume examination of thick sections at any depth"
+   ],
+   "correct": 3,
+   "explanation": "CP-105 lists material property measurement, flaw detection, and geometrical features. Full-volume deep examination is excluded by the skin effect — current density decays exponentially with depth, so the method is confined to the surface and near surface."
+  },
+  {
+   "question": "A 7075 aluminum fitting must be confirmed as the overaged T73 temper rather than T6. Eddy current conductivity testing can make this call because:",
+   "options": [
+    "the T73 temper is ferromagnetic while T6 is not",
+    "the instrument measures hardness directly through the coil",
+    "heat-treat condition changes electrical conductivity — T73 reads about 38–42.5 %IACS versus about 30.5–36 %IACS for T6",
+    "eddy currents penetrate much deeper into T6 material"
+   ],
+   "correct": 2,
+   "explanation": "Aging state alters conductivity, and the AMS 2658 acceptance ranges for the two tempers do not overlap, so a %IACS reading separates them cleanly. Hardness is verified with a separate hardness test, and neither temper is ferromagnetic."
+  },
+  {
+   "question": "Paint thickness over an aluminum skin is measured with an eddy current instrument by exploiting:",
+   "options": [
+    "eddy currents induced directly in the paint layer",
+    "the lift-off effect — the nonconductive coating spaces the coil away from the conductive base by exactly its own thickness",
+    "the magnetic permeability of the paint",
+    "a change in the skin depth of the aluminum caused by the coating"
+   ],
+   "correct": 1,
+   "explanation": "Paint is nonconductive, so no eddy currents form in it and it has no significant permeability. The coating simply holds the coil off the metal, and a calibrated instrument (per ASTM B244) reads that lift-off distance as coating thickness."
+  },
+  {
+   "question": "Compared with ultrasonic testing of the same aluminum part, which statement describes a genuine advantage of the eddy current method?",
+   "options": [
+    "It requires no couplant, and the probe need not contact the surface",
+    "It examines the full thickness of the part regardless of depth",
+    "It works equally well on nonconductive composite structure",
+    "It needs no reference standards for instrument setup"
+   ],
+   "correct": 0,
+   "explanation": "Eddy current coupling is electromagnetic, so no liquid couplant or contact is required — and inspection can proceed through paint. The other options are the opposite of the truth: depth is skin-effect limited, nonconductors cannot be tested, and standardization on reference standards is mandatory."
+  },
+  {
+   "question": "A planner proposes eddy current testing to find a suspected flaw 20 mm deep inside a thick steel forging. The proposal fails primarily because:",
+   "options": [
+    "steel is not electrically conductive",
+    "the flaw would be longer than the differential coil spacing",
+    "eddy current density decays exponentially with depth, and steel's high permeability makes the penetration depth smaller still",
+    "eddy current instruments cannot operate at frequencies below 1 MHz"
+   ],
+   "correct": 2,
+   "explanation": "The skin effect confines eddy currents to the surface and near surface, and in ferromagnetic steel the high permeability shrinks the standard depth of penetration to hundredths of a millimeter unless the part is saturated. A flaw 20 mm deep is a volumetric job for UT or RT. Steel is conductive, and instruments routinely operate far below 1 MHz."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, ECT Level I Basic Technique Course §1.1.5–1.1.7 (applications: measurement of material properties, flaw detection, geometrical features; advantages; limitations)",
+  "ASNT SNT-TC-1A (2024), Recommended Practice — ET training topic coverage under an employer's written practice",
+  "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method",
+  "ASTM B244, Standard Test Method for Measurement of Thickness of Anodic Coatings on Aluminum and of Other Nonconductive Coatings on Nonmagnetic Basis Metals with Eddy-Current Instruments",
+  "AMS 2658, Hardness and Conductivity Inspection of Wrought Aluminum Alloy Parts (temper-verification conductivity ranges)"
+ ]
+}

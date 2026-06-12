@@ -1,0 +1,190 @@
+{
+ "lessonId": "ut2-6-2",
+ "title": "Resolution and Operator Discrimination",
+ "narrationScript": "Detecting an echo is only half the job. The other half is telling two things apart, and telling what a signal probably is before you ever pick up the probe. That is what this lesson is about, resolution in the instrument and discrimination in the operator. Start with resolution. Resolution is the ability to separate two reflectors that lie close together. There are two kinds. Axial resolution is the ability to separate two reflectors at slightly different depths along the same beam line, like the front and back of a thin lamination, or a flaw sitting just in front of the back wall. Lateral resolution is the ability to separate two reflectors side by side at the same depth. Axial resolution is the one we control most directly, and it lives and dies on pulse length. Picture two echoes arriving very close in time. If the pulse is short and clean, each echo is a tight spike and you see two clear peaks with a valley between them. If the pulse is long and ringing, each echo smears out and the two blur into one fat hump, and you read one reflector where there are two. So a short pulse separates close reflectors, and a long pulse hides them. Now, what makes a pulse short. Two things, frequency and damping. Frequency sets the wavelength. A higher frequency has a shorter wavelength, so the same number of cycles occupies less time and distance, and axial resolution improves. A five megahertz probe resolves closer reflectors than a one megahertz probe. The price is more attenuation and more grain noise, so you do not just crank frequency, you choose it. Damping is the second lever, and often the more powerful one. Inside the probe a heavy backing block soaks up the ringing of the crystal so it stops vibrating quickly. Heavy damping gives a short, broadband pulse, excellent resolution, sharp depth reading, and a smaller dead zone near the front surface, but lower peak sensitivity. Light damping lets the crystal ring on, which gives a long, narrowband pulse, high sensitivity, but poor resolution and a longer dead zone. So broadband probes for resolving and sizing, narrowband probes for punching through attenuating material. That is the frequency and damping trade, and a Level two should be able to pick the right side of it on demand. Now the operator half, discrimination. Before the probe ever touches the part you should already have an expectation of what you might find and where. This comes from three sources. First, standard reference comparisons. Reference blocks with known reflectors, side drilled holes, flat bottomed holes, notches, give you a calibrated yardstick. You learn what a known one millimeter side drilled hole looks like at a given depth, and you compare unknown signals against it. Second, the history of the part. How was it made, cast, forged, rolled, welded. What service has it seen, fatigue, corrosion, heat. A casting suggests shrinkage and porosity. A weld suggests lack of fusion, slag, and cracks at the toes and root. A part that has been in cyclic service suggests fatigue cracks at stress concentrations. The manufacturing and service history tells you which flaws are likely and where to hunt. Third, the probability of discontinuity type. Some flaws are common in a given product, some are rare. You weight your interpretation toward what is plausible, while staying open to the surprise. This is where degrees of operator discrimination come in. A novice sees a signal and reports a signal. A skilled inspector sees the same signal and reads its dynamics, how it rises and falls as the probe moves, how it behaves from different angles, how its amplitude compares to the reference, and forms a judgment about what it probably is. That judgment is never certain. Detection is probabilistic. The same flaw may be found on one pass and missed on another, depending on orientation, coupling, and attention. So we do not bet everything on a single look. We scan with overlap, from more than one direction, against a reference, informed by the history of the part. Resolution is what the instrument can separate. Discrimination is what you can interpret. The best inspectors sharpen both.",
+ "imagePrompt": "An NDT technician studies a flaw detector screen showing two closely spaced echo peaks while holding a broadband contact transducer over a stepped steel reference block with side-drilled holes, manufacturing travelers and a parts drawing spread on the bench.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Two Jobs: Separate, Then Interpret",
+   "body": "Finding an echo is only half of evaluation. The other half is two distinct skills:\n\n- **Resolution** — the instrument's ability to *separate* two reflectors that lie close together.\n- **Discrimination** — the operator's ability to *interpret* what a signal probably represents, often before the probe even touches the part.\n\nResolution is mostly hardware and setup: frequency, damping, and beam. Discrimination is mostly the inspector's head: reference comparisons, the part's history, the likely flaw types, and the experience to read a signal's behavior. A perfectly resolved screen is useless to someone who cannot interpret it, and the sharpest interpreter is helpless if two flaws merge into one blurred hump. This lesson develops both, because Level II evaluation demands both."
+  },
+  {
+   "type": "text",
+   "heading": "Axial and Lateral Resolution",
+   "body": "Resolution comes in two directions, and they are limited by different things.\n\n- **Axial (depth) resolution** is the ability to separate two reflectors at slightly different depths **along the same beam path** — for example, a flaw lying just in front of the back wall, or the two faces of a thin lamination. It is governed by **pulse length**: the shorter the pulse, the closer two echoes can sit and still show as two peaks.\n- **Lateral resolution** is the ability to separate two reflectors **side by side at the same depth**. It is governed by **beam width** at that depth: a narrow or focused beam can place a gap between two adjacent reflectors that a broad beam would merge.\n\nAxial resolution is the one you control most directly through frequency and damping, so it gets most of our attention here. But remember both: a sizing decision can fail because two flaws were at the same depth and the beam was too wide to split them laterally, not because the pulse was too long."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-6-2-fig-a",
+   "caption": "Two reflectors close in depth: a short pulse resolves them into two distinct peaks, while a long ringing pulse smears them into a single indication."
+  },
+  {
+   "type": "text",
+   "heading": "Effect of Frequency on Resolution",
+   "body": "Frequency sets wavelength through **λ = v/f**, and wavelength sets how short a pulse can be. A pulse is a few cycles of the wave; at higher frequency those cycles occupy **less time and distance**, so two close echoes separate more cleanly.\n\nWork it concretely. In steel longitudinal (5,920 m/s):\n\n- At **1 MHz**, λ = 5.92 mm — a multi-cycle pulse is long, and two reflectors must be well separated to resolve.\n- At **5 MHz**, λ = 1.18 mm — the same pulse is far shorter, resolving much closer reflectors.\n\nSo raising frequency improves axial resolution **and** narrows the beam (improving lateral resolution). The cost is steeper attenuation and more grain scattering, which climbs roughly with **f⁴** in coarse material. You therefore pick the highest frequency that still penetrates and keeps noise acceptable — high frequency for thin, fine-grained, resolution-critical work; lower frequency for thick or coarse-grained parts where reach and signal-to-noise matter more than splitting hairs."
+  },
+  {
+   "type": "text",
+   "heading": "Damping: The Other Half of Pulse Length",
+   "body": "Frequency is not the only thing that sets pulse length — **damping** inside the transducer often matters more. A piezoelectric element rings after the pulser excites it; a **backing block** behind the element absorbs that ringing and decides how long it lasts.\n\n- **Heavy damping (broadband):** the backing kills the ring fast, producing a **short pulse**. Result — excellent axial resolution, sharp depth reading, and a **smaller dead zone** near the front surface, at the cost of lower peak sensitivity.\n- **Light damping (narrowband):** the element rings on, producing a **long pulse**. Result — high sensitivity and good penetration, but **poor resolution** and a longer dead zone.\n\nThe practical rule: reach for a **broadband, heavily damped** probe when you must resolve or size closely spaced reflectors near a surface, and a **narrowband, lightly damped** probe when you must punch through thick or attenuating material and sensitivity is the priority. Frequency and damping together set what your instrument can separate — choosing them is a Level II decision, not a default."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-6-2-fig-b",
+   "caption": "Heavy damping yields a short broadband pulse for resolution and a small dead zone; light damping yields a long narrowband pulse for sensitivity at the cost of resolution."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Resolution is a setup choice, not luck",
+   "body": "If two echoes blur into one, do not just turn up gain — that smears them worse. **Shorten the pulse**: raise frequency (within penetration limits) or switch to a more **heavily damped, broadband** probe. If two reflectors at the **same depth** will not separate, the limit is **lateral** — narrow or focus the beam, or use a higher frequency. Verify your real resolving power on a reference block with closely spaced holes or steps before trusting it on the part."
+  },
+  {
+   "type": "text",
+   "heading": "Discrimination: Knowing What You're Likely to Find",
+   "body": "Skilled interpretation starts **before** the probe touches metal. Three sources build the expectation:\n\n- **Standard reference comparisons.** Blocks with known reflectors — side-drilled holes, flat-bottom holes, notches — give a calibrated yardstick. When you know exactly what a 1.5 mm SDH at a given depth looks like, an unknown signal can be judged *against* it rather than guessed at.\n- **History of the part.** How it was made and what service it has seen narrows the field. A **casting** suggests shrinkage and porosity; a **forging** suggests laps and bursts; a **weld** suggests lack of fusion, slag, and toe or root cracks; a part in **cyclic service** suggests fatigue cracks at stress concentrations.\n- **Probability of discontinuity type.** Some flaws are common in a given product and process, others rare. You weight interpretation toward the plausible while staying alert for the surprise.\n\nTogether these tell you *what* to expect and *where* to hunt, so your scan is targeted, not random."
+  },
+  {
+   "type": "text",
+   "heading": "Degrees of Operator Discrimination and Probability",
+   "body": "Operators differ in how much they extract from the **same** signal. A novice reports 'an indication.' A skilled inspector reads the signal's **dynamics** — how it rises and falls as the probe moves, how it responds from different angles, how its amplitude and shape compare with the reference — and forms a judgment about the **likely type** of flaw. That graded skill is what 'degrees of operator discrimination' names, and it is built by deliberate practice against known references and real parts.\n\nBut interpretation is never certainty. **Detection is probabilistic**: the same flaw can be found on one pass and missed on the next, depending on orientation, coupling, surface condition, and attention. This is why we never stake a result on a single look. The defenses are procedural — **overlapping scans**, coverage from **more than one direction**, comparison against a **reference**, and interpretation **informed by part history**. Resolution is what the instrument can separate; discrimination is what the inspector can interpret. Probability of detection rises only when both are deliberately managed."
+  },
+  {
+   "type": "table",
+   "caption": "Choosing frequency and damping for the resolution-versus-sensitivity trade-off.",
+   "headers": ["Goal", "Frequency", "Damping / bandwidth", "Why"],
+   "rows": [
+    ["Resolve closely spaced reflectors", "Higher", "Heavy / broadband", "Short pulse separates echoes; small dead zone"],
+    ["Size near-surface flaws precisely", "Higher", "Heavy / broadband", "Sharp depth reading and reduced dead zone"],
+    ["Penetrate thick or coarse material", "Lower", "Light / narrowband", "Less attenuation and scatter; higher sensitivity"],
+    ["Find small fine cracks in clean steel", "Higher", "Heavy / broadband", "Short wavelength and tight beam improve detection and resolution"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-6-2-fig-a",
+   "title": "Axial resolution: short pulse versus long pulse",
+   "file": "ut2-6-2-fig-a.svg"
+  },
+  {
+   "id": "ut2-6-2-fig-b",
+   "title": "Damping and pulse length",
+   "file": "ut2-6-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Sharpen the Screen, Read the Part",
+  "intro": "Four interpretation decisions that turn on resolution and discrimination. Reason each one through before clicking. Steel velocities: 5,920 m/s longitudinal, 3,240 m/s shear.",
+  "steps": [
+   {
+    "prompt": "You suspect a flaw just in front of the back wall of a 25 mm plate, but at 2.25 MHz the flaw echo and the back-wall echo merge into one hump. Best first move?",
+    "options": [
+     "Increase gain to make the hump taller",
+     "Switch to a higher-frequency, heavily damped (broadband) probe",
+     "Switch to a lower-frequency, lightly damped probe",
+     "Apply the reject control to clean up the baseline"
+    ],
+    "correct": 1,
+    "feedback": "Merged echoes are an axial-resolution problem. A shorter pulse — higher frequency and heavier damping — separates the flaw echo from the back wall. Gain smears them worse, and reject distorts the display."
+   },
+   {
+    "prompt": "Before inspecting a cast pump housing, what flaw types should you most expect, based on part history?",
+    "options": [
+     "Fatigue cracks at machined fillets only",
+     "Shrinkage cavities and gas porosity typical of castings",
+     "Rolling laminations parallel to the surface",
+     "Weld lack-of-fusion along a bevel"
+    ],
+    "correct": 1,
+    "feedback": "Manufacturing history drives expectation. Castings are prone to shrinkage and porosity, so you weight interpretation that way while staying open to others. Laminations point to rolled product; lack of fusion points to welds."
+   },
+   {
+    "prompt": "An unknown signal in a forging reads 4 dB below your reference side-drilled hole and its echo changes little as you rock the probe. The most useful next step in discrimination is:",
+    "options": [
+     "Report it immediately as a crack",
+     "Compare its amplitude and dynamics with the reference and probe it from another angle",
+     "Ignore it because it is below the reference",
+     "Raise the frequency to 15 MHz to size it"
+    ],
+    "correct": 1,
+    "feedback": "Degrees of discrimination come from comparing the signal against the calibrated reference and observing its dynamics from multiple directions. A near-static, sub-reference echo behaves more like a rounded reflector, but a second angle confirms it."
+   },
+   {
+    "prompt": "A part 'always passes,' and a tech scans it quickly with one pass from one side. What is the main risk this poses to probability of detection?",
+    "options": [
+     "Over-gaining will create false indications",
+     "Expectation bias plus a single-direction scan can let a real, unfavorably oriented flaw go undetected",
+     "The dead zone will hide deep flaws",
+     "Higher frequency would have lowered sensitivity"
+    ],
+    "correct": 1,
+    "feedback": "Detection is probabilistic. A confident 'it always passes' mindset plus a single look from one direction can miss a flaw oriented away from that beam. Overlapping, multi-direction scanning against a reference protects the result."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Axial (depth) resolution — separating two reflectors at slightly different depths on the same beam path — is most directly improved by:",
+   "options": [
+    "A longer, lightly damped pulse",
+    "A shorter pulse, from higher frequency and/or heavier damping",
+    "Increasing the pulse repetition frequency",
+    "Widening the beam"
+   ],
+   "correct": 1,
+   "explanation": "Axial resolution depends on pulse length: a shorter pulse lets two echoes sit closer in time and still appear as separate peaks. Higher frequency and heavier damping both shorten the pulse."
+  },
+  {
+   "question": "A heavily damped (broadband) transducer, compared with a lightly damped (narrowband) one, generally provides:",
+   "options": [
+    "Higher sensitivity but poorer resolution and a larger dead zone",
+    "Better resolution and a smaller dead zone, but lower peak sensitivity",
+    "Both higher sensitivity and better resolution with no trade-off",
+    "A longer pulse and deeper penetration"
+   ],
+   "correct": 1,
+   "explanation": "Heavy damping shortens the pulse, improving axial resolution and shrinking the dead zone, at the cost of peak sensitivity. Light damping does the reverse: more sensitivity, worse resolution, longer dead zone."
+  },
+  {
+   "question": "Two reflectors lie side by side at the same depth and will not separate on the screen no matter how short the pulse. The limiting factor is:",
+   "options": [
+    "Axial resolution — shorten the pulse further",
+    "Lateral resolution — narrow or focus the beam, or raise frequency",
+    "Pulse repetition frequency — lower it",
+    "Velocity — recalibrate the time base"
+   ],
+   "correct": 1,
+   "explanation": "Reflectors at the same depth are separated by lateral resolution, which is set by beam width at that depth. A narrower or focused beam — or higher frequency — is needed; pulse length governs axial, not lateral, resolution."
+  },
+  {
+   "question": "Which use of part history best sharpens an inspector's discrimination before scanning a component that has spent years in cyclic loading service?",
+   "options": [
+    "Expect rolling laminations parallel to the plate surface",
+    "Expect fatigue cracks initiating at stress concentrations such as fillets and notches",
+    "Expect casting shrinkage at the part center",
+    "Expect no flaws because the part has survived in service"
+   ],
+   "correct": 1,
+   "explanation": "Service history matters as much as manufacturing history. Cyclic (fatigue) loading drives crack initiation at stress concentrations, so the inspector targets fillets, notches, and other raisers."
+  },
+  {
+   "question": "Why is overlapping, multi-direction scanning against a reference block emphasized even for a skilled operator?",
+   "options": [
+    "It is only a documentation formality",
+    "Because detection is probabilistic — the same flaw can be found on one pass and missed on another depending on orientation and coupling",
+    "Because it raises the instrument's frequency automatically",
+    "Because a single pass over-saturates the receiver"
+   ],
+   "correct": 1,
+   "explanation": "Probability of detection is never 100%. Orientation, coupling, surface condition, and attention all vary, so overlap, multiple directions, and reference comparison are needed to raise the chance of catching an unfavorably oriented flaw."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Evaluation Course §5.2 (resolution and discrimination)",
+  "General acoustics reference values: steel 5,920/3,240 m/s; aluminum 6,320/3,130 m/s",
+  "Codes such as ASME BPVC Section V, Article 4 (reference reflectors and calibration practice)"
+ ]
+}

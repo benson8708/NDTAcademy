@@ -1,0 +1,152 @@
+{
+ "lessonId": "ut1-1-2",
+ "title": "Math Review for UT",
+ "narrationScript": "Ultrasonic testing runs on a small set of formulas, and a technician who owns them works faster and catches mistakes that others miss. Let's build that tool kit. Start with units. Frequency is measured in hertz, cycles per second. A kilohertz is a thousand cycles per second. A megahertz is a million. So a five megahertz probe vibrates five million times every second. Time on an ultrasonic instrument is measured in microseconds, millionths of a second, because sound crosses metal fast. In twenty five millimeters of steel, the round trip to the back wall and home again takes only about eight and a half microseconds. Velocity ties the units together. Steel carries longitudinal sound at about five thousand nine hundred twenty meters per second. Say it another way and it becomes friendlier on a microsecond time base, five point nine two millimeters per microsecond. In the imperial system that is zero point two three three inches per microsecond, and the bridge between the systems is the exact conversion, one inch equals twenty five point four millimeters. Procedures, instruments, and clients mix these systems freely, so practice conversions until they feel boring. A good habit is to sanity check every answer against the physical part. A skip distance longer than the test piece is telling you that something went wrong. Now the master equation. Velocity equals frequency times wavelength. Velocity belongs to the material and the wave mode. Frequency belongs to the probe, and it does not change when the sound enters the part. So wavelength is the term that adjusts. Wavelength equals velocity divided by frequency. Run the numbers for steel. At five megahertz, five point nine two divided by five gives one point one eight millimeters. At two and a quarter megahertz, the wavelength is two point six three millimeters. Switch to shear waves, which travel at about three thousand two hundred forty meters per second in steel, roughly half the longitudinal speed, and a two and a quarter megahertz shear wave has a wavelength of about one point four four millimeters. Why does wavelength matter so much? Sensitivity. The working rule of thumb says reflectors smaller than about half a wavelength are unreliable to detect. So at two and a quarter megahertz longitudinal in steel, count on finding flaws down to roughly one point three millimeters, and at five megahertz, down to roughly zero point six millimeters. Then why not always run the highest frequency you own? Because short wavelengths scatter off grain structure and die out faster. Choosing frequency is always a trade between sensitivity and penetration. Next, decibels, the language of gain. A decibel value compares two amplitudes, two echo heights on the screen. The formula is twenty times the base ten logarithm of the amplitude ratio, but day to day you live on a few memorized pairs. Six decibels doubles the amplitude. Minus six halves it. Twelve decibels is four times. Twenty decibels is ten times. Forty decibels is one hundred times. And because decibels are logarithms, ratios multiply while decibels simply add. An echo that falls from eighty percent screen height to twenty percent has dropped to one quarter of its height. That is two halvings, minus twelve decibels. An indication standing at five percent needs sixteen times more amplitude to reach eighty percent. Sixteen is two doubled four times, so add twenty four decibels of gain. That is the entire arithmetic behind the gain control, distance amplitude correction curves, and the six decibel drop sizing technique you will meet later in the course. Finally, trigonometry, because angle beam testing is right triangle work. Tilt the beam at some angle from the vertical, and three relationships locate everything. Surface distance equals soundpath times the sine of the angle. Depth on the first leg equals soundpath times the cosine of the angle. The leg length, meaning the soundpath needed to reach the back wall, equals thickness divided by the cosine. And the skip distance, where the beam returns to the top surface after one full vee path, equals twice the thickness times the tangent. Try it on a sixty degree wedge over twenty five millimeter plate. The cosine of sixty degrees is one half, so the leg is twenty five divided by one half, fifty millimeters. The tangent of sixty degrees is one point seven three two, so the skip is two times twenty five times one point seven three two, about eighty six point six millimeters. Memorize the sine, cosine, and tangent of forty five, sixty, and seventy degrees, the three standard wedge angles. Carry these numbers in your head, the velocities, the decibel pairs, and the triangle formulas, and every calibration and every plotted flaw in this course will come easier.",
+ "imagePrompt": "A technician at a steel workbench works a handheld calculator beside an ultrasonic flaw detector, an angle-beam probe, a couplant bottle, and a stepped calibration block under bright shop lighting.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Numbers, Units, and Conversions",
+   "body": "UT runs on a small set of numbers used over and over, so get fluent in the units first. Frequency is in **hertz (Hz)** — cycles per second. One **kilohertz (kHz)** is a thousand hertz; one **megahertz (MHz)** is a million. A 5 MHz probe vibrates five million times per second — in scientific notation, 5 × 10⁶ Hz. Time on a UT instrument is measured in **microseconds (µs)** — millionths of a second — because metal-path round trips are that fast: in 25 mm of steel, the back-wall round trip takes about 8.4 µs.\n\nVelocity appears two ways, and you must convert comfortably between them:\n\n- **Metric:** meters per second — steel longitudinal ≈ **5,920 m/s**, which is **5.92 mm/µs** on a microsecond time base.\n- **Imperial:** inches per microsecond — divide mm/µs by 25.4 (1 inch = 25.4 mm exactly): 5.92 ÷ 25.4 ≈ **0.233 in/µs**.\n\nLengths convert the same way: 0.5 in. = 12.7 mm; 2 in. = 50.8 mm. Procedures, instruments, and clients mix unit systems freely, and a factor-of-25.4 slip produces absurd answers. Build the habit of sanity-checking every result against the physical part: a computed skip distance longer than the test piece is telling you something went wrong."
+  },
+  {
+   "type": "text",
+   "heading": "The Master Equation: v = f × λ",
+   "body": "One relationship anchors nearly all UT math: **velocity = frequency × wavelength (v = f × λ)**. Velocity is a property of the **material** and the wave mode; frequency is set by the **probe** and does not change when sound enters the part. So wavelength is the dependent variable: **λ = v ÷ f**. A convenient shortcut: wavelength in millimeters equals velocity in mm/µs divided by frequency in MHz.\n\nWorked examples in steel (longitudinal, 5,920 m/s = 5.92 mm/µs):\n\n- At **5 MHz**: λ = 5.92 ÷ 5 = **1.18 mm**\n- At **2.25 MHz**: λ = 5.92 ÷ 2.25 = **2.63 mm**\n- At **1 MHz**: λ = **5.92 mm**\n\nChange the wave mode and the velocity changes: steel **shear** velocity is about 3,240 m/s — roughly half of longitudinal — so a 2.25 MHz shear wave has λ = 3.24 ÷ 2.25 = **1.44 mm**.\n\nWhy care? **Sensitivity.** A practical rule of thumb says reflectors smaller than about **λ/2** are unreliable to detect. At 2.25 MHz longitudinal in steel that is about 1.3 mm; at 5 MHz it tightens to about 0.6 mm. The temptation is to crank frequency up for sensitivity — but shorter wavelengths scatter off grain structure and attenuate faster, so penetration suffers. Frequency selection is always that balance."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-1-2-fig-a",
+   "caption": "Wavelength is velocity divided by frequency: the length of one cycle in the material sets the smallest reflector you can reliably find."
+  },
+  {
+   "type": "table",
+   "caption": "Approximate room-temperature sound velocities; shear waves do not propagate in liquids or gases.",
+   "headers": ["Material", "Longitudinal (m/s)", "Longitudinal (in/µs)", "Shear (m/s)", "Shear (in/µs)"],
+   "rows": [
+    ["Carbon steel", "5,920", "0.233", "3,240", "0.128"],
+    ["Aluminum", "6,320", "0.249", "3,130", "0.123"],
+    ["Acrylic (wedge plastic)", "2,730", "0.107", "—", "—"],
+    ["Water", "1,480", "0.058", "none — liquids carry no shear", "—"],
+    ["Air", "330", "0.013", "none — gases carry no shear", "—"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Decibels: The Language of Gain",
+   "body": "Echo amplitudes on a UT screen are compared in **decibels (dB)** — a ratio, not an absolute unit. The defining relationship is **ΔdB = 20 × log₁₀(A₂ ÷ A₁)**, where A₁ and A₂ are two amplitudes (screen heights). On the floor you rarely need the formula, because a few pairs cover almost everything:\n\n- **+6 dB = 2× amplitude** (and −6 dB = ½)\n- **+12 dB = 4×**\n- **+20 dB = 10×** (and −20 dB = 1/10)\n- **+40 dB = 100×**\n\nRatios multiply, decibels **add**: doubling twice (4×) is 6 + 6 = 12 dB.\n\nScreen examples: an echo at 80% full screen height (FSH) that drops to 40% has fallen **6 dB**; 80% to 20% is **−12 dB**; 100% to 10% is **−20 dB**. Working the other way: an indication at 5% FSH needs 80 ÷ 5 = 16× more amplitude to reach 80% — and 16 is 2 doubled four times, so add **+24 dB** of gain.\n\nThis is the arithmetic behind every gain knob, DAC curve, transfer correction, and 6 dB-drop sizing technique you will meet later in this course — learn the pairs cold."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-1-2-fig-b",
+   "caption": "Each six-decibel step doubles echo amplitude on the screen; twenty decibels is a factor of ten."
+  },
+  {
+   "type": "text",
+   "heading": "Trigonometry for Beam Paths",
+   "body": "Angle-beam work is right-triangle work. With the refracted beam at angle **θ measured from the vertical** (the surface normal), the beam path (soundpath) is the hypotenuse, depth is the adjacent side, and surface distance is the opposite side:\n\n- **Surface distance = soundpath × sin θ**\n- **Depth (first leg) = soundpath × cos θ**\n- **Leg length (surface to back wall) = T ÷ cos θ**\n- **Skip distance (full V back to the top surface) = 2 × T × tan θ**\n\nWorked example — **60° wedge on 25 mm plate** (sin 60° = 0.866, cos 60° = 0.500, tan 60° = 1.732):\n\n- Leg = 25 ÷ 0.5 = **50 mm** of soundpath to reach the back wall\n- Skip = 2 × 25 × 1.732 = **86.6 mm** along the surface back to the top\n- Full V-path = two legs = **100 mm** of soundpath\n- An indication at 30 mm soundpath sits 30 × 0.866 = **26.0 mm** ahead of the index point and 30 × 0.5 = **15.0 mm** deep\n\nOn the second leg the beam travels upward, so depth = 2T − soundpath × cos θ. Memorize sin, cos, and tan for **45°, 60°, and 70°** — the three standard wedges — and these four formulas: together they locate every reflector you will ever plot."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-1-2-fig-c",
+   "caption": "The angle-beam right triangle for a 60-degree wedge on 25-millimeter plate: leg, skip distance, surface distance, and depth all come from the same geometry."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Carry these in your head",
+   "body": "λ = v ÷ f. Steel: **5,920 m/s** longitudinal (0.233 in/µs) and **3,240 m/s** shear (0.128 in/µs). **6 dB = ×2, 20 dB = ×10**, and decibels add. Skip = 2T·tan θ; leg = T ÷ cos θ; surface distance = soundpath × sin θ; depth = soundpath × cos θ. 1 inch = 25.4 mm. A technician who owns these numbers calibrates faster and spots instrument nonsense instantly."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-1-2-fig-a",
+   "title": "Wavelength, frequency, and velocity",
+   "file": "ut1-1-2-fig-a.svg"
+  },
+  {
+   "id": "ut1-1-2-fig-b",
+   "title": "The decibel ladder on an A-scan screen",
+   "file": "ut1-1-2-fig-b.svg"
+  },
+  {
+   "id": "ut1-1-2-fig-c",
+   "title": "Angle-beam geometry: skip, leg, surface distance, depth",
+   "file": "ut1-1-2-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Pre-Job Numbers: 60° Shear Wave on 25 mm Plate",
+  "intro": "You are setting up a 2.25 MHz, 60-degree shear-wave examination of a butt weld in 25 mm carbon steel plate. Work the numbers before the probe ever touches the part — exactly as a Level II will expect you to.",
+  "steps": [
+   {
+    "prompt": "First, the wavelength. Shear velocity in steel is 3,240 m/s (3.24 mm/µs) and the probe is 2.25 MHz. What is the wavelength in the plate?",
+    "options": ["2.63 mm", "1.44 mm", "0.69 mm"],
+    "correct": 1,
+    "feedback": "λ = v ÷ f = 3.24 mm/µs ÷ 2.25 MHz ≈ 1.44 mm. Using the longitudinal velocity (5.92 ÷ 2.25 = 2.63 mm) is the classic slip on a shear-wave job — the mode sets the velocity."
+   },
+   {
+    "prompt": "Using the half-wavelength rule of thumb, the smallest flaw this setup can reliably detect is about:",
+    "options": ["0.7 mm", "3 mm", "0.1 mm"],
+    "correct": 0,
+    "feedback": "Half of 1.44 mm is about 0.7 mm. Reflectors smaller than roughly λ/2 are unreliable to detect — one reason frequency is chosen deliberately rather than simply maximized."
+   },
+   {
+    "prompt": "Mark out the scan zone. What is the full skip distance for T = 25 mm at θ = 60° (tan 60° = 1.732)?",
+    "options": ["43.3 mm", "50 mm", "86.6 mm"],
+    "correct": 2,
+    "feedback": "Skip = 2 × T × tan θ = 2 × 25 × 1.732 ≈ 86.6 mm. 43.3 mm is only the half-skip (T·tan θ), and 50 mm is the leg length — a soundpath, not a surface distance."
+   },
+   {
+    "prompt": "How much soundpath puts the beam at the back wall on the first leg (cos 60° = 0.5)?",
+    "options": ["28.9 mm", "50 mm", "43.3 mm"],
+    "correct": 1,
+    "feedback": "Leg = T ÷ cos θ = 25 ÷ 0.5 = 50 mm. Dividing by the wrong function gives the distractors — when in doubt, sketch the right triangle before you trust a number."
+   },
+   {
+    "prompt": "During calibration the reference echo stands at 20% FSH, and the procedure requires 80% FSH. What gain change do you dial in?",
+    "options": ["+12 dB", "+6 dB", "+4 dB"],
+    "correct": 0,
+    "feedback": "80 ÷ 20 = 4× amplitude, and 4× is two doublings: 6 + 6 = 12 dB. Adding only +6 dB would leave the echo at 40% FSH."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A 5 MHz straight-beam probe sends longitudinal waves into carbon steel (5,920 m/s). The wavelength in the steel is approximately:",
+   "options": ["0.65 mm", "1.18 mm", "2.96 mm", "11.8 mm"],
+   "correct": 1,
+   "explanation": "λ = v ÷ f = 5.92 mm/µs ÷ 5 MHz ≈ 1.18 mm. The 0.65 mm distractor comes from mistakenly using the shear velocity."
+  },
+  {
+   "question": "An echo falls from 100% full screen height to 10% FSH. The amplitude change is:",
+   "options": ["−10 dB", "−20 dB", "−6 dB", "−3 dB"],
+   "correct": 1,
+   "explanation": "The ratio is 1/10, and 20 × log₁₀(0.1) = −20 dB. A factor of ten in amplitude is always 20 dB."
+  },
+  {
+   "question": "A velocity of 0.233 inches per microsecond is equal to approximately:",
+   "options": ["2,330 m/s", "3,240 m/s", "5,920 m/s", "9,250 m/s"],
+   "correct": 2,
+   "explanation": "0.233 in/µs × 25.4 mm/in = 5.92 mm/µs, which is 5,920 m/s — the longitudinal velocity of steel expressed in imperial units."
+  },
+  {
+   "question": "What is the full skip distance for a 45° shear-wave beam in 12.7 mm (½ in.) plate (tan 45° = 1.0)?",
+   "options": ["12.7 mm", "18.0 mm", "36.0 mm", "25.4 mm"],
+   "correct": 3,
+   "explanation": "Skip = 2 × T × tan θ = 2 × 12.7 × 1.0 = 25.4 mm. At 45 degrees the skip is simply twice the thickness."
+  },
+  {
+   "question": "A 70° probe shows an indication at 50 mm soundpath on the first leg (cos 70° = 0.342, sin 70° = 0.940). How deep is the reflector?",
+   "options": ["17.1 mm", "47.0 mm", "25.0 mm", "32.9 mm"],
+   "correct": 0,
+   "explanation": "Depth (first leg) = soundpath × cos θ = 50 × 0.342 ≈ 17.1 mm. The 47.0 mm figure is the surface distance (soundpath × sin θ), not the depth."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, Basic UT Course §1.4 (basic math review)",
+  "Standard relationships: v = f × λ; ΔdB = 20 log₁₀(A₂/A₁); skip = 2T·tan θ; leg = T/cos θ",
+  "Unit definitions: 1 in. = 25.4 mm (exact); 1 MHz = 10⁶ Hz; 1 µs = 10⁻⁶ s"
+ ]
+}

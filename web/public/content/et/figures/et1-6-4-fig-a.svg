@@ -1,0 +1,46 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0B1F3A">Band-Pass Filtering: What Each Cutoff Removes</text>
+
+  <!-- ============ SCREEN 1: raw signal ============ -->
+  <rect x="30" y="58" width="480" height="100" rx="8" fill="#0B1F3A"/>
+  <polyline points="42,142 54,136 66,144 78,134 90,140 102,130 114,138 126,128 138,134 150,126 162,132 174,122 186,128 198,120 210,126 222,116 234,122 246,114 252,108 258,80 264,72 270,78 276,106 288,112 300,118 312,108 324,114 336,104 348,110 360,102 372,108 384,98 396,104 408,94 420,100 432,92 444,98 456,88 468,94 480,84 492,90 498,86" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="540" y="84" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">raw signal</text>
+  <text x="540" y="106" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">slow drift (thermal, taper)</text>
+  <text x="540" y="126" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">+ fast grass (electronics, EMI)</text>
+  <text x="540" y="146" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">+ one flaw pulse</text>
+
+  <!-- arrow + label: high-pass -->
+  <line x1="80" y1="162" x2="80" y2="180" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="74,180 80,190 86,180" fill="#1E66F5"/>
+  <text x="100" y="183" font-family="Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#1E66F5">high-pass: removes everything slower than its cutoff</text>
+
+  <!-- ============ SCREEN 2: after high-pass ============ -->
+  <rect x="30" y="196" width="480" height="100" rx="8" fill="#0B1F3A"/>
+  <polyline points="42,252 54,247 66,255 78,248 90,254 102,247 114,253 126,248 138,254 150,247 162,253 174,248 186,254 198,247 210,253 222,248 234,254 246,250 252,238 258,212 262,226 266,258 270,284 274,272 280,256 292,250 304,255 316,248 328,254 340,247 352,253 364,248 376,254 388,247 400,253 412,248 424,254 436,247 448,253 460,248 472,254 484,248 496,252" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+  <text x="540" y="226" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">after the high-pass</text>
+  <text x="540" y="248" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">drift gone &#8212; baseline flat</text>
+  <text x="540" y="268" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">flaw now bipolar (differentiated)</text>
+  <text x="540" y="288" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">grass still present</text>
+
+  <!-- arrow + label: low-pass -->
+  <line x1="80" y1="300" x2="80" y2="318" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="74,318 80,328 86,318" fill="#1E66F5"/>
+  <text x="100" y="321" font-family="Arial, sans-serif" font-size="14.5" font-weight="bold" fill="#1E66F5">low-pass: removes everything faster than its cutoff</text>
+
+  <!-- ============ SCREEN 3: band-pass output ============ -->
+  <rect x="30" y="334" width="480" height="100" rx="8" fill="#0B1F3A"/>
+  <polyline points="42,394 236,394 246,392 252,386 258,352 264,372 270,424 276,406 286,396 296,394 498,394" fill="none" stroke="#FFFFFF" stroke-width="2.5"/>
+  <text x="540" y="368" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">band-pass output</text>
+  <text x="540" y="390" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">grass gone &#8212; quiet baseline</text>
+  <text x="540" y="410" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">flaw pulse rides through, clean</text>
+  <text x="540" y="430" font-family="Arial, sans-serif" font-size="14" fill="#1E66F5">only if its frequency fits the band</text>
+
+  <!-- ============ formula chips ============ -->
+  <rect x="40" y="450" width="300" height="40" rx="20" fill="#9BC4FF" fill-opacity="0.35" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="190" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">f_signal &#8776; scan speed &#247; response width</text>
+  <rect x="360" y="450" width="195" height="40" rx="20" fill="#9BC4FF" fill-opacity="0.35" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="457" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="14.5" fill="#0B1F3A">hand: 25 mm/s &#8594; ~5 Hz</text>
+  <rect x="575" y="450" width="185" height="40" rx="20" fill="#9BC4FF" fill-opacity="0.35" stroke="#0B1F3A" stroke-width="1.5"/>
+  <text x="667" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="14.5" fill="#0B1F3A">line: 1 m/s &#8594; ~200 Hz</text>
+</svg>

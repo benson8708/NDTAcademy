@@ -1,0 +1,188 @@
+{
+ "lessonId": "ut2-3-4",
+ "title": "Other Product Forms: Rubber, Glass, and Nonmetallics",
+ "narrationScript": "Sooner or later somebody hands you a part that is not metal. A rubber lined pipe spool. A glass sight window. A polyethylene fusion joint. A ceramic wear plate. There is no familiar code chapter, sometimes no code at all, and the question is the same every time. Can ultrasound test this, and how. The answer always starts with three numbers. Velocity. Acoustic impedance. Attenuation. Measure or look up those three, and the technique practically designs itself. Take rubber first. Sound crawls through rubber at roughly one and a half kilometers per second, about the speed of water and a quarter the speed of steel. That changes your screen immediately. A ten millimeter rubber lining takes more than thirteen microseconds for the round trip, the time a beam would need for nearly forty millimeters of steel, so set the range accordingly. Wavelengths are short, about one and a half millimeters at one megahertz, so resolution is workable. But attenuation is brutal, and it climbs fast with frequency, especially in carbon filled compounds. So you work low, half a megahertz to two and a quarter, and you accept short ranges. The good news is coupling. Rubber's impedance is close to water, so energy crosses from water or gel into rubber easily, and immersion testing feels natural. One warning. Polymer velocities drift strongly with temperature, far more than metals do, so calibrate at the temperature you actually test. The classic rubber job is not even testing the rubber. It is testing the bond between a rubber lining and the steel behind it, and you do it from the steel side using multiple echoes. Put a straight beam on bare steel backed by air and the pulse bounces almost forever, a long ringing train of back echoes, because a steel to air interface reflects essentially everything. Now put well bonded rubber on the far side. The impedance step from steel to rubber still reflects most of the energy, about eighty five percent, but the fifteen percent that leaks into the rubber on every single bounce never comes back. The echo train dies out quickly. So the decay pattern is the verdict. Fast decay means bonded. Long ringing means disbonded. You calibrate your eye on known bonded and known unbonded reference areas, then scan the shell on a grid and mark the boundaries. Glass is the opposite animal. Plate glass carries longitudinal waves at about five point eight kilometers per second, nearly the speed of steel, but glass has no grains. It is amorphous, so there is almost nothing inside to scatter the beam, and attenuation is tiny. That means you can run high frequencies, ten, fifteen, even twenty five megahertz, and resolve very small reflectors. You need to, because glass is brittle and the flaw that matters is small. The targets have their own names. Seeds are small bubbles. Stones are bits of unmelted refractory. Cords are streaks of glass with a different composition. Surface cracks matter most of all in a brittle material, and glass carries Rayleigh waves beautifully, so a surface wave probe can sweep a polished face or an edge for cracks at high sensitivity. Just respect the part. Couplant must be clean and compatible, and contact pressure on a brittle component is something you manage, not ignore. Between those two extremes sit the other nonmetallics. Polyethylene and most engineering plastics run around two to two and a half kilometers per second with high attenuation and strong temperature sensitivity. They are testable at low megahertz over modest thicknesses, which is exactly how fused joints in polyethylene pipe are examined. Fine ceramics are the opposite, very fast, around ten kilometers per second in alumina, and very clean, so high frequencies can chase very small defects. Concrete and similarly coarse materials scatter so badly that conventional megahertz ultrasonics gives up, and that work moves to specialized low frequency equipment. So what do you do when no code addresses your material. You build the evaluation framework, and there is a professional way to do it. Measure the velocity in the actual material and write it down. Prove penetration with a back echo or a through transmission check. Build reference standards from the same material with engineered reflectors, flat bottom holes, inserts, or known disbonds, and qualify a written technique against them. Then get the acceptance criteria from engineering, in writing, because fitness for purpose belongs to the designer, not the technician. The physics never changes when the material does. Velocity, impedance, attenuation. Start with those three numbers, and the strangest part on the bench becomes just another test.",
+ "imagePrompt": "A technician holds a low-frequency dual-element transducer against the painted steel shell of a large rubber-lined slurry tank, watching a ring-down echo train on the flaw detector clipped to his harness.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Three Numbers Decide Everything",
+   "body": "Faced with an unfamiliar material, characterize it before you test it. Three acoustic properties set the whole technique:\n\n- **Velocity** sets the time base, the wavelength (λ = v/f), and every depth or thickness readout. Measure it on a known thickness of the actual material — handbook values are starting points, not calibrations.\n- **Acoustic impedance** (Z = ρv) sets coupling and reflection. The fraction of energy reflected at an interface is R = ((Z₂−Z₁)/(Z₂+Z₁))², so a material near water's impedance couples beautifully from gel or immersion, while a large mismatch bounces energy at the entry surface and at every internal boundary.\n- **Attenuation** — absorption plus scattering — sets the usable frequency and range. Polymers absorb heavily and get worse fast as frequency rises; amorphous glass barely attenuates at all.\n\nThe payoff of thinking this way: a planar air gap is a near-total reflector in **every** material, because nothing matches air. What changes between steel, rubber, and glass is not whether a void reflects — it is whether the beam survives the round trip to reach it and how small a flaw the wavelength lets you see."
+  },
+  {
+   "type": "table",
+   "caption": "Longitudinal velocity, impedance, and practical frequency across product forms.",
+   "headers": ["Material", "Velocity (m/s)", "Z (MRayl)", "Attenuation", "Typical frequency"],
+   "rows": [
+    ["Aluminum (wrought)", "6,320", "17.1", "Low", "2.25–10 MHz"],
+    ["Steel (wrought)", "5,920", "46.5", "Low", "2.25–10 MHz"],
+    ["Plate glass", "5,800", "14.5", "Very low (amorphous)", "10–25 MHz"],
+    ["Acrylic (wedge plastic)", "2,730", "3.2", "Moderate", "1–5 MHz"],
+    ["Polyethylene", "2,300", "2.2", "High, temperature-sensitive", "0.5–2.25 MHz"],
+    ["Rubber (typical compound)", "1,550", "1.9", "Very high, rises steeply with f", "0.5–2.25 MHz"],
+    ["Water (reference)", "1,480", "1.48", "—", "—"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Rubber and Elastomers: Slow, Lossy, Easy to Couple",
+   "body": "Rubber carries longitudinal waves at roughly **1,500–1,600 m/s** — water speed, a quarter of steel. The time base feels it first: a 10 mm lining takes 2 × 10 mm ÷ 1.5 mm/µs ≈ **13.3 µs** round trip, the time a beam spends crossing nearly 40 mm of steel, so range settings calculated for metal will bury the echoes you want.\n\nAttenuation is the governing limit. Elastomers absorb heavily, the loss **rises steeply with frequency**, and carbon-black-filled compounds are worse than gum stock — so rubber work runs at **0.5–2.25 MHz** over short ranges. The compensation is coupling: with Z ≈ 1.9 MRayl, rubber sits close to water, energy crosses a water or gel interface with little loss, and immersion or squirter coupling is natural.\n\nTwo field cautions. **Temperature**: polymer velocities drift far more than metal velocities — re-verify velocity and calibration at the test temperature, or thickness readings walk. **Geometry**: soft, contoured surfaces deform under probe pressure; delay lines and captive water columns keep the entry consistent on rollers, expansion joints, and molded parts."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-3-4-fig-a",
+   "caption": "Longitudinal velocity across common product forms, with acoustic impedance noted for each — the two numbers that frame every technique decision."
+  },
+  {
+   "type": "text",
+   "heading": "The Lining Bond Test: Reading the Ring-Down",
+   "body": "The classic elastomer job is verifying the **bond between a rubber lining and its steel shell**, examined from the **steel side** with a straight beam and the **multiple-echo decay** technique.\n\nThe physics: bare steel backed by air reflects essentially **100%** of the energy at each back-wall hit, so the pulse bounces in the shell for a long, slowly decaying train of multiples. Behind a **bonded** lining, the steel-to-rubber interface (Z 46.5 against 1.9) still reflects R = ((46.5−1.9)/(46.5+1.9))² ≈ **85%** — but the ~15% that leaks into the lossy rubber on **every bounce** never returns. The echo train collapses within a few multiples.\n\nReading the screen:\n\n- **Rapid decay** of the multiple-echo train → energy is escaping into the rubber → **bonded**.\n- **Long, persistent ring-down** → steel-to-air behavior → **disbond** (or a missing lining).\n\nCalibrate the pattern on known-bonded and known-disbonded reference areas of the same construction, scan on a documented grid, and map disbond boundaries where the decay pattern changes. The same ring-down logic verifies many soft coatings and adhesive-bonded laminations on metal."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-3-4-fig-b",
+   "caption": "Multiple-echo decay seen from the steel side: a disbond rings like steel against air, while a good bond bleeds energy into the rubber and the train dies fast."
+  },
+  {
+   "type": "text",
+   "heading": "Glass, Ceramics, and Plastics",
+   "body": "**Glass** is the anti-casting. Amorphous — no grains — so scattering is nearly absent and attenuation tiny, while velocity is metal-like: plate glass about **5,800 m/s** longitudinal, Z ≈ 14.5 MRayl. The consequence: frequencies of **10–25 MHz** are practical, and they need to be, because glass is brittle and its critical flaws are small. At 10 MHz, λ = 5,800 ÷ 10,000,000 ≈ 0.58 mm, putting the λ/2 sensitivity floor near **0.3 mm**. The named targets: **seeds** (small bubbles), **stones** (unmelted refractory particles), and **cords** (streaks of off-composition glass). Surface cracks dominate fracture risk, and polished glass carries **Rayleigh waves** superbly — a surface-wave sweep finds edge and face cracks at high sensitivity, remembering the wave samples only about one wavelength deep. Handle gently: managed contact pressure, clean compatible couplant.\n\n**Fine ceramics** (alumina ≈ 10,000 m/s, low loss) push the same logic further: very high frequencies, very small reference reflectors. **Engineering plastics** sit with rubber: polyethylene near 2,300 m/s, lossy and temperature-sensitive, examined at low megahertz — the basis of HDPE pipe fusion-joint inspection. **Concrete and similar coarse materials** scatter megahertz beams to death; that work belongs to specialized low-frequency equipment, not your flaw detector."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "When no code covers the material",
+   "body": "Build the framework instead of borrowing one. **Measure and document velocity** in the actual material; **prove penetration** with a back echo or through-transmission check; **qualify a written technique on reference standards of the same material** containing engineered reflectors (flat-bottom holes, inserts, known disbonds); and obtain **acceptance criteria from engineering, in writing**. Fitness-for-purpose belongs to the designer — demonstrated sensitivity belongs to you."
+  },
+  {
+   "type": "text",
+   "heading": "One Physics, Many Materials",
+   "body": "Comparing responses across product forms is the Level II skill this module has been building:\n\n- **Reflection is universal**: a delamination in CFRP, a disbond under rubber, a seed in glass, and a flake in steel are all impedance discontinuities; air-backed ones reflect nearly everything in any host.\n- **Wavelength sets sensitivity**: flaws much smaller than ~λ/2 are unreliable. Rubber at 1 MHz (λ ≈ 1.5 mm) resolves millimeter-scale targets at best; glass at 25 MHz chases tenths of a millimeter.\n- **Attenuation sets range**: the same 1 MHz probe crosses a meter of fine steel, a couple of centimeters of filled rubber.\n- **Impedance sets coupling**: low-Z polymers drink energy in from water; high-Z metals and ceramics bounce most of it at entry — and every reference comparison between a calibration standard and a part with different surface or material needs a **transfer correction**.\n\nSo the habit to keep: characterize first — velocity, impedance, attenuation — then choose frequency, probe, and coupling to match, qualify on same-material references, and write down where the numbers came from. Do that, and \"other product forms\" stops being exotic and becomes ordinary, defensible testing."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-3-4-fig-a",
+   "title": "Velocity and impedance across product forms",
+   "file": "ut2-3-4-fig-a.svg"
+  },
+  {
+   "id": "ut2-3-4-fig-b",
+   "title": "Lining bond check by multiple-echo decay",
+   "file": "ut2-3-4-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Match the Material to the Starting Technique",
+  "intro": "Classify each part by the starting approach its acoustic properties demand.",
+  "buckets": [
+   "Low frequency (2.25 MHz or below) — high attenuation, short range",
+   "High frequency (10 MHz and up) usable — low attenuation, fine resolution"
+  ],
+  "items": [
+   {
+    "label": "Carbon-filled rubber pump lining",
+    "bucket": 0,
+    "why": "Filled elastomers absorb severely and the loss climbs steeply with frequency — work at 0.5–2.25 MHz over short ranges."
+   },
+   {
+    "label": "Plate-glass sight window",
+    "bucket": 1,
+    "why": "Amorphous glass has no grains to scatter the beam; attenuation is tiny, so 10–25 MHz resolves the small seeds and stones that matter."
+   },
+   {
+    "label": "Polyethylene pipe fusion joint",
+    "bucket": 0,
+    "why": "PE runs about 2,300 m/s with high, temperature-sensitive absorption — low-megahertz examination over modest thickness."
+   },
+   {
+    "label": "Fine alumina ceramic wear plate",
+    "bucket": 1,
+    "why": "Alumina carries sound near 10,000 m/s with low loss, so high frequencies chase the very small flaws a brittle ceramic cares about."
+   },
+   {
+    "label": "Coarse-grained austenitic steel casting",
+    "bucket": 0,
+    "why": "Grain scattering rises roughly with f⁴ — the cure is dropping to 1 MHz or below with a large element, exactly as in the castings lesson."
+   },
+   {
+    "label": "Soft natural-gum rubber expansion joint",
+    "bucket": 0,
+    "why": "Even unfilled rubber absorbs heavily and deforms under the probe; low frequency, short range, gentle coupling."
+   },
+   {
+    "label": "Fused-silica optical blank",
+    "bucket": 1,
+    "why": "Fused silica is amorphous and exceptionally clean acoustically (around 5,960 m/s), so very high frequencies and tiny reference reflectors are practical."
+   },
+   {
+    "label": "Thin fine-grained aluminum sheet for precision thickness",
+    "bucket": 1,
+    "why": "Low-attenuation wrought metal tolerates 10 MHz and up, where the short pulse gives the resolution thin-section work needs."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A 10 mm thick rubber lining (velocity 1,500 m/s) is examined with a straight beam. The round-trip transit time is about:",
+   "options": [
+    "6.7 µs",
+    "13.3 µs",
+    "26.7 µs",
+    "3.3 µs"
+   ],
+   "correct": 1,
+   "explanation": "t = 2d/v = 2 × 0.010 m ÷ 1,500 m/s ≈ 13.3 µs — roughly the time a beam needs for 40 mm of steel, which is why range settings must follow the material's velocity."
+  },
+  {
+   "question": "Glass tolerates examination frequencies of 10–25 MHz mainly because:",
+   "options": [
+    "Its velocity is lower than steel's",
+    "It is amorphous, so there are essentially no grains to scatter the beam and attenuation is very low",
+    "Its impedance matches the transducer perfectly",
+    "High frequencies bend around surface cracks"
+   ],
+   "correct": 1,
+   "explanation": "With no grain structure, glass scatters almost nothing; low attenuation lets high frequencies survive, and the short wavelength resolves the small seeds, stones, and cracks that matter in a brittle material."
+  },
+  {
+   "question": "Testing a rubber-lined vessel from the steel side, one area shows a long, persistent train of multiple back echoes while neighboring areas show a fast-dying train. The ringing area indicates:",
+   "options": [
+    "A well-bonded lining absorbing the sound",
+    "A disbond — the steel-to-air interface reflects essentially all the energy, so the multiples persist",
+    "Unusually thick rubber",
+    "A couplant problem under the probe"
+   ],
+   "correct": 1,
+   "explanation": "A good bond leaks about 15% of the energy into the lossy rubber at every bounce, killing the train quickly; steel against air returns nearly everything, so a long ring-down marks the disbond."
+  },
+  {
+   "question": "Why must velocity be re-verified at the test temperature when examining polymers such as rubber or polyethylene?",
+   "options": [
+    "Polymer velocities drift strongly with temperature, so thickness and depth readings shift far more than they would in metal",
+    "Couplant only works within 2 degrees of calibration temperature",
+    "The piezoelectric element changes frequency with part temperature",
+    "Temperature reverses the polarity of the reflected signal"
+   ],
+   "correct": 0,
+   "explanation": "Acoustic velocity in polymers is markedly temperature-dependent — far more than in metals — so a calibration done cold misreads thickness and depth when the part is warm."
+  },
+  {
+   "question": "You must evaluate a material no standard code directly addresses. The professional approach is to:",
+   "options": [
+    "Apply the steel weld acceptance criteria you know best",
+    "Qualify a written technique on reference standards of the same material with engineered reflectors, document measured velocity and penetration, and obtain acceptance criteria from engineering in writing",
+    "Test at the highest available frequency to be conservative",
+    "Decline the job, since testing without a published code is prohibited"
+   ],
+   "correct": 1,
+   "explanation": "Outside the standard catalog, validity comes from demonstration: same-material reference standards, documented properties, a qualified written technique, and engineering-issued acceptance criteria."
+  }
+ ],
+ "references": [
+  "CP-105-2024 UT Evaluation Course §2.8 (other product forms as applicable — rubber, glass, etc.)",
+  "General acoustic property tables for polymers, glasses, and ceramics (reference values)",
+  "Owner/engineering-specified acceptance for materials outside standard codes (general practice)"
+ ]
+}

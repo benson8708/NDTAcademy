@@ -1,0 +1,115 @@
+{
+  "moduleId": "ut1-8",
+  "questions": [
+    {
+      "question": "Which display presentation draws a cross-section of the part — depth versus probe travel — making it the natural view for corrosion profiling?",
+      "options": [
+        "C-scan",
+        "B-scan",
+        "RF A-scan",
+        "Strip-chart amplitude record"
+      ],
+      "correct": 1,
+      "explanation": "The B-scan plots gated depth (time) against probe position along a line of travel, producing a cross-sectional profile; the C-scan is a plan-view map and the A-scan a single waveform."
+    },
+    {
+      "question": "An automated immersion system builds its C-scan map by combining the gated signal data with:",
+      "options": [
+        "position data reported by the bridge and manipulator encoders",
+        "the pulser voltage waveform",
+        "the recorder's paper speed setting",
+        "the couplant flow rate at the squirter nozzle"
+      ],
+      "correct": 0,
+      "explanation": "A C-scan is amplitude (or time-of-flight) plotted against X-Y position, so every gated reading must be stamped with the probe location reported by the scanning system's encoders."
+    },
+    {
+      "question": "An echo stands at 100% of full screen height. After removing 12 dB of gain, a linear display will show it at approximately:",
+      "options": [
+        "50% FSH",
+        "12% FSH",
+        "25% FSH",
+        "6% FSH"
+      ],
+      "correct": 2,
+      "explanation": "Twelve decibels is two six-decibel steps — a factor of four in amplitude — so 100% falls to about 25% of full screen height."
+    },
+    {
+      "question": "A digital thickness setup reads 0.3 mm high on the 5 mm step of a block and 0.3 mm high on the 50 mm step. Which adjustment is needed?",
+      "options": [
+        "Material velocity — the error scales with thickness",
+        "Range — the screen is too compressed",
+        "Gain — the echoes are too small",
+        "Zero offset — a constant error at every thickness points to the delay setting"
+      ],
+      "correct": 3,
+      "explanation": "A zero (probe delay) error adds the same constant to every reading, while a velocity error grows in proportion to distance; an identical 0.3 mm error at both steps is a zero problem."
+    },
+    {
+      "question": "The reflector arrangement used for the screen-height (vertical) linearity verification is:",
+      "options": [
+        "A single flat-bottom hole at the near-field distance",
+        "Two echoes locked at a 2:1 amplitude ratio — for example a side-drilled-hole pair set at 80% and 40% FSH",
+        "Five back-wall echoes at equal spacing",
+        "The 100 mm radius of the IIW block"
+      ],
+      "correct": 1,
+      "explanation": "Vertical linearity is judged by whether a true 2:1 amplitude relationship stays 2:1 as gain is stepped — so the check needs two simultaneous echoes with a fixed ratio, typically from a pair of side-drilled holes."
+    },
+    {
+      "question": "The 'primary reference level' established during inspection standardization is best described as:",
+      "options": [
+        "the recorded gain that brings the peaked response of the specified reference reflector to a defined screen height, such as 80% FSH",
+        "the maximum gain the instrument can produce",
+        "the gain at which baseline grass reaches 20% of the screen",
+        "the alarm threshold of the flaw gate"
+      ],
+      "correct": 0,
+      "explanation": "Sensitivity is standardized by peaking the specified reference reflector and setting it to a defined height with the gain; that documented gain is the primary reference level all indications are compared against."
+    },
+    {
+      "question": "A DAC curve drawn from identical side-drilled holes slopes downward with increasing sound path because:",
+      "options": [
+        "deeper holes in the block are drilled smaller",
+        "the sweep becomes nonlinear at long range",
+        "beam spread and material attenuation reduce the echo from a same-size reflector as distance grows",
+        "the gate attenuates signals later in time"
+      ],
+      "correct": 2,
+      "explanation": "The holes are identical; only the sound path changes. Beam spread dilutes the energy over a larger area and attenuation absorbs and scatters it, so amplitude falls with distance — the falloff the curve exists to capture."
+    },
+    {
+      "question": "For a standardization to remain valid through an examination, which set of conditions must stay as calibrated?",
+      "options": [
+        "Same shift, same shop, same scanning pattern",
+        "Same probe (by serial number), cable, couplant, and instrument settings",
+        "Same gain only — all other settings may float",
+        "Same block storage location and ambient lighting"
+      ],
+      "correct": 1,
+      "explanation": "The standardization is a snapshot of a complete system: probe and cable identity, couplant type, and every instrument setting are pulse-echo variables that must match the calibration record or be re-established."
+    },
+    {
+      "question": "Common code practice requires the calibration block temperature to be within approximately how much of the test part temperature?",
+      "options": [
+        "1 °C (2 °F)",
+        "50 °C (90 °F)",
+        "30 °C (54 °F)",
+        "14 °C (25 °F)"
+      ],
+      "correct": 3,
+      "explanation": "Velocity, attenuation, and wedge behavior all shift with temperature, so codes commonly hold block and part within about 14 °C (25 °F); beyond that, standardize at temperature with a heated block and high-temperature couplant."
+    },
+    {
+      "question": "At the reference gain, the block's back echo reads 80% FSH and the part's back echo reads 20% FSH. The transfer correction is:",
+      "options": [
+        "12 dB",
+        "6 dB",
+        "4 dB",
+        "60 dB"
+      ],
+      "correct": 0,
+      "explanation": "The ratio is 80/20 = 4, and 20·log₁₀(4) ≈ 12 dB — that measured difference is added to the reference gain when evaluating indications in the part."
+    }
+  ]
+}

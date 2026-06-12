@@ -1,0 +1,62 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#0A2342">Angle-Beam Weld Geometry</text>
+
+  <!-- plate cross-section -->
+  <rect x="80" y="150" width="640" height="160" fill="#E8F1FB" stroke="#0A2342" stroke-width="2"/>
+  <text x="100" y="300" text-anchor="start" font-family="Arial, sans-serif" font-size="13" fill="#5A6B7E">T = thickness</text>
+
+  <!-- top surface label -->
+  <text x="400" y="142" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#5A6B7E">top surface</text>
+
+  <!-- thickness dimension -->
+  <line x1="64" y1="150" x2="64" y2="310" stroke="#5A6B7E" stroke-width="1.5"/>
+  <line x1="58" y1="150" x2="70" y2="150" stroke="#5A6B7E" stroke-width="1.5"/>
+  <line x1="58" y1="310" x2="70" y2="310" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="48" y="234" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0A2342" transform="rotate(-90 48 234)">T</text>
+
+  <!-- weld (simplified) at right -->
+  <polygon points="560,150 600,150 590,310 570,310" fill="#D9E0E8" stroke="#0A2342" stroke-width="1.5"/>
+  <text x="580" y="332" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#0A2342">weld</text>
+
+  <!-- probe / wedge on surface -->
+  <polygon points="150,150 230,150 230,118 162,118" fill="#5A6B7E" stroke="#0A2342" stroke-width="2"/>
+  <text x="196" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#0A2342">angle probe</text>
+  <!-- index point -->
+  <circle cx="210" cy="150" r="5" fill="#D14343" stroke="#0A2342" stroke-width="1.5"/>
+  <text x="210" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#D14343">index point</text>
+
+  <!-- first leg: down to back wall at x=410 -->
+  <line x1="210" y1="150" x2="410" y2="310" stroke="#1B82E8" stroke-width="3"/>
+  <!-- second leg: up to top surface at x=610 (reflector near top on 2nd leg) -->
+  <line x1="410" y1="310" x2="580" y2="174" stroke="#1B82E8" stroke-width="3"/>
+  <polygon points="580,174 568,178 576,188" fill="#1B82E8"/>
+
+  <!-- refracted angle arc at index point -->
+  <line x1="210" y1="150" x2="210" y2="240" stroke="#5A6B7E" stroke-width="1" stroke-dasharray="4 3"/>
+  <path d="M 210 200 A 50 50 0 0 1 240 188" fill="none" stroke="#F2A33C" stroke-width="2"/>
+  <text x="250" y="208" text-anchor="start" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#F2A33C">&#952; (refracted angle)</text>
+
+  <!-- soundpath label on first leg -->
+  <text x="290" y="232" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1B82E8" transform="rotate(38.7 290 232)">soundpath S</text>
+
+  <!-- bounce point -->
+  <circle cx="410" cy="310" r="5" fill="#1E9E6A" stroke="#0A2342" stroke-width="1.5"/>
+  <text x="410" y="332" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#1E9E6A">back-wall bounce</text>
+
+  <!-- skip distance bracket along top -->
+  <line x1="210" y1="100" x2="610" y2="100" stroke="#0A2342" stroke-width="1.5"/>
+  <line x1="210" y1="94" x2="210" y2="106" stroke="#0A2342" stroke-width="1.5"/>
+  <line x1="610" y1="94" x2="610" y2="106" stroke="#0A2342" stroke-width="1.5"/>
+  <text x="410" y="90" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0A2342">skip distance = 2T &#183; tan &#952;</text>
+
+  <!-- formulas box -->
+  <rect x="430" y="356" width="356" height="86" fill="#0A2342"/>
+  <text x="446" y="378" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#E8F1FB">Surface distance = S &#183; sin &#952;</text>
+  <text x="446" y="400" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#E8F1FB">Depth (1st leg) = S &#183; cos &#952;</text>
+  <text x="446" y="422" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#E8F1FB">Depth (2nd leg) = 2T &#8722; S &#183; cos &#952;</text>
+
+  <!-- depth marker for reflector on second leg -->
+  <line x1="580" y1="150" x2="580" y2="174" stroke="#D14343" stroke-width="2"/>
+  <text x="612" y="166" text-anchor="start" font-family="Arial, sans-serif" font-size="12" fill="#D14343">depth</text>
+</svg>

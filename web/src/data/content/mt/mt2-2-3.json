@@ -1,0 +1,125 @@
+{
+ "lessonId": "mt2-2-3",
+ "title": "Effects of Discontinuities on Materials",
+ "narrationScript": "This lesson answers a question every inspector eventually asks. Why does a crack the size of a hair matter on a part the size of a truck axle. The answer decides how seriously you take your own indications, so it is worth knowing cold. Start with how parts are designed. A designer sizes a part from the loads it must carry and the properties of sound material, then adds a margin of safety. Every number in that calculation assumes the metal is continuous. Tensile strength, yield strength, ductility, toughness, and fatigue strength are all measured on smooth, sound test bars. A discontinuity quietly breaks that assumption. The first effect is the obvious one. A flaw removes load carrying cross section. But on most real parts that loss is tiny, a fraction of one percent, and if that were the whole story, small flaws would not matter. The real damage is stress concentration. Force flowing through a part behaves like water in a channel. Put an obstacle in the channel and the flow squeezes around it, moving faster at the edges. Stress does the same thing. Around a smooth round hole the local stress runs about three times the average. Around a sharp crack the concentration is far higher, because the sharper the notch, the harder the stress lines crowd together at its tip. So a small, sharp, tight crack, exactly the kind magnetic particle testing finds best, can push local stress past yield while the average stress in the part stays comfortable. How much that matters depends on the material. Ductile materials can blunt a sharp notch by flowing a little at the tip, which spreads the load and buys tolerance. Hard, high strength, heat treated steels cannot flow. They are notch sensitive, and the same crack that a soft bracket shrugs off can fracture a hardened pin. That is one of the quiet ironies of this trade. The strongest looking parts are often the least forgiving of flaws. Part use matters just as much as material. A discontinuity in a lightly loaded static bracket may never move for the life of the machine. The same discontinuity in a rotating shaft, a pressure boundary, a lifting lug, or an aircraft fitting is a different animal, because the loading is severe and the cost of failure is measured in lives. This is why acceptance criteria differ from one specification to the next and from one class of part to the next. The criteria encode how the part is loaded, how it is used, and what failure would cost. Your job is not to invent a verdict. Your job is to find indications and report them accurately so the governing criteria can do their work. Now add cyclic loading, because most machinery failures in service are fatigue failures. Fatigue runs in three stages. First a crack initiates, almost always at a stress raiser and almost always at or near the surface, because bending and torsion put their highest stress at the surface. Then it propagates, advancing a tiny step with each load cycle and leaving the curved beach marks you see on fracture faces. Finally the remaining section can no longer carry the load, and the part breaks fast. Two facts about that sequence should shape how you inspect. First, a fatigue crack spends most of its life small and slow. Growth accelerates near the end, so the window for catching it is early, while the indication is still faint and tight, not dramatic. Second, an existing surface discontinuity skips the initiation stage entirely. A seam, a lap, or a grinding crack is a fatigue crack with a head start, which is why specifications treat those small linear indications so severely. Put it all together and the logic of your work becomes clear. Magnetic particle testing is biased toward small, sharp, surface breaking flaws. Service stress is biased toward starting failures at small, sharp, surface stress raisers. The method looks exactly where the danger lives. So treat a two millimeter linear indication on a loaded surface with respect. Find them small, report them honestly, and let the acceptance criteria decide what lives and what dies.",
+ "imagePrompt": "A fractured rotating shaft lies on a metal inspection table under workshop lighting, its fracture face showing smooth curved beach marks beside a rough crystalline final-fracture zone, with calipers and a magnifier resting nearby.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Design Factors: The Margin You Protect",
+   "body": "Every part you inspect was sized by a designer working from two inputs: the **loads** the part must carry, and the **properties of sound material**. On top of that calculation sits a factor of safety — margin against overload, misuse, and the unknown. Every number in the stack assumes the metal is **continuous**: no seams, no laps, no cracks, no inclusions of consequence.\n\nA discontinuity quietly invalidates that assumption. It does not change the drawing, the calculated stress, or the rated load — it changes what the *actual* metal can do at one specific spot. That is why inspection exists at all: NDT is how the designer's assumption of soundness gets verified on real hardware.\n\nUnderstanding this also explains why **acceptance criteria are not negotiable opinions**. The allowable indication sizes in a specification encode the designer's margins for that class of part. A Level II who understands *why* a 1/16 in. linear indication is rejectable on one part and acceptable on another reads criteria as engineering, not bureaucracy — and applies them with far fewer errors."
+  },
+  {
+   "type": "text",
+   "heading": "Mechanical Properties a Flaw Attacks",
+   "body": "The properties the designer relied on are measured on smooth, sound test specimens — and a discontinuity degrades nearly all of them:\n\n- **Tensile and yield strength**: reduced locally where the flaw cuts section and concentrates stress.\n- **Ductility**: a notch constrains plastic flow, so even a normally ductile material behaves in a more brittle way at a sharp flaw.\n- **Toughness**: the resistance to fracture from a crack-like defect — the property most directly consumed by a sharp discontinuity, and the reason crack-like indications are treated more severely than rounded ones.\n- **Fatigue (endurance) strength**: the most sensitive of all. Smooth-bar fatigue limits can be cut to a fraction by a surface notch.\n\nMaterial condition sets the penalty rate. **Ductile** materials blunt a sharp notch by yielding slightly at the tip, redistributing load. **Hard, high-strength, heat-treated steels cannot flow** — they are *notch sensitive*, and the identical crack that a soft bracket tolerates can fracture a hardened pin outright. Remember the irony from your magnetism lessons: the hard steels that hold magnetism best (high retentivity) are usually also the steels least forgiving of the flaws you are looking for."
+  },
+  {
+   "type": "text",
+   "heading": "Part Use Decides Significance",
+   "body": "The same physical discontinuity can be trivial on one part and lethal on another. Significance is a function of **how the part is used**:\n\n- **Loading type.** Static and lightly loaded parts tolerate far more than parts under cyclic, impact, or reversing loads. A flaw that never sees fluctuating stress may never grow.\n- **Stress level and direction.** A discontinuity lying **perpendicular to the principal tensile stress** is the worst case; one lying parallel to the stress may be nearly harmless. This is the structural mirror of your field-direction rule — orientation matters on both sides of the job.\n- **Location on the part.** Bending and torsion put maximum stress at the **surface**; a fillet, keyway, or section change concentrates it further. A small flaw in a high-stress fillet outweighs a larger one in a dead zone.\n- **Consequence of failure.** Rotating shafts, pressure boundaries, lifting hardware, and aircraft fittings carry tight criteria because failure is catastrophic; a static guard bracket does not.\n- **Environment.** Corrosion, temperature, and vibration all accelerate the damage a flaw can do — corrosion fatigue starts at surface discontinuities.\n\nThis is exactly why different specifications — and different part classes within one specification — carry different acceptance criteria."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt2-2-3-fig-a",
+   "caption": "Stress flow through a sound section, around a round hole, and around a sharp crack — the sharper the discontinuity, the more violently stress concentrates at its tips."
+  },
+  {
+   "type": "text",
+   "heading": "Load-Carrying Ability and Stress Concentration",
+   "body": "A discontinuity attacks load-carrying ability two ways, and the obvious one is the minor one.\n\n**Net-section loss** — the flaw removes load-bearing area. On real parts this is usually a fraction of a percent. If this were the whole story, small flaws would not matter.\n\n**Stress concentration** is the real damage. Stress flows through a part like water in a channel: an obstruction forces the flow to squeeze around it, and the local intensity rises at the edges. Around a smooth **round hole**, local stress runs about **three times** the nominal average. Make the obstruction elliptical and the factor grows with sharpness; at the tip of a **sharp, tight crack** the theoretical concentration becomes enormous — the sharper the tip, the harder the stress lines crowd. A crack-like flaw can drive local stress past yield while strain gauges on the part read a comfortable average.\n\nTwo consequences for the inspector:\n\n- The flaws MT finds best — **small, sharp, tight, surface-breaking** — are precisely the high-concentration geometry, which is why crack-like (linear) indications are dispositioned more severely than rounded ones in most criteria.\n- Concentrations **stack**: a small crack at the root of a keyway or fillet multiplies an already-concentrated stress. Pay disproportionate attention to geometric transitions."
+  },
+  {
+   "type": "text",
+   "heading": "Cyclic Loading: How Cracks Grow",
+   "body": "Most service failures of machinery are **fatigue** failures — damage accumulated from repeated load cycles at stresses well below the static strength. Fatigue runs in three stages:\n\n- **Initiation.** A crack nucleates at a stress raiser — a tool mark, pit, inclusion, fillet, or existing discontinuity — and almost always at or near the **surface**, where bending and torsion stresses peak.\n- **Propagation.** Each load cycle advances the crack a microscopic step. The fracture face records this as smooth, curved **beach marks** spreading from the origin.\n- **Final fracture.** The remaining ligament can no longer carry the load and tears fast, leaving a rough, crystalline-looking zone.\n\nTwo facts about this sequence shape inspection practice. First, **growth accelerates**: a fatigue crack spends most of its life short and slow, then races at the end. The window for detection is early, while the indication is faint and tight — which sets inspection intervals for cyclic hardware. Second, **an existing surface discontinuity skips initiation entirely.** A seam, lap, or grinding crack is a fatigue crack with a head start; under cyclic load it begins propagating on day one. That is why manufacturing discontinuities that look static and minor are rejected on parts headed for cyclic service."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt2-2-3-fig-b",
+   "caption": "A fatigue fracture face reads like a history: initiation at a surface stress raiser, beach marks recording slow growth, then fast final fracture — and crack growth accelerates late, so the detection window is early."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Find it small",
+   "body": "MT is biased toward **small, sharp, surface** flaws — and service stress is biased toward starting failures at **small, sharp, surface** stress raisers. The method looks exactly where the danger lives. A faint 2 mm linear indication on a loaded surface deserves your full attention: by the time a fatigue crack is dramatic, most of its life — and most of your options — are gone."
+  }
+ ],
+ "figures": [
+  {
+   "id": "mt2-2-3-fig-a",
+   "title": "Stress concentration at discontinuities",
+   "file": "mt2-2-3-fig-a.svg"
+  },
+  {
+   "id": "mt2-2-3-fig-b",
+   "title": "Fatigue: initiation, growth, final fracture",
+   "file": "mt2-2-3-fig-b.svg"
+  }
+ ],
+ "interactive": null,
+ "checkQuestions": [
+  {
+   "question": "A small crack removes only 0.2% of a shaft's cross-sectional area, yet the engineer rejects the part. The primary reason a small sharp flaw is dangerous is:",
+   "options": [
+    "The loss of load-bearing area",
+    "Stress concentration at the sharp tip, which can drive local stress far past the average",
+    "The crack adds weight imbalance to the shaft",
+    "Magnetic flux leakage weakens the steel"
+   ],
+   "correct": 1,
+   "explanation": "Net-section loss from a small flaw is trivial; the danger is the concentration of stress at the sharp tip, which can exceed yield locally while the average stress stays low."
+  },
+  {
+   "question": "Two parts contain identical tight cracks: a soft annealed steel bracket and a hardened heat-treated pin. Which statement is correct?",
+   "options": [
+    "Both parts are at equal risk",
+    "The hardened pin is at greater risk because hard, high-strength steels are notch sensitive and cannot blunt the crack tip by yielding",
+    "The soft bracket is at greater risk because soft steel is weaker",
+    "Neither part is at risk if the crack is under 1/8 in. long"
+   ],
+   "correct": 1,
+   "explanation": "Ductile material flows slightly at a crack tip and redistributes load; hard heat-treated steel cannot, so the same flaw is far more dangerous in the hardened part."
+  },
+  {
+   "question": "A discontinuity is most damaging to a part's load-carrying ability when it lies:",
+   "options": [
+    "Parallel to the principal tensile stress",
+    "Perpendicular to the principal tensile stress",
+    "At the neutral axis of a part in pure bending",
+    "Anywhere — orientation does not affect severity"
+   ],
+   "correct": 1,
+   "explanation": "A flaw perpendicular to the tensile stress opens under load and concentrates stress at its tips; one parallel to the stress barely disturbs the stress flow."
+  },
+  {
+   "question": "Where do fatigue cracks in shafts under bending or torsion most commonly initiate?",
+   "options": [
+    "At the centerline, where the material is weakest",
+    "At or near the surface, at a stress raiser such as a fillet, keyway, tool mark, or existing discontinuity",
+    "Uniformly throughout the cross section",
+    "Only at internal inclusions, never at the surface"
+   ],
+   "correct": 1,
+   "explanation": "Bending and torsion produce maximum stress at the surface, so fatigue initiates there — usually helped by a geometric or material stress raiser. This is why a surface method like MT is so relevant to rotating hardware."
+  },
+  {
+   "question": "Why do inspection programs aim to catch fatigue cracks early in their life?",
+   "options": [
+    "Early cracks are easier to weld repair",
+    "Crack growth accelerates late in life — most of the part's remaining safe life exists while the crack is still small and faint",
+    "Indications become nonrelevant once cracks grow large",
+    "Early detection lets the part stay in service with the crack"
+   ],
+   "correct": 1,
+   "explanation": "A fatigue crack spends most of its life small and slow-growing, then races near the end; the practical detection window — and the basis for inspection intervals — is the long early stage."
+  }
+ ],
+ "references": [
+  "CP-105-2024 MT Topical Outline §2.4 (effects of discontinuities on materials)",
+  "CP-105-2024 MT Topical Outline §2.4.1–2.4.3 (design factors: mechanical properties and part use; load-carrying ability; cyclic loading)",
+  "Acceptance criteria in governing codes (for example ASME Section VIII or customer specifications) encode these design factors (generic reference)",
+  "Reference value: stress concentration at a round hole in a wide plate ≈ 3× nominal stress"
+ ]
+}

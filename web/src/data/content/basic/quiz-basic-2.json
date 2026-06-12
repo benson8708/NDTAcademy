@@ -1,0 +1,115 @@
+{
+  "moduleId": "basic-2",
+  "questions": [
+    {
+      "question": "A pressure vessel known to contain a crack is AE-monitored during a pressurization that never climbs above recent service loads, and the crack region stays silent. The most fundamentally correct reading of that silence is:",
+      "options": [
+        "The crack must have healed, since every crack emits whenever the vessel is pressurized",
+        "AE cannot respond to cracks at all — it detects only leaks",
+        "The crack is not growing under the applied stress — AE detects only active sources, and the stimulus never exceeded prior loading",
+        "The sensors were too far away, because AE requires a sensor directly over each flaw"
+      ],
+      "correct": 2,
+      "explanation": "AE is the passive method: emission exists only while degradation releases stored elastic energy, so a flaw that does not move under the applied stress is silent. The Kaiser effect compounds it — a sound structure stays quiet until its previous maximum stress is exceeded, which is why AE test loads must climb meaningfully above service loads. A handful of fixed sensors covers the whole shell; proximity is not the issue. Silence here means dormant, not absent — sizing and characterization still belong to follow-up methods."
+    },
+    {
+      "question": "During AE monitoring of a loaded FRP vessel, the analyst sorts the hits by peak amplitude. Consistent with composite damage behavior, the expected pattern is:",
+      "options": [
+        "Numerous low-amplitude hits from matrix cracking and sparse high-amplitude hits from fiber breakage",
+        "Identical amplitudes from every damage mechanism, since amplitude is set by the preamplifier gain",
+        "Continuous emission from fiber breaks and discrete bursts from matrix cracking",
+        "Hits from delamination only, because fiber breakage releases too little energy to detect"
+      ],
+      "correct": 0,
+      "explanation": "Composites are productive AE targets because every damage mechanism emits, and amplitude climbs with severity: matrix cracking gives numerous lower-amplitude hits, while fiber breakage gives sparse, high-amplitude bursts — so amplitude sorting alone goes a long way toward separating mechanisms. Fiber breaks are discrete burst events, not continuous emission. Amplitude is reported in dB referenced to 1 microvolt at the sensor, a scale that subtracts gain settings out."
+    },
+    {
+      "question": "On requalification of an FRP tank, significant emission resumes at 85 percent of the previous maximum load and continues throughout the constant-load hold. Taken together, these observations indicate:",
+      "options": [
+        "The Kaiser effect held, so the tank is behaving as if sound",
+        "A Felicity ratio of 0.85 plus hold emission — both hallmarks of structurally significant, actively progressing damage",
+        "A Felicity ratio of 1.18, which outweighs the emission during the hold",
+        "Normal behavior, since stable structures emit steadily at constant load"
+      ],
+      "correct": 1,
+      "explanation": "Felicity ratio = load at emission onset ÷ previous maximum = 0.85. A ratio below 1.0 means the load memory of the Kaiser effect broke down — damage is progressing, and the lower the ratio the worse it is. The second red flag stands on its own: a stable structure falls silent under constant load, so emission that persists through a hold marks active degradation. Both behaviors are written into FRP vessel acceptance criteria (ASME Section V, Article 11 territory)."
+    },
+    {
+      "question": "Wary of plant noise, an operator sets a fixed detection threshold about 15 dB above the surveyed background. The most serious consequence for the test is:",
+      "options": [
+        "Storage and the location processor will flood with low-amplitude grass",
+        "The floating threshold will automatically pull the setting back down",
+        "Location accuracy improves, since only strong hits are time-stamped",
+        "Genuine low-amplitude emission never crosses the comparator — and because front-end rejection is irreversible, that data is gone for good"
+      ],
+      "correct": 3,
+      "explanation": "Nothing below the detection threshold ever becomes data: set it too high and real emission is silently deleted, set it too low and grass floods the system. Unlike software data filters — applied post-test to stored raw data and reversible — front-end rejection discards forever, and the Kaiser effect means you cannot replay the emission by re-running the load. Structural tests typically sit in the 35–45 dB range, just above the surveyed background; a floating threshold is a separate strategy, not an automatic rescue."
+    },
+    {
+      "question": "During a vessel pressurization, hits appear on many channels at the same instant with near-zero rise time and no arrival-time pattern. The noise family and the matched countermeasure are:",
+      "options": [
+        "Electromagnetic interference — coincidence rejection plus a rise-time/duration data filter",
+        "Friction at supports and slings — viscoelastic damping compound at the contact points",
+        "Hydraulic pump noise — time gates around pump strokes",
+        "A source outside the array — first-hit veto by perimeter guard sensors"
+      ],
+      "correct": 0,
+      "explanation": "A genuine stress wave needs travel time between sensors, so simultaneous arrival on many channels with near-zero rise time betrays EMI from welding, switchgear, or motor starts — rejected by coincidence logic, shielding and grounding, and post-test rise-time/duration filters. Friction shows long rise times and durations that track the load cycle; hydraulic noise starts and stops with the machinery; an external mechanical source announces itself by hitting a guard sensor first."
+    },
+    {
+      "question": "In eddy current testing, the standard depth of penetration decreases when which set of variables increases?",
+      "options": [
+        "Lift-off, fill factor, and probe diameter",
+        "Couplant thickness, wavelength, and instrument gain",
+        "Test frequency, electrical conductivity, and magnetic permeability",
+        "Test frequency only — material properties have no influence on penetration"
+      ],
+      "correct": 2,
+      "explanation": "The skin effect concentrates current at the surface; δ — the depth where current density falls to 1/e, about 37 percent of the surface value — shrinks as frequency, conductivity, or permeability increase, and by roughly 3δ the currents are too weak to matter. That makes frequency the operator's depth control: lower to look deeper, higher for surface sensitivity. Lift-off and fill factor are coupling variables, not penetration controls — and ET uses no couplant at all."
+    },
+    {
+      "question": "A tube mill's encircling-coil ET station reliably flags longitudinal seams yet is supplemented by a rotating-probe station. The supplement is needed because encircling coils:",
+      "options": [
+        "cannot keep up with production line speeds",
+        "drive circumferential eddy currents, which transverse flaws lying parallel to that current flow barely interrupt",
+        "respond only to ferromagnetic product held under magnetic saturation",
+        "measure fill factor rather than discontinuities"
+      ],
+      "correct": 1,
+      "explanation": "The orientation rule: a discontinuity registers only to the degree it interrupts the eddy current path. Encircling and bobbin coils drive currents circumferentially, so longitudinal flaws cut across the loops and ring loudly, while transverse and short flaws lie parallel to the flow and respond poorly — exactly why rotating-probe stations add that coverage. Encircling coils inspect the full circumference at line speed on any conductor; magnetic saturation is a separate fix that flattens permeability noise in steel."
+    },
+    {
+      "question": "Partway through a production run, an automated eddy current line fails its scheduled re-standardization check on the reference standard. The product tested since the last successful check must be:",
+      "options": [
+        "accepted, because the system was properly standardized at the start of the run",
+        "accepted, provided the alarm rate stayed within its normal trend",
+        "scrapped outright, since no valid disposition is possible",
+        "treated as suspect and re-examined once the system is restored and re-standardized"
+      ],
+      "correct": 3,
+      "explanation": "Eddy current responses are relative, so the periodic re-check is what proves the system has not quietly drifted since standardization. Fail it, and every accept/reject call back to the last good check loses its basis: the product is suspect and is re-examined — not blindly accepted on the strength of the morning's setup, and not scrapped, because re-examination on a re-standardized system recovers the disposition. The alarm-rate trend monitors the process, not the test system's calibration."
+    },
+    {
+      "question": "Aerospace practice per AMS 2658 verifies aluminum heat treatment with a conductivity reading paired with a hardness test because:",
+      "options": [
+        "conductivity bands for different alloy-temper combinations overlap, so the two measurements together discriminate tempers that neither resolves alone",
+        "the hardness value corrects the conductivity meter for temperature drift",
+        "eddy current instruments cannot read %IACS directly on aluminum",
+        "hardness is required to calculate the standard depth of penetration"
+      ],
+      "correct": 0,
+      "explanation": "Each alloy-temper combination owns a published %IACS band, but the bands overlap — 2024-T3 (roughly 28–33 %IACS) and 7075-T6 (about 31–36) share readings near the low thirties — so a conductivity number alone cannot always name the temper. Pairing it with hardness resolves the ambiguity. Temperature is handled by keeping part and calibration blocks at the same stable temperature; conductivity meters read %IACS directly per ASTM E1004."
+    },
+    {
+      "question": "A technician proposes one low-frequency eddy current scan of an aluminum lap joint to both detect tight surface fatigue cracks and map hidden corrosion thinning. The plan fails because:",
+      "options": [
+        "eddy currents cannot sense corrosion thinning from the accessible side",
+        "at low frequency the instrument responds only to lift-off",
+        "the low frequency that lets the currents reach the far surface surrenders the near-surface current density that tight cracks require — the two jobs need separate setups",
+        "fatigue cracks can only be detected after the paint is stripped"
+      ],
+      "correct": 2,
+      "explanation": "Thinning registers only while the eddy currents reach the far surface — the remaining wall must lie within the effective depth of about 3δ, which forces the frequency down. Surface crack detection wants the opposite: high frequencies that concentrate the currents in the first fraction of a millimeter where fatigue cracks start. The skin-effect bargain cuts both ways, so thinning surveys and crack searches are separate setups. Thinning surveys from one side are routine — and paint need not be stripped, since a thin nonconductive coating is merely a little lift-off."
+    }
+  ]
+}

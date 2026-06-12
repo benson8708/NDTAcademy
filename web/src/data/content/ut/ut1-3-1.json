@@ -1,0 +1,184 @@
+{
+ "lessonId": "ut1-3-1",
+ "title": "Pulse-Echo Instruments, Displays, and Controls",
+ "narrationScript": "Pick up any ultrasonic flaw detector, from a battered analog set to a brand new digital unit, and under the skin you will find the same machine. A clock that keeps time. A pulser that fires. A transducer that converts electricity to sound and back. A receiver that amplifies the faint echoes. And a display that draws them against time. That loop, fire, listen, draw, repeats hundreds or even thousands of times every second, and every knob on the front panel exists to control some part of it. So let's walk the loop once, slowly. It starts with the clock, sometimes called the timer or synchronizer. The clock does two jobs. First, it tells the pulser and the time base to start at the same instant, so the screen begins drawing exactly when the sound leaves the probe. Without that handshake, position along the screen would mean nothing. Second, the clock sets the pulse repetition frequency, how many complete fire and listen cycles happen each second. A few hundred to a few thousand is typical. There is a trap hiding here. If the instrument fires again before the echoes from the previous shot have died away, the leftovers appear on the next sweep as ghost indications, called wrap around ghosts. They look real, but they wander along the baseline when you change the repetition rate, and real echoes do not. Long parts and low attenuation materials are where you will meet them. The fix is simple, lower the repetition rate. Next, the pulser. On command from the clock it slams the transducer with a short electrical pulse, often a few hundred volts. A spike pulser dumps its energy all at once. A square wave pulser lets you tune the pulse width to match the probe, which puts more energy into the part and can improve penetration. Either way the transducer rings, sound enters the part, and the listening begins. The echoes that return are tiny, often a thousandth of the voltage that went out. The receiver makes them usable in three steps. It amplifies them, and the gain control sets how much, measured in decibels. Remember the scale. Six decibels doubles the echo height on the screen. Twelve decibels is four times. Twenty decibels is ten times. The receiver also filters the signal to cut noise outside the probe's frequency band. And it rectifies it. The raw signal, called the RF waveform, swings above and below zero. Full wave rectification folds the negative half upward so you see one clean positive envelope, which is how most field instruments display. Now the display itself. The basic presentation is the A scan, amplitude versus time. Horizontal position is time, and once the instrument is standardized, time becomes distance into the part. Vertical height is echo amplitude, how much energy came back. Every other presentation is built from A scans. A B scan stacks them side by side as the probe moves along a line, producing a cross section, as if you had sliced the part open along the scan path. A C scan rasters the probe over an area and maps each position from above, a plan view, like a floor plan of the part with the damage drawn in. Modern computerized systems record the complete waveform at every probe position, so the inspection can be replayed, re-gated, displayed any way you like, and archived as a permanent record. Finally, the controls. Range sets how much sound path fits across the screen. Velocity matches the time base to the material under test. Delay, sometimes called zero offset, slides the whole trace left or right to remove the travel time through a wedge or delay line. Gain we covered. Gates let you bracket a region of the screen and trigger an alarm or capture a measurement when an echo crosses a threshold inside that region. And then there is reject, which clips off everything below a set level to tidy up baseline grass. Treat reject with suspicion. On analog instruments it destroys vertical linearity, which means echo heights stop being trustworthy, and many procedures restrict it or ban it outright. If small signals are cluttering your baseline, ask why they are there instead of hiding them. That is the whole instrument, one loop and a handful of controls. In the next lesson we make it tell the truth, and that process is called standardization.",
+ "imagePrompt": "A technician adjusts the gain knob on a portable ultrasonic flaw detector sitting on a steel plate in a fabrication shop, the screen glowing with a bright A-scan trace.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "One Loop: Fire, Listen, Draw",
+   "body": "Strip away the branding and every pulse-echo instrument is the same five blocks working in a loop. The **clock** (timer/synchronizer) starts each cycle. The **pulser** hits the transducer with a short, high-voltage electrical pulse. The **transducer** converts that pulse to sound, sends it into the part, and converts returning echoes back to small voltages. The **receiver** amplifies, filters, and rectifies those voltages. The **display** draws them against time. Then the loop repeats - hundreds to thousands of times per second.\n\nTwo things make this loop useful for measurement. First, the clock triggers the pulser and the display's **time base** (sweep) at the same instant, so horizontal screen position is elapsed time since the pulse left. Second, sound velocity in the material is constant, so elapsed time converts directly to distance. That is the entire trick of pulse-echo: the instrument is a precise stopwatch wired to a microphone and a flashbulb.\n\nThe same architecture scales up to computerized systems: add position encoders and data storage and the instrument can record a complete waveform at every probe location, which is what makes B-scans, C-scans, and archived inspections possible."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-3-1-fig-a",
+   "caption": "Block diagram of a pulse-echo instrument: the clock synchronizes the pulser and the time base so screen position equals sound-path time."
+  },
+  {
+   "type": "text",
+   "heading": "The Electronics: Time Base, Pulser, Receiver",
+   "body": "The **time base** generates the horizontal sweep. Range, velocity, and delay settings all act on it - they decide how much sound path the screen represents and where it starts.\n\nThe **pulser** excites the probe. A **spike pulser** dumps a fast few-hundred-volt discharge - simple and broadband. A **square-wave pulser** lets you set pulse width and voltage to match the probe's frequency, putting more energy into the part for difficult, attenuating materials.\n\nThe **pulse repetition frequency (PRF)** is how many fire-listen cycles run per second. Higher PRF brightens analog displays and supports faster scanning, but there is a hard limit: all echoes from one pulse must die out before the next pulse fires. Fire too fast on a long sound path and late echoes from the previous cycle appear on the current sweep as **wrap-around ghosts** - indications at positions where nothing exists. Their signature: they shift along the baseline when you change PRF; real echoes stay put. Cure: lower the PRF.\n\nThe **receiver** takes echoes that may be a thousand times smaller than the transmitted pulse and makes them visible: **amplification** (set by gain, in dB), **filtering** (passing the probe's band, rejecting noise), and **rectification**. The raw **RF waveform** swings positive and negative; **full-wave rectification** folds it into the single positive envelope most field instruments display."
+  },
+  {
+   "type": "text",
+   "heading": "A-Scan, B-Scan, C-Scan, and Computerized Systems",
+   "body": "The **A-scan** is the fundamental presentation: echo **amplitude versus time** at one probe position. Horizontal position = sound-path distance (after standardization); vertical height = how much energy returned. Everything a Level II interprets - flaw echoes, back-wall echoes, loss of back wall, noise - is read from A-scans, and every other display is assembled from them.\n\nA **B-scan** records A-scans as the probe moves along a line and plots depth versus probe position: a **cross-section** of the part along the scan path. Corrosion survey instruments use B-scans to show the remaining-wall profile under the probe's track.\n\nA **C-scan** rasters the probe over an area (historically in an immersion tank, today also with encoded manual scanners) and plots a gated value - amplitude or depth - at each X-Y position: a **plan view**, the part seen from above with internal reflectors mapped like a floor plan. It is the natural display for laminations in plate and disbonds in composites.\n\n**Computerized systems** store the full RF waveform at every encoded position. Nothing is thrown away: data can be re-gated and re-displayed as any view after the scan, analyzed offline, and archived as a permanent record of the entire examination - the foundation of modern AUT and phased-array practice."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-3-1-fig-b",
+   "caption": "One flaw, three presentations: the A-scan shows amplitude versus time at one spot, the B-scan a cross-section along a line, the C-scan a plan-view map over an area."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Read the A-scan like a sentence",
+   "body": "Horizontal position answers **where** (sound-path distance to the reflector). Vertical height answers **how much** (energy returned, relative to your reference level). Every gate, alarm, thickness readout, and sizing technique is just the instrument reading those two axes for you - so a technician who cannot read the raw A-scan cannot catch the instrument when it lies."
+  },
+  {
+   "type": "text",
+   "heading": "Control Functions",
+   "body": "Each front-panel control acts on one block of the diagram:\n\n- **Gain** (receiver, in dB) scales echo height. +6 dB doubles a signal's screen height; -6 dB halves it; +20 dB is ten times. Gain does not change what energy returns - only how it is amplified.\n- **Range** (time base) sets how much sound path spans the screen - 100 mm for a thin plate, 250 mm for a full V-path weld scan.\n- **Velocity** (time base) matches the sweep to the material, e.g. 5,920 m/s longitudinal steel, 3,240 m/s shear steel.\n- **Delay / zero offset** (time base) slides the trace to subtract wedge or delay-line travel so zero on screen is the part surface.\n- **Reject / suppression** (receiver) blanks signals below a set level. On analog instruments it **destroys vertical linearity** - echo height ratios stop being true - so codes restrict it; some digital instruments implement a linear reject, but the safe habit is to leave it off unless your procedure explicitly allows it.\n- **Gates** watch a chosen span of the screen and trigger alarms or output a measurement (amplitude, time-of-flight) when a signal crosses the threshold - the basis of automatic flaw alarms and thickness readouts.\n- **PRF** balances scan speed and display brightness against wrap-around ghosts."
+  },
+  {
+   "type": "table",
+   "caption": "Quick reference: what each control changes and what to watch for.",
+   "headers": ["Control", "Acts on", "What it does", "Watch out for"],
+   "rows": [
+    ["Gain (dB)", "Receiver", "Scales echo height (+6 dB = 2x)", "Too high: grass and saturation; too low: missed flaws"],
+    ["Range", "Time base", "Sound path shown across screen", "Echoes beyond range are off-screen, not absent"],
+    ["Velocity", "Time base", "Matches sweep to material", "Wrong material velocity skews all distances"],
+    ["Delay / zero", "Time base", "Removes wedge or delay-line time", "Wrong zero shifts every reading by the same amount"],
+    ["Reject", "Receiver", "Blanks signals below a threshold", "Distorts vertical linearity on analog sets; codes restrict"],
+    ["Gate", "Monitor", "Alarms or measures within a screen span", "A gate set too short can miss the flaw region entirely"],
+    ["PRF", "Clock", "Fire-listen cycles per second", "Too high causes wrap-around ghost indications"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-3-1-fig-a",
+   "title": "Pulse-echo instrument block diagram",
+   "file": "ut1-3-1-fig-a.svg"
+  },
+  {
+   "id": "ut1-3-1-fig-b",
+   "title": "A-scan, B-scan, and C-scan presentations",
+   "file": "ut1-3-1-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Bench Time: Make the Virtual Flaw Detector Behave",
+  "intro": "You connect a 5 MHz straight-beam probe to a digital flaw detector and couple it to a 100 mm thick steel block to check a casting. The screen is not cooperating. Work through the setup the way a Level II would.",
+  "steps": [
+   {
+    "prompt": "With the range set at 50 mm you see the initial pulse at screen left and nothing else. The block is known to be sound. What is the most likely explanation?",
+    "options": [
+     "The transducer is dead and must be replaced",
+     "The 100 mm back-wall echo lies beyond the 50 mm range, so it is off-screen to the right",
+     "The steel is too attenuating for any back echo",
+     "The reject control is set too low"
+    ],
+    "correct": 1,
+    "feedback": "Range only decides how much sound path the screen shows. A 100 mm back wall cannot appear on a 50 mm screen. Set the range to about 125 mm and the back echo lands inside the display - nothing was wrong with the probe or the part."
+   },
+   {
+    "prompt": "Range corrected, the back-wall echo now appears but only reaches 15% of full screen height, and your procedure calls for a reference echo at 80%. What do you adjust?",
+    "options": [
+     "Increase the PRF until the echo grows",
+     "Increase the delay to push the echo higher",
+     "Add receiver gain - roughly +14 to +15 dB will lift 15% to about 80%",
+     "Increase the velocity setting"
+    ],
+    "correct": 2,
+    "feedback": "Echo height is a gain job. From 15% to 80% is a ratio of 5.3, and 20 log of 5.3 is about 14.5 dB. PRF, delay, and velocity move or repeat the trace in time - none of them amplifies it."
+   },
+   {
+    "prompt": "Low-level grass now dances along the baseline and a colleague suggests dialing in reject to clean it up. Your procedure is silent on reject. Best practice?",
+    "options": [
+     "Use as much reject as needed - a clean screen is a professional screen",
+     "Leave reject off; it can hide small flaw signals and distorts vertical linearity, especially on analog instruments",
+     "Use reject but add 6 dB of gain to compensate",
+     "Switch the display to RF to remove the grass"
+    ],
+    "correct": 1,
+    "feedback": "Reject hides exactly the small signals you are paid to evaluate and makes echo-height comparisons untrustworthy on analog sets. If the procedure does not authorize it, leave it off and manage noise with frequency, filtering, or probe selection."
+   },
+   {
+    "prompt": "Scanning a 1.5 m long shaft from the end, you notice extra low echoes that slide along the baseline when you change the PRF setting. Real flaw echoes in the shaft would:",
+    "options": [
+     "Also slide, because PRF stretches the time base",
+     "Stay fixed in screen position - the sliding signals are wrap-around ghosts, so lower the PRF",
+     "Disappear completely at any PRF change",
+     "Double in height at half the PRF"
+    ],
+    "correct": 1,
+    "feedback": "Real echoes are locked to sound-path time, which PRF does not touch. Signals that wander with PRF are leftovers from earlier pulses - wrap-around ghosts. On long sound paths, drop the PRF until they clear."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "In a pulse-echo instrument, what is the essential job of the clock (synchronizer)?",
+   "options": [
+    "It rectifies the RF waveform for display",
+    "It triggers the pulser and the time base together so screen position represents elapsed sound-path time",
+    "It amplifies returning echoes in decibel steps",
+    "It stores the waveform for C-scan imaging"
+   ],
+   "correct": 1,
+   "explanation": "The clock starts the pulser and the sweep at the same instant and sets the repetition rate; that synchronization is what lets horizontal screen position be read as time, and therefore distance."
+  },
+  {
+   "question": "A flaw echo stands at 20% of full screen height. Your procedure requires evaluating it at 80%. How much gain must you add?",
+   "options": [
+    "6 dB",
+    "20 dB",
+    "12 dB",
+    "3 dB"
+   ],
+   "correct": 2,
+   "explanation": "80/20 is a factor of 4 in amplitude, and each 6 dB doubles amplitude: 6 dB takes 20% to 40%, another 6 dB takes 40% to 80%, so 12 dB total (20 log 4 = 12 dB)."
+  },
+  {
+   "question": "Several small indications wander along the baseline when the pulse repetition frequency is changed. They are most likely:",
+   "options": [
+    "Wrap-around ghosts from a PRF set too high for the sound path - lower the PRF",
+    "Real discontinuities moving in the part",
+    "Mode-converted shear echoes, fixed by adding gain",
+    "Evidence of a cracked transducer element"
+   ],
+   "correct": 0,
+   "explanation": "Echoes from a previous pulse that arrive during the next sweep shift position when the firing rate changes; genuine reflectors hold their sound-path position. Reducing PRF lets late echoes die out before the next pulse."
+  },
+  {
+   "question": "Which presentation plots a plan view of the part - reflector data mapped over an X-Y scanned area as if seen from above?",
+   "options": [
+    "A-scan",
+    "B-scan",
+    "RF display",
+    "C-scan"
+   ],
+   "correct": 3,
+   "explanation": "The C-scan rasters the probe over an area and maps a gated value at each position, giving a top-down map; the B-scan is a cross-section along one line, and the A-scan is amplitude versus time at one spot."
+  },
+  {
+   "question": "Why do many procedures restrict or forbid the reject (suppression) control on analog instruments?",
+   "options": [
+    "It increases the pulse repetition frequency beyond safe limits",
+    "It distorts vertical linearity, so echo-height relationships are no longer trustworthy, and it can hide small flaw signals",
+    "It overheats the pulser circuit",
+    "It shortens transducer life by raising the excitation voltage"
+   ],
+   "correct": 1,
+   "explanation": "Reject removes the bottom of every signal, so displayed heights no longer scale truly with received amplitude - and small indications can vanish entirely. That is why codes require linearity verification and limit reject use."
+  }
+ ],
+ "references": [
+  "CP-105-2024 UT Topical Outline §3.1 (basic pulse-echo instrumentation)",
+  "CP-105-2024 UT Topical Outline §3.1.1 (electronics: time base, pulser, receiver, displays)",
+  "CP-105-2024 UT Topical Outline §3.1.2 (control functions)",
+  "ASME BPVC Section V, Article 4 (instrument screen height linearity and amplitude control linearity, general practice)"
+ ]
+}

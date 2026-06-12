@@ -1,0 +1,169 @@
+{
+ "lessonId": "ut1-2-4",
+ "title": "Refraction, Mode Conversion, Snell's Law, and Beam Fields",
+ "narrationScript": "So far our sound has traveled straight ahead. Now we tilt it, because most of the serious work in ultrasonics, weld testing above all, is done with beams that enter at an angle. The moment a beam crosses a boundary between two materials at an angle, it bends. That is refraction, and it obeys Snell's law. The sine of the angle in the first material divided by the velocity in the first material equals the sine of the angle in the second material divided by the velocity in the second. All angles are measured from the normal, the imaginary line square to the surface. Sound passing into a faster material bends away from the normal. Steel is roughly four times faster than water and more than twice as fast as acrylic wedge plastic, so a modest tilt outside the steel becomes a steep angle inside it. Try one. Aim a beam through water at ten degrees onto steel. The longitudinal wave refracts to about forty four degrees. But notice that I said the longitudinal wave, because something else appears at the same time. Mode conversion. At an angled boundary, part of the energy crossing into the solid is converted into a shear wave, and since shear travels at about half the longitudinal speed, it refracts to a much shallower angle, about twenty two degrees in that same setup. So below a certain incidence there are two beams in the part at once. Two modes, two velocities, two angles. One reflector can paint two indications at two different screen positions, and an instrument calibrated for one velocity will misplace anything carried by the other. Mode conversion also happens in reverse inside the part, when a beam strikes a back wall or a radius, and that is where many ghost signals are born. When an indication makes no geometric sense, suspect a converted mode before you suspect a flaw. The cure for the two beam problem is to get rid of the longitudinal wave entirely, and Snell's law shows the way. Raise the incident angle and the fast longitudinal wave refracts more and more steeply until it reaches ninety degrees and skims along the surface instead of entering. That incidence is the first critical angle. Beyond it, no longitudinal wave enters the part. Only shear remains, clean and unambiguous. Keep raising the angle and eventually the shear wave reaches ninety degrees too. That is the second critical angle, and just past it the remaining energy travels along the skin as a Rayleigh surface wave. For water against steel the two critical angles are about fourteen and a half degrees and about twenty seven degrees. For an acrylic wedge on steel they are about twenty seven and a half degrees and about fifty seven degrees. The space between them is the working window. Every standard weld wedge, forty five, sixty, and seventy degrees of refracted shear, is built with an incident angle inside that window, about thirty seven, forty seven, and fifty two degrees in the acrylic. Pure shear, one beam, one velocity, one answer. One more piece of physics before we leave fundamentals, the shape of the beam itself. A transducer is not a point source. Every spot on its face radiates, and close to the probe those wavelets interfere, adding here and canceling there. That turbulent zone is the near field, also called the Fresnel zone. Inside it, the amplitude along the axis swings wildly, so the same reflector can look big, small, or even double depending on its depth. Do not size reflectors or compare amplitudes in the near field if you can help it. The near field length equals the element diameter squared times the frequency, divided by four times the velocity. A ten millimeter element at five megahertz in steel has a near field of about twenty one millimeters. Beyond that distance the beam settles into the far field, the Fraunhofer zone, where there is one smooth beam, amplitude falls predictably with distance, and distance amplitude comparisons finally mean something. The far field beam also spreads. The sine of the half angle is one point two two times the velocity divided by the diameter times the frequency, which gives about eight degrees for our example. Larger elements and higher frequencies give longer near fields but tighter, straighter beams. Know where the near field ends for every probe you carry. It is the line between amplitude readings you can trust and amplitude readings that lie.",
+ "imagePrompt": "An inspector slides an angle-beam wedge transducer along a beveled pipe weld in a dim fabrication hall, the flaw detector screen glowing with sharp echo peaks.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Refraction and Snell's Law",
+   "body": "Send a beam **at an angle** across a boundary between materials of different velocity and the beam changes direction — **refraction**. The bookkeeping is **Snell's law**:\n\n**sin θ₁ ÷ v₁ = sin θ₂ ÷ v₂**\n\nwith every angle measured **from the normal** — the line square to the interface, not the surface itself. Entering a faster material bends the beam **away** from the normal; steel carries longitudinal sound four times faster than water and more than twice as fast as acrylic, so small tilts outside the part become steep angles inside it.\n\nWork one: water to steel, 10° incidence, longitudinal.\n\n- sin θ₂ = sin 10° × (5,920 ÷ 1,480) = 0.174 × 4.0 = 0.695 → **θ₂ ≈ 44°**\n\nA 10-degree tilt of an immersion probe swings the beam in the steel out to 44 degrees. Refraction is a lever, and a sensitive one: small errors in incident angle become large errors in refracted angle. That sensitivity is exactly what wedge and manipulator adjustments exploit — and exactly why a worn, gouged wedge no longer produces the angle stamped on its side."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-2-4-fig-a",
+   "caption": "Snell's law at an acrylic–steel interface: one incident longitudinal beam refracts into a longitudinal wave at one angle and a mode-converted shear wave at a shallower angle."
+  },
+  {
+   "type": "text",
+   "heading": "Mode Conversion",
+   "body": "An angled boundary does more than bend the beam — it **splits** it. When a longitudinal wave strikes a solid interface obliquely, part of the transmitted energy converts to a **shear wave**. Snell's law governs both, each with its own velocity: in the water-to-steel example at 10°, the longitudinal wave refracts to about 44° while the mode-converted shear wave (3,240 m/s) refracts to only about **22°**.\n\nBelow the first critical angle, then, **two beams patrol the part at once** — two modes, two velocities, two angles. Consequences:\n\n- One reflector can return **two indications** at two screen positions.\n- An instrument calibrated for one mode's velocity **misplots** anything carried by the other — the velocity ratio is nearly 2:1.\n\nMode conversion also runs in reverse **inside** the part: a shear beam striking a back wall, fillet radius, or root geometry can throw off longitudinal offspring that arrive at times no direct path explains. These mode-converted ghosts are a routine source of false calls in angle-beam work. The discipline: when an indication makes no geometric sense — impossible depth, impossible position — suspect a converted mode before you suspect a flaw, and confirm by moving the probe and watching whether the signal behaves like a real reflector."
+  },
+  {
+   "type": "text",
+   "heading": "Critical Angles: Cleaning Up the Beam",
+   "body": "Raise the incident angle and the fast wave dies first. The refracted longitudinal angle grows ahead of the shear; at the **first critical angle** it reaches 90° and stops entering the part. Past that incidence only the shear wave transmits — the ambiguity is gone. Keep tilting and the shear wave itself reaches 90° at the **second critical angle**; just beyond it the remaining energy runs along the skin as a **Rayleigh surface wave**.\n\nSetting the refracted angle to 90° in Snell's law gives sin θc = v₁ ÷ v₂:\n\n- **Water on steel:** first critical ≈ **14.5°**, second ≈ **27°**\n- **Acrylic on steel:** first critical ≈ **27.5°**, second ≈ **57°**\n\nThe band between the critical angles is the **shear-wave working window**, and commercial wedges live inside it: 45°, 60°, and 70° refracted shear in steel come from incident angles of about **36.6°, 46.9°, and 52.4°** in the acrylic. Wedges flatter than 45° refracted drift toward the window's floor and risk longitudinal contamination; wedges past 70° approach the second critical angle, where the beam goes surface-wave and depth information dies. Immersion work plays the same game inside the narrower 14.5°–27° water window, steering the manipulator between the critical angles to put pure shear into the part."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-2-4-fig-b",
+   "caption": "The incident-angle map for acrylic on steel: two modes below 27.5 degrees, pure shear in the 27.5 to 57 degree window, and Rayleigh waves beyond."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Why your wedges are 45, 60, and 70",
+   "body": "All three standard wedges put **only shear** into the steel because their incident angles (≈ 37°–52°) sit between the acrylic–steel critical angles of ≈ **27.5°** and ≈ **57°**. One mode, one velocity, one unambiguous plot — that is the entire design intent."
+  },
+  {
+   "type": "text",
+   "heading": "Fresnel and Fraunhofer: the Beam Has Anatomy",
+   "body": "A transducer face is not a point source — every spot on the element radiates, and close to the probe those wavelets **interfere**. That interference zone is the **near field (Fresnel zone)**: on-axis amplitude oscillates through maxima and nulls, so the same reflector can read high, low, or double depending on its depth. **Do not size reflectors or compare amplitudes in the near field** when you can avoid it; evaluate beyond it, or push the near field out of the metal with a delay line or immersion water path.\n\nNear-field length: **N = D²f ÷ 4v = D² ÷ 4λ**, where D is the element diameter. Worked: 10 mm element, 5 MHz, steel longitudinal → N = (10² × 5) ÷ (4 × 5.92) ≈ **21 mm**.\n\nBeyond N the beam settles into the **far field (Fraunhofer zone)**: a single smooth lobe whose on-axis amplitude falls predictably with distance — the region where DAC curves and amplitude comparisons behave. The far-field beam **spreads** at a half-angle given by **sin γ = 1.22 v ÷ (D f)**; for the example probe, sin γ = 1.22 × 5.92 ÷ 50 = 0.144 → γ ≈ **8.3°**.\n\nThe levers move together: **larger diameter or higher frequency → longer near field but a narrower beam**. Know where N ends for every probe you carry — it is the boundary between amplitudes you can trust and amplitudes that lie."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-2-4-fig-c",
+   "caption": "Near-field interference gives a jagged on-axis amplitude that smooths into predictable far-field decay beyond N, where the beam spreads at half-angle gamma."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-2-4-fig-a",
+   "title": "Snell's law and mode conversion",
+   "file": "ut1-2-4-fig-a.svg"
+  },
+  {
+   "id": "ut1-2-4-fig-b",
+   "title": "Critical angles for acrylic on steel",
+   "file": "ut1-2-4-fig-b.svg"
+  },
+  {
+   "id": "ut1-2-4-fig-c",
+   "title": "Near field and far field of a sound beam",
+   "file": "ut1-2-4-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Wedge Physics Pre-Check",
+  "intro": "You are assembling an acrylic-wedge shear-wave setup for steel (acrylic 2,730 m/s; steel longitudinal 5,920 m/s, shear 3,240 m/s). Before couplant touches the part, prove the physics.",
+  "steps": [
+   {
+    "prompt": "A trial wedge gives 20° incidence (sin 20° = 0.342). What enters the steel?",
+    "options": [
+     "A single shear wave at about 24°",
+     "A longitudinal wave at about 48° AND a shear wave at about 24°",
+     "A Rayleigh surface wave"
+    ],
+    "correct": 1,
+    "feedback": "20° is below the first critical angle, so both modes transmit: sin θL = 0.342 × (5,920/2,730) = 0.742 → 48°, and sin θS = 0.342 × (3,240/2,730) = 0.406 → 24°. Two beams — unusable for clean plotting."
+   },
+   {
+    "prompt": "Compute the first critical angle for acrylic on steel.",
+    "options": ["About 14.5°", "About 27.5°", "About 57°"],
+    "correct": 1,
+    "feedback": "sin θc1 = v₁ ÷ vL₂ = 2,730 ÷ 5,920 = 0.461 → about 27.5°. Beyond it no longitudinal wave enters the steel. 14.5° is the water-on-steel value; 57° is the second critical angle."
+   },
+   {
+    "prompt": "What happens just beyond 57° incidence?",
+    "options": [
+     "The shear wave refracts past 90° and disappears — the remaining energy travels as a Rayleigh surface wave",
+     "Both bulk modes reappear in the part",
+     "The longitudinal wave returns at a steeper angle"
+    ],
+    "correct": 0,
+    "feedback": "57° is the second critical angle (sin θc2 = 2,730 ÷ 3,240). Past it neither bulk mode transmits; the energy hugs the surface as a Rayleigh wave."
+   },
+   {
+    "prompt": "You need 60° refracted shear for the weld scan. What incident angle must the wedge provide?",
+    "options": ["About 36.6°", "About 46.9°", "About 60°"],
+    "correct": 1,
+    "feedback": "sin θ₁ = sin 60° × (2,730 ÷ 3,240) = 0.866 × 0.843 = 0.730 → about 46.9°, safely inside the 27.5°–57° shear-only window. 36.6° is the 45° wedge; cutting the wedge at 60° itself would pass the 57° second critical angle — no shear enters at all."
+   },
+   {
+    "prompt": "You switch to a 10 mm, 5 MHz straight-beam probe to evaluate a reflector indicated at 15 mm depth in steel. Any concern?",
+    "options": [
+     "None — 15 mm is beyond the near field",
+     "The reflector sits inside the ≈ 21 mm near field, where on-axis amplitude oscillates — amplitude-based evaluation is unreliable there",
+     "The beam has not yet begun to spread, so the echo will read too wide"
+    ],
+    "correct": 1,
+    "feedback": "N = D²f ÷ 4v = (100 × 5) ÷ (4 × 5.92) ≈ 21 mm. At 15 mm the reflector is inside the Fresnel zone — use a delay line, a different probe, or another evaluation method before trusting amplitude."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "An immersion beam strikes aluminum at 8° incidence (sin 8° = 0.139; water 1,480 m/s, aluminum longitudinal 6,320 m/s). The refracted longitudinal angle is about:",
+   "options": ["8°", "17°", "36.5°", "59°"],
+   "correct": 2,
+   "explanation": "Snell: sin θ₂ = 0.139 × (6,320 ÷ 1,480) = 0.139 × 4.27 = 0.594, and the angle whose sine is 0.594 is about 36.5°."
+  },
+  {
+   "question": "Just beyond the first critical angle for water on steel (≈ 14.5° incidence), which statement is true?",
+   "options": [
+    "No sound of any mode enters the steel",
+    "Only the shear wave continues into the steel",
+    "Only the longitudinal wave continues into the steel",
+    "A Rayleigh wave forms immediately"
+   ],
+   "correct": 1,
+   "explanation": "At the first critical angle the refracted longitudinal wave reaches 90° and stops entering; shear continues until the second critical angle (≈ 27° for water on steel), beyond which the Rayleigh wave appears."
+  },
+  {
+   "question": "Standard 45/60/70 wedges use incident angles between 27.5° and 57° because in that window:",
+   "options": [
+    "Both longitudinal and shear waves reinforce each other",
+    "Only the shear wave transmits into the steel — one mode, one velocity, unambiguous plotting",
+    "The beam cannot spread",
+    "Attenuation is zero"
+   ],
+   "correct": 1,
+   "explanation": "Between the acrylic–steel critical angles the longitudinal wave is gone and the shear wave has not yet reached 90°, so the part carries a single clean mode."
+  },
+  {
+   "question": "A 6.35 mm diameter, 10 MHz probe drives longitudinal waves into steel (5.92 mm/µs). Its near-field length N = D²f ÷ 4v is about:",
+   "options": ["1.7 mm", "17 mm", "68 mm", "170 mm"],
+   "correct": 1,
+   "explanation": "N = (6.35² × 10) ÷ (4 × 5.92) = (40.3 × 10) ÷ 23.7 ≈ 17 mm. Inside that distance, on-axis amplitude oscillates."
+  },
+  {
+   "question": "Within the near field (Fresnel zone), the on-axis echo amplitude from a small reflector:",
+   "options": [
+    "Falls smoothly with distance",
+    "Oscillates through maxima and nulls because of interference — so amplitude evaluation there is unreliable",
+    "Is always zero",
+    "Is independent of reflector depth"
+   ],
+   "correct": 1,
+   "explanation": "Wavelets from across the element face interfere constructively and destructively in the near field; smooth, predictable amplitude behavior only begins in the far field beyond N."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, Basic UT Course §2.7 (refraction and mode conversion)",
+  "ANSI/ASNT CP-105-2024, Basic UT Course §2.8 (Snell's law and critical angles)",
+  "ANSI/ASNT CP-105-2024, Basic UT Course §2.9 (Fresnel and Fraunhofer effects)",
+  "Standard relationships: sin θ₁/v₁ = sin θ₂/v₂; N = D²f ÷ 4v; sin γ = 1.22 v ÷ (D f)",
+  "Critical angles: water–steel ≈ 14.5° / 27°; acrylic–steel ≈ 27.5° / 57°"
+ ]
+}

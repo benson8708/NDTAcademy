@@ -1,0 +1,66 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Locating the Reflector: First and Second Leg</text>
+
+  <!-- plate cross-section (scale: 240 px = 1 in., T = 0.5 in.) -->
+  <rect x="60" y="180" width="680" height="120" fill="#E8F1FB" stroke="#0A2342" stroke-width="3"/>
+
+  <!-- weld V centered over flaw position -->
+  <polygon points="371,180 451,180 411,300 411,300" fill="#D9E0E8" stroke="#0A2342" stroke-width="2"/>
+  <path d="M 365 180 Q 411 162 457 180" fill="#D9E0E8" stroke="#0A2342" stroke-width="2"/>
+  <text x="468" y="170" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">weld</text>
+
+  <!-- wedge / probe -->
+  <polygon points="84,180 162,180 162,140 112,140" fill="#F2A33C" stroke="#0A2342" stroke-width="2"/>
+  <rect x="118" y="110" width="42" height="30" fill="#0A2342"/>
+
+  <!-- index point -->
+  <circle cx="120" cy="180" r="5" fill="#D14343"/>
+  <text x="106" y="206" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#D14343">index</text>
+  <text x="106" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#D14343">point</text>
+
+  <!-- leg 1 -->
+  <line x1="120" y1="180" x2="328" y2="300" stroke="#1B82E8" stroke-width="3.5"/>
+  <polygon points="314,298 326,288 332,304" fill="#1B82E8"/>
+  <text x="190" y="266" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#1B82E8">leg 1</text>
+
+  <!-- leg 2 to flaw -->
+  <line x1="328" y1="300" x2="411" y2="252" stroke="#1E9E6A" stroke-width="3.5"/>
+  <!-- continuation beyond flaw, dashed -->
+  <line x1="411" y1="252" x2="535" y2="180" stroke="#1E9E6A" stroke-width="2" stroke-dasharray="6,5"/>
+  <text x="356" y="318" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#1E9E6A">leg 2</text>
+  <text x="328" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">bounce at half skip</text>
+
+  <!-- flaw -->
+  <circle cx="411" cy="252" r="8" fill="#D14343"/>
+  <text x="430" y="258" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">reflector</text>
+
+  <!-- depth dimension -->
+  <line x1="411" y1="180" x2="411" y2="244" stroke="#5A6B7E" stroke-width="1.5"/>
+  <line x1="405" y1="180" x2="417" y2="180" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="398" y="216" text-anchor="end" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">depth 0.30 in.</text>
+
+  <!-- surface distance dimension -->
+  <line x1="120" y1="120" x2="411" y2="120" stroke="#0A2342" stroke-width="2"/>
+  <line x1="120" y1="114" x2="120" y2="126" stroke="#0A2342" stroke-width="2"/>
+  <line x1="411" y1="114" x2="411" y2="126" stroke="#0A2342" stroke-width="2"/>
+  <line x1="411" y1="126" x2="411" y2="176" stroke="#5A6B7E" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="266" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">surface distance = s &#183; sin &#952; = 1.21 in.</text>
+
+  <!-- theta arc -->
+  <line x1="120" y1="180" x2="120" y2="252" stroke="#5A6B7E" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <path d="M 120 232 A 52 52 0 0 0 165 206" fill="none" stroke="#0A2342" stroke-width="2"/>
+  <text x="166" y="236" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">60&#176;</text>
+
+  <!-- thickness dim -->
+  <line x1="760" y1="180" x2="760" y2="300" stroke="#5A6B7E" stroke-width="1.5"/>
+  <line x1="754" y1="180" x2="766" y2="180" stroke="#5A6B7E" stroke-width="1.5"/>
+  <line x1="754" y1="300" x2="766" y2="300" stroke="#5A6B7E" stroke-width="1.5"/>
+  <text x="774" y="245" text-anchor="start" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">T</text>
+
+  <!-- formula box -->
+  <rect x="60" y="366" width="680" height="72" fill="#E8F1FB" stroke="#1B82E8" stroke-width="2"/>
+  <text x="400" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">leg 1: depth = s &#183; cos &#952; &#160;&#160;&#183;&#160;&#160; leg 2: depth = 2T &#8722; s &#183; cos &#952; &#160;&#160;&#183;&#160;&#160; one leg = T / cos &#952;</text>
+  <text x="400" y="414" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">shown: T = 0.5 in., &#952; = 60&#176;, s = 1.40 in. &#8594; second leg (leg = 1.00 in.) &#8594; depth = 1.00 &#8722; 0.70 = 0.30 in.</text>
+  <text x="400" y="432" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">compare sound path with leg length first &#8212; the leg decides which depth formula applies</text>
+</svg>

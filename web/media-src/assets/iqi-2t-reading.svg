@@ -1,0 +1,165 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="qtrGlow" filterUnits="userSpaceOnUse" x="-20" y="-20" width="640" height="380">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="qtrSoft" filterUnits="userSpaceOnUse" x="10" y="-20" width="580" height="380">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+    </filter>
+    <linearGradient id="qtrIllumG" x1="0" y1="22" x2="0" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9fd0f2"/><stop offset=".5" stop-color="#5b97d4"/><stop offset="1" stop-color="#3a72ad"/>
+    </linearGradient>
+    <linearGradient id="qtrFilmG" x1="0" y1="36" x2="0" y2="292" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#152c4e"/><stop offset=".5" stop-color="#10233f"/><stop offset="1" stop-color="#0c1c36"/>
+    </linearGradient>
+    <linearGradient id="qtrWeldG" x1="0" y1="146" x2="0" y2="204" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bfe2ff" stop-opacity="0"/>
+      <stop offset=".2" stop-color="#bfe2ff" stop-opacity=".10"/>
+      <stop offset=".5" stop-color="#cfeaff" stop-opacity=".17"/>
+      <stop offset=".8" stop-color="#bfe2ff" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#bfe2ff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="qtrVigG" cx="300" cy="160" r="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9fd4ff" stop-opacity=".05"/>
+      <stop offset=".6" stop-color="#9fd4ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#010815" stop-opacity=".4"/>
+    </radialGradient>
+    <radialGradient id="qtrHoleDk">
+      <stop offset="0" stop-color="#020a18"/><stop offset=".7" stop-color="#04101f"/><stop offset="1" stop-color="#04101f" stop-opacity=".15"/>
+    </radialGradient>
+    <clipPath id="qtrFilmClip"><rect x="60" y="36" width="480" height="256" rx="10"/></clipPath>
+  </defs>
+
+  <!-- ===== ILLUMINATOR (light box) ===== -->
+  <rect x="42" y="18" width="516" height="286" rx="18" fill="#6fb2e8" opacity=".25" filter="url(#qtrSoft)"/>
+  <rect x="46" y="22" width="508" height="278" rx="16" fill="url(#qtrIllumG)" opacity=".55"/>
+  <rect x="46" y="22" width="508" height="278" rx="16" fill="none" stroke="#dff2ff" stroke-width="1" opacity=".25"/>
+
+  <!-- ===== FILM STRIP (clipped over the glowing illuminator) ===== -->
+  <rect x="60" y="36" width="480" height="256" rx="10" fill="url(#qtrFilmG)"/>
+  <g clip-path="url(#qtrFilmClip)">
+    <!-- faint scan-line texture -->
+    <g stroke="#bfe2ff" stroke-width="1" opacity=".05">
+      <line x1="60" y1="48" x2="540" y2="48"/><line x1="60" y1="62" x2="540" y2="62"/>
+      <line x1="60" y1="76" x2="540" y2="76"/><line x1="60" y1="90" x2="540" y2="90"/>
+      <line x1="60" y1="104" x2="540" y2="104"/><line x1="60" y1="118" x2="540" y2="118"/>
+      <line x1="60" y1="132" x2="540" y2="132"/><line x1="60" y1="146" x2="540" y2="146"/>
+      <line x1="60" y1="160" x2="540" y2="160"/><line x1="60" y1="174" x2="540" y2="174"/>
+      <line x1="60" y1="188" x2="540" y2="188"/><line x1="60" y1="202" x2="540" y2="202"/>
+      <line x1="60" y1="216" x2="540" y2="216"/><line x1="60" y1="230" x2="540" y2="230"/>
+      <line x1="60" y1="244" x2="540" y2="244"/><line x1="60" y1="258" x2="540" y2="258"/>
+      <line x1="60" y1="272" x2="540" y2="272"/><line x1="60" y1="286" x2="540" y2="286"/>
+    </g>
+
+    <!-- WELD: reinforcement is thicker metal, prints LIGHTER (horizontal band) -->
+    <rect x="60" y="146" width="480" height="58" fill="url(#qtrWeldG)"/>
+    <!-- weld ripple (transverse bead arcs, very subtle) -->
+    <g stroke="#dff1ff" stroke-width="5" fill="none" opacity=".045">
+      <path d="M72 150 Q82 175 72 200"/><path d="M96 150 Q106 175 96 200"/>
+      <path d="M120 150 Q130 175 120 200"/><path d="M144 150 Q154 175 144 200"/>
+      <path d="M168 150 Q178 175 168 200"/><path d="M192 150 Q202 175 192 200"/>
+      <path d="M216 150 Q226 175 216 200"/><path d="M240 150 Q250 175 240 200"/>
+      <path d="M264 150 Q274 175 264 200"/><path d="M288 150 Q298 175 288 200"/>
+      <path d="M312 150 Q322 175 312 200"/><path d="M336 150 Q346 175 336 200"/>
+      <path d="M360 150 Q370 175 360 200"/><path d="M384 150 Q394 175 384 200"/>
+      <path d="M408 150 Q418 175 408 200"/><path d="M432 150 Q442 175 432 200"/>
+      <path d="M456 150 Q466 175 456 200"/><path d="M480 150 Q490 175 480 200"/>
+      <path d="M504 150 Q514 175 504 200"/><path d="M528 150 Q538 175 528 200"/>
+    </g>
+    <!-- fusion-line edges (slightly darker toes) -->
+    <line x1="60" y1="150" x2="540" y2="150" stroke="#06132a" stroke-width="1" opacity=".4"/>
+    <line x1="60" y1="200" x2="540" y2="200" stroke="#06132a" stroke-width="1" opacity=".4"/>
+
+    <rect x="60" y="36" width="480" height="256" fill="url(#qtrVigG)"/>
+
+    <!-- HOLE-TYPE IQI: shim + plaque lying beside (above) the weld; extra metal prints lighter -->
+    <g id="qtrPlaque">
+      <rect x="88" y="78" width="136" height="48" rx="2" fill="#9cc4ec" opacity=".08"/>
+      <rect x="96" y="84" width="120" height="36" rx="2" fill="#9cc4ec" opacity=".3"/>
+      <rect x="96" y="84" width="120" height="36" rx="2" fill="none" stroke="#cfe9ff" stroke-width="1" opacity=".45"/>
+      <!-- holes (1T:2T:4T = 2:4:8 px radii) print darker -->
+      <circle cx="120" cy="102" r="8" fill="url(#qtrHoleDk)" opacity=".95"/>
+      <circle cx="154" cy="102" r="4" fill="url(#qtrHoleDk)" opacity=".95"/>
+      <circle cx="182" cy="102" r="2" fill="url(#qtrHoleDk)" opacity=".95"/>
+      <!-- lead ID number prints near-white -->
+      <text x="200" y="107" text-anchor="middle" font-size="12" font-weight="700" fill="#eaf6ff" opacity=".85">25</text>
+    </g>
+
+    <!-- WIRE-TYPE IQI: six stepped wire shadows crossing the weld -->
+    <g id="qtrWires">
+      <rect x="380" y="110" width="124" height="128" rx="3" fill="#9cc4ec" opacity=".05"/>
+      <rect x="380" y="110" width="124" height="128" rx="3" fill="none" stroke="#cfe9ff" stroke-width="1" opacity=".16"/>
+      <text x="442" y="124" text-anchor="middle" font-size="10" fill="#dff1ff" opacity=".6">1B ASTM</text>
+      <g stroke="#cfe9ff" stroke-linecap="round">
+        <line x1="392" y1="132" x2="392" y2="230" stroke-width="3.4" opacity=".6"/>
+        <line x1="412" y1="132" x2="412" y2="230" stroke-width="2.7" opacity=".54"/>
+        <line x1="432" y1="132" x2="432" y2="230" stroke-width="2.1" opacity=".48"/>
+        <line x1="452" y1="132" x2="452" y2="230" stroke-width="1.6" opacity=".42"/>
+        <line x1="472" y1="132" x2="472" y2="230" stroke-width="1.2" opacity=".36"/>
+        <line x1="492" y1="132" x2="492" y2="230" stroke-width="0.9" opacity=".3"/>
+      </g>
+    </g>
+
+    <!-- film ID (lead characters print light) -->
+    <text x="528" y="58" text-anchor="end" font-size="10" fill="#cfe9ff" opacity=".5" letter-spacing="1">FILM W-204</text>
+  </g>
+
+  <!-- film rim light -->
+  <rect x="60" y="36" width="480" height="256" rx="10" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".55" filter="url(#qtrGlow)"/>
+
+  <!-- steel film clips -->
+  <g id="qtrClips">
+    <rect x="120" y="22" width="30" height="24" rx="3" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <line x1="126" y1="34" x2="144" y2="34" stroke="#8fb6e0" stroke-width="1" opacity=".6"/>
+    <rect x="330" y="22" width="30" height="24" rx="3" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <line x1="336" y1="34" x2="354" y2="34" stroke="#8fb6e0" stroke-width="1" opacity=".6"/>
+  </g>
+
+  <!-- static annotations: hole diameters + area of interest bracket -->
+  <g id="qtrHoleLbls" font-size="10" fill="#9fe6ff" opacity=".6" text-anchor="middle">
+    <text x="120" y="138">4T</text>
+    <text x="154" y="138">2T</text>
+    <text x="182" y="138">1T</text>
+  </g>
+  <g id="qtrAoi">
+    <path d="M78 214 L78 208 L368 208 L368 214" fill="none" stroke="#9fe6ff" stroke-width="1.5" stroke-linejoin="round" opacity=".7"/>
+    <text x="223" y="230" text-anchor="middle" font-size="11" fill="#9fe6ff" letter-spacing="2" opacity=".8">AREA OF INTEREST</text>
+  </g>
+
+  <!-- ===== REVEAL 1: quality-level badge docks top-right ===== -->
+  <g id="qtrLevel" opacity="0">
+    <rect x="380" y="8" width="176" height="26" rx="5" fill="#0e2848" opacity=".92"/>
+    <rect x="380" y="8" width="176" height="26" rx="5" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".85"/>
+    <text x="468" y="25.5" text-anchor="middle" font-size="11.5" fill="#9fe6ff" letter-spacing="1">2-2T // QUALITY LEVEL</text>
+  </g>
+
+  <!-- ===== REVEAL 2: plaque = 2% of part thickness ===== -->
+  <g id="qtrPct" opacity="0">
+    <rect x="66" y="46" width="158" height="20" rx="4" fill="#0e2848" opacity=".85"/>
+    <rect x="66" y="46" width="158" height="20" rx="4" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".8"/>
+    <text x="145" y="60" text-anchor="middle" font-size="11" fill="#9fe6ff">PLAQUE = 2% OF PART</text>
+    <path d="M100 66 L100 76" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".85"/>
+    <path d="M100 82 L96.8 76 L103.2 76 Z" fill="#5fe0ff"/>
+  </g>
+
+  <!-- ===== REVEAL 3: ring + leader draw onto the 2T hole ===== -->
+  <path id="qtrHole" d="M163 102 a9 9 0 1 1 -18 0 a9 9 0 1 1 18 0 M160.4 95.6 L238 90" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" opacity=".95" filter="url(#qtrGlow)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="qtrHoleTag" opacity="0">
+    <rect x="240" y="80" width="152" height="20" rx="4" fill="#0e2848" opacity=".85"/>
+    <rect x="240" y="80" width="152" height="20" rx="4" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".8"/>
+    <text x="316" y="94" text-anchor="middle" font-size="11" fill="#9fe6ff">2T HOLE — MUST SHOW</text>
+  </g>
+
+  <!-- ===== REVEAL 4: the one named essential wire ===== -->
+  <g id="qtrWire" opacity="0">
+    <line x1="452" y1="130" x2="452" y2="232" stroke="#5fe0ff" stroke-width="3.2" stroke-linecap="round" opacity=".95" filter="url(#qtrGlow)"/>
+    <path d="M452 236 L452 246" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".85"/>
+    <rect x="392" y="246" width="124" height="20" rx="4" fill="#0e2848" opacity=".85"/>
+    <rect x="392" y="246" width="124" height="20" rx="4" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".8"/>
+    <text x="454" y="260" text-anchor="middle" font-size="11" fill="#9fe6ff">ESSENTIAL WIRE</text>
+  </g>
+
+  <!-- caption -->
+  <text x="46" y="330" font-size="11.5" fill="#9fe6ff" opacity=".7">WELD RADIOGRAPH — HOLE-TYPE + WIRE-TYPE IQI</text>
+</svg>

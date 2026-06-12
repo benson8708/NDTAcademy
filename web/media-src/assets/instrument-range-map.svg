@@ -1,0 +1,129 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="irmGlow" filterUnits="userSpaceOnUse" x="-40" y="-40" width="680" height="420">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="irmGlowS" filterUnits="userSpaceOnUse" x="-40" y="-40" width="680" height="420">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="irmGradScint" gradientUnits="userSpaceOnUse" x1="85" y1="0" x2="303" y2="0">
+      <stop offset="0" stop-color="#9fe6ff" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#9fe6ff" stop-opacity=".5"/>
+    </linearGradient>
+    <linearGradient id="irmGradGm" gradientUnits="userSpaceOnUse" x1="194" y1="0" x2="417" y2="0">
+      <stop offset="0" stop-color="#8fc2ff" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#2b86ff" stop-opacity=".9"/>
+    </linearGradient>
+    <linearGradient id="irmGradIon" gradientUnits="userSpaceOnUse" x1="277" y1="0" x2="545" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity="1"/>
+    </linearGradient>
+    <pattern id="irmHatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+      <line x1="0" y1="0" x2="0" y2="9" stroke="#ff6b6b" stroke-width="1.2" opacity=".6"/>
+    </pattern>
+    <linearGradient id="irmSatGrad" gradientUnits="userSpaceOnUse" x1="415" y1="0" x2="470" y2="0">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#000000"/>
+    </linearGradient>
+    <mask id="irmSatMask">
+      <rect x="408" y="140" width="70" height="36" fill="url(#irmSatGrad)"/>
+    </mask>
+    <linearGradient id="irmscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- captions -->
+  <text x="58" y="26" font-size="12" fill="#9fe6ff" letter-spacing="1" opacity=".75">SURVEY-INSTRUMENT OPERATING RANGES</text>
+  <text x="594" y="26" text-anchor="end" font-size="11" fill="#8fb6e0" opacity=".6">MATCH RANGE TO TASK</text>
+
+  <!-- ===== static scaffolding: decade gridlines, 2 mR/h riser, lane tracks ===== -->
+  <g stroke="#2b86ff" stroke-width="1" opacity=".13">
+    <line x1="66" y1="70" x2="66" y2="262"/>
+    <line x1="130" y1="70" x2="130" y2="262"/>
+    <line x1="194" y1="70" x2="194" y2="262"/>
+    <line x1="258" y1="70" x2="258" y2="262"/>
+    <line x1="322" y1="70" x2="322" y2="262"/>
+    <line x1="386" y1="70" x2="386" y2="262"/>
+    <line x1="450" y1="70" x2="450" y2="262"/>
+    <line x1="514" y1="70" x2="514" y2="262"/>
+  </g>
+  <line x1="277.3" y1="76" x2="277.3" y2="253" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="3 5" opacity=".28"/>
+
+  <g>
+    <rect x="56" y="90" width="506" height="18" rx="9" fill="rgba(10,30,60,.55)" stroke="rgba(159,230,255,.12)" stroke-width="1"/>
+    <rect x="56" y="148" width="506" height="18" rx="9" fill="rgba(10,30,60,.55)" stroke="rgba(159,230,255,.12)" stroke-width="1"/>
+    <rect x="56" y="205" width="506" height="22" rx="11" fill="rgba(10,30,60,.55)" stroke="rgba(159,230,255,.12)" stroke-width="1"/>
+  </g>
+
+  <!-- lane tags (static, label the three families) -->
+  <text x="85" y="83" font-size="11" fill="#9fe6ff" letter-spacing="1" opacity=".9">SCINTILLATOR — PROVES CLEAN</text>
+  <text x="194" y="141" font-size="11" fill="#9fe6ff" letter-spacing="1" opacity=".9">GM — FAST, RUGGED</text>
+  <text x="277" y="198" font-size="11" fill="#eaf6ff" letter-spacing="1" opacity=".95">ION CHAMBER</text>
+
+  <!-- ===== axis + decade ticks + 2 mR/h callout tick (draw 0.5) ===== -->
+  <path id="irmAxis" d="M54 262 H560 M552 257.5 L560 262 L552 266.5 M66 262 V269 M130 262 V269 M194 262 V269 M258 262 V269 M322 262 V269 M386 262 V269 M450 262 V269 M514 262 V269 M277.3 262 V253"
+    fill="none" stroke="#8fb6e0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" opacity=".85"
+    pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="100"/>
+
+  <!-- static axis labels -->
+  <g fill="#8fb6e0" font-size="10" text-anchor="middle" opacity=".8">
+    <text x="66" y="281">1µ</text>
+    <text x="130" y="281">10µ</text>
+    <text x="194" y="281">100µ</text>
+    <text x="258" y="281">1m</text>
+    <text x="322" y="281">10m</text>
+    <text x="386" y="281">100m</text>
+    <text x="450" y="281">1</text>
+    <text x="514" y="281">10</text>
+    <text x="564" y="281">R/h</text>
+  </g>
+  <text x="58" y="298" font-size="10" fill="#8fb6e0" letter-spacing="1" opacity=".65">DOSE RATE — LOG SCALE</text>
+  <g fill="#eaf6ff">
+    <path d="M277.3 271 l-4.5 8 h9 Z"/>
+    <text x="277.3" y="296" font-size="10" text-anchor="middle" letter-spacing=".5">2 mR/h</text>
+  </g>
+
+  <!-- ===== scintillator bar: ~2 µR/h to ~5 mR/h (draw 1.6) ===== -->
+  <path id="irmScint" d="M85.3 99 H302.7" fill="none" stroke="url(#irmGradScint)" stroke-width="18"
+    pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="100"/>
+
+  <!-- overload warning just right of scintillator end (fade 3.0) -->
+  <g id="irmScintX" opacity="0">
+    <path d="M317 90.5 L327 108 H307 Z" fill="#ffc24b" fill-opacity=".12" stroke="#ffc24b" stroke-width="1.8" stroke-linejoin="round"/>
+    <text x="317" y="104.5" font-size="11" fill="#ffc24b" text-anchor="middle">!</text>
+    <text x="334" y="103" font-size="10.5" fill="#ffc24b" letter-spacing="1">OVERLOADS</text>
+  </g>
+
+  <!-- ===== GM bar: low-to-mid span (draw 4.0) ===== -->
+  <path id="irmGm" d="M194 157 H416.5" fill="none" stroke="url(#irmGradGm)" stroke-width="18"
+    pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="100"/>
+
+  <!-- GM saturation: hatched fade-out tail at the right end (fade 5.2) -->
+  <g id="irmGmSat" opacity="0">
+    <g mask="url(#irmSatMask)">
+      <rect x="415" y="148" width="55" height="18" fill="url(#irmHatch)"/>
+      <line x1="416" y1="148.6" x2="470" y2="148.6" stroke="#ff6b6b" stroke-width="1.2" stroke-dasharray="4 4" opacity=".55"/>
+      <line x1="416" y1="165.4" x2="470" y2="165.4" stroke="#ff6b6b" stroke-width="1.2" stroke-dasharray="4 4" opacity=".55"/>
+    </g>
+    <text x="478" y="161" font-size="10.5" fill="#ff6b6b" letter-spacing="1">SATURATES</text>
+  </g>
+
+  <!-- ===== ion chamber bar: 2 mR/h to tens of R/h, brightest (draw 6.6) ===== -->
+  <path id="irmIon" d="M277.3 216 H544.5" fill="none" stroke="url(#irmGradIon)" stroke-width="22" filter="url(#irmGlowS)"
+    pathLength="100" stroke-dasharray="100 120" stroke-dashoffset="100"/>
+
+  <!-- LINEAR label along the ion bar (fade 7.8) -->
+  <g id="irmIonLin" opacity="0">
+    <text x="411" y="220.5" font-size="12.5" fill="#06263e" text-anchor="middle" letter-spacing="5" font-weight="600">LINEAR</text>
+  </g>
+
+  <!-- ===== scan sweep ===== -->
+  <g id="irmscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#irmscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#irmGlow)" opacity=".9"/>
+  </g>
+</svg>

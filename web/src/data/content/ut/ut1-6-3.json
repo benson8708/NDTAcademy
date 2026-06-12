@@ -1,0 +1,131 @@
+{
+ "lessonId": "ut1-6-3",
+ "title": "Multiple-Transducer Techniques",
+ "narrationScript": "Everything we have done so far used one transducer doing both jobs, sending and listening. This lesson is about splitting those jobs between separate elements, and why that simple change solves some stubborn problems. The first problem is the dead zone. When a single element fires, it keeps ringing for a moment, and while it rings the receiver side of the instrument is blind. Any reflector sitting just under the surface hides inside that blind window. The fix is to stop asking one crystal to do two jobs. A dual element probe puts a transmitting element and a receiving element side by side in one housing, separated by an acoustic barrier, usually a strip of cork, so the transmit pulse cannot leak straight across into the receiver. Each element sits on its own plastic delay line, and the two are tilted slightly toward each other, a tilt called the roof angle. The transmit beam and the receive beam cross under the surface, and where they overlap is where the probe hears best. That crossing zone acts like a focal zone, a pseudo focus, set at whatever depth the designer chose. Because the receiver never hears the transmit ringing, a dual reads reflectors almost at the surface. That is why duals own corrosion survey work, pitting, and remaining wall measurement, and with longer delay tips they handle hot surfaces too. But the vee shaped path has a cost. The sound travels down one slanted leg and up the other, so the path is slightly longer than twice the true depth. On thick sections nobody notices. On very thin sections the geometry overstates the reading. That is the vee path error, and it is why you calibrate a dual on a step wedge spanning the thin end of your range instead of trusting a single calibration point. Sensitivity also varies with depth, strongest in the focal zone and weaker above and below it, so match the probe to the wall thickness you expect. Now spread the elements farther apart. Any arrangement where one probe transmits and a separate probe receives is called pitch catch. Two angle beam probes facing each other on the same surface can meet at a shallow flaw between them, a setup that hears near surface reflectors a single angle probe struggles with. The most disciplined version is the tandem technique, built for one specific target, a vertical planar flaw in the middle of a thick section, like lack of fusion down the sidewall of a narrow gap weld. A vertical face reflects an angled beam away from a single probe, which is why singles miss it. In tandem, two probes of the same angle face the same direction, one behind the other. The front probe fires, the beam strikes the vertical face, glances down to the back wall, and climbs back to the surface where the trailing probe catches it. The spacing sets the depth you cover. The rule is, spacing equals two times, thickness minus target depth, times the tangent of the angle. For the mid wall of fifty millimeter plate with forty five degree probes, that comes to fifty millimeters between index points. Fixtures hold the pair at that spacing so the geometry cannot drift while you scan. The widest split of all is through transmission, a transmitter on one face and a receiver directly opposite on the other. Set the received signal to a steady reference on known good material, then scan both probes together and watch for the shadow. Alignment is everything. The two probes must stay on a common axis, usually held in a yoke or a bridge, and coupling must stay constant on both faces, because a misaligned probe or a dry spot drops the signal exactly the way a defect does. And remember what that display can and cannot say. A drop means something interrupted the path. It does not say how deep. So choose your arrangement by the flaw plane and the depth zone. Laminar flaws near the surface, dual element. Vertical faces in the mid wall, tandem. Attenuating or thin material with access to both sides, through transmission. And for everything else, the single probe pulse echo techniques you already know. The probes themselves are simple. Knowing which pair to put on the part, and how to space them, is the skill this lesson leaves you with.",
+ "imagePrompt": "A technician positions two cabled angle-beam transducers in a tandem holder bar on thick steel plate beside a heavy weld, with a flaw detector and step calibration wedge nearby on the shop floor.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Dead-Zone Problem",
+   "body": "A single-element probe must stop transmitting before it can listen. After the pulser fires, the crystal **rings** for a short time, and during that ring-down the receiver is saturated — the screen shows nothing useful in the first millimeter or more of material. That blind window is the **dead zone**, and it sits exactly where some of the most important reflectors live: near-surface porosity, shallow pits on the far side of thin wall, corrosion remnants under a thin coating.\n\nDelay lines help by moving the interface echo away from the initial pulse, but the cleanest cure is structural: **stop asking one element to do two jobs**. Splitting transmission and reception between separate elements removes transmit ringing from the receiver entirely. That idea — two or more transducers sharing one test — gives this lesson its family of techniques: dual-element probes, pitch-catch pairs, the tandem arrangement, and through-transmission."
+  },
+  {
+   "type": "text",
+   "heading": "Inside a Dual-Element Probe",
+   "body": "A **dual-element (TR) probe** packages a transmitting element and a receiving element side by side in one case. Three construction details do all the work:\n\n- An **acoustic barrier** — classically a strip of cork — stands between the elements so the transmit pulse cannot leak straight across into the receiver (cross-talk).\n- Each element sits on its own **delay line**, which also protects the elements on hot or rough surfaces.\n- The elements are tilted slightly toward each other at a **roof angle** of a few degrees, so the transmit and receive beams cross below the surface.\n\nWhere the two beams overlap, the probe hears best: a **pseudo-focal zone** whose depth is set by the roof angle and delay-line geometry. Because the receiver never hears transmit ringing, the dead zone essentially disappears — duals resolve reflectors almost at the entry surface. That is why they dominate **corrosion surveys, pitting evaluation, and remaining-wall thickness** work, and with long delay tips and high-temperature couplant they read hot components in service. Choose the probe whose focal range matches the wall you expect: sensitivity falls off above and below the crossing zone."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-6-3-fig-a",
+   "caption": "A dual-element probe: separate transmit and receive elements on delay lines, an acoustic barrier against cross-talk, and a roof angle that crosses the beams into a pseudo-focal zone."
+  },
+  {
+   "type": "text",
+   "heading": "V-Path Error and Dual Limitations",
+   "body": "The dual's geometry has a price. Sound travels **down one slanted leg and up the other** — a V — so the path is slightly longer than twice the true depth. On thick sections the angle is small and the error negligible; on **very thin sections the V geometry overstates the reading**, and the relationship between true and indicated thickness becomes nonlinear.\n\nThe defenses are procedural: calibrate a dual on a **step block spanning the thin end of the range** (two-point calibration, not a single back-wall echo), and never report thicknesses below the range you calibrated. Remember also that the pseudo-focus makes sensitivity **depth-dependent** — a dual tuned for 5–25 mm of steel is the wrong tool for a 100 mm forging, where a single-element probe with its uniform (if dead-zone-limited) response does better."
+  },
+  {
+   "type": "text",
+   "heading": "Pitch-Catch and Tandem",
+   "body": "Separate the elements into two housings and you have **pitch-catch**: one probe transmits, another receives. On the same surface, two angle-beam probes **facing each other** can meet at a shallow reflector between them — a sensitive arrangement for near-surface flaws that single-probe angle beam struggles to separate from the wedge noise.\n\nThe most disciplined pitch-catch is the **tandem technique**, designed for one target: a **vertical planar flaw in the mid-wall of a thick section** — classically lack of fusion on the near-vertical sidewall of a narrow-gap weld. A vertical face reflects an angled beam *away* from a single probe, which is why singles miss it. In tandem, two probes of the **same angle face the same direction**, one trailing the other. The leader transmits; the beam strikes the vertical face, deflects down to the back wall, and climbs to the surface where the trailing probe receives it.\n\nThe **spacing selects the depth zone**: spacing = 2 × (T − d) × tan θ, for thickness T, target depth d, and angle θ. For the mid-wall of 50 mm plate with 45° probes: 2 × 25 × 1.0 = **50 mm** between index points. Holder bars fix the spacing so geometry cannot drift during scanning, and the pair is moved together to sweep each depth zone."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-6-3-fig-b",
+   "caption": "Three multiple-transducer arrangements: pitch-catch probes facing each other over a near-surface flaw, a tandem pair sized for mid-wall vertical flaws, and through-transmission probes on opposite faces."
+  },
+  {
+   "type": "text",
+   "heading": "Setting Up Through-Transmission",
+   "body": "Through-transmission is the widest element split: transmitter on one face, receiver **aligned directly opposite** on the other, instrument switched to its dual/through mode (transmit on one connector, receive on the other). A workable field sequence:\n\n- Fixture the probes on a **common axis** — yoke, bridge, or C-frame — so they cannot wander independently.\n- Couple both faces and verify the received signal is stable while the fixture moves over known-good material.\n- Set the received signal to a **reference level** (commonly about 80% FSH) on that good area.\n- Scan with overlapping passes, watching for **amplitude drops**; the procedure defines the recordable drop (often given in dB or percent of reference).\n- Before calling any drop a defect, **re-check alignment and coupling** — a tilted probe or dry spot mimics a flaw exactly.\n\nIts strengths and limits follow from the geometry: no dead zone, no dependence on the flaw reflecting sound back, usable on highly attenuating or very thin material — but **no depth information** and a hard requirement for two-sided access."
+  },
+  {
+   "type": "table",
+   "caption": "Choosing among single- and multiple-transducer arrangements.",
+   "headers": ["Arrangement", "Elements", "Best for", "Depth info?"],
+   "rows": [
+    ["Single-element pulse-echo", "1 (sends and receives)", "General contact work, welds, thickness on heavier walls", "Yes"],
+    ["Dual-element (TR)", "2 in one housing", "Near-surface resolution, corrosion/remaining wall, hot parts", "Yes (V-path error when very thin)"],
+    ["Pitch-catch (facing)", "2 housings, same surface", "Shallow flaws between the probes", "Limited"],
+    ["Tandem", "2 housings, same direction", "Vertical planar flaws at a chosen mid-wall depth", "Zone set by spacing"],
+    ["Through-transmission", "2 housings, opposite faces", "Attenuative or very thin material, go/no-go screening", "No"]
+   ]
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Match the arrangement to the flaw plane",
+   "body": "Every arrangement answers an orientation problem. Laminar and near-surface reflectors: **dual element**. Vertical planar faces in the mid-wall: **tandem**, spaced 2(T − d)·tan θ. Anything that blocks the path in attenuative or thin material with two-sided access: **through-transmission**. If a single probe can already see the flaw face square-on, keep it simple and use one."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-6-3-fig-a",
+   "title": "Dual-element (TR) probe construction",
+   "file": "ut1-6-3-fig-a.svg"
+  },
+  {
+   "id": "ut1-6-3-fig-b",
+   "title": "Pitch-catch, tandem, and through-transmission arrangements",
+   "file": "ut1-6-3-fig-b.svg"
+  }
+ ],
+ "interactive": null,
+ "checkQuestions": [
+  {
+   "question": "The cork strip between the two elements of a dual-element probe exists to:",
+   "options": [
+    "Increase the probe's operating frequency",
+    "Block cross-talk so the transmit pulse cannot leak directly into the receiving element",
+    "Focus the beam at the back wall",
+    "Hold couplant inside the housing"
+   ],
+   "correct": 1,
+   "explanation": "The acoustic barrier isolates the receiver from the transmitter. Without it, the transmit pulse would cross directly between elements and blind the receiver — recreating the dead-zone problem the dual exists to solve."
+  },
+  {
+   "question": "The roof angle on a dual-element probe produces:",
+   "options": [
+    "A refracted shear wave at 45 degrees",
+    "A crossed-beam region below the surface that acts as a pseudo-focal zone of maximum sensitivity",
+    "A surface wave along the entry surface",
+    "A wider dead zone than a single-element probe"
+   ],
+   "correct": 1,
+   "explanation": "Tilting the elements toward each other crosses the transmit and receive beams; the overlap depth is where the probe hears best. Sensitivity falls off above and below that zone, so the probe is chosen to match the expected wall."
+  },
+  {
+   "question": "A tandem examination uses 45° probes (tan 45° = 1.0) on 40 mm plate to target flaws at 20 mm depth. The index-point spacing between transmitter and receiver should be about:",
+   "options": ["20 mm", "80 mm", "40 mm", "57 mm"],
+   "correct": 2,
+   "explanation": "Spacing = 2 × (T − d) × tan θ = 2 × (40 − 20) × 1.0 = 40 mm. For a mid-wall target this reduces to T·tan θ."
+  },
+  {
+   "question": "Which statement about a through-transmission examination is correct?",
+   "options": [
+    "The receiver displays an echo whose position gives the flaw depth",
+    "Probe misalignment raises the received amplitude",
+    "A discontinuity is detected as a drop in received amplitude, with no indication of its depth",
+    "It requires access to only one surface"
+   ],
+   "correct": 2,
+   "explanation": "Through-transmission watches the energy that gets through: a flaw casts a shadow and the received signal drops. There is no echo timing, hence no depth, and the method needs aligned probes on opposite faces."
+  },
+  {
+   "question": "On very thin sections, a dual-element thickness reading tends to:",
+   "options": [
+    "Read slightly thick, because the V-shaped sound path is longer than twice the true depth",
+    "Read slightly thin, because the beams cross above the surface",
+    "Be unaffected by geometry",
+    "Show no interface echo at all"
+   ],
+   "correct": 0,
+   "explanation": "The V-path geometry overstates thin readings — the slanted legs add path length. Two-point calibration on a step block spanning the thin range corrects for it."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Technique Course §1.1.5 (multiple-transducer techniques)",
+  "Tandem geometry: index-point spacing = 2 × (T − d) × tan θ (mid-wall: T·tan θ)",
+  "General practice for TR corrosion probes and through-transmission screening per common code requirements (reference level, recordable amplitude drop)"
+ ]
+}

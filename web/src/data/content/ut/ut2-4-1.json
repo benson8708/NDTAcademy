@@ -1,0 +1,172 @@
+{
+ "lessonId": "ut2-4-1",
+ "title": "Welding Processes and Weld Geometries",
+ "narrationScript": "Almost every ultrasonic hour you will bill as a Level Two technician runs through a weld. Plates, pipe, pressure vessels, bridges. The work is welded together, and the welds are where the engineering risk concentrates. So before we talk about echoes, we need to talk about welding. A weld is really a small casting, poured one bead at a time into a machined groove between two wrought plates. If you understand how that little casting was made, you can predict what can go wrong inside it, where it will sit, and how it will be oriented. That prediction is the difference between scanning and searching. Start with the processes. Shielded metal arc welding, the familiar stick rod, melts a flux-coated electrode. The flux burns into shielding gas and a molten slag blanket that must be chipped off between passes. Wherever that cleaning is sloppy, slag stays behind as an inclusion. Stick electrodes also pick up moisture, and moisture means hydrogen, which means delayed cracking in hardenable steels. Gas metal arc welding feeds a bare wire through a nozzle with shielding gas. There is no slag to trap, but in the low-energy short-circuit mode the puddle can run cold, and cold metal lays over the sidewall without fusing. That is lack of fusion, the classic wire-feed defect. Outdoors, wind strips the shielding gas away and leaves porosity. Flux-cored arc welding runs a tubular wire filled with flux, so it deposits fast like wire feed but makes slag like stick. Submerged arc welding buries the arc under a blanket of granular flux. It is usually mechanized, it penetrates deep, and it lays huge beads. A deep, narrow submerged arc bead solidifies from both walls toward the middle, and the centerline where the two fronts meet is where hot cracks form. Gas tungsten arc welding melts a separate filler rod under an arc from a tungsten electrode that is not consumed. It is the cleanest process, the usual choice for pipe root passes, and its signature flaw is a tungsten inclusion left behind when the electrode dips into the puddle. Now the joint itself. Butt, tee, corner, and lap are the basic joint types, and for full-penetration work the edges are prepared with a groove. Square grooves for thin material. Single vee for the everyday plate butt. Double vee on thick sections to cut filler volume and balance distortion, with the meeting point of the two sides becoming a natural home for incomplete penetration. Bevel grooves where one face must stay square, and J and U grooves where filler volume must be minimized. Learn the vocabulary that controls fusion at the bottom of the groove. The root opening is the gap between the parts. The root face is the small unbeveled land. Get those wrong on fit-up and the root does not fuse. Every finished groove weld has the same anatomy. The cap, or face, with its reinforcement and its toes where it meets the plate. The root on the far side. The fusion line where weld metal meets base metal. And wrapped around all of it, the heat-affected zone, a band of base metal a few millimeters wide whose microstructure was transformed by the heat. The heat-affected zone never melted, but it can harden, and hydrogen cracks love it. Your examination volume is the weld plus that zone, not just the weld. Coverage is geometry. An angle beam entering the plate travels down at the refracted angle, bounces off the far surface, and comes back up. The distance along the surface for one full vee path is the skip distance, two times the thickness times the tangent of the refracted angle. The sound path for each leg is the thickness divided by the cosine of the angle. Put numbers on it. Twenty-five millimeter plate with a sixty degree probe. The tangent of sixty degrees is about one point seven three, so the half skip is about forty-three millimeters and the full skip about eighty-seven. Each leg is fifty millimeters of sound path. Those numbers tell you exactly where to stand the probe to put the beam center on the root in the first leg and on the cap in the second. So plan the scan like a survey. Move the probe between roughly the half skip and the full skip stand-off so legs one and two together sweep the entire volume and the heat-affected zone. Scan from both sides of the weld when access allows, and add transverse passes for cracks running across the axis. Choose the angle so the beam meets the suspect plane square on. For a typical thirty degree bevel, a sixty degree beam hits the fusion face at right angles, which is why sixty is the workhorse on single vee butt welds. Know the weld, draw the paths, then scan with intent.",
+ "imagePrompt": "A welder in a dark fabrication shop lays a glowing bead down the beveled V-groove of a thick steel plate seam while a technician nearby measures the joint fit-up of the next weld with a steel rule and flashlight.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Know the Weld Before You Scan",
+   "body": "A fusion weld is a **small casting poured a bead at a time** into a machined groove between two wrought plates. Everything you learned about cast discontinuities — shrinkage, gas, inclusions, solidification cracking — happens here too, just in miniature and surrounded by a heat-affected band of base metal. That is why a Level II never scans blind. The welding process, the joint preparation, the number of passes, and the access all decide **which discontinuities can exist, where they will sit, and how they will be oriented**.\n\nBefore coupling a probe, pull the basics from the weld procedure or the traveler: process (SMAW, GMAW, FCAW, SAW, GTAW), joint type and groove configuration, thickness, backing or open root, single- or double-sided welding, and any back-gouging. Five minutes with that paperwork tells you what to hunt and which probe angles will find it. The rest of this lesson builds that picture: first the processes and their fingerprints, then the geometry that controls your beam paths."
+  },
+  {
+   "type": "text",
+   "heading": "The Arc Processes and Their Fingerprints",
+   "body": "- **SMAW (stick)** melts a flux-coated electrode; the coating becomes shielding gas plus a molten **slag** blanket that must be chipped between passes. Sloppy interpass cleaning leaves slag inclusions; moisture picked up by coatings introduces hydrogen and delayed HAZ cracking; every start and stop is a chance for porosity or crater cracks.\n- **GMAW (wire feed)** uses a bare solid wire and shielding gas — no slag at all. Its weakness is **cold lap / lack of fusion**, especially in low-heat short-circuit transfer, plus porosity when wind disturbs the gas on site work.\n- **FCAW** runs a tubular wire with flux inside: high deposition like GMAW but it **makes slag like stick**, so expect both families of flaws.\n- **SAW** buries a mechanized arc under granular flux. Deep penetration and very large beads; a deep, narrow bead solidifies inward from both walls and invites **centerline (solidification) cracking**. Damp flux adds hydrogen.\n- **GTAW (TIG)** uses a non-consumable tungsten electrode and separate filler — the cleanest process, standard for pipe root passes. Its signature is the **tungsten inclusion** when the electrode touches the puddle.\n- **Electroslag/electrogas** (single-pass heavy section) produce very coarse grain — expect high attenuation and noise, and often a lower test frequency."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-4-1-fig-a",
+   "caption": "Schematic comparison of SMAW, GMAW/FCAW, SAW, and GTAW — what shields the puddle, whether slag forms, and the discontinuity each process is known for."
+  },
+  {
+   "type": "table",
+   "caption": "Process fingerprints the UT technician scans for.",
+   "headers": [
+    "Process",
+    "Shielding",
+    "Slag formed?",
+    "Characteristic discontinuities"
+   ],
+   "rows": [
+    [
+     "SMAW (stick)",
+     "Flux coating → gas + slag",
+     "Yes",
+     "Slag inclusions, start/stop porosity, hydrogen (HAZ) cracking"
+    ],
+    [
+     "GMAW (solid wire)",
+     "Shielding gas",
+     "No",
+     "Lack of fusion / cold lap, porosity in wind"
+    ],
+    [
+     "FCAW (tubular wire)",
+     "Internal flux (± gas)",
+     "Yes",
+     "Slag inclusions plus wire-feed LOF"
+    ],
+    [
+     "SAW (submerged arc)",
+     "Granular flux blanket",
+     "Yes",
+     "Centerline solidification cracking, slag, deep-bead shrinkage"
+    ],
+    [
+     "GTAW (TIG)",
+     "Inert gas, separate filler",
+     "No",
+     "Tungsten inclusions; very low overall flaw rate"
+    ]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Joints, Grooves, and the Zones of a Weld",
+   "body": "The five basic joint types are **butt, tee, corner, lap, and edge**. Full-penetration strength welds get a prepared groove: **square** for thin sections, **single-V** for routine plate and pipe butts, **double-V** on thick sections to halve filler volume and balance distortion (the mid-thickness meeting point of the two sides is a natural home for incomplete penetration), **single-bevel** where one member must stay square (common at tees), and **J or U** grooves where filler must be minimized on heavy wall.\n\nFit-up vocabulary matters because it controls root fusion: the **root opening** is the gap between members; the **root face** is the small unbeveled land; the **bevel angle** (per side) and **included angle** set sidewall access. Backing strips or rings support an open root but stay in place — expect geometry echoes and a built-in crevice. Double-sided welds are often **back-gouged** before the second side to remove the first root.\n\nFinished anatomy: the **face/cap** with its reinforcement and **toes**, the **root** opposite, the **fusion line** between weld and base metal, and the **heat-affected zone (HAZ)** — a few millimeters of base metal transformed (never melted) by welding heat, prone to hardening and hydrogen cracking. The required examination volume is the weld **plus the HAZ**, typically the weld width plus about 6 mm (1/4 in.) each side or as the procedure defines."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-4-1-fig-b",
+   "caption": "Joint types, common groove configurations, and the named features of a finished single-V butt weld including the heat-affected zone."
+  },
+  {
+   "type": "text",
+   "heading": "Planning Angle-Beam Coverage",
+   "body": "Angle-beam coverage is pure trigonometry. With plate thickness T and refracted angle θ:\n\n- **Skip distance** (one full V-path along the surface) = 2T·tanθ\n- **Leg** (sound path per traverse) = T/cosθ\n- Surface distance to any reflector = sound path × sinθ; depth in leg 1 = sound path × cosθ\n\nWorked example — 25 mm plate, 60° probe: half-skip = 25 × 1.732 ≈ **43.3 mm**, full skip ≈ **86.6 mm**, each leg = 25/cos 60° = 25/0.5 = **50 mm**. Standing the index point a half-skip from the weld centerline puts the beam center on the **root in leg 1**; at the full skip it returns to the **cap in leg 2**.\n\nSo the scanning band runs from just short of the half-skip out to the full skip plus half the probe length, advancing along the weld with at least ~10–15% overlap per pass so legs 1 and 2 together flood the entire volume plus HAZ. Scan **from both sides** of the weld (and both surfaces where required) so each fusion face is interrogated near-normal; add **transverse scans** along the weld axis — probe skewed slightly toward the centerline — for transverse cracks. A cap ground flush lets you scan directly over the weld. Where geometry blocks the band (nozzle necks, stiffeners), document the limitation and supplement with other angles or the opposite surface."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-4-1-fig-c",
+   "caption": "Skip distance, legs, and the scanning band for a 60° probe on 25 mm plate — probe positions that place the beam on the root in leg 1 and the cap in leg 2."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Match the beam to the fusion face",
+   "body": "Planar fusion-face flaws reflect specularly, so pick the angle that strikes the bevel **near 90°**: probe angle ≈ 90° minus the bevel angle measured from vertical. A standard 30° bevel (60° included angle) is hit square-on by a **60° beam** — the reason 60° is the workhorse on single-V butt welds. If one side of the joint is inaccessible, the fusion face on the accessible side loses that normal-incidence shot: scan from the opposite surface, change angle, or note the coverage limit."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-4-1-fig-a",
+   "title": "Four arc welding processes at a glance",
+   "file": "ut2-4-1-fig-a.svg"
+  },
+  {
+   "id": "ut2-4-1-fig-b",
+   "title": "Joints, grooves, and weld nomenclature",
+   "file": "ut2-4-1-fig-b.svg"
+  },
+  {
+   "id": "ut2-4-1-fig-c",
+   "title": "Angle-beam coverage geometry",
+   "file": "ut2-4-1-fig-c.svg"
+  }
+ ],
+ "interactive": null,
+ "checkQuestions": [
+  {
+   "question": "Which pair of welding processes relies on a slag-forming flux, making interpass slag inclusions a primary UT concern?",
+   "options": [
+    "GMAW and GTAW",
+    "SMAW and FCAW",
+    "GTAW and SAW",
+    "GMAW and SAW"
+   ],
+   "correct": 1,
+   "explanation": "SMAW's electrode coating and FCAW's tubular-wire flux both form a slag blanket that must be removed between passes; trapped remnants become slag inclusions. GMAW and GTAW are gas-shielded and produce no slag."
+  },
+  {
+   "question": "A deep, narrow single-pass SAW bead is most prone to which discontinuity, and why?",
+   "options": [
+    "Tungsten inclusions, because the electrode dips into the puddle",
+    "Undercut, because travel speed is low",
+    "Centerline solidification (hot) cracking, because grains growing in from both walls meet at a weak, segregated center plane",
+    "Cold lap, because the arc energy is too low"
+   ],
+   "correct": 2,
+   "explanation": "A deep, narrow bead solidifies inward from both sidewalls; low-melting segregates concentrate where the fronts meet, and shrinkage strain opens a centerline hot crack. Tungsten is a GTAW issue and cold lap a short-circuit GMAW issue."
+  },
+  {
+   "question": "You are scanning a 20 mm plate butt weld with a 60° shear-wave probe (tan 60° ≈ 1.73). What is the full skip distance?",
+   "options": [
+    "34.6 mm",
+    "40.0 mm",
+    "23.1 mm",
+    "69.3 mm"
+   ],
+   "correct": 3,
+   "explanation": "Skip = 2T·tanθ = 2 × 20 × 1.73 ≈ 69.3 mm. Half that, 34.6 mm, is the half-skip stand-off that puts the beam center on the root in leg 1."
+  },
+  {
+   "question": "A single-V weld is prepared with a 60° included angle (30° bevel per side, measured from vertical). Which probe angle strikes the fusion faces closest to perpendicular?",
+   "options": [
+    "45°",
+    "60°",
+    "70°",
+    "30°"
+   ],
+   "correct": 1,
+   "explanation": "For normal incidence on a planar fusion face, probe angle ≈ 90° − bevel angle from vertical = 90° − 30° = 60°. That maximizes the specular response from sidewall lack of fusion."
+  },
+  {
+   "question": "Which statement about root-area fit-up terms is correct?",
+   "options": [
+    "The root face is the unbeveled land on the groove edge; too large a land with too little heat invites incomplete penetration",
+    "The root opening is the angle between the two bevels",
+    "The root face is the gap between the two members before welding",
+    "A permanent backing strip eliminates all root-area UT signals"
+   ],
+   "correct": 0,
+   "explanation": "The root face is the small flat land at the bottom of the bevel and the root opening is the gap between members; an oversized land or undersized gap starves the root of fusion. Backing strips add geometry echoes rather than remove them."
+  }
+ ],
+ "references": [
+  "CP-105-2024 UT Evaluation Course §3.1 (welding processes)",
+  "CP-105-2024 UT Evaluation Course §3.2 (weld geometries)",
+  "Standard welding terminology and joint nomenclature per documents such as AWS A3.0 (cited generically)",
+  "Weld examination volume and scanning practice per codes such as ASME Section V, Article 4 and AWS D1.1 (cited generically)"
+ ]
+}

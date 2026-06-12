@@ -1,0 +1,167 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="gfGlow" filterUnits="userSpaceOnUse" x="-30" y="-30" width="660" height="400">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.1" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="gfGlowS" filterUnits="userSpaceOnUse" x="-30" y="-30" width="660" height="400">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="gfSteel" x1="0" y1="124" x2="0" y2="240" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2f5f92"/><stop offset=".4" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="gfSteelD" x1="0" y1="168" x2="0" y2="238" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c5a8a"/><stop offset="1" stop-color="#0e2747"/>
+    </linearGradient>
+    <linearGradient id="gfTop" x1="0" y1="144" x2="0" y2="168" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3a6da0"/><stop offset="1" stop-color="#22497a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- panel split hairline -->
+  <path d="M366 46 V298" stroke="#9fe6ff" stroke-width="1" stroke-dasharray="3 6" opacity=".14" fill="none"/>
+
+  <!-- ================= LEFT : forged stepped shaft, longitudinal cut ================= -->
+  <text x="16" y="22" font-size="11" letter-spacing="1.5" fill="#9fe6ff" opacity=".8">FORGED SHAFT · LONGITUDINAL CUT</text>
+
+  <!-- shaft section body -->
+  <path d="M28 124 H182 C214 124 220 146 250 146 H352 V218 H250 C220 218 214 240 182 240 H28 Z"
+        fill="url(#gfSteel)" stroke="#8fb6e0" stroke-width="1.8" stroke-linejoin="round"/>
+
+  <!-- axis centerline (dash-dot) -->
+  <path d="M20 182 H358" stroke="#7fd8ff" stroke-width="1" stroke-dasharray="12 4 3 4" opacity=".4" fill="none"/>
+
+  <!-- fibrous axial grain-flow lines, bending around the contour -->
+  <g fill="none" stroke="#9fe6ff" stroke-width="1.1" stroke-linecap="round">
+    <path d="M31 131 q25 -2 50 0 t50 0 t49 0 C212 131 218 150 248 150 H349" opacity=".3"/>
+    <path d="M31 140 H180 C212 140 218 156 248 156 H349" stroke-dasharray="16 5" opacity=".22"/>
+    <path d="M31 151 q25 -2 50 0 t50 0 t49 0 C212 151 218 163 248 163 H349" opacity=".32"/>
+    <path d="M31 161 H180 C212 161 218 169 248 169 H349" stroke-dasharray="16 5" opacity=".22"/>
+    <path d="M31 172 q25 -1.5 50 0 t50 0 t49 0 C212 172 218 175.5 248 175.5 H349" opacity=".3"/>
+    <path d="M31 192 q25 1.5 50 0 t50 0 t49 0 C212 192 218 188.5 248 188.5 H349" opacity=".3"/>
+    <path d="M31 203 H180 C212 203 218 195 248 195 H349" stroke-dasharray="16 5" opacity=".22"/>
+    <path d="M31 213 q25 2 50 0 t50 0 t49 0 C212 213 218 201.5 248 201.5 H349" opacity=".32"/>
+    <path d="M31 224 H180 C212 224 218 208 248 208 H349" stroke-dasharray="16 5" opacity=".22"/>
+    <path d="M31 233 q25 2 50 0 t50 0 t49 0 C212 233 218 214 248 214 H349" opacity=".3"/>
+  </g>
+
+  <!-- static grain-flow direction cue -->
+  <text x="30" y="103" font-size="10" letter-spacing="1" fill="#9fe6ff" opacity=".7">GRAIN FLOW</text>
+  <g stroke="#9fe6ff" stroke-width="1.4" opacity=".55" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 111 H88"/><path d="M83 107 L91 111 L83 115"/>
+  </g>
+
+  <!-- gfStringer : elongated inclusion riding a flow line (draw) -->
+  <path id="gfStringer" d="M88 150.6 q14 -1.6 27 -0.4 t26 0.4" fill="none" stroke="#ff6b6b" stroke-width="2.4"
+        stroke-linecap="round" filter="url(#gfGlowS)" pathLength="100" stroke-dasharray="100 101" stroke-dashoffset="100"/>
+  <g id="gfStringerLbl" opacity="0" font-size="11">
+    <path d="M88 149 L78 139" stroke="#ff6b6b" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="74" y="135" text-anchor="middle" fill="#ff6b6b" opacity=".9" letter-spacing=".5">STRINGER</text>
+  </g>
+
+  <!-- gfBurst : ragged centerline tear, deep in section (fade + ping) -->
+  <g id="gfBurst" opacity="0">
+    <path d="M112 182 L120 179 L128 178 L137 180.5 L145 177.2 L154 179 L162 177.8 L168 181.6 L161 185.4 L152 184 L143 186.8 L134 184.6 L126 186.2 L118 184.8 Z"
+          fill="#060f1f" stroke="#ff6b6b" stroke-width="1.4" stroke-linejoin="round" filter="url(#gfGlowS)"/>
+    <g stroke="#ff6b6b" stroke-width="1" opacity=".6" fill="none">
+      <path d="M112 182 L104 183.5"/><path d="M168 182 L176 180.5"/>
+    </g>
+    <g font-size="11">
+      <path d="M169 179 L188 172" stroke="#ff6b6b" stroke-width="1" opacity=".5" fill="none"/>
+      <text x="191" y="175" fill="#ff6b6b" opacity=".9" letter-spacing=".5">BURST</text>
+    </g>
+  </g>
+  <circle id="gfBurstPing" cx="140" cy="182" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#gfGlowS)"/>
+
+  <!-- gfFlakes : cluster of flat bright dashes, mid-radius to center (fade) -->
+  <g id="gfFlakes" opacity="0">
+    <g stroke="#ffc24b" stroke-width="2" stroke-linecap="round" fill="none" filter="url(#gfGlowS)">
+      <path d="M98 196 H114"/><path d="M122 204 H138"/><path d="M104 212 H118"/><path d="M132 192 H148"/>
+      <path d="M198 201 L214 199"/><path d="M206 210 L221 207.5"/>
+      <path d="M268 196 H283"/><path d="M291 191 H305"/>
+    </g>
+    <g font-size="11">
+      <path d="M104 218 L94 249" stroke="#ffc24b" stroke-width="1" opacity=".45" fill="none"/>
+      <text x="92" y="259" text-anchor="middle" fill="#ffc24b" opacity=".9" letter-spacing=".5">FLAKES</text>
+    </g>
+  </g>
+
+  <!-- gfPerp : 90° cue where the coming beam crosses a flow line (fade) -->
+  <g id="gfPerp" opacity="0">
+    <path d="M150 152.5 H157.5 V161" fill="none" stroke="#5fe0ff" stroke-width="1.5" filter="url(#gfGlowS)"/>
+    <text x="162" y="157" font-size="9" fill="#5fe0ff" opacity=".95">90°</text>
+  </g>
+
+  <!-- gfBeamRadial : straight-beam probe on the OD firing radially (draw) -->
+  <g id="gfBeamRadial" fill="none" stroke-linecap="round" stroke-linejoin="round"
+     stroke-dasharray="100 101" stroke-dashoffset="100">
+    <path d="M139 100 H161 Q165 100 165 104 V120 H135 V104 Q135 100 139 100 Z" stroke="#eaf6ff" stroke-width="1.8" pathLength="100"/>
+    <path d="M141 110 H159" stroke="#9fe6ff" stroke-width="1.2" pathLength="100"/>
+    <path d="M150 100 V88 Q150 81 157 81" stroke="#eaf6ff" stroke-width="1.6" pathLength="100"/>
+    <path d="M136 122 H164" stroke="#eaf6ff" stroke-width="2.4" pathLength="100"/>
+    <path d="M150 126 V228" stroke="#5fe0ff" stroke-width="2.2" filter="url(#gfGlow)" pathLength="100"/>
+    <path d="M143 220.5 L150 229.5 L157 220.5" stroke="#5fe0ff" stroke-width="2" filter="url(#gfGlow)" pathLength="100"/>
+  </g>
+  <text id="gfBeamRadialLbl" x="158" y="259" text-anchor="middle" font-size="11" letter-spacing="1"
+        fill="#5fe0ff" opacity="0">RADIAL</text>
+
+  <!-- ================= RIGHT : upset disk, half-section cutaway (fade) ================= -->
+  <g id="gfDisk" opacity="0">
+    <text x="478" y="22" text-anchor="middle" font-size="11" letter-spacing="1.5" fill="#9fe6ff" opacity=".8">UPSET DISK · FACE CUT</text>
+
+    <!-- diametral cut face -->
+    <path d="M394 168 H562 V238 H394 Z" fill="url(#gfSteelD)" stroke="#8fb6e0" stroke-width="1.6" stroke-linejoin="round"/>
+    <!-- top face (back half, tree-stump grain) -->
+    <path d="M394 168 A84 24 0 0 1 562 168 Z" fill="url(#gfTop)" stroke="none"/>
+    <path d="M394 168 A84 24 0 0 1 462 144.6" fill="none" stroke="#8fb6e0" stroke-width="1.6"/>
+    <path d="M494 144.6 A84 24 0 0 1 562 168" fill="none" stroke="#8fb6e0" stroke-width="1.6"/>
+    <!-- ghost of removed front half -->
+    <path d="M394 238 A84 24 0 0 0 562 238" fill="none" stroke="#9fe6ff" stroke-width="1" stroke-dasharray="4 4" opacity=".22"/>
+
+    <!-- radial grain rays on the face -->
+    <g stroke="#bfe9ff" stroke-width="1" opacity=".5" fill="none" stroke-linecap="round">
+      <path d="M505.6 165.9 L556.7 162"/>
+      <path d="M498.2 162.2 L535.6 151.5"/>
+      <path d="M501.1 156.6 L518.7 147.8"/>
+      <path d="M454.9 156.6 L437.3 147.8"/>
+      <path d="M457.8 162.2 L420.4 151.5"/>
+      <path d="M450.4 165.9 L399.3 162"/>
+    </g>
+    <!-- growth-ring arcs (split around the probe) -->
+    <g stroke="#bfe9ff" stroke-width="1" opacity=".3" fill="none">
+      <path d="M421 168 A57 16.3 0 0 1 462 152.4"/>
+      <path d="M494 152.4 A57 16.3 0 0 1 535 168"/>
+      <path d="M452 168 A26 7.4 0 0 1 462 162.2"/>
+      <path d="M494 162.2 A26 7.4 0 0 1 504 168"/>
+    </g>
+
+    <!-- flow lines in section: parallel to end faces, fanning at the rim -->
+    <g fill="none" stroke="#9fe6ff" stroke-width="1.1" stroke-linecap="round">
+      <path d="M400 175 C428 179.5 528 179.5 556 175" opacity=".3"/>
+      <path d="M400 188 C428 191.5 528 191.5 556 188" stroke-dasharray="16 5" opacity=".22"/>
+      <path d="M400 201.5 C428 203 528 203 556 201.5" opacity=".32"/>
+      <path d="M400 216.5 C428 213.5 528 213.5 556 216.5" stroke-dasharray="16 5" opacity=".22"/>
+      <path d="M400 229 C428 225 528 225 556 229" opacity=".3"/>
+    </g>
+
+    <!-- thin flat flaws lying parallel to the faces -->
+    <g stroke="#ffc24b" stroke-width="2" stroke-linecap="round" fill="none" filter="url(#gfGlowS)">
+      <path d="M424 196 H442"/><path d="M450 210 H466"/><path d="M470 206 H486"/>
+      <path d="M492 222 H508"/><path d="M524 186 H540"/><path d="M438 226 H452"/>
+    </g>
+
+    <text x="478" y="286" text-anchor="middle" font-size="10" letter-spacing="1" fill="#9fe6ff" opacity=".65">GRAIN FANS RADIALLY</text>
+  </g>
+
+  <!-- gfBeamAxial : probe on the flat face firing through the thickness (draw) -->
+  <g id="gfBeamAxial" fill="none" stroke-linecap="round" stroke-linejoin="round"
+     stroke-dasharray="100 101" stroke-dashoffset="100">
+    <path d="M466 132 H490 Q494 132 494 136 V161 A16 4.5 0 0 1 462 161 V136 Q462 132 466 132 Z" stroke="#eaf6ff" stroke-width="1.8" pathLength="100"/>
+    <path d="M468 150 H488" stroke="#9fe6ff" stroke-width="1.2" pathLength="100"/>
+    <path d="M478 132 V119 Q478 112 485 112" stroke="#eaf6ff" stroke-width="1.6" pathLength="100"/>
+    <path d="M478 171 V225" stroke="#5fe0ff" stroke-width="2.2" filter="url(#gfGlow)" pathLength="100"/>
+    <path d="M471 217.5 L478 226.5 L485 217.5" stroke="#5fe0ff" stroke-width="2" filter="url(#gfGlow)" pathLength="100"/>
+  </g>
+  <text id="gfBeamAxialLbl" x="492" y="201" font-size="11" letter-spacing="1" fill="#5fe0ff" opacity="0">AXIAL</text>
+</svg>

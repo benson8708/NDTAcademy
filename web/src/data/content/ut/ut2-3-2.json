@@ -1,0 +1,182 @@
+{
+ "lessonId": "ut2-3-2",
+ "title": "Castings: Coarse Grains and Casting Discontinuities",
+ "narrationScript": "A casting is metal that froze in place. Nobody kneaded it, nobody rolled it, nobody forged it. Whatever happened in the mold is what you inspect, and that single fact drives both the discontinuities you hunt and the technique you need to hunt them. Start with how castings are made. Molten metal is poured into a sand mold, an investment shell, a permanent metal mold, or spun into a centrifugal mold, and it solidifies from the walls inward. The first metal to freeze against the cold mold forms a thin skin of fine grains. Then long columnar grains grow inward, following the heat flow. The center freezes last, often as coarse equiaxed grains. Shrinkage is the constant enemy. Metal contracts as it freezes, and the foundry feeds that contraction with risers, reservoirs of liquid placed to freeze last. Where the feeding fails, you get shrinkage cavities. So here is the casting discontinuity family. Shrinkage comes in three flavors. Macroshrinkage is a rough cavity where a thick section or a junction ran out of feed metal. Centerline shrinkage is a ragged porous plane along the thermal center of a wall. Microshrinkage is a sponge of tiny voids between the dendrite arms. All of it lives in the last metal to freeze. Thick sections, junctions where sections meet in an L, a T, or a cross, and the zones under risers. Gas porosity is different. Rounded holes from gas that came out of solution or got trapped during pouring, scattered through a region or layered under a surface. Hot tears form while the casting is still mostly solid but weak. A member that cannot shrink freely because the mold or a core restrains it tears along the grain boundaries, almost always at a change of section. Cold shuts happen when two streams of metal meet too cold to fuse, leaving a smooth seam at the surface. Add sand, slag, and dross inclusions, and chaplets, the little metal supports that hold cores in place, which sometimes fail to fuse into the casting around them. Now the technique problem. A casting keeps its coarse as-cast grain, and coarse grains scatter ultrasound. Scattering noise on the screen is called grass, and in the regime where the wavelength is much longer than the grains, it climbs roughly with the fourth power of frequency. Double the frequency and the scatter can jump sixteen fold. So the five megahertz probe that works beautifully on wrought plate can fill a casting screen with noise until no real signal survives. The fix is to slow the test down. Drop to two and a quarter megahertz, to one megahertz, even to half a megahertz on coarse austenitic or very large castings. The wavelength at one megahertz in steel is nearly six millimeters, long enough to step over the grains instead of bouncing off each one. You trade sensitivity for signal to noise, and in a casting that trade is the whole game. A larger diameter element helps too, because it narrows the beam and averages the grain noise, and a well damped probe with a short pulse keeps resolution from getting worse than it must. And watch the back reflection, because in a casting, attenuation itself is information. A healthy back echo says sound is getting through. A sinking back echo with no discrete indication can mean microshrinkage or a porosity field quietly soaking up the energy. A dead screen does not mean no defects. It may mean no test. On the screen, shrinkage gives ragged clusters of echoes that rise and fall as you move the probe, usually with the back echo knocked down or gone. Gas porosity gives many small separate echoes with a more modest drop in the back echo. A hot tear is more planar, so its response swings strongly with beam direction, and near section changes you may need an angle beam to face it squarely. A cold shut is smooth and lives at the surface, often better confirmed by magnetic particle or penetrant testing, which is why surface methods always partner with ultrasonics on castings. Evaluation follows practices written specifically for castings. You calibrate with distance amplitude blocks or flat bottom holes at a frequency the casting will tolerate, often one megahertz. The purchase order assigns quality levels, says which zones of the casting get which level, and sets what to record. Loss of back reflection beyond a stated fraction is recordable on its own. And remember what acceptance means here. A casting is allowed to contain more than a wrought product, because the designer planned for it. Your job is not to find a perfect casting. It is to find, size, and report what is there, honestly, at a frequency the metal will let you use.",
+ "imagePrompt": "An inspector presses a large low-frequency transducer onto the machined hub of a heavy steel valve-body casting in a foundry aisle, the flaw detector beside him showing a noisy baseline trace.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Frozen in Place: How Castings Are Made",
+   "body": "Molten metal is poured into a **sand mold**, an **investment shell**, a reusable **permanent mold**, or spun against the wall of a **centrifugal mold**, then left to solidify from the walls inward. Three structural zones form: a thin **chill zone** of fine grains against the mold, **columnar grains** growing inward along the heat-flow direction, and a **coarse equiaxed** center where the last metal freezes. Metal contracts several percent on freezing, so the foundry attaches **risers** — reservoirs designed to stay liquid longest and feed that contraction — and uses **chills** to speed local cooling and **cores** (held by small metal **chaplets**) to form internal passages.\n\nThe inspection consequence is blunt: **nothing refines the structure afterward**. There is no hot working to knead the grains fine or weld porosity shut, so the as-solidified structure — coarse grains, dendrites, and whatever the feeding system failed to feed — is exactly what arrives under your probe. Castings are also evaluated to their own quality philosophy: the designer expects some level of internal discontinuity and the acceptance levels say how much."
+  },
+  {
+   "type": "text",
+   "heading": "Where Casting Discontinuities Form",
+   "body": "**Shrinkage** concentrates in the **last metal to freeze** and comes in three forms: **macroshrinkage**, a rough cavity at a thick section, a junction, or under a riser that ran out of feed metal; **centerline shrinkage**, a ragged porous plane along the thermal center of a wall; and **microshrinkage**, an interdendritic sponge of tiny voids. Watch junctions — L, T, and cross sections concentrate heat and starve last.\n\n**Gas porosity** is rounded — holes from dissolved gas coming out of solution, mold moisture, or air entrapped during pouring — scattered through a region or layered just under a surface.\n\n**Hot tears** form at section changes and hot spots while the metal is solid but still weak: restrained contraction tears the casting along grain boundaries, leaving ragged, branched, roughly planar discontinuities at or near the surface.\n\n**Cold shuts** are smooth, linear surface seams where two metal streams met too cold to fuse.\n\n**Inclusions** — sand, slag, dross — ride in from the mold and the melt, and an **unfused chaplet** leaves a built-in planar interface at a known core-support location."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-3-2-fig-a",
+   "caption": "A riser-fed casting section showing where shrinkage, gas porosity, hot tears, cold shuts, and unfused chaplets form as the metal freezes from the mold walls inward."
+  },
+  {
+   "type": "table",
+   "caption": "Casting discontinuities and their typical ultrasonic behavior.",
+   "headers": ["Discontinuity", "Where it forms", "Character", "Screen signature"],
+   "rows": [
+    ["Macro / centerline shrinkage", "Junctions, thick sections, under risers", "Ragged cavity or porous plane", "Ragged traveling echo cluster; severe back-echo loss"],
+    ["Microshrinkage", "Interdendritic, last metal to freeze", "Dispersed sponge of fine voids", "Little or no discrete echo; back echo sinks over the area"],
+    ["Gas porosity", "Scattered or layered near surfaces", "Rounded, discrete holes", "Many small separate echoes; modest back-echo drop"],
+    ["Hot tear", "Section changes, hot spots", "Ragged, branched, roughly planar", "Direction-sensitive echo; angle beam often needed"],
+    ["Cold shut", "Surface where streams met", "Smooth linear seam", "Near-surface response; confirm with MT/PT"],
+    ["Unfused chaplet", "Known core-support location", "Planar disk-like interface", "Sharp echo at a predictable depth and position"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Coarse Grain and the f-to-the-Fourth Problem",
+   "body": "Coarse as-cast grains scatter the beam, and the scatter appears on screen as **grass** — hash that competes with real indications. In the Rayleigh regime (wavelength much larger than grain size) scattering rises roughly with **f⁴**: double the frequency and grain noise can jump sixteen-fold, while attenuation also climbs. This is why castings are tested **slow**: 2.25 MHz, 1 MHz, even 0.5 MHz on coarse austenitic or very heavy sections. At 1 MHz the wavelength in steel is λ = 5,920 ÷ 1,000,000 ≈ **5.9 mm** — long enough to stride over the grains.\n\nMore gain is not a fix: it raises grass and signal together, leaving the **signal-to-noise ratio** unchanged. The tools that do work:\n\n- **Lower frequency** until the back echo stands clearly above the grass.\n- **Larger element diameter** — beam-spread half-angle follows sin γ = 1.22 v/(D f), so a big element keeps the low-frequency beam narrow and averages grain noise.\n- **Heavily damped, short-pulse probes** to protect depth resolution at low frequency.\n- **Dual-element probes** for the near-surface zone, and a **through-transmission** check to prove penetration through the worst sections.\n\nLeave `reject` off for evaluation — it cleans the baseline by distorting vertical linearity."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-3-2-fig-b",
+   "caption": "The same casting wall at 5 MHz and 1 MHz: grain scattering buries the screen in grass at high frequency, while the lower frequency restores the back echo and exposes a real indication."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The back echo is data",
+   "body": "In attenuative cast structures the back reflection is your transmission monitor. A healthy back echo proves sound is crossing the wall. A **sinking back echo with no discrete indication** is itself recordable — microshrinkage or fine porosity may be absorbing the beam. A dead screen never means \"no defects\"; it may mean **no test**."
+  },
+  {
+   "type": "text",
+   "heading": "Evaluating Castings Against the Code",
+   "body": "Casting examination runs to practices written for the product form — documents in the pattern of **ASTM A609** for carbon and low-alloy steel castings, and ASME-style quality-level frameworks invoked by the purchase order. Calibration uses **flat-bottom-hole DAC blocks** (or a back-reflection basis) at the working frequency, commonly 1 MHz; the order assigns **quality levels by zone**, so a flange face may carry a tighter level than the body. Recordables typically include indications at or above the recording level, **back-reflection loss beyond a stated fraction**, and traveling indications, each mapped for location and extent — boundaries sized with the **6 dB-drop** method.\n\nSurface condition matters more on castings than anywhere else: an as-cast surface is rough enough to break up coupling and scatter the entry pulse, so practices commonly require examination zones to be machined or ground (roughness limits around 6 µm / 250 µin. Ra are typical) and a viscous couplant used on whatever roughness remains. Build the transfer correction honestly — the DAC block is smooth; the casting is not.\n\nRead signatures against origin: a ragged traveling cluster with heavy back-echo loss under a riser pad says **shrinkage**; many small discrete echoes with modest loss say **porosity**; a direction-sensitive planar response at a section change says **hot tear** — bring an angle beam to face it. Surface methods (MT/PT) carry the surface: cold shuts and tear mouths belong to them. Castings are also commonly **weld repaired**: the excavation and repair are re-examined to the same standard as the original metal. Report what is there, where, and how big — disposition belongs to the acceptance level the designer chose."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-3-2-fig-a",
+   "title": "Where casting discontinuities form",
+   "file": "ut2-3-2-fig-a.svg"
+  },
+  {
+   "id": "ut2-3-2-fig-b",
+   "title": "Frequency selection on a coarse-grained casting",
+   "file": "ut2-3-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Frequency Lab: A Coarse-Grained Casting",
+  "intro": "A 150 mm thick low-alloy steel sand casting arrives with machined surfaces, to be examined to a casting practice using FBH-based DAC calibration. Walk through the setup decisions and the first indications.",
+  "steps": [
+   {
+    "prompt": "You start with a 5 MHz, 10 mm straight-beam probe. The screen shows grass to 40% FSH across the full range and no back echo at all. What is the right first move?",
+    "options": [
+     "Add 12 dB of gain until a back echo appears",
+     "Switch to a 1 MHz large-diameter probe and re-establish the back echo",
+     "Switch on reject to clean up the baseline",
+     "Report the casting as unexaminable"
+    ],
+    "correct": 1,
+    "feedback": "Grain scattering rises roughly with f⁴, so gain raises grass and signal together and reject only hides the problem by distorting vertical linearity. Dropping frequency (and keeping the element large for a narrow beam) is the move that actually improves signal-to-noise."
+   },
+   {
+    "prompt": "At 1 MHz the back echo stands at 80% FSH with grass near 5%. Under a riser pad you find a ragged cluster of echoes at mid-depth that shifts and re-peaks as the probe moves, and the back echo drops to 20% over the area. Most likely cause?",
+    "options": [
+     "A layer of gas porosity",
+     "Shrinkage in the last metal to freeze beneath the riser",
+     "A cold shut",
+     "Mode-converted wedge noise"
+    ],
+    "correct": 1,
+    "feedback": "Ragged, traveling clusters with severe back-reflection loss in the thermal center under a riser are the classic shrinkage signature. Porosity tends to give many small discrete echoes with a more modest back-echo drop, and cold shuts live at the surface."
+   },
+   {
+    "prompt": "The procedure says: record any indication at or above 25% DAC and any back-reflection loss of 75% or more. Your cluster peaks at 40% DAC, and the back echo fell from 80% to 20% FSH. You should:",
+    "options": [
+     "Record only the indication amplitude, since the back echo is a separate technique",
+     "Record both the indication and the back-reflection loss, with location and mapped extent",
+     "Record nothing — castings are expected to contain shrinkage",
+     "Reject the casting yourself on the spot"
+    ],
+    "correct": 1,
+    "feedback": "Both thresholds are met: 40% DAC exceeds the 25% recording level, and 80% to 20% is a 75% back-reflection loss. A Level II records both, maps the extent with the 6 dB drop, and evaluates against the assigned quality level — final disposition follows the acceptance criteria, not instinct."
+   },
+   {
+    "prompt": "Near a flange-to-body section change you get a sharp echo that almost vanishes when you approach from the opposite direction, and MT later shows a ragged surface line there. This behavior fits:",
+    "options": [
+     "Microshrinkage, because it is direction-sensitive",
+     "A hot tear — a ragged, roughly planar tear at a restrained section change, best faced with an angle beam",
+     "An unfused chaplet at a core support",
+     "Gas porosity layered under the cope surface"
+    ],
+    "correct": 1,
+    "feedback": "Strong direction sensitivity means a roughly planar reflector, and a ragged surface-connected line at a section change is the hot-tear fingerprint — restrained contraction tore the metal while it was hot and weak. Angle beams face it squarely; MT/PT confirms the surface mouth."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "Grain scattering in the Rayleigh regime rises roughly with the fourth power of frequency. Dropping from 5 MHz to 2.5 MHz should cut scattering noise by about a factor of:",
+   "options": [
+    "2",
+    "4",
+    "16",
+    "It does not change"
+   ],
+   "correct": 2,
+   "explanation": "Halving the frequency cuts f⁴ scattering by 2⁴ = 16 — which is why frequency selection, not gain, is the lever that rescues signal-to-noise on coarse castings."
+  },
+  {
+   "question": "Shrinkage discontinuities concentrate:",
+   "options": [
+    "In the chill zone, where the first metal freezes",
+    "In the last metal to freeze — thick sections, junctions, and under risers",
+    "Uniformly throughout the casting volume",
+    "Only at the cope surface"
+   ],
+   "correct": 1,
+   "explanation": "Metal contracts as it freezes and the last regions to solidify run out of feed; junctions, heavy sections, and riser zones are where the feeding fails and shrinkage lives."
+  },
+  {
+   "question": "Which pairing of casting discontinuities is described correctly?",
+   "options": [
+    "Hot tear: a ragged tear at a section change from restrained contraction; cold shut: a smooth surface seam where two metal streams failed to fuse",
+    "Hot tear: a smooth seam from converging streams; cold shut: a ragged tear at a junction",
+    "Both are forms of gas porosity that differ only in size",
+    "Both occur only in centrifugal castings"
+   ],
+   "correct": 0,
+   "explanation": "Hot tears happen while the casting is solid but weak, tearing raggedly along grain boundaries at restrained section changes; cold shuts are smooth fusion-less seams where two cooling streams met."
+  },
+  {
+   "question": "The wavelength of a 1 MHz longitudinal wave in steel (5,920 m/s) is about:",
+   "options": [
+    "1.2 mm",
+    "3.0 mm",
+    "5.9 mm",
+    "11.8 mm"
+   ],
+   "correct": 2,
+   "explanation": "λ = v/f = 5,920 ÷ 1,000,000 ≈ 5.9 mm — long enough to step over coarse cast grains, which is exactly why low frequencies tame grain noise."
+  },
+  {
+   "question": "Scanning a thick casting, the back echo gradually sinks to near zero over one region with no discrete indication appearing. The best interpretation is:",
+   "options": [
+    "Couplant loss — ignore it and keep scanning",
+    "A field of microshrinkage or fine porosity is attenuating the beam, and the loss itself is recordable",
+    "The region is defect-free since nothing discrete appeared",
+    "The probe has entered its near field"
+   ],
+   "correct": 1,
+   "explanation": "Dispersed microshrinkage and fine porosity scatter the beam without returning discrete echoes; the sinking back reflection is the indication, and casting practices make back-echo loss beyond a stated fraction recordable on its own."
+  }
+ ],
+ "references": [
+  "CP-105-2024 UT Evaluation Course §2.6 (castings: process review, discontinuities, response, codes/standards)",
+  "Casting straight-beam practices such as ASTM A609 (cited generically)",
+  "ASME-style casting quality-level and repair-examination frameworks (cited generically)"
+ ]
+}

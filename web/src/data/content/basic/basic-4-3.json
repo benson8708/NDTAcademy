@@ -1,0 +1,140 @@
+{
+  "lessonId": "basic-4-3",
+  "title": "Magnetic Flux Leakage Testing: Fundamentals",
+  "narrationScript": "Magnetic flux leakage is magnetic particle testing's electronic cousin, and this lesson builds it from physics you already own. Drive a ferromagnetic steel near magnetic saturation, and any metal loss — a corrosion pit, a gouge, a worn or broken wire — forces flux out of the part as a leakage field. The difference is the detector: instead of iron particles and a trained eye, electronic sensors convert the leak into a recordable, repeatable signal. Saturation is the first rule. An under-magnetized wall lets flux shunt around a defect internally, and lets permeability noise masquerade as damage. The leakage field has two faces: the axial component peaks directly over the defect, while the radial component swings bipolar and crosses zero at the defect center. Hall elements read flux density directly and work at any speed; induction coils read the rate of change and need motion. Permanent-magnet bridges, DC coils, and current-based circuits supply the field. Tank-floor scanners, pipeline pigs, wire-rope testers, and tube-mill systems carry it to the steel — standardized on machined reference defects, with ultrasonic prove-up close behind.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Magnetic Particle's Electronic Cousin",
+      "body": "Magnetic flux leakage testing (MFL) runs on the same physics you built in the magnetic particle lessons: magnetize a **ferromagnetic** part, and a discontinuity interrupts the flux and forces some of it out of the surface as a **leakage field**. What changes is the detector. MT decorates the leak with iron particles and asks a trained eye to find the buildup; MFL drives **electronic sensors** through the leakage field and converts it into a voltage. That one substitution changes the method's character completely:\n\n- **Speed and coverage.** Sensor arrays sweep wide paths at walking speed and faster — an in-line inspection tool surveys hundreds of kilometers of pipeline in a single run, something no particle method could approach.\n- **A permanent, position-indexed record.** Every signal is logged against distance along the asset, so this year's survey can be laid over last year's and corrosion growth measured between them.\n- **No line of sight, no consumables.** MFL inspects through paint and thin nonmagnetic coatings, in the dark, inside a pipeline full of product — no bath, no powder, no UV lamp.\n- **Severity estimates.** Once the system is standardized on reference defects, signal amplitude and shape yield an approximate depth of metal loss — enough to rank indications and prioritize repairs.\n\nThe trade-offs are just as definite. MFL is first and foremost a **metal-loss** method — corrosion pitting, erosion, gouges, worn and broken wires. Tight cracks are detectable only when the field crosses them and conditions are favorable; sizing is approximate rather than exact; and only ferromagnetic steels qualify. Where MT paints a picture of a crack for the eye, MFL screens kilometers of steel and tells you where to look harder."
+    },
+    {
+      "type": "text",
+      "heading": "Field Principles: Why MFL Lives Near Saturation",
+      "body": "Every concept from the MT fundamentals lesson carries over unchanged — flux lines, permeability **μ = B/H**, the hysteresis loop, the right-hand rule. MFL adds one non-negotiable requirement: the part is driven **near magnetic saturation**, high on the B-H curve where the steel is carrying nearly all the flux it can.\n\nThree reasons:\n\n- **Saturation forces the leak.** At low magnetization the wall has spare flux-carrying capacity, so flux meets a defect and simply crowds through the remaining ligament — almost nothing escapes for a sensor to find. Near saturation the remaining wall *cannot* absorb the diverted flux, and the excess must break out into the air at the surface.\n- **Saturation silences permeability noise.** Microstructural variations, hard spots, and residual stresses all shift local permeability, and at moderate flux densities they generate leakage-like signals of their own. Near saturation the permeability differences flatten out, and what remains in the signal is geometry — metal loss.\n- **Saturation makes amplitude mean something.** The correlation between signal amplitude and defect severity holds only at a known, repeatable magnetization level — which is why every MFL system is standardized on reference defects at its working field strength.\n\nBecause the magnetizing field is steady — permanent magnets or DC — the flux fills the **entire wall thickness** of the plate and pipe sections MFL serves. The method therefore responds to metal loss on **both surfaces**: top side and soil side of a tank floor, ID and OD of a pipe, with the far-surface signal broader and weaker, exactly as MT's subsurface rule predicts. Pipeline tools add a second, shallow-reading sensor set to tag each indication as internal or external."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-4-3-fig-a",
+      "caption": "An MFL magnetizer drives the wall near saturation. Over the pit the remaining ligament cannot carry all the flux, so it leaks: the axial component rises to a single peak over the defect while the radial component swings bipolar, crossing zero at the defect center — the signature a sensor records at constant liftoff."
+    },
+    {
+      "type": "text",
+      "heading": "Reading the Leakage Field",
+      "body": "Pass a sensor over the defect and the leakage field resolves into two useful components:\n\n- The **axial (tangential) component**, parallel to the magnetizing flux, rises to a **single peak directly over the defect**.\n- The **radial (normal) component**, perpendicular to the surface, swings **bipolar** — positive approaching the defect, through **zero exactly at the center**, negative leaving it — because leakage flux exits the steel on one side of the defect and re-enters on the other.\n\nEither component can carry the inspection; together they locate the defect and begin to describe it. Beyond position, the signal responds to:\n\n- **Depth and volume.** Deeper, more voluminous metal loss diverts more flux — depth is the strongest driver of amplitude.\n- **Abruptness.** A sharp-walled pit concentrates its leakage into a strong, narrow signal. Gradual, saucer-shaped thinning spreads the same metal loss over a long distance and leaks weakly — the classic hard case for MFL.\n- **Liftoff.** Leakage fields are local and die off steeply with distance from the surface, so sensors run at a small, constant liftoff — many tools ride the surface on wear plates.\n- **Scan velocity.** Motion of a strong magnetizer induces eddy currents in the wall that oppose and distort the field, so each tool has a qualified speed window — for pipeline pigs, a few meters per second. Coil sensors add their own speed dependence on top.\n\nHold magnetization, liftoff, and speed constant and the same defect returns the same signal — the property that makes MFL a recordable, repeatable, comparable method."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Three conditions for a trustworthy MFL signal",
+      "body": "**Near-saturation magnetization** — otherwise flux shunts around the defect inside the wall and permeability noise masquerades as damage. **Flux crossing the discontinuity** — the MT orientation rule applies unchanged: a volumetric pit disturbs any field direction, but a narrow linear flaw lying parallel to the flux is nearly invisible. **Constant liftoff at a qualified speed** — amplitude falls steeply with sensor distance and distorts with velocity. Change any one of the three and the same defect produces a different signal, which is why MFL systems are standardized on machined reference defects before the data counts."
+    },
+    {
+      "type": "text",
+      "heading": "Magnetization: Electric Current and Permanent Magnets",
+      "body": "The magnetizing toolbox is MT's, repackaged to move:\n\n- **Current-based, circular geometry.** Pass current along a tube — or along an internal conductor — and the right-hand rule wraps a **circular field** around it, the orientation that crosses **longitudinal** flaws. Production systems reach the same geometry without contact: **rotating-pole magnetizers** sweep a circumferential field around the tube as it advances, with sensor shoes spinning between the poles.\n- **Encircling DC coils.** A coil around the product drives a **longitudinal field** along its axis — the orientation that crosses **transverse** defects and three-dimensional pitting. Tube and drill-pipe inspection units pair a coil section with a rotating section so both orientations are covered in one pass.\n- **Permanent-magnet and DC electromagnet bridges.** Two poles bridged by the part form a magnetic circuit, flux running pole-to-pole through the wall, with the sensor array riding between the poles. This is the architecture of the tank-floor scanner and of the in-line inspection (ILI) pig, whose permanent-magnet bars couple flux into the pipe wall through wire-brush shoes, magnetizing the pipe **axially** between two brush rings.\n\nOrientation thinking carries straight over from MT. An axially magnetized pig sees corrosion pits and circumferentially oriented defects well, but a narrow **axial** crack or seam-weld flaw lies parallel to its flux and barely disturbs it — which is why **circumferential-field** tools exist for axial defects. There is no universal shot: the field is chosen to cross the discontinuity of concern."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-4-3-fig-b",
+      "caption": "The two workhorse MFL sensors. A Hall element carries a control current and outputs a voltage proportional to the flux density passing through it — at any speed, even stationary. An induction coil outputs only while the flux through it changes, so it needs motion and its amplitude rides on scan speed."
+    },
+    {
+      "type": "text",
+      "heading": "Sensors Used in MFL",
+      "body": "- **Induction coils** obey Faraday's law: a coil of N turns outputs **e = −N · dΦ/dt**, a voltage proportional to the *rate of change* of the flux through it. Coils are passive, rugged, inexpensive, and can be wound to almost any shape — but they are blind when stationary, and their amplitude rides on scan speed. Wired as **differential pairs**, two opposed coils cancel the slowly varying background and respond sharply to abrupt changes — the standard broken-wire detector in wire-rope instruments.\n- **Hall elements** carry a small control current through a semiconductor chip; flux passing perpendicular to the chip deflects the charge carriers sideways (the Lorentz force), producing a transverse **Hall voltage proportional to flux density B** itself. Hall sensors read the absolute field at any speed — including zero — and their small size packs them into the dense arrays that give pipeline tools and floor scanners their resolution. The cost: they need excitation current and signal conditioning, and the chip's orientation selects which component — axial or radial — it reads.\n- **Magnetoresistive sensors** (AMR and GMR) change electrical resistance with applied field — sensitive, tiny, and increasingly common in high-resolution arrays.\n- **Flux-gate magnetometers** offer very high sensitivity at low field levels; wire-rope instruments use total-flux sensing of the magnetic circuit to track gradual loss of cross-section.\n\nWhatever the sensor, the system behind it looks alike: amplification and filtering, digitization, a position channel — odometer wheels on pigs and scanners — thresholds and alarms, and storage, so every signal lands on a map of the asset."
+    },
+    {
+      "type": "table",
+      "caption": "MFL equipment families: how each magnetizes, senses, and what it finds.",
+      "headers": ["Equipment family", "Magnetization", "Sensing", "Discontinuities found"],
+      "rows": [
+        ["Tank-floor scanner", "Permanent-magnet or DC electromagnet bridge, flux pole-to-pole through the plate", "Hall or coil array riding between the poles", "Top-side and soil-side corrosion pitting and wall loss in storage-tank floors"],
+        ["In-line inspection (ILI) pig", "Permanent-magnet bars coupling flux through brush shoes; axial field (circumferential-field tools for axial flaws)", "Circumferential Hall arrays plus ID/OD discrimination sensors, odometer-indexed", "Internal and external corrosion metal loss, gouges, dents with metal loss"],
+        ["Wire-rope tester", "Permanent-magnet head saturating the rope axially", "Hall or flux-gate sensing of total flux; differential coils for local leaks", "Loss of metallic area (LMA) from wear and corrosion; localized faults (LF) such as broken wires"],
+        ["Tube, casing, and drill-pipe systems (OCTG)", "Rotating-pole circumferential field plus encircling DC coil", "Sensor shoes riding the tube surface as it advances", "Longitudinal seams and cracks, transverse cracks, corrosion pitting"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Inspection Materials: Reference Standards, Not Consumables",
+      "body": "MFL has no baths to maintain, no powder, no UV lamp — the method's 'inspection materials' are its **reference standards** and the verification discipline around them:\n\n- **Tubular products** are standardized on a reference tube containing machined artificial discontinuities — typically **through-wall holes and ID/OD notches** of specified dimensions per ASTM E570 — run through the system at production speed until the response is repeatable.\n- **Tank-floor scanners** are set up on a **reference plate** of matching thickness with machined pits of graded depth (commonly 20–80% of wall), establishing the amplitude-to-depth relationship for that plate and coating thickness.\n- **Wire-rope instruments** are checked against rope samples with **known loss of metallic area and deliberately cut wires**, per ASTM E1571.\n\nStandardization is performed before examination, at prescribed intervals, and again at the end — exactly the system-verification logic MT applies with its shims and ring specimen.\n\nTwo closing disciplines. First, **prove-up**: MFL is a screening method, so flagged indications are verified and sized by a quantitative follow-up — ultrasonic thickness measurement or visual and pit-gauge examination — before repair decisions are made. API 653 work on tank floors and API 1163-qualified pipeline inspections are built around that pairing. Second, **residual magnetism**: MFL leaves parts strongly magnetized, and drill pipe or tubing headed for welding may need demagnetization — the rules from the MT fundamentals lesson apply unchanged. The next lesson takes these tools into the field: wire rope, pipe body, and tank floors in working detail."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-4-3-fig-a",
+      "title": "MFL sensor response over a wall-loss defect",
+      "file": "basic-4-3-fig-a.svg"
+    },
+    {
+      "id": "basic-4-3-fig-b",
+      "title": "Hall element and induction coil sensing",
+      "file": "basic-4-3-fig-b.svg"
+    }
+  ],
+  "interactive": null,
+  "checkQuestions": [
+    {
+      "question": "An MFL examination of steel plate is run with the wall magnetized well below saturation. The most likely consequence is that:",
+      "options": [
+        "Eddy currents overheat the plate and distort the sensor readings",
+        "Flux shunts around metal loss within the remaining wall, so little leaks out and defects are missed",
+        "The Hall sensors saturate and clip every signal",
+        "The radial component loses its bipolar shape but keeps its full amplitude"
+      ],
+      "correct": 1,
+      "explanation": "Below saturation the wall has spare flux-carrying capacity: flux crowds through the ligament under a defect instead of breaking out where sensors can find it, and permeability variations add noise. Near-saturation magnetization is what forces a strong, repeatable leak."
+    },
+    {
+      "question": "A Hall-element sensor can inspect at crawl speed — or stationary — while an induction coil cannot, because:",
+      "options": [
+        "A Hall element outputs a voltage proportional to flux density B itself, while a coil's output is proportional to the rate of change of flux and so requires motion",
+        "A coil works only when the part is magnetized with alternating current",
+        "A Hall element contains more turns of wire than a coil",
+        "A coil responds only to the axial component of the leakage field"
+      ],
+      "correct": 0,
+      "explanation": "The Hall voltage is an absolute measurement of B, present even with everything at rest. A coil obeys Faraday's law — e = −N · dΦ/dt — so with no change in flux there is no output, and its amplitude varies with scan speed. Current type and field component are set by design, not by sensor family."
+    },
+    {
+      "question": "As an MFL sensor passes over an isolated corrosion pit, the radial (normal) component of the leakage field characteristically shows:",
+      "options": [
+        "A single symmetric peak centered over the pit",
+        "A constant offset proportional to the remaining wall thickness",
+        "A bipolar swing that crosses zero directly over the pit center",
+        "No response, because only the axial component reacts to metal loss"
+      ],
+      "correct": 2,
+      "explanation": "Leakage flux exits the steel on one side of the pit and re-enters on the other, so the component normal to the surface reverses sign — positive, through zero at the center, then negative. The single centered peak belongs to the axial (tangential) component; both react to the defect."
+    },
+    {
+      "question": "A standard pipeline MFL pig magnetizes the pipe wall axially between two brush rings. Which condition is this tool LEAST suited to detect?",
+      "options": [
+        "An isolated sharp-walled corrosion pit in the pipe body",
+        "A narrow axial crack along the seam weld",
+        "A circumferential groove of significant depth",
+        "External corrosion metal loss under the coating"
+      ],
+      "correct": 1,
+      "explanation": "The orientation rule from MT applies unchanged: flux must cross the flaw. A narrow axial crack lies parallel to an axial field and barely disturbs it, which is why circumferential-field tools were developed for axial defects. Volumetric pits, circumferential grooves, and external wall loss all interrupt the axial flux and are detected."
+    },
+    {
+      "question": "Before a tank-floor MFL survey, the scanner is run over a reference plate containing machined pits of known depth. The purpose is to:",
+      "options": [
+        "Demagnetize the scanner's magnet bridge before it touches the floor",
+        "Standardize the system response so signal amplitudes can be related to metal loss at the working magnetization level",
+        "Measure the permeability of the reference plate for the report",
+        "Verify the odometer wheel's distance calibration"
+      ],
+      "correct": 1,
+      "explanation": "MFL severity estimates are comparative: amplitude means something only relative to known artificial defects examined at the same magnetization, liftoff, and speed — the same system-verification logic as MT's shims and ring specimen. Suspect indications are then proved up and sized quantitatively, typically by UT."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §2.11 (MFL fundamentals: magnetic field principles, magnetization by means of electric current, flux leakage; equipment and inspection materials, discontinuity types, sensors)",
+    "ASTM E570, Standard Practice for Flux Leakage Examination of Ferromagnetic Steel Tubular Products",
+    "ASTM E1571, Standard Practice for Electromagnetic Examination of Ferromagnetic Steel Wire Rope",
+    "API 653, Tank Inspection, Repair, Alteration, and Reconstruction, and API 1163, In-Line Inspection Systems Qualification (industry practice for MFL tank-floor and pipeline screening with follow-up verification)"
+  ]
+}

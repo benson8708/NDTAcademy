@@ -1,0 +1,58 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#0A2342">Time-Temperature Development Chart (typical)</text>
+  <text x="400" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#D14343">Do not develop below 60 °F or above about 75 °F - follow your film manufacturer's chart.</text>
+
+  <!-- out-of-range zones -->
+  <rect x="110" y="80" width="40" height="300" fill="#D14343" opacity="0.12"/>
+  <rect x="675" y="80" width="55" height="300" fill="#D14343" opacity="0.12"/>
+
+  <!-- gridlines -->
+  <line x1="110" y1="340" x2="730" y2="340" stroke="#D9E0E8" stroke-width="1"/>
+  <line x1="110" y1="300" x2="730" y2="300" stroke="#D9E0E8" stroke-width="1"/>
+  <line x1="110" y1="260" x2="730" y2="260" stroke="#D9E0E8" stroke-width="1"/>
+  <line x1="110" y1="220" x2="730" y2="220" stroke="#D9E0E8" stroke-width="1"/>
+  <line x1="110" y1="180" x2="730" y2="180" stroke="#D9E0E8" stroke-width="1"/>
+  <line x1="110" y1="140" x2="730" y2="140" stroke="#D9E0E8" stroke-width="1"/>
+
+  <!-- axes -->
+  <line x1="110" y1="80" x2="110" y2="380" stroke="#0A2342" stroke-width="2.5"/>
+  <line x1="110" y1="380" x2="730" y2="380" stroke="#0A2342" stroke-width="2.5"/>
+  <text x="115" y="92" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Development time (min)</text>
+
+  <!-- y tick labels -->
+  <text x="98" y="345" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">3</text>
+  <text x="98" y="305" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">4</text>
+  <text x="98" y="265" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">5</text>
+  <text x="98" y="225" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">6</text>
+  <text x="98" y="185" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">7</text>
+  <text x="98" y="145" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">8</text>
+
+  <!-- x ticks -->
+  <line x1="150" y1="380" x2="150" y2="388" stroke="#0A2342" stroke-width="2"/>
+  <line x1="290" y1="380" x2="290" y2="388" stroke="#0A2342" stroke-width="2"/>
+  <line x1="430" y1="380" x2="430" y2="388" stroke="#0A2342" stroke-width="2"/>
+  <line x1="570" y1="380" x2="570" y2="388" stroke="#0A2342" stroke-width="2"/>
+  <line x1="710" y1="380" x2="710" y2="388" stroke="#0A2342" stroke-width="2"/>
+  <text x="150" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">60</text>
+  <text x="290" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">64</text>
+  <text x="430" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">68</text>
+  <text x="570" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">72</text>
+  <text x="710" y="408" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">76</text>
+  <text x="420" y="434" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">Developer temperature (°F)</text>
+
+  <!-- curve: warmer = shorter time -->
+  <path d="M 150 140 C 200 165 245 188 290 204 C 340 222 385 244 430 260 C 480 277 525 290 570 300 C 620 311 665 321 710 328" fill="none" stroke="#1B82E8" stroke-width="3.5"/>
+
+  <!-- anchor point 5 min @ 68 F -->
+  <line x1="430" y1="260" x2="430" y2="380" stroke="#F2A33C" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="110" y1="260" x2="430" y2="260" stroke="#F2A33C" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <circle cx="430" cy="260" r="7" fill="#F2A33C" stroke="#0A2342" stroke-width="2"/>
+  <text x="446" y="248" text-anchor="start" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">5 min at 68 °F (anchor)</text>
+
+  <!-- example points -->
+  <circle cx="150" cy="140" r="5" fill="#1B82E8"/>
+  <text x="166" y="136" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">8 min at 60 °F</text>
+  <circle cx="570" cy="300" r="5" fill="#1B82E8"/>
+  <text x="560" y="330" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">4 min at 72 °F</text>
+</svg>

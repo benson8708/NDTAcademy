@@ -1,0 +1,218 @@
+{
+  "lessonId": "basic-8-2",
+  "title": "Origin of Discontinuities and Failure Modes",
+  "narrationScript": "Every discontinuity has a birthday, and the birthday predicts almost everything else about it. This lesson sorts discontinuities by origin. Inherent discontinuities form as the metal solidifies: pipe, gas porosity, inclusions, and segregation in the ingot, plus shrinkage, hot tears, and cold shuts in castings. Working the metal renames them: pipe flattens into laminations, surface blowholes draw out into seams, inclusions string into stringers. Process-induced discontinuities arrive during manufacture, from forging laps and welding cracks to grinding cracks, quench cracks, and hydrogen embrittlement picked up in plating. Service-induced discontinuities appear once the part goes to work: fatigue cracks growing from stress concentrators, corrosion in all its forms, stress-corrosion cracking, and creep at temperature. Then we learn to read fracture faces. Necking and dimples mean ductile overload. Bright granular faces with chevrons pointing to the origin mean brittle fracture. Beach marks fanning out from a rivet hole mean fatigue. We finish with nonmetallics, where composites hide delaminations under a surface that looks untouched. Origin predicts location, orientation, and character, and those three pick your method.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Every Discontinuity Has a Birthday",
+      "body": "A **discontinuity** is any interruption in the normal physical structure of a material or part — a crack, a pore, an inclusion, a lamination, a separation between plies. The word carries no verdict. A **defect** is a discontinuity that has been **evaluated against the governing acceptance criteria and found rejectable** — by type, size, shape, orientation, or location — so that it impairs the part's fitness for its intended service. Every defect is a discontinuity; most discontinuities, measured against their criteria, never become defects.\n\nThe Basic outline organizes discontinuities by **when they form**, because the birthday predicts nearly everything else about them:\n\n- **Inherent discontinuities** form during initial solidification of the metal — in the ingot for wrought products, in the mold for castings.\n- **Process-induced discontinuities** form during manufacturing: **primary processing** (rolling, forging, drawing, extrusion, welding) and **secondary processing and finishing** (machining, grinding, heat treatment, pickling, plating).\n- **Service-induced discontinuities** form after the part enters service — fatigue, corrosion, stress-corrosion cracking, creep, wear.\n\nWhy a Level III candidate cares: **origin predicts location, orientation, and character — and those three select the NDT method and technique.** A lamination born as ingot pipe lies flat at mid-thickness of rolled plate, parallel to the surfaces: nearly invisible to radiography, which needs a thickness change along the beam, and unmissable for straight-beam ultrasonics, which it faces square-on. A fatigue crack born at a fastener hole breaks the surface and grows perpendicular to the principal stress: prime territory for penetrant, magnetic particle, and eddy current. When an indication appears, tracing the discontinuity back to its origin stage is the opening move of failure analysis — and in an FAA Part 145 repair station it is also the move that decides whether one airplane has a problem or the entire fleet does."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Indication, discontinuity, defect — a one-way ladder",
+      "body": "An **indication** is the response the method gives you; interpretation sorts it as false, nonrelevant, or relevant. A relevant indication reveals a **discontinuity**. Evaluation against the code, specification, or drawing then decides whether that discontinuity is a **defect** — rejectable by the governing criteria. Every defect is a discontinuity and produced an indication, but most indications never climb that far. Writing 'defect' on a report before evaluation is complete is not loose vocabulary — it is a premature disposition of someone else's hardware."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-8-2-fig-a",
+      "caption": "The discontinuity origin timeline: each stage of a part's life contributes its own family — and primary working renames the inherent set it inherits from the ingot."
+    },
+    {
+      "type": "text",
+      "heading": "Inherent Discontinuities: Born in the Melt",
+      "body": "Inherent discontinuities form while the metal is **solidifying from the melt** — in the ingot (or continuous-cast strand) for wrought products, in the mold for shape castings.\n\nThe classic ingot set:\n\n- **Pipe.** An ingot solidifies from the walls inward, and the metal contracts as it freezes, leaving a shrinkage cavity in the top center. The piped end is normally cropped before rolling; any remnant elongates into **centerline pipe** running down the middle of bars and billets.\n- **Blowholes and gas porosity.** Gases evolved during solidification leave rounded cavities. Clean internal surfaces may weld shut under hot reduction; oxidized surfaces do not, and survive working as laminations or seams.\n- **Nonmetallic inclusions.** Slag, oxides, sulfides, and refractory fragments trapped in the melt. Hard and brittle relative to the matrix, they elongate into **stringers** as the metal is worked.\n- **Segregation.** Nonuniform distribution of alloying elements and impurities between the first and last metal to freeze. It locally alters strength, corrosion behavior, and response to heat treatment, and can persist as banding in wrought product.\n\nWhen the ingot is worked, inherent discontinuities are not erased — they are **renamed**: pipe and unhealed porosity flatten into **laminations** in plate, surface blowholes and cracks draw out into tight longitudinal **seams**, inclusions string into stringers. That family resemblance is why a Level III reads mill-product indications backward to the ingot.\n\nIn **shape castings**, the inherent family is the casting's own solidification record: **gas porosity**, **micro- and macroshrinkage** in the sections that froze last, **hot tears** where a still-mushy section was pulled apart by contraction against mold restraint, **cold shuts** where two converging metal streams met too cold to fuse, and **sand or slag inclusions**.\n\nAviation has paid full tuition on this category. In 1989, the center-engine fan disk of United flight 232 burst from a fatigue crack that started at a **hard alpha inclusion** — a brittle, nitrogen-stabilized region created during titanium melting — after seventeen years of service. An inherent discontinuity can lie dormant through every later stage and collect its toll only in service."
+    },
+    {
+      "type": "text",
+      "heading": "Process-Induced, Part One: Primary Processing",
+      "body": "**Primary processing** converts ingots and billets into mill products and near-net shapes by hot and cold work — and each process leaves a signature.\n\n- **Rolling.** Unhealed ingot porosity, pipe remnant, and inclusion clusters flatten into **laminations**: thin, planar separations at or near mid-thickness of plate and sheet, parallel to the surfaces. Inclusions draw into longitudinal **stringers**. Surface blowholes and cracks elongate into **seams** — tight, straight, longitudinal, and notoriously faint to magnetic particle testing because their faces press together.\n- **Forging.** A **lap** forms when a fin or corner of metal folds over onto the surface without fusing; it meets the surface at a shallow angle with oxide trapped in the fold, which is why laps under-indicate and demand high-sensitivity technique. **Bursts** are internal or surface ruptures from forging at improper temperature or taking too aggressive a reduction; an internal burst never reaches the surface, so only volumetric methods (UT, RT) will find it.\n- **Drawing and extrusion.** Drawn bar can develop **central bursts** — internal, chevron-shaped ruptures spaced along the axis — while drawn and extruded products also carry seams and stringers aligned with the working direction.\n- **Welding.** A weld is a small casting executed in the middle of manufacture, and it collects both solidification and process discontinuities: **porosity**, **slag inclusions**, **tungsten inclusions** (GTAW), **incomplete fusion** along a fusion face, **incomplete penetration** at an unfused root, **undercut** at the toe, and **cracks** — hot cracks as the weld solidifies (including crater cracks at an abruptly broken arc), and delayed **hydrogen-assisted cold cracks** in the heat-affected zone hours or days later, which is why many specifications impose a waiting period before final weld inspection.\n\nThe organizing rule of primary processing: **working direction is destiny.** Discontinuities elongate along the direction of metal flow, laminations lie flat in the rolling plane, and an inspector who knows how a product was worked already knows which way its discontinuities lie — and which beam direction or field orientation will cross them."
+    },
+    {
+      "type": "text",
+      "heading": "Process-Induced, Part Two: Secondary Processing and Finishing",
+      "body": "Secondary operations finish the part — and can break it in the last mile.\n\n- **Machining tears** are rough, torn surface zones left in ductile materials by dull tooling or excessive feed; they act as stress concentrators for later fatigue.\n- **Grinding cracks** are thermal: an aggressive wheel overheats a thin surface layer, which tries to expand — or, in hardened steel, locally re-hardens — and cracks on cooling. They are **very fine, shallow, and typically perpendicular to the grinding direction**, often in parallel families or networks. This is wet fluorescent magnetic particle and penetrant territory, easy to miss entirely with coarse technique.\n- **Quench cracks** form during heat treatment when thermal contraction and the volume expansion of the martensite transformation fight each other across a section change. They start at the surface at **stress concentrations — section changes, fillets, holes, keyways, sharp corners** — run deep, and often **fork**. A part may crack audibly in the quench or silently hours afterward.\n- **Hydrogen embrittlement.** Acid pickling and electroplating charge atomic hydrogen into steel. In high-strength steels (roughly 1000 MPa tensile strength and above), hydrogen plus sustained tensile stress produces **delayed brittle cracking**, typically intergranular, hours to days after the load is applied. The defense is procedural: **bake the parts** promptly after plating (hydrogen embrittlement relief per documents such as ASTM B850) and verify the bake record. Cadmium-plated high-strength fasteners and landing-gear components are the canonical aerospace concern.\n- **Plating cracks.** Hard chromium plate carries high residual tensile stress and a fine crack network; under load those cracks can propagate into the base metal, and the fatigue penalty of hard chrome is well documented. Plating can also **bridge and mask** an existing crack — one reason critical parts are inspected before plating, not only after.\n\nThe common thread: secondary-processing discontinuities are **surface or near-surface, fine, and tight** — the province of wet fluorescent magnetic particle, penetrant, and eddy current on finished surfaces."
+    },
+    {
+      "type": "table",
+      "caption": "Discontinuity families by origin stage: where they live, how they lie, and which methods find them.",
+      "headers": ["Origin stage", "Representative discontinuities", "Where they live / how they lie", "Methods that find them"],
+      "rows": [
+        ["Inherent (ingot / melt)", "Pipe, blowholes, inclusions, segregation; castings: shrinkage, hot tears, cold shuts, gas porosity", "Internal; concentrated at the centerline and in last-to-freeze sections", "RT and UT for the volume; PT/MT once working brings them to the surface"],
+        ["Primary processing (rolled, forged, drawn)", "Laminations, stringers, seams, laps, internal and central bursts", "Follow the working direction: laminations flat at mid-thickness, seams and stringers longitudinal, laps at shallow surface angles", "Straight-beam UT for laminations; MT/PT for seams and laps; UT/RT for internal bursts"],
+        ["Welding", "Porosity, slag and tungsten inclusions, incomplete fusion and penetration, undercut, hot and delayed cold cracks", "In the weld and HAZ; incomplete fusion along fusion faces, incomplete penetration at the root", "RT/UT volumetric; MT/PT for surface cracks; delayed cracking demands a delayed inspection"],
+        ["Secondary processing", "Grinding cracks, quench cracks, machining tears, hydrogen embrittlement, plating cracks", "Surface or near-surface; quench cracks at section changes and corners, grinding cracks perpendicular to the grind direction", "Wet fluorescent MT or PT; ET on finished surfaces"],
+        ["Service", "Fatigue cracks, corrosion and pitting, exfoliation, SCC, creep damage, wear and fretting", "Start at surface stress concentrators (fatigue, SCC); creep voids internal at grain boundaries", "PT/MT/ET at known hot spots; UT for remaining thickness; intervals set by the maintenance program"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Service-Induced Discontinuities",
+      "body": "Once hardware enters service, the load spectrum and the environment take over as discontinuity factories.\n\n- **Fatigue cracks** are the dominant service discontinuity in aviation. Cyclic stresses — far below the static strength — initiate a crack at a **stress concentrator**: a fastener hole, fillet, thread root, tool mark, nick, or corrosion pit. The crack advances a small amount per cycle, tight and surface-breaking, oriented perpendicular to the principal stress. In 1988, Aloha Airlines flight 243 lost a large section of upper fuselage to **multiple-site fatigue damage** — small cracks growing from a row of rivet holes in a disbonded lap joint linked up faster than the inspection program assumed.\n- **Corrosion** arrives in many forms: **uniform** attack; **galvanic** attack of the less noble metal at a dissimilar-metal couple; **pitting**, dangerous beyond its metal loss because every pit is a ready-made fatigue initiation site; **crevice** corrosion under faying surfaces and fastener heads; and **intergranular** attack along grain boundaries, whose aerospace expression is **exfoliation** — corrosion product wedging apart the elongated grain layers of rolled aluminum and lifting the surface in leaf-like layers.\n- **Stress-corrosion cracking (SCC)** requires three legs at once: a susceptible alloy, sustained tensile stress (applied or residual — a forming or assembly stress counts), and the specific corrodent for that alloy — chlorides for austenitic stainless steels, ammonia for brasses, caustic for carbon steel. The cracks are **branched, fine, and tight**, with little visible deformation; remove any one leg and the mechanism stops.\n- **Creep** is time-dependent plastic deformation under stress at elevated temperature — significant above roughly **0.4 of the absolute melting temperature** — ending in creep rupture as grain-boundary voids link into intergranular fracture. Turbine blades and disks live on creep budgets measured in hours at temperature.\n- **Wear, erosion, and fretting** remove material progressively; **fretting** — micro-slip between clamped surfaces — both abrades and nucleates fatigue cracks under hardware that looked merely discolored.\n\nService discontinuities define the inspection program: they start at predictable hot spots, so maintenance planning concentrates NDT there, at intervals shorter than the time a just-detectable crack needs to grow to critical size."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-8-2-fig-b",
+      "caption": "Three fracture faces, three verdicts: fatigue beach marks fan out from the origin; brittle chevrons point back to it; ductile overload necks, dimples, and tears in a single event."
+    },
+    {
+      "type": "text",
+      "heading": "Failure Modes in Metallic Materials",
+      "body": "A failure is the inability of a part to perform its intended function; fracture is the bluntest form, and the fracture face is a flight recorder.\n\n- **Ductile fracture** absorbs energy: gross plastic deformation, **necking**, and a dull, fibrous, gray face. In a round bar it produces the classic **cup-and-cone** — a flat central region formed by **microvoid coalescence** (dimples under magnification) ringed by a **45° shear lip**. Ductile failure is a single overload event; the investigator's question is what applied the load.\n- **Brittle fracture** absorbs little energy: sudden, flat, bright, and granular (cleavage), with **little or no deformation**, frequently decorated with **chevron marks** — a herringbone pattern whose points converge back at the origin, handing the investigator a map. Brittle behavior is promoted by **low temperature, high loading rate, and triaxial constraint** at notches and thick sections. Body-centered-cubic steels show a **ductile-to-brittle transition temperature** — the lesson of the WWII Liberty ships that fractured in cold seas — while face-centered-cubic metals such as aluminum and austenitic stainless steel show no such transition.\n- **Fatigue** is progressive failure in three stages: **initiation** at a stress concentrator; **propagation**, the smooth region carrying **beach marks** (macroscopic crack-arrest lines recording changes in the load spectrum) and microscopic **striations** (one per load cycle); and **final fast fracture** of the remaining ligament, ductile or brittle. **Ratchet marks** — small steps near the origin — betray multiple initiation sites. Aviation learned this signature early: the 1954 de Havilland Comet losses traced to fatigue cracks growing from the corners of fuselage cutouts. The face matters operationally: beach marks mean the failure was **progressive, and therefore detectable in principle** at some earlier inspection; a clean overload face means it was not.\n- **Creep rupture and environmental fracture** round out the set: intergranular voiding at temperature; SCC and hydrogen embrittlement producing brittle, often intergranular fractures in normally ductile alloys at stresses far below design."
+    },
+    {
+      "type": "text",
+      "heading": "Failures in Nonmetallic Materials",
+      "body": "Nonmetallics fail by their own rules, and modern airframes are full of them.\n\n- **Ceramics and glass** behave elastically to fracture with essentially no plastic deformation. Strength is governed by the **largest surface flaw** (the Griffith criterion), so it scatters widely between nominally identical parts and degrades with handling damage; **thermal shock** — fracture from stresses set up by steep temperature gradients — is a characteristic killer.\n- **Polymers** answer to temperature through the **glass transition**: below it they are glassy and brittle, above it ductile to rubbery. Their failure vocabulary includes **crazing** — whitened zones of microvoids bridged by drawn fibrils that precede cracking in transparencies such as canopies and windows; **environmental stress cracking**, the teamwork of stress and an active chemical (a solvent, the wrong cleaner); **ultraviolet and thermal degradation** that embrittles surfaces; and **creep at room temperature**, because polymers are viscoelastic and flow under loads metals would carry indefinitely.\n- **Composites** are anisotropic laminates and fail in modes metals do not have: **matrix cracking**, **fiber-matrix debonding**, **fiber fracture**, and above all **delamination** — separation between plies, lying parallel to the surface. The notorious case is **barely visible impact damage (BVID)**: a dropped tool or hail strike leaves a faint scuff or nothing at all on the surface while plies separate below in a cone that widens with depth, with a serious penalty to compression strength. Because the damage plane parallels the surface, **visual inspection is structurally insufficient** — detection belongs to pulse-echo and through-transmission ultrasonics, thermography, and bond testing, with radiography earning its keep finding **water trapped in honeycomb core**.\n- **Adhesive joints** fail **cohesively** (through the adhesive layer — the expected, design-basis mode) or **adhesively** (at the interface — the signature of poor surface preparation). The limit case is the **kissing bond**, surfaces in intimate contact with little or no strength, which conventional NDT struggles to detect and which keeps process control, not inspection, as the first line of defense for bonded structure.\n\nCarry the contrast into the exam: metals usually telegraph failure through deformation or progressive, inspectable cracking; nonmetallics more often fail suddenly from internal or invisible damage — precisely why composite inspection leans on volumetric and thermal methods."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-8-2-fig-a",
+      "title": "Discontinuity origin timeline",
+      "file": "basic-8-2-fig-a.svg"
+    },
+    {
+      "id": "basic-8-2-fig-b",
+      "title": "Reading the fracture face: fatigue, brittle, ductile",
+      "file": "basic-8-2-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "scenario",
+    "title": "Trace the Failure: Identify the Mode",
+    "intro": "Six broken parts arrive at the lab with their service histories attached. Read the evidence on each fracture face, name the failure mode, and trace it back to its origin.",
+    "steps": [
+      {
+        "prompt": "A cracked wing-skin section comes out of a heavy check and is opened in the lab. The fracture face is flat and smooth, with crescent-shaped marks fanning out from a rivet hole and several small radial steps clustered near the same hole. The last portion of the face is rough and torn.",
+        "options": [
+          "Ductile overload from a single severe flight load",
+          "Fatigue — progressive cracking that initiated at the rivet hole",
+          "Stress-corrosion cracking from cabin condensation",
+          "Brittle fracture triggered by cold-soak at altitude"
+        ],
+        "correct": 1,
+        "feedback": "Beach marks are crack-arrest lines that fan out from the origin as the load spectrum changes, and the radial ratchet marks reveal multiple initiation sites along the hole edge — the same multiple-site damage signature as Aloha 243. The rough terminal zone is the final fast fracture of the remaining ligament. A single overload event leaves no progression marks at all."
+      },
+      {
+        "prompt": "A steel ground-support towing fixture snapped on a freezing ramp under a load it had carried all summer. The fracture is flat and bright with a granular sparkle, shows no necking whatsoever, and carries a herringbone pattern whose V-points converge at an arc strike left by a careless weld repair.",
+        "options": [
+          "Fatigue initiated at the arc strike",
+          "Ductile overload of an undersized fixture",
+          "Brittle fracture starting at the arc strike, promoted by low temperature",
+          "Stress-corrosion cracking from de-icing fluid"
+        ],
+        "correct": 2,
+        "feedback": "Bright, granular, deformation-free cleavage plus chevron marks is the brittle signature, and the chevrons point back to their origin — the arc strike, a metallurgical notch. The freezing ramp matters: body-centered-cubic steel crossed below its ductile-to-brittle transition temperature, so a load it tolerated in July broke it in January. Fatigue would have left a smooth beach-marked region first."
+      },
+      {
+        "prompt": "An engine-mount bolt of ductile alloy steel is recovered in two pieces after a documented overtorque event. The shank is visibly necked down near the fracture, and the face is dull gray and fibrous with a 45-degree shear lip ringing a rough central region.",
+        "options": [
+          "Ductile overload — a single event that exceeded the bolt's strength",
+          "Fatigue driven by engine vibration",
+          "Hydrogen embrittlement from the plating line",
+          "Brittle fracture from an undetected quench crack"
+        ],
+        "correct": 0,
+        "feedback": "Necking, a dull fibrous face, and the cup-and-cone geometry with 45-degree shear lips are pure ductile overload: microvoids nucleated, grew, and coalesced in one event. There are no beach marks, no progression, nothing for an earlier inspection to have caught — the corrective action lives in the torque procedure, not the NDT program."
+      },
+      {
+        "prompt": "A formed austenitic stainless steel drain line cracked in service near a joint where chloride-bearing wash water pooled and evaporated. The line saw only static loads. Metallography shows fine, branched, multi-armed cracks with almost no deformation, starting where forming stresses were highest.",
+        "options": [
+          "Creep rupture from elevated temperature",
+          "Corrosion fatigue from pressure pulsation",
+          "Ductile tearing at a thin spot",
+          "Stress-corrosion cracking — alloy, sustained tensile stress, and chlorides acting together"
+        ],
+        "correct": 3,
+        "feedback": "Branched, fine, tight cracking with little deformation under a purely static load is the SCC signature, and the triangle is complete: a susceptible austenitic stainless alloy, residual tensile stress from forming, and concentrated chlorides. Remove any leg — relieve the stress, change the alloy, keep the chlorides off — and the mechanism stops. Fatigue needs cyclic load; creep needs sustained high temperature."
+      },
+      {
+        "prompt": "A batch of cadmium-plated high-strength steel bolts is installed and torqued. Three days later, two are found snapped under the heads with flat, intergranular fracture faces and zero deformation. The plating shop cannot produce a post-plating bake record.",
+        "options": [
+          "Fatigue from the torquing operation",
+          "Hydrogen embrittlement — delayed brittle failure under sustained stress",
+          "Ductile overload from overtorque",
+          "Exfoliation corrosion under the plating"
+        ],
+        "correct": 1,
+        "feedback": "Delayed fracture under a static sustained load, intergranular and deformation-free, in plated high-strength steel with no bake record is the textbook hydrogen embrittlement case: pickling and plating charged atomic hydrogen into the steel, and the embrittlement-relief bake that should have driven it out never happened. Overtorque fails at torque time with visible deformation; fatigue needs load cycles these bolts never saw."
+      },
+      {
+        "prompt": "A mechanic reports a dropped wrench on a composite horizontal stabilizer skin. The surface shows only a faint scuff, but pulse-echo ultrasonics over the impact site shows strong intermediate echoes and loss of the back-wall signal across a 40 mm zone.",
+        "options": [
+          "Surface crazing only — a cosmetic finding",
+          "Fiber fracture confined to the outer ply",
+          "Delamination — interply separation typical of barely visible impact damage",
+          "Water ingress into the core, unrelated to the impact"
+        ],
+        "correct": 2,
+        "feedback": "Impact bends the laminate and interlaminar shear separates the plies in a cone that widens with depth — barely visible impact damage. The delamination planes lie parallel to the surface, which is why they reflect the UT beam (intermediate echoes, lost back wall) and why the visual scuff says nothing about structural condition. Compression strength is the casualty, and ultrasonics or thermography, not the eye, makes the call."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "Straight-beam UT finds a thin, planar separation at mid-thickness of rolled plate, lying parallel to the surfaces. This lamination most likely originated as:",
+      "options": [
+        "A grinding crack introduced during surface finishing",
+        "Pipe or unhealed gas porosity in the ingot, flattened during rolling",
+        "A fatigue crack from cyclic service loads",
+        "A hot tear formed as the plate cooled after rolling"
+      ],
+      "correct": 1,
+      "explanation": "Laminations are inherent discontinuities transformed by primary processing: shrinkage pipe and porosity that survived the ingot flatten and spread in the rolling plane, ending up planar, mid-thickness, and parallel to the surfaces. Grinding and fatigue cracks are surface phenomena, and hot tears belong to solidifying castings, not rolled plate."
+    },
+    {
+      "question": "Which statement correctly relates the terms discontinuity and defect?",
+      "options": [
+        "The two terms are interchangeable in a properly written report",
+        "A discontinuity becomes a defect as soon as it is recorded",
+        "A defect is a discontinuity that evaluation against the governing acceptance criteria has found rejectable — every defect is a discontinuity, but not every discontinuity is a defect",
+        "Discontinuities arise in manufacturing, while defects arise only in service"
+      ],
+      "correct": 2,
+      "explanation": "A discontinuity is simply an interruption in normal structure and carries no verdict; it becomes a defect only when evaluation finds it rejectable by type, size, shape, orientation, or location under the governing criteria. The words form a one-way ladder, and writing 'defect' before evaluation is complete is a premature disposition."
+    },
+    {
+      "question": "A fractured component shows a smooth, flat region containing crescent-shaped marks that fan out from a thread root, ending in a small rough zone. The crescent marks indicate:",
+      "options": [
+        "Progressive fatigue crack growth, with the origin at the thread root where the marks converge",
+        "Brittle fracture, with the origin in the rough zone where the marks end",
+        "Stress-corrosion cracking driven by a corrosive environment",
+        "Ductile overload by microvoid coalescence in a single event"
+      ],
+      "correct": 0,
+      "explanation": "Beach marks are macroscopic crack-arrest lines recording changes in the load spectrum as a fatigue crack advances; they fan outward from the initiation site — here the thread root, a classic stress concentrator — and the rough terminal zone is the final fast fracture of the remaining ligament. Chevron marks of brittle fracture point back to the origin, and ductile overload leaves a dimpled face with no progression marks at all."
+    },
+    {
+      "question": "Quench cracks are best classified and described as:",
+      "options": [
+        "Service-induced, forming on smooth surfaces under cyclic load",
+        "Inherent, caused by segregation during ingot solidification",
+        "Process-induced during heat treatment, starting at section changes, fillets, holes, and sharp corners, and often forked",
+        "Primary-processing discontinuities running along the centerline of rolled bar"
+      ],
+      "correct": 2,
+      "explanation": "Quench cracks form in secondary processing when thermal contraction and the volume expansion of the martensite transformation fight across a section change; they initiate at surface stress concentrations such as fillets, holes, and corners and characteristically fork. Centerline discontinuities in bar are inherent pipe remnants, and fatigue belongs to the service-induced family."
+    },
+    {
+      "question": "A composite rudder skin took a documented tool-drop impact but shows no visible surface damage. Regarding the most characteristic damage mode, the inspector should:",
+      "options": [
+        "Return the part to service, since the absence of visible damage rules out structural damage",
+        "Perform penetrant testing, the standard method for composite impact damage",
+        "Suspect crazing, which always accompanies impact and fluoresces under UV-A",
+        "Suspect internal delamination (barely visible impact damage) and follow up with ultrasonic or thermographic inspection"
+      ],
+      "correct": 3,
+      "explanation": "Impact on a laminate characteristically produces delamination — interply separation parallel to the surface, widening with depth — that can leave the surface looking untouched while seriously degrading compression strength. Because the damage plane parallels the surface, visual inspection is structurally insufficient and detection falls to ultrasonics, thermography, or bond testing; penetrant has no role on composite laminates, and crazing is a polymer transparency phenomenon."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §3.1.2 (origin of discontinuities and failure modes)",
+    "ASNT, Nondestructive Testing Handbook, Vol. 10, NDT Overview (discontinuity origins by product form and process)",
+    "ASM Handbook, Vol. 11, Failure Analysis and Prevention (fracture modes, fractography, fatigue, SCC, creep)",
+    "ASTM B850, Standard Guide for Post-Coating Treatments of Steel for Reducing the Risk of Hydrogen Embrittlement"
+  ]
+}

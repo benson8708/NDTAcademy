@@ -1,0 +1,195 @@
+{
+  "lessonId": "basic-8-3",
+  "title": "Statistical Nature of Detecting and Characterizing Discontinuities",
+  "narrationScript": "Module eight closes with the question every inspection program stands on: when a flaw is present, how often do we actually find it? Run the same procedure on the same cracks and the outcomes scatter — flaw tightness and orientation, surface condition, instrument settings, and human attention all vary. So capability is a curve, not a threshold. Probability of detection starts near zero for small flaws, climbs through a steep transition, and flattens just below one hundred percent, because even large flaws are sometimes missed. From the curve come the working numbers. A fifty is a coin flip. A ninety sits on the fitted mean estimate. And a ninety ninety-five — the size we are ninety-five percent confident is caught at least ninety percent of the time — is what damage tolerance engineers treat as reliably detectable when they set initial flaw assumptions and inspection intervals. Demonstrations under MIL handbook eighteen twenty-three build the curve. False call rates keep it honest, because a threshold low enough to catch everything also scraps good hardware. Speak in probabilities and confidence — that is the Level Three habit.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Detection Is a Probability, Not a Property",
+      "body": "The first two lessons of this module established what materials are made of and where their discontinuities come from — inherent, process-induced, and service-induced. This lesson asks the question the entire inspection enterprise rests on: *when the flaw is there, how often does the inspection actually find it?* The intuitive answer — a competent inspector with a good procedure finds every flaw bigger than some threshold — has been tested repeatedly since the 1970s, when aerospace reliability programs began circulating identical sets of cracked specimens among many qualified inspectors. The results were uncomfortable and consistent: different inspectors found different cracks, the same inspector on a different day produced a different tally, and there was **no size above which every crack was found by everyone, every time**.\n\nDetection is the outcome of a chain of variables, and every link fluctuates:\n\n- **The flaw**: size, but also orientation to the interrogating energy, tightness (a crack held shut by compressive residual stress barely admits penetrant and barely disturbs a sound beam), what fills it (oxide, contamination), and its depth and location.\n- **The part**: geometry and access, surface roughness and coatings, and the material's own noise — coarse grain that scatters ultrasound, permeability variations that wobble an eddy current signal.\n- **The system**: method physics, penetrant sensitivity level or probe and frequency selection, calibration state, and processing parameters.\n- **The human**: training, visual function, vigilance, fatigue, lighting, and time pressure.\n\nBecause every term varies, finding a given flaw is a **random event**, and the only honest statement of capability is a probability: **POD(a)** — the fraction of all flaws of size *a* that the inspection system detects under stated conditions. A claimed \"minimum detectable flaw size\" with no probability and no confidence attached is a marketing claim, not a measurement."
+    },
+    {
+      "type": "text",
+      "heading": "Reading the POD Curve",
+      "body": "Plot POD against flaw size and the result is the S-shaped **POD curve**. Its three zones each carry a lesson:\n\n- **The lower shelf.** For small flaws POD is near zero — but not zero. Occasionally a tiny crack sits perfectly oriented, wide open, on a clean surface, and gets caught. No design credit is taken down here.\n- **The transition.** POD climbs steeply with size, and the steepness is itself diagnostic: a **steep transition** signals a repeatable, well-controlled inspection in which flaw size dominates the outcome; a **shallow, dragged-out transition** signals variability — human-dependent factors, noise, or poor process control smearing the result.\n- **The upper asymptote.** The curve flattens *below* 100% and never reaches it. Even gross flaws are occasionally missed — wrong access, freak orientation, a lapse in attention. \"Too big to miss\" is not a statistical category.\n\nFrom the curve come the working numbers. **a₅₀** is the size detected half the time — a coin flip, useful for comparing techniques, never a design basis. **a₉₀** is the size detected 90% of the time *on the fitted mean curve*. But that curve was estimated from a finite specimen set, and a different draw of specimens would give a slightly different curve. Statistics handles that sampling uncertainty with a **confidence bound**, and the number that matters is **a₉₀/₉₅** — the size for which there is **95% statistical confidence that POD is at least 90%**. It sits on the 95% lower confidence bound, always at a larger size than the mean-curve a₉₀.\n\nOne property is easy to miss and heavily examined: the curve belongs to the **whole system under the stated conditions** — method, procedure, equipment, part family, surface condition, and personnel together. Change the penetrant family, the probe, the surface preparation, or the inspection environment, and you are on a different curve."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-8-3-fig-a",
+      "caption": "The POD curve: near zero for small flaws, a steep transition, and an asymptote that never reaches 100%. a₅₀ and a₉₀ sit on the fitted mean estimate; the damage tolerance number a₉₀/₉₅ sits on the 95% lower confidence bound — always a larger flaw than the mean-curve a₉₀, because it also absorbs the sampling uncertainty of a finite demonstration."
+    },
+    {
+      "type": "table",
+      "caption": "The working vocabulary of detection statistics.",
+      "headers": ["Quantity", "What it states", "How it is used"],
+      "rows": [
+        ["POD(a)", "Fraction of all flaws of size a that the system detects under stated conditions", "The basic capability statement; plotted against size it forms the POD curve"],
+        ["a₅₀", "Size detected 50% of the time — a coin flip", "Comparing techniques and tracking process drift; never a design basis"],
+        ["a₉₀", "Size detected 90% of the time on the fitted mean curve", "Point estimate only — carries no confidence statement about the finite specimen set behind it"],
+        ["a₉₀/₉₅", "Size for which there is 95% statistical confidence that POD is at least 90%", "The \"reliably detectable\" flaw size: damage tolerance initial flaw assumptions and inspection intervals"],
+        ["False call rate (PFA)", "Probability of reporting a flaw where none exists", "Paired with POD to judge a system; high PFA scraps good hardware and erodes trust in the inspection"],
+        ["29 of 29", "All 29 flaws of a given size found, none missed — binomial basis for 90% POD at 95% confidence at that size", "Legacy point-method demonstration; any miss forces a substantially larger specimen set"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Quote the curve, not the trophy",
+      "body": "The smallest flaw an inspection has ever found is an anecdote. Its capability is the size it finds **90% of the time with 95% confidence — a₉₀/₉₅ —** demonstrated under representative conditions. When anyone asks \"what can you detect?\", the only defensible answer carries a probability and a confidence level. A Level III who quotes a single best-case find as system capability is signing for a margin that does not exist."
+    },
+    {
+      "type": "text",
+      "heading": "Demonstrating POD: MIL-HDBK-1823A",
+      "body": "A POD curve is **demonstrated, not asserted**. The governing document is **MIL-HDBK-1823A**, *Nondestructive Evaluation System Reliability Assessment*, with companion practices **ASTM E2862** (hit/miss analysis) and **ASTM E3023** (signal-response analysis).\n\nThe demonstration starts with the specimen set: parts representative of production geometry and surface condition, seeded with **real, characterized flaws** spanning the transition region of the expected curve. For crack detection that means laboratory-grown **fatigue cracks** — EDM notches are wide-open slots that penetrant, particles, and sound all find more easily than a tight service crack, so notch-based demonstrations flatter the system. The inspections are then run under **production conditions by production-qualified personnel**: the demonstrated curve must describe the inspection as it will actually be performed, or it describes nothing.\n\nTwo data types feed the statistics:\n\n- **Hit/miss.** Each flaw is simply found or not found — the natural form for PT, MT, and VT, where the outcome is binary. A logistic-type regression fits POD(a), and the handbook recommends on the order of **60 flawed sites** to support the curve and its confidence bound.\n- **â versus a (signal response).** The recorded signal amplitude â — a UT echo height, an ET signal — is regressed against true flaw size a, and the decision threshold converts the regression and its scatter into a POD curve. Because an amplitude carries more information than a binary hit, roughly **40 flawed sites** suffice.\n\nThe older **binomial point method** survives in legacy specifications: find **29 of 29** flaws of a given size and you may claim **at least 90% POD with 95% confidence at that size**. One miss, and a substantially larger set is required — and the method speaks only to that single size, blind to the rest of the curve, which is why the regression methods displaced it. Every demonstrated curve carries the same fine print: it is valid **only for the conditions demonstrated**. Revise the procedure, change the alloy or surface condition, or swap the probe family, and the curve must be re-established or justified by engineering analysis."
+    },
+    {
+      "type": "text",
+      "heading": "False Calls: The Other Half of the Statistics",
+      "body": "Every inspection decision is a **threshold decision on a noisy signal**: fluorescent background versus a crack indication, grain scatter versus a small reflector, liftoff wobble versus a real impedance change. The amplitudes of **noise** and of **true flaw signals** form two overlapping distributions, and wherever the decision threshold is placed, it cuts both:\n\n- Real flaws whose signals fall below the threshold are **misses** — they cap POD.\n- Noise that crosses the threshold becomes a **false call** — a flaw reported where none exists, measured as the **probability of false alarm (PFA)**, or false call rate.\n\nThe two error rates move **together**. Lower the threshold and POD rises — along with the false call rate, because more of the noise distribution now crosses. Raise the threshold and false calls fall — and so does POD. This pairing is the **relative operating characteristic (ROC)** view of an inspection: capability is honestly stated only as POD *at* a stated false call rate. An inspection tuned to call everything achieves perfect detection and is operationally worthless.\n\nFalse calls are not free. In a repair station they scrap serviceable hardware, hold engines open for teardowns that find nothing, and ground aircraft on phantom defects. The subtler cost is behavioral: a system that cries wolf trains everyone downstream to discount it, and inspectors pressured about false calls quietly raise their internal threshold — which lowers the real POD without a single procedure change. The defenses are procedural, not heroic: defined **recording and evaluation thresholds** (a percentage of DAC in UT, defined indication criteria in PT), verified **reference standards**, confirmation steps for borderline indications, and independent review — so the operating point is set by engineering, not by the mood on the shop floor."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-8-3-fig-b",
+      "caption": "Two error types from one threshold. Noise and flaw-signal amplitude distributions overlap, so the decision threshold trades misses against false calls: lower it and POD rises along with the false call rate; raise it and false calls fall while misses grow. Only a genuinely better system — more separation between the two distributions — improves both at once."
+    },
+    {
+      "type": "text",
+      "heading": "From the Curve to the Maintenance Program",
+      "body": "POD statistics would be an academic exercise except that **damage-tolerant design** is built directly on them. Damage tolerance assumes the structure contains a flaw **from day one** — at the worst location, of the largest size the scheduled NDT could plausibly have missed. That **initial flaw size** is set by demonstrated NDE capability: USAF structural-integrity practice, for example, has long assumed cracks on the order of **1.27 mm (0.050 in.)** at fastener holes for standard production NDI, with smaller assumptions permitted only when an enhanced inspection demonstrates them.\n\nFracture mechanics then grows that assumed flaw under the service load spectrum until it reaches **critical size** — the size at which the remaining structure fails under limit conditions. The crack-growth life between the reliably detectable size and the critical size is the inspection program's working capital: **inspection intervals are set as a fraction of that life — commonly one-half — so a crack passing detectable size gets at least two inspection opportunities before it can become critical.** A single missed detection is survivable *by design*, because the next look comes before failure. The arithmetic also runs in reverse, and a Level III should feel its weight: anything that quietly degrades POD — a procedure shortcut, a lapsed calibration, an unqualified eye — silently consumes a safety margin the engineers believe is still there.\n\nTwo closing extensions of the same statistics:\n\n- **Characterization is statistical too.** Sizing a flaw carries scatter: signal amplitude is an imperfect proxy (a small, favorably oriented reflector can out-signal a large, badly oriented one), and repeated length or depth measurements of the same flaw spread. Acceptance limits and engineering dispositions budget for sizing uncertainty exactly as intervals budget for detection uncertainty.\n- **The human term is maintained, not assumed.** The demonstrated curve included qualified people working under representative conditions — which is precisely what NAS410 and SNT-TC-1A certification, vision examinations, and periodic performance evaluations exist to preserve. Personnel qualification is the maintenance plan for the human factor in the POD curve.\n\nThat is the statistical mindset CP-105 expects at Level III: speak of detection and sizing in probabilities and confidence levels, never absolutes."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-8-3-fig-a",
+      "title": "The probability of detection curve",
+      "file": "basic-8-3-fig-a.svg"
+    },
+    {
+      "id": "basic-8-3-fig-b",
+      "title": "Decision threshold: misses versus false calls",
+      "file": "basic-8-3-fig-b.svg"
+    },
+    {
+      "id": "basic-8-3-fig-c",
+      "title": "POD curve explorer exercise",
+      "file": "basic-8-3-fig-c.svg"
+    }
+  ],
+  "interactive": {
+    "type": "hotspot",
+    "title": "POD Curve Explorer",
+    "intro": "A demonstration program produced this curve: the solid line is the mean POD estimate, the dashed line the 95% lower confidence bound. Five numbered markers sit on it. Click the marker a damage tolerance engineer uses as the reliably detectable flaw size when setting initial flaw assumptions and inspection intervals.",
+    "figureId": "basic-8-3-fig-c",
+    "regions": [
+      {
+        "x": 110,
+        "y": 338,
+        "w": 80,
+        "h": 80,
+        "label": "Marker 1 — the small-flaw shelf",
+        "isTarget": false,
+        "feedback": "Down here POD is close to zero but never exactly zero — tiny flaws still get caught now and then when orientation and surface cooperate. Nothing on the shelf is reliably detectable, so no design credit is taken from it."
+      },
+      {
+        "x": 300,
+        "y": 190,
+        "w": 80,
+        "h": 80,
+        "label": "Marker 2 — a50 on the mean curve",
+        "isTarget": false,
+        "feedback": "This is a50: a fifty-fifty coin flip, with half of all flaws this size missed. It is useful for comparing techniques, but no damage tolerance program schedules inspections around a flaw the system misses every other time."
+      },
+      {
+        "x": 442,
+        "y": 62,
+        "w": 76,
+        "h": 80,
+        "label": "Marker 3 — a90 on the mean estimate",
+        "isTarget": false,
+        "feedback": "Close. Ninety percent POD is the right detection level, but this point sits on the mean curve fitted to one finite specimen set — it carries no confidence statement. A different draw of specimens would shift it. Move right, onto the 95% lower confidence bound."
+      },
+      {
+        "x": 532,
+        "y": 62,
+        "w": 76,
+        "h": 80,
+        "label": "Marker 4 — a90/95 on the lower confidence bound",
+        "isTarget": true,
+        "feedback": "Correct. This is a90/95 — the size with 95% statistical confidence that POD is at least 90%. Because it sits on the lower confidence bound, it absorbs the sampling uncertainty of the demonstration, and damage tolerance programs treat it as the reliably detectable flaw size for initial flaw assumptions and inspection intervals."
+      },
+      {
+        "x": 660,
+        "y": 39,
+        "w": 80,
+        "h": 80,
+        "label": "Marker 5 — the upper asymptote",
+        "isTarget": false,
+        "feedback": "Even very large flaws are occasionally missed — blocked access, freak orientation, a human lapse — so the curve flattens below 100% and never touches it. \"Huge, therefore certain to be found\" is not a statistical statement, which is why no flaw size is assigned 100% POD."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "During a POD demonstration, the same qualified inspector applies the same penetrant procedure to the same set of cracked panels on two different days and produces different hit/miss results. Statistically, this outcome is:",
+      "options": [
+        "Evidence that the procedure is invalid and must be rewritten before the demonstration continues",
+        "Expected — detection is a probabilistic event governed by flaw, part, system, and human variables, which is why capability is stated as POD rather than as an absolute threshold",
+        "Proof that the panel cracks grew between the two trials",
+        "Acceptable only if the second trial found more cracks than the first"
+      ],
+      "correct": 1,
+      "explanation": "Repeated trials scatter even under controlled conditions — crack tightness, processing variation, and human attention all fluctuate — and that scatter is precisely why capability is expressed as POD(a) with confidence bounds instead of a fixed 'minimum detectable size'. Cracked demonstration panels do not grow sitting on a bench, and 'more finds later' is not a validity criterion."
+    },
+    {
+      "question": "The flaw size a₉₀/₉₅ reported from a POD demonstration is the size for which:",
+      "options": [
+        "90% of the specimen set was inspected with 95% surface coverage",
+        "There is 90% confidence that POD is at least 95%",
+        "There is 95% statistical confidence that POD is at least 90%",
+        "The best inspector in the study found 95 of 100 flaws"
+      ],
+      "correct": 2,
+      "explanation": "Read it 'ninety, ninety-five': a POD of at least 90%, demonstrated with 95% confidence. The confidence level exists because the curve was fitted to a finite specimen set — which is why a₉₀/₉₅ sits on the 95% lower confidence bound and is always a larger flaw than the mean-curve a₉₀. Option two states the numbers in reverse."
+    },
+    {
+      "question": "In a legacy binomial (point-method) demonstration, an inspection system finds all 29 of 29 cracks of a given size. The statistically supportable claim at that size is:",
+      "options": [
+        "POD = 100%, since nothing was missed",
+        "POD of at least 90%, with 95% confidence",
+        "POD of at least 99%, with one miss allowed in the next demonstration",
+        "Nothing — at least 60 flawed specimens are required before any claim can be made"
+      ],
+      "correct": 1,
+      "explanation": "Twenty-nine straight successes is exactly the binomial sample size that supports 90% POD at 95% confidence — a perfect score on a finite sample never demonstrates a perfect population, and a single miss forces a substantially larger specimen set. The roughly 60-site guideline belongs to hit/miss curve fitting under MIL-HDBK-1823A, not to the single-size point method."
+    },
+    {
+      "question": "An eddy current procedure lowers its reporting threshold from 40% to 10% of screen height with no other changes. The statistically expected consequence is:",
+      "options": [
+        "POD rises — and so does the false call rate, because more of the overlapping noise distribution now crosses the threshold",
+        "POD rises while the false call rate falls, since smaller flaws are now recorded",
+        "POD and the false call rate both fall until the instrument is recalibrated",
+        "No change in either, because POD depends only on probe frequency"
+      ],
+      "correct": 0,
+      "explanation": "Flaw signals and noise form overlapping amplitude distributions, and the threshold cuts both at once: lowering it converts some misses into hits and some noise into false calls. That coupled trade-off is the relative operating characteristic view of an inspection — only a genuinely better system, with more separation between the distributions, raises POD without raising the false call rate."
+    },
+    {
+      "question": "A new ultrasonic technique for a fastener hole reduces the demonstrated a₉₀/₉₅ from 3.0 mm to 1.5 mm. For the damage tolerance maintenance program, the direct benefit is:",
+      "options": [
+        "The structure's critical crack size doubles",
+        "The false call rate is automatically halved",
+        "The part may be considered free of flaws after each inspection",
+        "The crack-growth life between the reliably detectable size and the critical size lengthens, supporting longer inspection intervals or higher allowable stresses"
+      ],
+      "correct": 3,
+      "explanation": "Critical crack size is fixed by stress and fracture toughness — NDE cannot move it. What improves is the starting point: a crack must now grow from 1.5 mm instead of 3.0 mm to reach critical, so the safe window between reliable detectability and failure lengthens, and intervals set as a fraction (commonly half) of that window can stretch. Detection remains probabilistic, so 'free of flaws' is never the claim."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §3.1.3 (statistical nature of detecting and characterizing discontinuities)",
+    "MIL-HDBK-1823A, Nondestructive Evaluation System Reliability Assessment (POD demonstration design, hit/miss and â vs. a analysis, specimen recommendations, summarized)",
+    "ASTM E2862, Standard Practice for Probability of Detection Analysis for Hit/Miss Data",
+    "ASTM E3023, Standard Practice for Probability of Detection Analysis for â Versus a Data",
+    "MIL-STD-1530D, Aircraft Structural Integrity Program (damage tolerance initial flaw assumptions and inspection interval practice, summarized)"
+  ]
+}

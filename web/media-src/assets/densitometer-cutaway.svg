@@ -1,0 +1,133 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="dmGlow" filterUnits="userSpaceOnUse" x="-40" y="-40" width="680" height="420">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="dmBaseGrad" x1="0" y1="198" x2="0" y2="278" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#17375f"/><stop offset=".55" stop-color="#0f2746"/><stop offset="1" stop-color="#0b1f3a"/>
+    </linearGradient>
+    <linearGradient id="dmArmGrad" x1="0" y1="114" x2="0" y2="182" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1d4068"/><stop offset="1" stop-color="#122c4d"/>
+    </linearGradient>
+    <linearGradient id="dmConeGrad" x1="0" y1="240" x2="0" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2faff" stop-opacity=".92"/><stop offset=".6" stop-color="#cfeaff" stop-opacity=".66"/><stop offset="1" stop-color="#eaf6ff" stop-opacity=".95"/>
+    </linearGradient>
+    <radialGradient id="dmLampGlow" cx="260" cy="249" r="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2faff" stop-opacity=".95"/><stop offset=".55" stop-color="#9fe6ff" stop-opacity=".4"/><stop offset="1" stop-color="#9fe6ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ===== BENCH + FEET ===== -->
+  <line x1="40" y1="287" x2="560" y2="287" stroke="#9fe6ff" stroke-width="1" opacity=".22"/>
+  <rect x="168" y="278" width="36" height="7" rx="3" fill="#122c4d" stroke="#8fb6e0" stroke-width="1"/>
+  <rect x="430" y="278" width="36" height="7" rx="3" fill="#122c4d" stroke="#8fb6e0" stroke-width="1"/>
+
+  <!-- ===== BASE UNIT ===== -->
+  <rect x="148" y="198" width="344" height="80" rx="10" fill="url(#dmBaseGrad)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <!-- zero button + power LED -->
+  <rect x="162" y="214" width="38" height="18" rx="5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.1"/>
+  <text x="181" y="226" text-anchor="middle" font-size="8" fill="#9fe6ff" letter-spacing=".06em">ZERO</text>
+  <circle cx="480" cy="266" r="3" fill="#6ee7a0" opacity=".9"/>
+
+  <!-- ===== LAMP HOUSE CUTAWAY (static hardware, dim) ===== -->
+  <rect x="212" y="206" width="96" height="64" rx="6" fill="rgba(10,30,60,.55)" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="4 3" opacity=".45"/>
+  <rect x="251" y="257" width="18" height="11" rx="2" fill="#122c4d" stroke="#8fb6e0" stroke-width="1.1"/>
+  <circle cx="260" cy="249" r="9.5" fill="#112c4e" stroke="#8fb6e0" stroke-width="1.3"/>
+  <path d="M255 251 l2 -4 l3 4 l3 -4 l2 4" fill="none" stroke="#9fe6ff" stroke-width="1" opacity=".4"/>
+  <ellipse cx="260" cy="224" rx="15" ry="4" fill="rgba(159,230,255,.12)" stroke="#8fb6e0" stroke-width="1" opacity=".8"/>
+
+  <!-- ===== FILM STAGE (plates w/ aperture gap) ===== -->
+  <rect x="128" y="193" width="128" height="7" fill="#1a3c63" stroke="#8fb6e0" stroke-width="1.3"/>
+  <rect x="264" y="193" width="141" height="7" fill="#1a3c63" stroke="#8fb6e0" stroke-width="1.3"/>
+  <path d="M256 193 L258 200 M264 193 L262 200" stroke="#9fe6ff" stroke-width="1" opacity=".7" fill="none"/>
+
+  <!-- ===== FILM STRIP on stage ===== -->
+  <rect x="188" y="186" width="168" height="7" rx="1.5" fill="#0a1c33" stroke="#5b8cc0" stroke-width="1.1"/>
+  <path d="M206 189.5 h18 M298 189.5 h26" stroke="#3f628c" stroke-width="2" opacity=".8"/>
+
+  <!-- ===== COLUMN + HINGE + READING ARM (closed) ===== -->
+  <rect x="432" y="88" width="46" height="112" rx="10" fill="#122c4d" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="238" y="114" width="232" height="28" rx="9" fill="url(#dmArmGrad)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <circle cx="452" cy="128" r="6.5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.3"/>
+  <circle cx="452" cy="128" r="2" fill="#5fe0ff"/>
+  <!-- reading head with detector window notch -->
+  <path d="M238 136 L284 136 L284 182 L266 182 L266 176 L254 176 L254 182 L238 182 Z" fill="url(#dmArmGrad)" stroke="#8fb6e0" stroke-width="1.5" stroke-linejoin="round"/>
+  <rect x="244" y="146" width="32" height="26" rx="3" fill="rgba(10,30,60,.55)" stroke="#5fe0ff" stroke-width=".8" stroke-dasharray="3 3" opacity=".5"/>
+  <rect x="250" y="158" width="20" height="13" fill="#14304f" stroke="#8fb6e0" stroke-width="1.1"/>
+  <path d="M253 171 l6 -13 M259 171 l6 -13 M265 171 l5 -11" stroke="#3f628c" stroke-width="1" opacity=".8"/>
+
+  <!-- ===== DISPLAY (resting) ===== -->
+  <rect x="362" y="212" width="104" height="44" rx="7" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="370" y="219" width="88" height="30" rx="4" fill="#050e1d" stroke="#5fe0ff" stroke-width="1" opacity=".95"/>
+  <text x="414" y="241" text-anchor="middle" font-size="17" fill="#5fe0ff" opacity=".28" letter-spacing=".06em">0.00</text>
+
+  <!-- ===== STATIC LABELS ===== -->
+  <text x="24" y="30" font-size="13" fill="#eaf6ff" letter-spacing=".1em">TRANSMISSION DENSITOMETER</text>
+  <text x="24" y="46" font-size="9" fill="#9fe6ff" opacity=".55" letter-spacing=".12em">SIDE ELEVATION · CUTAWAY VIEW</text>
+  <text x="252" y="92" font-size="11" fill="#9fe6ff" opacity=".85" letter-spacing=".08em">READING ARM · CLOSED</text>
+  <path d="M330 96 L348 112" stroke="#5fe0ff" stroke-width="1" opacity=".45" fill="none"/>
+  <text x="24" y="150" font-size="11" fill="#9fe6ff" opacity=".85" letter-spacing=".08em">RADIOGRAPHIC FILM</text>
+  <path d="M142 154 L190 184" stroke="#5fe0ff" stroke-width="1" opacity=".45" fill="none"/>
+  <text x="40" y="212" font-size="11" fill="#9fe6ff" opacity=".85" letter-spacing=".08em">FILM STAGE</text>
+  <path d="M110 207 L130 199" stroke="#5fe0ff" stroke-width="1" opacity=".45" fill="none"/>
+
+  <!-- ===== REVEAL 1 · STABILIZED LAMP (2.0s) ===== -->
+  <g id="dmLamp" opacity="0">
+    <circle cx="260" cy="249" r="18" fill="url(#dmLampGlow)"/>
+    <circle cx="260" cy="249" r="9.5" fill="none" stroke="#eaf6ff" stroke-width="1.4" filter="url(#dmGlow)"/>
+    <path d="M255 251 l2 -4 l3 4 l3 -4 l2 4" fill="none" stroke="#f2faff" stroke-width="1.2" filter="url(#dmGlow)"/>
+    <path d="M247 240 L273 240 L262.5 201 L257.5 201 Z" fill="url(#dmConeGrad)" opacity=".85"/>
+    <ellipse cx="260" cy="224" rx="15" ry="4" fill="none" stroke="#9fe6ff" stroke-width="1" opacity=".9"/>
+    <text x="282" y="237" font-size="9" fill="#9fe6ff">I<tspan font-size="7" dy="2">0</tspan></text>
+    <text x="24" y="244" font-size="11" fill="#9fe6ff" letter-spacing=".08em">STABILIZED LAMP</text>
+    <path d="M128 240 L210 246" stroke="#5fe0ff" stroke-width="1" opacity=".55" fill="none"/>
+  </g>
+
+  <!-- ===== REVEAL 2 · DEFINING APERTURE (2.8s) ===== -->
+  <g id="dmAperture" opacity="0">
+    <rect x="258" y="186" width="4" height="15" fill="#f2faff" opacity=".95" filter="url(#dmGlow)"/>
+    <circle cx="260" cy="196" r="10" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".9"/>
+    <path d="M252 203 L238 226" stroke="#5fe0ff" stroke-width="1" opacity=".55" fill="none"/>
+    <text x="210" y="234" font-size="11" fill="#9fe6ff" letter-spacing=".06em">2 mm</text>
+  </g>
+  <circle id="dmAperturePing" cx="260" cy="196" r="10" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0"/>
+
+  <!-- ===== REVEAL 3 · PHOTODETECTOR (3.6s) ===== -->
+  <g id="dmDetector" opacity="0">
+    <line x1="260" y1="186" x2="260" y2="172" stroke="#eaf6ff" stroke-width="2" opacity=".9" filter="url(#dmGlow)"/>
+    <path d="M257 176 L260 171 L263 176" fill="none" stroke="#eaf6ff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="250" y="158" width="20" height="13" fill="rgba(95,224,255,.18)" stroke="#5fe0ff" stroke-width="1.5"/>
+    <text x="288" y="184" font-size="9" fill="#9fe6ff">I<tspan font-size="7" dy="2">t</tspan></text>
+    <text x="24" y="126" font-size="11" fill="#9fe6ff" letter-spacing=".08em">PHOTODETECTOR</text>
+    <path d="M114 128 L234 148" stroke="#5fe0ff" stroke-width="1" opacity=".55" fill="none"/>
+  </g>
+
+  <!-- ===== REVEAL 4 · LOG READOUT (4.4s) ===== -->
+  <g id="dmReadout" opacity="0">
+    <path d="M272 164 H294 M426 164 H440 V212" fill="none" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="4 3" opacity=".8"/>
+    <circle cx="272" cy="164" r="1.8" fill="#5fe0ff"/>
+    <circle cx="440" cy="212" r="1.8" fill="#5fe0ff"/>
+    <rect x="294" y="148" width="132" height="26" rx="6" fill="#0e2848" stroke="#5fe0ff" stroke-width="1.2"/>
+    <text x="360" y="165" text-anchor="middle" font-size="11" fill="#eaf6ff">D = log<tspan font-size="8" dy="2.5">10</tspan><tspan font-size="11" dy="-2.5">(I</tspan><tspan font-size="8" dy="2.5">0</tspan><tspan font-size="11" dy="-2.5">/I</tspan><tspan font-size="8" dy="2.5">t</tspan><tspan font-size="11" dy="-2.5">)</tspan></text>
+    <rect x="371" y="220" width="86" height="28" rx="3" fill="#050e1d"/>
+    <text x="414" y="241" text-anchor="middle" font-size="17" fill="#eaf6ff" letter-spacing=".06em" filter="url(#dmGlow)">2.35</text>
+  </g>
+
+  <!-- ===== REVEAL 5 · CALIBRATED STEP TABLET (7.0s) ===== -->
+  <g id="dmTablet" opacity="0">
+    <rect x="56" y="185" width="128" height="8" fill="#0a1c33"/>
+    <rect x="56" y="185" width="21" height="8" fill="#e6f4ff"/>
+    <rect x="77" y="185" width="21" height="8" fill="#b8d9f6"/>
+    <rect x="98" y="185" width="21" height="8" fill="#7fa8cf"/>
+    <rect x="119" y="185" width="21" height="8" fill="#48739c"/>
+    <rect x="140" y="185" width="21" height="8" fill="#22466b"/>
+    <rect x="161" y="185" width="23" height="8" fill="#0b2138"/>
+    <rect x="56" y="185" width="128" height="8" fill="none" stroke="#9fe6ff" stroke-width="1"/>
+    <path d="M114 181 H44 Q40 181 40 185 V193 Q40 197 44 197 H114" fill="rgba(159,230,255,.1)" stroke="#9fe6ff" stroke-width="1" opacity=".65"/>
+    <rect x="52" y="160" width="72" height="15" rx="3" fill="#0e2848" stroke="#6ee7a0" stroke-width="1"/>
+    <text x="88" y="171" text-anchor="middle" font-size="8" fill="#6ee7a0" letter-spacing=".08em">CERTIFIED</text>
+    <path d="M88 175 Q90 180 92 185" fill="none" stroke="#6ee7a0" stroke-width="1" opacity=".6"/>
+    <path d="M24 185 l5 4 l-5 4 M31 185 l5 4 l-5 4" fill="none" stroke="#5fe0ff" stroke-width="1.3" opacity=".75" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

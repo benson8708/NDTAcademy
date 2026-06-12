@@ -1,0 +1,95 @@
+{
+ "moduleId": "ut2-1",
+ "questions": [
+  {
+   "question": "An echo stands at 10% of full screen height and must be brought to the 80% reference level. The gain to add is about:",
+   "options": ["18 dB", "6 dB", "8 dB", "24 dB"],
+   "correct": 0,
+   "explanation": "ΔdB = 20·log₁₀(80/10) = 20·log₁₀(8) ≈ 18 dB. Each 6 dB doubles amplitude: 10 → 20 → 40 → 80% is three doublings."
+  },
+  {
+   "question": "At a steel-to-air interface, approximately what fraction of the incident sound energy reflects, and what does that imply in practice?",
+   "options": [
+    "Essentially 100% — air gaps and tight cracks act as near-perfect reflectors, and couplant is mandatory",
+    "About 88% — enough transmits that no couplant is needed",
+    "About 50% — half the energy always crosses",
+    "Nearly 0% — air transmits sound freely into steel"
+   ],
+   "correct": 0,
+   "explanation": "With R = ((Z₂−Z₁)/(Z₂+Z₁))² and air's tiny impedance, reflection is essentially total. That is why a dry probe sees nothing, and why cracks and laminations reflect so strongly."
+  },
+  {
+   "question": "Increasing the incident angle of an acrylic wedge on steel past the second critical angle (≈ 57°) produces:",
+   "options": [
+    "A Rayleigh wave traveling along the surface",
+    "A pure longitudinal wave in the steel",
+    "A stronger refracted shear wave",
+    "Total transmission into the steel"
+   ],
+   "correct": 0,
+   "explanation": "Beyond the second critical angle the refracted shear wave also disappears, and the energy runs along the surface as a Rayleigh wave — the basis of surface-wave probes."
+  },
+  {
+   "question": "To document the areal extent of a disbond across a bonded panel for the customer record, the most direct display is the:",
+   "options": ["C-scan", "RF A-scan", "Single B-scan slice", "Unrecorded live A-scan"],
+   "correct": 0,
+   "explanation": "The C-scan paints gated data over the X-Y raster — a plan-view map whose colored footprint is the disbond's area, ideal for records and repeat comparisons."
+  },
+  {
+   "question": "Vertical linearity verification confirms that:",
+   "options": [
+    "Amplitude ratios, such as a 2:1 echo pair, are preserved as gain is changed",
+    "Echoes from equal thickness steps stay equally spaced",
+    "The encoder reports true distance",
+    "The pulser voltage is stable"
+   ],
+   "correct": 0,
+   "explanation": "Amplitude evaluation is ratio arithmetic in dB, which only works if the display preserves ratios across the gain range — exactly what the vertical linearity check proves."
+  },
+  {
+   "question": "In a computerized UT system, the component that converts the analog echo signal into stored digital samples is the:",
+   "options": [
+    "Analog-to-digital converter (digitizer)",
+    "Pulser",
+    "Position encoder",
+    "Display gate"
+   ],
+   "correct": 0,
+   "explanation": "The A/D converter samples the received waveform — at several times the probe frequency for fidelity — so software can gate, image, store, and later re-analyze the raw A-scans."
+  },
+  {
+   "question": "A thick honeycomb composite panel attenuates heavily, and suspected disbonds reflect poorly in pulse-echo. The technique best matched to the problem is:",
+   "options": [
+    "Through-transmission with aligned probes on opposite faces",
+    "70° shear-wave contact scanning",
+    "Rayleigh surface waves",
+    "Higher-frequency pulse-echo at 15 MHz"
+   ],
+   "correct": 0,
+   "explanation": "Through-transmission crosses the lossy structure only once and registers any disbond as a loss of received energy — accepting its limitation of giving no depth information."
+  },
+  {
+   "question": "For immersion testing of 120-mm thick steel, the minimum water path should be about:",
+   "options": ["36 mm", "12 mm", "120 mm", "480 mm"],
+   "correct": 0,
+   "explanation": "Water path ≥ thickness ÷ velocity ratio (≈ 4 for steel) plus ≈ 6 mm margin: 120/4 + 6 = 36 mm, keeping the second front-surface echo beyond the first back-wall echo."
+  },
+  {
+   "question": "Horizontal (range) linearity of an instrument is verified by:",
+   "options": [
+    "Checking that multiple back echoes from a uniform block fall on equally spaced screen divisions",
+    "Holding a 2:1 echo amplitude ratio while changing gain",
+    "Peaking the echo from the 100-mm radius",
+    "Measuring gain in 1-dB steps"
+   ],
+   "correct": 0,
+   "explanation": "Equal sound paths must occupy equal screen distance: back-echo multiples at 25, 50, 75, 100 mm should land exactly on their divisions across the full time base."
+  },
+  {
+   "question": "During a resonance examination of steel plate (v = 5,920 m/s), adjacent resonance peaks appear at 1.480 MHz and 1.628 MHz. The plate thickness is:",
+   "options": ["20 mm", "10 mm", "40 mm", "2 mm"],
+   "correct": 0,
+   "explanation": "Adjacent harmonics are spaced by the fundamental: Δf = 148 kHz, and t = v/(2·Δf) = 5,920 ÷ (2 × 148,000) = 0.020 m = 20 mm."
+  }
+ ]
+}

@@ -1,0 +1,191 @@
+{
+ "lessonId": "rt2-1-1",
+ "title": "Radiation Interaction and Math Review",
+ "narrationScript": "Welcome to Level Two. Before we build anything new, we sharpen the tools you already own, because everything a Level Two radiographer does, from choosing a source to rescuing a thin radiograph, runs on the physics and math you met at Level One. At Level One you learned these ideas well enough to pass a test. At Level Two you must use them to predict what a technique will do before you ever burn film. That shift, from remembering to predicting, is the point of this whole review module. Start with what photons actually do inside steel. A photon either passes through untouched or interacts in a single decisive event, and three events matter to us. First, the photoelectric effect. The photon hands all of its energy to a bound electron and disappears. This interaction is strongest at low photon energies and in high atomic number materials, and it dies away quickly as energy rises. Because it responds so sharply to small differences in thickness and material, photoelectric absorption is the great contrast maker in low energy x ray work. Second, Compton scattering. The photon gives up only part of its energy to a loosely bound electron and carries on in a new direction. From roughly one hundred thousand to ten million electron volts in steel, which covers both iridium one ninety two and cobalt sixty, Compton dominates. It is the workhorse and the troublemaker at the same time, because every Compton event launches a scattered photon that no longer carries useful information about the part. Scatter that reaches the film is fog. It adds density without adding detail, and it flattens contrast. Every collimator, mask, filter, and sheet of backing lead you will ever handle exists to manage Compton scatter. Third, pair production. A photon carrying more than one point zero two two million electron volts can convert into an electron and a positron near a nucleus. Below that threshold it simply cannot happen, so it plays no role with iridium, only a small one with cobalt, and it matters mainly in megavolt machine work. Add the interactions together and you get attenuation. Each identical layer of material removes the same fraction of the beam, which gives the exponential law. The practical handle on that law is the half value layer, the thickness that cuts intensity in half. For iridium one ninety two, figure roughly half an inch of steel, or about five millimeters of lead. For cobalt sixty, roughly seven eighths of an inch of steel, or about twelve and a half millimeters of lead. A tenth value layer cuts the beam to one tenth, and it equals about three and a third half value layers. Count layers instead of crunching exponentials. Two inches of steel in an iridium beam is four half value layers, so about one sixteenth of the beam gets through. And remember the caution. Published values assume a narrow, well collimated beam. In the field, scatter builds the reading back up, so shielding deserves margin, and the survey meter, not the calculation, always has the final word. Now the math toolkit. Scientific notation keeps the big numbers honest. One curie is three point seven times ten to the tenth disintegrations per second. Logarithms compress huge ranges into small numbers, and film density is a logarithm, which is why a density of two passes one percent of the viewing light. Ratio and proportion carry nearly every exposure correction you will ever make. And two relationships do most of the daily work. The first is decay. Activity halves every half life, so build a halving table instead of reaching for a formula. An eighty curie iridium source becomes forty curies after seventy four days, twenty after one hundred forty eight, ten after two hundred twenty two. Write that table on the technique sheet and any correction becomes simple ratio. The second is the inverse square law. Radiation spreads as it travels, crossing four times the area every time the distance doubles, so intensity falls with the square of distance. If the meter reads two hundred forty milliroentgen per hour at one meter, expect about fifteen at four meters. Run it backward to place a boundary. One hundred twenty eight milliroentgen per hour at five feet falls to two milliroentgen per hour at about forty feet, because a factor of sixty four in intensity is a factor of eight in distance. Decay, inverse square, and half value layers are the three tools you will reach for every single working day. Get fast with them now, because the rest of this course assumes you are.",
+ "imagePrompt": "A radiographer in coveralls works through decay and distance calculations with a calculator and clipboard at a steel workbench, a survey meter and a locked gamma-ray projector resting beside him in a dim fabrication shop.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "From Remembering to Predicting",
+   "body": "Level I taught you the vocabulary of radiography - photons, curies, half-value layers. Level II expects fluency. From this module forward, you are the person who writes and fixes techniques, and every technique decision is a physics prediction: what energy reaches the film, how much, and how the numbers move when something changes. **This review module is what makes the rest of Level II possible.**\n\nThis lesson rebuilds two foundations: how radiation interacts with matter, and the math toolkit - exponents, logarithms, ratios - that turns those interactions into exposure numbers. The next lesson applies the toolkit to multi-step exposure corrections and geometric setup; the third reviews the image quality parameters those choices control.\n\nTreat the review seriously even where it feels familiar. Speed and certainty with these fundamentals are what separate a technician who follows a technique sheet from one who can write it - and what let you catch the sheet that is wrong before it costs you a retake."
+  },
+  {
+   "type": "text",
+   "heading": "Three Interactions, One Image",
+   "body": "A photon crossing steel either passes untouched or interacts in a single, decisive event. Three events shape every radiograph.\n\n- **Photoelectric effect.** The photon surrenders its entire energy to a bound electron and vanishes. Its probability climbs steeply with atomic number and falls roughly with the cube of photon energy, so it rules low-energy X-ray work. Because it responds so sharply to thickness and material differences, photoelectric absorption is the great **contrast maker**.\n- **Compton scattering.** The photon transfers part of its energy to a loosely bound electron and continues in a new direction. From roughly 0.1 to 10 MeV in steel - the entire gamma radiography range, Ir-192 and Co-60 included - Compton dominates. Each event launches a scattered photon that carries no useful information about the part. Scatter reaching the film is **fog**: density without detail. Collimation, masking, filtration, and backing lead all exist to manage Compton scatter.\n- **Pair production.** Above a hard threshold of 1.022 MeV, a photon passing near a nucleus can convert into an electron-positron pair; the positron later annihilates into two 0.511 MeV photons. Below threshold it cannot occur at all, so it is irrelevant to Ir-192 (average energy about 0.35 MeV), minor for Co-60, and significant mainly in megavolt machine work.\n\nA Level II reads every technique through this lens: the energy choice sets which interaction dominates, and that sets contrast, scatter load, and shielding behavior."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt2-1-1-fig-a",
+   "caption": "Differential absorption through a step block builds the image, while Compton scatter adds non-image density (fog) that flattens contrast."
+  },
+  {
+   "type": "text",
+   "heading": "Attenuation by Fractions: HVL and TVL",
+   "body": "Add the interactions together and you get **attenuation**: I = I₀e^(-µx), where µ - the linear attenuation coefficient - bundles the photoelectric, Compton, and pair-production probabilities for one material at one energy. The shape of the law matters more than the symbols: **each identical layer removes the same fraction of the beam**, not the same amount.\n\nThe working handles on the exponential are:\n\n- **Half-value layer (HVL)** - the thickness that cuts intensity in half (HVL = 0.693/µ). Approximate values worth carrying: Ir-192 about 0.5 in. of steel or about 4.8 mm of lead; Co-60 about 7/8 in. of steel or about 12.5 mm of lead.\n- **Tenth-value layer (TVL)** - the thickness that cuts intensity to one tenth; one TVL is about 3.32 HVL.\n\nCount layers instead of computing exponentials: two inches of steel in an Ir-192 beam is four HVLs, so roughly 1/16 of the intensity gets through. Three TVLs of lead cuts a beam by a factor of one thousand.\n\nOne caution: published HVLs assume a **narrow, well-collimated beam**. In broad-beam field conditions, scatter builds the transmitted reading back up, so real shielding needs margin beyond the paper answer."
+  },
+  {
+   "type": "callout",
+   "variant": "safety",
+   "title": "The meter has the final word",
+   "body": "Decay tables, inverse square, and HVL counts set up the job - they never replace measurement. Broad-beam buildup, a source that did not fully retract, and plain arithmetic slips all happen. **Survey on approach and after every exposure**, and treat any disagreement between the math and the meter as a stop-work signal until you understand it."
+  },
+  {
+   "type": "text",
+   "heading": "The Math Toolkit",
+   "body": "Level II math is not exotic - it is a handful of tools used fast and correctly.\n\n- **Scientific notation** keeps source arithmetic honest: one curie is 3.7×10¹⁰ disintegrations per second (one becquerel is one per second). Practice moving between forms without hesitation.\n- **Exponents** drive decay and attenuation: A = A₀(½)^(t/T½) just means multiply by one half, t/T½ times.\n- **Logarithms** compress huge ranges. Film density is a log: D = log₁₀(I₀/I_t), so a density of 2 means the film passes 1% of the viewing light. You will lean on this constantly in the image-quality lesson.\n- **Ratio and proportion** carry nearly every exposure correction: time scales inversely with activity, directly with the square of distance, and with published film factors.\n- **Rearranging formulas**: solve I₁d₁² = I₂d₂² for the unknown you actually need - often the distance, d₂ = d₁ × the square root of (I₁/I₂), as when siting a boundary.\n\nUnit discipline ties it together: write units beside every number, convert before computing - inches with inches, hours with hours - and sanity-check the direction of the answer. If the source got weaker and your exposure time got shorter, you flipped a ratio."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt2-1-1-fig-b",
+   "caption": "Ir-192 activity falls by half every 74 days; the halving table replaces the exponential formula for everyday field corrections."
+  },
+  {
+   "type": "text",
+   "heading": "Decay and Inverse Square: The Daily Workhorses",
+   "body": "**Decay.** Activity halves every half-life: 74 days for Ir-192, 5.27 years for Co-60, about 120 days for Se-75. Skip the exponential and build a **halving table**. An 80-curie Ir-192 source: 40 Ci at 74 days, 20 Ci at 148, 10 Ci at 222, 5 Ci at 296. For in-between dates use the decay chart or A = A₀(½)^(t/74): at 100 days, 80 × (½)^(100/74) is about 80 × 0.39, or roughly 31 Ci. Tape the table to the technique sheet and every correction becomes a ratio.\n\n**Inverse square.** Radiation diverges from a near-point source, so the same photons cross four times the area each time distance doubles: I₁d₁² = I₂d₂². If a collimated beam reads 240 mR/h at 1 m, expect about 15 mR/h at 4 m - distance ratio 4, intensity factor 16. Run it backward to place a boundary: a reading of 128 mR/h at 5 ft falls to 2 mR/h where the intensity ratio is 64, which is a distance ratio of 8 - about 40 ft.\n\nThe two relationships combine constantly - a decayed source moved closer, a hot source backed away. Work them **one factor at a time**, multiply the factors, and never average corrections. These two, plus HVL counting, are the arithmetic core of every exposure calculation in the next lesson."
+  },
+  {
+   "type": "figure",
+   "figureId": "rt2-1-1-fig-c",
+   "caption": "The same photon flux spreads over four times the area each time the distance doubles, so intensity falls with the square of distance."
+  }
+ ],
+ "figures": [
+  {
+   "id": "rt2-1-1-fig-a",
+   "title": "Attenuation builds the image, scatter degrades it",
+   "file": "rt2-1-1-fig-a.svg"
+  },
+  {
+   "id": "rt2-1-1-fig-b",
+   "title": "Iridium-192 decay curve and halving table",
+   "file": "rt2-1-1-fig-b.svg"
+  },
+  {
+   "id": "rt2-1-1-fig-c",
+   "title": "The inverse square law",
+   "file": "rt2-1-1-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Which Tool Solves It?",
+  "intro": "A Level II reads a field problem and reaches for the right relationship without hesitation. Sort each situation under the math tool that solves it.",
+  "buckets": [
+   "Inverse square law",
+   "Half-life decay",
+   "Attenuation (HVL/TVL)"
+  ],
+  "items": [
+   {
+    "label": "The boundary reading must drop from 8 to 2 milliroentgen per hour by moving the rope back",
+    "bucket": 0,
+    "why": "Nothing about the source or shielding changed - only distance. A factor of 4 in intensity is a factor of 2 in distance."
+   },
+   {
+    "label": "A technique sheet for an Ir-192 source is now 148 days old",
+    "bucket": 1,
+    "why": "148 days is two Ir-192 half-lives, so the source holds one quarter of its listed activity and exposure time must rise by four."
+   },
+   {
+    "label": "Estimating how much the dose rate falls behind a half-inch steel plate in an Ir-192 beam",
+    "bucket": 2,
+    "why": "Half an inch of steel is roughly one HVL for Ir-192, cutting the transmitted intensity to about half."
+   },
+   {
+    "label": "Sizing the lead for a storage container that must cut output to one thousandth",
+    "bucket": 2,
+    "why": "One thousandth is three factors of ten - three tenth-value layers, or about ten half-value layers of lead."
+   },
+   {
+    "label": "The crew doubles the source-to-film distance and asks what happens to exposure time",
+    "bucket": 0,
+    "why": "Intensity at the film falls to one quarter when distance doubles, so the exposure time must rise by a factor of four."
+   },
+   {
+    "label": "Predicting what a 60-curie source will read after another 74 days",
+    "bucket": 1,
+    "why": "One more Ir-192 half-life leaves 30 curies - straight off the halving table."
+   },
+   {
+    "label": "Finding the standoff where a 100 mR/h point falls to 1 mR/h",
+    "bucket": 0,
+    "why": "A factor of 100 in intensity requires a factor of 10 in distance, because intensity changes with the square of distance."
+   },
+   {
+    "label": "Estimating the dose rate that will leak through the concrete vault wall",
+    "bucket": 2,
+    "why": "Walls are attenuation problems: count the HVLs or TVLs of concrete in the beam path - then verify with a survey meter."
+   },
+   {
+    "label": "Converting a 40-curie exposure time for the same job when the source reads 10 curies",
+    "bucket": 1,
+    "why": "Ten curies is two halvings below 40, so the exposure time must be multiplied by four."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "In steel at Ir-192 and Co-60 energies, which photon interaction dominates, and what problem does it hand the radiographer?",
+   "options": [
+    "Photoelectric effect - it eliminates subject contrast",
+    "Compton scattering - its scattered photons fog the film and flatten contrast",
+    "Pair production - it doubles the photon count reaching the film",
+    "Characteristic emission - it overheats the source capsule"
+   ],
+   "correct": 1,
+   "explanation": "From roughly 0.1 to 10 MeV in steel, Compton scattering rules. Its scattered photons carry no image information, so they arrive as fog - the reason for collimation, masking, filtration, and backing lead."
+  },
+  {
+   "question": "An Ir-192 source measured 80 curies when the technique sheet was written 148 days ago. What is its activity today?",
+   "options": [
+    "40 curies",
+    "27 curies",
+    "20 curies",
+    "10 curies"
+   ],
+   "correct": 2,
+   "explanation": "148 days is two half-lives of 74 days each: 80 halves to 40, then 40 halves to 20 curies."
+  },
+  {
+   "question": "A survey meter reads 240 mR/h at 1 meter from a collimated source. About what should it read at 4 meters?",
+   "options": [
+    "60 mR/h",
+    "30 mR/h",
+    "15 mR/h",
+    "7.5 mR/h"
+   ],
+   "correct": 2,
+   "explanation": "Intensity falls with the square of distance: a distance ratio of 4 is an intensity factor of 16, and 240 ÷ 16 = 15 mR/h."
+  },
+  {
+   "question": "Using an approximate half-value layer of 0.5 in. of steel for Ir-192, about what fraction of the beam passes through a 2-inch steel wall?",
+   "options": [
+    "1/4",
+    "1/8",
+    "1/16",
+    "1/32"
+   ],
+   "correct": 2,
+   "explanation": "Two inches is four half-value layers; halving four times gives ½ × ½ × ½ × ½ = 1/16 of the original intensity (narrow-beam approximation)."
+  },
+  {
+   "question": "Why does pair production play essentially no role in Ir-192 radiography?",
+   "options": [
+    "Iridium photons are all absorbed photoelectrically before pair production can occur",
+    "Pair production requires at least 1.022 MeV, and Ir-192's photons average only about 0.35 MeV",
+    "Pair production occurs only in lead and tungsten",
+    "It occurs constantly but produces no effect on film"
+   ],
+   "correct": 1,
+   "explanation": "Creating an electron-positron pair costs two electron rest masses - 1.022 MeV. Ir-192's spectrum sits far below that threshold, so the interaction simply cannot happen."
+  }
+ ],
+ "references": [
+  "CP-105-2024 RT Topical Outline, Film Quality and Manufacturing Processes Course, FQ 1.1 (interaction of radiation with matter)",
+  "CP-105-2024 RT Topical Outline, Film Quality and Manufacturing Processes Course, FQ 1.2 (math review)",
+  "General radiation physics references: photon interaction mechanisms, exponential attenuation, half-value layers (general reference)",
+  "Typical NRC/Agreement-State radiography practice (10 CFR 20 / 10 CFR 34 style): survey verification of calculated dose rates (general reference)"
+ ]
+}

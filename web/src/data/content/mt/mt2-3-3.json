@@ -1,0 +1,230 @@
+{
+ "lessonId": "mt2-3-3",
+ "title": "Applied Technique Workshop: Magnetization Planning",
+ "narrationScript": "Everything in this course converges on one skill. Take a part you have never seen and produce a plan that another technician could run tomorrow and an auditor could defend next year. In this workshop we build three of those plans end to end. A bench shaft, a field weldment, and a ring gear. Before the examples, learn the worksheet. Every complete plan answers the same lines. What is the part, its alloy, and its condition. What discontinuities are likely, and where. Which two field directions cover them. What technique and current type produce each direction. What amperage, starting from the rule of thumb, and how the field will be proven. What particles and what lighting. What sequence. And how the part will be demagnetized and verified at the end. Part one. A pump shaft. Hardened forty one forty, sixteen inches long, two inches in diameter, machined journals. Likely flaws are grinding and fatigue cracks at the journals and fillets, plus forging laps running along the axis. A machined surface and a bench available mean wet fluorescent particles with full wave direct current. Direction one is a circular field from a head shot for the longitudinal flaws. The rule of thumb says three hundred to eight hundred amperes per inch of diameter, so with two inches we might start near a thousand amperes, mid range. Clean copper braid pads on the heads. Clamp first, current second, and never break contact while current flows. Direction two is a longitudinal field from the bench coil for the transverse cracks. Length over diameter is eight. Forty five thousand divided by eight is about fifty six hundred ampere turns, and through a five turn coil that is roughly eleven hundred amperes, with the part lying against the inside wall of the coil. Shims with artificial flaws taped at a journal and a fillet prove both shots, and a tangential field on the order of thirty to sixty gauss is the common meter cross check. Ultraviolet intensity gets verified at the surface, at least one thousand microwatts per square centimeter, with ambient white light held to about two footcandles. Continuous method. Bathe, divert, shoot. Inspect and record after each direction. Then demagnetize with the reversing direct current unit, because a full wave field sits deep, and verify three gauss or less at the ends. Part two. A structural tee weldment, as welded, inspected in the fabrication yard. The surface is rough, possibly warm, and there is no bench in sight. That calls for dry powder with half wave direct current through prods, or an alternating current yoke where prods are not allowed. Prod spacing runs six to eight inches at ninety to one hundred twenty five amperes per inch of spacing, so a seven inch spacing lands roughly between six hundred thirty and eight hundred seventy five amperes. Cover every area twice, with the second pass at right angles to the first, and place the prods so the field crosses the expected toe cracks and centerline cracks. Watch the contact points. A prod arc strike on a hardened member is a crack starter, so demand clean contact and current only after contact, and remember that many specifications simply ban prods on finished parts. The yoke alternative needs its lifting check, ten pounds for alternating current at the spacing used, and overlapping placements. Dry visible powder needs at least one hundred footcandles of white light at the surface. If more welding follows the inspection, plan a cable wrap demagnetization at the joint so the next welder does not fight arc blow. Part three. A ring gear, hardened eighty six twenty, with a twelve inch bore. The cracks that matter at tooth roots and on the bore mostly run in the axial direction, so a circular field does the work, and a finished gear should see no electrical contact at all. The answer is an offset central conductor. Slide an insulated copper bar through the bore and rest the bore against it. Each shot covers a band of circumference about four times the conductor diameter, so a one and a half inch bar covers roughly six inches. The bore circumference is about thirty seven and a half inches, so plan seven or eight overlapping shots, rotating the gear between shots with about ten percent overlap. Set the amperage per your procedure for the wall thickness and prove it with shims placed around the circumference, because the field weakens away from the conductor. Any circumferential cracks need a second direction, such as a coil shot or induced current, where the procedure requires it. This retentive alloy can even qualify for the residual method in high production, where permitted. Demagnetize to suit the current type used and verify. Three parts, one habit. Ask the five questions, write the answers, prove the field, and sign your name to a plan you can defend.",
+ "imagePrompt": "A technician marks overlapping inspection zones around the bore of a large hardened ring gear resting on an offset copper central conductor bar at a wet horizontal bench, clipboard with technique sheet propped against the headstock.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "The Planning Worksheet",
+   "body": "A magnetization plan is a short document that answers a fixed set of questions. Build the habit of filling it out the same way every time:\n\n- **Part:** alloy, heat-treat condition, geometry, surface condition.\n- **Expected discontinuities:** type, location, and probable orientation.\n- **Field directions:** which two directions (≈90° apart) cross those flaws at 45–90°.\n- **Technique per direction:** head shot, central conductor, prods, coil, cable wrap, or yoke.\n- **Current type:** AC, HWDC, or FWDC, matched to flaw depth and particle choice.\n- **Amperage:** rule-of-thumb starting value, plus the QQI/gaussmeter proof you will record.\n- **Particles and lighting:** wet fluorescent (UV-A ≥ 1,000 µW/cm², ambient ≤ 2 fc) or dry/visible (≥ 100 fc white light).\n- **Sequence:** continuous unless residual is justified and permitted; inspect each direction before the next.\n- **Demagnetization and verification:** method matched to field depth, acceptance value, instrument.\n\nThe three worked examples below fill in that sheet for a bench shaft, a field weldment, and a ring gear — the three geometries that cover most of what walks into a shop."
+  },
+  {
+   "type": "text",
+   "heading": "Worked Example 1: Hardened Pump Shaft on the Bench",
+   "body": "**Part:** 4140, quench-and-tempered, 16 in long × 2 in diameter, machined journals and fillets. **Expected flaws:** grinding and fatigue cracks at journals and fillets (mostly transverse), forging laps and seams along the axis (longitudinal). Machined surface + bench available → **wet fluorescent particles, FWDC, continuous method**.\n\n**Direction 1 — circular (head shot)** for the axial seams: typical procedure values run 300–800 A per inch of diameter, so a 2-in shaft starts near **1,000 A** mid-range. Clean copper-braid pads, firm clamp **before** current, and never break contact under power.\n\n**Direction 2 — longitudinal (coil)** for the transverse cracks: L/D = 16/2 = 8, so NI ≈ 45,000 ÷ 8 ≈ 5,600 ampere-turns; through a 5-turn coil that is about **1,100 A**, with the shaft lying against the inside coil wall (low fill factor).\n\n**Proof:** QQI shims at a journal and a fillet must show at technique amperage; a tangential reading on the order of 30–60 G is the common cross-check. Verify UV-A ≥ 1,000 µW/cm² and ambient ≤ 2 fc. Bathe–divert–shoot, inspect and record after **each** direction. **Demag:** reversing, step-down DC (the FWDC field sits deep), verified ≤ 3 G at the ends."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt2-3-3-fig-a",
+   "caption": "The shaft plan on one bench: a head shot wraps a circular field around the part for axial seams, then a coil shot drives flux down the axis for transverse cracks — each shot bathed, inspected, and recorded before the next."
+  },
+  {
+   "type": "text",
+   "heading": "Worked Example 2: Structural Weldment in the Yard",
+   "body": "**Part:** structural tee weldment, as-welded, possibly still warm, inspected where it sits. **Expected flaws:** toe cracks and transverse cracks at the surface, slag lines and lack of fusion just below it. Rough hot surface + portability → **dry powder with HWDC**, which combines subsurface reach with dry-particle mobility (some powders are rated to about 600 °F).\n\n**Technique:** prods where the spec allows them — spacing commonly **6–8 in**, at about **90–125 A per inch of spacing**, so a 7-in spacing runs roughly **630–875 A**. The field circles each prod and runs strongest perpendicular to the line between them, so orient placements to cross the expected cracks, and cover every area **twice, second pass at 90°** to the first, with overlap.\n\n**Contact discipline:** prods arc if they slip or lift under current — an arc strike on hardened material is a crack starter, which is why many specifications ban prods on finished or aerospace surfaces. Current flows only after firm contact, and stops before lift-off.\n\n**Alternative:** an AC yoke (lifting check ≈ 10 lb at the spacing used; ≈ 40 lb for DC) with overlapping, crossed placements. **Lighting:** ≥ 100 fc white light at the surface. **Demag:** if welding continues after inspection, cable-wrap the joint and step the current down so the next welder does not fight arc blow."
+  },
+  {
+   "type": "text",
+   "heading": "Worked Example 3: Ring Gear with an Offset Central Conductor",
+   "body": "**Part:** ring gear, carburized 8620, 12-in bore, finished teeth. **Expected flaws:** heat-treat and grinding cracks at tooth roots and on the bore, mostly running in the **axial** direction. A finished gear should see **no electrical contact**, which rules out head shots and prods.\n\n**Technique:** an insulated copper bar through the bore as an **offset central conductor**, with the bore resting on the bar. Current through the bar wraps a circular field around it; with the conductor against the wall, each shot effectively covers a band of circumference about **4 × the conductor diameter**. A 1.5-in bar therefore covers ≈ 6 in per shot. The 12-in bore has a circumference of about 37.7 in, so plan **seven to eight overlapping shots** (≈ 10 % overlap), rotating the gear between shots.\n\n**Amperage:** set per the governing procedure for the wall thickness and **proven with QQIs** placed at the edges of each coverage band — the field falls off with distance from the conductor, so the band edge is the worst case worth proving.\n\n**Second direction:** the circular field runs along the circumference, so it misses **circumferential** cracks; where the procedure requires that coverage, add a coil shot or induced-current magnetization. The retentive alloy may also qualify for the **residual method** in high-volume work where permitted. **Demag** to suit the current type used, then verify."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt2-3-3-fig-b",
+   "caption": "Offset central conductor coverage on a 12-inch-bore ring gear: each shot covers about four conductor diameters of circumference, so the gear is rotated through seven to eight overlapping shots with QQI proof at the band edges."
+  },
+  {
+   "type": "table",
+   "caption": "Three magnetization plans at a glance — typical procedure values; the written procedure governs.",
+   "headers": [
+    "Plan line",
+    "Pump shaft (bench)",
+    "Tee weldment (field)",
+    "Ring gear (bench)"
+   ],
+   "rows": [
+    [
+     "Particles / current",
+     "Wet fluorescent, FWDC",
+     "Dry powder, HWDC",
+     "Wet fluorescent, per procedure"
+    ],
+    [
+     "Direction 1",
+     "Head shot ≈ 1,000 A (300–800 A/in × 2 in)",
+     "Prods 6–8 in @ 90–125 A/in, crossed passes",
+     "Offset central conductor, 7–8 overlapping shots"
+    ],
+    [
+     "Direction 2",
+     "Coil ≈ 1,100 A (NI ≈ 45,000/8, 5 turns)",
+     "Second prod/yoke pass at 90°",
+     "Coil or induced current if circumferential cracks matter"
+    ],
+    [
+     "Field proof",
+     "QQI at journal + fillet, 30–60 G tangential",
+     "QQI on weld toe; yoke lift check 10 lb AC",
+     "QQI at coverage-band edges"
+    ],
+    [
+     "Lighting",
+     "UV-A ≥ 1,000 µW/cm², ambient ≤ 2 fc",
+     "≥ 100 fc white light",
+     "UV-A ≥ 1,000 µW/cm², ambient ≤ 2 fc"
+    ],
+    [
+     "Demag + verify",
+     "Reversing DC; ≤ 3 G at ends",
+     "Cable wrap if welding continues",
+     "Matched to current type; verify per procedure"
+    ]
+   ]
+  },
+  {
+   "type": "callout",
+   "variant": "safety",
+   "title": "Contact current is arc-flash and arc-burn territory",
+   "body": "Head shots and prods push hundreds to thousands of amperes through mechanical contacts. **Clamp or seat firmly before current, and never break contact while current flows** — a separating contact draws an arc that can flash, burn the operator, and leave an arc strike that becomes a crack in hardened material. Keep pads and prod tips clean, and respect every specification that bans prods on finished or aerospace surfaces. Under UV-A lamps, protect eyes and skin per the facility program."
+  },
+  {
+   "type": "text",
+   "heading": "Defending the Plan",
+   "body": "A technique is a plan that survives the question *why*. Expect these, from auditors and from Level IIIs:\n\n- **Why these directions?** Because flux must cross the expected flaws at 45–90°, and these two magnetizations, roughly perpendicular, cover both orientations.\n- **Why this amperage?** Because the rule of thumb put the starting value here, and the QQI indication plus the recorded gaussmeter reading prove the field was adequate on *this* part.\n- **Why this sequence?** Continuous method for sensitivity; each direction bathed, inspected, and recorded before the next shot overwrites its field.\n- **Why this demagnetization?** Matched to the current type and field depth, verified with an instrument to the procedure limit.\n\nThen write it all down: method, technique, current type and amperage per shot, particle type and bath data, lighting readings, results, and the demag verification value. A plan that answers *why* at every line is engineering. Anything less is a recipe — and recipes fail on the first part that does not match the cookbook."
+  }
+ ],
+ "figures": [
+  {
+   "id": "mt2-3-3-fig-a",
+   "title": "Two-direction bench plan for a pump shaft",
+   "file": "mt2-3-3-fig-a.svg"
+  },
+  {
+   "id": "mt2-3-3-fig-b",
+   "title": "Offset central conductor coverage on a ring gear",
+   "file": "mt2-3-3-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Virtual Bench: Plan and Execute a Two-Direction Inspection",
+  "intro": "A hardened 4340 splined shaft, 15 in long and 3 in in diameter, arrives with no service history and unknown flaw orientation. You have a wet horizontal bench with FWDC, a 5-turn coil, QQI shims, a Hall-effect gaussmeter, and a written procedure built on typical industry values. Plan and run the inspection.",
+  "steps": [
+   {
+    "prompt": "First call: which magnetizations does this shaft need?",
+    "options": [
+     "One strong circular shot — enough amperage finds every orientation",
+     "Circular and longitudinal magnetizations roughly 90° apart, each inspected separately",
+     "Longitudinal only — fatigue cracks are always transverse"
+    ],
+    "correct": 1,
+    "feedback": "Flaw orientation is unknown, and a field only shows flaws it crosses at about 45–90°. Two roughly perpendicular magnetizations, each bathed and inspected on its own, give full coverage — no amperage substitutes for direction."
+   },
+   {
+    "prompt": "Set the coil shot. The shaft is 15 in long, 3 in in diameter, in a 5-turn low-fill-factor coil. Your starting current?",
+    "options": [
+     "About 450 A",
+     "About 9,000 A",
+     "About 1,800 A"
+    ],
+    "correct": 2,
+    "feedback": "L/D = 15/3 = 5, so NI ≈ 45,000 ÷ 5 = 9,000 ampere-turns. Five turns means about 1,800 A — a starting value, with the shaft against the inside coil wall, to be proven before you call it a technique."
+   },
+   {
+    "prompt": "Now the head shot for the circular field on the 3-in shaft. Which setup is right?",
+    "options": [
+     "About 1,500 A as a mid-range start (300–800 A/in × 3 in), clean braid pads clamped before current",
+     "About 150 A — circular fields need little current",
+     "About 4,000 A — more field can only help"
+    ],
+    "correct": 0,
+    "feedback": "Typical procedure values run 300–800 A per inch of diameter, so a 3-in shaft starts around 1,500 A mid-range. Over-driving it furs the surface with background; under-driving hides tight cracks. Pads and clamp-before-current protect against arc burns."
+   },
+   {
+    "prompt": "Before trusting either amperage, you prove the field. What counts as proof?",
+    "options": [
+     "The amperage meter on the bench agrees with the procedure value",
+     "A QQI shim taped flaw-side-down shows a clear indication at each shot, with a tangential field on the order of 30–60 G as the meter cross-check",
+     "Particles gather at the splines and keyways, showing the field is strong"
+    ],
+    "correct": 1,
+    "feedback": "The ammeter only proves current, not field — geometry and permeability decide what the part actually sees. The QQI demonstrates a working leakage field on the surface, and the gaussmeter gives the recordable number. Particle buildup at section changes is a nonrelevant pattern, not proof."
+   },
+   {
+    "prompt": "Run order and wrap-up. Which sequence finishes the job correctly?",
+    "options": [
+     "Shoot both directions, then bathe once and read everything under UV",
+     "Bathe and shoot direction one (continuous), inspect and record under UV, repeat for direction two, then demagnetize with reversing DC and verify about 3 G or less at the ends",
+     "Inspect both directions, then skip demag — FWDC fields fade out on their own overnight"
+    ],
+    "correct": 1,
+    "feedback": "Each shot overwrites the previous field, so every direction is its own bathe-shoot-inspect-record cycle. Hardened 4340 magnetized with deep FWDC will not lose its field on its own — reversing, step-down DC demag plus a measured verification closes the record."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "An 18-inch-long, 1.5-inch-diameter bar goes into a 3-turn, low-fill-factor coil. Using NI ≈ 45,000/(L/D), the starting current is about:",
+   "options": [
+    "About 3,750 A",
+    "About 1,250 A",
+    "About 625 A",
+    "About 2,500 A"
+   ],
+   "correct": 1,
+   "explanation": "L/D = 18/1.5 = 12, so NI ≈ 45,000 ÷ 12 = 3,750 ampere-turns. Through 3 turns, I ≈ 1,250 A — and L/D of 12 sits inside the rule's effective range of roughly 2 to 15."
+  },
+  {
+   "question": "A prod inspection of a weld uses 6-inch prod spacing. The typical procedure amperage window is about:",
+   "options": [
+    "60–90 A",
+    "1,500–2,000 A",
+    "540–750 A",
+    "90–125 A"
+   ],
+   "correct": 2,
+   "explanation": "Prod techniques commonly run 90–125 A per inch of spacing. At 6 in: 6 × 90 = 540 A to 6 × 125 = 750 A. The 90–125 figure alone is the per-inch rate, not the current."
+  },
+  {
+   "question": "A ring with a 24-inch bore circumference is magnetized with an offset 1-inch central conductor. Minimum planning for full bore coverage is:",
+   "options": [
+    "One shot — a central conductor magnetizes the whole ring regardless of position",
+    "About 24 shots, one per inch of circumference",
+    "Two shots on opposite sides of the bore",
+    "About 4 inches of circumference per shot, so at least six positions, planned as about seven shots with overlap"
+   ],
+   "correct": 3,
+   "explanation": "An offset central conductor gives a reliable field over roughly 4 × the conductor diameter of circumference per shot — 4 in here. 24 ÷ 4 = 6 zones minimum, and the overlap good practice requires pushes the plan to about seven shots."
+  },
+  {
+   "question": "On the pump-shaft plan, the QQI at the fillet shows nothing at the calculated 1,100-A coil shot. Your first action is to:",
+   "options": [
+    "Check the setup — shaft against the inside coil wall, L/D assumptions, shim contact — before adjusting amperage per the procedure",
+    "Triple the amperage until the shim shows",
+    "Declare the shaft defect-free, since the shim is blank",
+    "Switch to prods, which need no verification"
+   ],
+   "correct": 0,
+   "explanation": "The coil rule assumes low-fill-factor geometry with the part near the coil wall and an L/D in range; a centered part, wrong L/D, or a lifted shim all kill the indication. Verify the setup first — blindly raising amperage can fur the surface and still not fix a geometry problem. A blank QQI means the field is unproven, not that the part is clean."
+  },
+  {
+   "question": "A finished aerospace landing-gear journal must be magnetized in two directions with no risk of arc strikes. The right combination is:",
+   "options": [
+    "Prods for circular plus a yoke for longitudinal",
+    "Head shot at reduced amperage plus prods at wide spacing",
+    "Central conductor (circular) plus coil (longitudinal) — no electrical contact with the part",
+    "Two prod passes at 90° with sharpened tips for better contact"
+   ],
+   "correct": 2,
+   "explanation": "A central conductor magnetizes circularly and a coil longitudinally, and neither passes current through the part, so neither can arc-burn it. Prods and direct-contact head shots both carry arc-strike risk, and prods are widely banned on finished aerospace surfaces."
+  }
+ ],
+ "references": [
+  "CP-105-2024 MT Topical Outline §2.5 (magnetization by means of electric current, applied)",
+  "CP-105-2024 MT Topical Outline §2.6 (selecting the proper method of magnetization, applied)",
+  "CP-105-2024 MT Topical Outline §3.6 (methods of demagnetization, applied)",
+  "Practices such as ASTM E709/E1444 and ASME Section V Article 7 cover technique values and verification (generic reference)",
+  "Reference values: coil NI ≈ 45,000/(L/D); head shot ≈ 300–800 A/in; prods ≈ 90–125 A/in of spacing; offset central conductor ≈ 4 × conductor Ø coverage; UV-A ≥ 1,000 µW/cm²; yoke lift 10 lb AC / 40 lb DC"
+ ]
+}

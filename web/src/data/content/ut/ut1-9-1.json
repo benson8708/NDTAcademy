@@ -1,0 +1,193 @@
+{
+ "lessonId": "ut1-9-1",
+ "title": "Straight-Beam Examination: Parameters and Test Standards",
+ "narrationScript": "Up to this point you have learned how sound behaves and how the instrument works. This lesson is about doing the job the way the paperwork says to do it. In production testing you rarely choose your own settings. You work to a written procedure, a controlled document prepared and approved by a Level Three, that spells out what part is covered, what equipment to use, how to calibrate, how to scan, and what to do with what you find. Your job as a technician is to execute that procedure exactly, and to recognize when something on the job does not match what the procedure assumes. Let us start with why procedures fix the parameters they fix. A straight beam examination sends a longitudinal wave straight down into the part, usually to find laminar discontinuities, laminations in plate, inclusions and bursts in forgings, and to watch the health of the back wall echo. The procedure names the transducer because the transducer controls the beam. A larger element covers more ground per pass and throws a narrower beam in the far field, but it stretches the near field. A typical one inch diameter element at two and a quarter megahertz in steel has a near field about two and a half inches long, and inside that zone amplitude swings up and down, so evaluating reflectors there is risky. Frequency is a balance. Higher frequency gives a shorter wavelength and better sensitivity to small reflectors, but it scatters more in coarse grained material. Most plate and forging work runs between two and a quarter and five megahertz. The procedure also says single element or dual element. Duals shine near the surface because the dead zone under the initial pulse is out of the picture. None of these choices are suggestions. They are essential variables. If you change one, the procedure is no longer the procedure, and any change has to be approved and documented by the responsible Level Three before you scan. Next, coverage. The procedure defines the scan pattern, either a grid on stated centers or one hundred percent coverage of the surface. For full coverage you overlap each pass, commonly by at least ten percent of the element dimension, so with a one inch probe your passes index over no more than about nine tenths of an inch. Scanning speed is limited too, commonly to about six inches per second, because the instrument needs enough pulses on each spot of metal to paint a real echo on the screen. You scan at a scanning gain set above reference, often six decibels or more, and you drop back to reference gain when you stop to evaluate. Now the anchor of the whole test, the test standard. Sensitivity means nothing without a reference. The procedure names a physical standard with known reflectors in it. For straight beam work the classic references are flat bottom holes. An area amplitude set holds the metal travel constant and varies the hole diameter, so it ties echo height to reflector size. A distance amplitude set holds the hole size constant and varies the metal travel, so it maps how echo height falls with depth, and that is what you use to build a distance amplitude correction curve. Many shop procedures instead use a basic calibration block made from the same material specification as the part, or a step wedge for range setting, or simply the part's own back wall as the reference for a back reflection technique. Whatever the standard, it has to be acoustically similar to the part. Same product form, similar heat treatment, similar surface. If the part surface is rougher than the block, you measure a transfer correction and add it, because otherwise you are scanning with less sensitivity than you think you have. Calibration is not a one time event. You set your reference echo to the screen height the procedure calls for, you record the gain in decibels, and you confirm the calibration at the intervals the procedure states. Commonly that means at the start and end of the examination, at set hours in between, and any time the system changes, a new cable, a different probe, a battery swap, or any time you suspect a problem. If a check finds the calibration has drifted beyond the allowed tolerance, everything tested since the last good check gets examined again. That rule has saved a lot of inspections. So here is the discipline. Read the procedure before you touch the part. Match every named parameter. Prove your sensitivity against the named standard. Cover the surface exactly the way the document says. And write down what you did as you go. That is straight beam examination to a specific procedure.",
+ "imagePrompt": "A technician in flame-resistant coveralls studies a laminated written procedure on a clipboard while a couplant-coated straight-beam transducer and portable flaw detector sit ready on a thick steel plate in a fabrication shop.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Working to a Written Procedure",
+   "body": "Production UT is not freestyle. A **written procedure** — prepared and approved by a Level III, often reviewed by the customer — controls the examination from start to finish. It defines the scope (which parts, which material, which thickness range), the equipment, the calibration method, the scanning plan, the recording criteria, and the acceptance reference. Qualification documents such as SNT-TC-1A and NAS410 frame the roles: a Level I performs examinations to a specific procedure under supervision and records results; a Level II sets up, performs, and evaluates against the criteria; the Level III owns the procedure itself.\n\nThe straight-beam examinations these procedures govern are mostly **laminar-flaw work**: laminations in rolled plate, inclusions and forging bursts, lack of bond, and wall-thickness verification — reflectors lying parallel to the entry surface, square to a longitudinal beam sent straight down.\n\nTwo working rules follow. First, **read the whole procedure before you couple a probe** — the step you skip is the one that voids the test. Second, if anything on the job falls outside the procedure's stated scope (different alloy, rougher surface, thicker plate), **stop and escalate**. Working outside scope produces results no one can stand behind."
+  },
+  {
+   "type": "text",
+   "heading": "Selection of Parameters: Transducer and Frequency",
+   "body": "The procedure fixes the search unit because the search unit fixes the beam. The choices it makes — and the reasons behind them:\n\n- **Element diameter.** A larger element sweeps more area per pass and produces a narrower far-field beam, but it lengthens the near field: N = D²f/4v. A 1 in. (25.4 mm) element at 2.25 MHz in steel (5,920 m/s) gives N ≈ 61 mm — about 2.4 in. of zone where amplitude oscillates and evaluation is unreliable.\n- **Frequency.** Higher frequency shortens wavelength (λ = v/f) and improves sensitivity to small reflectors, but raises scattering losses in coarse-grained material. Plate and forging procedures typically specify **2.25 to 5 MHz**.\n- **Single vs. dual element.** Duals separate transmit and receive crystals, suppressing the dead zone — the procedure's choice when near-surface resolution matters, as in thin plate or cladding checks.\n- **Couplant.** Named in the procedure (water, gel, glycerin, oil) and held consistent between calibration and scanning, since couplant changes transmission.\n\nThese are **essential variables**. Substituting the 5 MHz, 0.5 in. probe you happen to like changes beam spread, near field, and sensitivity — and invalidates the examination unless the Level III approves a documented change."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Procedure parameters are not suggestions",
+   "body": "Every named parameter — transducer size, frequency, couplant, range, reference level, scan pattern — is an **essential variable** someone qualified. Change one without documented Level III approval and you are no longer performing the procedure; you are improvising with company letterhead. When the job does not fit the procedure, the answer is escalation, not adaptation."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-9-1-fig-a",
+   "caption": "Straight-beam examination per procedure: longitudinal beam interrogating a plate for laminar reflectors, and the raster scan plan with overlapping passes that guarantees coverage."
+  },
+  {
+   "type": "text",
+   "heading": "Scan Pattern, Coverage, and Speed",
+   "body": "Detection only happens where the beam actually goes, so the procedure defines coverage exactly:\n\n- **Grid scanning** — passes on stated centers (for example, parallel lines on 9 in. centers across a plate) used by many product standards for plate, with full scanning around any indication found.\n- **100% scanning** — a raster covering the entire surface, each pass overlapping the last by **at least 10% of the element dimension**. With a 1 in. probe, index no more than about 0.9 in. per pass.\n- **Scan speed** — commonly limited to about **6 in./s (150 mm/s)**; faster movement starves each spot of pulses and real echoes never build on the screen.\n\nThe procedure also sets **scanning sensitivity**: you scan at reference gain plus a stated increment — commonly +6 dB or more — then return to reference gain to evaluate anything that breaks the recording threshold. While scanning laminar work you watch two things at once: new echoes appearing ahead of the back wall, and the **back-wall echo itself losing height**, which can be the only sign of a tilted or scattering discontinuity."
+  },
+  {
+   "type": "text",
+   "heading": "Test Standards: The Reference That Anchors Sensitivity",
+   "body": "An echo height means nothing until it is compared to a known reflector in a known material. That is the job of the **test standard** the procedure names:\n\n- **Area-amplitude sets** — blocks with flat-bottom holes (FBHs) of increasing diameter (commonly numbered in 1/64 in. steps, a No. 3 hole being 3/64 in.) at constant metal travel. They relate echo amplitude to reflector **size**.\n- **Distance-amplitude sets** — the same FBH size at increasing metal travel. They map amplitude versus **depth**, the basis for a distance-amplitude correction (DAC) curve or electronic TCG.\n- **Basic calibration blocks** — procedure-specific blocks of the same material specification and heat-treatment condition as the part, with FBHs or side-drilled holes at set depths.\n- **Step wedges** — known thickness steps for range and thickness calibration.\n- **The part's own back wall** — the reference for back-reflection techniques, where sensitivity is set as a percentage of a healthy back echo.\n\nThe standard must be **acoustically equivalent** to the part: same product form, comparable grain structure and heat treatment, comparable surface. Where part and block surfaces differ, the procedure requires a **transfer correction** — measured, in dB, and added to the reference gain."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-9-1-fig-b",
+   "caption": "Flat-bottom-hole reference standards: an area-amplitude series varies hole size at constant metal travel, and the reference echo is set to the procedure's screen height to establish reference gain."
+  },
+  {
+   "type": "table",
+   "caption": "Common straight-beam test standards and what each one establishes.",
+   "headers": ["Test standard", "Known reflector", "What it establishes"],
+   "rows": [
+    ["Area-amplitude set", "FBHs of increasing diameter, constant travel", "Echo height vs. reflector size; sensitivity level"],
+    ["Distance-amplitude set", "Same-size FBH at increasing metal travel", "Echo height vs. depth; DAC/TCG construction"],
+    ["Basic calibration block", "FBHs or SDHs at procedure-set depths", "Reference gain in part-equivalent material"],
+    ["Step wedge", "Machined thickness steps", "Sweep range and thickness accuracy"],
+    ["Part back wall", "The part's own far surface", "Back-reflection reference for laminar scanning"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Setting and Holding Sensitivity",
+   "body": "Standardization follows the procedure's recipe, typically: verify screen linearity is current, set the sweep range to cover the full part thickness (at least one back echo, often two), peak the named reference reflector, bring it to the stated screen height — **80% of full screen height (FSH)** is common — and **record the reference gain in dB**. Add the stated scanning gain and go to work.\n\nCalibration is then **confirmed**, not assumed: at the start and end of the examination, at fixed intervals (every 4 hours is a common requirement), and whenever any part of the system changes — probe, cable, operator, battery, instrument settings — or whenever you doubt a reading. If a confirmation check shows the system has drifted beyond the allowed tolerance (a couple of dB, per the procedure), the rule is unforgiving: **re-examine everything tested since the last good check**.\n\nKeep the conditions that existed at calibration: same couplant, same probe pressure habits, same surface preparation. A calibration performed on a milled block and spent on a scaled, pitted plate without transfer correction is quietly testing at reduced sensitivity — the kind of error that never announces itself."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-9-1-fig-a",
+   "title": "Straight-beam scan coverage per the procedure",
+   "file": "ut1-9-1-fig-a.svg"
+  },
+  {
+   "id": "ut1-9-1-fig-b",
+   "title": "Flat-bottom-hole reference standards and reference gain",
+   "file": "ut1-9-1-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Setting Up to Procedure UT-SB-12",
+  "intro": "You are assigned a straight-beam lamination scan of 2 in. thick carbon-steel plate to procedure UT-SB-12. The procedure specifies a 1 in. diameter, 2.25 MHz single-element transducer, calibration on a plate-material block, reference = back-wall echo at 80% FSH, scanning gain = reference + 6 dB, 100% coverage with at least 10% overlap, and recording of any back-reflection loss greater than 50%. Walk through the setup decisions.",
+  "steps": [
+   {
+    "prompt": "Your kit holds a 0.5 in., 5 MHz probe you prefer for its crisp signals. The procedure names a 1 in., 2.25 MHz unit. What do you do?",
+    "options": [
+     "Use the 5 MHz probe — higher frequency means better sensitivity, so it can only help",
+     "Use the specified 1 in., 2.25 MHz probe; any substitution needs documented Level III approval first",
+     "Use both probes and keep whichever screen looks cleaner",
+     "Average the two: find a 0.75 in., 3.5 MHz probe"
+    ],
+    "correct": 1,
+    "feedback": "Transducer size and frequency are essential variables — they set beam spread, near field, and sensitivity that the procedure was qualified with. Substitutions require a documented change approved by the responsible Level III, not operator preference."
+   },
+   {
+    "prompt": "On the calibration block you peak the back-wall echo and bring it to 80% FSH at 42 dB. Per the procedure, at what gain setting do you scan?",
+    "options": [
+     "36 dB — scan quieter to avoid grass",
+     "42 dB — scan exactly at reference",
+     "48 dB — reference plus the 6 dB scanning increment",
+     "62 dB — as hot as the instrument allows"
+    ],
+    "correct": 2,
+    "feedback": "Scanning gain is reference gain plus the stated increment: 42 + 6 = 48 dB. You scan hot so small or unfavorably oriented reflectors still break the screen, then return to 42 dB reference to evaluate."
+   },
+   {
+    "prompt": "With the 1 in. element and the 10%-overlap rule, what is the maximum index between raster passes?",
+    "options": [
+     "1.0 in. — edge to edge passes",
+     "About 0.9 in. — 10% of the element dimension overlapped",
+     "2.0 in. — the beam spreads to fill the gap",
+     "0.25 in. — overlap can never be too much to be wrong"
+    ],
+    "correct": 1,
+    "feedback": "At least 10% of the element dimension must overlap, so a 1 in. element may index at most about 0.9 in. per pass. Less overlap leaves unscanned strips; the beam does not reliably fill gaps at all depths."
+   },
+   {
+    "prompt": "Mid-plate, the back-wall echo drops to 30% FSH with no new echo ahead of it. Your first action?",
+    "options": [
+     "Record it immediately as a lamination",
+     "Ignore it — no flaw echo means no flaw",
+     "Re-check coupling and surface condition at that spot; if the loss is real, mark and record the area per the procedure",
+     "Add 20 dB and keep scanning"
+    ],
+    "correct": 2,
+    "feedback": "Back-reflection loss is a recordable condition here (greater than 50% loss from the 80% reference), but couplant starvation and rough surface cause the same symptom. Verify coupling first; if the loss persists, it may be a tilted or scattering laminar reflector — map and record it."
+   },
+   {
+    "prompt": "After lunch you swap to a spare cable because the original is intermittent. What does the procedure require before you resume scanning?",
+    "options": [
+     "Nothing — cables do not affect calibration",
+     "A calibration confirmation check against the reference standard, and re-examination of prior work if it fails tolerance",
+     "Only a note in the report",
+     "A new transducer to match the new cable"
+    ],
+    "correct": 1,
+    "feedback": "Any change to the system — cable, probe, battery, settings — requires a calibration check. If the check is out of tolerance, everything examined since the last good check must be re-examined."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A procedure specifies a 1 in. (25.4 mm) diameter, 2.25 MHz transducer for steel (longitudinal velocity 5,920 m/s). Using N = D²f/4v, the near-field length is approximately:",
+   "options": ["15 mm", "61 mm", "122 mm", "244 mm"],
+   "correct": 1,
+   "explanation": "N = (0.0254 m)² × 2.25×10⁶ Hz ÷ (4 × 5,920 m/s) ≈ 0.061 m, about 61 mm (2.4 in.). Inside that zone amplitude oscillates, which is one reason the procedure controls element size."
+  },
+  {
+   "question": "Why must the test standard be the same product form and comparable heat treatment as the part being examined?",
+   "options": [
+    "So the blocks weigh the same as the part",
+    "Because attenuation and velocity differ with grain structure, so a dissimilar block sets a false sensitivity",
+    "Because the procedure writer prefers matching paperwork",
+    "Only the block's surface finish matters; material is irrelevant"
+   ],
+   "correct": 1,
+   "explanation": "Grain structure and heat treatment change attenuation and velocity. Calibrating on acoustically different material means the reference gain does not represent the part — unless a measured transfer correction closes the gap."
+  },
+  {
+   "question": "Reference gain is established at 38 dB and the procedure requires scanning at reference plus 12 dB. You scan at — and evaluate at —",
+   "options": [
+    "50 dB scanning; 38 dB evaluation",
+    "38 dB scanning; 50 dB evaluation",
+    "26 dB scanning; 38 dB evaluation",
+    "50 dB for both scanning and evaluation"
+   ],
+   "correct": 0,
+   "explanation": "Scanning gain = 38 + 12 = 50 dB so marginal reflectors still show while moving; amplitude comparisons against the reference are made back at 38 dB."
+  },
+  {
+   "question": "An examiner finds the specified couplant unavailable and substitutes a much thicker high-viscosity gel for the scan after calibrating with light oil. The examination is:",
+   "options": [
+    "Acceptable — couplant never affects results",
+    "Acceptable if the screen still shows a back wall",
+    "Compromised — couplant is a procedure parameter affecting transmission, so calibration and scanning conditions no longer match",
+    "Improved, because thicker couplant always transmits more sound"
+   ],
+   "correct": 2,
+   "explanation": "Couplant type changes energy transmission into the part. Calibrating with one couplant and scanning with another breaks the link between reference gain and actual scanning sensitivity; the procedure names the couplant for exactly this reason."
+  },
+  {
+   "question": "An area-amplitude flat-bottom-hole set differs from a distance-amplitude set in that the area-amplitude set:",
+   "options": [
+    "varies hole diameter at constant metal travel to relate amplitude to reflector size",
+    "varies metal travel at constant hole size to map amplitude versus depth",
+    "uses side-drilled holes instead of flat-bottom holes",
+    "is used only for angle-beam calibration"
+   ],
+   "correct": 0,
+   "explanation": "Area-amplitude blocks change the hole diameter (such as Nos. 1–8 in 1/64 in. steps) at fixed travel, tying echo height to reflector area; distance-amplitude blocks fix the hole size and vary travel to build depth corrections like a DAC."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Technique Course §3.0 (straight-beam examination to specific procedures), §3.1 (selection of parameters), §3.2 (test standards)",
+  "Codes such as ASME BPVC Section V, Article 4/Article 5 (general practice for straight-beam examination, calibration confirmation)",
+  "Plate product standards (general practice): grid or 100% scanning with back-reflection monitoring",
+  "SNT-TC-1A / NAS410 (role of Level I–III with respect to written procedures, general framing)"
+ ]
+}

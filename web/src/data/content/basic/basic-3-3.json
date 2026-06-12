@@ -1,0 +1,196 @@
+{
+  "lessonId": "basic-3-3",
+  "title": "Liquid Penetrant Testing: Fundamentals and Processes",
+  "narrationScript": "Liquid penetrant testing makes a surface crack announce itself using physics you can watch in a coffee cup. A penetrant is a liquid engineered to wet metal almost perfectly, so capillary action pulls it into any clean opening at the surface. Tighter openings pull harder; gravity barely matters; viscosity only sets the pace. After a timed dwell the excess comes off the surface while the entrapped liquid stays behind. A developer then blots it back out and spreads it wide enough to see. Visibility is contrast: brilliant red dye against white developer under shop light, or fluorescent dye glowing yellow-green under UV-A in a darkened booth at contrast ratios hundreds to one. The processes differ mainly in removal. Water-washable penetrant rinses straight off, fast but easy to overwash. Post-emulsifiable penetrant cannot rinse until a timed emulsifier makes its surface layer washable, which is why critical aerospace hardware rides that line. Solvent-removable penetrant wipes off in the field. Equipment closes the loop: processing lines, UV lamps, light meters, and a daily known-defect panel that proves the whole system.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Capillary Action: How a Liquid Finds a Crack",
+      "body": "Liquid penetrant testing (PT) reveals discontinuities **open to the surface** of essentially any **nonporous, nonabsorbent** solid: aluminum, magnesium, titanium, nickel alloys, austenitic stainless steel, carbides, ceramics, glass, and many plastics. That material-blindness makes PT the natural partner of magnetic particle testing — where MT stops at nonferromagnetic alloys, PT does not care what the part is made of. It cares about exactly two things: the discontinuity must **break the surface**, and its opening must be **clean and empty**.\n\nThe engine is **capillary action** — the spontaneous movement of a wetting liquid into a confined opening. Two liquid properties run it:\n\n- **Surface tension** — the cohesive skin a liquid presents — supplies the driving force.\n- **Wetting ability**, measured by the **contact angle** between a drop's edge and the surface. A liquid wets when that angle is **below 90°**; good penetrants approach **zero**, spreading into thin films that creep across the surface and into every opening.\n\nThe capillary pressure pulling penetrant into a flaw rises with surface tension and the cosine of the contact angle — and is **inversely proportional to the width of the opening**. The consequence is happy and counterintuitive: the **tighter the crack, the harder the pull**. At flaw scale these forces dwarf gravity, which is why penetrant enters a crack on the underside of a wing fitting as readily as one on top.\n\n**Viscosity** sets the pace, not the verdict — a thick penetrant enters a tight flaw more slowly but just as surely, which is one reason procedures impose a **penetrant dwell time**: commonly a **10-minute minimum**, longer for tight fatigue cracks, cold parts, or viscous penetrants. The failure modes follow from the same physics: water, oil, paint, or corrosion product filling the opening leaves no room for penetrant; machining, blasting, and peening can **smear metal** over the opening — the reason many aerospace specifications require a chemical **etch** before final inspection; and a flaw sealed wholly beneath the surface produces nothing at all."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-3-3-fig-a",
+      "caption": "The fundamentals in three frames. A penetrant's near-zero contact angle lets it wet and creep; capillary pressure — stronger as the opening narrows — pulls it into the flaw in any orientation; and after removal, the developer works capillarity in reverse, blotting the entrapment back out into an indication far wider than the flaw."
+    },
+    {
+      "type": "text",
+      "heading": "Fluorescence and Contrast: Engineering Visibility",
+      "body": "A penetrant indication is useful only if the eye can find it, and the eye finds **contrast**. The two penetrant types classified by ASTM E1417 and AMS 2644 buy that contrast in different currencies:\n\n- **Type II — visible (color-contrast) penetrant.** A deep-red dye read against the white developer background under ordinary light — at least **100 footcandles** at the examination surface. It needs no special facility, but red-on-white delivers a contrast ratio on the order of **6:1**, which bounds the smallest indication the eye will reliably catch.\n- **Type I — fluorescent penetrant.** The dye absorbs **UV-A** — long-wave ultraviolet peaking near **365 nm**, the safe inspection band — and re-emits **yellow-green visible light near 550 nm**, the wavelength where the eye is most responsive. The read happens in a **darkened area**: ambient white light held to about **2 footcandles** or less, UV-A irradiance of at least **1,000 µW/cm²** at the surface, and at least **one minute** of dark adaptation for the inspector. Because the indication is essentially the only light source in a dark field, effective contrast can run to **hundreds to one**, and far smaller entrapments become visible.\n\nThat is why fluorescent systems dominate critical aerospace work, and why **sensitivity levels** exist: AMS 2644 grades fluorescent penetrant systems from **level ½ (ultralow) through level 4 (ultrahigh)**, while visible systems carry a single level. Higher sensitivity is not free — brighter, tighter-clinging dyes also light up rough surfaces and minor processing residue — so procedures match the level to the hardware's criticality and surface finish.\n\nKeep one number in mind: a tight crack's opening can measure a fraction of a **micrometer** across. Nothing about the unaided eye can see that. The process manufactures visibility in two stages — dye physics first, then the developer's bleed-out magnification."
+    },
+    {
+      "type": "text",
+      "heading": "Six Steps, Whatever the Process",
+      "body": "Every penetrant process — any type, any removal method — is the same six-step skeleton, and most PT escapes trace back to one step done out of order, out of time, or out of temperature.\n\n1. **Pre-clean and dry.** Vapor degrease, alkaline or ultrasonic clean, or solvent-wipe; strip paint and scale; etch where machining or peening has smeared metal over openings. Then **dry completely** — a flaw still holding rinse water has no room for penetrant. Standard processing applies between roughly **40 and 125 °F (4–52 °C)**; outside that window the technique must be separately qualified.\n2. **Apply penetrant and dwell.** Dip, spray, brush, or flow it on. A **drain dwell** — the part racked so surfaces stay wetted while excess runs back to the tank — is preferred practice: it conserves penetrant and keeps the film active. Dwell per the procedure, commonly **10 minutes minimum**.\n3. **Remove the excess.** The step that defines the method — and decides the test. Methods A through D are the next section.\n4. **Dry.** In a thermostatically controlled **recirculating-air oven**, part temperature not exceeding **160 °F (71 °C)**. Sequence nuance: **aqueous developers go on before the oven**; dry-powder and nonaqueous developers require a dry part first.\n5. **Develop.** The developer — a fine, white, absorbent coating — works **capillary action in reverse**: it blots entrapped penetrant up out of the flaw and spreads it laterally, multiplying the indication's width and brightness. Allow the **minimum development time, commonly 10 minutes**, before the final read.\n6. **Examine, then post-clean.** Interpret under the lighting conditions for the penetrant type, then remove every residue — left in place, residues corrode, contaminate later welding and coating, and gum up moving assemblies."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-3-3-fig-b",
+      "caption": "Three roads to the same indication. Water-washable penetrant (Method A) rinses directly — fast, with overwash risk. Post-emulsifiable penetrant (Methods B and D) cannot rinse until a separately applied, strictly timed emulsifier makes the surface layer washable. Solvent-removable penetrant (Method C) is wiped off — dry cloth first, then solvent-dampened, never a flush."
+    },
+    {
+      "type": "text",
+      "heading": "Methods A, B, C, D: Four Ways to Take the Excess Off",
+      "body": "ASTM E1417 and AMS 2644 classify removal into four methods. The chemistry differs; the goal is identical — remove **all** of the surface penetrant while disturbing **none** of the entrapped penetrant.\n\n- **Method A — water-washable.** The emulsifier is **built into the penetrant**, so a coarse water spray — **50–100 °F (10–38 °C), 40 psi (275 kPa) maximum** — rinses it straight off. Fastest and most economical, and kind to rough surfaces, threads, and keyways. The built-in convenience is also the hazard: the entrapped penetrant is exactly as washable as the surface film, so **overwashing strips shallow, broad flaws empty**. Fluorescent washing is monitored under UV-A so the operator stops at background removal.\n- **Method B — post-emulsifiable, lipophilic.** The penetrant itself is **not water-washable**. After dwell, an oil-base emulsifier is applied **by dipping or flowing only — never sprayed, brushed, or agitated** — and works by diffusing into the surface penetrant layer on a strict clock, typically seconds to a few minutes. Wash before it digs deeper than the surface film.\n- **Method C — solvent-removable.** The excess is wiped away: first a **clean, dry, lint-free cloth**, then a **solvent-dampened** one — and **never a solvent flush**, which would rinse out the flaws as efficiently as the background. This is the method of the three-aerosol-can field kit: portable, local, and the natural partner of nonaqueous developer.\n- **Method D — post-emulsifiable, hydrophilic.** A coarse **pre-rinse** first knocks the bulk penetrant off; then a dilute water-base detergent emulsifier — **35% maximum concentration for immersion, 5% maximum for spray** — scrubs only the thin layer that remains. Because the emulsifier never reaches what is inside the flaw, Method D offers the **best removal control and the highest process reliability**, which is why fluorescent Method D lines process critical rotating aerospace hardware.\n\nThe shared logic of B and D: only penetrant the **emulsifier touches** becomes washable. The entrapment below the surface never meets it — overwash resistance is designed into the chemistry."
+    },
+    {
+      "type": "table",
+      "caption": "Developer forms. Each blots entrapped penetrant back out and supplies a contrasting background, but application point and pairing rules differ.",
+      "headers": ["Developer form", "Applied", "Working notes"],
+      "rows": [
+        ["Dry powder", "Dusted or fogged onto a dry part", "Fluorescent (Type I) systems only; thinnest coat; forgiving on threads and rough surfaces"],
+        ["Water-soluble", "Dip or spray as a solution, before oven drying", "Dries to a translucent film; not used with Type II penetrants or with water-washable (Method A) systems"],
+        ["Water-suspendible", "Dip or spray as an agitated suspension, before oven drying", "Needs constant agitation and concentration checks; coats complex geometry evenly"],
+        ["Nonaqueous wet (solvent-suspendible)", "Aerosol sprayed onto a clean, dry part", "Most sensitive form — thin, fast-drying white layer; the standard partner of Method C field work"]
+      ]
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Removal is the razor's edge",
+      "body": "Every method walks the same line. **Under-remove** and the leftover background color or glow hides real indications; **over-remove** and you empty the very flaws you came to find — shallow, broad discontinuities go first. Choosing Method A, B, C, or D is choosing **how much protection the entrapped penetrant gets** during removal. Monitor fluorescent washing under UV-A, respect water temperature and pressure limits, keep emulsifier contact on the clock, and never flush solvent across a surface being wiped."
+    },
+    {
+      "type": "text",
+      "heading": "Test Equipment and Systems Factors",
+      "body": "A **stationary processing line** is the method built into furniture — stations in process order: penetrant tank with drain rack, pre-rinse and emulsifier stations for Method D, a wash station with **UV-A lighting over the rinse** so removal is monitored as it happens, a thermostatically controlled **recirculating-air drying oven**, a developer station (dust chamber for dry powder; dip or spray for the rest), and a **darkened inspection booth** with fixed UV-A lamps. At the portable end of the spectrum sits the **three-aerosol-can kit** — solvent cleaner, penetrant, nonaqueous developer — plus a battery UV-A lamp when fluorescent sensitivity has to travel.\n\n**Light is instrumentation here, not ambiance.** The classic UV-A source is a **mercury-vapor arc lamp** behind a deep violet filter that passes 365 nm and blocks visible and harmful shorter wavelengths; modern **UV-A LED lamps** start instantly and, for aerospace work, are qualified to **ASTM E3022**. A **UV-A radiometer** verifies irradiance against the 1,000 µW/cm² floor, and a **white-light meter** verifies both the 100-footcandle visible-examination level and the ≤2-footcandle booth background — on a scheduled basis, because lamps age and filters degrade.\n\n**Systems factors** is the outline's reminder that PT is a chemical *system*, qualified and operated as one:\n\n- Penetrant, emulsifier, and developer are qualified as a **family** on the AMS 2644 Qualified Products List; **intermixing manufacturers or material types voids the qualification**.\n- **Daily system performance verification:** before production, a **known-defect specimen** — such as the TAM/PSM panel carrying crack centers and a washability strip — runs through the complete process. If its indications fail to appear as they should, the system, not the panel, is wrong, and everything processed since the last good check is suspect.\n- **In-use material checks** catch drift: water content in water-washable penetrant tanks, hydrophilic emulsifier concentration by **refractometer**, developer condition and contamination, dwell and emulsification timers, bath and oven temperatures.\n\nThe chain logic is unforgiving: brilliant dye cannot fix a bad pre-clean, and a perfect read cannot recover what an overwash already stripped. Every station hands its work to the next — which is exactly why the steps, times, and temperatures are written, timed, and checked rather than left to feel."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-3-3-fig-a",
+      "title": "Capillary action: wetting, entry, and bleed-out",
+      "file": "basic-3-3-fig-a.svg"
+    },
+    {
+      "id": "basic-3-3-fig-b",
+      "title": "Penetrant process flowcharts: Methods A, B/D, and C",
+      "file": "basic-3-3-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "scenario",
+    "title": "Run a Penetrant Process Step by Step",
+    "intro": "You are running Type I fluorescent, Method D (post-emulsifiable hydrophilic) processing on machined aluminum engine-mount fittings. The written procedure follows ASTM E1417. Make the call at each station.",
+    "steps": [
+      {
+        "prompt": "The fittings arrive wearing light machining oil and handling fingerprints. Your first move?",
+        "options": [
+          "Apply penetrant immediately — it is oil-base, so it will dissolve the machining oil during dwell",
+          "Vapor degrease, then dry thoroughly, so every flaw opening is clean and empty before penetrant touches the part",
+          "Wipe off only the oil you can see and start the dip",
+          "Grit-blast the surfaces to a bright, uniform finish first"
+        ],
+        "correct": 1,
+        "feedback": "Penetrant can only enter an opening that is clean and empty — oil or water already in a crack leaves it no room, and contaminants degrade the dye. Blasting is worse than useless here: it peens and smears metal over flaw openings, which is why such operations trigger an etch requirement before final penetrant inspection."
+      },
+      {
+        "prompt": "The fittings come out of the penetrant dip tank. How do you run the dwell?",
+        "options": [
+          "Leave them fully submerged in the tank for the entire dwell period",
+          "Rack them to drain-dwell for the procedure's minimum — commonly 10 minutes or more — with surfaces staying wetted",
+          "Rinse after two minutes; smooth machined surfaces give up penetrant quickly",
+          "Warm the parts to 200 °F so the penetrant works faster"
+        ],
+        "correct": 1,
+        "feedback": "Drain dwell is preferred practice: excess runs back to the tank while a wetted, active film keeps feeding the capillaries. Cutting the dwell short starves tight cracks — they fill slowly precisely because they are tight — and 200 °F sits far above the standard 40–125 °F processing window, which would require separate qualification."
+      },
+      {
+        "prompt": "Dwell complete. In a Method D line, the next station is:",
+        "options": [
+          "Straight into the hydrophilic emulsifier at full strength",
+          "The drying oven",
+          "A coarse water pre-rinse to strip the bulk surface penetrant before any emulsifier",
+          "A solvent-dampened wipe-down"
+        ],
+        "correct": 2,
+        "feedback": "The pre-rinse removes most of the surface penetrant so the dilute emulsifier — 35% maximum by immersion, 5% by spray — only has to work on the thin layer that remains. That is the heart of Method D's control: the emulsifier never reaches the entrapped penetrant inside a flaw. Solvent wiping is Method C, and nothing goes to the oven still wearing surface penetrant."
+      },
+      {
+        "prompt": "You rinse the emulsified parts under a UV-A lamp. The general background is gone, but faint glows linger at a few bolt-hole edges. You should:",
+        "options": [
+          "Keep washing until every trace of fluorescence everywhere is gone",
+          "Stop — surface background removal is the goal, and residual glow at an opening may be the entrapment you are trying to find",
+          "Raise the water to 60 psi and 130 °F to finish the job quickly",
+          "Switch to a solvent flush for the stubborn spots"
+        ],
+        "correct": 1,
+        "feedback": "Washing until nothing glows is the definition of overwashing — you would strip the shallow entrapments the test exists to find. That is why the rinse happens under UV-A observation. The limits protect you too: roughly 50–100 °F and 40 psi maximum coarse spray. A solvent flush is prohibited even in Method C, where solvent is only ever applied to the cloth."
+      },
+      {
+        "prompt": "Parts are dried in the recirculating oven. Final processing and the read:",
+        "options": [
+          "Apply a thin dry-powder developer, allow at least 10 minutes of development, then examine under at least 1,000 µW/cm² UV-A with ambient white light near 2 footcandles after a minute of dark adaptation",
+          "Apply developer and examine immediately — waiting only fades the indications",
+          "Examine under 100 footcandles of white light, the same as a visible-dye test",
+          "Skip the developer — fluorescent penetrant supplies its own contrast"
+        ],
+        "correct": 0,
+        "feedback": "Dry powder pairs with fluorescent systems and goes onto a dry part. Development time is what lets reverse capillary action pull the entrapment out and grow the indication — commonly 10 minutes minimum before the final read. The darkened-booth conditions (≥1,000 µW/cm² UV-A, ≤2 fc ambient, dark-adapted eyes) are what produce the hundreds-to-one contrast that makes fluorescent PT so sensitive; 100 footcandles of white light is the visible-dye condition and would wash the glow out."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "Penetrant enters a tight surface crack primarily because:",
+      "options": [
+        "gravity feeds the liquid downward into the opening",
+        "capillary action — surface tension acting through a near-zero contact angle — pulls it in, more strongly as the opening narrows",
+        "the applied spray or dip pressure forces it in",
+        "a vacuum naturally present inside the discontinuity draws it in"
+      ],
+      "correct": 1,
+      "explanation": "Capillary pressure rises with surface tension and the cosine of the contact angle, and it is inversely proportional to the opening's width — so tighter cracks pull harder. At flaw scale that force dwarfs gravity and application pressure, which is why penetrant enters a crack on the underside of a part as readily as on top."
+    },
+    {
+      "question": "Switching to a penetrant with noticeably higher viscosity will mainly:",
+      "options": [
+        "prevent it from entering the tightest flaws at all",
+        "increase the capillary pressure available to drive penetration",
+        "slow penetration, so dwell time may need to lengthen — without deciding whether the penetrant can enter",
+        "improve wetting by lowering the contact angle"
+      ],
+      "correct": 2,
+      "explanation": "Viscosity is a rate property: a thick penetrant fills a tight flaw more slowly but just as surely. Whether it enters is governed by surface tension and contact angle. This is one reason procedures set minimum dwell times — commonly 10 minutes, longer for tight cracks, cold parts, or viscous penetrants."
+    },
+    {
+      "question": "Which set of conditions is correct for the final examination of a fluorescent (Type I) penetrant inspection?",
+      "options": [
+        "At least 100 footcandles of white light at the part surface",
+        "Direct sunlight, since it contains abundant ultraviolet",
+        "Any lighting — the fluorescent dye supplies its own illumination",
+        "UV-A of at least 1,000 µW/cm² at the part, ambient white light near 2 footcandles or less, after at least a minute of dark adaptation"
+      ],
+      "correct": 3,
+      "explanation": "Fluorescent contrast comes from a glowing indication in a dark field, so the booth is darkened to about 2 footcandles, UV-A irradiance must reach at least 1,000 µW/cm², and the inspector's eyes need a minute to dark-adapt. The 100-footcandle requirement belongs to visible-dye examinations, and sunlight's white component would wash out the glow entirely."
+    },
+    {
+      "question": "Post-emulsifiable systems (Methods B and D) resist overwashing because:",
+      "options": [
+        "their penetrant is weaker and therefore washes off slowly everywhere",
+        "the emulsifier makes only the surface layer it contacts washable — the entrapped penetrant inside a flaw never meets it",
+        "they use no water at any step of the process",
+        "their developer seals the flaw openings before washing"
+      ],
+      "correct": 1,
+      "explanation": "The penetrant itself is not water-washable; rinsability is created only where the separately applied, time-controlled emulsifier diffuses into the surface film. The entrapment below the surface stays untouched and unwashable — protection that Method A, with its emulsifier built into the penetrant, cannot offer."
+    },
+    {
+      "question": "Per standard practice, the daily proof that a fluorescent penetrant processing line still works is:",
+      "options": [
+        "checking the UV-A lamp's intensity, which qualifies the entire system",
+        "reviewing the manufacturer's certifications for each batch of materials",
+        "running one production part through twice and comparing the results",
+        "processing a known-defect specimen, such as a TAM/PSM panel, through the complete system before production hardware"
+      ],
+      "correct": 3,
+      "explanation": "The known-defect panel's crack centers must indicate and its washability area must rinse clean — proving every link in the chain at once. A radiometer check or a batch certificate verifies one link only, and a production part has no known flaws against which performance can be judged. A failed panel makes everything since the last good check suspect."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §2.4.1–2.4.2 (PT fundamentals: interaction of penetrants and discontinuity openings; fluorescence and contrast; penetrant processes; test equipment and systems factors)",
+    "ASTM E165/E165M, Standard Practice for Liquid Penetrant Testing for General Industry (capillary fundamentals, process steps, and temperature limits, summarized)",
+    "ASTM E1417/E1417M, Standard Practice for Liquid Penetrant Testing (type/method classification, removal limits, developer pairing rules, and system performance checks, summarized)",
+    "SAE AMS 2644, Inspection Material, Penetrant (type, method, developer form, and sensitivity-level classification)"
+  ]
+}

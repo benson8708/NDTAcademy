@@ -1,0 +1,40 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">One Threshold, Two Ways to Be Wrong</text>
+
+  <!-- noise distribution -->
+  <path d="M 120 360 C 195 360 225 190 290 190 C 355 190 385 360 470 360 Z" fill="#9BC4FF" opacity="0.4" stroke="#0B1F3A" stroke-width="2"/>
+  <!-- flaw-signal distribution -->
+  <path d="M 290 360 C 372 360 405 135 485 135 C 565 135 600 360 685 360 Z" fill="#1E66F5" opacity="0.1" stroke="#1E66F5" stroke-width="3"/>
+
+  <!-- misses: flaw signals left of the threshold -->
+  <path d="M 290 360 C 345 358 370 300 395 238 L 395 360 Z" fill="#F2A33C" opacity="0.45"/>
+  <!-- false calls: noise right of the threshold -->
+  <path d="M 395 314 C 415 332 440 352 470 360 L 395 360 Z" fill="#D14343" opacity="0.55"/>
+
+  <!-- decision threshold -->
+  <line x1="395" y1="96" x2="395" y2="372" stroke="#0B1F3A" stroke-width="3.5"/>
+  <text x="395" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#0B1F3A">decision threshold</text>
+
+  <!-- axis -->
+  <line x1="80" y1="360" x2="760" y2="360" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="420" y="394" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#5A6B7E">signal amplitude</text>
+  <text transform="rotate(-90 52 250)" x="52" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#5A6B7E">how often it occurs</text>
+
+  <!-- distribution labels -->
+  <text x="225" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">noise and nonrelevant indications</text>
+  <text x="560" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">signals from real flaws</text>
+
+  <!-- error-region labels -->
+  <text x="352" y="308" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0B1F3A">misses</text>
+  <text x="478" y="296" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#D14343">false calls</text>
+  <line x1="468" y1="302" x2="428" y2="340" stroke="#D14343" stroke-width="1.5"/>
+
+  <!-- trade-off arrows -->
+  <line x1="388" y1="420" x2="260" y2="420" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="248,420 262,413 262,427" fill="#0B1F3A"/>
+  <text x="85" y="443" font-family="Arial, sans-serif" font-size="13" fill="#0B1F3A">lower the threshold: POD rises — and false calls rise</text>
+  <line x1="402" y1="420" x2="530" y2="420" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="542,420 528,413 528,427" fill="#0B1F3A"/>
+  <text x="755" y="443" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#0B1F3A">raise it: false calls fall — and misses rise</text>
+</svg>

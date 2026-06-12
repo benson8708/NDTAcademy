@@ -1,0 +1,171 @@
+{
+ "lessonId": "ut2-6-4",
+ "title": "Locating Discontinuities",
+ "narrationScript": "You have detected an echo and you have an idea how big the reflector is. Now you have to say exactly where it lives inside the part, because a code disposition, a repair excavation, and a fitness for service calculation all depend on position. Location in ultrasonic testing is built on one simple idea. The horizontal axis of the screen is time, and time is distance. Sound travels at a known velocity, so the position of an echo along the sweep tells you how far the sound traveled to make it. That is the soundpath. With a straight beam this is almost trivial. The flaw depth is just the soundpath, read straight off a time base you calibrated in distance. The back wall echo gives you a reference, and any echo before it sits at a depth proportional to its position on the sweep. Linear time means equal divisions on the screen equal equal increments of distance, which is why screen linearity matters and why we verify it. With an angle beam it gets more interesting, because the sound travels on a slant. The soundpath is the distance along the slanted beam, but the flaw has both a depth below the surface and a surface distance back from the probe index point. Here is the geometry. Surface distance equals soundpath times the sine of the refracted angle. Depth, on the first leg, equals soundpath times the cosine of the refracted angle. Once the beam bounces off the back wall and comes back up on the second leg, the depth is two times the thickness minus soundpath times cosine. So a forty five degree probe reading a soundpath of fifty millimeters puts the reflector about thirty five millimeters back from the index point and about thirty five millimeters deep, on the first leg. Always know which leg you are on, because the same soundpath gives a different depth on the first leg than on the second. Skip distance helps you keep track. The skip distance is two times the thickness times the tangent of the angle, the surface distance the beam covers from the probe to where it returns to the top surface after one bounce. Knowing the skip, you know whether a given probe position is looking at the weld with the first leg or the second. Now amplitude has a role in location too. As you scan toward and past a reflector, the echo peaks when the beam center is on it. So you locate the reflector across the weld by finding the probe position of maximum amplitude, then you read depth and surface distance from the soundpath at that peak. Amplitude finds the lateral position, linear time finds the depth. The two together pin the point. Use the displays to cross check. The A scan gives you soundpath and amplitude at one probe position, which you convert with the geometry. A B scan shows a side view, depth against scan position, so you can read the depth profile directly and compare it to what your A scan math predicted. A C scan shows the plan view, where the flaw sits across the surface. If your hand calculation and the B scan disagree, something is wrong, maybe the wrong leg, maybe a mode converted signal, maybe a wrong velocity, and you stop and resolve it. Finally, search technique. You do not find the full extent of a flaw by parking the probe. You scan systematically. For welds that means a raster, moving the probe toward and away from the weld to cover the full thickness through the first and second legs, while also indexing along the weld, and overlapping each pass so nothing is skipped. You rotate or skew the probe to face flaws of unknown orientation, and you scan from both sides of the weld. You mark the surface where you get indications, then map the flaw by finding its ends and its depth extremes. Location is detective work with a ruler. Read time as distance, use amplitude to find the peak, apply the angle geometry, confirm the leg, and cross check across displays until the position is unambiguous.",
+ "imagePrompt": "An NDT technician slides an angle-beam transducer back and forth toward a pipe girth weld in a systematic raster, marking a crayon line on the steel where an echo peaks, with the flaw detector showing a soundpath readout in an outdoor field setting.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Why Location Matters and the Core Idea",
+   "body": "Once a flaw is detected and roughly sized, you must say **exactly where it is** inside the part. A code disposition, a repair excavation depth, and any fitness-for-service calculation all depend on accurate position — depth below the surface and location along and across the part.\n\nLocation rests on one idea: **the horizontal axis of the A-scan is time, and time is distance.** Sound travels at a known velocity, so an echo's position along the sweep tells you how far the sound travelled to produce it — the **soundpath**. Calibrate the time base in distance, and reading position becomes reading range.\n\nThat conversion only holds if the display is **linear** — equal divisions on the screen must equal equal increments of distance (and equal amplitude steps vertically). This is why **screen linearity** (horizontal and vertical) is verified during standardization, and why the **reject** control is avoided on analog sets: it distorts vertical linearity and corrupts the amplitude information you rely on."
+  },
+  {
+   "type": "text",
+   "heading": "Straight-Beam Location: Amplitude and Linear Time",
+   "body": "With a **straight beam**, locating is nearly direct. The flaw **depth equals the soundpath**, read straight off a time base calibrated in distance. The **back-wall echo** is your far reference; any echo arriving before it sits at a depth proportional to its position along the sweep.\n\n- **Linear time** means equal screen divisions equal equal depth increments — an echo at half the distance to the back wall is at half the thickness.\n- **Amplitude** confirms you are centred on the reflector: as the probe passes over it, the echo **peaks** when the beam axis is on the flaw, fixing its lateral position; the **time** of that peak fixes its depth.\n\nSo even in the simple case, the two screen quantities do different jobs: **linear time gives depth, amplitude gives lateral position.** Together they place the point. A multiple-echo pattern (a series of equally spaced back-wall repeats) also helps confirm the velocity calibration and reveals a near-surface laminar reflector that shortens the echo spacing."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-6-4-fig-a",
+   "caption": "Angle-beam weld geometry: soundpath, refracted angle, surface distance, first- and second-leg depth, and the skip distance from the probe index point."
+  },
+  {
+   "type": "text",
+   "heading": "Angle-Beam Geometry: Soundpath to Depth and Position",
+   "body": "With an **angle beam** the sound travels on a slant, so a single soundpath splits into a **depth** and a **surface distance** back from the probe index point. For refracted angle θ and material thickness T:\n\n- **Surface distance = soundpath × sin θ**\n- **Depth (first leg) = soundpath × cos θ**\n- **Depth (second leg) = 2T − soundpath × cos θ**\n- **Skip distance = 2T × tan θ** (surface distance to where the beam returns to the top surface after one bounce)\n- **Leg = T / cos θ** (soundpath length of one leg)\n\nWork an example. A **45° probe** reads a soundpath of **50 mm**. Surface distance = 50 × sin 45° = **35 mm** back from the index point; first-leg depth = 50 × cos 45° = **35 mm** deep. On a 20 mm plate the skip distance = 2 × 20 × tan 45° = **40 mm**, and one leg = 20 ÷ cos 45° = **28 mm** of soundpath.\n\n**Always know which leg you are on.** The same 50 mm soundpath that means 35 mm deep on the first leg means 2T − 35 deep on the second — a completely different location. Tracking the skip distance tells you whether the beam is hitting the weld on the first or second leg."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Amplitude finds across, linear time finds deep — confirm the leg",
+   "body": "To pin an angle-beam reflector: scan until the echo **peaks** (beam axis on the flaw) to fix its position **across** the weld, then read the **soundpath** at that peak and apply **depth = soundpath × cos θ** (first leg) to fix how **deep** it is. Then ask **which leg**: compare the surface distance against the **skip distance** (2T·tan θ). Getting the leg wrong is the most common location error in angle-beam work — the same soundpath can place a flaw near the surface or near the back wall depending on the leg."
+  },
+  {
+   "type": "text",
+   "heading": "Cross-Checking Across Display Formats",
+   "body": "No single display should be trusted blindly — **cross-check** the location across formats:\n\n- **A-scan** gives soundpath and amplitude at one probe position. You convert it with the angle geometry to depth and surface distance. It is the primary tool, but the math depends on correct velocity, angle, and leg.\n- **B-scan** gives a **side view** — depth against scan position — so you can read the depth profile directly and compare it to what your A-scan calculation predicted.\n- **C-scan** gives a **plan view** showing where the flaw sits across the surface, confirming length and lateral position.\n\nIf the hand calculation and the B-scan **disagree**, stop — something is wrong. The usual culprits are the **wrong leg**, a **mode-converted** signal arriving at an unexpected time, or a **wrong velocity** setting. A Level II resolves the contradiction before recording a position; agreement across at least two independent reads is the goal."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut2-6-4-fig-b",
+   "caption": "Systematic raster search of a weld: overlapping probe passes covering first and second legs, indexing along the weld, with skewing and two-sided coverage to map the full flaw."
+  },
+  {
+   "type": "text",
+   "heading": "Search Technique: Mapping the Whole Flaw",
+   "body": "You do not find a flaw's full extent by parking the probe — you **scan systematically**. A complete weld search has several motions working together:\n\n- **Traverse (toward/away from the weld)** to sweep the beam through the full thickness across the **first and second legs**.\n- **Index (along the weld)** in steps small enough that successive beam passes **overlap** — typically at least 10–15% overlap — so no length of weld is skipped.\n- **Rotation / skew** of the probe to face flaws of **unknown orientation**, since a tilted planar flaw is a directional mirror.\n- **Two-sided** coverage, scanning from **both sides** of the weld, because a flaw silent from one side can ring from the other.\n\nWhen an indication appears, **mark the surface** at the peak, then **map** the flaw: find its **ends** (length, by the 6 dB-drop walk) and its **depth extremes** (through-wall extent). The result is a flaw plotted in length, depth, and position — not a single echo. Location is detective work with a ruler: read time as distance, use amplitude to find the peak, apply the angle geometry, confirm the leg, and cross-check across displays until the position is unambiguous."
+  },
+  {
+   "type": "table",
+   "caption": "Angle-beam location relationships (refracted angle θ, thickness T, soundpath S).",
+   "headers": ["Quantity", "Relationship", "45° example (S = 50 mm, T = 20 mm)"],
+   "rows": [
+    ["Surface distance", "S × sin θ", "35 mm back from index point"],
+    ["Depth, first leg", "S × cos θ", "35 mm deep"],
+    ["Depth, second leg", "2T − S × cos θ", "5 mm deep (if on 2nd leg)"],
+    ["Leg (soundpath of one leg)", "T / cos θ", "28 mm"],
+    ["Skip distance", "2T × tan θ", "40 mm"]
+   ]
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut2-6-4-fig-a",
+   "title": "Angle-beam weld geometry: soundpath, depth, surface distance, skip",
+   "file": "ut2-6-4-fig-a.svg"
+  },
+  {
+   "id": "ut2-6-4-fig-b",
+   "title": "Systematic raster search of a weld",
+   "file": "ut2-6-4-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Pin the Reflector",
+  "intro": "Convert sweep data into position. Use the angle-beam relationships: surface distance = S·sin θ, depth (1st leg) = S·cos θ, depth (2nd leg) = 2T − S·cos θ, skip = 2T·tan θ. Round sin/cos 45° to 0.707, sin 60° to 0.866, cos 60° to 0.500.",
+  "steps": [
+   {
+    "prompt": "A 60° shear probe on a 25 mm plate reads a soundpath of 30 mm, and the geometry confirms you are on the first leg. The reflector depth below the surface is about:",
+    "options": ["15 mm", "26 mm", "30 mm", "10 mm"],
+    "correct": 0,
+    "feedback": "First-leg depth = S·cos θ = 30 × cos 60° = 30 × 0.500 = 15 mm. The 26 mm value is the surface distance (30 × sin 60°), not the depth."
+   },
+   {
+    "prompt": "Same 60° probe and 25 mm plate, soundpath 30 mm on the first leg. How far back from the probe index point is the reflector?",
+    "options": ["26 mm", "15 mm", "30 mm", "50 mm"],
+    "correct": 0,
+    "feedback": "Surface distance = S·sin θ = 30 × 0.866 ≈ 26 mm. Depth and surface distance are different projections of the same slanted soundpath."
+   },
+   {
+    "prompt": "A 45° probe on a 20 mm plate reads a soundpath of 50 mm. You are unsure of the leg. The skip distance is 2T·tan 45° = 40 mm and one leg is T/cos 45° ≈ 28 mm. Which leg is this echo on, and what is its depth?",
+    "options": [
+     "First leg, depth 35 mm — but that exceeds the 20 mm thickness, so it must be second leg, depth 5 mm",
+     "First leg, depth 35 mm",
+     "Second leg, depth 35 mm",
+     "Cannot be determined from soundpath"
+    ],
+    "correct": 0,
+    "feedback": "A 50 mm soundpath exceeds one full leg (28 mm), so the beam is past the first bounce — second leg. Second-leg depth = 2T − S·cos θ = 40 − 35 = 5 mm. The 35 mm first-leg figure is impossible in a 20 mm plate, which is the clue."
+   },
+   {
+    "prompt": "Your A-scan math puts a flaw at 12 mm deep, but the B-scan cross-section clearly shows it near the back wall at about 24 mm in a 25 mm plate. The best response is:",
+    "options": [
+     "Record 12 mm because the A-scan is primary",
+     "Average the two to 18 mm",
+     "Stop and resolve the conflict — likely the wrong leg, a mode-converted signal, or a wrong velocity",
+     "Record 24 mm and ignore the A-scan"
+    ],
+    "correct": 2,
+    "feedback": "Displays must agree. A clear conflict signals an error — most often the wrong leg, a mode-converted arrival, or a bad velocity setting. Resolve it before recording, rather than picking one or averaging."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "On an A-scan calibrated in distance, what does the horizontal position of an echo represent, and why does screen linearity matter?",
+   "options": [
+    "Echo amplitude; linearity keeps the gain accurate",
+    "Soundpath (time = distance at known velocity); linear time means equal screen divisions equal equal distance increments",
+    "The refracted angle; linearity sets the wedge angle",
+    "Frequency; linearity tunes the pulser"
+   ],
+   "correct": 1,
+   "explanation": "Horizontal position is time, which converts to soundpath at the known velocity. Locating depends on a linear time base so that equal divisions correspond to equal distances; non-linearity would misplace the reflector."
+  },
+  {
+   "question": "A 45° shear probe reads a soundpath of 40 mm on the first leg. The reflector's depth below the surface is about (cos 45° ≈ 0.707):",
+   "options": ["28 mm", "40 mm", "20 mm", "57 mm"],
+   "correct": 0,
+   "explanation": "First-leg depth = soundpath × cos θ = 40 × 0.707 ≈ 28 mm. The surface distance would be the same 28 mm at 45° because sin 45° = cos 45°, but depth specifically uses the cosine."
+  },
+  {
+   "question": "In angle-beam location, what do amplitude and linear time each tell you?",
+   "options": [
+    "Amplitude gives depth; linear time gives lateral position",
+    "Amplitude peaks to fix the position across the weld; linear time (soundpath) gives the depth",
+    "Both give depth independently",
+    "Neither relates to position"
+   ],
+   "correct": 1,
+   "explanation": "Scanning to maximum amplitude places the beam axis on the reflector, fixing its lateral position; the soundpath (linear time) at that peak, with the angle geometry, gives the depth."
+  },
+  {
+   "question": "The skip distance on a plate of thickness T inspected with a refracted angle θ is:",
+   "options": [
+    "T × cos θ",
+    "2T × tan θ",
+    "T / sin θ",
+    "soundpath × sin θ"
+   ],
+   "correct": 1,
+   "explanation": "Skip distance = 2T × tan θ — the surface distance the beam covers from the probe to where it returns to the top surface after one back-wall bounce. Knowing it tells you whether the weld is hit on the first or second leg."
+  },
+  {
+   "question": "Which describes a correct systematic search technique for fully mapping a weld flaw?",
+   "options": [
+    "Hold the probe at one spot and increase gain until the whole flaw appears",
+    "Raster with overlapping passes covering first and second legs, index along the weld, skew the probe, and scan from both sides",
+    "Make a single fast pass from one side to save time",
+    "Scan only at the maximum-amplitude position and record that point as the whole flaw"
+   ],
+   "correct": 1,
+   "explanation": "A flaw's full extent is found by systematic, overlapping scanning that covers the thickness through both legs, indexes along the weld, skews to face unfavorably oriented flaws, and covers both sides — then the ends and depth extremes are mapped."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, UT Evaluation Course §5.4 (location of discontinuity)",
+  "Angle-beam geometry: surface distance = S·sin θ; depth = S·cos θ (1st leg), 2T − S·cos θ (2nd leg); skip = 2T·tan θ",
+  "Codes such as ASME BPVC Section V, Article 4 (angle-beam examination and screen linearity)"
+ ]
+}

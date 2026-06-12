@@ -1,0 +1,50 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#0A2342">Circumferential Scan on Pipe — Why the Angle Choice Changes</text>
+
+  <!-- pipe wall (annulus segment, wall exaggerated) -->
+  <path d="M 60 362 A 360 360 0 0 1 740 362 L 700 363 A 322 322 0 0 0 100 363 Z" fill="#E8F1FB" stroke="#0A2342" stroke-width="2.5"/>
+  <text x="60" y="386" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0A2342" font-weight="bold">OD</text>
+  <text x="118" y="384" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#5A6B7E">ID</text>
+  <text x="400" y="312" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">bore (inside surface)</text>
+
+  <!-- wall label -->
+  <line x1="148" y1="258" x2="100" y2="234" stroke="#5A6B7E" stroke-width="1.3"/>
+  <text x="96" y="228" text-anchor="end" font-family="Arial, sans-serif" font-size="15" fill="#0A2342">wall 6.0 mm</text>
+  <text x="96" y="246" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#5A6B7E">(exaggerated)</text>
+
+  <!-- contoured shoe on OD -->
+  <path d="M 360 122 A 360 360 0 0 1 440 122 L 440 80 L 360 80 Z" fill="#D9E0E8" stroke="#0A2342" stroke-width="2"/>
+  <line x1="356" y1="100" x2="306" y2="84" stroke="#5A6B7E" stroke-width="1.3"/>
+  <text x="300" y="80" text-anchor="end" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">contoured shoe</text>
+
+  <!-- entry point + radial normal -->
+  <circle cx="400" cy="120" r="5" fill="#F2A33C" stroke="#0A2342" stroke-width="1.5"/>
+  <line x1="400" y1="120" x2="400" y2="218" stroke="#5A6B7E" stroke-width="1.4" stroke-dasharray="6,4"/>
+  <text x="400" y="240" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#5A6B7E">radial normal</text>
+
+  <!-- 60° beam: reaches the bore -->
+  <line x1="400" y1="120" x2="486" y2="170" stroke="#1B82E8" stroke-width="3.5"/>
+  <polygon points="486,170 472,168 478,158" fill="#1B82E8"/>
+  <path d="M 400 170 A 50 50 0 0 0 443 145" fill="none" stroke="#F2A33C" stroke-width="2.2"/>
+  <text x="452" y="132" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">60°</text>
+
+  <!-- radial at the ID hit + impingement note -->
+  <line x1="486" y1="170" x2="473" y2="218" stroke="#5A6B7E" stroke-width="1.3" stroke-dasharray="5,4"/>
+  <line x1="490" y1="176" x2="552" y2="240" stroke="#5A6B7E" stroke-width="1.2"/>
+  <text x="558" y="252" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1B82E8">reaches the bore —</text>
+  <text x="558" y="272" text-anchor="start" font-family="Arial, sans-serif" font-size="16" fill="#0A2342">but at ≈ 75° to the local normal</text>
+  <text x="558" y="292" text-anchor="start" font-family="Arial, sans-serif" font-size="15" fill="#5A6B7E">(a glancing hit)</text>
+
+  <!-- 70° beam: misses the bore -->
+  <line x1="400" y1="120" x2="631" y2="204" stroke="#D14343" stroke-width="3"/>
+  <polygon points="631,204 618,206 621,195" fill="#D14343"/>
+  <circle cx="516" cy="162" r="4" fill="#D14343"/>
+  <line x1="516" y1="162" x2="560" y2="116" stroke="#5A6B7E" stroke-width="1.2"/>
+  <text x="566" y="110" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#D14343">70° — closest approach stays mid-wall:</text>
+  <text x="566" y="130" text-anchor="start" font-family="Arial, sans-serif" font-size="15" fill="#D14343">it skims back to the OD, never touching the bore</text>
+
+  <!-- formulas -->
+  <text x="400" y="406" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">beam reaches the bore only if sin θ ≤ ID ÷ OD&#160;&#160;—&#160;&#160;4 in. sch 40: ID/OD ≈ 0.89 → θ max ≈ 63°</text>
+  <text x="400" y="432" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#5A6B7E">at the bore: sin θ_ID = (OD ÷ ID) × sin θ&#160;&#160;·&#160;&#160;flat-plate skip formulas no longer apply — calibrate on a curved block with ID/OD notches</text>
+</svg>

@@ -1,0 +1,191 @@
+{
+ "lessonId": "mt2-1-1",
+ "title": "Principles, Process, and Equipment Review",
+ "narrationScript": "Welcome to Level Two magnetic particle testing. Before we climb into deeper technique work, evaluation, and standards, we are going to take one fast, honest lap around everything Level One taught you, because every decision you will make as a Level Two stands on these basics. Start inside the steel. Ferromagnetic materials like iron and most steels are built from tiny regions called domains, and each domain is a little magnet. In an unmagnetized part the domains point every which way and cancel each other out. Put the part in a magnetizing field and the domains line up, and the part carries magnetic flux. Materials that do this strongly are ferromagnetic, and they are the only materials this method works on. Paramagnetic materials, like austenitic stainless steel and aluminum, respond so weakly they are useless to us. Diamagnetic materials, like copper, push back slightly. If a magnet will not hold to the part, magnetic particle testing is the wrong method. Now the curve that describes the steel, the hysteresis loop. Plot magnetizing force, H, measured in oersteds, against flux density, B, measured in gauss or tesla. Ten thousand gauss equals one tesla. The ratio of B to H is permeability, how easily the material accepts flux. Push the force high enough and the curve flattens at saturation, where the domains are fully aligned. Cut the force to zero and some flux remains. That leftover is retentivity, the residual field. The reverse force needed to wipe it out is the coercive force. Hard, high carbon steels hold a strong residual field, which is why the residual method works only on them. Soft, low carbon steels forget the field almost immediately, so they demand the continuous method. The whole method lives on one effect. A discontinuity at or near the surface interrupts the flux, and because the flaw is a poor magnetic path, flux is forced out of the part as a leakage field with tiny north and south poles on either side of the break. Fine magnetic particles bridge that leakage field and pile up, drawing a visible picture of the flaw right on the part. Leakage is strongest when flux crosses the flaw at ninety degrees, and detection stays reliable down to about forty five degrees. Parallel to the flaw, almost nothing leaks out. That is why one shot is never enough, and why full coverage always means two magnetizations roughly perpendicular to each other. Remember the pairing. Circular magnetization, where current passes through or around the part, finds longitudinal flaws, the ones running with the current. The head shot, the central conductor, prods, and induced current all make circular fields. Longitudinal magnetization, where flux runs along the part, finds transverse flaws. Coil shots, cable wraps, and yokes make longitudinal fields. For a coil shot in a low fill factor coil, the classic starting rule is ampere turns equal forty five thousand divided by the length to diameter ratio, good for ratios from about two up to fifteen. For prods, typical procedures call for ninety to one hundred twenty five amperes per inch of prod spacing, with spacing commonly six to eight inches. Your written procedure always governs the numbers. The process itself runs the same every time. Confirm the procedure and clean the surface. Choose the technique and the current. Alternating current hugs the surface because of skin effect and gives particles excellent mobility. Half wave rectified current adds subsurface reach and is the favorite with dry powder. Full wave rectified current penetrates deepest and lives mostly on bench units. Apply the particles, dry powder as a light cloud while current is on, or a wet bath cut just as the shot fires. The continuous method, current on while particles are applied, is the standard because it is the most sensitive. Interpret under verified light, at least one thousand microwatts per square centimeter of ultraviolet at the surface with ambient white light at two footcandles or less for fluorescent work, or at least one hundred footcandles of white light for visible particles. Evaluate against the acceptance criteria, demagnetize when required and verify with a field indicator, commonly three gauss or less, and document everything. Prove the field before you trust it. A pie gauge or a shim standard shows field direction and rough adequacy. A Hall effect gaussmeter reads the tangential surface field, and procedures commonly target thirty to sixty gauss. Finally, know the equipment on sight. The wet horizontal bench with its contact heads, built in coil, and recirculating bath. Mobile power packs with cables, prods, and clamps. The portable yoke, proven by lifting ten pounds with alternating current or forty pounds with direct current at the spacing used. And the demagnetizing tools, an alternating current coil you draw the part through, or step down current on the bench. That is Level One in one lap. Now we build on it.",
+ "imagePrompt": "A Level II technician clamps a splined steel shaft between the contact heads of a wet horizontal magnetic particle bench while a coworker readies the fluorescent bath hose, with portable yokes, prod kits, and coiled cables lined up on the workbench behind them.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Domains, Material Classes, and the B-H Loop",
+   "body": "Everything in MT starts inside the steel. Ferromagnetic materials - iron and most steels - are built of microscopic **domains**, each a tiny magnet. Unmagnetized, they point randomly and cancel; under a magnetizing force they align, and the part carries flux. **Paramagnetic** materials (aluminum, austenitic stainless) respond too weakly to matter, and **diamagnetic** materials (copper) are weakly repelled - neither can be usefully tested by MT.\n\nThe **B-H (hysteresis) loop** describes how a given steel behaves. Magnetizing force **H** (oersteds) drives flux density **B** (gauss or tesla - 10,000 gauss = 1 tesla). Their ratio, **permeability** µ = B/H, is how easily the material accepts flux. Key loop landmarks:\n\n- **Saturation** - domains fully aligned; more H buys almost no more B.\n- **Retentivity** - the residual flux left when H returns to zero.\n- **Coercive force** - the reverse H needed to drive that residual flux to zero.\n\nHard, high-carbon, heat-treated steels have high retentivity and coercive force; they hold a strong residual field, which makes them candidates for the **residual method** - and harder to demagnetize. Soft low-carbon steels lose their field almost instantly, so they demand the **continuous method**. One look at the loop tells you which world you are in."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt2-1-1-fig-a",
+   "caption": "Flux leakage at a surface crack and a subsurface discontinuity: the crack throws a sharp, strong leakage field that particles bridge, while the deeper flaw produces a weaker, broader one."
+  },
+  {
+   "type": "text",
+   "heading": "Leakage Flux and the Direction Rule",
+   "body": "The entire method rides on one effect. A discontinuity at or near the surface interrupts flux, and because air in a crack is a far poorer magnetic path than steel, flux is forced out of the part as a **leakage field**, complete with tiny local north and south poles on either side of the break. Fine magnetic particles bridge that leakage field and accumulate, forming an indication roughly the size, shape, and orientation of the flaw itself.\n\nLeakage is strongest when flux crosses the discontinuity at **90 degrees**, and detection remains dependable down to about **45 degrees**. Flux running parallel to a flaw barely leaks at all - the crack simply rides along between flux lines. Two consequences define your work:\n\n- **One shot never gives full coverage.** A complete examination requires two magnetizations roughly perpendicular to each other.\n- **Pick the field for the flaw you expect.** Circular magnetization (current through or around the part) finds **longitudinal** flaws; longitudinal magnetization (flux along the part) finds **transverse** flaws.\n\nIndication character also reports flaw depth: a surface crack holds particles in a sharp, dense, tightly adherent line, while a subsurface discontinuity shows broad, fuzzy, weakly held buildup - the leakage field has spread before it reaches the surface."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt2-1-1-fig-b",
+   "caption": "Circular magnetization (current through the part) detects longitudinal flaws, while longitudinal magnetization (coil flux along the part) detects transverse flaws - two perpendicular shots give full coverage."
+  },
+  {
+   "type": "text",
+   "heading": "The Process, Start to Finish",
+   "body": "Every MT examination, bench or field, runs the same skeleton:\n\n- **Confirm the procedure** - it governs technique, current, amperage, particles, and lighting.\n- **Preclean** - grease, scale, paint, and moisture interfere with particle movement and leakage fields.\n- **Magnetize** - choose the technique for the flaw direction sought. Typical starting values: coil shots near NI ≈ 45,000/(L/D) ampere-turns for low fill-factor coils (L/D between about 2 and 15, long parts in roughly 18-inch sections); prods around **90-125 A per inch** of 6-8 inch spacing; central conductors offset against the ID covering about **4 conductor diameters** of circumference per shot, rotated with overlap.\n- **Apply particles** - the **continuous method** (particles applied while current flows) is standard and most sensitive; the **residual method** is reserved for high-retentivity parts.\n- **Interpret and evaluate** under verified lighting - UV-A of at least 1,000 µW/cm² with ambient white light at or below 2 fc for fluorescent work; at least 100 fc white light for visible particles.\n- **Demagnetize and document** - demag when the part's service or later operations demand it, verify (commonly **3 G or less** on a field indicator), and record what you did and what you found."
+  },
+  {
+   "type": "table",
+   "caption": "The three magnetizing currents and where each earns its keep - typical procedure guidance.",
+   "headers": ["Current", "Penetration", "Particle mobility", "Best use"],
+   "rows": [
+    ["AC", "Surface only (skin effect)", "Excellent - field pulses dance particles", "Surface fatigue/service cracks; demag by step-down"],
+    ["HWDC", "Moderate subsurface", "Very good - pulsating DC", "Dry powder on welds and castings; field favorite"],
+    ["FWDC", "Deepest", "Lower - steady field", "Bench units, wet method, near-surface depth"]
+   ]
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "Three questions before every shot",
+   "body": "**Direction** - will flux cross the flaws I expect at 45-90 degrees? **Strength** - does the procedure value (or a QQI/gaussmeter check, commonly 30-60 G tangential) say the field is adequate without furring? **Proof** - are particles, lighting, and method verified per procedure? If any answer is no, the shot is decoration, not inspection."
+  },
+  {
+   "type": "text",
+   "heading": "Equipment You Must Know on Sight",
+   "body": "Level II work means choosing equipment, not just operating it.\n\n- **Wet horizontal bench units** - contact heads for head shots, a built-in coil on rails, recirculating bath, and selectable AC/HWDC/FWDC. The production workhorse for machined parts; watch clamping pressure and contact pads to prevent arc burns.\n- **Mobile power packs** - high-amperage sources feeding cables for wraps, clamps, prods, and central conductors out in the shop or field.\n- **Prod kits** - portable circular magnetization for welds and large surfaces; banned by many aerospace and finished-surface specifications because of arc-strike risk.\n- **Yokes** - AC or DC electromagnets placing a longitudinal field between poles; performance is proven by a lifting check, commonly **10 lb (AC)** or **40 lb (DC)** at the spacing used.\n- **Coils and central conductors** - longitudinal fields for solid parts; circular ID fields for tubes, rings, and nuts.\n- **Demagnetization equipment** - AC pass-through coils and step-down circuits; DC reversing-and-decreasing for deep residual fields.\n- **Verification accessories** - pie gauge, QQI shim standards, Hall-effect gaussmeter, ring specimen for overall system checks, UV radiometer and white-light meter.\n\nIf you cannot say what a tool proves or where it must not be used, review it before the next module."
+  },
+  {
+   "type": "figure",
+   "figureId": "mt2-1-1-fig-c",
+   "caption": "The MT equipment lineup: stationary bench, portable yoke, and prods, with the verification accessories every Level II must be able to use."
+  }
+ ],
+ "figures": [
+  {
+   "id": "mt2-1-1-fig-a",
+   "title": "Flux leakage at surface and subsurface discontinuities",
+   "file": "mt2-1-1-fig-a.svg"
+  },
+  {
+   "id": "mt2-1-1-fig-b",
+   "title": "Circular versus longitudinal magnetization",
+   "file": "mt2-1-1-fig-b.svg"
+  },
+  {
+   "id": "mt2-1-1-fig-c",
+   "title": "MT equipment categories and verification accessories",
+   "file": "mt2-1-1-fig-c.svg"
+  }
+ ],
+ "interactive": {
+  "type": "sort",
+  "title": "Rapid-Fire Review: Which Field Does It Make?",
+  "intro": "Classify each magnetizing technique by the field it produces. Remember the pairing: circular fields (current in or through the part) find longitudinal flaws; longitudinal fields (flux along the part) find transverse flaws.",
+  "buckets": [
+   "Circular magnetization - current in/through the part",
+   "Longitudinal magnetization - flux along the part"
+  ],
+  "items": [
+   {
+    "label": "Head shot between bench contact plates",
+    "bucket": 0,
+    "why": "Current passes lengthwise through the part, wrapping a circular field around it - best for flaws running parallel to the current path."
+   },
+   {
+    "label": "Central conductor threaded through a hollow bearing race",
+    "bucket": 0,
+    "why": "Current in the conductor circles it with flux, magnetizing the ring's ID and OD circularly without contact - no arc-burn risk."
+   },
+   {
+    "label": "Prods spaced 6-8 inches across a weld",
+    "bucket": 0,
+    "why": "Current flows through the plate between the prod tips, creating a circular field around that current path - typically 90-125 A per inch of spacing."
+   },
+   {
+    "label": "Induced current shot on a ring-shaped part",
+    "bucket": 0,
+    "why": "The ring acts as a shorted transformer secondary; current is induced in the part itself, so it is classified as circular magnetization and finds flaws parallel to the induced current path."
+   },
+   {
+    "label": "Coil shot with the part on the bench rails",
+    "bucket": 1,
+    "why": "Coil current circles the part, driving flux along its length - longitudinal field, transverse flaws; rule of thumb NI ≈ 45,000/(L/D)."
+   },
+   {
+    "label": "Multiple-turn cable wrap around a long shaft section",
+    "bucket": 1,
+    "why": "A cable wrap is a field-built coil: flux runs along the shaft axis, finding transverse cracks; magnetize long parts in roughly 18-inch sections."
+   },
+   {
+    "label": "AC yoke with legs straddling a weld bead",
+    "bucket": 1,
+    "why": "Flux flows pole to pole through the part - a longitudinal-type field that finds flaws lying across the line between the poles."
+   },
+   {
+    "label": "Plug-type central conductor offset against a large tube ID",
+    "bucket": 0,
+    "why": "Still a central-conductor technique: circular field strongest nearest the bar, covering about four conductor diameters of circumference per shot - rotate and overlap."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "A hydraulic cylinder rod is suspected of fatigue cracks running straight across the rod, perpendicular to its axis. Which magnetization gives the best detection?",
+   "options": [
+    "Head shot - circular field around the rod",
+    "Coil shot - longitudinal flux along the rod axis",
+    "Prods placed parallel to the rod axis near each crack",
+    "Residual method after a quick head shot"
+   ],
+   "correct": 1,
+   "explanation": "Transverse cracks are crossed at about 90 degrees by flux running along the part, which is exactly what a coil shot produces. A circular field would run parallel to these cracks and leak almost nothing."
+  },
+  {
+   "question": "A 12-inch-long, 1.5-inch-diameter shaft is magnetized in a 5-turn, low fill-factor coil. Using the classic rule of thumb, what is a reasonable starting current?",
+   "options": [
+    "About 280 amperes",
+    "About 1,125 amperes",
+    "About 5,625 amperes",
+    "About 45,000 amperes"
+   ],
+   "correct": 1,
+   "explanation": "L/D = 12/1.5 = 8, so NI ≈ 45,000/8 ≈ 5,625 ampere-turns; with 5 turns that is roughly 1,125 A. It is a starting value - the written procedure and a field check govern."
+  },
+  {
+   "question": "You are inspecting a rough, as-welded steel fabrication with dry powder and need the best chance at slightly subsurface lack of fusion. Which current type is the classic choice?",
+   "options": [
+    "Pure AC, for its skin effect",
+    "Half-wave rectified current (HWDC), for subsurface reach plus particle mobility",
+    "Full-wave DC at minimum amperage",
+    "Any current, since penetration depends only on amperage"
+   ],
+   "correct": 1,
+   "explanation": "HWDC pulsates like AC (good powder mobility) but has a DC component that drives flux below the surface - the standard pairing with dry powder on welds. AC's skin effect limits it to surface flaws."
+  },
+  {
+   "question": "In the wet continuous method on a bench unit, when should the magnetizing current be applied?",
+   "options": [
+    "Only after the bath has fully drained from the part",
+    "While the bath is flowing and continuing briefly as the flow is diverted, so particles are mobile while the field is at full strength",
+    "Before any bath is applied, then bathe the part afterward",
+    "Continuously for at least five minutes after bathing"
+   ],
+   "correct": 1,
+   "explanation": "Continuous means particles are on and mobile while the field is strongest - the bath is cut just as the shots fire. Applying bath only after current ends turns it into a residual test, valid only on high-retentivity parts."
+  },
+  {
+   "question": "Before using an AC yoke, your procedure requires a performance check. What is the typical requirement?",
+   "options": [
+    "Lift a 40-pound steel block at any pole spacing",
+    "Lift a 10-pound steel block at the pole spacing to be used",
+    "Read at least 3 gauss on a field indicator held at the poles",
+    "Produce a visible indication on bare plate with no discontinuity"
+   ],
+   "correct": 1,
+   "explanation": "AC yokes are commonly proven by lifting about 10 lb at the spacing used; about 40 lb applies to DC yokes, whose deeper, steadier field grips harder. The 3 G figure is a demagnetization check, not a lift test."
+  }
+ ],
+ "references": [
+  "CP-105-2024 MT Topical Outline §1.1 (basic principles review)",
+  "CP-105-2024 MT Topical Outline §1.2 (basic magnetic particle process review)",
+  "CP-105-2024 MT Topical Outline §1.3 (equipment review)",
+  "Practices such as ASTM E709 and ASTM E1444 (typical amperage, lighting, and verification values)",
+  "ASME BPVC Section V, Article 7 (technique and field verification context)"
+ ]
+}

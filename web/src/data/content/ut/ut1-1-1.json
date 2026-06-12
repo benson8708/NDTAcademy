@@ -1,0 +1,127 @@
+{
+ "lessonId": "ut1-1-1",
+ "title": "What Is Ultrasonics? History and Applications",
+ "narrationScript": "Welcome to ultrasonic testing. Before we pick up a probe, let's get clear on what this method is, where it came from, and what industry actually does with it. Start with sound itself. Sound is mechanical vibration. Something physical has to move, particle bumping particle, for sound to travel. That makes it fundamentally different from light or X rays, which are electromagnetic and cross empty space without complaint. Sound cannot. It needs a medium, a solid, a liquid, or a gas, and it stops dead at a vacuum. That one fact shapes almost everything in this method, including why we squeeze a layer of couplant between the probe and the part. Now put a number on it. The human ear hears from roughly twenty hertz up to about twenty thousand hertz, which is twenty kilohertz. Vibration faster than twenty kilohertz is ultrasonic, sound beyond hearing. Industrial testing works far above that line. The practical range runs from about half a megahertz to twenty five megahertz, and most everyday flaw detection sits between one and ten megahertz. A megahertz is a million cycles per second, so a five megahertz probe vibrates five million times each second. Why so fast? Because frequency sets wavelength, and wavelength sets what we can find. Higher frequency means shorter wavelength, which means smaller flaws become detectable and the sound forms a tight, directional beam we can aim. We will put hard numbers on that in the math lesson. Where did the method come from? In the eighteen seventies, Francis Galton built a whistle that produced tones beyond human hearing, proof that such sound existed and could be made on demand. The key breakthrough came in eighteen eighty, when Jacques and Pierre Curie discovered piezoelectricity. Squeeze certain crystals and they generate a voltage. Drive them with a voltage and they flex and vibrate. That two way conversion between electricity and motion is still the working heart of nearly every probe you will ever hold. The sinking of the Titanic in nineteen twelve pushed engineers to propose echo ranging, sending sound into water and timing the return to find icebergs. During the first world war, Paul Langevin built quartz transducers to hunt submarines, the ancestor of sonar and the first serious engineering use of ultrasonic pulses and their echoes. In nineteen twenty nine, Sergei Sokolov proposed using ultrasound to find hidden flaws in metal by passing sound straight through a part and watching for the shadow of a defect on the far side. It worked, but it needed access to both surfaces and it could not say how deep a flaw sat. The real revolution came around nineteen forty, when Floyd Firestone built a pulse echo instrument. Send a short pulse, then let the same crystal listen. An internal flaw returns an echo, and the round trip travel time tells you its depth, all from one side of the part. Similar instruments appeared in Britain and Germany in the same era, and by the late nineteen forties commercial flaw detectors were on the market. From there the method grew with the industries that needed it. Welds, forgings, and castings in the fifties. The fracture mechanics era in the sixties and seventies, which demanded flaw sizing rather than simple detection. Digital instruments in the eighties. And today, phased arrays, time of flight diffraction, and fully automated scanning systems, all still running on Firestone's idea, time the echo. So what does industry do with ultrasonic energy? At low power, we listen without changing the part. We find cracks, slag, and porosity in welds. We catch laminations in plate, and shrinkage and inclusions in castings and forgings. We measure remaining wall thickness on corroded pipe from the outside while the line stays in service. We check adhesive bonds and scan aerospace composites for delaminations. Outside inspection, the same physics drives medical imaging, sonar, flow metering, and liquid level measurement. At high power the goal flips, and the energy is meant to change the material. Ultrasonic cleaners scrub parts through cavitation. Ultrasonic welders join plastics and fine wires. Ultrasonic machines grind precise shapes into hard, brittle materials. Our work is the low power side, but a technician should know the whole family. Why has this method earned its place? It penetrates meters of fine grained steel. It needs only one side of the part. Results are immediate. It tells you depth as well as position, and it produces no radiation hazard. Its honest limits are just as real. It needs couplant and a reasonable surface. Coarse grained materials scatter the beam. And the results depend heavily on the skill of the operator. That last point is the reason this course, and your certification, exist.",
+ "imagePrompt": "A technician in coveralls and a hard hat couples an ultrasonic flaw detector probe to a long weld seam on a steel storage tank wall, the handheld instrument in his other hand glowing with a live waveform in an industrial yard.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Sound You Cannot Hear",
+   "body": "Sound is **mechanical vibration** — energy carried by particles physically moving and pushing on their neighbors. That makes it fundamentally different from electromagnetic radiation such as light or X-rays: sound requires a medium (solid, liquid, or gas) and cannot cross a vacuum. This single fact drives much of UT practice, from the couplant under a contact probe to why an air gap inside a part reflects nearly all of the energy that hits it.\n\nThe human ear responds from about **20 Hz to 20 kHz** (20,000 cycles per second). Vibration above 20 kHz is **ultrasonic** — sound beyond hearing. Industrial UT works far above that threshold: the practical range is roughly **0.5 to 25 MHz**, and most production flaw detection is performed between **1 and 10 MHz** — millions of cycles per second.\n\nWhy so high? Frequency sets wavelength (λ = v/f, covered fully in the next lesson), and wavelength sets capability:\n\n- **Short wavelength → small detectable reflectors.** A useful rule of thumb: flaws smaller than about half a wavelength are unreliable to detect.\n- **Short wavelength → a directional, aimable beam** instead of sound spreading in all directions.\n\nThe trade-off is that higher frequencies scatter and attenuate more, especially in coarse-grained material — a tension you will manage on every job in this method."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-1-1-fig-a",
+   "caption": "The acoustic spectrum on a logarithmic frequency scale, from infrasound through human hearing to the industrial ultrasonic testing range."
+  },
+  {
+   "type": "text",
+   "heading": "From Galton's Whistle to Sonar",
+   "body": "Ultrasound's story starts with proving such sound exists. In the 1870s **Francis Galton** built a graduated whistle that produced tones beyond human hearing — demonstrating that ultrasonic sound could be generated on demand. The enabling discovery came in **1880**, when **Jacques and Pierre Curie** demonstrated **piezoelectricity**: certain crystals (quartz, for one) generate a voltage when squeezed and — by the inverse effect — flex when a voltage is applied. That two-way conversion between electrical signals and mechanical vibration remains the working heart of nearly every transducer made today.\n\nApplication followed disaster and war. After the **Titanic** sank in 1912, engineers proposed **echo-ranging** — projecting sound into water and timing the returns — to detect icebergs ahead of a ship. During World War I, **Paul Langevin** developed quartz transducer assemblies to detect submarines: the ancestor of sonar, and the first serious engineering use of ultrasonic pulses and their echoes.\n\nIn **1929, Sergei Sokolov** proposed applying ultrasound to find hidden flaws in metals using **through-transmission**: a transmitter on one face, a receiver on the opposite face, and a drop in received energy — a 'shadow' — wherever a defect blocked the path. It proved the principle, but it required access to both surfaces, demanded careful alignment, and gave no information about how deep a flaw sat."
+  },
+  {
+   "type": "text",
+   "heading": "Pulse-Echo Changes Everything",
+   "body": "Around **1940**, Floyd Firestone at the University of Michigan solved the depth problem with the **pulse-echo** technique, the basis of the first practical ultrasonic flaw detector. Instead of a continuous beam and a separate receiver, his instrument sent a **short pulse** and then used the same crystal to **listen**. A flaw inside the part returns an echo; the **round-trip travel time**, multiplied by the sound velocity and halved, gives the reflector's distance — all from **one side** of the part. Similar pulse-echo instruments emerged independently in Britain and Germany in the same period, and by the late 1940s commercial flaw detectors reached general industry.\n\nGrowth then tracked industrial need:\n\n- **1950s–60s:** routine examination of welds, forgings, and castings; immersion scanning takes hold in aerospace production.\n- **1960s–70s:** **fracture mechanics** changed acceptance philosophy — a flaw's size and position mattered, not just its presence — pushing sizing techniques and calibration discipline.\n- **1980s–90s:** digital flaw detectors, recorded C-scan imaging, and time-of-flight diffraction (TOFD).\n- **Today:** portable phased array (PAUT), automated girth-weld scanning, and full-matrix capture — all still built on Firestone's idea: time the echo."
+  },
+  {
+   "type": "callout",
+   "variant": "key",
+   "title": "The pulse-echo idea",
+   "body": "Send a short pulse into the part and listen with the same crystal. Any boundary in the sound path — a crack, a lamination, the back wall — reflects energy back. **Round-trip time × velocity ÷ 2 = reflector depth.** One probe, one side of the part, an immediate answer. Most of industrial UT is built on this single idea."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-1-1-fig-b",
+   "caption": "Pulse-echo testing of a plate: the probe's pulse reflects from a mid-wall flaw and from the back wall, and each return appears at its travel time on the A-scan."
+  },
+  {
+   "type": "text",
+   "heading": "Where Ultrasonic Energy Earns Its Keep",
+   "body": "**Low-power** applications use ultrasound to gather information without changing the part — this is NDT's territory:\n\n- **Weld examination** for cracks, lack of fusion, slag, and porosity — much of it angle-beam work.\n- **Thickness and corrosion surveys** on pipe, vessels, and tanks — often in service, from one side.\n- **Plate, forging, and casting inspection** for laminations, inclusions, bursts, and shrinkage before fabrication.\n- **Bond and composite testing** — adhesive disbonds, honeycomb, and delaminations in aerospace structures.\n- **In-service monitoring** of known flaws, plus rail, axle, and rotating-equipment inspection.\n\nThe same low-power physics powers **medical imaging**, **sonar**, **flow metering**, and liquid **level measurement**.\n\n**High-power** applications turn the energy loose to change the material: ultrasonic **cleaning** (cavitation scrubbing), **welding** of plastics and fine wire, **machining** of hard brittle materials, soldering aids, atomization, and emulsification. A technician should know the whole family — and remember that NDT deliberately keeps power low: we listen to the part; we never alter it."
+  },
+  {
+   "type": "table",
+   "caption": "Applications of ultrasonic energy, from listening to the part to deliberately changing it.",
+   "headers": ["Power class", "Application", "What the sound does"],
+   "rows": [
+    ["Low power (NDT)", "Weld, forging, and casting inspection", "Echoes reveal cracks, slag, porosity, shrinkage"],
+    ["Low power (NDT)", "Thickness and corrosion surveys", "Round-trip time measures remaining wall"],
+    ["Low power (NDT)", "Bond and composite testing", "Reflections expose disbonds and delaminations"],
+    ["Low power (other)", "Medical imaging, sonar, flow metering", "Echo timing maps tissue, seafloor, or flow"],
+    ["High power", "Ultrasonic cleaning", "Cavitation scrubs contamination off surfaces"],
+    ["High power", "Plastic/wire welding and machining", "Vibration energy heats, joins, or erodes material"]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Strengths and Honest Limits",
+   "body": "UT earned its position among the major NDT methods on hard advantages:\n\n- **Penetration:** meters of fine-grained steel are testable — far beyond most other methods.\n- **Single-side access:** pulse-echo needs only one surface.\n- **Depth information:** echo timing locates reflectors through the thickness — the only common volumetric method that reads depth directly.\n- **Immediate results, no radiation:** no source permits, no exclusion zones, safe to run next to other trades.\n- **Portable and automatable:** from a pocket thickness gauge to fully automated scanning systems.\n\nBalance that against its honest limits:\n\n- A **couplant** is required to get energy across the probe-to-part interface.\n- **Surface condition** matters: scale, spatter, and roughness fight the test.\n- **Coarse-grained** castings and austenitic welds scatter sound and raise noise.\n- Thin sections and **complex geometry** can be difficult to resolve.\n- Results depend heavily on **operator skill** — calibration, scanning discipline, and interpretation.\n\nThat last limitation is why formal training, qualification, and certification exist — and why every module in this course ends with you proving what you know."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-1-1-fig-a",
+   "title": "The acoustic spectrum and the industrial UT range",
+   "file": "ut1-1-1-fig-a.svg"
+  },
+  {
+   "id": "ut1-1-1-fig-b",
+   "title": "Pulse-echo principle with A-scan display",
+   "file": "ut1-1-1-fig-b.svg"
+  }
+ ],
+ "interactive": null,
+ "checkQuestions": [
+  {
+   "question": "Ultrasound is defined as mechanical vibration at frequencies above approximately:",
+   "options": ["20 Hz", "2 kHz", "20 kHz", "2 MHz"],
+   "correct": 2,
+   "explanation": "Human hearing extends to about 20,000 cycles per second (20 kHz); vibration above that limit is ultrasonic — sound beyond hearing."
+  },
+  {
+   "question": "Most industrial ultrasonic flaw detection is performed in which frequency range?",
+   "options": ["0.5 to 25 kHz", "20 Hz to 20 kHz", "50 to 100 MHz", "1 to 10 MHz"],
+   "correct": 3,
+   "explanation": "Industrial UT spans roughly 0.5–25 MHz, but most production flaw detection uses 1–10 MHz — high enough for sensitivity, low enough to penetrate real materials."
+  },
+  {
+   "question": "Which discovery gave ultrasonic testing a practical way to generate and receive high-frequency pulses?",
+   "options": [
+    "The piezoelectric effect in certain crystals, demonstrated by the Curies in 1880",
+    "Electromagnetic induction in copper coils",
+    "X-ray diffraction in metals",
+    "Thermionic emission in vacuum tubes"
+   ],
+   "correct": 0,
+   "explanation": "Piezoelectric crystals convert voltage to vibration and vibration back to voltage — the two-way conversion at the heart of nearly every UT transducer."
+  },
+  {
+   "question": "Compared with Sokolov-style through-transmission, the key advance of Firestone's pulse-echo instrument was that it:",
+   "options": [
+    "eliminated the need for couplant",
+    "tested from one side and indicated reflector depth from echo travel time",
+    "used electromagnetic waves instead of sound",
+    "required no operator training"
+   ],
+   "correct": 1,
+   "explanation": "Pulse-echo sends a short pulse and listens with the same crystal: round-trip time gives depth, and only one surface is needed — through-transmission offered neither."
+  },
+  {
+   "question": "Which of the following is a HIGH-power application of ultrasonic energy rather than an NDT use?",
+   "options": [
+    "Corrosion thickness surveys on piping",
+    "Weld flaw detection with an angle beam",
+    "Ultrasonic cleaning of machined parts",
+    "Delamination scanning of composite panels"
+   ],
+   "correct": 2,
+   "explanation": "Cleaning uses high-power ultrasound to change the part's surface through cavitation; NDT applications keep power low and only listen to the part."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, Basic UT Course §1.1–1.3 (definition of ultrasonics, history of UT, applications of ultrasonic energy)",
+  "General acoustics references: audible range approximately 20 Hz–20 kHz; industrial UT approximately 0.5–25 MHz",
+  "Historical record (public domain facts): Curie brothers (1880) piezoelectricity; Langevin (WWI) echo-ranging; Sokolov (1929) through-transmission; Firestone (c. 1940) pulse-echo"
+ ]
+}

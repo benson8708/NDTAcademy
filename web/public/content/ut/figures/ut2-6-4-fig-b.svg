@@ -1,0 +1,66 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="450" fill="#FFFFFF"/>
+  <text x="400" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#0A2342">Systematic Raster Search of a Weld (plan view)</text>
+
+  <!-- plate surface -->
+  <rect x="70" y="70" width="660" height="320" fill="#F4F8FC" stroke="#D9E0E8" stroke-width="1.5"/>
+
+  <!-- weld band running vertically through center -->
+  <rect x="375" y="70" width="50" height="320" fill="#D9E0E8" stroke="#0A2342" stroke-width="1.5"/>
+  <!-- weld cap ripples -->
+  <path d="M 375 90 Q 400 100 425 90 M 375 130 Q 400 140 425 130 M 375 170 Q 400 180 425 170 M 375 210 Q 400 220 425 210 M 375 250 Q 400 260 425 250 M 375 290 Q 400 300 425 290 M 375 330 Q 400 340 425 330 M 375 370 Q 400 380 425 370" fill="none" stroke="#5A6B7E" stroke-width="1.2"/>
+  <text x="400" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0A2342">weld</text>
+
+  <!-- LEFT side probe passes (traverse arrows toward/away from weld) -->
+  <g stroke="#1B82E8" stroke-width="2.5">
+    <line x1="150" y1="110" x2="360" y2="110"/>
+    <line x1="150" y1="150" x2="360" y2="150"/>
+    <line x1="150" y1="190" x2="360" y2="190"/>
+    <line x1="150" y1="230" x2="360" y2="230"/>
+    <line x1="150" y1="270" x2="360" y2="270"/>
+    <line x1="150" y1="310" x2="360" y2="310"/>
+    <line x1="150" y1="350" x2="360" y2="350"/>
+  </g>
+  <!-- arrowheads toward weld -->
+  <g fill="#1B82E8">
+    <polygon points="360,110 348,104 348,116"/>
+    <polygon points="360,190 348,184 348,196"/>
+    <polygon points="360,270 348,264 348,276"/>
+    <polygon points="360,350 348,344 348,356"/>
+  </g>
+  <text x="250" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1B82E8">traverse (toward/away) - 1st &amp; 2nd legs</text>
+
+  <!-- overlap brackets between passes on left -->
+  <text x="135" y="135" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#1E9E6A">index</text>
+  <line x1="138" y1="110" x2="138" y2="150" stroke="#1E9E6A" stroke-width="2"/>
+  <polygon points="138,110 134,120 142,120" fill="#1E9E6A"/>
+  <polygon points="138,150 134,140 142,140" fill="#1E9E6A"/>
+  <text x="130" y="240" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#1E9E6A">along weld,</text>
+  <text x="130" y="256" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#1E9E6A">overlap &#8805;10%</text>
+
+  <!-- probe block left -->
+  <rect x="150" y="222" width="34" height="16" fill="#5A6B7E" stroke="#0A2342" stroke-width="1.5"/>
+
+  <!-- RIGHT side probe passes (two-sided coverage) -->
+  <g stroke="#F2A33C" stroke-width="2.5">
+    <line x1="440" y1="130" x2="650" y2="130"/>
+    <line x1="440" y1="190" x2="650" y2="190"/>
+    <line x1="440" y1="250" x2="650" y2="250"/>
+    <line x1="440" y1="310" x2="650" y2="310"/>
+  </g>
+  <g fill="#F2A33C">
+    <polygon points="440,130 452,124 452,136"/>
+    <polygon points="440,190 452,184 452,196"/>
+    <polygon points="440,250 452,244 452,256"/>
+    <polygon points="440,310 452,304 452,316"/>
+  </g>
+  <text x="560" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#F2A33C">scan from BOTH sides</text>
+  <rect x="616" y="242" width="34" height="16" fill="#5A6B7E" stroke="#0A2342" stroke-width="1.5"/>
+
+  <!-- skew indication -->
+  <line x1="280" y1="270" x2="320" y2="252" stroke="#D14343" stroke-width="2"/>
+  <path d="M 296 263 A 22 22 0 0 1 318 270" fill="none" stroke="#D14343" stroke-width="1.5"/>
+  <text x="300" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#D14343">skew to face tilted flaws</text>
+
+  <text x="400" y="412" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#5A6B7E">Overlapping passes + indexing + skew + two sides = full coverage</text>
+</svg>

@@ -1,0 +1,174 @@
+{
+ "lessonId": "ut1-5-2",
+ "title": "Immersion Testing Overview",
+ "narrationScript": "Immersion testing trades the human hand for a column of water, and that single change unlocks speed, consistency, and imaging that contact work cannot match. Let's see how it works and how to set it up. In immersion testing the part and the probe both sit in water, or water flows through a coupling column, and the sound travels through that water path before it ever reaches the metal. The water is the couplant. Because the probe never touches the part, the coupling never changes, which is the heart of immersion's advantage. There is no rocking, no dry spots, no pressure that wanders with the operator's hand. Mount the probe on a manipulator, drive it on a scanning bridge, and every point on the part sees the same beam from the same standoff. That is exactly what automated production scanning needs. You can also tip and steer the probe to inject the beam at any angle simply by aiming it in the water, and you can use focused probes that bring the sound to a tight spot for fine resolution, which is hard to do in contact. The display side is where immersion shines. As the probe rasters across the part, the instrument records the echoes and builds an image. A C scan is a top down plan view that maps where the flaws are across the whole part, like an X ray you assemble from echoes. A B scan shows a cross section through the thickness. This is why aerospace plants immerse forgings, billets, and plate, and scan them automatically against tight acceptance limits. Now the one calculation you must own. In the water path there is a front surface echo, the reflection off the top of the part where water meets metal, and a back wall echo from the far side of the part. The trouble is multiples. The sound bounces in the water column too, so a second front surface echo appears at twice the water travel time. If the water path is too short, that second front surface echo lands right on top of the first back wall echo and hides it. The rule that prevents this comes from the velocities. Sound travels in steel about four times faster than in water, because steel is roughly five thousand nine hundred twenty meters per second and water is about one thousand four hundred eighty. So a given thickness of steel is crossed in the same time as only a quarter of that thickness of water, which means the back wall echo comes home fast. To keep the second front surface multiple from colliding with the first back echo, set the water path at least equal to the part thickness divided by the velocity ratio, which for steel is one quarter of the thickness, and then add a margin, commonly about six millimeters or a quarter inch, so the echoes sit clear of each other on the screen. Work an example. For a twenty five millimeter steel part, a quarter of twenty five is about six millimeters, plus the six millimeter margin gives roughly twelve millimeters of water path. For a one inch part, a quarter inch plus a quarter inch, half an inch in all. Set the standoff there and the back wall echo arrives cleanly before the troublesome multiple. One more effect of the water path. A focused immersion probe focuses in water, but when the beam crosses into steel it bends and the focal length shortens by roughly the velocity ratio, so the focal spot ends up much shallower in the metal than it was in water. You account for that when you choose the probe and the standoff. Immersion is not free. It needs a tank or a squirter system, the part has to fit and tolerate water, and corrosion sensitive parts need rust inhibitor or prompt drying. Trapped air bubbles on the surface or on the probe face will wreck the signal, so you wet and wipe the part first. But for production volume, repeatable results, angle steering, focusing, and full C scan imaging, nothing in the basic toolbox beats immersion. Contact for the field, immersion for the shop floor.",
+ "imagePrompt": "An immersion ultrasonic tank in a clean aerospace inspection shop, a focused transducer mounted on an overhead scanning bridge aimed straight down at a metal forging fully submerged in clear water, a monitor nearby displaying a color C-scan map.",
+ "sections": [
+  {
+   "type": "text",
+   "heading": "Water as the Couplant",
+   "body": "In **immersion testing** both the transducer and the part sit in water (a tank), or water is delivered through a flowing column (a bubbler or 'squirter'), and the sound travels through that **water path** before reaching the metal. **The water is the couplant** — there is no gel film and the probe never touches the part.\n\nThat one change is the source of immersion's whole advantage. Because nothing presses on the part:\n\n- **Coupling never varies** — no rocking, no dry spots, no operator pressure that drifts.\n- The probe can be **aimed in the water** to inject the beam at any angle simply by tilting it, instead of grinding a wedge.\n- **Focused probes** can concentrate the beam to a fine spot for high resolution — difficult to achieve in contact.\n\nThe probe is carried on a **manipulator** and driven on a **scanning bridge or gantry**, so every point on the part is examined with the same beam from the same standoff. This repeatability is exactly what automated production inspection demands, and it is why aerospace and mill operations immerse forgings, billets, bar, and plate."
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-5-2-fig-a",
+   "caption": "An immersion tank: transducer on a manipulator and scanning bridge, the water path down to the submerged part, and the front-surface and back-wall reflections."
+  },
+  {
+   "type": "text",
+   "heading": "Why Immersion Wins for Automated Scanning",
+   "body": "Contact testing gives one waveform at a time and depends on the steadiness of a hand. Immersion removes the hand and adds **motion control**, so the instrument can record an echo at every position and assemble it into an **image**:\n\n- A **C-scan** is a top-down **plan view** that maps indications across the whole part — built from echoes the way a radiograph is built from X-rays. It shows *where* flaws are over the part's footprint.\n- A **B-scan** shows a **cross-section** through the thickness, revealing *how deep* reflectors lie along a line.\n- An **A-scan** is still available at any single point for detailed evaluation.\n\nBecause the standoff and beam are identical at every point, amplitudes are **repeatable** and can be compared against tight, recorded acceptance limits. Add the ability to **steer** the beam (tilt the probe in the water for angle-beam inspection) and to **focus** it (concentrate the energy at a chosen depth), and immersion becomes the natural choice for **high-volume production scanning** of critical components — turbine forgings, billets, rolled plate, and rod."
+  },
+  {
+   "type": "callout",
+   "variant": "standard",
+   "title": "Constant coupling is the whole point",
+   "body": "The reason immersion is repeatable enough for automated C-scan acceptance is that **the water path keeps the coupling constant** at every scan position. No hand pressure, no rocking, no dry spots — so a 10% amplitude change is a real material change, not a coupling artifact."
+  },
+  {
+   "type": "text",
+   "heading": "The Water-Path Calculation",
+   "body": "Setting the **standoff** correctly is the one calculation you must own in immersion work. In the water path there are two key reflections: the **front-surface echo** (water-to-metal at the top of the part) and the **back-wall echo** (from the far side of the part). The complication is **multiple echoes** — the pulse also reverberates in the water column, so a **second front-surface echo** appears at *twice* the water travel time.\n\nIf the water path is **too short**, that second front-surface multiple lands on top of the first back-wall echo and hides it. To prevent the collision, exploit the velocities:\n\n- Steel carries sound at about **5,920 m/s**; water at about **1,480 m/s** — steel is roughly **4× faster**.\n- So a given thickness of steel is crossed in the same time as **only about one quarter of that thickness of water** — on a steel-calibrated screen, 1 in. of water reads as about 4 in. of steel.\n\nThe working rule: set the **water path ≥ part thickness × (v_water ÷ v_part)** — about **thickness ÷ 4 for steel** — then add a **margin** (commonly **6 mm / ¼ in.**) so the echoes sit clearly apart on the screen. Below that, the back-wall echo disappears into a water multiple. (Multiplying by the ratio instead of dividing is the classic inversion error — it gives a path 16× longer than the rule requires.)"
+  },
+  {
+   "type": "figure",
+   "figureId": "ut1-5-2-fig-b",
+   "caption": "Timing of the echoes: with too short a water path the second front-surface multiple overlaps the first back-wall echo; a long-enough path separates them cleanly."
+  },
+  {
+   "type": "table",
+   "caption": "Minimum water path by the quarter-thickness steel rule, plus a 6 mm margin.",
+   "headers": ["Part thickness T", "T × (v_water/v_steel) = T ÷ 4", "Water path with +6 mm margin"],
+   "rows": [
+    ["12.5 mm", "≈ 3 mm", "≈ 9 mm"],
+    ["25 mm", "≈ 6 mm", "≈ 12 mm"],
+    ["50 mm", "12.5 mm", "≈ 19 mm"],
+    ["1 in.", "¼ in.", "≈ ½ in."]
+   ]
+  },
+  {
+   "type": "text",
+   "heading": "Focusing, Limits, and Practical Setup",
+   "body": "One more effect of the water path: a **focused** immersion probe focuses *in water*, but when the beam crosses into steel it **refracts and the focal length shortens** by roughly the velocity ratio — so the focal spot ends up much shallower in the metal than it was in water. You account for this shift when choosing the probe and standoff so the focus lands at the depth you want.\n\nImmersion is powerful but not free, and you must manage its limits:\n\n- It needs a **tank or squirter system**; the part must **fit** and **tolerate water** — corrosion-sensitive parts need rust inhibitor in the water or prompt drying.\n- **Trapped air bubbles** on the part surface or the probe face scatter the beam and ruin the signal, so the part is **wetted and wiped** and the probe face cleared before scanning.\n- Setup, fixturing, and maintenance cost far more time and money than a contact rig.\n\nThe bottom line: choose **contact for the field** — portable, fast, single-sided — and **immersion for the shop floor**, where constant coupling, angle steering, focusing, and full C-scan imaging make high-volume, repeatable inspection possible."
+  }
+ ],
+ "figures": [
+  {
+   "id": "ut1-5-2-fig-a",
+   "title": "Immersion tank setup with water path",
+   "file": "ut1-5-2-fig-a.svg"
+  },
+  {
+   "id": "ut1-5-2-fig-b",
+   "title": "Water-path echo timing and the second front-surface multiple",
+   "file": "ut1-5-2-fig-b.svg"
+  }
+ ],
+ "interactive": {
+  "type": "scenario",
+  "title": "Set the Standoff: Immersion of a 25 mm Steel Forging",
+  "intro": "You are setting up a flat immersion examination of a 25 mm thick steel part in a tank. Work out the water path so the back-wall echo is not lost behind a water multiple — the same reasoning a Level II expects before the scan begins.",
+  "steps": [
+   {
+    "prompt": "First, the velocity ratio. Steel is about 5,920 m/s and water about 1,480 m/s. How many times faster is sound in steel than in water?",
+    "options": ["About 2 times", "About 4 times", "About 10 times"],
+    "correct": 1,
+    "feedback": "5,920 ÷ 1,480 ≈ 4. A given thickness of steel is crossed in the same time as only about a quarter of that thickness of water — the basis of the whole water-path rule."
+   },
+   {
+    "prompt": "Using the rule water path ≥ thickness × (v_water ÷ v_part) — thickness ÷ 4 for steel — what is the minimum water path for the 25 mm part before any margin?",
+    "options": ["About 6 mm", "About 25 mm", "About 100 mm"],
+    "correct": 0,
+    "feedback": "25 mm ÷ 4 ≈ 6 mm. Below this the second front-surface multiple overlaps the first back-wall echo and hides it. (Multiplying by 4 — 100 mm — is the classic inversion of the rule.)"
+   },
+   {
+    "prompt": "Why do we add a margin (commonly about 6 mm) on top of that minimum?",
+    "options": [
+     "To keep the second front-surface multiple clearly separated from the first back-wall echo on the screen",
+     "To increase the frequency of the probe",
+     "To make the water warmer and reduce attenuation"
+    ],
+    "correct": 0,
+    "feedback": "The margin keeps the echoes from sitting right on the edge of overlap, so the back-wall echo reads cleanly. About 6 mm (¼ in.) is common, giving a standoff of roughly 12 mm here."
+   },
+   {
+    "prompt": "You switch to a focused probe with its focal point set in water. When the beam enters the steel, the focal depth in the metal will be:",
+    "options": [
+     "Deeper than it was in water",
+     "Shorter (shallower) than in water, by roughly the velocity ratio",
+     "Exactly the same as in water"
+    ],
+    "correct": 1,
+    "feedback": "Refraction at the water-to-steel interface shortens the focal length by roughly the velocity ratio, so the focus lands much shallower in the metal than it was in water. You choose the standoff to put the focus at the depth of interest."
+   },
+   {
+    "prompt": "During setup the front-surface echo flickers and the back-wall echo keeps dropping out at certain spots. The most likely cause is:",
+    "options": [
+     "Air bubbles clinging to the part surface or the probe face",
+     "The water path is far longer than the quarter-thickness minimum",
+     "The C-scan resolution is set too high"
+    ],
+    "correct": 0,
+    "feedback": "Trapped air bubbles scatter the beam and break coupling at the surface; wetting and wiping the part and clearing the probe face fix it. Constant coupling is exactly what immersion is supposed to deliver."
+   }
+  ]
+ },
+ "checkQuestions": [
+  {
+   "question": "In immersion testing, what serves as the couplant between the transducer and the part?",
+   "options": [
+    "A thin glycerin gel film",
+    "The water path the sound travels through",
+    "A solid acrylic delay line",
+    "High-temperature paste"
+   ],
+   "correct": 1,
+   "explanation": "In immersion the probe never touches the part; the water path itself couples the sound into the metal, which is why the coupling stays constant as the probe scans."
+  },
+  {
+   "question": "The principal advantage that makes immersion testing suited to automated production scanning is:",
+   "options": [
+    "It requires no instrument calibration",
+    "Constant, repeatable coupling at every scan position because the probe never contacts the part",
+    "It works without any couplant at all",
+    "It eliminates the need to know the part thickness"
+   ],
+   "correct": 1,
+   "explanation": "The fixed water path keeps coupling identical everywhere, so amplitudes are repeatable and can be compared to tight acceptance limits — ideal for mechanized C-scan inspection."
+  },
+  {
+   "question": "A 50 mm thick steel part is to be inspected by flat immersion. Given the 4:1 steel-to-water velocity ratio, the minimum water path (before margin) is approximately:",
+   "options": ["50 mm", "100 mm", "200 mm", "12.5 mm"],
+   "correct": 3,
+   "explanation": "Water path ≥ T × (v_water/v_steel) = 50 ÷ 4 = 12.5 mm. A margin of about 6 mm is then added so the back-wall echo clears the water multiple. (200 mm — multiplying by 4 — is the inverted rule.)"
+  },
+  {
+   "question": "If the water path is set too short during an immersion examination, the likely consequence is:",
+   "options": [
+    "The front-surface echo disappears entirely",
+    "The second front-surface multiple overlaps and hides the first back-wall echo",
+    "The probe frequency doubles",
+    "The part floats out of the beam"
+   ],
+   "correct": 1,
+   "explanation": "Reverberations in the water column produce a second front-surface echo at twice the water time; with too short a path it lands on the first back-wall echo and masks it. The quarter-thickness-plus-margin rule prevents this."
+  },
+  {
+   "question": "Which display is a top-down plan-view map of indications across a part, characteristic of immersion scanning?",
+   "options": [
+    "A-scan",
+    "B-scan",
+    "C-scan",
+    "RF display"
+   ],
+   "correct": 2,
+   "explanation": "A C-scan is the plan-view (top-down) image showing where flaws lie across the part's footprint; a B-scan is a cross-section, and an A-scan is a single-point waveform."
+  }
+ ],
+ "references": [
+  "ANSI/ASNT CP-105-2024, Basic UT Course §4.2 (Immersion)",
+  "Velocities: steel ≈ 5,920 m/s, water ≈ 1,480 m/s (ratio ≈ 4:1)",
+  "Water-path rule: path ≥ T × (v_water/v_part) ≈ T/4 for steel, plus a margin (commonly ≈ 6 mm / ¼ in.)",
+  "General practice: immersion C-scan/B-scan imaging and focused-probe scanning of forgings, billets, and plate"
+ ]
+}
