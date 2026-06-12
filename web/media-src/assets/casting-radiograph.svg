@@ -1,0 +1,183 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="craGlowC" filterUnits="userSpaceOnUse" x="-58" y="-58" width="116" height="456">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="craGlowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="craSoft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+    </filter>
+    <linearGradient id="craIllumG" x1="0" y1="22" x2="0" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9fd0f2"/><stop offset=".5" stop-color="#5b97d4"/><stop offset="1" stop-color="#3a72ad"/>
+    </linearGradient>
+    <linearGradient id="craBandG" x1="230" y1="0" x2="400" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9fd4ff" stop-opacity="0"/><stop offset=".3" stop-color="#9fd4ff" stop-opacity=".07"/>
+      <stop offset=".7" stop-color="#9fd4ff" stop-opacity=".07"/><stop offset="1" stop-color="#9fd4ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="craFilmG" x1="0" y1="36" x2="0" y2="292" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#152c4e"/><stop offset=".5" stop-color="#10233f"/><stop offset="1" stop-color="#0c1c36"/>
+    </linearGradient>
+    <radialGradient id="craVigG" cx="300" cy="160" r="330" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9fd4ff" stop-opacity=".05"/>
+      <stop offset=".6" stop-color="#9fd4ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#010815" stop-opacity=".4"/>
+    </radialGradient>
+    <radialGradient id="craPoreG">
+      <stop offset="0" stop-color="#020a18"/><stop offset=".62" stop-color="#04101f"/><stop offset="1" stop-color="#04101f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="craShrinkG">
+      <stop offset="0" stop-color="#020a16"/><stop offset=".68" stop-color="#04101f" stop-opacity=".9"/><stop offset="1" stop-color="#04101f" stop-opacity=".25"/>
+    </radialGradient>
+    <radialGradient id="craInclG">
+      <stop offset="0" stop-color="#e8f6ff" stop-opacity=".95"/><stop offset=".55" stop-color="#aed2f4" stop-opacity=".8"/><stop offset=".85" stop-color="#7fa8d0" stop-opacity=".4"/><stop offset="1" stop-color="#7fa8d0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="craScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+    <clipPath id="craFilmClip"><rect x="60" y="36" width="480" height="256" rx="10"/></clipPath>
+  </defs>
+
+  <!-- ===== ILLUMINATOR (light box) ===== -->
+  <rect x="42" y="18" width="516" height="286" rx="18" fill="#6fb2e8" opacity=".25" filter="url(#craSoft)"/>
+  <rect x="46" y="22" width="508" height="278" rx="16" fill="url(#craIllumG)" opacity=".55"/>
+  <rect x="46" y="22" width="508" height="278" rx="16" fill="none" stroke="#dff2ff" stroke-width="1" opacity=".25"/>
+
+  <!-- ===== FILM (clipped over the glowing illuminator) ===== -->
+  <rect x="60" y="36" width="480" height="256" rx="10" fill="url(#craFilmG)"/>
+  <g clip-path="url(#craFilmClip)">
+    <!-- thicker casting section prints lighter (soft-edged band) -->
+    <rect x="230" y="36" width="170" height="256" fill="url(#craBandG)"/>
+    <!-- faint scan-line texture -->
+    <g stroke="#bfe2ff" stroke-width="1" opacity=".05">
+      <line x1="60" y1="48" x2="540" y2="48"/><line x1="60" y1="62" x2="540" y2="62"/>
+      <line x1="60" y1="76" x2="540" y2="76"/><line x1="60" y1="90" x2="540" y2="90"/>
+      <line x1="60" y1="104" x2="540" y2="104"/><line x1="60" y1="118" x2="540" y2="118"/>
+      <line x1="60" y1="132" x2="540" y2="132"/><line x1="60" y1="146" x2="540" y2="146"/>
+      <line x1="60" y1="160" x2="540" y2="160"/><line x1="60" y1="174" x2="540" y2="174"/>
+      <line x1="60" y1="188" x2="540" y2="188"/><line x1="60" y1="202" x2="540" y2="202"/>
+      <line x1="60" y1="216" x2="540" y2="216"/><line x1="60" y1="230" x2="540" y2="230"/>
+      <line x1="60" y1="244" x2="540" y2="244"/><line x1="60" y1="258" x2="540" y2="258"/>
+      <line x1="60" y1="272" x2="540" y2="272"/><line x1="60" y1="286" x2="540" y2="286"/>
+    </g>
+    <rect x="60" y="36" width="480" height="256" fill="url(#craVigG)"/>
+
+    <!-- GAS POROSITY: cluster of small round smooth dark spots (upper-left) -->
+    <g id="craPoreCl">
+      <circle cx="148" cy="88" r="4.5" fill="url(#craPoreG)"/>
+      <circle cx="163" cy="96" r="6" fill="url(#craPoreG)"/>
+      <circle cx="175" cy="108" r="7.5" fill="url(#craPoreG)"/>
+      <circle cx="152" cy="108" r="3.5" fill="url(#craPoreG)"/>
+      <circle cx="168" cy="82" r="3" fill="url(#craPoreG)"/>
+      <circle cx="186" cy="93" r="4.2" fill="url(#craPoreG)"/>
+      <circle cx="158" cy="119" r="3" fill="url(#craPoreG)"/>
+      <circle cx="184" cy="119" r="2.6" fill="url(#craPoreG)"/>
+    </g>
+
+    <!-- SHRINKAGE: irregular ragged-edged dark patch (center) -->
+    <g id="craShrinkPatch">
+      <path d="M247 186 Q252 176 250 168 L262 172 L266 157 Q274 160 280 166 L288 152 L294 164 Q303 156 311 161 L315 150 L322 163 Q333 160 340 167 L352 164 L347 177 Q357 182 358 190 L348 195 L355 207 Q346 207 340 204 L342 218 L330 210 Q324 218 317 215 L312 222 L305 212 Q297 218 291 212 L282 217 L280 205 Q271 209 265 204 L256 207 L259 195 L246 194 Z" fill="url(#craShrinkG)"/>
+      <g stroke="#04101f" fill="none" stroke-linecap="round">
+        <path d="M352 164 L371 153 M358 190 L379 197" stroke-width="1.8" opacity=".6"/>
+        <path d="M256 207 L238 218 M266 157 L258 142 M330 210 L339 226 M247 186 L232 182" stroke-width="1.2" opacity=".55"/>
+      </g>
+      <circle cx="368" cy="176" r="2" fill="#04101f" opacity=".6"/>
+      <circle cx="374" cy="186" r="1.5" fill="#04101f" opacity=".55"/>
+      <ellipse cx="290" cy="180" rx="9" ry="6" fill="#020a16" opacity=".55"/>
+      <ellipse cx="318" cy="192" rx="7" ry="5" fill="#020a16" opacity=".5"/>
+      <ellipse cx="306" cy="170" rx="6" ry="4" fill="#020a16" opacity=".45"/>
+      <circle cx="300" cy="192" r="4" fill="#10233f" opacity=".5"/>
+      <circle cx="284" cy="168" r="3" fill="#10233f" opacity=".45"/>
+      <circle cx="324" cy="177" r="3.5" fill="#10233f" opacity=".45"/>
+      <circle cx="270" cy="190" r="2.5" fill="#10233f" opacity=".4"/>
+    </g>
+
+    <!-- CRACK: fine straight sharp-edged dark hairline (lower-right) -->
+    <g id="craCrackLine">
+      <path d="M392 262 L414 257 L433 252.5 L451 247 L470 243 L492 238" fill="none" stroke="#01060f" stroke-width="2" stroke-linecap="round"/>
+      <path d="M433 252.5 L439 258 M470 243 L474 237" fill="none" stroke="#01060f" stroke-width="1.2" stroke-linecap="round" opacity=".85"/>
+    </g>
+
+    <!-- HIGH-DENSITY INCLUSION: distinctly LIGHT spot (mid-right) -->
+    <g id="craInclSpot">
+      <circle cx="455" cy="120" r="7" fill="url(#craInclG)"/>
+      <circle cx="455" cy="120" r="2.5" fill="#eef8ff" opacity=".85"/>
+    </g>
+
+    <!-- film ID (lead characters print light) -->
+    <text x="532" y="56" text-anchor="end" font-size="11" fill="#cfe9ff" opacity=".55" letter-spacing="1">FILM 7A-114 · HEAT 41</text>
+
+    <!-- hole-type IQI plaque (prints lighter, holes darker) -->
+    <g id="craIqi">
+      <rect x="96" y="246" width="52" height="16" rx="2" fill="#9cc4ec" opacity=".3"/>
+      <rect x="96" y="246" width="52" height="16" rx="2" fill="none" stroke="#cfe9ff" stroke-width="1" opacity=".45"/>
+      <circle cx="108" cy="254" r="1.6" fill="#08152b" opacity=".9"/>
+      <circle cx="122" cy="254" r="2.6" fill="#08152b" opacity=".9"/>
+      <circle cx="139" cy="254" r="4" fill="#08152b" opacity=".9"/>
+    </g>
+  </g>
+
+  <!-- film rim light -->
+  <rect x="60" y="36" width="480" height="256" rx="10" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".55" filter="url(#craGlowR)"/>
+
+  <!-- steel film clips -->
+  <g id="craClips">
+    <rect x="146" y="22" width="30" height="24" rx="3" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <line x1="152" y1="34" x2="170" y2="34" stroke="#8fb6e0" stroke-width="1" opacity=".6"/>
+    <rect x="408" y="22" width="30" height="24" rx="3" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <line x1="414" y1="34" x2="432" y2="34" stroke="#8fb6e0" stroke-width="1" opacity=".6"/>
+  </g>
+
+  <!-- ===== REVEAL 1: VOID -> DARKER ===== -->
+  <g id="craDarker" opacity="0">
+    <circle cx="175" cy="108" r="7.5" fill="#5fe0ff" opacity=".28"/>
+    <circle cx="175" cy="108" r="12" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".9" filter="url(#craGlowR)"/>
+    <path d="M140 188 L169 125" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".85"/>
+    <path d="M173 116 L174.5 126.5 L167 123.4 Z" fill="#5fe0ff"/>
+    <rect x="92" y="190" width="102" height="20" rx="4" fill="#0e2848" opacity=".85"/>
+    <rect x="92" y="190" width="102" height="20" rx="4" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".8"/>
+    <text x="143" y="204" text-anchor="middle" font-size="11" fill="#9fe6ff">VOID → DARKER</text>
+  </g>
+  <circle id="craPingD" cx="175" cy="108" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#craGlowR)"/>
+
+  <!-- ===== REVEAL 2: DENSE -> LIGHTER ===== -->
+  <g id="craLighter" opacity="0">
+    <path d="M468 96 L459.5 106.5" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".85"/>
+    <path d="M456 112 L463.5 108.8 L458.3 104.4 Z" fill="#5fe0ff"/>
+    <rect x="411" y="76" width="114" height="20" rx="4" fill="#0e2848" opacity=".85"/>
+    <rect x="411" y="76" width="114" height="20" rx="4" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".8"/>
+    <text x="468" y="90" text-anchor="middle" font-size="11" fill="#9fe6ff">DENSE → LIGHTER</text>
+  </g>
+  <circle id="craPingL" cx="455" cy="120" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#craGlowR)"/>
+
+  <!-- ===== REVEAL 3: POROSITY - ROUND ===== -->
+  <g id="craPorosity" opacity="0">
+    <ellipse cx="166" cy="101" rx="44" ry="36" fill="none" stroke="#ffc24b" stroke-width="1.5" stroke-dasharray="5 4" opacity=".9"/>
+    <text x="166" y="57" text-anchor="middle" font-size="11" fill="#ffc24b" opacity=".95">POROSITY · ROUND</text>
+  </g>
+
+  <!-- ===== REVEAL 4: SHRINKAGE - IRREGULAR ===== -->
+  <g id="craShrink" opacity="0">
+    <ellipse cx="302" cy="186" rx="66" ry="40" fill="none" stroke="#ff9b4b" stroke-width="1.5" stroke-dasharray="5 4" opacity=".9"/>
+    <text x="302" y="246" text-anchor="middle" font-size="11" fill="#ff9b4b" opacity=".95">SHRINKAGE · IRREGULAR</text>
+  </g>
+
+  <!-- ===== REVEAL 5: CRACK - SHARP ===== -->
+  <g id="craCrack" opacity="0">
+    <ellipse cx="442" cy="250" rx="62" ry="14" fill="none" stroke="#ff6b6b" stroke-width="1.5" stroke-dasharray="5 4" opacity=".9" transform="rotate(-13.5 442 250)"/>
+    <text x="442" y="222" text-anchor="middle" font-size="11" fill="#ff6b6b" opacity=".95">CRACK · SHARP</text>
+  </g>
+
+  <!-- caption -->
+  <text x="46" y="330" font-size="11.5" fill="#9fe6ff" opacity=".7">CASTING RADIOGRAPH — FILM ON ILLUMINATOR</text>
+
+  <!-- ===== scan group ===== -->
+  <g id="crascanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#craScanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#craGlowC)" opacity=".9"/>
+  </g>
+</svg>

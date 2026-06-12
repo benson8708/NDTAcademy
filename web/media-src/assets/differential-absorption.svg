@@ -1,0 +1,184 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="daGlow" filterUnits="userSpaceOnUse" x="-40" y="-40" width="680" height="420">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="daGlowS" filterUnits="userSpaceOnUse" x="-40" y="-40" width="680" height="420">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="daSteelG" x1="0" y1="150" x2="0" y2="214" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3a6da0"/><stop offset=".38" stop-color="#214a78"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="daCrownG" x1="0" y1="134" x2="0" y2="151" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4fa6ff"/><stop offset="1" stop-color="#1f63d6"/>
+    </linearGradient>
+    <linearGradient id="daConeG" x1="0" y1="48" x2="0" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".30"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".05"/>
+    </linearGradient>
+    <linearGradient id="daInG" x1="0" y1="152" x2="0" y2="208" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7fd8ff" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#7fd8ff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="daSpotG" cx="224" cy="266" r="18" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#020710" stop-opacity=".97"/>
+      <stop offset=".6" stop-color="#020710" stop-opacity=".88"/>
+      <stop offset="1" stop-color="#020710" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="daBandG" x1="352" y1="0" x2="444" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d8eafc" stop-opacity="0"/>
+      <stop offset=".15" stop-color="#d8eafc" stop-opacity=".78"/>
+      <stop offset=".85" stop-color="#d8eafc" stop-opacity=".78"/>
+      <stop offset="1" stop-color="#d8eafc" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="daFilmG" x1="0" y1="252" x2="0" y2="282" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4d6781"/><stop offset="1" stop-color="#3a516a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== always-visible scaffold (default state) ===== -->
+  <g stroke="#8fb6e0" stroke-width="1.5" fill="none" opacity=".4">
+    <path d="M16 28 V16 H28"/><path d="M572 16 H584 V28"/>
+    <path d="M584 312 V324 H572"/><path d="M28 324 H16 V312"/>
+  </g>
+  <text x="560" y="28" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".6">DIFFERENTIAL ABSORPTION</text>
+  <g fill="none" stroke="#8fb6e0" stroke-dasharray="5 5" stroke-width="1">
+    <circle cx="300" cy="27" r="13" opacity=".2"/>
+    <rect x="88" y="150" width="424" height="64" opacity=".26"/>
+    <rect x="116" y="248" width="368" height="38" opacity=".22"/>
+    <path d="M352 150 C374 132 422 132 444 150" opacity=".2"/>
+    <circle cx="224" cy="180" r="5.5" opacity=".2"/>
+  </g>
+  <path d="M300 62 V244" stroke="#7fd8ff" stroke-width="1" stroke-dasharray="2 7" opacity=".18" fill="none"/>
+  <g font-size="12" fill="#9fe6ff" opacity=".22">
+    <text x="326" y="30">SOURCE</text>
+    <text x="100" y="173">STEEL</text>
+    <text x="108" y="271" text-anchor="end">FILM</text>
+  </g>
+
+  <!-- ===== FILM strip + density map (reveal) ===== -->
+  <g id="daFilm" opacity="0">
+    <rect x="116" y="248" width="368" height="38" rx="3" fill="#0a1830" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="122" y="252" width="356" height="30" fill="url(#daFilmG)"/>
+    <rect x="352" y="252" width="92" height="30" fill="url(#daBandG)"/>
+    <text x="108" y="271" text-anchor="end" font-size="12" fill="#9fe6ff" opacity=".9">FILM</text>
+    <text x="398" y="304" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".75">LIGHT = MORE STEEL</text>
+    <path d="M398 286 V292" stroke="#5fe0ff" stroke-width="1" opacity=".45" fill="none"/>
+  </g>
+
+  <!-- ===== source + beam cone (reveal) ===== -->
+  <g id="daSource" opacity="0">
+    <polygon points="300,48 124,150 474,150" fill="url(#daConeG)" opacity=".9">
+      <animate attributeName="opacity" values=".75;1;.75" dur="3.4s" repeatCount="indefinite"/>
+    </polygon>
+    <path d="M300 48 L124 150 M300 48 L474 150" stroke="#5fe0ff" stroke-width="1" opacity=".35" fill="none"/>
+    <rect x="283" y="16" width="34" height="20" rx="3" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M292 36 H308 L313 46 H287 Z" fill="#0e2848" stroke="#8fb6e0" stroke-width="1" opacity=".95"/>
+    <circle cx="300" cy="47.5" r="3.2" fill="#5fe0ff" filter="url(#daGlowS)">
+      <animate attributeName="opacity" values=".85;1;.85" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <text x="326" y="30" font-size="12" fill="#9fe6ff" opacity=".9">SOURCE</text>
+  </g>
+
+  <!-- ===== steel plate w/ gas pore + weld crown (reveal) ===== -->
+  <g id="daPart" opacity="0">
+    <rect x="88" y="150" width="424" height="64" fill="url(#daSteelG)"/>
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".18">
+      <line x1="92" y1="166" x2="508" y2="166"/>
+      <line x1="92" y1="186" x2="508" y2="186"/>
+      <line x1="92" y1="202" x2="508" y2="202"/>
+    </g>
+    <!-- faint weld V under the crown -->
+    <path d="M368 150 L388 214 L408 214 L428 150 Z" fill="#2f7ef2" opacity=".25"/>
+    <path d="M368 150 L388 214 M428 150 L408 214" stroke="#7fd8ff" stroke-width="1" stroke-dasharray="3 3" opacity=".25" fill="none"/>
+    <!-- root bead -->
+    <path d="M386 214 Q398 221.5 410 214 Z" fill="#2f7ef2" opacity=".8"/>
+    <path d="M386 214 Q398 221.5 410 214" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".6"/>
+    <!-- weld reinforcement crown (extra thickness) -->
+    <path d="M352 150 C374 132 422 132 444 150 Z" fill="url(#daCrownG)"/>
+    <g fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".5">
+      <path d="M362 147 Q398 134 434 147"/>
+      <path d="M375 145.5 Q398 139 421 145.5"/>
+    </g>
+    <path d="M352 150 C374 132 422 132 444 150" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#daGlow)" opacity=".85"/>
+    <!-- plate edges -->
+    <g stroke="#8fb6e0" stroke-width="2" fill="none">
+      <path d="M88 150 H352"/><path d="M444 150 H512"/><path d="M88 214 H512"/>
+    </g>
+    <g stroke="#8fb6e0" stroke-width="1.5" opacity=".5" fill="none">
+      <path d="M88 150 V214"/><path d="M512 150 V214"/>
+    </g>
+    <!-- internal gas pore -->
+    <circle cx="224" cy="180" r="5.5" fill="#060d1c" stroke="#9fd0ff" stroke-width="1.4"/>
+    <text x="100" y="173" font-size="12" fill="#9fe6ff" opacity=".9">STEEL</text>
+    <path d="M446 136 L470 126" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="474" y="129" font-size="12" fill="#9fe6ff" opacity=".9">WELD CROWN</text>
+  </g>
+
+  <!-- ===== transmitted intensity: in-slab attenuation + thickness-coded arrows (reveal) ===== -->
+  <g id="daRays" opacity="0">
+    <g stroke="url(#daInG)" stroke-width="1">
+      <line x1="124" y1="152" x2="124" y2="206"/>
+      <line x1="174" y1="152" x2="174" y2="206"/>
+      <line x1="274" y1="152" x2="274" y2="206"/>
+      <line x1="324" y1="152" x2="324" y2="206"/>
+      <line x1="374" y1="142" x2="374" y2="200"/>
+      <line x1="424" y1="142" x2="424" y2="200"/>
+      <line x1="474" y1="152" x2="474" y2="206"/>
+    </g>
+    <!-- medium: through plain plate -->
+    <g stroke="#7fd8ff" stroke-width="1.8" opacity=".65" fill="none">
+      <line x1="124" y1="219" x2="124" y2="237.5"/>
+      <line x1="174" y1="219" x2="174" y2="237.5"/>
+      <line x1="274" y1="219" x2="274" y2="237.5"/>
+      <line x1="324" y1="219" x2="324" y2="237.5"/>
+      <line x1="474" y1="219" x2="474" y2="237.5"/>
+    </g>
+    <g fill="#7fd8ff" opacity=".65">
+      <path d="M124 245.5 L119.5 237.5 L128.5 237.5 Z"/><path d="M174 245.5 L169.5 237.5 L178.5 237.5 Z"/>
+      <path d="M274 245.5 L269.5 237.5 L278.5 237.5 Z"/><path d="M324 245.5 L319.5 237.5 L328.5 237.5 Z"/>
+      <path d="M474 245.5 L469.5 237.5 L478.5 237.5 Z"/>
+    </g>
+    <!-- thin: through crown (more absorption) -->
+    <g stroke="#7fd8ff" stroke-width="1" opacity=".35" fill="none">
+      <line x1="374" y1="219" x2="374" y2="239.5"/>
+      <line x1="424" y1="219" x2="424" y2="239.5"/>
+    </g>
+    <g fill="#7fd8ff" opacity=".35">
+      <path d="M374 244.5 L370.8 239.5 L377.2 239.5 Z"/><path d="M424 244.5 L420.8 239.5 L427.2 239.5 Z"/>
+    </g>
+    <!-- strong: through the void (less absorption) -->
+    <g filter="url(#daGlowS)">
+      <line x1="224" y1="219" x2="224" y2="236.5" stroke="#5fe0ff" stroke-width="3.2" fill="none">
+        <animate attributeName="opacity" values=".8;1;.8" dur="2.2s" repeatCount="indefinite"/>
+      </line>
+      <path d="M224 246 L218.2 236.5 L229.8 236.5 Z" fill="#5fe0ff"/>
+    </g>
+  </g>
+
+  <!-- ===== incident ray fan (draw-on) ===== -->
+  <path id="daBeam" d="M300 48 L124 150 M300 48 L174 150 M300 48 L224 150 M300 48 L274 150 M300 48 L324 150 M300 48 L374 140 M300 48 L424 140 M300 48 L474 150" fill="none" stroke="#9fe0ff" stroke-width="1.4" stroke-linecap="round" opacity=".8" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== void highlight + brighter through-ray (reveal) ===== -->
+  <g id="daVoid" opacity="0">
+    <g stroke="#5fe0ff" stroke-width="2.6" stroke-linecap="round" filter="url(#daGlowS)">
+      <line x1="224" y1="150" x2="224" y2="172.5"/>
+      <line x1="224" y1="187.5" x2="224" y2="217"/>
+    </g>
+    <circle cx="224" cy="180" r="11" fill="none" stroke="#ffc24b" stroke-width="1.2" stroke-dasharray="4 3" opacity=".85"/>
+    <path d="M216 172 L172 140" stroke="#ffc24b" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="168" y="137" text-anchor="end" font-size="12" fill="#ffc24b" opacity=".9">GAS PORE</text>
+  </g>
+  <circle id="daVoidPing" cx="224" cy="180" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#daGlowS)"/>
+
+  <!-- ===== dark spot on film (reveal) ===== -->
+  <g id="daSpot" opacity="0">
+    <ellipse cx="224" cy="266" rx="15" ry="11" fill="url(#daSpotG)"/>
+    <ellipse cx="224" cy="266" rx="8.5" ry="6" fill="#020710"/>
+    <text x="224" y="304" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".75">DARK = VOID</text>
+    <path d="M224 280 V292" stroke="#5fe0ff" stroke-width="1" opacity=".45" fill="none"/>
+  </g>
+  <circle id="daSpotPing" cx="224" cy="266" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#daGlowS)"/>
+</svg>

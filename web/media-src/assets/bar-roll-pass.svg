@@ -1,0 +1,149 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="brpglowC" filterUnits="userSpaceOnUse" x="-58" y="-58" width="116" height="456">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="brpglowR" filterUnits="userSpaceOnUse" x="27" y="21" width="361" height="349">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <!-- userSpace filter region: safe for zero-height horizontal lines in the bar -->
+    <filter id="brpglowL" filterUnits="userSpaceOnUse" x="296" y="162" width="276" height="68">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="brpsteel" x1="0" y1="148" x2="0" y2="244" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a5680"/><stop offset=".24" stop-color="#3d72a0"/>
+      <stop offset=".58" stop-color="#16365c"/><stop offset="1" stop-color="#0a2038"/>
+    </linearGradient>
+    <radialGradient id="brproll" cx=".38" cy=".32" r=".85">
+      <stop offset="0" stop-color="#4a7eb2"/><stop offset=".5" stop-color="#1c4068"/><stop offset="1" stop-color="#0b2240"/>
+    </radialGradient>
+    <radialGradient id="brpbarx" cx=".36" cy=".3" r=".9">
+      <stop offset="0" stop-color="#5b8fc4"/><stop offset=".55" stop-color="#1c4068"/><stop offset="1" stop-color="#0b2240"/>
+    </radialGradient>
+    <radialGradient id="brpbillx" cx=".42" cy=".3" r=".95">
+      <stop offset="0" stop-color="#447aab"/><stop offset=".5" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2543"/>
+    </radialGradient>
+    <radialGradient id="brpheat" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ff9b4b" stop-opacity=".42"/><stop offset="1" stop-color="#ff9b4b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="brpscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== AXIS centerline (reveal, under the flaw exhibits) ===== -->
+  <g id="brpAxis" opacity="0">
+    <path d="M30 196 L580 196" fill="none" stroke="#9fe6ff" stroke-width="1.1" stroke-dasharray="16 5 3 5" opacity=".8"/>
+    <text x="556" y="168" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".95">PARALLEL TO THE AXIS</text>
+    <path d="M538 171 L531 194" stroke="#5fe0ff" stroke-width="1" opacity=".55" fill="none"/>
+  </g>
+
+  <!-- ===== STOCK: stocky billet -> bite -> slim round bar (longitudinal cutaway) ===== -->
+  <path d="M56 148 L256.4 148 A60 60 0 0 0 310 181 L552 181 A7 15 0 0 1 552 211 L310 211 A60 60 0 0 0 256.4 244 L56 244 A9 48 0 0 1 56 148 Z" fill="url(#brpsteel)"/>
+  <!-- hot deformation glow at the bite -->
+  <ellipse cx="306" cy="196" rx="48" ry="38" fill="url(#brpheat)" opacity=".9"/>
+  <!-- cylinder shading: highlight + core shadow per part -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M64 165 L256 165" stroke="#7fb3e2" stroke-width="6" opacity=".2"/>
+    <path d="M64 230 L256 230" stroke="#08152b" stroke-width="7" opacity=".22"/>
+    <path d="M312 187.5 L540 187.5" stroke="#7fb3e2" stroke-width="3.5" opacity=".22"/>
+    <path d="M318 206.5 L540 206.5" stroke="#08152b" stroke-width="4" opacity=".2"/>
+    <path d="M64 156 L246 156" stroke="#8fb6e0" stroke-width="1" opacity=".14"/>
+    <path d="M64 238.5 L246 238.5" stroke="#8fb6e0" stroke-width="1" opacity=".1"/>
+  </g>
+  <!-- end faces: billet cut face (left), bar cut face (right) — solid discs -->
+  <ellipse cx="56" cy="196" rx="9" ry="48" fill="url(#brpbillx)" stroke="#8fb6e0" stroke-width="1.5" opacity=".95"/>
+  <circle cx="56" cy="196" r="1.6" fill="#5fe0ff" opacity=".8"/>
+  <ellipse cx="552" cy="196" rx="7" ry="15" fill="url(#brpbarx)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <circle cx="552" cy="196" r="1.4" fill="#5fe0ff" opacity=".9"/>
+  <!-- bright edges -->
+  <g stroke="#8fb6e0" fill="none">
+    <path d="M56 148 L256.4 148" stroke-width="2"/>
+    <path d="M310 181 L546 181" stroke-width="2"/>
+    <path d="M310 211 L546 211" stroke-width="2"/>
+    <path d="M56 244 L256.4 244" stroke-width="2"/>
+  </g>
+
+  <!-- ===== BILLET INTERNALS (as-cast leftovers, static) ===== -->
+  <!-- V-shaped pipe cavity remnant on the centerline (slim collapsed funnel) -->
+  <path d="M84 189.5 L142 194.8 L142 197.2 L84 202.5 L94 196 Z" fill="#08152b" stroke="#5fe0ff" stroke-width="1.3" stroke-linejoin="round" filter="url(#brpglowR)" opacity=".95"/>
+  <!-- inclusion speck cluster -->
+  <g fill="#ffc24b">
+    <circle cx="146" cy="191" r="2.1"/><circle cx="156" cy="201" r="1.7"/>
+    <circle cx="169" cy="188.5" r="2.3"/><circle cx="181" cy="199" r="1.9"/>
+    <circle cx="193" cy="190.5" r="1.7"/><circle cx="204" cy="201.5" r="2.1"/>
+    <circle cx="212" cy="193" r="1.6"/>
+  </g>
+  <!-- dotted core segregation -->
+  <rect x="220" y="191" width="36" height="10" fill="#5fe0ff" opacity=".08"/>
+  <g stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" stroke-dasharray="1.5 6" opacity=".75" fill="none">
+    <path d="M221 192.5 L256 192.5"/>
+    <path d="M223 199.5 L254 199.5"/>
+  </g>
+
+  <!-- ===== EXITING BAR: flaws stretched into axial lines (reveals) ===== -->
+  <path id="brpLines" d="M316 196 C 360 195.2, 420 196.8, 470 196" fill="none" stroke="#7fd8ff" stroke-width="2.2" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#brpglowL)"/>
+  <path id="brpStr" d="M320 190.2 L450 190.2 M466 190.4 L528 190.4" fill="none" stroke="#ffc24b" stroke-width="1.8" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#brpglowL)"/>
+  <g id="brpCore" opacity="0">
+    <path d="M318 202 L540 202" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-dasharray="1.5 5.5" opacity=".9"/>
+  </g>
+  <g id="brpLineLbl" font-size="11" opacity="0">
+    <text x="384" y="236"><tspan fill="#7fd8ff">PIPE</tspan><tspan fill="#9fe6ff" opacity=".45"> · </tspan><tspan fill="#ffc24b">STRINGERS</tspan><tspan fill="#9fe6ff" opacity=".45"> · </tspan><tspan fill="#5fe0ff">CORE</tspan></text>
+  </g>
+
+  <!-- ===== GROOVED TWO-HIGH ROLLS: body = groove root, translucent collar flange in front ===== -->
+  <g>
+    <circle cx="310" cy="121" r="60" fill="url(#brproll)" stroke="#8fb6e0" stroke-width="2"/>
+    <circle cx="310" cy="271" r="60" fill="url(#brproll)" stroke="#8fb6e0" stroke-width="2"/>
+    <!-- collar flanges (full roll dia beside the groove) pass IN FRONT of the stock -->
+    <path d="M310 53 A68 68 0 1 0 310.01 53 Z M310 61 A60 60 0 1 1 309.99 61 Z" fill="#0f2c4d" fill-rule="evenodd" opacity=".3"/>
+    <circle cx="310" cy="121" r="68" fill="none" stroke="#8fb6e0" stroke-width="1.4" opacity=".75"/>
+    <path d="M310 203 A68 68 0 1 0 310.01 203 Z M310 211 A60 60 0 1 1 309.99 211 Z" fill="#0f2c4d" fill-rule="evenodd" opacity=".3"/>
+    <circle cx="310" cy="271" r="68" fill="none" stroke="#8fb6e0" stroke-width="1.4" opacity=".75"/>
+    <!-- bite contact lines: stock surface wedging down the groove root (luminous) -->
+    <path d="M256.4 148 A60 60 0 0 0 310 181" fill="none" stroke="#aee0ff" stroke-width="2" opacity=".95"/>
+    <path d="M256.4 244 A60 60 0 0 1 310 211" fill="none" stroke="#aee0ff" stroke-width="2" opacity=".95"/>
+    <path d="M256.4 148 A60 60 0 0 0 310 181" fill="none" stroke="#5fe0ff" stroke-width="1.2" filter="url(#brpglowR)" opacity=".8"/>
+    <path d="M256.4 244 A60 60 0 0 1 310 211" fill="none" stroke="#5fe0ff" stroke-width="1.2" filter="url(#brpglowR)" opacity=".8"/>
+    <!-- hubs -->
+    <circle cx="310" cy="121" r="9" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M304.5 121 H315.5 M310 115.5 V126.5" stroke="#8fb6e0" stroke-width="1" opacity=".5"/>
+    <circle cx="310" cy="271" r="9" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M304.5 271 H315.5 M310 265.5 V276.5" stroke="#8fb6e0" stroke-width="1" opacity=".5"/>
+  </g>
+
+  <!-- ===== BITE ACTION: counter-rotation + flow through the pass (reveal) ===== -->
+  <g id="brpBite" opacity="0">
+    <path d="M331 84.6 A42 42 0 0 0 289 84.6" fill="none" stroke="#5fe0ff" stroke-width="2.4" filter="url(#brpglowR)"/>
+    <path d="M282.1 88.6 L291.3 88.5 L286.8 80.7 Z" fill="#5fe0ff"/>
+    <path d="M331 307.4 A42 42 0 0 1 289 307.4" fill="none" stroke="#5fe0ff" stroke-width="2.4" filter="url(#brpglowR)"/>
+    <path d="M282.1 303.4 L291.3 303.5 L286.8 311.3 Z" fill="#5fe0ff"/>
+    <path d="M258 196 L322 196" stroke="#5fe0ff" stroke-width="2.5" filter="url(#brpglowR)" fill="none"/>
+    <path d="M322 190 L335 196 L322 202 Z" fill="#5fe0ff"/>
+  </g>
+
+  <!-- ===== INSET: bite cross-section, grooves form a ROUND pass ===== -->
+  <g>
+    <rect x="464" y="40" width="104" height="102" rx="10" fill="#0c2238" fill-opacity=".92" stroke="#5fe0ff" stroke-width="1.2" stroke-opacity=".6"/>
+    <path d="M474 54 L558 54 L558 83 L532.2 83 A16.5 16.5 0 0 0 499.8 83 L474 83 Z" fill="#1c4068" stroke="#8fb6e0" stroke-width="1.3"/>
+    <path d="M474 89 L499.8 89 A16.5 16.5 0 0 0 532.2 89 L558 89 L558 118 L474 118 Z" fill="#1c4068" stroke="#8fb6e0" stroke-width="1.3"/>
+    <circle cx="516" cy="86" r="14.5" fill="url(#brpbarx)" stroke="#8fb6e0" stroke-width="1.3"/>
+    <circle cx="516" cy="86" r="1.3" fill="#5fe0ff"/>
+    <text x="516" y="134" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".85">ROUND PASS</text>
+  </g>
+
+  <!-- ===== labels ===== -->
+  <text x="28" y="30" font-size="11" fill="#9fe6ff" opacity=".6">GROOVED ROLL PASS — LONGITUDINAL SECTION</text>
+  <text x="64" y="138" font-size="11" fill="#9fe6ff" opacity=".85">BILLET</text>
+  <text x="368" y="173" font-size="11" fill="#9fe6ff" opacity=".85">BAR</text>
+
+  <!-- ===== scan group ===== -->
+  <g id="brpscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#brpscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#brpglowC)" opacity=".9"/>
+  </g>
+</svg>

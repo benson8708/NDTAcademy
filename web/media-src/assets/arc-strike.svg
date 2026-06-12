@@ -1,0 +1,153 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="arsglowC" filterUnits="userSpaceOnUse" x="-59" y="-59" width="448" height="458">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="arsglowR" filterUnits="userSpaceOnUse" x="-33" y="-100" width="477" height="402">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="arssteel" x1="0" y1="232" x2="0" y2="298" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#26496f"/><stop offset=".25" stop-color="#143257"/><stop offset="1" stop-color="#091d36"/>
+    </linearGradient>
+    <linearGradient id="arsgrip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2c557f"/><stop offset=".45" stop-color="#14304f"/><stop offset="1" stop-color="#0a1f3a"/>
+    </linearGradient>
+    <radialGradient id="arsflash">
+      <stop offset="0" stop-color="#eaffff" stop-opacity=".95"/>
+      <stop offset=".42" stop-color="#7fd8ff" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="arsscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== STEEL PLATE (side view, lower third; left part edge visible, runs off right) ===== -->
+  <path d="M48 232 H600 V298 H48 Z" fill="url(#arssteel)"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".18">
+    <line x1="54" y1="246" x2="596" y2="246"/>
+    <line x1="54" y1="260" x2="596" y2="260"/>
+    <line x1="54" y1="274" x2="596" y2="274"/>
+    <line x1="54" y1="287" x2="596" y2="287"/>
+  </g>
+  <rect x="48" y="232" width="10" height="66" fill="#08152b" opacity=".35"/>
+  <path d="M48 232 H600" stroke="#8fb6e0" stroke-width="2" fill="none"/>
+  <path d="M48 298 H600" stroke="#8fb6e0" stroke-width="1.5" opacity=".55" fill="none"/>
+  <path d="M48 232 V298" stroke="#8fb6e0" stroke-width="2" opacity=".9" fill="none"/>
+
+  <!-- ===== ARC STRIKE scar: fused crater + radiating micro-cracks (reveal 5.9s) ===== -->
+  <g id="arsStrike" opacity="0">
+    <ellipse cx="271" cy="235.5" rx="21" ry="7.5" fill="#ff9b4b" opacity=".13"/>
+    <path d="M258 231.2 L284 231.2 L284 232.8 Q278.5 241.2 271 241.6 Q263.5 241.9 258 232.8 Z" fill="#08152b"/>
+    <path d="M256.5 231.4 Q258.5 229.6 261 230.6 M281 230.6 Q283.5 229.4 285.5 231.4" stroke="#ff9b4b" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".9"/>
+    <path d="M258 232.4 Q263.5 241.4 271 241.1 Q278.5 240.7 284 232.4" stroke="#ff9b4b" stroke-width="1.7" stroke-linecap="round" fill="none" filter="url(#arsglowR)" opacity=".95"/>
+    <path d="M265 240.5 l-4.5 6.5 l1.8 4.8 M272 241.6 l1.2 5.6 l-3 5.2 M278 240 l4.8 5.4 l-1.2 5" stroke="#ff6b6b" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity=".95"/>
+  </g>
+
+  <!-- ===== PROD (copper rod + guard + insulated grip, cable off-frame right) ===== -->
+  <line x1="331" y1="215.5" x2="404" y2="171" stroke="#1d3f63" stroke-width="10" stroke-linecap="round"/>
+  <line x1="333.6" y1="219.8" x2="404.6" y2="176.5" stroke="#ff9b4b" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+  <line x1="328.4" y1="211.2" x2="399.4" y2="167.9" stroke="#ff9b4b" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
+  <circle cx="330" cy="216.5" r="5.6" fill="#ff9b4b"/>
+  <circle cx="328.6" cy="214.6" r="1.8" fill="#ffd9a8" opacity=".85"/>
+
+  <g transform="translate(404,171) rotate(-31.4)">
+    <!-- hand guard flange -->
+    <rect x="-3.5" y="-14.5" width="7" height="29" rx="2.5" fill="#14304f" stroke="#8fb6e0" stroke-width="1.4"/>
+    <!-- grip -->
+    <rect x="3.5" y="-10" width="78" height="20" rx="9" fill="url(#arsgrip)" stroke="#8fb6e0" stroke-width="1.6"/>
+    <g stroke="#8fb6e0" stroke-width="1.2" opacity=".3">
+      <line x1="16" y1="-7.5" x2="16" y2="7.5"/><line x1="27" y1="-7.5" x2="27" y2="7.5"/>
+      <line x1="38" y1="-7.5" x2="38" y2="7.5"/><line x1="49" y1="-7.5" x2="49" y2="7.5"/>
+      <line x1="60" y1="-7.5" x2="60" y2="7.5"/>
+    </g>
+    <!-- trigger -->
+    <rect x="14" y="9" width="16" height="8" rx="3.5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+    <circle cx="22" cy="13" r="1.6" fill="#ffc24b" opacity=".9"/>
+    <!-- cable boot -->
+    <rect x="81.5" y="-6.5" width="13" height="13" rx="4" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.3"/>
+  </g>
+  <!-- cable trailing off-frame -->
+  <path d="M484 122 C518 112 548 125 560 153 C570 176 582 189 600 194" fill="none" stroke="#8fb6e0" stroke-width="9" opacity=".5"/>
+  <path d="M484 122 C518 112 548 125 560 153 C570 176 582 189 600 194" fill="none" stroke="#0c2340" stroke-width="6.5"/>
+  <path d="M484 122 C518 112 548 125 560 153 C570 176 582 189 600 194" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".3"/>
+
+  <!-- ===== HAND ON GRIP + burn hazard ticks (reveal 4.9s) ===== -->
+  <g transform="translate(404,171) rotate(-31.4)">
+    <g id="arsHand" opacity="0">
+      <g fill="#0a1c33" fill-opacity=".97" stroke="#5fe0ff" stroke-width="1.5" opacity=".95">
+        <rect x="58" y="-26" width="34" height="15" rx="7"/>
+        <rect x="16" y="-26" width="50" height="18" rx="9"/>
+        <rect x="17" y="-12" width="9.5" height="24" rx="4.7"/>
+        <rect x="28.5" y="-12" width="9.5" height="27" rx="4.7"/>
+        <rect x="40" y="-12" width="9.5" height="27" rx="4.7"/>
+        <rect x="51.5" y="-12" width="9.5" height="23" rx="4.7"/>
+      </g>
+      <path d="M24 -30 q3 -6 0 -12 M36 -31 q3 -6 0 -12 M48 -30 q3 -6 0 -12" stroke="#ff6b6b" stroke-width="1.8" stroke-linecap="round" fill="none" filter="url(#arsglowR)" opacity=".95"/>
+    </g>
+  </g>
+
+  <!-- ===== GAP annotation: tip lifted off plate (draw 1.6s) ===== -->
+  <path id="arsGap" d="M362 222 H376 M362 232 H376 M369 223.6 l-2.8 3.2 M369 223.6 l2.8 3.2 M369 223.6 V230.4 M369 230.4 l-2.8 -3.2 M369 230.4 l2.8 -3.2 M382 245 Q390 231 380 218 M380 218 l6.6 .4 M380 218 l.4 6.6" fill="none" stroke="#ffc24b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#arsglowR)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== ARC bridging the gap (reveal 3.4s) + ping ===== -->
+  <g id="arsArc" opacity="0">
+    <circle cx="328" cy="227" r="28" fill="url(#arsflash)"/>
+    <ellipse cx="325.5" cy="232" rx="7" ry="2.4" fill="#ffc24b" opacity=".6"/>
+    <path d="M330 221.5 L324.5 224.5 L329.5 227.5 L322.5 229.8 L325.5 232" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#arsglowC)"/>
+    <path d="M328 225.5 L333.5 228.5 L330.5 231.5" fill="none" stroke="#bfeeff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/>
+    <g stroke="#ffc24b" stroke-width="1.6" stroke-linecap="round" opacity=".85">
+      <line x1="316" y1="227" x2="309" y2="223.5"/>
+      <line x1="340" y1="222.5" x2="347" y2="219"/>
+      <line x1="336" y1="233" x2="343" y2="237.5"/>
+      <line x1="315" y1="235" x2="309" y2="240"/>
+    </g>
+    <circle cx="325.5" cy="232" r="2.4" fill="#ffffff"/>
+  </g>
+  <circle id="arsPing" cx="325.5" cy="232" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#arsglowR)"/>
+
+  <!-- ===== METER: CURRENT ON (base scene) ===== -->
+  <g>
+    <rect x="34" y="34" width="138" height="58" rx="9" fill="#0e2848" opacity=".6"/>
+    <rect x="34" y="34" width="138" height="58" rx="9" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".8"/>
+    <path d="M45 77.5 A16 16 0 1 1 75 77.5" fill="none" stroke="#2b86ff" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M75 66.5 A16 16 0 0 1 75 77.5" fill="none" stroke="#ff6b6b" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="60" y1="72" x2="75.9" y2="73.4" stroke="#ffc24b" stroke-width="2" stroke-linecap="round" filter="url(#arsglowR)"/>
+    <circle cx="60" cy="72" r="2.2" fill="#ffc24b"/>
+    <circle cx="86" cy="53.5" r="3.5" fill="#ff6b6b" filter="url(#arsglowR)"/>
+    <text x="94" y="58" font-size="11" fill="#9fe6ff">CURRENT ON</text>
+    <text x="94" y="80" font-size="13" fill="#ffc24b">800 A</text>
+  </g>
+
+  <!-- ===== static labels ===== -->
+  <text x="370" y="142" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".85">PROD</text>
+  <path d="M370 147 L375 184" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+  <text x="560" y="289" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".6">FINISHED PART</text>
+
+  <!-- ===== ARC STRIKE label (reveal 6.2s) ===== -->
+  <g id="arsStrikeLbl" font-size="12" opacity="0">
+    <path d="M266 252 L232 272" stroke="#ff9b4b" stroke-width="1" opacity=".55" fill="none"/>
+    <text x="234" y="286" text-anchor="end" fill="#ff9b4b" opacity=".95">ARC STRIKE</text>
+  </g>
+
+  <!-- ===== REJECT condemn tag + X over part edge (reveal 7.1s) ===== -->
+  <g id="arsReject" opacity="0">
+    <path d="M68 246 L104 282 M104 246 L68 282" stroke="#ff6b6b" stroke-width="3.5" stroke-linecap="round" filter="url(#arsglowC)" opacity=".95"/>
+    <g transform="rotate(-5 97 206)">
+      <rect x="54" y="193" width="86" height="26" rx="6" fill="#ff6b6b" opacity=".13"/>
+      <rect x="54" y="193" width="86" height="26" rx="6" fill="none" stroke="#ff6b6b" stroke-width="1.6"/>
+      <circle cx="62" cy="206" r="2.2" fill="none" stroke="#ff6b6b" stroke-width="1.2"/>
+      <text x="102" y="210.5" text-anchor="middle" font-size="12" fill="#ff6b6b" letter-spacing="2">REJECT</text>
+    </g>
+    <path d="M62 212 Q58 228 70 242" stroke="#ff6b6b" stroke-width="1.2" opacity=".6" fill="none"/>
+  </g>
+
+  <!-- ===== scan group ===== -->
+  <g id="arsscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#arsscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#arsglowC)" opacity=".9"/>
+  </g>
+</svg>

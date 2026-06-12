@@ -1,0 +1,174 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="dacglowC" filterUnits="userSpaceOnUse" x="-58" y="-58" width="716" height="456">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="dacglowA" filterUnits="userSpaceOnUse" x="-58" y="-58" width="716" height="456">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="dacsteel" x1="0" y1="96" x2="0" y2="276" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a5584"/><stop offset=".35" stop-color="#14304f"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="dacprobe" x1="0" y1="54" x2="0" y2="94" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3a6a9c"/><stop offset=".6" stop-color="#16334f"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <radialGradient id="dacscr" cx=".5" cy=".42" r=".95">
+      <stop offset="0" stop-color="#0c2747"/><stop offset=".75" stop-color="#071528"/><stop offset="1" stop-color="#050f1f"/>
+    </radialGradient>
+    <linearGradient id="dacbeam" x1="0" y1="96" x2="0" y2="231" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".08"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ============ LEFT: BASIC CALIBRATION BLOCK ============ -->
+  <!-- block body -->
+  <rect x="44" y="96" width="248" height="180" fill="url(#dacsteel)"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".13">
+    <line x1="48" y1="121" x2="288" y2="121"/>
+    <line x1="48" y1="153" x2="288" y2="153"/>
+    <line x1="48" y1="198" x2="288" y2="198"/>
+    <line x1="48" y1="243" x2="288" y2="243"/>
+    <line x1="48" y1="262" x2="288" y2="262"/>
+  </g>
+  <rect x="44" y="96" width="248" height="180" fill="none" stroke="#8fb6e0" stroke-width="2"/>
+
+  <!-- thickness dimension T -->
+  <g stroke="#5fe0ff" fill="none" opacity=".85">
+    <line x1="44" y1="96" x2="29" y2="96" stroke-width="1" opacity=".45"/>
+    <line x1="44" y1="276" x2="29" y2="276" stroke-width="1" opacity=".45"/>
+    <line x1="33" y1="104" x2="33" y2="268" stroke-width="1.2"/>
+    <path d="M33 96 L29.8 105 L36.2 105 Z" fill="#5fe0ff" stroke="none"/>
+    <path d="M33 276 L29.8 267 L36.2 267 Z" fill="#5fe0ff" stroke="none"/>
+  </g>
+  <text x="22" y="190" text-anchor="middle" font-size="12" fill="#9fe6ff">T</text>
+
+  <!-- three identical side-drilled holes + depth labels -->
+  <circle cx="104" cy="141" r="5.5" fill="#08152b" stroke="#8fb6e0" stroke-width="1.5"/>
+  <circle cx="172" cy="186" r="5.5" fill="#08152b" stroke="#8fb6e0" stroke-width="1.5"/>
+  <circle cx="240" cy="231" r="5.5" fill="#08152b" stroke="#8fb6e0" stroke-width="1.5"/>
+  <g font-size="11" fill="#9fe6ff" opacity=".8">
+    <text x="117" y="145">T/4</text>
+    <text x="185" y="190">T/2</text>
+    <text x="253" y="235">3T/4</text>
+  </g>
+
+  <!-- straight-beam probe, position 1 (solid) -->
+  <path d="M104 44 C104 30 90 26 74 24" fill="none" stroke="#8fb6e0" stroke-width="2" opacity=".75"/>
+  <rect x="96" y="42" width="16" height="12" rx="2" fill="#16334f" stroke="#8fb6e0" stroke-width="1.2"/>
+  <rect x="82" y="54" width="44" height="34" rx="3" fill="url(#dacprobe)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="84" y="88" width="40" height="6" fill="#0e2848" stroke="#8fb6e0" stroke-width="1"/>
+  <rect x="84" y="94" width="40" height="2" rx="1" fill="#5fe0ff" opacity=".55"/>
+  <text x="104" y="76" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85">0°</text>
+
+  <!-- block caption -->
+  <text x="44" y="292" font-size="11" fill="#9fe6ff" opacity=".7">BASIC BLOCK — SAME Ø SDH ×3</text>
+
+  <!-- ============ RIGHT: A-SCAN ============ -->
+  <text x="322" y="80" font-size="11" fill="#9fe6ff" opacity=".7">A-SCAN</text>
+  <rect x="478" y="64" width="104" height="22" rx="4" fill="#0e2848" stroke="#8fb6e0" stroke-width="1" opacity=".95"/>
+  <text x="530" y="79" text-anchor="middle" font-size="12" fill="#9fe6ff">REF 46 dB</text>
+
+  <!-- screen -->
+  <rect x="320" y="92" width="262" height="176" rx="6" fill="url(#dacscr)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="324" y="96" width="254" height="168" rx="4" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".15"/>
+  <!-- grid -->
+  <g stroke="#5fe0ff" stroke-width="1" opacity=".12">
+    <line x1="346.2" y1="94" x2="346.2" y2="266"/>
+    <line x1="372.4" y1="94" x2="372.4" y2="266"/>
+    <line x1="398.6" y1="94" x2="398.6" y2="266"/>
+    <line x1="424.8" y1="94" x2="424.8" y2="266"/>
+    <line x1="451" y1="94" x2="451" y2="266"/>
+    <line x1="477.2" y1="94" x2="477.2" y2="266"/>
+    <line x1="503.4" y1="94" x2="503.4" y2="266"/>
+    <line x1="529.6" y1="94" x2="529.6" y2="266"/>
+    <line x1="555.8" y1="94" x2="555.8" y2="266"/>
+    <line x1="322" y1="226" x2="580" y2="226"/>
+    <line x1="322" y1="196" x2="580" y2="196"/>
+    <line x1="322" y1="166" x2="580" y2="166"/>
+    <line x1="322" y1="106" x2="580" y2="106"/>
+  </g>
+  <!-- 80% FSH reference line -->
+  <line x1="322" y1="136" x2="580" y2="136" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="5 4" opacity=".35"/>
+  <text x="338" y="132" font-size="10" fill="#9fe6ff" opacity=".7">80%</text>
+  <!-- baseline + initial pulse -->
+  <line x1="322" y1="256" x2="580" y2="256" stroke="#5fe0ff" stroke-width="1.2" opacity=".55"/>
+  <path d="M324 256 L325.6 112 L327.2 256 Z" fill="#5fe0ff" opacity=".75"/>
+  <path d="M328 256 L329.4 144 L330.8 256 Z" fill="#5fe0ff" opacity=".45"/>
+  <!-- sweep depth ticks -->
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".5">
+    <line x1="384" y1="256" x2="384" y2="262"/>
+    <line x1="442" y1="256" x2="442" y2="262"/>
+    <line x1="500" y1="256" x2="500" y2="262"/>
+    <line x1="558" y1="256" x2="558" y2="262"/>
+  </g>
+  <g font-size="11" fill="#9fe6ff" text-anchor="middle" opacity=".65">
+    <text x="384" y="282">T/4</text>
+    <text x="442" y="282">T/2</text>
+    <text x="500" y="282">3T/4</text>
+    <text x="558" y="282" opacity=".7">T</text>
+  </g>
+
+  <!-- ============ REVEAL 1: peak T/4 hole ============ -->
+  <g id="dacPeakQuarter" opacity="0">
+    <path d="M96 96 L112 96 L114 135 L94 135 Z" fill="url(#dacbeam)"/>
+    <line x1="104" y1="96" x2="104" y2="134" stroke="#5fe0ff" stroke-width="1.5" filter="url(#dacglowC)" opacity=".9"/>
+    <circle cx="104" cy="141" r="8.5" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".8"/>
+    <path d="M376 256 Q379 252 380.5 242 L383 140 L384 136 L385 140 L387.5 244 Q389 253 392 256 Z" fill="#2b86ff" fill-opacity=".3" stroke="#7fd8ff" stroke-width="1.8" stroke-linejoin="round" filter="url(#dacglowC)"/>
+    <circle cx="384" cy="136" r="3.2" fill="#5fe0ff" filter="url(#dacglowC)"/>
+    <circle cx="384" cy="136" r="1.2" fill="#eaffff"/>
+  </g>
+  <circle id="dacping" cx="384" cy="136" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#dacglowC)"/>
+
+  <!-- ============ REVEAL 2: peak T/2 hole ============ -->
+  <g id="dacPeakHalf" opacity="0">
+    <path d="M132 66 L138 72 L132 78 M139 66 L145 72 L139 78" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".7"/>
+    <rect x="150" y="54" width="44" height="40" rx="3" fill="none" stroke="#8fb6e0" stroke-width="1.3" stroke-dasharray="4 3" opacity=".6"/>
+    <line x1="152" y1="88" x2="192" y2="88" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/>
+    <rect x="152" y="94" width="40" height="2" rx="1" fill="#5fe0ff" opacity=".4"/>
+    <path d="M164 96 L180 96 L182 180 L162 180 Z" fill="url(#dacbeam)"/>
+    <line x1="172" y1="96" x2="172" y2="179" stroke="#5fe0ff" stroke-width="1.5" filter="url(#dacglowC)" opacity=".9"/>
+    <circle cx="172" cy="186" r="8.5" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".8"/>
+    <path d="M435 256 Q437.5 252.5 439 246 L441 182 L442 178 L443 182 L445 247 Q446.5 253 449 256 Z" fill="#2b86ff" fill-opacity=".3" stroke="#7fd8ff" stroke-width="1.8" stroke-linejoin="round" filter="url(#dacglowC)"/>
+    <circle cx="442" cy="178" r="3.2" fill="#5fe0ff" filter="url(#dacglowC)"/>
+    <circle cx="442" cy="178" r="1.2" fill="#eaffff"/>
+  </g>
+
+  <!-- ============ REVEAL 3: peak 3T/4 hole ============ -->
+  <g id="dacPeakThreeQ" opacity="0">
+    <path d="M200 66 L206 72 L200 78 M207 66 L213 72 L207 78" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".7"/>
+    <rect x="218" y="54" width="44" height="40" rx="3" fill="none" stroke="#8fb6e0" stroke-width="1.3" stroke-dasharray="4 3" opacity=".6"/>
+    <line x1="220" y1="88" x2="260" y2="88" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="4 3" opacity=".5"/>
+    <rect x="220" y="94" width="40" height="2" rx="1" fill="#5fe0ff" opacity=".4"/>
+    <path d="M232 96 L248 96 L250 225 L230 225 Z" fill="url(#dacbeam)"/>
+    <line x1="240" y1="96" x2="240" y2="224" stroke="#5fe0ff" stroke-width="1.5" filter="url(#dacglowC)" opacity=".9"/>
+    <circle cx="240" cy="231" r="8.5" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".8"/>
+    <path d="M494 256 Q496 253 497.3 249 L499.2 209 L500 205 L500.8 209 L502.7 249.5 Q504 253.5 506 256 Z" fill="#2b86ff" fill-opacity=".3" stroke="#7fd8ff" stroke-width="1.8" stroke-linejoin="round" filter="url(#dacglowC)"/>
+    <circle cx="500" cy="205" r="3.2" fill="#5fe0ff" filter="url(#dacglowC)"/>
+    <circle cx="500" cy="205" r="1.2" fill="#eaffff"/>
+  </g>
+
+  <!-- ============ REVEAL 4: gain locked ============ -->
+  <g id="dacGainLock" opacity="0">
+    <rect x="478" y="64" width="104" height="22" rx="4" fill="none" stroke="#ffc24b" stroke-width="1.5" filter="url(#dacglowA)"/>
+    <text x="452" y="79" text-anchor="end" font-size="11" fill="#ffc24b">GAIN LOCKED</text>
+    <rect x="458" y="72" width="12" height="10" rx="1.5" fill="none" stroke="#ffc24b" stroke-width="1.5"/>
+    <path d="M460.5 72 V68.5 A3.5 3.5 0 0 1 467.5 68.5 V72" fill="none" stroke="#ffc24b" stroke-width="1.5"/>
+    <circle cx="464" cy="77" r="1.3" fill="#ffc24b"/>
+  </g>
+
+  <!-- ============ REVEAL 5: DAC curve (draw-on) ============ -->
+  <path id="dacCurve" d="M384 136 C404 152 423 166 442 178 C462 190 482 198.5 500 205 C517 210.5 532 214.5 546 217.5" fill="none" stroke="#ffc24b" stroke-width="2.5" filter="url(#dacglowA)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <text id="dacCurveLbl" x="551" y="221" font-size="12" fill="#ffc24b" opacity="0">DAC</text>
+
+  <!-- ============ REVEAL 6: judge an indication vs the curve ============ -->
+  <g id="dacJudge" opacity="0">
+    <path d="M407 256 Q409 253 410.4 248 L412.2 211 L413 207 L413.8 211 L415.6 248.5 Q417 253.5 419 256 Z" fill="#ff9b4b" fill-opacity=".25" stroke="#ff9b4b" stroke-width="1.8" stroke-linejoin="round" filter="url(#dacglowA)"/>
+    <circle cx="413" cy="158.5" r="3" fill="none" stroke="#ffc24b" stroke-width="1.5"/>
+    <line x1="413" y1="163.5" x2="413" y2="202" stroke="#ffc24b" stroke-width="1.2" stroke-dasharray="3 3" opacity=".75"/>
+    <rect x="387.5" y="240.5" width="51" height="14.5" rx="3" fill="#071528" fill-opacity=".88" stroke="#ff9b4b" stroke-width=".8" opacity=".95"/>
+    <text x="413" y="251.3" text-anchor="middle" font-size="10" fill="#ff9b4b">50% DAC</text>
+  </g>
+</svg>

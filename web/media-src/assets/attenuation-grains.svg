@@ -1,0 +1,189 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="agglow" filterUnits="userSpaceOnUse" x="60" y="149" width="543" height="116">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="agglowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="agblur" x="-40%" y="-80%" width="180%" height="260%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <linearGradient id="agprobeG" x1="0" y1="182" x2="0" y2="232" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2e5c8d"/><stop offset=".4" stop-color="#1a3d63"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="agdepthShade" x1="118" y1="0" x2="566" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#06101f" stop-opacity="0"/>
+      <stop offset=".55" stop-color="#06101f" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#06101f" stop-opacity=".3"/>
+    </linearGradient>
+    <linearGradient id="agbeamFade" x1="118" y1="0" x2="545" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".5"/>
+      <stop offset=".25" stop-color="#5fe0ff" stop-opacity=".3"/>
+      <stop offset=".5" stop-color="#5fe0ff" stop-opacity=".15"/>
+      <stop offset=".75" stop-color="#5fe0ff" stop-opacity=".05"/>
+      <stop offset=".92" stop-color="#5fe0ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="agbeamLineG" x1="118" y1="0" x2="545" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".95"/>
+      <stop offset=".45" stop-color="#5fe0ff" stop-opacity=".5"/>
+      <stop offset=".9" stop-color="#5fe0ff" stop-opacity="0"/>
+    </linearGradient>
+    <marker id="agarrW" orient="auto" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="8" refX="7" refY="3.5">
+      <path d="M0 0 L8 3.5 L0 7 Z" fill="#ffc24b"/>
+    </marker>
+    <marker id="agarrC" orient="auto" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="8" refX="7" refY="3.5">
+      <path d="M0 0 L8 3.5 L0 7 Z" fill="#5fe0ff"/>
+    </marker>
+  </defs>
+
+  <!-- ===== COARSE-GRAINED STEEL BLOCK ===== -->
+  <rect x="118" y="118" width="448" height="178" fill="#0e2848"/>
+  <g stroke="#8fb6e0" stroke-width="1.1" stroke-opacity=".42" stroke-linejoin="round">
+    <path d="M118 118 L163.1 118 L165.1 155.1 L118 162.4 Z" fill="#14304f"/>
+    <path d="M163.1 118 L217.5 118 L216.7 142.9 L175.5 166 L165.1 155.1 Z" fill="#0e2848"/>
+    <path d="M217.5 118 L259.4 118 L258.1 165.6 L237 163.5 L216.7 142.9 Z" fill="#173a5e"/>
+    <path d="M259.4 118 L296.3 118 L304.2 154 L265.5 170.7 L258.1 165.6 Z" fill="#102c4c"/>
+    <path d="M296.3 118 L365 118 L352.6 143 L320.1 161.5 L304.2 154 Z" fill="#0c2440"/>
+    <path d="M365 118 L404.3 118 L412.5 151.5 L399.5 174.4 L379.4 184.7 L352.6 143 Z" fill="#1a3d63"/>
+    <path d="M404.3 118 L479.3 118 L473.7 149.5 L455.3 170.8 L412.5 151.5 Z" fill="#14304f"/>
+    <path d="M479.3 118 L510.3 118 L532.3 153.5 L514.6 181.2 L473.7 149.5 Z" fill="#0e2848"/>
+    <path d="M510.3 118 L566 118 L566 154.3 L532.3 153.5 Z" fill="#173a5e"/>
+    <path d="M118 213.2 L118 162.4 L165.1 155.1 L175.5 166 L181.9 204.5 L178 208.6 Z" fill="#14304f"/>
+    <path d="M181.9 204.5 L175.5 166 L216.7 142.9 L237 163.5 L204 204.9 Z" fill="#0e2848"/>
+    <path d="M204 204.9 L237 163.5 L258.1 165.6 L265.5 170.7 L268.8 214.1 L266 218.3 L216.2 212 Z" fill="#173a5e"/>
+    <path d="M268.8 214.1 L265.5 170.7 L304.2 154 L320.1 161.5 L327.1 197.3 L320.7 206.7 Z" fill="#102c4c"/>
+    <path d="M327.1 197.3 L320.1 161.5 L352.6 143 L379.4 184.7 L372.6 200.6 Z" fill="#0c2440"/>
+    <path d="M374.9 206.2 L372.6 200.6 L379.4 184.7 L399.5 174.4 L428.3 202.7 L423 211.9 Z" fill="#1a3d63"/>
+    <path d="M399.5 174.4 L412.5 151.5 L455.3 170.8 L454.8 190.4 L428.3 202.7 Z" fill="#14304f"/>
+    <path d="M454.8 190.4 L455.3 170.8 L473.7 149.5 L514.6 181.2 L515.4 192.2 L465.7 201.9 Z" fill="#0e2848"/>
+    <path d="M566 154.3 L566 211.4 L525.6 205.8 L515.4 192.2 L514.6 181.2 L532.3 153.5 Z" fill="#173a5e"/>
+    <path d="M118 253.2 L118 213.2 L178 208.6 L178.9 255.5 L168.5 272 Z" fill="#14304f"/>
+    <path d="M178.9 255.5 L178 208.6 L181.9 204.5 L204 204.9 L216.2 212 L223.4 260.1 L222.7 261.3 Z" fill="#0e2848"/>
+    <path d="M223.4 260.1 L216.2 212 L266 218.3 L267.1 234.5 Z" fill="#173a5e"/>
+    <path d="M280.3 257.8 L267.1 234.5 L266 218.3 L268.8 214.1 L320.7 206.7 L331.8 253.8 L322.7 266 Z" fill="#102c4c"/>
+    <path d="M331.8 253.8 L320.7 206.7 L327.1 197.3 L372.6 200.6 L374.9 206.2 L376 244.2 Z" fill="#0c2440"/>
+    <path d="M376 244.2 L374.9 206.2 L423 211.9 L422.3 252.5 L413.3 258.3 L389.1 254 Z" fill="#1a3d63"/>
+    <path d="M422.3 252.5 L423 211.9 L428.3 202.7 L454.8 190.4 L465.7 201.9 L470.9 235.5 L446.8 252.6 Z" fill="#14304f"/>
+    <path d="M470.9 235.5 L465.7 201.9 L515.4 192.2 L525.6 205.8 L501.6 245.5 Z" fill="#0e2848"/>
+    <path d="M566 211.4 L566 245.4 L514 272.2 L501.6 245.5 L525.6 205.8 Z" fill="#173a5e"/>
+    <path d="M169.9 296 L118 296 L118 253.2 L168.5 272 Z" fill="#14304f"/>
+    <path d="M233.6 296 L169.9 296 L168.5 272 L178.9 255.5 L222.7 261.3 Z" fill="#0e2848"/>
+    <path d="M258.3 296 L233.6 296 L222.7 261.3 L223.4 260.1 L267.1 234.5 L280.3 257.8 Z" fill="#173a5e"/>
+    <path d="M328.7 296 L258.3 296 L280.3 257.8 L322.7 266 Z" fill="#102c4c"/>
+    <path d="M368.6 296 L328.7 296 L322.7 266 L331.8 253.8 L376 244.2 L389.1 254 Z" fill="#0c2440"/>
+    <path d="M417.5 296 L368.6 296 L389.1 254 L413.3 258.3 Z" fill="#1a3d63"/>
+    <path d="M471.4 296 L417.5 296 L413.3 258.3 L422.3 252.5 L446.8 252.6 Z" fill="#14304f"/>
+    <path d="M511.1 296 L471.4 296 L446.8 252.6 L470.9 235.5 L501.6 245.5 L514 272.2 Z" fill="#0e2848"/>
+    <path d="M566 245.4 L566 296 L511.1 296 L514 272.2 Z" fill="#173a5e"/>
+  </g>
+  <rect x="118" y="118" width="448" height="178" fill="url(#agdepthShade)"/>
+  <rect x="118" y="118" width="448" height="178" fill="none" stroke="#8fb6e0" stroke-width="1.8"/>
+
+  <!-- depth direction -->
+  <text x="130" y="101" font-size="11" fill="#9fe6ff" opacity=".7">DEPTH</text>
+  <line x1="178" y1="97.5" x2="268" y2="97.5" stroke="#5fe0ff" stroke-width="1.2" opacity=".55" marker-end="url(#agarrC)"/>
+  <text x="24" y="34" font-size="12" fill="#9fe6ff" opacity=".75">COARSE-GRAINED STEEL</text>
+
+  <!-- ===== agBeam: contact probe + fading sound beam ===== -->
+  <g id="agBeam" opacity="0">
+    <!-- cable + strain relief -->
+    <path d="M24 207 C 12 207 8 194 6 166" fill="none" stroke="#8fb6e0" stroke-width="2.4" opacity=".75"/>
+    <path d="M24 199 L38 196 L38 218 L24 215 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <!-- housing -->
+    <rect x="36" y="182" width="68" height="50" rx="6" fill="url(#agprobeG)" stroke="#8fb6e0" stroke-width="1.6"/>
+    <line x1="52" y1="188" x2="52" y2="226" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+    <line x1="61" y1="188" x2="61" y2="226" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+    <line x1="70" y1="188" x2="70" y2="226" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+    <!-- piezo element + wear face -->
+    <rect x="90" y="190" width="14" height="34" fill="#1E66F5" opacity=".9" stroke="#7fd8ff" stroke-width=".9"/>
+    <rect x="104" y="186" width="10" height="42" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+    <!-- couplant film against block face -->
+    <rect x="114" y="189" width="4" height="36" fill="#5fe0ff" opacity=".3"/>
+    <line x1="116" y1="189" x2="116" y2="225" stroke="#5fe0ff" stroke-width="1.2" opacity=".7"/>
+    <text x="70" y="252" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85">CONTACT PROBE</text>
+    <!-- beam wedge fading with depth -->
+    <path d="M118 194 L545 170 L545 244 L118 220 Z" fill="url(#agbeamFade)"/>
+    <path d="M118 194 L545 170" fill="none" stroke="url(#agbeamLineG)" stroke-width="1.1" stroke-dasharray="5 4" opacity=".45"/>
+    <path d="M118 220 L545 244" fill="none" stroke="url(#agbeamLineG)" stroke-width="1.1" stroke-dasharray="5 4" opacity=".45"/>
+    <!-- wavefronts dying out -->
+    <g fill="none" stroke="#5fe0ff" stroke-width="1.6">
+      <path d="M170 191.1 Q180 207 170 222.9" opacity=".65"/>
+      <path d="M240 187 Q250 207 240 227" opacity=".45"/>
+      <path d="M310 183 Q320 207 310 231" opacity=".3"/>
+      <path d="M380 179.2 Q390 207 380 234.8" opacity=".18"/>
+      <path d="M450 175 Q460 207 450 239" opacity=".09"/>
+    </g>
+  </g>
+  <path id="agbeamCore" d="M118 207 L545 207" fill="none" stroke="url(#agbeamLineG)" stroke-width="2.4" filter="url(#agglow)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== agHeat: absorption -> heat wisps ===== -->
+  <g id="agHeat" opacity="0">
+    <ellipse cx="225" cy="208" rx="112" ry="22" fill="#ff9b4b" opacity=".14" filter="url(#agblur)"/>
+    <g fill="none" stroke="#ff9b4b" stroke-width="2" stroke-linecap="round" filter="url(#agglowS)">
+      <path d="M150 208 q6 -8 0 -16 q-6 -8 1 -17" opacity=".85"/>
+      <path d="M188 210 q-6 -9 0 -17 q6 -8 -1 -16" opacity=".8"/>
+      <path d="M226 209 q6 -8 0 -16 q-6 -8 1 -17" opacity=".75"/>
+      <path d="M262 210 q-6 -9 0 -17 q6 -8 -1 -16" opacity=".7"/>
+    </g>
+    <rect x="168" y="246" width="128" height="18" rx="4" fill="#08152b" opacity=".72" stroke="#ff9b4b" stroke-opacity=".4"/>
+    <text x="232" y="259" text-anchor="middle" font-size="11" fill="#ff9b4b">ABSORPTION → HEAT</text>
+    <path d="M204 246 L190 216" stroke="#ff9b4b" stroke-width="1" opacity=".5" fill="none"/>
+  </g>
+
+  <!-- ===== agScatter: grain-boundary scatter ===== -->
+  <g id="agScatter" opacity="0">
+    <g fill="none" stroke="#ffc24b" stroke-width="2.4" stroke-linecap="round" filter="url(#agglowS)">
+      <path d="M237 163.5 L204 204.9" opacity=".95"/>
+      <path d="M266 218.3 L216.2 212" opacity=".95"/>
+      <path d="M320.7 206.7 L268.8 214.1" opacity=".9"/>
+      <path d="M372.6 200.6 L327.1 197.3" opacity=".85"/>
+      <path d="M399.5 174.4 L428.3 202.7" opacity=".7"/>
+      <path d="M423 211.9 L422.4 246" opacity=".7"/>
+      <path d="M454.8 190.4 L428.3 202.7" opacity=".55"/>
+    </g>
+    <g fill="none" stroke="#ffc24b" stroke-width="1.8">
+      <line x1="222" y1="186" x2="207" y2="167" marker-end="url(#agarrW)"/>
+      <line x1="240" y1="214" x2="230" y2="236" marker-end="url(#agarrW)"/>
+      <line x1="296" y1="210" x2="309" y2="231" marker-end="url(#agarrW)"/>
+      <line x1="351" y1="198" x2="363" y2="177" marker-end="url(#agarrW)"/>
+      <line x1="414" y1="188" x2="403" y2="169" marker-end="url(#agarrW)" opacity=".85"/>
+      <line x1="423" y1="231" x2="435" y2="250" marker-end="url(#agarrW)" opacity=".85"/>
+      <line x1="442" y1="196" x2="456" y2="178" marker-end="url(#agarrW)" opacity=".7"/>
+    </g>
+    <rect x="244" y="126" width="194" height="18" rx="4" fill="#08152b" opacity=".72" stroke="#ffc24b" stroke-opacity=".4"/>
+    <text x="341" y="139" text-anchor="middle" font-size="11" fill="#ffc24b">SCATTER AT GRAIN BOUNDARIES</text>
+    <path d="M352 144 L352 193" stroke="#ffc24b" stroke-width="1" opacity=".5" fill="none"/>
+  </g>
+
+  <!-- ===== A-SCAN INSET (frame default; trace lights with agGrass) ===== -->
+  <rect x="388" y="16" width="184" height="88" rx="8" fill="#0a1d36" opacity=".92" stroke="#8fb6e0" stroke-width="1.5"/>
+  <text x="562" y="31" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".8">A-SCAN</text>
+  <g stroke="#2b86ff" opacity=".18">
+    <line x1="426" y1="38" x2="426" y2="88"/>
+    <line x1="454" y1="38" x2="454" y2="88"/>
+    <line x1="482" y1="38" x2="482" y2="88"/>
+    <line x1="510" y1="38" x2="510" y2="88"/>
+    <line x1="538" y1="38" x2="538" y2="88"/>
+  </g>
+  <line x1="396" y1="88" x2="564" y2="88" stroke="#8fb6e0" stroke-width="1.2" opacity=".6"/>
+
+  <!-- ===== agGrass: scatter returns to probe + grass and shrinking echoes ===== -->
+  <g id="agGrass" opacity="0">
+    <g fill="none" stroke="#ffc24b" stroke-width="1.7" stroke-dasharray="5 4" filter="url(#agglowS)">
+      <path d="M346 197 C 290 180 200 182 131 199" marker-end="url(#agarrW)" opacity=".9"/>
+      <path d="M292 214 C 245 224 190 226 131 214" marker-end="url(#agarrW)" opacity=".9"/>
+      <path d="M418 228 C 330 240 230 238 133 221" marker-end="url(#agarrW)" opacity=".8"/>
+    </g>
+    <!-- inset trace -->
+    <path d="M399 88 L401 26 L403 26 L405 88" fill="none" stroke="#7fd8ff" stroke-width="1.8" opacity=".95"/>
+    <polyline points="398,88 398,84.2 399.6,87.5 401.2,79.2 402.8,86.6 404.4,86.1 406,87 407.6,86.3 409.2,86.9 410.8,84.2 412.4,87.5 414,82.3 415.6,86.6 417.2,83.5 418.8,87.2 420.4,80.2 422,86.9 423.6,82.9 425.2,87.6 426.8,85.2 428.4,87.4 430,82.5 431.6,86.6 433.2,79.3 434.8,87.1 436.4,86.4 438,86.6 439.6,85.9 441.2,87.6 442.8,83.6 444.4,87.5 446,83.4 447.6,87.7 449.2,86.1 450.8,86.6 452.4,84.4 454,86.9 455.6,86 457.2,87.5 458.8,83.5 460.4,87.6 462,83.7 463.6,87.5 465.2,85.2 466.8,86.5 468.4,85.9 470,86.6 471.6,85.3 473.2,87.6 474.8,84.7 476.4,87 478,79.9 479.6,86.7 481.2,83.6 482.8,87.2 484.4,81.6 486,87.7 487.6,82.5 489.2,87.2 490.8,85.4 492.4,87.3 494,86.1 495.6,87.6 497.2,79 498.8,86.7 500.4,84 502,87.4 503.6,82.8 505.2,87.4 506.8,81.7 508.4,87.3 510,82.2 511.6,86.9 513.2,85.6 514.8,87.4 516.4,86.2 518,87.5 519.6,81.8 521.2,87 522.8,84 524.4,87.2 526,83.4 527.6,87.3 529.2,85.8 530.8,87.5 532.4,86.1 534,86.9 535.6,86.2 537.2,86.9 538.8,82.7 540.4,86.6 542,85.7 543.6,86.8 545.2,82.1 546.8,87.6 548.4,86.3 550,87.5 551.6,79.8 553.2,87.4 554.8,83.5 556.4,87 558,81.6 559.6,86.6 560,88" fill="none" stroke="#ffc24b" stroke-width="1.2" opacity=".9"/>
+    <path d="M426 88 L428 38 L430 88 M445 88 L447 50 L449 88 M464 88 L466 60 L468 88 M483 88 L485 67 L487 88 M502 88 L504 73 L506 88 M521 88 L523 77 L525 88 M540 88 L542 80 L544 88" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#agglowS)"/>
+    <path d="M428 36 Q 470 60 542 78" fill="none" stroke="#9fe6ff" stroke-width="1" stroke-dasharray="3 3" opacity=".45"/>
+    <text x="426" y="101" text-anchor="middle" font-size="11" fill="#ffc24b">GRASS</text>
+    <text x="484" y="113.5" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85">BACK ECHOES SHRINK →</text>
+  </g>
+  <circle id="agPing" cx="121" cy="207" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#agglowS)"/>
+</svg>

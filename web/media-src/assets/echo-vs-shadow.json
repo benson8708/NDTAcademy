@@ -1,0 +1,16 @@
+{
+  "description": "Split panel: LEFT pulse echo — one T/R probe on top face, pulse down to mid-depth flaw, echo back up, mini A-scan (IP / F / BW) with TIME → DEPTH axis. RIGHT through transmission — aligned TX top / RX bottom probes, beam crossing the thickness; flaw casts shadow cone over RX and the received-signal bar falls from REF (SIGNAL DROPS).",
+  "scan": { "id": "evscanG", "sweep": 4.6 },
+  "reveals": [
+    { "kind": "fade", "id": "evSplit", "at": 0.8 },
+    { "kind": "fade", "id": "evProbe", "at": 0.9 },
+    { "kind": "draw", "id": "evPulse", "at": 1.3 },
+    { "kind": "ping", "id": "evPingL", "at": 1.8 },
+    { "kind": "draw", "id": "evEcho", "at": 1.95 },
+    { "kind": "fade", "id": "evScan", "at": 2.9 },
+    { "kind": "fade", "id": "evPair", "at": 5.2 },
+    { "kind": "draw", "id": "evBeam", "at": 5.55 },
+    { "kind": "fade", "id": "evDrop", "at": 7.3 },
+    { "kind": "ping", "id": "evPingR", "at": 7.35 }
+  ]
+}

@@ -1,0 +1,172 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="cstglowC" filterUnits="userSpaceOnUse" x="-58" y="-58" width="478" height="456">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cstglowR" filterUnits="userSpaceOnUse" x="66" y="53" width="473" height="255">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="cststeel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".35" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="cstcoatG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8fb6e0" stop-opacity=".34"/><stop offset="1" stop-color="#8fb6e0" stop-opacity=".10"/>
+    </linearGradient>
+    <pattern id="csthatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M0 0 V7" stroke="#8fb6e0" stroke-width="1" opacity=".20"/>
+    </pattern>
+    <!-- leakage field strength: bright at surface, nearly gone ~40px up -->
+    <linearGradient id="cstfadeM" gradientUnits="userSpaceOnUse" x1="0" y1="193" x2="0" y2="145">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".95"/>
+      <stop offset=".35" stop-color="#5fe0ff" stop-opacity=".6"/>
+      <stop offset=".7" stop-color="#5fe0ff" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".08"/>
+    </linearGradient>
+    <linearGradient id="cstfadeA" gradientUnits="userSpaceOnUse" x1="0" y1="124" x2="0" y2="104">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".95"/>
+      <stop offset=".4" stop-color="#5fe0ff" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".1"/>
+    </linearGradient>
+    <linearGradient id="cstfadeB" gradientUnits="userSpaceOnUse" x1="0" y1="252" x2="0" y2="231">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".95"/>
+      <stop offset=".35" stop-color="#5fe0ff" stop-opacity=".5"/>
+      <stop offset=".7" stop-color="#5fe0ff" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".04"/>
+    </linearGradient>
+    <linearGradient id="cstscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <text x="36" y="30" font-size="11" fill="#9fe6ff" opacity=".6">CROSS-SECTION — SURFACE CRACK UNDER COATING</text>
+
+  <!-- ===== STEEL SUBSTRATE (lower third) ===== -->
+  <rect x="36" y="193" width="266" height="85" fill="url(#cststeel)"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".14">
+    <line x1="42" y1="240" x2="296" y2="240"/>
+    <line x1="42" y1="254" x2="296" y2="254"/>
+    <line x1="42" y1="268" x2="296" y2="268"/>
+  </g>
+  <!-- top surface, broken at crack mouth -->
+  <g stroke="#8fb6e0" stroke-width="2" fill="none">
+    <path d="M36 193 H146"/><path d="M154 193 H302"/>
+  </g>
+  <g stroke="#8fb6e0" stroke-width="1.2" opacity=".4" fill="none">
+    <path d="M36 193 V278"/><path d="M302 193 V278"/>
+  </g>
+  <text x="262" y="272" font-size="11" fill="#9fe6ff" opacity=".55">STEEL</text>
+
+  <!-- ===== TIGHT VERTICAL CRACK, open to surface ===== -->
+  <path d="M147.9 193 L146.5 206 L149.2 214 L145.8 228 L148.9 237 L147.2 249 L151.4 249.7 L150.7 236 L153.1 225 L150.8 211 L152.9 201 L152.1 193 Z" fill="#07142a"/>
+  <path d="M150 193 L148.2 205 L150.6 213 L147.5 227 L150.3 236 L148.8 249" fill="none" stroke="#ff6b6b" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" filter="url(#cstglowR)" opacity=".95"/>
+
+  <!-- ===== LEAKAGE FIELD (draw): flux squeezed in steel, leaking arcs above, strength fades with height ===== -->
+  <path id="cstField" d="M42 208 C92 208 112 208 126 218 C140 228 138 252 150 252 C162 252 160 228 174 218 C188 208 208 208 296 208 M42 224 C96 224 118 224 132 234 C144 243 142 262 150 262 C158 262 156 243 168 234 C182 224 204 224 296 224 M143 193 A7 10 0 0 1 157 193 M138 193 A12 18 0 0 1 162 193 M132.5 193 A17.5 27 0 0 1 167.5 193 M127 193 A23 37 0 0 1 173 193 M121 193 A29 48 0 0 1 179 193" fill="none" stroke="url(#cstfadeM)" stroke-width="1.7" stroke-linecap="round" filter="url(#cstglowC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <circle id="cstPing" cx="150" cy="190" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#cstglowR)"/>
+
+  <!-- ===== FALLOFF GRAPH: B vs height above surface ===== -->
+  <path id="cstCurve" d="M362 190 C346 183 332 176 325.5 167.5 C319.8 160 318.9 150 318.7 141" fill="none" stroke="#7fd8ff" stroke-width="1.8" stroke-linecap="round" filter="url(#cstglowC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <g id="cstFieldLbl" opacity="0" font-size="11">
+    <g stroke="#8fb6e0" stroke-width="1.2" opacity=".55" fill="none">
+      <path d="M318 193 V140"/>
+      <path d="M318 193 H366"/>
+    </g>
+    <path d="M318 138 L314.8 144 H321.2 Z" fill="#8fb6e0" opacity=".55"/>
+    <path d="M368 193 L362 189.8 V196.2 Z" fill="#8fb6e0" opacity=".55"/>
+    <path d="M302 193 H318" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="3 3" opacity=".35" fill="none"/>
+    <text x="116" y="148" text-anchor="end" font-size="12" fill="#9fe6ff">LEAKAGE FLUX</text>
+    <path d="M119 151 L131 163" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="358" y="207" fill="#9fe6ff" opacity=".85">B</text>
+    <text x="318" y="130" text-anchor="middle" fill="#9fe6ff" opacity=".85">HEIGHT</text>
+  </g>
+
+  <!-- ===== NONMAGNETIC COATING SLAB (fade) ===== -->
+  <g id="cstCoating" opacity="0">
+    <rect x="36" y="170" width="266" height="23" fill="url(#cstcoatG)"/>
+    <rect x="36" y="170" width="266" height="23" fill="url(#csthatch)"/>
+    <path d="M36 170 H302" stroke="#8fb6e0" stroke-width="1.5" opacity=".9" fill="none"/>
+    <path d="M36 170 V193 M302 170 V193" stroke="#8fb6e0" stroke-width="1" opacity=".45" fill="none"/>
+    <text x="294" y="180" text-anchor="end" font-size="11" fill="#9fe6ff">NONMAGNETIC</text>
+    <text x="294" y="190" text-anchor="end" font-size="11" fill="#9fe6ff">COATING</text>
+  </g>
+
+  <!-- ===== PARTICLES held at standoff on the coating's outer face ===== -->
+  <g id="cstParticles" opacity="0">
+    <!-- standoff dimension -->
+    <path d="M116 170.6 L113.2 176 H118.8 Z" fill="#5fe0ff"/>
+    <path d="M116 192.4 L113.2 187 H118.8 Z" fill="#5fe0ff"/>
+    <path d="M116 175 V188 " stroke="#5fe0ff" stroke-width="1.2" fill="none"/>
+    <path d="M108 170 H124" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="104" y="185" text-anchor="end" font-size="11" fill="#9fe6ff">STANDOFF</text>
+    <!-- particle dust on the outer face, lifted into the faint zone -->
+    <g fill="#ff9b4b" filter="url(#cstglowR)">
+      <circle cx="137" cy="166.3" r="1.8"/><circle cx="142" cy="165.1" r="2.1"/>
+      <circle cx="146" cy="166.4" r="1.7"/><circle cx="150" cy="164.7" r="2.3"/>
+      <circle cx="154" cy="166.1" r="1.9"/><circle cx="158" cy="164.9" r="2"/>
+      <circle cx="163" cy="166.3" r="1.7"/><circle cx="168" cy="165.8" r="1.5" opacity=".8"/>
+      <circle cx="131" cy="166.1" r="1.4" opacity=".6"/><circle cx="174" cy="166" r="1.4" opacity=".6"/>
+      <circle cx="124" cy="166.4" r="1.2" opacity=".4"/><circle cx="181" cy="166.3" r="1.2" opacity=".4"/>
+      <circle cx="144" cy="162.2" r="1.1" opacity=".45"/><circle cx="153" cy="161.6" r="1.2" opacity=".5"/>
+      <circle cx="161" cy="162.4" r="1" opacity=".4"/>
+    </g>
+    <!-- particle height marked on the falloff curve: almost no field left -->
+    <path d="M302 169 H319" stroke="#7fd8ff" stroke-width="1" stroke-dasharray="3 3" opacity=".55" fill="none"/>
+    <circle cx="325.5" cy="169" r="2.6" fill="#7fd8ff" opacity=".95"/>
+  </g>
+
+  <!-- ===== RIGHT: THIN FILM vs THICK COATING outcomes ===== -->
+  <g id="cstThin" opacity="0">
+    <rect x="384" y="44" width="180" height="116" rx="10" fill="#0e2848" opacity=".55"/>
+    <rect x="384" y="44" width="180" height="116" rx="10" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".3"/>
+    <text x="396" y="63" font-size="12" fill="#9fe6ff">THIN FILM</text>
+    <text x="396" y="80" font-size="11" fill="#5fe0ff" opacity=".95">CRISP INDICATION</text>
+    <rect x="396" y="124" width="156" height="26" fill="url(#cststeel)"/>
+    <g stroke="#8fb6e0" stroke-width="1.5" fill="none">
+      <path d="M396 124 H470.5"/><path d="M477.5 124 H552"/>
+    </g>
+    <rect x="396" y="119.5" width="156" height="4.5" fill="#8fb6e0" opacity=".26"/>
+    <path d="M396 119.5 H552" stroke="#8fb6e0" stroke-width="1" opacity=".8" fill="none"/>
+    <path d="M474 124 L472.8 132 L474.8 138 L472.6 146" fill="none" stroke="#ff6b6b" stroke-width="1.4" stroke-linecap="round" opacity=".95"/>
+    <path d="M470.5 124 A3.5 5 0 0 1 477.5 124 M467.5 124 A6.5 10 0 0 1 480.5 124 M464.5 124 A9.5 15 0 0 1 483.5 124" fill="none" stroke="url(#cstfadeA)" stroke-width="1.6" filter="url(#cstglowR)"/>
+    <g fill="#ff9b4b" filter="url(#cstglowR)">
+      <circle cx="466" cy="117.4" r="1.8"/><circle cx="469.5" cy="117.6" r="2"/><circle cx="473" cy="117.2" r="2.1"/><circle cx="476.5" cy="117.6" r="2"/><circle cx="480" cy="117.4" r="1.8"/>
+      <circle cx="468" cy="114.6" r="1.7"/><circle cx="471.5" cy="114.4" r="1.9"/><circle cx="475" cy="114.6" r="1.9"/><circle cx="478.3" cy="114.5" r="1.7"/>
+      <circle cx="470.5" cy="112.2" r="1.5"/><circle cx="474" cy="111.8" r="1.7"/><circle cx="477.2" cy="112.2" r="1.5"/>
+    </g>
+  </g>
+
+  <g id="cstThick" opacity="0">
+    <rect x="384" y="172" width="180" height="116" rx="10" fill="#0e2848" opacity=".55"/>
+    <rect x="384" y="172" width="180" height="116" rx="10" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".3"/>
+    <text x="396" y="191" font-size="12" fill="#9fe6ff">THICK COATING</text>
+    <text x="396" y="208" font-size="11" fill="#ff6b6b" opacity=".95">INDICATION ERASED</text>
+    <rect x="396" y="252" width="156" height="28" fill="url(#cststeel)"/>
+    <g stroke="#8fb6e0" stroke-width="1.5" fill="none">
+      <path d="M396 252 H470.5"/><path d="M477.5 252 H552"/>
+    </g>
+    <path d="M474 252 L472.8 260 L474.8 266 L472.6 273" fill="none" stroke="#ff6b6b" stroke-width="1.4" stroke-linecap="round" opacity=".95"/>
+    <path d="M470.5 252 A3.5 5 0 0 1 477.5 252 M467.5 252 A6.5 10 0 0 1 480.5 252 M464.5 252 A9.5 15 0 0 1 483.5 252" fill="none" stroke="url(#cstfadeB)" stroke-width="1.6" filter="url(#cstglowR)"/>
+    <rect x="396" y="224" width="156" height="28" fill="url(#cstcoatG)"/>
+    <rect x="396" y="224" width="156" height="28" fill="url(#csthatch)"/>
+    <path d="M396 224 H552" stroke="#8fb6e0" stroke-width="1" opacity=".8" fill="none"/>
+    <!-- scattered, dimmed particles + ghost of the lost cluster -->
+    <g fill="#ff9b4b">
+      <circle cx="408" cy="222.7" r="1.3" opacity=".45"/><circle cx="424" cy="222.5" r="1.5" opacity=".5"/>
+      <circle cx="441" cy="222.8" r="1.2" opacity=".35"/><circle cx="458" cy="222.5" r="1.5" opacity=".5"/>
+      <circle cx="470" cy="222.7" r="1.3" opacity=".45"/><circle cx="483" cy="222.4" r="1.6" opacity=".55"/>
+      <circle cx="499" cy="222.8" r="1.2" opacity=".4"/><circle cx="517" cy="222.6" r="1.4" opacity=".45"/>
+      <circle cx="536" cy="222.8" r="1.2" opacity=".35"/>
+    </g>
+    <ellipse cx="474" cy="219" rx="10" ry="4.5" fill="none" stroke="#ff6b6b" stroke-width="1" stroke-dasharray="3 3" opacity=".45"/>
+  </g>
+
+  <!-- ===== scan group ===== -->
+  <g id="cstscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#cstscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#cstglowC)" opacity=".9"/>
+  </g>
+</svg>

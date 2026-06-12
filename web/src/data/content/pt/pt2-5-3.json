@@ -1,0 +1,178 @@
+{
+  "lessonId": "pt2-5-3",
+  "title": "Standards, Codes, and Acceptance Criteria",
+  "narrationScript": "A Level Two inspector answers two different questions from two different shelves of documents. How to test comes from the method practices — ASTM E1417 for aerospace hardware, E165 for general industry, ASME Section Five, Article Six on Code work — and the chemicals themselves are qualified under AMS 2644. Those documents control type, method, form, sensitivity level, dwell, removal, and lighting. What to accept never comes from them. Acceptance criteria flow from the design side: the referencing code section, the drawing note, the customer specification. Pressure-vessel work follows the pattern of Section Eight, Mandatory Appendix Eight. Indications bigger than one sixteenth of an inch are relevant. A relevant indication longer than three times its width is linear, and none are permitted. Rounded indications fail above three sixteenths of an inch, or when four or more line up a sixteenth apart or closer. Measure the indication, not the flaw you imagine beneath it. If no criteria were flowed down, stop and ask. When documents conflict, the contract governs.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Two Questions, Two Sets of Documents",
+      "body": "SNT-TC-1A draws the Level II line exactly here: a Level II is expected to *interpret and evaluate results with respect to applicable codes, standards, and specifications*. Doing that means knowing which documents govern a job — and what each one is allowed to tell you.\n\nEvery PT job answers two different questions from two different document chains:\n\n- **How to test** — the *method* chain. **ASTM E1417/E1417M** is the controlling practice for aerospace and military hardware; **ASTM E165/E165M** serves general industry; **ASME BPVC Section V, Article 6** governs work built to the ASME Code (Section V's Subsection B adopts E165 as SE-165). The chemicals themselves are qualified under **SAE AMS 2644** and selected from its Qualified Products List.\n- **What to accept** — the *design* chain. Accept/reject limits flow down from the referencing code section (for vessels, **ASME Section VIII, Division 1, Mandatory Appendix 8**), the structural code (**AWS D1.1** for steel welds), drawing notes, or the customer's specification. Defense drawings often flow graded soundness requirements from **MIL-STD-1907**.\n\nYour written procedure sits underneath both chains and reconciles them into one executable recipe. The skill this lesson builds is navigation: given a job package, find the applicable method requirements, find the acceptance criteria, and never confuse the two."
+    },
+    {
+      "type": "figure",
+      "figureId": "pt2-5-3-fig-a",
+      "caption": "Two chains flow into your written procedure: the design chain owns acceptance criteria, the method chain owns process. The contract sits on top of both."
+    },
+    {
+      "type": "text",
+      "heading": "Locating the Applicable Method and Process",
+      "body": "Start at the top of the package and read down. The contract or purchase order invokes a code or specification; that document names the PT practice; the practice classifies the process; your procedure implements it.\n\nThe classification system in ASTM E1417 — mirroring AMS 2644 — is the vocabulary most drawings speak:\n\n- **Type** — I fluorescent, II visible\n- **Method** — A water-washable, B post-emulsifiable lipophilic, C solvent-removable, D post-emulsifiable hydrophilic\n- **Developer form** — a dry powder; b water-soluble; c water-suspendible; d and e nonaqueous (for Type I and Type II); f special applications\n- **Sensitivity level** — ½ through 4 per AMS 2644; the graded levels apply to Type I fluorescent systems\n\nSo a note reading *\"PT per ASTM E1417, Type I, Method D, Sensitivity Level 3, Form d\"* is a complete process decision: high-sensitivity fluorescent penetrant, hydrophilic emulsifier removal, nonaqueous developer — with materials drawn from the AMS 2644 Qualified Products List, and penetrant and emulsifier from the same product family.\n\nOn ASME work the path differs in detail, not in logic: Section V, Article 6 requires a written procedure, identifies its essential variables (Table T-621.1) — change one and the procedure must be requalified — and sets the demonstration requirements. Either way, the method document tells you *which processes are permitted and how to run them*. It is silent about whether the part is any good."
+    },
+    {
+      "type": "figure",
+      "figureId": "pt2-5-3-fig-b",
+      "caption": "One drawing note is five process decisions. Every token maps to the E1417/AMS 2644 classification system — and your procedure must honor all of them."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "The method standard never buys the part",
+      "body": "ASTM E1417 says it directly: acceptance criteria are whatever the **cognizant engineering organization** flows down through the contract, drawing, or specification. ASME Section V, Article 6 runs the examination and then hands you to the **referencing Code Section** for acceptance. AWS D1.1 evaluates PT-found indications against the **same criteria it applies to visual inspection** of welds. If the only document on your bench is the method practice and someone is asking accept or reject — you are missing a document, not a judgment call."
+    },
+    {
+      "type": "text",
+      "heading": "The Vocabulary Acceptance Criteria Are Written In",
+      "body": "Codes write acceptance criteria in a small, exact vocabulary. Use it the same way.\n\n- An **indication** is what you see — penetrant bleed-out against the developer. **Interpretation** sorts it: *false* (lint, residue, handling marks — process artifacts), *nonrelevant* (real bleed-out explained by part geometry, such as a press fit or spline), or *relevant* (caused by a discontinuity — it must now be evaluated).\n- **Evaluation** compares the relevant indication to the acceptance criteria. A discontinuity that exceeds them is a **defect** — and *defect* means rejectable by definition, so never use the word loosely.\n- **Linear indication** — length greater than three times the width. **Rounded indication** — circular or elliptical, with length three times the width or less. Nearly every PT acceptance table is built on this 3:1 split.\n- **Relevance threshold** — pressure-vessel criteria typically consider only indications with a major dimension greater than 1/16 in. (1.5 mm).\n- **Measure the indication, not the flaw.** Bleed-out is normally wider than the discontinuity feeding it, and Appendix 8 is explicit that the size of the indication is the basis for acceptance evaluation. If the indication is rejectable, the part is rejectable — you do not get to argue that the flaw underneath is smaller."
+    },
+    {
+      "type": "table",
+      "caption": "Typical pressure-vessel PT acceptance pattern — after ASME BPVC Section VIII, Division 1, Mandatory Appendix 8. Read the governing edition on every job; never recite limits from memory.",
+      "headers": ["Indication as classified", "Typical limit (Appendix 8 pattern)", "Disposition"],
+      "rows": [
+        ["Any indication, major dimension 1/16 in. (1.5 mm) or less", "Below the relevance threshold", "Not relevant — not evaluated against the limits; record as the procedure requires"],
+        ["Relevant linear (length > 3 × width)", "None permitted", "Reject"],
+        ["Relevant rounded (length ≤ 3 × width)", "Permitted up to 3/16 in. (5 mm)", "Reject only if greater than 3/16 in."],
+        ["Four or more relevant rounded indications in a line", "Edge-to-edge spacing must exceed 1/16 in. (1.5 mm)", "Reject if spaced 1/16 in. or less"]
+      ]
+    },
+    {
+      "type": "figure",
+      "figureId": "pt2-5-3-fig-c",
+      "caption": "Classification before comparison: gauge the indication, apply the 3:1 rule, then test it against the flowed-down limits — here, the ASME Section VIII, Division 1, Appendix 8 pattern."
+    },
+    {
+      "type": "text",
+      "heading": "Dispositioning at the Bench",
+      "body": "Put the pieces together the same way every time:\n\n1. **Confirm the process was valid** — system performance check passed, parameters inside the written procedure. Criteria mean nothing applied to a bad test.\n2. **Interpret** every indication: false, nonrelevant, or relevant. When interpretation is in doubt, re-examine or reprocess the area.\n3. **Measure relevant indications** as they appear at the specified development time — length and width, in the units of the governing document.\n4. **Classify** — linear or rounded, using the 3:1 rule.\n5. **Compare to the flowed-down criteria and disposition.** Cite the document, edition or revision, and paragraph on the report — \"ASME VIII, Div. 1, Mandatory Appendix 8\" is auditable; \"per code\" is not.\n6. **Rejectable means defect** — route it through the quality system. After any rework or repair, the area is fully reprocessed and evaluated to the same criteria.\n\nTwo traps close out the lesson. **No criteria in the package?** You cannot disposition — stop and obtain written direction from the cognizant engineering organization; never borrow another code's table because it looks similar. **Documents conflict?** The contract chain governs — purchase order over drawing over referenced standard, as your quality system defines — and the conflict is resolved in writing, not on the bench."
+    }
+  ],
+  "figures": [
+    { "id": "pt2-5-3-fig-a", "title": "The document stack: who tells you what", "file": "pt2-5-3-fig-a.svg" },
+    { "id": "pt2-5-3-fig-b", "title": "Decoding a drawing callout", "file": "pt2-5-3-fig-b.svg" },
+    { "id": "pt2-5-3-fig-c", "title": "Classify the indication, then compare to the limit", "file": "pt2-5-3-fig-c.svg" }
+  ],
+  "interactive": {
+    "type": "scenario",
+    "title": "Find the Document, Make the Call",
+    "intro": "Second shift, two jobs on your bench: an aerospace hydraulic fitting and an ASME Section VIII vessel weld. Every call below is one you will make for real as a Level II.",
+    "steps": [
+      {
+        "prompt": "The fitting's drawing note reads: 'Penetrant inspect per ASTM E1417, Type I, Method D, Sensitivity Level 3.' What process does that commit you to?",
+        "options": [
+          "A water-washable visible-dye kit from the flammables cabinet — penetrant is penetrant",
+          "Fluorescent penetrant removed with a hydrophilic emulsifier step, qualified at Sensitivity Level 3, with materials from the AMS 2644 qualified list",
+          "Solvent-removable fluorescent penetrant at whatever sensitivity level is in stock",
+          "Post-emulsifiable lipophilic visible dye at Level 3"
+        ],
+        "correct": 1,
+        "feedback": "Type I means fluorescent dye; Method D means post-emulsifiable with a hydrophilic (water-base) emulsifier; Level 3 is a high sensitivity grade under AMS 2644 — and E1417 requires the materials to come from the qualified products list. Method C would be solvent-removable, Method B lipophilic, Method A water-washable."
+      },
+      {
+        "prompt": "Processing on the fitting is complete and you have a crisp relevant indication. Where do the accept/reject limits come from?",
+        "options": [
+          "ASTM E1417's annex of universal indication size limits",
+          "The penetrant manufacturer's technical data sheet",
+          "The design flow-down — drawing notes, the referenced specification, or the customer's requirements; E1417 itself sends acceptance to the cognizant engineering organization",
+          "Level II judgment — that is exactly what the certification is for"
+        ],
+        "correct": 2,
+        "feedback": "E1417 controls process, not product acceptance — it explicitly assigns acceptance criteria to the cognizant engineering organization's flow-down. A Level II evaluates against those flowed-down criteria; certification authorizes you to apply them, not to invent them."
+      },
+      {
+        "prompt": "On the vessel weld — evaluated to the typical ASME VIII, Division 1, Appendix 8 pattern — an indication measures 1/8 in. long by 1/32 in. wide. Your call?",
+        "options": [
+          "Reject — 4:1 length-to-width makes it a relevant linear indication, and the pattern permits none",
+          "Accept — it is shorter than the 3/16 in. limit",
+          "Not relevant — anything under 1/4 in. is ignored",
+          "Re-clean and retest until the indication stops coming back"
+        ],
+        "correct": 0,
+        "feedback": "At 1/8 in., the indication exceeds the 1/16 in. relevance threshold; 1/8 ÷ 1/32 = 4, past the 3:1 boundary, so it is linear. The 3/16 in. limit applies only to rounded indications. Retesting to make a real indication disappear is falsification, not inspection."
+      },
+      {
+        "prompt": "Last snag of the night: the customer purchase order, the part drawing, and your shop procedure each call a different requirement for the same process step. What now?",
+        "options": [
+          "Follow the shop procedure — it is the qualified document",
+          "Follow the most conservative requirement and note your choice in the report",
+          "Run the part both ways and report both results",
+          "Stop processing — the contract chain governs, and the conflict gets resolved in writing by the cognizant engineering organization before parts move"
+        ],
+        "correct": 3,
+        "feedback": "Conflicts are resolved by precedence — the purchase order and contract sit on top — and the resolution must be written direction from the cognizant engineering organization, usually routed through your Level III. Picking 'conservative' yourself still means processing to a requirement nobody authorized."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "Per ASTM E1417, where do the accept/reject criteria for a penetrant-tested part come from?",
+      "options": [
+        "An annex of indication size limits published in E1417 itself",
+        "The Level II inspector's documented experience with similar hardware",
+        "The cognizant engineering organization, through the contract, drawing, or specification flow-down",
+        "The penetrant manufacturer's technical data sheet for the qualified materials"
+      ],
+      "correct": 2,
+      "explanation": "E1417 is a process-control practice: it governs materials, classification, and processing, and it explicitly assigns acceptance criteria to the cognizant engineering organization's flow-down documents. Method standards control how to test — never whether the part is acceptable."
+    },
+    {
+      "question": "A drawing note requires 'PT per ASTM E1417, Type I, Method D, Sensitivity Level 3.' Which process does that call out?",
+      "options": [
+        "Fluorescent penetrant removed with a hydrophilic emulsifier step, using high-sensitivity materials from the AMS 2644 qualified list",
+        "Visible red dye removed by solvent wiping, at any qualified sensitivity",
+        "Water-washable fluorescent penetrant with dry powder developer required",
+        "Lipophilic post-emulsifiable visible dye at medium sensitivity"
+      ],
+      "correct": 0,
+      "explanation": "Type I is fluorescent; Method D is post-emulsifiable using a hydrophilic, water-base emulsifier; Level 3 is a high sensitivity grade under AMS 2644; and E1417 requires materials from the Qualified Products List. Method C is solvent-removable, Method B is lipophilic, and Method A is water-washable."
+    },
+    {
+      "question": "A pressure-vessel weld is examined per ASME Section V, Article 6. Where are the acceptance standards for the indications you find?",
+      "options": [
+        "In Article 6, immediately after the examination requirements",
+        "In ASTM E165, which Section V adopts as SE-165",
+        "In SAE AMS 2644, alongside the material qualification requirements",
+        "In the referencing Code Section — for a Section VIII, Division 1 vessel, Mandatory Appendix 8"
+      ],
+      "correct": 3,
+      "explanation": "Section V articles define how examinations are performed; acceptance always belongs to the referencing Code Section that invoked them. For Section VIII, Division 1 vessels, the PT acceptance standards are in Mandatory Appendix 8. SE-165 and AMS 2644 govern technique and materials, not part acceptance."
+    },
+    {
+      "question": "Evaluating to the typical Appendix 8 pattern, an indication on a vessel weld measures 3/16 in. long by 1/32 in. wide. What is the disposition?",
+      "options": [
+        "Acceptable — it does not exceed the 3/16 in. limit",
+        "Reject — length is six times width, so it is a relevant linear indication, and none are permitted",
+        "Not relevant — only indications over 1/4 in. are evaluated",
+        "Acceptable if it is the only indication on the weld"
+      ],
+      "correct": 1,
+      "explanation": "Its major dimension exceeds the 1/16 in. relevance threshold, and 3/16 ÷ 1/32 = 6 — far past the 3:1 boundary — so it is a relevant linear indication, and the pattern permits none. The 3/16 in. limit applies to rounded indications only; isolation never excuses a linear indication."
+    },
+    {
+      "question": "Your shop procedure, the part drawing, and the customer purchase order each point to a different requirement for the same process step. What is the correct action?",
+      "options": [
+        "Follow the shop procedure, because it is the qualified document",
+        "Follow the most conservative of the three and note the choice on the report",
+        "Stop and have the conflict resolved in writing through the contract chain — the purchase order governs, and the cognizant engineering organization makes the call",
+        "Follow the drawing, because drawings always outrank purchase orders"
+      ],
+      "correct": 2,
+      "explanation": "Order of precedence puts the contract and purchase order on top, and document conflicts are resolved in writing by the cognizant engineering organization — typically routed through your Level III. Choosing 'conservative' on your own authority still means processing to an unauthorized requirement."
+    }
+  ],
+  "references": [
+    "CP-105-2024 PT Topical Outline §4.3 (standards/codes, applicable methods/processes, acceptance criteria)",
+    "ASTM E1417/E1417M, Standard Practice for Liquid Penetrant Testing",
+    "ASME BPVC Section V, Article 6, and Section VIII, Division 1, Mandatory Appendix 8 (method and acceptance standards)",
+    "SAE AMS 2644, Inspection Material, Penetrant (qualified penetrant materials)"
+  ]
+}

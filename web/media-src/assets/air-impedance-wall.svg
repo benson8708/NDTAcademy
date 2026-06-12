@@ -1,0 +1,122 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="aiwGlowC" filterUnits="userSpaceOnUse" x="-16" y="51" width="581" height="297">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="aiwGlowR" filterUnits="userSpaceOnUse" x="66" y="-11" width="553" height="297">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="aiwSteel" x1="0" y1="132" x2="0" y2="288" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".35" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="aiwBarGrad" x1="0" y1="70" x2="0" y2="114" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3f9bff"/><stop offset="1" stop-color="#1E66F5"/>
+    </linearGradient>
+    <linearGradient id="aiwLossGrad" x1="371" y1="0" x2="561" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5fe0ff"/><stop offset=".55" stop-color="#ffc24b"/><stop offset="1" stop-color="#ff6b6b"/>
+    </linearGradient>
+    <pattern id="aiwDots" width="13" height="13" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1" fill="#5fe0ff" opacity=".16"/>
+    </pattern>
+  </defs>
+
+  <!-- ===== beam axis (alignment line TX -> RX) ===== -->
+  <line x1="106" y1="196" x2="496" y2="196" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="3 6" opacity=".18"/>
+
+  <!-- ===== AIR bands ===== -->
+  <rect x="104" y="132" width="147" height="156" fill="url(#aiwDots)"/>
+  <rect x="349" y="132" width="147" height="156" fill="url(#aiwDots)"/>
+  <text x="178" y="156" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".6">AIR</text>
+  <text x="424" y="156" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".6">AIR</text>
+
+  <!-- ===== SOLID plate mid-frame ===== -->
+  <rect x="255" y="132" width="90" height="156" fill="url(#aiwSteel)"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".13">
+    <line x1="257" y1="166" x2="343" y2="166"/>
+    <line x1="257" y1="244" x2="343" y2="244"/>
+    <line x1="257" y1="268" x2="343" y2="268"/>
+  </g>
+  <line x1="255" y1="132" x2="345" y2="132" stroke="#8fb6e0" stroke-width="1.5" opacity=".8"/>
+  <line x1="255" y1="288" x2="345" y2="288" stroke="#8fb6e0" stroke-width="1.5" opacity=".8"/>
+  <text x="300" y="156" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".9">SOLID</text>
+
+  <!-- interfaces: ENTRY / EXIT -->
+  <line x1="255" y1="132" x2="255" y2="288" stroke="#7fd8ff" stroke-width="2" opacity=".9" filter="url(#aiwGlowC)"/>
+  <line x1="345" y1="132" x2="345" y2="288" stroke="#7fd8ff" stroke-width="2" opacity=".9" filter="url(#aiwGlowC)"/>
+  <line x1="255" y1="124.5" x2="255" y2="132" stroke="#7fd8ff" stroke-width="1.5" opacity=".85"/>
+  <line x1="345" y1="124.5" x2="345" y2="132" stroke="#7fd8ff" stroke-width="1.5" opacity=".85"/>
+  <text x="255" y="120" text-anchor="middle" font-size="12" fill="#9fe6ff">ENTRY</text>
+  <text x="345" y="120" text-anchor="middle" font-size="12" fill="#9fe6ff">EXIT</text>
+
+  <!-- ===== TX probe (left, firing right): backing / crystal / matching layer ===== -->
+  <g>
+    <path d="M10 206 C 18 200 24 196 32 196" fill="none" stroke="#8fb6e0" stroke-width="2" opacity=".55"/>
+    <rect x="32" y="188" width="14" height="16" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1"/>
+    <rect x="46" y="172" width="50" height="48" rx="5" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="54" y="178" width="28" height="36" fill="#0e2848"/>
+    <rect x="84" y="178" width="8" height="36" fill="#3f9bff" opacity=".75"/>
+    <rect x="96" y="176" width="7" height="40" fill="#5fe0ff" opacity=".9" filter="url(#aiwGlowC)"/>
+    <text x="71" y="240" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".85">TX</text>
+  </g>
+  <!-- ===== RX probe (right, mirrored) ===== -->
+  <g>
+    <path d="M590 206 C 582 200 576 196 568 196" fill="none" stroke="#8fb6e0" stroke-width="2" opacity=".55"/>
+    <rect x="554" y="188" width="14" height="16" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1"/>
+    <rect x="504" y="172" width="50" height="48" rx="5" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="518" y="178" width="28" height="36" fill="#0e2848"/>
+    <rect x="508" y="178" width="8" height="36" fill="#3f9bff" opacity=".75"/>
+    <rect x="497" y="176" width="7" height="40" fill="#5fe0ff" opacity=".9" filter="url(#aiwGlowC)"/>
+    <text x="529" y="240" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".85">RX</text>
+  </g>
+
+  <!-- ===== beam choreography (draw reveals) ===== -->
+  <path id="aiwBeam" d="M106 196 H251 M251 196 l-11 -6.5 M251 196 l-11 6.5" fill="none" stroke="#5fe0ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#aiwGlowC)"/>
+  <path id="aiwReflect1" d="M253 197 L238 221 L124 221 M124 221 l12 -7 M124 221 l12 7" fill="none" stroke="#ff6b6b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#aiwGlowR)"/>
+  <path id="aiwSliver1" d="M257 196 H339 M339 196 l-8 -5 M339 196 l-8 5" fill="none" stroke="#7fd8ff" stroke-width="2.2" stroke-opacity=".9" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <path id="aiwReflect2" d="M342 199 L330 219 L266 219 M266 219 l10 -6 M266 219 l10 6" fill="none" stroke="#ff6b6b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#aiwGlowR)"/>
+  <path id="aiwSliver2" d="M349 196 H490 M490 196 l-8 -5 M490 196 l-8 5" fill="none" stroke="#7fd8ff" stroke-width="1.4" stroke-opacity=".7" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="aiwR1lbl" opacity="0">
+    <text x="186" y="245" text-anchor="middle" font-size="11" fill="#ff6b6b" opacity=".9">≈99.9% REFLECTED</text>
+  </g>
+  <circle id="aiwPing" cx="499" cy="196" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#aiwGlowC)"/>
+
+  <!-- ===== top-left: Z formula chip ===== -->
+  <g id="aiwZchip" opacity="0">
+    <rect x="28" y="22" width="148" height="30" rx="8" fill="#0e2848" fill-opacity=".68" stroke="#5fe0ff" stroke-width="1" stroke-opacity=".7"/>
+    <text x="102" y="42" text-anchor="middle" font-size="13" fill="#9fe6ff">Z = ρ × v</text>
+  </g>
+
+  <!-- ===== top-left: impedance bars AIR vs SOLID ===== -->
+  <g id="aiwZbars" opacity="0">
+    <line x1="40" y1="114.5" x2="152" y2="114.5" stroke="#8fb6e0" stroke-width="1" opacity=".5"/>
+    <rect x="44" y="111" width="28" height="3" fill="#5fe0ff" filter="url(#aiwGlowC)"/>
+    <rect x="96" y="70" width="28" height="44" fill="url(#aiwBarGrad)" stroke="#8fb6e0" stroke-width=".75" stroke-opacity=".6"/>
+    <text x="58" y="105" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".8">0.0004</text>
+    <text x="110" y="64" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".8">≈46 MRayl</text>
+    <text x="58" y="127" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".7">AIR</text>
+    <text x="110" y="127" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".7">SOLID</text>
+  </g>
+
+  <!-- ===== top-right: cumulative loss meter ===== -->
+  <g id="aiwLoss" opacity="0">
+    <text x="572" y="40" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".8">CUMULATIVE LOSS</text>
+    <rect x="368" y="48" width="204" height="14" rx="7" fill="#0e2848" fill-opacity=".7" stroke="#8fb6e0" stroke-width="1" stroke-opacity=".5"/>
+    <rect x="551" y="49.5" width="19" height="11" fill="#ff6b6b" opacity=".15"/>
+    <rect x="371" y="51" width="190" height="8" rx="4" fill="url(#aiwLossGrad)"/>
+    <line x1="561" y1="47" x2="561" y2="63" stroke="#ff6b6b" stroke-width="2" filter="url(#aiwGlowR)"/>
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".8">
+      <line x1="369" y1="62" x2="369" y2="69"/>
+      <line x1="460" y1="62" x2="460" y2="69"/>
+      <line x1="551" y1="62" x2="551" y2="69"/>
+    </g>
+    <text x="369" y="80" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".7">0</text>
+    <text x="460" y="80" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".7">50</text>
+    <text x="551" y="80" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".7">100</text>
+    <text x="572" y="94" text-anchor="end" font-size="13" fill="#ff6b6b">&gt;100 dB</text>
+  </g>
+
+  <!-- ===== caption ===== -->
+  <text x="40" y="328" font-size="12" fill="#9fe6ff" opacity=".7">AIR-COUPLED PATH</text>
+</svg>

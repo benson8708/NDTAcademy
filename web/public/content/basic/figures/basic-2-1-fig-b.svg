@@ -1,0 +1,70 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-size="23" font-weight="bold" fill="#0B1F3A">The Kaiser and Felicity Effects</text>
+  <text x="400" y="57" text-anchor="middle" font-size="15" fill="#1E66F5">cumulative AE counts vs. load through load &#8211; unload &#8211; reload cycles</text>
+
+  <!-- ============ LEFT PANEL: KAISER ============ -->
+  <text x="213" y="92" text-anchor="middle" font-size="16" font-weight="bold" fill="#0B1F3A">KAISER EFFECT &#8212; structurally sound</text>
+
+  <!-- axes -->
+  <line x1="76" y1="392" x2="76" y2="124" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="70,124 82,124 76,114" fill="#0B1F3A"/>
+  <line x1="76" y1="392" x2="380" y2="392" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="380,386 380,398 390,392" fill="#0B1F3A"/>
+  <text x="376" y="418" text-anchor="end" font-size="15" fill="#0B1F3A">load &#8594;</text>
+  <text x="48" y="258" text-anchor="middle" font-size="15" fill="#0B1F3A" transform="rotate(-90 48 258)">cumulative AE counts</text>
+
+  <!-- first loading curve -->
+  <polyline points="76,392 110,382 140,368 170,348 200,320 220,292 240,252" fill="none" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="96" y="300" font-size="14" fill="#0B1F3A">1st load:</text>
+  <text x="96" y="318" font-size="14" fill="#0B1F3A">emission</text>
+
+  <!-- P1 marker -->
+  <line x1="240" y1="392" x2="240" y2="246" stroke="#1E66F5" stroke-width="2" stroke-dasharray="5,4"/>
+  <line x1="240" y1="392" x2="240" y2="400" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="240" y="416" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">P1</text>
+
+  <!-- reload: silent, then resumes beyond P1 -->
+  <line x1="80" y1="252" x2="238" y2="252" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="174,246 174,258 186,252" fill="#1E66F5"/>
+  <text x="150" y="236" text-anchor="middle" font-size="14" fill="#1E66F5">reload: silent below P1</text>
+  <polyline points="240,252 270,228 300,200 330,172 360,148" fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="354,156 367,147 353,140" fill="#1E66F5"/>
+  <text x="290" y="134" text-anchor="middle" font-size="14" fill="#0B1F3A">emission resumes beyond P1</text>
+
+  <!-- ============ RIGHT PANEL: FELICITY ============ -->
+  <text x="589" y="92" text-anchor="middle" font-size="16" font-weight="bold" fill="#0B1F3A">FELICITY EFFECT &#8212; damage present</text>
+
+  <!-- axes -->
+  <line x1="452" y1="392" x2="452" y2="124" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="446,124 458,124 452,114" fill="#0B1F3A"/>
+  <line x1="452" y1="392" x2="756" y2="392" stroke="#0B1F3A" stroke-width="2"/>
+  <polygon points="756,386 756,398 766,392" fill="#0B1F3A"/>
+  <text x="752" y="418" text-anchor="end" font-size="15" fill="#0B1F3A">load &#8594;</text>
+  <text x="424" y="258" text-anchor="middle" font-size="15" fill="#0B1F3A" transform="rotate(-90 424 258)">cumulative AE counts</text>
+
+  <!-- first loading curve -->
+  <polyline points="452,392 486,382 516,368 546,348 576,320 596,292 616,252" fill="none" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="472" y="300" font-size="14" fill="#0B1F3A">1st load:</text>
+  <text x="472" y="318" font-size="14" fill="#0B1F3A">emission</text>
+
+  <!-- P1 and F markers -->
+  <line x1="616" y1="392" x2="616" y2="246" stroke="#1E66F5" stroke-width="2" stroke-dasharray="5,4"/>
+  <line x1="616" y1="392" x2="616" y2="400" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="616" y="416" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">P1</text>
+  <line x1="544" y1="392" x2="544" y2="252" stroke="#1E66F5" stroke-width="2" stroke-dasharray="5,4"/>
+  <line x1="544" y1="392" x2="544" y2="400" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="544" y="416" text-anchor="middle" font-size="15" font-weight="bold" fill="#1E66F5">F</text>
+
+  <!-- reload: emission returns early at F -->
+  <line x1="456" y1="252" x2="542" y2="252" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="494,246 494,258 506,252" fill="#1E66F5"/>
+  <polyline points="544,252 576,226 610,198 648,172 690,150 730,134" fill="none" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="724,143 738,131 722,127" fill="#1E66F5"/>
+  <text x="620" y="126" text-anchor="middle" font-size="14" fill="#1E66F5">emission starts early, at F &#60; P1</text>
+
+  <!-- summary bar -->
+  <rect x="50" y="434" width="700" height="54" rx="6" fill="#0B1F3A"/>
+  <text x="400" y="456" text-anchor="middle" font-size="15" font-weight="bold" fill="#FFFFFF">Kaiser: a sound structure stays silent until its previous maximum load is exceeded.</text>
+  <text x="400" y="477" text-anchor="middle" font-size="15" font-weight="bold" fill="#9BC4FF">Felicity: emission returns at F below P1 &#8212; ratio F &#247; P1 &#60; 1 flags structural damage.</text>
+</svg>

@@ -1,0 +1,209 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="csgGlow" filterUnits="userSpaceOnUse" x="-58" y="-57" width="116" height="454">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="csgGlowSm" filterUnits="userSpaceOnUse" x="29" y="2" width="462" height="312">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="csgSoft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.1"/>
+    </filter>
+    <filter id="csgSoftSm" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation=".5"/>
+    </filter>
+    <linearGradient id="csgSteel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2c5683"/><stop offset=".5" stop-color="#1b3e66"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="csgSlabG" x1="0" y1="68" x2="0" y2="78" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3a6fa6"/><stop offset=".5" stop-color="#1d4470"/><stop offset="1" stop-color="#102c50"/>
+    </linearGradient>
+    <linearGradient id="csgMapFill" x1="0" y1="120" x2="0" y2="288" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4ea2ff"/><stop offset=".55" stop-color="#2b86ff"/><stop offset="1" stop-color="#1d5fd8"/>
+    </linearGradient>
+    <radialGradient id="csgPoreG" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#06182e" stop-opacity=".9"/>
+      <stop offset=".62" stop-color="#06182e" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#06182e" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="csgBarG" x1="0" y1="128" x2="0" y2="272" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7fd8ff"/><stop offset=".3" stop-color="#2b86ff"/><stop offset=".55" stop-color="#1E66F5"/><stop offset=".8" stop-color="#0e2848"/><stop offset="1" stop-color="#02060d"/>
+    </linearGradient>
+    <linearGradient id="csgScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+    <pattern id="csgGridP" width="25" height="25" patternUnits="userSpaceOnUse" patternTransform="translate(70,120)">
+      <path d="M25 0 V25 M0 25 H25" stroke="#8fb6e0" stroke-width="1" opacity=".13" fill="none"/>
+    </pattern>
+    <pattern id="csgLinesP" width="6" height="4" patternUnits="userSpaceOnUse">
+      <path d="M0 2 H6" stroke="#9fd9ff" stroke-width="1" opacity=".07"/>
+    </pattern>
+    <clipPath id="csgMapClip"><rect x="72" y="122" width="376" height="164"/></clipPath>
+  </defs>
+
+  <!-- ===== caption ===== -->
+  <text x="70" y="13" font-size="11" fill="#9fe6ff" opacity=".75">AUTOMATED SQUIRTER TTU — PLAN-VIEW C-SCAN</text>
+
+  <!-- ===== side-elevation vignette: gantry rails + twin squirter yoke + part edge-on ===== -->
+  <!-- top rail -->
+  <rect x="56" y="20" width="408" height="8" rx="2" fill="url(#csgSteel)" stroke="#8fb6e0" stroke-width="1"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".18">
+    <path d="M96 20 V28 M136 20 V28 M176 20 V28 M336 20 V28 M376 20 V28 M416 20 V28"/>
+  </g>
+  <!-- carriage w/ wheels -->
+  <circle cx="241" cy="28" r="2.5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1"/>
+  <circle cx="259" cy="28" r="2.5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1"/>
+  <rect x="234" y="30" width="32" height="13" rx="2" fill="url(#csgSteel)" stroke="#8fb6e0" stroke-width="1"/>
+  <!-- motion arrow -->
+  <g opacity=".7">
+    <path d="M276 37 H306" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="4 3" fill="none"/>
+    <path d="M313 37 L305 33.8 V40.2 Z" fill="#5fe0ff"/>
+  </g>
+  <!-- upper nozzle -->
+  <rect x="241" y="43" width="18" height="8" rx="1" fill="#14304f" stroke="#8fb6e0" stroke-width="1"/>
+  <path d="M243.5 51 H256.5 L252.5 58 H247.5 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1" stroke-linejoin="round"/>
+  <!-- upper water jet -->
+  <rect x="248.7" y="57.5" width="2.6" height="10.5" fill="#7fe6ff" filter="url(#csgGlowSm)" opacity=".95"/>
+  <g fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".8">
+    <path d="M250 67.5 Q245.5 66.8 242.5 63.5"/>
+    <path d="M250 67.5 Q254.5 66.8 257.5 63.5"/>
+  </g>
+  <!-- part slab (edge-on, spans map width) -->
+  <rect x="70" y="68" width="380" height="10" fill="url(#csgSlabG)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <g stroke="#7fd8ff" stroke-width=".7" opacity=".35">
+    <line x1="72" y1="71.3" x2="448" y2="71.3"/>
+    <line x1="72" y1="74.6" x2="448" y2="74.6"/>
+  </g>
+  <!-- lower water jet -->
+  <rect x="248.7" y="78" width="2.6" height="10.5" fill="#7fe6ff" filter="url(#csgGlowSm)" opacity=".95"/>
+  <g fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".8">
+    <path d="M250 78.5 Q245.5 79.2 242.5 82.5"/>
+    <path d="M250 78.5 Q254.5 79.2 257.5 82.5"/>
+  </g>
+  <!-- lower nozzle -->
+  <path d="M243.5 95 H256.5 L252.5 88.5 H247.5 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1" stroke-linejoin="round"/>
+  <rect x="241" y="95" width="18" height="7" rx="1" fill="#14304f" stroke="#8fb6e0" stroke-width="1"/>
+  <rect x="246" y="102" width="8" height="3" fill="#14304f" stroke="#8fb6e0" stroke-width=".8"/>
+  <!-- lower rail -->
+  <rect x="56" y="105" width="408" height="7" rx="2" fill="url(#csgSteel)" stroke="#8fb6e0" stroke-width="1"/>
+  <!-- twin squirters label -->
+  <text x="228" y="48" font-size="11" fill="#9fe6ff" opacity=".85" text-anchor="end">TWIN SQUIRTERS</text>
+  <path d="M231 50 L243 54" stroke="#9fe6ff" stroke-width="1" opacity=".5" fill="none"/>
+
+  <!-- ===== plan-view panel / C-scan map frame ===== -->
+  <rect x="70" y="120" width="380" height="168" fill="#0c2240" fill-opacity=".8" stroke="#8fb6e0" stroke-width="2"/>
+  <rect x="70" y="120" width="380" height="168" fill="url(#csgGridP)"/>
+  <!-- corner brackets -->
+  <g stroke="#5fe0ff" stroke-width="2" fill="none" opacity=".8">
+    <path d="M66 130 V116 H80"/>
+    <path d="M440 116 H454 V130"/>
+    <path d="M454 278 V292 H440"/>
+    <path d="M80 292 H66 V278"/>
+  </g>
+  <!-- edge ticks -->
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".4">
+    <path d="M120 116 V120 M170 116 V120 M220 116 V120 M270 116 V120 M320 116 V120 M370 116 V120 M420 116 V120"/>
+    <path d="M64 162 H70 M64 204 H70 M64 246 H70"/>
+  </g>
+
+  <!-- ===== healthy raster fill (fade) ===== -->
+  <g id="csgRaster" opacity="0">
+    <g clip-path="url(#csgMapClip)">
+      <rect x="72" y="122" width="376" height="164" fill="url(#csgMapFill)" fill-opacity=".68"/>
+      <rect x="72" y="122" width="376" height="164" fill="url(#csgLinesP)"/>
+      <ellipse cx="160" cy="150" rx="55" ry="20" fill="#7fd8ff" opacity=".06"/>
+      <ellipse cx="360" cy="258" rx="65" ry="22" fill="#08152b" opacity=".06"/>
+      <ellipse cx="250" cy="240" rx="48" ry="18" fill="#7fd8ff" opacity=".05"/>
+      <ellipse cx="392" cy="148" rx="50" ry="20" fill="#08152b" opacity=".07"/>
+      <rect x="74.5" y="124.5" width="371" height="159" fill="none" stroke="#071a30" stroke-width="5" opacity=".45"/>
+    </g>
+    <!-- current yoke position drop line -->
+    <line x1="250" y1="113" x2="250" y2="256" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="3 4" opacity=".4"/>
+    <circle cx="250" cy="256" r="2.6" fill="#5fe0ff" filter="url(#csgGlowSm)"/>
+  </g>
+
+  <!-- ===== serpentine raster trail (draw) ===== -->
+  <path id="csgRasterTrail" d="M84 136 H421 a15 15 0 0 1 0 30 H99 a15 15 0 0 0 0 30 H421 a15 15 0 0 1 0 30 H99 a15 15 0 0 0 0 30 H250" fill="none" stroke="#5fe0ff" stroke-width="1.6" opacity=".6" filter="url(#csgGlowSm)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== signature 1: delamination — sharp-edged dead zone ===== -->
+  <g id="csgDelam" opacity="0">
+    <path d="M146 210 C146 194 162 184 180 186 C198 188 214 196 220 208 C226 220 220 234 206 238 C196 241 188 236 178 240 C164 246 150 238 147 226 C146 221 146 215 146 210 Z" fill="#020a16" stroke="#ff6b6b" stroke-width="1.6"/>
+  </g>
+  <circle id="csgDelamPing" cx="182" cy="213" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#csgGlowSm)"/>
+  <g id="csgDelamLbl" opacity="0">
+    <text x="100" y="166" font-size="12" fill="#ff6b6b" opacity=".95">DELAM</text>
+    <path d="M126 170 L154 192" stroke="#ff6b6b" stroke-width="1" opacity=".55" fill="none"/>
+  </g>
+
+  <!-- ===== signature 2: porosity — mottled diffuse loss ===== -->
+  <g id="csgPorosity" opacity="0">
+    <ellipse cx="300" cy="166" rx="42" ry="28" fill="url(#csgPoreG)" filter="url(#csgSoft)"/>
+    <g filter="url(#csgSoftSm)">
+      <g fill="#ffc24b">
+        <circle cx="272" cy="162" r="2" opacity=".55"/><circle cx="278" cy="176" r="1.6" opacity=".4"/>
+        <circle cx="282" cy="154" r="2.3" opacity=".5"/><circle cx="288" cy="170" r="1.4" opacity=".6"/>
+        <circle cx="292" cy="159" r="1.8" opacity=".45"/><circle cx="296" cy="180" r="2.1" opacity=".5"/>
+        <circle cx="298" cy="150" r="1.5" opacity=".4"/><circle cx="300" cy="172" r="2.4" opacity=".55"/>
+        <circle cx="304" cy="162" r="1.6" opacity=".6"/><circle cx="308" cy="182" r="1.9" opacity=".4"/>
+        <circle cx="310" cy="153" r="2.2" opacity=".5"/><circle cx="314" cy="171" r="1.5" opacity=".55"/>
+        <circle cx="318" cy="160" r="2" opacity=".45"/><circle cx="322" cy="177" r="1.7" opacity=".5"/>
+        <circle cx="326" cy="166" r="2.2" opacity=".4"/><circle cx="330" cy="156" r="1.5" opacity=".5"/>
+      </g>
+      <g fill="#ff9b4b">
+        <circle cx="285" cy="184" r="1.8" opacity=".4"/><circle cx="307" cy="187" r="1.5" opacity=".35"/>
+        <circle cx="275" cy="168" r="1.4" opacity=".45"/><circle cx="315" cy="184" r="1.8" opacity=".4"/>
+        <circle cx="320" cy="151" r="1.4" opacity=".4"/><circle cx="334" cy="173" r="1.6" opacity=".35"/>
+      </g>
+      <g fill="#04142a">
+        <circle cx="294" cy="166" r="2.8" opacity=".55"/><circle cx="306" cy="156" r="2.4" opacity=".5"/>
+        <circle cx="312" cy="166" r="2.1" opacity=".5"/><circle cx="288" cy="158" r="2" opacity=".45"/>
+        <circle cx="300" cy="161" r="1.8" opacity=".5"/><circle cx="318" cy="174" r="2.3" opacity=".45"/>
+      </g>
+      <!-- diffuse fringe -->
+      <g fill="#ffc24b">
+        <circle cx="256" cy="158" r="1.3" opacity=".3"/><circle cx="262" cy="180" r="1.4" opacity=".28"/>
+        <circle cx="338" cy="160" r="1.3" opacity=".3"/><circle cx="342" cy="174" r="1.2" opacity=".26"/>
+        <circle cx="298" cy="196" r="1.4" opacity=".28"/><circle cx="304" cy="141" r="1.3" opacity=".3"/>
+        <circle cx="268" cy="149" r="1.2" opacity=".26"/><circle cx="332" cy="186" r="1.3" opacity=".26"/>
+      </g>
+    </g>
+  </g>
+  <g id="csgPorosityLbl" opacity="0">
+    <text x="302" y="132" font-size="12" fill="#ffc24b" opacity=".95" text-anchor="middle">POROSITY</text>
+    <path d="M302 136 V144" stroke="#ffc24b" stroke-width="1" opacity=".55" fill="none"/>
+  </g>
+
+  <!-- ===== signature 3: film inclusion — discrete geometric footprint ===== -->
+  <g id="csgFilm" opacity="0">
+    <g transform="rotate(-7 382 238)">
+      <path d="M354 220 H410 V242 L392 256 H354 Z" fill="#0a2a4e" fill-opacity=".92" stroke="#ff9b4b" stroke-width="1.6" stroke-linejoin="miter"/>
+      <path d="M360 226 L402 248" stroke="#ff9b4b" stroke-width=".8" opacity=".3"/>
+    </g>
+  </g>
+  <circle id="csgFilmPing" cx="382" cy="238" r="6" fill="none" stroke="#ff9b4b" stroke-width="2" opacity="0" filter="url(#csgGlowSm)"/>
+  <g id="csgFilmLbl" opacity="0">
+    <text x="414" y="204" font-size="12" fill="#ff9b4b" opacity=".95">FILM</text>
+    <path d="M424 208 L408 221" stroke="#ff9b4b" stroke-width="1" opacity=".55" fill="none"/>
+  </g>
+
+  <!-- ===== transmission colorbar ===== -->
+  <text x="478" y="118" font-size="11" fill="#9fe6ff" opacity=".75">TRANS %</text>
+  <rect x="478" y="128" width="16" height="144" fill="url(#csgBarG)" stroke="#8fb6e0" stroke-width="1" opacity=".95"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".6">
+    <path d="M494 128 H498 M494 200 H498 M494 272 H498"/>
+  </g>
+  <g font-size="10" fill="#9fe6ff" opacity=".75">
+    <text x="502" y="132">100</text>
+    <text x="502" y="204">50</text>
+    <text x="502" y="276">0</text>
+  </g>
+
+  <!-- ===== scan sweep group ===== -->
+  <g id="csgscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#csgScanFade)"/>
+    <rect x="-1" y="0" width="2" height="340" fill="#5fe0ff" filter="url(#csgGlow)" opacity=".9"/>
+  </g>
+</svg>

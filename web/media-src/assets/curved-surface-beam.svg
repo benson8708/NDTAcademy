@@ -1,0 +1,144 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="csvGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="csvGlowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="csvGlowU" filterUnits="userSpaceOnUse" x="282" y="86" width="36" height="226">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="csvSteelR" gradientUnits="userSpaceOnUse" cx="284" cy="168" r="138">
+      <stop offset="0" stop-color="#2c5a88"/><stop offset=".45" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </radialGradient>
+    <linearGradient id="csvHousingG" gradientUnits="userSpaceOnUse" x1="0" y1="54" x2="0" y2="104">
+      <stop offset="0" stop-color="#24507e"/><stop offset="1" stop-color="#122b4c"/>
+    </linearGradient>
+    <linearGradient id="csvWaterG" gradientUnits="userSpaceOnUse" x1="0" y1="34" x2="0" y2="310">
+      <stop offset="0" stop-color="#2b86ff" stop-opacity=".12"/>
+      <stop offset=".65" stop-color="#2b86ff" stop-opacity=".05"/>
+      <stop offset="1" stop-color="#2b86ff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="csvFanG" gradientUnits="userSpaceOnUse" cx="300" cy="130" r="132">
+      <stop offset="0" stop-color="#ffc24b" stop-opacity=".95"/>
+      <stop offset=".45" stop-color="#ffc24b" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#ffc24b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="csvFocusG" gradientUnits="userSpaceOnUse" cx="300" cy="179" r="16">
+      <stop offset="0" stop-color="#bff4ff" stop-opacity=".95"/>
+      <stop offset=".45" stop-color="#5fe0ff" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ===== WATER (tank) ===== -->
+  <rect x="16" y="34" width="568" height="276" fill="url(#csvWaterG)"/>
+  <line x1="16" y1="34" x2="584" y2="34" stroke="#7fd8ff" stroke-width="1.5" opacity=".4"/>
+  <line x1="16" y1="37.5" x2="584" y2="37.5" stroke="#7fd8ff" stroke-width="1" opacity=".15"/>
+  <polygon points="546,22 558,22 552,33" fill="none" stroke="#9fe6ff" stroke-width="1.2" opacity=".6"/>
+  <text x="540" y="31" text-anchor="end" font-size="10" fill="#9fe6ff" opacity=".55">WATER</text>
+
+  <!-- ===== ROUND BAR cross-section (convex test surface) ===== -->
+  <circle cx="300" cy="212" r="82" fill="url(#csvSteelR)" stroke="#8fb6e0" stroke-width="1.8"/>
+  <g fill="none" stroke="#8fb6e0" opacity=".11" stroke-width="1">
+    <circle cx="300" cy="212" r="58"/>
+    <circle cx="300" cy="212" r="30"/>
+  </g>
+
+  <!-- ===== reveal: convex entry highlighted as a lens ===== -->
+  <g id="csvLens" opacity="0">
+    <path d="M260.2 140.3 A82 82 0 0 1 339.8 140.3" fill="none" stroke="#5fe0ff" stroke-width="2.2" filter="url(#csvGlow)" opacity=".9"/>
+    <path d="M390 106 L342 137" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="394" y="104" font-size="11" fill="#9fe6ff" opacity=".9">CURVED SURFACE = LENS</text>
+  </g>
+
+  <!-- ===== reveal: diverging fan inside the bar (dims with depth) ===== -->
+  <path id="csvFan" d="M284 131.6 L221.6 205.8 M292 130.4 L256.2 244.9 M300 130 L300 202 M308 130.4 L343.8 244.9 M316 131.6 L378.4 205.8" fill="none" stroke="url(#csvFanG)" stroke-width="2.4" filter="url(#csvGlowS)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="csvSpreadLbl" opacity="0">
+    <path d="M215 193 L220 203" stroke="#ffc24b" stroke-width="1" opacity=".55" fill="none"/>
+    <text x="212" y="190" text-anchor="end" font-size="11" fill="#ffc24b" opacity=".9">BEAM SPREADS</text>
+  </g>
+
+  <!-- ===== reveal: flat-probe rays in water (parallel) ===== -->
+  <path id="csvDiverge" d="M284 104 L284 131.6 M292 104 L292 130.4 M300 104 L300 130 M308 104 L308 130.4 M316 104 L316 131.6" fill="none" stroke="#ffc24b" stroke-width="1.8" opacity=".75" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== reveal: ghost off-axis shot skips off the bar ===== -->
+  <g id="csvGhost" opacity="0">
+    <rect x="232" y="54" width="44" height="50" rx="5" fill="none" stroke="#ff6b6b" stroke-width="1.2" stroke-dasharray="5 4" opacity=".35"/>
+    <path d="M254 104 L254 144.1" fill="none" stroke="#ff6b6b" stroke-width="1.6" stroke-dasharray="4 3" opacity=".8"/>
+    <path d="M254 144.1 L202.9 123.7" fill="none" stroke="#ff6b6b" stroke-width="1.6" stroke-dasharray="4 3" opacity=".65"/>
+    <polygon points="202.9,123.7 210.4,123.7 208.4,128.9" fill="#ff6b6b" opacity=".75"/>
+    <path d="M249 139.3 L259 149.3 M259 139.3 L249 149.3" stroke="#ff6b6b" stroke-width="2.4" stroke-linecap="round" filter="url(#csvGlowS)"/>
+    <text x="228" y="166" text-anchor="end" font-size="11" fill="#ff6b6b" opacity=".9">OFF-AXIS</text>
+  </g>
+
+  <!-- ===== IMMERSION PROBE (flat face) on manipulator ===== -->
+  <rect x="282" y="6" width="36" height="8" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.1"/>
+  <rect x="296.5" y="12" width="7" height="32" fill="#14304f" stroke="#8fb6e0" stroke-width="1.1"/>
+  <rect x="291" y="42" width="18" height="14" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.1"/>
+  <rect x="278" y="54" width="44" height="50" rx="5" fill="url(#csvHousingG)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="284" y="94" width="32" height="8" fill="#0c2340" opacity=".9"/>
+  <line x1="280" y1="104" x2="320" y2="104" stroke="#9fe6ff" stroke-width="1.8" opacity=".9"/>
+  <text x="330" y="78" font-size="11" fill="#9fe6ff" opacity=".8">IMMERSION PROBE</text>
+
+  <!-- ===== reveal: matched concave lens, beam refocused ===== -->
+  <g id="csvMatched" opacity="0">
+    <circle cx="300" cy="212" r="80.5" fill="url(#csvSteelR)" opacity=".55"/>
+    <path d="M289 130.74 L300 178 L311 130.74 A82 82 0 0 0 289 130.74 Z" fill="#5fe0ff" opacity=".1"/>
+    <path d="M300 178 L304.5 196 L295.5 196 Z" fill="#5fe0ff" opacity=".07"/>
+    <!-- converging rays in water -->
+    <g fill="none" stroke="#7fd8ff" stroke-width="1.8" opacity=".9">
+      <path d="M285.5 109.3 L289 130.74"/>
+      <path d="M292.8 108.3 L294.5 130.18"/>
+      <path d="M300 108 L300 130"/>
+      <path d="M307.2 108.3 L305.5 130.18"/>
+      <path d="M314.5 109.3 L311 130.74"/>
+    </g>
+    <!-- refracted rays converge to the focal zone -->
+    <g fill="none" stroke="#5fe0ff" stroke-width="2" filter="url(#csvGlowS)">
+      <path d="M289 130.74 L300 178"/>
+      <path d="M294.5 130.18 L300 178"/>
+      <path d="M300 130 L300 178"/>
+      <path d="M305.5 130.18 L300 178"/>
+      <path d="M311 130.74 L300 178"/>
+    </g>
+    <g fill="none" stroke="#5fe0ff" stroke-width="1.1" opacity=".35">
+      <path d="M300 178 L304.1 195.5"/>
+      <path d="M300 178 L302.1 195.9"/>
+      <path d="M300 178 L300 196"/>
+      <path d="M300 178 L297.9 195.9"/>
+      <path d="M300 178 L295.9 195.5"/>
+    </g>
+    <ellipse cx="300" cy="179" rx="6" ry="13" fill="url(#csvFocusG)" filter="url(#csvGlowS)"/>
+    <!-- concave lens overlay (concentric with bar surface) -->
+    <rect x="279" y="96" width="42" height="9" fill="#122b4c"/>
+    <path d="M280 104 L280 112 Q300 104.7 320 112 L320 104 Z" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+    <path d="M280 112 Q300 104.7 320 112" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#csvGlowS)"/>
+    <!-- radius callout + chip -->
+    <circle cx="300" cy="212" r="2" fill="#9fe6ff" opacity=".8"/>
+    <path d="M300 212 L358 270" stroke="#9fe6ff" stroke-width="1.3" stroke-dasharray="5 4" opacity=".75" fill="none"/>
+    <polygon points="358,270 354.4,262.2 350.2,266.4" fill="#9fe6ff" opacity=".8"/>
+    <text x="342" y="243" font-size="13" fill="#9fe6ff">R</text>
+    <rect x="394" y="118" width="104" height="24" rx="8" fill="#0e2848" fill-opacity=".75" stroke="#5fe0ff" stroke-opacity=".55" stroke-width="1.2"/>
+    <text x="446" y="134.5" text-anchor="middle" font-size="12" fill="#9fe6ff">FOCUS = R</text>
+  </g>
+
+  <!-- ===== reveal: aim line through the exact center (topmost) ===== -->
+  <g id="csvRadial" opacity="0">
+    <path d="M300 104 L300 294" fill="none" stroke="#5fe0ff" stroke-width="1.8" stroke-dasharray="6 4.5" filter="url(#csvGlowU)" opacity=".95"/>
+    <circle cx="300" cy="212" r="3" fill="#5fe0ff" filter="url(#csvGlowS)"/>
+    <path d="M300 201 V206 M300 218 V223 M289 212 H294 M306 212 H311" stroke="#5fe0ff" stroke-width="1.5" fill="none"/>
+    <text x="309" y="284" font-size="10" fill="#9fe6ff" opacity=".85">THROUGH CENTER</text>
+  </g>
+
+  <!-- pings -->
+  <circle id="csvPing" cx="300" cy="212" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0"/>
+  <circle id="csvFocusPing" cx="300" cy="179" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0"/>
+
+  <!-- caption -->
+  <text x="22" y="24" font-size="11" fill="#9fe6ff" opacity=".65">IMMERSION — ROUND BAR (SECTION)</text>
+</svg>

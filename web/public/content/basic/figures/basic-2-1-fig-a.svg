@@ -1,0 +1,95 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="34" text-anchor="middle" font-size="23" font-weight="bold" fill="#0B1F3A">Acoustic Emission: From Source to Signal</text>
+  <text x="400" y="57" text-anchor="middle" font-size="15" fill="#1E66F5">the flaw makes the sound &#8212; the instrument only listens</text>
+
+  <defs>
+    <clipPath id="memberClip"><rect x="36" y="130" width="310" height="170"/></clipPath>
+  </defs>
+
+  <!-- stressed member -->
+  <rect x="36" y="130" width="310" height="170" fill="#9BC4FF" fill-opacity="0.35" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="338" y="290" text-anchor="end" font-size="14" font-style="italic" fill="#0B1F3A">member under stress</text>
+
+  <!-- load arrows -->
+  <line x1="36" y1="215" x2="16" y2="215" stroke="#0B1F3A" stroke-width="3"/>
+  <polygon points="16,209 16,221 6,215" fill="#0B1F3A"/>
+  <text x="21" y="200" text-anchor="middle" font-size="14" fill="#0B1F3A">load</text>
+  <line x1="346" y1="215" x2="366" y2="215" stroke="#0B1F3A" stroke-width="3"/>
+  <polygon points="366,209 366,221 376,215" fill="#0B1F3A"/>
+  <text x="361" y="200" text-anchor="middle" font-size="14" fill="#0B1F3A">load</text>
+
+  <!-- expanding wavefronts from the crack tip (clipped to member) -->
+  <g clip-path="url(#memberClip)">
+    <circle cx="124" cy="232" r="26" fill="none" stroke="#1E66F5" stroke-width="2" stroke-dasharray="6,4"/>
+    <circle cx="124" cy="232" r="50" fill="none" stroke="#1E66F5" stroke-width="2" stroke-dasharray="6,4"/>
+    <circle cx="124" cy="232" r="74" fill="none" stroke="#1E66F5" stroke-width="2" stroke-dasharray="6,4"/>
+    <circle cx="124" cy="232" r="98" fill="none" stroke="#1E66F5" stroke-width="2" stroke-dasharray="6,4"/>
+  </g>
+  <text x="216" y="292" font-size="14" font-style="italic" fill="#1E66F5">expanding stress wave</text>
+
+  <!-- crack -->
+  <polyline points="100,300 110,278 104,264 118,248 114,240 124,232" fill="none" stroke="#0B1F3A" stroke-width="3"/>
+  <line x1="104" y1="266" x2="86" y2="322" stroke="#1E66F5" stroke-width="1.5"/>
+  <text x="36" y="338" font-size="15" font-weight="bold" fill="#0B1F3A">crack jump &#8212; rapid release</text>
+  <text x="36" y="356" font-size="15" fill="#0B1F3A">of stored elastic energy</text>
+
+  <!-- wave path to sensor -->
+  <line x1="142" y1="224" x2="254" y2="132" stroke="#1E66F5" stroke-width="2" stroke-dasharray="3,3"/>
+  <polygon points="250,128 258,138 262,126" fill="#1E66F5"/>
+
+  <!-- sensor + couplant -->
+  <rect x="246" y="124" width="56" height="6" fill="#1E66F5"/>
+  <rect x="250" y="92" width="48" height="32" rx="4" fill="#0B1F3A"/>
+  <text x="242" y="108" text-anchor="end" font-size="15" font-weight="bold" fill="#0B1F3A">PZT sensor</text>
+  <text x="242" y="132" text-anchor="end" font-size="14" fill="#1E66F5">couplant</text>
+
+  <!-- cable to preamplifier -->
+  <line x1="298" y1="108" x2="420" y2="108" stroke="#0B1F3A" stroke-width="2.5"/>
+  <rect x="420" y="78" width="150" height="64" rx="4" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2.5"/>
+  <text x="495" y="103" text-anchor="middle" font-size="16" font-weight="bold" fill="#0B1F3A">PREAMPLIFIER</text>
+  <text x="495" y="126" text-anchor="middle" font-size="14" fill="#1E66F5">gain ~40 dB + filters</text>
+
+  <!-- arrow to system -->
+  <line x1="570" y1="110" x2="596" y2="110" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="596,104 596,116 606,110" fill="#0B1F3A"/>
+
+  <!-- AE system -->
+  <rect x="606" y="62" width="166" height="110" rx="6" fill="#0B1F3A"/>
+  <text x="689" y="88" text-anchor="middle" font-size="17" font-weight="bold" fill="#FFFFFF">AE SYSTEM</text>
+  <text x="689" y="110" text-anchor="middle" font-size="14" fill="#9BC4FF">threshold + hit timing</text>
+  <text x="689" y="130" text-anchor="middle" font-size="14" fill="#9BC4FF">amplitude, counts,</text>
+  <text x="689" y="148" text-anchor="middle" font-size="14" fill="#9BC4FF">duration, energy</text>
+  <text x="689" y="166" text-anchor="middle" font-size="14" fill="#9BC4FF">&#916;T source location</text>
+
+  <!-- burst anatomy panel -->
+  <rect x="400" y="200" width="372" height="270" fill="#FFFFFF" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="586" y="224" text-anchor="middle" font-size="16" font-weight="bold" fill="#0B1F3A">anatomy of one burst hit</text>
+  <text x="758" y="246" text-anchor="end" font-size="14" fill="#0B1F3A">&#9679; counts = threshold crossings (4)</text>
+
+  <line x1="420" y1="352" x2="762" y2="352" stroke="#9BC4FF" stroke-width="1.5"/>
+  <line x1="420" y1="312" x2="762" y2="312" stroke="#1E66F5" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="758" y="304" text-anchor="end" font-size="14" fill="#1E66F5">threshold</text>
+
+  <polyline fill="none" stroke="#0B1F3A" stroke-width="2" points="420,352 476,352 480,352 482,350 484,346 486,339 488,332 490,327 492,326 494,330 496,338 498,352 500,369 502,387 504,404 506,416 508,421 510,417 512,403 514,381 516,352 518,322 520,295 522,277 524,267 526,268 528,279 530,299 532,324 534,352 536,379 538,403 540,420 542,428 544,427 546,417 548,400 550,377 552,352 554,327 556,306 558,291 560,284 562,284 564,293 566,309 568,329 570,352 572,374 574,393 576,407 578,414 580,413 582,405 584,391 586,372 588,352 590,332 592,315 594,303 596,297 598,297 600,304 602,317 604,334 606,352 608,370 610,385 612,396 614,402 616,401 618,395 620,383 622,369 624,352 626,336 628,322 630,312 632,307 634,308 636,314 638,324 640,337 642,352 644,366 646,379 648,388 650,392 652,392 654,387 656,377 658,365 660,352 662,339 664,328 666,320 668,316 670,316 672,321 674,329 676,340 678,352 680,364 682,374 684,381 686,385 688,384 690,380 692,373 694,363 696,352 698,341 700,332 702,326 704,323 706,323 708,327 710,334 712,342 714,352 716,361 718,370 720,375 722,378 724,378 726,375 728,369 730,361 732,352 734,343 736,336 738,331 740,328 742,329 744,332 746,337 748,344 762,352"/>
+
+  <circle cx="524" cy="267" r="4" fill="#1E66F5"/>
+  <circle cx="560" cy="284" r="4" fill="#1E66F5"/>
+  <circle cx="596" cy="297" r="4" fill="#1E66F5"/>
+  <circle cx="632" cy="307" r="4" fill="#1E66F5"/>
+
+  <!-- peak amplitude arrow -->
+  <line x1="452" y1="346" x2="452" y2="273" stroke="#1E66F5" stroke-width="2"/>
+  <polygon points="448,275 456,275 452,265" fill="#1E66F5"/>
+  <polygon points="448,344 456,344 452,354" fill="#1E66F5"/>
+  <line x1="452" y1="267" x2="520" y2="267" stroke="#1E66F5" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="437" y="310" text-anchor="middle" font-size="14" fill="#0B1F3A" transform="rotate(-90 437 310)">peak amplitude (dB)</text>
+
+  <!-- duration bracket -->
+  <line x1="520" y1="446" x2="634" y2="446" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="520" y1="440" x2="520" y2="446" stroke="#0B1F3A" stroke-width="2"/>
+  <line x1="634" y1="440" x2="634" y2="446" stroke="#0B1F3A" stroke-width="2"/>
+  <text x="642" y="451" font-size="14" fill="#0B1F3A">duration</text>
+
+  <text x="400" y="492" text-anchor="middle" font-size="15" font-weight="bold" fill="#0B1F3A">passive method &#8212; the energy comes from the structure, not from the instrument</text>
+</svg>

@@ -1,0 +1,158 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="dmgGlow" filterUnits="userSpaceOnUse" x="-20" y="-20" width="640" height="380">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="dmgGlowS" filterUnits="userSpaceOnUse" x="-20" y="-20" width="640" height="380">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="dmgSteel" gradientUnits="userSpaceOnUse" x1="0" y1="105" x2="0" y2="131">
+      <stop offset="0" stop-color="#33648f"/><stop offset=".4" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="dmgBarP" gradientUnits="userSpaceOnUse" x1="0" y1="222" x2="0" y2="272">
+      <stop offset="0" stop-color="#5fe0ff"/><stop offset="1" stop-color="#1E66F5"/>
+    </linearGradient>
+    <radialGradient id="dmgCore" gradientUnits="userSpaceOnUse" cx="414" cy="98" r="25">
+      <stop offset="0" stop-color="#ffd27f" stop-opacity=".95"/>
+      <stop offset=".45" stop-color="#ffb45f" stop-opacity=".6"/>
+      <stop offset=".8" stop-color="#ff9b4b" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#ff9b4b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ===== BENCH ===== -->
+  <line x1="46" y1="178" x2="366" y2="178" stroke="#8fb6e0" stroke-width="1.5" opacity=".3"/>
+
+  <!-- ===== DEMAG COIL (housing + bore slot + winding blocks) ===== -->
+  <rect x="86" y="58" width="56" height="120" rx="6" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="89" y="100" width="50" height="36" rx="3" fill="#08152b" opacity=".95"/>
+
+  <!-- ===== SHAFT on axis (tail still in the bore, body withdrawn right) ===== -->
+  <rect x="98" y="105" width="247" height="26" fill="url(#dmgSteel)"/>
+  <ellipse cx="98" cy="118" rx="5" ry="13" fill="#1b3e66" stroke="#8fb6e0" stroke-width="1.2" opacity=".9"/>
+  <ellipse cx="345" cy="118" rx="5" ry="13" fill="#244e79" stroke="#8fb6e0" stroke-width="1.4"/>
+  <line x1="104" y1="109.5" x2="341" y2="109.5" stroke="#8fb6e0" stroke-width="1" opacity=".35"/>
+
+  <!-- axis centerline + direction -->
+  <line x1="70" y1="118" x2="368" y2="118" stroke="#7fd8ff" stroke-width="1" stroke-dasharray="10 4 2 4" opacity=".35"/>
+  <polygon points="370,113.5 382,118 370,122.5" fill="#7fd8ff" opacity=".8"/>
+
+  <!-- winding cross-section blocks w/ hatch -->
+  <g fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2">
+    <rect x="91" y="64" width="46" height="30" rx="2"/>
+    <rect x="91" y="142" width="46" height="30" rx="2"/>
+  </g>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".5">
+    <path d="M95 92 L103 66 M103 92 L111 66 M111 92 L119 66 M119 92 L127 66 M127 92 L135 66"/>
+    <path d="M95 170 L103 144 M103 170 L111 144 M111 170 L119 144 M119 170 L127 144 M127 170 L135 144"/>
+  </g>
+
+  <!-- ===== ROLLERS ===== -->
+  <g fill="#14304f" stroke="#8fb6e0">
+    <path d="M193 178 L217 178 L209 146 L201 146 Z" stroke-width="1" opacity=".85"/>
+    <path d="M281 178 L305 178 L297 146 L289 146 Z" stroke-width="1" opacity=".85"/>
+    <circle cx="205" cy="140" r="8" stroke-width="1.4"/>
+    <circle cx="293" cy="140" r="8" stroke-width="1.4"/>
+    <circle cx="205" cy="140" r="2" fill="#8fb6e0" stroke="none" opacity=".7"/>
+    <circle cx="293" cy="140" r="2" fill="#8fb6e0" stroke="none" opacity=".7"/>
+  </g>
+
+  <!-- ===== CROSS-SECTION INSETS (default: bare steel discs) ===== -->
+  <circle cx="414" cy="98" r="32" fill="#0e2848" stroke="#8fb6e0" stroke-width="2"/>
+  <circle cx="544" cy="98" r="32" fill="#0e2848" stroke="#8fb6e0" stroke-width="2"/>
+
+  <!-- ===== STEP-DOWN AXIS (default frame) ===== -->
+  <line x1="64" y1="272" x2="470" y2="272" stroke="#8fb6e0" stroke-width="1.5" opacity=".5"/>
+  <polygon points="470,268.5 480,272 470,275.5" fill="#8fb6e0" opacity=".6"/>
+
+  <!-- ===== default labels ===== -->
+  <g font-size="11" fill="#9fe6ff">
+    <text x="114" y="195" text-anchor="middle" opacity=".85">AC DEMAG COIL</text>
+    <text x="479" y="48" text-anchor="middle" opacity=".75">PART CROSS-SECTION</text>
+    <text x="414" y="147" text-anchor="middle" opacity=".9">AC FIELD</text>
+    <text x="544" y="147" text-anchor="middle" opacity=".9">STEP-DOWN DC</text>
+    <text x="470" y="240" text-anchor="end" opacity=".8">REVERSE THE FIELD AS IT SHRINKS TO ZERO</text>
+    <text x="486" y="276" opacity=".75">0</text>
+  </g>
+  <text x="54" y="256" font-size="13" fill="#7fd8ff" text-anchor="middle" opacity=".9">+</text>
+  <text x="54" y="302" font-size="13" fill="#ffc24b" text-anchor="middle" opacity=".9">&#8722;</text>
+
+  <!-- ===== REVEAL 1: coil energizes (AC) ===== -->
+  <g id="dmgCoil" opacity="0">
+    <ellipse cx="114" cy="118" rx="8" ry="47" fill="none" stroke="#5fe0ff" stroke-width="2" filter="url(#dmgGlow)" opacity=".85"/>
+    <g fill="#5fe0ff" fill-opacity=".14" stroke="#5fe0ff" stroke-width="1.5" opacity=".95">
+      <rect x="91" y="64" width="46" height="30" rx="2"/>
+      <rect x="91" y="142" width="46" height="30" rx="2"/>
+    </g>
+    <g fill="none" stroke="#5fe0ff" stroke-width="1.5" filter="url(#dmgGlowS)">
+      <path d="M80 96 q-10 22 0 44" opacity=".6"/>
+      <path d="M70 102 q-7 16 0 32" opacity=".35"/>
+      <path d="M148 96 q10 22 0 44" opacity=".6"/>
+      <path d="M158 102 q7 16 0 32" opacity=".35"/>
+    </g>
+    <text x="114" y="50" font-size="11" fill="#5fe0ff" text-anchor="middle" opacity=".95">~ AC</text>
+  </g>
+
+  <!-- ===== REVEAL 2: tapering alternating wave along the axis (draw) ===== -->
+  <g id="dmgWave">
+    <path d="M140 118 Q151.5 58.0 163 118 Q174.5 164.8 186 118 Q197.5 81.5 209 118 Q220.5 146.5 232 118 Q243.5 95.8 255 118 Q266.5 135.3 278 118 Q289.5 104.5 301 118 Q312.5 128.5 324 118 Q335.5 109.8 347 118" fill="none" stroke="#5fe0ff" stroke-width="2.2" filter="url(#dmgGlowS)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <path d="M140 88.0 L163 94.6 L186 99.7 L209 103.8 L232 106.9 L255 109.3 L278 111.2 L301 112.7 L324 113.9 L347 114.8" fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".5" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <path d="M140 148.0 L163 141.4 L186 136.3 L209 132.2 L232 129.1 L255 126.7 L278 124.8 L301 123.3 L324 122.1 L347 121.2" fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".5" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  </g>
+
+  <!-- ===== REVEAL 3: slow withdrawal along axis ===== -->
+  <g id="dmgWithdraw" opacity="0">
+    <line x1="180" y1="72" x2="296" y2="72" stroke="#7fd8ff" stroke-width="2.5"/>
+    <polygon points="296,66.5 310,72 296,77.5" fill="#7fd8ff"/>
+    <text x="252" y="58" font-size="11" fill="#9fe6ff" text-anchor="middle">SLOW WITHDRAWAL TAPERS THE FIELD</text>
+    <text x="252" y="195" font-size="11" fill="#7fd8ff" text-anchor="middle" opacity=".85">2&#8211;3 FT BEFORE SWITCH-OFF</text>
+  </g>
+
+  <!-- ===== REVEAL 4: AC skin effect — thin surface ring, core still magnetized ===== -->
+  <g id="dmgSkin" opacity="0">
+    <circle cx="414" cy="98" r="25" fill="url(#dmgCore)"/>
+    <circle cx="414" cy="98" r="28.5" fill="none" stroke="#5fe0ff" stroke-width="4" filter="url(#dmgGlowS)" opacity=".95"/>
+    <text x="414" y="163" font-size="11" fill="#9fe6ff" text-anchor="middle">HUGS THE SURFACE</text>
+  </g>
+
+  <!-- ===== REVEAL 5: reversing step-down DC bars ===== -->
+  <g id="dmgDC" opacity="0">
+    <g fill="url(#dmgBarP)" stroke="#7fd8ff" stroke-width=".8" stroke-opacity=".6">
+      <rect x="78" y="226.0" width="14" height="46.0"/>
+      <rect x="132" y="242.6" width="14" height="29.4"/>
+      <rect x="186" y="253.2" width="14" height="18.8"/>
+      <rect x="240" y="259.9" width="14" height="12.1"/>
+      <rect x="294" y="264.3" width="14" height="7.7"/>
+      <rect x="348" y="267.1" width="14" height="4.9"/>
+      <rect x="402" y="268.8" width="14" height="3.2"/>
+    </g>
+    <g fill="#ff9b4b" fill-opacity=".8" stroke="#ffc24b" stroke-width=".8" stroke-opacity=".5">
+      <rect x="105" y="272" width="14" height="36.8"/>
+      <rect x="159" y="272" width="14" height="23.6"/>
+      <rect x="213" y="272" width="14" height="15.1"/>
+      <rect x="267" y="272" width="14" height="9.6"/>
+      <rect x="321" y="272" width="14" height="6.2"/>
+      <rect x="375" y="272" width="14" height="4.0"/>
+      <rect x="429" y="272" width="14" height="2.5"/>
+    </g>
+    <g fill="none" stroke="#7fd8ff" stroke-width="1" stroke-dasharray="4 3" opacity=".45">
+      <path d="M78 224 L132 241.3 L186 252.3 L240 259.4 L294 263.9 L348 266.8 L402 268.7 L443 269.6"/>
+      <path d="M78 320 L132 302.7 L186 291.7 L240 284.6 L294 280.1 L348 277.2 L402 275.3 L443 274.4"/>
+    </g>
+    <circle cx="455" cy="272" r="3" fill="#5fe0ff" filter="url(#dmgGlowS)" opacity=".9"/>
+  </g>
+
+  <!-- ===== REVEAL 6: step-down DC reaches full depth — core goes dark ===== -->
+  <g id="dmgDeep" opacity="0">
+    <circle cx="544" cy="98" r="30" fill="#08152b" opacity=".9"/>
+    <g fill="none" stroke="#5fe0ff">
+      <circle cx="544" cy="98" r="28.5" stroke-width="3.5" filter="url(#dmgGlowS)" opacity=".95"/>
+      <circle cx="544" cy="98" r="21" stroke-width="2.4" opacity=".75"/>
+      <circle cx="544" cy="98" r="13.5" stroke-width="2" opacity=".6"/>
+      <circle cx="544" cy="98" r="6" stroke-width="1.5" opacity=".5"/>
+    </g>
+    <text x="544" y="163" font-size="11" fill="#9fe6ff" text-anchor="middle">REACHES THE CORE</text>
+  </g>
+</svg>

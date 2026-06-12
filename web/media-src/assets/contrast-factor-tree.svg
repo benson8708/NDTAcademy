@@ -1,0 +1,129 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="cftglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cftglowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cftsoft" filterUnits="userSpaceOnUse" x="301" y="31" width="302" height="210">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+    </filter>
+    <filter id="cftblur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.1"/>
+    </filter>
+    <linearGradient id="cftcardG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1b4068"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== always-visible: corner tag + blueprint ghost skeleton ===== -->
+  <text x="14" y="25" font-size="10" fill="#9fe6ff" opacity=".5">RT // IMAGE QUALITY</text>
+
+  <g fill="none" stroke="#8fb6e0" stroke-width="1.2" stroke-dasharray="5 5" opacity=".24">
+    <rect x="165" y="14" width="270" height="44" rx="9"/>
+    <rect x="92" y="116" width="180" height="64" rx="8"/>
+    <rect x="362" y="116" width="180" height="64" rx="8"/>
+    <rect x="20" y="222" width="152" height="62" rx="8"/>
+    <rect x="192" y="222" width="152" height="62" rx="8"/>
+    <g stroke-dasharray="3 5" opacity=".9">
+      <path d="M240 58 V82 Q240 88 234 88 H188 Q182 88 182 94 V116"/>
+      <path d="M360 58 V82 Q360 88 366 88 H446 Q452 88 452 94 V116"/>
+      <path d="M140 180 V192 Q140 198 134 198 H102 Q96 198 96 204 V222"/>
+      <path d="M224 180 V192 Q224 198 230 198 H262 Q268 198 268 204 V222"/>
+    </g>
+  </g>
+  <g font-size="10" fill="#9fe6ff" opacity=".3">
+    <text x="175" y="29">01</text>
+    <text x="102" y="131">02</text>
+    <text x="372" y="131">03</text>
+    <text x="30" y="237">04</text>
+    <text x="202" y="237">05</text>
+  </g>
+
+  <!-- ===== connectors (draw-on, holographic) ===== -->
+  <g fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#cftglowS)">
+    <path id="cftLinkC" d="M240 58 V82 Q240 88 234 88 H188 Q182 88 182 94 V116" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <path id="cftLinkD" d="M360 58 V82 Q360 88 366 88 H446 Q452 88 452 94 V116" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <path id="cftLinkS" d="M140 180 V192 Q140 198 134 198 H102 Q96 198 96 204 V222" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <path id="cftLinkF" d="M224 180 V192 Q224 198 230 198 H262 Q268 198 268 204 V222" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  </g>
+
+  <!-- ===== ROOT: RADIOGRAPHIC SENSITIVITY (hole-type IQI glyph) ===== -->
+  <g id="cftRoot" opacity="0">
+    <rect x="165" y="14" width="270" height="44" rx="9" fill="url(#cftcardG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M174 17.5 H426" stroke="#7fd8ff" stroke-width="1" opacity=".3" fill="none"/>
+    <!-- hole-type IQI (penetrameter): plate + 4T 2T 1T holes -->
+    <rect x="178" y="29" width="30" height="14" rx="1.5" fill="#1b4068" stroke="#8fb6e0" stroke-width="1"/>
+    <circle cx="186.5" cy="36" r="4" fill="#07142a" stroke="#7fd8ff" stroke-width=".7"/>
+    <circle cx="196.5" cy="36" r="2.5" fill="#07142a" stroke="#7fd8ff" stroke-width=".7"/>
+    <circle cx="203.5" cy="36" r="1.4" fill="#07142a" stroke="#7fd8ff" stroke-width=".7"/>
+    <text x="322" y="40.5" text-anchor="middle" font-size="13" fill="#9fe6ff" opacity=".97">RADIOGRAPHIC SENSITIVITY</text>
+  </g>
+  <path id="cftRootDraw" d="M174 14 H426 A9 9 0 0 1 435 23 V49 A9 9 0 0 1 426 58 H174 A9 9 0 0 1 165 49 V23 A9 9 0 0 1 174 14 Z" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#cftglowS)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== PILLARS: CONTRAST + DEFINITION ===== -->
+  <g id="cftPillars" opacity="0">
+    <!-- CONTRAST: step-wedge density glyph -->
+    <rect x="92" y="116" width="180" height="64" rx="8" fill="url(#cftcardG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="162" y="122" width="10" height="12" fill="#07142a"/>
+    <rect x="172" y="122" width="10" height="12" fill="#1b4068"/>
+    <rect x="182" y="122" width="10" height="12" fill="#2b86ff"/>
+    <rect x="192" y="122" width="10" height="12" fill="#7fd8ff"/>
+    <rect x="162" y="122" width="40" height="12" fill="none" stroke="#8fb6e0" stroke-width=".8" opacity=".9"/>
+    <text x="182" y="153" text-anchor="middle" font-size="13" fill="#9fe6ff" opacity=".97">CONTRAST</text>
+    <text x="182" y="170" text-anchor="middle" font-size="11" fill="#8fb6e0" opacity=".9">density difference</text>
+    <!-- DEFINITION: sharp vs blurred edge-trace glyph -->
+    <rect x="362" y="116" width="180" height="64" rx="8" fill="url(#cftcardG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M430 133 H438 V123 H446" fill="none" stroke="#7fd8ff" stroke-width="1.5"/>
+    <path d="M456 133 H459 C465 133 465 123 471 123 H474" fill="none" stroke="#7fd8ff" stroke-width="1.5" opacity=".8" filter="url(#cftblur)"/>
+    <text x="452" y="153" text-anchor="middle" font-size="13" fill="#9fe6ff" opacity=".97">DEFINITION</text>
+    <text x="452" y="170" text-anchor="middle" font-size="11" fill="#8fb6e0" opacity=".9">edge sharpness</text>
+  </g>
+
+  <!-- ===== FOCUS: spotlight CONTRAST, ghost DEFINITION ===== -->
+  <g id="cftFocus" opacity="0">
+    <rect x="442" y="90" width="20" height="28" fill="#07142a" opacity=".4" filter="url(#cftsoft)"/>
+    <rect x="360" y="114" width="184" height="68" rx="10" fill="#07142a" opacity=".68" filter="url(#cftsoft)"/>
+    <rect x="408" y="173" width="88" height="15" rx="4" fill="#0e2848" stroke="#8fb6e0" stroke-width=".8" stroke-dasharray="3 2"/>
+    <text x="452" y="184.5" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".85">NEXT LESSON</text>
+    <rect x="93" y="117" width="178" height="62" rx="8" fill="#5fe0ff" opacity=".07"/>
+    <rect x="88" y="112" width="188" height="72" rx="10" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#cftglow)" opacity=".9"/>
+    <rect x="98" y="105" width="52" height="15" rx="4" fill="#0e2848" stroke="#5fe0ff" stroke-width="1"/>
+    <text x="124" y="116.5" text-anchor="middle" font-size="10" fill="#5fe0ff">TODAY</text>
+  </g>
+
+  <!-- ===== LEAF: SUBJECT CONTRAST (part + beam glyph) ===== -->
+  <g id="cftSubject" opacity="0">
+    <rect x="20" y="222" width="152" height="62" rx="8" fill="url(#cftcardG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <g stroke="#7fd8ff" stroke-width="1.2">
+      <line x1="82" y1="226" x2="82" y2="233"/>
+      <line x1="96" y1="226" x2="96" y2="229"/>
+      <line x1="110" y1="226" x2="110" y2="233"/>
+    </g>
+    <g fill="#7fd8ff">
+      <path d="M79.4 233 L84.6 233 L82 237 Z"/>
+      <path d="M93.4 229 L98.6 229 L96 233 Z"/>
+      <path d="M107.4 233 L112.6 233 L110 237 Z"/>
+    </g>
+    <path d="M76 246 V240 H89 V235 H103 V240 H116 V246 Z" fill="#1b4068" stroke="#8fb6e0" stroke-width="1"/>
+    <text x="96" y="261" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".97">SUBJECT CONTRAST</text>
+    <text x="96" y="276" text-anchor="middle" font-size="11" fill="#8fb6e0" opacity=".9">part + beam</text>
+  </g>
+
+  <!-- ===== LEAF: FILM CONTRAST (H&D curve glyph) ===== -->
+  <g id="cftFilm" opacity="0">
+    <rect x="192" y="222" width="152" height="62" rx="8" fill="url(#cftcardG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M252 228 V245 H286" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".8"/>
+    <path d="M254 243 C262 242.5 264 236 268 232 C271 229 276 228.5 283 228" fill="none" stroke="#7fd8ff" stroke-width="1.5" filter="url(#cftglowS)"/>
+    <text x="268" y="261" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".97">FILM CONTRAST</text>
+    <text x="268" y="276" text-anchor="middle" font-size="11" fill="#8fb6e0" opacity=".9">film + processing</text>
+    <text x="182" y="259" text-anchor="middle" font-size="14" fill="#5fe0ff" opacity=".9" filter="url(#cftglowS)">+</text>
+  </g>
+
+  <!-- ===== pings ===== -->
+  <circle id="cftPingS" cx="96" cy="222" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#cftglowS)"/>
+  <circle id="cftPingF" cx="268" cy="222" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#cftglowS)"/>
+</svg>

@@ -1,0 +1,139 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="cshGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cshGlowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="cshSteel" x1="0" y1="233" x2="0" y2="345" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2e5d8e"/>
+      <stop offset=".5" stop-color="#16334f"/>
+      <stop offset="1" stop-color="#081728" stop-opacity=".35"/>
+    </linearGradient>
+    <linearGradient id="cshWedgeG" x1="0" y1="157" x2="0" y2="246" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a5685"/><stop offset="1" stop-color="#122b4c"/>
+    </linearGradient>
+    <linearGradient id="cshBeamFade" gradientUnits="userSpaceOnUse" x1="160" y1="235.5" x2="203.8" y2="279.3">
+      <stop offset="0" stop-color="#7fd8ff" stop-opacity=".55"/>
+      <stop offset=".55" stop-color="#7fd8ff" stop-opacity=".26"/>
+      <stop offset="1" stop-color="#7fd8ff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="cshHatch" width="7" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#ffc24b" stroke-width="2" stroke-opacity=".7"/>
+    </pattern>
+  </defs>
+
+  <!-- ===== HEADERS ===== -->
+  <g stroke="#ff6b6b" stroke-width="2.2" stroke-linecap="round">
+    <line x1="100" y1="33" x2="109" y2="42"/><line x1="109" y1="33" x2="100" y2="42"/>
+  </g>
+  <text x="160" y="42" text-anchor="middle" font-size="13" letter-spacing="2" fill="#9fe6ff" opacity=".92">FLAT SHOE</text>
+  <text x="440" y="42" text-anchor="middle" font-size="13" letter-spacing="2" fill="#9fe6ff" opacity=".38">CONTOURED SHOE</text>
+
+  <!-- divider -->
+  <line x1="300" y1="30" x2="300" y2="304" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="3 6" opacity=".3"/>
+
+  <!-- ===== LEFT PIPE (OD R190 / ID R152, center 160,425.5) ===== -->
+  <path d="M30 286.9 A190 190 0 0 1 286 283.3 L286 340 L30 340 Z" fill="url(#cshSteel)"/>
+  <g fill="none" stroke="#8fb6e0">
+    <path d="M40 298.1 A175 175 0 0 1 280 298.1" stroke-width="1" opacity=".14"/>
+    <path d="M45 310 A163 163 0 0 1 275 310" stroke-width="1" opacity=".1"/>
+  </g>
+  <path d="M34.3 340 A152 152 0 0 1 285.7 340 Z" fill="#050f1f" opacity=".55"/>
+  <path d="M30 286.9 A190 190 0 0 1 286 283.3" fill="none" stroke="#8fb6e0" stroke-width="1.8"/>
+  <path d="M34.3 340 A152 152 0 0 1 285.7 340" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".45"/>
+
+  <!-- ===== RIGHT PIPE (center 430,425.5) ===== -->
+  <path d="M314 275 A190 190 0 0 1 570 297 L570 340 L314 340 Z" fill="url(#cshSteel)"/>
+  <g fill="none" stroke="#8fb6e0">
+    <path d="M318 291 A175 175 0 0 1 550 298.1" stroke-width="1" opacity=".14"/>
+    <path d="M322 303.4 A163 163 0 0 1 545 310" stroke-width="1" opacity=".1"/>
+  </g>
+  <path d="M314 327.3 A152 152 0 0 1 555.7 340 L314 340 Z" fill="#050f1f" opacity=".55"/>
+  <path d="M314 275 A190 190 0 0 1 570 297" fill="none" stroke="#8fb6e0" stroke-width="1.8"/>
+  <path d="M314 327.3 A152 152 0 0 1 555.7 340" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".45"/>
+
+  <!-- ===== LEFT WEDGE: flat face, tangent at crest (160,235.5) ===== -->
+  <g>
+    <path d="M100 235.5 L100 202 L101.9 199.3 L150.5 167.7 L163 162.5 L185 166 L220 199 L220 235.5 Z" fill="url(#cshWedgeG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="102.4" y="170.6" width="40" height="14" rx="2.5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.4" transform="rotate(-33 122.4 177.6)"/>
+    <rect x="104.4" y="163.9" width="24" height="9" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.1" transform="rotate(-33 116.4 168.4)"/>
+    <line x1="126.2" y1="183.5" x2="160" y2="235.5" stroke="#5fe0ff" stroke-width="2" opacity=".85" filter="url(#cshGlowS)"/>
+    <line x1="160" y1="228.5" x2="160" y2="235.5" stroke="#5fe0ff" stroke-width="1.4" opacity=".9"/>
+  </g>
+
+  <!-- ===== RIGHT WEDGE (dim until cshContoured): face contoured to R190 ===== -->
+  <g opacity=".35">
+    <path d="M370 242.1 L370 202 L371.9 199.3 L420.5 167.7 L433 162.5 L455 166 L490 199 L490 242.1 A193 193 0 0 0 370 242.1 Z" fill="url(#cshWedgeG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="372.4" y="170.6" width="40" height="14" rx="2.5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.4" transform="rotate(-33 392.4 177.6)"/>
+    <rect x="374.4" y="163.9" width="24" height="9" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.1" transform="rotate(-33 386.4 168.4)"/>
+    <line x1="396.2" y1="183.5" x2="430" y2="232.5" stroke="#5fe0ff" stroke-width="2" opacity=".85"/>
+    <line x1="430" y1="225.5" x2="430" y2="232.5" stroke="#5fe0ff" stroke-width="1.4" opacity=".9"/>
+  </g>
+
+  <!-- ===== REVEAL 1: line contact glow + air-gap hatching ===== -->
+  <g id="cshLine" opacity="0">
+    <path d="M100 235.6 L160 235.6 A190 190 0 0 0 100 245.2 Z" fill="url(#cshHatch)" stroke="#ffc24b" stroke-width=".6" stroke-opacity=".5"/>
+    <path d="M160 235.6 L220 235.6 L220 245.2 A190 190 0 0 0 160 235.6 Z" fill="url(#cshHatch)" stroke="#ffc24b" stroke-width=".6" stroke-opacity=".5"/>
+    <line x1="148" y1="235.5" x2="172" y2="235.5" stroke="#5fe0ff" stroke-width="2.5" filter="url(#cshGlow)"/>
+    <line x1="152" y1="235.5" x2="168" y2="235.5" stroke="#d8f6ff" stroke-width="1"/>
+    <path d="M160 240 L152 288" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="3 3" opacity=".4" fill="none"/>
+    <text x="150" y="299" text-anchor="middle" font-size="11" fill="#5fe0ff" opacity=".92">LINE CONTACT</text>
+  </g>
+  <circle id="cshPing" cx="160" cy="235.5" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0"/>
+
+  <!-- ===== REVEAL 2: weak refracted beam (draw-on, fades along length) ===== -->
+  <path id="cshWeakBeam" d="M160 235.5 L203.8 279.3" fill="none" stroke="url(#cshBeamFade)" stroke-width="1.8" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== REVEAL 3: rocking probe + wandering exit point ===== -->
+  <g id="cshRock" opacity="0">
+    <path d="M105.5 157.7 A95 95 0 0 1 214.5 157.7" fill="none" stroke="#ffc24b" stroke-width="2"/>
+    <polygon points="98.1,162.9 103.5,154.8 107.5,160.6" fill="#ffc24b"/>
+    <polygon points="221.9,162.9 216.5,154.8 212.5,160.6" fill="#ffc24b"/>
+    <polygon points="136.8,228.6 143.2,228.6 140,235.2" fill="none" stroke="#ff9b4b" stroke-width="1.3" opacity=".85"/>
+    <polygon points="176.8,228.6 183.2,228.6 180,235.2" fill="none" stroke="#ff9b4b" stroke-width="1.3" opacity=".85"/>
+    <line x1="147" y1="221" x2="173" y2="221" stroke="#ff9b4b" stroke-width="1.2" opacity=".8"/>
+    <polygon points="141,221 147,218.4 147,223.6" fill="#ff9b4b" opacity=".8"/>
+    <polygon points="179,221 173,218.4 173,223.6" fill="#ff9b4b" opacity=".8"/>
+    <path d="M140 236.3 L168.3 272.5" stroke="#ff9b4b" stroke-width="1.4" stroke-dasharray="5 4" opacity=".65" fill="none"/>
+    <path d="M180 236.3 L221 268.3" stroke="#ff9b4b" stroke-width="1.4" stroke-dasharray="5 4" opacity=".65" fill="none"/>
+    <text x="246" y="254" text-anchor="middle" font-size="10" fill="#ff9b4b" opacity=".9">EXIT WANDERS</text>
+  </g>
+
+  <!-- ===== REVEAL 4: heel-gap dimension callout ===== -->
+  <g id="cshGap" opacity="0">
+    <line x1="96" y1="235.5" x2="112" y2="235.5" stroke="#ffc24b" stroke-width="1.2" opacity=".9"/>
+    <line x1="96" y1="245.2" x2="112" y2="245.2" stroke="#ffc24b" stroke-width="1.2" opacity=".9"/>
+    <line x1="103" y1="224" x2="103" y2="235.5" stroke="#ffc24b" stroke-width="1.2"/>
+    <line x1="103" y1="256" x2="103" y2="245.2" stroke="#ffc24b" stroke-width="1.2"/>
+    <polygon points="103,235.5 100,228.5 106,228.5" fill="#ffc24b"/>
+    <polygon points="103,245.2 100,252.2 106,252.2" fill="#ffc24b"/>
+    <path d="M134 272 L107 250" stroke="#ffc24b" stroke-width="1" opacity=".6" fill="none"/>
+    <text x="30" y="266" font-size="10" letter-spacing="1" fill="#ffc24b" opacity=".85">MAX GAP</text>
+    <text x="30" y="281" font-size="12" fill="#ffc24b">0.5 mm (0.020 in.)</text>
+  </g>
+
+  <!-- ===== REVEAL 5: contoured side lights up ===== -->
+  <g id="cshContoured" opacity="0">
+    <rect x="312" y="24" width="272" height="286" rx="16" fill="#5fe0ff" fill-opacity=".045" stroke="#5fe0ff" stroke-opacity=".3" stroke-width="1"/>
+    <text x="440" y="42" text-anchor="middle" font-size="13" letter-spacing="2" fill="#9fe6ff" opacity=".95">CONTOURED SHOE</text>
+    <polyline points="350,37 356,43 365,30" fill="none" stroke="#5fe0ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M370 242.1 L370 202 L371.9 199.3 L420.5 167.7 L433 162.5 L455 166 L490 199 L490 242.1 A193 193 0 0 0 370 242.1 Z" fill="url(#cshWedgeG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="372.4" y="170.6" width="40" height="14" rx="2.5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.4" transform="rotate(-33 392.4 177.6)"/>
+    <rect x="374.4" y="163.9" width="24" height="9" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.1" transform="rotate(-33 386.4 168.4)"/>
+    <line x1="396.2" y1="183.5" x2="430" y2="232.5" stroke="#5fe0ff" stroke-width="2" opacity=".85" filter="url(#cshGlowS)"/>
+    <path d="M370 242.1 A193 193 0 0 1 490 242.1 L490 245.2 A190 190 0 0 0 370 245.2 Z" fill="#5fe0ff" opacity=".8" filter="url(#cshGlowS)" stroke="none"/>
+    <path d="M370 243.6 A191.5 191.5 0 0 1 490 243.6" fill="none" stroke="#d8f6ff" stroke-width=".8" opacity=".9"/>
+    <path d="M430 233 L474.8 280.3" stroke="#5fe0ff" stroke-width="2.5" filter="url(#cshGlow)" fill="none"/>
+    <polygon points="469.2,274.7 465.3,265.8 460.3,270.8" fill="#5fe0ff"/>
+    <line x1="430" y1="226" x2="430" y2="242" stroke="#5fe0ff" stroke-width="1.5"/>
+    <circle cx="430" cy="235.5" r="2.8" fill="#5fe0ff" filter="url(#cshGlowS)"/>
+    <path d="M374 246 L378 259" stroke="#5fe0ff" stroke-width=".8" opacity=".55" fill="none"/>
+    <text x="380" y="271" text-anchor="middle" font-size="10" fill="#9fe6ff" opacity=".85">COUPLANT FILM</text>
+    <path d="M430 248 L430 288" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="3 3" opacity=".4" fill="none"/>
+    <text x="430" y="299" text-anchor="middle" font-size="11" fill="#5fe0ff" opacity=".92">FULL CONTACT</text>
+  </g>
+</svg>

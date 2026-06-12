@@ -1,0 +1,142 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="vlglow" filterUnits="userSpaceOnUse" x="-40" y="-40" width="680" height="420">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="vlglowS" filterUnits="userSpaceOnUse" x="-40" y="-40" width="680" height="420">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="vlscr" gradientUnits="userSpaceOnUse" x1="0" y1="43" x2="0" y2="281">
+      <stop offset="0" stop-color="#0d2140"/><stop offset="1" stop-color="#081428"/>
+    </linearGradient>
+    <linearGradient id="vlscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- captions -->
+  <text x="58" y="26" font-size="12" fill="#9fe6ff" opacity=".75">A-SCAN — VERTICAL LINEARITY</text>
+  <text x="594" y="26" text-anchor="end" font-size="11" fill="#8fb6e0" opacity=".6">ASTM E317</text>
+
+  <!-- ===== instrument screen (bezel + CRT) ===== -->
+  <rect x="56" y="36" width="402" height="252" rx="10" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="63" y="43" width="388" height="238" rx="6" fill="url(#vlscr)" stroke="#2b86ff" stroke-opacity=".35" stroke-width="1"/>
+
+  <!-- axis, trace baseline, baseline grass (default visible) -->
+  <line x1="96" y1="56" x2="96" y2="260" stroke="#8fb6e0" stroke-width="1.2" opacity=".55"/>
+  <line x1="96" y1="260" x2="444" y2="260" stroke="#5fe0ff" stroke-width="2" opacity=".85" filter="url(#vlglowS)"/>
+  <g stroke="#5fe0ff" stroke-width="1" opacity=".3" fill="none">
+    <path d="M98 258 l6 -2 l5 2 l7 -3 l6 3 l6 -2 l7 2 l5 -1"/>
+    <path d="M215 258 l6 -2 l6 2 l7 -3 l5 3 l7 -2 l6 2 l6 -3 l7 3 l6 -2 l7 2"/>
+    <path d="M348 258 l6 -2 l6 2 l7 -3 l6 3 l6 -2 l7 2 l6 -3 l6 3 l7 -2 l6 2 l7 -3 l6 3 l6 -2"/>
+  </g>
+
+  <!-- ===== right column readouts (default visible) ===== -->
+  <rect x="466" y="44" width="128" height="40" rx="9" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+  <text x="478" y="59" font-size="10" fill="#8fb6e0">GAIN</text>
+  <text x="478" y="76" font-size="15" fill="#9fe6ff">46.0 dB</text>
+  <text x="466" y="252" font-size="10" fill="#8fb6e0" opacity=".75">RANGE   50 mm</text>
+  <text x="466" y="270" font-size="10" fill="#8fb6e0" opacity=".75">REJECT   0 %</text>
+
+  <!-- ===== %FSH grid + labels ===== -->
+  <g id="vlScale" opacity="0">
+    <g stroke="#2b86ff" stroke-width="1" opacity=".35">
+      <line x1="96" y1="220" x2="444" y2="220"/>
+      <line x1="96" y1="180" x2="444" y2="180"/>
+      <line x1="96" y1="140" x2="444" y2="140"/>
+      <line x1="96" y1="100" x2="444" y2="100"/>
+    </g>
+    <line x1="96" y1="60" x2="444" y2="60" stroke="#3f9bff" stroke-width="1" stroke-dasharray="5 4" opacity=".55"/>
+    <g font-size="11" fill="#9fe6ff" opacity=".85" text-anchor="end">
+      <text x="90" y="64">100</text>
+      <text x="90" y="104">80</text>
+      <text x="90" y="144">60</text>
+      <text x="90" y="184">40</text>
+      <text x="90" y="224">20</text>
+      <text x="90" y="264">0</text>
+    </g>
+    <text x="100" y="55" font-size="10" fill="#8fb6e0" opacity=".8">% FSH</text>
+  </g>
+
+  <!-- ===== two echoes locked at 80% / 40% (draw) ===== -->
+  <path id="vlEchoes" d="M154 260 L167 150 L172 100 L177 150 L186 246 Q191 255 198 259 L205 260 M298 260 L307 206 L312 180 L317 206 L324 252 Q328 258 333 259.5 L338 260" fill="none" stroke="#5fe0ff" stroke-width="2.4" stroke-linejoin="round" filter="url(#vlglowS)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="vlTags" opacity="0" font-size="11" fill="#9fe6ff" text-anchor="middle">
+    <text x="172" y="90">80 %</text>
+    <text x="312" y="170">40 %</text>
+  </g>
+
+  <!-- ===== 2:1 ratio bracket between the peaks ===== -->
+  <g id="vlRatio" opacity="0">
+    <path d="M236 100 H248 M242 100 V180 M236 180 H248" stroke="#5fe0ff" stroke-width="1.5" fill="none" opacity=".9"/>
+    <text x="252" y="144" font-size="12" fill="#9fe6ff">2:1</text>
+  </g>
+
+  <!-- ===== -6 dB gain-step chip ===== -->
+  <g id="vlGain" opacity="0">
+    <rect x="466" y="92" width="128" height="46" rx="9" fill="#ffc24b" fill-opacity=".08" stroke="#ffc24b" stroke-width="1.5"/>
+    <path d="M480 101 V115 M480 115 L475.5 109.5 M480 115 L484.5 109.5" stroke="#ffc24b" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <text x="492" y="114" font-size="13" fill="#ffc24b">-6 dB</text>
+    <text x="480" y="131" font-size="10" fill="#ffc24b" opacity=".8">46.0 → 40.0</text>
+  </g>
+  <circle id="vlPing" cx="572" cy="115" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#vlglowS)"/>
+
+  <!-- ===== ghosts of original heights + drop arrows (fade) ===== -->
+  <g id="vlGhosts" opacity="0">
+    <!-- erase the original solid traces with the screen gradient -->
+    <g fill="none" stroke="url(#vlscr)" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+      <path d="M154 260 L167 150 L172 100 L177 150 L186 246 Q191 255 198 259 L205 260"/>
+      <path d="M298 260 L307 206 L312 180 L317 206 L324 252 Q328 258 333 259.5 L338 260"/>
+    </g>
+    <!-- re-draw grid segments the eraser crossed -->
+    <g stroke="#2b86ff" stroke-width="1" opacity=".35">
+      <path d="M164.5 100 H179.5"/>
+      <path d="M163 140 H181"/>
+      <path d="M158.5 180 H168.5 M174.5 180 H185"/>
+      <path d="M153.5 220 H164 M178.5 220 H189"/>
+      <path d="M304.5 180 H319.5"/>
+      <path d="M299.5 220 H310 M313.5 220 H324.5"/>
+    </g>
+    <!-- re-draw baseline segments the eraser crossed -->
+    <g stroke="#5fe0ff" stroke-width="2" opacity=".85" filter="url(#vlglowS)">
+      <path d="M149 260 H160"/>
+      <path d="M186 260 H211"/>
+      <path d="M292.5 260 H303.5"/>
+      <path d="M318.5 260 H343"/>
+    </g>
+    <!-- dashed ghost outlines at the original 80% / 40% heights -->
+    <g fill="none" stroke="#7fd8ff" stroke-width="1.5" stroke-dasharray="5 4" opacity=".6" stroke-linejoin="round">
+      <path d="M154 260 L167 150 L172 100 L177 150 L186 246 Q191 255 198 259 L205 260"/>
+      <path d="M298 260 L307 206 L312 180 L317 206 L324 252 Q328 258 333 259.5 L338 260"/>
+    </g>
+    <!-- drop arrows -->
+    <g stroke="#ffc24b" stroke-width="2" stroke-linecap="round">
+      <path d="M197 106 V163" fill="none"/>
+      <path d="M197 171 L192.5 162.5 H201.5 Z" fill="#ffc24b" stroke="none"/>
+      <path d="M335 186 V209" fill="none"/>
+      <path d="M335 217 L330.5 208.5 H339.5 Z" fill="#ffc24b" stroke="none"/>
+    </g>
+  </g>
+
+  <!-- ===== halved echoes at 40% / 20% (draw) ===== -->
+  <path id="vlDrop" d="M157 260 L167 208 L172 180 L177 208 L185 250 Q190 257 196 259 L202 260 M300 260 L308 234 L312 220 L316 234 L322 254 Q326 258.5 330 259.5 L334 260" fill="none" stroke="#5fe0ff" stroke-width="2.4" stroke-linejoin="round" filter="url(#vlglow)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="vlDropFill" opacity="0" fill="#5fe0ff" fill-opacity=".16">
+    <path d="M157 260 L167 208 L172 180 L177 208 L185 250 Q190 257 196 259 L202 260 Z"/>
+    <path d="M300 260 L308 234 L312 220 L316 234 L322 254 Q326 258.5 330 259.5 L334 260 Z"/>
+  </g>
+
+  <!-- ===== ratio holds at the new heights ===== -->
+  <g id="vlHold" opacity="0">
+    <path d="M242 182 V220 M236 220 H248" stroke="#5fe0ff" stroke-width="1.5" fill="none" opacity=".9"/>
+    <text x="252" y="206" font-size="12" fill="#9fe6ff">2:1</text>
+    <path d="M281 204 l5 6 l9 -13" fill="none" stroke="#5fe0ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#vlglowS)"/>
+  </g>
+
+  <!-- ===== scan group ===== -->
+  <g id="vlscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#vlscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#vlglow)" opacity=".9"/>
+  </g>
+</svg>

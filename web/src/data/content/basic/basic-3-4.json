@@ -1,0 +1,194 @@
+{
+  "lessonId": "basic-3-4",
+  "title": "Liquid Penetrant Testing: Interpretation and Applications",
+  "narrationScript": "A penetrant test is only as good as the read that follows development. In this lesson you learn interpretation: sorting every indication into false, nonrelevant, or relevant before evaluation against acceptance criteria even begins. False indications come from sloppy processing, like residue, lint, or a contaminated developer. Nonrelevant indications are real entrapments at part geometry, like press fits and keyways. Relevant indications come from discontinuities, and their shapes talk. Jagged continuous lines mean cracks and hot tears. Smooth curved lines mean cold shuts. Broken straight lines mean seams and laps. Round spots mean porosity, and clusters of pinpoints mean microshrinkage. Bleed-out rate hints at volume, and a wipe-and-redevelop check separates real entrapments from ghosts. Then we tour the applications: castings, welds, wrought products, and machined parts, each with signature discontinuities, plus leak-through testing on thin-wall vessels and the aerosol dye kits that make penetrant the most portable NDT method in the field.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Three Verdicts: Interpretation Before Evaluation",
+      "body": "After the developer has worked — give it a minimum development time, commonly **10 minutes**, before the final read — every mark on the part gets one of three verdicts. **Interpretation** is the act of classifying each indication as **false** (caused by improper processing, not by entrapped penetrant in the part), **nonrelevant** (real penetrant entrapment, but caused by part geometry or design rather than a discontinuity), or **relevant** (caused by a discontinuity). Only relevant indications move on to **evaluation** — the judgment of whether each one is acceptable or rejectable under the governing acceptance criteria. Keep the two words separate: interpretation decides *what it is*; evaluation decides *whether it can stay*.\n\nInterpretation happens under controlled viewing conditions. Visible-dye examinations need adequate white light at the surface — **100 footcandles** is the standard minimum. Fluorescent examinations need a UV-A irradiance of at least **1,000 µW/cm²** at the examination surface, ambient white light held to about **2 footcandles** or less, and an inspector whose eyes have had at least a minute to dark-adapt.\n\nOne more foundation: developer bleed-out **exaggerates width**. That magnification is the method's gift — it makes a crack opening measured in microns visible from arm's length — but it means indication width says little about flaw width. Acceptance criteria therefore work mostly from **length**, and most written criteria call an indication **linear** when its length is more than three times its width, and **rounded** otherwise. That classification decides which acceptance limit applies."
+    },
+    {
+      "type": "text",
+      "heading": "False and Nonrelevant: Clearing the Imposters",
+      "body": "**False indications** trace back to processing, not to the part. The classics: inadequate penetrant removal leaving a blotchy background, penetrant transferred from an inspector's hands or a contaminated wipe, lint and fibers that glow under UV-A, penetrant tracked from the bleed-out of an adjacent part or fixture, and contaminated developer. A heavy false background does not just add clutter — it can mask a real indication, so the remedy is never to read around it.\n\n**Nonrelevant indications** are genuine entrapments at features the design put there: press-fit and shrink-fit interfaces, keyways and splines, riveted or bolted faying surfaces, weld spatter, braze fillet edges, and rough as-cast or as-welded surface texture. They are interpreted against the drawing — you must know a bushing is pressed into that bore before you dismiss the ring around it.\n\nThe discipline that holds it all together: **a doubtful indication is never argued away — the part is cleaned and completely reprocessed.** For a single questionable indication there is also a quick confirmation: wipe the indication once with a solvent-dampened swab or brush, re-apply developer, and watch. A real entrapment **re-bleeds** and the indication returns; a smear of surface residue does not. If the retest still cannot be interpreted with confidence, reprocess from the pre-clean forward."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-3-4-fig-a",
+      "caption": "The five classic indication shapes. Jagged continuous lines mean cracks or hot tears; smooth curved lines mean cold shuts; broken straight lines mean seams or laps; round spots with spreading bleed-out mean porosity; clusters of pinpoints mean microshrinkage. Fast, wide bleed-out signals volume — a thin line that re-bleeds slowly signals a tight crack."
+    },
+    {
+      "type": "table",
+      "caption": "Reading indications: appearance, the discontinuity it usually means, and where you meet it.",
+      "headers": ["Appearance", "Likely cause", "Typical origin"],
+      "rows": [
+        ["Continuous jagged line, strong bleed-out", "Crack — fatigue, quench, or hot tear", "Weld toes, fillet radii, section changes, heat-treated parts"],
+        ["Smooth, narrow, curving line", "Cold shut", "Castings — two metal streams met without fusing"],
+        ["Straight line, often intermittent, parallel to the working direction", "Seam or lap", "Rolled bar, forgings, other wrought products"],
+        ["Round spot with spreading bleed-out", "Gas porosity or deep pit", "Casting surfaces, weld faces and craters"],
+        ["Cluster of fine pinpoints", "Microshrinkage", "Castings — magnesium and aluminum especially"],
+        ["Network of fine, sharp lines", "Grinding or heat-treat check cracks", "Ground, hardened, or chrome-plated surfaces"],
+        ["Sharp ring or line tracing an assembly interface", "Nonrelevant — geometry entrapment", "Press fits, keyways, splines, faying surfaces"],
+        ["Blotchy patches or smears", "False — processing residue", "Inadequate removal, contaminated hands, wipes, or developer"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Castings: Solidification Writes the Indications",
+      "body": "Castings and penetrant testing fit each other naturally. Complex shapes process easily — an immersion line wets every surface at once — and so many structural castings are **nonmagnetic alloys** (aluminum, magnesium, bronze, austenitic steels) that PT is often the only practical surface method.\n\nThe discontinuities are written during solidification:\n\n- **Cold shuts** — two streams of metal met and failed to fuse. The indication is a **smooth, narrow, curving line**, often with rounded ends.\n- **Hot tears** — ragged, often branched lines at section changes and fillets, torn open while the metal was still hot and weak and its contraction was restrained.\n- **Shrinkage** — sponge-like local areas where feed metal ran out, typically at thick sections; **microshrinkage** appears as fuzzy clusters of pinpoint indications, a classic appearance on magnesium castings.\n- **Gas porosity** — scattered, rounded indications from trapped gas.\n- **Inclusions** — dross or sand exposed when machining cuts into them.\n\nProcess selection follows the surface. Rough as-cast surfaces favor **water-washable** penetrant so the background rinses clean; machined castings headed into critical service step up to **post-emulsifiable fluorescent** systems for sensitivity with washover protection."
+    },
+    {
+      "type": "text",
+      "heading": "Welds: Toes, Craters, and the Nonmagnetic Niche",
+      "body": "On ferromagnetic welds, magnetic particle testing usually wins the surface-inspection job. PT owns the welds MT cannot touch: **austenitic stainless steel, aluminum, nickel alloy, and titanium** weldments — pipe welds in chemical and power plants being the everyday example. On those alloy families the penetrant materials themselves are controlled: qualified **low-sulfur, low-halogen** formulations protect nickel alloys, stainless steels, and titanium from embrittlement and corrosion damage.\n\nWhat PT finds on and beside a weld:\n\n- **Crater cracks** — star-shaped clusters of short radial lines where a pass stopped.\n- **Longitudinal and transverse cracks** in the bead, including delayed cracks that appear hours after welding — which is why some procedures impose a waiting period before final inspection.\n- **Toe cracks and heat-affected-zone cracks** — jagged lines hugging the fusion line.\n- **Surface porosity** and surface-breaking **lack of fusion** at the bead edges.\n\nTwo cautions. First, weld ripple, spatter, and undercut trap penetrant and throw nonrelevant indications — surface conditioning before the test buys interpretability. Second, PT serves well as an **in-process check** on root passes and back-gouged cavities, but every trace of penetrant material must be removed before welding over the area, or the inspection becomes a contamination source."
+    },
+    {
+      "type": "text",
+      "heading": "Wrought and Machined Parts: What Working and Finishing Leave Behind",
+      "body": "Primary working — rolling, forging, extruding — elongates billet discontinuities and folds new ones into the surface:\n\n- **Seams** in rolled bar show as **straight, often intermittent lines parallel to the rolling direction**, the stretched remnants of billet cracks, blowholes, and inclusions.\n- **Laps** are metal folded over and pressed in without fusing. Because the fold meets the surface at a shallow angle and is packed with oxide, lap indications can be faint and broken — one of the reasons tight-flaw sensitivity matters.\n- **Stringers** — elongated inclusions — indicate when machining opens them to the surface, and **surface bursts** from forging at improper temperature show as ragged lines.\n\nFinishing operations add their own signatures. **Grinding cracks** are fine, tight, shallow networks — often running at right angles to the grinding direction — caused by localized overheating on hardened surfaces and chrome plate. **Heat-treat and quench cracks** start at stress raisers — keyways, holes, sharp fillets — and show as jagged lines with heavy bleed-out. Machined surfaces give PT its cleanest backgrounds, so final inspections of critical machined hardware typically use **high-sensitivity fluorescent** penetrant. One trap remains: machining, blasting, buffing, and peening can **smear metal over flaw openings**, which is why many aerospace specifications require a **chemical etch** after such operations and before the final penetrant inspection."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-3-4-fig-b",
+      "caption": "Signature PT applications by product form: cold shuts, hot tears, and microshrinkage on castings; crater and toe cracks on welds; seams along rolled bar; grinding-crack networks and quench cracks on machined, hardened parts."
+    },
+    {
+      "type": "text",
+      "heading": "Leak-Through Testing and Taking PT to the Field",
+      "body": "Penetrant materials can also find **through-wall leaks**. Apply penetrant to one surface of a thin-wall vessel, tank seam, or radiator core, apply developer to the **opposite** surface, and wait — migration through a leak path takes far longer than a normal dwell, so be patient with thicker sections. Penetrant blooming through the developer marks the leak's exact location. The technique is cheap and precise about *where*, but it is not quantitative — it measures no leak rate — and it requires access to **both sides**, which is why it complements rather than replaces the bubble and pressure-change techniques from the leak testing lessons.\n\nField work is where PT's portability shines. The standard kit is three aerosol cans — **solvent cleaner/remover, visible red-dye penetrant, and nonaqueous wet developer** — needing no water, no electricity, and no darkened area; daylight or shop lighting usually supplies the 100 footcandles the read requires. When field sensitivity must rise, fluorescent penetrant goes out with a portable UV-A lamp and a blackout shroud. Respect the boundaries: the standard processing temperature window is roughly **40–125 °F (4–52 °C)**, and outside it the technique must be qualified with comparator blocks. Do not intermix material families from different manufacturers, and post-clean every part — residues corrode, interfere with later welding or coating, and announce a sloppy program to whoever finds them."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-3-4-fig-a",
+      "title": "Penetrant indication morphology guide",
+      "file": "basic-3-4-fig-a.svg"
+    },
+    {
+      "id": "basic-3-4-fig-b",
+      "title": "PT applications by product form",
+      "file": "basic-3-4-fig-b.svg"
+    },
+    {
+      "id": "basic-3-4-fig-c",
+      "title": "Practice panel: five indications after development",
+      "file": "basic-3-4-fig-c.svg"
+    }
+  ],
+  "interactive": {
+    "type": "hotspot",
+    "title": "Call the Indications",
+    "intro": "A machined aluminum housing with a pressed-in bushing and a welded boss has been processed correctly through visible-dye PT. Five indications appear against the white developer. Click the indication that is RELEVANT and must be evaluated as a crack.",
+    "figureId": "basic-3-4-fig-c",
+    "regions": [
+      {
+        "x": 400,
+        "y": 135,
+        "w": 180,
+        "h": 70,
+        "label": "Point 1 - jagged continuous line at the weld toe",
+        "isTarget": true,
+        "feedback": "Correct. A continuous, jagged line hugging the weld toe is the classic crack signature — a relevant indication that now moves to evaluation against the acceptance criteria. Note its strong bleed-out: a deep entrapment feeding the developer."
+      },
+      {
+        "x": 625,
+        "y": 170,
+        "w": 110,
+        "h": 80,
+        "label": "Point 2 - thin wispy curl on the surface",
+        "isTarget": false,
+        "feedback": "False indication. A curled, fiber-like wisp is lint or a fiber carrying dye — processing contamination, not entrapment in the part. It wipes away and does not re-bleed. If any doubt remains after the wipe-and-redevelop check, reprocess."
+      },
+      {
+        "x": 110,
+        "y": 245,
+        "w": 140,
+        "h": 115,
+        "label": "Point 3 - blotchy patch of background color",
+        "isTarget": false,
+        "feedback": "False indication from inadequate penetrant removal. You never interpret through a dirty background — it can hide a real crack. Clean the part and reprocess from the pre-clean forward."
+      },
+      {
+        "x": 305,
+        "y": 265,
+        "w": 130,
+        "h": 130,
+        "label": "Point 4 - sharp ring tracing the bushing bore",
+        "isTarget": false,
+        "feedback": "Nonrelevant. The drawing shows a press-fit bushing in this bore, and penetrant entrapment at the interference-fit interface is expected geometry, not a discontinuity. You can only make this call because you checked the design."
+      },
+      {
+        "x": 525,
+        "y": 255,
+        "w": 150,
+        "h": 150,
+        "label": "Point 5 - cluster of fine pinpoint dots on the cast boss",
+        "isTarget": false,
+        "feedback": "Close — this one IS relevant, but it is not a crack. A cluster of pinpoints on a cast surface reads as microshrinkage: rounded indications evaluated under the porosity criteria, not the linear-indication criteria a crack would face."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "An inspector decides that a sharp line of color around a bore is caused by penetrant trapped in a press-fit bushing interface rather than by a discontinuity. In standard PT terminology, making that determination is:",
+      "options": [
+        "Evaluation, because the indication was compared with the drawing",
+        "Interpretation — classifying the indication as false, nonrelevant, or relevant",
+        "Acceptance, because the part can now be released",
+        "Calibration of the penetrant system"
+      ],
+      "correct": 1,
+      "explanation": "Interpretation is the classification step: false, nonrelevant, or relevant. Evaluation comes afterward and applies only to relevant indications, judging them against acceptance criteria. The bushing ring is interpreted as nonrelevant, so it never reaches evaluation."
+    },
+    {
+      "question": "Which of the following is a NONRELEVANT indication rather than a false one?",
+      "options": [
+        "A curled, wispy line that wipes away and does not return — lint carrying dye",
+        "A blotchy colored background caused by inadequate penetrant removal",
+        "A sharp ring of penetrant tracing the circumference of a press-fit bushing",
+        "A smear of color transferred from the inspector's contaminated glove"
+      ],
+      "correct": 2,
+      "explanation": "Nonrelevant indications are real penetrant entrapments caused by part geometry or design — press fits, keyways, splines, faying surfaces. Lint, wash residue, and transferred penetrant are false indications: they come from processing, not from entrapment in the part."
+    },
+    {
+      "question": "A smooth, narrow, curving line with rounded ends appears on the surface of an aluminum casting. The most likely discontinuity is:",
+      "options": [
+        "A cold shut, where two streams of metal met without fusing",
+        "A grinding crack from abusive finishing",
+        "A quench crack radiating from a keyway",
+        "Microshrinkage from inadequate feed metal"
+      ],
+      "correct": 0,
+      "explanation": "The smooth, curving line with rounded ends is the cold shut's signature. Cracks — quench, grinding, hot tears — read as jagged or sharp networks, and microshrinkage reads as a fuzzy cluster of pinpoints, not a single smooth line."
+    },
+    {
+      "question": "A ground, hardened steel part shows a network of fine, sharp indications oriented mostly at right angles to the finishing direction. The most likely cause is:",
+      "options": [
+        "Seams elongated from billet defects during rolling",
+        "Gas porosity from solidification",
+        "Laps folded into the surface during forging",
+        "Grinding cracks caused by localized overheating"
+      ],
+      "correct": 3,
+      "explanation": "Fine, tight, shallow crack networks on ground hardened surfaces — typically perpendicular to the grinding direction — are thermal grinding cracks. Seams and laps run parallel to the working direction of wrought products, and porosity reads as rounded spots."
+    },
+    {
+      "question": "To locate through-wall leak paths in a thin-wall welded tank using penetrant materials, the correct technique is to:",
+      "options": [
+        "Apply penetrant and developer to the same surface and read after a normal dwell",
+        "Apply penetrant to one surface and developer to the opposite surface, then allow extended time for migration",
+        "Pressurize the tank with penetrant vapor and watch the welds for color",
+        "Apply developer to both surfaces and rely on capillary action alone"
+      ],
+      "correct": 1,
+      "explanation": "Leak-through testing puts penetrant on one side and developer on the other; penetrant migrating through a leak path blooms in the developer and marks the leak's exact location. It needs access to both sides, extended dwell for thicker walls, and it gives location only — no leak rate."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Topical Outline §2.4.2.3–2.4.2.4 (PT test result interpretation, discontinuity indications, and applications)",
+    "ASTM E165/E165M, Standard Practice for Liquid Penetrant Testing for General Industry (interpretation conditions and techniques, summarized)",
+    "ASTM E1417/E1417M, Standard Practice for Liquid Penetrant Testing (lighting, temperature, development, and material-control requirements, summarized)"
+  ]
+}

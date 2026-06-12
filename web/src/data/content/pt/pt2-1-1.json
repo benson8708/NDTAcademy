@@ -1,0 +1,187 @@
+{
+  "lessonId": "pt2-1-1",
+  "title": "Basic Principles Review",
+  "narrationScript": "Level Two starts by rebuilding the foundation, because everything you will interpret and evaluate rests on it. Penetrant testing is five steps wrapped around two capillary events. During dwell, surface tension and wetting drive penetrant into any clean opening that breaks the surface, and the tighter the crack, the harder it pulls. Gravity is irrelevant at that scale. During development the same force runs in reverse, and the developer blots the evidence back out into a visible indication. Surface tension and contact angle decide whether entry happens. Viscosity only decides how fast. Volatility must stay low so penetrant never dries inside the flaw. Penetrability is measured by comparison: AMS 2644 qualification on cracked specimens assigns each fluorescent penetrant a sensitivity level, and the shop verifies the running system daily with a known defect panel, brightness checks against an unused reference, and concentration checks. Add lighting rules, contamination traps, and the way surface condition, geometry, temperature, and alloy bend the process, and you have the working physics a Level Two inspector answers for.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Five Steps, Two Capillary Events",
+      "body": "Level II starts where Level I ended — with the whole method in one frame, because everything you will interpret and evaluate traces back to it. The sequence is unchanged: **preclean** so every flaw opening is empty and wettable; **apply penetrant and let it dwell**; **remove the excess** without flushing the flaws; **develop**; **examine** under the proper light; **postclean**. Strip away the hardware and PT is two capillary events separated by a removal step: during dwell, capillary action pulls penetrant *into* every clean, surface-breaking opening, and during development the same physics runs in reverse, pulling it back *out* into a film engineered to show it.\n\nThe two non-negotiables carry forward unchanged — the flaw must be **open to the surface**, and the opening must be **clean** — and so does the materials rule: the part must be essentially nonporous. What changes at Level II is your job. A Level I performs the process to a written procedure. A Level II sets up and standardizes it, interprets and evaluates what it produces, and answers for the process controls that keep the chemistry honest. That means owning the physics, not just the steps — which is exactly where this review begins."
+    },
+    {
+      "type": "text",
+      "heading": "Surface Tension, Wetting, and Capillary Pressure",
+      "body": "**Surface tension** is the contracted skin a liquid carries at its boundary: molecules at the surface are pulled inward by their neighbors, so the surface behaves like a stretched membrane. Whether that membrane works for you or against you is decided by **wetting**, scored by the **contact angle** where the liquid meets the metal. Below 90° the liquid wets the surface and can advance into fine openings; a quality penetrant on clean metal sits within a few degrees of zero, spreading nearly flat.\n\nPut a wetting liquid at the mouth of a narrow opening and its curved meniscus generates **capillary pressure** that drives the liquid in. For a parallel-sided crack that pressure is proportional to surface tension times the cosine of the contact angle, divided by the gap width — so the relationship to memorize is simple: **the tighter the flaw, the harder it pulls**. In a crack a fraction of a micrometer wide, capillary pressure reaches the order of an atmosphere, which dwarfs gravity at that scale. That is why penetrant enters overhead, vertical, and upside-down flaws with equal indifference.\n\n**Viscosity** — resistance to flow — is the most misquoted property in PT: it governs how *fast* penetrant moves, never *whether* it can enter. And **volatility** must stay low, because a penetrant that dries during dwell strands its dye in the flaw before the developer can ever call it back."
+    },
+    {
+      "type": "figure",
+      "figureId": "pt2-1-1-fig-a",
+      "caption": "Wetting opens the door, gap width sets the pull, and the developer film reverses the flow — the same surface-tension physics drives entry and bleed-out."
+    },
+    {
+      "type": "text",
+      "heading": "Measuring Penetrability — Qualification and Daily Control",
+      "body": "There is no penetrability meter on the shop floor. The underlying properties are measured separately, mostly in the laboratory: surface tension with a tensiometer, contact angle with a goniometer, **kinematic viscosity in centistokes per ASTM D445**. What ties them into a single useful number is comparative performance testing. Under **AMS 2644**, a candidate penetrant is processed side by side with reference materials over low-cycle-fatigue cracked specimens; its crack detection and fluorescent brightness are scored, and the result is the **sensitivity level — ½, 1, 2, 3, or 4** — it carries on the Qualified Products List. When a procedure calls out *Type I, Method D, Level 3*, it is buying the outcome of that testing — which is also why penetrant, emulsifier or remover, and developer are qualified and used as a **family**, never intermixed.\n\nIn service, measurement continues as process control under ASTM E1417-style rules: a **system performance check each day before processing**, running a known-defect specimen — a PSM or TAM panel — through the complete line; **in-use fluorescent penetrant brightness per ASTM E1135**, acceptable at **90 % or more of an unused reference sample**; water-content checks on water-washable penetrant baths; **refractometer** checks of hydrophilic remover concentration; and dry-developer checks for caking and fluorescent contamination. Processing stays inside the standard **40–125 °F (4–52 °C)** window unless the procedure has qualified something different, and penetrant is never allowed to dry during its dwell — **10 minutes is the typical minimum**."
+    },
+    {
+      "type": "table",
+      "caption": "The classification grid — ASTM E1417 governs the process, AMS 2644 qualifies the materials. Products qualify as families on the QPL; do not intermix.",
+      "headers": ["Classification axis", "Designations", "Level II takeaway"],
+      "rows": [
+        ["Type", "I — fluorescent · II — visible", "Type I emits light under UV-A and carries the graded sensitivity levels; Type II is red dye read under white light, a single sensitivity class"],
+        ["Method (removal)", "A — water-washable · B — post-emulsifiable, lipophilic · C — solvent-removable · D — post-emulsifiable, hydrophilic", "The method sets the removal step and the over-wash risk; B and D add a separate, controllable emulsification step"],
+        ["Sensitivity level (Type I only)", "½ ultralow · 1 low · 2 medium · 3 high · 4 ultrahigh", "Assigned by AMS 2644 comparative testing on cracked specimens — select for the flaws you must catch; higher is not automatically better on rough or noisy surfaces"],
+        ["Developer form", "a dry powder · b water-soluble · c water-suspendible · d nonaqueous (Type I) · e nonaqueous (Type II) · f special application", "The form fixes where drying falls in the sequence and how aggressively the film blots"],
+        ["Solvent remover class", "1 halogenated · 2 nonhalogenated · 3 special application", "Chosen for material compatibility and shop safety rules; qualified alongside the family"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Contrast, Brightness, and Fluorescence",
+      "body": "An indication only counts if the eye finds it, and the eye runs on **contrast**. Type II builds contrast by *reflection*: red dye against the white developer background, examined under strong white light — **100 fc (1,076 lx) minimum at the surface** is the standard requirement. It needs no booth and no dark adaptation, and it trades away sensitivity in exchange.\n\nType I builds contrast by *emission*. The dye absorbs **UV-A** — near-ultraviolet centered near **365 nm** — and re-radiates that energy as visible **yellow-green light near 550 nm**, almost exactly where the light-adapted eye responds most strongly. Run that exchange in a darkened booth and the indication becomes practically the only light source in the field of view. Contrast against the dark field far exceeds anything red-on-white reflection can deliver, and that margin is what the upper sensitivity levels are built on.\n\nThe standard numbers exist to protect this physics: **UV-A intensity of 1,000 µW/cm² minimum at the examination surface**, verified at least daily; **ambient white light held to 2 fc (21.5 lx) or less** in the booth; eyes **dark-adapted at least 1 minute** before evaluating — many procedures require longer. And brightness is perishable: excessive heat bakes dye out of trapped penetrant, and long exposure to UV or sunlight fades it. A part that sat under the lamp all afternoon is not the part you processed that morning."
+    },
+    {
+      "type": "figure",
+      "figureId": "pt2-1-1-fig-b",
+      "caption": "Type I trades lighting discipline for emitted-light contrast; Type II trades sensitivity for the freedom to inspect anywhere the white light is strong enough."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Contamination — how a penetrant system goes quietly blind",
+      "body": "Every contaminant attacks a link you just reviewed. **Water** in penetrant degrades wetting and brightness and can cloud or gel the bath. **Acids and chromates** chemically quench fluorescent dye — etch and pickle residues must be rinsed and neutralized before PT, or indications dim and die. **Cleaning solvents** carried into the tank dilute the dye. **Penetrant tracked into dry developer** seeds it with glowing specks that read as false indications — ten or more fluorescent specks in a 100-mm (4-in.) circle of sampled developer is the classic replacement trigger. When the daily panel check loses an indication it showed yesterday, one of these is usually the reason."
+    },
+    {
+      "type": "text",
+      "heading": "Test-Object Factors That Bend the Process",
+      "body": "The part always gets a vote, and Level II work is largely anticipating it:\n\n- **Surface condition.** Rough as-cast and as-forged surfaces hold penetrant and produce background; smooth machined surfaces release excess cleanly. The rougher the surface, the more disciplined the removal step must be.\n- **Mechanical working.** Peening, grit and vapor blasting, sanding, buffing, and aggressive machining **smear metal across flaw openings**. Capillarity cannot enter a closed mouth, which is why many aerospace procedures require a chemical **etch** after such operations before penetrant goes on.\n- **Coatings.** Paint and plating seal openings shut. PT belongs after stripping — or before coating in the first place.\n- **Geometry.** Threads, keyways, blind holes, and pockets trap penetrant and pool developer. Plan drainage, stage parts deliberately, and expect background where liquid lingers.\n- **Temperature.** Cold thickens penetrant and stretches dwell; heat dries it in place. Stay inside the standard window.\n- **Alloy and product form predict the flaw.** Castings: porosity, shrinkage, cold shuts. Forgings and rolled stock: laps and seams. Welds: cracks and surface porosity. In-service hardware: fatigue and stress-corrosion cracking. Knowing what you are hunting drives sensitivity level, dwell, and removal choices.\n- **Flaw morphology.** Tight, deep cracks hold a strong reservoir but fill slowly — give them dwell and sensitivity. Wide, shallow flaws hold little and surrender it to over-washing — they punish a sloppy removal step hardest.\n\nHold the part's story next to the physics and most processing decisions make themselves. Rebuilding that reflex is what this review module is for."
+    }
+  ],
+  "figures": [
+    {
+      "id": "pt2-1-1-fig-a",
+      "title": "Capillary physics of entry and bleed-out",
+      "file": "pt2-1-1-fig-a.svg"
+    },
+    {
+      "id": "pt2-1-1-fig-b",
+      "title": "Emitted vs reflected light: the contrast budget",
+      "file": "pt2-1-1-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "sort",
+    "title": "Entry, Rate, or Readout? Sort the Variable",
+    "intro": "Every PT variable earns its keep in one of three places: getting penetrant into the flaw, setting how fast the process runs, or making the indication visible. File each one where it does its work.",
+    "buckets": [
+      "Entry — can it get in?",
+      "Rate — how fast does it happen?",
+      "Readout — can you see it?"
+    ],
+    "items": [
+      {
+        "label": "Contact angle between penetrant and part surface",
+        "bucket": 0,
+        "why": "Wetting is the gatekeeper: below 90° a liquid can advance into fine openings, and good penetrants sit within a few degrees of zero on clean metal."
+      },
+      {
+        "label": "Surface tension acting across a narrow flaw opening",
+        "bucket": 0,
+        "why": "With good wetting, surface tension generates the capillary pressure that pulls penetrant in — and the tighter the gap, the stronger the pull."
+      },
+      {
+        "label": "Metal smeared over crack mouths by shot peening",
+        "bucket": 0,
+        "why": "Smeared metal mechanically closes the surface opening. With no open path, capillary action has nothing to work on — the reason many procedures require etching after such operations."
+      },
+      {
+        "label": "Kinematic viscosity of the penetrant",
+        "bucket": 1,
+        "why": "Viscosity is resistance to flow: it sets fill speed and drag-out losses, not whether the penetrant can enter. Measured in centistokes per ASTM D445."
+      },
+      {
+        "label": "Part temperature within the 40–125 °F window",
+        "bucket": 1,
+        "why": "Temperature works mostly through viscosity — a cold, thick penetrant fills slowly and needs more dwell, which is why processing stays inside the standard window."
+      },
+      {
+        "label": "Penetrant dwell time",
+        "bucket": 1,
+        "why": "Dwell buys time for capillary fill to finish, especially in tight, deep flaws — a rate variable, with 10 minutes the typical minimum."
+      },
+      {
+        "label": "Fluorescent brightness of the in-use penetrant",
+        "bucket": 2,
+        "why": "Brightness is what the eye receives. It is checked per ASTM E1135 against an unused reference — 90 % of reference is the common floor before the bath is replaced."
+      },
+      {
+        "label": "White light leaking into the darkened UV-A booth",
+        "bucket": 2,
+        "why": "Ambient white light washes out fluorescent contrast. Common practice caps it at 2 fc (21.5 lx) in the examination area."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "A fluorescent penetrant must fill a fatigue crack on the underside of a horizontal wing spar — entry is straight up, against gravity. What actually drives the penetrant in?",
+      "options": [
+        "Hydrostatic pressure from the layer of penetrant applied to the surface",
+        "Capillary pressure generated by surface tension acting across the wetted, narrow opening — and it grows stronger as the gap narrows",
+        "The mechanical force of the spray or brush during application",
+        "A partial vacuum trapped inside the crack that sucks the liquid inward"
+      ],
+      "correct": 1,
+      "explanation": "A wetting liquid at a narrow opening forms a curved meniscus that generates capillary pressure proportional to surface tension times the cosine of the contact angle, divided by gap width. At flaw scale that pressure reaches the order of an atmosphere and dwarfs gravity, so orientation is irrelevant. Spray force and hydrostatic head are negligible, and cracks hold no engineered vacuum."
+    },
+    {
+      "question": "Two qualified penetrants show the same surface tension and near-zero contact angle on clean steel, but penetrant B has a much higher kinematic viscosity. What does the higher viscosity actually change?",
+      "options": [
+        "B cannot enter flaws as tight as the ones A enters",
+        "B produces dimmer indications, because viscosity controls dye brightness",
+        "B generates lower capillary driving pressure",
+        "B fills the same flaws, but more slowly — expect longer dwell and heavier drag-out losses"
+      ],
+      "correct": 3,
+      "explanation": "Penetrating ability is set by wetting — surface tension and contact angle — while viscosity is a rate property: it slows entry and increases the penetrant carried away on part surfaces. With identical wetting, B reaches the same flaws given enough dwell time. Viscosity does not change capillary pressure or dye brightness."
+    },
+    {
+      "question": "A procedure calls out penetrant materials per AMS 2644: Type I, Method D, Sensitivity Level 3. Decode the designation.",
+      "options": [
+        "Fluorescent penetrant, post-emulsifiable hydrophilic removal, high sensitivity",
+        "Visible penetrant, solvent-removable, medium sensitivity",
+        "Fluorescent penetrant, water-washable, ultrahigh sensitivity",
+        "Visible penetrant, post-emulsifiable lipophilic removal, low sensitivity"
+      ],
+      "correct": 0,
+      "explanation": "Type I is fluorescent; Method D is post-emulsifiable with a hydrophilic (water-base) emulsifier; and on the ½–4 scale, Level 3 is high sensitivity (4 is ultrahigh). Sensitivity levels apply to Type I penetrants and are assigned through AMS 2644 comparative qualification testing."
+    },
+    {
+      "question": "An in-use fluorescent penetrant sample is brightness-tested per ASTM E1135 against an unused reference sample. Under common ASTM E1417-based process control, the in-use penetrant is acceptable when its brightness is at least:",
+      "options": [
+        "50 % of the reference",
+        "75 % of the reference",
+        "90 % of the reference",
+        "Equal to or greater than the reference"
+      ],
+      "correct": 2,
+      "explanation": "The widely applied criterion keeps in-use penetrant at 90 % or more of the brightness of an unused reference sample. Dilution by cleaners, water contamination, and heat all dim the dye, and a dimmer penetrant quietly lowers system sensitivity even though the process looks unchanged."
+    },
+    {
+      "question": "Aluminum parts arrive at a fluorescent penetrant line straight from a chromate-bearing acid etch tank, and the rinse step was skipped. What is the biggest process risk?",
+      "options": [
+        "Nonaqueous developer will not adhere to an etched surface",
+        "Residual acids and chromates chemically quench the fluorescent dye, so indications dim or vanish",
+        "Etching smears metal over the flaw openings and seals them shut",
+        "The parts will be outside the standard 40–125 °F processing window"
+      ],
+      "correct": 1,
+      "explanation": "Acids and chromates are classic fluorescence killers: they chemically degrade the dye so a flaw that holds penetrant still fails to glow. Etch residues must be rinsed and neutralized before PT. Etching actually opens smeared flaws rather than sealing them, developer adhesion is not the issue, and bath chemistry says nothing about part temperature."
+    }
+  ],
+  "references": [
+    "CP-105-2024 PT Level II Topical Outline §1.0 (review: basic principles, theory, control and measurement of the penetrant process)",
+    "ASTM E1417/E1417M, Standard Practice for Liquid Penetrant Testing (classification, processing limits, and process control checks)",
+    "SAE AMS 2644, Inspection Material, Penetrant (material qualification, sensitivity levels, and the Qualified Products List)",
+    "ASTM E165/E165M, Standard Practice for Liquid Penetrant Examination for General Industry (general reference)"
+  ]
+}

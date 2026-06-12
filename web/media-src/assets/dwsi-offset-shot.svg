@@ -1,0 +1,139 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="dwsGlow" filterUnits="userSpaceOnUse" x="-30" y="-30" width="660" height="400">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="dwsGlowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="dwsBlur" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.6"/>
+    </filter>
+    <linearGradient id="dwsSteel" gradientUnits="userSpaceOnUse" x1="0" y1="86" x2="0" y2="270">
+      <stop offset="0" stop-color="#39689a"/>
+      <stop offset=".45" stop-color="#1a3a5f"/>
+      <stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="dwsCone" gradientUnits="userSpaceOnUse" x1="188" y1="292" x2="212" y2="86">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".30"/>
+      <stop offset=".55" stop-color="#5fe0ff" stop-opacity=".11"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".04"/>
+    </linearGradient>
+    <linearGradient id="dwsScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== weld plane (girth-weld seam, edge-on) ===== -->
+  <line x1="222" y1="26" x2="222" y2="288" stroke="#7fd8ff" stroke-width="1.2" stroke-dasharray="5 5" opacity=".4"/>
+
+  <!-- ===== PIPE RING (end-on section, wall thickness visible) ===== -->
+  <circle cx="222" cy="178" r="92" fill="url(#dwsSteel)" stroke="#8fb6e0" stroke-width="2"/>
+  <circle cx="222" cy="178" r="73" fill="#061224" fill-opacity=".92" stroke="#8fb6e0" stroke-width="1.5"/>
+  <circle cx="222" cy="178" r="86" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".14"/>
+  <circle cx="222" cy="178" r="79" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".10"/>
+  <path d="M138 130 A92 92 0 0 1 196 90" fill="none" stroke="#5fe0ff" stroke-width="1.6" opacity=".35" filter="url(#dwsGlow)"/>
+  <path d="M262 263 A92 92 0 0 0 304 220" fill="none" stroke="#5fe0ff" stroke-width="1.4" opacity=".2" filter="url(#dwsGlow)"/>
+
+  <!-- ===== GIRTH WELD notches at top + bottom wall crossings ===== -->
+  <path d="M214 86 Q222 79.5 230 86 L226.5 95.5 L229 105 Q222 110 215 105 L217.5 95.5 Z" fill="#2b86ff" stroke="#7fd8ff" stroke-width="1.1"/>
+  <path d="M214 86 Q222 79.5 230 86" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".9" filter="url(#dwsGlowS)"/>
+  <path d="M214 270 Q222 276.5 230 270 L226.5 260.5 L229 251 Q222 246 215 251 L217.5 260.5 Z" fill="#2b86ff" stroke="#7fd8ff" stroke-width="1.1"/>
+  <path d="M214 270 Q222 276.5 230 270" fill="none" stroke="#5fe0ff" stroke-width="1.5" opacity=".9" filter="url(#dwsGlowS)"/>
+
+  <!-- OD callout -->
+  <text x="118" y="250" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".85">OD &gt; 3.5 IN</text>
+  <path d="M122 245 L144 233" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+
+  <!-- ===== central ray: source -> film-side weld -> film (draw-on) ===== -->
+  <path id="dwsRay" d="M188 292 L223.2 79" fill="none" stroke="#9fe6ff" stroke-width="1.4" opacity=".85" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#dwsGlowS)"/>
+
+  <!-- ===== SETUP: source + beam cone + film + bore chip + strip bg ===== -->
+  <g id="dwsSetup" opacity="0">
+    <!-- beam cone through both walls -->
+    <path d="M188 292 L166.7 95.9 A99 99 0 0 1 277.3 95.9 Z" fill="url(#dwsCone)"/>
+    <line x1="188" y1="292" x2="166.7" y2="95.9" stroke="#5fe0ff" stroke-width="1.2" opacity=".5"/>
+    <line x1="188" y1="292" x2="277.3" y2="95.9" stroke="#5fe0ff" stroke-width="1.2" opacity=".5"/>
+
+    <!-- film strip curved against OUTSIDE of top wall -->
+    <path d="M162.5 89.7 A106.5 106.5 0 0 1 281.5 89.7 L277.3 95.9 A99 99 0 0 0 166.7 95.9 Z" fill="#081830" fill-opacity=".95" stroke="#ffc24b" stroke-width="1.4" stroke-linejoin="round"/>
+    <path d="M165.4 92.8 A102.75 102.75 0 0 1 278.6 92.8" fill="none" stroke="#ffc24b" stroke-width="1" opacity=".35" stroke-dasharray="3 4"/>
+    <text x="290" y="86" font-size="11" fill="#ffc24b" opacity=".95">FILM</text>
+    <path d="M287 88 L281 90" stroke="#ffc24b" stroke-width="1" opacity=".5" fill="none"/>
+
+    <!-- gamma source: offset left of weld plane, angled toward it -->
+    <circle cx="188" cy="292" r="5" fill="#ffc24b" filter="url(#dwsGlowS)"/>
+    <circle cx="188" cy="292" r="2" fill="#fff3d6"/>
+    <g stroke="#ffc24b" stroke-width="1.5" stroke-linecap="round" opacity=".8">
+      <line x1="181" y1="299" x2="176.5" y2="303.5"/>
+      <line x1="188" y1="301" x2="188" y2="307"/>
+      <line x1="195" y1="299" x2="199.5" y2="303.5"/>
+    </g>
+    <text x="168" y="296" text-anchor="end" font-size="11" fill="#ffc24b" opacity=".95">&#947; SOURCE &#183; OFFSET</text>
+    <!-- offset gap indicator: source vs weld plane -->
+    <g stroke="#5fe0ff" opacity=".65">
+      <line x1="196" y1="288" x2="216" y2="288" stroke-width="1.1"/>
+      <path d="M196 288 l4 -2.4 v4.8 Z M216 288 l-4 -2.4 v4.8 Z" fill="#5fe0ff" stroke="none"/>
+    </g>
+
+    <!-- NO INTERNAL ACCESS chip in the bore -->
+    <rect x="166" y="161" width="112" height="34" rx="7" fill="#081830" fill-opacity=".94" stroke="#ffc24b" stroke-width="1.2" opacity=".9"/>
+    <path d="M175.5 175 v-3.4 a4.5 4.5 0 0 1 9 0 V175" fill="none" stroke="#ffc24b" stroke-width="1.6"/>
+    <rect x="173" y="175" width="14" height="10" rx="2" fill="#ffc24b" opacity=".9"/>
+    <text x="194" y="175" font-size="11" fill="#ffc24b">NO INTERNAL</text>
+    <text x="194" y="188" font-size="11" fill="#ffc24b">ACCESS</text>
+
+    <!-- projected-image strip floating above film -->
+    <rect x="128" y="18" width="276" height="30" rx="8" fill="#0a1c36" fill-opacity=".6" stroke="#8fb6e0" stroke-width="1" opacity=".9"/>
+  </g>
+
+  <!-- ===== FILM-SIDE vs SOURCE-SIDE images on the strip ===== -->
+  <g id="dwsFilmSide" opacity="0">
+    <!-- crisp film-side weld image, centered on weld plane -->
+    <rect x="217" y="23" width="10" height="20" rx="4.5" fill="#5fe0ff" filter="url(#dwsGlowS)"/>
+    <rect x="219.2" y="25" width="5.6" height="16" rx="2.8" fill="#eaffff" opacity=".85"/>
+    <line x1="213.5" y1="26" x2="213.5" y2="40" stroke="#5fe0ff" stroke-width="1" opacity=".4"/>
+    <line x1="230.5" y1="26" x2="230.5" y2="40" stroke="#5fe0ff" stroke-width="1" opacity=".4"/>
+    <text x="206" y="31" text-anchor="end" font-size="11" fill="#9fe6ff">FILM SIDE</text>
+    <text x="206" y="44" text-anchor="end" font-size="11" fill="#5fe0ff">READ</text>
+    <!-- enlarged blurred source-side ghost, displaced off the weld plane -->
+    <rect x="283" y="20" width="22" height="26" rx="10" fill="#ff6b6b" opacity=".45" filter="url(#dwsBlur)"/>
+    <rect x="288" y="24" width="12" height="18" rx="6" fill="#ff6b6b" opacity=".30" filter="url(#dwsBlur)"/>
+    <text x="314" y="31" font-size="11" fill="#ff9b8f">SOURCE SIDE</text>
+    <text x="314" y="44" font-size="11" fill="#ff6b6b">NOT READ</text>
+    <!-- tie strip image to film-side weld -->
+    <line x1="222" y1="48" x2="222" y2="70" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="2 3" opacity=".55"/>
+  </g>
+  <circle id="dwsPing" cx="222" cy="33" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#dwsGlowS)"/>
+
+  <!-- ===== COVERAGE INSET: >=3 shots @ 120 deg ===== -->
+  <g id="dwsCoverage" opacity="0">
+    <line x1="494" y1="74" x2="494" y2="178" stroke="#7fd8ff" stroke-width="1" stroke-dasharray="3 4" opacity=".3"/>
+    <circle cx="494" cy="126" r="40" fill="url(#dwsSteel)" stroke="#8fb6e0" stroke-width="1.4"/>
+    <circle cx="494" cy="126" r="31" fill="#061224" fill-opacity=".92" stroke="#8fb6e0" stroke-width="1.1"/>
+    <!-- coverage arcs, each opposite its source, overlapping ends -->
+    <path d="M541.3 117.7 A48 48 0 0 0 446.7 117.7" fill="none" stroke="#5fe0ff" stroke-width="3.2" stroke-linecap="round" opacity=".95" filter="url(#dwsGlowS)"/>
+    <path d="M459.3 84.6 A54 54 0 0 0 512.5 176.7" fill="none" stroke="#3f9bff" stroke-width="3.2" stroke-linecap="round" opacity=".95"/>
+    <path d="M473.5 182.4 A60 60 0 0 0 532.6 80" fill="none" stroke="#7fd8ff" stroke-width="3.2" stroke-linecap="round" opacity=".6"/>
+    <!-- three source positions, 120 deg apart -->
+    <circle cx="494" cy="198" r="3.6" fill="#ffc24b" filter="url(#dwsGlowS)"/>
+    <circle cx="556.3" cy="90" r="3.6" fill="#ffc24b" filter="url(#dwsGlowS)"/>
+    <circle cx="431.7" cy="90" r="3.6" fill="#ffc24b" filter="url(#dwsGlowS)"/>
+    <line x1="494" y1="192" x2="494" y2="184" stroke="#ffc24b" stroke-width="1.2" opacity=".7"/>
+    <line x1="551.1" y1="93" x2="544.2" y2="97" stroke="#ffc24b" stroke-width="1.2" opacity=".7"/>
+    <line x1="436.9" y1="93" x2="443.8" y2="97" stroke="#ffc24b" stroke-width="1.2" opacity=".7"/>
+    <text x="504" y="202" font-size="11" fill="#ffc24b" opacity=".9">1</text>
+    <text x="564" y="86" font-size="11" fill="#ffc24b" opacity=".9">2</text>
+    <text x="424" y="86" text-anchor="end" font-size="11" fill="#ffc24b" opacity=".9">3</text>
+    <text x="494" y="222" text-anchor="middle" font-size="11" fill="#9fe6ff">&#8805;3 SHOTS @ 120&#176;</text>
+  </g>
+
+  <!-- ===== scan sweep ===== -->
+  <g id="dwsscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#dwsScanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#dwsGlow)" opacity=".9"/>
+  </g>
+</svg>

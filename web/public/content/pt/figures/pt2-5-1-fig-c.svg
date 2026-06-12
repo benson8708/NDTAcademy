@@ -1,0 +1,69 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0B1F3A">The Two-Pass Review Before First Use</text>
+
+  <!-- draft box -->
+  <rect x="28" y="120" width="160" height="64" fill="#0B1F3A"/>
+  <text x="108" y="148" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">Draft procedure</text>
+  <text x="108" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">arrives for review</text>
+
+  <!-- arrow draft -> pass 1 -->
+  <line x1="188" y1="152" x2="212" y2="152" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="212,145 212,159 224,152" fill="#0B1F3A"/>
+
+  <!-- PASS 1 box -->
+  <rect x="222" y="78" width="250" height="210" fill="#FFFFFF" stroke="#1E66F5" stroke-width="2.5"/>
+  <rect x="222" y="78" width="250" height="38" fill="#1E66F5"/>
+  <text x="347" y="103" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">PASS 1 — Completeness</text>
+  <text x="234" y="140" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">• all required elements present</text>
+  <text x="234" y="162" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">• each parameter has a number</text>
+  <text x="234" y="184" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">• numbers within E1417 limits</text>
+  <text x="234" y="206" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">• references current + specific</text>
+  <text x="234" y="228" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">• materials by classification</text>
+  <text x="234" y="250" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">• approval block correct</text>
+
+  <!-- arrow pass1 -> pass2 -->
+  <line x1="472" y1="150" x2="514" y2="150" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="514,143 514,157 526,150" fill="#1E66F5"/>
+  <text x="500" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E66F5">pass</text>
+
+  <!-- PASS 2 box -->
+  <rect x="528" y="78" width="250" height="210" fill="#FFFFFF" stroke="#1E66F5" stroke-width="2.5"/>
+  <rect x="528" y="78" width="250" height="38" fill="#1E66F5"/>
+  <text x="653" y="103" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">PASS 2 — Workability</text>
+  <text x="540" y="140" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">• equipment can hold the numbers</text>
+  <text x="540" y="162" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">• part fits the line and drains</text>
+  <text x="540" y="184" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">• booth meets 2 fc / 1,000 µW/cm²</text>
+  <text x="540" y="206" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">• QPL materials in stock, in date</text>
+  <text x="540" y="228" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">• dwell + development fit pace</text>
+
+  <!-- arrow pass2 -> release -->
+  <line x1="653" y1="288" x2="653" y2="384" stroke="#1E66F5" stroke-width="2.5"/>
+  <polygon points="646,384 660,384 653,396" fill="#1E66F5"/>
+  <text x="641" y="324" text-anchor="end" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">executable as written</text>
+
+  <!-- release box -->
+  <rect x="528" y="396" width="250" height="72" fill="#1E66F5"/>
+  <text x="653" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">Level III approves</text>
+  <text x="653" y="448" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#FFFFFF">released for use</text>
+
+  <!-- arrow pass1 -> fail -->
+  <line x1="347" y1="288" x2="347" y2="384" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="340,384 354,384 347,396" fill="#0B1F3A"/>
+  <text x="357" y="324" text-anchor="start" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">gap found</text>
+
+  <!-- arrow pass2 -> fail (polyline) -->
+  <polyline points="560,288 560,352 400,352 400,384" fill="none" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="393,384 407,384 400,396" fill="#0B1F3A"/>
+  <text x="480" y="344" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">can't run as written</text>
+
+  <!-- fail box -->
+  <rect x="222" y="396" width="250" height="72" fill="#0B1F3A"/>
+  <text x="347" y="426" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">Return for revision</text>
+  <text x="347" y="448" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#9BC4FF">never improvise at the bench</text>
+
+  <!-- loop fail -> draft -->
+  <polyline points="222,432 108,432 108,196" fill="none" stroke="#0B1F3A" stroke-width="2.5"/>
+  <polygon points="101,196 115,196 108,184" fill="#0B1F3A"/>
+  <text x="92" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A" transform="rotate(-90 92 320)">revise and resubmit</text>
+</svg>

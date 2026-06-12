@@ -1,0 +1,13 @@
+{
+  "description": "Canonical pulse-echo flaw-detector A-scan: steel bezel w/ knobs + RANGE/VEL/GAIN chips, 10x5 graticule, initial pulse hard left, flaw echo at 50 mm mid-sweep, strong back-wall echo at 90 mm, grass baseline, 0-100 MM ruler under the sweep. Build: grid powers up, CRT trace sweeps L-to-R, IP, flaw echo + ping, BW, ruler lights with amber 50 mm drop-line (time = distance).",
+  "scan": { "id": "asdscanG", "sweep": 4.5 },
+  "reveals": [
+    { "kind": "draw", "id": "asdGrid", "at": 0.8 },
+    { "kind": "draw", "id": "asdTrace", "at": 1.0 },
+    { "kind": "fade", "id": "asdPulse", "at": 1.2 },
+    { "kind": "fade", "id": "asdEcho", "at": 2.2 },
+    { "kind": "ping", "id": "asdPing", "at": 2.2 },
+    { "kind": "fade", "id": "asdBackwall", "at": 3.6 },
+    { "kind": "fade", "id": "asdRuler", "at": 7.0 }
+  ]
+}

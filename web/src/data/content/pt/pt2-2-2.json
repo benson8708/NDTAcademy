@@ -1,0 +1,180 @@
+{
+  "lessonId": "pt2-2-2",
+  "title": "Disadvantages of the Various Methods",
+  "narrationScript": "Level Two work starts before the first drop of penetrant goes on: you choose the method, and every method carries a built-in failure mode. Water-washable, Method A, removes in one step because the emulsifier is blended into the penetrant — which means the penetrant inside a flaw stays water-removable, and overwashing can strip a broad, shallow flaw until the part looks perfectly clean. Post-emulsifiable Methods B and D buy back washing control, but the price is extra stations, unforgiving emulsifier timing — about three minutes maximum for lipophilic, two for hydrophilic contact — plus refractometer checks on remover concentration. Solvent-removable Method C is slow, one surface at a time, and rides entirely on wiping technique; flushing the surface with solvent is prohibited because it strips flaws. Fluorescent systems demand a darkened area, a verified UV-A source, and dark adaptation. Visible dye gives up sensitivity, carries no graded sensitivity levels, and must never precede a fluorescent examination. Know each weakness, and read the part before you pick the method.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Every Method Fails Differently",
+      "body": "Level I training taught you to run a penetrant process. Level II hands you a different job: choosing one — and every choice is a bet. Recall the classification used by ASTM E1417 and AMS 2644: penetrants come in **Type I (fluorescent)** and **Type II (visible)**, and excess penetrant is removed by **Method A (water-washable)**, **Method B (post-emulsifiable, lipophilic)**, **Method C (solvent-removable)**, or **Method D (post-emulsifiable, hydrophilic)**. The previous lesson covered what each method does well. This one covers the costs — because the costs are where inspections fail.\n\nA method's disadvantage is never an abstraction. It is a specific mechanism for missing a defect, drowning it in background, or blowing the budget and schedule. Two framing facts before we start. First, standard processing assumes part and materials between **40 and 125 °F (4 and 52 °C)** — outside that band, no method proceeds without a qualified nonstandard procedure. Second, every removal step is a controlled attack on penetrant that the flaw needs to keep. Selection means matching each method's failure mode against the part in front of you."
+    },
+    {
+      "type": "text",
+      "heading": "Method A: The Overwash Problem",
+      "body": "Water-washable penetrant removes in one step because the emulsifying agent is **blended into the penetrant itself**. That convenience is also the hazard: the penetrant sitting *inside* a discontinuity remains water-removable for the entire wash. Nothing converts it to a protected state — the only things standing between a loaded flaw and a stripped one are spray pressure, water temperature, time, and the operator's judgment.\n\n**Overwashing** is therefore Method A's signature failure, and it is invisible. An overwashed part looks perfect — clean, low background, fast to read — while the flaw that mattered sits empty. **Broad, shallow discontinuities** such as laps and shallow open flaws are the most vulnerable: they hold a thin film of penetrant behind a wide-open mouth, and a few extra seconds of spray empties them. That is why practices such as ASTM E1417 cap the coarse variables — spray rinse at **40 psi (275 kPa) maximum** with water between **50 and 100 °F (10 and 38 °C)** — and why wash time is held to the minimum that clears the background.\n\nTwo more liabilities follow Method A around. The open penetrant tank slowly drinks rinse water dragged in on parts, and a water-contaminated bath can separate, lose sensitivity, and wash unpredictably — which is why process control includes water-content checks. And because removal aggressiveness cannot be dialed locally, Method A is a poor bet whenever the suspected flaw population is shallow and open."
+    },
+    {
+      "type": "figure",
+      "figureId": "pt2-2-2-fig-a",
+      "caption": "Overwashing — Method A penetrant inside a flaw stays water-removable, and broad shallow flaws strip first, leaving a clean-looking part with nothing left to develop."
+    },
+    {
+      "type": "text",
+      "heading": "Methods B and D: Paying for Control",
+      "body": "Post-emulsifiable systems exist to fix Method A's weakness: the penetrant itself is **not** water-washable, and only the surface layer touched by emulsifier or remover becomes washable. The flaw contents stay protected — *if* the process is run exactly right. The disadvantages are everything that \"exactly right\" demands.\n\n**Method B (lipophilic)** emulsifier works by **diffusing into the penetrant the moment they touch**, so it is applied by immersion — it cannot be sprayed or brushed onto selected areas, because there is no way to time the contact locally. The clock is short and unforgiving: emulsification time is typically limited to about **3 minutes maximum**, and parts hang and drain while it runs, since agitation accelerates the attack. Leave parts in too long and the emulsifier reaches the penetrant inside the flaws — at which point you have built a water-washable system with extra steps and inherited the very overwash failure you were paying to avoid. The viscous emulsifier also drags out of the tank on every load, one reason Method B has largely been displaced by Method D in modern aerospace processing.\n\n**Method D (hydrophilic)** removers scrub penetrant off the surface like a detergent, which gives the finest removal control of any method — and the longest process chain. A timed **pre-rinse** must knock down the bulk penetrant first, or the remover bath fouls quickly. The bath only works inside a concentration window — typically **no more than 35 % for immersion and 5 % for spray** — so it is checked with a **refractometer** as drag-in and drag-out shift it, and contact time is commonly capped at about **2 minutes**. More stations, more tanks, more measurements, more ways to drift.\n\nBoth methods share a geometric weakness: emulsifier and remover act only where they reach. **Threads, keyways, and blind holes** carry unemulsified penetrant through the rinse and bleed background across the very features you most need to read."
+    },
+    {
+      "type": "text",
+      "heading": "Method C: One Part at a Time",
+      "body": "Solvent-removable penetrant exists for the places tank lines cannot go — a weld on installed piping, a spot check during an outage. Its disadvantages are the price of that portability.\n\nIt is **slow**: one surface at a time, by hand. Put a basket of four hundred fittings against an aerosol can and a box of wipers, and the math ends the conversation — Method C is disqualified from production-volume work on workload alone.\n\nIt is also the most **operator-dependent** removal in penetrant testing. The approved technique is a **dry wipe with clean, lint-free cloth first**, then a wipe with a cloth **lightly dampened** with solvent — never saturated. Wipe too timidly and fluorescent or red background masks everything; wipe too aggressively, or let solvent run across the surface, and flaws empty out exactly as in an overwash. There is no gauge, no timer, and no pressure regulator standing behind the technician's hand.\n\nAnd it dislikes **rough surfaces**. A cloth cannot pull penetrant out of as-cast or grit-blasted texture, so the result is a part-wide glow or stain that hides real indications. Method C belongs on relatively smooth, accessible, local areas — and walks away from almost everything else."
+    },
+    {
+      "type": "callout",
+      "variant": "safety",
+      "title": "Solvent discipline — for the test and the technician",
+      "body": "**Never flush the examination surface with solvent** to remove excess penetrant. Flushing strips penetrant out of discontinuities, and standard practices prohibit it outright — removal is a wipe, not a rinse. The same materials carry personal hazards: most removal solvents are **flammable**, and their vapors concentrate fast in tanks, pits, and confined spaces. Ventilation, ignition control, gloves, and eye protection per the safety data sheet are part of the procedure, not suggestions."
+    },
+    {
+      "type": "text",
+      "heading": "Type I vs Type II: Sensitivity, Lighting, and a One-Way Door",
+      "body": "The penetrant **type** carries its own disadvantages, independent of the removal method.\n\n**Type I (fluorescent)** pays a lighting tax. Examination requires a **darkened area — ambient white light of 2 fc (21.5 lx) or less** — and a UV-A source delivering **at least 1,000 µW/cm² at the examination surface**, verified with a calibrated meter. The inspector needs **at least one minute of dark adaptation** before evaluating. None of that travels well: fluorescent work in the field means blackout hoods or curtained enclosures, and every lamp and meter adds a periodic check to track.\n\n**Type II (visible)** gives up sensitivity to escape the booth. Under AMS 2644, graded **sensitivity levels (1/2 through 4) apply to Type I penetrants only** — visible systems carry a single, low sensitivity classification, and the tight fatigue cracks a high-sensitivity fluorescent system reveals may produce no usable color contrast at all. Visible examination needs light of its own: **a minimum of 100 fc (1,076 lx)** of white light at the surface.\n\nThe trap between them is a **one-way door**: visible dye residues left in a discontinuity can **quench fluorescence**, so a Type II examination must not precede a Type I examination of the same surface. Choose visible dye today and you may have spent that surface's fluorescent reinspection. That — plus the sensitivity gap — is why aerospace final-acceptance examinations under ASTM E1417 are fluorescent territory, with Type II reserved for applications the cognizant engineering organization specifically allows."
+    },
+    {
+      "type": "table",
+      "caption": "Method limitation and risk table — typical values shown; the written procedure and governing specification control.",
+      "headers": ["Method / type", "Chief disadvantages", "Highest-risk failure mode", "Walk away when..."],
+      "rows": [
+        ["A — water-washable", "One-step removal cannot be controlled locally; penetrant in flaws stays water-removable; bath vulnerable to water contamination", "Overwash strips broad, shallow flaws while the part looks perfectly clean", "Shallow, open discontinuities are the main concern"],
+        ["B — post-emulsifiable, lipophilic", "Immersion-only emulsifier application; short critical timing (≈3 min max typical); viscous drag-out; extra tanks and steps", "Over-emulsification turns flaw-trapped penetrant washable — overwash with extra steps", "There is no immersion line, or recessed geometry dominates the part"],
+        ["D — post-emulsifiable, hydrophilic", "Longest process chain: pre-rinse, concentration-controlled remover (≤35 % dip / ≤5 % spray typical), refractometer checks, ≈2 min contact cap", "Concentration drift or over-contact either strips flaws or leaves masking background", "Budget, floor space, or process-control discipline is not there"],
+        ["C — solvent-removable", "Manual and slow; most operator-dependent removal; surface flushing prohibited; flammable solvents", "Aggressive wiping or a solvent flush empties the flaw before development", "Volume is high, surfaces are rough, or geometry is recessed"],
+        ["Type I — fluorescent", "Needs darkened area (≤2 fc ambient), UV-A ≥1,000 µW/cm² at the surface, dark adaptation, lamp and meter checks", "Weak UV-A or light leakage dims indications below what the eye catches", "The examination site cannot be darkened"],
+        ["Type II — visible", "Single low sensitivity class (no AMS 2644 graded levels); needs ≥100 fc white light; dye residue quenches fluorescence", "Tight fatigue cracks fall below the visible-contrast threshold", "Tight cracks are the target, or a later fluorescent examination is possible"]
+      ]
+    },
+    {
+      "type": "figure",
+      "figureId": "pt2-2-2-fig-b",
+      "caption": "Read the part before you pick: six common part and site conditions and the methods they rule out. An X means choose a different method — or qualify a special procedure where the specification allows one."
+    }
+  ],
+  "figures": [
+    { "id": "pt2-2-2-fig-a", "title": "Overwashing: the water-washable failure mode", "file": "pt2-2-2-fig-a.svg" },
+    { "id": "pt2-2-2-fig-b", "title": "Conditions that disqualify a method", "file": "pt2-2-2-fig-b.svg" }
+  ],
+  "interactive": {
+    "type": "sort",
+    "title": "Whose Weakness Is It?",
+    "intro": "Each statement below is a real limitation or risk from this lesson. File it under the removal-method family it belongs to.",
+    "buckets": [
+      "Water-washable (Method A)",
+      "Post-emulsifiable (Methods B / D)",
+      "Solvent-removable (Method C)"
+    ],
+    "items": [
+      {
+        "label": "Overwashing can strip penetrant out of broad, shallow discontinuities",
+        "bucket": 0,
+        "why": "The emulsifier is blended into Method A penetrant, so what is inside the flaw stays water-removable through the entire wash — and wide, shallow flaws have the least to lose."
+      },
+      {
+        "label": "A missed timer turns a controlled removal into a flaw-stripping wash",
+        "bucket": 1,
+        "why": "Emulsification is time-critical — about 3 minutes maximum for lipophilic and about 2 minutes contact for hydrophilic, typically. Overstay the clock and flaw-trapped penetrant becomes washable."
+      },
+      {
+        "label": "Flushing the surface with the remover is prohibited because it strips flaws",
+        "bucket": 2,
+        "why": "Method C removal is a dry wipe followed by a lightly solvent-dampened cloth. Solvent flushed across the face runs into discontinuities and washes the evidence out."
+      },
+      {
+        "label": "Rinse-water drag-in slowly contaminates the penetrant tank",
+        "bucket": 0,
+        "why": "Open water-washable baths absorb water carried in on parts; contamination can separate the penetrant and degrade washing and sensitivity, so water content is a routine process-control check."
+      },
+      {
+        "label": "Bath concentration must be verified with a refractometer",
+        "bucket": 1,
+        "why": "Hydrophilic remover only works inside a concentration window — typically no more than 35 % for immersion and 5 % for spray — and drag-in and drag-out shift it constantly."
+      },
+      {
+        "label": "Removal quality rides almost entirely on one technician's wiping hand",
+        "bucket": 2,
+        "why": "Solvent-removable is the most operator-dependent method: no gauge, timer, or pressure limit stands behind the cloth — only technique."
+      },
+      {
+        "label": "Cannot be applied by spraying — immersion only, because action starts on contact",
+        "bucket": 1,
+        "why": "Lipophilic emulsifier begins diffusing into penetrant the instant they touch, so only immersion gives every surface the same, timeable contact."
+      },
+      {
+        "label": "Impractical for high-volume batch processing of small parts",
+        "bucket": 2,
+        "why": "Hand-wiping one surface at a time cannot keep pace with production quantities — that work belongs on a tank line."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "A water-washable fluorescent line keeps producing clean-looking parts, but a known-defect reference part processed with the batch shows only a faint trace of its broad, shallow lap. What is the most likely method-related cause?",
+      "options": [
+        "The developer was applied too thinly to blot the flaw",
+        "The penetrant dwell ran past its minimum, saturating the flaw",
+        "Overwashing — Method A penetrant inside the flaw remains water-removable, and the wash stripped the shallow lap",
+        "UV-A intensity was too high and bleached the indication"
+      ],
+      "correct": 2,
+      "explanation": "Method A's emulsifier is built into the penetrant, so flaw-trapped penetrant stays water-removable through the entire rinse. Broad, shallow flaws hold a thin film behind a wide mouth and strip first — and the overwashed part looks perfectly clean, which is exactly why known-defect comparison reveals the problem."
+    },
+    {
+      "question": "Why is lipophilic emulsifier (Method B) applied by immersion rather than sprayed onto the part?",
+      "options": [
+        "Emulsification begins the instant the emulsifier contacts the penetrant, so only immersion gives uniform, timeable contact over the whole surface",
+        "Spraying produces a toxic mist that immersion avoids",
+        "Lipophilic emulsifier is too dilute to stay on a vertical surface",
+        "Immersion lets the emulsifier be reused indefinitely without process checks"
+      ],
+      "correct": 0,
+      "explanation": "Lipophilic emulsifier acts by diffusing into the penetrant on contact and cannot be locally timed. Spraying would start the clock at different moments across the surface, over-emulsifying some areas — and the penetrant in flaws there — while leaving background elsewhere."
+    },
+    {
+      "question": "During a Method C examination of a pipe weld, a technician speeds up removal by spraying solvent directly onto the examination surface and wiping it dry. What has the technician most likely done?",
+      "options": [
+        "Improved sensitivity, because solvent sharpens the bleed-out",
+        "Nothing wrong — solvent flushing is the standard Method C technique",
+        "Created false indications by chilling the surface below the processing band",
+        "Flushed penetrant out of surface flaws — direct solvent flushing is prohibited precisely because it strips discontinuities"
+      ],
+      "correct": 3,
+      "explanation": "Solvent applied directly to the surface runs into discontinuities and washes out the trapped penetrant. The approved technique is a dry wipe with lint-free cloth followed by a lightly solvent-dampened cloth — flushing the surface is prohibited by standard practice."
+    },
+    {
+      "question": "A vendor performs a visible-dye (Type II) examination on a fitting. Engineering then requests a fluorescent (Type I) reinspection of the same surface at higher sensitivity. What is the problem?",
+      "options": [
+        "None — a fluorescent examination always supersedes earlier results",
+        "Visible dye residues left in discontinuities can quench fluorescence, so a Type II examination must not precede a Type I examination of the same surface",
+        "Type I penetrant cannot be applied to any previously inspected part",
+        "The fitting must first be re-examined with Type II at a longer dwell"
+      ],
+      "correct": 1,
+      "explanation": "Visible dye trapped in a flaw can suppress the fluorescent response of penetrant applied later, so the higher-sensitivity reinspection may be compromised — a one-way door. This is one reason visible dye is kept away from hardware that may ever need fluorescent examination."
+    },
+    {
+      "question": "Which job is the strongest case for rejecting solvent-removable Method C in favor of a tank line?",
+      "options": [
+        "A single weld repair on an installed bracket in the field",
+        "A smooth machined shaft examined once at a bench",
+        "A basket of 400 small as-cast fittings with rough surfaces due every shift",
+        "A localized check of two stud holes during an outage"
+      ],
+      "correct": 2,
+      "explanation": "That job stacks both of Method C's disqualifiers: hand-wiping cannot keep pace with production volume, and a cloth cannot clean penetrant from rough as-cast texture, leaving background that masks indications. The field repair and outage checks are exactly where Method C belongs."
+    }
+  ],
+  "references": [
+    "CP-105-2024 PT Topical Outline §2.2 (disadvantages of various methods)",
+    "ASTM E1417/E1417M, Standard Practice for Liquid Penetrant Testing (type and method classification, removal and lighting limits)",
+    "SAE AMS 2644, Inspection Material, Penetrant (type, method, and sensitivity classification)",
+    "ASTM E165/E165M, Standard Practice for Liquid Penetrant Examination for General Industry (general reference)"
+  ]
+}

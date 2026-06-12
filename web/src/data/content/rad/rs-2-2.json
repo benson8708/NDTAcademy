@@ -1,0 +1,187 @@
+{
+  "lessonId": "rs-2-2",
+  "title": "Using Survey Meters: Readings, Calibration, and Battery Checks",
+  "narrationScript": "Your survey meter is the only sense you have for radiation, so this lesson is about proving the instrument works and reading it correctly. On an analog meter the true dose rate is the needle reading times the range multiplier — drop the multiplier and you are wrong by ten, a hundred, or a thousand. Approach on a high range, give the needle time to settle, watch the trend, and treat any zero reading as unproven until the meter itself is proven. NRC rules require radiography instruments to measure from two millirem per hour up to one rem per hour, and to be calibrated at least every six months — and after any servicing except a battery change — to within plus or minus twenty percent on each scale. The day calibration expires, the meter comes out of service: tag it, and no radiography until a calibrated, operable instrument is on site. And before every use, run the battery check, because a dead battery reads zero in any radiation field — and zero looks exactly like safe.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Calibrated and Operable: The Instrument Behind Every Survey",
+      "body": "In industrial radiography the survey meter is not an accessory — it is the measurement behind every radiation-safety decision you make. The survey you perform after **every single exposure** to prove the source has returned to its shielded position, the checks on your restricted-area boundary, the storage-area surveys — all of them are only as good as the instrument in your hand. That is why 10 CFR 34.25 requires the licensee to keep **calibrated and operable** survey instruments at each location where radioactive material is present, sufficient to make every required survey.\n\nThe regulation also fixes the instrument's working span: it must be able to measure from **2 millirem per hour through 1 rem per hour** (0.02 mSv/h through 0.01 Sv/h). The low end is where boundary and posting decisions live; the high end is what you need when something has gone wrong near the device. Field instruments are commonly marked in mR/h — for the gamma fields of radiography the numbers are treated as equivalent in practice.\n\nTwo words in the rule carry this whole lesson. *Calibrated* is proven by the calibration sticker and the record behind it. *Operable* is proven by **you**, before each use, with the checks this lesson teaches. Agreement States impose compatible requirements; your license and operating procedures are the controlling documents."
+    },
+    {
+      "type": "text",
+      "heading": "Reading an Analog Meter: Needle Times Range",
+      "body": "Most radiography survey meters are analog: a needle moves across a printed scale, and a **range selector** multiplies whatever the scale says. A typical instrument prints a **0–2 mR/h** scale and offers selector positions of ×1, ×10, ×100, and ×1000, so one printed face covers everything from a fraction of a milliroentgen per hour up to 2 R/h. The reading is always:\n\n**dose rate = needle reading × range multiplier**\n\nA needle resting on 1.2 means 1.2 mR/h on ×1, 12 mR/h on ×10, and 120 mR/h on ×100. The classic field error is reporting the needle and forgetting the multiplier — an answer wrong by a factor of ten, a hundred, or a thousand, and always in the dangerous direction when the range switch is high.\n\nTechnique matters as much as arithmetic:\n\n- **Start high, work down.** Turn the meter on and set a high range *before* you approach. If the needle barely moves, click down a range for resolution. A needle slammed against the stop — *pegged* — means switch up a range immediately and back away.\n- **Give the needle time.** Detector and circuit response takes seconds. Walk slowly and let the reading settle before you act on it.\n- **Watch the trend.** Approaching the device, the reading should climb smoothly and fall as you retreat. The trend tells you where the source is.\n\nDigital and auto-ranging instruments remove the multiplier but add a units trap: the display flips between µR/h, mR/h, and R/h on its own. Read the number **and** the units, every time."
+    },
+    {
+      "type": "table",
+      "caption": "Same needle, different ranges — the multiplier is the reading.",
+      "headers": ["Needle (0–2 mR/h scale)", "Range selector", "Actual dose rate", "What it tells you"],
+      "rows": [
+        ["1.2", "×1", "1.2 mR/h", "Low-level field — the magnitude of boundary and posting decisions"],
+        ["1.2", "×10", "12 mR/h", "Same needle position, ten times the field"],
+        ["0.6", "×100", "60 mR/h", "Serious working field — control your time and distance"],
+        ["1.8", "×1000", "1,800 mR/h (1.8 R/h)", "Top of the required span — source-problem territory; back out now"],
+        ["0", "any", "Unknown until the meter is proven", "Zero from an unproven instrument is not a measurement"]
+      ]
+    },
+    {
+      "type": "figure",
+      "figureId": "rs-2-2-fig-a",
+      "caption": "Analog survey meter face: the needle reads 1.2 on the 0–2 mR/h scale with the range selector on ×10, so the field is 12 mR/h — not 1.2. The BAT position and the BAT OK band on the scale support the pre-use battery check."
+    },
+    {
+      "type": "callout",
+      "variant": "safety",
+      "title": "A zero reading is a claim — make the instrument prove it",
+      "body": "Three failures make a meter read zero or absurdly low in a real radiation field: a **dead or weak battery** (the movement has no power to tell the truth); a **range far too high for the field** (5 mR/h on the ×1000 range deflects the needle a hair's width — it looks like zero); and **detector saturation** — some Geiger-Müller instruments without anti-saturation circuitry can *fold back* toward zero in fields far above their range, a failure documented in real overexposure events where a radiographer walked up to an unshielded source behind a quiet meter. Your defenses: battery-check before each use, approach from a distance on a high range while watching the trend, and expect what physics predicts — a loaded exposure device **always** reads above background at its surface. A meter that shows nothing beside a loaded device is reporting its own failure, not safety."
+    },
+    {
+      "type": "text",
+      "heading": "Calibration: Six Months, Defined Points, ±20 Percent",
+      "body": "Calibration is the periodic, documented proof that the instrument reads true, performed against a standard traceable to a national standard. 10 CFR 34.25(b) sets three requirements every IRRSP candidate must know cold:\n\n- **Frequency.** At intervals **not to exceed 6 months**, and **after each instrument servicing** — with one exception: **battery changes**.\n- **Points.** Linear-scale instruments are calibrated at **two points on each scale**, located at approximately **one-third and two-thirds of full scale**. Logarithmic-scale instruments are calibrated at midrange of each decade and at two points of at least one decade. Digital instruments are calibrated at **3 points between 2 and 1,000 mR/h**.\n- **Accuracy.** The instrument must demonstrate readings within **±20 percent** of the calibration standard on each scale.\n\nThe calibration facility applies known radiation fields and documents the result. The instrument comes back wearing a **calibration sticker** — calibration date and due date — backed by a certificate for the file, and records of each calibration are retained for **3 years** (10 CFR 34.65). Build the habit: every time you pick up a meter, the sticker is the first thing you read."
+    },
+    {
+      "type": "figure",
+      "figureId": "rs-2-2-fig-b",
+      "caption": "The three calibration rules of 10 CFR 34.25(b): a 6-month maximum interval plus recalibration after any servicing except battery changes; two points at roughly one-third and two-thirds of full scale on every linear scale; and demonstrated accuracy within ±20 percent of the standard."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Calibration expired? Out of service — and radiography stops",
+      "body": "The 6-month interval is a *not-to-exceed* limit. The day the due date passes, the instrument is no longer a survey meter:\n\n- **Remove it from service immediately** and tag it — DO NOT USE, CALIBRATION EXPIRED — so nobody grabs it by mistake.\n- **Send it for calibration.** It returns to service only with a fresh calibration.\n- **No required survey may be made with it.** Because 10 CFR 34.49 requires surveys to be conducted with a calibrated and operable instrument meeting 10 CFR 34.25, **radiographic operations stop** until a compliant meter is on site.\n\nThe same out-of-service rule applies after any repair or servicing other than a battery change — accuracy is unverified until recalibration. And \"it seems to read fine\" changes nothing: a survey made with an expired instrument does not satisfy the regulation, may have to be repeated or evaluated, and is exactly the kind of finding an inspector documents."
+    },
+    {
+      "type": "text",
+      "heading": "The Battery Check: One Minute That Makes Zero Believable",
+      "body": "Everything in a survey meter — detector bias voltage, amplifier, needle or display — runs on its battery. A weak battery makes readings sluggish and low; a dead one makes the meter read **zero in any radiation field**. And a meter reading zero looks exactly like a safe area. That is why the battery check comes **before each use**: at the start of every workday, after every battery change, and any time readings turn erratic or drift mid-shift.\n\nThe check is built into the instrument. Turn the selector to **BAT** — or press the battery-test button — and the circuit places the battery under a known load. The needle must rise into the marked **BAT OK band** on the scale; a digital instrument shows a battery-status indicator instead. Needle below the band? **Replace the batteries and repeat the check.** A battery change is the one service that does *not* require recalibration under 10 CFR 34.25(b) — but you still re-run the battery check and confirm the instrument responds to radiation before trusting it.\n\nThe full pre-use sequence takes under a minute: **calibration sticker current → physical condition (case, cable, switch, mechanical zero) → battery check in the band → response check against a check source or other known field.** Pass all four and your readings are measurements. Skip one and they are guesses. Carry spare batteries — cold weather and long shifts kill them at the worst possible time."
+    }
+  ],
+  "figures": [
+    {
+      "id": "rs-2-2-fig-a",
+      "title": "Reading an analog survey meter: needle × range",
+      "file": "rs-2-2-fig-a.svg"
+    },
+    {
+      "id": "rs-2-2-fig-b",
+      "title": "Calibration requirements of 10 CFR 34.25(b)",
+      "file": "rs-2-2-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "scenario",
+    "title": "First Meter of the Morning",
+    "intro": "You are the radiographer on a dawn pipeline job. The crew truck holds one survey meter, and every survey you make today rides on it. Walk through the pre-use routine and the first reading of the day.",
+    "steps": [
+      {
+        "prompt": "You take the meter from the locker at 5:40 a.m. What do you check first?",
+        "options": [
+          "Press the battery-check button — no power, no meter",
+          "The calibration sticker — is the instrument within its calibration interval?",
+          "Hold it near the loaded exposure device to confirm it responds",
+          "Set the selector to ×1000 so the first reading cannot peg the needle"
+        ],
+        "correct": 1,
+        "feedback": "Calibration status decides whether this instrument may be used at all. If the sticker shows it past due, no battery check or response test can rescue it — it is out of service before you spend a minute on it. The battery check and response check follow once you know the calibration is current."
+      },
+      {
+        "prompt": "The sticker reads: calibrated December 5 — six months and a week ago. Your only other meter is at the calibration lab. The client's welds are ready and the inspector is waiting. What now?",
+        "options": [
+          "Use it — a week past due on a meter that worked yesterday changes nothing physically",
+          "Use it for device surveys only and skip the boundary surveys today",
+          "Tag it out of service and make no radiographic exposures until a calibrated, operable meter is on site",
+          "Run a battery check and a check-source response test; if both pass, document that the calibration is extended"
+        ],
+        "correct": 2,
+        "feedback": "10 CFR 34.25 says intervals not to exceed 6 months, and 10 CFR 34.49 requires every survey to be made with a calibrated and operable instrument. Past the due date the meter is out of service — tag it — and without a compliant meter there is no radiography today. Schedule pressure has walked radiographers into unshielded sources before; it is never the right trade."
+      },
+      {
+        "prompt": "A calibrated meter arrives from the shop. You turn the selector to BAT and the needle climbs but stops just below the BAT OK band. Your move?",
+        "options": [
+          "Replace the batteries, repeat the battery check, and confirm the meter responds to a known field",
+          "Send it out for recalibration — battery work voids the calibration",
+          "Use it as-is; the needle moved, so the battery clearly has some life",
+          "Switch to ×1000, since higher ranges draw less battery current"
+        ],
+        "correct": 0,
+        "feedback": "Below the band means the battery cannot reliably drive the detector and movement — readings may sit low or sluggish exactly when they matter most. Swap the batteries and re-run the check. A battery change is the one servicing that does not require recalibration under 10 CFR 34.25(b), so once the needle sits in the band and the meter responds to a check field, you are in business."
+      },
+      {
+        "prompt": "Mid-morning, after an exposure, you approach the device with the selector on ×10. The needle settles at 1.5 on the 0–2 mR/h scale. What is the dose rate where you stand?",
+        "options": [
+          "1.5 mR/h",
+          "0.15 mR/h",
+          "15 mR/h",
+          "150 mR/h"
+        ],
+        "correct": 2,
+        "feedback": "Needle times range: 1.5 × 10 = 15 mR/h. Reporting 1.5 mR/h would understate the field ten times over — the most common reading error in the trade. Keep the multiplier in every reading you speak, log, or act on, and keep watching the trend as you close in on the device."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "After an exposure you approach the device with the range selector on ×100. The needle settles at 0.8 on the 0–2 mR/h scale. The dose rate is:",
+      "options": [
+        "0.8 mR/h",
+        "8 mR/h",
+        "80 mR/h",
+        "800 mR/h"
+      ],
+      "correct": 2,
+      "explanation": "An analog reading is always needle times range multiplier: 0.8 × 100 = 80 mR/h. Reporting the needle alone would understate the field by a factor of one hundred — the classic and most dangerous survey-meter error."
+    },
+    {
+      "question": "Under 10 CFR 34.25, a radiography survey instrument must be calibrated:",
+      "options": [
+        "At intervals not to exceed 3 months, and after any battery change",
+        "At intervals not to exceed 6 months, and after each instrument servicing except battery changes",
+        "At intervals not to exceed 12 months, regardless of servicing",
+        "Only when its readings appear inaccurate against a co-worker's meter"
+      ],
+      "correct": 1,
+      "explanation": "10 CFR 34.25(b) requires calibration at intervals not to exceed 6 months and after each instrument servicing — with battery changes named as the single exception that does not trigger recalibration."
+    },
+    {
+      "question": "You discover the crew's only survey meter went past its calibration due date over the weekend. The correct action is to:",
+      "options": [
+        "Use it but apply a 20 percent correction factor to every reading",
+        "Use it only for the post-exposure device surveys, not boundary surveys",
+        "Perform a battery check and a check-source response test; if both pass, the calibration is considered extended",
+        "Remove it from service, tag it, and perform no radiography until a calibrated, operable instrument is available"
+      ],
+      "correct": 3,
+      "explanation": "The 6-month interval is a not-to-exceed limit. An expired instrument comes out of service, and because 10 CFR 34.49 requires surveys to be made with a calibrated and operable instrument, radiographic operations stop until a compliant meter is on hand. No field check extends a calibration."
+    },
+    {
+      "question": "The battery check is performed before each use of a survey meter because:",
+      "options": [
+        "A weak or dead battery can make the instrument read zero or low no matter how intense the radiation field is",
+        "Battery voltage changes the calibration points recorded on the sticker",
+        "Regulations require survey-meter batteries to be replaced daily",
+        "The check resets the instrument's mechanical zero for the day"
+      ],
+      "correct": 0,
+      "explanation": "The detector bias, amplifier, and readout all run on the battery. Without adequate battery power the meter under-reads or reads zero in any field — and a falsely quiet meter looks identical to a safe area. The battery check proves the instrument can physically tell the truth."
+    },
+    {
+      "question": "During calibration, a survey instrument must demonstrate accuracy within what tolerance of the calibration standard on each scale?",
+      "options": [
+        "±5 percent",
+        "±10 percent",
+        "±20 percent",
+        "±50 percent"
+      ],
+      "correct": 2,
+      "explanation": "10 CFR 34.25(b)(3) requires demonstrated accuracy within plus or minus 20 percent of the calibration standard on each scale — checked at roughly one-third and two-thirds of full scale on every scale of a linear instrument."
+    }
+  ],
+  "references": [
+    "10 CFR 34.25 — Radiation survey instruments (required range, 6-month calibration interval, calibration points, ±20% accuracy)",
+    "10 CFR 34.49 and 10 CFR 34.65 — Radiation surveys; records of survey-instrument calibrations (3-year retention)",
+    "10 CFR Part 20 — Standards for Protection Against Radiation (general survey and monitoring requirements, §20.1501)",
+    "ANSI/ASNT CP-105-2024, Appendix A §2.3–2.6 (reading meter indications; calibration frequency and expiration; battery check)"
+  ]
+}

@@ -72,8 +72,11 @@ for (const level of curriculum.levels) {
       const script = c.narrationScript ?? "";
       const w = script.split(/\s+/).filter(Boolean).length;
       words += w;
-      if (w < 350) problems.push(`${lesson.id}: narrationScript too short (${w} words)`);
-      else if (w < 500) warn.push(`${lesson.id}: narration on the short side (${w} words)`);
+      // narrationScript feeds the legacy slideshow videos; only courses that
+      // ship them (videos.json present, i.e. VT) need full-length scripts.
+      const hasLegacyVideos = existsSync(join(contentDir, "videos.json"));
+      if (hasLegacyVideos && w < 350) problems.push(`${lesson.id}: narrationScript too short (${w} words)`);
+      else if (hasLegacyVideos && w < 500) warn.push(`${lesson.id}: narration on the short side (${w} words)`);
       if (/[#*`_]|\bFigure [A-Z]/.test(script)) warn.push(`${lesson.id}: narration may contain markdown/figure refs`);
 
       const needsInteractive = lesson.media.some((m) => m.type === "interactive");

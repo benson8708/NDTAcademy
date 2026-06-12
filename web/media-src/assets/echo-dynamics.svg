@@ -1,0 +1,177 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="edyGlow" filterUnits="userSpaceOnUse" x="-58" y="-58" width="716" height="456">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="edyGlowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="edySteel" x1="0" y1="46" x2="0" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1d4067"/><stop offset=".4" stop-color="#14304f"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="edyShoe" x1="0" y1="151" x2="0" y2="195" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a5584"/><stop offset=".5" stop-color="#1b3e66"/><stop offset="1" stop-color="#102c4d"/>
+    </linearGradient>
+    <linearGradient id="edyScr" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0c2747"/><stop offset=".8" stop-color="#071528"/><stop offset="1" stop-color="#050f1f"/>
+    </linearGradient>
+    <linearGradient id="edyScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== LEFT 2/3: PLAN VIEW — butt weld + angle-beam probe ===== -->
+  <text x="32" y="36" font-size="11" fill="#9fe6ff" opacity=".6" letter-spacing="1">PLAN VIEW &#183; BUTT WELD</text>
+
+  <!-- plate -->
+  <rect x="30" y="46" width="354" height="254" rx="4" fill="url(#edySteel)" stroke="#8fb6e0" stroke-width="1.8"/>
+  <!-- mill texture -->
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".11">
+    <line x1="36" y1="70" x2="104" y2="70"/><line x1="36" y1="98" x2="104" y2="98"/>
+    <line x1="36" y1="126" x2="104" y2="126"/><line x1="36" y1="154" x2="104" y2="154"/>
+    <line x1="36" y1="182" x2="104" y2="182"/><line x1="36" y1="210" x2="104" y2="210"/>
+    <line x1="36" y1="238" x2="104" y2="238"/><line x1="36" y1="266" x2="104" y2="266"/>
+    <line x1="164" y1="70" x2="378" y2="70"/><line x1="164" y1="98" x2="378" y2="98"/>
+    <line x1="164" y1="126" x2="378" y2="126"/><line x1="164" y1="154" x2="378" y2="154"/>
+    <line x1="164" y1="182" x2="378" y2="182"/><line x1="164" y1="210" x2="378" y2="210"/>
+    <line x1="164" y1="238" x2="378" y2="238"/><line x1="164" y1="266" x2="378" y2="266"/>
+  </g>
+  <!-- corner index ticks -->
+  <g stroke="#8fb6e0" stroke-width="1.5" opacity=".4" fill="none">
+    <path d="M38 60 V52 H46"/><path d="M376 52 H368 M376 52 V60"/>
+    <path d="M38 286 V294 H46"/><path d="M376 294 H368 M376 294 V286"/>
+  </g>
+
+  <!-- HAZ tint flanking the seam -->
+  <rect x="104" y="46" width="8" height="254" fill="#2b86ff" opacity=".12"/>
+  <rect x="156" y="46" width="8" height="254" fill="#2b86ff" opacity=".12"/>
+  <line x1="104" y1="46" x2="104" y2="300" stroke="#7fd8ff" stroke-width="1" stroke-dasharray="4 4" opacity=".22"/>
+  <line x1="164" y1="46" x2="164" y2="300" stroke="#7fd8ff" stroke-width="1" stroke-dasharray="4 4" opacity=".22"/>
+
+  <!-- weld seam band (cap, top view) -->
+  <rect x="112" y="46" width="44" height="254" fill="#2b86ff" opacity=".22"/>
+  <!-- cap ripples (stacked crescents) -->
+  <g fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".45">
+    <path d="M112 58 Q134 49 156 58"/><path d="M112 71 Q134 62 156 71"/>
+    <path d="M112 84 Q134 75 156 84"/><path d="M112 97 Q134 88 156 97"/>
+    <path d="M112 110 Q134 101 156 110"/><path d="M112 123 Q134 114 156 123"/>
+    <path d="M112 136 Q134 127 156 136"/><path d="M112 149 Q134 140 156 149"/>
+    <path d="M112 162 Q134 153 156 162"/><path d="M112 175 Q134 166 156 175"/>
+    <path d="M112 188 Q134 179 156 188"/><path d="M112 201 Q134 192 156 201"/>
+    <path d="M112 214 Q134 205 156 214"/><path d="M112 227 Q134 218 156 227"/>
+    <path d="M112 240 Q134 231 156 240"/><path d="M112 253 Q134 244 156 253"/>
+    <path d="M112 266 Q134 257 156 266"/><path d="M112 279 Q134 270 156 279"/>
+    <path d="M112 292 Q134 283 156 292"/>
+  </g>
+  <!-- weld toes -->
+  <line x1="112" y1="46" x2="112" y2="300" stroke="#7fd8ff" stroke-width="1.5" opacity=".75" filter="url(#edyGlow)"/>
+  <line x1="156" y1="46" x2="156" y2="300" stroke="#7fd8ff" stroke-width="1.5" opacity=".75" filter="url(#edyGlow)"/>
+  <!-- weld centerline -->
+  <line x1="134" y1="46" x2="134" y2="300" stroke="#9fe6ff" stroke-width="1" stroke-dasharray="6 5" opacity=".25"/>
+
+  <!-- beam wedge: index point -> indication (under probe shoe) -->
+  <path d="M230 173 L126 159 L126 187 Z" fill="#5fe0ff" opacity=".12"/>
+  <path d="M230 173 L126 159 M230 173 L126 187" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".4"/>
+  <line x1="230" y1="173" x2="140" y2="173" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="4 4" opacity=".45"/>
+
+  <!-- glowing indication dot inside weld zone -->
+  <circle cx="134" cy="173" r="7.5" fill="none" stroke="#ffc24b" stroke-width="1" opacity=".5"/>
+  <circle cx="134" cy="173" r="4" fill="#ffc24b" filter="url(#edyGlowR)"/>
+
+  <!-- angle-beam probe (top view): shoe + case + index ticks + cable -->
+  <g>
+    <rect x="216" y="151" width="64" height="44" rx="6" fill="url(#edyShoe)" stroke="#8fb6e0" stroke-width="1.8"/>
+    <!-- transducer housing over the back of the wedge -->
+    <rect x="246" y="158" width="28" height="30" rx="3" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+    <rect x="250" y="162" width="20" height="22" rx="2" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".3"/>
+    <circle cx="260" cy="166" r="2.2" fill="#14304f" stroke="#8fb6e0" stroke-width="1" opacity=".8"/>
+    <!-- grip serrations on shoe nose -->
+    <path d="M220 156 V190 M224.5 156 V190" stroke="#8fb6e0" stroke-width="1" opacity=".3" fill="none"/>
+    <!-- engraved beam-direction arrow on shoe -->
+    <path d="M229 173 L238 168.8 L238 177.2 Z" fill="#9fe6ff" opacity=".6"/>
+    <!-- index point ticks on shoe sides at exit line -->
+    <line x1="230" y1="143" x2="230" y2="154" stroke="#5fe0ff" stroke-width="2" opacity=".95" filter="url(#edyGlow)"/>
+    <line x1="230" y1="192" x2="230" y2="203" stroke="#5fe0ff" stroke-width="2" opacity=".95" filter="url(#edyGlow)"/>
+    <!-- cable stub off the back, upper corner -->
+    <rect x="280" y="154" width="12" height="8" rx="2" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+    <path d="M292 158 C 306 158, 313 147, 318 136" fill="none" stroke="#8fb6e0" stroke-width="2.5" stroke-linecap="round" opacity=".8"/>
+  </g>
+
+  <!-- ===== REVEAL 1: TRAVERSE (perpendicular to weld) ===== -->
+  <g id="edyTraverse" opacity="0">
+    <line x1="203" y1="173" x2="305" y2="173" stroke="#5fe0ff" stroke-width="2" filter="url(#edyGlow)"/>
+    <path d="M196 173 L206 168.5 L206 177.5 Z" fill="#5fe0ff"/>
+    <path d="M312 173 L302 168.5 L302 177.5 Z" fill="#5fe0ff"/>
+    <text x="318" y="177" font-size="11" fill="#9fe6ff" opacity=".95">TRAVERSE</text>
+  </g>
+
+  <!-- ===== REVEAL 2: LATERAL (parallel to weld) ===== -->
+  <g id="edyLateral" opacity="0">
+    <line x1="254" y1="126" x2="254" y2="230" stroke="#5fe0ff" stroke-width="2" filter="url(#edyGlow)"/>
+    <path d="M254 118 L249.5 128 L258.5 128 Z" fill="#5fe0ff"/>
+    <path d="M254 238 L249.5 228 L258.5 228 Z" fill="#5fe0ff"/>
+    <text x="254" y="254" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".95">LATERAL</text>
+  </g>
+
+  <!-- ===== REVEAL 3: ORBIT (dashed arc, constant radius about indication) ===== -->
+  <path id="edyOrbit" d="M205.3 108.8 A96 96 0 0 1 211.2 115.9 M214.3 120.3 A96 96 0 0 1 218.9 128.3 M221.3 133.1 A96 96 0 0 1 224.7 141.7 M226.4 146.8 A96 96 0 0 1 228.4 155.8 M229.3 161.1 A96 96 0 0 1 230.0 170.3 M230.0 175.7 A96 96 0 0 1 229.3 184.9 M228.4 190.2 A96 96 0 0 1 226.4 199.2 M224.7 204.3 A96 96 0 0 1 221.3 212.9 M218.9 217.7 A96 96 0 0 1 214.3 225.7 M211.2 230.1 A96 96 0 0 1 205.3 237.2"
+    fill="none" stroke="#7fd8ff" stroke-width="2" stroke-linecap="round"
+    pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#edyGlowR)"/>
+  <g id="edyOrbitTag" opacity="0">
+    <path d="M0 0 L-10 -4.5 L-10 4.5 Z" transform="translate(203.5,105.5) rotate(-132)" fill="#7fd8ff"/>
+    <path d="M0 0 L-10 -4.5 L-10 4.5 Z" transform="translate(203.5,240.5) rotate(132)" fill="#7fd8ff"/>
+    <text x="196" y="94" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".95">ORBIT</text>
+  </g>
+
+  <!-- ===== REVEAL 4: SWIVEL (rotation on the probe body) ===== -->
+  <g id="edySwivel" opacity="0">
+    <path d="M238 164 A21 21 0 1 1 238 182" fill="none" stroke="#5fe0ff" stroke-width="2" filter="url(#edyGlowR)"/>
+    <path d="M0 0 L-12 -5.5 L-12 5.5 Z" transform="translate(236.5,185.5) rotate(-115)" fill="#5fe0ff"/>
+    <path d="M293 227 L274 196" stroke="#5fe0ff" stroke-width="1" opacity=".6" fill="none"/>
+    <text x="296" y="232" font-size="11" fill="#9fe6ff" opacity=".95">SWIVEL</text>
+  </g>
+
+  <!-- ===== RIGHT 1/3: stacked A-scan windows ===== -->
+  <text x="404" y="56" font-size="11" fill="#9fe6ff" opacity=".85" letter-spacing="1">PLANAR</text>
+  <g>
+    <rect x="404" y="62" width="178" height="102" rx="6" fill="url(#edyScr)" stroke="#8fb6e0" stroke-width="1.2"/>
+    <path d="M448.5 68 V158 M493 68 V158 M537.5 68 V158" stroke="#5fe0ff" stroke-width="1" opacity=".13" fill="none"/>
+    <line x1="410" y1="148" x2="576" y2="148" stroke="#5fe0ff" stroke-width="1.2" opacity=".5"/>
+    <!-- initial pulse -->
+    <path d="M412 148 L416 112 L420 148" fill="none" stroke="#7fd8ff" stroke-width="1.5" opacity=".7"/>
+  </g>
+  <text x="404" y="186" font-size="11" fill="#9fe6ff" opacity=".85" letter-spacing="1">VOLUMETRIC</text>
+  <g>
+    <rect x="404" y="192" width="178" height="102" rx="6" fill="url(#edyScr)" stroke="#8fb6e0" stroke-width="1.2"/>
+    <path d="M448.5 198 V288 M493 198 V288 M537.5 198 V288" stroke="#5fe0ff" stroke-width="1" opacity=".13" fill="none"/>
+    <line x1="410" y1="278" x2="576" y2="278" stroke="#5fe0ff" stroke-width="1.2" opacity=".5"/>
+    <!-- initial pulse -->
+    <path d="M412 278 L416 242 L420 278" fill="none" stroke="#7fd8ff" stroke-width="1.5" opacity=".7"/>
+  </g>
+
+  <!-- ===== REVEAL 5: MIRROR — tall sharp spike collapses off-angle ===== -->
+  <g id="edyMirror" opacity="0">
+    <path d="M474 148 L486 76 L498 148" fill="none" stroke="#5fe0ff" stroke-width="2.2" stroke-linejoin="round" filter="url(#edyGlowR)"/>
+    <path d="M514 148 L522 138 L530 148" fill="none" stroke="#7fd8ff" stroke-width="1.8" opacity=".45"/>
+    <line x1="508" y1="96" x2="508" y2="122" stroke="#ffc24b" stroke-width="1.8"/>
+    <path d="M508 130 L503.5 120 L512.5 120 Z" fill="#ffc24b"/>
+  </g>
+
+  <!-- ===== REVEAL 6: SCATTERER — low cluster, holds with angle ===== -->
+  <g id="edyScatter" opacity="0">
+    <path d="M438 278 L444 278 L448 260 L452 278 L458 278 L462 252 L466 278 L472 278 L476 264 L480 278 L486 278 L490 254 L494 278 L500 278 L504 262 L508 278 L514 278 L518 256 L522 278 L528 278 L532 266 L536 278 L542 278"
+      fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linejoin="round" filter="url(#edyGlowR)"/>
+    <line x1="438" y1="287" x2="542" y2="287" stroke="#7fd8ff" stroke-width="1.5" opacity=".55"/>
+    <line x1="438" y1="284" x2="438" y2="290" stroke="#7fd8ff" stroke-width="1.5" opacity=".55"/>
+    <line x1="542" y1="284" x2="542" y2="290" stroke="#7fd8ff" stroke-width="1.5" opacity=".55"/>
+  </g>
+
+  <!-- ===== scan group ===== -->
+  <g id="edyscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#edyScanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#edyGlow)" opacity=".9"/>
+  </g>
+</svg>

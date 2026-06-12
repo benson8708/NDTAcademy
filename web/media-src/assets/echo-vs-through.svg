@@ -1,0 +1,161 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="evtGlowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="evtGlowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="evtSteel" x1="0" y1="132" x2="0" y2="226" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c5a88"/><stop offset=".4" stop-color="#16385d"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="evtWater" x1="0" y1="58" x2="0" y2="308" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2b86ff" stop-opacity=".12"/>
+      <stop offset=".5" stop-color="#1E66F5" stop-opacity=".05"/>
+      <stop offset="1" stop-color="#1E66F5" stop-opacity=".02"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== STAGE (always visible): tanks, divider, titles, blocks, flaws ===== -->
+  <rect x="36" y="58" width="228" height="250" fill="url(#evtWater)"/>
+  <rect x="336" y="58" width="228" height="250" fill="url(#evtWater)"/>
+  <!-- tank side walls (cropped below panel) -->
+  <path d="M36 58 V308 M264 58 V308 M336 58 V308 M564 58 V308" stroke="#8fb6e0" stroke-width="1.5" opacity=".28" fill="none"/>
+  <!-- waterline + ripples -->
+  <g stroke="#7fd8ff" fill="none" opacity=".45">
+    <path d="M36 58 H264 M336 58 H564" stroke-width="1.2"/>
+    <path d="M58 54 q7 -4 14 0 M196 54 q7 -4 14 0 M384 54 q7 -4 14 0 M508 54 q7 -4 14 0" stroke-width="1" opacity=".6"/>
+  </g>
+  <text x="42" y="77" font-size="11" fill="#7fd8ff" opacity=".55">WATER</text>
+  <!-- divider -->
+  <line x1="300" y1="44" x2="300" y2="314" stroke="#8fb6e0" stroke-width="1" opacity=".16"/>
+  <!-- half titles -->
+  <text x="150" y="38" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".95">PULSE-ECHO</text>
+  <text x="450" y="38" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".95">THROUGH-TRANSMISSION</text>
+  <!-- blocks -->
+  <rect x="60" y="132" width="180" height="94" fill="url(#evtSteel)"/>
+  <rect x="360" y="132" width="180" height="94" fill="url(#evtSteel)"/>
+  <!-- rolling texture -->
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".15">
+    <line x1="64" y1="150" x2="236" y2="150"/><line x1="64" y1="168" x2="236" y2="168"/>
+    <line x1="64" y1="190" x2="236" y2="190"/><line x1="64" y1="208" x2="236" y2="208"/>
+    <line x1="364" y1="150" x2="536" y2="150"/><line x1="364" y1="168" x2="536" y2="168"/>
+    <line x1="364" y1="190" x2="536" y2="190"/><line x1="364" y1="208" x2="536" y2="208"/>
+  </g>
+  <!-- block edges: bright entry surface + back wall -->
+  <g stroke="#8fb6e0" fill="none">
+    <path d="M60 132 H240 M360 132 H540" stroke-width="1.8"/>
+    <path d="M60 226 H240 M360 226 H540" stroke-width="2"/>
+    <path d="M60 132 V226 M240 132 V226 M360 132 V226 M540 132 V226" stroke-width="1.5" opacity=".45"/>
+  </g>
+  <!-- mid-depth flaws (same in both halves) -->
+  <ellipse cx="150" cy="179" rx="9" ry="3.5" fill="#ff6b6b" filter="url(#evtGlowR)"/>
+  <ellipse cx="450" cy="179" rx="9" ry="3.5" fill="#ff6b6b" filter="url(#evtGlowR)"/>
+
+  <!-- ============================================================ -->
+  <!-- LEFT — PULSE-ECHO                                             -->
+  <!-- ============================================================ -->
+  <!-- immersion transducer: manipulator rod, housing outline, element face -->
+  <g id="evtPeProbe" fill="none" stroke-dasharray="100" stroke-dashoffset="100">
+    <path d="M150 46 V64" pathLength="100" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M136 92 V68 Q136 64 140 64 H160 Q164 64 164 68 V92 H136" pathLength="100" stroke="#8fb6e0" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M137 94.5 H163" pathLength="100" stroke="#5fe0ff" stroke-width="3.5"/>
+  </g>
+
+  <!-- echoes: down ray, then returns off front surface / flaw / back wall -->
+  <path id="evtPeEchoes" d="M138 98 V221 M133.5 214.5 L138 221 L142.5 214.5
+    M146 132 V102 M141.5 108.5 L146 102 L150.5 108.5
+    M152 175 V102 M147.5 108.5 L152 102 L156.5 108.5
+    M164 225 V102 M159.5 108.5 L164 102 L168.5 108.5"
+    fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+    filter="url(#evtGlowC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <circle id="evtPePing" cx="150" cy="179" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#evtGlowR)"/>
+
+  <!-- mini A-scan: three blips on a time axis -->
+  <g id="evtPeScan" opacity="0">
+    <rect x="60" y="244" width="180" height="48" rx="4" fill="#081a30" opacity=".92" stroke="#8fb6e0" stroke-width="1"/>
+    <line x1="70" y1="276" x2="228" y2="276" stroke="#9fe6ff" stroke-width="1" opacity=".5"/>
+    <path d="M232 276 L225 272.6 L225 279.4 Z" fill="#9fe6ff" opacity=".5"/>
+    <path d="M71 276 L74 260 L77 276" fill="none" stroke="#9fe6ff" stroke-width="1.2" opacity=".45"/>
+    <path d="M84 276 L92 250 L100 276" fill="none" stroke="#5fe0ff" stroke-width="1.6"/>
+    <path d="M132 276 L140 257 L148 276" fill="none" stroke="#ff6b6b" stroke-width="1.8"/>
+    <path d="M188 276 L196 248 L204 276" fill="none" stroke="#5fe0ff" stroke-width="1.6"/>
+    <text x="92" y="289" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".8">FS</text>
+    <text x="140" y="289" text-anchor="middle" font-size="11" fill="#ff6b6b" opacity=".9">FLAW</text>
+    <text x="196" y="289" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".8">BW</text>
+  </g>
+
+  <!-- depth bracket: echo time ties to flaw depth -->
+  <g id="evtPeDepth" opacity="0" font-size="12">
+    <g stroke="#ffc24b" stroke-width="1.5" fill="none">
+      <path d="M211 132 H221 M211 175 H221 M216 132 V175"/>
+    </g>
+    <text x="226" y="158" fill="#ffc24b">d</text>
+    <g stroke="#ffc24b" stroke-width="1.2" fill="none">
+      <path d="M92 296 V302 M140 296 V302 M92 299 H140"/>
+    </g>
+    <text x="116" y="313" text-anchor="middle" font-size="11" fill="#ffc24b">&#916;t</text>
+    <text x="150" y="240" text-anchor="middle" fill="#ffc24b">d = v&#183;&#916;t/2</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- RIGHT — THROUGH-TRANSMISSION                                  -->
+  <!-- ============================================================ -->
+  <!-- alignment axis + TX/RX tags -->
+  <g id="evtTtAxis" opacity="0">
+    <line x1="450" y1="52" x2="450" y2="306" stroke="#9fe6ff" stroke-width="1" stroke-dasharray="7 4" opacity=".5"/>
+    <text x="428" y="82" text-anchor="end" font-size="11" fill="#9fe6ff">TX</text>
+    <text x="428" y="286" text-anchor="end" font-size="11" fill="#9fe6ff">RX</text>
+  </g>
+  <!-- aligned probe pair: transmitter above, receiver below -->
+  <g id="evtTtProbes" fill="none" stroke-dasharray="100" stroke-dashoffset="100">
+    <path d="M450 46 V64" pathLength="100" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M436 92 V68 Q436 64 440 64 H460 Q464 64 464 68 V92 H436" pathLength="100" stroke="#8fb6e0" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M437 94.5 H463" pathLength="100" stroke="#5fe0ff" stroke-width="3.5"/>
+    <path d="M437 265.5 H463" pathLength="100" stroke="#5fe0ff" stroke-width="3.5"/>
+    <path d="M436 268 V292 Q436 296 440 296 H460 Q464 296 464 292 V268 H436" pathLength="100" stroke="#8fb6e0" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M450 296 V308" pathLength="100" stroke="#8fb6e0" stroke-width="1.5"/>
+  </g>
+
+  <!-- one-way transmitted beam TX -> RX -->
+  <g id="evtTtBeam" fill="none" stroke-dasharray="100" stroke-dashoffset="100">
+    <path d="M443 98 V258" pathLength="100" stroke="#5fe0ff" stroke-width="1" opacity=".35"/>
+    <path d="M457 98 V258" pathLength="100" stroke="#5fe0ff" stroke-width="1" opacity=".35"/>
+    <path d="M450 98 V258 M445.5 251.5 L450 258 L454.5 251.5" pathLength="100" stroke="#5fe0ff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" filter="url(#evtGlowC)"/>
+  </g>
+
+  <!-- flaw blocks the beam: scatter + acoustic shadow cast beyond it -->
+  <g id="evtTtFlaw" opacity="0">
+    <path d="M443 183 L439 267 L461 267 L457 183 Z" fill="#02060f" opacity=".58"/>
+    <line x1="443" y1="183" x2="439" y2="267" stroke="#ffc24b" stroke-width="1" stroke-dasharray="2 3" opacity=".55"/>
+    <line x1="457" y1="183" x2="461" y2="267" stroke="#ffc24b" stroke-width="1" stroke-dasharray="2 3" opacity=".55"/>
+    <g stroke="#ff9b4b" stroke-width="1.6" stroke-linecap="round" fill="none" filter="url(#evtGlowR)">
+      <path d="M441 175 L431 166 M459 175 L469 166 M444 184 L435 191 M456 184 L465 191"/>
+    </g>
+    <text x="472" y="241" font-size="11" fill="#ffc24b" opacity=".85">SHADOW</text>
+  </g>
+  <circle id="evtTtPing" cx="450" cy="179" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#evtGlowR)"/>
+
+  <!-- received-signal bar drops -->
+  <g id="evtTtDrop" opacity="0">
+    <path d="M464 282 H492" stroke="#8fb6e0" stroke-width="1.2" opacity=".5" fill="none"/>
+    <rect x="492" y="246" width="68" height="48" rx="4" fill="#081a30" opacity=".92" stroke="#8fb6e0" stroke-width="1"/>
+    <text x="526" y="258" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85">RX SIGNAL</text>
+    <line x1="498" y1="288" x2="554" y2="288" stroke="#9fe6ff" stroke-width="1" opacity=".5"/>
+    <rect x="520" y="262" width="16" height="26" fill="none" stroke="#9fe6ff" stroke-width="1.2" stroke-dasharray="3 2" opacity=".65"/>
+    <rect x="520" y="279" width="16" height="9" fill="#ffc24b" opacity=".9"/>
+    <line x1="511" y1="264" x2="511" y2="274" stroke="#ff9b4b" stroke-width="1.5"/>
+    <path d="M511 278 L507.8 272 L514.2 272 Z" fill="#ff9b4b"/>
+  </g>
+
+  <!-- struck-through depth bracket: no depth from this side -->
+  <g id="evtTtNoDepth" opacity="0">
+    <g stroke="#ffc24b" stroke-width="1.5" fill="none" opacity=".75">
+      <path d="M511 132 H521 M511 175 H521 M516 132 V175"/>
+    </g>
+    <text x="526" y="158" font-size="12" fill="#ffc24b" opacity=".85">d?</text>
+    <path d="M503 184 L539 123" stroke="#ff6b6b" stroke-width="2.2" stroke-linecap="round" filter="url(#evtGlowR)"/>
+  </g>
+</svg>

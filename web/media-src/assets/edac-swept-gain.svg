@@ -1,0 +1,129 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="tcgGlow" filterUnits="userSpaceOnUse" x="-30" y="-30" width="660" height="400">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="tb"/>
+      <feMerge><feMergeNode in="tb"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="tcgSteel" gradientUnits="userSpaceOnUse" x1="0" y1="96" x2="0" y2="292">
+      <stop offset="0" stop-color="#2a5683"/><stop offset=".3" stop-color="#16365c"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="tcgConeFade" gradientUnits="userSpaceOnUse" x1="0" y1="96" x2="0" y2="288">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".2"/>
+      <stop offset=".55" stop-color="#5fe0ff" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".02"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== captions ===== -->
+  <text x="38" y="42" font-size="11" fill="#9fe6ff" opacity=".8">3 IDENTICAL SDH — SAME Ø</text>
+  <text x="240" y="42" font-size="11" fill="#9fe6ff" opacity=".8">A-SCAN — %FSH</text>
+
+  <!-- ===== TEST BLOCK (cross-section) ===== -->
+  <rect x="38" y="96" width="148" height="196" fill="url(#tcgSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".14">
+    <line x1="42" y1="122" x2="182" y2="122"/>
+    <line x1="42" y1="152" x2="182" y2="152"/>
+    <line x1="42" y1="182" x2="182" y2="182"/>
+    <line x1="42" y1="212" x2="182" y2="212"/>
+    <line x1="42" y1="242" x2="182" y2="242"/>
+    <line x1="42" y1="270" x2="182" y2="270"/>
+  </g>
+
+  <!-- beam cone + cause labels (reveal 2) -->
+  <g id="tcgCauses" opacity="0">
+    <polygon points="92,96 130,96 158,288 64,288" fill="url(#tcgConeFade)"/>
+    <line x1="92" y1="96" x2="64" y2="288" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="4 4" opacity=".55"/>
+    <line x1="130" y1="96" x2="158" y2="288" stroke="#5fe0ff" stroke-width="1.2" stroke-dasharray="4 4" opacity=".55"/>
+    <text x="111" y="309" text-anchor="middle" font-size="11" fill="#7fd8ff" opacity=".95">BEAM SPREAD</text>
+    <text x="111" y="323" text-anchor="middle" font-size="11" fill="#7fd8ff" opacity=".95">+ ATTENUATION</text>
+  </g>
+
+  <!-- probe on top -->
+  <path d="M111 64 V57 Q111 51 117 51 H133" fill="none" stroke="#8fb6e0" stroke-width="2.5"/>
+  <rect x="88" y="64" width="46" height="30" rx="3" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="94" y="84" width="34" height="6" fill="#1E66F5"/>
+  <line x1="94" y1="90" x2="128" y2="90" stroke="#7fd8ff" stroke-width="1.2" opacity=".9"/>
+  <line x1="84" y1="95.2" x2="138" y2="95.2" stroke="#5fe0ff" stroke-width="2" opacity=".55"/>
+
+  <!-- 3 identical side-drilled holes -->
+  <g>
+    <circle cx="111" cy="136" r="7" fill="#08152b" stroke="#8fb6e0" stroke-width="1.8"/>
+    <circle cx="111" cy="193" r="7" fill="#08152b" stroke="#8fb6e0" stroke-width="1.8"/>
+    <circle cx="111" cy="250" r="7" fill="#08152b" stroke="#8fb6e0" stroke-width="1.8"/>
+    <path d="M106.5 132.5 A6 6 0 0 1 111 130.5 M106.5 189.5 A6 6 0 0 1 111 187.5 M106.5 246.5 A6 6 0 0 1 111 244.5" stroke="#7fd8ff" stroke-width="1.2" fill="none" opacity=".6"/>
+  </g>
+  <g font-size="10" fill="#8fb6e0" opacity=".75" text-anchor="end">
+    <text x="92" y="140">1</text>
+    <text x="92" y="197">2</text>
+    <text x="92" y="254">3</text>
+  </g>
+
+  <!-- ===== A-SCAN GRID ===== -->
+  <rect x="240" y="70" width="330" height="216" fill="#081a30" opacity=".55"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".12">
+    <line x1="273" y1="70" x2="273" y2="286"/><line x1="306" y1="70" x2="306" y2="286"/>
+    <line x1="339" y1="70" x2="339" y2="286"/><line x1="372" y1="70" x2="372" y2="286"/>
+    <line x1="405" y1="70" x2="405" y2="286"/><line x1="438" y1="70" x2="438" y2="286"/>
+    <line x1="471" y1="70" x2="471" y2="286"/><line x1="504" y1="70" x2="504" y2="286"/>
+    <line x1="537" y1="70" x2="537" y2="286"/>
+    <line x1="240" y1="156.4" x2="570" y2="156.4"/>
+    <line x1="240" y1="199.6" x2="570" y2="199.6"/>
+    <line x1="240" y1="242.8" x2="570" y2="242.8"/>
+  </g>
+  <rect x="240" y="70" width="330" height="216" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".85"/>
+  <g font-size="10" text-anchor="end">
+    <text x="234" y="74" fill="#8fb6e0" opacity=".7">100</text>
+    <text x="234" y="117" fill="#9fe6ff" opacity=".9">80</text>
+    <text x="234" y="289" fill="#8fb6e0" opacity=".7">0</text>
+  </g>
+  <!-- evaluation level 80% FSH -->
+  <line x1="240" y1="113" x2="570" y2="113" stroke="#9fe6ff" stroke-width="1.3" stroke-dasharray="6 4" opacity=".75"/>
+  <text x="258" y="106" font-size="10" fill="#9fe6ff" opacity=".85">EVAL 80%</text>
+  <!-- baseline trace + initial pulse -->
+  <path d="M240 286 H570" stroke="#7fd8ff" stroke-width="1.5" fill="none" opacity=".75"/>
+  <path d="M256 285 l8 -1.5 8 1.5 9 -2 9 2 10 -1.5 10 1.5" stroke="#7fd8ff" stroke-width="1" fill="none" opacity=".3"/>
+  <path d="M243 286 L245.5 78 L248 210 L250 256 L252 286" stroke="#7fd8ff" stroke-width="1.5" fill="none" opacity=".9"/>
+  <text x="240" y="302" font-size="11" fill="#9fe6ff" opacity=".65">SWEEP →</text>
+
+  <!-- ===== REVEAL 1: falling echoes + leaders + envelope ===== -->
+  <g id="tcgEchoes" opacity="0">
+    <g stroke="#7fd8ff" stroke-width="1" stroke-dasharray="3 4" opacity=".45" fill="none">
+      <path d="M118 136 L312 116"/>
+      <path d="M118 193 L412 181"/>
+      <path d="M118 250 L511 224"/>
+    </g>
+    <g stroke="#3f9bff" stroke-width="2" fill="#1E66F5" fill-opacity=".22">
+      <path d="M300 286 Q311 175 316 113 Q321 175 332 286 Z"/>
+      <path d="M402 286 Q412 218 416 178 Q420 218 430 286 Z"/>
+      <path d="M503 286 Q511 248 515 221 Q519 248 527 286 Z"/>
+    </g>
+    <path d="M316 110 Q416 186 515 218" stroke="#ffc24b" stroke-width="1.5" stroke-dasharray="6 4" fill="none" opacity=".9"/>
+    <polygon points="524.5,221 516,221.5 517.9,215.7" fill="#ffc24b" opacity=".9"/>
+  </g>
+  <circle id="tcgPing1" cx="515" cy="221" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#tcgGlow)"/>
+
+  <!-- ===== REVEAL 3: swept-gain ramp ===== -->
+  <path id="tcgRamp" d="M248 280 L560 236" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" stroke="#5fe0ff" stroke-width="2" fill="none" filter="url(#tcgGlow)"/>
+  <g id="tcgRampLbl" opacity="0">
+    <polygon points="566.2,235.1 558.5,239.5 557.6,233.2" fill="#5fe0ff"/>
+    <text x="570" y="302" text-anchor="end" font-size="11" fill="#9fe6ff">GAIN RISES WITH TIME</text>
+  </g>
+
+  <!-- ===== REVEAL 4: corrected equal-height echoes ===== -->
+  <g id="tcgFlat" opacity="0">
+    <line x1="240" y1="113" x2="570" y2="113" stroke="#5fe0ff" stroke-width="1.5" stroke-dasharray="6 4" opacity=".9" filter="url(#tcgGlow)"/>
+    <g stroke="#5fe0ff" stroke-width="2" fill="#5fe0ff" fill-opacity=".15" filter="url(#tcgGlow)">
+      <path d="M300 286 Q311 175 316 113 Q321 175 332 286 Z"/>
+      <path d="M400 286 Q412 178 416 113 Q420 178 432 286 Z"/>
+      <path d="M499 286 Q511 178 515 113 Q519 178 531 286 Z"/>
+    </g>
+    <g stroke="#7fd8ff" stroke-width="1.6" opacity=".9">
+      <line x1="416" y1="170" x2="416" y2="128"/>
+      <line x1="515" y1="213" x2="515" y2="128"/>
+    </g>
+    <polygon points="416,118 412,128 420,128" fill="#7fd8ff" opacity=".9"/>
+    <polygon points="515,118 511,128 519,128" fill="#7fd8ff" opacity=".9"/>
+    <text x="566" y="104" text-anchor="end" font-size="11" fill="#9fe6ff">ONE FLAT LEVEL</text>
+  </g>
+  <circle id="tcgPing2" cx="515" cy="113" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#tcgGlow)"/>
+</svg>

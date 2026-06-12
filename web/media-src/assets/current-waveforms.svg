@@ -1,0 +1,106 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="cwglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cwglowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="cwsteel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d4368"/><stop offset=".35" stop-color="#122f51"/><stop offset="1" stop-color="#0b2140"/>
+    </linearGradient>
+    <linearGradient id="cwskinGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".95"/>
+      <stop offset=".55" stop-color="#5fe0ff" stop-opacity=".4"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cwfieldGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".72"/>
+      <stop offset=".7" stop-color="#5fe0ff" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== column headers ===== -->
+  <text x="204" y="25" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".62" letter-spacing="1">MAGNETIZING CURRENT</text>
+  <text x="441" y="25" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".62" letter-spacing="1">FIELD DEPTH IN PART</text>
+
+  <!-- ===== row labels ===== -->
+  <text x="76" y="76" text-anchor="end" font-size="13" fill="#9fe6ff">AC</text>
+  <text x="76" y="172" text-anchor="end" font-size="13" fill="#9fe6ff">HWDC</text>
+  <text x="76" y="268" text-anchor="end" font-size="13" fill="#9fe6ff">FWDC</text>
+
+  <!-- ===== zero axes (scope baselines) ===== -->
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".35" stroke-dasharray="3 4">
+    <line x1="84" y1="72" x2="324" y2="72"/>
+    <line x1="84" y1="192" x2="324" y2="192"/>
+    <line x1="84" y1="288" x2="324" y2="288"/>
+  </g>
+
+  <!-- ===== steel depth panels (cross-sections) ===== -->
+  <g>
+    <rect x="350" y="40" width="182" height="64" fill="url(#cwsteel)"/>
+    <rect x="350" y="136" width="182" height="64" fill="url(#cwsteel)"/>
+    <rect x="350" y="232" width="182" height="64" fill="url(#cwsteel)"/>
+  </g>
+  <!-- rolling texture -->
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".14">
+    <line x1="354" y1="64" x2="528" y2="64"/><line x1="354" y1="94" x2="528" y2="94"/>
+    <line x1="354" y1="158" x2="528" y2="158"/><line x1="354" y1="180" x2="528" y2="180"/>
+    <line x1="354" y1="254" x2="528" y2="254"/><line x1="354" y1="276" x2="528" y2="276"/>
+  </g>
+  <!-- side + bottom edges -->
+  <g fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".4">
+    <path d="M350 40 V104 H532 V40"/>
+    <path d="M350 136 V200 H532 V136"/>
+    <path d="M350 232 V296 H532 V232"/>
+  </g>
+  <!-- top surfaces (where the field enters) -->
+  <g stroke="#8fb6e0" stroke-width="2" opacity=".9">
+    <line x1="350" y1="40" x2="532" y2="40"/>
+    <line x1="350" y1="136" x2="532" y2="136"/>
+    <line x1="350" y1="232" x2="532" y2="232"/>
+  </g>
+
+  <!-- ===== ROW 1 — AC : skin band + tag (fade) ===== -->
+  <g id="cwAc" opacity="0">
+    <rect x="351" y="41" width="180" height="9" fill="url(#cwskinGrad)"/>
+    <line x1="351" y1="41.8" x2="531" y2="41.8" stroke="#5fe0ff" stroke-width="1.6" opacity=".9" filter="url(#cwglowS)"/>
+    <path d="M441 53 V74" stroke="#5fe0ff" stroke-width="1" opacity=".55" fill="none"/>
+    <text x="441" y="87" text-anchor="middle" font-size="11" fill="#9fe6ff">SKIN EFFECT</text>
+    <text x="331" y="58" font-size="12" fill="#9fe6ff" opacity=".7">+</text>
+    <text x="331" y="97" font-size="12" fill="#9fe6ff" opacity=".7">&#8722;</text>
+  </g>
+  <circle id="cwSkinPing" cx="441" cy="46" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#cwglowS)"/>
+
+  <!-- ===== ROW 2 — HWDC : moderate field depth (fade) ===== -->
+  <g id="cwHw" opacity="0">
+    <rect x="351" y="137" width="180" height="30" fill="url(#cwfieldGrad)"/>
+    <line x1="351" y1="167" x2="531" y2="167" stroke="#5fe0ff" stroke-width="1" opacity=".65" stroke-dasharray="3 3"/>
+  </g>
+
+  <!-- ===== ROW 3 — FWDC : deepest field + DC average level (fade) ===== -->
+  <g id="cwFw" opacity="0">
+    <rect x="351" y="233" width="180" height="55" fill="url(#cwfieldGrad)"/>
+    <line x1="351" y1="288" x2="531" y2="288" stroke="#5fe0ff" stroke-width="1" opacity=".65" stroke-dasharray="3 3"/>
+    <path d="M92 260 H316" stroke="#7fd8ff" stroke-width="1.2" stroke-dasharray="5 4" opacity=".55" fill="none"/>
+    <text x="320" y="256" font-size="11" fill="#9fe6ff" opacity=".75">AVG</text>
+  </g>
+
+  <!-- ===== waveform traces (draw-on) ===== -->
+  <path id="cwAcTrace" d="M92 72 L94 69.31 L96 66.66 L98 64.07 L100 61.59 L102 59.23 L104 57.04 L106 55.03 L108 53.24 L110 51.68 L112 50.38 L114 49.35 L116 48.6 L118 48.15 L120 48 L122 48.15 L124 48.6 L126 49.35 L128 50.38 L130 51.68 L132 53.24 L134 55.03 L136 57.04 L138 59.23 L140 61.59 L142 64.07 L144 66.66 L146 69.31 L148 72 L150 74.69 L152 77.34 L154 79.93 L156 82.41 L158 84.77 L160 86.96 L162 88.97 L164 90.76 L166 92.32 L168 93.62 L170 94.65 L172 95.4 L174 95.85 L176 96 L178 95.85 L180 95.4 L182 94.65 L184 93.62 L186 92.32 L188 90.76 L190 88.97 L192 86.96 L194 84.77 L196 82.41 L198 79.93 L200 77.34 L202 74.69 L204 72 L206 69.31 L208 66.66 L210 64.07 L212 61.59 L214 59.23 L216 57.04 L218 55.03 L220 53.24 L222 51.68 L224 50.38 L226 49.35 L228 48.6 L230 48.15 L232 48 L234 48.15 L236 48.6 L238 49.35 L240 50.38 L242 51.68 L244 53.24 L246 55.03 L248 57.04 L250 59.23 L252 61.59 L254 64.07 L256 66.66 L258 69.31 L260 72 L262 74.69 L264 77.34 L266 79.93 L268 82.41 L270 84.77 L272 86.96 L274 88.97 L276 90.76 L278 92.32 L280 93.62 L282 94.65 L284 95.4 L286 95.85 L288 96 L290 95.85 L292 95.4 L294 94.65 L296 93.62 L298 92.32 L300 90.76 L302 88.97 L304 86.96 L306 84.77 L308 82.41 L310 79.93 L312 77.34 L314 74.69 L316 72" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#cwglow)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <path id="cwHwTrace" d="M92 192 L94 187.07 L96 182.21 L98 177.47 L100 172.91 L102 168.59 L104 164.57 L106 160.89 L108 157.6 L110 154.74 L112 152.36 L114 150.47 L116 149.1 L118 148.28 L120 148 L122 148.28 L124 149.1 L126 150.47 L128 152.36 L130 154.74 L132 157.6 L134 160.89 L136 164.57 L138 168.59 L140 172.91 L142 177.47 L144 182.21 L146 187.07 L148 192 L204 192 L206 187.07 L208 182.21 L210 177.47 L212 172.91 L214 168.59 L216 164.57 L218 160.89 L220 157.6 L222 154.74 L224 152.36 L226 150.47 L228 149.1 L230 148.28 L232 148 L234 148.28 L236 149.1 L238 150.47 L240 152.36 L242 154.74 L244 157.6 L246 160.89 L248 164.57 L250 168.59 L252 172.91 L254 177.47 L256 182.21 L258 187.07 L260 192 L316 192" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#cwglow)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <path id="cwFwTrace" d="M92 288 L94 283.07 L96 278.21 L98 273.47 L100 268.91 L102 264.59 L104 260.57 L106 256.89 L108 253.6 L110 250.74 L112 248.36 L114 246.47 L116 245.1 L118 244.28 L120 244 L122 244.28 L124 245.1 L126 246.47 L128 248.36 L130 250.74 L132 253.6 L134 256.89 L136 260.57 L138 264.59 L140 268.91 L142 273.47 L144 278.21 L146 283.07 L148 288 L150 283.07 L152 278.21 L154 273.47 L156 268.91 L158 264.59 L160 260.57 L162 256.89 L164 253.6 L166 250.74 L168 248.36 L170 246.47 L172 245.1 L174 244.28 L176 244 L178 244.28 L180 245.1 L182 246.47 L184 248.36 L186 250.74 L188 253.6 L190 256.89 L192 260.57 L194 264.59 L196 268.91 L198 273.47 L200 278.21 L202 283.07 L204 288 L206 283.07 L208 278.21 L210 273.47 L212 268.91 L214 264.59 L216 260.57 L218 256.89 L220 253.6 L222 250.74 L224 248.36 L226 246.47 L228 245.1 L230 244.28 L232 244 L234 244.28 L236 245.1 L238 246.47 L240 248.36 L242 250.74 L244 253.6 L246 256.89 L248 260.57 L250 264.59 L252 268.91 L254 273.47 L256 278.21 L258 283.07 L260 288 L262 283.07 L264 278.21 L266 273.47 L268 268.91 L270 264.59 L272 260.57 L274 256.89 L276 253.6 L278 250.74 L280 248.36 L282 246.47 L284 245.1 L286 244.28 L288 244 L290 244.28 L292 245.1 L294 246.47 L296 248.36 L298 250.74 L300 253.6 L302 256.89 L304 260.57 L306 264.59 L308 268.91 L310 273.47 L312 278.21 L314 283.07 L316 288" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#cwglow)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== shared right-edge depth arrow ===== -->
+  <g id="cwDepthArrow" opacity="0">
+    <line x1="546" y1="40" x2="558" y2="40" stroke="#9fe6ff" stroke-width="1.5" opacity=".85"/>
+    <line x1="552" y1="40" x2="552" y2="288" stroke="#9fe6ff" stroke-width="1.5" opacity=".85"/>
+    <path d="M552 297 L547.4 288 L556.6 288 Z" fill="#9fe6ff" opacity=".9"/>
+    <text transform="rotate(90 570 113)" x="570" y="113" font-size="11" fill="#9fe6ff" opacity=".8" letter-spacing="1">SURFACE &#8594; DEEP</text>
+  </g>
+</svg>

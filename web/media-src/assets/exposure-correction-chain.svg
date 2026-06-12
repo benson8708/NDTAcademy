@@ -1,0 +1,124 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="eccGlow" filterUnits="userSpaceOnUse" x="-60" y="-60" width="720" height="460">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="eccGlowS" filterUnits="userSpaceOnUse" x="-60" y="-60" width="720" height="460">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="eccCard" x1="0" y1="112" x2="0" y2="216" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1c4068"/><stop offset=".5" stop-color="#14304f"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="eccSteel" x1="0" y1="164" x2="0" y2="176" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== STATIC: technique-sheet header strip (baseline conditions) ===== -->
+  <g>
+    <rect x="24" y="20" width="552" height="30" rx="8" fill="#0e2848" opacity=".5"/>
+    <rect x="24" y="20" width="552" height="30" rx="8" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".35"/>
+    <!-- small sheet glyph w/ folded corner -->
+    <g opacity=".75">
+      <path d="M38 27 H48 L52 31 V43 H38 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1"/>
+      <path d="M48 27 V31 H52" fill="none" stroke="#8fb6e0" stroke-width="1"/>
+      <path d="M41 34 H49 M41 38 H49" stroke="#5fe0ff" stroke-width="1" opacity=".6"/>
+    </g>
+    <text x="60" y="39" font-size="11" fill="#9fe6ff" opacity=".7">SHEET: 8 MIN / 60 Ci / 30 IN SFD</text>
+    <text x="566" y="39" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".45">Ir-192</text>
+  </g>
+
+  <!-- ===== STATIC: chain spine + ghost slots (default-state composition) ===== -->
+  <path d="M24 164 H578" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="2 5" opacity=".14" fill="none"/>
+  <g fill="none" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="5 4" opacity=".22">
+    <rect x="24" y="112" width="90" height="104" rx="10"/>
+    <rect x="156" y="112" width="118" height="104" rx="10"/>
+    <rect x="324" y="112" width="146" height="104" rx="10"/>
+    <rect x="494" y="138" width="84" height="52" rx="9"/>
+  </g>
+  <g fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".4">
+    <path d="M128 158 L135 164 L128 170"/>
+    <path d="M290 158 L297 164 L290 170"/>
+  </g>
+
+  <!-- ===== eccBase: baseline glass card '8 MIN' off the sheet ===== -->
+  <g id="eccBase" opacity="0">
+    <path d="M69 55 V101" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="3 3" opacity=".45" fill="none"/>
+    <path d="M69 108 L65.4 100.5 L72.6 100.5 Z" fill="#5fe0ff" opacity=".6"/>
+    <rect x="24" y="112" width="90" height="104" rx="10" fill="url(#eccCard)" opacity=".92"/>
+    <rect x="24" y="112" width="90" height="104" rx="10" fill="none" stroke="#8fb6e0" stroke-width="1.5"/>
+    <!-- clipboard glyph -->
+    <rect x="58" y="127" width="22" height="28" rx="3" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.4"/>
+    <rect x="64" y="123.5" width="10" height="6.5" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1"/>
+    <g stroke="#5fe0ff" stroke-width="1" opacity=".55">
+      <path d="M62.5 137 H75.5 M62.5 142.5 H75.5 M62.5 148 H71"/>
+    </g>
+    <text x="69" y="186" text-anchor="middle" font-size="16" fill="#9fe6ff" filter="url(#eccGlowS)">8 MIN</text>
+    <text x="69" y="205" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".55">BASELINE</text>
+  </g>
+
+  <!-- ===== eccDecay: '× 2' operator + decay card (60 -> 30 Ci) ===== -->
+  <g id="eccDecay" opacity="0">
+    <text x="131" y="156" text-anchor="middle" font-size="16" fill="#5fe0ff" filter="url(#eccGlow)">× 2</text>
+    <rect x="156" y="112" width="118" height="104" rx="10" fill="url(#eccCard)" opacity=".92"/>
+    <rect x="156" y="112" width="118" height="104" rx="10" fill="none" stroke="#8fb6e0" stroke-width="1.5"/>
+    <text x="164" y="128" font-size="11" fill="#9fe6ff" opacity=".7">DECAY</text>
+    <!-- mini axes -->
+    <path d="M168 138 V192 H252" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+    <!-- activity decay curve -->
+    <path d="M170 142 C182 156 192 163 202 167 C220 174.5 236 179.5 250 183" fill="none" stroke="#ffc24b" stroke-width="2" stroke-linecap="round" filter="url(#eccGlowS)"/>
+    <!-- half-activity drop -->
+    <path d="M168 167 H202 M202 167 V192" fill="none" stroke="#ffc24b" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>
+    <circle cx="170" cy="142" r="2.6" fill="#ffc24b"/>
+    <circle cx="202" cy="167" r="2.6" fill="#ffc24b"/>
+    <text x="177" y="142" font-size="11" fill="#ffc24b" opacity=".9">60</text>
+    <text x="208" y="163" font-size="11" fill="#ffc24b" opacity=".9">30</text>
+    <text x="215" y="208" text-anchor="middle" font-size="12" fill="#ffc24b" opacity=".95">60 → 30 Ci</text>
+  </g>
+
+  <!-- ===== eccDecayOut: running total beneath decay card ===== -->
+  <g id="eccDecayOut" opacity="0">
+    <path d="M215 218 V240" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <path d="M215 246 L211.4 239 L218.6 239 Z" fill="#5fe0ff" opacity=".6"/>
+    <rect x="172" y="249" width="86" height="25" rx="7" fill="#0e2848" opacity=".9"/>
+    <rect x="172" y="249" width="86" height="25" rx="7" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".8"/>
+    <text x="215" y="266" text-anchor="middle" font-size="13" fill="#9fe6ff">= 16 MIN</text>
+  </g>
+
+  <!-- ===== eccDist: '× 1.78' operator + distance card (30 -> 40 IN arcs) ===== -->
+  <g id="eccDist" opacity="0">
+    <text x="293" y="156" text-anchor="middle" font-size="16" fill="#5fe0ff" filter="url(#eccGlow)">× 1.78</text>
+    <rect x="324" y="112" width="146" height="104" rx="10" fill="url(#eccCard)" opacity=".92"/>
+    <rect x="324" y="112" width="146" height="104" rx="10" fill="none" stroke="#8fb6e0" stroke-width="1.5"/>
+    <text x="332" y="128" font-size="11" fill="#9fe6ff" opacity=".7">DISTANCE</text>
+    <!-- source pigtail + capsule -->
+    <path d="M326 170 H338" stroke="#8fb6e0" stroke-width="1.6" opacity=".8" fill="none"/>
+    <rect x="338" y="165.5" width="9" height="9" rx="2.5" fill="url(#eccSteel)" stroke="#8fb6e0" stroke-width="1"/>
+    <circle cx="343" cy="170" r="2.4" fill="#ffc24b" filter="url(#eccGlowS)"/>
+    <!-- SFD radial w/ arrow -->
+    <path d="M352 170 H436" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="4 3" opacity=".55" fill="none"/>
+    <path d="M442 170 L434.5 166.4 L434.5 173.6 Z" fill="#8fb6e0" opacity=".7"/>
+    <!-- radius arcs: 30 IN solid (old), 40 IN dashed (new) -->
+    <path d="M370.1 142.4 A36 36 0 0 1 370.1 197.6" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#eccGlowS)" opacity=".95"/>
+    <path d="M396 128.9 A64 64 0 0 1 396 211.1" fill="none" stroke="#5fe0ff" stroke-width="1.5" stroke-dasharray="6 4" opacity=".8"/>
+    <circle cx="383" cy="170" r="2" fill="#5fe0ff"/>
+    <circle cx="411" cy="170" r="2" fill="#5fe0ff"/>
+    <text x="377" y="161" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".9">30 IN</text>
+    <text x="432" y="148" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".9">40 IN</text>
+    <text x="397" y="207" text-anchor="middle" font-size="11.5" fill="#9fe6ff">(40 / 30)² <tspan fill="#5fe0ff">= 1.78</tspan></text>
+  </g>
+
+  <!-- ===== eccTotal: '=' + result chip + pencil-stroke underline ===== -->
+  <g id="eccTotal" opacity="0">
+    <text x="482" y="158" text-anchor="middle" font-size="18" fill="#5fe0ff" filter="url(#eccGlow)">=</text>
+    <rect x="494" y="138" width="84" height="52" rx="9" fill="url(#eccCard)" opacity=".95"/>
+    <rect x="494" y="138" width="84" height="52" rx="9" fill="none" stroke="#5fe0ff" stroke-width="1.5" filter="url(#eccGlowS)"/>
+    <text x="536" y="161" text-anchor="middle" font-size="15" fill="#5fe0ff" filter="url(#eccGlowS)">~ 28.5</text>
+    <text x="536" y="179" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85">MIN</text>
+    <!-- pencil-stroke underline (written on the sheet) -->
+    <path d="M496 200 C515 196.5 546 197.5 576 199.5" fill="none" stroke="#ffc24b" stroke-width="2.2" stroke-linecap="round" opacity=".9"/>
+    <path d="M499 204.5 C521 201.5 553 203 573 202" fill="none" stroke="#ffc24b" stroke-width="1.3" stroke-linecap="round" opacity=".55"/>
+  </g>
+</svg>

@@ -1,0 +1,135 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="bfglowC" filterUnits="userSpaceOnUse" x="-58" y="-58" width="560" height="456">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bfglowR" filterUnits="userSpaceOnUse" x="67" y="55" width="498" height="190">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="bfdoubGrad" x1="0" y1="96" x2="0" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".4" stop-color="#1b3e66"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="bfadhGrad" x1="0" y1="150" x2="0" y2="186" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5b9ef2"/><stop offset=".5" stop-color="#3a80e0"/><stop offset="1" stop-color="#2b64c2"/>
+    </linearGradient>
+    <linearGradient id="bfskinGrad" x1="0" y1="186" x2="0" y2="246" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".35" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="bfscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== LOWER SKIN SLAB ===== -->
+  <rect x="40" y="186" width="520" height="60" fill="url(#bfskinGrad)"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".18">
+    <line x1="46" y1="200" x2="554" y2="200"/>
+    <line x1="46" y1="216" x2="554" y2="216"/>
+    <line x1="96" y1="232" x2="554" y2="232"/>
+  </g>
+
+  <!-- ===== ADHESIVE BONDLINE (exaggerated thickness, squeeze-out fillets) ===== -->
+  <path d="M90 150 H510 V186 H90 Z" fill="url(#bfadhGrad)"/>
+  <path d="M90 172 Q79 176 77 186 L90 186 Z" fill="url(#bfadhGrad)"/>
+  <path d="M510 172 Q521 176 523 186 L510 186 Z" fill="url(#bfadhGrad)"/>
+  <g stroke="#bfe2ff" stroke-width="1" opacity=".22" fill="none">
+    <path d="M100 163 H500"/>
+    <path d="M100 175 H500"/>
+  </g>
+  <path d="M90 172 Q79 176 77 186" fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".5"/>
+  <path d="M510 172 Q521 176 523 186" fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".5"/>
+
+  <!-- ===== UPPER DOUBLER SLAB (chamfered ends) ===== -->
+  <path d="M90 150 L130 96 H470 L510 150 Z" fill="url(#bfdoubGrad)"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".18">
+    <line x1="124" y1="110" x2="476" y2="110"/>
+    <line x1="113" y1="124" x2="487" y2="124"/>
+    <line x1="103" y1="138" x2="497" y2="138"/>
+  </g>
+  <path d="M90 150 L130 96 H470 L510 150" fill="none" stroke="#8fb6e0" stroke-width="2"/>
+
+  <!-- ===== INTERFACES (adhesive-to-doubler, adhesive-to-skin) ===== -->
+  <path d="M90 150 H510" fill="none" stroke="#7fd8ff" stroke-width="1.3" opacity=".9"/>
+  <path d="M90 186 H510" fill="none" stroke="#7fd8ff" stroke-width="1.3" opacity=".9"/>
+
+  <!-- skin edges outside bond footprint -->
+  <g stroke="#8fb6e0" fill="none">
+    <path d="M40 186 H77" stroke-width="2"/>
+    <path d="M523 186 H560" stroke-width="2"/>
+    <path d="M40 246 H560" stroke-width="2"/>
+    <path d="M40 186 V246" stroke-width="1.5" opacity=".5"/>
+    <path d="M560 186 V246" stroke-width="1.5" opacity=".5"/>
+  </g>
+
+  <!-- ===== STATIC LABELS ===== -->
+  <text x="40" y="34" font-size="12" fill="#9fe6ff" opacity=".7">BONDLINE SECTION — METAL-TO-METAL</text>
+  <text x="372" y="127" font-size="11" fill="#9fe6ff" opacity=".75">DOUBLER</text>
+  <text x="52" y="232" font-size="11" fill="#9fe6ff" opacity=".75">SKIN</text>
+  <text x="46" y="270" font-size="11" fill="#9fe6ff" opacity=".75">ADHESIVE 0.2mm</text>
+  <path d="M100 258 L86 176" stroke="#5fe0ff" stroke-width="1" opacity=".45" fill="none"/>
+
+  <!-- ===== DISBOND (left zone): open separation at adhesive-to-skin interface ===== -->
+  <g id="bfDisbondGap" opacity="0">
+    <path d="M124 186 Q170 167 216 186 Z" fill="#08152b"/>
+    <path d="M124 186 Q170 167 216 186 Z" fill="#ff6b6b" opacity=".1"/>
+  </g>
+  <path id="bfDisbond" d="M124 186 Q170 167 216 186 M216 186 L124 186" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#bfglowR)"/>
+  <g id="bfDisbondLbl" opacity="0">
+    <text x="171" y="78" text-anchor="middle" font-size="12" fill="#ff6b6b" opacity=".9">DISBOND</text>
+    <path d="M171 84 L177 174" stroke="#ff6b6b" stroke-width="1" opacity=".4" fill="none"/>
+  </g>
+
+  <!-- ===== VOID (center zone): pocket fully inside the adhesive ===== -->
+  <g id="bfVoid" opacity="0">
+    <ellipse cx="300" cy="168" rx="24" ry="8.5" fill="#08152b"/>
+    <ellipse cx="300" cy="168" rx="24" ry="8.5" fill="none" stroke="#ffc24b" stroke-width="1.8" filter="url(#bfglowR)"/>
+    <circle cx="264" cy="162" r="3.4" fill="#08152b"/><circle cx="264" cy="162" r="3.4" fill="none" stroke="#ffc24b" stroke-width="1.2"/>
+    <circle cx="338" cy="174" r="3" fill="#08152b"/><circle cx="338" cy="174" r="3" fill="none" stroke="#ffc24b" stroke-width="1.2"/>
+  </g>
+  <g id="bfVoidLbl" opacity="0">
+    <text x="300" y="78" text-anchor="middle" font-size="12" fill="#ffc24b" opacity=".9">VOID</text>
+    <path d="M294 84 L291 157" stroke="#ffc24b" stroke-width="1" opacity=".4" fill="none"/>
+  </g>
+
+  <!-- ===== KISSING BOND (right zone): hairline contact, no gap ===== -->
+  <g id="bfKissing" opacity="0">
+    <rect x="392" y="181" width="116" height="4" fill="url(#bfadhGrad)"/>
+    <rect x="392" y="185" width="116" height="3.4" fill="url(#bfskinGrad)"/>
+    <rect x="392" y="182.6" width="116" height="6.4" fill="#ff9b4b" opacity=".08"/>
+    <g stroke="#ff9b4b" fill="none" filter="url(#bfglowR)">
+      <path d="M392 185 H508" stroke-width="1.3" stroke-dasharray="6 3.5"/>
+      <path d="M392 187.2 H508" stroke-width="1.3" stroke-dasharray="6 3.5" stroke-dashoffset="4.5"/>
+    </g>
+    <g stroke="#ff9b4b" stroke-width="1.2" opacity=".9">
+      <path d="M415 184.4 V187.8"/>
+      <path d="M452 184.4 V187.8"/>
+      <path d="M487 184.4 V187.8"/>
+    </g>
+  </g>
+  <g id="bfKissingLbl" opacity="0">
+    <text x="450" y="78" text-anchor="middle" font-size="12" fill="#ff9b4b" opacity=".9">KISSING BOND</text>
+    <path d="M450 84 L466 183" stroke="#ff9b4b" stroke-width="1" opacity=".4" fill="none"/>
+  </g>
+
+  <!-- ===== PULSE crossing the kissing bond nearly unchanged ===== -->
+  <path id="bfWave" d="M435 90 V222 M427 211 L435 222 L443 211 M426 112 H444 M426 124 H444" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#bfglowC)"/>
+
+  <!-- ===== ECHOES bouncing back off disbond gap + void ===== -->
+  <g id="bfEcho" opacity="0" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#bfglowR)">
+    <path d="M137 124 L149 178"/>
+    <path d="M149 178 L163 126"/>
+    <path d="M158 136 L163 126 L167.4 135"/>
+    <path d="M298 112 L306 157"/>
+    <path d="M306 157 L318 114"/>
+    <path d="M313.5 124 L318 114 L322.4 123"/>
+  </g>
+
+  <!-- ===== scan group ===== -->
+  <g id="bfscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#bfscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#bfglowC)" opacity=".9"/>
+  </g>
+</svg>

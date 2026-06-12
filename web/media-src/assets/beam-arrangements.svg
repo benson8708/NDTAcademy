@@ -1,0 +1,149 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="baGlowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="baGlowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="baSteel" x1="0" y1="116" x2="0" y2="212" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c5a88"/><stop offset=".4" stop-color="#16385d"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== STAGE (always visible): three identical steel-block cross-sections ===== -->
+  <g>
+    <!-- panel separators -->
+    <line x1="201" y1="72" x2="201" y2="284" stroke="#8fb6e0" stroke-width="1" opacity=".14"/>
+    <line x1="399" y1="72" x2="399" y2="284" stroke="#8fb6e0" stroke-width="1" opacity=".14"/>
+    <!-- blocks -->
+    <rect x="33" y="116" width="140" height="96" fill="url(#baSteel)"/>
+    <rect x="230" y="116" width="140" height="96" fill="url(#baSteel)"/>
+    <rect x="427" y="116" width="140" height="96" fill="url(#baSteel)"/>
+    <!-- rolling texture -->
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".16">
+      <line x1="37" y1="134" x2="169" y2="134"/><line x1="37" y1="152" x2="169" y2="152"/>
+      <line x1="37" y1="170" x2="169" y2="170"/><line x1="37" y1="188" x2="169" y2="188"/>
+      <line x1="234" y1="134" x2="366" y2="134"/><line x1="234" y1="152" x2="366" y2="152"/>
+      <line x1="234" y1="170" x2="366" y2="170"/><line x1="234" y1="188" x2="366" y2="188"/>
+      <line x1="431" y1="134" x2="563" y2="134"/><line x1="431" y1="152" x2="563" y2="152"/>
+      <line x1="431" y1="170" x2="563" y2="170"/><line x1="431" y1="188" x2="563" y2="188"/>
+    </g>
+    <!-- block edges: bright top (entry) + bottom (back wall) -->
+    <g stroke="#8fb6e0" fill="none">
+      <path d="M33 116 H173 M230 116 H370 M427 116 H567" stroke-width="1.8"/>
+      <path d="M33 212 H173 M230 212 H370 M427 212 H567" stroke-width="2"/>
+      <path d="M33 116 V212 M173 116 V212 M230 116 V212 M370 116 V212 M427 116 V212 M567 116 V212" stroke-width="1.5" opacity=".45"/>
+    </g>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 1 — PULSE ECHO                                          -->
+  <!-- ============================================================ -->
+  <g id="baPulseEcho" opacity="0">
+    <text x="103" y="56" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".95">PULSE ECHO</text>
+    <!-- probe: housing, element, connector, cable -->
+    <rect x="86" y="94" width="34" height="22" rx="3" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="88.5" y="111" width="29" height="4.5" fill="#5fe0ff" opacity=".85"/>
+    <rect x="97" y="86" width="12" height="8" rx="2" fill="#0e2848" stroke="#8fb6e0" stroke-width="1"/>
+    <path d="M103 86 C103 78 112 76 121 74" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".7"/>
+    <!-- mid-wall flaw -->
+    <ellipse cx="103" cy="168" rx="7.5" ry="3.2" fill="#ff6b6b" filter="url(#baGlowR)"/>
+    <!-- A-scan inset: frame, baseline, initial pulse -->
+    <rect x="38" y="226" width="130" height="52" rx="4" fill="#081a30" opacity=".92" stroke="#8fb6e0" stroke-width="1"/>
+    <line x1="46" y1="268" x2="160" y2="268" stroke="#9fe6ff" stroke-width="1" opacity=".5"/>
+    <path d="M50 268 L54 236 L58 268" fill="none" stroke="#9fe6ff" stroke-width="1.5"/>
+  </g>
+  <!-- rays: down to back wall, echo from flaw, echo from back wall -->
+  <path id="baPERay" d="M96 122 L96 206 M103 163 L103 124 M112 206 L112 124" fill="none" stroke="#5fe0ff" stroke-width="2" filter="url(#baGlowC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="baPEHeads" fill="#5fe0ff" opacity="0" filter="url(#baGlowR)">
+    <path d="M96 209 L92.2 201.5 L99.8 201.5 Z"/>
+    <path d="M103 121 L99.2 128.5 L106.8 128.5 Z"/>
+    <path d="M112 121 L108.2 128.5 L115.8 128.5 Z"/>
+  </g>
+  <circle id="baPEPing" cx="103" cy="168" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#baGlowR)"/>
+  <!-- A-scan echoes + echo-time tag -->
+  <g id="baPEEcho" opacity="0">
+    <path d="M92 268 L96 246 L100 268" fill="none" stroke="#ff6b6b" stroke-width="1.5"/>
+    <path d="M133 268 L138 240 L143 268" fill="none" stroke="#5fe0ff" stroke-width="1.5"/>
+    <line x1="58" y1="273.5" x2="92" y2="273.5" stroke="#ffc24b" stroke-width="1.2"/>
+    <path d="M55 273.5 L61 270.7 L61 276.3 Z" fill="#ffc24b"/>
+    <path d="M95 273.5 L89 270.7 L89 276.3 Z" fill="#ffc24b"/>
+    <text x="103" y="292" text-anchor="middle" font-size="11" fill="#9fe6ff">ECHO TIME → DEPTH</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 2 — THROUGH-TRANSMISSION                                -->
+  <!-- ============================================================ -->
+  <g id="baThruTrans" opacity="0">
+    <text x="300" y="56" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".95">THROUGH-TRANSMISSION</text>
+    <!-- TX probe on top face -->
+    <rect x="283" y="94" width="34" height="22" rx="3" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="285.5" y="111" width="29" height="4.5" fill="#5fe0ff" opacity=".85"/>
+    <rect x="294" y="86" width="12" height="8" rx="2" fill="#0e2848" stroke="#8fb6e0" stroke-width="1"/>
+    <path d="M300 86 C300 78 309 76 318 74" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".7"/>
+    <text x="277" y="107" text-anchor="end" font-size="11" fill="#9fe6ff">TX</text>
+    <!-- aligned RX on bottom face -->
+    <rect x="283" y="212" width="34" height="20" rx="3" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="285.5" y="212.8" width="29" height="4.5" fill="#5fe0ff" opacity=".85"/>
+    <text x="277" y="227" text-anchor="end" font-size="11" fill="#9fe6ff">RX</text>
+    <!-- one-way beam band -->
+    <rect x="287" y="116" width="26" height="96" fill="#5fe0ff" opacity=".1"/>
+    <line x1="287" y1="116" x2="287" y2="212" stroke="#5fe0ff" stroke-width="1" opacity=".3"/>
+    <line x1="313" y1="116" x2="313" y2="212" stroke="#5fe0ff" stroke-width="1" opacity=".3"/>
+    <!-- mid-wall flaw -->
+    <ellipse cx="300" cy="160" rx="8.5" ry="3.8" fill="#ff6b6b" filter="url(#baGlowR)"/>
+    <!-- amplitude inset: frame, baseline, expected bar -->
+    <rect x="242" y="242" width="116" height="38" rx="4" fill="#081a30" opacity=".92" stroke="#8fb6e0" stroke-width="1"/>
+    <line x1="250" y1="273" x2="350" y2="273" stroke="#9fe6ff" stroke-width="1" opacity=".5"/>
+    <rect x="266" y="247" width="18" height="26" fill="none" stroke="#9fe6ff" stroke-width="1.2" stroke-dasharray="3 2" opacity=".65"/>
+  </g>
+  <!-- one-way rays: two pass the flaw, center one intercepted -->
+  <path id="baTTRay" d="M288 122 L288 206 M312 122 L312 206 M300 122 L300 152" fill="none" stroke="#5fe0ff" stroke-width="2" filter="url(#baGlowC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="baTTHeads" fill="#5fe0ff" opacity="0" filter="url(#baGlowR)">
+    <path d="M288 209 L284.2 201.5 L291.8 201.5 Z"/>
+    <path d="M312 209 L308.2 201.5 L315.8 201.5 Z"/>
+    <path d="M300 155 L296.2 147.5 L303.8 147.5 Z"/>
+  </g>
+  <!-- shadow band onto RX + dropped received bar + tag -->
+  <g id="baTTLoss" opacity="0">
+    <path d="M292.5 163 L307.5 163 L307.5 212 L292.5 212 Z" fill="#02060f" opacity=".55"/>
+    <line x1="292.5" y1="163" x2="292.5" y2="212" stroke="#ffc24b" stroke-width="1" stroke-dasharray="2 3" opacity=".5"/>
+    <line x1="307.5" y1="163" x2="307.5" y2="212" stroke="#ffc24b" stroke-width="1" stroke-dasharray="2 3" opacity=".5"/>
+    <rect x="292.5" y="212.8" width="15" height="4.5" fill="#02060f" opacity=".55"/>
+    <rect x="300" y="263" width="18" height="10" fill="#ffc24b" opacity=".9"/>
+    <line x1="293" y1="249" x2="293" y2="260" stroke="#ff9b4b" stroke-width="1.5"/>
+    <path d="M293 264 L289.8 258 L296.2 258 Z" fill="#ff9b4b"/>
+    <text x="300" y="292" text-anchor="middle" font-size="11" fill="#ffc24b">LOSS ONLY</text>
+  </g>
+
+  <!-- ============================================================ -->
+  <!-- PANEL 3 — PITCH-CATCH                                         -->
+  <!-- ============================================================ -->
+  <g id="baPitchCatch" opacity="0">
+    <text x="497" y="56" text-anchor="middle" font-size="12" fill="#9fe6ff" opacity=".95">PITCH-CATCH</text>
+    <!-- TX wedge (angled element, beam down-right) -->
+    <path d="M448 116 L484 116 L484 94 L448 108 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5" stroke-linejoin="round"/>
+    <line x1="453" y1="107" x2="480" y2="96.5" stroke="#5fe0ff" stroke-width="4.5" opacity=".9"/>
+    <line x1="479" y1="93" x2="479" y2="86" stroke="#8fb6e0" stroke-width="1.5" opacity=".7"/>
+    <text x="442" y="110" text-anchor="end" font-size="11" fill="#9fe6ff">TX</text>
+    <!-- RX wedge (mirrored, catches rising beam) -->
+    <path d="M546 116 L510 116 L510 94 L546 108 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5" stroke-linejoin="round"/>
+    <line x1="541" y1="107" x2="514" y2="96.5" stroke="#5fe0ff" stroke-width="4.5" opacity=".9"/>
+    <line x1="515" y1="93" x2="515" y2="86" stroke="#8fb6e0" stroke-width="1.5" opacity=".7"/>
+    <text x="552" y="110" font-size="11" fill="#9fe6ff">RX</text>
+  </g>
+  <!-- V path: angled down, bounce off back wall, rise into RX -->
+  <path id="baPCRay" d="M466 119 L497 210 L528 119" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linejoin="round" filter="url(#baGlowC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="baPCHeads" fill="#5fe0ff" opacity="0" filter="url(#baGlowR)">
+    <path d="M6 0 L-5 -4.2 L-5 4.2 Z" transform="translate(484 172) rotate(71.2)"/>
+    <path d="M6 0 L-5 -4.2 L-5 4.2 Z" transform="translate(522 136.5) rotate(-71.2)"/>
+  </g>
+  <!-- same-side bracket + tag -->
+  <g id="baPCTag" opacity="0">
+    <path d="M448 88 V83 H546 V88" fill="none" stroke="#9fe6ff" stroke-width="1.5" opacity=".85"/>
+    <text x="497" y="292" text-anchor="middle" font-size="11" fill="#9fe6ff">SAME SIDE</text>
+  </g>
+</svg>

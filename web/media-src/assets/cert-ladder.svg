@@ -1,0 +1,171 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="lvGlowC" filterUnits="userSpaceOnUse" x="-36" y="20" width="688" height="326">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="lvGlowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="lvPlat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#245179"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== caption (top-left; bottom-right kept clear for note chip) ===== -->
+  <text x="24" y="26" font-size="11" fill="#9fe6ff" opacity=".7">RESPONSIBILITY LADDER // SNT-TC-1A</text>
+
+  <!-- ===== climb route (dim, ascending over the tiers) ===== -->
+  <path d="M40 196 L430 49" fill="none" stroke="#5fe0ff" stroke-width="1.5" stroke-dasharray="5 5" opacity=".22"/>
+  <polygon points="430,49 422.4,58.3 418.2,47.1" fill="#5fe0ff" opacity=".24"/>
+
+  <!-- ===== INTERPRETATION gate (dim) ===== -->
+  <g opacity=".4">
+    <line x1="308" y1="78" x2="308" y2="288" stroke="#8fb6e0" stroke-width="1.8" stroke-dasharray="7 5"/>
+    <path d="M301 182 L309 190 L301 198 M309 182 L317 190 L309 198" fill="none" stroke="#8fb6e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="308" y="68" text-anchor="middle" font-size="10.5" fill="#9fe6ff" opacity=".32">INTERPRETATION</text>
+
+  <!-- ===== platforms (always lit base) ===== -->
+  <g stroke="#8fb6e0" stroke-width="1.5" stroke-opacity=".75">
+    <rect x="22"  y="278" width="128" height="12" rx="3" fill="url(#lvPlat)"/>
+    <rect x="158" y="226" width="128" height="12" rx="3" fill="url(#lvPlat)"/>
+    <rect x="330" y="160" width="128" height="12" rx="3" fill="url(#lvPlat)"/>
+    <rect x="466" y="98"  width="128" height="12" rx="3" fill="url(#lvPlat)"/>
+  </g>
+
+  <!-- ===== TRAINEE tier (dim) ===== -->
+  <g opacity=".42">
+    <!-- certified silhouette w/ hard hat + badge -->
+    <text x="110" y="212" text-anchor="middle" font-size="8.5" fill="#9fe6ff">CERTIFIED</text>
+    <path d="M100 224 a10 10 0 0 1 20 0 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <line x1="97" y1="224" x2="123" y2="224" stroke="#8fb6e0" stroke-width="1.5"/>
+    <circle cx="110" cy="230" r="6" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <path d="M99 242 Q110 234 121 242 L122 262 H98 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <path d="M102 262 h7 v16 h-7 Z M111 262 h7 v16 h-7 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <path d="M99 245 L95 259 M121 245 L125 259" stroke="#8fb6e0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <rect x="105.5" y="247" width="9" height="7" rx="1" fill="none" stroke="#8fb6e0" stroke-width="1"/>
+    <!-- trainee silhouette (smaller, bare head) -->
+    <circle cx="60" cy="244" r="5" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <path d="M52 253 Q60 246.5 68 253 L69 268 H51 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <path d="M54 268 h5.5 v10 h-5.5 Z M61 268 h5.5 v10 h-5.5 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.2"/>
+    <path d="M52 256 L49 266 M68 256 L71 266" stroke="#8fb6e0" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <!-- supervision tether -->
+    <path d="M71 265 Q83 274 95 259" fill="none" stroke="#8fb6e0" stroke-width="1.5"/>
+    <circle cx="71" cy="265" r="1.6" fill="#8fb6e0"/>
+    <circle cx="95" cy="259" r="1.6" fill="#8fb6e0"/>
+  </g>
+  <!-- trainee tag plaque (dim) -->
+  <g opacity=".32">
+    <rect x="18" y="292" width="136" height="32" rx="6" fill="#0e2848" fill-opacity=".9" stroke="#8fb6e0" stroke-opacity=".8"/>
+    <text x="86" y="305" text-anchor="middle" font-size="12" fill="#9fe6ff">TRAINEE</text>
+    <text x="86" y="317" text-anchor="middle" font-size="8.5" fill="#9fe6ff" opacity=".9">DIRECT SUPERVISION ONLY</text>
+  </g>
+
+  <!-- ===== LEVEL I tier (dim) ===== -->
+  <g opacity=".4">
+    <rect x="162" y="160" width="120" height="66" rx="6" fill="none" stroke="#8fb6e0" stroke-width="1.4" stroke-dasharray="5 4"/>
+    <text x="222" y="154" text-anchor="middle" font-size="9" fill="#9fe6ff">WRITTEN INSTRUCTION</text>
+  </g>
+  <g opacity=".32">
+    <rect x="172" y="172" width="100" height="44" rx="6" fill="#0e2848" fill-opacity=".9" stroke="#8fb6e0" stroke-opacity=".8"/>
+    <text x="222" y="190" text-anchor="middle" font-size="12" fill="#9fe6ff">LEVEL I</text>
+    <text x="222" y="206" text-anchor="middle" font-size="9" fill="#9fe6ff" opacity=".9">PERFORM &amp; RECORD</text>
+  </g>
+
+  <!-- ===== LEVEL II tier (dim) ===== -->
+  <g opacity=".32">
+    <rect x="334" y="100" width="120" height="58" rx="6" fill="#0e2848" fill-opacity=".9" stroke="#8fb6e0" stroke-opacity=".8"/>
+    <text x="394" y="117" text-anchor="middle" font-size="12" fill="#9fe6ff">LEVEL II</text>
+    <text x="394" y="131" text-anchor="middle" font-size="9" fill="#9fe6ff" opacity=".9">INTERPRET &amp; EVALUATE</text>
+    <!-- code-book glyph -->
+    <g fill="none" stroke="#8fb6e0" stroke-width="1.2">
+      <path d="M394 152 C389 147 383 146 378 147.5 L378 137 C383 135.5 389 136.5 394 141 Z" fill="#14304f"/>
+      <path d="M394 152 C399 147 405 146 410 147.5 L410 137 C405 135.5 399 136.5 394 141 Z" fill="#14304f"/>
+      <path d="M394 141 V152"/>
+      <path d="M382 141.5 L390 143.2 M398 143.2 L406 141.5" stroke-width="1"/>
+    </g>
+  </g>
+
+  <!-- ===== LEVEL III tier (dim background context) ===== -->
+  <g opacity=".32">
+    <rect x="470" y="34" width="120" height="60" rx="6" fill="#0e2848" fill-opacity=".9" stroke="#8fb6e0" stroke-opacity=".8"/>
+    <text x="530" y="52" text-anchor="middle" font-size="12" fill="#9fe6ff">LEVEL III</text>
+    <text x="530" y="67" text-anchor="middle" font-size="9" fill="#9fe6ff" opacity=".9">APPROVE PROCEDURES</text>
+    <text x="530" y="80" text-anchor="middle" font-size="9" fill="#9fe6ff" opacity=".9">TRAIN &amp; EXAMINE</text>
+  </g>
+
+  <!-- ===================== REVEALS ===================== -->
+
+  <!-- climb route draws on: "duties stack as you climb" -->
+  <path id="lvRoute" d="M40 196 L430 49 M418.2 47.1 L430 49 L422.4 58.3" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".82" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#lvGlowR)"/>
+
+  <!-- trainee tier lights -->
+  <g id="lvTrainee" opacity="0">
+    <path d="M22 278 H150" stroke="#5fe0ff" stroke-width="2" opacity=".85" filter="url(#lvGlowC)" fill="none"/>
+    <text x="110" y="212" text-anchor="middle" font-size="8.5" fill="#9fe6ff">CERTIFIED</text>
+    <path d="M100 224 a10 10 0 0 1 20 0 Z" fill="#14304f" stroke="#5fe0ff" stroke-width="1.4"/>
+    <line x1="97" y1="224" x2="123" y2="224" stroke="#5fe0ff" stroke-width="1.5"/>
+    <circle cx="110" cy="230" r="6" fill="#14304f" stroke="#5fe0ff" stroke-width="1.4"/>
+    <path d="M99 242 Q110 234 121 242 L122 262 H98 Z" fill="#14304f" stroke="#5fe0ff" stroke-width="1.4"/>
+    <path d="M102 262 h7 v16 h-7 Z M111 262 h7 v16 h-7 Z" fill="#14304f" stroke="#5fe0ff" stroke-width="1.4"/>
+    <path d="M99 245 L95 259 M121 245 L125 259" stroke="#5fe0ff" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <rect x="105.5" y="247" width="9" height="7" rx="1" fill="none" stroke="#5fe0ff" stroke-width="1"/>
+    <circle cx="60" cy="244" r="5" fill="#14304f" stroke="#5fe0ff" stroke-width="1.4"/>
+    <path d="M52 253 Q60 246.5 68 253 L69 268 H51 Z" fill="#14304f" stroke="#5fe0ff" stroke-width="1.4"/>
+    <path d="M54 268 h5.5 v10 h-5.5 Z M61 268 h5.5 v10 h-5.5 Z" fill="#14304f" stroke="#5fe0ff" stroke-width="1.4"/>
+    <path d="M52 256 L49 266 M68 256 L71 266" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" fill="none"/>
+    <path d="M71 265 Q83 274 95 259" fill="none" stroke="#ffc24b" stroke-width="1.8" filter="url(#lvGlowR)"/>
+    <circle cx="71" cy="265" r="1.8" fill="#ffc24b"/>
+    <circle cx="95" cy="259" r="1.8" fill="#ffc24b"/>
+    <rect x="18" y="292" width="136" height="32" rx="6" fill="#0e2848" fill-opacity=".55" stroke="#5fe0ff" stroke-width="1.2" stroke-opacity=".8"/>
+    <text x="86" y="305" text-anchor="middle" font-size="12" fill="#9fe6ff">TRAINEE</text>
+    <text x="86" y="317" text-anchor="middle" font-size="8.5" fill="#ffc24b">DIRECT SUPERVISION ONLY</text>
+  </g>
+
+  <!-- Level I tier lights -->
+  <g id="lvLevel1" opacity="0">
+    <path d="M158 226 H286" stroke="#5fe0ff" stroke-width="2" opacity=".85" filter="url(#lvGlowC)" fill="none"/>
+    <rect x="172" y="172" width="100" height="44" rx="6" fill="#0e2848" fill-opacity=".55" stroke="#5fe0ff" stroke-width="1.2" stroke-opacity=".8"/>
+    <text x="222" y="190" text-anchor="middle" font-size="12" fill="#9fe6ff">LEVEL I</text>
+    <text x="222" y="206" text-anchor="middle" font-size="9" fill="#9fe6ff">PERFORM &amp; RECORD</text>
+  </g>
+
+  <!-- WRITTEN INSTRUCTION boundary box lights -->
+  <g id="lvBoxLit" opacity="0">
+    <rect x="162" y="160" width="120" height="66" rx="6" fill="#ffc24b" fill-opacity=".05" stroke="#ffc24b" stroke-width="1.8" stroke-dasharray="5 4" filter="url(#lvGlowR)"/>
+    <text x="222" y="154" text-anchor="middle" font-size="9" fill="#ffc24b">WRITTEN INSTRUCTION</text>
+  </g>
+  <circle id="lvBox" cx="222" cy="193" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#lvGlowR)"/>
+
+  <!-- INTERPRETATION gate ignites -->
+  <g id="lvGate" opacity="0">
+    <line x1="308" y1="78" x2="308" y2="288" stroke="#5fe0ff" stroke-width="2" stroke-dasharray="7 5" opacity=".95" filter="url(#lvGlowC)"/>
+    <path d="M301 182 L309 190 L301 198 M309 182 L317 190 L309 198" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#lvGlowR)"/>
+    <text x="308" y="68" text-anchor="middle" font-size="10.5" fill="#9fe6ff">INTERPRETATION</text>
+  </g>
+
+  <!-- Level II tier lights -->
+  <g id="lvLevel2" opacity="0">
+    <path d="M330 160 H458" stroke="#5fe0ff" stroke-width="2" opacity=".85" filter="url(#lvGlowC)" fill="none"/>
+    <rect x="334" y="100" width="120" height="58" rx="6" fill="#0e2848" fill-opacity=".55" stroke="#5fe0ff" stroke-width="1.2" stroke-opacity=".8"/>
+    <text x="394" y="117" text-anchor="middle" font-size="12" fill="#9fe6ff">LEVEL II</text>
+    <text x="394" y="131" text-anchor="middle" font-size="9" fill="#9fe6ff">INTERPRET &amp; EVALUATE</text>
+    <g fill="none" stroke="#7fd8ff" stroke-width="1.2" filter="url(#lvGlowR)">
+      <path d="M394 152 C389 147 383 146 378 147.5 L378 137 C383 135.5 389 136.5 394 141 Z" fill="#14304f"/>
+      <path d="M394 152 C399 147 405 146 410 147.5 L410 137 C405 135.5 399 136.5 394 141 Z" fill="#14304f"/>
+      <path d="M394 141 V152"/>
+      <path d="M382 141.5 L390 143.2 M398 143.2 L406 141.5" stroke-width="1"/>
+    </g>
+  </g>
+
+  <!-- Level III lit layer (alternate lessons only — NEVER revealed in ut1-1-3) -->
+  <g id="lvLevel3" opacity="0">
+    <path d="M466 98 H594" stroke="#5fe0ff" stroke-width="2" opacity=".85" filter="url(#lvGlowC)" fill="none"/>
+    <rect x="470" y="34" width="120" height="60" rx="6" fill="#0e2848" fill-opacity=".55" stroke="#5fe0ff" stroke-width="1.2" stroke-opacity=".8"/>
+    <text x="530" y="52" text-anchor="middle" font-size="12" fill="#9fe6ff">LEVEL III</text>
+    <text x="530" y="67" text-anchor="middle" font-size="9" fill="#9fe6ff">APPROVE PROCEDURES</text>
+    <text x="530" y="80" text-anchor="middle" font-size="9" fill="#9fe6ff">TRAIN &amp; EXAMINE</text>
+  </g>
+</svg>

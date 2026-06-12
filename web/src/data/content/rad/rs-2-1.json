@@ -1,0 +1,185 @@
+{
+  "lessonId": "rs-2-1",
+  "title": "Types of Radiation Survey Instruments",
+  "narrationScript": "Industrial radiography hands you a hazard no human sense can detect, so the survey instrument is the only sense you have. This lesson is about how those instruments work and which one to trust for each job. Nearly every field meter starts the same way: radiation ionizes gas between two electrodes, and the instrument collects the charge. Sweep the applied voltage and one chamber becomes three different instruments. In the ionization region, ion chambers collect only the primary charge — slow and unspectacular, but they read true exposure rate accurately, even in strong fields. In the Geiger-Mueller region, a single event avalanches into one full-size pulse — superb sensitivity, but every pulse is identical, and in an extreme field a GM tube can saturate and read near zero. Scintillation detectors pair a sodium iodide crystal with a photomultiplier for the greatest sensitivity of all — the lost-source search instrument. And because neutrons carry no charge, photon meters barely see them: wherever neutrons may be present, a moderated rem meter with a boron or helium-3 tube is required equipment.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "The Instrument Is the Only Sense You Have",
+      "body": "You proved in Module 1 that no human sense detects radiation — the survey instrument is the only sense you have. This lesson is about what is inside those instruments, because **choosing the wrong detector for a job is how good radiographers get hurt**.\n\nNearly every field instrument is built on the same event. A chamber holds a **fill gas** between two electrodes with a voltage across them. Radiation passing through the gas creates **ion pairs** — freed electrons and positive ions. The electric field sweeps that charge to the electrodes, and the readout circuit turns it into the number you act on.\n\nWhat the voltage does next is the organizing idea of the whole lesson: sweep it upward and the same chamber passes through **six operating regions**. Three are usable — the **ionization (saturation) region**, home of ion chambers; the **proportional region**, home of proportional counters, including the neutron tubes at the end of this lesson; and the **Geiger-Mueller region**, where a single event discharges the entire tube. The other three — recombination, limited proportionality, and continuous discharge — are dead zones or damage.\n\nOne regulatory anchor before the tour: under the typical NRC and Agreement State rule (10 CFR 34.25), survey instruments for radiographic operations must be capable of measuring **from 2 mrem per hour through 1 rem per hour**. An instrument that cannot cover that range — whatever its other virtues — is not a radiography survey meter."
+    },
+    {
+      "type": "figure",
+      "figureId": "rs-2-1-fig-a",
+      "caption": "Charge collected versus applied voltage for one gas-filled chamber. Regions 1 (recombination), 4 (limited proportionality), and 6 (continuous discharge) are unusable; the working instruments live in region 2 (ionization chambers), region 3 (proportional counters), and region 5 (GM tubes), where the curves for large and small initial ionization merge — every pulse becomes the same size."
+    },
+    {
+      "type": "text",
+      "heading": "The Geiger-Mueller Tube: Maximum Sensitivity, Minimum Information",
+      "body": "The GM tube operates in **region 5**, at high voltage — typically several hundred volts — where a single ion pair triggers an **avalanche**: accelerated electrons ionize more gas, ultraviolet photons spread the avalanche along the full length of the anode wire, and the entire tube discharges at once. A **quench gas**, commonly a halogen, terminates the discharge so the tube can reset — a recovery that takes on the order of 100 microseconds, the tube's **dead time**.\n\nThat design buys three things radiographers value: **sensitivity** (single events register), **ruggedness**, and **speed** — the needle jumps the instant you enter a field. That is why a GM instrument is the classic choice for the **approach survey** that confirms the source actually returned to its shield after every exposure, for locating a source at close range, and for frisking when contamination is suspected.\n\nIts costs come from the same physics. Every pulse is identical, so a GM tube **counts events — it knows nothing about their energy**. A bare tube badly over-responds to low-energy scattered photons, so survey instruments add an **energy-compensating** metal sleeve and are calibrated, typically against cesium-137, so the count rate displays dose rate honestly. And because every pulse is followed by dead time, the tube has a hard ceiling on how fast it can count — which sets up the most dangerous failure mode in survey instrumentation."
+    },
+    {
+      "type": "callout",
+      "variant": "safety",
+      "title": "Saturation: a GM meter can read near zero in a lethal field",
+      "body": "Push a GM tube into an extreme radiation field and events arrive faster than the tube can recover. Pulses pile into a continuous blur the circuit cannot count, and the displayed reading **collapses toward zero** — saturation, also called fold-back. The classic accident setup is a meter reading almost nothing right next to an unshielded source.\n\nYour defenses: **switch the meter on and verify response before you approach — never after.** Watch the reading continuously as you advance; a real field grows smoothly as distance closes. **A reading that climbs fast and then suddenly collapses means retreat now**, back along the path you came. Many modern instruments add anti-saturation circuits that lock the display at full scale — verify how yours behaves; never assume."
+    },
+    {
+      "type": "text",
+      "heading": "The Ionization Chamber: The Instrument That Measures",
+      "body": "Drop the voltage into **region 2** — the ionization, or saturation, region — and the detector becomes an **ionization chamber**: it collects exactly the ion pairs the radiation creates, no avalanche, no amplification. The output is a minuscule current, on the order of trillionths of an ampere, read by a sensitive **electrometer** circuit.\n\nThat modest signal is the ion chamber's authority. Because the current is directly proportional to the energy the radiation deposits in the gas, the instrument reads **true exposure rate**, with a relatively **flat energy response** across the photon energies radiography uses. And because there is no avalanche to choke, a properly ranged ion chamber **does not fold back** at the dose rates radiographers encounter. When the number matters — quantifying the field near an exposure device, setting a boundary, calculating a stay time — the ion chamber is the instrument of record.\n\nThe trade-offs: it is the **least sensitive** of the three instruments at very low levels, its response is slower (give it seconds to settle), it needs zeroing and warm-up, and vented chambers breathe with **temperature and pressure**, so treat readings near the bottom of the scale with respect. It is a measuring instrument, not a search instrument."
+    },
+    {
+      "type": "text",
+      "heading": "Scintillation Detectors: A Crystal, a Flash, a Million-Fold Multiplier",
+      "body": "The third instrument leaves gas behind. Some crystals **scintillate** — they convert absorbed radiation into a flash of light — and the workhorse for gamma work is **sodium iodide doped with thallium, NaI(Tl)**. Each flash's brightness is proportional to the energy deposited. Coupled to the crystal is a **photomultiplier tube**: the flash frees electrons from a photocathode, and a chain of dynodes multiplies them by a factor on the order of a **million**, delivering a large, clean pulse whose height still carries the energy information. That is why scintillation instruments can discriminate photon energies and, in laboratory form, identify isotopes.\n\nThe payoff is **sensitivity beyond anything a GM tube offers**. A scintillation survey meter detects a gamma source at distances where other instruments still read background — which makes it the instrument that leads a **lost-source search**. In the lab, scintillation counters quantify **leak-test wipes**, where the test must be capable of detecting **185 becquerels (0.005 microcurie)** of removable activity under 10 CFR 34.27.\n\nThe costs: the crystal is fragile, sensitive to thermal shock, and hygroscopic — moisture ruins it; the photomultiplier needs a stable high-voltage supply; the response over-reads at low photon energies; and it is a low-level instrument — not the tool for measuring strong fields."
+    },
+    {
+      "type": "text",
+      "heading": "Neutron Survey Instruments: Moderate, Capture, Count",
+      "body": "Neutrons carry **no charge**, so they cannot ionize gas directly — and a photon survey meter is **nearly blind** to them. Where neutrons may be present, you measure them with instruments built around **capture reactions** that convert a neutron into charged particles:\n\n- **Boron-10** absorbs a slow neutron and instantly splits into an energetic **alpha particle** plus lithium-7 — the basis of **BF₃ gas tubes** and boron-lined detectors.\n- **Helium-3** absorbs a slow neutron and emits an energetic **proton**.\n\nThose charged particles ionize the gas, and the tube runs as a **proportional counter** — region 3 — where the huge capture pulses tower over the small gamma pulses, so **pulse-height discrimination** lets the instrument count neutrons honestly inside a mixed field.\n\nCapture is most probable for **slow (thermal) neutrons**, but field neutrons arrive fast. So the tube sits at the center of a thick **polyethylene moderator** — roughly 25 cm of hydrogen-rich plastic. Collisions with hydrogen thermalize fast neutrons by the time they reach the tube, and the assembly is engineered so its overall response approximates **dose equivalent** across the neutron energy range. The result is the **neutron rem meter** — the 'rem ball' — reading directly in **mrem per hour**.\n\nYou need one, paired with a photon instrument and the neutron dosimetry from Module 1, at neutron radiography facilities, around accelerators, and near isotopic neutron sources such as americium-beryllium or californium-252. Remember the stakes from Lesson 1: the neutron quality factor is about 10."
+    },
+    {
+      "type": "figure",
+      "figureId": "rs-2-1-fig-b",
+      "caption": "Inside a neutron rem meter: a thick polyethylene moderator thermalizes fast neutrons through collisions with hydrogen, a BF₃ or He-3 proportional tube at the center captures them, and pulse-height discrimination rejects gamma — the readout displays neutron dose equivalent in mrem/h."
+    },
+    {
+      "type": "table",
+      "caption": "Survey instrument selection at a glance — the right tool, what it is best at, and where it fails you.",
+      "headers": ["Instrument", "Operating principle", "Best at", "Watch out for"],
+      "rows": [
+        ["GM tube", "Avalanche discharge in region 5 — every event makes one full-size pulse", "Finding radiation: approach surveys, close-range source location, frisking; fast, rugged, sensitive", "Counts events, not energy — needs energy compensation; can saturate and read near zero in extreme fields"],
+        ["Ionization chamber", "Collects only primary ion pairs in region 2; electrometer reads a tiny current", "Measuring: true exposure rate with flat energy response, accurate in strong fields — boundary and stay-time numbers", "Least sensitive at low levels; slow to settle; needs zero and warm-up; vented chambers drift with temperature and pressure"],
+        ["Scintillation detector", "NaI(Tl) crystal converts radiation to light; photomultiplier amplifies the flash about a million times", "Extreme sensitivity: lost-source searches at maximum distance, low-level surveys, counting leak-test wipes to 185 Bq (0.005 µCi)", "Fragile, moisture- and temperature-sensitive crystal; over-reads low energies; not for strong fields"],
+        ["Neutron rem meter", "Polyethylene moderator thermalizes neutrons; BF₃ or He-3 proportional tube detects them by capture", "The only field measurement of neutron dose equivalent — reads mrem/h across the neutron energy range", "Reads neutrons only — always pair it with a photon instrument; required wherever neutrons may be present"]
+      ]
+    }
+  ],
+  "figures": [
+    {
+      "id": "rs-2-1-fig-a",
+      "title": "Gas-filled detector operating regions",
+      "file": "rs-2-1-fig-a.svg"
+    },
+    {
+      "id": "rs-2-1-fig-b",
+      "title": "Neutron rem meter: moderation and capture",
+      "file": "rs-2-1-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "scenario",
+    "title": "Pick the Right Instrument for the Source",
+    "intro": "Four jobs, four instrument decisions. You are the radiographer — choose like your dose depends on it, because it does.",
+    "steps": [
+      {
+        "prompt": "First exposure of the day on an Ir-192 pipeline job. Which instrument goes in your hand for the approach survey after you crank the source back?",
+        "options": [
+          "A contamination frisker from the lab bench — its GM tube is the most sensitive one available",
+          "A calibrated survey meter that reads from 2 mrem per hour through at least 1 rem per hour — switched on and response-checked before you start walking",
+          "Your direct-reading pocket dosimeter, held out at arm's length",
+          "No meter — the projector's source-position indicator already shows the source is shielded"
+        ],
+        "correct": 1,
+        "feedback": "Radiography survey instruments must cover 2 mrem/h through 1 rem/h, and the approach survey is the most important survey you make. A dosimeter only records dose you have already absorbed, a position indicator can lie after a drive-cable failure, and a frisker is built for counting contamination — not measuring fields."
+      },
+      {
+        "prompt": "Halfway down the approach path the needle climbs fast — then suddenly collapses toward zero. Nothing else on the job changed. Your move?",
+        "options": [
+          "Keep walking — the source obviously dropped back into its shield",
+          "Tap the meter and change the batteries where you stand",
+          "Treat it as possible GM saturation in an extremely high field: stop, back out along the path you came, and re-evaluate from a distance with a high-range instrument",
+          "Switch to the highest scale multiplier and continue forward slowly"
+        ],
+        "correct": 2,
+        "feedback": "A real field rises smoothly as distance closes — it never collapses because you stepped closer. Climb-then-collapse is the signature of a saturated GM tube. Retreat first, troubleshoot at a safe distance, and bring an ion chamber that will not fold back."
+      },
+      {
+        "prompt": "A pigtail failure left an Ir-192 source somewhere along 150 meters of dark right-of-way. Which instrument leads the search?",
+        "options": [
+          "A NaI(Tl) scintillation survey meter — the crystal and photomultiplier detect the source from the greatest distance",
+          "An ionization chamber — its flat energy response makes it the most accurate",
+          "A pocket dosimeter, read every fifty paces",
+          "A neutron rem meter — iridium emits neutrons as it decays"
+        ],
+        "correct": 0,
+        "feedback": "A search is won by raw sensitivity, and nothing beats a scintillator for detection range. The ion chamber takes over once the source is found and you must measure dose rates to plan the recovery. Ir-192 emits beta and gamma — not neutrons."
+      },
+      {
+        "prompt": "Next month you support a neutron radiography cell. Outside the shield door, your gamma survey meter reads barely above background. What does that prove about the neutron field?",
+        "options": [
+          "The area is safe — radiation is radiation, and the meter would see it",
+          "Nothing useful — photon instruments are nearly blind to neutrons; only a moderated rem meter with a BF₃ or He-3 tube measures the neutron dose rate",
+          "Multiply the gamma reading by ten and log that as the neutron dose rate",
+          "Neutrons cannot exist outside the cell, so no measurement is needed"
+        ],
+        "correct": 1,
+        "feedback": "Neutrons carry no charge and slip right past a photon detector's working physics. With a quality factor of about 10, the stakes are high: wherever neutrons may be present, a neutron rem meter — and neutron dosimetry — are required."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "Every pulse from a GM tube is the same size, regardless of the energy of the radiation that triggered it. What is the practical consequence?",
+      "options": [
+        "The instrument can only count events, so it needs energy compensation and calibration — typically against cesium-137 — before its dose-rate display can be trusted",
+        "The instrument reads true exposure rate at any photon energy without correction",
+        "The instrument can identify which radionuclide produced each pulse",
+        "The pulses are too small to register without a photomultiplier tube"
+      ],
+      "correct": 0,
+      "explanation": "The full-tube avalanche erases energy information — a GM tube knows that an event happened, not how energetic it was. The energy-compensating sleeve and calibration are what make its count rate display dose rate honestly."
+    },
+    {
+      "question": "Why is the ionization chamber the instrument of record for quantifying the dose rate near an exposure device?",
+      "options": [
+        "Its gas amplification multiplies each pulse millions of times",
+        "Its crystal and photomultiplier respond to single photons",
+        "It collects only the primary ion pairs, so its current is proportional to true exposure rate — with a flat energy response and no fold-back at radiography dose rates",
+        "It is the most sensitive instrument available at background levels"
+      ],
+      "correct": 2,
+      "explanation": "Operating in the saturation region, the ion chamber's tiny current is directly proportional to the energy deposited in the gas. That is exactly what you want when the number itself — for a boundary or a stay time — must be right."
+    },
+    {
+      "question": "Walking toward the exposure device after retracting the source, your GM meter climbs rapidly and then collapses to near zero. The correct interpretation is:",
+      "options": [
+        "The source just reached its fully shielded position",
+        "Possible tube saturation in an extremely high field — stop and retreat along your approach path immediately",
+        "The batteries failed at the worst possible moment",
+        "Normal inverse-square behavior as the geometry changes"
+      ],
+      "correct": 1,
+      "explanation": "A genuine field rises smoothly as you close distance — it cannot collapse because you stepped closer. Pulse pile-up beyond the tube's dead-time limit folds the reading back toward zero, and the only safe response is immediate retreat."
+    },
+    {
+      "question": "A source has been lost along several hundred feet of right-of-way. Which instrument leads the search, and why?",
+      "options": [
+        "Ionization chamber — its flat energy response gives the most accurate reading",
+        "Pocket dosimeter — it integrates dose as you walk the line",
+        "Energy-compensated GM meter — identical pulses make it the most sensitive choice",
+        "Scintillation survey meter — the NaI(Tl) crystal and photomultiplier detect the source at the greatest distance"
+      ],
+      "correct": 3,
+      "explanation": "The photomultiplier's million-fold amplification of each light flash makes the scintillator the most sensitive common survey instrument — it picks up the source while other meters still read background. Accuracy matters later; the search is won by sensitivity."
+    },
+    {
+      "question": "Why is the detector tube in a neutron rem meter surrounded by roughly 25 cm of polyethylene?",
+      "options": [
+        "Collisions with hydrogen slow fast neutrons to thermal speeds, where capture in BF₃ or He-3 is most probable — and shape the response to approximate dose equivalent",
+        "The polyethylene shields out gamma rays so they never reach the tube",
+        "The sphere protects a fragile sodium iodide crystal from moisture",
+        "Polyethylene amplifies each neutron pulse the way a photomultiplier amplifies light"
+      ],
+      "correct": 0,
+      "explanation": "Capture reactions need slow neutrons, so the hydrogen-rich moderator thermalizes the fast ones on the way in. Gamma rejection is done electronically by pulse height, and there is no scintillation crystal in a rem meter — the moderation is the whole point of the plastic."
+    }
+  ],
+  "references": [
+    "CP-105-2024 Radiation Safety Outline §2.1–2.2 (types of radiation instruments; neutron radiation survey equipment)",
+    "10 CFR 34.25 (radiation survey instruments — required measurement range for industrial radiography)",
+    "10 CFR 34.27 (leak testing of sealed sources — 185 Bq / 0.005 µCi detection capability)",
+    "10 CFR Part 20 (radiation surveys and monitoring — typical NRC/Agreement State framework; your license and procedures govern)"
+  ]
+}

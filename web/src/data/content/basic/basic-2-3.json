@@ -1,0 +1,185 @@
+{
+  "lessonId": "basic-2-3",
+  "title": "Electromagnetic Testing: Sensors, Equipment, and Reference Standards",
+  "narrationScript": "Electromagnetic testing earns its place on production lines because nothing has to touch the part. Drive a coil with alternating current and it generates a changing magnetic field. Hold that coil near any electrical conductor and it induces eddy currents — closed loops of current that create their own opposing field and load the coil. Anything that disturbs those currents — a crack, a conductivity change, a thinning wall — appears as a change in coil impedance. Sensors are almost always coils: surface probes for flat work, bobbin probes inside tubing, encircling coils around bar and tube at line speed. Wire them absolute to track gradual properties, or differential to make sharp local flaws stand out. Equipment runs from meter-readout crack detectors and conductivity meters to impedance-plane displays and multifrequency tube systems, with readouts from a needle to a data file. And because every reading is relative, none of it means anything until the system is standardized on a reference standard — the same alloy, temper, and size as the product, carrying machined notches and holes of known depth.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "A Coil, a Conductor, and an Opposing Field",
+      "body": "Electromagnetic testing (ET) is a family of techniques — eddy current, remote field, flux leakage, alternating current field measurement — but the workhorse, and the focus of the Basic outline, is **eddy current testing**. The physics chain is short. Drive a coil with alternating current and it generates an alternating magnetic field. Bring that coil near an electrically conductive material and the changing field **induces eddy currents** — closed loops of current that mirror the coil winding and flow parallel to the part surface. By **Lenz's law** those currents generate a secondary magnetic field that **opposes** the primary field. That opposition loads the coil and changes its **impedance** — its combination of resistance and inductive reactance. The instrument never sees the eddy currents directly; it watches the coil.\n\nAnything that changes how the eddy currents flow changes the signal:\n\n- **electrical conductivity** — alloy, temper, heat treatment\n- **magnetic permeability** — dominant in ferromagnetic materials\n- **geometry** — thickness, diameter, edges\n- **discontinuities** — cracks and seams that interrupt the current loops\n- **coupling** — lift-off for a surface probe; fill factor for bobbin and encircling coils\n\nEddy currents are a **surface and near-surface** phenomenon. Current density is greatest at the surface and falls off exponentially with depth — the **skin effect**. The depth at which density drops to 1/e (about **37%**) of its surface value is the **standard depth of penetration, δ**, and by roughly **3δ** the currents are too weak to matter. δ shrinks as **frequency, conductivity, or permeability** increase — which makes frequency the operator's depth control: lower frequency to look deeper, higher frequency for surface sensitivity. Test frequencies run from roughly 50 Hz to about 10 MHz, with most general-purpose work between a few kilohertz and a few megahertz. The method needs **no couplant and no contact**, and it responds at production-line speed — but the part **must conduct electricity**."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-2-3-fig-a",
+      "caption": "Left: the induction chain — an AC-driven coil, its primary field, eddy current loops in the part, and an opposing secondary field that loads the coil. Right: current density decays exponentially with depth; one standard depth of penetration (δ) leaves 37% of the surface density, and about 3δ is the practical limit."
+    },
+    {
+      "type": "text",
+      "heading": "Sensors: The Coil Is the Transducer",
+      "body": "Whatever the instrument, the sensor doing the work is almost always a **coil**, and its geometry is chosen to put eddy currents where the expected flaws are.\n\n- **Surface probes** (pancake, pencil, spot) hold the coil axis **normal to the surface** — plates, machined parts, weld caps, fastener holes. Their coupling variable is **lift-off**, the probe-to-surface spacing: noise when you hunt cracks, and the *measurement itself* when you gauge a nonconductive coating over a conductive base.\n- **Bobbin (ID) probes** travel inside tubing — the standard sensor for heat-exchanger tube inspection. Their eddy currents flow **circumferentially** around the tube wall.\n- **Encircling (OD, feed-through) coils** surround bar, wire, and tubing on the mill and inspect the **full circumference at line speed**. Their coupling variable is **fill factor** — how completely the part fills the coil opening, kept as close to 1 as practical.\n\n**Orientation rule:** a discontinuity registers only if it **interrupts** the eddy current path. Bobbin and encircling coils drive circumferential currents, so they detect **longitudinal** flaws strongly and respond poorly to flaws lying parallel to the current flow — one reason rotating-probe systems exist. **Shielded probes** confine the field in a ferrite cup to work close to edges and geometry changes.\n\nThe circuit arrangement matters as much as the geometry:\n\n- **Absolute** — a single coil reads its own impedance. Every variable registers, gradual or abrupt: right for conductivity sorting and gauging, but prone to drift.\n- **Differential (self-comparing)** — two opposed coils straddle adjacent areas of the same part. Whatever both coils share cancels; an **abrupt local change** unbalances the pair and stands out. This is the standard arrangement for high-speed tube and bar testing. An *external-reference* differential instead compares the test part against a separate reference piece — the comparator arrangement used for sorting.\n- **Send–receive (driver–pickup)** — separate excitation and sensing coils, including reflection probes and through-transmission pairs, with good thermal stability and wide usable frequency range.\n\nNot every ET sensor is a coil. **Hall-effect detectors** read magnetic flux density directly — even a static field — where a coil responds only to the *rate of change* of flux; they appear in flux leakage and other electromagnetic instruments. Modern **eddy current arrays** multiplex many small coils into one probe to cover a wide strip in a single pass."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-2-3-fig-b",
+      "caption": "Coil geometries put current where the flaws are: surface probes for plates and welds, bobbin probes inside tubing, encircling coils around mill product. Below: absolute (one coil reads everything) versus differential (two opposed coils — shared conditions cancel, an abrupt flaw unbalances the pair)."
+    },
+    {
+      "type": "text",
+      "heading": "Inside the Box: From Oscillator to Alarm",
+      "body": "Every eddy current instrument, from a pocket crack detector to a multichannel tubing system, is the same functional chain. An **oscillator** drives the coil at the selected test frequency. A **balance (bridge) network** nulls the coil's large static impedance so the instrument amplifies only *changes*. An **amplifier** boosts those changes, a **phase-sensitive detector** resolves them into components by phase angle, **filters** reject responses too slow or too fast to be flaws at the scanning speed, and the result feeds the **display and alarm** stage.\n\nThe equipment families to recognize:\n\n- **Meter-readout crack detectors** — single frequency, lift-off compensated, go/no-go.\n- **Conductivity meters** — read directly in **%IACS** (International Annealed Copper Standard; annealed pure copper = 100%). Used to verify alloy and heat-treat condition — most aluminum alloys fall between roughly 25 and 65 %IACS.\n- **Coating-thickness gauges** — exploit the lift-off effect to measure nonconductive coatings on conductive bases.\n- **Impedance-plane instruments** — the modern flaw detector: a flying dot traces the coil's impedance on an X-Y display so the operator reads **phase and amplitude together**.\n- **Multifrequency systems** — drive the probe at two or more frequencies and mix the channels to suppress an unwanted variable; the classic case is removing tube-support-plate signals in heat-exchanger tubing data.\n- **Automated in-line systems** — encircling-coil or rotating-probe stations on tube, bar, and wire mills, with alarm gates firing paint markers, cutters, or sorting gates. Ferromagnetic product is commonly tested under **magnetic saturation**: a strong DC field flattens permeability variations that would otherwise swamp the eddy current signal — the basis of ASTM E309 steel-tube practice."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-2-3-fig-c",
+      "caption": "The impedance-plane display. The dot is the coil's impedance; signals are the trajectories it traces. With phase rotated so lift-off runs horizontal, a surface crack rises at a clearly different angle, and a conductivity or permeability shift moves along a third direction — phase tells you what, amplitude tells you how much."
+    },
+    {
+      "type": "table",
+      "caption": "Types of readout, from a needle to a data file — matched to the speed of the test and the decision being made.",
+      "headers": ["Readout", "What it presents", "Where you meet it"],
+      "rows": [
+        ["Analog meter", "Signal amplitude only, as needle deflection", "Simple crack detectors and comparators; go/no-go checks"],
+        ["Audible / visual alarm", "A threshold crossing — no analysis", "High-speed mill lines; gates trigger markers and sorters"],
+        ["Digital numeric display", "A measured value — %IACS or coating thickness", "Conductivity meters and coating-thickness gauges"],
+        ["Impedance-plane display", "Phase and amplitude together, as a flying-dot trajectory", "Modern flaw detectors; tubing and aerospace surface work"],
+        ["Strip chart / recorded trace", "Signal versus time or position — a permanent record", "Legacy tube testing; documentation of in-service inspections"],
+        ["Computer acquisition / C-scan", "Digitized signals imaged over the scanned area", "Eddy current arrays; multifrequency tubing analysis"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Reference Standards: What Gives a Signal Meaning",
+      "body": "An eddy current instrument outputs **relative** changes — a deflection, a dot excursion, a number that means nothing by itself. The response earns meaning only by **comparison against a reference standard**: a specimen of known condition carrying artificial discontinuities of known size. Standardizing on that specimen sets the sensitivity, the phase rotation, and the alarm gates — and re-checking it at planned intervals proves the system has not quietly drifted. Fail a re-check, and every piece tested since the last good check is suspect and is re-examined.\n\nA reference standard must match the product, because every material variable shifts the signal:\n\n- **same alloy and temper / heat-treat condition** — these set conductivity and permeability\n- **same nominal size and geometry** — diameter, wall thickness, shape, so fill factor and field spread match\n- **comparable surface condition and processing**\n\nFor tube, bar, and wire the standard is literally a length of the same product with **artificial discontinuities** machined in: **drilled radial through-holes**, **flat-bottom holes**, and **EDM notches** — longitudinal or transverse, OD or ID, with depth typically specified as a **percentage of wall thickness** by the governing practice (ASTM E243 for copper-alloy tube, E309 for steel tube under magnetic saturation). Notch orientation is chosen to interrupt the eddy currents the way real flaws would. Conductivity meters standardize on **certified conductivity blocks** bracketing the expected %IACS value, per ASTM E1004.\n\nOne discipline keeps you honest: an artificial discontinuity establishes **repeatable test sensitivity — not equivalence**. A natural crack of the same depth, with different shape, tightness, and orientation, will not necessarily produce the same response. The reference standard calibrates the *system*; it does not promise the flaw."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "No reference standard, no test",
+      "body": "Eddy current responses are relative. Until the system is standardized on a reference of the **same alloy, temper, and geometry** as the product — carrying machined discontinuities of specified size — a deflection is just a wiggle. The reference standard sets sensitivity and alarm levels, and periodic re-standardization is what makes yesterday's accept/reject calls defensible today."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-2-3-fig-a",
+      "title": "Eddy current generation and the skin effect",
+      "file": "basic-2-3-fig-a.svg"
+    },
+    {
+      "id": "basic-2-3-fig-b",
+      "title": "ET sensors: coil geometries and circuit arrangements",
+      "file": "basic-2-3-fig-b.svg"
+    },
+    {
+      "id": "basic-2-3-fig-c",
+      "title": "The impedance-plane display",
+      "file": "basic-2-3-fig-c.svg"
+    }
+  ],
+  "interactive": {
+    "type": "hotspot",
+    "title": "Read the Impedance Plane",
+    "intro": "Surface probe on a nonferrous machined part; the instrument's phase is rotated so lift-off runs horizontal. Click the signal that calls for a crack investigation.",
+    "figureId": "basic-2-3-fig-c",
+    "regions": [
+      {
+        "x": 115,
+        "y": 300,
+        "w": 160,
+        "h": 70,
+        "label": "Flat trace running left from the balance point",
+        "isTarget": false,
+        "feedback": "That is lift-off — probe-to-surface spacing changing as the probe rocks or rides over paint. The set-up rotated it horizontal precisely so it cannot be confused with a flaw."
+      },
+      {
+        "x": 350,
+        "y": 105,
+        "w": 170,
+        "h": 200,
+        "label": "Loop rising steeply away from the lift-off direction",
+        "isTarget": true,
+        "feedback": "Correct. With lift-off set horizontal, a surface crack drives the dot upward at a distinctly different phase angle — the angular separation from lift-off is what makes the call, and the amplitude scales with severity."
+      },
+      {
+        "x": 150,
+        "y": 185,
+        "w": 125,
+        "h": 105,
+        "label": "Dashed excursion between lift-off and vertical",
+        "isTarget": false,
+        "feedback": "That direction is a conductivity or permeability shift — alloy mix-up, heat-treat variation, or localized heating. Phase separates it from both lift-off and crack signals."
+      },
+      {
+        "x": 295,
+        "y": 330,
+        "w": 80,
+        "h": 55,
+        "label": "Stationary dot",
+        "isTarget": false,
+        "feedback": "That is the balance (null) point — the coil's impedance sitting on clean, sound material. No excursion means no indication."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "A surface probe's impedance changes as it approaches a conductive part because:",
+      "options": [
+        "direct electrical contact lets current flow from the coil into the part",
+        "induced eddy currents create a secondary magnetic field that opposes the coil's primary field",
+        "the coil's windings heat and expand when near the part",
+        "the part reflects ultrasonic energy back into the coil"
+      ],
+      "correct": 1,
+      "explanation": "The coil's alternating field induces eddy currents in the conductor, and by Lenz's law those currents generate an opposing secondary field that loads the coil — shifting its resistance and inductive reactance. No contact, current transfer, heating, or sound is involved; the test is non-contact by nature."
+    },
+    {
+      "question": "On a given material, raising the eddy current test frequency will generally:",
+      "options": [
+        "increase the standard depth of penetration",
+        "leave the depth of penetration unchanged",
+        "decrease the standard depth of penetration, concentrating the currents nearer the surface",
+        "allow the method to work on nonconductive materials"
+      ],
+      "correct": 2,
+      "explanation": "Standard depth of penetration varies inversely with the square root of frequency, conductivity, and permeability — raise any of them and δ shrinks. Frequency is the operator's depth control: lower to look deeper, higher for surface sensitivity. No frequency makes a nonconductor testable."
+    },
+    {
+      "question": "For high-speed inspection of tubing on a mill, a differential (self-comparing) coil arrangement is preferred mainly because it:",
+      "options": [
+        "reads absolute conductivity directly in %IACS",
+        "eliminates the need for a reference standard",
+        "responds strongly to slow dimensional and temperature drift",
+        "cancels gradually varying conditions so abrupt, local discontinuities stand out"
+      ],
+      "correct": 3,
+      "explanation": "Two opposed coils compare adjacent areas of the same part: whatever both coils see — gradual dimension, temperature, or conductivity trends — cancels, while a short local flaw unbalances the pair. Absolute coils are the ones that read gradual variables (and drift), and nothing eliminates the reference standard."
+    },
+    {
+      "question": "Which readout presents both the amplitude and the phase of an eddy current signal, letting the operator separate a crack indication from lift-off?",
+      "options": [
+        "An impedance-plane (flying-dot) display",
+        "An analog meter",
+        "An audible alarm",
+        "A digital %IACS readout"
+      ],
+      "correct": 0,
+      "explanation": "The impedance-plane display traces the coil's impedance as a trajectory, so phase angle distinguishes the cause (lift-off versus crack versus conductivity shift) while amplitude scales with severity. A meter, an alarm, or a numeric readout each deliver a single amplitude or value with no phase information."
+    },
+    {
+      "question": "A mill runs encircling-coil eddy current testing on copper-alloy condenser tubing. The correct reference standard is:",
+      "options": [
+        "any conductive tube with a hand-filed notch of convenient size",
+        "a length of tubing of the same alloy, temper, and size containing drilled holes and EDM notches of specified dimensions",
+        "a flat conductivity block certified in %IACS",
+        "a carbon steel tube, because steel gives stronger signals"
+      ],
+      "correct": 1,
+      "explanation": "The reference standard must duplicate the product — alloy and temper set conductivity, and size sets fill factor and geometry response — and carry artificial discontinuities of dimensions specified by the governing practice (ASTM E243 for copper-alloy tube). Conductivity blocks standardize conductivity meters, not tube flaw tests, and a different material invalidates the comparison entirely."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105 (2024), Basic Examination Topical Outline §2.2 (Electromagnetic Testing: sensors; basic types of equipment and readout; reference standards)",
+    "ASTM E309, Standard Practice for Eddy Current Examination of Steel Tubular Products Using Magnetic Saturation",
+    "ASTM E243, Standard Practice for Electromagnetic (Eddy Current) Examination of Copper and Copper-Alloy Tubes",
+    "ASTM E1004, Standard Test Method for Determining Electrical Conductivity Using the Electromagnetic (Eddy Current) Method"
+  ]
+}

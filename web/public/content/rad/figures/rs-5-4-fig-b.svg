@@ -1,0 +1,45 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="32" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#0B1F3A">Dose-Rate Map: 100 Ci Ir-192 — Bare vs Collimated</text>
+  <line x1="400" y1="58" x2="400" y2="425" stroke="#D9E0E8" stroke-width="2"/>
+
+  <!-- LEFT: no collimator -->
+  <text x="205" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">No collimator</text>
+  <text x="205" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#5A6B7E">(distances not to scale)</text>
+
+  <circle cx="205" cy="265" r="130" fill="none" stroke="#0B1F3A" stroke-width="2" stroke-dasharray="6 6"/>
+  <circle cx="205" cy="265" r="82" fill="none" stroke="#1E66F5" stroke-width="2"/>
+  <circle cx="205" cy="265" r="34" fill="none" stroke="#1E66F5" stroke-width="2"/>
+  <circle cx="205" cy="265" r="7" fill="#F2A33C" stroke="#0B1F3A" stroke-width="2"/>
+
+  <text x="205" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">50 R/h @ 1 m</text>
+  <text x="205" y="172" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">500 mR/h @ 10 m</text>
+  <text x="205" y="124" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">2 mR/h @ ≈158 m — boundary</text>
+
+  <!-- RIGHT: with collimator -->
+  <text x="600" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0B1F3A">With collimator — ×100 in shielded directions</text>
+  <text x="600" y="96" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#5A6B7E">(same source — only the port direction unchanged)</text>
+
+  <!-- beam cone -->
+  <polygon points="585,256 780,196 780,334 585,274" fill="#9BC4FF" opacity="0.5"/>
+  <text x="672" y="186" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">full beam through the port</text>
+
+  <!-- collimator block + source -->
+  <rect x="535" y="240" width="50" height="50" rx="8" fill="#0B1F3A"/>
+  <circle cx="560" cy="265" r="7" fill="#F2A33C" stroke="#FFFFFF" stroke-width="2"/>
+
+  <!-- shielded-side contours (left semicircles) -->
+  <path d="M 560 231 A 34 34 0 1 0 560 299" fill="none" stroke="#1E66F5" stroke-width="2"/>
+  <path d="M 560 197 A 68 68 0 1 0 560 333" fill="none" stroke="#0B1F3A" stroke-width="2" stroke-dasharray="6 6"/>
+
+  <text x="578" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">500 mR/h @ 1 m</text>
+  <text x="560" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">2 mR/h @ ≈16 m — boundary</text>
+
+  <text x="680" y="384" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">boundary in the beam direction:</text>
+  <text x="680" y="402" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">set by survey, far beyond this panel</text>
+
+  <!-- bottom note -->
+  <rect x="40" y="440" width="720" height="48" rx="8" fill="#E8F1FB" stroke="#1E66F5" stroke-width="1.5"/>
+  <text x="400" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#0B1F3A">A ×100 reduction pulls the shielded-side boundary in by ×10 (√100): ≈158 m → ≈16 m.</text>
+  <text x="400" y="479" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0B1F3A">The boundary is always set by the survey meter — never by the spec sheet.</text>
+</svg>

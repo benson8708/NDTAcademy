@@ -1,0 +1,202 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="csoGlowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="csoGlowR" filterUnits="userSpaceOnUse" x="111" y="9" width="401" height="285">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="csoSteel" x1="0" y1="38" x2="0" y2="296" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".4" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <pattern id="csoSand" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="4" r="1" fill="#8fb6e0" opacity=".22"/>
+      <circle cx="11" cy="9" r=".8" fill="#8fb6e0" opacity=".15"/>
+      <circle cx="6" cy="14" r=".9" fill="#5fe0ff" opacity=".09"/>
+      <circle cx="15" cy="16" r="1" fill="#8fb6e0" opacity=".19"/>
+      <circle cx="16" cy="2" r=".7" fill="#8fb6e0" opacity=".13"/>
+    </pattern>
+    <radialGradient id="csoMeltG" cx="232" cy="178" r="215" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffe2b0" stop-opacity=".95"/>
+      <stop offset=".22" stop-color="#ffc24b" stop-opacity=".85"/>
+      <stop offset=".5" stop-color="#ff9b4b" stop-opacity=".6"/>
+      <stop offset="1" stop-color="#c1531f" stop-opacity=".3"/>
+    </radialGradient>
+    <linearGradient id="csoRiserG" x1="0" y1="64" x2="0" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffc24b" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#ff9b4b" stop-opacity=".8"/>
+    </linearGradient>
+    <radialGradient id="csoHotG" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#fff3c0" stop-opacity=".9"/>
+      <stop offset=".45" stop-color="#ffc24b" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ff9b4b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- ============ BASE: sand-mold flask cutaway ============ -->
+  <g id="csoMold">
+    <!-- bottom board -->
+    <rect x="78" y="286" width="444" height="9" rx="2" fill="url(#csoSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <!-- flask side rails (cope + drag halves) -->
+    <rect x="86" y="38" width="8" height="123" fill="url(#csoSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="86" y="163" width="8" height="123" fill="url(#csoSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="506" y="38" width="8" height="123" fill="url(#csoSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="506" y="163" width="8" height="123" fill="url(#csoSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <!-- clamp lugs + pins at parting line -->
+    <rect x="72" y="150" width="14" height="11" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.3"/>
+    <rect x="72" y="163" width="14" height="11" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.3"/>
+    <circle cx="79" cy="162" r="2.6" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+    <rect x="514" y="150" width="14" height="11" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.3"/>
+    <rect x="514" y="163" width="14" height="11" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.3"/>
+    <circle cx="521" cy="162" r="2.6" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.2"/>
+    <!-- packed sand -->
+    <rect x="94" y="38" width="412" height="248" fill="#0e2848"/>
+    <rect x="94" y="38" width="412" height="124" fill="#1E66F5" opacity=".06"/>
+    <rect x="94" y="38" width="412" height="248" fill="url(#csoSand)"/>
+    <!-- parting line between cope and drag -->
+    <g stroke="#8fb6e0" stroke-width="1" stroke-dasharray="5 4" opacity=".45" fill="none">
+      <path d="M94 162 H165"/><path d="M458 162 H506"/>
+    </g>
+    <!-- mold top surface (open at riser mouth) -->
+    <g stroke="#8fb6e0" stroke-width="2" fill="none">
+      <path d="M94 38 H202"/><path d="M248 38 H506"/>
+    </g>
+    <!-- sand vents from cavity high points -->
+    <g stroke="#8fb6e0" stroke-width="1" stroke-dasharray="2 3" opacity=".35" fill="none">
+      <path d="M270 118 V40"/>
+      <path d="M444 138 V40"/>
+    </g>
+    <!-- cavity + riser column carved dark -->
+    <path d="M202 38 L207 120 H175 Q165 120 165 130 V230 Q165 240 175 240 H275 Q285 240 285 230 V206 Q285 198 293 198 H422 Q430 198 430 206 V212 Q430 220 438 220 H450 Q458 220 458 212 V148 Q458 140 450 140 H438 Q430 140 430 148 V154 Q430 162 422 162 H293 Q285 162 285 154 V130 Q285 120 275 120 H243 L248 38 Z" fill="#08152b"/>
+    <!-- just-poured dim metal (default state) -->
+    <path d="M207 120 H175 Q165 120 165 130 V230 Q165 240 175 240 H275 Q285 240 285 230 V206 Q285 198 293 198 H422 Q430 198 430 206 V212 Q430 220 438 220 H450 Q458 220 458 212 V148 Q458 140 450 140 H438 Q430 140 430 148 V154 Q430 162 422 162 H293 Q285 162 285 154 V130 Q285 120 275 120 H243 Z" fill="url(#csoMeltG)" opacity=".38"/>
+    <path d="M203.7 66 Q225 78 246.3 66 L243 120 H207 Z" fill="url(#csoRiserG)" opacity=".26"/>
+  </g>
+
+  <!-- ============ REVEAL 1: molten core glow ============ -->
+  <g id="csoMelt" opacity="0">
+    <g>
+      <path d="M207 120 H175 Q165 120 165 130 V230 Q165 240 175 240 H275 Q285 240 285 230 V206 Q285 198 293 198 H422 Q430 198 430 206 V212 Q430 220 438 220 H450 Q458 220 458 212 V148 Q458 140 450 140 H438 Q430 140 430 148 V154 Q430 162 422 162 H293 Q285 162 285 154 V130 Q285 120 275 120 H243 Z" fill="url(#csoMeltG)"/>
+      <animate attributeName="opacity" values=".88;1;.88" dur="3.4s" repeatCount="indefinite"/>
+    </g>
+    <!-- riser liquid with sunken (feeding) meniscus -->
+    <path d="M203.7 66 Q225 78 246.3 66 L243 120 H207 Z" fill="url(#csoRiserG)" opacity=".9"/>
+    <path d="M203.7 66 Q225 78 246.3 66" fill="none" stroke="#ffc24b" stroke-width="1.6" filter="url(#csoGlowR)" opacity=".9"/>
+    <!-- hottest pool in the heavy boss -->
+    <ellipse cx="226" cy="176" rx="44" ry="46" fill="#ffe2b0" opacity=".3" filter="url(#csoGlowC)"/>
+    <!-- heat shimmer + embers above the open riser -->
+    <g stroke="#7fd8ff" stroke-width="1.2" fill="none" opacity=".4">
+      <path d="M217 32 q3 -4.5 0 -9 q-3 -4.5 0 -9"/>
+      <path d="M233 33 q-3 -4.5 0 -9 q3 -4.5 0 -9"/>
+    </g>
+    <g fill="#ffc24b">
+      <circle cx="219" cy="30" r="1.5" opacity=".01">
+        <animate attributeName="cy" values="32;12" dur="3.1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;.8;0" dur="3.1s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="227" cy="26" r="1.2" opacity=".01">
+        <animate attributeName="cy" values="30;10" dur="3.9s" begin="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;.7;0" dur="3.9s" begin="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="236" cy="28" r="1.4" opacity=".01">
+        <animate attributeName="cy" values="31;14" dur="3.5s" begin="2.1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;.75;0" dur="3.5s" begin="2.1s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- ============ REVEAL 2: chill skin draws along mold walls ============ -->
+  <path id="csoChill" d="M210 112 V123 H175 Q168 123 168 130 V230 Q168 237 175 237 H275 Q282 237 282 230 V209 Q282 201 290 201 H420 Q427 201 427 208 V210 Q427 217 434 217 H448 Q455 217 455 210 V150 Q455 143 448 143 H440 Q433 143 433 150 V152 Q433 159 426 159 H290 Q282 159 282 151 V130 Q282 123 275 123 H246 L240 123 V112" fill="none" stroke="#7fd8ff" stroke-width="2" filter="url(#csoGlowR)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ============ REVEAL 3: solidification front (columnar fringe, arrows, equiaxed) ============ -->
+  <g id="csoFront" opacity="0">
+    <!-- solidified rim band -->
+    <path d="M210 112 V123 H175 Q168 123 168 130 V230 Q168 237 175 237 H275 Q282 237 282 230 V209 Q282 201 290 201 H420 Q427 201 427 208 V210 Q427 217 434 217 H448 Q455 217 455 210 V150 Q455 143 448 143 H440 Q433 143 433 150 V152 Q433 159 426 159 H290 Q282 159 282 151 V130 Q282 123 275 123 H246 L240 123 V112" fill="none" stroke="#1E66F5" stroke-width="9" opacity=".32"/>
+    <!-- columnar dendrite combs growing perpendicular from every mold wall -->
+    <g stroke="#7fd8ff" stroke-width="1.1" opacity=".75" fill="none">
+      <path d="M169.5 131 h12 M169.5 140.1 h9 M169.5 149.2 h10.5 M169.5 158.3 h12 M169.5 167.4 h9 M169.5 176.5 h10.5 M169.5 185.6 h12 M169.5 194.7 h9 M169.5 203.8 h10.5 M169.5 212.9 h12 M169.5 222 h9"/>
+      <path d="M176 235.5 v-11 M185.2 235.5 v-9 M194.4 235.5 v-10 M203.6 235.5 v-11 M212.8 235.5 v-9 M222 235.5 v-10 M231.2 235.5 v-11 M240.4 235.5 v-9 M249.6 235.5 v-10 M258.8 235.5 v-11 M268 235.5 v-9"/>
+      <path d="M280.5 205 h-11 M280.5 214 h-9 M280.5 223 h-11 M280.5 231 h-9"/>
+      <path d="M280.5 128 h-11.5 M280.5 137 h-10 M280.5 146 h-11.5 M280.5 155 h-10"/>
+      <path d="M176 124.5 v11 M185 124.5 v9 M194 124.5 v11 M201 124.5 v9"/>
+      <path d="M250 124.5 v11.5 M259 124.5 v10 M268 124.5 v11.5 M277 124.5 v10"/>
+      <path d="M294 165.5 v8 M303 165.5 v6.5 M312 165.5 v7.2 M321 165.5 v8 M330 165.5 v6.5 M339 165.5 v7.2 M348 165.5 v8 M357 165.5 v6.5 M366 165.5 v7.2 M375 165.5 v8 M384 165.5 v6.5 M393 165.5 v7.2 M402 165.5 v8 M411 165.5 v6.5 M420 165.5 v7.2"/>
+      <path d="M298.5 194.5 v-7.5 M307.5 194.5 v-6.2 M316.5 194.5 v-8 M325.5 194.5 v-7.5 M334.5 194.5 v-6.2 M343.5 194.5 v-8 M352.5 194.5 v-7.5 M361.5 194.5 v-6.2 M370.5 194.5 v-8 M379.5 194.5 v-7.5 M388.5 194.5 v-6.2 M397.5 194.5 v-8 M406.5 194.5 v-7.5 M415.5 194.5 v-6.2 M424.5 194.5 v-8"/>
+      <path d="M453.5 147 h-9.5 M453.5 156.5 h-8 M453.5 166 h-9.5 M453.5 175.5 h-8 M453.5 185 h-9.5 M453.5 194.5 h-8 M453.5 204 h-9.5 M453.5 213.5 h-8"/>
+      <path d="M434.5 148 h8.5 M434.5 156 h7"/>
+      <path d="M434.5 206 h8.5 M434.5 213.5 h7"/>
+      <path d="M438.5 144 v7 M447.5 144 v6"/>
+      <path d="M440 216 v-7 M449 216 v-6"/>
+    </g>
+    <!-- inward freeze-direction arrows -->
+    <g stroke="#5fe0ff" stroke-width="1.6" fill="none" filter="url(#csoGlowR)" opacity=".9">
+      <path d="M184 178 L200 178"/><path d="M206.5 178 L200 181.4 L200 174.6 Z" fill="#5fe0ff" stroke="none"/>
+      <path d="M210 229 L210 215"/><path d="M210 208.5 L213.4 215 L206.6 215 Z" fill="#5fe0ff" stroke="none"/>
+      <path d="M258 229 L258 215"/><path d="M258 208.5 L261.4 215 L254.6 215 Z" fill="#5fe0ff" stroke="none"/>
+      <path d="M190 129 L190 143"/><path d="M190 149.5 L186.6 143 L193.4 143 Z" fill="#5fe0ff" stroke="none"/>
+      <path d="M279 141 L265 141"/><path d="M258.5 141 L265 137.6 L265 144.4 Z" fill="#5fe0ff" stroke="none"/>
+      <path d="M350 167 L350 175"/><path d="M350 181.5 L346.6 175 L353.4 175 Z" fill="#5fe0ff" stroke="none"/>
+      <path d="M350 193 L350 185"/><path d="M350 178.5 L353.4 185 L346.6 185 Z" fill="#5fe0ff" stroke="none"/>
+      <path d="M396 167 L396 175"/><path d="M396 181.5 L392.6 175 L399.4 175 Z" fill="#5fe0ff" stroke="none"/>
+      <path d="M396 193 L396 185"/><path d="M396 178.5 L399.4 185 L392.6 185 Z" fill="#5fe0ff" stroke="none"/>
+      <path d="M451 180 L440 180"/><path d="M433.5 180 L440 176.6 L440 183.4 Z" fill="#5fe0ff" stroke="none"/>
+    </g>
+    <!-- coarse equiaxed grains blooming in the slow centre -->
+    <g stroke="#7fd8ff" stroke-width="1" fill="#2b86ff" fill-opacity=".3" opacity=".9">
+      <path d="M197 201 l7 2 l-1 7 l-8 1 l-3 -6 z"/>
+      <path d="M220 210 l6 3 l-2 6 l-7 0 l-2 -6 z"/>
+      <path d="M245 200 l7 1 l0 7 l-7 2 l-4 -6 z"/>
+      <path d="M262 214 l6 2 l-1 6 l-7 1 l-2 -6 z"/>
+      <path d="M236 190 l5 2 l-1 5 l-6 1 l-2 -5 z"/>
+      <path d="M308 177 l4 2 l-1 4 l-5 1 l-2 -4 z"/>
+      <path d="M330 178 l4 1 l0 4 l-4 2 l-3 -4 z"/>
+      <path d="M441 196 l5 1 l-1 5 l-5 1 l-2 -4 z"/>
+    </g>
+  </g>
+
+  <!-- zone labels -->
+  <g id="csoFrontLbl" font-size="12" opacity="0">
+    <path d="M185 258 L196 243" stroke="#5fe0ff" stroke-width="1" opacity=".55" fill="none"/>
+    <text x="185" y="271" text-anchor="middle" fill="#9fe6ff" opacity=".9">CHILL + COLUMNAR</text>
+    <path d="M352 258 L318 190" stroke="#5fe0ff" stroke-width="1" opacity=".55" fill="none"/>
+    <text x="368" y="271" text-anchor="middle" fill="#9fe6ff" opacity=".9">EQUIAXED CORE</text>
+  </g>
+
+  <!-- ============ REVEAL 4: last to freeze + shrink void ============ -->
+  <g id="csoHotSpot" opacity="0">
+    <!-- thermal centerline -->
+    <g stroke="#ffc24b" stroke-width="1.6" stroke-dasharray="5 4" fill="none" opacity=".85">
+      <path d="M446 180 H292"/>
+      <path d="M225 230 V124"/>
+    </g>
+    <!-- micro shrink trail on the web centerline -->
+    <g fill="#ff6b6b" opacity=".75">
+      <circle cx="312" cy="180" r="1.6"/><circle cx="348" cy="180" r="1.3"/><circle cx="384" cy="180" r="1.6"/>
+    </g>
+    <!-- pulsing last-liquid pocket in the heavy boss, under the riser -->
+    <circle cx="225" cy="168" r="27" fill="url(#csoHotG)">
+      <animate attributeName="opacity" values=".55;1;.55" dur="2.3s" repeatCount="indefinite"/>
+    </circle>
+    <!-- ragged shrinkage void -->
+    <path d="M211 170 L218 161 L225 166 L231 159 L238 168 L232 173 L237 179 L226 178 L219 183 L213 176 Z" fill="#08152b" stroke="#ff6b6b" stroke-width="1.8" stroke-linejoin="round" filter="url(#csoGlowR)"/>
+    <g font-size="12">
+      <path d="M330 105 L256 149" stroke="#ffc24b" stroke-width="1" opacity=".55" fill="none"/>
+      <text x="334" y="108" fill="#ffc24b" opacity=".95">LAST TO FREEZE</text>
+      <path d="M150 108 L212 164" stroke="#ff6b6b" stroke-width="1" opacity=".5" fill="none"/>
+      <text x="150" y="104" text-anchor="middle" fill="#ff6b6b" opacity=".95">SHRINK VOID</text>
+    </g>
+  </g>
+  <circle id="csoPing" cx="225" cy="171" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#csoGlowR)"/>
+
+  <!-- crisp cavity + riser outline on top -->
+  <path d="M202 38 L207 120 H175 Q165 120 165 130 V230 Q165 240 175 240 H275 Q285 240 285 230 V206 Q285 198 293 198 H422 Q430 198 430 206 V212 Q430 220 438 220 H450 Q458 220 458 212 V148 Q458 140 450 140 H438 Q430 140 430 148 V154 Q430 162 422 162 H293 Q285 162 285 154 V130 Q285 120 275 120 H243 L248 38" fill="none" stroke="#8fb6e0" stroke-width="1.8"/>
+
+  <!-- base labels -->
+  <g font-size="12" fill="#9fe6ff">
+    <text x="104" y="62" opacity=".75">SAND MOLD</text>
+    <path d="M262 52 L251 43" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="266" y="56" opacity=".85">RISER</text>
+  </g>
+</svg>

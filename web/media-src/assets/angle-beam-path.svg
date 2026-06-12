@@ -1,0 +1,137 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="abpGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="abpGlowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="abpSteel" x1="0" y1="150" x2="0" y2="258" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c5a88"/><stop offset=".3" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="abpWedgeG" x1="0" y1="86" x2="0" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#24507e"/><stop offset="1" stop-color="#122b4c"/>
+    </linearGradient>
+    <pattern id="abpHatch" width="7" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(38)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#ffc24b" stroke-width="2" stroke-opacity=".5"/>
+    </pattern>
+  </defs>
+
+  <!-- ===== PLATE cross-section (T thick, spans frame) ===== -->
+  <rect x="35" y="150" width="515" height="108" fill="url(#abpSteel)"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".16">
+    <line x1="42" y1="176" x2="544" y2="176"/>
+    <line x1="42" y1="205" x2="544" y2="205"/>
+    <line x1="42" y1="234" x2="544" y2="234"/>
+  </g>
+  <!-- plate outline: top surface, backwall, ends -->
+  <line x1="35" y1="150" x2="550" y2="150" stroke="#8fb6e0" stroke-width="1.6"/>
+  <line x1="35" y1="258" x2="550" y2="258" stroke="#8fb6e0" stroke-width="1.6"/>
+  <line x1="35" y1="150" x2="35" y2="258" stroke="#8fb6e0" stroke-width="1.4" opacity=".8"/>
+  <line x1="550" y1="150" x2="550" y2="258" stroke="#8fb6e0" stroke-width="1.4" opacity=".8"/>
+
+  <!-- ===== SINGLE-V BUTT WELD (subdued scan target, centerline x=482) ===== -->
+  <g>
+    <path d="M449 150 L478 258 L486 258 L515 150 Z" fill="#2b86ff" opacity=".14"/>
+    <path d="M455 176 Q482 165 509 176 M462 204 Q482 195 502 204 M469 232 Q482 225 495 232" fill="none" stroke="#7fd8ff" stroke-width="1" opacity=".28"/>
+    <path d="M449 150 L478 258 M515 150 L486 258" fill="none" stroke="#7fd8ff" stroke-width="1" stroke-dasharray="4 4" opacity=".5"/>
+    <path d="M440 150 Q482 127 524 150 Z" fill="#1d4066" stroke="#8fb6e0" stroke-width="1.2" opacity=".9"/>
+    <path d="M474 258 Q482 269 490 258 Z" fill="#1d4066" stroke="#8fb6e0" stroke-width="1" opacity=".8"/>
+  </g>
+
+  <!-- base thickness ticks at right plate edge -->
+  <g stroke="#8fb6e0" stroke-width="1.2" opacity=".7">
+    <line x1="552" y1="150" x2="563" y2="150"/>
+    <line x1="552" y1="258" x2="563" y2="258"/>
+  </g>
+
+  <!-- ===== SCAN-ZONE band (reveal: grease-pencil marks on surface) ===== -->
+  <g id="abpZone" opacity="0">
+    <rect x="88" y="142" width="348" height="8" fill="url(#abpHatch)"/>
+    <path d="M88 142 H436" stroke="#ffc24b" stroke-width="1.4" stroke-dasharray="7 3" opacity=".9" fill="none"/>
+    <line x1="88" y1="138" x2="88" y2="154" stroke="#ffc24b" stroke-width="2.2" opacity=".9"/>
+    <line x1="436" y1="138" x2="436" y2="154" stroke="#ffc24b" stroke-width="2.2" opacity=".9"/>
+    <text x="252" y="169" text-anchor="middle" font-size="10" letter-spacing="1.5" fill="#ffc24b" opacity=".85">SCAN ZONE</text>
+  </g>
+
+  <!-- ===== NORMAL + REFRACTED-ANGLE ARC at index point (theta from the vertical) ===== -->
+  <g id="abpNormal" opacity="0">
+    <line x1="108" y1="150" x2="108" y2="214" stroke="#9fe6ff" stroke-width="1.2" stroke-dasharray="4 4" opacity=".8"/>
+    <path d="M108 180 A30 30 0 0 0 134 165" fill="none" stroke="#9fe6ff" stroke-width="1.4"/>
+    <text x="130" y="192" text-anchor="middle" font-size="12" fill="#9fe6ff">&#952;</text>
+  </g>
+
+  <!-- ghost ray: probe advanced to half-skip stand-off, leg 1 lands on the ROOT -->
+  <g id="abpRootLeg" opacity="0">
+    <line x1="295" y1="150" x2="479" y2="256" stroke="#7fd8ff" stroke-width="1.5" stroke-dasharray="5 4" opacity=".8"/>
+    <text x="491" y="276" font-size="10" fill="#9fe6ff" opacity=".9">ROOT</text>
+  </g>
+
+  <!-- ===== SHEAR-WAVE V-PATH (draw-on legs) ===== -->
+  <path id="abpLeg1" d="M108 150 L295 258" fill="none" stroke="#5fe0ff" stroke-width="2.5" filter="url(#abpGlow)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <path id="abpLeg2" d="M295 258 L482 150" fill="none" stroke="#5fe0ff" stroke-width="2.5" filter="url(#abpGlow)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <g id="abpLeg1Lbl" opacity="0">
+    <polygon points="294,257.4 283.3,255.9 287.3,249" fill="#5fe0ff"/>
+    <text x="190" y="182" text-anchor="middle" font-size="10.5" letter-spacing="1" fill="#9fe6ff" transform="rotate(30 190 182)">LEG 1</text>
+  </g>
+  <g id="abpLeg2Lbl" opacity="0">
+    <polygon points="480.3,151 473.6,159.5 469.6,152.5" fill="#5fe0ff"/>
+    <text x="382" y="193" text-anchor="middle" font-size="10.5" letter-spacing="1" fill="#9fe6ff" transform="rotate(-30 382 193)">LEG 2</text>
+    <text x="494" y="134" font-size="10" fill="#9fe6ff" opacity=".9">CAP</text>
+  </g>
+
+  <!-- ===== PROBE ON WEDGE (index point under nose) ===== -->
+  <g>
+    <polygon points="32,150 112,150 112,116 77,90 47,122 34,130" fill="url(#abpWedgeG)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <line x1="62" y1="106" x2="106" y2="148" stroke="#5fe0ff" stroke-width="2" opacity=".85" filter="url(#abpGlowS)"/>
+    <rect x="35.4" y="91.9" width="40" height="16" rx="2.5" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.4" transform="rotate(-46.8 55.4 99.9)"/>
+    <rect x="34.4" y="87.3" width="26" height="10" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.1" transform="rotate(-46.8 47.4 92.3)"/>
+    <path d="M42 88 C34 74 40 62 30 50" fill="none" stroke="#8fb6e0" stroke-width="1.6" opacity=".7"/>
+    <!-- index / exit point -->
+    <line x1="108" y1="155" x2="108" y2="143" stroke="#5fe0ff" stroke-width="1.5"/>
+    <circle cx="108" cy="150" r="2.8" fill="#5fe0ff" filter="url(#abpGlowS)"/>
+  </g>
+
+  <!-- ===== DIMENSIONS (draw-on) ===== -->
+  <path id="abpHalfSkip" d="M108 136 H295 M295 136 V254" fill="none" stroke="#9fe6ff" stroke-width="1.3" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="abpHalfSkipLbl" opacity="0">
+    <polygon points="108,136 120,132.5 120,139.5" fill="#9fe6ff"/>
+    <polygon points="295,136 283,132.5 283,139.5" fill="#9fe6ff"/>
+    <text x="180" y="131" text-anchor="middle" font-size="11" fill="#9fe6ff">&#189; SKIP = T&#183;TAN &#952;</text>
+  </g>
+
+  <path id="abpFullSkip" d="M108 148 V118 M108 118 H482 M482 118 V140" fill="none" stroke="#9fe6ff" stroke-width="1.3" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="abpFullSkipLbl" opacity="0">
+    <polygon points="108,118 120,114.5 120,121.5" fill="#9fe6ff"/>
+    <polygon points="482,118 470,114.5 470,121.5" fill="#9fe6ff"/>
+    <text x="295" y="113" text-anchor="middle" font-size="11" fill="#9fe6ff">SKIP = 2T&#183;TAN &#952;</text>
+  </g>
+
+  <!-- thickness bracket -->
+  <g id="abpThick" opacity="0">
+    <line x1="566" y1="153" x2="566" y2="255" stroke="#9fe6ff" stroke-width="1.3"/>
+    <polygon points="566,151 562.5,161 569.5,161" fill="#9fe6ff"/>
+    <polygon points="566,257 562.5,247 569.5,247" fill="#9fe6ff"/>
+    <text x="572" y="208" font-size="13" fill="#9fe6ff">T</text>
+  </g>
+
+  <!-- formula chip -->
+  <g id="abpFormula" opacity="0">
+    <rect x="195" y="72" width="210" height="28" rx="8" fill="#0e2848" fill-opacity=".75" stroke="#5fe0ff" stroke-opacity=".55" stroke-width="1.2"/>
+    <text x="300" y="90.5" text-anchor="middle" font-size="12.5" letter-spacing=".5" fill="#9fe6ff">SKIP = 2 &#215; T &#215; TAN &#952;</text>
+  </g>
+
+  <!-- theta emphasis chip -->
+  <g id="abpAngle" opacity="0">
+    <path d="M108 180 A30 30 0 0 0 134 165" fill="none" stroke="#5fe0ff" stroke-width="2" filter="url(#abpGlowS)"/>
+    <circle cx="130" cy="187" r="12" fill="#5fe0ff" fill-opacity=".12" stroke="#5fe0ff" stroke-width="1.2" stroke-opacity=".8"/>
+  </g>
+
+  <!-- pings -->
+  <circle id="abpBouncePing" cx="295" cy="258" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0"/>
+  <circle id="abpAnglePing" cx="130" cy="187" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0"/>
+  <circle id="abpRootPing" cx="482" cy="256" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0"/>
+</svg>

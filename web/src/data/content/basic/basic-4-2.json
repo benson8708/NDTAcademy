@@ -1,0 +1,183 @@
+{
+  "lessonId": "basic-4-2",
+  "title": "Magnetic Particle Testing: Equipment, Interpretation, and Applications",
+  "narrationScript": "The first MT lesson gave you the physics. This one gives you the hardware, the judgment, and the job sites. Equipment falls into two families: portable yokes, permanent magnets, prods, and mobile power packs that go to the part, and stationary wet horizontal benches the part comes to. Each carries proof-of-performance numbers — the ten and forty pound lift checks, settling-test concentrations, black light intensity — that auditors quote from memory, and now you will too. Then the heart of the lesson: interpretation. Every particle accumulation is relevant, nonrelevant, or false. Sharp, tight lines mean surface cracks. Broad, fuzzy buildups mean near-surface trouble. Symmetric bands at section changes mean geometry, not damage, and powder that wipes away for good was never held by a magnetic field at all. We close with the applications the Basic outline names: welds magnetized in two directions, rough castings worked with prods and dry powder, wrought bars hiding seams and laps, machined parts under wet fluorescent baths, and field work where a permanent magnet is sometimes the only legal tool.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Two Families of Equipment",
+      "body": "MT hardware divides into **portable** gear you carry to the part and **stationary** systems the part comes to.\n\nOn the portable side:\n\n- **Electromagnetic yokes** — a coil-wound core with legs (often articulated) that drops a **longitudinal field** into the part between its poles. AC yokes concentrate on the surface and give particles excellent mobility; DC (rectified) yokes push flux deeper. Performance is proven with a **dead-weight lift check**: an AC yoke must lift at least **10 lb (4.5 kg)**, and a DC or permanent-magnet yoke at least **40 lb (18 kg)**, at the pole spacing to be used.\n- **Permanent magnets** — no power, no cables, and no arcing: the tool for sites without electricity and for atmospheres where sparks are prohibited. Same 40-lb lift requirement; the trade-off is a fixed, modest field you cannot adjust.\n- **Prods** — hand-held electrodes that pass current **through** the part, wrapping a **circular field** around the current path. Codes typically call for roughly **90–125 A per inch of prod spacing** depending on section thickness, with spacing limited to about 8 in. The hazard is **arc strikes and copper penetration** at the contact points, which is why many specifications prohibit prods on finished surfaces and aerospace hardware.\n- **Mobile power packs** — wheeled rectified sources feeding heavy cables, used for **cable wraps** (improvised coils) around large shafts, drill string, and heavy weldments.\n\nOn the stationary side, the **wet horizontal bench** clamps the part between contact heads for a **headshot** (current through the part — circular field) and surrounds it with a built-in **coil** (longitudinal field), all over a recirculating wet particle bath. **Multidirectional units** energize two or more circuits in rapid alternation to cover both crack orientations in a single operation. Most shops also keep **demagnetization** equipment — a pass-through AC coil, or reversing and decaying DC for deeper fields — so parts leave the bench magnetically clean."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-4-2-fig-a",
+      "caption": "Three ways to magnetize: a yoke's longitudinal field between its poles, a prod shot's circular field wrapped around the current path, and a wet horizontal bench combining headshot and coil — two directions, roughly 90 degrees apart, for full crack coverage."
+    },
+    {
+      "type": "text",
+      "heading": "Inspection Materials: Dry Powder and Wet Bath",
+      "body": "The particles do the talking, and they come in two delivery systems.\n\n**Dry powder** is dusted on as a light cloud from a squeeze bulb or powder blower while the magnetizing current flows, with excess removed by a gentle air stream. Its territory: rough as-welded and as-cast surfaces, outdoor work, and **hot parts** — many dry powders remain serviceable to roughly **600°F (315°C)**, far beyond any wet bath. Dry powder pairs naturally with **AC or half-wave DC**, whose pulsations keep particles mobile across the surface; HWDC with dry powder is the classic weld-and-casting combination because it adds the best practical near-surface reach.\n\n**Wet-method** particles ride in an oil or conditioned-water vehicle, flowed or sprayed over the part — normally in the **continuous technique**, applied just before and during the shot. The finer suspended particles give the wet method its edge: **fine, shallow surface cracks** on smooth and machined surfaces. Visible wet particles come black or red; **fluorescent** particles viewed under UV-A deliver the highest contrast and are the default for bench work.\n\nA wet bath is a living system, so it is measured:\n\n- **Concentration** by settling test in a pear-shaped centrifuge tube: **0.1–0.4 mL per 100 mL** for fluorescent and **1.2–2.4 mL per 100 mL** for visible particles after settling (about 30 minutes for water vehicles, 60 for oil under most documents), checked along with bath contamination.\n- **Lighting**: fluorescent examination requires UV-A (nominal 365 nm) of at least **1000 µW/cm² at the part surface** in a darkened area with ambient white light held to **2 fc or less**; visible-particle examination requires at least **100 fc** of white light at the surface.\n\n**System verification tools** complete the kit: notched artificial-flaw shims (**QQIs**) fastened notch-side to the part prove field adequacy and direction, the segmented **pie gauge** gives a quick qualitative direction check, and the tool-steel **ring specimen** with subsurface holes, run at specified DC currents, verifies overall system sensitivity."
+    },
+    {
+      "type": "callout",
+      "variant": "standard",
+      "title": "Numbers an auditor will ask for",
+      "body": "Yoke lift checks: **AC ≥ 10 lb (4.5 kg)**; **DC or permanent magnet ≥ 40 lb (18 kg)** at the pole spacing used. Settling-test concentration: **0.1–0.4 mL/100 mL fluorescent**, **1.2–2.4 mL/100 mL visible**. Lighting: **UV-A ≥ 1000 µW/cm²** at the surface with ambient white light ≤ 2 fc for fluorescent work; **≥ 100 fc** white light for visible work. These values come from ASTM E1444 and ASME Section V, Article 7 — your written procedure states which document and edition govern."
+    },
+    {
+      "type": "text",
+      "heading": "Interpretation: Relevant, Nonrelevant, or False",
+      "body": "**Interpretation** decides what an indication *is*; **evaluation** decides what to *do about it* against acceptance criteria. Interpretation sorts every particle accumulation into one of three classes:\n\n- **False indications** are particles held by anything *other than* a magnetic leakage field: mechanical trapping in surface roughness, scale, and grooves; gravity pooling bath in depressions; lint, fingerprints, or drying residue. Clean the surface and reprocess — a false indication does not re-form in the same place with the same character.\n- **Nonrelevant indications** are produced by **real leakage fields that do not come from a discontinuity**: sharp section changes, keyways and drilled holes just under the surface, the boundary between hardened and soft zones, junctions of metals with different magnetic properties, **magnetic writing** from contact with another magnetized part, and plain over-magnetization decorating external corners. They *do* repeat on reprocessing — what gives them away is that they sit exactly where the part's geometry or metallurgy says they must, usually uniform and symmetric, explainable from the drawing. Magnetic writing is the exception that proves the rule: demagnetize, reprocess, and it is gone.\n- **Relevant indications** result from leakage fields at actual discontinuities. Only these proceed to **evaluation** against the governing code or specification.\n\nThe discipline matters because the remedy differs: false indications mean fix the cleaning or the application; nonrelevant indications may call for reduced current or a technique note; relevant indications get recorded, sized, and dispositioned by someone certified to make that call."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-4-2-fig-b",
+      "caption": "Four particle buildups, three classes: a sharp surface-crack line and a fuzzy near-surface accumulation are relevant; a symmetric band at a section change is nonrelevant; powder trapped by roughness and gravity is false."
+    },
+    {
+      "type": "text",
+      "heading": "Reading Discontinuity Indications",
+      "body": "With the classes in place, learn the signatures. The governing rule: **sharpness tracks depth** — the closer the discontinuity lies to the surface, the tighter, denser, and better defined the buildup.\n\n- **Surface cracks** — quench, fatigue, weld shrinkage — give **sharp, tightly held, well-defined lines** along the crack path. Fatigue cracks favor stress concentrations: thread roots, fillets, keyway corners. Quench cracks favor section changes and holes, and often **fork**.\n- **Grinding cracks** are very fine, shallow, and typically run **perpendicular to the grinding direction**, often as a network or a family of parallel hairlines — classic wet-fluorescent work, easy to miss with dry powder.\n- **Seams** in rolled bar appear as **straight, tight lines parallel to the working direction**, continuous or intermittent; because seams are tight, the buildup can be surprisingly weak.\n- **Forging laps** meet the surface at a **shallow angle**, often with oxide folded inside, so the indication is frequently **weak, irregular, and intermittent** — a lap can demand more sensitivity than an open crack, and it commonly lives near the flash line.\n- **Near-surface discontinuities** — inclusions, porosity, lack of fusion just under a weld surface — collect **broad, fuzzy, weakly held** accumulations that lose definition with every bit of depth. MT's reach below the surface is real but shallow; truly internal conditions such as forging bursts belong to ultrasonic testing.\n- **Casting signatures**: **hot tears** are ragged, branched lines at junctions of light and heavy sections; **cold shuts** show smoother, curving lines with rounded edges; near-surface **shrinkage** reads as a fuzzy patch.\n\nWipe-and-repeat is the interpreter's friend: reprocess the part and watch whether the indication returns in the same place with the same character."
+    },
+    {
+      "type": "table",
+      "caption": "MT applications summary: what each product form hides and how the method is typically applied.",
+      "headers": ["Product form", "Typical discontinuities found", "Typical MT approach"],
+      "rows": [
+        ["Welds", "Longitudinal, transverse, crater, and toe cracks; near-surface lack of fusion", "Yoke or prods with dry powder; HWDC for reach; two passes about 90° apart; interpass checks on multipass welds"],
+        ["Castings", "Hot tears, shrinkage cracks, cold shuts, near-surface shrinkage and inclusions", "Prods, clamps, or cable wraps with HWDC and dry or wet visible particles, worked section by section"],
+        ["Wrought metals (bars, billets, forgings)", "Seams, laps, stringers, bursts where they break the surface", "Bench or semi-automatic wet systems; headshot plus coil to cover both orientations"],
+        ["Machined parts", "Grinding cracks, heat-treat and quench cracks, service-induced fatigue cracks", "Wet fluorescent on horizontal bench; residual technique on high-retentivity steels; demagnetize after"],
+        ["Field applications", "Fatigue cracks in structures, lifting gear, drill string, tank and pipeline welds", "AC or battery yokes; permanent magnets where power or sparks are prohibited; visible powder in daylight, portable UV-A for fluorescent"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Applications in Practice",
+      "body": "**Welds.** MT catches longitudinal, transverse, crater, and toe cracks plus near-surface lack of fusion. Because a crack only shows when it crosses the field, complete coverage means **two magnetizing passes roughly 90° apart**. Yokes with dry powder dominate structural work; multipass welds are often checked **between passes** and after back-gouging, clearing each excavation before rewelding.\n\n**Castings.** As-cast surfaces are rough, so **dry powder with HWDC** through prods, clamps, or cable wraps is the foundry standard, working the casting **section by section** with overlapping shots aimed at hot tears, shrinkage cracks, and cold shuts.\n\n**Wrought products.** Billets, bars, and forgings are screened — often on semi-automatic wet-bench systems — for seams, laps, and stringers. A **headshot plus coil** covers both orientations; drill pipe and oil-country tubular goods get coil-magnetized **wet fluorescent** inspection of the critical end areas on dedicated units.\n\n**Machined and finished parts.** Wet fluorescent on the horizontal bench is the default, because this is where fine grinding and heat-treat cracks matter. High-retentivity alloy steels may use the **residual technique** — magnetize first, apply the bath after the current stops. Finished parts are routinely **demagnetized** afterward so chips do not cling during later machining, instruments are not disturbed, and arc blow does not complicate subsequent welding.\n\n**Field applications.** Yokes and permanent magnets travel anywhere a technician can climb: crane hooks and lifting gear, structural steel, storage-tank and pipeline welds, drill string at the rig. Battery yokes and permanent magnets serve where line power is absent; where a flammable atmosphere prohibits arcing equipment entirely, the **permanent magnet** may be the only legal tool. Visible powders work in daylight; shrouded portable UV-A lamps bring fluorescent sensitivity to night and confined-space work."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-4-2-fig-a",
+      "title": "MT equipment and magnetization map",
+      "file": "basic-4-2-fig-a.svg"
+    },
+    {
+      "id": "basic-4-2-fig-b",
+      "title": "Indication gallery: relevant, nonrelevant, false",
+      "file": "basic-4-2-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "sort",
+    "title": "Classify the MT Indication",
+    "intro": "Eight particle accumulations from a day of MT work. Interpret each one before anyone talks about acceptance criteria: is it relevant, nonrelevant, or false?",
+    "buckets": ["Relevant", "Nonrelevant", "False"],
+    "items": [
+      {
+        "label": "Sharp, tight, well-defined particle line crossing a weld toe",
+        "bucket": 0,
+        "why": "A dense, tightly held linear buildup is the classic signature of a surface crack — a real discontinuity that now goes to evaluation."
+      },
+      {
+        "label": "Broad, fuzzy buildup that returns in the same spot with the same shape after wiping and remagnetizing",
+        "bucket": 0,
+        "why": "Repeatable but diffuse means a real leakage field from a discontinuity just below the surface — relevant even though it is not sharp."
+      },
+      {
+        "label": "Uniform particle band ringing a shaft exactly where the diameter steps down",
+        "bucket": 1,
+        "why": "A sharp section change forces flux to leak. The field is real, but the source is geometry on the drawing, not a discontinuity."
+      },
+      {
+        "label": "Random patches lying in the pits of a rough, scaly casting surface that wipe away and do not re-form in place",
+        "bucket": 2,
+        "why": "Particles trapped mechanically by roughness and gravity are not held by a leakage field — improve the surface preparation and application."
+      },
+      {
+        "label": "Blotchy scrawled marks where the part rested against another magnetized component",
+        "bucket": 1,
+        "why": "Magnetic writing — a genuine leakage field with the wrong source. It is nonrelevant, and it disappears after demagnetizing and reprocessing."
+      },
+      {
+        "label": "Straight, faint line exactly at the boundary between an induction-hardened zone and the soft shaft body",
+        "bucket": 1,
+        "why": "Abrupt permeability change at a heat-treat boundary leaks flux. Real field, no discontinuity — nonrelevant."
+      },
+      {
+        "label": "Bath particles pooled in a shallow depression on a horizontal surface after drainage",
+        "bucket": 2,
+        "why": "Gravity parked the bath there; nothing magnetic held those particles. Reposition the part or control drainage and reprocess."
+      },
+      {
+        "label": "Weak, irregular, intermittent line near the flash line of a forging that strengthens on a higher-sensitivity retest",
+        "bucket": 0,
+        "why": "That is a forging lap — shallow-angled and oxide-filled, so it under-indicates. Relevant, and a reminder that weak does not mean harmless."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "Before use, a DC electromagnetic yoke is performance-checked by demonstrating that it can:",
+      "options": [
+        "Deflect a field indicator held six inches from its poles",
+        "Lift a 10-lb steel weight at the pole spacing to be used",
+        "Lift a 40-lb steel weight at the pole spacing to be used",
+        "Hold a QQI shim firmly against the part surface"
+      ],
+      "correct": 2,
+      "explanation": "Lift checks prove magnetizing capability with a dead weight: AC yokes must lift at least 10 lb, while DC and permanent-magnet yokes must lift at least 40 lb at the pole spacing to be used. The 10-lb value is the AC requirement — a common exam trap."
+    },
+    {
+      "question": "A settling test on a fluorescent wet bath should show a particle volume in the range of:",
+      "options": [
+        "0.1 to 0.4 mL per 100 mL of vehicle",
+        "1.2 to 2.4 mL per 100 mL of vehicle",
+        "5 to 10 mL per 100 mL of vehicle",
+        "30 to 60 mL per 100 mL of vehicle"
+      ],
+      "correct": 0,
+      "explanation": "Fluorescent baths run 0.1–0.4 mL per 100 mL in the pear-shaped centrifuge tube; the higher 1.2–2.4 mL range belongs to visible (nonfluorescent) particles, which need more material to form a visible buildup."
+    },
+    {
+      "question": "A broad, fuzzy, weakly held particle accumulation that re-forms in the same place with the same character after the surface is wiped and the part is remagnetized most likely indicates:",
+      "options": [
+        "A false indication caused by surface roughness",
+        "A discontinuity lying below the surface",
+        "An open crack breaking the surface",
+        "Over-magnetization of the part"
+      ],
+      "correct": 1,
+      "explanation": "Repeatability proves a real leakage field, and the diffuse, weak character is the signature of depth — flux leaking from a near-surface discontinuity spreads before it reaches the surface. An open surface crack would print sharp and tight; mechanically held particles would not re-form identically."
+    },
+    {
+      "question": "During a bench inspection, particles form a uniform band ringing a shaft exactly where the diameter steps down. The correct interpretation is:",
+      "options": [
+        "Relevant — record it and evaluate against acceptance criteria",
+        "False — the bath pooled at the shoulder by gravity",
+        "Relevant but acceptable, because the band is symmetric",
+        "Nonrelevant — a leakage field created by the part's geometry"
+      ],
+      "correct": 3,
+      "explanation": "A sharp section change forces flux out of the part, so a real leakage field forms — but its source is the drawing, not a discontinuity. That is the definition of a nonrelevant indication: it repeats on reprocessing and sits exactly where geometry dictates."
+    },
+    {
+      "question": "Many specifications prohibit prod magnetization on finished surfaces and aerospace hardware primarily because:",
+      "options": [
+        "Prods cannot generate enough magnetizing force for heavy sections",
+        "Arc strikes and copper penetration at the contact points can damage the part",
+        "Prods produce only longitudinal fields, which miss transverse cracks",
+        "The prod technique works only with fluorescent particles"
+      ],
+      "correct": 1,
+      "explanation": "Prods pass current through the part itself, and poor contact can draw an arc that locally damages the surface or deposits copper from the electrode tips — unacceptable on finished or flight hardware. Prods actually deliver strong circular fields and work readily with dry visible powder."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Topical Outline §2.5.2 (MT survey: equipment and inspection materials, test results interpretation, applications)",
+    "ASTM E709, Standard Guide for Magnetic Particle Testing",
+    "ASTM E1444/E1444M, Standard Practice for Magnetic Particle Testing",
+    "ASME Boiler and Pressure Vessel Code, Section V, Article 7, Magnetic Particle Examination"
+  ]
+}

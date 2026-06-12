@@ -1,0 +1,194 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="clbglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="clbglowR" filterUnits="userSpaceOnUse" x="86" y="107" width="324" height="213">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="clbsteel" x1="0" y1="156" x2="0" y2="184" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".35" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="clbbeamG" gradientUnits="userSpaceOnUse" x1="256" y1="175" x2="356" y2="196">
+      <stop offset="0" stop-color="#ffc24b" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#ffc24b" stop-opacity=".07"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== survey grid (plan-view texture) ===== -->
+  <path stroke="#8fb6e0" stroke-width="1" opacity=".11" fill="none" d="
+    M56 62 H64 M60 58 V66 M136 62 H144 M140 58 V66 M216 62 H224 M220 58 V66 M296 62 H304 M300 58 V66 M376 62 H384 M380 58 V66 M456 62 H464 M460 58 V66 M536 62 H544 M540 58 V66
+    M56 132 H64 M60 128 V136 M136 132 H144 M140 128 V136 M216 132 H224 M220 128 V136 M296 132 H304 M300 128 V136 M376 132 H384 M380 128 V136 M456 132 H464 M460 128 V136 M536 132 H544 M540 128 V136
+    M56 202 H64 M60 198 V206 M136 202 H144 M140 198 V206 M216 202 H224 M220 198 V206 M296 202 H304 M300 198 V206 M376 202 H384 M380 198 V206 M456 202 H464 M460 198 V206 M536 202 H544 M540 198 V206
+    M56 272 H64 M60 268 V276 M216 272 H224 M220 268 V276 M296 272 H304 M300 268 V276 M376 272 H384 M380 268 V276 M456 272 H464 M460 268 V276 M536 272 H544 M540 268 V276"/>
+
+  <!-- ===== yard furniture ===== -->
+  <g opacity=".9">
+    <rect x="26" y="42" width="64" height="30" rx="2" fill="#14304f" fill-opacity=".25" stroke="#8fb6e0" stroke-opacity=".25" stroke-width="1"/>
+    <path d="M47 42 V72 M68 42 V72" stroke="#8fb6e0" stroke-opacity=".18" stroke-width="1"/>
+    <rect x="478" y="252" width="86" height="40" rx="2" fill="#14304f" fill-opacity=".25" stroke="#8fb6e0" stroke-opacity=".25" stroke-width="1"/>
+    <path d="M478 252 L564 292 M564 252 L478 292" stroke="#8fb6e0" stroke-opacity=".12" stroke-width="1"/>
+  </g>
+  <!-- north arrow -->
+  <g opacity=".55">
+    <path d="M566 52 V32" stroke="#9fe6ff" stroke-width="1.2" fill="none"/>
+    <path d="M566 28 L562.5 37 L569.5 37 Z" fill="#9fe6ff"/>
+    <text x="572" y="40" font-size="11" fill="#9fe6ff">N</text>
+  </g>
+
+  <!-- ===== pipe with weld (shot target) ===== -->
+  <g>
+    <rect x="300" y="196" width="132" height="20" fill="#0e2848" opacity=".85"/>
+    <path d="M300 196 H432 M300 216 H432" stroke="#8fb6e0" stroke-width="1.5" opacity=".5" fill="none"/>
+    <path d="M302 200 H430" stroke="#8fb6e0" stroke-width="1" opacity=".15" fill="none"/>
+    <path d="M300 206 H432" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="8 6" opacity=".28" fill="none"/>
+    <path d="M432 196 V216" stroke="#8fb6e0" stroke-width="1.5" opacity=".5" fill="none"/>
+    <path d="M300 196 q-4 5 0 10 q4 5 0 10" stroke="#8fb6e0" stroke-width="1.2" opacity=".45" fill="none"/>
+    <path d="M352 196.5 V215.5" stroke="#7fd8ff" stroke-width="1.8" opacity=".9" fill="none"/>
+    <path d="M352 218 V224" stroke="#5fe0ff" stroke-width="1" opacity=".4" fill="none"/>
+    <text x="352" y="234" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".7">WELD</text>
+  </g>
+
+  <!-- ===== clbOpen: omnidirectional rays + 110 m boundary ===== -->
+  <g id="clbOpen" opacity="0">
+    <g stroke="#ffc24b" stroke-width="1.1" stroke-dasharray="6 7" opacity=".34" fill="none">
+      <path d="M264 170 L364 170"/>
+      <path d="M262.2 179.2 L337.9 210.6"/>
+      <path d="M257 187 L327.7 257.7"/>
+      <path d="M249.2 192.2 L280.6 268"/>
+      <path d="M240 194 L240 294"/>
+      <path d="M230.8 192.2 L199.4 268"/>
+      <path d="M223 187 L152.3 257.7"/>
+      <path d="M217.8 179.2 L142.1 210.6"/>
+      <path d="M216 170 L116 170"/>
+      <path d="M217.8 160.8 L142.1 129.4"/>
+      <path d="M223 153 L152.3 82.3"/>
+      <path d="M230.8 147.8 L199.4 72"/>
+      <path d="M240 146 L240 46"/>
+      <path d="M249.2 147.8 L280.6 72"/>
+      <path d="M257 153 L327.7 82.3"/>
+      <path d="M262.2 160.8 L337.9 129.4"/>
+    </g>
+    <circle cx="240" cy="170" r="130" fill="none" stroke="#7fd8ff" stroke-width="1.6" stroke-dasharray="7 6" opacity=".8"/>
+    <path d="M251.1 153.4 L312.3 62" stroke="#5fe0ff" stroke-width="1" opacity=".75" fill="none"/>
+    <path d="M312.3 62 L310.9 69.5 L305.9 66.1 Z" fill="#5fe0ff" opacity=".85"/>
+    <text x="318" y="54" font-size="13" fill="#9fe6ff">110 m</text>
+    <path d="M371 170 H377" stroke="#8fb6e0" stroke-width="1" opacity=".6" fill="none"/>
+    <rect x="378" y="160.5" width="58" height="19" rx="4" fill="#0a1c33" stroke="#8fb6e0" stroke-opacity=".5" stroke-width="1"/>
+    <text x="407" y="174" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85">2 mR/h</text>
+  </g>
+
+  <!-- ===== exposure device + crank stub + source (static) ===== -->
+  <g>
+    <path d="M180 170 C168 170 162 176 154.5 184" stroke="#8fb6e0" stroke-width="1.5" opacity=".8" fill="none"/>
+    <circle cx="148" cy="188" r="6.5" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M141.5 188 H154.5 M148 181.5 V194.5" stroke="#8fb6e0" stroke-width="1" opacity=".7" fill="none"/>
+    <circle cx="152.6" cy="183.4" r="2" fill="#8fb6e0"/>
+    <rect x="180" y="156" width="44" height="28" rx="6" fill="url(#clbsteel)" stroke="#8fb6e0" stroke-width="1.6"/>
+    <path d="M188 158 V182" stroke="#8fb6e0" stroke-width="1" opacity=".35" fill="none"/>
+    <path d="M202 162.5 L209 175 L195 175 Z" stroke="#ffc24b" stroke-width="1.2" fill="none" opacity=".85"/>
+    <circle cx="202" cy="171" r="1.3" fill="#ffc24b" opacity=".85"/>
+    <path d="M224 167.6 H235 M224 172.4 H235" stroke="#8fb6e0" stroke-width="1.2" opacity=".8" fill="none"/>
+    <rect x="234" y="165.5" width="5" height="9" rx="1" fill="#14304f" stroke="#8fb6e0" stroke-width="1"/>
+    <circle cx="240" cy="170" r="3.4" fill="#ffc24b" filter="url(#clbglowR)"/>
+    <circle cx="240" cy="170" r="6.2" fill="none" stroke="#ff9b4b" stroke-width="1.2" opacity=".8"/>
+  </g>
+
+  <!-- ===== clbCol: collimator snaps on, rays dim, narrow cone ===== -->
+  <g id="clbCol" opacity="0">
+    <g stroke="#0a1c33" stroke-width="3" stroke-linecap="round" opacity=".62" fill="none">
+      <path d="M264 170 L364 170"/>
+      <path d="M262.2 179.2 L337.9 210.6"/>
+      <path d="M257 187 L327.7 257.7"/>
+      <path d="M249.2 192.2 L280.6 268"/>
+      <path d="M240 194 L240 294"/>
+      <path d="M230.8 192.2 L199.4 268"/>
+      <path d="M223 187 L152.3 257.7"/>
+      <path d="M217.8 179.2 L142.1 210.6"/>
+      <path d="M216 170 L116 170"/>
+      <path d="M217.8 160.8 L142.1 129.4"/>
+      <path d="M223 153 L152.3 82.3"/>
+      <path d="M230.8 147.8 L199.4 72"/>
+      <path d="M240 146 L240 46"/>
+      <path d="M249.2 147.8 L280.6 72"/>
+      <path d="M257 153 L327.7 82.3"/>
+      <path d="M262.2 160.8 L337.9 129.4"/>
+    </g>
+    <path d="M255.6 177.1 L348.3 218.9 L356.5 193.3 L256.8 173.4 Z" fill="url(#clbbeamG)"/>
+    <path d="M255.6 177.1 L348.3 218.9 M256.8 173.4 L356.5 193.3" stroke="#ffc24b" stroke-width=".9" opacity=".35" fill="none"/>
+    <ellipse cx="352.4" cy="206.1" rx="13" ry="5.5" transform="rotate(17.8 352.4 206.1)" fill="#ffc24b" fill-opacity=".18" stroke="#ffc24b" stroke-width="1.2" opacity=".85"/>
+    <path d="M251.93 180.66 A16 16 0 1 1 255.91 168.27 L247.95 169.14 A8 8 0 1 0 245.96 175.33 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="208" y="120" width="64" height="30" rx="4" fill="#0a1c33" stroke="#ffc24b" stroke-opacity=".6" stroke-width="1"/>
+    <text x="240" y="133" text-anchor="middle" font-size="11" fill="#ffc24b">RATE ÷10</text>
+    <text x="240" y="146" text-anchor="middle" font-size="11" fill="#ffc24b" opacity=".7">(typ.)</text>
+  </g>
+  <path id="clbBeam" d="M256.2 175.2 L352.4 206.1" stroke="#ffc24b" stroke-width="2" stroke-linecap="round" fill="none" filter="url(#clbglowR)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== clbShrink: boundary collapses to solid 35 m circle ===== -->
+  <g id="clbShrink" opacity="0">
+    <circle cx="240" cy="170" r="62" fill="#5fe0ff" fill-opacity=".05" stroke="#5fe0ff" stroke-width="2.2" filter="url(#clbglowC)"/>
+    <g stroke="#5fe0ff" stroke-width="1.6" opacity=".8" fill="none">
+      <path d="M138 190.3 L165.5 184.8"/>
+      <path d="M326.4 112.2 L303.2 127.7"/>
+      <path d="M260.3 272 L254.8 244.6"/>
+      <path d="M368 170 H317"/>
+    </g>
+    <g fill="#5fe0ff" opacity=".8">
+      <path d="M172.4 183.4 L166.2 188.2 L164.8 181.4 Z"/>
+      <path d="M297.4 131.6 L301.3 124.8 L305.1 130.6 Z"/>
+      <path d="M253.4 237.7 L258.2 243.9 L251.4 245.3 Z"/>
+      <path d="M310 170 L317 166.4 L317 173.6 Z"/>
+    </g>
+    <text x="179" y="126" text-anchor="end" font-size="13" fill="#9fe6ff">35 m</text>
+    <path d="M182 128.5 L188.5 135.5" stroke="#5fe0ff" stroke-width="1" opacity=".6" fill="none"/>
+    <rect x="211" y="86.5" width="58" height="19" rx="4" fill="#0a1c33" stroke="#5fe0ff" stroke-width="1.2"/>
+    <text x="240" y="100" text-anchor="middle" font-size="11" fill="#9fe6ff">2 mR/h</text>
+    <path d="M240 108 V106" stroke="#5fe0ff" stroke-width="1" opacity=".6" fill="none"/>
+  </g>
+
+  <!-- ===== clbMeter: survey meter + rope stanchions on the 35 m line ===== -->
+  <g id="clbMeter" opacity="0">
+    <path d="M196 215 L164 233" stroke="#5fe0ff" stroke-width="1" opacity=".45" fill="none"/>
+    <g transform="translate(-8,0)">
+      <rect x="146" y="227" width="22" height="7" rx="3.5" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".8"/>
+      <rect x="134" y="234" width="46" height="34" rx="4" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+      <path d="M143 263 A14 14 0 0 1 171 263" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".85"/>
+      <path d="M165 251.5 A14 14 0 0 1 169.7 257.1" fill="none" stroke="#ff6b6b" stroke-width="2.5" opacity=".85"/>
+      <g stroke="#8fb6e0" stroke-width="1" opacity=".7" fill="none">
+        <path d="M144.9 256 L147.5 257.5"/>
+        <path d="M150 250.9 L151.5 253.5"/>
+        <path d="M157 249 L157 252"/>
+        <path d="M164 250.9 L162.5 253.5"/>
+        <path d="M169.1 256 L166.5 257.5"/>
+      </g>
+      <path d="M157 263 L151.7 251.7" stroke="#5fe0ff" stroke-width="1.8" stroke-linecap="round" filter="url(#clbglowR)" fill="none"/>
+      <circle cx="157" cy="263" r="1.8" fill="#5fe0ff"/>
+      <text x="157" y="281" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".9">2 mR/h</text>
+    </g>
+    <g>
+      <path d="M192 246 V268 M216 246 V268" stroke="#8fb6e0" stroke-width="2.2" fill="none"/>
+      <path d="M188 268 H196 M212 268 H220" stroke="#8fb6e0" stroke-width="1.2" opacity=".7" fill="none"/>
+      <circle cx="192" cy="245" r="1.8" fill="#ffc24b"/>
+      <circle cx="216" cy="245" r="1.8" fill="#ffc24b"/>
+      <path d="M192 250 Q204 261 216 250" stroke="#ffc24b" stroke-width="1.6" fill="none"/>
+      <path d="M201 257 L207 257 L204 263 Z" fill="#ffc24b" opacity=".9"/>
+    </g>
+    <g fill="#ffc24b" opacity=".95">
+      <circle cx="302" cy="170" r="2.4"/>
+      <circle cx="283.8" cy="213.8" r="2.4"/>
+      <circle cx="240" cy="232" r="2.4"/>
+      <circle cx="196.2" cy="213.8" r="2.4"/>
+      <circle cx="178" cy="170" r="2.4"/>
+      <circle cx="196.2" cy="126.2" r="2.4"/>
+      <circle cx="240" cy="108" r="2.4"/>
+      <circle cx="283.8" cy="126.2" r="2.4"/>
+    </g>
+  </g>
+
+  <text x="16" y="24" font-size="11" fill="#9fe6ff" opacity=".7">PLAN VIEW — FAB YARD</text>
+
+  <circle id="clbPing" cx="240" cy="170" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#clbglowR)"/>
+  <circle id="clbPingMeter" cx="149" cy="257" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#clbglowR)"/>
+</svg>

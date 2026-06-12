@@ -1,0 +1,179 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="dmrGlowC" filterUnits="userSpaceOnUse" x="-58" y="-58" width="716" height="456">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="dmrGlowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="dmrSoft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+    </filter>
+    <linearGradient id="dmrIllumG" x1="0" y1="30" x2="0" y2="188" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#9fd0f2"/><stop offset=".5" stop-color="#5b97d4"/><stop offset="1" stop-color="#3a72ad"/>
+    </linearGradient>
+    <radialGradient id="dmrPaleG" cx="443" cy="112" r="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#eef8ff"/><stop offset=".7" stop-color="#d4e8f8"/><stop offset="1" stop-color="#bfd9ee"/>
+    </radialGradient>
+    <linearGradient id="dmrDensG" x1="48" y1="0" x2="280" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#02080f"/><stop offset=".25" stop-color="#0e2440"/><stop offset=".5" stop-color="#46719c"/>
+      <stop offset=".75" stop-color="#9cc3e2"/><stop offset="1" stop-color="#e4f2fc"/>
+    </linearGradient>
+    <linearGradient id="dmrScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+    <clipPath id="dmrClipL"><rect x="50" y="48" width="214" height="128" rx="4"/></clipPath>
+    <clipPath id="dmrClipR"><rect x="336" y="48" width="214" height="128" rx="4"/></clipPath>
+  </defs>
+
+  <!-- ===== caption ===== -->
+  <text x="36" y="15" font-size="12" fill="#9fe6ff" opacity=".7" letter-spacing="1">READING ROOM // FILM DENSITY</text>
+
+  <!-- ===== FILM VIEWER (illuminator strip) ===== -->
+  <rect x="28" y="24" width="544" height="170" rx="18" fill="#6fb2e8" opacity=".22" filter="url(#dmrSoft)"/>
+  <rect x="34" y="30" width="532" height="158" rx="14" fill="url(#dmrIllumG)" opacity=".5"/>
+  <rect x="34" y="30" width="532" height="158" rx="14" fill="none" stroke="#dff2ff" stroke-width="1" opacity=".3"/>
+  <rect x="34" y="30" width="532" height="158" rx="14" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".55"/>
+  <circle cx="554" cy="182" r="2.5" fill="#5fe0ff" opacity=".9" filter="url(#dmrGlowR)"/>
+  <!-- hanger clips (empty viewer awaits film) -->
+  <g fill="#0e2848" stroke="#8fb6e0" stroke-width="1">
+    <rect x="95" y="42" width="18" height="10" rx="2"/>
+    <rect x="201" y="42" width="18" height="10" rx="2"/>
+    <rect x="381" y="42" width="18" height="10" rx="2"/>
+    <rect x="487" y="42" width="18" height="10" rx="2"/>
+  </g>
+
+  <!-- ===== TWO FILM FRAMES on the viewer ===== -->
+  <g id="dmrFrames" opacity="0">
+    <!-- film sheets (unread) -->
+    <rect x="50" y="48" width="214" height="128" rx="4" fill="#132b4a" opacity=".78"/>
+    <rect x="336" y="48" width="214" height="128" rx="4" fill="#132b4a" opacity=".78"/>
+    <rect x="50" y="48" width="214" height="128" rx="4" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".8"/>
+    <rect x="336" y="48" width="214" height="128" rx="4" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".8"/>
+  </g>
+
+  <!-- ===== LEFT FILM: TOO DARK (floods near-black, weld barely visible) ===== -->
+  <g id="dmrDark" opacity="0">
+    <g clip-path="url(#dmrClipL)">
+      <rect x="50" y="48" width="214" height="128" fill="#02080f" opacity=".96"/>
+      <!-- weld band, barely discernible -->
+      <path d="M50 101 C85 96, 120 103, 157 99 S230 101, 264 99 L264 127 C230 132, 195 125, 157 129 S85 126, 50 129 Z" fill="#0e2240" opacity=".9"/>
+      <path d="M50 101 C85 96, 120 103, 157 99 S230 101, 264 99" fill="none" stroke="#1a3a5e" stroke-width="1.4" opacity=".9"/>
+      <path d="M50 129 C85 126, 120 125, 157 129 S230 132, 264 127" fill="none" stroke="#1a3a5e" stroke-width="1.4" opacity=".9"/>
+      <!-- faint mottle + ghost IQI + dim lead ID -->
+      <ellipse cx="120" cy="80" rx="26" ry="10" fill="#061224" opacity=".7"/>
+      <ellipse cx="205" cy="152" rx="22" ry="8" fill="#061224" opacity=".6"/>
+      <rect x="70" y="146" width="34" height="11" rx="1.5" fill="none" stroke="#122a44" stroke-width="1" opacity=".9"/>
+      <text x="252" y="64" text-anchor="end" font-size="10" fill="#1c3a5c" opacity=".95">B-7</text>
+    </g>
+    <rect x="50" y="48" width="214" height="128" rx="4" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".75"/>
+    <g>
+      <rect x="121" y="56" width="72" height="20" rx="10" fill="#081427" opacity=".88"/>
+      <rect x="121" y="56" width="72" height="20" rx="10" fill="none" stroke="#ffc24b" stroke-width="1.2"/>
+      <text x="157" y="70" text-anchor="middle" font-size="11" fill="#ffc24b">TOO DARK</text>
+    </g>
+  </g>
+
+  <!-- causes under left film -->
+  <g id="dmrDarkCauses" opacity="0" font-size="11">
+    <path d="M105 176 V196 M209 176 V196" stroke="#ff9b4b" stroke-width="1" opacity=".45" fill="none"/>
+    <rect x="52" y="200" width="100" height="20" rx="6" fill="#0b1c36" opacity=".9"/>
+    <rect x="52" y="200" width="100" height="20" rx="6" fill="none" stroke="#ff9b4b" stroke-width="1.2" opacity=".9"/>
+    <text x="102" y="214" text-anchor="middle" fill="#ffc24b">OVEREXPOSURE</text>
+    <rect x="158" y="200" width="104" height="20" rx="6" fill="#0b1c36" opacity=".9"/>
+    <rect x="158" y="200" width="104" height="20" rx="6" fill="none" stroke="#ff9b4b" stroke-width="1.2" opacity=".9"/>
+    <text x="210" y="214" text-anchor="middle" fill="#ffc24b">DEVELOPER HOT</text>
+  </g>
+
+  <!-- ===== RIGHT FILM: TOO LIGHT (thin, pale, washed-out) ===== -->
+  <g id="dmrLight" opacity="0">
+    <g clip-path="url(#dmrClipR)">
+      <rect x="336" y="48" width="214" height="128" fill="url(#dmrPaleG)" opacity=".92"/>
+      <!-- washed-out weld band, low contrast -->
+      <path d="M336 101 C371 96, 406 103, 443 99 S516 101, 550 99 L550 127 C516 132, 481 125, 443 129 S371 126, 336 129 Z" fill="#f4fafe" opacity=".8"/>
+      <path d="M336 101 C371 96, 406 103, 443 99 S516 101, 550 99" fill="none" stroke="#aecde8" stroke-width="1.2" opacity=".75"/>
+      <path d="M336 129 C371 126, 406 125, 443 129 S516 132, 550 127" fill="none" stroke="#aecde8" stroke-width="1.2" opacity=".75"/>
+      <!-- IQI outline only (sensitivity lost) + film ID -->
+      <rect x="356" y="146" width="34" height="11" rx="1.5" fill="#e9f5fd" opacity=".85"/>
+      <rect x="356" y="146" width="34" height="11" rx="1.5" fill="none" stroke="#a8c9e4" stroke-width="1" opacity=".9"/>
+      <text x="538" y="64" text-anchor="end" font-size="10" fill="#8fb2d4" opacity=".95">B-7</text>
+    </g>
+    <rect x="336" y="48" width="214" height="128" rx="4" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".85"/>
+    <g>
+      <rect x="404" y="56" width="78" height="20" rx="10" fill="#081427" opacity=".88"/>
+      <rect x="404" y="56" width="78" height="20" rx="10" fill="none" stroke="#ffc24b" stroke-width="1.2"/>
+      <text x="443" y="70" text-anchor="middle" font-size="11" fill="#ffc24b">TOO LIGHT</text>
+    </g>
+  </g>
+
+  <!-- ===== MIRROR arrow between films (draw-on) ===== -->
+  <path id="dmrMirror" d="M278 112 H322 M312 103 L322 112 L312 121 M288 103 L278 112 L288 121" fill="none" stroke="#5fe0ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#dmrGlowR)"/>
+
+  <!-- mirrored causes under right film -->
+  <g id="dmrMirrorChips" opacity="0" font-size="11">
+    <path d="M391 176 V196 M495 176 V196" stroke="#5fe0ff" stroke-width="1" opacity=".45" fill="none"/>
+    <rect x="338" y="200" width="104" height="20" rx="6" fill="#0b1c36" opacity=".9"/>
+    <rect x="338" y="200" width="104" height="20" rx="6" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".9"/>
+    <text x="390" y="214" text-anchor="middle" fill="#9fe6ff">UNDEREXPOSURE</text>
+    <rect x="448" y="200" width="108" height="20" rx="6" fill="#0b1c36" opacity=".9"/>
+    <rect x="448" y="200" width="108" height="20" rx="6" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".9"/>
+    <text x="502" y="214" text-anchor="middle" fill="#9fe6ff">DEVELOPER COLD</text>
+  </g>
+
+  <!-- ===== static density accept band ===== -->
+  <g>
+    <rect x="48" y="240" width="232" height="14" rx="3" fill="url(#dmrDensG)"/>
+    <rect x="48" y="240" width="232" height="14" rx="3" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".5"/>
+    <path d="M118 238 V256 M208 238 V256" stroke="#5fe0ff" stroke-width="1.2" opacity=".9" fill="none"/>
+    <path d="M118 259 H208" stroke="#5fe0ff" stroke-width="2" opacity=".9" fill="none" filter="url(#dmrGlowC)"/>
+    <text x="163" y="274" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85">ACCEPT: D 2.0–4.0</text>
+  </g>
+
+  <!-- ===== Ir-192 decay inset (bottom-right) ===== -->
+  <g id="dmrDecay" opacity="0">
+    <rect x="300" y="226" width="266" height="72" rx="8" fill="#081628" opacity=".92"/>
+    <rect x="300" y="226" width="266" height="72" rx="8" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".5"/>
+    <text x="312" y="240" font-size="11" fill="#9fe6ff" opacity=".85">IR-192 ACTIVITY</text>
+    <path d="M314 246 V288 H556" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".7"/>
+    <g stroke="#5fe0ff" stroke-width="1" stroke-dasharray="3 3" opacity=".45" fill="none">
+      <path d="M314 268 H388"/>
+      <path d="M388 268 V288"/>
+      <path d="M458 278 V288"/>
+      <path d="M528 283 V288"/>
+    </g>
+    <path d="M318 248 L335.5 254.4 L353 259.7 L370.5 264.2 L388 268 L423 273.9 L458 278 L493 280.9 L528 283 L552 284.1" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" filter="url(#dmrGlowR)"/>
+    <g fill="#7fd8ff">
+      <circle cx="318" cy="248" r="2.5"/>
+      <circle cx="388" cy="268" r="2.5"/>
+      <circle cx="458" cy="278" r="2.5"/>
+      <circle cx="528" cy="283" r="2.5"/>
+    </g>
+    <g stroke="#8fb6e0" stroke-width="1" opacity=".7">
+      <path d="M318 288 V291 M388 288 V291 M458 288 V291 M528 288 V291"/>
+    </g>
+    <g font-size="10" fill="#9fe6ff" opacity=".75" text-anchor="middle">
+      <text x="318" y="296">0</text>
+      <text x="388" y="296">74</text>
+      <text x="458" y="296">148</text>
+      <text x="528" y="296">222 D</text>
+    </g>
+  </g>
+
+  <!-- half-life chip + ping -->
+  <g id="dmrHalfChip" opacity="0">
+    <rect x="398" y="248" width="98" height="18" rx="9" fill="#081427" opacity=".9"/>
+    <rect x="398" y="248" width="98" height="18" rx="9" fill="none" stroke="#ffc24b" stroke-width="1.2"/>
+    <text x="447" y="261" text-anchor="middle" font-size="11" fill="#ffc24b">x 1/2 @ ~74 D</text>
+    <path d="M398 257 L389 266" stroke="#ffc24b" stroke-width="1" opacity=".6" fill="none"/>
+  </g>
+  <circle id="dmrPing" cx="388" cy="268" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#dmrGlowR)"/>
+
+  <!-- ===== scan group ===== -->
+  <g id="dmrscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#dmrScanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#dmrGlowC)" opacity=".9"/>
+  </g>
+</svg>

@@ -1,0 +1,134 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="csglow" filterUnits="userSpaceOnUse" x="-57" y="-57" width="584" height="454">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="csglowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="cssteelG" x1="0" y1="186" x2="0" y2="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#33639a"/><stop offset=".4" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="csscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== header labels ===== -->
+  <text x="40" y="36" font-size="12" fill="#9fe6ff" opacity=".75">COIL SHOT — SECTION VIEW</text>
+  <g opacity=".85">
+    <text x="392" y="37" font-size="11" fill="#ffc24b">CURRENT</text>
+    <circle cx="452" cy="33" r="5.5" fill="none" stroke="#ffc24b" stroke-width="1.3"/>
+    <circle cx="452" cy="33" r="1.8" fill="#ffc24b"/>
+    <text x="462" y="37" font-size="11" fill="#ffc24b">OUT</text>
+    <circle cx="500" cy="33" r="5.5" fill="none" stroke="#ffc24b" stroke-width="1.3"/>
+    <path d="M496.4 29.4 L503.6 36.6 M503.6 29.4 L496.4 36.6" stroke="#ffc24b" stroke-width="1.4"/>
+    <text x="510" y="37" font-size="11" fill="#ffc24b">IN</text>
+  </g>
+
+  <!-- ===== turn connector ellipses (wire path seen edge-on, behind everything) ===== -->
+  <g fill="none" stroke="#ff9b4b" stroke-width="2.2" opacity=".38">
+    <ellipse cx="190" cy="168" rx="9" ry="76"/>
+    <ellipse cx="245" cy="168" rx="9" ry="76"/>
+    <ellipse cx="300" cy="168" rx="9" ry="76"/>
+    <ellipse cx="355" cy="168" rx="9" ry="76"/>
+    <ellipse cx="410" cy="168" rx="9" ry="76"/>
+  </g>
+  <!-- circulation arrows riding the front (right) edge of each turn: current flows downward -->
+  <g fill="#ff9b4b" opacity=".8">
+    <polygon points="195.3,132.5 201.3,132.5 198.3,141.5"/>
+    <polygon points="250.3,132.5 256.3,132.5 253.3,141.5"/>
+    <polygon points="305.3,132.5 311.3,132.5 308.3,141.5"/>
+    <polygon points="360.3,132.5 366.3,132.5 363.3,141.5"/>
+    <polygon points="415.3,132.5 421.3,132.5 418.3,141.5"/>
+  </g>
+  <text x="207" y="141" font-size="11" fill="#ff9b4b" opacity=".8">I</text>
+
+  <!-- ===== coil inner wall (bore liner) ===== -->
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".5">
+    <line x1="176" y1="106" x2="424" y2="106"/>
+    <line x1="176" y1="230" x2="424" y2="230"/>
+  </g>
+
+  <!-- ===== faint longitudinal flux through EMPTY bore ===== -->
+  <g stroke="#5fe0ff" stroke-width="1.4" fill="none" opacity=".34">
+    <line x1="186" y1="126" x2="392" y2="126"/>
+    <line x1="186" y1="147" x2="392" y2="147"/>
+    <line x1="186" y1="189" x2="392" y2="189"/>
+    <line x1="186" y1="210" x2="392" y2="210"/>
+  </g>
+  <g fill="#5fe0ff" opacity=".34">
+    <polygon points="392,121.5 392,130.5 400,126"/>
+    <polygon points="392,142.5 392,151.5 400,147"/>
+    <polygon points="392,184.5 392,193.5 400,189"/>
+    <polygon points="392,205.5 392,214.5 400,210"/>
+  </g>
+  <text x="118" y="130" font-size="11" fill="#5fe0ff" opacity=".55">FLUX</text>
+
+  <!-- ===== coil turns in cross-section: top row current OUT, bottom row current IN ===== -->
+  <g>
+    <g fill="#142e4f" stroke="#ff9b4b" stroke-width="2">
+      <circle cx="190" cy="92" r="14"/><circle cx="245" cy="92" r="14"/><circle cx="300" cy="92" r="14"/><circle cx="355" cy="92" r="14"/><circle cx="410" cy="92" r="14"/>
+      <circle cx="190" cy="244" r="14"/><circle cx="245" cy="244" r="14"/><circle cx="300" cy="244" r="14"/><circle cx="355" cy="244" r="14"/><circle cx="410" cy="244" r="14"/>
+    </g>
+    <!-- top: dots (out of page) -->
+    <g fill="#ffc24b">
+      <circle cx="190" cy="92" r="3"/><circle cx="245" cy="92" r="3"/><circle cx="300" cy="92" r="3"/><circle cx="355" cy="92" r="3"/><circle cx="410" cy="92" r="3"/>
+    </g>
+    <!-- bottom: crosses (into page) -->
+    <g stroke="#ffc24b" stroke-width="1.8">
+      <path d="M185 239 L195 249 M195 239 L185 249"/>
+      <path d="M240 239 L250 249 M250 239 L240 249"/>
+      <path d="M295 239 L305 249 M305 239 L295 249"/>
+      <path d="M350 239 L360 249 M360 239 L350 249"/>
+      <path d="M405 239 L415 249 M415 239 L405 249"/>
+    </g>
+  </g>
+  <text x="190" y="66" font-size="11" fill="#ff9b4b" opacity=".8" text-anchor="start">5-TURN COIL</text>
+
+  <!-- ===== STEEL SHAFT (reveal: slides in, rests on lower inside wall) ===== -->
+  <g id="cspart" opacity="0">
+    <path d="M100 186 H493 V230 H100 A11 22 0 0 1 100 186 Z" fill="url(#cssteelG)" stroke="#8fb6e0" stroke-width="1.6"/>
+    <ellipse cx="493" cy="208" rx="10" ry="22" fill="#2c5784" stroke="#8fb6e0" stroke-width="1.6"/>
+    <line x1="106" y1="191.5" x2="482" y2="191.5" stroke="#cfe6ff" stroke-width="1.4" opacity=".28"/>
+  </g>
+  <g id="cspartLbl" font-size="11" opacity="0">
+    <text x="84" y="270" fill="#9fe6ff" opacity=".85">STEEL SHAFT</text>
+    <path d="M125 260 L136 234" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+  </g>
+
+  <!-- ===== coil axis centerline (drafting, over part) ===== -->
+  <line x1="70" y1="168" x2="530" y2="168" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="12 5 3 5" opacity=".45"/>
+
+  <!-- ===== FLUX PULLED INTO THE PART (draw reveals) ===== -->
+  <g id="cschip" opacity="0">
+    <rect x="160" y="152" width="88" height="24" rx="6" fill="#0e2848" stroke="#5fe0ff" stroke-width="1" opacity=".95"/>
+    <text x="204" y="168" font-size="11" fill="#9fe6ff" text-anchor="middle">STEEL ≫ AIR</text>
+  </g>
+  <path id="cswisp1" d="M196 126 C230 130 250 144 262 168 C268 180 274 188 290 192 M290 192 l-9 -4.5 M290 192 l-8 4" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" fill="none" stroke="#5fe0ff" stroke-width="1.9" filter="url(#csglowS)"/>
+  <path id="cswisp2" d="M210 147 C244 152 266 162 278 184 C284 194 292 199 306 200 M306 200 l-9 -4.5 M306 200 l-8 4" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" fill="none" stroke="#5fe0ff" stroke-width="1.9" filter="url(#csglowS)"/>
+  <path id="csflux1" d="M106 192 H470 M470 192 l-9 -4.5 M470 192 l-9 4.5" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#csglow)"/>
+  <path id="csflux2" d="M106 200 H470 M470 200 l-9 -4.5 M470 200 l-9 4.5" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#csglow)"/>
+  <path id="csflux3" d="M106 208 H470 M320 208 l-9 -4.5 M320 208 l-9 4.5 M470 208 l-9 -4.5 M470 208 l-9 4.5" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#csglow)"/>
+  <path id="csflux4" d="M106 216 H470 M310 216 l-9 -4.5 M310 216 l-9 4.5 M470 216 l-9 -4.5 M470 216 l-9 4.5" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#csglow)"/>
+  <path id="csflux5" d="M106 224 H470 M300 224 l-9 -4.5 M300 224 l-9 4.5 M470 224 l-9 -4.5 M470 224 l-9 4.5" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#csglow)"/>
+  <!-- ===== AIR GAP / NO ELECTRICAL CONTACT (reveal) ===== -->
+  <g id="csgap" opacity="0">
+    <line x1="385" y1="115" x2="385" y2="177" stroke="#ffc24b" stroke-width="1.2"/>
+    <polygon points="381,117 389,117 385,108" fill="#ffc24b"/>
+    <polygon points="381,175 389,175 385,184" fill="#ffc24b"/>
+    <rect x="402" y="116" width="158" height="40" rx="6" fill="#0e2848" stroke="#ffc24b" stroke-width="1" opacity=".95"/>
+    <text x="410" y="132" font-size="11" fill="#ffc24b">AIR GAP</text>
+    <text x="410" y="148" font-size="11" fill="#9fe6ff">NO ELECTRICAL CONTACT</text>
+  </g>
+  <circle id="csgapPing" cx="385" cy="146" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#csglowS)"/>
+
+  <!-- ===== scan group ===== -->
+  <g id="csscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#csscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#csglow)" opacity=".9"/>
+  </g>
+</svg>

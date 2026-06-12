@@ -1,0 +1,182 @@
+{
+  "lessonId": "pt2-5-2",
+  "title": "Documentation of Inspection and Test",
+  "narrationScript": "When the developer comes off at postcleaning, the indication is gone forever. The record is the only thing that survives, so quality systems treat the report as the product of the examination. A complete record answers five questions. What was examined: part number, serial, drawing revision, material. How it was processed: procedure and revision, the E1417 classification, and the manufacturer and batch number of every material on the line. Under what conditions: the ultraviolet irradiance and ambient light you actually measured, with the meter and its calibration due date. What was found: each indication recorded as linear or rounded, located from a part datum, sized, and dispositioned. And who says so: a signature that traces to a current certification. Rejected parts carry a nonconformance number so the trail continues past your bench. Corrections never hide the original entry: one line through the error, the correct value, initials, and the date. Write every report expecting an auditor to walk each entry back to objective evidence, because one day one will.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "The Record Is the Product",
+      "body": "At the end of every PT job, postcleaning destroys the evidence. The developer film goes down the drain, the bleed-out with it, and the part carries no trace of the indication you evaluated an hour ago. The only thing that survives the examination is the record - which is why quality systems treat the report, not the glowing indication, as the product.\n\nThe record serves three audiences on three timescales. **Production** needs the disposition now: accept, reject, rework. **The quality system** needs objective evidence later, when a customer source inspector or third-party auditor pulls last quarter's reports. **Engineering and investigators** may need it years from now - a fleet crack campaign or a failure investigation begins by pulling every inspection record a serial number has ever generated. An entry that seems obvious today must still make sense to a stranger reading it in ten years.\n\nSNT-TC-1A puts reporting squarely in the Level II job description: a Level II is expected to interpret, evaluate, and **organize and report** the results of examinations. The shop rule is blunt and correct - if it is not written down, it did not happen."
+    },
+    {
+      "type": "text",
+      "heading": "What a Complete Record Contains",
+      "body": "A complete record lets a knowledgeable stranger reconstruct the examination - same process, same materials, same conditions - and reach the same conclusion. Codes set the floor. ASME Section V, Article 6, for example, requires each examination record to include, as a minimum: the **procedure identification and revision**; the **penetrant type** (fluorescent or visible); the **designation of each penetrant, remover, emulsifier, and developer** used; the **identity of the examiner** and, where the referencing code requires it, the certification level; a **map or record of indications**; the **material and thickness** examined; the **lighting equipment**; and the **date** of the examination.\n\nAerospace work to ASTM E1417 typically adds more: part number, serial or lot number, and drawing revision; the full materials classification - **Type, Method, Form, and sensitivity level** - with the **manufacturer and batch number** of every material on the line, each traceable to QPL-AMS-2644; the **measured** UV-A irradiance and ambient light with the meter identification; key process parameters such as dwell times and part temperature; quantity inspected, accepted, and rejected; and the acceptance criteria applied. None of this is busywork. Each field exists because someone, somewhere, once needed it and it was not there."
+    },
+    {
+      "type": "figure",
+      "figureId": "pt2-5-2-fig-a",
+      "caption": "A complete PT examination report answers five questions: what was examined, how, under what conditions, what was found, and who says so."
+    },
+    {
+      "type": "table",
+      "caption": "The five questions an audit-proof record answers - with the fields that answer them.",
+      "headers": ["Question", "Fields that answer it", "Example entries"],
+      "rows": [
+        ["What was examined?", "Part number, serial/lot, drawing and revision, material, area covered", "PN 7312-5, S/N 0147, Dwg D7312 Rev F, Ti-6Al-4V, 100% machined surfaces"],
+        ["How was it processed?", "Procedure and revision, practice and classification, material batches, dwell and temperature", "PT-OP-12 Rev C; E1417 Type I, Method D, Form a, Level 3; pen batch 19F22; 15 min at 68 °F"],
+        ["Under what conditions?", "Measured UV-A and ambient light, meter IDs, calibration due dates", "1,450 µW/cm² at the surface; 1.2 fc ambient; radiometer R-204, cal due 2026-09-15"],
+        ["What was found?", "Indication map: type, size, location from datum, disposition, NCR link", "One linear indication, 0.20 in., 1.3 in. from datum A - reject, NCR 26-0412"],
+        ["Who says so?", "Printed name, signature or stamp, certification level and expiration, date", "J. Rivera, Level II PT, stamp 47, cert exp 2027-03-31, 2026-06-09"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Recording Indications",
+      "body": "Record indications in the language the codes use. The minimum written record of a **rejectable** indication is its **type** - linear or rounded, where the usual code convention calls an indication linear when its length is more than three times its width - its **location**, and its **extent**: length for a linear indication, diameter for a rounded one, count and spacing for aligned or grouped indications. **Nonrejectable** indications are recorded as the referencing code or contract directs - many aerospace jobs require recording everything that was evaluated, not just what failed.\n\nLocation means dimensions from **part datums or permanent features** - \"1.3 in. from datum A along the flange face,\" never \"near the top.\" For weldments and large surfaces, an **indication map** - a sketch on a part outline with datum or grid references - is the cleanest record there is.\n\nSupplementary techniques preserve the indication itself: **photography** under the proper lighting, **tape transfer** - clear tape pressed over a dry-developed indication lifts a copy onto a record card - and **peelable developers** (special-application forms) that cure to a strippable film carrying the indication. Make transfers and photographs only after evaluation is complete, because lifting the film disturbs the very bleed-out you are recording.\n\nClose the loop on the hardware too. Accepted parts are marked or tagged per the procedure - and the marking method is itself controlled, since stamping or etching may be prohibited on fatigue-critical surfaces. Rejected parts are positively identified, segregated, and tied to a **nonconformance report number** so the paper trail continues past your bench."
+    },
+    {
+      "type": "figure",
+      "figureId": "pt2-5-2-fig-b",
+      "caption": "Traceability is a web: every entry on the signed report points outward to a record someone else can pull and verify."
+    },
+    {
+      "type": "text",
+      "heading": "Traceability: Every Entry Points to Evidence",
+      "body": "Traceability means no entry on the report stands alone - each one points to a record that can be pulled and checked. Three chains matter most:\n\n- **Materials.** Each batch number traces to the manufacturer's batch certification and, for E1417 work, to the QPL-AMS-2644 listing. When a manufacturer later reports a nonconforming batch, the batch numbers on examination reports are how the affected hardware is found.\n- **Instruments.** Every measured value names the instrument behind it and its calibration status: the radiometer behind the UV-A reading, the photometer behind the ambient check, the thermometer behind the bath temperature - each traceable through the calibration program.\n- **People.** The signature traces to a certification record maintained under the employer's written practice (SNT-TC-1A) or NAS 410 procedure: training and experience, examination results, current vision examination, certification expiration.\n\nThe fourth chain is the **process-control log**. E1417-style quality-assurance provisions generate dated records of their own: the system-performance check run with a known-defect standard each day the line is used, lighting verifications, and bath concentration and contamination checks at set intervals. Those logs are what prove the process was in control on the day your report says it was."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "The recall window",
+      "body": "A failed daily system-performance check does not just stop the line - it puts every part processed **since the last successful check** in question, and those parts must be reexamined. The dated process-control log is what bounds that recall to one shift instead of one quarter. Sign and date the boring daily checks as carefully as the reports; one day they will fence in a problem."
+    },
+    {
+      "type": "text",
+      "heading": "Corrections, Retention, and the Audit",
+      "body": "Records are made in permanent, legible form - ink or a controlled electronic system, never pencil. When an entry is wrong, the correction must leave the original visible: a **single line through the error**, the correct value beside it, and the **initials and date** of the person making the correction. Correction fluid, overwriting, and obliteration are audit findings in themselves, because a record that can be silently altered proves nothing.\n\nRecord **what you measured, not what the procedure wanted**. If the minimum is 1,000 µW/cm² and the meter read 1,450, the record says 1,450. Pre-filled results and signatures on blank forms are falsification - and in aviation work a fraudulent or intentionally false inspection entry is a federal offense, not a paperwork problem. Electronic systems follow the same logic with different mechanics: unique logins, controlled electronic signatures, and an audit trail that preserves the original entry through every revision.\n\n**Retention** is set by the referencing code, the contract, or the quality manual - never by the inspector - and records must stay **retrievable**: indexed by part number, serial, and date, and readable for the full period. An auditor's favorite test is simple: pick a report at random and walk every entry back to its evidence - batch to certification, reading to calibration record, signature to certification file, examination date to that day's system-performance check. Write every report expecting that walk, because the exercise below is exactly that."
+    }
+  ],
+  "figures": [
+    { "id": "pt2-5-2-fig-a", "title": "Anatomy of a complete PT examination report", "file": "pt2-5-2-fig-a.svg" },
+    { "id": "pt2-5-2-fig-b", "title": "Every entry traces to objective evidence", "file": "pt2-5-2-fig-b.svg" },
+    { "id": "pt2-5-2-fig-c", "title": "Level II review exercise: report PT-26-0288", "file": "pt2-5-2-fig-c.svg" }
+  ],
+  "interactive": {
+    "type": "hotspot",
+    "title": "Stop the Report Before the Auditor Does",
+    "intro": "Report PT-26-0288 is on your desk for Level II review before it goes into the certification package. The examination date is 2026-06-09. Three entries would stop an auditor cold - click all three.",
+    "figureId": "pt2-5-2-fig-c",
+    "coordH": 500,
+    "regions": [
+      {
+        "x": 52,
+        "y": 172,
+        "w": 280,
+        "h": 40,
+        "label": "Penetrant batch field",
+        "isTarget": true,
+        "feedback": "The penetrant batch is blank. Without it there is no trace to the batch certification or the QPL-AMS-2644 listing - and no way to find this part if the batch is ever reported nonconforming. The report cannot be accepted until the batch is entered from the line log."
+      },
+      {
+        "x": 52,
+        "y": 218,
+        "w": 290,
+        "h": 38,
+        "label": "Corrected dwell entry",
+        "isTarget": true,
+        "feedback": "The original dwell entry is obliterated, and the correction carries no initials or date. A proper correction is a single line through the error - original still legible - with the correct value, initials, and date beside it."
+      },
+      {
+        "x": 392,
+        "y": 266,
+        "w": 360,
+        "h": 26,
+        "label": "Radiometer calibration due date",
+        "isTarget": true,
+        "feedback": "Radiometer R-204 was due for calibration on 2026-04-30 - five weeks before this 2026-06-09 examination. The UV-A reading is unsupported, and every acceptance made under that lamp since the due date is now in question."
+      },
+      {
+        "x": 52,
+        "y": 320,
+        "w": 696,
+        "h": 72,
+        "label": "Indication record",
+        "isTarget": false,
+        "feedback": "Nothing wrong here: type (linear), size, location from a datum, disposition, and the NCR number are all recorded. This is what a complete indication record looks like."
+      },
+      {
+        "x": 52,
+        "y": 402,
+        "w": 696,
+        "h": 60,
+        "label": "Sign-off block",
+        "isTarget": false,
+        "feedback": "This block is sound: identity, Level II certification, an expiration date well after the examination, and the sign-off date are all present and consistent."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "Under codes such as ASME Section V, Article 6, what is the minimum written record of a rejectable indication?",
+      "options": [
+        "A UV photograph and a tape transfer of the developed indication",
+        "The probable metallurgical cause and the process step that produced it",
+        "Its type (linear or rounded), its location, and its extent",
+        "The penetrant batch number and dwell time used to find it"
+      ],
+      "correct": 2,
+      "explanation": "The code minimum for a rejectable indication is type, location, and extent. Photographs and transfers are valuable supplements, cause analysis belongs to engineering and the material review process, and materials data is recorded elsewhere on the report."
+    },
+    {
+      "question": "The procedure requires a minimum of 1,000 µW/cm² UV-A at the examination surface, and your radiometer reads 1,450 µW/cm². What goes on the report?",
+      "options": [
+        "1,450 µW/cm², with the radiometer identification and its calibration due date",
+        "1,000 µW/cm², so the report matches the procedure requirement",
+        "\"Meets specification\" - the actual number is not needed",
+        "Nothing - lighting is covered by the daily checks, not the report"
+      ],
+      "correct": 0,
+      "explanation": "Records capture what was measured, not what was required. The actual reading, plus the instrument and its calibration status, is what makes the entry verifiable; writing the specification value or \"meets spec\" records a conclusion instead of evidence."
+    },
+    {
+      "question": "While completing a report you realize you entered the wrong dwell time. What is the acceptable correction?",
+      "options": [
+        "Cover the error with correction fluid and write the right value over it",
+        "Rewrite the page so no correction shows, and discard the original",
+        "Overwrite the digits firmly so only the new value is readable",
+        "Draw a single line through the error, enter the correct value, and initial and date the correction"
+      ],
+      "correct": 3,
+      "explanation": "A correction must leave the original entry legible and show who changed it and when. Correction fluid, overwriting, and discarded originals destroy the audit trail - a record that can be silently altered proves nothing."
+    },
+    {
+      "question": "A penetrant manufacturer notifies the shop that batch 19F22 failed a retained-sample test and is nonconforming. What makes it possible to identify the hardware examined with that batch?",
+      "options": [
+        "The QPL-AMS-2644 listing for the penetrant family",
+        "The batch numbers recorded on each examination report",
+        "The dryer's temperature chart for the period",
+        "The inspectors' certification records"
+      ],
+      "correct": 1,
+      "explanation": "The QPL only shows the product family was qualified - it says nothing about where one batch went. Batch numbers entered on each report are the thread that connects a recalled batch to every part it touched."
+    },
+    {
+      "question": "Monday morning's system-performance check on the fluorescent line fails. Which record determines how many parts must be reexamined?",
+      "options": [
+        "The radiometer's calibration certificate",
+        "The inspectors' certification files",
+        "The process-control log showing the last successful system-performance check",
+        "The controlled-document register for the procedure"
+      ],
+      "correct": 2,
+      "explanation": "Parts processed since the last successful check are in question and must be reexamined. The dated process-control log is what bounds that recall window - which is exactly why the daily checks are signed and dated like reports."
+    }
+  ],
+  "references": [
+    "CP-105-2024 PT Topical Outline §4.2 (documentation of inspection/test)",
+    "ASTM E1417/E1417M, liquid penetrant testing practice (records, qualified materials, and quality assurance provisions, general reference)",
+    "ASME BPVC Section V, Article 6 (recording of indications and examination records, general reference)",
+    "ASNT SNT-TC-1A (2024) and NAS 410 (Level II reporting duties and personnel certification records, general reference)"
+  ]
+}

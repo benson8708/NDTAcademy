@@ -1,0 +1,211 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="drkglow" filterUnits="userSpaceOnUse" x="-50" y="-50" width="700" height="440">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="drkglowA" filterUnits="userSpaceOnUse" x="-50" y="-50" width="700" height="440">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="drkwallG" x1="0" y1="54" x2="0" y2="296" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#102a4d"/><stop offset="1" stop-color="#071427"/>
+    </linearGradient>
+    <linearGradient id="drkbenchG" x1="0" y1="202" x2="0" y2="212" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".5" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="drkconeG" x1="0" y1="86" x2="0" y2="216" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffc24b" stop-opacity=".3"/>
+      <stop offset=".7" stop-color="#ffb04b" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#ff9b4b" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="drkhaloG">
+      <stop offset="0" stop-color="#ffd27f" stop-opacity=".75"/>
+      <stop offset="1" stop-color="#ffc24b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="drkfilmG" x1="190" y1="122" x2="232" y2="192" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16395f"/><stop offset=".55" stop-color="#1f4e80"/><stop offset="1" stop-color="#142f52"/>
+    </linearGradient>
+    <linearGradient id="drkweldbandG" x1="474" y1="0" x2="546" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#08152b" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#2b86ff" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#08152b" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== STATIC FLOOR (grounds furniture in default state) ===== -->
+  <rect x="34" y="296" width="532" height="10" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+
+  <!-- ===== ROOM SHELL + DIVIDER + LIGHT-TRAP DOOR (reveal 0.8s) ===== -->
+  <g id="drkRoom" opacity="0">
+    <!-- back wall backdrop -->
+    <rect x="46" y="54" width="508" height="242" fill="url(#drkwallG)" opacity=".75"/>
+    <!-- ceiling + side walls poché -->
+    <path d="M34 44 H566 V306 H554 V54 H46 V306 H34 Z" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <!-- center divider (half wall) -->
+    <rect x="296" y="158" width="12" height="138" fill="#245080" stroke="#8fb6e0" stroke-width="2"/>
+    <line x1="299" y1="166" x2="299" y2="290" stroke="#8fb6e0" stroke-width="1" opacity=".35"/>
+    <line x1="296" y1="158" x2="308" y2="158" stroke="#5fe0ff" stroke-width="2.5" filter="url(#drkglow)" opacity=".9"/>
+    <!-- light-trapped door, far left -->
+    <rect x="58" y="122" width="64" height="174" fill="#08152b" stroke="#8fb6e0" stroke-width="2"/>
+    <rect x="63" y="127" width="54" height="164" fill="#0e2848" stroke="#8fb6e0" stroke-width="1" opacity=".7"/>
+    <rect x="68" y="132" width="44" height="154" fill="none" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="3 4" opacity=".35"/>
+    <g fill="none" stroke="#5fe0ff" stroke-width="2" opacity=".5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M76 192 L96 204 L76 216"/>
+      <path d="M84 192 L104 204 L84 216"/>
+    </g>
+    <rect x="106" y="200" width="4" height="16" rx="1.5" fill="#8fb6e0"/>
+    <line x1="63" y1="289" x2="117" y2="289" stroke="#5fe0ff" stroke-width="1.5" opacity=".5"/>
+    <text x="90" y="112" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".8">LIGHT TRAP</text>
+  </g>
+
+  <!-- ===== DRY-SIDE FURNITURE (static) ===== -->
+  <!-- loading bench -->
+  <rect x="134" y="202" width="156" height="10" fill="url(#drkbenchG)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="140" y="212" width="144" height="84" fill="#0e2848" stroke="#8fb6e0" stroke-width="1" opacity=".8"/>
+  <g fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".45">
+    <rect x="146" y="218" width="64" height="26"/>
+    <rect x="214" y="218" width="64" height="26"/>
+    <rect x="146" y="250" width="64" height="40"/>
+    <rect x="214" y="250" width="64" height="40"/>
+  </g>
+  <g stroke="#8fb6e0" stroke-width="2" opacity=".7">
+    <line x1="171" y1="231" x2="185" y2="231"/>
+    <line x1="239" y1="231" x2="253" y2="231"/>
+  </g>
+  <!-- film box, stored on edge -->
+  <rect x="146" y="154" width="38" height="48" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+  <line x1="146" y1="164" x2="184" y2="164" stroke="#8fb6e0" stroke-width="1" opacity=".7"/>
+  <text x="165" y="186" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85">FILM</text>
+  <!-- cassette on edge near divider -->
+  <rect x="244" y="150" width="42" height="52" rx="3" fill="#1b3e66" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="250" y="156" width="30" height="40" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".5"/>
+  <rect x="283" y="158" width="5" height="8" rx="1" fill="#8fb6e0" opacity=".8"/>
+  <rect x="283" y="184" width="5" height="8" rx="1" fill="#8fb6e0" opacity=".8"/>
+  <text x="262" y="142" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".7">CASSETTE</text>
+  <!-- hanger rack: wall rod + 2 film hangers -->
+  <line x1="130" y1="92" x2="186" y2="92" stroke="#8fb6e0" stroke-width="2.5" opacity=".85"/>
+  <path d="M130 92 l-4 6 M186 92 l4 6" stroke="#8fb6e0" stroke-width="1.5" opacity=".6" fill="none"/>
+  <g stroke="#8fb6e0" fill="none">
+    <g transform="translate(136,0)">
+      <path d="M8 98 a4 4 0 0 1 0 -8 a4 4 0 0 1 0 8" stroke-width="1.5" opacity=".9"/>
+      <rect x="0" y="98" width="16" height="3" stroke-width="1.2" fill="#1b3e66"/>
+      <rect x="1.5" y="101" width="13" height="37" stroke-width="1.2" opacity=".75"/>
+      <line x1="4" y1="101" x2="4" y2="104" stroke-width="2" opacity=".9"/>
+      <line x1="12" y1="101" x2="12" y2="104" stroke-width="2" opacity=".9"/>
+    </g>
+    <g transform="translate(160,0)">
+      <path d="M8 98 a4 4 0 0 1 0 -8 a4 4 0 0 1 0 8" stroke-width="1.5" opacity=".9"/>
+      <rect x="0" y="98" width="16" height="3" stroke-width="1.2" fill="#1b3e66"/>
+      <rect x="1.5" y="101" width="13" height="37" stroke-width="1.2" opacity=".75"/>
+      <line x1="4" y1="101" x2="4" y2="104" stroke-width="2" opacity=".9"/>
+      <line x1="12" y1="101" x2="12" y2="104" stroke-width="2" opacity=".9"/>
+    </g>
+  </g>
+
+  <!-- ===== WET-SIDE TANK LINE (static): DEV / STOP / FIX / WASH ===== -->
+  <path d="M318 196 V272 Q318 280 326 280 H533 Q541 280 541 272 V196" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+  <!-- liquids -->
+  <rect x="322" y="212" width="50" height="64" fill="#1E66F5" opacity=".5"/>
+  <rect x="377" y="212" width="50" height="64" fill="#2b86ff" opacity=".42"/>
+  <rect x="432" y="212" width="50" height="64" fill="#3f9bff" opacity=".42"/>
+  <rect x="487" y="212" width="50" height="64" fill="#5fe0ff" opacity=".3"/>
+  <g fill="none" stroke="#7fd8ff" stroke-width="1.5" opacity=".9">
+    <path d="M322 213 Q334 208 347 213 T372 213"/>
+    <path d="M377 213 Q389 208 402 213 T427 213"/>
+    <path d="M432 213 Q444 208 457 213 T482 213"/>
+    <path d="M487 213 Q499 208 512 213 T537 213"/>
+  </g>
+  <!-- inner tank dividers -->
+  <g fill="#14304f" stroke="#8fb6e0" stroke-width=".8" opacity=".9">
+    <rect x="373" y="196" width="4" height="80"/>
+    <rect x="428" y="196" width="4" height="80"/>
+    <rect x="483" y="196" width="4" height="80"/>
+  </g>
+  <line x1="318" y1="196" x2="541" y2="196" stroke="#8fb6e0" stroke-width="2"/>
+  <!-- stand legs -->
+  <rect x="330" y="280" width="8" height="16" fill="#0e2848" stroke="#8fb6e0" stroke-width="1" opacity=".85"/>
+  <rect x="521" y="280" width="8" height="16" fill="#0e2848" stroke="#8fb6e0" stroke-width="1" opacity=".85"/>
+  <line x1="338" y1="290" x2="521" y2="290" stroke="#8fb6e0" stroke-width="1" opacity=".4"/>
+  <!-- thermometer in developer -->
+  <g stroke="#9fe6ff" stroke-width="2" fill="none" opacity=".9">
+    <line x1="328" y1="190" x2="328" y2="242"/>
+    <line x1="324" y1="190" x2="332" y2="190"/>
+  </g>
+  <circle cx="328" cy="245" r="3.5" fill="#5fe0ff"/>
+  <!-- wash bubbles -->
+  <g fill="#7fd8ff" opacity=".55">
+    <circle cx="500" cy="238" r="1.6"/><circle cx="514" cy="252" r="1.3"/><circle cx="524" cy="230" r="1.5"/>
+  </g>
+  <!-- tank labels -->
+  <g font-size="11" fill="#9fe6ff" text-anchor="middle" opacity=".85">
+    <text x="347" y="190">DEV</text>
+    <text x="402" y="190">STOP</text>
+    <text x="457" y="190">FIX</text>
+    <text x="512" y="190">WASH</text>
+  </g>
+
+  <!-- ===== SAFELIGHT (reveal 1.0s) — only warm accent ===== -->
+  <g id="drkSafelight" opacity="0">
+    <ellipse cx="300" cy="88" rx="46" ry="20" fill="url(#drkhaloG)" opacity=".55">
+      <animate attributeName="opacity" values=".55;.75;.55" dur="4s" repeatCount="indefinite"/>
+    </ellipse>
+    <path d="M284 86 L316 86 L430 214 L170 214 Z" fill="url(#drkconeG)">
+      <animate attributeName="opacity" values=".8;1;.8" dur="4s" repeatCount="indefinite"/>
+    </path>
+    <path d="M284 86 L170 214 M316 86 L430 214" stroke="#ffc24b" stroke-width="1" opacity=".25" fill="none"/>
+    <line x1="300" y1="54" x2="300" y2="62" stroke="#8fb6e0" stroke-width="2.5"/>
+    <rect x="278" y="62" width="44" height="22" rx="4" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+    <rect x="283" y="78" width="34" height="8" rx="2" fill="#ff9b4b" stroke="#ffc24b" stroke-width="1" filter="url(#drkglowA)"/>
+    <text x="300" y="103" text-anchor="middle" font-size="11" fill="#ffc24b" opacity=".95">SAFELIGHT</text>
+  </g>
+
+  <!-- ===== RAW FILM HELD BY ONE EDGE (reveal 2.2s) ===== -->
+  <g id="drkFilm" opacity="0">
+    <!-- forearm + back of hand (behind the sheet) -->
+    <path d="M228 102 L250 82 L261 92 L239 112 Z" fill="#1b3e66" stroke="#8fb6e0" stroke-width="1.4" stroke-linejoin="round"/>
+    <ellipse cx="216" cy="114" rx="20" ry="18" fill="#1b3e66" stroke="#8fb6e0" stroke-width="1.4"/>
+    <!-- film sheet: stiff flat parallelogram, held by its top edge -->
+    <path d="M190 128 L228 122 L232 186 L194 192 Z" fill="url(#drkfilmG)" stroke="#5fe0ff" stroke-width="1.4" opacity=".97"/>
+    <path d="M190 128 L228 122 L232 186 L194 192 Z" fill="none" stroke="#5fe0ff" stroke-width="1" filter="url(#drkglow)" opacity=".3"/>
+    <path d="M190 128 l6 -1 l-5 6 Z" fill="#08152b" stroke="#5fe0ff" stroke-width=".8" opacity=".9"/>
+    <!-- thumb in front of the film face -->
+    <path d="M222 116 Q214 124 207 134 Q204 140 208 142 Q212 143 216 137 Q222 128 228 121 Z" fill="#1b3e66" stroke="#8fb6e0" stroke-width="1.4" stroke-linejoin="round"/>
+  </g>
+
+  <!-- ===== DRY SIDE TAG (reveal 4.4s) ===== -->
+  <g id="drkDryLabel" opacity="0">
+    <text x="206" y="70" text-anchor="middle" font-size="13" fill="#9fe6ff">DRY SIDE</text>
+    <g stroke="#5fe0ff" stroke-width="1.2" opacity=".7" fill="none">
+      <path d="M140 78 H272"/>
+      <path d="M140 78 v6 M272 78 v6"/>
+    </g>
+  </g>
+
+  <!-- ===== WET SIDE TAG (reveal 5.0s) ===== -->
+  <g id="drkWetLabel" opacity="0">
+    <text x="396" y="70" text-anchor="middle" font-size="13" fill="#9fe6ff">WET SIDE</text>
+    <g stroke="#5fe0ff" stroke-width="1.2" opacity=".7" fill="none">
+      <path d="M336 78 H456"/>
+      <path d="M336 78 v6 M456 78 v6"/>
+    </g>
+  </g>
+
+  <!-- ===== GHOST RADIOGRAPH CHIP w/ CRIMP MARK (reveal 7.4s) ===== -->
+  <g id="drkGhostFlaw" opacity="0">
+    <rect x="468" y="78" width="84" height="64" rx="4" fill="#08152b" opacity=".95" stroke="#5fe0ff" stroke-width="1.2"/>
+    <g stroke="#5fe0ff" stroke-width="1.5" opacity=".75" fill="none">
+      <path d="M468 86 v-4 a4 4 0 0 1 4 -4 h4 M544 78 h4 a4 4 0 0 1 4 4 v4 M552 134 v4 a4 4 0 0 1 -4 4 h-4 M476 142 h-4 a4 4 0 0 1 -4 -4 v-4"/>
+    </g>
+    <rect x="474" y="100" width="72" height="18" fill="url(#drkweldbandG)"/>
+    <line x1="474" y1="100" x2="546" y2="100" stroke="#3f9bff" stroke-width="1" opacity=".5"/>
+    <line x1="474" y1="118" x2="546" y2="118" stroke="#3f9bff" stroke-width="1" opacity=".5"/>
+    <rect x="473" y="83" width="14" height="7" fill="#1b3e66" stroke="#5fe0ff" stroke-width=".7" opacity=".8"/>
+    <!-- crescent crimp mark, flickering -->
+    <path d="M482 134 A12 12 0 0 1 500 130" fill="none" stroke="#ffc24b" stroke-width="2.6" stroke-linecap="round" filter="url(#drkglowA)">
+      <animate attributeName="opacity" values=".55;1;.65;1;.55" dur="2.6s" repeatCount="indefinite"/>
+    </path>
+    <text x="510" y="158" text-anchor="middle" font-size="11" fill="#ffc24b" opacity=".9">CRIMP MARK</text>
+  </g>
+  <circle id="drkPing" cx="491" cy="131" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#drkglowA)"/>
+</svg>

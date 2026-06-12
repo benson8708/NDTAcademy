@@ -1,0 +1,175 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="dpeGlowC" filterUnits="userSpaceOnUse" x="-58" y="-58" width="716" height="456">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="dpeGlowW" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="dpeSteel" x1="0" y1="58" x2="0" y2="276" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a5584"/><stop offset=".38" stop-color="#14304f"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="dpeProbeG" x1="0" y1="78" x2="0" y2="116" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a5584"/><stop offset=".5" stop-color="#16334f"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="dpeScrG" x1="0" y1="78" x2="0" y2="242" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0d2746"/><stop offset="1" stop-color="#050f1f"/>
+    </linearGradient>
+    <linearGradient id="dpeBeamG" x1="0" y1="117" x2="0" y2="283" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".04"/>
+    </linearGradient>
+    <pattern id="dpeP0" width="10" height="6" patternUnits="userSpaceOnUse">
+      <path d="M0 3 H10" stroke="#8fb6e0" stroke-width="1" fill="none"/>
+    </pattern>
+    <pattern id="dpeP45" width="9" height="9" patternUnits="userSpaceOnUse">
+      <path d="M-1 10 L10 -1" stroke="#8fb6e0" stroke-width="1" fill="none"/>
+    </pattern>
+    <pattern id="dpeP90" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M4 0 V8" stroke="#8fb6e0" stroke-width="1" fill="none"/>
+    </pattern>
+    <pattern id="dpeP135" width="9" height="9" patternUnits="userSpaceOnUse">
+      <path d="M-1 -1 L10 10" stroke="#8fb6e0" stroke-width="1" fill="none"/>
+    </pattern>
+    <pattern id="dpeHatchR" width="7" height="7" patternUnits="userSpaceOnUse">
+      <path d="M-1 8 L8 -1" stroke="#ff6b6b" stroke-width="1" fill="none"/>
+    </pattern>
+  </defs>
+
+  <!-- ===================== LEFT: CFRP LAMINATE CROSS-SECTION ===================== -->
+  <text x="38" y="108" font-size="11" fill="#9fe6ff" opacity=".75">CFRP LAMINATE</text>
+
+  <!-- ply stack: 8 plies, symmetric layup 0/+45/90/-45/-45/90/+45/0 (fiber-angle hatch per ply) -->
+  <rect x="38" y="116" width="232" height="168" fill="#0e2440"/>
+  <g>
+    <rect x="38" y="116" width="232" height="21" fill="#132c49"/><rect x="38" y="116" width="232" height="21" fill="url(#dpeP0)" opacity=".2"/>
+    <rect x="38" y="137" width="232" height="21" fill="#0e2440"/><rect x="38" y="137" width="232" height="21" fill="url(#dpeP45)" opacity=".2"/>
+    <rect x="38" y="158" width="232" height="21" fill="#132c49"/><rect x="38" y="158" width="232" height="21" fill="url(#dpeP90)" opacity=".2"/>
+    <rect x="38" y="179" width="232" height="21" fill="#0e2440"/><rect x="38" y="179" width="232" height="21" fill="url(#dpeP135)" opacity=".2"/>
+    <rect x="38" y="200" width="232" height="21" fill="#132c49"/><rect x="38" y="200" width="232" height="21" fill="url(#dpeP135)" opacity=".2"/>
+    <rect x="38" y="221" width="232" height="21" fill="#0e2440"/><rect x="38" y="221" width="232" height="21" fill="url(#dpeP90)" opacity=".2"/>
+    <rect x="38" y="242" width="232" height="21" fill="#132c49"/><rect x="38" y="242" width="232" height="21" fill="url(#dpeP45)" opacity=".2"/>
+    <rect x="38" y="263" width="232" height="21" fill="#0e2440"/><rect x="38" y="263" width="232" height="21" fill="url(#dpeP0)" opacity=".2"/>
+  </g>
+  <!-- ply interfaces -->
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".3">
+    <line x1="38" y1="137" x2="270" y2="137"/><line x1="38" y1="158" x2="270" y2="158"/>
+    <line x1="38" y1="179" x2="270" y2="179"/><line x1="38" y1="200" x2="270" y2="200"/>
+    <line x1="38" y1="221" x2="270" y2="221"/><line x1="38" y1="242" x2="270" y2="242"/>
+    <line x1="38" y1="263" x2="270" y2="263"/>
+  </g>
+  <!-- faint seam hint where the delamination will open -->
+  <path d="M116 200 H192" stroke="#08152b" stroke-width="1.5" opacity=".55" fill="none"/>
+
+  <!-- sound beam (vertical, full thickness in healthy base state) -->
+  <path d="M142 117 L166 117 L172 283 L136 283 Z" fill="url(#dpeBeamG)"/>
+  <line x1="154" y1="121" x2="154" y2="280" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="4 4" opacity=".35"/>
+  <g fill="none" stroke="#5fe0ff" stroke-width="1.6" opacity=".65" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M147 135 L154 142 L161 135"/>
+    <path d="M147 160 L154 167 L161 160"/>
+  </g>
+  <!-- healthy back-wall contact under the beam -->
+  <line x1="139" y1="281.6" x2="169" y2="281.6" stroke="#5fe0ff" stroke-width="2.2" opacity=".9" filter="url(#dpeGlowW)"/>
+
+  <!-- block outline -->
+  <rect x="38" y="116" width="232" height="168" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".55"/>
+  <line x1="38" y1="116" x2="270" y2="116" stroke="#8fb6e0" stroke-width="2"/>
+  <line x1="38" y1="284" x2="270" y2="284" stroke="#8fb6e0" stroke-width="2"/>
+
+  <!-- BACK WALL tag on bottom ply -->
+  <rect x="42" y="269" width="66" height="13" rx="2" fill="#0e2848" opacity=".7"/>
+  <text x="45" y="279" font-size="11" fill="#9fe6ff" opacity=".75">BACK WALL</text>
+
+  <!-- thickness dimension t (ties to t/2, t on the A-scan ruler) -->
+  <g stroke="#5fe0ff" fill="none" opacity=".8">
+    <path d="M270 116 H280 M270 284 H280" stroke-width="1" opacity=".4"/>
+    <path d="M280 122 V278" stroke-width="1" opacity=".6"/>
+    <path d="M280 116 L276.8 125 L283.2 125 Z" fill="#5fe0ff" stroke="none" opacity=".75"/>
+    <path d="M280 284 L276.8 275 L283.2 275 Z" fill="#5fe0ff" stroke="none" opacity=".75"/>
+  </g>
+  <text x="286" y="203" font-size="11" fill="#9fe6ff" opacity=".8">t</text>
+
+  <!-- 0-degree pulse-echo probe on top surface -->
+  <path d="M154 78 C154 56 124 52 98 40" fill="none" stroke="#0e2848" stroke-width="3.5" opacity=".9"/>
+  <path d="M154 78 C154 56 124 52 98 40" fill="none" stroke="#8fb6e0" stroke-width="1.6" opacity=".75"/>
+  <rect x="149" y="70" width="10" height="9" rx="2" fill="#16334f" stroke="#8fb6e0" stroke-width="1"/>
+  <rect x="132" y="78" width="44" height="38" rx="4" fill="url(#dpeProbeG)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <line x1="138" y1="88" x2="170" y2="88" stroke="#8fb6e0" stroke-width="1" opacity=".35"/>
+  <rect x="134" y="110" width="40" height="6" fill="#0e2848"/>
+  <line x1="130" y1="116.6" x2="178" y2="116.6" stroke="#5fe0ff" stroke-width="1.6" opacity=".55"/>
+  <text x="184" y="96" font-size="11" fill="#9fe6ff" opacity=".85">0° PE PROBE</text>
+
+  <!-- ===================== RIGHT: A-SCAN INSTRUMENT ===================== -->
+  <rect x="296" y="58" width="272" height="218" rx="12" fill="url(#dpeSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="300" y="62" width="264" height="210" rx="9" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".18"/>
+  <text x="312" y="72" font-size="11" fill="#9fe6ff" opacity=".8">A-SCAN · 0° PULSE-ECHO</text>
+  <circle cx="552" cy="68" r="3" fill="#5fe0ff" filter="url(#dpeGlowW)" opacity=".9"/>
+
+  <!-- CRT -->
+  <rect x="308" y="78" width="248" height="164" rx="6" fill="url(#dpeScrG)" stroke="#8fb6e0" stroke-width="1.1" opacity=".95"/>
+  <rect x="308" y="78" width="248" height="164" rx="6" fill="none" stroke="#020912" stroke-width="3" opacity=".5"/>
+  <path d="M316 82 L424 82 L364 128 L316 150 Z" fill="#9fd0ff" opacity=".04"/>
+
+  <!-- graticule -->
+  <path d="M320 90 V224 M352 90 V224 M384 90 V224 M416 90 V224 M448 90 V224 M480 90 V224 M512 90 V224 M544 90 V224 M320 90 H544 M320 117 H544 M320 144 H544 M320 171 H544 M320 198 H544" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".15"/>
+
+  <!-- live trace: FS entry + grass + healthy back-wall echo -->
+  <path d="M320 223.6 L323.5 223.9 L326 222.8 L328 152 L329.5 102 L331 96 L333 144 L334.8 204 L336.6 166 L338.6 216 L341 222.8 L345 224.2 L356 223.4 L367 224.5 L378 223 L389 224.3 L400 223.7 L411 224.4 L422 222.9 L433 224.1 L444 223.5 L455 224.4 L466 223.2 L477 224 L488 223.6 L499 224.5 L510 223.1 L516 223.7 L520 223.6 L524.5 222.8 L527.5 152 L530 121 L532.5 170 L535 209 L537.5 188 L539.5 219 L542 223.4 L544 223.8" fill="none" stroke="#5fe0ff" stroke-width="1.6" stroke-linejoin="round" opacity=".92" filter="url(#dpeGlowC)"/>
+  <text x="331" y="89" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".9">FS</text>
+  <text x="531" y="113" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".9">BW</text>
+
+  <!-- depth ruler on bezel: 0, t/2, t -->
+  <g stroke="#5fe0ff" stroke-width="1.2" opacity=".55">
+    <line x1="330" y1="246" x2="330" y2="252"/>
+    <line x1="432" y1="246" x2="432" y2="252"/>
+    <line x1="534" y1="246" x2="534" y2="252"/>
+  </g>
+  <g font-size="11" fill="#9fe6ff" opacity=".6" text-anchor="middle">
+    <text x="330" y="265">0</text>
+    <text x="432" y="265">t/2</text>
+    <text x="534" y="265">t</text>
+  </g>
+
+  <!-- ===================== REVEAL 1: delamination opens (resin-to-air gap) ===================== -->
+  <g id="dpeDelam" opacity="0">
+    <path d="M112 200 Q154 186 196 200 Q154 214 112 200 Z" fill="#060e1c" stroke="#ff6b6b" stroke-width="1.6" filter="url(#dpeGlowW)" opacity=".95"/>
+    <path d="M122 198.4 Q154 190.4 186 198.4" fill="none" stroke="#ff9b9b" stroke-width="1" opacity=".5"/>
+    <text x="154" y="204" text-anchor="middle" font-size="11" fill="#ffc24b">AIR</text>
+  </g>
+  <circle id="dpeDelamPing" cx="116" cy="200" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#dpeGlowW)"/>
+
+  <!-- ===================== REVEAL 2: strong echo at the delam's depth (t/2) ===================== -->
+  <path id="dpeEcho" d="M416 224 L424 223.2 L428 150 L430.5 110 L432 106 L434 150 L436.5 198 L438.5 176 L441 218 L444 223 L450 223.8" fill="none" stroke="#ff6b6b" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" filter="url(#dpeGlowW)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <circle id="dpePing" cx="432" cy="106" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#dpeGlowW)"/>
+  <g id="dpeEchoLbl" opacity="0">
+    <text x="432" y="93" text-anchor="middle" font-size="12" fill="#ff6b6b" opacity=".95">DELAM</text>
+    <line x1="432" y1="112" x2="432" y2="222" stroke="#ff6b6b" stroke-width="1.2" stroke-dasharray="3 3" opacity=".5"/>
+    <path d="M432 231 L427.5 238.5 L436.5 238.5 Z" fill="#ff6b6b" opacity=".95"/>
+    <path d="M139 184 L146 177 L153 184" fill="none" stroke="#ff6b6b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity=".9" filter="url(#dpeGlowW)"/>
+  </g>
+
+  <!-- ===================== REVEAL 3: back wall goes dark ===================== -->
+  <g id="dpeDeadwall" opacity="0">
+    <!-- screen: dead zone patch replaces healthy BW -->
+    <rect x="516" y="84" width="34" height="148" fill="url(#dpeScrG)"/>
+    <path d="M544 90 V224 M516 117 H544 M516 144 H544 M516 171 H544 M516 198 H544 M520 90 H544" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".15"/>
+    <path d="M524.5 222.8 L527.5 152 L530 121 L532.5 170 L535 209 L537.5 188 L539.5 219" fill="none" stroke="#5d7892" stroke-width="1.5" stroke-dasharray="3 3" opacity=".55"/>
+    <path d="M516 223.6 L521 223.9 L526 223.4 L531 223.8 L536 223.5 L541 223.9 L544 223.7" fill="none" stroke="#7e98b4" stroke-width="1.5" opacity=".8"/>
+    <path d="M524 141 L537 154 M537 141 L524 154" fill="none" stroke="#ff6b6b" stroke-width="2.2" stroke-linecap="round" opacity=".95" filter="url(#dpeGlowW)"/>
+    <text x="531" y="110" text-anchor="middle" font-size="11" fill="#ff6b6b" opacity=".95">LOST</text>
+    <!-- part: back-wall contact glow dies -->
+    <rect x="134" y="277.4" width="40" height="5.6" fill="#0e2848"/>
+    <line x1="139" y1="281.6" x2="169" y2="281.6" stroke="#44607e" stroke-width="1.5" stroke-dasharray="3 3" opacity=".8"/>
+  </g>
+
+  <!-- ===================== REVEAL 4: shadow zone — nothing below gets examined ===================== -->
+  <g id="dpeShadow" opacity="0">
+    <path d="M114 202 Q154 215 194 202 L200 283 L108 283 Z" fill="#04101e" opacity=".78"/>
+    <path d="M114 202 Q154 215 194 202 L200 283 L108 283 Z" fill="url(#dpeHatchR)" opacity=".4"/>
+    <path d="M114 202 Q154 215 194 202 L200 283 L108 283 Z" fill="none" stroke="#ff6b6b" stroke-width="1" stroke-dasharray="4 3" opacity=".45"/>
+    <rect x="112" y="238" width="84" height="15" rx="3" fill="#08152b" opacity=".88" stroke="#ff6b6b" stroke-width="1" stroke-opacity=".4"/>
+    <text x="154" y="249.5" text-anchor="middle" font-size="11" fill="#ff6b6b" opacity=".95">UNEXAMINED</text>
+  </g>
+</svg>

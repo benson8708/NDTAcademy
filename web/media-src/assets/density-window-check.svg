@@ -1,0 +1,132 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="dwcGlow" filterUnits="userSpaceOnUse" x="-40" y="-40" width="680" height="420">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="dwcLightWin" cx="234" cy="181" r="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f2faff" stop-opacity=".62"/>
+      <stop offset=".7" stop-color="#dcefff" stop-opacity=".52"/>
+      <stop offset="1" stop-color="#b8d9f6" stop-opacity=".4"/>
+    </radialGradient>
+    <linearGradient id="dwcFilm" x1="0" y1="92" x2="0" y2="262" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#16335c"/><stop offset=".5" stop-color="#102745"/><stop offset="1" stop-color="#143055"/>
+    </linearGradient>
+    <linearGradient id="dwcWeld" x1="0" y1="166" x2="0" y2="210" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4a7cb4"/><stop offset=".5" stop-color="#3a68a0"/><stop offset="1" stop-color="#4a7cb4"/>
+    </linearGradient>
+    <linearGradient id="dwcSteel" x1="0" y1="42" x2="0" y2="96" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2c5a8a"/><stop offset=".4" stop-color="#1a3c63"/><stop offset="1" stop-color="#11304f"/>
+    </linearGradient>
+    <linearGradient id="dwcDstrip" x1="0" y1="286" x2="0" y2="86" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e8f4ff"/><stop offset=".35" stop-color="#7fa8cf"/><stop offset=".7" stop-color="#1b3a5e"/><stop offset="1" stop-color="#04101f"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== ILLUMINATOR (light box) ===== -->
+  <rect x="22" y="44" width="424" height="254" rx="12" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+  <text x="40" y="66" font-size="11" fill="#9fe6ff" opacity=".6">FILM ILLUMINATOR</text>
+  <circle cx="172" cy="62" r="3" fill="#6ee7a0" opacity=".9" filter="url(#dwcGlow)"/>
+  <!-- lit window -->
+  <rect x="38" y="80" width="392" height="202" rx="6" fill="url(#dwcLightWin)" stroke="#bfe2ff" stroke-width="1" opacity=".95"/>
+  <rect x="42" y="84" width="384" height="194" rx="4" fill="none" stroke="#ffffff" stroke-width="1" opacity=".18"/>
+
+  <!-- ===== RADIOGRAPH FILM STRIP ===== -->
+  <rect x="54" y="92" width="360" height="170" rx="3" fill="url(#dwcFilm)" stroke="#5b8cc0" stroke-width="1.2"/>
+  <!-- weld image: lighter band, wavy toes, cap ripples -->
+  <path d="M54 167 Q79 163.5 104 167 T154 167 T204 167 T254 167 T304 167 T354 167 T404 167 L414 167 L414 209 L404 209 Q379 212.5 354 209 T304 209 T254 209 T204 209 T154 209 T104 209 T54 209 Z" fill="url(#dwcWeld)" opacity=".92"/>
+  <g fill="none" stroke="#7fb6e6" stroke-width="1.1" opacity=".5">
+    <path d="M54 167 Q79 163.5 104 167 T154 167 T204 167 T254 167 T304 167 T354 167 T404 167 L414 167"/>
+    <path d="M54 209 Q79 212.5 104 209 T154 209 T204 209 T254 209 T304 209 T354 209 T404 209 L414 209"/>
+  </g>
+  <g fill="none" stroke="#8fc0e8" stroke-width="1" opacity=".28">
+    <path d="M66 170 q-8 18 0 36"/><path d="M90 170 q-8 18 0 36"/><path d="M114 170 q-8 18 0 36"/>
+    <path d="M138 170 q-8 18 0 36"/><path d="M162 170 q-8 18 0 36"/><path d="M186 170 q-8 18 0 36"/>
+    <path d="M210 170 q-8 18 0 36"/><path d="M234 170 q-8 18 0 36"/><path d="M258 170 q-8 18 0 36"/>
+    <path d="M282 170 q-8 18 0 36"/><path d="M306 170 q-8 18 0 36"/><path d="M330 170 q-8 18 0 36"/>
+    <path d="M354 170 q-8 18 0 36"/><path d="M378 170 q-8 18 0 36"/><path d="M400 170 q-8 18 0 36"/>
+  </g>
+  <text x="76" y="120" font-size="11" fill="#d7ecff" opacity=".7">A&#8201;12</text>
+  <text x="62" y="252" font-size="11" fill="#9fe6ff" opacity=".6">WELD IMAGE</text>
+  <path d="M106 248 L122 212" stroke="#5fe0ff" stroke-width="1" opacity=".4" fill="none"/>
+
+  <!-- ===== HOLE-TYPE IQI PLAQUE (on parent metal beside weld) ===== -->
+  <rect x="296" y="112" width="96" height="34" rx="2" fill="#5d92c8" stroke="#b8dcf8" stroke-width="1" opacity=".95"/>
+  <text x="309" y="133" text-anchor="middle" font-size="12" fill="#dcefff">10</text>
+  <circle cx="332" cy="129" r="6.5" fill="#0c1f3a"/><circle cx="332" cy="129" r="6.5" fill="none" stroke="#9fc6ec" stroke-width=".8" opacity=".45"/>
+  <circle cx="360" cy="129" r="4" fill="#0c1f3a"/><circle cx="360" cy="129" r="4" fill="none" stroke="#9fc6ec" stroke-width=".8" opacity=".45"/>
+  <circle cx="377" cy="129" r="2.2" fill="#0c1f3a"/><circle cx="377" cy="129" r="2.2" fill="none" stroke="#9fc6ec" stroke-width=".8" opacity=".45"/>
+  <text x="286" y="133" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".85">HOLE-TYPE IQI</text>
+  <path d="M289 129 L294 129" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+
+  <!-- ===== DENSITOMETER (reveal 1.0s) ===== -->
+  <g id="dwcMeter" opacity="0">
+    <path d="M387 36 V44" stroke="#6ee7a0" stroke-width="1" opacity=".6" fill="none"/>
+    <rect x="300" y="12" width="174" height="24" rx="12" fill="#0e2848" stroke="#6ee7a0" stroke-width="1" opacity=".95"/>
+    <path d="M310 23 l4 4 l7 -8" stroke="#6ee7a0" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#dwcGlow)"/>
+    <text x="328" y="28" font-size="11" fill="#9fe6ff">STEP-TABLET VERIFIED</text>
+    <rect x="312" y="42" width="134" height="54" rx="9" fill="url(#dwcSteel)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <text x="321" y="56" font-size="11" fill="#9fe6ff" opacity=".75">DENSITOMETER</text>
+    <circle cx="436" cy="51" r="3" fill="#6ee7a0" opacity=".9"/>
+    <rect x="320" y="61" width="118" height="27" rx="4" fill="#050e1d" stroke="#5fe0ff" stroke-width="1" opacity=".95"/>
+    <!-- arm + aperture foot over IQI body -->
+    <path d="M326 96 L350 96 L356 118 L340 121 Z" fill="#1a3c63" stroke="#8fb6e0" stroke-width="1.3" stroke-linejoin="round"/>
+    <circle cx="347.3" cy="129" r="6" fill="#14304f" stroke="#8fb6e0" stroke-width="1.3"/>
+    <circle cx="347.3" cy="129" r="2.2" fill="#050e1d" stroke="#5fe0ff" stroke-width=".9"/>
+  </g>
+
+  <!-- ===== APERTURE READS IQI BODY + 2.40 (reveal 3.0s) ===== -->
+  <g id="dwcIqi" opacity="0">
+    <circle cx="347.3" cy="129" r="8" fill="none" stroke="#5fe0ff" stroke-width="1.5" filter="url(#dwcGlow)"/>
+    <g stroke="#5fe0ff" stroke-width="1.2" opacity=".85">
+      <path d="M347.3 119 V114"/><path d="M347.3 139 V144"/>
+    </g>
+    <text x="430" y="80" text-anchor="end" font-size="13" fill="#5fe0ff" letter-spacing="1" filter="url(#dwcGlow)">2.40 D</text>
+  </g>
+
+  <!-- ===== WELD READING SPOTS (reveal 5.2s) ===== -->
+  <g id="dwcSpots" opacity="0">
+    <circle cx="110" cy="190" r="2.5" fill="#9fe6ff"/>
+    <circle cx="188" cy="184" r="2.5" fill="#9fe6ff"/>
+    <circle cx="266" cy="192" r="2.5" fill="#9fe6ff"/>
+    <text x="110" y="160" text-anchor="middle" font-size="11" fill="#9fe6ff">2.21</text>
+    <text x="188" y="160" text-anchor="middle" font-size="11" fill="#9fe6ff">2.63</text>
+    <text x="266" y="160" text-anchor="middle" font-size="11" fill="#9fe6ff">2.88</text>
+  </g>
+  <circle id="dwcPing1" cx="110" cy="190" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#dwcGlow)"/>
+  <circle id="dwcPing2" cx="188" cy="184" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#dwcGlow)"/>
+  <circle id="dwcPing3" cx="266" cy="192" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#dwcGlow)"/>
+
+  <!-- ===== DENSITY SCALE (right, default) ===== -->
+  <text x="528" y="68" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".7">DENSITY</text>
+  <rect x="510" y="86" width="12" height="200" fill="url(#dwcDstrip)" stroke="#8fb6e0" stroke-width="1" opacity=".9"/>
+  <line x1="508" y1="86" x2="508" y2="286" stroke="#8fb6e0" stroke-width="1.5"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".8">
+    <path d="M502 86 H508"/><path d="M502 119.3 H508"/><path d="M502 152.7 H508"/><path d="M502 186 H508"/>
+    <path d="M502 219.3 H508"/><path d="M502 252.7 H508"/><path d="M502 286 H508"/>
+  </g>
+  <g font-size="11" fill="#9fe6ff" opacity=".6" text-anchor="end">
+    <text x="497" y="90">4.0</text><text x="497" y="123">3.5</text><text x="497" y="157">3.0</text>
+    <text x="497" y="190">2.5</text><text x="497" y="223">2.0</text><text x="497" y="257">1.5</text><text x="497" y="290">1.0</text>
+  </g>
+
+  <!-- ===== ACCEPTANCE WINDOW -15% / +30% (reveal 7.0s) ===== -->
+  <g id="dwcBand" opacity="0">
+    <rect x="509" y="144.7" width="41" height="72" fill="#5fe0ff" opacity=".13"/>
+    <path d="M504 144.7 H552" stroke="#5fe0ff" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <path d="M504 216.7 H552" stroke="#5fe0ff" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <path d="M502 192.7 H552" stroke="#ffc24b" stroke-width="2" filter="url(#dwcGlow)"/>
+    <g font-size="11">
+      <text x="556" y="148" fill="#9fe6ff">3.12</text><text x="556" y="160" fill="#5fe0ff" opacity=".85">+30%</text>
+      <text x="556" y="190" fill="#ffc24b">2.40</text><text x="556" y="202" fill="#ffc24b" opacity=".85">IQI</text>
+      <text x="556" y="226" fill="#9fe6ff">2.04</text><text x="556" y="238" fill="#5fe0ff" opacity=".85">-15%</text>
+    </g>
+  </g>
+
+  <!-- ===== WELD READINGS TICK GREEN INSIDE BAND (reveal 7.3s) ===== -->
+  <g id="dwcChecks" opacity="0" stroke="#6ee7a0" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#dwcGlow)">
+    <path d="M526 205 l3 3 l6 -7"/>
+    <path d="M526 177 l3 3 l6 -7"/>
+    <path d="M526 160 l3 3 l6 -7"/>
+  </g>
+</svg>

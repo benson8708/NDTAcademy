@@ -1,0 +1,189 @@
+{
+  "lessonId": "rs-4-2",
+  "title": "NR Operating and Emergency Procedures",
+  "narrationScript": "Neutron radiography moves you from a portable projector to a fixed facility, and the safety rules move with you. The beam is a mixed field, neutrons plus gamma, produced by a reactor, an accelerator, or a californium two fifty two source. A gamma meter and a standard badge each tell only half the story, so neutron work runs on a moderated neutron rem meter, neutron-capable dosimetry, and written procedures for every operation. This lesson walks the normal cycle: pre-operational checks, search and secure, warning signal, shutter open from the console, then shutter closed and proven with a neutron meter at the door before anyone enters. It covers what the beam leaves behind, activated objects, fixtures, and transfer screens that keep emitting after shutdown. And it scripts the emergencies: a shutter that will not close, a power failure, a person discovered inside the cell, contamination from a leaking source, and fire. The rule underneath all of it: indicator lights make claims, surveys provide proof, and your facility's specific procedures are the final word.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Neutron Work Is Procedure Work",
+      "body": "Neutron radiography does not happen out of a truck. It happens at a **fixed facility** — a reactor beam port, an accelerator hall, or a shielded assembly holding a **californium-252** source — and three things make its hazards different from the gamma work covered so far:\n\n- **The field is mixed.** Every NR beam carries gamma radiation along with neutrons — from the reactor core or the Cf-252 capsule itself, and from capture gammas generated in the moderator and shielding. Controlling one without the other protects no one.\n- **Ordinary equipment understates it.** GM tubes and ion chambers barely respond to neutrons, and a standard gamma badge alone will not record your neutron dose. NR work demands a **moderated neutron rem meter** — a BF₃ or helium-3 detector inside a polyethylene moderator — and **neutron-capable dosimetry** such as albedo TLDs or track-etch (CR-39) detectors, in addition to the usual gamma instruments.\n- **The beam leaves radioactivity behind.** Neutron activation means the object, the fixtures, and the imaging screens can keep emitting after the shutter closes.\n\nBecause the hazards are engineered around a facility rather than carried in a projector, the license requires **written operating and emergency procedures** specific to that facility, and operators train on them before touching a control. This lesson covers what those procedures contain: the normal beam-on/beam-off cycle, the specific procedures unique to neutron work, and the emergency actions for the days the hardware does not cooperate."
+    },
+    {
+      "type": "text",
+      "heading": "Three Sources, One Safety Chain",
+      "body": "Every NR facility is built around one of three neutron sources, and the first thing its procedures establish is what \"off\" means for yours:\n\n- **Reactor** — the highest thermal-neutron flux and the best image quality. The radiography beam is controlled by a **shutter** in the beam port; the core itself runs under the reactor's own operating license and staff.\n- **Accelerator** — a machine source such as a D-T neutron generator. De-energizing it stops neutron production, like an X-ray machine — but unlike an X-ray room, the hardware and fixtures around it may remain radioactive from activation.\n- **Cf-252 isotopic source** — a sealed capsule producing neutrons by spontaneous fission, with a half-life of about 2.6 years. Like any radioisotope it is **never off**: it shuttles between a shielded storage position and the exposure position, emitting both neutrons and gammas the entire time.\n\nDownstream of the source, the chain is the same everywhere: a **moderator** slows fast neutrons to thermal energies, a **collimator** forms the beam, the **shutter** controls it, and the beam crosses the **exposure cell** through the object to the imaging plane and dies in a **beam stop**. Wrapped around that chain are the engineered protections — a shielded cell, an **interlocked door** that drives the shutter closed if opened during a run, visible and audible warnings, **separate neutron and gamma area monitors**, key control at the console, and an in-cell emergency stop."
+    },
+    {
+      "type": "figure",
+      "figureId": "rs-4-2-fig-a",
+      "caption": "Plan view of a thermal neutron radiography facility: source and moderator behind a biological shield, collimated beam through the shutter into an interlocked exposure cell, ending in a beam stop. Neutron and gamma area monitors watch the cell independently of the status lights."
+    },
+    {
+      "type": "text",
+      "heading": "The Beam-On / Beam-Off Cycle",
+      "body": "A normal run is a fixed sequence. Learn it as a loop you close the same way every time:\n\n1. **Pre-operational checks.** Response-check the neutron rem meter and the gamma survey meter against their check sources, confirm calibrations are current, test the warning lights and the door interlock, and put on full dosimetry — gamma badge, direct-reading dosimeter, and the neutron-capable element.\n2. **Set up.** Position the object and imaging screens. A radioactive object calls for the **transfer method** — exposing an indium or dysprosium foil in the beam instead of film.\n3. **Search and secure.** Physically walk the cell, confirm it is empty, leave last, and secure the interlocked door.\n4. **Warn, then open.** Activate the warning signal, then open the shutter from the console — the only place beam control is permitted — and log the start.\n5. **During the run**, stay at the control point and watch the area monitors.\n6. **Close and prove.** Close the shutter, check the status indication — then prove it with the **neutron meter held at the door** before entry. Neutrons exist only while the beam is on, so any neutron reading at the door means the shutter failed.\n7. **Survey what the beam touched.** Inside, gamma-survey the object, fixtures, and screens for **activation** before hands-on work. Items are released when the survey says so — not when the schedule does. Log everything."
+    },
+    {
+      "type": "callout",
+      "variant": "safety",
+      "title": "The light is a claim — the meter is the proof",
+      "body": "Status lights, interlock indications, and console displays describe what the hardware *believes* it did. A moderated neutron meter at the door is the only proof the beam terminated, and a gamma survey of the object is the only proof you can touch it. After a neutron run, a gamma-only survey answers half the question — and a glance at the panel answers none of it. Both meters, every entry, no exceptions."
+    },
+    {
+      "type": "table",
+      "caption": "Specific procedures every NR facility maintains — and what each one exists to prevent.",
+      "headers": ["Written procedure", "What it covers", "What it prevents"],
+      "rows": [
+        ["Pre-operational checklist", "Instrument response checks, dosimetry issue, warning and interlock function tests", "Operating blind with dead instruments or unrecorded dose"],
+        ["Search and secure", "Physical walk-through of the cell, last-person-out sequence, door secured", "Opening the shutter on an occupied cell"],
+        ["Shutter and source operation", "Console-only control, key custody, status verification, run logging", "Uncontrolled or unattributed beam-on time"],
+        ["Entry survey", "Neutron meter at the door first, then gamma survey inside", "Walking into a beam the status light claims is off"],
+        ["Activation survey and release", "Survey of object, fixtures, and screens; decay holds; tongs for transfer foils (In-116m t½ ≈ 54 min, Dy-165 ≈ 2.3 h)", "Carrying induced radioactivity out in someone's hands"],
+        ["Contamination control and leak tests", "Periodic sealed-source leak tests (Cf-252), swipe surveys, spill response", "A leaking capsule turning radiation work into contamination work"],
+        ["Emergency procedures and call list", "Shutter failure, power loss, occupied-cell, contamination, and fire actions; posted contacts", "Improvisation when minutes and doses count"]
+      ]
+    },
+    {
+      "type": "text",
+      "heading": "Beam Emergencies: Shutter Failure, Power Loss, an Occupied Cell",
+      "body": "Three beam emergencies dominate NR planning, and the written procedure scripts each one.\n\n**The shutter fails to close.** You discover it the way the entry survey is designed to reveal it: a neutron reading at the door that should not exist, or a status indication that will not drive closed. **Do not enter.** Withdraw, use the meter — not guesswork — to establish a safe boundary, secure and post the area, and notify the **RSO**. Recovery of a jammed shutter or a stuck Cf-252 source transfer is planned work under the RSO's direction, exactly like a gamma source retrieval: it is never improvised by the operator who found it.\n\n**Power fails during a run.** A properly designed shutter **fails safe** — gravity or a spring drives it closed when power or air is lost. Design intent is not proof. Treat the beam as ON until a neutron survey at the door shows otherwise, and restore normal access only after the full entry survey.\n\n**Someone is inside the cell during beam-on.** An interlock breach or a failed search is the worst credible event. Terminate the beam immediately — emergency stop or shutter close — get the person out, and impound their dosimetry for **emergency processing**. The RSO is notified at once, the person performs no further radiation work until the dose is established, and a severe neutron exposure can even be reconstructed from **sodium-24** activated in the blood — a measurement nobody ever wants to need."
+    },
+    {
+      "type": "text",
+      "heading": "Contamination, Fire, and Who You Call",
+      "body": "Two more emergencies are specific enough to neutron work to carry their own procedures.\n\n**Contamination.** A failed leak test or a ruptured Cf-252 capsule, a damaged transfer foil, or grinding on an activated fixture all put loose radioactive material where it can spread. The response is the contamination drill from the previous lesson, run at emergency tempo: stop work, isolate the area, keep people from tracking material out, monitor everyone leaving, no eating, drinking, or smoking, and get the RSO moving. Nothing is cleaned up casually — surveys define the boundary, and the RSO directs decontamination.\n\n**Fire.** Evacuate by the facility plan and account for every person. Meet the responders and tell them **what radioactive material is present and where** — the source and its shielded storage position, plus any activated or contaminated areas — so they can fight the fire without creating a radiological accident. Property is never worth a re-entry.\n\nEvery emergency ends the same way: the operator notifies the **RSO**, the RSO directs the response and informs licensee management, and the licensee makes the regulatory notifications — overexposures, lost or leaking sources, and similar events carry immediate or short-deadline reporting requirements under typical NRC and agreement-state rules. The **emergency call list** posted at the console, with current names and numbers, is what makes that chain work at 2 a.m. Your facility's own procedures name the people and the thresholds — they are the final word."
+    },
+    {
+      "type": "figure",
+      "figureId": "rs-4-2-fig-b",
+      "caption": "Entry-survey decision after every run: the neutron meter at the door either clears you to enter and perform the activation survey, or it declares a shutter failure — withdraw, secure and post the area, and call the RSO."
+    }
+  ],
+  "figures": [
+    {
+      "id": "rs-4-2-fig-a",
+      "title": "Thermal neutron radiography facility — plan view",
+      "file": "rs-4-2-fig-a.svg"
+    },
+    {
+      "id": "rs-4-2-fig-b",
+      "title": "Post-run entry survey and shutter-failure response",
+      "file": "rs-4-2-fig-b.svg"
+    }
+  ],
+  "interactive": {
+    "type": "sort",
+    "title": "Procedure Sequencing: Before, After, or Emergency",
+    "intro": "Every action at an NR facility belongs to a moment. Sort each one: does it happen before the shutter opens, after the shutter closes, or only when something has already gone wrong?",
+    "buckets": [
+      "Before the shutter opens",
+      "After the shutter closes",
+      "Emergency — act now"
+    ],
+    "items": [
+      {
+        "label": "Response-check the neutron rem meter and gamma meter against their check sources",
+        "bucket": 0,
+        "why": "Pre-operational checks prove your instruments work before anything depends on them."
+      },
+      {
+        "label": "Walk the exposure cell on a search-and-secure, leave last, and secure the interlocked door",
+        "bucket": 0,
+        "why": "No shutter opens until a physical search proves the cell is empty."
+      },
+      {
+        "label": "Activate the visible and audible warning signal",
+        "bucket": 0,
+        "why": "Warnings precede and accompany the beam — people are warned before the field exists, not after."
+      },
+      {
+        "label": "Hold the neutron meter at the door and confirm the field is gone",
+        "bucket": 1,
+        "why": "The entry survey is the only proof the shutter actually closed — neutrons exist only while the beam is on."
+      },
+      {
+        "label": "Gamma-survey the test object, fixtures, and screens before hands-on handling",
+        "bucket": 1,
+        "why": "Neutrons activate material; the survey decides what may be touched and released."
+      },
+      {
+        "label": "Set a transfer foil aside with tongs for a decay hold",
+        "bucket": 1,
+        "why": "In-116m and Dy-165 are deliberately activated by the technique and stay radioactive for minutes to hours after the run."
+      },
+      {
+        "label": "Neutron field at the door while the status light reads CLOSED — withdraw, secure and post the area, notify the RSO",
+        "bucket": 2,
+        "why": "A field that should not exist is a shutter failure: nobody enters, and recovery is planned work under the RSO."
+      },
+      {
+        "label": "A coworker is discovered inside the cell during a run — emergency-stop the beam and get them out",
+        "bucket": 2,
+        "why": "Terminate the field first, then remove the person, impound their dosimetry for emergency processing, and call the RSO."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "After a run ends and the shutter indicator shows CLOSED, the entry procedure calls for a neutron instrument at the door and then a gamma instrument on the object and fixtures. Why are both required?",
+      "options": [
+        "Two meters are required so one can act as a backup if the other's battery fails",
+        "The neutron meter finds activation in the object, while the gamma meter proves the shutter closed",
+        "The neutron meter proves the beam actually terminated, while the gamma meter finds activation radiation that persists after the beam is off",
+        "Gamma meters are not permitted inside exposure cells"
+      ],
+      "correct": 2,
+      "explanation": "Neutrons exist only while the beam is on, so a neutron reading at the door means the shutter failed; what lingers afterward is gamma (and beta) from activated material, which the neutron meter will not show. Each instrument answers a different question, and entry requires both answers."
+    },
+    {
+      "question": "At the door after a run, the shutter status light reads CLOSED but your neutron rem meter still shows a significant field. The correct response is to:",
+      "options": [
+        "treat it as a shutter failure — do not enter; withdraw, secure and post the area, and notify the RSO",
+        "trust the interlock light and enter, since moderated rem meters commonly read high",
+        "enter briefly to visually confirm the shutter position, keeping the entry under two minutes",
+        "re-zero the meter, and if it still reads, enter and press the in-cell emergency stop"
+      ],
+      "correct": 0,
+      "explanation": "Instruments outrank indicators. A neutron field at the door means the beam is still on regardless of what the panel claims, and recovery of a failed shutter is planned work directed by the RSO — never an improvised entry."
+    },
+    {
+      "question": "Transfer-method imaging foils such as indium or dysprosium are handled with tongs and set aside to decay after exposure because:",
+      "options": [
+        "they are coated with toxic beryllium compounds",
+        "the technique works by deliberately activating the foil, so it leaves the beam as a radioactive emitter until it decays",
+        "they remain physically hot in temperature from beam heating",
+        "tongs prevent fingerprints that would fog the film during transfer"
+      ],
+      "correct": 1,
+      "explanation": "The transfer method exposes the film later, from the foil's own decay radiation — which means the foil leaves the beam genuinely radioactive (In-116m half-life about 54 minutes; Dy-165 about 2.3 hours). Tongs, minimal handling time, and a decay hold keep that dose off your hands."
+    },
+    {
+      "question": "Facility power fails while the beam is on. In a properly designed NR facility, what happens — and what must you still do?",
+      "options": [
+        "The shutter locks in its current position, so you enter immediately to crank it closed",
+        "The beam continues until the source decays, so the building is evacuated permanently",
+        "The warning system keeps everyone out automatically, so no further action is needed",
+        "The shutter fails safe — gravity or a spring drives it closed — but you treat the beam as ON until a neutron survey at the door proves otherwise"
+      ],
+      "correct": 3,
+      "explanation": "Fail-safe design means loss of power or air closes the shutter on its own — but design intent is not proof. Access is restored only after the normal entry survey with the neutron meter confirms the field is gone."
+    },
+    {
+      "question": "During an exposure you discover a coworker inside the cell. After terminating the beam and getting them out, what happens to their dosimetry?",
+      "options": [
+        "It is re-zeroed so the next shift starts from a clean reading",
+        "It is impounded and submitted for emergency processing, and the worker performs no further radiation work until their dose is established",
+        "It is averaged with yours to produce a best estimate of the dose",
+        "It is discarded, because personnel dosimetry cannot record neutron dose"
+      ],
+      "correct": 1,
+      "explanation": "The dose must be established by processing and investigation under the RSO — never by guessing, averaging, or wiping the record. NR workers wear neutron-capable dosimetry (albedo TLD or track-etch) precisely so it can be read out, and a severe neutron exposure can additionally be reconstructed from sodium-24 activation in the blood."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024 Radiation Safety Outline §5.2–5.3 (operation, emergency, and specific procedures for neutron radiographic work)",
+    "ASTM E748, Standard Guide for Thermal Neutron Radiography of Materials (facility practice; direct and transfer methods)",
+    "Typical NRC 10 CFR 20-style survey, posting, and radiation protection program requirements, described generically — your facility license and procedures govern",
+    "Typical NRC 10 CFR 19-style worker instruction and notification expectations, described generically"
+  ]
+}

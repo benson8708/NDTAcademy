@@ -1,0 +1,177 @@
+{
+  "lessonId": "basic-4-1",
+  "title": "Magnetic Particle Testing: Fundamentals",
+  "narrationScript": "Magnetic particle testing turns the part itself into a magnet and lets the magnet point at its own flaws. Flux flows easily through ferromagnetic steel, but a discontinuity at or near the surface interrupts it and forces some flux out of the part as a leakage field. Iron particles pile up at that leak and draw a visible line around the flaw. This lesson builds the physics underneath that trick: flux, permeability, and the hysteresis loop that gives steel a magnetic memory — retentivity and coercive force. Then we put electric current to work. Current through the part wraps a circular field around it and reveals axial discontinuities. Current in a surrounding coil drives a longitudinal field and reveals transverse ones. Flux must cross the flaw, so full coverage takes two perpendicular shots. Alternating current hugs the surface; rectified current reaches deeper. Finally, demagnetization: why residual fields cause trouble downstream, when removal is required, and how a diminishing, reversing field walks the steel's magnetic memory back to zero.",
+  "sections": [
+    {
+      "type": "text",
+      "heading": "Flux Leakage: How a Magnetized Part Finds Its Own Flaws",
+      "body": "Magnetic particle testing (MT) magnetizes a **ferromagnetic** part and applies finely divided ferromagnetic particles — dry powder or a wet suspension — while a magnetic field is in the part. Sound metal is an easy highway for magnetic flux. A discontinuity at or near the surface is not: the air, slag, or oxide filling the flaw has a permeability hundreds of times lower than the surrounding steel, so flux must either crowd beneath the flaw or break out of the surface. The flux that breaks out forms a local **leakage field** with its own tiny north and south poles. Particles are pulled to that leak, bridge it, and hold — building a visible **indication** wider than the flaw itself, which is exactly what makes a tight crack visible to the eye.\n\nMT is fast and inexpensive, and — unlike liquid penetrant — it does not require the flaw to be open to the surface; it can even find discontinuities under a thin nonconductive coating, though sensitivity falls as coating thickness grows. Three boundaries define the method:\n\n- **Ferromagnetic materials only.** Iron, nickel, cobalt, and most carbon and low-alloy steels qualify. Aluminum, copper, titanium, and austenitic stainless steels do not — and no amperage setting changes that.\n- **Surface and slightly subsurface flaws.** Sensitivity is highest for discontinuities open to the surface and falls rapidly with depth; with DC-type current, a flaw a few millimeters down can still show under favorable conditions. A sharp, dense, tightly held buildup says surface; a broad, weak, fuzzy buildup says subsurface.\n- **Indications form where flux crosses the flaw, not where it runs alongside it** — the orientation rule developed below, and the reason every MT procedure controls field direction."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-4-1-fig-a",
+      "caption": "A magnetized bar with two flaws. The surface crack interrupts the flux sharply: strong leakage, dense particle mound. The subsurface void leaks a weaker, broader field, so its indication is wide and fuzzy — and a deeper flaw would not show at all."
+    },
+    {
+      "type": "text",
+      "heading": "The Field Itself: Flux, Permeability, and Material Classes",
+      "body": "Picture any magnetic field as **lines of flux** — a drawing convention with rules that do real predictive work. Flux lines form continuous closed loops, never cross one another, follow the path of least magnetic resistance (**reluctance**), and pack densest where the field is strongest. Outside a magnet they run from the north pole to the south pole; inside, they complete the loop from south to north.\n\nTwo quantities and their ratio describe what current does to steel. **Magnetizing force (H)** is the field the current applies, expressed in amperes per meter or oersteds. **Flux density (B)** is the material's response — how much flux is actually carried per unit area, in teslas or gauss. Their ratio, **permeability (μ = B/H)**, measures how easily a material conducts flux; reluctance is its opposite number, the magnetic analog of electrical resistance.\n\nPermeability sorts all materials into three classes:\n\n- **Ferromagnetic** — iron, nickel, cobalt, and most carbon and low-alloy steels. Their internal magnetic **domains** align with an applied field, multiplying it; relative permeabilities run from hundreds to several thousand. These are the only MT-testable materials.\n- **Paramagnetic** — aluminum, magnesium, austenitic stainless steel: very weakly attracted, relative permeability barely above 1.\n- **Diamagnetic** — copper, gold, bismuth: very weakly repelled, relative permeability slightly below 1.\n\nFerromagnetism is also temperature-limited: above the **Curie point** — about 770 °C (1418 °F) for iron — thermal agitation randomizes the domains and the material behaves paramagnetically until it cools. That fact returns at the end of this lesson as the one demagnetization method that is total."
+    },
+    {
+      "type": "text",
+      "heading": "Hysteresis: Steel Has a Magnetic Memory",
+      "body": "Plot flux density B against magnetizing force H for a piece of steel and you get the most useful curve in this method. Starting from a dead-unmagnetized state, the **virgin curve** climbs steeply — domains aligning — then flattens at **saturation**, where essentially all domains point with the field and more H buys almost no more B.\n\nNow reduce H back to zero. B does not follow it down. The flux density remaining with the magnetizing force removed is the **residual magnetism**, and the material's capacity to hold it is its **retentivity (Br)**. To force B back to zero you must push H in the *reverse* direction; the reverse force required is the **coercive force (Hc)**. Keep going and the steel saturates in the opposite polarity — cycle the current and the trace closes into the **hysteresis loop**.\n\nThe loop's shape is the material's magnetic personality:\n\n- **Magnetically soft** steels (annealed, low-carbon) draw a tall, narrow loop — easy to magnetize, little residual field, easy to demagnetize.\n- **Magnetically hard** steels (high-carbon, heat-treated alloys) draw a wide loop — high retentivity and high coercive force. They hold a strong residual field and give it up grudgingly.\n\nThree working consequences. The **continuous technique** — particles applied while the magnetizing current flows — gives maximum sensitivity, because B is always higher with H applied than after it is removed. The **residual technique**, examining after the current stops, is workable only on high-retentivity steels. And demagnetization, when required, is fundamentally a fight against coercive force — wide-loop steels fight hardest."
+    },
+    {
+      "type": "callout",
+      "variant": "key",
+      "title": "Flux must cross the flaw",
+      "body": "Leakage — and therefore the indication — is strongest when flux crosses a discontinuity at **90°**. Detection stays dependable out to roughly **45°** from perpendicular; a flaw lying parallel to the flux barely disturbs it and is effectively invisible. Because flaw orientation is unknown in advance, complete examination requires magnetizing in **two directions at right angles** — in practice, a circular shot and a longitudinal shot of the same part."
+    },
+    {
+      "type": "text",
+      "heading": "Circular Magnetization: Current Through — or Inside — the Part",
+      "body": "Electric current is the practical way to magnetize, and the **right-hand rule** is the compass: point the right thumb along the conventional current and the fingers curl in the direction of the flux circling it. Around any straight conductor, flux forms concentric circles — strength proportional to the current, falling off with distance outside the conductor. Inside a solid conductor carrying direct current, field strength is zero at the center and maximum at the surface; with alternating current, the **skin effect** crowds both current and flux toward the surface.\n\nPass the current through (or inside) the part and you get a **circular field** wrapping its circumference — the field that reveals **axial (lengthwise) discontinuities**:\n\n- **Head shot.** The part is clamped between contact pads and current flows end to end. A common starting range is **300–800 A per inch (12–32 A/mm) of part diameter**, with the governing procedure setting the value. Contact surfaces must be clean and clamped firmly — poor contact means arcing and burns.\n- **Central conductor.** Hollow or ring-shaped parts are threaded onto an insulated current-carrying bar. No current flows through the part itself — no arc risk on finished surfaces — and the field is strongest at the bore, so inside-diameter flaws (invisible to a head shot's external field) are examined directly, along with the OD. With the conductor laid **offset** against the bore wall, the effectively examined arc of circumference is about **four times the conductor diameter**; the part is rotated and shot again with overlap until the full circumference is covered.\n- **Prods.** Hand-held contacts pass current through a local region of a large part or weld, creating a distorted circular field between the tips. Typical practice is roughly **90–125 A per inch of prod spacing**, with spacing about 75–200 mm (3–8 in.). The price is arc-burn risk at the tips, which is why prods are prohibited on many finished and aerospace components."
+    },
+    {
+      "type": "figure",
+      "figureId": "basic-4-1-fig-b",
+      "caption": "The two workhorse field directions. A head shot's circular flux crosses axial flaws and misses transverse ones; a coil's longitudinal flux does the reverse. Neither alone is a complete examination — full coverage takes both, 90° apart."
+    },
+    {
+      "type": "text",
+      "heading": "Longitudinal Magnetization — and Choosing the Current",
+      "body": "Wrap the current *around* the part instead and the geometry flips. A **coil or cable wrap** obeys the same right-hand rule applied to its windings: flux runs **along the part's axis**, and the field now reveals **transverse discontinuities**. Coil strength is rated in **ampere-turns (NI)** — amperage times the number of turns — and its effectiveness depends on the part's length-to-diameter ratio. The working window is roughly **L/D between 2 and 15** (short parts are extended with pole pieces; above 15, use 15), and one widely used starting rule for a part laid against the inside wall of a low fill-factor coil is **NI ≈ 45,000 ÷ (L/D)**. The strongly magnetized zone extends only about **230 mm (9 in.) to either side of the coil's center**, so long parts are magnetized and examined in successive, overlapping shots.\n\nA **yoke** reaches the same longitudinal result indirectly: current through a coil wound on a U-shaped core magnetizes the core, and the part completes the magnetic circuit between the two poles. Flux runs pole-to-pole through the part — revealing flaws perpendicular to the pole-to-pole line — with no current through the part and therefore no arc risk.\n\nThe **type of current** sets how deep the field lives:\n\n- **AC** — the skin effect confines flux near the surface, so AC finds *surface* discontinuities only. Its reversals vibrate the particles, giving the best particle mobility, and its residual field is shallow and easy to remove.\n- **Half-wave rectified DC (HWDC)** — pulsating, one-directional current that combines useful penetration with strong particle mobility; the favorite with dry powder on welds.\n- **Full-wave rectified DC (FWDC)** — the steadiest waveform and the deepest penetration, best for slightly subsurface flaws. The trade: DC-type magnetization leaves the deepest residual field, which is exactly what makes demagnetization hard."
+    },
+    {
+      "type": "text",
+      "heading": "Demagnetization: Why, When, and How",
+      "body": "Steel's magnetic memory outlives the test, and a residual field can cause real trouble downstream: machining chips cling to the work and mar finishes or damage tooling; **arc blow** deflects the arc in subsequent welding; residual fields disturb aircraft compasses and nearby instruments; rotating assemblies and bearings attract hard ferrous debris and wear; and a leftover field can interfere with plating, cleaning, or a later magnetization in a different direction. Demagnetization is **not** automatic, though. It is generally unnecessary when the material has low retentivity, when the part will be heated above the Curie point in subsequent processing, when it will immediately be re-magnetized for another examination, or when the residual field has no effect on the part's function — the governing specification or written procedure makes the call.\n\nThe principle behind every practical method is the same: apply a magnetizing force strong enough to overcome the coercive force — as a rule, at least as strong as the field that magnetized the part — then **reverse its direction repeatedly while shrinking it to zero**. Each reversal traces a smaller hysteresis loop, spiraling the residual flux density down toward nothing.\n\n- **AC coil pull-through** — the everyday method. The part passes through an energized AC coil and is withdrawn slowly, about 1 m (3 ft) or more, before the current is switched off; the receding field supplies the diminishing reversals. The skin effect limits how deep AC can reach.\n- **AC step-down** — the part stays in the coil while current is stepped to zero; same depth limitation.\n- **Reversing step-down DC** — the field direction is flipped and reduced step by step. This reaches the full cross-section and is the method for heavy sections holding deep DC residual fields.\n- **Heating above the Curie point** (~770 °C for iron) — the only *complete* demagnetization, practical only when heat treatment is planned anyway.\n\nVerify the result with a field indicator or Hall-effect gauss meter; a common acceptance limit is **3 gauss (240 A/m) maximum** unless the governing specification says otherwise. Demagnetize long parts oriented **east–west**, so the Earth's field (~0.5 gauss) cannot re-magnetize them along their length as the applied field collapses. And remember the trap: a circularly magnetized part keeps its flux loop almost entirely *inside* the metal — a near-zero meter reading on such a part proves very little."
+    }
+  ],
+  "figures": [
+    {
+      "id": "basic-4-1-fig-a",
+      "title": "Flux leakage at surface and subsurface discontinuities",
+      "file": "basic-4-1-fig-a.svg"
+    },
+    {
+      "id": "basic-4-1-fig-b",
+      "title": "Circular vs. longitudinal magnetization",
+      "file": "basic-4-1-fig-b.svg"
+    },
+    {
+      "id": "basic-4-1-fig-c",
+      "title": "Head shot on a shaft: which discontinuity shows?",
+      "file": "basic-4-1-fig-c.svg"
+    }
+  ],
+  "interactive": {
+    "type": "hotspot",
+    "title": "Orient the Field to Find the Crack",
+    "intro": "A head shot drives current end-to-end through this shaft, wrapping a circular field around its circumference. Click the discontinuity this shot will reveal most strongly.",
+    "figureId": "basic-4-1-fig-c",
+    "regions": [
+      {
+        "x": 315,
+        "y": 190,
+        "w": 170,
+        "h": 60,
+        "label": "A — axial seam on the surface",
+        "isTarget": true,
+        "feedback": "Correct. The seam runs along the axis, square across the circular flux — maximum leakage and a sharp, dense indication. Circular fields find axial discontinuities."
+      },
+      {
+        "x": 525,
+        "y": 210,
+        "w": 70,
+        "h": 120,
+        "label": "B — transverse crack",
+        "isTarget": false,
+        "feedback": "This crack lies parallel to the circular flux lines, so it barely disturbs them — little leakage, no dependable indication. It needs a longitudinal field from a coil or yoke."
+      },
+      {
+        "x": 210,
+        "y": 255,
+        "w": 80,
+        "h": 60,
+        "label": "C — mid-wall inclusion",
+        "isTarget": false,
+        "feedback": "Too deep. Its leakage spreads and dies before reaching the surface — MT is a surface and slightly-subsurface method. A volumetric method such as UT or RT owns this flaw."
+      },
+      {
+        "x": 370,
+        "y": 283,
+        "w": 100,
+        "h": 45,
+        "label": "D — sound surface",
+        "isTarget": false,
+        "feedback": "Flux flows undisturbed inside sound metal: nothing leaks, so particles do not hold. A clean background is exactly what lets real indications stand out."
+      }
+    ]
+  },
+  "checkQuestions": [
+    {
+      "question": "Magnetic particle testing can form an indication only where a discontinuity:",
+      "options": [
+        "is open to the surface so that particles can settle into the cavity itself",
+        "interrupts the flux and forces a leakage field out at or near the surface",
+        "lies deep in the cross-section where flux density is greatest",
+        "is oriented parallel to the magnetic lines of flux"
+      ],
+      "correct": 1,
+      "explanation": "Particles are held by leakage flux, not trapped in the cavity — which is why MT can show flaws under thin coatings and slightly below the surface. Deep flaws and flux-parallel flaws produce little or no surface leakage, so they go unseen."
+    },
+    {
+      "question": "A solid steel shaft receives a head shot — current passed end to end between contact pads. The field produced, and the discontinuities it reveals best, are:",
+      "options": [
+        "a longitudinal field, revealing transverse cracks",
+        "a circular field, revealing transverse cracks",
+        "a circular field around the circumference, revealing axial (lengthwise) discontinuities",
+        "a longitudinal field, revealing axial seams"
+      ],
+      "correct": 2,
+      "explanation": "By the right-hand rule, flux circles the current path — current along the axis wraps a circular field around the shaft. Axial flaws cross that circumferential flux at about 90° and leak strongly; transverse flaws lie parallel to it and stay hidden."
+    },
+    {
+      "question": "On the hysteresis loop, the flux density remaining in a part after the magnetizing force has returned to zero is the material's:",
+      "options": [
+        "retentivity (residual magnetism)",
+        "coercive force",
+        "permeability",
+        "reluctance"
+      ],
+      "correct": 0,
+      "explanation": "Residual magnetism — the measure of retentivity — is the flux density left at H = 0. Coercive force is the reverse magnetizing force needed to drive that flux density to zero; permeability is the ratio B/H; reluctance is opposition to flux."
+    },
+    {
+      "question": "Which magnetizing current is the best choice when the concern is discontinuities slightly below the surface?",
+      "options": [
+        "Alternating current, because the skin effect concentrates flux below the surface",
+        "Alternating current, because its reversals give particles maximum mobility",
+        "Any current type — penetration depends only on amperage, not waveform",
+        "Full-wave (or half-wave) rectified current, because its steady component magnetizes deeper into the cross-section"
+      ],
+      "correct": 3,
+      "explanation": "The skin effect confines AC flux near the surface, so AC is a surface-only examination — its excellent particle mobility does not change that. Rectified DC-type currents penetrate deeper, which is why they are chosen for slightly subsurface flaws."
+    },
+    {
+      "question": "A heavy shaft was magnetized with full-wave rectified DC. Which approach is most likely to remove its deep residual field?",
+      "options": [
+        "Pass it slowly through an energized AC demagnetizing coil",
+        "Apply reversing, step-down DC demagnetization",
+        "Store it oriented east–west for several days",
+        "Wipe the surface with the poles of an AC yoke"
+      ],
+      "correct": 1,
+      "explanation": "AC demagnetization — coil or yoke — is depth-limited by the skin effect, and east–west storage merely avoids picking up the Earth's field. A deep residual field from DC magnetization calls for a reversing DC field stepped down to zero, which works the full cross-section."
+    }
+  ],
+  "references": [
+    "ANSI/ASNT CP-105-2024, Basic Examination Topical Outline §2.5.1 (MT fundamentals: magnetic field principles, magnetization by means of electric current, demagnetization)",
+    "ASTM E1444/E1444M, Standard Practice for Magnetic Particle Testing (current-level guidance, coil ampere-turn rules, central conductor coverage, residual field limits)",
+    "ASTM E709, Standard Guide for Magnetic Particle Testing",
+    "ASME BPVC Section V, Article 7, Magnetic Particle Examination (prod technique amperage and spacing)"
+  ]
+}

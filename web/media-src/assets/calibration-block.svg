@@ -1,0 +1,153 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="cbglowC" filterUnits="userSpaceOnUse" x="-58" y="-58" width="116" height="456">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cbglowR" filterUnits="userSpaceOnUse" x="18" y="71" width="537" height="276">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="cbsteel" x1="0" y1="140" x2="0" y2="290" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".3" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <radialGradient id="cbacr" cx=".38" cy=".32" r=".75">
+      <stop offset="0" stop-color="#9feaff" stop-opacity=".34"/>
+      <stop offset=".55" stop-color="#5fe0ff" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".05"/>
+    </radialGradient>
+    <linearGradient id="cbscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== BLOCK BODY: 300x100 profile, 100mm-radius quadrant on left ===== -->
+  <path d="M525 140 L75 140 A150 150 0 0 0 225 290 L525 290 Z" fill="url(#cbsteel)"/>
+  <!-- machining texture -->
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".14" fill="none">
+    <line x1="84" y1="170" x2="519" y2="170"/>
+    <line x1="93" y1="200" x2="519" y2="200"/>
+    <line x1="110" y1="230" x2="519" y2="230"/>
+    <line x1="140" y1="260" x2="519" y2="260"/>
+  </g>
+  <!-- block outline -->
+  <path d="M525 140 L75 140 A150 150 0 0 0 225 290 L525 290 L525 140 Z" fill="none" stroke="#8fb6e0" stroke-width="2"/>
+  <!-- arc inner glow accent -->
+  <path d="M75 140 A150 150 0 0 0 225 290" fill="none" stroke="#5fe0ff" stroke-width="1.2" opacity=".5" filter="url(#cbglowR)"/>
+
+  <!-- ===== RADIUS FOCAL POINT: slot + engraved zero line ===== -->
+  <line x1="225" y1="148" x2="225" y2="284" stroke="#7fd8ff" stroke-width="1" stroke-dasharray="3 5" opacity=".25"/>
+  <rect x="223" y="140" width="4" height="31" fill="#08152b" stroke="#8fb6e0" stroke-width="1" opacity=".95"/>
+  <!-- exit index tick engraved on wedge / surface -->
+  <line x1="225" y1="133" x2="225" y2="146" stroke="#9fe6ff" stroke-width="1.6" opacity=".9"/>
+
+  <!-- ===== ACRYLIC INSERT Ø50, center 30mm above bottom edge ===== -->
+  <circle cx="307.5" cy="222.5" r="39.5" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".85"/>
+  <circle cx="307.5" cy="222.5" r="37.5" fill="url(#cbacr)" stroke="#7fd8ff" stroke-width="1" opacity=".95"/>
+  <path d="M283 205 A31 31 0 0 1 305 191" fill="none" stroke="#9feaff" stroke-width="2" opacity=".5"/>
+  <line x1="301.5" y1="222.5" x2="313.5" y2="222.5" stroke="#7fd8ff" stroke-width="1" opacity=".6"/>
+  <line x1="307.5" y1="216.5" x2="307.5" y2="228.5" stroke="#7fd8ff" stroke-width="1" opacity=".6"/>
+  <text x="307.5" y="248" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".55">Ø50</text>
+
+  <!-- ===== ENGRAVED DEGREE SCALE (35-70) radiating from insert center to lower-right edge ===== -->
+  <g stroke="#7fd8ff" stroke-width="1.2" opacity=".75">
+    <line x1="354.8" y1="290" x2="349.6" y2="282.6"/>
+    <line x1="364.1" y1="290" x2="355.1" y2="279.3" stroke-width="1.5"/>
+    <line x1="375" y1="290" x2="368.6" y2="283.6"/>
+    <line x1="387.9" y1="290" x2="377.2" y2="281" stroke-width="1.5"/>
+    <line x1="403.9" y1="290" x2="396.5" y2="284.8"/>
+    <line x1="424.4" y1="290" x2="412.3" y2="283" stroke-width="1.5"/>
+    <line x1="452.3" y1="290" x2="444.1" y2="286.2"/>
+    <line x1="493" y1="290" x2="479.8" y2="285.2" stroke-width="1.5"/>
+  </g>
+  <g font-size="11" fill="#9fe6ff" text-anchor="middle" opacity=".7">
+    <text x="347.4" y="273.5">40</text>
+    <text x="368.5" y="276.5">50</text>
+    <text x="402.5" y="280">60</text>
+    <text x="469" y="283.5">70</text>
+  </g>
+
+  <!-- ===== 1.5mm SDH, 15mm below scan surface ===== -->
+  <circle cx="480" cy="162.5" r="3" fill="#08152b" stroke="#8fb6e0" stroke-width="1.2"/>
+  <text x="489" y="159" font-size="11" fill="#9fe6ff" opacity=".5">Ø1.5</text>
+
+  <!-- engraved stamp -->
+  <text x="392" y="180" text-anchor="middle" font-size="11" fill="#7fd8ff" opacity=".3" letter-spacing="2">IIW</text>
+
+  <!-- ===== R100 TAG ===== -->
+  <g font-size="11">
+    <path d="M94 130 L83 170" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="78" y="124" fill="#9fe6ff" opacity=".8">R 100</text>
+  </g>
+
+  <!-- ===== ANGLE-BEAM PROBE + WEDGE coupled over the focal point, facing the radius ===== -->
+  <g>
+    <line x1="198" y1="141" x2="260" y2="141" stroke="#5fe0ff" stroke-width="1.4" opacity=".5"/>
+    <path d="M196 140 L262 140 L262 131 L196 108 Z" fill="#0e2848" stroke="#8fb6e0" stroke-width="1.5"/>
+    <text x="201" y="137" font-size="11" fill="#9fe6ff" opacity=".6">45°</text>
+    <g transform="translate(229 119.5) rotate(19.2)">
+      <rect x="-17" y="-30" width="34" height="30" rx="3" fill="#14304f" stroke="#8fb6e0" stroke-width="1.5"/>
+      <line x1="-17" y1="-7" x2="17" y2="-7" stroke="#8fb6e0" stroke-width="1" opacity=".55"/>
+      <rect x="-6" y="-38" width="12" height="8" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.3"/>
+    </g>
+    <path d="M242 82 C256 72 270 69 286 69" fill="none" stroke="#8fb6e0" stroke-width="2" opacity=".8"/>
+    <line x1="225" y1="134" x2="225" y2="141" stroke="#5fe0ff" stroke-width="2" filter="url(#cbglowR)"/>
+  </g>
+
+  <!-- ===== STEP 1 · EXIT POINT: ray to 100mm radius and back ===== -->
+  <path id="cbExit" d="M225 140 L118.9 246.1 M122.4 249.5 L228.4 143.5" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#cbglowR)"/>
+  <circle id="cbExitPing" cx="225" cy="141" r="6" fill="none" stroke="#5fe0ff" stroke-width="2" opacity="0" filter="url(#cbglowR)"/>
+  <g id="cbExitLbl" opacity="0" font-size="12">
+    <line x1="225" y1="128" x2="225" y2="146" stroke="#5fe0ff" stroke-width="2.4" filter="url(#cbglowR)"/>
+    <path d="M222 152 L229 145 L221.4 144.4 Z" fill="#5fe0ff"/>
+    <path d="M148 104 L213 130" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="110" y="100" text-anchor="middle" fill="#9fe6ff">1 · EXIT POINT</text>
+  </g>
+
+  <!-- ===== STEP 2 · REFRACTED ANGLE: ray through acrylic insert + scale sweep ===== -->
+  <path id="cbAngle" d="M225 140 L375 290 M352 287.5 L498 287.5" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#cbglowR)"/>
+  <g id="cbAngleLbl" opacity="0" font-size="12">
+    <line x1="225" y1="146" x2="225" y2="198" stroke="#9fe6ff" stroke-width="1" stroke-dasharray="3 4" opacity=".55"/>
+    <path d="M225 180 A40 40 0 0 0 253.3 168.3" fill="none" stroke="#ffc24b" stroke-width="1.5"/>
+    <text x="236" y="204" fill="#ffc24b">45°</text>
+    <line x1="375" y1="290" x2="366.2" y2="278.2" stroke="#ffc24b" stroke-width="2.4" filter="url(#cbglowR)"/>
+    <path d="M428 222 L386 264" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="446" y="216" text-anchor="middle" fill="#9fe6ff">2 · REFRACTED ANGLE</text>
+  </g>
+
+  <!-- ===== STEP 3 · RANGE: echo wavefronts returning from the radius ===== -->
+  <path id="cbRange" d="M155.5 255.7 A135 135 0 0 1 109.3 209.5 M176.1 221.4 A95 95 0 0 1 143.6 188.9 M196.7 187.1 A55 55 0 0 1 177.9 168.3" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#cbglowR)"/>
+  <g id="cbRangeLbl" opacity="0" font-size="12">
+    <text x="141" y="185" fill="#9fe6ff" transform="rotate(-45 141 185)" text-anchor="middle">100 mm</text>
+    <path d="M84 282 L118 256" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="66" y="302" text-anchor="middle" fill="#9fe6ff">3 · RANGE</text>
+  </g>
+
+  <!-- ===== STEP 4 · SENSITIVITY: SDH glows + 80% FSH reference bar ===== -->
+  <g id="cbSens" opacity="0">
+    <circle cx="480" cy="162.5" r="8" fill="#ffc24b" opacity=".22"/>
+    <circle cx="480" cy="162.5" r="3" fill="#ffc24b" filter="url(#cbglowR)"/>
+    <circle cx="480" cy="162.5" r="5.4" fill="none" stroke="#ffc24b" stroke-width="1.4" opacity=".9"/>
+    <path d="M488 168 L540 186" stroke="#ffc24b" stroke-width="1" opacity=".5" fill="none"/>
+    <rect x="546" y="152" width="13" height="46" fill="none" stroke="#8fb6e0" stroke-width="1.2"/>
+    <rect x="547.5" y="161.2" width="10" height="35.3" fill="#ffc24b" opacity=".75"/>
+    <line x1="541" y1="161.2" x2="564" y2="161.2" stroke="#ffc24b" stroke-width="1.4" stroke-dasharray="3 2"/>
+    <text x="552" y="212" text-anchor="middle" font-size="11" fill="#ffc24b">80% FSH</text>
+  </g>
+  <circle id="cbSensPing" cx="480" cy="162.5" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#cbglowR)"/>
+  <g id="cbSensLbl" opacity="0" font-size="12">
+    <path d="M468 118 L478 152" stroke="#ffc24b" stroke-width="1" opacity=".5" fill="none"/>
+    <text x="462" y="112" text-anchor="middle" fill="#9fe6ff">4 · SENSITIVITY</text>
+  </g>
+
+  <!-- ===== captions (lower-center kept clear for note chip) ===== -->
+  <text x="40" y="326" font-size="12" fill="#9fe6ff" opacity=".7">IIW TYPE 1 (V1)</text>
+  <text x="560" y="326" text-anchor="end" font-size="12" fill="#9fe6ff" opacity=".7">300 × 100 × 25 mm</text>
+
+  <!-- ===== scan group ===== -->
+  <g id="cbscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#cbscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#cbglowC)" opacity=".9"/>
+  </g>
+</svg>

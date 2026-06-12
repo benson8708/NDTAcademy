@@ -1,0 +1,208 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="bcoGlow" filterUnits="userSpaceOnUse" x="-58" y="-58" width="116" height="456">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bcoGlowSm" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="bcoSoft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation=".9"/>
+    </filter>
+    <linearGradient id="bcoField" x1="78" y1="66" x2="180" y2="276" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1c5096"/><stop offset=".55" stop-color="#15407a"/><stop offset="1" stop-color="#0f2c58"/>
+    </linearGradient>
+    <linearGradient id="bcoBar" x1="0" y1="70" x2="0" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2f7ef2"/><stop offset=".5" stop-color="#ffc24b"/><stop offset=".78" stop-color="#ff9b4b"/><stop offset="1" stop-color="#ff6b6b"/>
+    </linearGradient>
+    <linearGradient id="bcoScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+    <pattern id="bcoRaster" width="8" height="6" patternUnits="userSpaceOnUse">
+      <path d="M0 3 H8" stroke="#9fd9ff" stroke-width="1" opacity=".08"/>
+    </pattern>
+    <pattern id="bcoHatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="1" y1="0" x2="1" y2="8" stroke="#ffc24b" stroke-width="1.4" opacity=".6"/>
+    </pattern>
+    <clipPath id="bcoClip"><rect x="78" y="66" width="420" height="210" rx="10"/></clipPath>
+  </defs>
+
+  <!-- ===== titles ===== -->
+  <text x="78" y="30" font-size="11.5" fill="#9fe6ff" opacity=".8">THROUGH-TRANSMISSION C-SCAN — BONDED DOUBLER</text>
+  <text x="594" y="30" text-anchor="end" font-size="9" fill="#9fe6ff" opacity=".5">CLASS B · ILLUSTRATIVE</text>
+
+  <!-- ===== axes: ticks + values ===== -->
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".5">
+    <path d="M78 59 V66 M148 59 V66 M218 59 V66 M288 59 V66 M358 59 V66 M428 59 V66 M498 59 V66"/>
+    <path d="M70 66 H77 M70 136 H77 M70 206 H77 M70 276 H77"/>
+  </g>
+  <g font-size="9" fill="#9fe6ff" opacity=".6">
+    <text x="78" y="54" text-anchor="middle">0</text>
+    <text x="218" y="54" text-anchor="middle">100</text>
+    <text x="358" y="54" text-anchor="middle">200</text>
+    <text x="498" y="54" text-anchor="middle">300</text>
+    <text x="66" y="69" text-anchor="end">0</text>
+    <text x="66" y="139" text-anchor="end">50</text>
+    <text x="66" y="209" text-anchor="end">100</text>
+    <text x="66" y="279" text-anchor="end">150</text>
+  </g>
+  <text x="56" y="54" text-anchor="end" font-size="9" fill="#9fe6ff" opacity=".45">mm</text>
+
+  <!-- ===== C-scan field (clipped to doubler) ===== -->
+  <g clip-path="url(#bcoClip)">
+    <rect x="78" y="66" width="420" height="210" fill="url(#bcoField)"/>
+    <!-- transmission mottle -->
+    <ellipse cx="185" cy="102" rx="62" ry="24" fill="#7fd8ff" opacity=".05"/>
+    <ellipse cx="410" cy="218" rx="75" ry="30" fill="#08152b" opacity=".16"/>
+    <ellipse cx="130" cy="240" rx="50" ry="22" fill="#7fd8ff" opacity=".04"/>
+
+    <!-- sub-threshold speckle (below 6 mm — never tagged) -->
+    <g fill="#ffc24b" opacity=".5">
+      <circle cx="123" cy="205" r="2"/><circle cx="147" cy="128" r="1.7"/><circle cx="190" cy="247" r="1.6"/>
+      <circle cx="262" cy="121" r="2"/><circle cx="233" cy="142" r="1.7"/><circle cx="320" cy="238" r="2.2"/>
+      <circle cx="372" cy="202" r="1.8"/><circle cx="430" cy="176" r="2"/><circle cx="362" cy="154" r="1.5"/>
+      <circle cx="282" cy="212" r="1.5"/><circle cx="440" cy="240" r="2"/><circle cx="115" cy="160" r="1.7"/>
+      <circle cx="350" cy="252" r="1.8"/>
+    </g>
+    <g fill="#ff9b4b" opacity=".45">
+      <circle cx="398" cy="132" r="2.3"/><circle cx="205" cy="158" r="2.3"/>
+    </g>
+
+    <!-- D1 · 12 mm -->
+    <g transform="rotate(-14 165 140)" filter="url(#bcoSoft)">
+      <ellipse cx="165" cy="140" rx="8.5" ry="6.8" fill="#ffc24b"/>
+      <ellipse cx="164" cy="139.5" rx="4.6" ry="3.6" fill="#ff9b4b"/>
+    </g>
+    <!-- D2 · 9 mm -->
+    <g transform="rotate(18 348 118)" filter="url(#bcoSoft)">
+      <ellipse cx="348" cy="118" rx="6.5" ry="5.4" fill="#ffc24b"/>
+      <ellipse cx="349" cy="118" rx="3.2" ry="2.6" fill="#ff9b4b"/>
+    </g>
+    <!-- D3 · 16 mm -->
+    <g transform="rotate(-9 236 232)" filter="url(#bcoSoft)">
+      <ellipse cx="236" cy="232" rx="11" ry="8.8" fill="#ffc24b"/>
+      <ellipse cx="235" cy="231.5" rx="6.4" ry="5" fill="#ff9b4b"/>
+      <ellipse cx="234.5" cy="231" rx="2.9" ry="2.2" fill="#ff6b6b"/>
+    </g>
+    <!-- D4 · 34 mm — oversize, mid-panel -->
+    <g filter="url(#bcoSoft)">
+      <path d="M276 177 C275 166 283 156 296 154 C310 152 321 158 323 169 C325 179 319 190 307 194 C293 198 278 190 276 177 Z" fill="#ffc24b"/>
+      <path d="M283 176 C283 168 289 161 298 160 C308 158 316 163 317 171 C318 179 313 187 304 189 C294 191 284 185 283 176 Z" fill="#ff9b4b"/>
+      <path d="M292 175 C292 169 296 165 301 165 C307 165 311 169 311 175 C311 181 306 184 300 184 C295 184 292 180 292 175 Z" fill="#ff6b6b"/>
+    </g>
+    <!-- D5 · 8 mm — inside edge zone -->
+    <g transform="rotate(20 487 212)" filter="url(#bcoSoft)">
+      <ellipse cx="487" cy="212" rx="5.5" ry="4.5" fill="#ffc24b"/>
+      <ellipse cx="487.5" cy="212" rx="2.7" ry="2.1" fill="#ff9b4b"/>
+    </g>
+
+    <!-- raster scan-line texture -->
+    <rect x="78" y="66" width="420" height="210" fill="url(#bcoRaster)"/>
+  </g>
+
+  <!-- adhesive fillet hint -->
+  <rect x="84" y="72" width="408" height="198" rx="7" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".18"/>
+
+  <!-- faint fastener row -->
+  <g opacity=".35">
+    <path d="M96 96 H480" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="6 5" opacity=".6" fill="none"/>
+    <g fill="#0d2750" stroke="#8fb6e0" stroke-width="1.2">
+      <circle cx="110" cy="96" r="3.5"/><circle cx="155" cy="96" r="3.5"/><circle cx="200" cy="96" r="3.5"/>
+      <circle cx="245" cy="96" r="3.5"/><circle cx="290" cy="96" r="3.5"/><circle cx="335" cy="96" r="3.5"/>
+      <circle cx="380" cy="96" r="3.5"/><circle cx="425" cy="96" r="3.5"/><circle cx="470" cy="96" r="3.5"/>
+    </g>
+    <g fill="#8fb6e0">
+      <circle cx="110" cy="96" r="1"/><circle cx="155" cy="96" r="1"/><circle cx="200" cy="96" r="1"/>
+      <circle cx="245" cy="96" r="1"/><circle cx="290" cy="96" r="1"/><circle cx="335" cy="96" r="1"/>
+      <circle cx="380" cy="96" r="1"/><circle cx="425" cy="96" r="1"/><circle cx="470" cy="96" r="1"/>
+    </g>
+  </g>
+
+  <!-- doubler outline + datum corner -->
+  <rect x="78" y="66" width="420" height="210" rx="10" fill="none" stroke="#8fb6e0" stroke-width="2"/>
+  <g>
+    <circle cx="78" cy="66" r="6" fill="none" stroke="#5fe0ff" stroke-width="1.3"/>
+    <path d="M78 66 L84 66 A6 6 0 0 0 78 60 Z" fill="#5fe0ff"/>
+    <path d="M78 66 L72 66 A6 6 0 0 0 78 72 Z" fill="#5fe0ff"/>
+  </g>
+
+  <!-- ===== right rail: transmission-loss color bar ===== -->
+  <text x="550" y="59" text-anchor="middle" font-size="9.5" fill="#9fe6ff" opacity=".7">TT LOSS dB</text>
+  <rect x="516" y="70" width="18" height="100" fill="url(#bcoBar)" stroke="#8fb6e0" stroke-width="1" opacity=".9"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".5">
+    <path d="M534 70 H539 M534 103 H539 M534 137 H539 M534 170 H539"/>
+  </g>
+  <g font-size="9" fill="#9fe6ff" opacity=".65">
+    <text x="542" y="73.5">0</text>
+    <text x="542" y="106.5">-6</text>
+    <text x="542" y="140">-12</text>
+    <text x="542" y="173">-18</text>
+  </g>
+
+  <!-- ===== REVEAL 1 · log recordables (≥ 6 mm) ===== -->
+  <g id="bcoRecord" opacity="0">
+    <g fill="none" stroke="#5fe0ff" stroke-width="1.6" filter="url(#bcoGlowSm)">
+      <circle cx="165" cy="140" r="14.5"/>
+      <circle cx="348" cy="118" r="12.5"/>
+      <circle cx="236" cy="232" r="17"/>
+      <circle cx="300" cy="175" r="32.5" stroke-width="1.8"/>
+      <circle cx="487" cy="212" r="10.5"/>
+    </g>
+    <g font-size="10" fill="#5fe0ff">
+      <text x="183" y="130">D1</text>
+      <text x="363" y="109">D2</text>
+      <text x="257" y="252">D3</text>
+      <text x="262" y="172" text-anchor="end">D4</text>
+      <text x="468" y="232" text-anchor="end">D5</text>
+    </g>
+    <text x="550" y="195" text-anchor="middle" font-size="10.5" fill="#5fe0ff">REC ≥ 6 mm</text>
+  </g>
+
+  <!-- ===== REVEAL 2 · single-size limit (Ø 25 max) ===== -->
+  <g id="bcoSingle" opacity="0">
+    <circle cx="300" cy="175" r="17.5" fill="none" stroke="#9fe6ff" stroke-width="2" stroke-dasharray="6 4"/>
+    <path d="M311 162 L325 149" stroke="#9fe6ff" stroke-width="1" opacity=".6" fill="none"/>
+    <text x="328" y="147" font-size="10" fill="#9fe6ff">Ø 25 MAX</text>
+    <g stroke="#08152b" stroke-width="5" fill="none" opacity=".85" stroke-linecap="round">
+      <path d="M276 175 H324 M276 167 V183 M324 167 V183"/>
+    </g>
+    <g stroke="#ff6b6b" stroke-width="1.8" fill="none">
+      <path d="M276 175 H324 M276 167 V183 M324 167 V183"/>
+    </g>
+    <text x="300" y="220" text-anchor="middle" font-size="11.5" fill="#ff6b6b" filter="url(#bcoGlowSm)">Ø 34 — OVER</text>
+  </g>
+  <circle id="bcoPingSingle" cx="300" cy="175" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#bcoGlowSm)"/>
+
+  <!-- ===== REVEAL 3 · cumulative density readout ===== -->
+  <g id="bcoDensity" opacity="0">
+    <rect x="506" y="206" width="88" height="56" rx="8" fill="#0e2848" opacity=".88"/>
+    <rect x="506" y="206" width="88" height="56" rx="8" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".6"/>
+    <text x="550" y="221" text-anchor="middle" font-size="8.5" fill="#9fe6ff" opacity=".8">Σ DISBOND AREA</text>
+    <rect x="514" y="229" width="72" height="8" rx="4" fill="#14304f" stroke="#8fb6e0" stroke-width="1" opacity=".9"/>
+    <rect x="514" y="230" width="54.7" height="6" rx="3" fill="#5fe0ff" opacity=".9"/>
+    <path d="M586 226 V240" stroke="#ff6b6b" stroke-width="1.5"/>
+    <text x="550" y="254" text-anchor="middle" font-size="9.5" fill="#9fe6ff"><tspan fill="#5fe0ff">3.8%</tspan> / LIM 5%</text>
+  </g>
+
+  <!-- ===== REVEAL 4 · 13 mm edge zone ===== -->
+  <g id="bcoEdge" opacity="0">
+    <path fill-rule="evenodd" fill="url(#bcoHatch)" opacity=".5" d="M88 66 H488 A10 10 0 0 1 498 76 V266 A10 10 0 0 1 488 276 H88 A10 10 0 0 1 78 266 V76 A10 10 0 0 1 88 66 Z M100 84 H476 A4 4 0 0 1 480 88 V254 A4 4 0 0 1 476 258 H100 A4 4 0 0 1 96 254 V88 A4 4 0 0 1 100 84 Z"/>
+    <rect x="96" y="84" width="384" height="174" rx="4" fill="none" stroke="#ffc24b" stroke-width="1.2" stroke-dasharray="5 4" opacity=".85"/>
+    <rect x="78" y="66" width="420" height="210" rx="10" fill="none" stroke="#ffc24b" stroke-width="2" filter="url(#bcoGlowSm)" opacity=".9"/>
+    <rect x="240" y="261" width="96" height="12" rx="3" fill="#0e2848" opacity=".8"/>
+    <text x="288" y="270.5" text-anchor="middle" font-size="10" fill="#ffc24b">EDGE ZONE 13 mm</text>
+    <circle cx="487" cy="212" r="13" fill="none" stroke="#ff6b6b" stroke-width="2" filter="url(#bcoGlowSm)"/>
+    <path d="M474 204 L446 193" stroke="#ff6b6b" stroke-width="1" opacity=".6" fill="none"/>
+    <text x="443" y="190" text-anchor="end" font-size="11" fill="#ff6b6b" filter="url(#bcoGlowSm)">EDGE — REJECT</text>
+  </g>
+  <circle id="bcoPingEdge" cx="487" cy="212" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#bcoGlowSm)"/>
+
+  <!-- ===== scan sweep ===== -->
+  <g id="bcoscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#bcoScanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#bcoGlow)" opacity=".9"/>
+  </g>
+</svg>

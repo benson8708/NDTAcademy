@@ -1,0 +1,179 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="casGlow" filterUnits="userSpaceOnUse" x="-58" y="-58" width="517" height="456">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="casGlowS" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="casSteelLite" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3d6ea3"/><stop offset=".45" stop-color="#234a77"/><stop offset="1" stop-color="#142f54"/>
+    </linearGradient>
+    <linearGradient id="casFoilG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c4dcf2"/><stop offset=".45" stop-color="#85add4"/><stop offset="1" stop-color="#44719f"/>
+    </linearGradient>
+    <linearGradient id="casBaseG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b86ff"/><stop offset="1" stop-color="#1E66F5"/>
+    </linearGradient>
+    <linearGradient id="casScanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== SOURCE SIDE indicator (static, parked between ray columns) ===== -->
+  <text x="305" y="20" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".8" letter-spacing="2">SOURCE SIDE</text>
+  <g fill="none" stroke="#ffc24b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".8">
+    <path d="M296 27 L305 34 L314 27"/>
+    <path d="M296 39 L305 46 L314 39"/>
+  </g>
+
+  <!-- ===== LIGHT-TIGHT SHELL (static outline) ===== -->
+  <rect x="132" y="52" width="300" height="240" rx="12" fill="none" stroke="#8fb6e0" stroke-width="2"/>
+  <rect x="137" y="57" width="290" height="230" rx="9" fill="none" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="5 4" opacity=".3"/>
+
+  <!-- ghost slats (static, faint placeholders so default isn't empty) -->
+  <g fill="#5fe0ff" fill-opacity=".05" stroke="#8fb6e0" stroke-opacity=".25" stroke-width="1">
+    <rect x="150" y="66" width="250" height="16" rx="2"/>
+    <rect x="150" y="109" width="250" height="11" rx="1.5"/>
+    <rect x="150" y="148" width="250" height="26" rx="2"/>
+    <rect x="150" y="198" width="250" height="18" rx="1.5"/>
+    <rect x="150" y="244" width="250" height="18" rx="2"/>
+  </g>
+
+  <!-- ===== EXPLODED LAYER STACK + LABELS ===== -->
+  <g id="casStack" opacity="0">
+    <!-- faint assembly axis -->
+    <line x1="160" y1="82" x2="160" y2="244" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="2 5" opacity=".18"/>
+    <line x1="390" y1="82" x2="390" y2="244" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="2 5" opacity=".18"/>
+
+    <!-- 1. front face: low absorption -->
+    <rect x="150" y="66" width="250" height="16" rx="2" fill="url(#casSteelLite)" stroke="#8fb6e0" stroke-width="1.5"/>
+    <line x1="153" y1="69" x2="397" y2="69" stroke="#dff0ff" stroke-width="1" opacity=".6"/>
+
+    <!-- 2. front lead screen: card + 0.005in foil (foil faces film) -->
+    <rect x="150" y="109" width="250" height="4" fill="#0e2848" stroke="#8fb6e0" stroke-width=".75" opacity=".9"/>
+    <rect x="150" y="113" width="250" height="7" fill="url(#casFoilG)" stroke="#cfe6ff" stroke-width=".8"/>
+    <line x1="152" y1="114.4" x2="398" y2="114.4" stroke="#eaf6ff" stroke-width=".8" opacity=".85"/>
+
+    <!-- 3. film: emulsion / base / emulsion -->
+    <rect x="150" y="148" width="250" height="6" fill="#9fe0ff"/>
+    <rect x="150" y="154" width="250" height="14" fill="url(#casBaseG)"/>
+    <rect x="150" y="168" width="250" height="6" fill="#9fe0ff"/>
+    <rect x="150" y="148" width="250" height="26" fill="none" stroke="#cfe6ff" stroke-width="1" opacity=".8"/>
+    <g fill="#0a1f3a" opacity=".6">
+      <circle cx="163" cy="151" r=".9"/><circle cx="189" cy="152" r=".9"/><circle cx="214" cy="150.5" r=".9"/><circle cx="243" cy="151.8" r=".9"/><circle cx="268" cy="150.4" r=".9"/><circle cx="297" cy="151.6" r=".9"/><circle cx="323" cy="150.6" r=".9"/><circle cx="352" cy="151.7" r=".9"/><circle cx="381" cy="150.8" r=".9"/>
+      <circle cx="171" cy="170.7" r=".9"/><circle cx="199" cy="171.6" r=".9"/><circle cx="226" cy="170.4" r=".9"/><circle cx="255" cy="171.4" r=".9"/><circle cx="281" cy="170.6" r=".9"/><circle cx="309" cy="171.5" r=".9"/><circle cx="338" cy="170.5" r=".9"/><circle cx="366" cy="171.3" r=".9"/><circle cx="392" cy="170.7" r=".9"/>
+    </g>
+
+    <!-- 4. back lead screen: 0.010in foil (faces film) + card -->
+    <rect x="150" y="198" width="250" height="14" fill="url(#casFoilG)" stroke="#cfe6ff" stroke-width=".8"/>
+    <line x1="152" y1="199.6" x2="398" y2="199.6" stroke="#eaf6ff" stroke-width=".8" opacity=".85"/>
+    <rect x="150" y="212" width="250" height="4" fill="#0e2848" stroke="#8fb6e0" stroke-width=".75" opacity=".9"/>
+
+    <!-- 5. pressure backing: felt pad + springs against shell back -->
+    <rect x="150" y="244" width="250" height="18" rx="2" fill="#0c2340" stroke="#8fb6e0" stroke-width="1.2"/>
+    <g fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".45">
+      <path d="M156 249 q6 -3 12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0"/>
+      <path d="M156 254 q6 3 12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0"/>
+      <path d="M156 258 q6 -3 12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0 t12 0"/>
+    </g>
+    <g fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".85" stroke-linejoin="round">
+      <path d="M190 265 l6 3 l-12 4 l12 4 l-12 4 l6 3"/>
+      <path d="M275 265 l6 3 l-12 4 l12 4 l-12 4 l6 3"/>
+      <path d="M360 265 l6 3 l-12 4 l12 4 l-12 4 l6 3"/>
+    </g>
+
+    <!-- right-hand layer labels -->
+    <g font-size="12" fill="#9fe6ff">
+      <path d="M428 56 L444 56" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+      <text x="448" y="60" opacity=".9">LIGHT-TIGHT SHELL</text>
+
+      <path d="M402 74 L444 88" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+      <text x="448" y="92" opacity=".9">FRONT FACE</text>
+      <text x="448" y="105" font-size="11" opacity=".55">LOW ABSORPTION</text>
+
+      <path d="M402 117 L444 130" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+      <text x="448" y="134" opacity=".9">FRONT LEAD SCREEN</text>
+
+      <path d="M402 151 L438 166 L444 166 M402 171 L438 166" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+      <text x="448" y="170" opacity=".9">FILM</text>
+      <text x="448" y="183" font-size="11" opacity=".55">DOUBLE EMULSION</text>
+
+      <path d="M402 206 L444 216" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+      <text x="448" y="220" opacity=".9">BACK LEAD SCREEN</text>
+
+      <path d="M402 253 L444 250" stroke="#5fe0ff" stroke-width="1" opacity=".5" fill="none"/>
+      <text x="448" y="254" opacity=".9">PRESSURE BACKING</text>
+      <text x="448" y="267" font-size="11" opacity=".55">FELT + SPRING</text>
+    </g>
+
+    <!-- left-hand foil thickness tags (dim until casFoils brightens them) -->
+    <g font-size="12" fill="#9fe6ff" opacity=".8">
+      <path d="M148 113 H132 V120 H148" stroke="#5fe0ff" stroke-width=".9" opacity=".6" fill="none"/>
+      <text x="124" y="121" text-anchor="end">0.005 IN</text>
+      <path d="M148 198 H132 V212 H148" stroke="#5fe0ff" stroke-width=".9" opacity=".6" fill="none"/>
+      <text x="124" y="209" text-anchor="end">0.010 IN</text>
+    </g>
+  </g>
+
+  <!-- ===== PHOTON STREAKS (draw-on, pour straight through; butt caps so hidden dash leaks no dot) ===== -->
+  <g stroke="#ffc24b" fill="none" stroke-linecap="butt">
+    <path id="casRay1" d="M180 34 V298" stroke-width="1.5" opacity=".4" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <path id="casRay2" d="M230 34 V298" stroke-width="1.5" opacity=".4" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <path id="casRay3" d="M280 34 V151" stroke-width="2" opacity=".85" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <path id="casRay4" d="M330 34 V298" stroke-width="1.5" opacity=".4" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <path id="casRay5" d="M380 34 V298" stroke-width="1.5" opacity=".4" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  </g>
+
+  <!-- pass-through arrowheads + capture starburst + ~1% tag -->
+  <g id="casBeam" opacity="0">
+    <g fill="#ffc24b" opacity=".55">
+      <path d="M176 296 L180 306 L184 296 Z"/>
+      <path d="M226 296 L230 306 L234 296 Z"/>
+      <path d="M326 296 L330 306 L334 296 Z"/>
+      <path d="M376 296 L380 306 L384 296 Z"/>
+    </g>
+    <circle cx="280" cy="151" r="8.5" fill="none" stroke="#ffc24b" stroke-width="1" opacity=".35"/>
+    <g stroke="#ffc24b" stroke-width="1.8" stroke-linecap="round" filter="url(#casGlowS)">
+      <path d="M274 145 L286 157 M286 145 L274 157 M280 142 V160 M271 151 H289"/>
+    </g>
+    <circle cx="280" cy="151" r="3" fill="#ffc24b" filter="url(#casGlowS)"/>
+    <path d="M146 151 H130" stroke="#ffc24b" stroke-width="1" opacity=".55" fill="none"/>
+    <text x="124" y="155" text-anchor="end" font-size="12" fill="#ffc24b" opacity=".95">~1% CAPTURED</text>
+  </g>
+  <circle id="casPing" cx="280" cy="151" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#casGlowS)"/>
+
+  <!-- ===== FOILS GLOW + electron clawback (lead screens earn their keep) ===== -->
+  <g id="casFoils" opacity="0">
+    <rect x="150" y="113" width="250" height="7" fill="#5fe0ff" opacity=".25"/>
+    <rect x="150" y="198" width="250" height="14" fill="#5fe0ff" opacity=".25"/>
+    <rect x="149" y="112" width="252" height="9" rx="2" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#casGlow)"/>
+    <rect x="149" y="197" width="252" height="16" rx="2" fill="none" stroke="#5fe0ff" stroke-width="1.8" filter="url(#casGlow)"/>
+    <!-- photoelectrons fired into the film at contact range -->
+    <g stroke="#5fe0ff" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".95">
+      <path d="M205 124 V138 M201 134 L205 142 L209 134"/>
+      <path d="M255 124 V138 M251 134 L255 142 L259 134"/>
+      <path d="M355 124 V138 M351 134 L355 142 L359 134"/>
+      <path d="M205 196 V182 M201 186 L205 178 L209 186"/>
+      <path d="M305 196 V182 M301 186 L305 178 L309 186"/>
+      <path d="M355 196 V182 M351 186 L355 178 L359 186"/>
+    </g>
+    <text x="363" y="136" font-size="11" fill="#5fe0ff" opacity=".9">e-</text>
+    <text x="363" y="190" font-size="11" fill="#5fe0ff" opacity=".9">e-</text>
+    <!-- thickness tags brighten -->
+    <text x="124" y="121" text-anchor="end" font-size="12" fill="#5fe0ff" filter="url(#casGlowS)">0.005 IN</text>
+    <text x="124" y="209" text-anchor="end" font-size="12" fill="#5fe0ff" filter="url(#casGlowS)">0.010 IN</text>
+  </g>
+
+  <!-- footer caption -->
+  <text x="40" y="328" font-size="12" fill="#9fe6ff" opacity=".7">LOADED FILM CASSETTE — EDGE-ON SECTION</text>
+
+  <!-- ===== scan group ===== -->
+  <g id="casscanG" transform="translate(60,0)">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#casScanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#casGlow)" opacity=".9"/>
+  </g>
+</svg>

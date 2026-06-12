@@ -1,0 +1,162 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="asrglow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="asrglowS" filterUnits="userSpaceOnUse" x="80" y="-6" width="327" height="347">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="asrsteelV" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".35" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="asrprobe" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f5e8e"/><stop offset=".5" stop-color="#14304f"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="asrskin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#35639b"/><stop offset="1" stop-color="#1b3e66"/>
+    </linearGradient>
+    <pattern id="asrhex" patternUnits="userSpaceOnUse" x="46" y="179" width="15" height="26">
+      <path d="M7.5 2 L14.5 7.5 V18.5 L7.5 24 L0.5 18.5 V7.5 Z" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".42"/>
+    </pattern>
+  </defs>
+
+  <!-- ===== soft ground shadow (right side only; lower-left kept clear) ===== -->
+  <ellipse cx="420" cy="330" rx="135" ry="7" fill="#5fe0ff" opacity=".05"/>
+
+  <!-- ===== RX signal cable into yoke spine ===== -->
+  <path d="M350 272 C400 278 452 288 486 298" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".55"/>
+
+  <!-- ===== CONVEYOR ROLLERS (gap in bed under the receive probe) ===== -->
+  <g>
+    <g fill="#14304f" stroke="#8fb6e0" stroke-width="1.5" opacity=".95">
+      <circle cx="72" cy="222" r="10"/><circle cx="116" cy="222" r="10"/><circle cx="160" cy="222" r="10"/>
+      <circle cx="204" cy="222" r="10"/>
+      <circle cx="404" cy="222" r="10"/><circle cx="440" cy="222" r="10"/>
+    </g>
+    <g fill="#8fb6e0" opacity=".7">
+      <circle cx="72" cy="222" r="2"/><circle cx="116" cy="222" r="2"/><circle cx="160" cy="222" r="2"/>
+      <circle cx="204" cy="222" r="2"/>
+      <circle cx="404" cy="222" r="2"/><circle cx="440" cy="222" r="2"/>
+    </g>
+    <rect x="56" y="227" width="176" height="9" rx="2" fill="#0e2848" stroke="#8fb6e0" stroke-width="1" opacity=".9"/>
+    <rect x="388" y="227" width="66" height="9" rx="2" fill="#0e2848" stroke="#8fb6e0" stroke-width="1" opacity=".9"/>
+  </g>
+
+  <!-- ===== COMPOSITE HONEYCOMB SANDWICH PANEL (cut edge shows hex core) ===== -->
+  <rect x="46" y="179" width="408" height="26" fill="#0a1f3a"/>
+  <rect x="46" y="179" width="408" height="26" fill="url(#asrhex)"/>
+  <rect x="46" y="172" width="408" height="7" fill="url(#asrskin)"/>
+  <rect x="46" y="205" width="408" height="7" fill="url(#asrskin)"/>
+  <g stroke="#8fb6e0" fill="none">
+    <line x1="46" y1="172" x2="454" y2="172" stroke-width="2"/>
+    <line x1="46" y1="212" x2="454" y2="212" stroke-width="2"/>
+    <line x1="46" y1="179" x2="454" y2="179" stroke-width="1" opacity=".4"/>
+    <line x1="46" y1="205" x2="454" y2="205" stroke-width="1" opacity=".4"/>
+    <line x1="46" y1="172" x2="46" y2="212" stroke-width="1.5" opacity=".7"/>
+    <line x1="454" y1="172" x2="454" y2="212" stroke-width="1.5" opacity=".7"/>
+  </g>
+
+  <!-- feed direction chevrons -->
+  <g fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".55">
+    <path d="M104 150 l-10 7 l10 7"/>
+    <path d="M119 150 l-10 7 l10 7"/>
+  </g>
+
+  <!-- ===== C-FRAME YOKE (spine right, throat open left) ===== -->
+  <path d="M296 60 H520 V318 H296 V290 H486 V88 H296 Z" fill="url(#asrsteelV)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="472" y="316" width="56" height="8" rx="2" fill="#0e2848" stroke="#8fb6e0" stroke-width="1" opacity=".9"/>
+  <g stroke="#8fb6e0" opacity=".25">
+    <line x1="304" y1="74" x2="474" y2="74"/>
+    <line x1="304" y1="304" x2="474" y2="304"/>
+    <line x1="503" y1="100" x2="503" y2="280"/>
+  </g>
+  <g fill="#0c2340" stroke="#8fb6e0" stroke-width="1">
+    <circle cx="305" cy="74" r="2.2"/><circle cx="476" cy="74" r="2.2"/>
+    <circle cx="305" cy="304" r="2.2"/><circle cx="476" cy="304" r="2.2"/>
+  </g>
+
+  <!-- ===== TX PROBE (above panel, firing down) ===== -->
+  <rect x="324" y="88" width="16" height="9" fill="#0e2848" stroke="#8fb6e0" stroke-width="1"/>
+  <rect x="314" y="96" width="36" height="44" rx="3" fill="url(#asrprobe)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <g stroke="#8fb6e0" opacity=".25"><line x1="318" y1="106" x2="346" y2="106"/><line x1="318" y1="114" x2="346" y2="114"/></g>
+  <rect x="316" y="140" width="32" height="6" fill="#1E66F5" stroke="#5fe0ff" stroke-width="1" opacity=".95"/>
+  <line x1="316" y1="146" x2="348" y2="146" stroke="#5fe0ff" stroke-width="1.5" filter="url(#asrglowS)" opacity=".8"/>
+
+  <!-- ===== RX PROBE (below panel, face up, coaxial) ===== -->
+  <rect x="316" y="238" width="32" height="6" fill="#1E66F5" stroke="#5fe0ff" stroke-width="1" opacity=".95"/>
+  <line x1="316" y1="238" x2="348" y2="238" stroke="#5fe0ff" stroke-width="1.5" filter="url(#asrglowS)" opacity=".8"/>
+  <rect x="314" y="244" width="36" height="40" rx="3" fill="url(#asrprobe)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <g stroke="#8fb6e0" opacity=".25"><line x1="318" y1="266" x2="346" y2="266"/><line x1="318" y1="274" x2="346" y2="274"/></g>
+  <rect x="324" y="284" width="16" height="6" fill="#0e2848" stroke="#8fb6e0" stroke-width="1"/>
+
+  <!-- ===== AIR GAP markers (both gaps) ===== -->
+  <g stroke="#9fe6ff" opacity=".7">
+    <line x1="357" y1="151" x2="357" y2="167" stroke-width="1"/>
+    <line x1="307" y1="217" x2="307" y2="233" stroke-width="1"/>
+  </g>
+  <g fill="#9fe6ff" opacity=".7" stroke="none">
+    <path d="M357 147 L354 153 L360 153 Z"/><path d="M357 171 L354 165 L360 165 Z"/>
+    <path d="M307 213 L304 219 L310 219 Z"/><path d="M307 237 L304 231 L310 231 Z"/>
+  </g>
+  <text x="364" y="163" font-size="12" fill="#9fe6ff" opacity=".75">AIR GAP</text>
+  <text x="300" y="226" text-anchor="end" font-size="12" fill="#9fe6ff" opacity=".75">AIR GAP</text>
+
+  <!-- ===== C-SCAN MONITOR INSET (top-left) ===== -->
+  <rect x="44" y="40" width="142" height="84" rx="8" fill="#0e2848" opacity=".92" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="52" y="48" width="126" height="58" fill="#08152b" stroke="#5fe0ff" stroke-width="1" opacity=".95"/>
+  <!-- built scan rows -->
+  <g stroke="none">
+    <rect x="54" y="51" width="80" height="7" fill="#1E66F5" opacity=".85"/>
+    <rect x="54" y="60" width="80" height="7" fill="#2b86ff" opacity=".7"/>
+    <rect x="54" y="69" width="80" height="7" fill="#3f9bff" opacity=".8"/>
+    <rect x="54" y="78" width="80" height="7" fill="#2b86ff" opacity=".75"/>
+    <rect x="54" y="87" width="80" height="7" fill="#1E66F5" opacity=".8"/>
+    <rect x="54" y="96" width="80" height="7" fill="#3f9bff" opacity=".7"/>
+    <!-- amplitude noise -->
+    <rect x="62" y="60" width="7" height="7" fill="#7fd8ff" opacity=".45"/>
+    <rect x="88" y="87" width="8" height="7" fill="#7fd8ff" opacity=".4"/>
+    <rect x="72" y="96" width="6" height="7" fill="#0c2340" opacity=".6"/>
+    <rect x="120" y="51" width="8" height="7" fill="#7fd8ff" opacity=".35"/>
+    <!-- flaw shadow: transmission drop (dark cells) -->
+    <rect x="106" y="60" width="18" height="7" fill="#04101f"/>
+    <rect x="100" y="69" width="26" height="7" fill="#04101f"/>
+    <rect x="106" y="78" width="16" height="7" fill="#04101f"/>
+  </g>
+  <circle cx="113" cy="73" r="14" fill="none" stroke="#ffc24b" stroke-width="1" stroke-dasharray="4 3" opacity=".75"/>
+  <!-- empty raster + build cursor -->
+  <g stroke="#8fb6e0" opacity=".14">
+    <line x1="144" y1="50" x2="144" y2="104"/><line x1="152" y1="50" x2="152" y2="104"/>
+    <line x1="160" y1="50" x2="160" y2="104"/><line x1="168" y1="50" x2="168" y2="104"/>
+    <line x1="140" y1="68" x2="176" y2="68"/><line x1="140" y1="86" x2="176" y2="86"/>
+  </g>
+  <line x1="136" y1="50" x2="136" y2="104" stroke="#5fe0ff" stroke-width="2" filter="url(#asrglowS)" opacity=".9"/>
+  <text x="52" y="119" font-size="12" fill="#9fe6ff" opacity=".8">C-SCAN</text>
+  <circle cx="170" cy="115" r="3" fill="#5fe0ff" filter="url(#asrglowS)" opacity=".9"/>
+
+  <!-- ===== caption ===== -->
+  <text x="556" y="28" text-anchor="end" font-size="11" fill="#9fe6ff" opacity=".7">THROUGH-TRANSMISSION MODE</text>
+
+  <!-- ===== REVEAL: rig highlight + probe tags ===== -->
+  <g id="asrRig" opacity="0">
+    <path d="M296 60 H520 V318 H296 V290 H486 V88 H296 Z" fill="none" stroke="#5fe0ff" stroke-width="2" filter="url(#asrglow)" opacity=".85"/>
+    <rect x="313" y="95" width="38" height="52" rx="3" fill="none" stroke="#5fe0ff" stroke-width="1.5" filter="url(#asrglowS)" opacity=".9"/>
+    <rect x="313" y="237" width="38" height="48" rx="3" fill="none" stroke="#5fe0ff" stroke-width="1.5" filter="url(#asrglowS)" opacity=".9"/>
+    <text x="358" y="122" font-size="12" fill="#9fe6ff" opacity=".9">TX 400 kHz</text>
+    <text x="358" y="268" font-size="12" fill="#9fe6ff" opacity=".9">RX</text>
+  </g>
+
+  <!-- ===== REVEAL: crossed-out couplant droplet beside upper air gap ===== -->
+  <g id="asrNoWet" opacity="0">
+    <path d="M266 142 C262 149 259 153 259 158 a7 7 0 0 0 14 0 C273 153 270 149 266 142 Z" fill="#2b86ff" stroke="#7fd8ff" stroke-width="1.2"/>
+    <circle cx="266" cy="155" r="13.5" fill="none" stroke="#ff6b6b" stroke-width="2.2" filter="url(#asrglowS)"/>
+    <line x1="256.5" y1="145.5" x2="275.5" y2="164.5" stroke="#ff6b6b" stroke-width="2.2" filter="url(#asrglowS)"/>
+  </g>
+
+  <!-- ===== REVEAL: beam in (wavefronts cross upper air gap, enter panel) ===== -->
+  <path id="asrBeamIn" d="M322 157 Q332 163 342 157 M321 166 Q332 172 343 166 M332 148 V196" fill="none" stroke="#5fe0ff" stroke-width="2.5" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#asrglow)"/>
+
+  <!-- ===== REVEAL: beam out (exits bottom skin, crosses lower gap, into RX) ===== -->
+  <path id="asrBeamOut" d="M332 196 V236 M322 219 Q332 225 342 219 M321 228 Q332 234 343 228" fill="none" stroke="#5fe0ff" stroke-width="2.5" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#asrglow)"/>
+</svg>

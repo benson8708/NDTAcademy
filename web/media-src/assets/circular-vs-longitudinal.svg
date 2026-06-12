@@ -1,0 +1,137 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="cvlgC" filterUnits="userSpaceOnUse" x="-58" y="-58" width="654" height="456">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cvlgR" filterUnits="userSpaceOnUse" x="41" y="91" width="480" height="158">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cvlgA" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="cvlsteel" x1="0" y1="149" x2="0" y2="191" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#30608f"/><stop offset=".38" stop-color="#1b3e66"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="cvlhead" x1="0" y1="132" x2="0" y2="208" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1c4068"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="cvlscanFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5fe0ff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#5fe0ff" stop-opacity=".3"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== divider ===== -->
+  <line x1="300" y1="24" x2="300" y2="316" stroke="#8fb6e0" stroke-width="1" stroke-dasharray="3 6" opacity=".25"/>
+
+  <!-- ===== LEFT: head shot — bar between contact heads ===== -->
+  <!-- cables -->
+  <path d="M16 198 C6 212 4 228 10 246" fill="none" stroke="#8fb6e0" stroke-width="2.5" opacity=".35"/>
+  <path d="M256 198 C268 210 272 228 266 246" fill="none" stroke="#8fb6e0" stroke-width="2.5" opacity=".35"/>
+  <!-- contact heads -->
+  <rect x="14" y="132" width="28" height="76" rx="3" fill="url(#cvlhead)" stroke="#8fb6e0" stroke-width="1.5" opacity=".95"/>
+  <rect x="228" y="132" width="28" height="76" rx="3" fill="url(#cvlhead)" stroke="#8fb6e0" stroke-width="1.5" opacity=".95"/>
+  <!-- copper contact pads -->
+  <rect x="42" y="142" width="6" height="56" rx="2" fill="#ff9b4b" opacity=".85"/>
+  <rect x="222" y="142" width="6" height="56" rx="2" fill="#ff9b4b" opacity=".85"/>
+  <g fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".45">
+    <circle cx="28" cy="148" r="2.2"/><circle cx="28" cy="192" r="2.2"/>
+    <circle cx="242" cy="148" r="2.2"/><circle cx="242" cy="192" r="2.2"/>
+  </g>
+  <!-- steel bar -->
+  <rect x="48" y="149" width="174" height="42" fill="url(#cvlsteel)"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".15">
+    <line x1="52" y1="163" x2="218" y2="163"/>
+    <line x1="52" y1="172" x2="218" y2="172"/>
+    <line x1="52" y1="181" x2="218" y2="181"/>
+  </g>
+  <line x1="48" y1="155" x2="222" y2="155" stroke="#cfe7ff" stroke-width="1.2" opacity=".22"/>
+  <g stroke="#8fb6e0" stroke-width="1.5" opacity=".65" fill="none">
+    <line x1="48" y1="149" x2="222" y2="149"/>
+    <line x1="48" y1="191" x2="222" y2="191"/>
+  </g>
+
+  <!-- ===== RIGHT: coil shot — back strands behind bar ===== -->
+  <g id="cvlCoilBk" opacity="0" fill="none" stroke="#7c4b20" stroke-width="3">
+    <ellipse cx="392" cy="170" rx="11" ry="40" transform="rotate(8 392 170)" opacity=".75"/>
+    <ellipse cx="434" cy="170" rx="11" ry="40" transform="rotate(8 434 170)" opacity=".75"/>
+    <ellipse cx="476" cy="170" rx="11" ry="40" transform="rotate(8 476 170)" opacity=".75"/>
+    <ellipse cx="518" cy="170" rx="11" ry="40" transform="rotate(8 518 170)" opacity=".75"/>
+    <path d="M396 131 C386 114 372 107 356 110" stroke-width="2.5" opacity=".6"/>
+    <path d="M514 209 C524 226 538 231 552 228" stroke-width="2.5" opacity=".6"/>
+  </g>
+  <!-- steel bar -->
+  <rect x="352" y="149" width="196" height="42" fill="url(#cvlsteel)"/>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".15">
+    <line x1="358" y1="163" x2="542" y2="163"/>
+    <line x1="358" y1="172" x2="542" y2="172"/>
+    <line x1="358" y1="181" x2="542" y2="181"/>
+  </g>
+  <line x1="352" y1="155" x2="548" y2="155" stroke="#cfe7ff" stroke-width="1.2" opacity=".22"/>
+  <g stroke="#8fb6e0" stroke-width="1.5" opacity=".65" fill="none">
+    <line x1="352" y1="149" x2="548" y2="149"/>
+    <line x1="352" y1="191" x2="548" y2="191"/>
+  </g>
+  <line x1="352" y1="149" x2="352" y2="191" stroke="#8fb6e0" stroke-width="1.5" opacity=".6"/>
+  <ellipse cx="548" cy="170" rx="6" ry="21" fill="#16395f" stroke="#8fb6e0" stroke-width="1.2" opacity=".7"/>
+
+  <!-- ===== bend/morph arrow (wire -> coil) ===== -->
+  <path id="cvlBend" d="M226 86 C262 54 334 54 370 94 M370 94 L366.5 83.5 M370 94 L359.5 90" fill="none" stroke="#8fb6e0" stroke-width="1.6" stroke-linecap="round" opacity=".5" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== LEFT overlay: circular field ===== -->
+  <g id="cvlCircular" opacity="0">
+    <rect x="81" y="26" width="108" height="22" rx="5" fill="#0e2848" fill-opacity=".85" stroke="#8fb6e0" stroke-opacity=".5"/>
+    <text x="135" y="41" text-anchor="middle" font-size="11" letter-spacing=".5" fill="#9fe6ff">CIRCULAR FIELD</text>
+    <rect x="48" y="149" width="174" height="42" fill="#5fe0ff" opacity=".06"/>
+    <text x="55" y="161" font-size="12" fill="#ffc24b">I</text>
+    <path id="cvlWire" d="M62 170 L214 170 M214 170 L204 164.5 M214 170 L204 175.5" fill="none" stroke="#ffc24b" stroke-width="2.4" stroke-linecap="round" filter="url(#cvlgA)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <path id="cvlRings" d="M77 136 A10 34 0 0 1 77 204 A10 34 0 0 1 77 136 M116 136 A10 34 0 0 1 116 204 A10 34 0 0 1 116 136 M155 136 A10 34 0 0 1 155 204 A10 34 0 0 1 155 136 M194 136 A10 34 0 0 1 194 204 A10 34 0 0 1 194 136" fill="none" stroke="#5fe0ff" stroke-width="2" opacity=".95" filter="url(#cvlgC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <path id="cvlSeam" d="M100 157 L113 155 L125 157.5 L138 155.5 L151 157.5 L163 155.5 L176 157" fill="none" stroke="#ff6b6b" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#cvlgR)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <g id="cvlSeamTag" opacity="0">
+      <path d="M138 152 L136 112" fill="none" stroke="#ff6b6b" stroke-width="1" opacity=".5"/>
+      <text x="135" y="104" text-anchor="middle" font-size="12" fill="#ff6b6b" opacity=".92">FINDS LONGITUDINAL</text>
+    </g>
+  </g>
+
+  <!-- ===== RIGHT overlay: longitudinal field ===== -->
+  <g id="cvlLongitudinal" opacity="0">
+    <rect x="383" y="26" width="134" height="22" rx="5" fill="#0e2848" fill-opacity=".85" stroke="#8fb6e0" stroke-opacity=".5"/>
+    <text x="450" y="41" text-anchor="middle" font-size="11" letter-spacing=".5" fill="#9fe6ff">LONGITUDINAL FIELD</text>
+    <rect x="352" y="149" width="196" height="42" fill="#5fe0ff" opacity=".06"/>
+    <path id="cvlCoil" d="M390 209 C376 194 376 146 396 131 M432 209 C418 194 418 146 438 131 M474 209 C460 194 460 146 480 131 M516 209 C502 194 502 146 522 131" fill="none" stroke="#ff9b4b" stroke-width="3.2" stroke-linecap="round" filter="url(#cvlgA)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <path id="cvlFlux" d="M362 160 L538 160 M538 160 L530 156 M538 160 L530 164 M362 170 L538 170 M538 170 L530 166 M538 170 L530 174 M362 180 L538 180 M538 180 L530 176 M538 180 L530 184" fill="none" stroke="#5fe0ff" stroke-width="2" stroke-linecap="round" filter="url(#cvlgC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <path id="cvlCrack" d="M453 150 L458 157 L452 163 L459 170 L454 176 L460 183 L456 190" fill="none" stroke="#ff6b6b" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" filter="url(#cvlgR)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+    <g id="cvlCrackTag" opacity="0">
+      <path d="M455 148 L453 112" fill="none" stroke="#ff6b6b" stroke-width="1" opacity=".5"/>
+      <text x="452" y="104" text-anchor="middle" font-size="12" fill="#ff6b6b" opacity=".92">FINDS TRANSVERSE</text>
+    </g>
+  </g>
+
+  <!-- ===== TWO SHOTS: both indications glow + ~90 deg badge ===== -->
+  <g id="cvlTwoShots" opacity="0">
+    <ellipse cx="138" cy="156" rx="50" ry="13" fill="#ff6b6b" opacity=".1"/>
+    <path d="M100 157 L113 155 L125 157.5 L138 155.5 L151 157.5 L163 155.5 L176 157" fill="none" stroke="#ff6b6b" stroke-width="7" stroke-linecap="round" opacity=".3" filter="url(#cvlgR)"/>
+    <ellipse cx="456" cy="170" rx="14" ry="30" fill="#ff6b6b" opacity=".1"/>
+    <path d="M453 150 L458 157 L452 163 L459 170 L454 176 L460 183 L456 190" fill="none" stroke="#ff6b6b" stroke-width="7" stroke-linecap="round" opacity=".3" filter="url(#cvlgR)"/>
+    <rect x="264" y="128" width="72" height="84" rx="9" fill="#0e2848" fill-opacity=".94" stroke="#8fb6e0" stroke-width="1.2"/>
+    <g fill="none" stroke="#7fd8ff" stroke-width="2.2" stroke-linecap="round" filter="url(#cvlgC)">
+      <path d="M276 162 L324 162 M276 162 L283 158 M276 162 L283 166 M324 162 L317 158 M324 162 L317 166"/>
+      <path d="M300 138 L300 186 M300 138 L296 145 M300 138 L304 145 M300 186 L296 179 M300 186 L304 179"/>
+    </g>
+    <path d="M314 162 A14 14 0 0 0 300 148" fill="none" stroke="#ffc24b" stroke-width="1.4" opacity=".85"/>
+    <text x="300" y="203" text-anchor="middle" font-size="12" fill="#ffc24b">~90&#176;</text>
+  </g>
+
+  <!-- ===== pings ===== -->
+  <circle id="cvlSeamPing" cx="138" cy="156" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#cvlgR)"/>
+  <circle id="cvlCrackPing" cx="456" cy="170" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#cvlgR)"/>
+
+  <!-- ===== scan group ===== -->
+  <g id="cvlscanG" transform="translate(60,0)" opacity="0">
+    <rect x="-30" y="0" width="30" height="340" fill="url(#cvlscanFade)"/>
+    <line x1="0" y1="0" x2="0" y2="340" stroke="#5fe0ff" stroke-width="2" filter="url(#cvlgC)" opacity=".9"/>
+  </g>
+</svg>

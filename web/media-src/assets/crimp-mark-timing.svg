@@ -1,0 +1,171 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="cmtGlowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="cmtFilmG" x1="0" y1="28" x2="0" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1d4166"/><stop offset=".55" stop-color="#143659"/><stop offset="1" stop-color="#0e2848"/>
+    </linearGradient>
+    <linearGradient id="cmtFoldShR" x1="300" y1="0" x2="420" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#061427" stop-opacity=".32"/><stop offset="1" stop-color="#061427" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cmtFoldShL" x1="300" y1="0" x2="140" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bfe2ff" stop-opacity=".18"/><stop offset="1" stop-color="#bfe2ff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="cmtSwatchG" x1="0" y1="164" x2="0" y2="244" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7e90a4"/><stop offset="1" stop-color="#5b6d80"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== static labels ===== -->
+  <text x="22" y="24" font-size="11" fill="#9fe6ff" opacity=".7">UNPROCESSED FILM</text>
+
+  <!-- ===== fingers reaching behind the film (left + right) ===== -->
+  <g fill="#1a3a60" stroke="#8fb6e0" stroke-width="1.3">
+    <rect x="0" y="-5.5" width="30" height="11" rx="5.5" transform="translate(92,63) rotate(-8)"/>
+    <rect x="0" y="-5.25" width="32" height="10.5" rx="5.25" transform="translate(94,73) rotate(-3)"/>
+    <rect x="0" y="-5.25" width="32" height="10.5" rx="5.25" transform="translate(94,83) rotate(3)"/>
+    <rect x="0" y="-5" width="28" height="10" rx="5" transform="translate(92,92) rotate(6)"/>
+  </g>
+  <g fill="#1a3a60" stroke="#8fb6e0" stroke-width="1.3" transform="translate(600,0) scale(-1,1)">
+    <rect x="0" y="-5.5" width="30" height="11" rx="5.5" transform="translate(92,63) rotate(-8)"/>
+    <rect x="0" y="-5.25" width="32" height="10.5" rx="5.25" transform="translate(94,73) rotate(-3)"/>
+    <rect x="0" y="-5.25" width="32" height="10.5" rx="5.25" transform="translate(94,83) rotate(3)"/>
+    <rect x="0" y="-5" width="28" height="10" rx="5" transform="translate(92,92) rotate(6)"/>
+  </g>
+
+  <!-- ===== film sheet, flexed with sharp kink at center ===== -->
+  <path d="M112 56 Q205 36 300 28 Q395 36 488 56 L488 98 Q395 78 300 70 Q205 78 112 98 Z" fill="url(#cmtFilmG)"/>
+  <path d="M300 28 Q395 36 488 56 L488 98 Q395 78 300 70 Z" fill="url(#cmtFoldShR)"/>
+  <path d="M300 28 Q205 36 112 56 L112 98 Q205 78 300 70 Z" fill="url(#cmtFoldShL)"/>
+  <path d="M112 56 Q205 36 300 28 Q395 36 488 56 L488 98 Q395 78 300 70 Q205 78 112 98 Z" fill="none" stroke="#8fb6e0" stroke-width="1.6"/>
+  <!-- kink ridge -->
+  <path d="M300 28 L300 70" stroke="#7fd8ff" stroke-width="1.2" opacity=".55"/>
+  <!-- surface sheen -->
+  <path d="M132 64 Q212 46 290 39" stroke="#bfe2ff" stroke-width="1" opacity=".14" fill="none"/>
+  <path d="M310 39 Q388 46 468 64" stroke="#bfe2ff" stroke-width="1" opacity=".1" fill="none"/>
+
+  <!-- flex arrows toward the kink -->
+  <g stroke="#5fe0ff" fill="none" stroke-width="1.5" opacity=".65">
+    <path d="M158 44 Q184 34 210 30"/>
+    <path d="M442 44 Q416 34 390 30"/>
+  </g>
+  <g fill="#5fe0ff" opacity=".75">
+    <path d="M221 28.6 L210 25.4 L211.8 34.6 Z"/>
+    <path d="M379 28.6 L390 25.4 L388.2 34.6 Z"/>
+  </g>
+
+  <!-- crescent crease at the kink (draw-on) -->
+  <path id="cmtKink" d="M285 62 Q300 40 315 62 M291 62 Q300 49 309 62" fill="none" stroke="#ffc24b" stroke-width="2.4" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#cmtGlowR)"/>
+  <circle id="cmtKinkPing" cx="300" cy="52" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#cmtGlowR)"/>
+  <g id="cmtKinkLbl" opacity="0">
+    <path d="M317 45 L386 15" stroke="#ffc24b" stroke-width="1" opacity=".55" fill="none"/>
+    <text x="392" y="18" font-size="11" fill="#ffc24b" opacity=".95">CRESCENT CRIMP</text>
+  </g>
+
+  <!-- ===== back of hands + thumbs in front (left + right) ===== -->
+  <g>
+    <path d="M50 68 Q46 84 50 98 Q54 108 70 108 Q88 108 96 100 L98 62 Q90 56 74 56 Q56 56 50 68 Z" fill="#16365c" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M89 61 q4.5 8 .5 16 M90 81 q3.5 7 .5 13" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".35"/>
+    <rect x="0" y="-8.5" width="42" height="17" rx="8.5" transform="translate(86,99) rotate(-25)" fill="#1d4470" stroke="#8fb6e0" stroke-width="1.4"/>
+  </g>
+  <g transform="translate(600,0) scale(-1,1)">
+    <path d="M50 68 Q46 84 50 98 Q54 108 70 108 Q88 108 96 100 L98 62 Q90 56 74 56 Q56 56 50 68 Z" fill="#16365c" stroke="#8fb6e0" stroke-width="1.5"/>
+    <path d="M89 61 q4.5 8 .5 16 M90 81 q3.5 7 .5 13" fill="none" stroke="#8fb6e0" stroke-width="1" opacity=".35"/>
+    <rect x="0" y="-8.5" width="42" height="17" rx="8.5" transform="translate(86,99) rotate(-25)" fill="#1d4470" stroke="#8fb6e0" stroke-width="1.4"/>
+  </g>
+
+  <!-- ===== sequence lane panels ===== -->
+  <g fill="#5fe0ff" fill-opacity=".035" stroke="#8fb6e0" stroke-opacity=".4" stroke-width="1.5">
+    <rect x="22" y="116" width="272" height="174" rx="12"/>
+    <rect x="306" y="116" width="272" height="174" rx="12"/>
+  </g>
+  <text x="158" y="138" text-anchor="middle" font-size="12" fill="#9fe6ff">KINK, THEN EXPOSE</text>
+  <text x="442" y="138" text-anchor="middle" font-size="12" fill="#9fe6ff">EXPOSE, THEN KINK</text>
+  <line x1="36" y1="148" x2="280" y2="148" stroke="#8fb6e0" opacity=".18"/>
+  <line x1="320" y1="148" x2="564" y2="148" stroke="#8fb6e0" opacity=".18"/>
+  <g stroke="#8fb6e0" stroke-width="1" stroke-dasharray="3 5" opacity=".14">
+    <path d="M46 206 H206"/>
+    <path d="M330 206 H490"/>
+  </g>
+
+  <!-- ===== LEFT LANE: kink -> expose ===== -->
+  <g id="cmtBefore" opacity="0">
+    <!-- step 1: kink icon -->
+    <g transform="translate(72,206)">
+      <circle cy="-38" r="8" fill="#5fe0ff" fill-opacity=".07" stroke="#5fe0ff" stroke-opacity=".6"/>
+      <text y="-34.4" text-anchor="middle" font-size="10" fill="#9fe6ff">1</text>
+      <path d="M-17 13 Q-8 11 -3 0 L0 -8 L3 0 Q8 11 17 13" fill="none" stroke="#8fb6e0" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M-17 17.5 Q-8 15.5 -3 4.5 L0 -3.5 L3 4.5 Q8 15.5 17 17.5" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".45"/>
+      <path d="M-6 -6 Q0 -14 6 -6" fill="none" stroke="#ffc24b" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M-26 6 H-21 M26 6 H21" stroke="#5fe0ff" stroke-width="1.3" opacity=".7"/>
+      <path d="M-15.5 6 L-21 3.4 L-21 8.6 Z M15.5 6 L21 3.4 L21 8.6 Z" fill="#5fe0ff" opacity=".7"/>
+      <text y="38" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85">KINK</text>
+    </g>
+    <!-- step 2: expose icon -->
+    <g transform="translate(150,206)">
+      <circle cy="-38" r="8" fill="#5fe0ff" fill-opacity=".07" stroke="#5fe0ff" stroke-opacity=".6"/>
+      <text y="-34.4" text-anchor="middle" font-size="10" fill="#9fe6ff">2</text>
+      <circle cy="-19" r="3.4" fill="#ffc24b" filter="url(#cmtGlowR)"/>
+      <path d="M0 -16 L-14 9 L14 9 Z" fill="#ffc24b" opacity=".13"/>
+      <path d="M0 -15 L-11 8 M0 -15 V8 M0 -15 L11 8" stroke="#ffc24b" stroke-width="1.2" stroke-dasharray="3 2.6" opacity=".85" fill="none"/>
+      <rect x="-17" y="11" width="34" height="5.5" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1"/>
+      <text y="38" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85">EXPOSE</text>
+    </g>
+    <path d="M103 206 H116" stroke="#5fe0ff" stroke-width="1.6" opacity=".8"/>
+    <path d="M116 201.8 L116 210.2 L125 206 Z" fill="#5fe0ff" opacity=".8"/>
+    <path d="M176 206 H203" stroke="#5fe0ff" stroke-width="1.6" opacity=".8"/>
+    <path d="M203 201.8 L203 210.2 L212 206 Z" fill="#5fe0ff" opacity=".8"/>
+  </g>
+  <!-- result: radiograph swatch w/ LIGHT crescent -->
+  <g id="cmtBeforeSwatch" opacity="0">
+    <rect x="222" y="164" width="54" height="80" rx="5" fill="url(#cmtSwatchG)" stroke="#cfdce8" stroke-opacity=".55" stroke-width="1.2"/>
+    <path d="M236 203 A 13.5 13.5 0 1 1 262 203 A 19 19 0 0 0 236 203 Z" transform="rotate(-14 249 196)" fill="#eaf3fb" filter="url(#cmtGlowR)"/>
+    <text x="249" y="266" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".9">IMAGES LIGHT</text>
+  </g>
+  <circle id="cmtBeforePing" cx="249" cy="196" r="6" fill="none" stroke="#7fd8ff" stroke-width="2" opacity="0" filter="url(#cmtGlowR)"/>
+
+  <!-- ===== RIGHT LANE: expose -> kink ===== -->
+  <g id="cmtAfter" opacity="0">
+    <!-- step 1: expose icon -->
+    <g transform="translate(356,206)">
+      <circle cy="-38" r="8" fill="#5fe0ff" fill-opacity=".07" stroke="#5fe0ff" stroke-opacity=".6"/>
+      <text y="-34.4" text-anchor="middle" font-size="10" fill="#9fe6ff">1</text>
+      <circle cy="-19" r="3.4" fill="#ffc24b" filter="url(#cmtGlowR)"/>
+      <path d="M0 -16 L-14 9 L14 9 Z" fill="#ffc24b" opacity=".13"/>
+      <path d="M0 -15 L-11 8 M0 -15 V8 M0 -15 L11 8" stroke="#ffc24b" stroke-width="1.2" stroke-dasharray="3 2.6" opacity=".85" fill="none"/>
+      <rect x="-17" y="11" width="34" height="5.5" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1"/>
+      <text y="38" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85">EXPOSE</text>
+    </g>
+    <!-- step 2: kink icon -->
+    <g transform="translate(434,206)">
+      <circle cy="-38" r="8" fill="#5fe0ff" fill-opacity=".07" stroke="#5fe0ff" stroke-opacity=".6"/>
+      <text y="-34.4" text-anchor="middle" font-size="10" fill="#9fe6ff">2</text>
+      <path d="M-17 13 Q-8 11 -3 0 L0 -8 L3 0 Q8 11 17 13" fill="none" stroke="#8fb6e0" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M-17 17.5 Q-8 15.5 -3 4.5 L0 -3.5 L3 4.5 Q8 15.5 17 17.5" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".45"/>
+      <path d="M-6 -6 Q0 -14 6 -6" fill="none" stroke="#ffc24b" stroke-width="1.8" stroke-linecap="round"/>
+      <path d="M-26 6 H-21 M26 6 H21" stroke="#5fe0ff" stroke-width="1.3" opacity=".7"/>
+      <path d="M-15.5 6 L-21 3.4 L-21 8.6 Z M15.5 6 L21 3.4 L21 8.6 Z" fill="#5fe0ff" opacity=".7"/>
+      <text y="38" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".85">KINK</text>
+    </g>
+    <path d="M381 206 H394" stroke="#5fe0ff" stroke-width="1.6" opacity=".8"/>
+    <path d="M394 201.8 L394 210.2 L403 206 Z" fill="#5fe0ff" opacity=".8"/>
+    <path d="M468 206 H494" stroke="#5fe0ff" stroke-width="1.6" opacity=".8"/>
+    <path d="M494 201.8 L494 210.2 L503 206 Z" fill="#5fe0ff" opacity=".8"/>
+  </g>
+  <!-- result: radiograph swatch w/ DARK crescent -->
+  <g id="cmtAfterSwatch" opacity="0">
+    <rect x="506" y="164" width="54" height="80" rx="5" fill="url(#cmtSwatchG)" stroke="#cfdce8" stroke-opacity=".55" stroke-width="1.2"/>
+    <path d="M520 203 A 13.5 13.5 0 1 1 546 203 A 19 19 0 0 0 520 203 Z" transform="rotate(18 533 196)" fill="#131c27"/>
+    <text x="533" y="266" text-anchor="middle" font-size="11" fill="#9fe6ff" opacity=".9">IMAGES DARK</text>
+  </g>
+  <circle id="cmtAfterPing" cx="533" cy="196" r="6" fill="none" stroke="#7fd8ff" stroke-width="2" opacity="0" filter="url(#cmtGlowR)"/>
+
+  <!-- mimic warning tag -->
+  <g id="cmtMimic" opacity="0">
+    <path d="M470 262 L521 207" stroke="#ffc24b" stroke-width="1" opacity=".55" fill="none"/>
+    <rect x="374" y="262" width="104" height="20" rx="10" fill="#ffc24b" fill-opacity=".08" stroke="#ffc24b" stroke-opacity=".8"/>
+    <text x="426" y="276" text-anchor="middle" font-size="11" fill="#ffc24b">REAL FLAW?</text>
+  </g>
+</svg>

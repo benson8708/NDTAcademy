@@ -1,0 +1,101 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="ddglowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ddglowR" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="ddglowW" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- ===== STATIC BASE: grid + axes (empty calibrated A-scan) ===== -->
+  <!-- faint graticule: 0-100% screen height band -->
+  <path d="M125.4 54 V250 M172.8 54 V250 M220.2 54 V250 M267.6 54 V250 M315 54 V250 M362.4 54 V250 M409.8 54 V250 M457.2 54 V250 M504.6 54 V250 M552 54 V250 M78 210.8 H552 M78 171.6 H552 M78 132.4 H552 M78 93.2 H552" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".12"/>
+  <path d="M78 54 H552" fill="none" stroke="#5fe0ff" stroke-width="1" stroke-dasharray="5 4" opacity=".22"/>
+
+  <!-- axes -->
+  <path d="M78 45 V250 M78 250 H545" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".85"/>
+  <path d="M78 37 L74.6 46 L81.4 46 Z" fill="#8fb6e0" opacity=".85"/>
+  <path d="M557 250 L548 246.8 L548 253.2 Z" fill="#8fb6e0" opacity=".85"/>
+  <!-- y ticks (amplitude) + x ruler ticks -->
+  <path d="M74 210.8 H78 M74 171.6 H78 M74 132.4 H78 M74 93.2 H78 M74 54 H78" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".6"/>
+  <path d="M125.4 250 V254.5 M172.8 250 V254.5 M220.2 250 V254.5 M267.6 250 V254.5 M315 250 V254.5 M362.4 250 V254.5 M409.8 250 V254.5 M457.2 250 V254.5 M504.6 250 V254.5" fill="none" stroke="#8fb6e0" stroke-width="1.2" opacity=".55"/>
+  <!-- axis titles -->
+  <text x="34" y="145" font-size="12" fill="#9fe6ff" opacity=".8" text-anchor="middle" transform="rotate(-90 34 145)">SCREEN HEIGHT %</text>
+  <text x="311" y="280" font-size="12" fill="#9fe6ff" opacity=".8" text-anchor="middle">SOUND PATH</text>
+  <path d="M352 276 H374" fill="none" stroke="#9fe6ff" stroke-width="1.2" opacity=".6"/>
+  <path d="M380 276 L372 273.2 L372 278.8 Z" fill="#9fe6ff" opacity=".6"/>
+
+  <!-- initial pulse + baseline grass (live but empty screen) -->
+  <path d="M80 250 L81.5 78 L83 64 L84.5 122 L86 198 L88 142 L90 214 L92.5 180 L95 233 L98 222 L101 243 L105 250" fill="none" stroke="#5fe0ff" stroke-width="1.6" stroke-linejoin="round" opacity=".45"/>
+  <path d="M78 248.5 L92 246.8 L105 249 L118 247.2 L131 248.8 L144 246.4 L157 248.9 L170 247 L183 249.2 L196 246.6 L209 248.4 L222 247.1 L235 249 L248 246.9 L261 248.6 L274 247.3 L287 249.1 L300 246.7 L313 248.8 L326 247 L339 249 L352 246.8 L365 248.7 L378 247.2 L391 249.2 L404 246.5 L417 248.5 L430 247.3 L443 249 L456 246.9 L469 248.6 L482 247.1 L495 249.1 L508 246.8 L521 248.4 L534 247.5 L552 248.6" fill="none" stroke="#5fe0ff" stroke-width="1.2" stroke-linejoin="round" opacity=".3"/>
+
+  <!-- ===== REVEAL 1a: SDH reference echoes T/4, T/2, 3T/4 ===== -->
+  <g id="ddHoles" opacity="0">
+    <path d="M130 250 L138 93 L141 192 L143.5 228 L147 250 Z" fill="#5fe0ff" opacity=".1"/>
+    <path d="M240 250 L248 140 L251 212 L253.5 236 L257 250 Z" fill="#5fe0ff" opacity=".1"/>
+    <path d="M350 250 L358 179 L361 222 L363.5 240 L367 250 Z" fill="#5fe0ff" opacity=".1"/>
+    <g fill="none" stroke="#7fd8ff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" filter="url(#ddglowC)">
+      <path d="M130 250 L135 250 L138 93 L141 192 L143.5 228 L147 250"/>
+      <path d="M240 250 L245 250 L248 140 L251 212 L253.5 236 L257 250"/>
+      <path d="M350 250 L355 250 L358 179 L361 222 L363.5 240 L367 250"/>
+    </g>
+    <g fill="none" stroke="#9fe6ff" stroke-width="1.5">
+      <circle cx="138" cy="93" r="3.2"/>
+      <circle cx="248" cy="140" r="3.2"/>
+      <circle cx="358" cy="179" r="3.2"/>
+    </g>
+    <g fill="#9fe6ff">
+      <circle cx="138" cy="93" r="1.1"/>
+      <circle cx="248" cy="140" r="1.1"/>
+      <circle cx="358" cy="179" r="1.1"/>
+    </g>
+    <g font-size="11" fill="#9fe6ff" text-anchor="middle" opacity=".85">
+      <text x="138" y="263">T/4</text>
+      <text x="248" y="263">T/2</text>
+      <text x="358" y="263">3T/4</text>
+    </g>
+  </g>
+
+  <!-- ===== REVEAL 1b: DAC curve drawn through the echo tips ===== -->
+  <path id="ddCurve" d="M138 93 C175 110 211 127 248 140 C285 153 321 167 358 179 C415 196 472 199.5 546 204" fill="none" stroke="#5fe0ff" stroke-width="2.2" filter="url(#ddglowC)" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+
+  <!-- ===== REVEAL 1c: curve label ===== -->
+  <g id="ddCurveLbl" opacity="0">
+    <text x="96" y="66" font-size="12" fill="#9fe6ff">100% DAC — REFERENCE</text>
+    <path d="M158 70 L142 86" fill="none" stroke="#5fe0ff" stroke-width="1" opacity=".6"/>
+  </g>
+
+  <!-- ===== REVEAL 2: planar indication — small spike, still rejected ===== -->
+  <g id="ddPlanar" opacity="0">
+    <path d="M310 250 L318 201 L320.5 226 L322.5 240 L326 250 Z" fill="#ff6b6b" opacity=".12"/>
+    <path d="M310 250 L315 250 L318 201 L320.5 226 L322.5 240 L326 250" fill="none" stroke="#ff6b6b" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" filter="url(#ddglowR)"/>
+  </g>
+  <circle id="ddPing" cx="318" cy="201" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#ddglowR)"/>
+  <g id="ddPlanarLbl" opacity="0">
+    <text x="330" y="78" font-size="11" fill="#ff6b6b" text-anchor="middle">CRACK / LOF / IP</text>
+    <path d="M326 98 L319 196" fill="none" stroke="#ff6b6b" stroke-width="1" stroke-dasharray="3 3" opacity=".55"/>
+    <rect x="393" y="64" width="62" height="18" rx="4" fill="#ff6b6b" fill-opacity=".14" stroke="#ff6b6b" stroke-width="1.2"/>
+    <text x="424" y="77" font-size="11" fill="#ff6b6b" text-anchor="middle" letter-spacing="1">REJECT</text>
+    <text x="330" y="93" font-size="10" fill="#ff8585" text-anchor="middle" opacity=".85">ANY AMPLITUDE</text>
+  </g>
+
+  <!-- ===== REVEAL 3: over-reference indication rejected on length ===== -->
+  <g id="ddLength" opacity="0">
+    <path d="M430 250 L437 215 L443 182 L449 167 L455 162 L461 164 L467 173 L474 190 L481 213 L488 235 L495 250 Z" fill="#ffc24b" opacity=".12"/>
+    <path d="M430 250 L437 215 L443 182 L449 167 L455 162 L461 164 L467 173 L474 190 L481 213 L488 235 L495 250" fill="none" stroke="#ffc24b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" filter="url(#ddglowW)"/>
+  </g>
+  <circle id="ddPing2" cx="455" cy="162" r="6" fill="none" stroke="#ffc24b" stroke-width="2" opacity="0" filter="url(#ddglowW)"/>
+  <path id="ddLenBracket" d="M430 256 L430 266 M430 261 L495 261 M495 256 L495 266" fill="none" stroke="#ffc24b" stroke-width="1.5" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+  <g id="ddLengthLbl" opacity="0">
+    <text x="462" y="277" font-size="11" fill="#ffc24b" text-anchor="middle">LENGTH &gt; LIMIT</text>
+    <rect x="427" y="128" width="62" height="18" rx="4" fill="#ff6b6b" fill-opacity=".14" stroke="#ff6b6b" stroke-width="1.2"/>
+    <text x="458" y="141" font-size="11" fill="#ff6b6b" text-anchor="middle" letter-spacing="1">REJECT</text>
+  </g>
+</svg>

@@ -1,0 +1,87 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="800" height="500" fill="#FFFFFF"/>
+  <text x="400" y="36" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#0A2342">Porosity vs. Crack — Bleedout Signatures</text>
+
+  <!-- column headers -->
+  <text x="245" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Crack</text>
+  <text x="465" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Scattered porosity</text>
+  <text x="685" y="76" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#0A2342">Aligned porosity</text>
+
+  <!-- row labels -->
+  <text x="20" y="140" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">First</text>
+  <text x="20" y="160" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">bleedout</text>
+  <text x="20" y="268" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">Full</text>
+  <text x="20" y="288" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">development</text>
+
+  <!-- time arrow between rows -->
+  <line x1="58" y1="200" x2="58" y2="234" stroke="#F2A33C" stroke-width="3"/>
+  <polygon points="52,232 58,246 64,232" fill="#F2A33C"/>
+
+  <!-- ===== Row 1: first bleedout (developer panels) ===== -->
+  <rect x="150" y="90" width="190" height="105" fill="#E8F1FB" stroke="#5A6B7E" stroke-width="1.5"/>
+  <rect x="370" y="90" width="190" height="105" fill="#E8F1FB" stroke="#5A6B7E" stroke-width="1.5"/>
+  <rect x="590" y="90" width="190" height="105" fill="#E8F1FB" stroke="#5A6B7E" stroke-width="1.5"/>
+
+  <!-- crack: thin continuous line -->
+  <path d="M 180 144 C 215 140, 270 147, 310 142" fill="none" stroke="#D14343" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- scattered porosity: discrete small dots -->
+  <circle cx="405" cy="125" r="4" fill="#D14343"/>
+  <circle cx="450" cy="165" r="4.5" fill="#D14343"/>
+  <circle cx="492" cy="115" r="4" fill="#D14343"/>
+  <circle cx="525" cy="150" r="4" fill="#D14343"/>
+
+  <!-- aligned porosity: row of small dots -->
+  <circle cx="615" cy="143" r="4" fill="#D14343"/>
+  <circle cx="645" cy="142" r="4" fill="#D14343"/>
+  <circle cx="675" cy="144" r="4.5" fill="#D14343"/>
+  <circle cx="705" cy="142" r="4" fill="#D14343"/>
+  <circle cx="735" cy="143" r="4" fill="#D14343"/>
+
+  <!-- ===== Row 2: full development (developer panels) ===== -->
+  <rect x="150" y="218" width="190" height="105" fill="#E8F1FB" stroke="#5A6B7E" stroke-width="1.5"/>
+  <rect x="370" y="218" width="190" height="105" fill="#E8F1FB" stroke="#5A6B7E" stroke-width="1.5"/>
+  <rect x="590" y="218" width="190" height="105" fill="#E8F1FB" stroke="#5A6B7E" stroke-width="1.5"/>
+
+  <!-- crack: same line, wider and softer -->
+  <path d="M 180 272 C 215 268, 270 275, 310 270" fill="none" stroke="#D14343" stroke-width="16" stroke-linecap="round" opacity="0.35"/>
+  <path d="M 180 272 C 215 268, 270 275, 310 270" fill="none" stroke="#D14343" stroke-width="9" stroke-linecap="round" opacity="0.75"/>
+  <path d="M 180 272 C 215 268, 270 275, 310 270" fill="none" stroke="#D14343" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- scattered porosity: dots grown radially, still separate -->
+  <circle cx="405" cy="253" r="13" fill="#D14343" opacity="0.35"/>
+  <circle cx="405" cy="253" r="8" fill="#D14343"/>
+  <circle cx="450" cy="293" r="14" fill="#D14343" opacity="0.35"/>
+  <circle cx="450" cy="293" r="9" fill="#D14343"/>
+  <circle cx="492" cy="243" r="13" fill="#D14343" opacity="0.35"/>
+  <circle cx="492" cy="243" r="8" fill="#D14343"/>
+  <circle cx="525" cy="278" r="13" fill="#D14343" opacity="0.35"/>
+  <circle cx="525" cy="278" r="8" fill="#D14343"/>
+
+  <!-- aligned porosity: dots merged into a lumpy false linear -->
+  <ellipse cx="675" cy="271" rx="78" ry="15" fill="#D14343" opacity="0.3"/>
+  <circle cx="615" cy="271" r="11" fill="#D14343" opacity="0.55"/>
+  <circle cx="645" cy="270" r="11" fill="#D14343" opacity="0.55"/>
+  <circle cx="675" cy="272" r="11" fill="#D14343" opacity="0.55"/>
+  <circle cx="705" cy="270" r="11" fill="#D14343" opacity="0.55"/>
+  <circle cx="735" cy="271" r="11" fill="#D14343" opacity="0.55"/>
+  <circle cx="615" cy="271" r="7" fill="#D14343"/>
+  <circle cx="645" cy="270" r="7" fill="#D14343"/>
+  <circle cx="675" cy="272" r="7" fill="#D14343"/>
+  <circle cx="705" cy="270" r="7" fill="#D14343"/>
+  <circle cx="735" cy="271" r="7" fill="#D14343"/>
+
+  <!-- column takeaways -->
+  <text x="245" y="348" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0A2342">A line from the first bleed —</text>
+  <text x="245" y="366" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0A2342">it only widens with time</text>
+  <text x="465" y="348" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0A2342">Discrete dots grow radially</text>
+  <text x="465" y="366" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0A2342">and stay separate</text>
+  <text x="685" y="348" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0A2342">Dots merge — can mimic</text>
+  <text x="685" y="366" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0A2342">a linear indication</text>
+
+  <!-- bleedback check panel -->
+  <rect x="40" y="392" width="720" height="92" rx="8" fill="#E8F1FB" stroke="#0A2342" stroke-width="1.5"/>
+  <text x="400" y="419" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#0A2342">Bleedback check (where your written procedure permits)</text>
+  <text x="400" y="444" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0A2342">Wipe the indication once with a solvent-dampened swab, apply a thin fresh developer coat,</text>
+  <text x="400" y="466" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#0A2342">and watch the re-bleed: a continuous line re-forms = crack — separate beads = porosity</text>
+</svg>

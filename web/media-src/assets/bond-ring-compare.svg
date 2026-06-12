@@ -1,0 +1,184 @@
+<svg viewBox="0 0 600 340" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <filter id="brcGlowC" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="brcGlowR" filterUnits="userSpaceOnUse" x="-24" y="-39" width="638" height="377">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="brcSkinG" x1="0" y1="68" x2="0" y2="84" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#356a9c"/><stop offset="1" stop-color="#1e4773"/>
+    </linearGradient>
+    <linearGradient id="brcSteelG" x1="0" y1="94" x2="0" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#244e7c"/><stop offset="1" stop-color="#0c2340"/>
+    </linearGradient>
+    <linearGradient id="brcProbeG" x1="0" y1="41" x2="0" y2="68" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2a5180"/><stop offset="1" stop-color="#122c4e"/>
+    </linearGradient>
+    <linearGradient id="brcScrG" x1="0" y1="148" x2="0" y2="298" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0b1f3c"/><stop offset="1" stop-color="#060f20"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ===== HEADERS ===== -->
+  <circle cx="36" cy="21" r="3.5" fill="#5fe0ff" filter="url(#brcGlowR)"/>
+  <text x="46" y="26" font-size="13" fill="#9fe6ff" letter-spacing="1.5">GOOD BOND</text>
+  <circle cx="324" cy="21" r="3.5" fill="#ff6b6b" filter="url(#brcGlowR)"/>
+  <text x="334" y="26" font-size="13" fill="#ff6b6b" letter-spacing="1.5">DISBOND</text>
+
+  <!-- center divider -->
+  <line x1="300" y1="16" x2="300" y2="300" stroke="#8fb6e0" stroke-width="1" opacity=".18" stroke-dasharray="3 6"/>
+
+  <!-- ===== LEFT CROSS-SECTION: skin + adhesive + doubler ===== -->
+  <!-- skin -->
+  <rect x="60" y="68" width="212" height="16" fill="url(#brcSkinG)"/>
+  <line x1="62" y1="74" x2="270" y2="74" stroke="#8fb6e0" stroke-width="1" opacity=".18"/>
+  <!-- adhesive -->
+  <rect x="60" y="84" width="212" height="10" fill="#ff9b4b" opacity=".26"/>
+  <line x1="60" y1="84" x2="272" y2="84" stroke="#ff9b4b" stroke-width="1" opacity=".6"/>
+  <line x1="60" y1="94" x2="272" y2="94" stroke="#ff9b4b" stroke-width="1" opacity=".6"/>
+  <!-- doubler -->
+  <rect x="60" y="94" width="212" height="26" fill="url(#brcSteelG)"/>
+  <line x1="62" y1="102" x2="270" y2="102" stroke="#8fb6e0" stroke-width="1" opacity=".15"/>
+  <line x1="62" y1="110" x2="270" y2="110" stroke="#8fb6e0" stroke-width="1" opacity=".15"/>
+  <!-- edges -->
+  <line x1="60" y1="68" x2="272" y2="68" stroke="#8fb6e0" stroke-width="2"/>
+  <line x1="60" y1="120" x2="272" y2="120" stroke="#8fb6e0" stroke-width="1.5"/>
+  <line x1="60" y1="68" x2="60" y2="120" stroke="#8fb6e0" stroke-width="1" opacity=".45"/>
+  <line x1="272" y1="68" x2="272" y2="120" stroke="#8fb6e0" stroke-width="1" opacity=".45"/>
+
+  <!-- layer labels -->
+  <g font-size="11" fill="#9fe6ff" opacity=".8">
+    <text x="54" y="80" text-anchor="end">SKIN</text>
+    <text x="54" y="93" text-anchor="end">ADHESIVE</text>
+    <text x="54" y="111" text-anchor="end">DOUBLER</text>
+  </g>
+  <g stroke="#8fb6e0" stroke-width="1" opacity=".4">
+    <line x1="56" y1="76.5" x2="60" y2="76.5"/>
+    <line x1="56" y1="89.5" x2="60" y2="89.5"/>
+    <line x1="56" y1="107" x2="60" y2="107"/>
+  </g>
+
+  <!-- ===== LEFT PROBE (straight beam, on skin) ===== -->
+  <path d="M166 33 C166 22 170 11 176 0" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".7"/>
+  <rect x="160" y="33" width="12" height="8" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.25"/>
+  <rect x="148" y="41" width="36" height="27" rx="3" fill="url(#brcProbeG)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="153" y="46" width="26" height="9" fill="#0e2848" opacity=".9"/>
+  <rect x="153" y="58" width="26" height="5.5" fill="#5fe0ff" opacity=".5" stroke="#7fd8ff" stroke-width=".75"/>
+  <line x1="143" y1="69" x2="189" y2="69" stroke="#5fe0ff" stroke-width="1.6" opacity=".75" filter="url(#brcGlowR)"/>
+  <text x="192" y="52" font-size="11" fill="#9fe6ff" opacity=".8">0&#176; PROBE</text>
+
+  <!-- ===== DRAIN ARROWS (reveal): energy crosses adhesive into doubler ===== -->
+  <g id="brcDrainArrow" opacity="0">
+    <g stroke="#5fe0ff" stroke-width="2" filter="url(#brcGlowR)">
+      <line x1="155" y1="76" x2="155" y2="106"/>
+      <line x1="166" y1="76" x2="166" y2="106"/>
+      <line x1="177" y1="76" x2="177" y2="106"/>
+    </g>
+    <g fill="#5fe0ff" filter="url(#brcGlowR)">
+      <path d="M151 105 L159 105 L155 113 Z"/>
+      <path d="M162 105 L170 105 L166 113 Z"/>
+      <path d="M173 105 L181 105 L177 113 Z"/>
+    </g>
+  </g>
+
+  <!-- ===== RIGHT CROSS-SECTION: skin + AIR GAP + adhesive + doubler ===== -->
+  <rect x="328" y="68" width="212" height="16" fill="url(#brcSkinG)"/>
+  <line x1="330" y1="74" x2="538" y2="74" stroke="#8fb6e0" stroke-width="1" opacity=".18"/>
+  <rect x="328" y="84" width="212" height="10" fill="#ff9b4b" opacity=".26"/>
+  <line x1="328" y1="84" x2="376" y2="84" stroke="#ff9b4b" stroke-width="1" opacity=".6"/>
+  <line x1="492" y1="84" x2="540" y2="84" stroke="#ff9b4b" stroke-width="1" opacity=".6"/>
+  <line x1="328" y1="94" x2="540" y2="94" stroke="#ff9b4b" stroke-width="1" opacity=".6"/>
+  <rect x="328" y="94" width="212" height="26" fill="url(#brcSteelG)"/>
+  <line x1="330" y1="102" x2="538" y2="102" stroke="#8fb6e0" stroke-width="1" opacity=".15"/>
+  <line x1="330" y1="110" x2="538" y2="110" stroke="#8fb6e0" stroke-width="1" opacity=".15"/>
+  <!-- disbond: air gap carved into adhesive at skin interface -->
+  <path d="M376 84 Q434 83.2 492 84 Q478 91 434 91.4 Q390 91 376 84 Z" fill="#060f20"/>
+  <path d="M376 84.3 Q434 83.4 492 84.3" fill="none" stroke="#ff6b6b" stroke-width="1.8" filter="url(#brcGlowR)" opacity=".95"/>
+  <!-- edges -->
+  <line x1="328" y1="68" x2="540" y2="68" stroke="#8fb6e0" stroke-width="2"/>
+  <line x1="328" y1="120" x2="540" y2="120" stroke="#8fb6e0" stroke-width="1.5"/>
+  <line x1="328" y1="68" x2="328" y2="120" stroke="#8fb6e0" stroke-width="1" opacity=".45"/>
+  <line x1="540" y1="68" x2="540" y2="120" stroke="#8fb6e0" stroke-width="1" opacity=".45"/>
+  <!-- air gap label -->
+  <line x1="543" y1="87" x2="496" y2="86.5" stroke="#ff6b6b" stroke-width="1" opacity=".5"/>
+  <text x="546" y="90" font-size="11" fill="#ff6b6b" opacity=".9">AIR GAP</text>
+
+  <!-- ===== RIGHT PROBE ===== -->
+  <path d="M434 33 C434 22 438 11 444 0" fill="none" stroke="#8fb6e0" stroke-width="1.5" opacity=".7"/>
+  <rect x="428" y="33" width="12" height="8" rx="2" fill="#14304f" stroke="#8fb6e0" stroke-width="1.25"/>
+  <rect x="416" y="41" width="36" height="27" rx="3" fill="url(#brcProbeG)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <rect x="421" y="46" width="26" height="9" fill="#0e2848" opacity=".9"/>
+  <rect x="421" y="58" width="26" height="5.5" fill="#5fe0ff" opacity=".5" stroke="#7fd8ff" stroke-width=".75"/>
+  <line x1="411" y1="69" x2="457" y2="69" stroke="#5fe0ff" stroke-width="1.6" opacity=".75" filter="url(#brcGlowR)"/>
+
+  <!-- trapped energy bouncing in free skin (reveal) -->
+  <path id="brcSkinBounce" d="M414 70.5 L421 81.5 L428 70.5 L435 81.5 L442 70.5 L449 81.5 L456 70.5" fill="none" stroke="#ffc24b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" opacity="0" filter="url(#brcGlowR)"/>
+  <circle id="brcRingPing" cx="434" cy="87" r="6" fill="none" stroke="#ff6b6b" stroke-width="2" opacity="0" filter="url(#brcGlowR)"/>
+
+  <!-- ===== LEFT A-SCAN ===== -->
+  <rect x="36" y="148" width="248" height="150" rx="8" fill="url(#brcScrG)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <text x="46" y="163" font-size="11" fill="#9fe6ff" opacity=".5">A-SCAN</text>
+  <g stroke="#5fe0ff" stroke-width="1" opacity=".1">
+    <line x1="56" y1="152" x2="56" y2="294"/>
+    <line x1="86" y1="152" x2="86" y2="294"/>
+    <line x1="116" y1="152" x2="116" y2="294"/>
+    <line x1="146" y1="152" x2="146" y2="294"/>
+    <line x1="176" y1="152" x2="176" y2="294"/>
+    <line x1="206" y1="152" x2="206" y2="294"/>
+    <line x1="236" y1="152" x2="236" y2="294"/>
+    <line x1="266" y1="152" x2="266" y2="294"/>
+  </g>
+  <g stroke="#5fe0ff" stroke-width="1" opacity=".08">
+    <line x1="38" y1="182" x2="282" y2="182"/>
+    <line x1="38" y1="207" x2="282" y2="207"/>
+    <line x1="38" y1="232" x2="282" y2="232"/>
+    <line x1="38" y1="257" x2="282" y2="257"/>
+  </g>
+  <line x1="40" y1="282" x2="280" y2="282" stroke="#8fb6e0" stroke-width="1.2" opacity=".55"/>
+  <text x="62" y="182" font-size="11" fill="#9fe6ff" opacity=".55">IP</text>
+  <!-- trace: IP + fast-decaying skin multiples (draw reveal) -->
+  <path id="brcGoodTrace" d="M40 282 H53 L56 177 L59 282 H83 L86 230 L89 282 H113 L116 258 L119 282 H143 L146 271 L149 282 H173 L176 278 L179 282 H278" fill="none" stroke="#5fe0ff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#brcGlowR)"/>
+  <!-- decay envelope (reveal) -->
+  <g id="brcGoodEnv" opacity="0">
+    <path d="M56 177 C70 208 76 220 86 229 C98 240 104 250 116 257 C128 264 134 268 146 271 C158 274 170 277 188 279.5 C210 281.5 230 282 252 282" fill="none" stroke="#7fd8ff" stroke-width="1.5" stroke-dasharray="4 3" opacity=".8"/>
+    <text x="166" y="247" font-size="11" fill="#7fd8ff" opacity=".9">FAST DECAY</text>
+  </g>
+
+  <!-- ===== RIGHT A-SCAN ===== -->
+  <rect x="316" y="148" width="248" height="150" rx="8" fill="url(#brcScrG)" stroke="#8fb6e0" stroke-width="1.5"/>
+  <text x="326" y="163" font-size="11" fill="#9fe6ff" opacity=".5">A-SCAN</text>
+  <g stroke="#5fe0ff" stroke-width="1" opacity=".1">
+    <line x1="336" y1="152" x2="336" y2="294"/>
+    <line x1="366" y1="152" x2="366" y2="294"/>
+    <line x1="396" y1="152" x2="396" y2="294"/>
+    <line x1="426" y1="152" x2="426" y2="294"/>
+    <line x1="456" y1="152" x2="456" y2="294"/>
+    <line x1="486" y1="152" x2="486" y2="294"/>
+    <line x1="516" y1="152" x2="516" y2="294"/>
+    <line x1="546" y1="152" x2="546" y2="294"/>
+  </g>
+  <g stroke="#5fe0ff" stroke-width="1" opacity=".08">
+    <line x1="318" y1="182" x2="562" y2="182"/>
+    <line x1="318" y1="207" x2="562" y2="207"/>
+    <line x1="318" y1="232" x2="562" y2="232"/>
+    <line x1="318" y1="257" x2="562" y2="257"/>
+  </g>
+  <line x1="320" y1="282" x2="560" y2="282" stroke="#8fb6e0" stroke-width="1.2" opacity=".55"/>
+  <text x="342" y="182" font-size="11" fill="#9fe6ff" opacity=".55">IP</text>
+  <!-- trace: IP + long persistent ring at skin-thickness spacing (draw reveal) -->
+  <path id="brcRingTrace" d="M320 282 H333 L336 177 L339 282 H363 L366 196 L369 282 H393 L396 203 L399 282 H423 L426 210 L429 282 H453 L456 216 L459 282 H483 L486 221 L489 282 H513 L516 226 L519 282 H543 L546 230 L549 282 H558" fill="none" stroke="#ff8585" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100" filter="url(#brcGlowR)"/>
+  <!-- spacing bracket (reveal) -->
+  <g id="brcSpacingBracket" opacity="0">
+    <g stroke="#5fe0ff" stroke-width="1" opacity=".9" fill="none">
+      <path d="M426 206 V197"/>
+      <path d="M456 212 V197"/>
+      <path d="M426 199.5 H456" stroke-width="1.2"/>
+    </g>
+    <path d="M426 199.5 L432 197.3 L432 201.7 Z" fill="#5fe0ff"/>
+    <path d="M456 199.5 L450 197.3 L450 201.7 Z" fill="#5fe0ff"/>
+    <text x="441" y="189" text-anchor="middle" font-size="11" fill="#9fe6ff">SKIN THICKNESS</text>
+  </g>
+</svg>
