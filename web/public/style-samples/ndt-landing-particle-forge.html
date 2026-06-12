@@ -184,24 +184,36 @@
   .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,1,.3,1)}
   .reveal.in{opacity:1;transform:none}
 
-  /* ---------- STORY (industry flythrough) ---------- */
-  .story-grid{display:grid;grid-template-columns:minmax(0,470px) 1fr;gap:40px;margin-top:64px}
-  .story-cards{display:flex;flex-direction:column}
-  .story-card{position:relative;border-radius:24px;padding:34px 30px 30px;background:var(--card);
-    border:1px solid var(--line);overflow:hidden;margin-bottom:34vh;
-    transition:transform .35s cubic-bezier(.2,1.4,.4,1),box-shadow .35s,border-color .35s}
-  .story-card:last-child{margin-bottom:6vh}
-  .story-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;
-    background:linear-gradient(90deg,var(--cyan),var(--blue));opacity:.55;transition:opacity .3s}
-  .story-card:hover{transform:translateY(-6px);border-color:rgba(95,224,255,.4);box-shadow:0 24px 60px rgba(4,10,24,.6)}
-  .story-card .tag{font-family:var(--disp);font-weight:700;font-size:11.5px;letter-spacing:.22em;color:var(--cyan);
+  /* ---------- INSPECTION VIGNETTES (scroll-scrubbed stories) ---------- */
+  .vig{position:relative;z-index:2;height:calc(var(--svh,220)*1vh)}
+  .vig-pin{position:sticky;top:0;height:100vh;overflow:hidden;pointer-events:none}
+  .tag{font-family:var(--disp);font-weight:700;font-size:11.5px;letter-spacing:.22em;color:var(--cyan);
     display:inline-flex;padding:8px 16px;border-radius:999px;background:rgba(95,224,255,.08);
-    border:1px solid var(--line);margin-bottom:18px}
-  .story-card h3{font-family:var(--disp);font-weight:700;font-size:20px;margin-bottom:12px;line-height:1.35}
-  .story-card p{color:var(--ink-dim);font-size:15.5px;line-height:1.7}
-  .story-card p strong{color:var(--ink);font-weight:600}
-  .story-card.live{border-color:rgba(95,224,255,.55);box-shadow:0 24px 70px rgba(4,10,24,.65),0 0 50px rgba(95,224,255,.08)}
-  .story-card.live::before{opacity:1}
+    border:1px solid var(--line)}
+  .vig-head{position:absolute;top:96px;left:5vw;z-index:6;max-width:400px;pointer-events:auto}
+  .vig-head h3{font-family:var(--disp);font-weight:700;font-size:clamp(18px,1.8vw,25px);line-height:1.32;
+    margin-top:14px;text-shadow:0 2px 18px rgba(4,10,24,.85)}
+  .vig-cap{position:absolute;left:50%;bottom:40px;transform:translateX(-50%);z-index:6;
+    display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;
+    max-width:min(92vw,660px);pointer-events:auto;transition:opacity .25s}
+  .vig-cap.swap{opacity:0}
+  .vig-chips{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center}
+  .mchip{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;font-weight:600;
+    letter-spacing:.14em;color:var(--cyan);padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:rgba(8,21,43,.78);backdrop-filter:blur(8px)}
+  .mchip[hidden]{display:none}
+  .mchip.alert{color:#ff8d98;border-color:rgba(255,77,94,.5);background:rgba(28,10,20,.82);
+    opacity:0;transform:translateY(5px);transition:opacity .3s,transform .3s}
+  .mchip.alert.on{opacity:1;transform:none}
+  .vig-story{font-size:15.5px;font-weight:500;line-height:1.55;color:var(--ink);
+    text-shadow:0 2px 14px rgba(4,10,24,.95);padding:0 10px;min-height:24px}
+  .vig-learn{font-size:13.5px;font-weight:700;letter-spacing:.06em;color:var(--cyan);
+    border-bottom:1px solid rgba(95,224,255,.4);transition:.2s}
+  .vig-learn:hover{color:#fff;border-color:#fff}
+  .vig-learn[hidden]{display:none}
+  .vig-bar{width:min(40vw,300px);height:2px;border-radius:2px;background:rgba(95,224,255,.14);
+    overflow:hidden;margin-top:2px}
+  .vig-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--blue))}
   .story-wide{border-radius:24px;padding:34px 30px;background:var(--card);border:1px solid var(--line);margin-top:30px;
     display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:space-between}
   .story-wide h3{font-family:var(--disp);font-weight:700;font-size:19px;line-height:1.4;max-width:520px}
@@ -267,8 +279,11 @@
   @media (max-width:920px){
     .navlinks{display:none}
     .stats{grid-template-columns:1fr 1fr}
-    .story-grid{grid-template-columns:1fr;gap:0}
-    .story-card{margin-bottom:46vh}
+    .vig-head{top:84px;max-width:74vw}
+    .vig-head h3{font-size:17px}
+    .vig-cap{bottom:24px;gap:8px}
+    .vig-story{font-size:13.5px}
+    .mchip{font-size:10.5px;padding:6px 11px}
     .shape-hud{right:50%;transform:translateX(50%);bottom:7vh}
     .shape-label{min-width:230px;font-size:13px}
     .hero-inner{padding-top:130px}
@@ -358,31 +373,69 @@
       <h2>Everything you trust gets inspected by <span class="grad">certified eyes</span>.</h2>
       <p class="sec-sub">Nondestructive Testing is how the modern world stays trustworthy. The hardware is evolving fast — the people who can certify it are the bottleneck. That's your opening. Watch the particles — they know where they're needed.</p>
     </div>
-    <div class="story-grid" id="storyGrid">
-      <div class="story-cards" id="storyCards">
-        <article class="story-card reveal" data-shape="2">
-          <span class="tag">Energy</span>
-          <h3>The wind never stops. Neither does inspection.</h3>
-          <p>Turbine blades, tower welds, foundation bolts — wind farms live outdoors in the worst weather on earth. <strong>NDT technicians keep them turning</strong>, on rope, by drone, and on the ground.</p>
-        </article>
-        <article class="story-card reveal" data-shape="3">
-          <span class="tag">Aerospace</span>
-          <h3>Every flight you've ever taken was signed off first.</h3>
-          <p>Airframes, engine fans, landing gear — aircraft are inspected their whole working lives. New aerospace programs need <strong>first inspections</strong>; the existing fleet needs them forever.</p>
-        </article>
-        <article class="story-card reveal" data-shape="4">
-          <span class="tag">Infrastructure</span>
-          <h3>Bridges don't get to fail.</h3>
-          <p>Aging steel, welds, and pins need re-certification — and there's a lot of aging steel out there. <strong>The work is here; the certified workforce isn't.</strong> Get certified while the door is wide open.</p>
-        </article>
-        <article class="story-card reveal" data-shape="6">
-          <span class="tag">Thrill rides</span>
-          <h3>The scariest ride is the one nobody inspected.</h3>
-          <p>Roller coasters get crawled over by inspectors before you ever board. Welds, track, bolts, restraints — <strong>somebody's eyes cleared your last ride.</strong> They could be yours.</p>
-        </article>
+  </div>
+  <!-- scroll-scrubbed inspection vignettes: scroll position drives each story -->
+  <section class="vig" data-vig="0" style="--svh:250">
+    <div class="vig-pin">
+      <div class="vig-head"><span class="tag">Infrastructure</span>
+        <h3>Bridges don't get to fail.</h3></div>
+      <div class="vig-cap">
+        <div class="vig-chips"><span class="mchip" data-method hidden></span><span class="mchip alert" data-alert></span></div>
+        <p class="vig-story" data-story></p>
+        <a class="vig-learn" data-learn href="/courses" hidden></a>
+        <div class="vig-bar"><i data-bar></i></div>
       </div>
-      <div class="story-stage" aria-hidden="true"></div>
     </div>
+  </section>
+  <section class="vig" data-vig="1" style="--svh:200">
+    <div class="vig-pin">
+      <div class="vig-head"><span class="tag">Energy</span>
+        <h3>The wind never stops. Neither does inspection.</h3></div>
+      <div class="vig-cap">
+        <div class="vig-chips"><span class="mchip" data-method hidden></span><span class="mchip alert" data-alert></span></div>
+        <p class="vig-story" data-story></p>
+        <a class="vig-learn" data-learn href="/courses" hidden></a>
+        <div class="vig-bar"><i data-bar></i></div>
+      </div>
+    </div>
+  </section>
+  <section class="vig" data-vig="2" style="--svh:200">
+    <div class="vig-pin">
+      <div class="vig-head"><span class="tag">Aerospace</span>
+        <h3>Every flight you've ever taken was signed off first.</h3></div>
+      <div class="vig-cap">
+        <div class="vig-chips"><span class="mchip" data-method hidden></span><span class="mchip alert" data-alert></span></div>
+        <p class="vig-story" data-story></p>
+        <a class="vig-learn" data-learn href="/courses" hidden></a>
+        <div class="vig-bar"><i data-bar></i></div>
+      </div>
+    </div>
+  </section>
+  <section class="vig" data-vig="3" style="--svh:200">
+    <div class="vig-pin">
+      <div class="vig-head"><span class="tag">Pipelines</span>
+        <h3>Pressure inside. Proof outside.</h3></div>
+      <div class="vig-cap">
+        <div class="vig-chips"><span class="mchip" data-method hidden></span><span class="mchip alert" data-alert></span></div>
+        <p class="vig-story" data-story></p>
+        <a class="vig-learn" data-learn href="/courses" hidden></a>
+        <div class="vig-bar"><i data-bar></i></div>
+      </div>
+    </div>
+  </section>
+  <section class="vig" data-vig="4" style="--svh:210">
+    <div class="vig-pin">
+      <div class="vig-head"><span class="tag">Thrill rides</span>
+        <h3>The scariest ride is the one nobody inspected.</h3></div>
+      <div class="vig-cap">
+        <div class="vig-chips"><span class="mchip" data-method hidden></span><span class="mchip alert" data-alert></span></div>
+        <p class="vig-story" data-story></p>
+        <a class="vig-learn" data-learn href="/courses" hidden></a>
+        <div class="vig-bar"><i data-bar></i></div>
+      </div>
+    </div>
+  </section>
+  <div class="wrap">
     <div class="story-wide reveal">
       <h3>Learn under <span class="grad">ASNT Level IIIs</span> from day one.</h3>
       <p>Founded by two multi-certified <strong>ASNT Level IIIs</strong> — every student gets Level III oversight. Training structured to <strong>SNT-TC-1A 2024</strong> and <strong>NAS410</strong>.</p>
@@ -966,8 +1019,8 @@ let tbN = 0, tbIdx, tbX0, tbY0;
     def.targets[i*3+1] = HUB_LY + tbY0[k];
   }
 }
-function animTurbine(t, A){
-  const ang = t * TURB_OMEGA, ca = Math.cos(ang), sa = Math.sin(ang);
+function animTurbine(ang, A){
+  const ca = Math.cos(ang), sa = Math.sin(ang);
   for (let k = 0; k < tbN; k++){
     const i3 = tbIdx[k] * 3;
     A[i3]   = HUB_LX + tbX0[k]*ca - tbY0[k]*sa;
@@ -1068,7 +1121,8 @@ for (let k = 0; k < TRN_C*TRN_P; k++) SZ[trnIdx[k]] = 1.8 + (k % 3)*.35;    // c
 const POOLN = LOWPOWER ? 500 : 1200;
 const poolIdx = new Uint32Array(POOLN);
 const isPool = new Uint8Array(USABLE);
-for (let k = 0; k < POOLN; k++){ const i = (k*USABLE/POOLN)|0; poolIdx[k] = i; isPool[i] = 1; }
+for (let k = 0; k < POOLN; k++){ const i = (k*USABLE/POOLN)|0; poolIdx[k] = i; isPool[i] = 1;
+  if (SZ[i] < 1.75) SZ[i] = 1.5 + R4[i*4]*.85; }                 // glyph-duty particles read solid
 function PL(k, x, y, z, r, g, b, dy){                       // canvas px -> pool particle k target
   const i3 = poolIdx[k]*3;
   const lx = (x - SW/2)*SC, ly = -(y - SH/2)*SC + (dy || 0);
@@ -1274,6 +1328,537 @@ function animRocket(t, rise){
   }
 }
 
+/* ================================================================
+   INSPECTION VIGNETTES (owner round 3) — scroll-SCRUBBED method
+   stories. Each tall .vig section pins a viewport; scroll progress
+   drives beats: the industry shape forms, the camera zooms to a
+   joint, and real NDT gear (drawn as particle glyphs from the
+   shared pool) performs the inspection. Covers UT MT ET RT PT VT.
+   ================================================================ */
+const ease = u => u <= 0 ? 0 : u >= 1 ? 1 : u*u*(3-2*u);
+const bu = (p, a, b) => ease((p - a) / (b - a));            // beat-local progress
+const gss = (x, c, s) => Math.exp(-((x-c)*(x-c))/(2*s*s));
+
+/* pool particle counts per glyph (desktop / low-power) */
+const VN = LOWPOWER
+  ? {probe:60, beam:14, panel:70, trace:50, mark:20, yoke:80, arcs:36, ink:90,
+     sweep:44, glint:8, pencil:44, rivet:20, bore:56, tip:6,
+     src:50, plate:40, rays:60, film:60, poro:24, pen:100, dev:90, bleed:40}
+  : {probe:170, beam:32, panel:170, trace:110, mark:44, yoke:210, arcs:78, ink:200,
+     sweep:110, glint:14, pencil:130, rivet:30, bore:140, tip:10,
+     src:130, plate:90, rays:170, film:150, poro:24, pen:260, dev:220, bleed:90};
+
+/* ---- glyph drawings (canvas px, same montage discipline as shapes).
+       Drawn around (240,150); sampled to fixed-count offset arrays. ---- */
+const GLY = {
+  utAngle(c){                                               // angle-beam probe: wedge + transducer + cable
+    c.beginPath(); c.moveTo(240, 150); c.lineTo(180, 150); c.lineTo(180, 122); c.closePath(); c.fill();
+    c.fillRect(182, 96, 36, 28);                            // transducer housing on the wedge heel
+    c.lineWidth = 5;
+    c.beginPath(); c.moveTo(200, 96); c.quadraticCurveTo(194, 78, 176, 70); c.stroke();
+  },
+  utStraight(c){                                            // straight-beam probe: barrel + neck + cable
+    c.fillRect(231, 122, 18, 28);                           // barrel, face at y=150
+    c.fillRect(235, 108, 10, 14);                           // neck
+    c.lineWidth = 5;
+    c.beginPath(); c.moveTo(240, 108); c.quadraticCurveTo(240, 92, 256, 84); c.stroke();
+  },
+  panel(c){                                                 // instrument screen: frame + axes
+    c.lineWidth = 4; c.strokeRect(170, 80, 140, 110);
+    c.lineWidth = 2;
+    c.beginPath(); c.moveTo(178, 178); c.lineTo(302, 178); c.stroke();   // baseline axis
+    c.beginPath(); c.moveTo(178, 90); c.lineTo(178, 178); c.stroke();    // amplitude axis
+    for (let x = 208; x <= 298; x += 30){ c.beginPath(); c.moveTo(x, 174); c.lineTo(x, 182); c.stroke(); }
+  },
+  mtYoke(c){                                                // MT yoke: arch + poles + housing + grip
+    c.lineWidth = 11;
+    c.beginPath(); c.arc(240, 118, 28, Math.PI, 0); c.stroke();          // arch
+    c.fillRect(206, 116, 12, 34); c.fillRect(262, 116, 12, 34);          // poles (feet at y=150)
+    c.fillRect(222, 72, 36, 20);                                         // coil housing
+    c.fillRect(233, 58, 14, 14);                                         // grip stub
+  },
+  etPencil(c){                                              // ET pencil probe, tip down on the rivet
+    c.lineWidth = 4;
+    c.beginPath(); c.moveTo(240, 150); c.lineTo(244, 132); c.stroke();   // tip
+    c.lineWidth = 9;
+    c.beginPath(); c.moveTo(244, 132); c.lineTo(252, 102); c.stroke();   // body
+    c.lineWidth = 3;
+    c.beginPath(); c.moveTo(252, 102); c.quadraticCurveTo(258, 88, 268, 82); c.stroke();
+  },
+  rtSource(c){                                              // gamma source head, collimator down
+    c.fillRect(226, 96, 28, 24);                                         // body
+    c.beginPath(); c.moveTo(231, 120); c.lineTo(249, 120); c.lineTo(240, 134); c.closePath(); c.fill();
+    c.lineWidth = 3; c.beginPath(); c.arc(240, 91, 5, 0, 7); c.stroke(); // eye bolt
+  },
+  rtPlate(c){                                               // film cassette
+    c.fillRect(190, 148, 100, 9);
+    c.fillRect(186, 145, 6, 15); c.fillRect(288, 145, 6, 15);            // edge clips
+  },
+  boreScope(c){                                             // borescope: grip + articulating tube + lit tip
+    c.fillRect(158, 178, 26, 44);
+    c.lineWidth = 5;
+    c.beginPath(); c.moveTo(171, 178); c.quadraticCurveTo(176, 120, 240, 120); c.stroke();
+    c.beginPath(); c.arc(244, 120, 5, 0, 7); c.fill();
+  },
+};
+function glyphPts(n, ax, ay, drawFn, bake){
+  const b = bake || 1;
+  const pts = samplePixels(c => {
+    c.save(); c.translate(ax*(1-b), ay*(1-b)); c.scale(b, b); drawFn(c); c.restore();
+  });
+  const m = pts.length/2, out = new Float32Array(n*2);
+  for (let k = 0; k < n; k++){
+    const j = ((k*m/n)|0)*2;
+    out[k*2] = pts[j] - ax; out[k*2+1] = pts[j+1] - ay;
+  }
+  return out;
+}
+const G_UTW   = glyphPts(VN.probe, 228, 150, c => {         // anchor: beam exit (no cable: it moirés)
+  /* baked at .55 */
+  c.beginPath(); c.moveTo(240, 150); c.lineTo(180, 150); c.lineTo(180, 122); c.closePath(); c.fill();
+  c.fillRect(182, 96, 36, 28);
+}, .55);
+const G_UTS   = glyphPts(VN.probe, 240, 150, c => {          // anchor: face center
+  c.fillRect(231, 122, 18, 28); c.fillRect(235, 108, 10, 14);
+}, .6);
+const G_PANEL = glyphPts(VN.panel, 170, 80, GLY.panel, .45); // anchor: top-left
+const G_YOKE  = glyphPts(VN.yoke, 240, 150, GLY.mtYoke, .5); // anchor: between the feet
+const G_PEN   = glyphPts(VN.pencil, 240, 150, c => {         // anchor: tip
+  c.lineWidth = 4; c.beginPath(); c.moveTo(240, 150); c.lineTo(244, 132); c.stroke();
+  c.lineWidth = 9; c.beginPath(); c.moveTo(244, 132); c.lineTo(252, 102); c.stroke();
+}, .55);
+const G_SRC   = glyphPts(VN.src, 240, 134, c => {            // anchor: collimator port
+  c.fillRect(226, 96, 28, 24);
+  c.beginPath(); c.moveTo(231, 120); c.lineTo(249, 120); c.lineTo(240, 134); c.closePath(); c.fill();
+}, .5);
+const G_PLATE = glyphPts(VN.plate, 240, 152, GLY.rtPlate, .6); // anchor: cassette center
+
+/* ---- stamping helpers (pool writers; zero allocations) ---- */
+function stampR(k, pts, n, x, y, z, s, ang, r, g, b){
+  const ca = Math.cos(ang), sa = Math.sin(ang);
+  for (let q = 0; q < n; q++){
+    const i4 = poolIdx[k+q]*4;
+    const dx = pts[q*2]*s + (R4[i4]-.5)*1.3, dy = pts[q*2+1]*s + (R4[i4+1]-.5)*1.3;
+    PL(k+q, x + dx*ca - dy*sa, y + dx*sa + dy*ca, z, r, g, b);
+  }
+  return k + n;
+}
+function park(k0, k1){                                       // unused pool slots rejoin the silhouette
+  const def = curDef; if (!def) return;
+  for (let k = k0; k < k1; k++){
+    const i3 = poolIdx[k]*3;
+    TL[i3] = def.targets[i3]; TL[i3+1] = def.targets[i3+1]; TL[i3+2] = def.targets[i3+2];
+    CT[i3] = def.colors[i3]; CT[i3+1] = def.colors[i3+1]; CT[i3+2] = def.colors[i3+2];
+  }
+}
+function trace(k0, x0, y0, w, h, t, fn, redC, redAmp){       // instrument trace inside a panel
+  for (let q = 0; q < VN.trace; q++){
+    const u = q/(VN.trace-1), v = Math.min(1, fn(u));
+    const us = (t*.55) % 1, hot = Math.exp(-((u-us)*(u-us))/.0016)*1.1;  // CRT sweep dot
+    const dim = .5 + v*1.1 + hot;
+    let r = .5*dim, g = 1.0*dim, b = 1.18*dim;
+    if (redAmp > 0){ const m2 = Math.exp(-((u-redC)*(u-redC))/.0035)*redAmp; r += m2*1.4; g = Math.max(.1, g-m2*.5); b = Math.max(.1, b-m2*.6); }
+    PL(k0+q, x0 + 7 + u*(w-14), y0 + h - 9 - v*(h-22), .55, r, g, b);
+  }
+  return k0 + VN.trace;
+}
+const _v3v = new THREE.Vector3();
+function vigScreen(cx, cy){                                  // canvas px -> screen px (for DOM pings)
+  _v3v.set((cx - SW/2)*SC*fs + fox, -(cy - SH/2)*SC*fs + foy, .4);
+  _v3v.project(camera);
+  return {x: (_v3v.x*.5+.5)*W, y: (1-(_v3v.y*.5+.5))*H};
+}
+
+/* ---- per-vignette fixed geometry ---- */
+const BR_CRACK = [258,109, 264,113, 270,108, 276,112, 282,109]; // bridge gusset toe crack
+const BR_CK = new Float32Array(VN.ink*2);
+samplePolyline(BR_CRACK, VN.ink, BR_CK, 0);
+const INK_SX = new Float32Array(VN.ink), INK_SY = new Float32Array(VN.ink);
+for (let q = 0; q < VN.ink; q++){ INK_SX[q] = 271 + (Math.random()-.5)*68; INK_SY[q] = 101 + Math.random()*26; }
+const RIV_X0 = 156, RIV_DX = 15, RIV_N = 10, RIV_BAD = 6, RIV_Y = 159;   // fuselage lap-joint rivets
+let _bpx = 0, _bpy = 0;
+function borePt(s){                                          // borescope insertion path (cubic)
+  const a = 1 - s;
+  _bpx = a*a*a*128 + 3*a*a*s*150 + 3*a*s*s*176 + s*s*s*222;
+  _bpy = a*a*a*258 + 3*a*a*s*210 + 3*a*s*s*191 + s*s*s*190;
+}
+const railY = x => x < 287 ? 234 : 234 + (x - 287)*.52;      // coaster exit-ramp rail line
+const CO_CRACK = [294,236, 299,241, 304,241, 309,246, 314,247];
+const CO_CK = new Float32Array(VN.bleed*2);
+samplePolyline(CO_CRACK, VN.bleed, CO_CK, 0);
+const DEV_X = new Float32Array(VN.dev), DEV_Y = new Float32Array(VN.dev);
+for (let q = 0; q < VN.dev; q++){
+  DEV_X[q] = 276 + Math.random()*42;
+  DEV_Y[q] = railY(DEV_X[q]) + (Math.random()-.5)*9 - 1.5;
+}
+
+/* ---- vignette config: shape, beats (captions), transform keys ----
+   keys: [progress, zoom (xbase), focusX, focusY] in shape-canvas px */
+const VIGS = [
+{ shape:4, key:.88, park:VN.probe+VN.beam+VN.panel+VN.trace+VN.mark+VN.yoke+VN.arcs+VN.ink,
+  beats:[
+    {p:0,   m:'', l:'', a:'', s:'Morning traffic. Forty-year-old steel. Somebody has to know it’s still sound.'},
+    {p:.16, m:'', l:'', a:'', s:'Today’s job: the chord-to-gusset weld. Move in close.'},
+    {p:.30, m:'UT · ULTRASONIC TESTING', l:'UT', a:'FLAW ECHO',
+     s:'Shear-wave UT hears what eyes can’t — the echo betrays a crack buried in the weld.'},
+    {p:.64, m:'MT · MAGNETIC PARTICLE TESTING', l:'MT', a:'INDICATION',
+     s:'A magnetic yoke + iron particles make the invisible crack draw itself.'}],
+  keys:[[0,1,240,168],[.16,1,240,168],[.30,4.4,296,98],[.58,4.4,296,98],[.70,4.2,272,108],[1,4.2,272,108]] },
+{ shape:2, key:.45, park:VN.mark+VN.probe+VN.panel+VN.trace+VN.sweep+VN.glint,
+  beats:[
+    {p:0,   m:'', l:'', a:'', s:'A hundred meters up, the blades never rest — but the tower carries it all.'},
+    {p:.26, m:'UT · ULTRASONIC TESTING', l:'UT', a:'ECHO',
+     s:'Straight-beam UT sounds the tower girth weld — the backwall answers, then something else does.'},
+    {p:.62, m:'VT · VISUAL TESTING', l:'VT', a:'EDGE CRACK',
+     s:'Blades parked. A raking light crawls the edge — and catches a glint that shouldn’t be there.'}],
+  keys:[[0,1,240,155],[.26,4.6,305,195],[.56,4.6,305,195],[.68,4.2,272,92],[1,4.2,272,92]] },
+{ shape:3, key:.45, park:VN.rivet+VN.pencil+VN.panel+VN.trace+VN.bore+VN.tip,
+  beats:[
+    {p:0,   m:'', l:'', a:'', s:'Every flight pressurizes the skin. Every rivet takes the strain.'},
+    {p:.24, m:'ET · EDDY CURRENT TESTING', l:'ET', a:'CRACKED RIVET',
+     s:'An eddy-current pencil probe hops rivet to rivet along the lap joint — one of them answers wrong.'},
+    {p:.64, m:'VT · VISUAL TESTING', l:'VT', a:'',
+     s:'A borescope snakes into the engine — eyes where no eyes fit.'}],
+  keys:[[0,1,240,152],[.24,4.2,245,118],[.58,4.2,245,118],[.72,5,185,210],[1,5,185,210]] },
+{ shape:1, key:.86, park:VN.src+VN.plate+VN.rays+VN.panel+VN.film+VN.poro,
+  beats:[
+    {p:0,   m:'', l:'', a:'', s:'Product never stops moving. One girth weld holds it all in.'},
+    {p:.22, m:'RT · RADIOGRAPHIC TESTING', l:'RT', a:'EXPOSING',
+     s:'Source on one side, film on the other — gamma rays photograph the inside of the weld.'},
+    {p:.60, m:'RT · RADIOGRAPHIC TESTING', l:'RT', a:'POROSITY',
+     s:'The film develops — a string of gas pores, caught before it ever leaks.'}],
+  keys:[[0,1,240,150],[.22,4.4,320,110],[1,4.4,320,110]] },
+{ shape:6, key:.86, park:VN.pen+VN.dev+VN.bleed,
+  beats:[
+    {p:0,   m:'', l:'', a:'', s:'Three g’s at the bottom of the loop, every ride, all summer long.'},
+    {p:.22, m:'PT · PENETRANT TESTING', l:'PT', a:'DWELL',
+     s:'Red penetrant soaks into anything open to the surface. Dwell… then wipe it clean.'},
+    {p:.60, m:'PT · PENETRANT TESTING', l:'PT', a:'BLEEDOUT',
+     s:'White developer pulls the dye back out — the crack bleeds red. Found it.'}],
+  keys:[[0,1,240,150],[.22,4.8,300,238],[1,4.8,300,238]] },
+];
+
+const vigSecs = [...document.querySelectorAll('.vig')];
+const vigEls = vigSecs.map(sec => ({sec,
+  cap: sec.querySelector('.vig-cap'), head: sec.querySelector('.vig-head'),
+  m: sec.querySelector('[data-method]'), a: sec.querySelector('[data-alert]'),
+  s: sec.querySelector('[data-story]'), l: sec.querySelector('[data-learn]'),
+  bar: sec.querySelector('[data-bar]'), timer: 0, _bw: -1}));
+
+let vigIdx = 0, vigBeat = -1, vigP = 0;
+let vsBlipGate = false, vsClunkGate = false, vsPingGate = false, vsTickClock = 0;
+let turbAng = 0;                                             // turbine blade angle (vig can freeze it)
+const TURB_POSE = -0.66;                                     // parked pose: blade 0 up-right for the VT walk
+const vigDbg = {vi:-1, beat:-1, p:0, probeX:0, echoAmp:0, yokeY:0, inkCluster:0,
+  etRivet:-1, etAmp:0, boreU:0, rtExpo:0, filmU:0, ptPhase:'', sweepU:0};
+
+function vigTransform(vi, p){
+  const base = Math.min(1.0, (W > 920 ? visW*.6 : visW*.92)/10.6);
+  const ks = VIGS[vi].keys;
+  let s = ks[0][1], cx = ks[0][2], cy = ks[0][3];
+  for (let i = 0; i < ks.length-1; i++){
+    const a = ks[i], b = ks[i+1];
+    if (p >= a[0]){
+      const u = ease((p - a[0]) / Math.max(1e-4, b[0] - a[0]));
+      s = a[1] + (b[1]-a[1])*u; cx = a[2] + (b[2]-a[2])*u; cy = a[3] + (b[3]-a[3])*u;
+    }
+  }
+  if (W <= 920){ s = 1; cx = 240; cy = 158; }                // mobile: same beats, no zoom
+  const fsv = base*s;
+  return [fsv, -(cx - SW/2)*SC*fsv, (cy - SH/2)*SC*fsv + .4];
+}
+function setVigCaption(vi, bi){
+  const v = vigEls[vi], cfg = VIGS[vi].beats[bi];
+  clearTimeout(v.timer);
+  v.cap.classList.add('swap');
+  v.timer = setTimeout(() => {
+    v.m.hidden = !cfg.m; v.m.textContent = cfg.m;
+    v.a.textContent = cfg.a; v.a.classList.remove('on');
+    v.s.textContent = cfg.s;
+    v.l.hidden = !cfg.l; if (cfg.l) v.l.textContent = 'Learn ' + cfg.l + ' →';
+    v.cap.classList.remove('swap');
+  }, 160);
+}
+function muteVigDefects(si){                                 // hero-game cracks stay quiet in vignettes
+  const def = SHAPES[si];
+  for (let g = 0; g < 3; g++) if (DEFECT_SHAPES[g] === si && def.defect){
+    const base = (COUNT - DEF_TOTAL) + g*DEF_N;
+    for (let k2 = 0; k2 < DEF_N; k2++){
+      const j = (base + k2)*3;
+      CT[j] = .25; CT[j+1] = .55; CT[j+2] = .9;
+    }
+  }
+}
+function setVigAlert(vi, on){
+  const a = vigEls[vi].a;
+  if (a.classList.contains('on') !== !!on) a.classList.toggle('on', !!on);
+}
+
+/* ---- the five writers (pool stamping, all scrubbed by p) ---- */
+function vigBridge(p, t, dt){
+  park(0, VIGS[0].park);
+  let k = 0, echo = 0, probeX = 0, cl = 0, yokeY = 0;
+  if (p >= .24 && p < .68){                                  // ---- UT angle-beam pass ----
+    const u = bu(p, .30, .62), xf = 238;
+    const inU = Math.min(1, u*14) * Math.min(1, (1-u)*14);
+    if (u < .35)      probeX = 206 + (xf-206)*ease(u/.35);
+    else if (u < .62) probeX = xf + Math.sin(t*2.2)*2.0;     // scrubbing over the indication
+    else              probeX = xf + (322-xf)*ease((u-.62)/.38);
+    echo = gss(probeX, xf, 9) * inU;
+    k = stampR(k, G_UTW, VN.probe, probeX, 107, .5, 1, 0, 1.9, 1.45, .7);
+    for (let q = 0; q < VN.beam; q++){                       // refracted shear beam toward the flaw
+      const uu = (q+.5)/VN.beam, zip = (t*1.7)%1;
+      const b = (.3 + .9*Math.exp(-(uu-zip)*(uu-zip)/.012)) * inU;
+      PL(k+q, probeX + 4 + uu*(270-probeX-4), 108.5 + Math.sin(uu*Math.PI)*8, .45, .4*b, 1.15*b, 1.4*b);
+    }
+    k += VN.beam;
+    k = stampR(k, G_PANEL, VN.panel, 348, 44, .5, 1, 0, .8, 1.25, 1.5);
+    k = trace(k, 348, 44, 63, 49.5, t,
+      uu => .9*gss(uu,.07,.018) + echo*.95*gss(uu,.45,.02) + .42*gss(uu,.86,.022) + .022*(1+Math.sin(uu*43+t*3)),
+      .45, echo);
+    for (let q = 0; q < VN.mark; q++){                       // the flaw answers: red ping at the crack
+      const j = ((q*VN.ink/VN.mark)|0)*2, i4 = poolIdx[k+q]*4;
+      const b = echo*(1.1 + .5*Math.sin(t*9 + q));
+      PL(k+q, BR_CK[j] + (R4[i4]-.5)*2, BR_CK[j+1] + (R4[i4+1]-.5)*2, .5, b*1.6, b*.3, b*.34);
+    }
+    k += VN.mark;
+    if (echo > .55 && !vsBlipGate){ vsBlipGate = true; SND.blip();
+      if (!reduced && !vsPingGate){ vsPingGate = true; const sp = vigScreen(268, 110); spawnPing(sp.x, sp.y, false); } }
+    else if (echo < .25) vsBlipGate = false;
+  }
+  if (p >= .64){                                             // ---- MT yoke + indication ----
+    const u = bu(p, .66, .98);
+    const setU = ease(Math.min(1, u/.16));
+    yokeY = -46*(1-setU);
+    k = stampR(k, G_YOKE, VN.yoke, 271, 107.5 + yokeY, .5, 1.1, 0, 1.9, 1.45, .7);
+    for (let q = 0; q < VN.arcs; q++){                       // flux arcs bowing pole to pole
+      const a = q%3, uu = ((q/3)|0)/((VN.arcs/3)|0);
+      const b = setU*(.5 + .3*Math.sin(t*3 + a*2.1 + uu*6.3));
+      PL(k+q, 271 + (uu-.5)*2*(13+a*5), 106.5 - Math.sin(uu*Math.PI)*(5+a*4), .42, .25*b, .8*b, 1.1*b);
+    }
+    k += VN.arcs;
+    cl = ease(bu(p, .72, .92)) * setU;
+    for (let q = 0; q < VN.ink; q++){                        // iron ink migrates + clusters on the crack
+      const i4 = poolIdx[k+q]*4;
+      const cx = INK_SX[q] + (BR_CK[q*2]   - INK_SX[q])*cl + Math.sin(t*1.4 + R4[i4]*6.28)*2.2*(1-cl);
+      const cy = INK_SY[q] + (BR_CK[q*2+1] - INK_SY[q])*cl + Math.cos(t*1.1 + R4[i4+1]*6.28)*1.5*(1-cl) + (R4[i4+2]-.5)*1.4*(1-cl*.8);
+      const b = .45 + cl*1.15 + R4[i4+3]*.25;
+      PL(k+q, cx, cy, .5, b*1.5, b*.28, b*.34);
+    }
+    k += VN.ink;
+    if (setU >= .98 && !vsClunkGate){ vsClunkGate = true; SND.clunk(); }
+    else if (setU < .2) vsClunkGate = false;
+  }
+  setVigAlert(0, (vigBeat === 2 && echo > .5) || (vigBeat === 3 && cl > .65));
+  vigDbg.probeX = Math.round(probeX); vigDbg.echoAmp = +echo.toFixed(3);
+  vigDbg.yokeY = +yokeY.toFixed(1); vigDbg.inkCluster = +cl.toFixed(3);
+}
+function vigTurbine(p, t, dt){
+  park(0, VIGS[1].park);
+  let k = 0, echo = 0, probeY = 0, swU = 0, glint = 0;
+  const fz = ease(bu(p, .52, .64));                          // blades ease to a stop for the blade walk
+  turbAng += TURB_OMEGA * dt * (1 - fz);
+  if (fz > 0){
+    const dlt = ((TURB_POSE - turbAng) % 6.2832 + 9.42478) % 6.2832 - 3.14159;
+    turbAng += dlt * Math.min(1, (dt || .016)*4) * fz;
+  }
+  if (p >= .22 && p < .60){                                  // ---- straight-beam UT, tower girth weld ----
+    const u = bu(p, .26, .56), yf = 205;
+    const inU = Math.min(1, u*14) * Math.min(1, (1-u)*14);
+    if (u < .35)      probeY = 178 + (yf-178)*ease(u/.35);
+    else if (u < .62) probeY = yf + Math.sin(t*2.0)*1.8;
+    else              probeY = yf + (232-yf)*ease((u-.62)/.38);
+    echo = gss(probeY, yf, 6) * inU;
+    for (let q = 0; q < VN.mark; q++){                       // girth weld band on the tower
+      const uu = q/(VN.mark-1);
+      PL(k+q, 230 + uu*22, 205 + ((q&1) ? 2.2 : -2.2), .55, 1.15, 1.35, 1.5);
+    }
+    k += VN.mark;
+    k = stampR(k, G_UTS, VN.probe, 252, probeY, .5, 1, Math.PI/2, 1.9, 1.45, .7);
+    k = stampR(k, G_PANEL, VN.panel, 312, 162, .5, 1, 0, .8, 1.25, 1.5);
+    k = trace(k, 312, 162, 63, 49.5, t,
+      uu => .9*gss(uu,.07,.018) + echo*.8*gss(uu,.5,.02) + .5*gss(uu,.84,.022) + .022*(1+Math.sin(uu*39+t*3)),
+      .5, echo);
+    if (echo > .55 && !vsBlipGate){ vsBlipGate = true; SND.blip(); }
+    else if (echo < .25) vsBlipGate = false;
+  }
+  if (p >= .60){                                             // ---- VT raking light up the parked blade ----
+    const u = bu(p, .66, .96);
+    swU = ease(u);
+    const dirx = Math.cos(.91), diry = -Math.sin(.91);       // blade 0 parked ~52 deg up-right
+    const d = 10 + swU*88;
+    const bx = 240 + dirx*d, by = 124 + diry*d;
+    for (let q = 0; q < VN.sweep; q++){                      // light bar + halo trailing down-blade
+      const i4 = poolIdx[k+q]*4;
+      const off = (R4[i4]-.5)*11, back = R4[i4+1]*R4[i4+1]*22;
+      const b = (1 - back/30)*(.9 + R4[i4+2]*.9) * Math.min(1, swU*8);
+      PL(k+q, bx - dirx*back - diry*off, by - diry*back + dirx*off, .5, b*1.5, b*1.6, b*1.75);
+    }
+    k += VN.sweep;
+    glint = gss(d, 72, 7) + (d > 72 ? .5 : 0);             // flash, then stay marked
+    for (let q = 0; q < VN.glint; q++){                      // the glint that shouldn't be there
+      const b = Math.min(1.4, glint)*(1.3 + .8*Math.sin(t*13 + q*2.1));
+      PL(k+q, 240 + dirx*72 + (q-VN.glint/2)*1.3, 124 + diry*72 + ((q&1)?1.5:-1.5), .55, b*1.7, b*.5, b*.5);
+    }
+    k += VN.glint;
+  }
+  setVigAlert(1, (vigBeat === 1 && echo > .5) || (vigBeat === 2 && glint > .4));
+  vigDbg.probeX = Math.round(probeY); vigDbg.echoAmp = +echo.toFixed(3); vigDbg.sweepU = +swU.toFixed(3);
+}
+function vigPlane(p, t, dt){
+  const B = TRAIL_N;
+  park(B, B + VIGS[2].park);
+  let k = B, etAmp = 0, rf = -1, boreU = 0;
+  if (p >= .20 && p < .62){                                  // ---- ET pencil probe hops the rivet line ----
+    const u = bu(p, .24, .58);
+    rf = u*(RIV_N - 1 + .999);
+    const ri = Math.min(RIV_N-1, rf|0), hu = rf - ri;
+    etAmp = ease((rf - (RIV_BAD - .4))/.5);                  // latches once the bad rivet is reached
+    for (let q = 0; q < VN.rivet; q++){                      // rivet heads (3 particles each)
+      const rr = (q/3)|0, sub = q%3;
+      const hot = rr === RIV_BAD ? etAmp : 0;
+      const b = .55 + (rf > rr ? .3 : 0) + hot*.9;
+      PL(k+q, RIV_X0 + rr*RIV_DX + (sub-1)*1.8, RIV_Y + (sub === 1 ? -1.6 : 1), .55,
+         b*(1.1 + hot*1.4), b*(1.2 - hot*.7), b*(1.35 - hot*.9));
+    }
+    k += VN.rivet;
+    const hop = hu < .3 ? 0 : hu > .7 ? 1 : ease((hu - .3)/.4);    // dwell on each rivet, hop between
+    const hx = RIV_X0 + Math.min(RIV_N-1, ri + hop)*RIV_DX;
+    const lift = Math.sin(Math.PI*hop)*8;
+    k = stampR(k, G_PEN, VN.pencil, hx, RIV_Y - 2 - lift, .55, 1, 0, 1.9, 1.45, .7);
+    k = stampR(k, G_PANEL, VN.panel, 242, 58, .5, 1, 0, .8, 1.25, 1.5);
+    const badU = .08 + .84*RIV_BAD/(RIV_N-1);
+    k = trace(k, 242, 58, 63, 49.5, t, uu => {
+        let v = .07 + .03*Math.sin(uu*47 + t*2.6);
+        for (let rr = 0; rr < RIV_N; rr++) if (rf > rr) v += .1*gss(uu, .08 + .84*rr/(RIV_N-1), .011);
+        return v + etAmp*.85*gss(uu, badU, .015);
+      }, badU, etAmp);
+    if (etAmp > .55 && !vsBlipGate){ vsBlipGate = true; SND.blip();
+      if (!reduced && !vsPingGate){ vsPingGate = true; const sp = vigScreen(RIV_X0 + RIV_BAD*RIV_DX, RIV_Y); spawnPing(sp.x, sp.y, false); } }
+    else if (etAmp < .2) vsBlipGate = false;
+  }
+  if (p >= .62){                                             // ---- borescope into the engine ----
+    boreU = ease(bu(p, .68, .96));
+    for (let q = 0; q < VN.bore; q++){                       // tube feeds in along the path
+      borePt((q/(VN.bore-1)) * boreU);
+      PL(k+q, _bpx, _bpy, .5, 1.6, 1.2, .6);
+    }
+    k += VN.bore;
+    borePt(boreU);
+    for (let q = 0; q < VN.tip; q++){                        // lit articulating tip
+      const i4 = poolIdx[k+q]*4;
+      const b = 1.8 + .8*Math.sin(t*9 + q*2.1);
+      PL(k+q, _bpx + (R4[i4]-.5)*5, _bpy + (R4[i4+1]-.5)*5, .55, b, b*1.05, b*1.15);
+    }
+    k += VN.tip;
+  }
+  setVigAlert(2, vigBeat === 1 && etAmp > .5);
+  vigDbg.etRivet = rf < 0 ? -1 : Math.min(RIV_N-1, rf|0);
+  vigDbg.etAmp = +etAmp.toFixed(3); vigDbg.boreU = +boreU.toFixed(3);
+}
+function vigPipe(p, t, dt){
+  const B = FLUID_N;
+  park(B, B + VIGS[3].park);
+  let k = B, expo = 0, filmU = 0;
+  if (p >= .18){
+    k = stampR(k, G_SRC, VN.src, 262, 78, .5, 1, 0, 1.9, 1.45, .7);     // gamma source over the weld
+    k = stampR(k, G_PLATE, VN.plate, 262, 162, .5, 1, 0, 1.3, 1.38, 1.5);  // film cassette under it
+    const uB = bu(p, .24, .56);
+    expo = (uB > 0 && uB < 1) ? Math.min(1, uB*8)*Math.min(1, (1-uB)*8) : 0;
+    for (let q = 0; q < VN.rays; q++){                       // gamma rays: source -> through wall -> film
+      const i4 = poolIdx[k+q]*4;
+      const ang = (R4[i4]-.5)*.6 + Math.PI/2;
+      const cyc = (R4[i4+1] + t*(1.4 + R4[i4+2])) % 1;
+      const len = 82/Math.sin(ang);
+      const rx = 262 + Math.cos(ang)*cyc*len, ry = 78 + Math.sin(ang)*cyc*len;
+      const through = ry > 93 ? .4 : 1;                      // attenuated inside the steel
+      const b = expo*through*(.5 + R4[i4+3]*.6)*(1 - cyc*.25);
+      PL(k+q, rx, ry, .42, .4*b, 1.0*b, .85*b);
+    }
+    k += VN.rays;
+    vsTickClock -= dt;
+    if (expo > .5 && vsTickClock <= 0){ SND.tick(); vsTickClock = .05 + Math.random()*.34; }
+    filmU = ease(bu(p, .62, .9));
+    const pb = .35 + .65*Math.max(.25, filmU);               // radiograph viewer brightens as it develops
+    k = stampR(k, G_PANEL, VN.panel, 340, 60, .5, 1, 0, .8*pb, 1.25*pb, 1.5*pb);
+    for (let q = 0; q < VN.film; q++){                       // the weld image swims up out of the film
+      const i4 = poolIdx[k+q]*4;
+      const b = filmU*(.4 + R4[i4+2]*.5)*(R4[i4+3] < filmU ? 1 : .12);
+      PL(k+q, 371 + (R4[i4]-.5)*12, 65 + R4[i4+1]*36, .5, .55*b, .9*b, 1.05*b);
+    }
+    k += VN.film;
+    for (let q = 0; q < VN.poro; q++){                       // porosity: a string of gas pores
+      const d = (q/4)|0, sub = q%4;
+      const du = ease((filmU - .45 - d*.07)/.12);
+      const b = du*(1.0 + .4*Math.sin(t*7 + d));
+      PL(k+q, 371 + ((d*73)%9) - 4 + (sub&1)*2 - 1, 68 + d*6 + (sub>>1)*2 - 1, .55, b*1.6, b*.32, b*.36);
+    }
+    k += VN.poro;
+  }
+  setVigAlert(3, (vigBeat === 1 && expo > .5) || (vigBeat === 2 && filmU > .55));
+  vigDbg.rtExpo = +expo.toFixed(3); vigDbg.filmU = +filmU.toFixed(3);
+}
+function vigCoaster(p, t, dt){
+  park(0, VIGS[4].park);
+  let k = 0, ph = 0, devU = 0, bleedU = 0;
+  if (p >= .20 && p < .62){                                  // ---- penetrant: apply, dwell, wipe ----
+    const u = bu(p, .24, .58);
+    const spray = u < .5 ? Math.min(1, u*8) : 0;
+    const coat = Math.min(1, u*4) * (u > .72 ? Math.max(0, 1-(u-.72)/.22) : 1);
+    ph = u < .5 ? 1 : u < .72 ? 2 : 3;
+    for (let q = 0; q < VN.pen; q++){
+      const i4 = poolIdx[k+q]*4;
+      const dx2 = 276 + R4[i4+2]*42;
+      if (q < VN.pen*.45 && spray > 0){                      // falling red droplets
+        const cyc = (R4[i4] + t*(.8 + R4[i4+1]*.5)) % 1;
+        const b = spray*(1 - cyc*.3);
+        PL(k+q, dx2 + Math.sin(t + q)*1.5, 206 + cyc*(railY(dx2) - 206), .5, b*1.5, b*.3, b*.34);
+      } else {                                               // soaked coat hugging the joint
+        const b = coat*(.5 + R4[i4+3]*.5);
+        PL(k+q, dx2, railY(dx2) + (R4[i4]-.5)*7 - 1, .45, b*1.4, b*.3, b*.34);
+      }
+    }
+    k += VN.pen;
+  }
+  if (p >= .62){                                             // ---- developer + bleedout ----
+    const u = bu(p, .64, .94);
+    devU = ease(Math.min(1, u/.45));
+    bleedU = ease((u - .35)/.6);
+    ph = bleedU > .05 ? 5 : 4;
+    for (let q = 0; q < VN.dev; q++){                        // white developer dusts on
+      const i4 = poolIdx[k+q]*4;
+      const b = (R4[i4+3] < devU ? 1 : 0)*(.5 + R4[i4]*.45)*devU;
+      PL(k+q, DEV_X[q], DEV_Y[q] - (1-devU)*(9 + (R4[i4+1]-.5)*14), .42, .95*b, .98*b, 1.0*b);
+    }
+    k += VN.dev;
+    for (let q = 0; q < VN.bleed; q++){                      // the crack bleeds red through the developer
+      const i4 = poolIdx[k+q]*4;
+      const cu = Math.abs(q/(VN.bleed-1) - .5)*2;            // grows outward from the center
+      const on = ease((bleedU - cu*.6)/.4);
+      const b = on*(.8 + R4[i4+1]*.5 + bleedU*.5);
+      PL(k+q, CO_CK[q*2] + (R4[i4+2]-.5)*1.2, CO_CK[q*2+1] + (R4[i4]-.5)*(1 + bleedU*3.2), .55, b*1.7, b*.3, b*.35);
+    }
+    k += VN.bleed;
+  }
+  setVigAlert(4, (vigBeat === 1 && ph === 2) || (vigBeat === 2 && bleedU > .3));
+  vigDbg.ptPhase = ['', 'PENETRANT', 'DWELL', 'WIPE', 'DEVELOPER', 'BLEEDOUT'][ph];
+}
+const VIG_WRITERS = [vigBridge, vigTurbine, vigPlane, vigPipe, vigCoaster];
+
+function vigFrame(vi, p, t, dt){
+  vigP = p; vigDbg.vi = vi; vigDbg.p = +p.toFixed(4);
+  const beats = VIGS[vi].beats;
+  let bi = 0;
+  for (let i = 0; i < beats.length; i++) if (p >= beats[i].p) bi = i;
+  if (bi !== vigBeat){ vigBeat = bi; setVigCaption(vi, bi); }
+  vigDbg.beat = bi;
+  const tr = vigTransform(vi, p);
+  fsT = tr[0]; foxT = tr[1]; foyT = tr[2];
+  const bw = (p*100)|0;
+  if (vigEls[vi]._bw !== bw){ vigEls[vi]._bw = bw; vigEls[vi].bar.style.width = bw + '%'; }
+  VIG_WRITERS[vi](p, t, dt);
+}
+
 const posAttr = new THREE.BufferAttribute(P, 3);  posAttr.setUsage(THREE.DynamicDrawUsage);
 const colAttr = new THREE.BufferAttribute(CL, 3); colAttr.setUsage(THREE.DynamicDrawUsage);
 geo.setAttribute('position', posAttr);
@@ -1282,10 +1867,11 @@ geo.setAttribute('aSize', new THREE.BufferAttribute(SZ, 1));
 geo.setAttribute('aRand', new THREE.BufferAttribute(R4, 4));
 geo.boundingSphere = new THREE.Sphere(new THREE.Vector3(), 80);
 
+const SIZE0 = LOWPOWER ? 2.6 : 2.15;
 const uni = {
   uTime:  {value: 0},
   uPR:    {value: Math.min(devicePixelRatio, 1.5)},
-  uSize:  {value: LOWPOWER ? 2.6 : 2.15},
+  uSize:  {value: SIZE0},
   uStreak:{value: 0},
   uAlpha: {value: 1},
   uRes:   {value: new THREE.Vector2(W, H)},
@@ -1370,6 +1956,7 @@ const SND = (() => {
   if (reduced){
     if (sndBtn) sndBtn.style.display = 'none';
     return {init(){}, swoosh(){}, chime(){}, pop(){}, toggle(){}, crackle(){}, rumble(){},
+      blip(){}, clunk(){}, tick(){},
       get created(){ return false; }, get enabled(){ return false; }, get masterGain(){ return 0; }};
   }
   let ctx = null, master = null, noiseBuf = null, lastSwoosh = -9;
@@ -1479,6 +2066,51 @@ const SND = (() => {
     src.connect(lp); lp.connect(g); g.connect(master);
     src.start(now); src.stop(now + .6);
   }
+  function blip(){                                           // A-scan flaw echo: faint sonar ping
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    const o = ctx.createOscillator(); o.type = 'sine';
+    o.frequency.setValueAtTime(1240, now);
+    o.frequency.exponentialRampToValueAtTime(870, now + .15);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0, now);
+    g.gain.linearRampToValueAtTime(.3, now + .012);
+    g.gain.exponentialRampToValueAtTime(.001, now + .24);
+    o.connect(g); g.connect(master);
+    o.start(now); o.stop(now + .28);
+  }
+  function clunk(){                                          // MT yoke setting down on the part
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    const o = ctx.createOscillator(); o.type = 'sine';
+    o.frequency.setValueAtTime(165, now);
+    o.frequency.exponentialRampToValueAtTime(56, now + .09);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(.5, now);
+    g.gain.exponentialRampToValueAtTime(.001, now + .17);
+    o.connect(g); g.connect(master);
+    o.start(now); o.stop(now + .2);
+    const src = ctx.createBufferSource(); src.buffer = noiseBuf;
+    const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 420;
+    const ng = ctx.createGain();
+    ng.gain.setValueAtTime(.16, now);
+    ng.gain.exponentialRampToValueAtTime(.001, now + .07);
+    src.connect(lp); lp.connect(ng); ng.connect(master);
+    src.start(now); src.stop(now + .1);
+  }
+  function tick(){                                           // RT exposure: geiger-ish click
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    const src = ctx.createBufferSource(); src.buffer = noiseBuf;
+    src.playbackRate.value = 2.2 + Math.random()*.6;
+    const hp = ctx.createBiquadFilter(); hp.type = 'highpass';
+    hp.frequency.value = 4800 + Math.random()*1400;
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(.2, now);
+    g.gain.exponentialRampToValueAtTime(.0001, now + .014);
+    src.connect(hp); hp.connect(g); g.connect(master);
+    src.start(now); src.stop(now + .03);
+  }
   function toggle(){
     enabled = !enabled;
     localStorage.setItem('forgeSound', enabled ? 'on' : 'off');
@@ -1488,7 +2120,7 @@ const SND = (() => {
   addEventListener('pointerdown', init, {passive:true});     // gesture-gated: silent until then
   addEventListener('keydown', init);
   if (sndBtn) sndBtn.addEventListener('click', () => { init(); toggle(); });
-  return {init, swoosh, chime, pop, toggle, crackle, rumble,
+  return {init, swoosh, chime, pop, toggle, crackle, rumble, blip, clunk, tick,
     get created(){ return !!ctx; },
     get enabled(){ return enabled; },
     get masterGain(){ return master ? master.gain.value : 0; }};
@@ -1498,10 +2130,10 @@ window.__forgeAudio = SND;
 /* ================================================================
    CHOREOGRAPHY — modes, formations, scroll logic
    ================================================================ */
-const MODE = {HERO:0, STREAM:1, STORY:2, RING:3, STATS:4, SEAL:5, ARROW:6, FIREWORK:7};
+const MODE = {HERO:0, STREAM:1, VIG:2, RING:3, STATS:4, SEAL:5, ARROW:6, FIREWORK:7};
 let mode = MODE.HERO, formationKey = -1;
 let fs = 1, fox = 0, foy = 0, fsT = 1, foxT = 0, foyT = 0;  // formation transform (lerped)
-let heroIdx = 0, heroT = 0, storyIdx = 0;
+let heroIdx = 0, heroT = 0;
 let shapeClock = 0;                                         // time since the current formation applied
 let bobW = 0, riseW = 0, vibX = 0;                          // per-shape whole-formation offsets (world units)
 let fxSndClock = 0;                                         // weld-crackle / rocket-rumble scheduler
@@ -1515,8 +2147,6 @@ const els = {
   heroCopy: document.getElementById('heroCopy'),
   hud: document.getElementById('shapeHud'),
   label: document.getElementById('shapeLabel'),
-  cards: [...document.querySelectorAll('.story-card')],
-  storyGrid: document.getElementById('storyGrid'),
   vframe: document.getElementById('vframe'),
   videoHead: document.getElementById('videoHead'),
   statsGrid: document.getElementById('statsGrid'),
@@ -1765,7 +2395,6 @@ function pickMode(){
     if (d < bestD){ bestD = d; bestKind = kind; bestSub = sub || 0; }
   };
   consider(els.hero, 'hero');
-  els.cards.forEach((c, i) => consider(c, 'story', i));
   consider(els.vframe, 'ring');
   consider(els.statsGrid, 'stats');
   consider(els.band, 'cta', 0, -150);
@@ -1780,11 +2409,19 @@ function pickMode(){
     showToast(`You inspect every corner. We like that. — <a href="/signup">Start free</a>`, 8000);
     return;
   }
+  /* vignette sections own the stage while their pin spans mid-screen */
+  for (let v = 0; v < vigSecs.length; v++){
+    const r = vigSecs[v].getBoundingClientRect();
+    if (r.top <= vh*.5 && r.bottom >= vh*.5){
+      if (Math.abs(scrollVel) > 1150){ applyMode(MODE.STREAM, 0); return; }
+      applyMode(MODE.VIG, v);
+      return;
+    }
+  }
   /* a hard fling ignites the comet stream no matter where we are */
   if (Math.abs(scrollVel) > 1150 || bestD > vh*.62){ applyMode(MODE.STREAM, 0); return; }
   switch (bestKind){
     case 'hero':  applyMode(MODE.HERO, 0); break;
-    case 'story': applyMode(MODE.STORY, bestSub); break;
     case 'ring':  applyMode(MODE.RING, 0); break;
     case 'stats': applyMode(MODE.STATS, 0); break;
     case 'cta':   applyMode((W > 920 && (atBottom || scrollY + vh > docH - vh*.22)) ? MODE.ARROW : MODE.SEAL, 0); break;
@@ -1799,15 +2436,14 @@ function applyMode(m, sub){
   if (m === MODE.HERO){
     setHeroShape(heroIdx, prev !== MODE.HERO);
     heroT = 0;
-  } else if (m === MODE.STORY){
-    storyIdx = sub;
-    const si = +els.cards[sub].dataset.shape;
-    const gr = els.storyGrid.getBoundingClientRect();
-    const wide = W > 920;
-    const colCx = wide ? gr.left + 470 + (gr.width - 470)/2 : W/2;
-    const s = wide ? Math.min(.92, (gr.width-510)*px2w()/10.6) : Math.min(.8, visW*.9/10.6);
-    writeFormation(SHAPES[si], s, worldX(colCx), 0, true);
-    els.cards.forEach((c, i) => c.classList.toggle('live', i === sub));
+  } else if (m === MODE.VIG){
+    vigIdx = sub; vigBeat = -1;
+    vsBlipGate = vsClunkGate = vsPingGate = false; vsTickClock = 0;
+    const sec = vigSecs[sub], r = sec.getBoundingClientRect();
+    const p = Math.max(0, Math.min(1, -r.top / Math.max(1, sec.offsetHeight - H)));
+    const tr = vigTransform(sub, p);
+    writeFormation(SHAPES[VIGS[sub].shape], tr[0], tr[1], tr[2], true);
+    muteVigDefects(VIGS[sub].shape);
   } else if (m === MODE.STREAM){
     CT.set(streamCols); fsT = 1; foxT = 0; foyT = 0; fs = 1; fox = 0; foy = 0;
     curShapeIdx = -1; curDef = null;
@@ -1883,10 +2519,10 @@ function frame(){
     writeRing(t);
   }
   else if (mode === MODE.STATS) writeStats(t);
-  else if (mode === MODE.STORY){
-    const r = els.cards[storyIdx].getBoundingClientRect();
-    foyT = worldY(r.top + r.height/2);
-    if (W <= 920) foyT = worldY(Math.min(r.top - 30, H*.32));
+  else if (mode === MODE.VIG){
+    const sec = vigSecs[vigIdx], r = sec.getBoundingClientRect();
+    const p = Math.max(0, Math.min(1, -r.top / Math.max(1, sec.offsetHeight - H)));
+    vigFrame(vigIdx, p, t, dt);
   }
   else if (mode === MODE.SEAL){
     const r = els.band.getBoundingClientRect();
@@ -1903,7 +2539,10 @@ function frame(){
   bobW = 0; riseW = 0; vibX = 0;
   if (curShapeIdx === 0) animWeld(shapeClock + WELD_T0, t, TL, CT, true);
   else if (curShapeIdx === 1) animFluid(t);
-  else if (curShapeIdx === 2) animTurbine(t, TL);
+  else if (curShapeIdx === 2){
+    if (!(mode === MODE.VIG && vigIdx === 1)) turbAng += TURB_OMEGA*dt;   // vig 1 scrubs/freezes the blades
+    animTurbine(turbAng, TL);
+  }
   else if (curShapeIdx === 3){ animContrails(t); bobW = Math.sin(t*1.25)*.07; }
   else if (curShapeIdx === 4) animCars(t, TL);
   else if (curShapeIdx === 5){ bobW = Math.sin(t*.8)*.085; animShip(t, bobW); }
@@ -1955,16 +2594,17 @@ function frame(){
   /* formation transform smoothing (a touch slower = silkier morphs) */
   const fk = Math.min(1, dt*3.4);
   fs += (fsT - fs)*fk; fox += (foxT - fox)*fk; foy += (foyT - foy)*fk;
+  uni.uSize.value = SIZE0 * (1 + Math.max(0, fs - 1) * .38); // points thicken as vignettes zoom in
 
   /* exclusion rects per mode */
   if (mode === MODE.HERO){ setRect(uni.uRectA, els.heroCopy, 10); uni.uRectB.value.set(0,0,-1,-1); }
-  else if (mode === MODE.STORY){ setRect(uni.uRectA, els.cards[storyIdx], 6); uni.uRectB.value.set(0,0,-1,-1); }
+  else if (mode === MODE.VIG){ setRect(uni.uRectA, vigEls[vigIdx].cap, 8); setRect(uni.uRectB, vigEls[vigIdx].head, 6); }
   else if (mode === MODE.RING){ setRect(uni.uRectA, els.vframe, -4); setRect(uni.uRectB, els.videoHead, 6); }
   else if (mode === MODE.STATS){ setRect(uni.uRectA, els.statsHead, 8); uni.uRectB.value.set(0,0,-1,-1); }
   else if (mode === MODE.SEAL){ setRect(uni.uRectA, els.bandCopy, 4); uni.uRectB.value.set(0,0,-1,-1); }
   else if (mode === MODE.ARROW){ setRect(uni.uRectA, els.bandBtn, 10); uni.uRectB.value.set(0,0,-1,-1); }
   else { setRect(uni.uRectA, null); setRect(uni.uRectB, null); }
-  uni.uAlpha.value += (((mode === MODE.STORY && W <= 920) ? .45 : 1) - uni.uAlpha.value) * Math.min(1, dt*4);
+  uni.uAlpha.value += (1 - uni.uAlpha.value) * Math.min(1, dt*4);
 
   /* mouse smoothing */
   mx = mxT === 999 ? 999 : mx === 999 ? mxT : mx + (mxT - mx)*.2;
@@ -2041,8 +2681,17 @@ function frame(){
 
 /* ---------- debug hook (kept in production, harmless) ---------- */
 window.__forgeDebug = {
-  get state(){ return {mode, heroShape: HERO_CYCLE[heroIdx], heroIdx, storyIdx, found: [...found], foundCount,
+  get state(){ return {mode, heroShape: HERO_CYCLE[heroIdx], heroIdx, vigIdx, vigBeat, found: [...found], foundCount,
     hoverDefect, hold: HOLD, curShapeIdx, count: COUNT, fireworkDone}; },
+  get vig(){ return {...vigDbg}; },                          // live vignette telemetry
+  vigProgress(vi){                                           // scrub progress of a section (0..1)
+    const sec = vigSecs[vi], r = sec.getBoundingClientRect();
+    return +Math.max(0, Math.min(1, -r.top / Math.max(1, sec.offsetHeight - H))).toFixed(4);
+  },
+  vigY(vi, p){                                               // scrollY that lands a section at progress p
+    const sec = vigSecs[vi];
+    return Math.round(sec.getBoundingClientRect().top + scrollY + (sec.offsetHeight - H)*p);
+  },
   get defectScreenPositions(){
     return [0,1,2].map(g => {
       const sp = defectScreenPos(g) || {x:-1, y:-1};
@@ -2060,7 +2709,7 @@ window.__forgeDebug = {
     });
   },
   get trainArc(){ return Math.round((uni.uTime.value*TRN_SPEED) % coasterTrack.len); },
-  get turbineDeg(){ return Math.round((uni.uTime.value*TURB_OMEGA*180/Math.PI) % 360); },
+  get turbineDeg(){ return Math.round((turbAng*180/Math.PI) % 360); },
   setShape(n, hold){                                         // force a formation by name/index (validation)
     const si = typeof n === 'string'
       ? SHAPES.findIndex(s => s.name.toLowerCase().includes(String(n).toLowerCase())) : n;
@@ -2080,6 +2729,13 @@ window.__forgeDebug = {
   get rocketRise(){ return +riseW.toFixed(3); },
   get poolInfo(){ return {poolN: POOLN, sparks: SPARK_N, fluid: FLUID_N, contrail: TRAIL_N,
     water: WATER_N, shipSmoke: SMOKESHIP_N, flame: FLAME_N, rocketSmoke: RSMOKE_N}; },
+  get xform(){ return {fs: +fs.toFixed(3), fox: +fox.toFixed(3), foy: +foy.toFixed(3)}; },
+  poolSlot(k){                                               // inspect a pool particle (vignette debugging)
+    const i3 = poolIdx[k]*3;
+    return {i: poolIdx[k], tl: [+TL[i3].toFixed(3), +TL[i3+1].toFixed(3)],
+      p: [+P[i3].toFixed(2), +P[i3+1].toFixed(2)],
+      ct: [+CT[i3].toFixed(2), +CT[i3+1].toFixed(2), +CT[i3+2].toFixed(2)]};
+  },
   montage(){
     const COLS = 3, ROWS = 4, CW = SW, CH = SH + 44;
     const m = document.createElement('canvas'); m.width = COLS*CW; m.height = ROWS*CH;
@@ -2105,21 +2761,192 @@ window.__forgeDebug = {
     });
     return m.toDataURL('image/png');
   },
+  glyphMontage(){                                            // NDT gear glyph proof sheet
+    const CW = 480, CH = SH + 44, COLS = 3, ROWS = 4;
+    const m = document.createElement('canvas'); m.width = COLS*CW; m.height = ROWS*CH;
+    const g = m.getContext('2d');
+    g.fillStyle = '#091a33'; g.fillRect(0, 0, m.width, m.height);
+    const STEEL = '#9fb6cc', GEAR = '#ffc977', SIG = '#5fe0ff', FLAW = '#ff4d5e', DEVC = '#e8f0f8';
+    const tiles = [
+      ['UT angle-beam probe (wedge) + shear beam', c => {
+        c.fillStyle = STEEL; c.fillRect(60, 150, 360, 36);                   // plate
+        c.fillStyle = c.strokeStyle = GEAR; GLY.utAngle(c);
+        c.strokeStyle = SIG; c.lineWidth = 3; c.setLineDash([7,6]);          // refracted vee path
+        c.beginPath(); c.moveTo(240, 152); c.lineTo(300, 184); c.lineTo(352, 154); c.stroke(); c.setLineDash([]);
+        c.strokeStyle = FLAW; rough(c, 346, 186, 360, 152, 4);               // the flaw it hits
+      }],
+      ['UT straight-beam probe', c => {
+        c.fillStyle = STEEL; c.fillRect(140, 150, 200, 70);
+        c.fillStyle = c.strokeStyle = GEAR; GLY.utStraight(c);
+        c.strokeStyle = SIG; c.lineWidth = 3; c.setLineDash([6,6]);
+        c.beginPath(); c.moveTo(240, 152); c.lineTo(240, 218); c.stroke(); c.setLineDash([]);
+      }],
+      ['A-scan: IP / FLAW ECHO / backwall', c => {
+        c.fillStyle = c.strokeStyle = GEAR; GLY.panel(c);
+        c.strokeStyle = SIG; c.lineWidth = 3; c.beginPath();
+        for (let q = 0; q <= 120; q++){
+          const u = q/120;
+          const v = .9*Math.exp(-(u-.07)*(u-.07)/.0007) + .85*Math.exp(-(u-.45)*(u-.45)/.0008)
+                  + .42*Math.exp(-(u-.86)*(u-.86)/.001) + .03;
+          const x = 177 + u*126, y = 169 - v*82;
+          q ? c.lineTo(x, y) : c.moveTo(x, y);
+        }
+        c.stroke();
+        c.strokeStyle = FLAW; c.lineWidth = 4; c.beginPath();
+        for (let q = 0; q <= 30; q++){
+          const u = .38 + (q/30)*.14;
+          const v = .85*Math.exp(-(u-.45)*(u-.45)/.0008) + .03;
+          q ? c.lineTo(177 + u*126, 169 - v*82) : c.moveTo(177 + u*126, 169 - v*82);
+        }
+        c.stroke();
+        c.fillStyle = FLAW; c.font = '600 14px Manrope'; c.textAlign = 'center';
+        c.fillText('FLAW', 234, 70);
+      }],
+      ['MT yoke + flux field + indication', c => {
+        c.fillStyle = STEEL; c.fillRect(110, 150, 260, 34);
+        c.fillStyle = c.strokeStyle = GEAR; GLY.mtYoke(c);
+        c.strokeStyle = SIG; c.lineWidth = 2;
+        [12, 22, 32].forEach(rr => { c.beginPath(); c.ellipse(240, 151, 30+rr, rr*.7, 0, Math.PI, 0); c.stroke(); });
+        c.strokeStyle = FLAW; rough(c, 222, 156, 258, 152, 5);
+      }],
+      ['ET pencil probe on rivet line', c => {
+        c.fillStyle = STEEL; c.fillRect(110, 150, 260, 26);
+        c.fillStyle = SIG;
+        for (let r = 0; r < 6; r++){ c.beginPath(); c.arc(140 + r*40, 162, 5, 0, 7); c.fill(); }
+        c.fillStyle = FLAW; c.beginPath(); c.arc(140 + 3*40, 162, 6, 0, 7); c.fill();
+        c.fillStyle = c.strokeStyle = GEAR; c.save(); c.translate(20, 8); GLY.etPencil(c); c.restore();
+      }],
+      ['ET impedance trace: cracked rivet spike', c => {
+        c.fillStyle = c.strokeStyle = GEAR; GLY.panel(c);
+        c.strokeStyle = SIG; c.lineWidth = 3; c.beginPath();
+        for (let q = 0; q <= 120; q++){
+          const u = q/120;
+          let v = .08 + .03*Math.sin(u*40);
+          for (let r = 0; r < 6; r++) v += .1*Math.exp(-(u-(.1+r*.15))*(u-(.1+r*.15))/.0003);
+          v += .8*Math.exp(-(u-.55)*(u-.55)/.0005);
+          q ? c.lineTo(177 + u*126, 169 - v*82) : c.moveTo(177 + u*126, 169 - v*82);
+        }
+        c.stroke();
+        c.fillStyle = FLAW; c.font = '600 14px Manrope'; c.textAlign = 'center'; c.fillText('CRACKED RIVET', 246, 74);
+      }],
+      ['RT: source head / part / film plate', c => {
+        c.fillStyle = STEEL; c.fillRect(150, 140, 180, 40);                  // the weldment
+        c.fillStyle = c.strokeStyle = GEAR; c.save(); c.translate(0, -36); GLY.rtSource(c); c.restore();
+        c.save(); c.translate(0, 50); GLY.rtPlate(c); c.restore();
+        c.strokeStyle = SIG; c.lineWidth = 2; c.setLineDash([4,7]);
+        for (let r = -2; r <= 2; r++){ c.beginPath(); c.moveTo(240, 100); c.lineTo(240 + r*22, 192); c.stroke(); }
+        c.setLineDash([]);
+      }],
+      ['Radiograph: weld image + porosity', c => {
+        c.fillStyle = c.strokeStyle = GEAR; GLY.panel(c);
+        c.fillStyle = 'rgba(95,224,255,.30)'; c.fillRect(228, 88, 24, 94);   // weld band on film
+        c.fillStyle = FLAW;
+        [[236,100],[243,114],[233,128],[245,142],[238,158],[242,170]].forEach(([x,y]) => {
+          c.beginPath(); c.arc(x, y, 3.4, 0, 7); c.fill();
+        });
+        c.fillStyle = FLAW; c.font = '600 14px Manrope'; c.textAlign = 'center'; c.fillText('POROSITY', 240, 74);
+      }],
+      ['VT borescope into a bore', c => {
+        c.fillStyle = STEEL; c.fillRect(210, 96, 180, 48);                   // the bore it enters
+        c.fillStyle = '#091a33'; c.fillRect(218, 108, 172, 24);
+        c.fillStyle = c.strokeStyle = GEAR; GLY.boreScope(c);
+        c.fillStyle = SIG; c.beginPath(); c.arc(248, 120, 8, 0, 7); c.fill();
+      }],
+      ['PT: penetrant soak', c => {
+        c.fillStyle = STEEL; c.fillRect(110, 150, 260, 40);
+        c.fillStyle = 'rgba(255,77,94,.5)'; c.fillRect(170, 150, 140, 14);
+        c.fillStyle = FLAW;
+        for (let q = 0; q < 14; q++){ c.beginPath(); c.arc(186 + q*8, 116 + (q%4)*7, 3, 0, 7); c.fill(); }
+      }],
+      ['PT: developer + BLEEDOUT', c => {
+        c.fillStyle = STEEL; c.fillRect(110, 150, 260, 40);
+        c.fillStyle = DEVC; c.fillRect(170, 148, 140, 18);
+        c.strokeStyle = FLAW; rough(c, 210, 160, 268, 154, 6);
+        c.fillStyle = FLAW; c.font = '600 14px Manrope'; c.textAlign = 'center'; c.fillText('BLEEDOUT', 240, 130);
+      }],
+      ['VT raking light + glint', c => {
+        c.fillStyle = STEEL; c.fillRect(110, 130, 260, 22);
+        const lg = c.createLinearGradient(150, 60, 260, 140);
+        lg.addColorStop(0, 'rgba(95,224,255,.65)'); lg.addColorStop(1, 'rgba(95,224,255,0)');
+        c.fillStyle = lg;
+        c.beginPath(); c.moveTo(150, 58); c.lineTo(286, 128); c.lineTo(216, 134); c.closePath(); c.fill();
+        c.fillStyle = FLAW; c.beginPath(); c.arc(262, 132, 5, 0, 7); c.fill();
+        c.strokeStyle = FLAW; rough(c, 250, 136, 286, 130, 3);
+      }],
+    ];
+    tiles.forEach(([label, draw], i) => {
+      const cx = (i % COLS)*CW, cy = ((i/COLS)|0)*CH;
+      const tile = document.createElement('canvas'); tile.width = CW; tile.height = CH;
+      const tg = tile.getContext('2d');
+      tg.lineCap = tg.lineJoin = 'round';
+      draw(tg);
+      g.save(); g.translate(cx, cy);
+      g.strokeStyle = 'rgba(95,224,255,.25)'; g.lineWidth = 1; g.strokeRect(.5, .5, CW-1, CH-1);
+      g.drawImage(tile, 0, 0);
+      g.fillStyle = '#5fe0ff'; g.font = '600 17px Manrope, sans-serif'; g.textAlign = 'center';
+      g.fillText(label, CW/2, SH + 30);
+      g.restore();
+    });
+    return m.toDataURL('image/png');
+  },
 };
 
 /* ---------- boot ---------- */
 if (reduced){
+  const snap = () => {                                       // freeze particles onto their targets
+    uni.uSize.value = SIZE0 * (1 + Math.max(0, fs - 1) * .38);
+    for (let i = 0; i < COUNT; i++){
+      P[i*3] = TL[i*3]*fs + fox; P[i*3+1] = TL[i*3+1]*fs + foy; P[i*3+2] = TL[i*3+2]*fs;
+      CL[i*3] = CT[i*3]; CL[i*3+1] = CT[i*3+1]; CL[i*3+2] = CT[i*3+2];
+    }
+    posAttr.needsUpdate = true; colAttr.needsUpdate = true;
+    renderer.render(scene, camera);
+  };
   setHeroShape(0, false);
   fs = fsT; fox = foxT; foy = foyT;
-  for (let i = 0; i < COUNT; i++){
-    P[i*3] = TL[i*3]*fs + fox; P[i*3+1] = TL[i*3+1]*fs + foy; P[i*3+2] = TL[i*3+2]*fs;
-    CL[i*3] = CT[i*3]; CL[i*3+1] = CT[i*3+1]; CL[i*3+2] = CT[i*3+2];
-  }
-  posAttr.needsUpdate = true; colAttr.needsUpdate = true;
   setRect(uni.uRectA, els.heroCopy, 10);
   els.label.textContent = SHAPES[0].cap;
-  renderer.render(scene, camera);
-  addEventListener('resize', () => { resize(); renderer.render(scene, camera); });
+  snap();
+  /* vignettes: pin captions + alert to each section's key beat, statically */
+  VIGS.forEach((v, vi) => {
+    let bi = 0; v.beats.forEach((b, i) => { if (v.key >= b.p) bi = i; });
+    const cfg = v.beats[bi], e = vigEls[vi];
+    e.m.hidden = !cfg.m; e.m.textContent = cfg.m;
+    e.a.textContent = cfg.a; if (cfg.a) e.a.classList.add('on');
+    e.s.textContent = cfg.s;
+    e.l.hidden = !cfg.l; if (cfg.l) e.l.textContent = 'Learn ' + cfg.l + ' →';
+    e.bar.style.width = (v.key*100) + '%';
+  });
+  /* each section shows one static key frame (e.g. yoke + indication) */
+  let staticVi = -1;
+  const renderStatic = () => {
+    let vi = -1;
+    vigSecs.forEach((s, i) => {
+      const r = s.getBoundingClientRect();
+      if (r.top <= H*.5 && r.bottom >= H*.5) vi = i;
+    });
+    if (vi === staticVi) return;
+    staticVi = vi;
+    if (vi < 0){
+      setHeroShape(0, false);
+      fs = fsT; fox = foxT; foy = foyT;
+      setRect(uni.uRectA, els.heroCopy, 10); uni.uRectB.value.set(0,0,-1,-1);
+      snap(); return;
+    }
+    vigIdx = vi; vigBeat = -1;
+    const kp = VIGS[vi].key;
+    let bi = 0; VIGS[vi].beats.forEach((b, i) => { if (kp >= b.p) bi = i; });
+    vigBeat = bi;
+    const tr = vigTransform(vi, kp);
+    writeFormation(SHAPES[VIGS[vi].shape], tr[0], tr[1], tr[2], false);
+    muteVigDefects(VIGS[vi].shape);
+    fs = tr[0]; fox = tr[1]; foy = tr[2];
+    VIG_WRITERS[vi](kp, 1.0, 0);
+    setRect(uni.uRectA, vigEls[vi].cap, 8); setRect(uni.uRectB, vigEls[vi].head, 6);
+    snap();
+  };
+  addEventListener('scroll', renderStatic, {passive:true});
+  addEventListener('resize', () => { resize(); staticVi = -2; renderStatic(); snap(); });
 } else {
   setHeroShape(0, false);
   formationKey = MODE.HERO*100;
