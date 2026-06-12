@@ -1,0 +1,103 @@
+{
+  "ut1-8-1": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: dial in the probe's near field",
+    "intro": "The transducer is calibrated equipment: frequency and element diameter fix wavelength and the near field N = D^2 f / 4v. Tune the lesson's 10 mm, 5 MHz probe and watch the lambda and near-field readouts to see why amplitude references belong beyond N.",
+    "params": {
+      "materials": ["steel", "aluminum", "water"],
+      "startMaterial": "steel",
+      "frequencyMHz": 5,
+      "probeDiameterMm": 10
+    },
+    "tasks": [
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Push lambda below 1 mm in steel; watch N grow",
+        "hint": "Raise frequency: lambda = v/f shrinks while N = D^2 f / 4v stretches the near field past the lesson's 21 mm example."
+      },
+      {
+        "id": "compareMaterials",
+        "label": "Fire the same pulse in steel, aluminum, water",
+        "hint": "Hold frequency fixed and switch materials; velocity sets the crest spacing, so lambda and N shift with every material."
+      }
+    ]
+  },
+  "ut1-8-2": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: prove the time axis on known steps",
+    "intro": "Standardization puts the screen's claims on trial against known references. Gauge thin and thick steps of a known block and confirm the sweep reads true: a constant offset would be a zero error, an error growing with distance a velocity error.",
+    "params": {
+      "stepsMm": [10, 25, 50, 100],
+      "velocityMps": 5920,
+      "material": "Carbon steel"
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Record readings on three known steps",
+        "hint": "Take one thin and one thick step among your three: zero error shifts every reading equally, velocity error scales with distance."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Call the thinnest step from the sweep alone",
+        "hint": "The earliest backwall echo (shortest time of flight) marks the thinnest section, just as a calibrated sweep promises."
+      }
+    ]
+  },
+  "ut1-8-3": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: peak the SDH ladder, DAC-style",
+    "intro": "Angle-beam standardization lives on side-drilled holes. Slide the 60-degree wedge along the reference plate and peak the echo from each SDH at increasing depth (about 1/4T, 1/2T, 3/4T) — the same peak-and-mark discipline used to set sensitivity and build a DAC.",
+    "params": {
+      "flawCount": 3,
+      "depthsMm": [6, 13, 19],
+      "plateThicknessMm": 25,
+      "refractedAngleDeg": 60,
+      "scanLengthMm": 200
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Peak the first SDH echo and mark it",
+        "hint": "Slide until the echo crests, then Mark within 4 mm of the peak — a DAC point is always taken at maximum response."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Capture the second SDH at maximum response",
+        "hint": "Watch the echo rise and fall as the beam centreline sweeps the hole; mark the crest, not the first flicker."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Mark the third SDH to finish the ladder",
+        "hint": "Deeper holes answer smaller — beam spread and attenuation at work, exactly why a DAC curve slopes downward."
+      }
+    ]
+  },
+  "ut1-8-4": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: same probe, different material",
+    "intro": "Your reference gain was earned on one material, so carrying the probe elsewhere changes the transfer. Fire the same pulse through water (the couplant's bridging job made visible), steel, and aluminum to see why block-to-part differences demand transfer correction.",
+    "params": {
+      "materials": ["steel", "aluminum", "water"],
+      "startMaterial": "water",
+      "frequencyMHz": 2,
+      "probeDiameterMm": 10
+    },
+    "tasks": [
+      {
+        "id": "compareMaterials",
+        "label": "Run the pulse through all three materials",
+        "hint": "Keep the settings fixed and switch materials — velocity and transmission change while your gain promise stays behind."
+      },
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Drop lambda below 1 mm in steel",
+        "hint": "Raise frequency in steel; shorter wavelengths scatter more in coarse grain, one reason a part never echoes like its block."
+      }
+    ]
+  }
+}

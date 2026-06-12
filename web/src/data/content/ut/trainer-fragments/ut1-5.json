@@ -1,0 +1,74 @@
+{
+  "ut1-5-1": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: contact thickness survey on a step block",
+    "intro": "Slide the 0° contact probe along the stepped block exactly as you would on a corrosion survey — only a thin couplant film separates the probe face from the steel. Flat, steady contact (not pressure) is what keeps the backwall echo repeatable while you gauge each step.",
+    "params": {
+      "stepsMm": [25, 12, 6, 18],
+      "velocityMps": 5920,
+      "material": "Carbon steel",
+      "stepWidthMm": 36
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Record thickness readings on three different steps",
+        "hint": "Keep the probe flat and still on each step — let the backwall echo settle before you record, just as a steady couplant film demands."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Identify the thinnest step on the block",
+        "hint": "The thinnest step has the shortest round trip, so its backwall echo arrives earliest on the A-scan."
+      }
+    ]
+  },
+  "ut1-5-2": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: the 4:1 water-to-steel velocity rule",
+    "intro": "Fire the same pulse through water and through steel and watch how much slower the couplant is — sound crosses water at roughly one quarter of its speed in steel. That 4:1 ratio is exactly why your immersion standoff must be at least thickness ÷ 4 (plus margin) before the water multiple clears the back-wall echo.",
+    "params": {
+      "materials": ["steel", "water"],
+      "startMaterial": "water",
+      "frequencyMHz": 5,
+      "probeDiameterMm": 10
+    },
+    "tasks": [
+      {
+        "id": "compareMaterials",
+        "label": "Send the pulse through water, then through steel",
+        "hint": "Water carries sound at ~1,480 m/s vs steel's ~5,920 — that ~4× gap is the whole basis of the water-path ≥ thickness ÷ 4 rule."
+      },
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Raise frequency until λ in steel is under 1 mm",
+        "hint": "λ = v/f, so steel needs roughly 6 MHz or more — immersion's constant water coupling is what makes such high frequencies practical."
+      }
+    ]
+  },
+  "ut1-5-3": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: why air coupling runs below 1 MHz",
+    "intro": "Drop the frequency to the slider's 1 MHz floor — already the ceiling of practical air-coupled work — and watch the wavelength stretch in water, aluminum, and steel. Velocity is the v in Z = ρv: air's ~330 m/s makes its impedance so low that R ≈ 1 at each interface, forcing air-coupled probes to low frequencies and coarser resolution.",
+    "params": {
+      "materials": ["steel", "aluminum", "water"],
+      "startMaterial": "water",
+      "frequencyMHz": 1,
+      "probeDiameterMm": 25
+    },
+    "tasks": [
+      {
+        "id": "compareMaterials",
+        "label": "Run the pulse through water, aluminum, and steel",
+        "hint": "Compare velocities as you switch: water's 1,480 m/s already drags Z down, and air at ~330 m/s sits far lower still — hence the near-total reflection."
+      },
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Push λ in steel below 1 mm — resolution air gives up",
+        "hint": "You need about 6 MHz or more — far above the sub-1 MHz band that can cross an air gap, which is exactly the detail air coupling trades away."
+      }
+    ]
+  }
+}

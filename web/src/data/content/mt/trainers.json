@@ -1,0 +1,972 @@
+{
+ "mt1-1-1": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: Recreate the discovery that started MT",
+  "intro": "Recreate what Saxby, de Forest, and Doane uncovered: magnetize the steel plate with the yoke, dust on dry particles, and watch leakage fields pull them into crisp lines over the cracks. Rotate the yoke deliberately \u2014 direction is the whole trick \u2014 until all three cracks indicate.",
+  "params": {
+   "crackAngles": [
+    0,
+    60,
+    120
+   ],
+   "indicationThresholdDeg": 40,
+   "startAngleDeg": 25
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Dust the plate and indicate crack A",
+    "hint": "Energize the yoke, dust particles, then rotate until they gather into a sharp line."
+   },
+   {
+    "id": "indicateB",
+    "label": "Rotate the yoke to indicate crack B",
+    "hint": "Leakage flux is strongest where the pole-to-pole flux crosses the crack near 90 degrees."
+   },
+   {
+    "id": "indicateC",
+    "label": "Find crack C to complete the set",
+    "hint": "Crack C lies at a third orientation \u2014 keep sweeping the yoke around the plate."
+   }
+  ]
+ },
+ "mt1-1-2": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: Run your first complete magnetizing shots",
+  "intro": "Walk the heart of the MT sequence you just outlined \u2014 magnetize, apply the particle bath, inspect, evaluate \u2014 twice on the same steel bar: once with a head shot and once with a coil shot. Finish with the kind of which-field-finds-which question your qualification exams will ask.",
+  "params": {
+   "bathMs": 1000,
+   "quizLockMs": 1500
+  },
+  "tasks": [
+   {
+    "id": "revealTransverse",
+    "label": "Coil shot: energize, bathe, reveal the transverse crack",
+    "hint": "The encircling coil drives flux along the bar, so it crosses cracks running around the bar."
+   },
+   {
+    "id": "revealLongitudinal",
+    "label": "Head shot: reveal the longitudinal crack",
+    "hint": "Current through the bar makes circular flux, which crosses cracks running along its length."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Pass the check: which field finds which crack?",
+    "hint": "Flux must cross a crack to reveal it \u2014 match each field to the crack it cuts across."
+   }
+  ]
+ },
+ "mt1-1-3": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: Prove that direction decides detection",
+  "intro": "Every crack on this plate is real, yet at the starting yoke angle none of them indicates \u2014 the flux runs too close to parallel to each one. Rotate the yoke to make each crack appear and prove the limitation yourself: absence of an indication is not absence of a discontinuity, so full coverage demands two roughly perpendicular magnetizations.",
+  "params": {
+   "crackAngles": [
+    0,
+    45,
+    90
+   ],
+   "indicationThresholdDeg": 55,
+   "startAngleDeg": 45
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Rotate the yoke until silent crack A indicates",
+    "hint": "At the start the flux is only 45 degrees off crack A \u2014 swing the yoke until it crosses A nearly square."
+   },
+   {
+    "id": "indicateB",
+    "label": "Find the second window: indicate crack B",
+    "hint": "B's normal sits 45 degrees beyond A's \u2014 keep rotating past the angle where A appeared."
+   },
+   {
+    "id": "indicateC",
+    "label": "Indicate crack C and watch A stay dark",
+    "hint": "C only shows when flux runs nearly parallel to A \u2014 no single shot can cover both, hence two magnetizations."
+   }
+  ]
+ },
+ "mt1-2-1": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: Fields from current \u2014 head shot vs coil",
+  "intro": "Electric current always creates a magnetic field \u2014 \u00d8rsted's discovery. Fire the head shot to wrap a circular field around the bar, then the coil shot for a longitudinal field, and watch each field pattern reveal only the crack it crosses.",
+  "params": {
+   "bathMs": 1000,
+   "quizLockMs": 1500
+  },
+  "tasks": [
+   {
+    "id": "revealTransverse",
+    "label": "Reveal the transverse crack \u2014 choose the right shot",
+    "hint": "A coil's flux runs lengthwise along the bar, so it crosses the crack that lies across the bar."
+   },
+   {
+    "id": "revealLongitudinal",
+    "label": "Reveal the longitudinal crack with the other shot",
+    "hint": "Current through the bar wraps a circular field around it (right-hand rule) \u2014 it cuts the lengthwise crack at 90\u00b0."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Pass the check: which field finds which crack?",
+    "hint": "Flux only leaks where it crosses a crack \u2014 match each field's direction to the crack it cuts across."
+   }
+  ]
+ },
+ "mt1-2-3": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: Flux leakage and the 45\u201390\u00b0 rule",
+  "intro": "Steer the AC yoke's pole-to-pole flux through the plate and dust particles: an indication blooms only where flux crosses a crack within 45\u201390\u00b0 of perpendicular \u2014 the flux-leakage principle that makes MT work. Indicate all three cracks.",
+  "params": {
+   "crackAngles": [
+    0,
+    60,
+    120
+   ],
+   "indicationThresholdDeg": 45,
+   "startAngleDeg": 90
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Indicate crack A \u2014 steer flux across it",
+    "hint": "Drag the yoke until its pole-to-pole flux crosses crack A at better than 45\u00b0 \u2014 particles pile up where flux leaks."
+   },
+   {
+    "id": "indicateB",
+    "label": "Rotate the yoke until crack B leaks flux",
+    "hint": "Parallel to the flux a crack is invisible \u2014 swing the flux toward perpendicular over crack B."
+   },
+   {
+    "id": "indicateC",
+    "label": "Catch crack C \u2014 one direction never shows all",
+    "hint": "Compare the yoke angles that worked: every crack needed flux within 45\u201390\u00b0 of perpendicular, which is why real parts get two shots."
+   }
+  ]
+ },
+ "mt1-3-1": {
+  "engine": "pt",
+  "mode": "process",
+  "title": "Hands-on: pre-clean first \u2014 run the inspection line",
+  "intro": "Every surface method lives or dies on preparation. Work a fluorescent penetrant line station by station \u2014 skip the pre-clean or rush a step and the part resets, exactly how a contaminated surface silently invalidates an MT examination.",
+  "params": {
+   "dwellSec": 8,
+   "wipeCoverage": 0.9,
+   "crackSeed": 31
+  },
+  "tasks": [
+   {
+    "id": "fullSequence",
+    "label": "Work all six stations in order \u2014 pre-clean first",
+    "hint": "Pre-clean is station one; any out-of-order step resets the part."
+   },
+   {
+    "id": "properDwell",
+    "label": "Let the dwell timer finish \u2014 no shortcuts",
+    "hint": "Watch the timer ring close completely before wiping off the excess."
+   },
+   {
+    "id": "findIndication",
+    "label": "Find the indication a clean surface reveals",
+    "hint": "After developer, wait for the bleedout, then click the glow under UV-A."
+   }
+  ]
+ },
+ "mt1-3-2": {
+  "engine": "et",
+  "mode": "skin-depth",
+  "title": "Hands-on: drive the field shallow, then deep",
+  "intro": "Why is AC magnetization blind below the surface while HWDC reaches a buried inclusion? Tune an electromagnetic field's frequency and watch its depth: pin it to a thin surface skin like AC, then drive it past 6 mm \u2014 roughly the quarter-inch best-case subsurface ceiling quoted for MT.",
+  "params": {
+   "shallowTargetMm": 0.4,
+   "deepTargetMm": 6,
+   "material": "stainless"
+  },
+  "tasks": [
+   {
+    "id": "setShallow",
+    "label": "Confine the field to a 0.4 mm skin, like AC",
+    "hint": "Raise the frequency and pick a high-conductivity material like aluminum."
+   },
+   {
+    "id": "setDeep",
+    "label": "Push penetration past 6 mm \u2014 MT's best-case depth",
+    "hint": "Drop near the bottom of the frequency slider and choose a low-conductivity metal like titanium."
+   }
+  ]
+ },
+ "mt1-4-1": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: Head shot \u2014 circular flux finds the seam",
+  "intro": "Energize the head shot so current flows through the bar and circular flux wraps it \u2014 the right-hand rule made visible. Watch which crack indicates, then prove what circular magnetization can and cannot find.",
+  "params": {
+   "bathMs": 800,
+   "quizLockMs": 1500
+  },
+  "tasks": [
+   {
+    "id": "revealLongitudinal",
+    "label": "Energize the head shot; dust to reveal the lengthwise seam",
+    "hint": "Current through the bar makes flux circle it, and that flux crosses cracks running along the bar at nearly 90 degrees."
+   },
+   {
+    "id": "revealTransverse",
+    "label": "Coil shot: reveal the crack the head shot missed",
+    "hint": "The transverse crack lies parallel to circular flux, so it never leaks \u2014 only the encircling coil's longitudinal flux crosses it."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Answer: which field indicates which crack?",
+    "hint": "Flux must cross a crack near perpendicular to leak; circular flux runs around the bar, so it crosses lengthwise flaws."
+   }
+  ]
+ },
+ "mt1-4-2": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: Orient the yoke's longitudinal flux",
+  "intro": "An AC yoke drives a local longitudinal field pole-to-pole through the plate \u2014 the same flux a coil shot puts down a part's axis. Rotate it so the flux crosses each crack within about 45 degrees of perpendicular, the indication-geometry rule for every longitudinal field.",
+  "params": {
+   "crackAngles": [
+    0,
+    90,
+    135
+   ],
+   "indicationThresholdDeg": 45,
+   "startAngleDeg": 20
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Rotate the yoke to indicate crack A",
+    "hint": "Flux runs pole to pole between the legs \u2014 set that leg-to-leg axis roughly perpendicular to the crack."
+   },
+   {
+    "id": "indicateB",
+    "label": "Re-orient about 90 degrees and indicate crack B",
+    "hint": "A crack parallel to the flux leaks nothing; B lies at right angles to A, so it needs the perpendicular placement."
+   },
+   {
+    "id": "indicateC",
+    "label": "Catch oblique crack C with a third placement",
+    "hint": "Anything within about 45 degrees of perpendicular still leaks \u2014 split the difference between your first two placements."
+   }
+  ]
+ },
+ "mt1-4-3": {
+  "engine": "et",
+  "mode": "skin-depth",
+  "title": "Hands-on: Skin effect \u2014 why AC stays at the surface",
+  "intro": "AC's reversing current pins its field to a thin surface skin while DC fills the cross-section \u2014 the same skin-effect physics this eddy-current cutaway lets you drive directly. Sweep the frequency high to mimic AC's shallow skin, then head toward DC and watch penetration open up.",
+  "params": {
+   "material": "stainless",
+   "shallowTargetMm": 0.6,
+   "deepTargetMm": 3,
+   "holdMs": 800
+  },
+  "tasks": [
+   {
+    "id": "setShallow",
+    "label": "Pin the field into a thin AC-like skin (depth \u2264 0.6 mm)",
+    "hint": "Faster reversals mean a shallower skin \u2014 slide the frequency up toward 1 MHz and hold."
+   },
+   {
+    "id": "setDeep",
+    "label": "Head toward DC: drive penetration past 3 mm",
+    "hint": "Lower the frequency \u2014 DC is the zero-frequency limit where the field fills the part, which is why FWDC finds subsurface flaws."
+   }
+  ]
+ },
+ "mt1-4-4": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: Pick the shot that crosses the crack",
+  "intro": "Run the full decision chain on the bench: predict each crack's orientation, choose the head shot (circular) or coil shot (longitudinal) so the flux crosses it, then prove your reasoning in the which-field-finds-which check.",
+  "params": {
+   "bathMs": 500,
+   "quizLockMs": 2500
+  },
+  "tasks": [
+   {
+    "id": "revealTransverse",
+    "label": "Choose the shot that finds the transverse crack",
+    "hint": "A transverse crack needs flux running along the bar to cross it \u2014 that is the coil (longitudinal) shot."
+   },
+   {
+    "id": "revealLongitudinal",
+    "label": "Now find the lengthwise seam with the other shot",
+    "hint": "A seam along the bar needs flux wrapping around it \u2014 head shot, current straight through the part."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Pass the which-field-finds-which check",
+    "hint": "Flux only indicates what it crosses at 45-90 degrees; match each field to the crack lying perpendicular to it."
+   }
+  ]
+ },
+ "mt1-5-1": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: dust dry powder and indicate three cracks",
+  "intro": "The particles are the detector: float a light cloud of dry powder onto the energized surface and an indication forms only where flux crosses a crack's leakage field. Rotate the yoke and dust until all three differently oriented cracks indicate.",
+  "params": {
+   "crackAngles": [
+    0,
+    60,
+    120
+   ],
+   "indicationThresholdDeg": 40,
+   "startAngleDeg": 25
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Dust a light cloud and indicate crack A",
+    "hint": "Drift a light cloud \u2014 never pour \u2014 and set the yoke axis near 90\u00b0 so flux crosses the 0\u00b0 crack square-on."
+   },
+   {
+    "id": "indicateB",
+    "label": "Swing the flux to develop crack B's indication",
+    "hint": "Flux runs pole-to-pole between the yoke legs; crack B sits near 60\u00b0, so aim the yoke axis around 150\u00b0."
+   },
+   {
+    "id": "indicateC",
+    "label": "Reorient and indicate crack C",
+    "hint": "Crack C runs near 120\u00b0 \u2014 bring the yoke axis toward 30\u00b0 and keep dusting; indications form while flux crosses."
+   }
+  ]
+ },
+ "mt1-5-2": {
+  "engine": "et",
+  "mode": "skin-depth",
+  "title": "Hands-on: skin effect \u2014 why AC demag stays shallow",
+  "intro": "A demagnetizing field only removes residual magnetism where it reaches, and alternating current crowds toward the surface. Tune frequency and conductivity to pin the field to a thin skin, then drive it deep \u2014 the skin-effect trade-off that splits the work between AC coils and reversing step-down DC.",
+  "params": {
+   "shallowTargetMm": 0.8,
+   "deepTargetMm": 4,
+   "material": "stainless"
+  },
+  "tasks": [
+   {
+    "id": "setShallow",
+    "label": "Pin the current to a thin surface skin",
+    "hint": "Raise the frequency \u2014 \u03b4 shrinks as 1/\u221af, the same reason a line-frequency AC coil only strips surface residual fields."
+   },
+   {
+    "id": "setDeep",
+    "label": "Push the field deep, like reversing DC demag",
+    "hint": "Slide toward 100 Hz and hold \u2014 lower reversal frequency penetrates deeper, which is why thick sections need reversing step-down DC."
+   }
+  ]
+ },
+ "mt1-5-3": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: bench unit \u2014 head shot vs coil shot",
+  "intro": "Operate the two shots of a wet horizontal bench: the head shot wraps a circular field around the bar and the coil shot lays a longitudinal field along it, and the bath reveals only the crack each field crosses. Equipment selection starts here \u2014 the machine must put the right field on the flaw you expect.",
+  "params": {
+   "bathMs": 1000
+  },
+  "tasks": [
+   {
+    "id": "revealTransverse",
+    "label": "Reveal the transverse crack with the right shot",
+    "hint": "The coil shot lays longitudinal flux along the bar \u2014 it crosses a crack that runs across the bar."
+   },
+   {
+    "id": "revealLongitudinal",
+    "label": "Reveal the longitudinal crack with the other shot",
+    "hint": "The head shot passes current through the bar; its circular flux wraps around and crosses the lengthwise crack."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Pass the which-field-finds-which check",
+    "hint": "Flux must cross a crack to leak: circular fields find longitudinal cracks, longitudinal fields find transverse."
+   }
+  ]
+ },
+ "mt1-5-4": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: prove field direction like a QQI",
+  "intro": "A pie gauge or QQI shim reveals field direction because particles indicate only where flux crosses a flaw. Rotate the yoke over three crack orientations and read the surface field's direction from which crack lights up \u2014 the same logic you'll use to prove a field with shims.",
+  "params": {
+   "crackAngles": [
+    20,
+    90,
+    150
+   ],
+   "indicationThresholdDeg": 55,
+   "startAngleDeg": 0
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Read the field direction that indicates crack A",
+    "hint": "Crack A lies near 20\u00b0, so only a yoke axis near 110\u00b0 crosses it hard enough \u2014 that yoke angle IS your direction reading."
+   },
+   {
+    "id": "indicateB",
+    "label": "Prove the vertical crack B with crossing flux",
+    "hint": "Crack B stands at 90\u00b0; swing the yoke axis toward 0\u00b0 so flux crosses it nearly perpendicular, like a properly oriented QQI slot."
+   },
+   {
+    "id": "indicateC",
+    "label": "Indicate crack C and log the yoke angle that worked",
+    "hint": "Crack C runs near 150\u00b0 \u2014 a yoke axis near 60\u00b0 gives the near-perpendicular crossing a crisp indication needs."
+   }
+  ]
+ },
+ "mt1-6-1": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: why the procedure demands two yoke passes",
+  "intro": "Your weld procedure calls for two yoke passes rotated roughly 90 degrees apart \u2014 and the reason is pure physics. Rotate the energized yoke over three differently oriented cracks and prove that no single pass can clear a weld.",
+  "params": {
+   "crackAngles": [
+    0,
+    60,
+    120
+   ],
+   "indicationThresholdDeg": 45,
+   "startAngleDeg": 25
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Rotate the yoke until crack A indicates",
+    "hint": "Flux runs leg to leg \u2014 set the poles either side of crack A so flux crosses it near 90 degrees."
+   },
+   {
+    "id": "indicateB",
+    "label": "Re-aim the flux to pick up crack B",
+    "hint": "Flux parallel to a crack barely leaks. If B stays dark, you are within about 45 degrees of parallel \u2014 keep rotating."
+   },
+   {
+    "id": "indicateC",
+    "label": "Find the pass angle that lights up crack C",
+    "hint": "Notice no one angle catches all three \u2014 exactly why the written technique mandates a second, perpendicular pass."
+   }
+  ]
+ },
+ "mt1-6-2": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: let the flaw's origin pick the shot",
+  "intro": "A mill seam runs with the bar's working direction; a service fatigue crack runs across it. Energize the head shot and the coil shot and prove that a discontinuity's birthday \u2014 its stage of origin \u2014 predicts the field you need.",
+  "params": {
+   "bathMs": 800,
+   "quizLockMs": 1500
+  },
+  "tasks": [
+   {
+    "id": "revealLongitudinal",
+    "label": "Reveal the seam that runs with the working direction",
+    "hint": "Primary-processing flaws like seams and stringers follow the grain \u2014 only the head shot's circular flux crosses them."
+   },
+   {
+    "id": "revealTransverse",
+    "label": "Reveal the transverse in-service fatigue crack",
+    "hint": "A crack across the bar needs flux running along the bar \u2014 that is the coil shot's longitudinal field."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Pass the which-field-finds-which check",
+    "hint": "Flux must cross the flaw: circular field finds lengthwise flaws, longitudinal field finds transverse ones."
+   }
+  ]
+ },
+ "mt1-6-3": {
+  "engine": "et",
+  "mode": "crack-scan",
+  "title": "Hands-on: relevant signal or nonrelevant noise?",
+  "intro": "Interpretation means deciding what caused each indication before you ever judge it. Scan the lane over a hidden crack, then sort your recorded signals \u2014 the same relevant-versus-nonrelevant triage you will run over every particle indication.",
+  "params": {
+   "crackDepthMm": 0.8,
+   "markToleranceMm": 3
+  },
+  "tasks": [
+   {
+    "id": "findCrack",
+    "label": "Scan the lane and mark where the crack really is",
+    "hint": "The crack kicks the dot at a steep phase angle; lift-off wobble stays near horizontal \u2014 read the trace, not your hopes."
+   },
+   {
+    "id": "distinguish",
+    "label": "Pick which recorded signal was the relevant one",
+    "hint": "Ask what held each signal: probe wobble and geometry are nonrelevant \u2014 only the discontinuity's response is relevant."
+   }
+  ]
+ },
+ "mt1-6-4": {
+  "engine": "rs",
+  "mode": "survey",
+  "title": "Hands-on: measure, compare to the limit, record it",
+  "intro": "Evaluation is a measuring job: actual numbers against a written criterion, then a disposition, then a record. Survey the three boundary stakes, log only stable readings, and correct the one point that fails its acceptance limit.",
+  "params": {
+   "curies": 30,
+   "isotope": "Ir-192",
+   "deviceFactor": 0.01,
+   "limit": 2
+  },
+  "tasks": [
+   {
+    "id": "surveyAll",
+    "label": "Record stable readings at all three stakes",
+    "hint": "Hold the meter still until the number settles \u2014 Record refuses jittery readings, just as reports refuse adjectives."
+   },
+   {
+    "id": "postBoundary",
+    "label": "Move stake B until it just meets the 2 mR/h limit",
+    "hint": "B fails its criterion: reject, correct, re-measure. Drag it outward along its radial until the rate sits at the limit."
+   }
+  ]
+ },
+ "mt2-1-1": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: Head shot vs. coil shot refresher",
+  "intro": "Back on the bench for your Level I review: energize the head shot and the coil shot on a cracked bar, watch which flaw each field reveals, then confirm the principle that links current path, flux direction, and crack orientation.",
+  "params": {
+   "bathMs": 600,
+   "quizLockMs": 1500
+  },
+  "tasks": [
+   {
+    "id": "revealTransverse",
+    "label": "Reveal the transverse crack with the right shot",
+    "hint": "The coil shot drives longitudinal flux down the bar, so it crosses cracks running across the bar."
+   },
+   {
+    "id": "revealLongitudinal",
+    "label": "Reveal the longitudinal crack with the other shot",
+    "hint": "The head shot passes current through the bar, wrapping circular flux around its axis."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Pass the which-field-finds-which check",
+    "hint": "Flux must cross a crack to leak: circular flux finds longitudinal flaws, longitudinal flux finds transverse ones."
+   }
+  ]
+ },
+ "mt2-1-2": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: Prove the 45-90 degree direction factor",
+  "intro": "Field direction is the test factor that decides whether an indication forms at all. Rotate the AC yoke and dust particles until every crack indicates - each one shows only while flux crosses it within the 45-90 degree window.",
+  "params": {
+   "crackAngles": [
+    20,
+    75,
+    130
+   ],
+   "indicationThresholdDeg": 45,
+   "startAngleDeg": 20
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Rotate the yoke until crack A indicates",
+    "hint": "Crack A lies parallel to the starting flux - the invisible case. Swing the yoke roughly 90 degrees off it."
+   },
+   {
+    "id": "indicateB",
+    "label": "Bring crack B inside the 45-90 degree window",
+    "hint": "An indication holds only while the flux-to-crack crossing angle stays at 45 degrees or more."
+   },
+   {
+    "id": "indicateC",
+    "label": "Indicate crack C to complete full coverage",
+    "hint": "No single yoke position covers all orientations - that is why procedures require two shots about 90 degrees apart."
+   }
+  ]
+ },
+ "mt2-2-1": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: Predict the Flux Pattern Before the Shot",
+  "intro": "Level II means predicting the field, not just producing one. Use the right-hand rule to call which crack the head shot's circular flux and the coil shot's longitudinal flux will each reveal \u2014 then energize and test your prediction.",
+  "params": {
+   "bathMs": 800,
+   "quizLockMs": 2000
+  },
+  "tasks": [
+   {
+    "id": "revealTransverse",
+    "label": "Predict, then fire the shot that shows the transverse crack",
+    "hint": "Sketch it first: an encircling coil drives flux along the bar's axis, and that flux cuts a crack lying across the bar."
+   },
+   {
+    "id": "revealLongitudinal",
+    "label": "Choose the shot whose flux cuts the lengthwise crack",
+    "hint": "Right-hand rule on the head shot: thumb with the current, fingers wrap circular flux around the bar \u2014 zero at the centerline, strongest at the surface."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Ace the current-path vs crack-orientation check",
+    "hint": "H comes from amperes and geometry alone; an indication needs that flux crossing the flaw at roughly 45\u201390\u00b0."
+   }
+  ]
+ },
+ "mt2-2-2": {
+  "engine": "et",
+  "mode": "skin-depth",
+  "title": "Hands-on: Skin Effect \u2014 Surface Skin vs Deep Field",
+  "intro": "FWDC fills the cross section while AC crowds into a millimeter-deep surface skin \u2014 and frequency is the dial between those regimes. Tune the coil frequency over the cutaway slab to pin the standard depth shallow like 60 Hz AC in steel, then drive it deep toward DC-style penetration.",
+  "params": {
+   "shallowTargetMm": 1.0,
+   "deepTargetMm": 4,
+   "material": "stainless"
+  },
+  "tasks": [
+   {
+    "id": "setShallow",
+    "label": "Confine the field to a 1 mm skin \u2014 AC's regime",
+    "hint": "Raise the frequency: depth shrinks as 1/\u221af \u2014 the cyclic effect that buys AC its strong surface field and costs it all subsurface capability."
+   },
+   {
+    "id": "setDeep",
+    "label": "Drive the depth past 4 mm \u2014 toward DC penetration",
+    "hint": "Slide the frequency low: a slowly changing field induces weaker opposing eddy currents, so flux relaxes into the full section like FWDC."
+   }
+  ]
+ },
+ "mt2-2-4": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: Yoke Technique \u2014 Cover Every Orientation",
+  "intro": "A yoke magnetizes pole-to-pole and detects only the flaws its flux crosses at 45\u201390\u00b0 \u2014 the field-direction-first logic behind every technique choice in this lesson. Work the plate in passes, re-aiming between them, until all three differently-oriented cracks indicate.",
+  "params": {
+   "crackAngles": [
+    15,
+    75,
+    135
+   ],
+   "indicationThresholdDeg": 45,
+   "startAngleDeg": 15
+  },
+  "tasks": [
+   {
+    "id": "indicateB",
+    "label": "Seat the yoke, dust, and log crack B's indication",
+    "hint": "Keep both legs seated firmly and dust \u2014 crack B lies more than 45\u00b0 off the starting flux line, so it leaks."
+   },
+   {
+    "id": "indicateC",
+    "label": "Confirm crack C also indicates in this first pass",
+    "hint": "One field direction catches every flaw lying 45\u201390\u00b0 off it \u2014 C sits inside the same detection window as B."
+   },
+   {
+    "id": "indicateA",
+    "label": "Pass one missed crack A \u2014 rotate ~90\u00b0 and reshoot",
+    "hint": "A crack parallel to the pole-to-pole flux never leaks; swinging the yoke about 90\u00b0 is the second 'shot' that completes coverage."
+   }
+  ]
+ },
+ "mt2-3-1": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: pick the field that finds each crack",
+  "intro": "Field direction is the heart of the five-question plan. On one steel bar, energize the head shot and the coil shot to prove which field reveals the transverse crack and which finds the longitudinal seam \u2014 then justify the pairing in the theory check.",
+  "params": {
+   "quizLockMs": 2000
+  },
+  "tasks": [
+   {
+    "id": "revealTransverse",
+    "label": "Fire the shot that reveals the transverse crack",
+    "hint": "The coil shot drives longitudinal flux along the bar \u2014 it crosses transverse cracks."
+   },
+   {
+    "id": "revealLongitudinal",
+    "label": "Fire the shot that reveals the longitudinal seam",
+    "hint": "The head shot wraps circular flux around the bar \u2014 it crosses seams running along the axis."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Pass the which-field-finds-which check",
+    "hint": "Flux only leaks where it crosses a flaw at 45\u201390 degrees; match each field to the crack it cuts across."
+   }
+  ]
+ },
+ "mt2-3-2": {
+  "engine": "et",
+  "mode": "skin-depth",
+  "title": "Hands-on: why AC demag stops at the skin",
+  "intro": "An alternating field penetrates only to its skin depth \u2014 the same physics that lets an AC demagnetizer strip a surface residual yet leave a deep FWDC field untouched (Trap 2). Sweep the frequency and watch the induced field shrink to a skin or soak toward the core.",
+  "params": {
+   "material": "stainless",
+   "shallowTargetMm": 0.6,
+   "deepTargetMm": 4
+  },
+  "tasks": [
+   {
+    "id": "setShallow",
+    "label": "Push penetration depth under 0.6 mm (the AC skin)",
+    "hint": "Raise the frequency \u2014 depth shrinks as frequency climbs, like 60 Hz demag current hugging the surface."
+   },
+   {
+    "id": "setDeep",
+    "label": "Drive the field 4 mm deep to reach a buried residual",
+    "hint": "Drop the frequency toward 100 Hz \u2014 only a slowly reversing field soaks deep, which is why thick FWDC sections need step-down DC."
+   }
+  ]
+ },
+ "mt2-3-3": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: execute a full-coverage yoke plan",
+  "intro": "Time to run the plan: three cracks at 0, 45 and 90 degrees share one plate, like the mixed flaw orientations on the yard weldment. Rotate the energized yoke and dust particles until every crack indicates \u2014 proof that one field direction never covers them all.",
+  "params": {
+   "crackAngles": [
+    0,
+    90,
+    45
+   ],
+   "indicationThresholdDeg": 55,
+   "startAngleDeg": 20
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Indicate crack A with flux near-perpendicular",
+    "hint": "Flux runs pole-to-pole between the yoke legs; rotate until it crosses crack A at better than 55 degrees."
+   },
+   {
+    "id": "indicateB",
+    "label": "Re-orient and indicate crack B, 90 deg from A",
+    "hint": "One orientation can't cover cracks 90 degrees apart \u2014 that's why plans call for two near-perpendicular shots."
+   },
+   {
+    "id": "indicateC",
+    "label": "Catch the oblique crack C with a third orientation",
+    "hint": "Crack C lies at 45 degrees, halfway between A and B; aim the flux perpendicular to it."
+   }
+  ]
+ },
+ "mt2-4-1": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: work the portable AC yoke",
+  "intro": "Portable equipment means the test travels to the part, and the workhorse is the AC yoke: flux runs pole-to-pole between its legs, so a crack indicates only when that flux crosses it. Rotate the yoke over the plate and dust particles until all three cracks indicate \u2014 the systematic multi-pass coverage every field technician owes the part.",
+  "params": {
+   "crackAngles": [
+    0,
+    60,
+    120
+   ],
+   "indicationThresholdDeg": 45,
+   "startAngleDeg": 25
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Aim the yoke's flux across crack A",
+    "hint": "Flux runs pole-to-pole \u2014 straddle the crack with the legs so flux crosses it near perpendicular."
+   },
+   {
+    "id": "indicateB",
+    "label": "Re-position the yoke to indicate crack B",
+    "hint": "A crack parallel to the flux leaks nothing; rotate the yoke until its axis sits roughly across B."
+   },
+   {
+    "id": "indicateC",
+    "label": "Find the orientation that lights up crack C",
+    "hint": "Work the surface in passes about 90 degrees apart so no crack orientation escapes the coverage."
+   }
+  ]
+ },
+ "mt2-4-2": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: two circuits, every direction",
+  "intro": "A multidirectional machine rapidly alternates exactly these two circuits \u2014 head shot for circular flux, coil shot for longitudinal flux \u2014 while the bath is still draining. Fire each circuit yourself to reveal both cracks and prove why a single direction leaves a coverage gap that only continuous-method sequencing can close.",
+  "params": {
+   "bathMs": 1200,
+   "quizLockMs": 1500
+  },
+  "tasks": [
+   {
+    "id": "revealTransverse",
+    "label": "Fire the circuit that reveals the transverse crack",
+    "hint": "The coil shot drives longitudinal flux down the bar axis \u2014 that is the flux a transverse crack interrupts."
+   },
+   {
+    "id": "revealLongitudinal",
+    "label": "Reveal the longitudinal crack with the other circuit",
+    "hint": "A head shot passes current through the bar, wrapping circular flux around it \u2014 that flux crosses axial, seam-like cracks."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Pass the which-field-finds-which check",
+    "hint": "Flux must cross the flaw: circular flux finds longitudinal cracks, longitudinal flux finds transverse ones."
+   }
+  ]
+ },
+ "mt2-4-3": {
+  "engine": "pt",
+  "mode": "process",
+  "title": "Hands-on: fluorescent viewing under UV-A",
+  "intro": "Fluorescent NDT \u2014 magnetic or penetrant \u2014 ends the same way: a darkened viewing area and a UV-A source that the dye converts to yellow-green light. Run this fluorescent inspection through its stations and finish in the UV-A booth, where the indication appears only once the lighting regime is right: UV-A on the surface, ambient white light shut out.",
+  "params": {
+   "dwellSec": 5,
+   "bleedSec": 4,
+   "crackSeed": 42
+  },
+  "tasks": [
+   {
+    "id": "fullSequence",
+    "label": "Work the stations through to the UV-A booth",
+    "hint": "Order matters: clean, penetrant, dwell, remove, developer \u2014 then darken the scene and bring up the UV-A lamp."
+   },
+   {
+    "id": "findIndication",
+    "label": "Find the indication that glows only under UV-A",
+    "hint": "In the darkened booth the dye re-emits UV-A as yellow-green light \u2014 scan under the lamp and click the glow."
+   }
+  ]
+ },
+ "mt2-5-1": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: Pick the shot for each product-form flaw",
+  "intro": "Wrought bar carries its ingot ancestry: surface blowholes rolled into tight longitudinal seams, plus service cracks running across the axis. Energize the head shot and the coil shot to reveal each flaw and confirm the orientation rule that sorts almost everything.",
+  "params": {
+   "bathMs": 800,
+   "quizLockMs": 1500
+  },
+  "tasks": [
+   {
+    "id": "revealLongitudinal",
+    "label": "Reveal the seam-like longitudinal flaw",
+    "hint": "Seams run with the bar axis - the classic circular-magnetization target, so put current through the bar with the head shot."
+   },
+   {
+    "id": "revealTransverse",
+    "label": "Reveal the transverse crack with the other shot",
+    "hint": "Transverse flaws need longitudinal flux: the encircling coil drives it straight down the bar."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Pass the orientation-rule check",
+    "hint": "Leakage is strongest with flux 45-90 degrees to the flaw: circular finds longitudinal, longitudinal finds transverse."
+   }
+  ]
+ },
+ "mt2-5-2": {
+  "engine": "et",
+  "mode": "crack-scan",
+  "title": "Hands-on: Call it relevant or nonrelevant",
+  "intro": "Detection, interpretation, and evaluation are three different acts in every method. Scan the lane and log what you see, then disposition the record: the crack's steep kick is the relevant indication, the lift-off wobble is nonrelevant background.",
+  "params": {
+   "crackDepthMm": 0.9,
+   "markToleranceMm": 4
+  },
+  "tasks": [
+   {
+    "id": "findCrack",
+    "label": "Scan the lane and mark where the indication forms",
+    "hint": "Detection comes first: a real flaw kicks the dot at a steep phase angle, unlike the flat lift-off noise."
+   },
+   {
+    "id": "distinguish",
+    "label": "Interpret the record: pick the relevant signal",
+    "hint": "Interpretation means deciding the cause - the steep-phase kick is relevant; horizontal probe-wobble traces are nonrelevant."
+   }
+  ]
+ },
+ "mt2-5-3": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: Validate the technique before you write it",
+  "intro": "Formulas get you onto the bench; validation is proof. Rotate the yoke over three known cracks and demonstrate which shot angles the written technique must specify - inside its 50-degree crossing window - to catch every orientation.",
+  "params": {
+   "crackAngles": [
+    15,
+    70,
+    125
+   ],
+   "indicationThresholdDeg": 50,
+   "startAngleDeg": 15
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Demonstrate the technique catches crack A",
+    "hint": "Validation starts at worst case: the flux begins parallel to A, so nothing leaks until you swing the yoke well off it."
+   },
+   {
+    "id": "indicateB",
+    "label": "Qualify a yoke angle that develops crack B",
+    "hint": "Qualified values are demonstrated, then written down with tolerances - note the angle where B blooms and holds."
+   },
+   {
+    "id": "indicateC",
+    "label": "Prove full coverage by indicating crack C",
+    "hint": "No single shot covers all three orientations - that is why the procedure specifies two shots about 90 degrees apart."
+   }
+  ]
+ },
+ "mt2-5-4": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: Known-defect system performance check",
+  "intro": "Meters drift and baths exhaust invisibly, so process control ends with a known-defect check. Energize both shots on a reference bar and verify each field still develops the flaw it should - the same proof a QQI shim or test ring writes into the QC log.",
+  "params": {
+   "bathMs": 1500,
+   "quizLockMs": 2000
+  },
+  "tasks": [
+   {
+    "id": "revealTransverse",
+    "label": "Verify the coil shot develops the known transverse flaw",
+    "hint": "System checks use known defects: give the bath time to work, and if the bloom never comes, the bench fails QC."
+   },
+   {
+    "id": "revealLongitudinal",
+    "label": "Verify the head shot develops the longitudinal flaw",
+    "hint": "Like a QQI shim, a known defect proves field strength AND direction together - not just an ammeter reading."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Confirm the principle your pie gauge reads",
+    "hint": "Field validation devices work because flux must cross a flaw to leak - circular finds longitudinal, longitudinal finds transverse."
+   }
+  ]
+ },
+ "mt2-5-5": {
+  "engine": "pt",
+  "mode": "process",
+  "title": "Hands-on: Run the written sequence like a stranger",
+  "intro": "A procedure passes the stranger test when a technician who has never seen the part can run its numbered steps and reach the same result. Execute a six-station surface-method sequence exactly as written - out-of-order moves and cut-short dwells reset the job.",
+  "params": {
+   "dwellSec": 10,
+   "wipeCoverage": 0.85,
+   "crackSeed": 425,
+   "bleedSec": 3
+  },
+  "tasks": [
+   {
+    "id": "fullSequence",
+    "label": "Execute all six stations in the written order",
+    "hint": "Detailed instructions are numbered, imperative, one action per step - jumping ahead violates the sequence and resets the part."
+   },
+   {
+    "id": "properDwell",
+    "label": "Hold the dwell for its full specified time",
+    "hint": "A sound step carries a verifiable value: the timer ring is the 'minimum dwell' number written into the instruction."
+   },
+   {
+    "id": "findIndication",
+    "label": "Record the indication that closes out the run",
+    "hint": "The final required section turns findings into a record - click the bleedout under UV-A to log the result."
+   }
+  ]
+ }
+}

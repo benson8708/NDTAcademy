@@ -1,0 +1,81 @@
+{
+  "rt1-1-1": {
+    "engine": "rs",
+    "mode": "survey",
+    "title": "Hands-on: survey the invisible field around a source",
+    "intro": "Roentgen's rays were invisible in 1895 and they are invisible now — only a survey meter shows you the field. Walk the rope boundary around a shielded Ir-192 exposure device, record the rate at all three stakes, and fix the one posting that reads over the limit.",
+    "params": {
+      "isotope": "Ir-192",
+      "curies": 30,
+      "limit": 2
+    },
+    "tasks": [
+      {
+        "id": "surveyAll",
+        "label": "Carry the meter to stakes A, B, C and record each",
+        "hint": "Hold the meter still at a stake until the reading stabilises — Record only accepts a steady value."
+      },
+      {
+        "id": "postBoundary",
+        "label": "Drag stake B outward until it reads the 2 mR/h limit",
+        "hint": "The rate falls with the square of distance, so a short move outward drops the reading quickly."
+      }
+    ]
+  },
+  "rt1-1-2": {
+    "engine": "rs",
+    "mode": "tds",
+    "title": "Hands-on: inverse-square and halving math at the bay",
+    "intro": "Put the lesson's math to work at a gamma bay: doubling distance divides the rate by 2 squared, each half-value layer is another negative power of 2, and the exposure plan is dose = rate x time rearranged for time. Solve all three with the live meter checking your arithmetic.",
+    "params": {
+      "isotope": "Ir-192",
+      "curies": 30,
+      "boundaryLimit": 2,
+      "doseLimit": 20,
+      "minWorkMin": 10
+    },
+    "tasks": [
+      {
+        "id": "distanceHalf",
+        "label": "Double your distance — confirm the rate falls 4x",
+        "hint": "I1·d1² = I2·d2²: doubling d makes d² four times larger, so the meter must read one quarter."
+      },
+      {
+        "id": "shieldToLimit",
+        "label": "Stack HVL slabs until the door post reads under 2 mR/h",
+        "hint": "Each half-value layer leaves 1/2 of the rate — after n slabs only 1/2^n remains, just like the halving table."
+      },
+      {
+        "id": "planExposure",
+        "label": "Plan 10+ minutes of work under the 20 mrem dose cap",
+        "hint": "Rearrange dose = rate x hours: allowed hours = 20 mrem / rate. If that is too short, cut the rate with distance or slabs first."
+      }
+    ]
+  },
+  "rt1-1-4": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: watch a radioisotope decay on the clock",
+    "intro": "Ir-192 — iridium with 115 neutrons instead of a stable mix — cannot settle, so its activity falls on a fixed 73.8-day half-life. Make a good exposure today, then jump 30 days ahead and compensate for the decay your radioisotope's nucleus made inevitable.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 40,
+      "targetDmin": 2.0,
+      "targetDmax": 3.0,
+      "maxTimeMin": 20
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Expose the day-0 shot into the 2.0-3.0 density window",
+        "hint": "Exposure E = activity x time — nudge the time slider until film density lands inside the window."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "Jump 30 days and re-expose to make up for lost curies",
+        "hint": "A = A0 x 2^(-30/73.8) ≈ 75% of day-0 activity, so stretch the exposure time by about a third."
+      }
+    ]
+  }
+}

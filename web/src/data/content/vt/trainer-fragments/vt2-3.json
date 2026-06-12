@@ -1,0 +1,73 @@
+{
+  "vt2-3-1": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: Snell's law steers a beam to hidden flaws",
+    "intro": "The wedge on an angle-beam probe is a prism for sound: at the wedge-steel boundary the beam bends to 70 degrees, governed by the same Snell's law you just learned for light. Slide the probe along the plate and let refraction aim the beam at two hidden holes.",
+    "params": {
+      "refractedAngleDeg": 70,
+      "flawCount": 2,
+      "depthsMm": [10, 18],
+      "plateThicknessMm": 25
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Walk the 70-degree refracted beam onto the first hole",
+        "hint": "The echo peaks when the drawn beam centreline crosses the hole - a 70-degree beam strikes about 2.7x the hole's depth ahead of the wedge, so the 10 mm hole peaks roughly 27 mm out."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Refract your way to the second, deeper hole",
+        "hint": "Deeper target, longer first leg: the 18 mm hole peaks about 50 mm ahead of the wedge - keep sliding past the first echo and Mark within 4 mm of the new peak."
+      }
+    ]
+  },
+  "vt2-3-2": {
+    "engine": "et",
+    "mode": "crack-scan",
+    "title": "Hands-on: tell the crack's signal from lift-off noise",
+    "intro": "Digitized inspection lives or dies on separating real indications from processing artifacts - the lesson's filtering and signal-processing warning. Sweep an eddy-current probe over a hidden crack and use the signal's phase character, not its size, to pick the flaw out of the lift-off noise.",
+    "params": {
+      "crackDepthMm": 0.9,
+      "markToleranceMm": 4
+    },
+    "tasks": [
+      {
+        "id": "findCrack",
+        "label": "Scan the lane and mark where the hidden crack kicks",
+        "hint": "Probe wobble (lift-off) draws flat, horizontal traces; the crack snaps the dot out at a steep phase angle - mark the lane position where that kick happens."
+      },
+      {
+        "id": "distinguish",
+        "label": "Pick which recorded trace was the real indication",
+        "hint": "Judge by angle, not amplitude - gain can make noise big, but it cannot rotate it to the crack's steep phase."
+      }
+    ]
+  },
+  "vt2-3-4": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: projection geometry behind remote sizing",
+    "intro": "Shadow and stereo tips re-establish scale through projection geometry, and a radiographic setup makes that geometry tangible: source size and distances set magnification and blur exactly as standoff does through a scope. Tune the distances until the image is sharp, then place a known-size reference to demonstrate capability the way codes expect.",
+    "params": {
+      "focalSpotMm": 4,
+      "specUgMm": 0.4,
+      "plateThicknessMm": 12,
+      "sodMm": 180,
+      "gapMm": 50
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Set distances until blur Ug meets the 0.4 mm spec",
+        "hint": "Ug = f x OFD / SOD - push the source back AND close the film-side gap; with a 50 mm gap no legal source distance can pass, so shrink the gap first."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Demonstrate capability: set the wire IQI source-side",
+        "hint": "Like the comparison technique's reference, the IQI only proves anything in the hardest plane to resolve - drag it onto the source-side weld surface; film-side placement is rejected."
+      }
+    ]
+  }
+}

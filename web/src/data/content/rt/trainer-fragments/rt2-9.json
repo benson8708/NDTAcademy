@@ -1,0 +1,134 @@
+{
+  "rt2-9-1": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: planar flaws vanish off-angle",
+    "intro": "Hot tears and cold cracks are planar — they are caught only when the interrogating field crosses their plane, exactly like beam angle on a casting radiograph. Rotate the energized yoke over three differently-oriented cracks and watch detection switch on and off with orientation.",
+    "params": {
+      "crackAngles": [15, 75, 130],
+      "indicationThresholdDeg": 50,
+      "startAngleDeg": 20
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Aim the flux across crack A until it indicates",
+        "hint": "Flux runs pole-to-pole between the yoke legs — turn it to cross crack A near 90 degrees."
+      },
+      {
+        "id": "indicateB",
+        "label": "Re-orient to catch crack B at a new attitude",
+        "hint": "B lies at a different angle; a flaw nearly parallel to the flux leaks no field and stays invisible."
+      },
+      {
+        "id": "indicateC",
+        "label": "Find the third orientation that lights up crack C",
+        "hint": "Like a tight hot tear seen broadside by the beam, C vanishes until the crossing angle is steep enough."
+      }
+    ]
+  },
+  "rt2-9-2": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: valid density before you grade",
+    "intro": "Comparison against an E446-style reference plate is only fair on a valid film with density inside the required window. Pick an exposure time that lands the window, then prove you can hold it as the Ir-192 source decays.",
+    "params": {
+      "isotope": "Ir-192",
+      "curies": 40,
+      "targetDmin": 2.0,
+      "targetDmax": 3.0,
+      "maxTimeMin": 20
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Expose into the 2.0-3.0 density window",
+        "hint": "Density follows exposure E = A x t — nudge the time slider until the readout sits inside the window."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "Jump 30 days ahead, then re-hit the window",
+        "hint": "Ir-192 halves every 73.8 days, so a month costs real activity — buy it back with a longer exposure."
+      }
+    ]
+  },
+  "rt2-9-3": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: find weld flaws at their addresses",
+    "intro": "Process knowledge says every weld discontinuity has an address — root, bevel, toe/HAZ. Sweep the angle-beam wedge along this welded plate and mark the three hidden flaws seeded at root, mid-bevel, and near-toe depths.",
+    "params": {
+      "flawCount": 3,
+      "plateThicknessMm": 25,
+      "depthsMm": [19, 12, 6],
+      "flawXsMm": [-60, 0, 60],
+      "refractedAngleDeg": 70,
+      "scanLengthMm": 200
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Mark the root-depth flaw (19 mm down)",
+        "hint": "Slide until the echo peaks — that is the beam centreline on the flaw — then Mark within 4 mm."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Mark the mid-bevel flaw (12 mm down)",
+        "hint": "Mid-wall flaws like slag and LOF ride the bevels; watch for the second distinct echo peak."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Mark the near-toe flaw (6 mm down)",
+        "hint": "Shallow toe/HAZ-zone flaws return early echoes — peak it, then Mark."
+      }
+    ]
+  },
+  "rt2-9-4": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: prove the film before the flaw call",
+    "intro": "Discipline before diagnosis: a crack-versus-slag call needs a sharp image and demonstrated sensitivity. Tighten the shot geometry until unsharpness is fine enough for crack tips, then place the IQI where the code accepts it.",
+    "params": {
+      "focalSpotMm": 3,
+      "specUgMm": 0.3,
+      "plateThicknessMm": 12
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Drive Ug to 0.3 mm or better for crack-sharp film",
+        "hint": "Ug = f x OFD / SOD — stretch the source back and close the object-to-film gap."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Drag the wire IQI onto the source-side surface",
+        "hint": "Film-side placement is rejected here — sensitivity is proven on the source side of the weld."
+      }
+    ]
+  },
+  "rt2-9-5": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: parameter verification before the shot",
+    "intro": "Run pre-shot parameter verification like a pilot's checklist: this employer procedure caps geometric unsharpness at 0.5 mm and requires a source-side IQI. Bring the as-found setup into compliance before any film is exposed.",
+    "params": {
+      "focalSpotMm": 4,
+      "specUgMm": 0.5,
+      "plateThicknessMm": 20,
+      "sodMm": 180,
+      "gapMm": 30
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Verify the setup meets the procedure Ug limit, 0.5 mm",
+        "hint": "The as-found SOD and gap do not comply — fix the geometry; never shoot outside the procedure."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Check off IQI placement: source side, per procedure",
+        "hint": "Placement is an essential variable to verify, not a convenience — the film side is rejected."
+      }
+    ]
+  }
+}

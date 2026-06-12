@@ -1,0 +1,80 @@
+{
+  "mt2-4-1": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: work the portable AC yoke",
+    "intro": "Portable equipment means the test travels to the part, and the workhorse is the AC yoke: flux runs pole-to-pole between its legs, so a crack indicates only when that flux crosses it. Rotate the yoke over the plate and dust particles until all three cracks indicate — the systematic multi-pass coverage every field technician owes the part.",
+    "params": {
+      "crackAngles": [0, 60, 120],
+      "indicationThresholdDeg": 45,
+      "startAngleDeg": 25
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Aim the yoke's flux across crack A",
+        "hint": "Flux runs pole-to-pole — straddle the crack with the legs so flux crosses it near perpendicular."
+      },
+      {
+        "id": "indicateB",
+        "label": "Re-position the yoke to indicate crack B",
+        "hint": "A crack parallel to the flux leaks nothing; rotate the yoke until its axis sits roughly across B."
+      },
+      {
+        "id": "indicateC",
+        "label": "Find the orientation that lights up crack C",
+        "hint": "Work the surface in passes about 90 degrees apart so no crack orientation escapes the coverage."
+      }
+    ]
+  },
+  "mt2-4-2": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: two circuits, every direction",
+    "intro": "A multidirectional machine rapidly alternates exactly these two circuits — head shot for circular flux, coil shot for longitudinal flux — while the bath is still draining. Fire each circuit yourself to reveal both cracks and prove why a single direction leaves a coverage gap that only continuous-method sequencing can close.",
+    "params": {
+      "bathMs": 1200,
+      "quizLockMs": 1500
+    },
+    "tasks": [
+      {
+        "id": "revealTransverse",
+        "label": "Fire the circuit that reveals the transverse crack",
+        "hint": "The coil shot drives longitudinal flux down the bar axis — that is the flux a transverse crack interrupts."
+      },
+      {
+        "id": "revealLongitudinal",
+        "label": "Reveal the longitudinal crack with the other circuit",
+        "hint": "A head shot passes current through the bar, wrapping circular flux around it — that flux crosses axial, seam-like cracks."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Pass the which-field-finds-which check",
+        "hint": "Flux must cross the flaw: circular flux finds longitudinal cracks, longitudinal flux finds transverse ones."
+      }
+    ]
+  },
+  "mt2-4-3": {
+    "engine": "pt",
+    "mode": "process",
+    "title": "Hands-on: fluorescent viewing under UV-A",
+    "intro": "Fluorescent NDT — magnetic or penetrant — ends the same way: a darkened viewing area and a UV-A source that the dye converts to yellow-green light. Run this fluorescent inspection through its stations and finish in the UV-A booth, where the indication appears only once the lighting regime is right: UV-A on the surface, ambient white light shut out.",
+    "params": {
+      "dwellSec": 5,
+      "bleedSec": 4,
+      "crackSeed": 42
+    },
+    "tasks": [
+      {
+        "id": "fullSequence",
+        "label": "Work the stations through to the UV-A booth",
+        "hint": "Order matters: clean, penetrant, dwell, remove, developer — then darken the scene and bring up the UV-A lamp."
+      },
+      {
+        "id": "findIndication",
+        "label": "Find the indication that glows only under UV-A",
+        "hint": "In the darkened booth the dye re-emits UV-A as yellow-green light — scan under the lamp and click the glow."
+      }
+    ]
+  }
+}

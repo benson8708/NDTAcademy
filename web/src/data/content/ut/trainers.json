@@ -1,0 +1,1664 @@
+{
+ "ut1-1-1": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: Your first pulse-echo measurement",
+  "intro": "Firestone's 1940 pulse-echo idea, live: slide a 0\u00b0 probe across a stepped steel block and watch the backwall echo arrive later wherever the metal is thicker. Measure three steps and pick out the thinnest \u2014 the same single-sided thickness survey run on pipes and vessels every day.",
+  "params": {
+   "stepsMm": [
+    10,
+    20,
+    40,
+    80
+   ],
+   "velocityMps": 5920,
+   "material": "Carbon steel"
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Record thickness readings on three different steps",
+    "hint": "Park the probe fully on a step; the backwall echo's round-trip time \u00d7 velocity \u00f7 2 is the thickness."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Identify the thinnest step of the block",
+    "hint": "Thinner metal means a shorter round trip \u2014 its backwall echo arrives earliest on the A-scan."
+   }
+  ]
+ },
+ "ut1-1-2": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: Make wavelength obey \u03bb = v \u00f7 f",
+  "intro": "Put the master equation to work: sweep the probe frequency and swap between steel, aluminium, and water while the wavefront spacing tracks \u03bb = v \u00f7 f live. Confirm the lesson's shortcut \u2014 \u03bb in mm equals velocity in mm/\u00b5s divided by frequency in MHz.",
+  "params": {
+   "materials": [
+    "steel",
+    "aluminum",
+    "water"
+   ],
+   "startMaterial": "steel",
+   "frequencyMHz": 2
+  },
+  "tasks": [
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Get the wavelength below 1 mm in steel",
+    "hint": "In steel \u03bb = 5.92 \u00f7 f (mm, with f in MHz) \u2014 push the frequency past 5.92 MHz."
+   },
+   {
+    "id": "compareMaterials",
+    "label": "Send the pulse through steel, aluminium, and water",
+    "hint": "Frequency belongs to the probe and stays put; velocity belongs to the material, so \u03bb jumps at each swap."
+   }
+  ]
+ },
+ "ut1-2-1": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: ride a pulse through three materials",
+  "intro": "Fire a probe pulse and watch the crest packet \u2014 alternating zones of particle squeeze and stretch \u2014 travel the slab. Switch materials to prove velocity belongs to the medium, not the probe.",
+  "params": {
+   "frequencyMHz": 1,
+   "startMaterial": "steel"
+  },
+  "tasks": [
+   {
+    "id": "compareMaterials",
+    "label": "Send the pulse through steel, aluminium, and water",
+    "hint": "Use the material buttons and watch the crest speed change \u2014 the probe never changed, the medium did."
+   },
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Pack the crests under 1 mm apart in steel",
+    "hint": "Raise the frequency \u2014 each crest is a compression zone, and they sit exactly \u03bb = v/f apart."
+   }
+  ]
+ },
+ "ut1-2-2": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: drive \u03bb = v \u00f7 f with the frequency slider",
+  "intro": "Work the slider lab from this lesson: tune frequency and swap materials while the \u03bb readout tracks v \u00f7 f. Every move you make is the field trade between sensitivity and penetration.",
+  "params": {
+   "frequencyMHz": 2,
+   "startMaterial": "steel",
+   "probeDiameterMm": 10
+  },
+  "tasks": [
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Shrink \u03bb below 1 mm in steel for small-flaw sensitivity",
+    "hint": "Field shortcut: \u03bb(mm) \u2248 5.92 \u00f7 f(MHz) in steel, so you need roughly 6 MHz or more."
+   },
+   {
+    "id": "compareMaterials",
+    "label": "Hold f fixed and compare \u03bb in steel, aluminium, water",
+    "hint": "Frequency belongs to the probe and never changes \u2014 only v changes, so \u03bb stretches or shrinks with it."
+   }
+  ]
+ },
+ "ut1-2-3": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: harvest echoes from the steel\u2013air mirror",
+  "intro": "Slide a 0\u00b0 probe across a stepped block: every back-wall echo exists because the steel\u2013air interface reflects essentially 100% of the sound. Read each echo's round-trip time as metal path via d = v \u00d7 t \u00f7 2.",
+  "params": {
+   "stepsMm": [
+    10,
+    20,
+    40,
+    80
+   ],
+   "velocityMps": 5920,
+   "material": "Carbon steel"
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Record the back-wall echo on three different steps",
+    "hint": "These steps double each time \u2014 watch the echo's round-trip time double with the thickness."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Identify the step with the earliest echo",
+    "hint": "Least metal means the shortest round trip: pick the step whose echo sits closest to the initial pulse."
+   }
+  ]
+ },
+ "ut1-2-4": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: hunt holes with a 60\u00b0 refracted shear beam",
+  "intro": "Slide the wedge along the welded plate \u2014 its incident angle sits between the two critical angles, so Snell's law puts a single 60\u00b0 shear wave into the steel. Mark each hidden side-drilled hole where its echo peaks.",
+  "params": {
+   "flawCount": 3,
+   "depthsMm": [
+    8,
+    14,
+    19
+   ],
+   "plateThicknessMm": 25,
+   "refractedAngleDeg": 60
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Mark the first hole at its echo peak",
+    "hint": "Watch the A-scan while you slide: press Mark within \u00b14 mm of the position where the echo stands tallest."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Mark the second hole \u2014 deeper means a longer sound path",
+    "hint": "A deeper hole returns its echo later along the first-leg path; keep sliding until a fresh peak rises."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Mark the third hole to clear the whole weld",
+    "hint": "A hole only answers when the refracted beam centreline actually crosses it \u2014 sweep the full scan line."
+   }
+  ]
+ },
+ "ut1-3-1": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: Read the live A-scan on a stepped block",
+  "intro": "Drag the 0-degree probe across the stepped block and watch the back-wall echo slide along the time base \u2014 horizontal position is time of flight, vertical height is returned energy. Log readings on three steps, then use the sweep alone to call the thinnest one.",
+  "params": {
+   "stepsMm": [
+    10,
+    25,
+    50,
+    90
+   ],
+   "velocityMps": 5920,
+   "material": "Carbon steel",
+   "stepWidthMm": 36
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Record A-scan readings on three different steps",
+    "hint": "Center the probe on a step; the back-wall echo lands farther right on the sweep as the steel under it gets thicker."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Pick the step whose back-wall echo arrives earliest",
+    "hint": "Least metal means shortest time of flight \u2014 choose the step whose echo sits closest to the initial pulse."
+   }
+  ]
+ },
+ "ut1-3-2": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: Peak the SDH echoes that set sensitivity",
+  "intro": "A reference reflector only means something at its echo peak. Slide the angle-beam wedge over two side-drilled holes \u2014 the same known reflectors a procedure names for setting the reference level \u2014 and mark each one exactly where its A-scan echo maximizes.",
+  "params": {
+   "flawCount": 2,
+   "depthsMm": [
+    12.5,
+    19
+   ],
+   "plateThicknessMm": 25,
+   "refractedAngleDeg": 60
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Maximize and mark the first side-drilled hole",
+    "hint": "Inch the wedge until the echo stops growing, then mark within 4 mm of peak \u2014 the same move as maximizing a cal reflector."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Maximize and mark the second side-drilled hole",
+    "hint": "Keep sliding past the first hole; a fresh echo rises as the beam centreline approaches the next SDH."
+   }
+  ]
+ },
+ "ut1-3-3": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: Gauge a thin step wedge with T = vt/2",
+  "intro": "A digital gauge just times the round trip and computes thickness as velocity times time over two. Work the probe across a thin-wall step wedge, record three readings, and flag the minimum wall \u2014 the number a corrosion survey exists to find.",
+  "params": {
+   "stepsMm": [
+    5,
+    7.5,
+    12.5,
+    20
+   ],
+   "velocityMps": 5920,
+   "material": "Carbon steel"
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Take gauge readings on three different steps",
+    "hint": "Hold the probe flat on each step \u2014 the readout follows T = vt/2 from the timed back-wall echo."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Flag the thinnest step as the critical wall",
+    "hint": "Sweep all four steps and compare numbers \u2014 the minimum wall is what the survey reports."
+   }
+  ]
+ },
+ "ut1-4-1": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: dial the element, frequency sets wavelength",
+  "intro": "A transducer's frequency is built in at manufacture: the element is ground to half a wavelength thick. Raise the drive frequency (a thinner crystal) and watch the wavelength it launches shrink, then switch media to see that f stays the element's property while lambda belongs to the material.",
+  "params": {
+   "frequencyMHz": 1,
+   "startMaterial": "steel"
+  },
+  "tasks": [
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Pick a thinner element: push lambda in steel below 1 mm",
+    "hint": "Lambda = v/f. In steel that is 5.92 mm at 1 MHz, so you need roughly 6 MHz or more."
+   },
+   {
+    "id": "compareMaterials",
+    "label": "Fire the same element into all three materials",
+    "hint": "Same frequency, different velocity: lambda stretches in fast steel and shrinks in slow water."
+   }
+  ]
+ },
+ "ut1-4-2": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: peak the echo, put the flaw on the beam axis",
+  "intro": "The spreading beam returns an echo over a whole range of probe positions, but amplitude is highest only when the hole sits on the beam axis. Practice this lesson's field rule, maximize before you evaluate, by sliding the wedge and marking each hidden hole exactly at its echo peak.",
+  "params": {
+   "flawCount": 3,
+   "refractedAngleDeg": 60,
+   "scanLengthMm": 220
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Sweep past hole 1 and mark dead on the echo peak",
+    "hint": "The echo rises as the beam edge clips the hole; mark only when amplitude tops out."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Bracket the peak of echo 2, then mark it",
+    "hint": "Slide past the maximum and come back; half amplitude means the hole is at the beam's 6 dB edge."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Put hole 3 on the beam axis and log it",
+    "hint": "An echo that wanders as you move is beam geometry talking; mark where it peaks, not where it first appears."
+   }
+  ]
+ },
+ "ut1-4-3": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: the straight-beam workhorse on thin steps",
+  "intro": "From the probe family tree, the 0-degree straight-beam contact probe doing its signature job. These steps are thin and out of order, so the short, well-damped pulse and the resolution you just read about are what separate one backwall echo from the next.",
+  "params": {
+   "stepsMm": [
+    14,
+    6,
+    22,
+    9
+   ]
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Gauge three different steps with the 0-degree probe",
+    "hint": "Park the probe flat on a step and read the backwall echo; its time of flight tracks the metal under your wear face."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Pick out the thinnest step from its echo",
+    "hint": "Thinner metal means a shorter round trip: the backwall echo that sits closest to the initial pulse."
+   }
+  ]
+ },
+ "ut1-4-4": {
+  "engine": "pt",
+  "mode": "capillarity",
+  "title": "Hands-on: thin vs thick, viscosity and wetting at work",
+  "intro": "Borrowed from the penetrant bench: capillary wetting is the same physics that pulls couplant into every valley of a rough surface and floats the air out. Run a water-thin liquid, then a paste-thick one, and feel the trade-off behind the couplant menu: thin flows in fast but runs off, thick clings but crawls.",
+  "params": {
+   "fillSecBase": 4,
+   "viscMinCst": 1,
+   "viscMaxCst": 30
+  },
+  "tasks": [
+   {
+    "id": "fillCrack",
+    "label": "Run the thin grade and let it wick in completely",
+    "hint": "Apply at the surface and wait: capillarity does the pulling, no pressure needed, just like couplant wetting into roughness valleys."
+   },
+   {
+    "id": "compareViscosity",
+    "label": "Re-run at maximum viscosity and compare fill times",
+    "hint": "Slide viscosity to the paste end; the slow crawl you see is exactly what keeps heavy gel clinging to vertical and overhead work."
+   }
+  ]
+ },
+ "ut1-5-1": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: contact thickness survey on a step block",
+  "intro": "Slide the 0\u00b0 contact probe along the stepped block exactly as you would on a corrosion survey \u2014 only a thin couplant film separates the probe face from the steel. Flat, steady contact (not pressure) is what keeps the backwall echo repeatable while you gauge each step.",
+  "params": {
+   "stepsMm": [
+    25,
+    12,
+    6,
+    18
+   ],
+   "velocityMps": 5920,
+   "material": "Carbon steel",
+   "stepWidthMm": 36
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Record thickness readings on three different steps",
+    "hint": "Keep the probe flat and still on each step \u2014 let the backwall echo settle before you record, just as a steady couplant film demands."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Identify the thinnest step on the block",
+    "hint": "The thinnest step has the shortest round trip, so its backwall echo arrives earliest on the A-scan."
+   }
+  ]
+ },
+ "ut1-5-2": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: the 4:1 water-to-steel velocity rule",
+  "intro": "Fire the same pulse through water and through steel and watch how much slower the couplant is \u2014 sound crosses water at roughly one quarter of its speed in steel. That 4:1 ratio is exactly why your immersion standoff must be at least thickness \u00f7 4 (plus margin) before the water multiple clears the back-wall echo.",
+  "params": {
+   "materials": [
+    "steel",
+    "water"
+   ],
+   "startMaterial": "water",
+   "frequencyMHz": 5,
+   "probeDiameterMm": 10
+  },
+  "tasks": [
+   {
+    "id": "compareMaterials",
+    "label": "Send the pulse through water, then through steel",
+    "hint": "Water carries sound at ~1,480 m/s vs steel's ~5,920 \u2014 that ~4\u00d7 gap is the whole basis of the water-path \u2265 thickness \u00f7 4 rule."
+   },
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Raise frequency until \u03bb in steel is under 1 mm",
+    "hint": "\u03bb = v/f, so steel needs roughly 6 MHz or more \u2014 immersion's constant water coupling is what makes such high frequencies practical."
+   }
+  ]
+ },
+ "ut1-5-3": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: why air coupling runs below 1 MHz",
+  "intro": "Drop the frequency to the slider's 1 MHz floor \u2014 already the ceiling of practical air-coupled work \u2014 and watch the wavelength stretch in water, aluminum, and steel. Velocity is the v in Z = \u03c1v: air's ~330 m/s makes its impedance so low that R \u2248 1 at each interface, forcing air-coupled probes to low frequencies and coarser resolution.",
+  "params": {
+   "materials": [
+    "steel",
+    "aluminum",
+    "water"
+   ],
+   "startMaterial": "water",
+   "frequencyMHz": 1,
+   "probeDiameterMm": 25
+  },
+  "tasks": [
+   {
+    "id": "compareMaterials",
+    "label": "Run the pulse through water, aluminum, and steel",
+    "hint": "Compare velocities as you switch: water's 1,480 m/s already drags Z down, and air at ~330 m/s sits far lower still \u2014 hence the near-total reflection."
+   },
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Push \u03bb in steel below 1 mm \u2014 resolution air gives up",
+    "hint": "You need about 6 MHz or more \u2014 far above the sub-1 MHz band that can cross an air gap, which is exactly the detail air coupling trades away."
+   }
+  ]
+ },
+ "ut1-6-1": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: locate 3 hidden holes with a 60\u00b0 wedge",
+  "intro": "Slide the 60\u00b0 wedge along the scan line and Mark each side-drilled hole where its echo peaks \u2014 the same sound-path geometry you just plotted with skip and surface distance. The peak lands exactly where the refracted shear-beam centreline intersects the reflector.",
+  "params": {
+   "flawCount": 3,
+   "depthsMm": [
+    8,
+    19,
+    13
+   ],
+   "plateThicknessMm": 25,
+   "refractedAngleDeg": 60,
+   "scanLengthMm": 220
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Mark the first SDH at its echo peak",
+    "hint": "Slide until the echo is tallest, then press Mark within \u00b14 mm \u2014 peak amplitude means the beam centreline is on the hole."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Sweep on and Mark the second hole's peak",
+    "hint": "Watch the A-scan: the echo rises, peaks, and falls as the first-leg path sweeps through the hole \u2014 Mark at the top."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Pin the third hole from its sound path",
+    "hint": "A deeper hole peaks with the wedge farther back \u2014 its surface distance is depth \u00d7 tan 60\u00b0, just like your plot."
+   }
+  ]
+ },
+ "ut1-6-2": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: size the wavelength that rides the surface",
+  "intro": "Rayleigh waves hug only the top wavelength of the part and Lamb modes need a plate just a few wavelengths thick, so \u03bb = v/f decides where these waves live. Tune frequency and switch materials to see how big that ruler really is.",
+  "params": {
+   "startMaterial": "steel",
+   "frequencyMHz": 2
+  },
+  "tasks": [
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Push \u03bb below 1 mm \u2014 a surface wave's whole world",
+    "hint": "Raise the frequency: \u03bb = v/f, so more MHz means a shorter wavelength \u2014 and a Rayleigh wave samples only about 1\u03bb deep."
+   },
+   {
+    "id": "compareMaterials",
+    "label": "Run the pulse in steel, aluminium, and water",
+    "hint": "Crest spacing tracks velocity at fixed frequency \u2014 and note water's short \u03bb: fluids carry no shear or surface waves at all."
+   }
+  ]
+ },
+ "ut1-6-3": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: gauge thin steps where duals earn their keep",
+  "intro": "Gauge a thin-stepped block and watch the back-wall echo crowd the initial pulse as the section shrinks. That squeeze is the ring-down dead zone that blinds a single element \u2014 exactly why dual-element TR probes own thin-section and near-surface work.",
+  "params": {
+   "stepsMm": [
+    5,
+    8,
+    12,
+    25
+   ]
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Gauge three steps of the thin-wall block",
+    "hint": "Place the 0\u00b0 probe squarely on a step and log the reading \u2014 on the 5 mm step the echo sits hard against the initial pulse."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Flag the thinnest step \u2014 dual-probe territory",
+    "hint": "Thinnest means shortest time of flight: the back-wall echo closest to the initial pulse, where a dual's crossed beams focus."
+   }
+  ]
+ },
+ "ut1-6-4": {
+  "engine": "et",
+  "mode": "liftoff-null",
+  "title": "Hands-on: feel the air gap a flat shoe leaves on pipe",
+  "intro": "An eddy-current probe makes probe-to-part gap visible instantly: null it on full contact, then lift off and watch the signal run to AIR. That is the same coupling collapse a flat wedge suffers riding a curved surface on one contact line \u2014 the reason codes say contour once the gap tops about 0.5 mm.",
+  "params": {
+   "nullToleranceMm": 0.1,
+   "liftoffTargetMm": 2
+  },
+  "tasks": [
+   {
+    "id": "nullProbe",
+    "label": "Null the probe on full, mated contact",
+    "hint": "Lower until height reads essentially zero, then press Null \u2014 like a contoured shoe, balance only counts on true contact."
+   },
+   {
+    "id": "traceLiftoff",
+    "label": "Lift off 2 mm and watch the trace run to AIR",
+    "hint": "Raise the probe slowly: every fraction of a millimetre of air gap drags the signal away \u2014 a rocking wedge does this on pipe."
+   }
+  ]
+ },
+ "ut1-7-1": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: raster a 0\u00b0 beam like an immersion gantry",
+  "intro": "An immersion gantry builds its picture from one primitive: a 0\u00b0 beam held square to the entry surface while the backwall echo is logged position by position. Drive the probe across the stepped aluminum plate the way the bridge manipulator would, record three readings, and flag the thinnest step.",
+  "params": {
+   "stepsMm": [
+    10,
+    20,
+    35,
+    50
+   ],
+   "velocityMps": 6320,
+   "material": "Aluminum plate"
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Log readings on three different steps",
+    "hint": "Hold the probe steady mid-step until the backwall echo stops moving, then record."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Flag the thinnest step",
+    "hint": "Thinner metal returns its backwall echo sooner \u2014 pick the step with the earliest echo."
+   }
+  ]
+ },
+ "ut1-7-2": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: see the 4:1 water-steel velocity ratio",
+  "intro": "Minimum water path exists because sound crawls through water at roughly a quarter of its speed in steel \u2014 watch the same pulse in water, aluminum, and steel to see that 4:1 ratio yourself. Then raise the frequency until \u03bb in steel drops below 1 mm, tightening the wavelength and near-field focus the way a focused immersion probe sharpens resolution.",
+  "params": {
+   "materials": [
+    "steel",
+    "aluminum",
+    "water"
+   ],
+   "startMaterial": "water",
+   "frequencyMHz": 2,
+   "probeDiameterMm": 19
+  },
+  "tasks": [
+   {
+    "id": "compareMaterials",
+    "label": "Watch the pulse travel in all three materials",
+    "hint": "Water runs ~1,480 m/s vs ~5,920 in steel \u2014 that 4:1 crawl is why a quarter-thickness water path suffices."
+   },
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Shrink the wavelength in steel below 1 mm",
+    "hint": "\u03bb = v/f. Steel runs 5,920 m/s, so you need roughly 6 MHz or more."
+   }
+  ]
+ },
+ "ut1-7-3": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: locate hidden flaws with pulse-echo",
+  "intro": "Through-transmission can only say the beam was blocked \u2014 pulse-echo tells you where. Using the same incident-angle control that generates plate waves, steer a 70\u00b0 refracted beam through the plate and pin down all three hidden holes by their echo peaks: the locating power one-sided immersion scans rely on.",
+  "params": {
+   "flawCount": 3,
+   "depthsMm": [
+    7,
+    12,
+    9
+   ],
+   "plateThicknessMm": 20,
+   "refractedAngleDeg": 70
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Mark the first hole at its echo peak",
+    "hint": "Slide until the echo peaks, then press Mark within \u00b14 mm of the peak."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Sweep on and mark the second hole",
+    "hint": "Each hole owns its own stretch of the scan line \u2014 watch for a fresh echo rising as you sweep."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Pin the third hole to finish the scan",
+    "hint": "A deeper hole echoes later on the time base \u2014 don't confuse late with weak."
+   }
+  ]
+ },
+ "ut1-8-1": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: dial in the probe's near field",
+  "intro": "The transducer is calibrated equipment: frequency and element diameter fix wavelength and the near field N = D^2 f / 4v. Tune the lesson's 10 mm, 5 MHz probe and watch the lambda and near-field readouts to see why amplitude references belong beyond N.",
+  "params": {
+   "materials": [
+    "steel",
+    "aluminum",
+    "water"
+   ],
+   "startMaterial": "steel",
+   "frequencyMHz": 5,
+   "probeDiameterMm": 10
+  },
+  "tasks": [
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Push lambda below 1 mm in steel; watch N grow",
+    "hint": "Raise frequency: lambda = v/f shrinks while N = D^2 f / 4v stretches the near field past the lesson's 21 mm example."
+   },
+   {
+    "id": "compareMaterials",
+    "label": "Fire the same pulse in steel, aluminum, water",
+    "hint": "Hold frequency fixed and switch materials; velocity sets the crest spacing, so lambda and N shift with every material."
+   }
+  ]
+ },
+ "ut1-8-2": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: prove the time axis on known steps",
+  "intro": "Standardization puts the screen's claims on trial against known references. Gauge thin and thick steps of a known block and confirm the sweep reads true: a constant offset would be a zero error, an error growing with distance a velocity error.",
+  "params": {
+   "stepsMm": [
+    10,
+    25,
+    50,
+    100
+   ],
+   "velocityMps": 5920,
+   "material": "Carbon steel"
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Record readings on three known steps",
+    "hint": "Take one thin and one thick step among your three: zero error shifts every reading equally, velocity error scales with distance."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Call the thinnest step from the sweep alone",
+    "hint": "The earliest backwall echo (shortest time of flight) marks the thinnest section, just as a calibrated sweep promises."
+   }
+  ]
+ },
+ "ut1-8-3": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: peak the SDH ladder, DAC-style",
+  "intro": "Angle-beam standardization lives on side-drilled holes. Slide the 60-degree wedge along the reference plate and peak the echo from each SDH at increasing depth (about 1/4T, 1/2T, 3/4T) \u2014 the same peak-and-mark discipline used to set sensitivity and build a DAC.",
+  "params": {
+   "flawCount": 3,
+   "depthsMm": [
+    6,
+    13,
+    19
+   ],
+   "plateThicknessMm": 25,
+   "refractedAngleDeg": 60,
+   "scanLengthMm": 200
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Peak the first SDH echo and mark it",
+    "hint": "Slide until the echo crests, then Mark within 4 mm of the peak \u2014 a DAC point is always taken at maximum response."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Capture the second SDH at maximum response",
+    "hint": "Watch the echo rise and fall as the beam centreline sweeps the hole; mark the crest, not the first flicker."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Mark the third SDH to finish the ladder",
+    "hint": "Deeper holes answer smaller \u2014 beam spread and attenuation at work, exactly why a DAC curve slopes downward."
+   }
+  ]
+ },
+ "ut1-8-4": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: same probe, different material",
+  "intro": "Your reference gain was earned on one material, so carrying the probe elsewhere changes the transfer. Fire the same pulse through water (the couplant's bridging job made visible), steel, and aluminum to see why block-to-part differences demand transfer correction.",
+  "params": {
+   "materials": [
+    "steel",
+    "aluminum",
+    "water"
+   ],
+   "startMaterial": "water",
+   "frequencyMHz": 2,
+   "probeDiameterMm": 10
+  },
+  "tasks": [
+   {
+    "id": "compareMaterials",
+    "label": "Run the pulse through all three materials",
+    "hint": "Keep the settings fixed and switch materials \u2014 velocity and transmission change while your gain promise stays behind."
+   },
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Drop lambda below 1 mm in steel",
+    "hint": "Raise frequency in steel; shorter wavelengths scatter more in coarse grain, one reason a part never echoes like its block."
+   }
+  ]
+ },
+ "ut1-9-1": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: Straight-beam scan of the plate standard",
+  "intro": "Procedure UT-SB-12 assigns a 0\u00b0 straight-beam scan of a carbon-steel step standard spanning the procedure's 1\u20132.5 in. thickness scope. Gauge three steps to confirm a clean backwall echo across the whole scope, then call out the thinnest section.",
+  "params": {
+   "stepsMm": [
+    25,
+    38,
+    51,
+    64
+   ],
+   "velocityMps": 5920,
+   "material": "Carbon steel plate"
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Gauge three steps of the UT-SB-12 standard",
+    "hint": "Drag the 0\u00b0 probe onto a step; the backwall echo's time of flight reads its thickness."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Identify the thinnest step on the block",
+    "hint": "Earliest backwall echo = least metal travel = the thinnest step."
+   }
+  ]
+ },
+ "ut1-9-2": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: Log readings, flag the reportable minimum",
+  "intro": "A defensible straight-beam report starts with disciplined recording. These steps differ by only a few millimetres and sit in scrambled order \u2014 log each reading as you take it, then evaluate your own data and flag the minimum the report must carry.",
+  "params": {
+   "stepsMm": [
+    32,
+    24,
+    35,
+    28
+   ],
+   "velocityMps": 5920,
+   "material": "Carbon steel plate",
+   "stepWidthMm": 28
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Log three thickness readings as you go",
+    "hint": "Record each reading the moment you take it \u2014 end-of-shift memory writes fiction, not data."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Flag the minimum reading for the report",
+    "hint": "Steps are scrambled \u2014 trust your logged numbers, not the block's silhouette."
+   }
+  ]
+ },
+ "ut1-9-3": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: Mark the T/4, T/2, 3T/4 DAC holes",
+  "intro": "Procedure UT-AB-7 puts a 60\u00b0 shear wave on this 20 mm carbon-steel joint. Slide the wedge to peak and mark the side-drilled holes at T/4, T/2 and 3T/4 \u2014 the same reference reflectors the procedure's DAC is standardized on.",
+  "params": {
+   "flawCount": 3,
+   "depthsMm": [
+    5,
+    10,
+    15
+   ],
+   "plateThicknessMm": 20,
+   "refractedAngleDeg": 60,
+   "shearVelocityMps": 3230
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Peak and mark the T/4 hole (5 mm deep)",
+    "hint": "Slide the wedge slowly and press Mark within \u00b14 mm of the echo's peak."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Peak and mark the T/2 hole (10 mm deep)",
+    "hint": "Deeper hole, longer first-leg sound path \u2014 its echo peaks later in the sweep."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Peak and mark the 3T/4 hole (15 mm deep)",
+    "hint": "The deepest hole needs the most stand-off: surface distance grows as depth \u00d7 tan 60\u00b0."
+   }
+  ]
+ },
+ "ut1-9-4": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: Plot three reflectors from sound path",
+  "intro": "Three reflectors hide at different depths under a 45\u00b0 wedge in 25 mm plate. Peak and mark each echo, treating every mark as a plotted point \u2014 depth = s \u00d7 cos 45\u00b0, surface distance = s \u00d7 sin 45\u00b0 on your report sketch.",
+  "params": {
+   "flawCount": 3,
+   "depthsMm": [
+    8,
+    12.5,
+    19
+   ],
+   "plateThicknessMm": 25,
+   "refractedAngleDeg": 45,
+   "scanLengthMm": 220,
+   "shearVelocityMps": 3230
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Mark the 8 mm reflector at its echo peak",
+    "hint": "Maximize the echo before you mark \u2014 off-peak position data plots fiction."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Mark the 12.5 mm reflector and plot depth",
+    "hint": "All three sit in the first leg: sound path \u00d7 cos 45\u00b0 gives depth directly."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Mark the deep 19 mm reflector at its peak",
+    "hint": "At 45\u00b0 the surface distance equals the depth \u2014 both are s \u00d7 0.707."
+   }
+  ]
+ },
+ "ut2-1-1": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: dial in wavelength with \u03bb = v/f",
+  "intro": "Put \u03bb = v/f under your fingers: sweep the probe frequency and jump between steel, aluminum, and water while the crest spacing and near-field readout respond live. This is the same velocity-and-wavelength reasoning this review expects you to run on every Level II problem.",
+  "params": {
+   "materials": [
+    "steel",
+    "aluminum",
+    "water"
+   ],
+   "startMaterial": "steel",
+   "frequencyMHz": 2,
+   "probeDiameterMm": 10
+  },
+  "tasks": [
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Push \u03bb in steel below 1 mm",
+    "hint": "\u03bb = v/f: with steel's 5920 m/s you need roughly 6 MHz or more."
+   },
+   {
+    "id": "compareMaterials",
+    "label": "Fire the pulse in steel, aluminum, and water",
+    "hint": "Switch materials and watch crest spacing track velocity \u2014 slow water squeezes \u03bb tightest."
+   }
+  ]
+ },
+ "ut2-1-2": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: read the A-scan on a stepped block",
+  "intro": "Each probe position paints one A-scan \u2014 amplitude against time. Drag the 0\u00b0 probe across the stepped block, read the backwall echo's time of flight as thickness, and notice how sweeping positions along a line is exactly how a B-scan gets stacked.",
+  "params": {
+   "stepsMm": [
+    10,
+    20,
+    40,
+    80
+   ],
+   "velocityMps": 5920,
+   "material": "Carbon steel"
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Record thickness readings on three different steps",
+    "hint": "Doubling the thickness doubles the echo's time of flight \u2014 watch the backwall echo slide right."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Call the thinnest step from the A-scan alone",
+    "hint": "Earliest backwall echo = shortest sound path."
+   }
+  ]
+ },
+ "ut2-1-3": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: angle-beam technique on a one-sided weld",
+  "intro": "You have one accessible surface over a welded plate \u2014 a textbook case for the contact angle-beam technique. Slide the 70\u00b0 wedge along the scan line and mark every hidden side-drilled hole, keeping coverage honest from first flaw to last.",
+  "params": {
+   "refractedAngleDeg": 70,
+   "plateThicknessMm": 20,
+   "flawCount": 3,
+   "depthsMm": [
+    8,
+    14,
+    11
+   ],
+   "scanLengthMm": 220
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Mark the first SDH echo as you scan the lane",
+    "hint": "Slide steadily and press Mark within \u00b14 mm of where the echo peaks."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Keep scanning and mark the second hidden hole",
+    "hint": "One hit is not coverage \u2014 the technique demands you sweep the full lane."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Sweep to the end and mark the third flaw",
+    "hint": "The shear beam only answers when its centreline crosses a hole \u2014 mark at the peak, not the first rise."
+   }
+  ]
+ },
+ "ut2-1-4": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: prove the distance scale on known steps",
+  "intro": "Standardization starts with the distance scale: prove it on references of known thickness before trusting anything the screen tells you. Read the 25, 50, 75, and 100 mm steps and confirm each backwall echo lands exactly where the scale says it should.",
+  "params": {
+   "stepsMm": [
+    25,
+    50,
+    75,
+    100
+   ],
+   "velocityMps": 5920,
+   "material": "Carbon steel"
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Verify readings on three known reference steps",
+    "hint": "On a standardized scale the 25/50/75/100 mm references must read true and evenly spaced."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Identify the 25 mm reference step",
+    "hint": "The thinnest reference returns the earliest backwall echo."
+   }
+  ]
+ },
+ "ut2-2-1": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: pick a wavelength the grain will tolerate",
+  "intro": "As-cast ingot structure scatters sound roughly with the fourth power of frequency, so testers buy quiet screens by lengthening the wavelength. Sweep the probe frequency, watch \u03bb = v/f respond in three materials, and feel why coarse-grained ingot work lives at the low end.",
+  "params": {
+   "startMaterial": "steel",
+   "frequencyMHz": 1,
+   "probeDiameterMm": 10
+  },
+  "tasks": [
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Push \u03bb in steel below 1 mm \u2014 grain-noise territory",
+    "hint": "\u03bb = v/f: steel at 5,920 m/s needs roughly 6 MHz or more."
+   },
+   {
+    "id": "compareMaterials",
+    "label": "Send the pulse through steel, aluminium, and water",
+    "hint": "Hold frequency steady \u2014 crest spacing tracks each material's velocity."
+   }
+  ]
+ },
+ "ut2-2-2": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: gauge the plate \u2014 spot the half-path echo",
+  "intro": "A mid-wall lamination returns an echo at exactly half the backwall path \u2014 the same reading a half-thickness step gives. Gauge three steps of this rolled-plate block, then flag the thinnest, training your eye for the early echo that betrays a lamination.",
+  "params": {
+   "stepsMm": [
+    12.5,
+    25,
+    50,
+    100
+   ],
+   "material": "Rolled carbon-steel plate"
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Record straight-beam readings on three different steps",
+    "hint": "Park the probe mid-step; the backwall echo's time of flight sets the depth."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Pick the thinnest step \u2014 the earliest backwall echo",
+    "hint": "12.5 mm reads exactly like 25 mm plate split by a mid-wall lamination."
+   }
+  ]
+ },
+ "ut2-2-3": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: hunt the centerline \u2014 mark both axial flaws",
+  "intro": "Bar discontinuities are predictable: pipe remnants and stringers ride the axis at mid-section. Both hidden reflectors in this 30 mm section sit at centerline depth \u2014 slide the wedge, watch the echo rise, and press Mark at each peak.",
+  "params": {
+   "flawCount": 2,
+   "depthsMm": [
+    15,
+    15
+   ],
+   "plateThicknessMm": 30,
+   "refractedAngleDeg": 60
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Mark the first centerline reflector at its echo peak",
+    "hint": "Slide slowly; press Mark within \u00b14 mm of where the echo tops out."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Find the second stringer riding the same mid-depth",
+    "hint": "Same 15 mm depth, different spot along the scan \u2014 expect a twin echo farther on."
+   }
+  ]
+ },
+ "ut2-2-4": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: 45\u00b0 shear scan \u2014 log OD, mid-wall, and ID flaws",
+  "intro": "Tubular scanning launches a roughly 45\u00b0 shear wave and judges everything against OD and ID notches. Sweep the wedge along this seam-scan analog and Mark three reflectors: a near-OD lap, a mid-wall hook crack, and a near-ID notch stand-in.",
+  "params": {
+   "flawCount": 3,
+   "depthsMm": [
+    6,
+    10,
+    14
+   ],
+   "plateThicknessMm": 20,
+   "refractedAngleDeg": 45,
+   "scanLengthMm": 240
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Mark the near-OD reflector \u2014 the lap analog",
+    "hint": "Shallowest of the three: its echo arrives on the shortest beam path."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Catch the mid-wall hook-crack stand-in at its peak",
+    "hint": "Mid-wall depth means a mid-length path \u2014 Mark within \u00b14 mm of the peak."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Log the near-ID reflector \u2014 your ID-notch analog",
+    "hint": "Deepest reflector, longest path \u2014 like the half-V ID notch hit."
+   }
+  ]
+ },
+ "ut2-3-1": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: catch the flaws lying along the grain",
+  "intro": "Forging flow lays stringers, flakes, and bursts parallel to the grain, so you fire a 45\u00b0 shear beam across the flow to catch them. Slide the wedge along the forged section and Mark each hidden reflector right at its echo peak.",
+  "params": {
+   "flawCount": 3,
+   "depthsMm": [
+    8,
+    15,
+    22
+   ],
+   "plateThicknessMm": 30,
+   "refractedAngleDeg": 45,
+   "scanLengthMm": 220
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Mark the near-surface stringer 8 mm down",
+    "hint": "Slide the wedge slowly and press Mark within \u00b14 mm of the echo peak."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Mark the centerline burst at 15 mm depth",
+    "hint": "Peak amplitude means the 45\u00b0 beam centreline is square on the flaw \u2014 bursts live at mid-wall."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Mark the deep flake cluster at 22 mm",
+    "hint": "Deeper reflector, longer sound path \u2014 its echo arrives later on the A-scan."
+   }
+  ]
+ },
+ "ut2-3-2": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: shrink \u03bb toward grain size \u2014 then back off",
+  "intro": "Grain scatter climbs roughly with f\u2074, which is why castings are tested slow. Raise the frequency until \u03bb in steel drops below 1 mm \u2014 coarse-grain territory where grass buries the screen \u2014 then see how aluminum behaves at the same settings.",
+  "params": {
+   "materials": [
+    "steel",
+    "aluminum"
+   ],
+   "startMaterial": "steel",
+   "frequencyMHz": 2,
+   "probeDiameterMm": 20
+  },
+  "tasks": [
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Push \u03bb below 1 mm in steel \u2014 grain-scatter range",
+    "hint": "\u03bb = v/f: at 5,920 m/s you need roughly 6 MHz or more."
+   },
+   {
+    "id": "compareMaterials",
+    "label": "Send the same pulse through steel and aluminum",
+    "hint": "Switch materials at a fixed frequency and watch \u03bb and the near field shift."
+   }
+  ]
+ },
+ "ut2-3-3": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: read echo depth at composite velocity",
+  "intro": "A delamination reflects nearly everything, so it reads like an early back wall at the separation depth. Gauge a stepped CFRP block at ~3,000 m/s \u2014 half steel's velocity \u2014 and pick out the thinnest step by its earliest echo.",
+  "params": {
+   "stepsMm": [
+    5,
+    8,
+    12,
+    18
+   ],
+   "velocityMps": 3000,
+   "material": "Carbon-fiber laminate",
+   "stepWidthMm": 30
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Record readings on three laminate steps",
+    "hint": "Center the 0\u00b0 probe on a step and log the back-wall reading before moving on."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Flag the thinnest step \u2014 the earliest echo",
+    "hint": "Thinner section, shorter time of flight: the echo sits closest to the initial pulse."
+   }
+  ]
+ },
+ "ut2-3-4": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: velocity sets the rules \u2014 steel to water",
+  "intro": "Rubber carries sound at water speed \u2014 about a quarter of steel \u2014 and that one number resets the wavelength, the time base, and every readout. Fire the same pulse through water, aluminum, and steel and watch the picture change.",
+  "params": {
+   "materials": [
+    "steel",
+    "aluminum",
+    "water"
+   ],
+   "startMaterial": "water",
+   "frequencyMHz": 1
+  },
+  "tasks": [
+   {
+    "id": "compareMaterials",
+    "label": "Run the pulse in water, aluminum, and steel",
+    "hint": "Water stands in for rubber at ~1,480 m/s \u2014 watch the wavefronts bunch up versus steel."
+   },
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "In steel, drive \u03bb under 1 mm; then recheck water",
+    "hint": "Same frequency, a quarter the velocity: \u03bb = v/f, so water's \u03bb is ~4\u00d7 shorter."
+   }
+  ]
+ },
+ "ut2-4-1": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: plan 60\u00b0 angle-beam coverage of a butt weld",
+  "intro": "Plan first-leg coverage of a 25 mm welded plate using the 60\u00b0 wedge that strikes a 30\u00b0 bevel square-on. Walk the wedge along the scan track and mark all three hidden side-drilled holes to prove your coverage plan reaches every depth.",
+  "params": {
+   "flawCount": 3,
+   "depthsMm": [
+    8,
+    14,
+    19
+   ],
+   "plateThicknessMm": 25,
+   "refractedAngleDeg": 60,
+   "scanLengthMm": 240
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Locate flaw 1 and Mark at the echo peak",
+    "hint": "Slide slowly; press Mark within \u00b14 mm of where the echo peaks."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Locate flaw 2 \u2014 note its longer sound path",
+    "hint": "Deeper holes echo later on the A-scan \u2014 depth = sound path \u00d7 cos 60\u00b0."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Locate flaw 3 to complete full coverage",
+    "hint": "Sweep the whole 240 mm track; coverage means every depth gets hit square-on."
+   }
+  ]
+ },
+ "ut2-4-2": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: orientation decides which cracks you see",
+  "intro": "Weld flaws lie in predictable orientations \u2014 centerline, toe, transverse \u2014 and a field only reveals what it crosses near-perpendicular. Rotate the energized yoke over three differently oriented cracks and make each indicate, just as your scan plan must aim the beam square at each expected flaw.",
+  "params": {
+   "crackAngles": [
+    0,
+    45,
+    90
+   ],
+   "indicationThresholdDeg": 50
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Indicate the longitudinal (0\u00b0) centerline crack",
+    "hint": "Rotate the yoke so flux crosses the crack near 90\u00b0 \u2014 parallel flux leaks nothing."
+   },
+   {
+    "id": "indicateB",
+    "label": "Indicate the 45\u00b0 toe crack",
+    "hint": "Set the yoke axis near 135\u00b0 so the pole-to-pole flux runs square across a 45\u00b0 crack."
+   },
+   {
+    "id": "indicateC",
+    "label": "Indicate the transverse (90\u00b0) crack",
+    "hint": "Flux must run along the weld axis (yoke near 0\u00b0) to cross a transverse crack."
+   }
+  ]
+ },
+ "ut2-4-3": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: maximize echoes and mark three weld flaws",
+  "intro": "Interrogate each indication the way a Level II does: slide the 45\u00b0 probe, watch the echo rise and fall, and mark only at the true peak. Three side-drilled holes at different depths drill the echo dynamics that separate real reflectors from geometry.",
+  "params": {
+   "flawCount": 3,
+   "depthsMm": [
+    6,
+    10,
+    14
+   ],
+   "plateThicknessMm": 20,
+   "refractedAngleDeg": 45
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Peak the first echo, then press Mark",
+    "hint": "Push past the peak and the echo collapses \u2014 back up to the crest before marking."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Characterize flaw 2: maximize, then mark",
+    "hint": "Watch the rise\u2013peak\u2013fall as the 45\u00b0 beam centreline sweeps across the hole."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Confirm flaw 3's peak before you call it",
+    "hint": "Check its sound path \u2014 a real mid-wall reflector, not root or cap geometry."
+   }
+  ]
+ },
+ "ut2-4-4": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: pass or fail the setup against code limits",
+  "intro": "Acceptance is the code's decision, not yours: a measured value either meets the written limit or it doesn't. Drive geometric unsharpness under its 0.5 mm spec and place the IQI exactly where the code demands \u2014 the same verify-against-the-book discipline weld UT dispositions require.",
+  "params": {
+   "specUgMm": 0.5
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Drive Ug under the 0.5 mm acceptance limit",
+    "hint": "Ug = f \u00d7 OFD / SOD \u2014 pull the source back or close the film-side gap."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Place the wire IQI where the code requires",
+    "hint": "Source-side weld surface only \u2014 film-side placement is rejected."
+   }
+  ]
+ },
+ "ut2-5-1": {
+  "engine": "pt",
+  "mode": "capillarity",
+  "title": "Hands-on: capillary flow \u2014 how adhesive fillets form",
+  "intro": "Adhesive fillets climb honeycomb cell walls by the same capillary action that pulls penetrant into this magnified crack. Fill the crack, then race a thin grade against a thick one to see how viscosity decides whether a liquid wets a tight gap \u2014 or bridges it and leaves a void.",
+  "params": {
+   "fillSecBase": 6,
+   "viscMinCst": 3,
+   "viscMaxCst": 24,
+   "crackDepthMm": 6
+  },
+  "tasks": [
+   {
+    "id": "fillCrack",
+    "label": "Apply penetrant and let capillarity fill the gap",
+    "hint": "Apply and wait \u2014 fill depth grows as the square root of time (Washburn), the same wetting that builds core fillets during cure."
+   },
+   {
+    "id": "compareViscosity",
+    "label": "Fill at low and high viscosity; compare the curves",
+    "hint": "Run one fill at each end of the viscosity slider \u2014 the depth-time chart overlays both runs, like runny paste adhesive versus stiff film."
+   }
+  ]
+ },
+ "ut2-5-2": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: read disbond depth from echo arrival",
+  "intro": "A disbond turns its interface into an air-backed reflector, and pulse-echo's advantage is depth: echo arrival time tells you which bondline failed. Treat each step of this aluminum block as a deeper failed interface in a skin-doubler stack \u2014 gauge three, then flag the shallowest as the near-side disbond.",
+  "params": {
+   "stepsMm": [
+    6,
+    12,
+    18,
+    24
+   ],
+   "stepWidthMm": 30,
+   "velocityMps": 6320,
+   "material": "Aluminum laminate"
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Gauge the reflector depth on three different steps",
+    "hint": "Seat the 0-degree probe mid-step and read the backwall echo \u2014 an earlier arrival means sound stopped at a shallower interface."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Flag the shallowest step \u2014 the near-side disbond",
+    "hint": "A near-side disbond stops sound at the first bondline, so its echo arrives earliest; a far-side break lets sound travel deeper first."
+   }
+  ]
+ },
+ "ut2-5-3": {
+  "engine": "et",
+  "mode": "liftoff-null",
+  "title": "Hands-on: standardize on a reference \u2014 null, then deviate",
+  "intro": "A bond evaluation is only valid after standardizing on a known-good reference: the tester is nulled there, and every finding is read as a deviation from that null. Practice the discipline \u2014 null the probe at contact, then lift off and watch the dot swing away exactly as it would over a disbonded, un-loaded skin.",
+  "params": {
+   "maxHeightMm": 5,
+   "nullToleranceMm": 0.15,
+   "liftoffTargetMm": 2
+  },
+  "tasks": [
+   {
+    "id": "nullProbe",
+    "label": "Lower to contact and null on the known-good surface",
+    "hint": "Get the probe within 0.15 mm of the surface before pressing Null \u2014 standardization demands real contact with the reference."
+   },
+   {
+    "id": "traceLiftoff",
+    "label": "Lift off and watch the dot swing away from the null",
+    "hint": "Raise the probe about 2 mm after a good null; a probe the structure no longer loads drifts toward AIR, like a meter over a disbond."
+   }
+  ]
+ },
+ "ut2-6-1": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: shrink the wavelength to catch small flaws",
+  "intro": "Detection starts with the wave itself: sweep the probe frequency in a transparent slab and watch wavelength stretch and shrink as lambda = v/f. Make lambda short enough to catch a 1 mm reflector in steel, then see how aluminum and water rewrite it at the same frequency.",
+  "params": {
+   "materials": [
+    "steel",
+    "aluminum",
+    "water"
+   ],
+   "startMaterial": "steel",
+   "frequencyMHz": 1,
+   "probeDiameterMm": 10
+  },
+  "tasks": [
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Raise frequency until lambda in steel drops below 1 mm",
+    "hint": "Lambda = v/f. At 5920 m/s in steel you need roughly 6 MHz or more before a 1 mm reflector becomes a strong scatterer."
+   },
+   {
+    "id": "compareMaterials",
+    "label": "Pulse steel, aluminum, and water at one frequency",
+    "hint": "Hold frequency fixed and switch materials: slower water (about 1480 m/s) packs the crests far closer together than steel."
+   }
+  ]
+ },
+ "ut2-6-2": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: resolve near-equal steps on a fine block",
+  "intro": "These steps differ by as little as 2.5 mm, so their backwall echoes arrive only microseconds apart \u2014 separating and calling them is resolution plus operator discrimination. Gauge three steps, then commit to which one is thinnest.",
+  "params": {
+   "stepsMm": [
+    5,
+    7.5,
+    10,
+    15
+   ],
+   "stepWidthMm": 26,
+   "velocityMps": 5920,
+   "material": "Carbon steel"
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Record thickness readings on three close steps",
+    "hint": "Seat the 0-degree probe fully on one step at a time; the backwall echo's time of flight is your thickness reading."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Discriminate and pick the thinnest step",
+    "hint": "Compare echo arrival times, not heights \u2014 the earliest backwall return marks the thinnest section."
+   }
+  ]
+ },
+ "ut2-6-3": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: peak each echo to size by probe motion",
+  "intro": "Echo height alone is not size \u2014 what counts is how amplitude changes as the transducer moves. Sweep the 45-degree wedge across three side-drilled holes and mark each echo exactly at its peak, the same probe-motion discipline behind 6 dB-drop sizing.",
+  "params": {
+   "flawCount": 3,
+   "plateThicknessMm": 25,
+   "depthsMm": [
+    8,
+    16,
+    12
+   ],
+   "refractedAngleDeg": 45,
+   "scanLengthMm": 200
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Walk the beam over hole 1 and mark its echo peak",
+    "hint": "Amplitude maximizes when the beam centreline hits the hole; mark within 4 mm of that peak."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Peak hole 2 as amplitude rises, crests, then falls",
+    "hint": "Overshoot on purpose once \u2014 watching the echo drop past the peak is exactly what the 6 dB-drop method exploits."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Peak and mark hole 3 to finish the sizing scan",
+    "hint": "Small probe steps near the crest separate the true peak from its shoulders."
+   }
+  ]
+ },
+ "ut2-6-4": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: locate three hidden holes with a 60-degree wedge",
+  "intro": "Turn sweep time into position: each echo's soundpath plus the 60-degree wedge geometry fixes the reflector's depth and surface distance. Search the scan line systematically and mark all three hidden holes where their echoes peak.",
+  "params": {
+   "flawCount": 3,
+   "plateThicknessMm": 30,
+   "depthsMm": [
+    10,
+    22,
+    16
+   ],
+   "refractedAngleDeg": 60,
+   "scanLengthMm": 240
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Sweep the line and mark flaw 1 at maximum echo",
+    "hint": "Move steadily until an echo appears, then jockey the wedge to peak it before pressing Mark."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Locate flaw 2 and read its depth from soundpath",
+    "hint": "At 60 degrees, depth = soundpath x cos 60 \u2014 exactly half the soundpath on the first leg."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Locate flaw 3 to complete the position map",
+    "hint": "Surface distance = soundpath x sin 60; a longer sweep time means a farther, deeper reflector on leg one."
+   }
+  ]
+ },
+ "ut2-7-1": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: verify a certified calibration standard",
+  "intro": "An echo means nothing until it is compared with a calibrated standard. Verify this serialized block's certified step thicknesses with your own probe \u2014 same block, same setup, same answer \u2014 so every reading stays traceable to the certificate.",
+  "params": {
+   "stepsMm": [
+    12.5,
+    25,
+    50,
+    75
+   ],
+   "velocityMps": 5920,
+   "material": "Carbon steel \u2014 block S/N CB-417",
+   "stepWidthMm": 32
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Verify certified thickness on three different steps",
+    "hint": "Seat the 0\u00b0 probe fully on a step and read the backwall echo \u2014 a certified 25 mm step must answer 25 mm on your screen too."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Confirm the standard: pick the thinnest certified step",
+    "hint": "Compare backwall arrival times across steps, never echo heights \u2014 the earliest return marks the thinnest section."
+   }
+  ]
+ },
+ "ut2-7-2": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: peak the T/4, T/2, 3T/4 DAC reflector set",
+  "intro": "A DAC curve is the same reference reflector peaked at increasing soundpaths. Slide the 60\u00b0 wedge and peak the side-drilled holes at T/4, T/2, and 3T/4 of this 32 mm plate \u2014 the three points every distance-amplitude correction is drawn through.",
+  "params": {
+   "flawCount": 3,
+   "plateThicknessMm": 32,
+   "depthsMm": [
+    8,
+    16,
+    24
+   ],
+   "refractedAngleDeg": 60,
+   "scanLengthMm": 240,
+   "flawXsMm": [
+    -70,
+    0,
+    70
+   ]
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Peak the T/4 reference hole \u2014 first DAC point",
+    "hint": "Slide until amplitude crests, then press Mark within \u00b14 mm \u2014 the shortest soundpath anchors the top of the curve."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Peak the T/2 hole \u2014 the curve falls with distance",
+    "hint": "Same reflector, longer soundpath: beam spread alone costs an SDH roughly 9 dB per doubling of distance."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Peak the 3T/4 hole to finish the DAC ladder",
+    "hint": "Its echo sits latest on the sweep \u2014 and every future indication is judged against the curve at its own soundpath."
+   }
+  ]
+ },
+ "ut2-7-3": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: corrosion survey \u2014 find the minimum wall",
+  "intro": "Two identical readings can earn opposite verdicts, because significance lives in the object. Service corrosion has thinned this nominal 25 mm wall unevenly: survey it and find the governing minimum \u2014 the number engineering weighs against the part's history and intended use.",
+  "params": {
+   "stepsMm": [
+    22,
+    25,
+    12.5,
+    19
+   ],
+   "velocityMps": 5920,
+   "material": "Carbon steel \u2014 in-service wall",
+   "stepWidthMm": 32
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Log remaining wall at three survey locations",
+    "hint": "Drag the 0\u00b0 probe from zone to zone \u2014 corrosion loss shows up as a backwall echo arriving earlier than nominal 25 mm."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Call the governing minimum wall for appraisal",
+    "hint": "The thinnest reading rules the verdict \u2014 fitness depends on what duty the wall must still survive, not on the screen."
+   }
+  ]
+ },
+ "ut2-7-4": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: locate every indication for disposition",
+  "intro": "No acceptance clause applies until the flaw has an address. Scan this 20 mm plate with the 60\u00b0 wedge \u2014 the lesson's worked geometry \u2014 and mark every hidden indication at its echo peak so each can be located, classified, and judged to code.",
+  "params": {
+   "flawCount": 3,
+   "plateThicknessMm": 20,
+   "depthsMm": [
+    12.5,
+    7.5,
+    10
+   ],
+   "refractedAngleDeg": 60,
+   "scanLengthMm": 220
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Peak indication 1 and mark its address for the report",
+    "hint": "Depth = SP\u00b7cos 60\u00b0 and surface distance = SP\u00b7sin 60\u00b0 \u2014 the lesson's worked triangle, now live on the sweep."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Locate indication 2 \u2014 no clause applies without it",
+    "hint": "Acceptance tables key on type AND location: jockey the wedge to the amplitude crest, then Mark within \u00b14 mm."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Complete the record: mark the last indication",
+    "hint": "A defensible report lists every recordable indication with datum, depth, and surface distance \u2014 leave none unlogged."
+   }
+  ]
+ }
+}

@@ -1,0 +1,80 @@
+{
+  "mt2-2-1": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: Predict the Flux Pattern Before the Shot",
+    "intro": "Level II means predicting the field, not just producing one. Use the right-hand rule to call which crack the head shot's circular flux and the coil shot's longitudinal flux will each reveal — then energize and test your prediction.",
+    "params": {
+      "bathMs": 800,
+      "quizLockMs": 2000
+    },
+    "tasks": [
+      {
+        "id": "revealTransverse",
+        "label": "Predict, then fire the shot that shows the transverse crack",
+        "hint": "Sketch it first: an encircling coil drives flux along the bar's axis, and that flux cuts a crack lying across the bar."
+      },
+      {
+        "id": "revealLongitudinal",
+        "label": "Choose the shot whose flux cuts the lengthwise crack",
+        "hint": "Right-hand rule on the head shot: thumb with the current, fingers wrap circular flux around the bar — zero at the centerline, strongest at the surface."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Ace the current-path vs crack-orientation check",
+        "hint": "H comes from amperes and geometry alone; an indication needs that flux crossing the flaw at roughly 45–90°."
+      }
+    ]
+  },
+  "mt2-2-2": {
+    "engine": "et",
+    "mode": "skin-depth",
+    "title": "Hands-on: Skin Effect — Surface Skin vs Deep Field",
+    "intro": "FWDC fills the cross section while AC crowds into a millimeter-deep surface skin — and frequency is the dial between those regimes. Tune the coil frequency over the cutaway slab to pin the standard depth shallow like 60 Hz AC in steel, then drive it deep toward DC-style penetration.",
+    "params": {
+      "shallowTargetMm": 1.0,
+      "deepTargetMm": 4,
+      "material": "stainless"
+    },
+    "tasks": [
+      {
+        "id": "setShallow",
+        "label": "Confine the field to a 1 mm skin — AC's regime",
+        "hint": "Raise the frequency: depth shrinks as 1/√f — the cyclic effect that buys AC its strong surface field and costs it all subsurface capability."
+      },
+      {
+        "id": "setDeep",
+        "label": "Drive the depth past 4 mm — toward DC penetration",
+        "hint": "Slide the frequency low: a slowly changing field induces weaker opposing eddy currents, so flux relaxes into the full section like FWDC."
+      }
+    ]
+  },
+  "mt2-2-4": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: Yoke Technique — Cover Every Orientation",
+    "intro": "A yoke magnetizes pole-to-pole and detects only the flaws its flux crosses at 45–90° — the field-direction-first logic behind every technique choice in this lesson. Work the plate in passes, re-aiming between them, until all three differently-oriented cracks indicate.",
+    "params": {
+      "crackAngles": [15, 75, 135],
+      "indicationThresholdDeg": 45,
+      "startAngleDeg": 15
+    },
+    "tasks": [
+      {
+        "id": "indicateB",
+        "label": "Seat the yoke, dust, and log crack B's indication",
+        "hint": "Keep both legs seated firmly and dust — crack B lies more than 45° off the starting flux line, so it leaks."
+      },
+      {
+        "id": "indicateC",
+        "label": "Confirm crack C also indicates in this first pass",
+        "hint": "One field direction catches every flaw lying 45–90° off it — C sits inside the same detection window as B."
+      },
+      {
+        "id": "indicateA",
+        "label": "Pass one missed crack A — rotate ~90° and reshoot",
+        "hint": "A crack parallel to the pole-to-pole flux never leaks; swinging the yoke about 90° is the second 'shot' that completes coverage."
+      }
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "ut2-2-1": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: pick a wavelength the grain will tolerate",
+    "intro": "As-cast ingot structure scatters sound roughly with the fourth power of frequency, so testers buy quiet screens by lengthening the wavelength. Sweep the probe frequency, watch λ = v/f respond in three materials, and feel why coarse-grained ingot work lives at the low end.",
+    "params": {
+      "startMaterial": "steel",
+      "frequencyMHz": 1,
+      "probeDiameterMm": 10
+    },
+    "tasks": [
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Push λ in steel below 1 mm — grain-noise territory",
+        "hint": "λ = v/f: steel at 5,920 m/s needs roughly 6 MHz or more."
+      },
+      {
+        "id": "compareMaterials",
+        "label": "Send the pulse through steel, aluminium, and water",
+        "hint": "Hold frequency steady — crest spacing tracks each material's velocity."
+      }
+    ]
+  },
+  "ut2-2-2": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: gauge the plate — spot the half-path echo",
+    "intro": "A mid-wall lamination returns an echo at exactly half the backwall path — the same reading a half-thickness step gives. Gauge three steps of this rolled-plate block, then flag the thinnest, training your eye for the early echo that betrays a lamination.",
+    "params": {
+      "stepsMm": [12.5, 25, 50, 100],
+      "material": "Rolled carbon-steel plate"
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Record straight-beam readings on three different steps",
+        "hint": "Park the probe mid-step; the backwall echo's time of flight sets the depth."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Pick the thinnest step — the earliest backwall echo",
+        "hint": "12.5 mm reads exactly like 25 mm plate split by a mid-wall lamination."
+      }
+    ]
+  },
+  "ut2-2-3": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: hunt the centerline — mark both axial flaws",
+    "intro": "Bar discontinuities are predictable: pipe remnants and stringers ride the axis at mid-section. Both hidden reflectors in this 30 mm section sit at centerline depth — slide the wedge, watch the echo rise, and press Mark at each peak.",
+    "params": {
+      "flawCount": 2,
+      "depthsMm": [15, 15],
+      "plateThicknessMm": 30,
+      "refractedAngleDeg": 60
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Mark the first centerline reflector at its echo peak",
+        "hint": "Slide slowly; press Mark within ±4 mm of where the echo tops out."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Find the second stringer riding the same mid-depth",
+        "hint": "Same 15 mm depth, different spot along the scan — expect a twin echo farther on."
+      }
+    ]
+  },
+  "ut2-2-4": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: 45° shear scan — log OD, mid-wall, and ID flaws",
+    "intro": "Tubular scanning launches a roughly 45° shear wave and judges everything against OD and ID notches. Sweep the wedge along this seam-scan analog and Mark three reflectors: a near-OD lap, a mid-wall hook crack, and a near-ID notch stand-in.",
+    "params": {
+      "flawCount": 3,
+      "depthsMm": [6, 10, 14],
+      "plateThicknessMm": 20,
+      "refractedAngleDeg": 45,
+      "scanLengthMm": 240
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Mark the near-OD reflector — the lap analog",
+        "hint": "Shallowest of the three: its echo arrives on the shortest beam path."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Catch the mid-wall hook-crack stand-in at its peak",
+        "hint": "Mid-wall depth means a mid-length path — Mark within ±4 mm of the peak."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Log the near-ID reflector — your ID-notch analog",
+        "hint": "Deepest reflector, longest path — like the half-V ID notch hit."
+      }
+    ]
+  }
+}

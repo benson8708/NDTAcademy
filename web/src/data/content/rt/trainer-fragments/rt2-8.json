@@ -1,0 +1,78 @@
+{
+  "rt2-8-1": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: land every section in the density window",
+    "intro": "Drive exposure E = A x t until film density lands inside the 2.0-3.0 readable slice - the same characteristic-curve budget that forces multi-film loads on stepped parts. Then rebuild the exposure after 30 days of Ir-192 decay, the very shift along log-E a slower film demands.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 40,
+      "targetDmin": 2.0,
+      "targetDmax": 3.0,
+      "maxTimeMin": 20
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Set exposure time to land density between 2.0 and 3.0",
+        "hint": "Density rises with exposure E = A x t - nudge the time slider until D sits inside the green window."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "Press '30 days later', then re-enter the density window",
+        "hint": "Ir-192 loses about a quarter of its activity in 30 days - stretch the time roughly a third longer to rebuild the same exposure."
+      }
+    ]
+  },
+  "rt2-8-2": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: beat the Ug cap and place the IQI",
+    "intro": "Your shot opens with a 3.8 mm source, a short SOD, and a 50 mm film gap - work the geometry chain (film in contact first, then stretch the distance) until Ug = f x OFD / SOD meets the 0.5 mm code cap. Then grade the setup the way the code does: wire IQI on the source side.",
+    "params": {
+      "focalSpotMm": 3.8,
+      "specUgMm": 0.5,
+      "plateThicknessMm": 20,
+      "sodMm": 180,
+      "gapMm": 50
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Drive Ug at or under the 0.5 mm code cap",
+        "hint": "Ug = f x OFD / SOD - close the object-to-film gap first, then pull the source back until the readout passes."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Place the wire IQI on the source-side weld surface",
+        "hint": "Drag the IQI onto the weld's source-side surface - film-side placement is rejected, just as the code intends."
+      }
+    ]
+  },
+  "rt2-8-3": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: triangulate flaw depth with a 45-degree beam",
+    "intro": "A single radiograph hides depth; the tube-shift method recovers it from similar triangles. Work the same triangle with the follow-up tool RT interpreters call for - a 45-degree angle beam whose sound path pins each hidden flaw's depth and position.",
+    "params": {
+      "flawCount": 2,
+      "depthsMm": [10, 20],
+      "plateThicknessMm": 25,
+      "refractedAngleDeg": 45,
+      "scanLengthMm": 200
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Peak the first echo and mark the flaw",
+        "hint": "Slide slowly - the echo peaks when the beam centreline crosses the hole; press Mark within 4 mm of the peak."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Find and mark the second hidden flaw",
+        "hint": "At 45 degrees the flaw lies as far ahead of the wedge as it is deep - read the drawn beam path's triangle."
+      }
+    ]
+  }
+}

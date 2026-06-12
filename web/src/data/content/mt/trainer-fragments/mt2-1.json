@@ -1,0 +1,57 @@
+{
+  "mt2-1-1": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: Head shot vs. coil shot refresher",
+    "intro": "Back on the bench for your Level I review: energize the head shot and the coil shot on a cracked bar, watch which flaw each field reveals, then confirm the principle that links current path, flux direction, and crack orientation.",
+    "params": {
+      "bathMs": 600,
+      "quizLockMs": 1500
+    },
+    "tasks": [
+      {
+        "id": "revealTransverse",
+        "label": "Reveal the transverse crack with the right shot",
+        "hint": "The coil shot drives longitudinal flux down the bar, so it crosses cracks running across the bar."
+      },
+      {
+        "id": "revealLongitudinal",
+        "label": "Reveal the longitudinal crack with the other shot",
+        "hint": "The head shot passes current through the bar, wrapping circular flux around its axis."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Pass the which-field-finds-which check",
+        "hint": "Flux must cross a crack to leak: circular flux finds longitudinal flaws, longitudinal flux finds transverse ones."
+      }
+    ]
+  },
+  "mt2-1-2": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: Prove the 45-90 degree direction factor",
+    "intro": "Field direction is the test factor that decides whether an indication forms at all. Rotate the AC yoke and dust particles until every crack indicates - each one shows only while flux crosses it within the 45-90 degree window.",
+    "params": {
+      "crackAngles": [20, 75, 130],
+      "indicationThresholdDeg": 45,
+      "startAngleDeg": 20
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Rotate the yoke until crack A indicates",
+        "hint": "Crack A lies parallel to the starting flux - the invisible case. Swing the yoke roughly 90 degrees off it."
+      },
+      {
+        "id": "indicateB",
+        "label": "Bring crack B inside the 45-90 degree window",
+        "hint": "An indication holds only while the flux-to-crack crossing angle stays at 45 degrees or more."
+      },
+      {
+        "id": "indicateC",
+        "label": "Indicate crack C to complete full coverage",
+        "hint": "No single yoke position covers all orientations - that is why procedures require two shots about 90 degrees apart."
+      }
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "mt2-3-1": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: pick the field that finds each crack",
+    "intro": "Field direction is the heart of the five-question plan. On one steel bar, energize the head shot and the coil shot to prove which field reveals the transverse crack and which finds the longitudinal seam — then justify the pairing in the theory check.",
+    "params": {
+      "quizLockMs": 2000
+    },
+    "tasks": [
+      {
+        "id": "revealTransverse",
+        "label": "Fire the shot that reveals the transverse crack",
+        "hint": "The coil shot drives longitudinal flux along the bar — it crosses transverse cracks."
+      },
+      {
+        "id": "revealLongitudinal",
+        "label": "Fire the shot that reveals the longitudinal seam",
+        "hint": "The head shot wraps circular flux around the bar — it crosses seams running along the axis."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Pass the which-field-finds-which check",
+        "hint": "Flux only leaks where it crosses a flaw at 45–90 degrees; match each field to the crack it cuts across."
+      }
+    ]
+  },
+  "mt2-3-2": {
+    "engine": "et",
+    "mode": "skin-depth",
+    "title": "Hands-on: why AC demag stops at the skin",
+    "intro": "An alternating field penetrates only to its skin depth — the same physics that lets an AC demagnetizer strip a surface residual yet leave a deep FWDC field untouched (Trap 2). Sweep the frequency and watch the induced field shrink to a skin or soak toward the core.",
+    "params": {
+      "material": "stainless",
+      "shallowTargetMm": 0.6,
+      "deepTargetMm": 4
+    },
+    "tasks": [
+      {
+        "id": "setShallow",
+        "label": "Push penetration depth under 0.6 mm (the AC skin)",
+        "hint": "Raise the frequency — depth shrinks as frequency climbs, like 60 Hz demag current hugging the surface."
+      },
+      {
+        "id": "setDeep",
+        "label": "Drive the field 4 mm deep to reach a buried residual",
+        "hint": "Drop the frequency toward 100 Hz — only a slowly reversing field soaks deep, which is why thick FWDC sections need step-down DC."
+      }
+    ]
+  },
+  "mt2-3-3": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: execute a full-coverage yoke plan",
+    "intro": "Time to run the plan: three cracks at 0, 45 and 90 degrees share one plate, like the mixed flaw orientations on the yard weldment. Rotate the energized yoke and dust particles until every crack indicates — proof that one field direction never covers them all.",
+    "params": {
+      "crackAngles": [0, 90, 45],
+      "indicationThresholdDeg": 55,
+      "startAngleDeg": 20
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Indicate crack A with flux near-perpendicular",
+        "hint": "Flux runs pole-to-pole between the yoke legs; rotate until it crosses crack A at better than 55 degrees."
+      },
+      {
+        "id": "indicateB",
+        "label": "Re-orient and indicate crack B, 90 deg from A",
+        "hint": "One orientation can't cover cracks 90 degrees apart — that's why plans call for two near-perpendicular shots."
+      },
+      {
+        "id": "indicateC",
+        "label": "Catch the oblique crack C with a third orientation",
+        "hint": "Crack C lies at 45 degrees, halfway between A and B; aim the flux perpendicular to it."
+      }
+    ]
+  }
+}

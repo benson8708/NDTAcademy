@@ -1,0 +1,83 @@
+{
+  "rt1-9-2": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: set up a clean single-wall shot",
+    "intro": "Single-wall is the first-choice technique because its geometry is clean and Ug is controlled with the full SFD working for you. Stretch the film gap to watch a far wall blur into uselessness — the DWSI effect — then pull the source back to meet the Ug spec and place the IQI on the source side, where single-wall viewing demands it.",
+    "params": {
+      "focalSpotMm": 3,
+      "specUgMm": 0.5,
+      "plateThicknessMm": 10,
+      "sodMm": 180,
+      "gapMm": 45
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Bring Ug within the 0.5 mm spec",
+        "hint": "Ug = f x OFD / SOD — pull the source back or close the film gap; single-wall lets you do both."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Place the wire IQI on the source-side weld surface",
+        "hint": "Single-wall viewing puts the IQI on the side facing the source — film-side placement is rejected."
+      }
+    ]
+  },
+  "rt1-9-3": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: time a panoramic gamma exposure",
+    "intro": "A panoramic shot exposes every film around the girth weld in one firing, so the exposure time must be right the first time — there is no per-film re-shoot. Land the density window with the 60 Ci Ir-192 crawler source, then re-time the same weld 30 days of decay later, the round-to-round correction every pipeline crew makes.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 60,
+      "targetDmin": 2.0,
+      "targetDmax": 3.0,
+      "maxTimeMin": 30
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Land film density in the 2.0-3.0 window",
+        "hint": "Density follows exposure E = activity x time — every cassette around the circumference gets this one shot."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "Re-shoot 30 days later at the same density",
+        "hint": "After 30 days Ir-192 keeps about 75% of its activity — stretch the time so A x t matches the first shot."
+      }
+    ]
+  },
+  "rt1-9-4": {
+    "engine": "rs",
+    "mode": "tds",
+    "title": "Hands-on: protect the fluoroscopist with T-D-S",
+    "intro": "Direct-screen viewing parks a person closer to an energized beam than anything else in radiography, so protection rests on time, distance, and shielding. Work all three levers: step back like a remote-viewing setup, stack shielding like the lead-glass window, and plan a limited viewing session under the dose cap.",
+    "params": {
+      "isotope": "Ir-192",
+      "curies": 20,
+      "boundaryLimit": 2,
+      "doseLimit": 25,
+      "minWorkMin": 15
+    },
+    "tasks": [
+      {
+        "id": "distanceHalf",
+        "label": "Double your distance from the source — rate falls 4x",
+        "hint": "Inverse square is why remote-screen viewing is safer: the operator reads a monitor in another room."
+      },
+      {
+        "id": "shieldToLimit",
+        "label": "Stack shielding until the door post reads under 2 mR/h",
+        "hint": "Each slab is one half-value layer — the lead-glass viewing window protects the same way, halving per HVL."
+      },
+      {
+        "id": "planExposure",
+        "label": "Plan a 15-minute viewing session under 25 mrem",
+        "hint": "Dose = rate x hours — viewing periods are limited and alternated, so cut the rate until 15 minutes fits."
+      }
+    ]
+  }
+}

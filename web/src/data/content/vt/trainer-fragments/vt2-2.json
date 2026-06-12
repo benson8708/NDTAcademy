@@ -1,0 +1,71 @@
+{
+  "vt2-2-1": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: drive frequency, watch wavelength shrink",
+    "intro": "Light is a wave: wavelength = velocity / frequency, the same law that fixes the 380-780 nm visible band where wavelength is color. Drive a pulse's frequency up and switch materials to feel how f and v together set the wavelength.",
+    "params": {
+      "frequencyMHz": 1,
+      "startMaterial": "steel",
+      "materials": ["steel", "aluminum", "water"]
+    },
+    "tasks": [
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Raise frequency until wavelength drops below 1 mm",
+        "hint": "Lambda = v/f: in steel (5920 m/s) you need about 6 MHz or more."
+      },
+      {
+        "id": "compareMaterials",
+        "label": "Send the pulse through steel, aluminum, and water",
+        "hint": "Hold frequency fixed — the slower the material, the tighter the crests pack."
+      }
+    ]
+  },
+  "vt2-2-2": {
+    "engine": "rs",
+    "mode": "survey",
+    "title": "Hands-on: verify the level with a meter, not a guess",
+    "intro": "A requirement means nothing until a calibrated meter proves it at the point that counts — the same discipline as proving 500 lx at the examination surface. Take stable readings at all three stakes, then move stake B until it sits right at the 2 mR/h posting limit.",
+    "params": {
+      "curies": 30,
+      "isotope": "Ir-192",
+      "limit": 2
+    },
+    "tasks": [
+      {
+        "id": "surveyAll",
+        "label": "Record a stable reading at stakes A, B, and C",
+        "hint": "Hold the meter still at each stake — Record only accepts a settled reading."
+      },
+      {
+        "id": "postBoundary",
+        "label": "Drag stake B out until it reads the 2 mR/h limit",
+        "hint": "Small outward steps — the reading falls with the square of distance."
+      }
+    ]
+  },
+  "vt2-2-3": {
+    "engine": "rs",
+    "mode": "tds",
+    "title": "Hands-on: prove the inverse-square law by walking it",
+    "intro": "The law of illumination, E = I/d², is the same inverse-square rule every point source obeys. Double your distance from the source to cut the reading to one quarter, then stack half-value slabs — each layer halves what gets through, the way each loss along a light path scales luminance.",
+    "params": {
+      "curies": 30,
+      "isotope": "Ir-192",
+      "boundaryLimit": 2
+    },
+    "tasks": [
+      {
+        "id": "distanceHalf",
+        "label": "Double your distance and quarter the reading",
+        "hint": "No slabs yet — drag straight back until distance doubles; 2x distance = 1/4 rate."
+      },
+      {
+        "id": "shieldToLimit",
+        "label": "Stack slabs until the boundary post reads under 2 mR/h",
+        "hint": "Each half-value layer halves the rate — count how many halvings you need."
+      }
+    ]
+  }
+}

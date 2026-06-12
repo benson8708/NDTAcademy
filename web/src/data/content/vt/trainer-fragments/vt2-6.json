@@ -1,0 +1,98 @@
+{
+  "vt2-6-1": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: reveal the bar's inherited seam and crack",
+    "intro": "Wrought bars inherit longitudinal seams from the working direction — process history predicts discontinuity orientation. Reveal both cracks on this bar and confirm which field crosses which: the same logic that tells you where to aim raking light in VT.",
+    "params": {
+      "bathMs": 1000
+    },
+    "tasks": [
+      {
+        "id": "revealLongitudinal",
+        "label": "Reveal the longitudinal seam with the right shot",
+        "hint": "Seams follow the working direction; the head shot's circular flux runs around the bar and crosses them."
+      },
+      {
+        "id": "revealTransverse",
+        "label": "Reveal the transverse crack with the other shot",
+        "hint": "The coil shot drives flux along the bar axis, so it crosses cracks running around the bar."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Answer: which field finds which orientation?",
+        "hint": "Flux must cross a crack near-perpendicular to leak and indicate — parallel flux finds nothing."
+      }
+    ]
+  },
+  "vt2-6-2": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: gauge the corroded wall, flag the thinnest spot",
+    "intro": "VT spots corrosion and erosion on a piping walkdown; thickness gauging tells you how much wall is left. Gauge three spots on this stepped wasted-wall mock-up and flag the worst thinning, just as you would follow up uniform corrosion found on a line.",
+    "params": {
+      "stepsMm": [16, 12.5, 9, 6],
+      "velocityMps": 5920,
+      "material": "Carbon steel pipe wall"
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Record wall thickness at three different steps",
+        "hint": "Sit the 0° probe flat on each step and read the depth of the backwall echo."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Flag the step with the least remaining wall",
+        "hint": "The thinnest wall returns the earliest backwall echo — shortest time of flight."
+      }
+    ]
+  },
+  "vt2-6-3": {
+    "engine": "et",
+    "mode": "crack-scan",
+    "title": "Hands-on: detect the crack, then interpret the signals",
+    "intro": "Detection and interpretation are separate skills. Scan the lane to detect a hidden crack — speed, pattern, and overlap decide whether you catch it — then interpret your record by separating the relevant indication from false, test-condition noise.",
+    "params": {
+      "crackDepthMm": 0.8,
+      "markToleranceMm": 3
+    },
+    "tasks": [
+      {
+        "id": "findCrack",
+        "label": "Scan the full lane and mark the hidden crack",
+        "hint": "Slow, overlapping passes — scan speed is the strongest predictor of missed indications."
+      },
+      {
+        "id": "distinguish",
+        "label": "Pick which recorded signal was the real crack",
+        "hint": "The crack kicks at a steep phase angle; flat horizontal wiggles are lift-off noise."
+      }
+    ]
+  },
+  "vt2-6-4": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: sharpen the image, prove it with the IQI",
+    "intro": "Codes make you prove a recording system resolves the required detail before trusting its images. Sharpen this radiographic setup until unsharpness passes spec, then place the wire IQI — the test target that demonstrates the chain, like a resolution target for remote VT.",
+    "params": {
+      "focalSpotMm": 3,
+      "specUgMm": 0.4,
+      "plateThicknessMm": 12,
+      "sodMm": 200,
+      "gapMm": 50
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Tune distances until unsharpness meets spec",
+        "hint": "Ug = f × OFD / SOD — pull the source back and close the object-to-film gap."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Place the wire IQI on the source-side surface",
+        "hint": "The proof target goes where resolving it is hardest — source side, never film side."
+      }
+    ]
+  }
+}

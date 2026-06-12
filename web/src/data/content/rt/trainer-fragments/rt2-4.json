@@ -1,0 +1,52 @@
+{
+  "rt2-4-1": {
+    "engine": "et",
+    "mode": "crack-scan",
+    "title": "Hands-on: Sort a relevant indication from lift-off noise",
+    "intro": "The indication ladder applies to every NDT method, not just film. Scan the probe down the lane and mark where a signal peaks, then make the interpreter's call: which recording was relevant — produced by a real crack — and which was lift-off noise the technique put on screen.",
+    "params": {
+      "crackDepthMm": 0.9,
+      "markToleranceMm": 4
+    },
+    "tasks": [
+      {
+        "id": "findCrack",
+        "label": "Scan the lane and mark where the indication peaks",
+        "hint": "A real flaw kicks the dot off at a steep phase angle; lift-off drifts flat along the horizontal."
+      },
+      {
+        "id": "distinguish",
+        "label": "Pick the signal a real discontinuity produced",
+        "hint": "Relevant means made by the part: choose the steep-phase kick, not the flat lift-off wiggle."
+      }
+    ]
+  },
+  "rt2-4-2": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: Orientation decides what you detect",
+    "intro": "Planar discontinuities only show when the interrogating energy crosses their plane — the same rule that hides laminations from a straight RT beam. Rotate the energized yoke so its flux crosses each surface crack near-perpendicular, the way you would hunt service fatigue cracks growing in different directions.",
+    "params": {
+      "crackAngles": [15, 75, 135],
+      "indicationThresholdDeg": 50,
+      "startAngleDeg": 105
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Dust the plate and indicate crack A",
+        "hint": "Particles gather only where flux crosses a crack close to 90 degrees — A already lies across the flux."
+      },
+      {
+        "id": "indicateB",
+        "label": "Re-aim the yoke until crack B indicates",
+        "hint": "No single yoke angle holds all three cracks; swing the axis until the flux runs perpendicular to B."
+      },
+      {
+        "id": "indicateC",
+        "label": "Find the angle that reveals crack C",
+        "hint": "C lies in yet another plane — the flux that found B runs nearly parallel to C, so keep rotating."
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "vt2-4-1": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: reveal a rolled seam vs a transverse crack",
+    "intro": "Rolled and forged discontinuities follow the working direction — a seam runs along the bar axis while a transverse crack lies across it. Energize the head shot and the coil shot so the flux crosses each flaw, proving how a discontinuity's manufacturing origin predicts its orientation and how you find it.",
+    "params": {
+      "bathMs": 700,
+      "quizLockMs": 1500
+    },
+    "tasks": [
+      {
+        "id": "revealLongitudinal",
+        "label": "Reveal the seam-like longitudinal crack",
+        "hint": "Seams follow the bar axis; the head shot's circular flux crosses them at 90 degrees."
+      },
+      {
+        "id": "revealTransverse",
+        "label": "Reveal the transverse crack with the other shot",
+        "hint": "The coil shot drives flux along the bar — it crosses a crack lying across the axis."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Match each field to the crack it detects",
+        "hint": "Flux only leaks where it crosses a crack; flux running parallel to a crack finds nothing."
+      }
+    ]
+  },
+  "vt2-4-2": {
+    "engine": "et",
+    "mode": "crack-scan",
+    "title": "Hands-on: find and verify a hidden fatigue crack",
+    "intro": "Fatigue cracks initiate tight at stress risers and can be nearly invisible until they weep rust. Scan the lane, mark the hidden crack's position, then pick its sharp signal out from harmless lift-off wobble — the instrument version of this lesson's crack-or-scratch call.",
+    "params": {
+      "crackDepthMm": 0.8,
+      "markToleranceMm": 3
+    },
+    "tasks": [
+      {
+        "id": "findCrack",
+        "label": "Mark the hidden fatigue crack's position",
+        "hint": "The crack kicks the dot at a steep phase angle; lift-off noise stays nearly flat."
+      },
+      {
+        "id": "distinguish",
+        "label": "Pick which recorded signal was the crack",
+        "hint": "Like crack vs scratch: the genuine flaw rises steeply off the lift-off line."
+      }
+    ]
+  },
+  "vt2-4-3": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: gauge steps against a 10 mm minimum wall",
+    "intro": "Size-based criteria turn judgment into numbers. Gauge the stepped block with the 0-degree probe, log three readings, and flag the step that violates a 10 mm minimum-wall limit — evaluation by measurement, exactly as criteria style three demands.",
+    "params": {
+      "stepsMm": [8, 10, 12.5, 16],
+      "velocityMps": 5920,
+      "material": "Carbon steel"
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Record readings on three different steps",
+        "hint": "Drag the probe onto a step and wait for a clean backwall echo before logging."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Flag the step that fails the 10 mm minimum",
+        "hint": "Only one logged number sits below 10 mm — the thinnest step is the reject."
+      }
+    ]
+  },
+  "vt2-4-4": {
+    "engine": "rs",
+    "mode": "survey",
+    "title": "Hands-on: record every point, then close the survey",
+    "intro": "An undocumented examination never happened — a defensible record holds a valid reading at every required location. Hold the meter steady at stakes A, B, and C, record each stabilised value like a data-report entry, then fix and re-post the boundary your own data condemns.",
+    "params": {
+      "isotope": "Ir-192",
+      "curies": 30,
+      "limit": 2
+    },
+    "tasks": [
+      {
+        "id": "surveyAll",
+        "label": "Record a stable reading at stakes A, B, and C",
+        "hint": "Hold the meter still at each stake — Record only accepts a stabilised value."
+      },
+      {
+        "id": "postBoundary",
+        "label": "Move stake B until it meets the posted limit",
+        "hint": "Drag B outward along its radial until the rate reads at or just under 2 mR/h."
+      }
+    ]
+  }
+}

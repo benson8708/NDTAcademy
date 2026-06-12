@@ -1,0 +1,103 @@
+{
+  "ut2-3-1": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: catch the flaws lying along the grain",
+    "intro": "Forging flow lays stringers, flakes, and bursts parallel to the grain, so you fire a 45° shear beam across the flow to catch them. Slide the wedge along the forged section and Mark each hidden reflector right at its echo peak.",
+    "params": {
+      "flawCount": 3,
+      "depthsMm": [8, 15, 22],
+      "plateThicknessMm": 30,
+      "refractedAngleDeg": 45,
+      "scanLengthMm": 220
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Mark the near-surface stringer 8 mm down",
+        "hint": "Slide the wedge slowly and press Mark within ±4 mm of the echo peak."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Mark the centerline burst at 15 mm depth",
+        "hint": "Peak amplitude means the 45° beam centreline is square on the flaw — bursts live at mid-wall."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Mark the deep flake cluster at 22 mm",
+        "hint": "Deeper reflector, longer sound path — its echo arrives later on the A-scan."
+      }
+    ]
+  },
+  "ut2-3-2": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: shrink λ toward grain size — then back off",
+    "intro": "Grain scatter climbs roughly with f⁴, which is why castings are tested slow. Raise the frequency until λ in steel drops below 1 mm — coarse-grain territory where grass buries the screen — then see how aluminum behaves at the same settings.",
+    "params": {
+      "materials": ["steel", "aluminum"],
+      "startMaterial": "steel",
+      "frequencyMHz": 2,
+      "probeDiameterMm": 20
+    },
+    "tasks": [
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Push λ below 1 mm in steel — grain-scatter range",
+        "hint": "λ = v/f: at 5,920 m/s you need roughly 6 MHz or more."
+      },
+      {
+        "id": "compareMaterials",
+        "label": "Send the same pulse through steel and aluminum",
+        "hint": "Switch materials at a fixed frequency and watch λ and the near field shift."
+      }
+    ]
+  },
+  "ut2-3-3": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: read echo depth at composite velocity",
+    "intro": "A delamination reflects nearly everything, so it reads like an early back wall at the separation depth. Gauge a stepped CFRP block at ~3,000 m/s — half steel's velocity — and pick out the thinnest step by its earliest echo.",
+    "params": {
+      "stepsMm": [5, 8, 12, 18],
+      "velocityMps": 3000,
+      "material": "Carbon-fiber laminate",
+      "stepWidthMm": 30
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Record readings on three laminate steps",
+        "hint": "Center the 0° probe on a step and log the back-wall reading before moving on."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Flag the thinnest step — the earliest echo",
+        "hint": "Thinner section, shorter time of flight: the echo sits closest to the initial pulse."
+      }
+    ]
+  },
+  "ut2-3-4": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: velocity sets the rules — steel to water",
+    "intro": "Rubber carries sound at water speed — about a quarter of steel — and that one number resets the wavelength, the time base, and every readout. Fire the same pulse through water, aluminum, and steel and watch the picture change.",
+    "params": {
+      "materials": ["steel", "aluminum", "water"],
+      "startMaterial": "water",
+      "frequencyMHz": 1
+    },
+    "tasks": [
+      {
+        "id": "compareMaterials",
+        "label": "Run the pulse in water, aluminum, and steel",
+        "hint": "Water stands in for rubber at ~1,480 m/s — watch the wavefronts bunch up versus steel."
+      },
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "In steel, drive λ under 1 mm; then recheck water",
+        "hint": "Same frequency, a quarter the velocity: λ = v/f, so water's λ is ~4× shorter."
+      }
+    ]
+  }
+}

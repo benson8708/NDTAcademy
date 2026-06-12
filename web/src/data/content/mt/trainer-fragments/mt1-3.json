@@ -1,0 +1,53 @@
+{
+  "mt1-3-1": {
+    "engine": "pt",
+    "mode": "process",
+    "title": "Hands-on: pre-clean first — run the inspection line",
+    "intro": "Every surface method lives or dies on preparation. Work a fluorescent penetrant line station by station — skip the pre-clean or rush a step and the part resets, exactly how a contaminated surface silently invalidates an MT examination.",
+    "params": {
+      "dwellSec": 8,
+      "wipeCoverage": 0.9,
+      "crackSeed": 31
+    },
+    "tasks": [
+      {
+        "id": "fullSequence",
+        "label": "Work all six stations in order — pre-clean first",
+        "hint": "Pre-clean is station one; any out-of-order step resets the part."
+      },
+      {
+        "id": "properDwell",
+        "label": "Let the dwell timer finish — no shortcuts",
+        "hint": "Watch the timer ring close completely before wiping off the excess."
+      },
+      {
+        "id": "findIndication",
+        "label": "Find the indication a clean surface reveals",
+        "hint": "After developer, wait for the bleedout, then click the glow under UV-A."
+      }
+    ]
+  },
+  "mt1-3-2": {
+    "engine": "et",
+    "mode": "skin-depth",
+    "title": "Hands-on: drive the field shallow, then deep",
+    "intro": "Why is AC magnetization blind below the surface while HWDC reaches a buried inclusion? Tune an electromagnetic field's frequency and watch its depth: pin it to a thin surface skin like AC, then drive it past 6 mm — roughly the quarter-inch best-case subsurface ceiling quoted for MT.",
+    "params": {
+      "shallowTargetMm": 0.4,
+      "deepTargetMm": 6,
+      "material": "stainless"
+    },
+    "tasks": [
+      {
+        "id": "setShallow",
+        "label": "Confine the field to a 0.4 mm skin, like AC",
+        "hint": "Raise the frequency and pick a high-conductivity material like aluminum."
+      },
+      {
+        "id": "setDeep",
+        "label": "Push penetration past 6 mm — MT's best-case depth",
+        "hint": "Drop near the bottom of the frequency slider and choose a low-conductivity metal like titanium."
+      }
+    ]
+  }
+}

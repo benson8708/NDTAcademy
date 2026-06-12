@@ -1,0 +1,53 @@
+{
+  "rt2-3-2": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: cure a blurry radiograph",
+    "intro": "Poor definition is a geometry problem: Ug = f x OFD / SOD. This setup starts badly blurred by a 4 mm source sitting close over a big film gap — cure it by closing the gap and backing the source off until the ghost radiograph sharpens past the 0.4 mm spec.",
+    "params": {
+      "focalSpotMm": 4,
+      "specUgMm": 0.4,
+      "plateThicknessMm": 15,
+      "sodMm": 180,
+      "gapMm": 50
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Shrink Ug to 0.4 mm or less and sharpen the image",
+        "hint": "Ug = f x OFD / SOD: first drag the film gap toward zero, then pull the source farther back."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Set the wire IQI on the source-side weld surface",
+        "hint": "Drag the IQI onto the top, source-facing surface — film-side placement is rejected."
+      }
+    ]
+  },
+  "rt2-3-3": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: land film density in the code window",
+    "intro": "Density is measured, not eyeballed: read the console's density number like a densitometer and land it inside the 2.0-3.0 window (2.0 is the gamma code minimum). Then prove why measurement matters — 30 days of Ir-192 decay drifts the density low, and you must catch it and re-expose.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 40,
+      "targetDmin": 2.0,
+      "targetDmax": 3.0,
+      "maxTimeMin": 20
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Expose so the density readout lands between 2.0 and 3.0",
+        "hint": "Density rises with exposure E = A x t — lengthen the time until D clears the 2.0 gamma minimum."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "After 30 days, re-expose to put density back in window",
+        "hint": "Activity halves every 73.8 days, so the same density needs a longer exposure time than before."
+      }
+    ]
+  }
+}

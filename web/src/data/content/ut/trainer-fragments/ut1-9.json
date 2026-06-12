@@ -1,0 +1,110 @@
+{
+  "ut1-9-1": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: Straight-beam scan of the plate standard",
+    "intro": "Procedure UT-SB-12 assigns a 0° straight-beam scan of a carbon-steel step standard spanning the procedure's 1–2.5 in. thickness scope. Gauge three steps to confirm a clean backwall echo across the whole scope, then call out the thinnest section.",
+    "params": {
+      "stepsMm": [25, 38, 51, 64],
+      "velocityMps": 5920,
+      "material": "Carbon steel plate"
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Gauge three steps of the UT-SB-12 standard",
+        "hint": "Drag the 0° probe onto a step; the backwall echo's time of flight reads its thickness."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Identify the thinnest step on the block",
+        "hint": "Earliest backwall echo = least metal travel = the thinnest step."
+      }
+    ]
+  },
+  "ut1-9-2": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: Log readings, flag the reportable minimum",
+    "intro": "A defensible straight-beam report starts with disciplined recording. These steps differ by only a few millimetres and sit in scrambled order — log each reading as you take it, then evaluate your own data and flag the minimum the report must carry.",
+    "params": {
+      "stepsMm": [32, 24, 35, 28],
+      "velocityMps": 5920,
+      "material": "Carbon steel plate",
+      "stepWidthMm": 28
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Log three thickness readings as you go",
+        "hint": "Record each reading the moment you take it — end-of-shift memory writes fiction, not data."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Flag the minimum reading for the report",
+        "hint": "Steps are scrambled — trust your logged numbers, not the block's silhouette."
+      }
+    ]
+  },
+  "ut1-9-3": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: Mark the T/4, T/2, 3T/4 DAC holes",
+    "intro": "Procedure UT-AB-7 puts a 60° shear wave on this 20 mm carbon-steel joint. Slide the wedge to peak and mark the side-drilled holes at T/4, T/2 and 3T/4 — the same reference reflectors the procedure's DAC is standardized on.",
+    "params": {
+      "flawCount": 3,
+      "depthsMm": [5, 10, 15],
+      "plateThicknessMm": 20,
+      "refractedAngleDeg": 60,
+      "shearVelocityMps": 3230
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Peak and mark the T/4 hole (5 mm deep)",
+        "hint": "Slide the wedge slowly and press Mark within ±4 mm of the echo's peak."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Peak and mark the T/2 hole (10 mm deep)",
+        "hint": "Deeper hole, longer first-leg sound path — its echo peaks later in the sweep."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Peak and mark the 3T/4 hole (15 mm deep)",
+        "hint": "The deepest hole needs the most stand-off: surface distance grows as depth × tan 60°."
+      }
+    ]
+  },
+  "ut1-9-4": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: Plot three reflectors from sound path",
+    "intro": "Three reflectors hide at different depths under a 45° wedge in 25 mm plate. Peak and mark each echo, treating every mark as a plotted point — depth = s × cos 45°, surface distance = s × sin 45° on your report sketch.",
+    "params": {
+      "flawCount": 3,
+      "depthsMm": [8, 12.5, 19],
+      "plateThicknessMm": 25,
+      "refractedAngleDeg": 45,
+      "scanLengthMm": 220,
+      "shearVelocityMps": 3230
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Mark the 8 mm reflector at its echo peak",
+        "hint": "Maximize the echo before you mark — off-peak position data plots fiction."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Mark the 12.5 mm reflector and plot depth",
+        "hint": "All three sit in the first leg: sound path × cos 45° gives depth directly."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Mark the deep 19 mm reflector at its peak",
+        "hint": "At 45° the surface distance equals the depth — both are s × 0.707."
+      }
+    ]
+  }
+}

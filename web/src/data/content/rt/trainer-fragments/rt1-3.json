@@ -1,0 +1,82 @@
+{
+  "rt1-3-1": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: turn ionization events into film density",
+    "intro": "Film blackens because photons interact in the emulsion — every step of density is an ionization tally. Land the density window by choosing the exposure time, then hold it after 30 days of decay thins the photon supply.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 40,
+      "targetDmin": 2.0,
+      "targetDmax": 3.0,
+      "maxTimeMin": 20
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Expose until film density lands between D 2.0 and 3.0",
+        "hint": "Density is an ionization tally — exposure E = A × t, so give the emulsion more time until enough photons have interacted."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "Jump 30 days ahead and recover the density window",
+        "hint": "The decayed source fires fewer photons per minute, so stretch the time until the total interaction count A × t matches."
+      }
+    ]
+  },
+  "rt1-3-2": {
+    "engine": "rs",
+    "mode": "survey",
+    "title": "Hands-on: survey the field an 80 Ci Ir-192 source makes",
+    "intro": "Exposure is ionization in air, and an ion-chamber survey meter collects exactly that charge. Survey the boundary around an 80 Ci Ir-192 device and post the line where the 2 mR/h limit truly sits — plan with the emissivity constant, believe the meter.",
+    "params": {
+      "isotope": "Ir-192",
+      "curies": 80,
+      "deviceFactor": 0.01,
+      "limit": 2
+    },
+    "tasks": [
+      {
+        "id": "surveyAll",
+        "label": "Record a stable exposure-rate reading at stakes A, B, C",
+        "hint": "Hold the meter still — it is an air-filled ion chamber collecting charge; the mR/h reading only records once it settles."
+      },
+      {
+        "id": "postBoundary",
+        "label": "Drag stake B out until the rate sits at the 2 mR/h limit",
+        "hint": "Plan with emissivity (Ir-192 ≈ 0.5 R/h per Ci at 1 m, falling as 1/d²), but the calibrated meter — not the constant — sets the post."
+      }
+    ]
+  },
+  "rt1-3-3": {
+    "engine": "rs",
+    "mode": "tds",
+    "title": "Hands-on: beat the field with time, distance, shielding",
+    "intro": "Attenuation and geometry are your only levers against a hot source. Prove the inverse square law by doubling your distance, stack one-HVL lead slabs until the boundary post clears 2 mR/h, then plan a job dose with the time slider.",
+    "params": {
+      "isotope": "Ir-192",
+      "curies": 80,
+      "boundaryLimit": 2,
+      "doseLimit": 20,
+      "minWorkMin": 10
+    },
+    "tasks": [
+      {
+        "id": "distanceHalf",
+        "label": "Double your distance and watch the rate fall 4x",
+        "hint": "Inverse square: I₁d₁² = I₂d₂² — twice the distance spreads the same photons over four times the area."
+      },
+      {
+        "id": "shieldToLimit",
+        "label": "Stack lead slabs until the boundary post reads 2 mR/h",
+        "hint": "Each slab is one HVL and halves the rate; about 3.3 HVL make one TVL — count the halvings needed from ~230 mR/h down to 2."
+      },
+      {
+        "id": "planExposure",
+        "label": "Plan a 10-minute job that stays under 20 mrem",
+        "hint": "Dose = rate × time — trade distance and shielding against the clock; ALARA is all three levers pulled at once."
+      }
+    ]
+  }
+}

@@ -1,0 +1,733 @@
+{
+ "vt1-1-1": {
+  "engine": "et",
+  "mode": "crack-scan",
+  "title": "Hands-on: from indication to interpretation",
+  "intro": "VT's core vocabulary - indication, interpretation, relevant vs. nonrelevant - runs through every NDT method. Scan a probe along the lane over a hidden crack, mark the indication it produces, then interpret which recorded signal was the relevant one.",
+  "params": {
+   "markToleranceMm": 4,
+   "crackDepthMm": 1.6
+  },
+  "tasks": [
+   {
+    "id": "findCrack",
+    "label": "Scan the lane and mark the crack's indication",
+    "hint": "The crack kicks the dot at a steep angle; flat sweeps are just noise - mark where the kick peaks."
+   },
+   {
+    "id": "distinguish",
+    "label": "Interpret: pick the relevant signal",
+    "hint": "Relevant means caused by a discontinuity; the flat lift-off sweep is nonrelevant, from probe motion, not a flaw."
+   }
+  ]
+ },
+ "vt1-1-2": {
+  "engine": "rs",
+  "mode": "survey",
+  "title": "Hands-on: trust the meter, not your eye",
+  "intro": "Light at an examination surface falls off with the same inverse-square law as the dose rate around this source - and in both cases only a measured, recorded reading counts. Survey the three boundary stakes, then move stake B until the meter, not your eyeball, says the level meets the written limit.",
+  "params": {
+   "curies": 40,
+   "isotope": "Ir-192",
+   "deviceFactor": 0.01,
+   "limit": 2
+  },
+  "tasks": [
+   {
+    "id": "surveyAll",
+    "label": "Record a stable meter reading at stakes A, B, C",
+    "hint": "Hold the meter still at each stake until the reading settles - Record only accepts a stable value."
+   },
+   {
+    "id": "postBoundary",
+    "label": "Move stake B until the rate meets the 2 mR/h limit",
+    "hint": "Intensity falls with 1/d-squared, so readings near the source swing hard - slide B outward in small steps."
+   }
+  ]
+ },
+ "vt1-1-3": {
+  "engine": "pt",
+  "mode": "process",
+  "title": "Hands-on: clean first, then build the contrast",
+  "intro": "You cannot inspect what you cannot see: cleaning precedes the examination, and detection lives on contrast. Run a fluorescent penetrant inspection from pre-clean through developer, then find the indication by its glow against the developer background.",
+  "params": {
+   "dwellSec": 10,
+   "wipeCoverage": 0.9,
+   "crackSeed": 42,
+   "bleedSec": 4
+  },
+  "tasks": [
+   {
+    "id": "fullSequence",
+    "label": "Work all six stations in order - cleaning first",
+    "hint": "Pre-clean before penetrant: dirt and grease hide the very surface you mean to read."
+   },
+   {
+    "id": "properDwell",
+    "label": "Let the dwell timer finish before removing",
+    "hint": "Cutting dwell short starves the crack of penetrant - and your eye of contrast."
+   },
+   {
+    "id": "findIndication",
+    "label": "Find the high-contrast indication under UV-A",
+    "hint": "Look for the green glow blooming against the white developer background after bleedout."
+   }
+  ]
+ },
+ "vt1-2-1": {
+  "engine": "rs",
+  "mode": "survey",
+  "title": "Hands-on: Meter the surface, not the lamp",
+  "intro": "Light and gamma rays fall off by the same inverse-square law, and codes judge both at the surface, not at the source. Practice the metering discipline behind VT's 500/1000-lux floors: take stable readings where the work happens, then reposition until the level sits right at the limit.",
+  "params": {
+   "isotope": "Ir-192",
+   "curies": 30,
+   "limit": 2
+  },
+  "tasks": [
+   {
+    "id": "surveyAll",
+    "label": "Record stable meter readings at stakes A, B, and C",
+    "hint": "Hold the meter still at each stake until the reading settles \u2014 Record only accepts a stable value, just like a lux check."
+   },
+   {
+    "id": "postBoundary",
+    "label": "Move stake B until it reads right at the limit",
+    "hint": "Reading too high? Slide the stake outward \u2014 intensity drops with the square of distance, exactly like lamp light on a work surface."
+   }
+  ]
+ },
+ "vt1-2-2": {
+  "engine": "et",
+  "mode": "crack-scan",
+  "title": "Hands-on: Find the flaw your eye can't reach",
+  "intro": "A video borescope turns the image into an electrical signal at its tip; this eddy-current probe does the same with impedance \u2014 either way the instrument is your eye. Sweep the 90 mm lane systematically to locate the hidden surface crack, then prove you can tell a real indication from probe-wobble artifacts.",
+  "params": {
+   "markToleranceMm": 3,
+   "crackDepthMm": 0.8
+  },
+  "tasks": [
+   {
+    "id": "findCrack",
+    "label": "Sweep the lane and mark the hidden crack",
+    "hint": "Scan slowly end to end like a borescope pass \u2014 the crack kicks the dot at a steep angle; press Mark within 3 mm of the peak."
+   },
+   {
+    "id": "distinguish",
+    "label": "Pick the crack signal, not the lift-off noise",
+    "hint": "Lift-off wobble runs nearly flat; the real indication rises at a much steeper phase angle \u2014 the RVI skill of rejecting glare and artifacts."
+   }
+  ]
+ },
+ "vt1-2-3": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: The verdict comes from numbers",
+  "intro": "These four steps differ by only 1-2 mm \u2014 far too close to call by eye, which is exactly why VT runs on gauges. Use the digital thickness gauge to read three different steps, then make the dimensional call on the thinnest.",
+  "params": {
+   "stepsMm": [
+    24,
+    21,
+    25,
+    23
+   ],
+   "material": "Carbon steel"
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Gauge the thickness of three different steps",
+    "hint": "Center the probe on a step and read the backwall echo \u2014 log readings on three separate steps, like working a checklist of dimensional checks."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Call the thinnest step from your readings",
+    "hint": "Never eyeball a 1-2 mm difference \u2014 compare your recorded numbers and pick the smallest, the way a gauge settles an accept/reject call."
+   }
+  ]
+ },
+ "vt1-3-1": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: reveal cracks in all three orientations",
+  "intro": "This lesson's weld-crack set runs longitudinal along the joint, transverse across it, and angled in the heat-affected zone. Rotate the yoke over a plate with cracks at 0\u00b0, 90\u00b0, and 45\u00b0 and prove that no single orientation of look catches them all \u2014 origin predicts orientation, and orientation drives detection.",
+  "params": {
+   "crackAngles": [
+    0,
+    90,
+    45
+   ],
+   "indicationThresholdDeg": 45,
+   "startAngleDeg": 25
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Indicate the longitudinal crack (0\u00b0)",
+    "hint": "Rotate the yoke so flux runs near 90\u00b0 \u2014 perpendicular to a crack lying along the weld axis."
+   },
+   {
+    "id": "indicateB",
+    "label": "Indicate the transverse crack (90\u00b0)",
+    "hint": "Swing the yoke back toward 0\u00b0 so flux crosses the across-the-weld crack head-on."
+   },
+   {
+    "id": "indicateC",
+    "label": "Indicate the 45\u00b0 heat-affected-zone crack",
+    "hint": "Set the yoke near 135\u00b0 so the pole-to-pole flux crosses the angled crack squarely, then dust."
+   }
+  ]
+ },
+ "vt1-3-2": {
+  "engine": "pt",
+  "mode": "process",
+  "title": "Hands-on: run an inspection to the written procedure",
+  "intro": "This penetrant bench works exactly like the lesson's VT procedure: six stations in a fixed order, with a timed dwell that behaves like a hold point. Execute it as written \u2014 a skipped step or a cut-short dwell voids the examination, the same way an unmet lighting or angle parameter voids a visual one.",
+  "params": {
+   "dwellSec": 12,
+   "wipeCoverage": 0.85,
+   "crackSeed": 4117
+  },
+  "tasks": [
+   {
+    "id": "fullSequence",
+    "label": "Work all six stations in the procedure's order",
+    "hint": "Pre-clean first, inspect last \u2014 out-of-order steps reset the part, like blowing through a checkpoint."
+   },
+   {
+    "id": "properDwell",
+    "label": "Let the dwell hold point run to zero",
+    "hint": "Dwell time is a selected parameter, not a suggestion \u2014 wait for the timer ring to close before removal."
+   },
+   {
+    "id": "findIndication",
+    "label": "Inspect under UV-A and click the bleedout",
+    "hint": "Only a procedure executed in full earns the indication \u2014 scan the plate and click the glow."
+   }
+  ]
+ },
+ "vt1-3-3": {
+  "engine": "et",
+  "mode": "crack-scan",
+  "title": "Hands-on: interpret the indication, log its location",
+  "intro": "Scan the 90 mm lane, mark the crack's exact position, then pick the relevant signal out of the flat lift-off noise. It is the lesson's chain in miniature: interpret before you evaluate, and record a location a stranger could relocate \u2014 not 'near the top'.",
+  "params": {
+   "markToleranceMm": 3,
+   "crackDepthMm": 1.2
+  },
+  "tasks": [
+   {
+    "id": "findCrack",
+    "label": "Mark the crack's position within \u00b13 mm",
+    "hint": "The crack kicks the dot steeply as you cross it \u2014 mark where that kick peaks, like dimensioning from a datum."
+   },
+   {
+    "id": "distinguish",
+    "label": "Pick the recorded signal that was the crack",
+    "hint": "Lift-off noise slides flat and horizontal; the relevant indication rises at a steep phase angle."
+   }
+  ]
+ },
+ "vt2-1-1": {
+  "engine": "pt",
+  "mode": "process",
+  "title": "Hands-on: find a surface flaw VT alone would miss",
+  "intro": "VT's job is finding surface-breaking discontinuities, and penetrant testing is visual testing's closest extension \u2014 its final station is a visual exam under UV light. Run the six-station inspection in proper order and find the bleedout, then remember: you found an indication to document, not yet a defect.",
+  "params": {
+   "dwellSec": 10,
+   "crackSeed": 21
+  },
+  "tasks": [
+   {
+    "id": "fullSequence",
+    "label": "Work the six PT stations in the correct order",
+    "hint": "Pre-clean, penetrant, dwell, remove excess, developer, UV-A inspect \u2014 skipping ahead resets the part."
+   },
+   {
+    "id": "properDwell",
+    "label": "Let the dwell timer run out before wiping",
+    "hint": "Cutting dwell short starves the crack of penetrant \u2014 wait for the ring to close."
+   },
+   {
+    "id": "findIndication",
+    "label": "Visually locate the glowing indication under UV-A",
+    "hint": "The last station is pure visual testing \u2014 scan the plate for the bleedout and click it."
+   }
+  ]
+ },
+ "vt2-1-2": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: angle decides what your inspection sees",
+  "intro": "This lesson's viewing rule \u2014 eye within 24 inches and at least 30 degrees to the surface \u2014 is really about geometry: detection collapses at bad orientations. Feel the same physics with a magnetic yoke: each of three differently oriented cracks indicates only while the flux crosses it near-perpendicular.",
+  "params": {
+   "crackAngles": [
+    15,
+    75,
+    135
+   ],
+   "indicationThresholdDeg": 50
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Rotate the yoke until crack A shows an indication",
+    "hint": "Dust particles, then turn the flux to cross crack A close to perpendicular."
+   },
+   {
+    "id": "indicateB",
+    "label": "Re-orient the field to pick up crack B",
+    "hint": "B lies at a different angle \u2014 the orientation that found A cannot find B."
+   },
+   {
+    "id": "indicateC",
+    "label": "Find the orientation that reveals crack C",
+    "hint": "Each crack has its own narrow angular window \u2014 sweep slowly and watch for the build-up."
+   }
+  ]
+ },
+ "vt2-1-3": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: tune the instrument's acuity (\u03bb = v/f)",
+  "intro": "Acuity exams exist because the inspector's eye is a measuring instrument that must resolve fine detail \u2014 and every instrument has an 'acuity' you can verify. In UT that limit is the wavelength \u03bb = v/f: push it below 1 millimetre, the instrument's version of reading the J-2 line.",
+  "params": {
+   "frequencyMHz": 1
+  },
+  "tasks": [
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Raise frequency until \u03bb in steel is under 1 mm",
+    "hint": "\u03bb = v/f and steel's v is about 5920 m/s, so you need roughly 6 MHz or more."
+   },
+   {
+    "id": "compareMaterials",
+    "label": "Observe the pulse in steel, aluminium and water",
+    "hint": "Switch materials at a fixed frequency \u2014 velocity changes \u03bb, and \u03bb sets what the instrument can resolve."
+   }
+  ]
+ },
+ "vt2-2-1": {
+  "engine": "ut",
+  "mode": "wave-basics",
+  "title": "Hands-on: drive frequency, watch wavelength shrink",
+  "intro": "Light is a wave: wavelength = velocity / frequency, the same law that fixes the 380-780 nm visible band where wavelength is color. Drive a pulse's frequency up and switch materials to feel how f and v together set the wavelength.",
+  "params": {
+   "frequencyMHz": 1,
+   "startMaterial": "steel",
+   "materials": [
+    "steel",
+    "aluminum",
+    "water"
+   ]
+  },
+  "tasks": [
+   {
+    "id": "setLambdaUnder1mm",
+    "label": "Raise frequency until wavelength drops below 1 mm",
+    "hint": "Lambda = v/f: in steel (5920 m/s) you need about 6 MHz or more."
+   },
+   {
+    "id": "compareMaterials",
+    "label": "Send the pulse through steel, aluminum, and water",
+    "hint": "Hold frequency fixed \u2014 the slower the material, the tighter the crests pack."
+   }
+  ]
+ },
+ "vt2-2-2": {
+  "engine": "rs",
+  "mode": "survey",
+  "title": "Hands-on: verify the level with a meter, not a guess",
+  "intro": "A requirement means nothing until a calibrated meter proves it at the point that counts \u2014 the same discipline as proving 500 lx at the examination surface. Take stable readings at all three stakes, then move stake B until it sits right at the 2 mR/h posting limit.",
+  "params": {
+   "curies": 30,
+   "isotope": "Ir-192",
+   "limit": 2
+  },
+  "tasks": [
+   {
+    "id": "surveyAll",
+    "label": "Record a stable reading at stakes A, B, and C",
+    "hint": "Hold the meter still at each stake \u2014 Record only accepts a settled reading."
+   },
+   {
+    "id": "postBoundary",
+    "label": "Drag stake B out until it reads the 2 mR/h limit",
+    "hint": "Small outward steps \u2014 the reading falls with the square of distance."
+   }
+  ]
+ },
+ "vt2-2-3": {
+  "engine": "rs",
+  "mode": "tds",
+  "title": "Hands-on: prove the inverse-square law by walking it",
+  "intro": "The law of illumination, E = I/d\u00b2, is the same inverse-square rule every point source obeys. Double your distance from the source to cut the reading to one quarter, then stack half-value slabs \u2014 each layer halves what gets through, the way each loss along a light path scales luminance.",
+  "params": {
+   "curies": 30,
+   "isotope": "Ir-192",
+   "boundaryLimit": 2
+  },
+  "tasks": [
+   {
+    "id": "distanceHalf",
+    "label": "Double your distance and quarter the reading",
+    "hint": "No slabs yet \u2014 drag straight back until distance doubles; 2x distance = 1/4 rate."
+   },
+   {
+    "id": "shieldToLimit",
+    "label": "Stack slabs until the boundary post reads under 2 mR/h",
+    "hint": "Each half-value layer halves the rate \u2014 count how many halvings you need."
+   }
+  ]
+ },
+ "vt2-3-1": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: Snell's law steers a beam to hidden flaws",
+  "intro": "The wedge on an angle-beam probe is a prism for sound: at the wedge-steel boundary the beam bends to 70 degrees, governed by the same Snell's law you just learned for light. Slide the probe along the plate and let refraction aim the beam at two hidden holes.",
+  "params": {
+   "refractedAngleDeg": 70,
+   "flawCount": 2,
+   "depthsMm": [
+    10,
+    18
+   ],
+   "plateThicknessMm": 25
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Walk the 70-degree refracted beam onto the first hole",
+    "hint": "The echo peaks when the drawn beam centreline crosses the hole - a 70-degree beam strikes about 2.7x the hole's depth ahead of the wedge, so the 10 mm hole peaks roughly 27 mm out."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Refract your way to the second, deeper hole",
+    "hint": "Deeper target, longer first leg: the 18 mm hole peaks about 50 mm ahead of the wedge - keep sliding past the first echo and Mark within 4 mm of the new peak."
+   }
+  ]
+ },
+ "vt2-3-2": {
+  "engine": "et",
+  "mode": "crack-scan",
+  "title": "Hands-on: tell the crack's signal from lift-off noise",
+  "intro": "Digitized inspection lives or dies on separating real indications from processing artifacts - the lesson's filtering and signal-processing warning. Sweep an eddy-current probe over a hidden crack and use the signal's phase character, not its size, to pick the flaw out of the lift-off noise.",
+  "params": {
+   "crackDepthMm": 0.9,
+   "markToleranceMm": 4
+  },
+  "tasks": [
+   {
+    "id": "findCrack",
+    "label": "Scan the lane and mark where the hidden crack kicks",
+    "hint": "Probe wobble (lift-off) draws flat, horizontal traces; the crack snaps the dot out at a steep phase angle - mark the lane position where that kick happens."
+   },
+   {
+    "id": "distinguish",
+    "label": "Pick which recorded trace was the real indication",
+    "hint": "Judge by angle, not amplitude - gain can make noise big, but it cannot rotate it to the crack's steep phase."
+   }
+  ]
+ },
+ "vt2-3-4": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: projection geometry behind remote sizing",
+  "intro": "Shadow and stereo tips re-establish scale through projection geometry, and a radiographic setup makes that geometry tangible: source size and distances set magnification and blur exactly as standoff does through a scope. Tune the distances until the image is sharp, then place a known-size reference to demonstrate capability the way codes expect.",
+  "params": {
+   "focalSpotMm": 4,
+   "specUgMm": 0.4,
+   "plateThicknessMm": 12,
+   "sodMm": 180,
+   "gapMm": 50
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Set distances until blur Ug meets the 0.4 mm spec",
+    "hint": "Ug = f x OFD / SOD - push the source back AND close the film-side gap; with a 50 mm gap no legal source distance can pass, so shrink the gap first."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Demonstrate capability: set the wire IQI source-side",
+    "hint": "Like the comparison technique's reference, the IQI only proves anything in the hardest plane to resolve - drag it onto the source-side weld surface; film-side placement is rejected."
+   }
+  ]
+ },
+ "vt2-4-1": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: reveal a rolled seam vs a transverse crack",
+  "intro": "Rolled and forged discontinuities follow the working direction \u2014 a seam runs along the bar axis while a transverse crack lies across it. Energize the head shot and the coil shot so the flux crosses each flaw, proving how a discontinuity's manufacturing origin predicts its orientation and how you find it.",
+  "params": {
+   "bathMs": 700,
+   "quizLockMs": 1500
+  },
+  "tasks": [
+   {
+    "id": "revealLongitudinal",
+    "label": "Reveal the seam-like longitudinal crack",
+    "hint": "Seams follow the bar axis; the head shot's circular flux crosses them at 90 degrees."
+   },
+   {
+    "id": "revealTransverse",
+    "label": "Reveal the transverse crack with the other shot",
+    "hint": "The coil shot drives flux along the bar \u2014 it crosses a crack lying across the axis."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Match each field to the crack it detects",
+    "hint": "Flux only leaks where it crosses a crack; flux running parallel to a crack finds nothing."
+   }
+  ]
+ },
+ "vt2-4-2": {
+  "engine": "et",
+  "mode": "crack-scan",
+  "title": "Hands-on: find and verify a hidden fatigue crack",
+  "intro": "Fatigue cracks initiate tight at stress risers and can be nearly invisible until they weep rust. Scan the lane, mark the hidden crack's position, then pick its sharp signal out from harmless lift-off wobble \u2014 the instrument version of this lesson's crack-or-scratch call.",
+  "params": {
+   "crackDepthMm": 0.8,
+   "markToleranceMm": 3
+  },
+  "tasks": [
+   {
+    "id": "findCrack",
+    "label": "Mark the hidden fatigue crack's position",
+    "hint": "The crack kicks the dot at a steep phase angle; lift-off noise stays nearly flat."
+   },
+   {
+    "id": "distinguish",
+    "label": "Pick which recorded signal was the crack",
+    "hint": "Like crack vs scratch: the genuine flaw rises steeply off the lift-off line."
+   }
+  ]
+ },
+ "vt2-4-3": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: gauge steps against a 10 mm minimum wall",
+  "intro": "Size-based criteria turn judgment into numbers. Gauge the stepped block with the 0-degree probe, log three readings, and flag the step that violates a 10 mm minimum-wall limit \u2014 evaluation by measurement, exactly as criteria style three demands.",
+  "params": {
+   "stepsMm": [
+    8,
+    10,
+    12.5,
+    16
+   ],
+   "velocityMps": 5920,
+   "material": "Carbon steel"
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Record readings on three different steps",
+    "hint": "Drag the probe onto a step and wait for a clean backwall echo before logging."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Flag the step that fails the 10 mm minimum",
+    "hint": "Only one logged number sits below 10 mm \u2014 the thinnest step is the reject."
+   }
+  ]
+ },
+ "vt2-4-4": {
+  "engine": "rs",
+  "mode": "survey",
+  "title": "Hands-on: record every point, then close the survey",
+  "intro": "An undocumented examination never happened \u2014 a defensible record holds a valid reading at every required location. Hold the meter steady at stakes A, B, and C, record each stabilised value like a data-report entry, then fix and re-post the boundary your own data condemns.",
+  "params": {
+   "isotope": "Ir-192",
+   "curies": 30,
+   "limit": 2
+  },
+  "tasks": [
+   {
+    "id": "surveyAll",
+    "label": "Record a stable reading at stakes A, B, and C",
+    "hint": "Hold the meter still at each stake \u2014 Record only accepts a stabilised value."
+   },
+   {
+    "id": "postBoundary",
+    "label": "Move stake B until it meets the posted limit",
+    "hint": "Drag B outward along its radial until the rate reads at or just under 2 mR/h."
+   }
+  ]
+ },
+ "vt2-5-1": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: meet the spec \u2014 Ug limit and IQI placement",
+  "intro": "Codes state method requirements as hard numbers \u2014 here an ASME Section V-style spec sets Ug \u2264 0.4 mm and dictates source-side IQI placement. Locate the requirement, set up to comply, and prove it, exactly the routine this lesson teaches for any governing code.",
+  "params": {
+   "focalSpotMm": 3,
+   "specUgMm": 0.4,
+   "plateThicknessMm": 12,
+   "sodMm": 200,
+   "gapMm": 45
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Adjust SOD and gap until Ug meets the 0.4 mm spec",
+    "hint": "Ug = f \u00d7 OFD / SOD \u2014 close the film gap first, then pull the source back until the readout shows PASS."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Place the wire IQI where the code requires",
+    "hint": "The method code wants the IQI on the source-side weld surface \u2014 film-side placement is rejected."
+   }
+  ]
+ },
+ "vt2-5-2": {
+  "engine": "pt",
+  "mode": "process",
+  "title": "Hands-on: run the written procedure to the letter",
+  "intro": "Employer specs reach your bench as a written procedure: run a fluorescent penetrant inspection exactly as written \u2014 right order, full dwell, thorough removal \u2014 then evaluate under UV-A lighting. Skipped steps or a cut-short dwell reset the part, the way an audit finding would on a real job.",
+  "params": {
+   "dwellSec": 15,
+   "wipeCoverage": 0.85,
+   "crackSeed": 2105
+  },
+  "tasks": [
+   {
+    "id": "fullSequence",
+    "label": "Work all six stations in the procedure's order",
+    "hint": "Pre-clean \u2192 penetrant \u2192 dwell \u2192 remove excess \u2192 developer \u2192 UV-A inspect; the procedure, not habit, sets the order."
+   },
+   {
+    "id": "properDwell",
+    "label": "Hold the full penetrant dwell \u2014 no shortcuts",
+    "hint": "This employer's spec tightened the dwell minimum; let the timer ring finish before wiping."
+   },
+   {
+    "id": "findIndication",
+    "label": "Find and click the bleedout under UV-A",
+    "hint": "After developer goes on, scan the darkened plate for the glowing line and click it."
+   }
+  ]
+ },
+ "vt2-5-3": {
+  "engine": "et",
+  "mode": "crack-scan",
+  "title": "Hands-on: indication or noise? Make the call",
+  "intro": "Put the glossary chain to work: every blip on the trace is an indication, and only interpretation decides which one is a real discontinuity. Scan the lane, mark the crack's indication, then defend your call against lift-off noise.",
+  "params": {
+   "markToleranceMm": 3,
+   "crackDepthMm": 1.0
+  },
+  "tasks": [
+   {
+    "id": "findCrack",
+    "label": "Mark the crack indication on the scan lane",
+    "hint": "The crack kicks the dot at a steep phase angle; lift-off wobble stays nearly horizontal."
+   },
+   {
+    "id": "distinguish",
+    "label": "Pick which recorded signal is the real discontinuity",
+    "hint": "Say the word you can defend: the steep-phase kick is the discontinuity, flat traces are non-relevant indications."
+   }
+  ]
+ },
+ "vt2-6-1": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: reveal the bar's inherited seam and crack",
+  "intro": "Wrought bars inherit longitudinal seams from the working direction \u2014 process history predicts discontinuity orientation. Reveal both cracks on this bar and confirm which field crosses which: the same logic that tells you where to aim raking light in VT.",
+  "params": {
+   "bathMs": 1000
+  },
+  "tasks": [
+   {
+    "id": "revealLongitudinal",
+    "label": "Reveal the longitudinal seam with the right shot",
+    "hint": "Seams follow the working direction; the head shot's circular flux runs around the bar and crosses them."
+   },
+   {
+    "id": "revealTransverse",
+    "label": "Reveal the transverse crack with the other shot",
+    "hint": "The coil shot drives flux along the bar axis, so it crosses cracks running around the bar."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Answer: which field finds which orientation?",
+    "hint": "Flux must cross a crack near-perpendicular to leak and indicate \u2014 parallel flux finds nothing."
+   }
+  ]
+ },
+ "vt2-6-2": {
+  "engine": "ut",
+  "mode": "thickness",
+  "title": "Hands-on: gauge the corroded wall, flag the thinnest spot",
+  "intro": "VT spots corrosion and erosion on a piping walkdown; thickness gauging tells you how much wall is left. Gauge three spots on this stepped wasted-wall mock-up and flag the worst thinning, just as you would follow up uniform corrosion found on a line.",
+  "params": {
+   "stepsMm": [
+    16,
+    12.5,
+    9,
+    6
+   ],
+   "velocityMps": 5920,
+   "material": "Carbon steel pipe wall"
+  },
+  "tasks": [
+   {
+    "id": "measure3",
+    "label": "Record wall thickness at three different steps",
+    "hint": "Sit the 0\u00b0 probe flat on each step and read the depth of the backwall echo."
+   },
+   {
+    "id": "identifyThinnest",
+    "label": "Flag the step with the least remaining wall",
+    "hint": "The thinnest wall returns the earliest backwall echo \u2014 shortest time of flight."
+   }
+  ]
+ },
+ "vt2-6-3": {
+  "engine": "et",
+  "mode": "crack-scan",
+  "title": "Hands-on: detect the crack, then interpret the signals",
+  "intro": "Detection and interpretation are separate skills. Scan the lane to detect a hidden crack \u2014 speed, pattern, and overlap decide whether you catch it \u2014 then interpret your record by separating the relevant indication from false, test-condition noise.",
+  "params": {
+   "crackDepthMm": 0.8,
+   "markToleranceMm": 3
+  },
+  "tasks": [
+   {
+    "id": "findCrack",
+    "label": "Scan the full lane and mark the hidden crack",
+    "hint": "Slow, overlapping passes \u2014 scan speed is the strongest predictor of missed indications."
+   },
+   {
+    "id": "distinguish",
+    "label": "Pick which recorded signal was the real crack",
+    "hint": "The crack kicks at a steep phase angle; flat horizontal wiggles are lift-off noise."
+   }
+  ]
+ },
+ "vt2-6-4": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: sharpen the image, prove it with the IQI",
+  "intro": "Codes make you prove a recording system resolves the required detail before trusting its images. Sharpen this radiographic setup until unsharpness passes spec, then place the wire IQI \u2014 the test target that demonstrates the chain, like a resolution target for remote VT.",
+  "params": {
+   "focalSpotMm": 3,
+   "specUgMm": 0.4,
+   "plateThicknessMm": 12,
+   "sodMm": 200,
+   "gapMm": 50
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Tune distances until unsharpness meets spec",
+    "hint": "Ug = f \u00d7 OFD / SOD \u2014 pull the source back and close the object-to-film gap."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Place the wire IQI on the source-side surface",
+    "hint": "The proof target goes where resolving it is hardest \u2014 source side, never film side."
+   }
+  ]
+ }
+}

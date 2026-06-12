@@ -1,0 +1,56 @@
+{
+  "rt1-5-1": {
+    "engine": "rs",
+    "mode": "tds",
+    "title": "Hands-on: cut the dose with time, distance, shielding",
+    "intro": "Work the three exposure-control levers on a live 80 Ci Ir-192 bay. Prove the inverse-square law by stepping back, stack half-value layers until the boundary post reads under 2 mR/h, then plan the job time so the dose stays ALARA.",
+    "params": {
+      "curies": 80,
+      "isotope": "Ir-192",
+      "boundaryLimit": 2,
+      "doseLimit": 20,
+      "minWorkMin": 10
+    },
+    "tasks": [
+      {
+        "id": "distanceHalf",
+        "label": "Double your distance and cut the rate to one quarter",
+        "hint": "I1d1^2 = I2d2^2 - drag the worker marker out to twice the start distance with no slabs stacked."
+      },
+      {
+        "id": "shieldToLimit",
+        "label": "Stack lead HVL slabs until the boundary reads under 2 mR/h",
+        "hint": "Each slab is one half-value layer (about 4.8 mm lead for Ir-192) and halves the rate - watch the boundary post readout."
+      },
+      {
+        "id": "planExposure",
+        "label": "Plan at least 10 min of work under a 20 mrem budget",
+        "hint": "Dose = rate x hours. If 10 minutes busts the budget, lower the rate first with distance or shielding, then set the time slider."
+      }
+    ]
+  },
+  "rt1-5-2": {
+    "engine": "rs",
+    "mode": "survey",
+    "title": "Hands-on: survey and post the radiography boundary",
+    "intro": "Your survey meter is your only sense for radiation around a shielded exposure device. Carry it to each boundary stake and wait for a stable reading before recording - then move the over-limit stake until the posted line truly reads 2 mR/h.",
+    "params": {
+      "curies": 80,
+      "isotope": "Ir-192",
+      "deviceFactor": 0.01,
+      "limit": 2
+    },
+    "tasks": [
+      {
+        "id": "surveyAll",
+        "label": "Record a stable meter reading at stakes A, B, and C",
+        "hint": "Hold the meter still at each stake until the needle settles - Record rejects a reading that is still moving, just like a real ion chamber."
+      },
+      {
+        "id": "postBoundary",
+        "label": "Re-post stake B where the meter reads the 2 mR/h limit",
+        "hint": "Drag stake B outward along its radial and watch the rate fall by inverse square; release when it sits at the posting limit."
+      }
+    ]
+  }
+}

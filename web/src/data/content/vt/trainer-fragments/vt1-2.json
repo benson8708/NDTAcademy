@@ -1,0 +1,69 @@
+{
+  "vt1-2-1": {
+    "engine": "rs",
+    "mode": "survey",
+    "title": "Hands-on: Meter the surface, not the lamp",
+    "intro": "Light and gamma rays fall off by the same inverse-square law, and codes judge both at the surface, not at the source. Practice the metering discipline behind VT's 500/1000-lux floors: take stable readings where the work happens, then reposition until the level sits right at the limit.",
+    "params": {
+      "isotope": "Ir-192",
+      "curies": 30,
+      "limit": 2
+    },
+    "tasks": [
+      {
+        "id": "surveyAll",
+        "label": "Record stable meter readings at stakes A, B, and C",
+        "hint": "Hold the meter still at each stake until the reading settles — Record only accepts a stable value, just like a lux check."
+      },
+      {
+        "id": "postBoundary",
+        "label": "Move stake B until it reads right at the limit",
+        "hint": "Reading too high? Slide the stake outward — intensity drops with the square of distance, exactly like lamp light on a work surface."
+      }
+    ]
+  },
+  "vt1-2-2": {
+    "engine": "et",
+    "mode": "crack-scan",
+    "title": "Hands-on: Find the flaw your eye can't reach",
+    "intro": "A video borescope turns the image into an electrical signal at its tip; this eddy-current probe does the same with impedance — either way the instrument is your eye. Sweep the 90 mm lane systematically to locate the hidden surface crack, then prove you can tell a real indication from probe-wobble artifacts.",
+    "params": {
+      "markToleranceMm": 3,
+      "crackDepthMm": 0.8
+    },
+    "tasks": [
+      {
+        "id": "findCrack",
+        "label": "Sweep the lane and mark the hidden crack",
+        "hint": "Scan slowly end to end like a borescope pass — the crack kicks the dot at a steep angle; press Mark within 3 mm of the peak."
+      },
+      {
+        "id": "distinguish",
+        "label": "Pick the crack signal, not the lift-off noise",
+        "hint": "Lift-off wobble runs nearly flat; the real indication rises at a much steeper phase angle — the RVI skill of rejecting glare and artifacts."
+      }
+    ]
+  },
+  "vt1-2-3": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: The verdict comes from numbers",
+    "intro": "These four steps differ by only 1-2 mm — far too close to call by eye, which is exactly why VT runs on gauges. Use the digital thickness gauge to read three different steps, then make the dimensional call on the thinnest.",
+    "params": {
+      "stepsMm": [24, 21, 25, 23],
+      "material": "Carbon steel"
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Gauge the thickness of three different steps",
+        "hint": "Center the probe on a step and read the backwall echo — log readings on three separate steps, like working a checklist of dimensional checks."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Call the thinnest step from your readings",
+        "hint": "Never eyeball a 1-2 mm difference — compare your recorded numbers and pick the smallest, the way a gauge settles an accept/reject call."
+      }
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "ut2-4-1": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: plan 60° angle-beam coverage of a butt weld",
+    "intro": "Plan first-leg coverage of a 25 mm welded plate using the 60° wedge that strikes a 30° bevel square-on. Walk the wedge along the scan track and mark all three hidden side-drilled holes to prove your coverage plan reaches every depth.",
+    "params": {
+      "flawCount": 3,
+      "depthsMm": [8, 14, 19],
+      "plateThicknessMm": 25,
+      "refractedAngleDeg": 60,
+      "scanLengthMm": 240
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Locate flaw 1 and Mark at the echo peak",
+        "hint": "Slide slowly; press Mark within ±4 mm of where the echo peaks."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Locate flaw 2 — note its longer sound path",
+        "hint": "Deeper holes echo later on the A-scan — depth = sound path × cos 60°."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Locate flaw 3 to complete full coverage",
+        "hint": "Sweep the whole 240 mm track; coverage means every depth gets hit square-on."
+      }
+    ]
+  },
+  "ut2-4-2": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: orientation decides which cracks you see",
+    "intro": "Weld flaws lie in predictable orientations — centerline, toe, transverse — and a field only reveals what it crosses near-perpendicular. Rotate the energized yoke over three differently oriented cracks and make each indicate, just as your scan plan must aim the beam square at each expected flaw.",
+    "params": {
+      "crackAngles": [0, 45, 90],
+      "indicationThresholdDeg": 50
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Indicate the longitudinal (0°) centerline crack",
+        "hint": "Rotate the yoke so flux crosses the crack near 90° — parallel flux leaks nothing."
+      },
+      {
+        "id": "indicateB",
+        "label": "Indicate the 45° toe crack",
+        "hint": "Set the yoke axis near 135° so the pole-to-pole flux runs square across a 45° crack."
+      },
+      {
+        "id": "indicateC",
+        "label": "Indicate the transverse (90°) crack",
+        "hint": "Flux must run along the weld axis (yoke near 0°) to cross a transverse crack."
+      }
+    ]
+  },
+  "ut2-4-3": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: maximize echoes and mark three weld flaws",
+    "intro": "Interrogate each indication the way a Level II does: slide the 45° probe, watch the echo rise and fall, and mark only at the true peak. Three side-drilled holes at different depths drill the echo dynamics that separate real reflectors from geometry.",
+    "params": {
+      "flawCount": 3,
+      "depthsMm": [6, 10, 14],
+      "plateThicknessMm": 20,
+      "refractedAngleDeg": 45
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Peak the first echo, then press Mark",
+        "hint": "Push past the peak and the echo collapses — back up to the crest before marking."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Characterize flaw 2: maximize, then mark",
+        "hint": "Watch the rise–peak–fall as the 45° beam centreline sweeps across the hole."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Confirm flaw 3's peak before you call it",
+        "hint": "Check its sound path — a real mid-wall reflector, not root or cap geometry."
+      }
+    ]
+  },
+  "ut2-4-4": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: pass or fail the setup against code limits",
+    "intro": "Acceptance is the code's decision, not yours: a measured value either meets the written limit or it doesn't. Drive geometric unsharpness under its 0.5 mm spec and place the IQI exactly where the code demands — the same verify-against-the-book discipline weld UT dispositions require.",
+    "params": {
+      "specUgMm": 0.5
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Drive Ug under the 0.5 mm acceptance limit",
+        "hint": "Ug = f × OFD / SOD — pull the source back or close the film-side gap."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Place the wire IQI where the code requires",
+        "hint": "Source-side weld surface only — film-side placement is rejected."
+      }
+    ]
+  }
+}

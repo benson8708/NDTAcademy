@@ -1,0 +1,85 @@
+{
+  "rt2-5-1": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: Expose a casting film fit for grading",
+    "intro": "Castings are the most heavily radiographed product form, and grading their film against reference-radiograph sets like E446 only counts when density lands in the window. Set the gamma exposure for the casting shot, then keep the campaign alive by compensating for source decay.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 40,
+      "targetDmin": 2.0,
+      "targetDmax": 3.0,
+      "maxTimeMin": 20
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Land the casting film inside the D 2.0-3.0 window",
+        "hint": "Exposure E = A x t - lengthen the time until the density readout climbs into the window."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "Press '30 days later' and re-expose to compensate",
+        "hint": "Ir-192 halves every 73.8 days, so 30 days cuts activity to about 75% - stretch the exposure time by roughly a third."
+      }
+    ]
+  },
+  "rt2-5-2": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: Magnetize a rolled bar to catch its seam",
+    "intro": "Rolling strings every surviving discontinuity out along the bar axis, and a magnetic field only finds a crack it crosses - the same orientation rule that hides laminations from a straight radiographic beam. Energize the head shot and the coil shot to reveal both flaws in this rolled bar, then lock in which field finds which.",
+    "params": {
+      "bathMs": 800,
+      "quizLockMs": 1200
+    },
+    "tasks": [
+      {
+        "id": "revealLongitudinal",
+        "label": "Reveal the longitudinal seam left by rolling",
+        "hint": "A head shot drives current down the bar - its circular flux crosses flaws that run with the axis."
+      },
+      {
+        "id": "revealTransverse",
+        "label": "Reveal the transverse crack",
+        "hint": "A coil shot wraps the bar in longitudinal flux, which crosses flaws lying across the axis."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Answer the which-field-finds-which check",
+        "hint": "Flux must cross a crack to leak - each field finds the flaw perpendicular to it."
+      }
+    ]
+  },
+  "rt2-5-3": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: Hunt sidewall fusion flaws the WPS predicts",
+    "intro": "The WPS says short-circuiting GMAW, so the suspect list starts with lack of sidewall fusion along the groove faces - tight planar flaws film can miss unless the beam lines up. Sweep the 60-degree shear beam along the weld and mark all three hidden fusion-face flaws.",
+    "params": {
+      "flawCount": 3,
+      "plateThicknessMm": 20,
+      "depthsMm": [6, 10, 14],
+      "refractedAngleDeg": 60,
+      "scanLengthMm": 200
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Mark the shallow fusion-face flaw",
+        "hint": "Slide the wedge until the A-scan echo peaks, then press Mark within +/-4 mm of the peak."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Mark the mid-wall sidewall flaw",
+        "hint": "On a first-leg beam, a deeper flaw peaks with the wedge standing farther back from it."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Mark the deep flaw near the root",
+        "hint": "Keep sweeping the full scan line - the deepest hole echoes at the longest sound path."
+      }
+    ]
+  }
+}

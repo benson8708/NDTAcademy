@@ -1,0 +1,83 @@
+{
+  "rt2-1-1": {
+    "engine": "rs",
+    "mode": "tds",
+    "title": "Hands-on: HVL and inverse square at the boundary",
+    "intro": "Put the lesson's two workhorse laws to work on an 80 Ci Ir-192 bay: walk the worker back to see dose rate fall with 1/d squared, then attenuate by fractions with half-value-layer slabs and budget exposure time like a Level II.",
+    "params": {
+      "curies": 80,
+      "isotope": "Ir-192",
+      "boundaryLimit": 2,
+      "doseLimit": 20,
+      "minWorkMin": 10
+    },
+    "tasks": [
+      {
+        "id": "distanceHalf",
+        "label": "Double your distance and cut the rate fourfold",
+        "hint": "Inverse square: 2x the distance means 1/4 the dose rate — no slabs needed."
+      },
+      {
+        "id": "shieldToLimit",
+        "label": "Stack HVL slabs until the boundary reads under 2 mR/h",
+        "hint": "Each slab halves the rate — count halvings like the lesson's halving table (about 3.3 HVLs per factor of ten)."
+      },
+      {
+        "id": "planExposure",
+        "label": "Plan a 10+ minute job that stays under 20 mrem",
+        "hint": "Dose = rate x time. If the planned dose runs hot, buy margin with distance or slabs before trimming time."
+      }
+    ]
+  },
+  "rt2-1-2": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: hit density, then beat source decay",
+    "intro": "Work a real exposure calculation: choose a time that lands film density inside the 2.0-3.0 window, then jump 30 days ahead and re-expose — the Ir-192 has decayed, so scale time by t2 = t1 x (A1/A2) exactly like the lesson's big-three corrections.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 40,
+      "targetDmin": 2.0,
+      "targetDmax": 3.0,
+      "maxTimeMin": 20
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Expose the film into the 2.0-3.0 density window",
+        "hint": "Exposure is a product, E = A x t (reciprocity) — more time means more density."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "Press '30 days later' and re-hit the window",
+        "hint": "After 30 of 73.8 half-life days, activity is about 75% — multiply your old time by A1/A2 (about 1.33x)."
+      }
+    ]
+  },
+  "rt2-1-3": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: sharpen definition, prove sensitivity",
+    "intro": "Definition and sensitivity are the image-quality words you can rig for: the setup starts at Ug near 0.8 mm, so work the lesson's levers — film tight to the part, source backed off — to meet a 0.3 mm spec, then place the wire IQI where it proves the technique.",
+    "params": {
+      "focalSpotMm": 3,
+      "specUgMm": 0.3,
+      "plateThicknessMm": 12,
+      "sodMm": 220,
+      "gapMm": 45
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Drive Ug down to 0.3 mm or better",
+        "hint": "Ug = F x OFD / SOD — close the film gap to shrink OFD AND lengthen SOD; one lever alone won't get you there."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Drag the wire IQI onto the source-side weld surface",
+        "hint": "Sensitivity must be proven where image quality is worst — film-side placement is rejected."
+      }
+    ]
+  }
+}

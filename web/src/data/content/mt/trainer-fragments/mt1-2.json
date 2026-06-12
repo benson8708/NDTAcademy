@@ -1,0 +1,57 @@
+{
+  "mt1-2-1": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: Fields from current — head shot vs coil",
+    "intro": "Electric current always creates a magnetic field — Ørsted's discovery. Fire the head shot to wrap a circular field around the bar, then the coil shot for a longitudinal field, and watch each field pattern reveal only the crack it crosses.",
+    "params": {
+      "bathMs": 1000,
+      "quizLockMs": 1500
+    },
+    "tasks": [
+      {
+        "id": "revealTransverse",
+        "label": "Reveal the transverse crack — choose the right shot",
+        "hint": "A coil's flux runs lengthwise along the bar, so it crosses the crack that lies across the bar."
+      },
+      {
+        "id": "revealLongitudinal",
+        "label": "Reveal the longitudinal crack with the other shot",
+        "hint": "Current through the bar wraps a circular field around it (right-hand rule) — it cuts the lengthwise crack at 90°."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Pass the check: which field finds which crack?",
+        "hint": "Flux only leaks where it crosses a crack — match each field's direction to the crack it cuts across."
+      }
+    ]
+  },
+  "mt1-2-3": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: Flux leakage and the 45–90° rule",
+    "intro": "Steer the AC yoke's pole-to-pole flux through the plate and dust particles: an indication blooms only where flux crosses a crack within 45–90° of perpendicular — the flux-leakage principle that makes MT work. Indicate all three cracks.",
+    "params": {
+      "crackAngles": [0, 60, 120],
+      "indicationThresholdDeg": 45,
+      "startAngleDeg": 90
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Indicate crack A — steer flux across it",
+        "hint": "Drag the yoke until its pole-to-pole flux crosses crack A at better than 45° — particles pile up where flux leaks."
+      },
+      {
+        "id": "indicateB",
+        "label": "Rotate the yoke until crack B leaks flux",
+        "hint": "Parallel to the flux a crack is invisible — swing the flux toward perpendicular over crack B."
+      },
+      {
+        "id": "indicateC",
+        "label": "Catch crack C — one direction never shows all",
+        "hint": "Compare the yoke angles that worked: every crack needed flux within 45–90° of perpendicular, which is why real parts get two shots."
+      }
+    ]
+  }
+}

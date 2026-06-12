@@ -1,0 +1,87 @@
+{
+  "rt2-2-2": {
+    "engine": "rs",
+    "mode": "tds",
+    "title": "Hands-on: protect stored film from radiation fog",
+    "intro": "Stored film integrates dose continuously - every stray mR builds base-plus-fog and steals contrast from the whole box. Work distance, lead shielding, and exposure-time planning so a 20 Ci Ir-192 shot leaves the film store under a 2 mrem budget.",
+    "params": {
+      "curies": 20,
+      "isotope": "Ir-192",
+      "boundaryLimit": 0.5,
+      "doseLimit": 2,
+      "minWorkMin": 30
+    },
+    "tasks": [
+      {
+        "id": "distanceHalf",
+        "label": "Double the film store's distance to quarter the rate",
+        "hint": "Inverse square: with no slabs stacked, drag the marker out to twice its start distance and watch the meter fall to one quarter - 'well away from exposure bays' is physics, not habit."
+      },
+      {
+        "id": "shieldToLimit",
+        "label": "Stack lead until the store wall reads under 0.5 mR/h",
+        "hint": "Each slab is one half-value layer (about 4.8 mm of lead for Ir-192) and halves the rate - this is the lead-lined film bin at room scale; expect around seven slabs."
+      },
+      {
+        "id": "planExposure",
+        "label": "Plan the 30-min shot under the film's 2 mrem budget",
+        "hint": "Dose = rate x hours, and film fogs by accumulation - cut the rate with distance plus lead until 30 minutes of beam time costs the stock less than 2 mrem."
+      }
+    ]
+  },
+  "rt2-2-3": {
+    "engine": "pt",
+    "mode": "process",
+    "title": "Hands-on: run a timed wet process start to finish",
+    "intro": "The darkroom's five steps run on order and clock discipline - develop, stop, fix, wash, dry, full time at temperature, never by eye. Drill that discipline on a six-station wet-process line: skip a station or cut the timed dwell short and the part resets, exactly as sight development ruins a film.",
+    "params": {
+      "dwellSec": 15,
+      "wipeCoverage": 0.85,
+      "crackSeed": 23,
+      "bleedSec": 4
+    },
+    "tasks": [
+      {
+        "id": "fullSequence",
+        "label": "Work all six stations in their fixed order",
+        "hint": "Like develop-stop-fix-wash-dry, the order is one-way: start at pre-clean and end at inspection - a swapped or skipped station resets the part."
+      },
+      {
+        "id": "properDwell",
+        "label": "Let the timed dwell run to zero - no early pulls",
+        "hint": "The time-temperature method, not your eye, ends a chemical step: wait for the timer ring to close completely before moving to the next station."
+      },
+      {
+        "id": "findIndication",
+        "label": "Inspect and click the indication a clean process earned",
+        "hint": "Only a full-order, full-time process leaves a readable record - scan the plate under the UV lamp for the glowing bleedout."
+      }
+    ]
+  },
+  "rt2-2-4": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: hold density inside QC action limits",
+    "intro": "A processor's daily control strip has one job: keep film density pinned inside action limits while conditions drift. Land density in a tight 2.35-2.65 window, then catch and correct the out-of-limits drift that 30 days of source decay causes - the same read-the-chart, fix-the-cause loop processor QC runs every morning.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 40,
+      "targetDmin": 2.35,
+      "targetDmax": 2.65,
+      "maxTimeMin": 30
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Land density inside the 2.35-2.65 action window",
+        "hint": "Treat 2.5 as the aim line and +/-0.15 as the QC chart's action limits - fine-tune exposure time until the density readout settles inside the window."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "Catch the 30-day drift and re-center the density",
+        "hint": "Activity fell to about 75% (A = A0 x 2^(-30/73.8)), so the strip now reads low - like any out-of-limits chart point, find the cause and correct: stretch the time about 1.3x."
+      }
+    ]
+  }
+}

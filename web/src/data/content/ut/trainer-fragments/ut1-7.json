@@ -1,0 +1,78 @@
+{
+  "ut1-7-1": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: raster a 0° beam like an immersion gantry",
+    "intro": "An immersion gantry builds its picture from one primitive: a 0° beam held square to the entry surface while the backwall echo is logged position by position. Drive the probe across the stepped aluminum plate the way the bridge manipulator would, record three readings, and flag the thinnest step.",
+    "params": {
+      "stepsMm": [10, 20, 35, 50],
+      "velocityMps": 6320,
+      "material": "Aluminum plate"
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Log readings on three different steps",
+        "hint": "Hold the probe steady mid-step until the backwall echo stops moving, then record."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Flag the thinnest step",
+        "hint": "Thinner metal returns its backwall echo sooner — pick the step with the earliest echo."
+      }
+    ]
+  },
+  "ut1-7-2": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: see the 4:1 water-steel velocity ratio",
+    "intro": "Minimum water path exists because sound crawls through water at roughly a quarter of its speed in steel — watch the same pulse in water, aluminum, and steel to see that 4:1 ratio yourself. Then raise the frequency until λ in steel drops below 1 mm, tightening the wavelength and near-field focus the way a focused immersion probe sharpens resolution.",
+    "params": {
+      "materials": ["steel", "aluminum", "water"],
+      "startMaterial": "water",
+      "frequencyMHz": 2,
+      "probeDiameterMm": 19
+    },
+    "tasks": [
+      {
+        "id": "compareMaterials",
+        "label": "Watch the pulse travel in all three materials",
+        "hint": "Water runs ~1,480 m/s vs ~5,920 in steel — that 4:1 crawl is why a quarter-thickness water path suffices."
+      },
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Shrink the wavelength in steel below 1 mm",
+        "hint": "λ = v/f. Steel runs 5,920 m/s, so you need roughly 6 MHz or more."
+      }
+    ]
+  },
+  "ut1-7-3": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: locate hidden flaws with pulse-echo",
+    "intro": "Through-transmission can only say the beam was blocked — pulse-echo tells you where. Using the same incident-angle control that generates plate waves, steer a 70° refracted beam through the plate and pin down all three hidden holes by their echo peaks: the locating power one-sided immersion scans rely on.",
+    "params": {
+      "flawCount": 3,
+      "depthsMm": [7, 12, 9],
+      "plateThicknessMm": 20,
+      "refractedAngleDeg": 70
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Mark the first hole at its echo peak",
+        "hint": "Slide until the echo peaks, then press Mark within ±4 mm of the peak."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Sweep on and mark the second hole",
+        "hint": "Each hole owns its own stretch of the scan line — watch for a fresh echo rising as you sweep."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Pin the third hole to finish the scan",
+        "hint": "A deeper hole echoes later on the time base — don't confuse late with weak."
+      }
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "ut1-6-1": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: locate 3 hidden holes with a 60° wedge",
+    "intro": "Slide the 60° wedge along the scan line and Mark each side-drilled hole where its echo peaks — the same sound-path geometry you just plotted with skip and surface distance. The peak lands exactly where the refracted shear-beam centreline intersects the reflector.",
+    "params": {
+      "flawCount": 3,
+      "depthsMm": [8, 19, 13],
+      "plateThicknessMm": 25,
+      "refractedAngleDeg": 60,
+      "scanLengthMm": 220
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Mark the first SDH at its echo peak",
+        "hint": "Slide until the echo is tallest, then press Mark within ±4 mm — peak amplitude means the beam centreline is on the hole."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Sweep on and Mark the second hole's peak",
+        "hint": "Watch the A-scan: the echo rises, peaks, and falls as the first-leg path sweeps through the hole — Mark at the top."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Pin the third hole from its sound path",
+        "hint": "A deeper hole peaks with the wedge farther back — its surface distance is depth × tan 60°, just like your plot."
+      }
+    ]
+  },
+  "ut1-6-2": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: size the wavelength that rides the surface",
+    "intro": "Rayleigh waves hug only the top wavelength of the part and Lamb modes need a plate just a few wavelengths thick, so λ = v/f decides where these waves live. Tune frequency and switch materials to see how big that ruler really is.",
+    "params": {
+      "startMaterial": "steel",
+      "frequencyMHz": 2
+    },
+    "tasks": [
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Push λ below 1 mm — a surface wave's whole world",
+        "hint": "Raise the frequency: λ = v/f, so more MHz means a shorter wavelength — and a Rayleigh wave samples only about 1λ deep."
+      },
+      {
+        "id": "compareMaterials",
+        "label": "Run the pulse in steel, aluminium, and water",
+        "hint": "Crest spacing tracks velocity at fixed frequency — and note water's short λ: fluids carry no shear or surface waves at all."
+      }
+    ]
+  },
+  "ut1-6-3": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: gauge thin steps where duals earn their keep",
+    "intro": "Gauge a thin-stepped block and watch the back-wall echo crowd the initial pulse as the section shrinks. That squeeze is the ring-down dead zone that blinds a single element — exactly why dual-element TR probes own thin-section and near-surface work.",
+    "params": {
+      "stepsMm": [5, 8, 12, 25]
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Gauge three steps of the thin-wall block",
+        "hint": "Place the 0° probe squarely on a step and log the reading — on the 5 mm step the echo sits hard against the initial pulse."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Flag the thinnest step — dual-probe territory",
+        "hint": "Thinnest means shortest time of flight: the back-wall echo closest to the initial pulse, where a dual's crossed beams focus."
+      }
+    ]
+  },
+  "ut1-6-4": {
+    "engine": "et",
+    "mode": "liftoff-null",
+    "title": "Hands-on: feel the air gap a flat shoe leaves on pipe",
+    "intro": "An eddy-current probe makes probe-to-part gap visible instantly: null it on full contact, then lift off and watch the signal run to AIR. That is the same coupling collapse a flat wedge suffers riding a curved surface on one contact line — the reason codes say contour once the gap tops about 0.5 mm.",
+    "params": {
+      "nullToleranceMm": 0.1,
+      "liftoffTargetMm": 2
+    },
+    "tasks": [
+      {
+        "id": "nullProbe",
+        "label": "Null the probe on full, mated contact",
+        "hint": "Lower until height reads essentially zero, then press Null — like a contoured shoe, balance only counts on true contact."
+      },
+      {
+        "id": "traceLiftoff",
+        "label": "Lift off 2 mm and watch the trace run to AIR",
+        "hint": "Raise the probe slowly: every fraction of a millimetre of air gap drags the signal away — a rocking wedge does this on pipe."
+      }
+    ]
+  }
+}

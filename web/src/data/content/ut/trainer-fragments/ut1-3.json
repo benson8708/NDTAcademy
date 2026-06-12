@@ -1,0 +1,73 @@
+{
+  "ut1-3-1": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: Read the live A-scan on a stepped block",
+    "intro": "Drag the 0-degree probe across the stepped block and watch the back-wall echo slide along the time base — horizontal position is time of flight, vertical height is returned energy. Log readings on three steps, then use the sweep alone to call the thinnest one.",
+    "params": {
+      "stepsMm": [10, 25, 50, 90],
+      "velocityMps": 5920,
+      "material": "Carbon steel",
+      "stepWidthMm": 36
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Record A-scan readings on three different steps",
+        "hint": "Center the probe on a step; the back-wall echo lands farther right on the sweep as the steel under it gets thicker."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Pick the step whose back-wall echo arrives earliest",
+        "hint": "Least metal means shortest time of flight — choose the step whose echo sits closest to the initial pulse."
+      }
+    ]
+  },
+  "ut1-3-2": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: Peak the SDH echoes that set sensitivity",
+    "intro": "A reference reflector only means something at its echo peak. Slide the angle-beam wedge over two side-drilled holes — the same known reflectors a procedure names for setting the reference level — and mark each one exactly where its A-scan echo maximizes.",
+    "params": {
+      "flawCount": 2,
+      "depthsMm": [12.5, 19],
+      "plateThicknessMm": 25,
+      "refractedAngleDeg": 60
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Maximize and mark the first side-drilled hole",
+        "hint": "Inch the wedge until the echo stops growing, then mark within 4 mm of peak — the same move as maximizing a cal reflector."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Maximize and mark the second side-drilled hole",
+        "hint": "Keep sliding past the first hole; a fresh echo rises as the beam centreline approaches the next SDH."
+      }
+    ]
+  },
+  "ut1-3-3": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: Gauge a thin step wedge with T = vt/2",
+    "intro": "A digital gauge just times the round trip and computes thickness as velocity times time over two. Work the probe across a thin-wall step wedge, record three readings, and flag the minimum wall — the number a corrosion survey exists to find.",
+    "params": {
+      "stepsMm": [5, 7.5, 12.5, 20],
+      "velocityMps": 5920,
+      "material": "Carbon steel"
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Take gauge readings on three different steps",
+        "hint": "Hold the probe flat on each step — the readout follows T = vt/2 from the timed back-wall echo."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Flag the thinnest step as the critical wall",
+        "hint": "Sweep all four steps and compare numbers — the minimum wall is what the survey reports."
+      }
+    ]
+  }
+}

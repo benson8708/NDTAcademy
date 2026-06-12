@@ -1,0 +1,108 @@
+{
+  "rt1-4-1": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: expose with a decaying Ir-192 source",
+    "intro": "Your exposure device holds a 40 Ci Ir-192 source with a 73.8-day half-life - it is always on and always decaying. Run a gamma exposure to the film-density window, then prove you can compensate when the source has decayed for a month.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 40,
+      "targetDmin": 2.0,
+      "targetDmax": 3.0,
+      "maxTimeMin": 20
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Expose the film to a density between 2.0 and 3.0",
+        "hint": "Exposure E = activity x time - if the film reads light (low D), lengthen the exposure time."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "Jump 30 days ahead and hit the density window again",
+        "hint": "30 days is about 0.4 half-life, so activity fell to roughly 75% - stretch the time about a third longer."
+      }
+    ]
+  },
+  "rt1-4-2": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: small focal spot, sharp radiograph",
+    "intro": "The line-focus target of your directional tube spreads heat over a big area yet shows the beam only a 1.5 mm effective focal spot. Use that small spot well: set source-to-object distance and film gap so geometric unsharpness Ug = f x OFD / SOD stays in spec.",
+    "params": {
+      "focalSpotMm": 1.5,
+      "specUgMm": 0.3,
+      "plateThicknessMm": 12,
+      "sodMm": 200,
+      "gapMm": 40
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Bring Ug to 0.3 mm or less with the 1.5 mm spot",
+        "hint": "Ug = f x OFD / SOD - back the tube head away or close the object-to-film gap."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Place the wire IQI on the source-side weld surface",
+        "hint": "The IQI proves the sharpness you set up - it belongs on the face toward the tube, never the film side."
+      }
+    ]
+  },
+  "rt1-4-3": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: betatron sharpness on 25 mm steel",
+    "intro": "A betatron is prized for sharpness because its focal spot is tiny - here just 0.5 mm. On this thick 25 mm plate, hold geometric unsharpness to a razor-thin 0.15 mm spec and feel why high-energy machines with small spots win on image definition.",
+    "params": {
+      "focalSpotMm": 0.5,
+      "specUgMm": 0.15,
+      "plateThicknessMm": 25,
+      "sodMm": 180,
+      "gapMm": 50
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Hold Ug at or under 0.15 mm on the thick plate",
+        "hint": "With f only 0.5 mm a modest SOD already helps - shrink the film gap or back the source off a little."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Set the IQI on the source-side surface of the part",
+        "hint": "Same rule at any energy: the wire IQI sits on the face looking at the betatron, not against the film."
+      }
+    ]
+  },
+  "rt1-4-4": {
+    "engine": "rs",
+    "mode": "tds",
+    "title": "Hands-on: live-beam safety at the fluoroscope",
+    "intro": "A fluoroscopic beam is ON the entire time you watch the screen - never put your eye (or your body) in it unprotected. Work the time-distance-shielding bay to keep a 15-minute live viewing session under the dose limit, just like the lead glass and standoff of a real-time cell.",
+    "params": {
+      "isotope": "Ir-192",
+      "curies": 20,
+      "boundaryLimit": 2,
+      "doseLimit": 10,
+      "minWorkMin": 15
+    },
+    "tasks": [
+      {
+        "id": "distanceHalf",
+        "label": "Double your distance and watch the rate drop 4x",
+        "hint": "Inverse-square law: twice as far from a live beam means one quarter of the dose rate."
+      },
+      {
+        "id": "shieldToLimit",
+        "label": "Stack shielding until the boundary reads under 2 mR/h",
+        "hint": "Each half-value layer cuts the rate in half - it is the same job the lead-glass viewing window does."
+      },
+      {
+        "id": "planExposure",
+        "label": "Plan a 15-minute viewing session under 10 mrem",
+        "hint": "Dose = rate x hours - add slabs or stand farther back until 15 minutes of screen time fits the limit."
+      }
+    ]
+  }
+}

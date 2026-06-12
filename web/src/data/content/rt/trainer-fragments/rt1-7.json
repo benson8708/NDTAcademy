@@ -1,0 +1,79 @@
+{
+  "rt1-7-1": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: spend your unsharpness budget",
+    "intro": "Inherent unsharpness Ui is fixed by radiation energy - about 0.17 mm for Ir-192 - so the geometric term is the only one you control. Kill the film gap and stretch the source distance until Ug drops below the 0.2 mm floor, then prove the setup with a source-side IQI.",
+    "params": {
+      "focalSpotMm": 3,
+      "specUgMm": 0.2,
+      "plateThicknessMm": 12,
+      "sodMm": 220,
+      "gapMm": 45
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Drive Ug below the 0.2 mm Ir-192 film floor",
+        "hint": "Ug = f x OFD / SOD: drag the film gap to zero first, then pull the source farther away."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Place the wire IQI on the source-side weld surface",
+        "hint": "Drag the IQI onto the surface facing the source - film-side placement is rejected."
+      }
+    ]
+  },
+  "rt1-7-2": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: expose to density, then beat the decay",
+    "intro": "Exposure is activity x time - the reciprocity law in curie-hours. Set an exposure time that lands film density inside the 2.0-3.0 code window with the lesson's 40 Ci Ir-192 source, then jump 30 days ahead and stretch the time to compensate for decay.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 40,
+      "targetDmin": 2.0,
+      "targetDmax": 3.0,
+      "maxTimeMin": 20
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Land film density inside the 2.0-3.0 window",
+        "hint": "E = A x t: nudge the time slider and watch density track total curie-minutes."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "Press '30 days later' and re-hit the window",
+        "hint": "A = A0 x 2^(-30/73.8) leaves about 75% activity, so the time must grow about 1.33x."
+      }
+    ]
+  },
+  "rt1-7-3": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: ride the steep part of the H&D curve",
+    "intro": "The characteristic curve maps log exposure to density, and its slope - the gradient - is film contrast. Work a weaker 25 Ci source up into the high-gradient 2.5-3.2 band, then show speed thinking: when activity falls, the same density demands more exposure, so slide right along the log-E axis with time.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 25,
+      "targetDmin": 2.5,
+      "targetDmax": 3.2,
+      "maxTimeMin": 30
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Land density in the steep 2.5-3.2 gradient band",
+        "hint": "Higher density sits higher on the H&D curve - longer exposure climbs the straight-line region."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "Match the same band after 30 days of decay",
+        "hint": "A decayed source acts like a slower film: same density needs more exposure - stretch time about 1.3x."
+      }
+    ]
+  }
+}

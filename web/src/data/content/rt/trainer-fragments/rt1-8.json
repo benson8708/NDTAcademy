@@ -1,0 +1,53 @@
+{
+  "rt1-8-1": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: expose into the 2.0-3.0 density window",
+    "intro": "Film contrast lives on the characteristic curve, so where your density lands decides what you can see. Set the exposure time on an Ir-192 shot to put the film in the 2.0-3.0 target window - past the lazy toe - then prove that density follows total exposure E = A x t by compensating after the source decays.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 40,
+      "targetDmin": 2.0,
+      "targetDmax": 3.0,
+      "maxTimeMin": 20
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Land the film density inside the 2.0-3.0 window",
+        "hint": "Density climbs with total exposure E = A x t - lengthen the time slider to climb the characteristic curve past the low-gradient toe below D 2.0."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "After 30 days of decay, restore density with time",
+        "hint": "Ir-192's half-life is 73.8 days, so 30 days cuts activity to about 75% - stretch the exposure time roughly a third to keep E = A x t, and the density, the same."
+      }
+    ]
+  },
+  "rt1-8-2": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: tame Ug and place the IQI source side",
+    "intro": "Definition dies by geometry: this setup starts with a smeared penumbra. Shrink Ug = F x t / d below the 0.5 mm code cap by pressing the film against the part and backing the source up, then drag the wire IQI onto the source-side weld surface - the position where image quality is hardest to prove.",
+    "params": {
+      "focalSpotMm": 3.8,
+      "specUgMm": 0.5,
+      "plateThicknessMm": 25,
+      "sodMm": 200,
+      "gapMm": 50
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Bring geometric unsharpness under 0.5 mm",
+        "hint": "Ug = F x t / d: drag the object-to-film gap toward zero AND back the source up - doubling the stand-off halves the penumbra."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Drag the wire IQI onto the source-side weld face",
+        "hint": "Source side is the default because that is where quality is hardest to demonstrate - film-side placement is rejected here (in the field it needs a lead 'F')."
+      }
+    ]
+  }
+}

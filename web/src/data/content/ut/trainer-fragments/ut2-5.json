@@ -1,0 +1,73 @@
+{
+  "ut2-5-1": {
+    "engine": "pt",
+    "mode": "capillarity",
+    "title": "Hands-on: capillary flow — how adhesive fillets form",
+    "intro": "Adhesive fillets climb honeycomb cell walls by the same capillary action that pulls penetrant into this magnified crack. Fill the crack, then race a thin grade against a thick one to see how viscosity decides whether a liquid wets a tight gap — or bridges it and leaves a void.",
+    "params": {
+      "fillSecBase": 6,
+      "viscMinCst": 3,
+      "viscMaxCst": 24,
+      "crackDepthMm": 6
+    },
+    "tasks": [
+      {
+        "id": "fillCrack",
+        "label": "Apply penetrant and let capillarity fill the gap",
+        "hint": "Apply and wait — fill depth grows as the square root of time (Washburn), the same wetting that builds core fillets during cure."
+      },
+      {
+        "id": "compareViscosity",
+        "label": "Fill at low and high viscosity; compare the curves",
+        "hint": "Run one fill at each end of the viscosity slider — the depth-time chart overlays both runs, like runny paste adhesive versus stiff film."
+      }
+    ]
+  },
+  "ut2-5-2": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: read disbond depth from echo arrival",
+    "intro": "A disbond turns its interface into an air-backed reflector, and pulse-echo's advantage is depth: echo arrival time tells you which bondline failed. Treat each step of this aluminum block as a deeper failed interface in a skin-doubler stack — gauge three, then flag the shallowest as the near-side disbond.",
+    "params": {
+      "stepsMm": [6, 12, 18, 24],
+      "stepWidthMm": 30,
+      "velocityMps": 6320,
+      "material": "Aluminum laminate"
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Gauge the reflector depth on three different steps",
+        "hint": "Seat the 0-degree probe mid-step and read the backwall echo — an earlier arrival means sound stopped at a shallower interface."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Flag the shallowest step — the near-side disbond",
+        "hint": "A near-side disbond stops sound at the first bondline, so its echo arrives earliest; a far-side break lets sound travel deeper first."
+      }
+    ]
+  },
+  "ut2-5-3": {
+    "engine": "et",
+    "mode": "liftoff-null",
+    "title": "Hands-on: standardize on a reference — null, then deviate",
+    "intro": "A bond evaluation is only valid after standardizing on a known-good reference: the tester is nulled there, and every finding is read as a deviation from that null. Practice the discipline — null the probe at contact, then lift off and watch the dot swing away exactly as it would over a disbonded, un-loaded skin.",
+    "params": {
+      "maxHeightMm": 5,
+      "nullToleranceMm": 0.15,
+      "liftoffTargetMm": 2
+    },
+    "tasks": [
+      {
+        "id": "nullProbe",
+        "label": "Lower to contact and null on the known-good surface",
+        "hint": "Get the probe within 0.15 mm of the surface before pressing Null — standardization demands real contact with the reference."
+      },
+      {
+        "id": "traceLiftoff",
+        "label": "Lift off and watch the dot swing away from the null",
+        "hint": "Raise the probe about 2 mm after a good null; a probe the structure no longer loads drifts toward AIR, like a meter over a disbond."
+      }
+    ]
+  }
+}

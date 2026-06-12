@@ -1,0 +1,77 @@
+{
+  "vt2-1-1": {
+    "engine": "pt",
+    "mode": "process",
+    "title": "Hands-on: find a surface flaw VT alone would miss",
+    "intro": "VT's job is finding surface-breaking discontinuities, and penetrant testing is visual testing's closest extension — its final station is a visual exam under UV light. Run the six-station inspection in proper order and find the bleedout, then remember: you found an indication to document, not yet a defect.",
+    "params": {
+      "dwellSec": 10,
+      "crackSeed": 21
+    },
+    "tasks": [
+      {
+        "id": "fullSequence",
+        "label": "Work the six PT stations in the correct order",
+        "hint": "Pre-clean, penetrant, dwell, remove excess, developer, UV-A inspect — skipping ahead resets the part."
+      },
+      {
+        "id": "properDwell",
+        "label": "Let the dwell timer run out before wiping",
+        "hint": "Cutting dwell short starves the crack of penetrant — wait for the ring to close."
+      },
+      {
+        "id": "findIndication",
+        "label": "Visually locate the glowing indication under UV-A",
+        "hint": "The last station is pure visual testing — scan the plate for the bleedout and click it."
+      }
+    ]
+  },
+  "vt2-1-2": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: angle decides what your inspection sees",
+    "intro": "This lesson's viewing rule — eye within 24 inches and at least 30 degrees to the surface — is really about geometry: detection collapses at bad orientations. Feel the same physics with a magnetic yoke: each of three differently oriented cracks indicates only while the flux crosses it near-perpendicular.",
+    "params": {
+      "crackAngles": [15, 75, 135],
+      "indicationThresholdDeg": 50
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Rotate the yoke until crack A shows an indication",
+        "hint": "Dust particles, then turn the flux to cross crack A close to perpendicular."
+      },
+      {
+        "id": "indicateB",
+        "label": "Re-orient the field to pick up crack B",
+        "hint": "B lies at a different angle — the orientation that found A cannot find B."
+      },
+      {
+        "id": "indicateC",
+        "label": "Find the orientation that reveals crack C",
+        "hint": "Each crack has its own narrow angular window — sweep slowly and watch for the build-up."
+      }
+    ]
+  },
+  "vt2-1-3": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: tune the instrument's acuity (λ = v/f)",
+    "intro": "Acuity exams exist because the inspector's eye is a measuring instrument that must resolve fine detail — and every instrument has an 'acuity' you can verify. In UT that limit is the wavelength λ = v/f: push it below 1 millimetre, the instrument's version of reading the J-2 line.",
+    "params": {
+      "frequencyMHz": 1
+    },
+    "tasks": [
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Raise frequency until λ in steel is under 1 mm",
+        "hint": "λ = v/f and steel's v is about 5920 m/s, so you need roughly 6 MHz or more."
+      },
+      {
+        "id": "compareMaterials",
+        "label": "Observe the pulse in steel, aluminium and water",
+        "hint": "Switch materials at a fixed frequency — velocity changes λ, and λ sets what the instrument can resolve."
+      }
+    ]
+  }
+}

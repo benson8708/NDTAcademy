@@ -1,0 +1,53 @@
+{
+  "rt1-6-1": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: gamma exposure, reciprocity, and decay",
+    "intro": "With a gamma source there is no mA or kVp knob — activity fixes intensity, so exposure is activity × time, the same reciprocity behind mA·min. Time an Ir-192 shot to land the film-density window, then prove you understand half-life by re-exposing after 30 days of decay.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 40,
+      "targetDmin": 2.0,
+      "targetDmax": 3.0,
+      "maxTimeMin": 30
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Set the time so density lands between 2.0 and 3.0",
+        "hint": "Exposure E = activity × time: more minutes means a darker film, so nudge the time slider until D enters the window."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "Press '30 days later', then re-hit the density window",
+        "hint": "30 days is about 0.4 half-life of Ir-192, so activity dropped to ~75% — stretch the exposure time by roughly a third to match the old E = A × t."
+      }
+    ]
+  },
+  "rt1-6-2": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: beat the 0.4 mm Ug spec, then place the IQI",
+    "intro": "Geometric unsharpness is triangle math: Ug = F × t ÷ d. The setup starts sloppy — drag the source farther away and close the object-to-film gap until the ghost radiograph sharpens under the 0.4 mm spec, then drop the wire IQI where the shadow rules demand: the source-side surface.",
+    "params": {
+      "focalSpotMm": 3,
+      "specUgMm": 0.4,
+      "plateThicknessMm": 12,
+      "sodMm": 180,
+      "gapMm": 50
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Get Ug at or under 0.4 mm — source far, film tight",
+        "hint": "Ug = F × t ÷ d: shrink the object-to-film gap t toward contact and grow the source-to-object distance d — both follow the five rules of a sharp shadow."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Drag the wire IQI onto the source-side weld surface",
+        "hint": "Film-side placement is rejected: on the source side the IQI's shadow suffers the same enlargement and penumbra as the worst-placed flaw."
+      }
+    ]
+  }
+}

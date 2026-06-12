@@ -1,0 +1,1374 @@
+{
+ "rt1-1-1": {
+  "engine": "rs",
+  "mode": "survey",
+  "title": "Hands-on: survey the invisible field around a source",
+  "intro": "Roentgen's rays were invisible in 1895 and they are invisible now \u2014 only a survey meter shows you the field. Walk the rope boundary around a shielded Ir-192 exposure device, record the rate at all three stakes, and fix the one posting that reads over the limit.",
+  "params": {
+   "isotope": "Ir-192",
+   "curies": 30,
+   "limit": 2
+  },
+  "tasks": [
+   {
+    "id": "surveyAll",
+    "label": "Carry the meter to stakes A, B, C and record each",
+    "hint": "Hold the meter still at a stake until the reading stabilises \u2014 Record only accepts a steady value."
+   },
+   {
+    "id": "postBoundary",
+    "label": "Drag stake B outward until it reads the 2 mR/h limit",
+    "hint": "The rate falls with the square of distance, so a short move outward drops the reading quickly."
+   }
+  ]
+ },
+ "rt1-1-2": {
+  "engine": "rs",
+  "mode": "tds",
+  "title": "Hands-on: inverse-square and halving math at the bay",
+  "intro": "Put the lesson's math to work at a gamma bay: doubling distance divides the rate by 2 squared, each half-value layer is another negative power of 2, and the exposure plan is dose = rate x time rearranged for time. Solve all three with the live meter checking your arithmetic.",
+  "params": {
+   "isotope": "Ir-192",
+   "curies": 30,
+   "boundaryLimit": 2,
+   "doseLimit": 20,
+   "minWorkMin": 10
+  },
+  "tasks": [
+   {
+    "id": "distanceHalf",
+    "label": "Double your distance \u2014 confirm the rate falls 4x",
+    "hint": "I1\u00b7d1\u00b2 = I2\u00b7d2\u00b2: doubling d makes d\u00b2 four times larger, so the meter must read one quarter."
+   },
+   {
+    "id": "shieldToLimit",
+    "label": "Stack HVL slabs until the door post reads under 2 mR/h",
+    "hint": "Each half-value layer leaves 1/2 of the rate \u2014 after n slabs only 1/2^n remains, just like the halving table."
+   },
+   {
+    "id": "planExposure",
+    "label": "Plan 10+ minutes of work under the 20 mrem dose cap",
+    "hint": "Rearrange dose = rate x hours: allowed hours = 20 mrem / rate. If that is too short, cut the rate with distance or slabs first."
+   }
+  ]
+ },
+ "rt1-1-4": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: watch a radioisotope decay on the clock",
+  "intro": "Ir-192 \u2014 iridium with 115 neutrons instead of a stable mix \u2014 cannot settle, so its activity falls on a fixed 73.8-day half-life. Make a good exposure today, then jump 30 days ahead and compensate for the decay your radioisotope's nucleus made inevitable.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 40,
+   "targetDmin": 2.0,
+   "targetDmax": 3.0,
+   "maxTimeMin": 20
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Expose the day-0 shot into the 2.0-3.0 density window",
+    "hint": "Exposure E = activity x time \u2014 nudge the time slider until film density lands inside the window."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "Jump 30 days and re-expose to make up for lost curies",
+    "hint": "A = A0 x 2^(-30/73.8) \u2248 75% of day-0 activity, so stretch the exposure time by about a third."
+   }
+  ]
+ },
+ "rt1-2-2": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: beat Ir-192 decay with exposure time",
+  "intro": "Expose film with a fresh 40 Ci Ir-192 source until density lands in the 2.0-3.0 window, then jump 30 days ahead: activity has fallen along A = A0 x 2^(-t/73.8), so you must stretch the exposure time to win the density back - the same half-life math as this lesson's decay tables.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 40,
+   "targetDmin": 2.0,
+   "targetDmax": 3.0,
+   "maxTimeMin": 20
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Expose film into the 2.0-3.0 density window",
+    "hint": "Density tracks total exposure E = activity x time - nudge the time slider and watch the density readout climb."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "After 30 days of decay, recover the density",
+    "hint": "30 days is about 0.4 half-lives: activity is down to ~75%, so exposure time must grow by roughly a third."
+   }
+  ]
+ },
+ "rt1-2-3": {
+  "engine": "rs",
+  "mode": "tds",
+  "title": "Hands-on: time, distance, shielding vs gamma photons",
+  "intro": "Gamma photons cross the whole bay and no shield stops them all - lead only thins the field. Work the three defenses this lesson ends on: back away (inverse square), stack half-value layers, and cap the time you spend in the field.",
+  "params": {
+   "curies": 30,
+   "isotope": "Ir-192",
+   "boundaryLimit": 2,
+   "doseLimit": 20,
+   "minWorkMin": 10
+  },
+  "tasks": [
+   {
+    "id": "distanceHalf",
+    "label": "Double your distance and watch the rate fall 4x",
+    "hint": "Photons spread over a sphere, so intensity goes as 1/d-squared: twice the distance means one quarter the rate."
+   },
+   {
+    "id": "shieldToLimit",
+    "label": "Stack lead until the boundary reads under 2 mR/h",
+    "hint": "Each half-value layer halves the rate - count the halvings needed to get from ~86 mR/h down below 2."
+   },
+   {
+    "id": "planExposure",
+    "label": "Plan a 10-minute job under the 20 mrem budget",
+    "hint": "Dose = rate x time; if the plan busts the budget, lower the rate first with distance or another slab."
+   }
+  ]
+ },
+ "rt1-2-4": {
+  "engine": "rs",
+  "mode": "tds",
+  "title": "Hands-on: Co-60 - when the nucleus sets the energy",
+  "intro": "Swap the bay's source for Co-60. Its 1.17 and 1.33 MeV lines are nuclear constants - no kV or mA knob - so the HUD's output (1.32 R-m2/Ci-h vs Ir-192's 0.48) and 12.5 mm lead HVL are simply what you must work around: shield the boundary, then budget your dose.",
+  "params": {
+   "curies": 15,
+   "isotope": "Co-60",
+   "boundaryLimit": 2,
+   "doseLimit": 20,
+   "minWorkMin": 15
+  },
+  "tasks": [
+   {
+    "id": "shieldToLimit",
+    "label": "Shield the boundary - count the HVLs Co-60 costs",
+    "hint": "At Co-60 energy one half-value layer is 12.5 mm of lead; expect about six slabs to get under 2 mR/h."
+   },
+   {
+    "id": "planExposure",
+    "label": "Budget a 15-minute shot under 20 mrem",
+    "hint": "Output is activity, not a dial: dose = rate x time, so buy your margin with distance and lead before adding minutes."
+   }
+  ]
+ },
+ "rt1-3-1": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: turn ionization events into film density",
+  "intro": "Film blackens because photons interact in the emulsion \u2014 every step of density is an ionization tally. Land the density window by choosing the exposure time, then hold it after 30 days of decay thins the photon supply.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 40,
+   "targetDmin": 2.0,
+   "targetDmax": 3.0,
+   "maxTimeMin": 20
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Expose until film density lands between D 2.0 and 3.0",
+    "hint": "Density is an ionization tally \u2014 exposure E = A \u00d7 t, so give the emulsion more time until enough photons have interacted."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "Jump 30 days ahead and recover the density window",
+    "hint": "The decayed source fires fewer photons per minute, so stretch the time until the total interaction count A \u00d7 t matches."
+   }
+  ]
+ },
+ "rt1-3-2": {
+  "engine": "rs",
+  "mode": "survey",
+  "title": "Hands-on: survey the field an 80 Ci Ir-192 source makes",
+  "intro": "Exposure is ionization in air, and an ion-chamber survey meter collects exactly that charge. Survey the boundary around an 80 Ci Ir-192 device and post the line where the 2 mR/h limit truly sits \u2014 plan with the emissivity constant, believe the meter.",
+  "params": {
+   "isotope": "Ir-192",
+   "curies": 80,
+   "deviceFactor": 0.01,
+   "limit": 2
+  },
+  "tasks": [
+   {
+    "id": "surveyAll",
+    "label": "Record a stable exposure-rate reading at stakes A, B, C",
+    "hint": "Hold the meter still \u2014 it is an air-filled ion chamber collecting charge; the mR/h reading only records once it settles."
+   },
+   {
+    "id": "postBoundary",
+    "label": "Drag stake B out until the rate sits at the 2 mR/h limit",
+    "hint": "Plan with emissivity (Ir-192 \u2248 0.5 R/h per Ci at 1 m, falling as 1/d\u00b2), but the calibrated meter \u2014 not the constant \u2014 sets the post."
+   }
+  ]
+ },
+ "rt1-3-3": {
+  "engine": "rs",
+  "mode": "tds",
+  "title": "Hands-on: beat the field with time, distance, shielding",
+  "intro": "Attenuation and geometry are your only levers against a hot source. Prove the inverse square law by doubling your distance, stack one-HVL lead slabs until the boundary post clears 2 mR/h, then plan a job dose with the time slider.",
+  "params": {
+   "isotope": "Ir-192",
+   "curies": 80,
+   "boundaryLimit": 2,
+   "doseLimit": 20,
+   "minWorkMin": 10
+  },
+  "tasks": [
+   {
+    "id": "distanceHalf",
+    "label": "Double your distance and watch the rate fall 4x",
+    "hint": "Inverse square: I\u2081d\u2081\u00b2 = I\u2082d\u2082\u00b2 \u2014 twice the distance spreads the same photons over four times the area."
+   },
+   {
+    "id": "shieldToLimit",
+    "label": "Stack lead slabs until the boundary post reads 2 mR/h",
+    "hint": "Each slab is one HVL and halves the rate; about 3.3 HVL make one TVL \u2014 count the halvings needed from ~230 mR/h down to 2."
+   },
+   {
+    "id": "planExposure",
+    "label": "Plan a 10-minute job that stays under 20 mrem",
+    "hint": "Dose = rate \u00d7 time \u2014 trade distance and shielding against the clock; ALARA is all three levers pulled at once."
+   }
+  ]
+ },
+ "rt1-4-1": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: expose with a decaying Ir-192 source",
+  "intro": "Your exposure device holds a 40 Ci Ir-192 source with a 73.8-day half-life - it is always on and always decaying. Run a gamma exposure to the film-density window, then prove you can compensate when the source has decayed for a month.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 40,
+   "targetDmin": 2.0,
+   "targetDmax": 3.0,
+   "maxTimeMin": 20
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Expose the film to a density between 2.0 and 3.0",
+    "hint": "Exposure E = activity x time - if the film reads light (low D), lengthen the exposure time."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "Jump 30 days ahead and hit the density window again",
+    "hint": "30 days is about 0.4 half-life, so activity fell to roughly 75% - stretch the time about a third longer."
+   }
+  ]
+ },
+ "rt1-4-2": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: small focal spot, sharp radiograph",
+  "intro": "The line-focus target of your directional tube spreads heat over a big area yet shows the beam only a 1.5 mm effective focal spot. Use that small spot well: set source-to-object distance and film gap so geometric unsharpness Ug = f x OFD / SOD stays in spec.",
+  "params": {
+   "focalSpotMm": 1.5,
+   "specUgMm": 0.3,
+   "plateThicknessMm": 12,
+   "sodMm": 200,
+   "gapMm": 40
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Bring Ug to 0.3 mm or less with the 1.5 mm spot",
+    "hint": "Ug = f x OFD / SOD - back the tube head away or close the object-to-film gap."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Place the wire IQI on the source-side weld surface",
+    "hint": "The IQI proves the sharpness you set up - it belongs on the face toward the tube, never the film side."
+   }
+  ]
+ },
+ "rt1-4-3": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: betatron sharpness on 25 mm steel",
+  "intro": "A betatron is prized for sharpness because its focal spot is tiny - here just 0.5 mm. On this thick 25 mm plate, hold geometric unsharpness to a razor-thin 0.15 mm spec and feel why high-energy machines with small spots win on image definition.",
+  "params": {
+   "focalSpotMm": 0.5,
+   "specUgMm": 0.15,
+   "plateThicknessMm": 25,
+   "sodMm": 180,
+   "gapMm": 50
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Hold Ug at or under 0.15 mm on the thick plate",
+    "hint": "With f only 0.5 mm a modest SOD already helps - shrink the film gap or back the source off a little."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Set the IQI on the source-side surface of the part",
+    "hint": "Same rule at any energy: the wire IQI sits on the face looking at the betatron, not against the film."
+   }
+  ]
+ },
+ "rt1-4-4": {
+  "engine": "rs",
+  "mode": "tds",
+  "title": "Hands-on: live-beam safety at the fluoroscope",
+  "intro": "A fluoroscopic beam is ON the entire time you watch the screen - never put your eye (or your body) in it unprotected. Work the time-distance-shielding bay to keep a 15-minute live viewing session under the dose limit, just like the lead glass and standoff of a real-time cell.",
+  "params": {
+   "isotope": "Ir-192",
+   "curies": 20,
+   "boundaryLimit": 2,
+   "doseLimit": 10,
+   "minWorkMin": 15
+  },
+  "tasks": [
+   {
+    "id": "distanceHalf",
+    "label": "Double your distance and watch the rate drop 4x",
+    "hint": "Inverse-square law: twice as far from a live beam means one quarter of the dose rate."
+   },
+   {
+    "id": "shieldToLimit",
+    "label": "Stack shielding until the boundary reads under 2 mR/h",
+    "hint": "Each half-value layer cuts the rate in half - it is the same job the lead-glass viewing window does."
+   },
+   {
+    "id": "planExposure",
+    "label": "Plan a 15-minute viewing session under 10 mrem",
+    "hint": "Dose = rate x hours - add slabs or stand farther back until 15 minutes of screen time fits the limit."
+   }
+  ]
+ },
+ "rt1-5-1": {
+  "engine": "rs",
+  "mode": "tds",
+  "title": "Hands-on: cut the dose with time, distance, shielding",
+  "intro": "Work the three exposure-control levers on a live 80 Ci Ir-192 bay. Prove the inverse-square law by stepping back, stack half-value layers until the boundary post reads under 2 mR/h, then plan the job time so the dose stays ALARA.",
+  "params": {
+   "curies": 80,
+   "isotope": "Ir-192",
+   "boundaryLimit": 2,
+   "doseLimit": 20,
+   "minWorkMin": 10
+  },
+  "tasks": [
+   {
+    "id": "distanceHalf",
+    "label": "Double your distance and cut the rate to one quarter",
+    "hint": "I1d1^2 = I2d2^2 - drag the worker marker out to twice the start distance with no slabs stacked."
+   },
+   {
+    "id": "shieldToLimit",
+    "label": "Stack lead HVL slabs until the boundary reads under 2 mR/h",
+    "hint": "Each slab is one half-value layer (about 4.8 mm lead for Ir-192) and halves the rate - watch the boundary post readout."
+   },
+   {
+    "id": "planExposure",
+    "label": "Plan at least 10 min of work under a 20 mrem budget",
+    "hint": "Dose = rate x hours. If 10 minutes busts the budget, lower the rate first with distance or shielding, then set the time slider."
+   }
+  ]
+ },
+ "rt1-5-2": {
+  "engine": "rs",
+  "mode": "survey",
+  "title": "Hands-on: survey and post the radiography boundary",
+  "intro": "Your survey meter is your only sense for radiation around a shielded exposure device. Carry it to each boundary stake and wait for a stable reading before recording - then move the over-limit stake until the posted line truly reads 2 mR/h.",
+  "params": {
+   "curies": 80,
+   "isotope": "Ir-192",
+   "deviceFactor": 0.01,
+   "limit": 2
+  },
+  "tasks": [
+   {
+    "id": "surveyAll",
+    "label": "Record a stable meter reading at stakes A, B, and C",
+    "hint": "Hold the meter still at each stake until the needle settles - Record rejects a reading that is still moving, just like a real ion chamber."
+   },
+   {
+    "id": "postBoundary",
+    "label": "Re-post stake B where the meter reads the 2 mR/h limit",
+    "hint": "Drag stake B outward along its radial and watch the rate fall by inverse square; release when it sits at the posting limit."
+   }
+  ]
+ },
+ "rt1-6-1": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: gamma exposure, reciprocity, and decay",
+  "intro": "With a gamma source there is no mA or kVp knob \u2014 activity fixes intensity, so exposure is activity \u00d7 time, the same reciprocity behind mA\u00b7min. Time an Ir-192 shot to land the film-density window, then prove you understand half-life by re-exposing after 30 days of decay.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 40,
+   "targetDmin": 2.0,
+   "targetDmax": 3.0,
+   "maxTimeMin": 30
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Set the time so density lands between 2.0 and 3.0",
+    "hint": "Exposure E = activity \u00d7 time: more minutes means a darker film, so nudge the time slider until D enters the window."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "Press '30 days later', then re-hit the density window",
+    "hint": "30 days is about 0.4 half-life of Ir-192, so activity dropped to ~75% \u2014 stretch the exposure time by roughly a third to match the old E = A \u00d7 t."
+   }
+  ]
+ },
+ "rt1-6-2": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: beat the 0.4 mm Ug spec, then place the IQI",
+  "intro": "Geometric unsharpness is triangle math: Ug = F \u00d7 t \u00f7 d. The setup starts sloppy \u2014 drag the source farther away and close the object-to-film gap until the ghost radiograph sharpens under the 0.4 mm spec, then drop the wire IQI where the shadow rules demand: the source-side surface.",
+  "params": {
+   "focalSpotMm": 3,
+   "specUgMm": 0.4,
+   "plateThicknessMm": 12,
+   "sodMm": 180,
+   "gapMm": 50
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Get Ug at or under 0.4 mm \u2014 source far, film tight",
+    "hint": "Ug = F \u00d7 t \u00f7 d: shrink the object-to-film gap t toward contact and grow the source-to-object distance d \u2014 both follow the five rules of a sharp shadow."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Drag the wire IQI onto the source-side weld surface",
+    "hint": "Film-side placement is rejected: on the source side the IQI's shadow suffers the same enlargement and penumbra as the worst-placed flaw."
+   }
+  ]
+ },
+ "rt1-7-1": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: spend your unsharpness budget",
+  "intro": "Inherent unsharpness Ui is fixed by radiation energy - about 0.17 mm for Ir-192 - so the geometric term is the only one you control. Kill the film gap and stretch the source distance until Ug drops below the 0.2 mm floor, then prove the setup with a source-side IQI.",
+  "params": {
+   "focalSpotMm": 3,
+   "specUgMm": 0.2,
+   "plateThicknessMm": 12,
+   "sodMm": 220,
+   "gapMm": 45
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Drive Ug below the 0.2 mm Ir-192 film floor",
+    "hint": "Ug = f x OFD / SOD: drag the film gap to zero first, then pull the source farther away."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Place the wire IQI on the source-side weld surface",
+    "hint": "Drag the IQI onto the surface facing the source - film-side placement is rejected."
+   }
+  ]
+ },
+ "rt1-7-2": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: expose to density, then beat the decay",
+  "intro": "Exposure is activity x time - the reciprocity law in curie-hours. Set an exposure time that lands film density inside the 2.0-3.0 code window with the lesson's 40 Ci Ir-192 source, then jump 30 days ahead and stretch the time to compensate for decay.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 40,
+   "targetDmin": 2.0,
+   "targetDmax": 3.0,
+   "maxTimeMin": 20
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Land film density inside the 2.0-3.0 window",
+    "hint": "E = A x t: nudge the time slider and watch density track total curie-minutes."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "Press '30 days later' and re-hit the window",
+    "hint": "A = A0 x 2^(-30/73.8) leaves about 75% activity, so the time must grow about 1.33x."
+   }
+  ]
+ },
+ "rt1-7-3": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: ride the steep part of the H&D curve",
+  "intro": "The characteristic curve maps log exposure to density, and its slope - the gradient - is film contrast. Work a weaker 25 Ci source up into the high-gradient 2.5-3.2 band, then show speed thinking: when activity falls, the same density demands more exposure, so slide right along the log-E axis with time.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 25,
+   "targetDmin": 2.5,
+   "targetDmax": 3.2,
+   "maxTimeMin": 30
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Land density in the steep 2.5-3.2 gradient band",
+    "hint": "Higher density sits higher on the H&D curve - longer exposure climbs the straight-line region."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "Match the same band after 30 days of decay",
+    "hint": "A decayed source acts like a slower film: same density needs more exposure - stretch time about 1.3x."
+   }
+  ]
+ },
+ "rt1-8-1": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: expose into the 2.0-3.0 density window",
+  "intro": "Film contrast lives on the characteristic curve, so where your density lands decides what you can see. Set the exposure time on an Ir-192 shot to put the film in the 2.0-3.0 target window - past the lazy toe - then prove that density follows total exposure E = A x t by compensating after the source decays.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 40,
+   "targetDmin": 2.0,
+   "targetDmax": 3.0,
+   "maxTimeMin": 20
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Land the film density inside the 2.0-3.0 window",
+    "hint": "Density climbs with total exposure E = A x t - lengthen the time slider to climb the characteristic curve past the low-gradient toe below D 2.0."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "After 30 days of decay, restore density with time",
+    "hint": "Ir-192's half-life is 73.8 days, so 30 days cuts activity to about 75% - stretch the exposure time roughly a third to keep E = A x t, and the density, the same."
+   }
+  ]
+ },
+ "rt1-8-2": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: tame Ug and place the IQI source side",
+  "intro": "Definition dies by geometry: this setup starts with a smeared penumbra. Shrink Ug = F x t / d below the 0.5 mm code cap by pressing the film against the part and backing the source up, then drag the wire IQI onto the source-side weld surface - the position where image quality is hardest to prove.",
+  "params": {
+   "focalSpotMm": 3.8,
+   "specUgMm": 0.5,
+   "plateThicknessMm": 25,
+   "sodMm": 200,
+   "gapMm": 50
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Bring geometric unsharpness under 0.5 mm",
+    "hint": "Ug = F x t / d: drag the object-to-film gap toward zero AND back the source up - doubling the stand-off halves the penumbra."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Drag the wire IQI onto the source-side weld face",
+    "hint": "Source side is the default because that is where quality is hardest to demonstrate - film-side placement is rejected here (in the field it needs a lead 'F')."
+   }
+  ]
+ },
+ "rt1-9-2": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: set up a clean single-wall shot",
+  "intro": "Single-wall is the first-choice technique because its geometry is clean and Ug is controlled with the full SFD working for you. Stretch the film gap to watch a far wall blur into uselessness \u2014 the DWSI effect \u2014 then pull the source back to meet the Ug spec and place the IQI on the source side, where single-wall viewing demands it.",
+  "params": {
+   "focalSpotMm": 3,
+   "specUgMm": 0.5,
+   "plateThicknessMm": 10,
+   "sodMm": 180,
+   "gapMm": 45
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Bring Ug within the 0.5 mm spec",
+    "hint": "Ug = f x OFD / SOD \u2014 pull the source back or close the film gap; single-wall lets you do both."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Place the wire IQI on the source-side weld surface",
+    "hint": "Single-wall viewing puts the IQI on the side facing the source \u2014 film-side placement is rejected."
+   }
+  ]
+ },
+ "rt1-9-3": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: time a panoramic gamma exposure",
+  "intro": "A panoramic shot exposes every film around the girth weld in one firing, so the exposure time must be right the first time \u2014 there is no per-film re-shoot. Land the density window with the 60 Ci Ir-192 crawler source, then re-time the same weld 30 days of decay later, the round-to-round correction every pipeline crew makes.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 60,
+   "targetDmin": 2.0,
+   "targetDmax": 3.0,
+   "maxTimeMin": 30
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Land film density in the 2.0-3.0 window",
+    "hint": "Density follows exposure E = activity x time \u2014 every cassette around the circumference gets this one shot."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "Re-shoot 30 days later at the same density",
+    "hint": "After 30 days Ir-192 keeps about 75% of its activity \u2014 stretch the time so A x t matches the first shot."
+   }
+  ]
+ },
+ "rt1-9-4": {
+  "engine": "rs",
+  "mode": "tds",
+  "title": "Hands-on: protect the fluoroscopist with T-D-S",
+  "intro": "Direct-screen viewing parks a person closer to an energized beam than anything else in radiography, so protection rests on time, distance, and shielding. Work all three levers: step back like a remote-viewing setup, stack shielding like the lead-glass window, and plan a limited viewing session under the dose cap.",
+  "params": {
+   "isotope": "Ir-192",
+   "curies": 20,
+   "boundaryLimit": 2,
+   "doseLimit": 25,
+   "minWorkMin": 15
+  },
+  "tasks": [
+   {
+    "id": "distanceHalf",
+    "label": "Double your distance from the source \u2014 rate falls 4x",
+    "hint": "Inverse square is why remote-screen viewing is safer: the operator reads a monitor in another room."
+   },
+   {
+    "id": "shieldToLimit",
+    "label": "Stack shielding until the door post reads under 2 mR/h",
+    "hint": "Each slab is one half-value layer \u2014 the lead-glass viewing window protects the same way, halving per HVL."
+   },
+   {
+    "id": "planExposure",
+    "label": "Plan a 15-minute viewing session under 25 mrem",
+    "hint": "Dose = rate x hours \u2014 viewing periods are limited and alternated, so cut the rate until 15 minutes fits."
+   }
+  ]
+ },
+ "rt2-1-1": {
+  "engine": "rs",
+  "mode": "tds",
+  "title": "Hands-on: HVL and inverse square at the boundary",
+  "intro": "Put the lesson's two workhorse laws to work on an 80 Ci Ir-192 bay: walk the worker back to see dose rate fall with 1/d squared, then attenuate by fractions with half-value-layer slabs and budget exposure time like a Level II.",
+  "params": {
+   "curies": 80,
+   "isotope": "Ir-192",
+   "boundaryLimit": 2,
+   "doseLimit": 20,
+   "minWorkMin": 10
+  },
+  "tasks": [
+   {
+    "id": "distanceHalf",
+    "label": "Double your distance and cut the rate fourfold",
+    "hint": "Inverse square: 2x the distance means 1/4 the dose rate \u2014 no slabs needed."
+   },
+   {
+    "id": "shieldToLimit",
+    "label": "Stack HVL slabs until the boundary reads under 2 mR/h",
+    "hint": "Each slab halves the rate \u2014 count halvings like the lesson's halving table (about 3.3 HVLs per factor of ten)."
+   },
+   {
+    "id": "planExposure",
+    "label": "Plan a 10+ minute job that stays under 20 mrem",
+    "hint": "Dose = rate x time. If the planned dose runs hot, buy margin with distance or slabs before trimming time."
+   }
+  ]
+ },
+ "rt2-1-2": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: hit density, then beat source decay",
+  "intro": "Work a real exposure calculation: choose a time that lands film density inside the 2.0-3.0 window, then jump 30 days ahead and re-expose \u2014 the Ir-192 has decayed, so scale time by t2 = t1 x (A1/A2) exactly like the lesson's big-three corrections.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 40,
+   "targetDmin": 2.0,
+   "targetDmax": 3.0,
+   "maxTimeMin": 20
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Expose the film into the 2.0-3.0 density window",
+    "hint": "Exposure is a product, E = A x t (reciprocity) \u2014 more time means more density."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "Press '30 days later' and re-hit the window",
+    "hint": "After 30 of 73.8 half-life days, activity is about 75% \u2014 multiply your old time by A1/A2 (about 1.33x)."
+   }
+  ]
+ },
+ "rt2-1-3": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: sharpen definition, prove sensitivity",
+  "intro": "Definition and sensitivity are the image-quality words you can rig for: the setup starts at Ug near 0.8 mm, so work the lesson's levers \u2014 film tight to the part, source backed off \u2014 to meet a 0.3 mm spec, then place the wire IQI where it proves the technique.",
+  "params": {
+   "focalSpotMm": 3,
+   "specUgMm": 0.3,
+   "plateThicknessMm": 12,
+   "sodMm": 220,
+   "gapMm": 45
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Drive Ug down to 0.3 mm or better",
+    "hint": "Ug = F x OFD / SOD \u2014 close the film gap to shrink OFD AND lengthen SOD; one lever alone won't get you there."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Drag the wire IQI onto the source-side weld surface",
+    "hint": "Sensitivity must be proven where image quality is worst \u2014 film-side placement is rejected."
+   }
+  ]
+ },
+ "rt2-2-2": {
+  "engine": "rs",
+  "mode": "tds",
+  "title": "Hands-on: protect stored film from radiation fog",
+  "intro": "Stored film integrates dose continuously - every stray mR builds base-plus-fog and steals contrast from the whole box. Work distance, lead shielding, and exposure-time planning so a 20 Ci Ir-192 shot leaves the film store under a 2 mrem budget.",
+  "params": {
+   "curies": 20,
+   "isotope": "Ir-192",
+   "boundaryLimit": 0.5,
+   "doseLimit": 2,
+   "minWorkMin": 30
+  },
+  "tasks": [
+   {
+    "id": "distanceHalf",
+    "label": "Double the film store's distance to quarter the rate",
+    "hint": "Inverse square: with no slabs stacked, drag the marker out to twice its start distance and watch the meter fall to one quarter - 'well away from exposure bays' is physics, not habit."
+   },
+   {
+    "id": "shieldToLimit",
+    "label": "Stack lead until the store wall reads under 0.5 mR/h",
+    "hint": "Each slab is one half-value layer (about 4.8 mm of lead for Ir-192) and halves the rate - this is the lead-lined film bin at room scale; expect around seven slabs."
+   },
+   {
+    "id": "planExposure",
+    "label": "Plan the 30-min shot under the film's 2 mrem budget",
+    "hint": "Dose = rate x hours, and film fogs by accumulation - cut the rate with distance plus lead until 30 minutes of beam time costs the stock less than 2 mrem."
+   }
+  ]
+ },
+ "rt2-2-3": {
+  "engine": "pt",
+  "mode": "process",
+  "title": "Hands-on: run a timed wet process start to finish",
+  "intro": "The darkroom's five steps run on order and clock discipline - develop, stop, fix, wash, dry, full time at temperature, never by eye. Drill that discipline on a six-station wet-process line: skip a station or cut the timed dwell short and the part resets, exactly as sight development ruins a film.",
+  "params": {
+   "dwellSec": 15,
+   "wipeCoverage": 0.85,
+   "crackSeed": 23,
+   "bleedSec": 4
+  },
+  "tasks": [
+   {
+    "id": "fullSequence",
+    "label": "Work all six stations in their fixed order",
+    "hint": "Like develop-stop-fix-wash-dry, the order is one-way: start at pre-clean and end at inspection - a swapped or skipped station resets the part."
+   },
+   {
+    "id": "properDwell",
+    "label": "Let the timed dwell run to zero - no early pulls",
+    "hint": "The time-temperature method, not your eye, ends a chemical step: wait for the timer ring to close completely before moving to the next station."
+   },
+   {
+    "id": "findIndication",
+    "label": "Inspect and click the indication a clean process earned",
+    "hint": "Only a full-order, full-time process leaves a readable record - scan the plate under the UV lamp for the glowing bleedout."
+   }
+  ]
+ },
+ "rt2-2-4": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: hold density inside QC action limits",
+  "intro": "A processor's daily control strip has one job: keep film density pinned inside action limits while conditions drift. Land density in a tight 2.35-2.65 window, then catch and correct the out-of-limits drift that 30 days of source decay causes - the same read-the-chart, fix-the-cause loop processor QC runs every morning.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 40,
+   "targetDmin": 2.35,
+   "targetDmax": 2.65,
+   "maxTimeMin": 30
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Land density inside the 2.35-2.65 action window",
+    "hint": "Treat 2.5 as the aim line and +/-0.15 as the QC chart's action limits - fine-tune exposure time until the density readout settles inside the window."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "Catch the 30-day drift and re-center the density",
+    "hint": "Activity fell to about 75% (A = A0 x 2^(-30/73.8)), so the strip now reads low - like any out-of-limits chart point, find the cause and correct: stretch the time about 1.3x."
+   }
+  ]
+ },
+ "rt2-3-2": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: cure a blurry radiograph",
+  "intro": "Poor definition is a geometry problem: Ug = f x OFD / SOD. This setup starts badly blurred by a 4 mm source sitting close over a big film gap \u2014 cure it by closing the gap and backing the source off until the ghost radiograph sharpens past the 0.4 mm spec.",
+  "params": {
+   "focalSpotMm": 4,
+   "specUgMm": 0.4,
+   "plateThicknessMm": 15,
+   "sodMm": 180,
+   "gapMm": 50
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Shrink Ug to 0.4 mm or less and sharpen the image",
+    "hint": "Ug = f x OFD / SOD: first drag the film gap toward zero, then pull the source farther back."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Set the wire IQI on the source-side weld surface",
+    "hint": "Drag the IQI onto the top, source-facing surface \u2014 film-side placement is rejected."
+   }
+  ]
+ },
+ "rt2-3-3": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: land film density in the code window",
+  "intro": "Density is measured, not eyeballed: read the console's density number like a densitometer and land it inside the 2.0-3.0 window (2.0 is the gamma code minimum). Then prove why measurement matters \u2014 30 days of Ir-192 decay drifts the density low, and you must catch it and re-expose.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 40,
+   "targetDmin": 2.0,
+   "targetDmax": 3.0,
+   "maxTimeMin": 20
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Expose so the density readout lands between 2.0 and 3.0",
+    "hint": "Density rises with exposure E = A x t \u2014 lengthen the time until D clears the 2.0 gamma minimum."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "After 30 days, re-expose to put density back in window",
+    "hint": "Activity halves every 73.8 days, so the same density needs a longer exposure time than before."
+   }
+  ]
+ },
+ "rt2-4-1": {
+  "engine": "et",
+  "mode": "crack-scan",
+  "title": "Hands-on: Sort a relevant indication from lift-off noise",
+  "intro": "The indication ladder applies to every NDT method, not just film. Scan the probe down the lane and mark where a signal peaks, then make the interpreter's call: which recording was relevant \u2014 produced by a real crack \u2014 and which was lift-off noise the technique put on screen.",
+  "params": {
+   "crackDepthMm": 0.9,
+   "markToleranceMm": 4
+  },
+  "tasks": [
+   {
+    "id": "findCrack",
+    "label": "Scan the lane and mark where the indication peaks",
+    "hint": "A real flaw kicks the dot off at a steep phase angle; lift-off drifts flat along the horizontal."
+   },
+   {
+    "id": "distinguish",
+    "label": "Pick the signal a real discontinuity produced",
+    "hint": "Relevant means made by the part: choose the steep-phase kick, not the flat lift-off wiggle."
+   }
+  ]
+ },
+ "rt2-4-2": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: Orientation decides what you detect",
+  "intro": "Planar discontinuities only show when the interrogating energy crosses their plane \u2014 the same rule that hides laminations from a straight RT beam. Rotate the energized yoke so its flux crosses each surface crack near-perpendicular, the way you would hunt service fatigue cracks growing in different directions.",
+  "params": {
+   "crackAngles": [
+    15,
+    75,
+    135
+   ],
+   "indicationThresholdDeg": 50,
+   "startAngleDeg": 105
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Dust the plate and indicate crack A",
+    "hint": "Particles gather only where flux crosses a crack close to 90 degrees \u2014 A already lies across the flux."
+   },
+   {
+    "id": "indicateB",
+    "label": "Re-aim the yoke until crack B indicates",
+    "hint": "No single yoke angle holds all three cracks; swing the axis until the flux runs perpendicular to B."
+   },
+   {
+    "id": "indicateC",
+    "label": "Find the angle that reveals crack C",
+    "hint": "C lies in yet another plane \u2014 the flux that found B runs nearly parallel to C, so keep rotating."
+   }
+  ]
+ },
+ "rt2-5-1": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: Expose a casting film fit for grading",
+  "intro": "Castings are the most heavily radiographed product form, and grading their film against reference-radiograph sets like E446 only counts when density lands in the window. Set the gamma exposure for the casting shot, then keep the campaign alive by compensating for source decay.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 40,
+   "targetDmin": 2.0,
+   "targetDmax": 3.0,
+   "maxTimeMin": 20
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Land the casting film inside the D 2.0-3.0 window",
+    "hint": "Exposure E = A x t - lengthen the time until the density readout climbs into the window."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "Press '30 days later' and re-expose to compensate",
+    "hint": "Ir-192 halves every 73.8 days, so 30 days cuts activity to about 75% - stretch the exposure time by roughly a third."
+   }
+  ]
+ },
+ "rt2-5-2": {
+  "engine": "mt",
+  "mode": "field-direction",
+  "title": "Hands-on: Magnetize a rolled bar to catch its seam",
+  "intro": "Rolling strings every surviving discontinuity out along the bar axis, and a magnetic field only finds a crack it crosses - the same orientation rule that hides laminations from a straight radiographic beam. Energize the head shot and the coil shot to reveal both flaws in this rolled bar, then lock in which field finds which.",
+  "params": {
+   "bathMs": 800,
+   "quizLockMs": 1200
+  },
+  "tasks": [
+   {
+    "id": "revealLongitudinal",
+    "label": "Reveal the longitudinal seam left by rolling",
+    "hint": "A head shot drives current down the bar - its circular flux crosses flaws that run with the axis."
+   },
+   {
+    "id": "revealTransverse",
+    "label": "Reveal the transverse crack",
+    "hint": "A coil shot wraps the bar in longitudinal flux, which crosses flaws lying across the axis."
+   },
+   {
+    "id": "explainCheck",
+    "label": "Answer the which-field-finds-which check",
+    "hint": "Flux must cross a crack to leak - each field finds the flaw perpendicular to it."
+   }
+  ]
+ },
+ "rt2-5-3": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: Hunt sidewall fusion flaws the WPS predicts",
+  "intro": "The WPS says short-circuiting GMAW, so the suspect list starts with lack of sidewall fusion along the groove faces - tight planar flaws film can miss unless the beam lines up. Sweep the 60-degree shear beam along the weld and mark all three hidden fusion-face flaws.",
+  "params": {
+   "flawCount": 3,
+   "plateThicknessMm": 20,
+   "depthsMm": [
+    6,
+    10,
+    14
+   ],
+   "refractedAngleDeg": 60,
+   "scanLengthMm": 200
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Mark the shallow fusion-face flaw",
+    "hint": "Slide the wedge until the A-scan echo peaks, then press Mark within +/-4 mm of the peak."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Mark the mid-wall sidewall flaw",
+    "hint": "On a first-leg beam, a deeper flaw peaks with the wedge standing farther back from it."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Mark the deep flaw near the root",
+    "hint": "Keep sweeping the full scan line - the deepest hole echoes at the longest sound path."
+   }
+  ]
+ },
+ "rt2-6-1": {
+  "engine": "rs",
+  "mode": "tds",
+  "title": "Hands-on: Time, Distance, Shielding vs the Dose Budget",
+  "intro": "Run the lesson's three ALARA levers on a live 52 Ci Ir-192 bay (the ~25 R/h-at-1-m source from the worked example): prove inverse square with your feet, shield the door post to 2 mR/h, then plan a shot that stays inside the 8 mrem shift budget.",
+  "params": {
+   "isotope": "Ir-192",
+   "curies": 52,
+   "boundaryLimit": 2,
+   "doseLimit": 8,
+   "minWorkMin": 10
+  },
+  "tasks": [
+   {
+    "id": "distanceHalf",
+    "label": "Double your distance and watch the rate fall 4x",
+    "hint": "Keep slabs at zero; inverse square means 2x the distance = 1/4 the rate."
+   },
+   {
+    "id": "shieldToLimit",
+    "label": "Stack HVL slabs until the door post reads under 2 mR/h",
+    "hint": "The post starts near 150 mR/h and each 4.8 mm lead slab halves it - count the halvings."
+   },
+   {
+    "id": "planExposure",
+    "label": "Plan a 10+ minute job that stays under 8 mrem",
+    "hint": "Dose = rate x hours. Cut the rate with distance and slabs first, then set the time slider."
+   }
+  ]
+ },
+ "rt2-6-2": {
+  "engine": "rs",
+  "mode": "survey",
+  "title": "Hands-on: Boundary Survey Around the Projector",
+  "intro": "Walk the survey meter around a shielded exposure device the way the lesson requires after every exposure: hold for a stable reading at each stake (ion chambers respond slowly), record all three, then fix the boundary where the numbers say it belongs.",
+  "params": {
+   "isotope": "Ir-192",
+   "curies": 40,
+   "deviceFactor": 0.01,
+   "limit": 2
+  },
+  "tasks": [
+   {
+    "id": "surveyAll",
+    "label": "Record stable readings at stakes A, B and C",
+    "hint": "Hold the meter still until the reading settles - Record rejects a jumpy needle."
+   },
+   {
+    "id": "postBoundary",
+    "label": "Drag stake B out until it reads the 2 mR/h limit",
+    "hint": "Rate falls as 1/d squared; ease B outward and stop just under 2 mR/h (-15%/+5% is accepted)."
+   }
+  ]
+ },
+ "rt2-7-1": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: land density inside the gamma viewing window",
+  "intro": "Work the Ir-192 exposure console until the film density lands inside the single-film gamma viewing window of 2.0-4.0 \u2014 below 2.0 the image throws away contrast, and above 4.0 each density unit cuts illuminator light another tenfold until no viewer can penetrate it. Then prove you can hold the window after a month of source decay.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 40,
+   "targetDmin": 2.0,
+   "targetDmax": 4.0,
+   "maxTimeMin": 20
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Expose the film to a density between 2.0 and 4.0",
+    "hint": "Density rises with exposure E = A x t \u2014 lengthen the time until D enters the 2.0-4.0 viewing window."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "After 30 days of decay, re-land density in the window",
+    "hint": "Ir-192 loses about a quarter of its activity in 30 days \u2014 expose roughly 1.3x longer to recreate the same E = A x t."
+   }
+  ]
+ },
+ "rt2-7-2": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: source-side IQI on a code-compliant setup",
+  "intro": "Arrange the shot so geometric unsharpness passes the 0.4 mm spec, then drag the wire IQI onto the source-side weld surface \u2014 the side rule exists so the IQI suffers the technique's full unsharpness, exactly as an internal flaw would. Film-side placement is rejected, just as it earns a lead F on a production radiograph.",
+  "params": {
+   "focalSpotMm": 3,
+   "specUgMm": 0.4,
+   "plateThicknessMm": 12,
+   "sodMm": 200,
+   "gapMm": 40
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Bring geometric unsharpness within the 0.4 mm spec",
+    "hint": "Ug = f x OFD / SOD \u2014 close the object-to-film gap and back the source away until the readout passes."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Place the wire IQI on the source-side weld surface",
+    "hint": "Drop it on the surface facing the source \u2014 the engine rejects film-side placement, mirroring the code's default rule."
+   }
+  ]
+ },
+ "rt2-7-3": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: hit the densitometer's tight working window",
+  "intro": "Density is measured, not estimated: drive the exposure until the density readout sits inside a tight 2.2-2.8 working window, the kind of margin that keeps every area-of-interest reading legal against the minus 15% / plus 30% variation rule. Then re-verify after 30 days of decay \u2014 numbers before opinions, every shift.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 40,
+   "targetDmin": 2.2,
+   "targetDmax": 2.8,
+   "maxTimeMin": 20
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Land the measured density inside 2.2-2.8",
+    "hint": "Treat the readout as your densitometer \u2014 adjust exposure time until the number, not your eye, says the film passes."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "Re-verify after 30 days: hit the same tight window",
+    "hint": "The decayed source needs about 1.3x the original time to put the same exposure \u2014 and the same measured density \u2014 on the film."
+   }
+  ]
+ },
+ "rt2-8-1": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: land every section in the density window",
+  "intro": "Drive exposure E = A x t until film density lands inside the 2.0-3.0 readable slice - the same characteristic-curve budget that forces multi-film loads on stepped parts. Then rebuild the exposure after 30 days of Ir-192 decay, the very shift along log-E a slower film demands.",
+  "params": {
+   "isotope": "Ir-192",
+   "halfLifeDays": 73.8,
+   "curies": 40,
+   "targetDmin": 2.0,
+   "targetDmax": 3.0,
+   "maxTimeMin": 20
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Set exposure time to land density between 2.0 and 3.0",
+    "hint": "Density rises with exposure E = A x t - nudge the time slider until D sits inside the green window."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "Press '30 days later', then re-enter the density window",
+    "hint": "Ir-192 loses about a quarter of its activity in 30 days - stretch the time roughly a third longer to rebuild the same exposure."
+   }
+  ]
+ },
+ "rt2-8-2": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: beat the Ug cap and place the IQI",
+  "intro": "Your shot opens with a 3.8 mm source, a short SOD, and a 50 mm film gap - work the geometry chain (film in contact first, then stretch the distance) until Ug = f x OFD / SOD meets the 0.5 mm code cap. Then grade the setup the way the code does: wire IQI on the source side.",
+  "params": {
+   "focalSpotMm": 3.8,
+   "specUgMm": 0.5,
+   "plateThicknessMm": 20,
+   "sodMm": 180,
+   "gapMm": 50
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Drive Ug at or under the 0.5 mm code cap",
+    "hint": "Ug = f x OFD / SOD - close the object-to-film gap first, then pull the source back until the readout passes."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Place the wire IQI on the source-side weld surface",
+    "hint": "Drag the IQI onto the weld's source-side surface - film-side placement is rejected, just as the code intends."
+   }
+  ]
+ },
+ "rt2-8-3": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: triangulate flaw depth with a 45-degree beam",
+  "intro": "A single radiograph hides depth; the tube-shift method recovers it from similar triangles. Work the same triangle with the follow-up tool RT interpreters call for - a 45-degree angle beam whose sound path pins each hidden flaw's depth and position.",
+  "params": {
+   "flawCount": 2,
+   "depthsMm": [
+    10,
+    20
+   ],
+   "plateThicknessMm": 25,
+   "refractedAngleDeg": 45,
+   "scanLengthMm": 200
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Peak the first echo and mark the flaw",
+    "hint": "Slide slowly - the echo peaks when the beam centreline crosses the hole; press Mark within 4 mm of the peak."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Find and mark the second hidden flaw",
+    "hint": "At 45 degrees the flaw lies as far ahead of the wedge as it is deep - read the drawn beam path's triangle."
+   }
+  ]
+ },
+ "rt2-9-1": {
+  "engine": "mt",
+  "mode": "yoke-orientation",
+  "title": "Hands-on: planar flaws vanish off-angle",
+  "intro": "Hot tears and cold cracks are planar \u2014 they are caught only when the interrogating field crosses their plane, exactly like beam angle on a casting radiograph. Rotate the energized yoke over three differently-oriented cracks and watch detection switch on and off with orientation.",
+  "params": {
+   "crackAngles": [
+    15,
+    75,
+    130
+   ],
+   "indicationThresholdDeg": 50,
+   "startAngleDeg": 20
+  },
+  "tasks": [
+   {
+    "id": "indicateA",
+    "label": "Aim the flux across crack A until it indicates",
+    "hint": "Flux runs pole-to-pole between the yoke legs \u2014 turn it to cross crack A near 90 degrees."
+   },
+   {
+    "id": "indicateB",
+    "label": "Re-orient to catch crack B at a new attitude",
+    "hint": "B lies at a different angle; a flaw nearly parallel to the flux leaks no field and stays invisible."
+   },
+   {
+    "id": "indicateC",
+    "label": "Find the third orientation that lights up crack C",
+    "hint": "Like a tight hot tear seen broadside by the beam, C vanishes until the crossing angle is steep enough."
+   }
+  ]
+ },
+ "rt2-9-2": {
+  "engine": "rt",
+  "mode": "exposure",
+  "title": "Hands-on: valid density before you grade",
+  "intro": "Comparison against an E446-style reference plate is only fair on a valid film with density inside the required window. Pick an exposure time that lands the window, then prove you can hold it as the Ir-192 source decays.",
+  "params": {
+   "isotope": "Ir-192",
+   "curies": 40,
+   "targetDmin": 2.0,
+   "targetDmax": 3.0,
+   "maxTimeMin": 20
+  },
+  "tasks": [
+   {
+    "id": "hitDensity",
+    "label": "Expose into the 2.0-3.0 density window",
+    "hint": "Density follows exposure E = A x t \u2014 nudge the time slider until the readout sits inside the window."
+   },
+   {
+    "id": "compensateDecay",
+    "label": "Jump 30 days ahead, then re-hit the window",
+    "hint": "Ir-192 halves every 73.8 days, so a month costs real activity \u2014 buy it back with a longer exposure."
+   }
+  ]
+ },
+ "rt2-9-3": {
+  "engine": "ut",
+  "mode": "angle-flaw",
+  "title": "Hands-on: find weld flaws at their addresses",
+  "intro": "Process knowledge says every weld discontinuity has an address \u2014 root, bevel, toe/HAZ. Sweep the angle-beam wedge along this welded plate and mark the three hidden flaws seeded at root, mid-bevel, and near-toe depths.",
+  "params": {
+   "flawCount": 3,
+   "plateThicknessMm": 25,
+   "depthsMm": [
+    19,
+    12,
+    6
+   ],
+   "flawXsMm": [
+    -60,
+    0,
+    60
+   ],
+   "refractedAngleDeg": 70,
+   "scanLengthMm": 200
+  },
+  "tasks": [
+   {
+    "id": "findFlaw1",
+    "label": "Mark the root-depth flaw (19 mm down)",
+    "hint": "Slide until the echo peaks \u2014 that is the beam centreline on the flaw \u2014 then Mark within 4 mm."
+   },
+   {
+    "id": "findFlaw2",
+    "label": "Mark the mid-bevel flaw (12 mm down)",
+    "hint": "Mid-wall flaws like slag and LOF ride the bevels; watch for the second distinct echo peak."
+   },
+   {
+    "id": "findFlaw3",
+    "label": "Mark the near-toe flaw (6 mm down)",
+    "hint": "Shallow toe/HAZ-zone flaws return early echoes \u2014 peak it, then Mark."
+   }
+  ]
+ },
+ "rt2-9-4": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: prove the film before the flaw call",
+  "intro": "Discipline before diagnosis: a crack-versus-slag call needs a sharp image and demonstrated sensitivity. Tighten the shot geometry until unsharpness is fine enough for crack tips, then place the IQI where the code accepts it.",
+  "params": {
+   "focalSpotMm": 3,
+   "specUgMm": 0.3,
+   "plateThicknessMm": 12
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Drive Ug to 0.3 mm or better for crack-sharp film",
+    "hint": "Ug = f x OFD / SOD \u2014 stretch the source back and close the object-to-film gap."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Drag the wire IQI onto the source-side surface",
+    "hint": "Film-side placement is rejected here \u2014 sensitivity is proven on the source side of the weld."
+   }
+  ]
+ },
+ "rt2-9-5": {
+  "engine": "rt",
+  "mode": "geometry",
+  "title": "Hands-on: parameter verification before the shot",
+  "intro": "Run pre-shot parameter verification like a pilot's checklist: this employer procedure caps geometric unsharpness at 0.5 mm and requires a source-side IQI. Bring the as-found setup into compliance before any film is exposed.",
+  "params": {
+   "focalSpotMm": 4,
+   "specUgMm": 0.5,
+   "plateThicknessMm": 20,
+   "sodMm": 180,
+   "gapMm": 30
+  },
+  "tasks": [
+   {
+    "id": "meetUg",
+    "label": "Verify the setup meets the procedure Ug limit, 0.5 mm",
+    "hint": "The as-found SOD and gap do not comply \u2014 fix the geometry; never shoot outside the procedure."
+   },
+   {
+    "id": "placeIQI",
+    "label": "Check off IQI placement: source side, per procedure",
+    "hint": "Placement is an essential variable to verify, not a convenience \u2014 the film side is rejected."
+   }
+  ]
+ }
+}

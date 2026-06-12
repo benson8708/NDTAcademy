@@ -1,0 +1,48 @@
+{
+  "ut1-1-1": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: Your first pulse-echo measurement",
+    "intro": "Firestone's 1940 pulse-echo idea, live: slide a 0° probe across a stepped steel block and watch the backwall echo arrive later wherever the metal is thicker. Measure three steps and pick out the thinnest — the same single-sided thickness survey run on pipes and vessels every day.",
+    "params": {
+      "stepsMm": [10, 20, 40, 80],
+      "velocityMps": 5920,
+      "material": "Carbon steel"
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Record thickness readings on three different steps",
+        "hint": "Park the probe fully on a step; the backwall echo's round-trip time × velocity ÷ 2 is the thickness."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Identify the thinnest step of the block",
+        "hint": "Thinner metal means a shorter round trip — its backwall echo arrives earliest on the A-scan."
+      }
+    ]
+  },
+  "ut1-1-2": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: Make wavelength obey λ = v ÷ f",
+    "intro": "Put the master equation to work: sweep the probe frequency and swap between steel, aluminium, and water while the wavefront spacing tracks λ = v ÷ f live. Confirm the lesson's shortcut — λ in mm equals velocity in mm/µs divided by frequency in MHz.",
+    "params": {
+      "materials": ["steel", "aluminum", "water"],
+      "startMaterial": "steel",
+      "frequencyMHz": 2
+    },
+    "tasks": [
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Get the wavelength below 1 mm in steel",
+        "hint": "In steel λ = 5.92 ÷ f (mm, with f in MHz) — push the frequency past 5.92 MHz."
+      },
+      {
+        "id": "compareMaterials",
+        "label": "Send the pulse through steel, aluminium, and water",
+        "hint": "Frequency belongs to the probe and stays put; velocity belongs to the material, so λ jumps at each swap."
+      }
+    ]
+  }
+}

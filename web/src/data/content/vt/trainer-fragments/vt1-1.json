@@ -1,0 +1,77 @@
+{
+  "vt1-1-1": {
+    "engine": "et",
+    "mode": "crack-scan",
+    "title": "Hands-on: from indication to interpretation",
+    "intro": "VT's core vocabulary - indication, interpretation, relevant vs. nonrelevant - runs through every NDT method. Scan a probe along the lane over a hidden crack, mark the indication it produces, then interpret which recorded signal was the relevant one.",
+    "params": {
+      "markToleranceMm": 4,
+      "crackDepthMm": 1.6
+    },
+    "tasks": [
+      {
+        "id": "findCrack",
+        "label": "Scan the lane and mark the crack's indication",
+        "hint": "The crack kicks the dot at a steep angle; flat sweeps are just noise - mark where the kick peaks."
+      },
+      {
+        "id": "distinguish",
+        "label": "Interpret: pick the relevant signal",
+        "hint": "Relevant means caused by a discontinuity; the flat lift-off sweep is nonrelevant, from probe motion, not a flaw."
+      }
+    ]
+  },
+  "vt1-1-2": {
+    "engine": "rs",
+    "mode": "survey",
+    "title": "Hands-on: trust the meter, not your eye",
+    "intro": "Light at an examination surface falls off with the same inverse-square law as the dose rate around this source - and in both cases only a measured, recorded reading counts. Survey the three boundary stakes, then move stake B until the meter, not your eyeball, says the level meets the written limit.",
+    "params": {
+      "curies": 40,
+      "isotope": "Ir-192",
+      "deviceFactor": 0.01,
+      "limit": 2
+    },
+    "tasks": [
+      {
+        "id": "surveyAll",
+        "label": "Record a stable meter reading at stakes A, B, C",
+        "hint": "Hold the meter still at each stake until the reading settles - Record only accepts a stable value."
+      },
+      {
+        "id": "postBoundary",
+        "label": "Move stake B until the rate meets the 2 mR/h limit",
+        "hint": "Intensity falls with 1/d-squared, so readings near the source swing hard - slide B outward in small steps."
+      }
+    ]
+  },
+  "vt1-1-3": {
+    "engine": "pt",
+    "mode": "process",
+    "title": "Hands-on: clean first, then build the contrast",
+    "intro": "You cannot inspect what you cannot see: cleaning precedes the examination, and detection lives on contrast. Run a fluorescent penetrant inspection from pre-clean through developer, then find the indication by its glow against the developer background.",
+    "params": {
+      "dwellSec": 10,
+      "wipeCoverage": 0.9,
+      "crackSeed": 42,
+      "bleedSec": 4
+    },
+    "tasks": [
+      {
+        "id": "fullSequence",
+        "label": "Work all six stations in order - cleaning first",
+        "hint": "Pre-clean before penetrant: dirt and grease hide the very surface you mean to read."
+      },
+      {
+        "id": "properDwell",
+        "label": "Let the dwell timer finish before removing",
+        "hint": "Cutting dwell short starves the crack of penetrant - and your eye of contrast."
+      },
+      {
+        "id": "findIndication",
+        "label": "Find the high-contrast indication under UV-A",
+        "hint": "Look for the green glow blooming against the white developer background after bleedout."
+      }
+    ]
+  }
+}

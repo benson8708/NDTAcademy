@@ -1,0 +1,103 @@
+{
+  "mt1-6-1": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: why the procedure demands two yoke passes",
+    "intro": "Your weld procedure calls for two yoke passes rotated roughly 90 degrees apart — and the reason is pure physics. Rotate the energized yoke over three differently oriented cracks and prove that no single pass can clear a weld.",
+    "params": {
+      "crackAngles": [0, 60, 120],
+      "indicationThresholdDeg": 45,
+      "startAngleDeg": 25
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Rotate the yoke until crack A indicates",
+        "hint": "Flux runs leg to leg — set the poles either side of crack A so flux crosses it near 90 degrees."
+      },
+      {
+        "id": "indicateB",
+        "label": "Re-aim the flux to pick up crack B",
+        "hint": "Flux parallel to a crack barely leaks. If B stays dark, you are within about 45 degrees of parallel — keep rotating."
+      },
+      {
+        "id": "indicateC",
+        "label": "Find the pass angle that lights up crack C",
+        "hint": "Notice no one angle catches all three — exactly why the written technique mandates a second, perpendicular pass."
+      }
+    ]
+  },
+  "mt1-6-2": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: let the flaw's origin pick the shot",
+    "intro": "A mill seam runs with the bar's working direction; a service fatigue crack runs across it. Energize the head shot and the coil shot and prove that a discontinuity's birthday — its stage of origin — predicts the field you need.",
+    "params": {
+      "bathMs": 800,
+      "quizLockMs": 1500
+    },
+    "tasks": [
+      {
+        "id": "revealLongitudinal",
+        "label": "Reveal the seam that runs with the working direction",
+        "hint": "Primary-processing flaws like seams and stringers follow the grain — only the head shot's circular flux crosses them."
+      },
+      {
+        "id": "revealTransverse",
+        "label": "Reveal the transverse in-service fatigue crack",
+        "hint": "A crack across the bar needs flux running along the bar — that is the coil shot's longitudinal field."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Pass the which-field-finds-which check",
+        "hint": "Flux must cross the flaw: circular field finds lengthwise flaws, longitudinal field finds transverse ones."
+      }
+    ]
+  },
+  "mt1-6-3": {
+    "engine": "et",
+    "mode": "crack-scan",
+    "title": "Hands-on: relevant signal or nonrelevant noise?",
+    "intro": "Interpretation means deciding what caused each indication before you ever judge it. Scan the lane over a hidden crack, then sort your recorded signals — the same relevant-versus-nonrelevant triage you will run over every particle indication.",
+    "params": {
+      "crackDepthMm": 0.8,
+      "markToleranceMm": 3
+    },
+    "tasks": [
+      {
+        "id": "findCrack",
+        "label": "Scan the lane and mark where the crack really is",
+        "hint": "The crack kicks the dot at a steep phase angle; lift-off wobble stays near horizontal — read the trace, not your hopes."
+      },
+      {
+        "id": "distinguish",
+        "label": "Pick which recorded signal was the relevant one",
+        "hint": "Ask what held each signal: probe wobble and geometry are nonrelevant — only the discontinuity's response is relevant."
+      }
+    ]
+  },
+  "mt1-6-4": {
+    "engine": "rs",
+    "mode": "survey",
+    "title": "Hands-on: measure, compare to the limit, record it",
+    "intro": "Evaluation is a measuring job: actual numbers against a written criterion, then a disposition, then a record. Survey the three boundary stakes, log only stable readings, and correct the one point that fails its acceptance limit.",
+    "params": {
+      "curies": 30,
+      "isotope": "Ir-192",
+      "deviceFactor": 0.01,
+      "limit": 2
+    },
+    "tasks": [
+      {
+        "id": "surveyAll",
+        "label": "Record stable readings at all three stakes",
+        "hint": "Hold the meter still until the number settles — Record refuses jittery readings, just as reports refuse adjectives."
+      },
+      {
+        "id": "postBoundary",
+        "label": "Move stake B until it just meets the 2 mR/h limit",
+        "hint": "B fails its criterion: reject, correct, re-measure. Drag it outward along its radial until the rate sits at the limit."
+      }
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "mt1-5-1": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: dust dry powder and indicate three cracks",
+    "intro": "The particles are the detector: float a light cloud of dry powder onto the energized surface and an indication forms only where flux crosses a crack's leakage field. Rotate the yoke and dust until all three differently oriented cracks indicate.",
+    "params": {
+      "crackAngles": [0, 60, 120],
+      "indicationThresholdDeg": 40,
+      "startAngleDeg": 25
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Dust a light cloud and indicate crack A",
+        "hint": "Drift a light cloud — never pour — and set the yoke axis near 90° so flux crosses the 0° crack square-on."
+      },
+      {
+        "id": "indicateB",
+        "label": "Swing the flux to develop crack B's indication",
+        "hint": "Flux runs pole-to-pole between the yoke legs; crack B sits near 60°, so aim the yoke axis around 150°."
+      },
+      {
+        "id": "indicateC",
+        "label": "Reorient and indicate crack C",
+        "hint": "Crack C runs near 120° — bring the yoke axis toward 30° and keep dusting; indications form while flux crosses."
+      }
+    ]
+  },
+  "mt1-5-2": {
+    "engine": "et",
+    "mode": "skin-depth",
+    "title": "Hands-on: skin effect — why AC demag stays shallow",
+    "intro": "A demagnetizing field only removes residual magnetism where it reaches, and alternating current crowds toward the surface. Tune frequency and conductivity to pin the field to a thin skin, then drive it deep — the skin-effect trade-off that splits the work between AC coils and reversing step-down DC.",
+    "params": {
+      "shallowTargetMm": 0.8,
+      "deepTargetMm": 4,
+      "material": "stainless"
+    },
+    "tasks": [
+      {
+        "id": "setShallow",
+        "label": "Pin the current to a thin surface skin",
+        "hint": "Raise the frequency — δ shrinks as 1/√f, the same reason a line-frequency AC coil only strips surface residual fields."
+      },
+      {
+        "id": "setDeep",
+        "label": "Push the field deep, like reversing DC demag",
+        "hint": "Slide toward 100 Hz and hold — lower reversal frequency penetrates deeper, which is why thick sections need reversing step-down DC."
+      }
+    ]
+  },
+  "mt1-5-3": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: bench unit — head shot vs coil shot",
+    "intro": "Operate the two shots of a wet horizontal bench: the head shot wraps a circular field around the bar and the coil shot lays a longitudinal field along it, and the bath reveals only the crack each field crosses. Equipment selection starts here — the machine must put the right field on the flaw you expect.",
+    "params": {
+      "bathMs": 1000
+    },
+    "tasks": [
+      {
+        "id": "revealTransverse",
+        "label": "Reveal the transverse crack with the right shot",
+        "hint": "The coil shot lays longitudinal flux along the bar — it crosses a crack that runs across the bar."
+      },
+      {
+        "id": "revealLongitudinal",
+        "label": "Reveal the longitudinal crack with the other shot",
+        "hint": "The head shot passes current through the bar; its circular flux wraps around and crosses the lengthwise crack."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Pass the which-field-finds-which check",
+        "hint": "Flux must cross a crack to leak: circular fields find longitudinal cracks, longitudinal fields find transverse."
+      }
+    ]
+  },
+  "mt1-5-4": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: prove field direction like a QQI",
+    "intro": "A pie gauge or QQI shim reveals field direction because particles indicate only where flux crosses a flaw. Rotate the yoke over three crack orientations and read the surface field's direction from which crack lights up — the same logic you'll use to prove a field with shims.",
+    "params": {
+      "crackAngles": [20, 90, 150],
+      "indicationThresholdDeg": 55,
+      "startAngleDeg": 0
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Read the field direction that indicates crack A",
+        "hint": "Crack A lies near 20°, so only a yoke axis near 110° crosses it hard enough — that yoke angle IS your direction reading."
+      },
+      {
+        "id": "indicateB",
+        "label": "Prove the vertical crack B with crossing flux",
+        "hint": "Crack B stands at 90°; swing the yoke axis toward 0° so flux crosses it nearly perpendicular, like a properly oriented QQI slot."
+      },
+      {
+        "id": "indicateC",
+        "label": "Indicate crack C and log the yoke angle that worked",
+        "hint": "Crack C runs near 150° — a yoke axis near 60° gives the near-perpendicular crossing a crisp indication needs."
+      }
+    ]
+  }
+}

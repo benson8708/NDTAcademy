@@ -1,0 +1,79 @@
+{
+  "rt2-7-1": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: land density inside the gamma viewing window",
+    "intro": "Work the Ir-192 exposure console until the film density lands inside the single-film gamma viewing window of 2.0-4.0 — below 2.0 the image throws away contrast, and above 4.0 each density unit cuts illuminator light another tenfold until no viewer can penetrate it. Then prove you can hold the window after a month of source decay.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 40,
+      "targetDmin": 2.0,
+      "targetDmax": 4.0,
+      "maxTimeMin": 20
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Expose the film to a density between 2.0 and 4.0",
+        "hint": "Density rises with exposure E = A x t — lengthen the time until D enters the 2.0-4.0 viewing window."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "After 30 days of decay, re-land density in the window",
+        "hint": "Ir-192 loses about a quarter of its activity in 30 days — expose roughly 1.3x longer to recreate the same E = A x t."
+      }
+    ]
+  },
+  "rt2-7-2": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: source-side IQI on a code-compliant setup",
+    "intro": "Arrange the shot so geometric unsharpness passes the 0.4 mm spec, then drag the wire IQI onto the source-side weld surface — the side rule exists so the IQI suffers the technique's full unsharpness, exactly as an internal flaw would. Film-side placement is rejected, just as it earns a lead F on a production radiograph.",
+    "params": {
+      "focalSpotMm": 3,
+      "specUgMm": 0.4,
+      "plateThicknessMm": 12,
+      "sodMm": 200,
+      "gapMm": 40
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Bring geometric unsharpness within the 0.4 mm spec",
+        "hint": "Ug = f x OFD / SOD — close the object-to-film gap and back the source away until the readout passes."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Place the wire IQI on the source-side weld surface",
+        "hint": "Drop it on the surface facing the source — the engine rejects film-side placement, mirroring the code's default rule."
+      }
+    ]
+  },
+  "rt2-7-3": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: hit the densitometer's tight working window",
+    "intro": "Density is measured, not estimated: drive the exposure until the density readout sits inside a tight 2.2-2.8 working window, the kind of margin that keeps every area-of-interest reading legal against the minus 15% / plus 30% variation rule. Then re-verify after 30 days of decay — numbers before opinions, every shift.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 40,
+      "targetDmin": 2.2,
+      "targetDmax": 2.8,
+      "maxTimeMin": 20
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Land the measured density inside 2.2-2.8",
+        "hint": "Treat the readout as your densitometer — adjust exposure time until the number, not your eye, says the film passes."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "Re-verify after 30 days: hit the same tight window",
+        "hint": "The decayed source needs about 1.3x the original time to put the same exposure — and the same measured density — on the film."
+      }
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "ut1-4-1": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: dial the element, frequency sets wavelength",
+    "intro": "A transducer's frequency is built in at manufacture: the element is ground to half a wavelength thick. Raise the drive frequency (a thinner crystal) and watch the wavelength it launches shrink, then switch media to see that f stays the element's property while lambda belongs to the material.",
+    "params": {
+      "frequencyMHz": 1,
+      "startMaterial": "steel"
+    },
+    "tasks": [
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Pick a thinner element: push lambda in steel below 1 mm",
+        "hint": "Lambda = v/f. In steel that is 5.92 mm at 1 MHz, so you need roughly 6 MHz or more."
+      },
+      {
+        "id": "compareMaterials",
+        "label": "Fire the same element into all three materials",
+        "hint": "Same frequency, different velocity: lambda stretches in fast steel and shrinks in slow water."
+      }
+    ]
+  },
+  "ut1-4-2": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: peak the echo, put the flaw on the beam axis",
+    "intro": "The spreading beam returns an echo over a whole range of probe positions, but amplitude is highest only when the hole sits on the beam axis. Practice this lesson's field rule, maximize before you evaluate, by sliding the wedge and marking each hidden hole exactly at its echo peak.",
+    "params": {
+      "flawCount": 3,
+      "refractedAngleDeg": 60,
+      "scanLengthMm": 220
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Sweep past hole 1 and mark dead on the echo peak",
+        "hint": "The echo rises as the beam edge clips the hole; mark only when amplitude tops out."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Bracket the peak of echo 2, then mark it",
+        "hint": "Slide past the maximum and come back; half amplitude means the hole is at the beam's 6 dB edge."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Put hole 3 on the beam axis and log it",
+        "hint": "An echo that wanders as you move is beam geometry talking; mark where it peaks, not where it first appears."
+      }
+    ]
+  },
+  "ut1-4-3": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: the straight-beam workhorse on thin steps",
+    "intro": "From the probe family tree, the 0-degree straight-beam contact probe doing its signature job. These steps are thin and out of order, so the short, well-damped pulse and the resolution you just read about are what separate one backwall echo from the next.",
+    "params": {
+      "stepsMm": [14, 6, 22, 9]
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Gauge three different steps with the 0-degree probe",
+        "hint": "Park the probe flat on a step and read the backwall echo; its time of flight tracks the metal under your wear face."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Pick out the thinnest step from its echo",
+        "hint": "Thinner metal means a shorter round trip: the backwall echo that sits closest to the initial pulse."
+      }
+    ]
+  },
+  "ut1-4-4": {
+    "engine": "pt",
+    "mode": "capillarity",
+    "title": "Hands-on: thin vs thick, viscosity and wetting at work",
+    "intro": "Borrowed from the penetrant bench: capillary wetting is the same physics that pulls couplant into every valley of a rough surface and floats the air out. Run a water-thin liquid, then a paste-thick one, and feel the trade-off behind the couplant menu: thin flows in fast but runs off, thick clings but crawls.",
+    "params": {
+      "fillSecBase": 4,
+      "viscMinCst": 1,
+      "viscMaxCst": 30
+    },
+    "tasks": [
+      {
+        "id": "fillCrack",
+        "label": "Run the thin grade and let it wick in completely",
+        "hint": "Apply at the surface and wait: capillarity does the pulling, no pressure needed, just like couplant wetting into roughness valleys."
+      },
+      {
+        "id": "compareViscosity",
+        "label": "Re-run at maximum viscosity and compare fill times",
+        "hint": "Slide viscosity to the paste end; the slow crawl you see is exactly what keeps heavy gel clinging to vertical and overhead work."
+      }
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "vt2-5-1": {
+    "engine": "rt",
+    "mode": "geometry",
+    "title": "Hands-on: meet the spec — Ug limit and IQI placement",
+    "intro": "Codes state method requirements as hard numbers — here an ASME Section V-style spec sets Ug ≤ 0.4 mm and dictates source-side IQI placement. Locate the requirement, set up to comply, and prove it, exactly the routine this lesson teaches for any governing code.",
+    "params": {
+      "focalSpotMm": 3,
+      "specUgMm": 0.4,
+      "plateThicknessMm": 12,
+      "sodMm": 200,
+      "gapMm": 45
+    },
+    "tasks": [
+      {
+        "id": "meetUg",
+        "label": "Adjust SOD and gap until Ug meets the 0.4 mm spec",
+        "hint": "Ug = f × OFD / SOD — close the film gap first, then pull the source back until the readout shows PASS."
+      },
+      {
+        "id": "placeIQI",
+        "label": "Place the wire IQI where the code requires",
+        "hint": "The method code wants the IQI on the source-side weld surface — film-side placement is rejected."
+      }
+    ]
+  },
+  "vt2-5-2": {
+    "engine": "pt",
+    "mode": "process",
+    "title": "Hands-on: run the written procedure to the letter",
+    "intro": "Employer specs reach your bench as a written procedure: run a fluorescent penetrant inspection exactly as written — right order, full dwell, thorough removal — then evaluate under UV-A lighting. Skipped steps or a cut-short dwell reset the part, the way an audit finding would on a real job.",
+    "params": {
+      "dwellSec": 15,
+      "wipeCoverage": 0.85,
+      "crackSeed": 2105
+    },
+    "tasks": [
+      {
+        "id": "fullSequence",
+        "label": "Work all six stations in the procedure's order",
+        "hint": "Pre-clean → penetrant → dwell → remove excess → developer → UV-A inspect; the procedure, not habit, sets the order."
+      },
+      {
+        "id": "properDwell",
+        "label": "Hold the full penetrant dwell — no shortcuts",
+        "hint": "This employer's spec tightened the dwell minimum; let the timer ring finish before wiping."
+      },
+      {
+        "id": "findIndication",
+        "label": "Find and click the bleedout under UV-A",
+        "hint": "After developer goes on, scan the darkened plate for the glowing line and click it."
+      }
+    ]
+  },
+  "vt2-5-3": {
+    "engine": "et",
+    "mode": "crack-scan",
+    "title": "Hands-on: indication or noise? Make the call",
+    "intro": "Put the glossary chain to work: every blip on the trace is an indication, and only interpretation decides which one is a real discontinuity. Scan the lane, mark the crack's indication, then defend your call against lift-off noise.",
+    "params": {
+      "markToleranceMm": 3,
+      "crackDepthMm": 1.0
+    },
+    "tasks": [
+      {
+        "id": "findCrack",
+        "label": "Mark the crack indication on the scan lane",
+        "hint": "The crack kicks the dot at a steep phase angle; lift-off wobble stays nearly horizontal."
+      },
+      {
+        "id": "distinguish",
+        "label": "Pick which recorded signal is the real discontinuity",
+        "hint": "Say the word you can defend: the steep-phase kick is the discontinuity, flat traces are non-relevant indications."
+      }
+    ]
+  }
+}

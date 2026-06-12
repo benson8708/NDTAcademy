@@ -1,0 +1,85 @@
+{
+  "mt1-1-1": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: Recreate the discovery that started MT",
+    "intro": "Recreate what Saxby, de Forest, and Doane uncovered: magnetize the steel plate with the yoke, dust on dry particles, and watch leakage fields pull them into crisp lines over the cracks. Rotate the yoke deliberately — direction is the whole trick — until all three cracks indicate.",
+    "params": {
+      "crackAngles": [0, 60, 120],
+      "indicationThresholdDeg": 40,
+      "startAngleDeg": 25
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Dust the plate and indicate crack A",
+        "hint": "Energize the yoke, dust particles, then rotate until they gather into a sharp line."
+      },
+      {
+        "id": "indicateB",
+        "label": "Rotate the yoke to indicate crack B",
+        "hint": "Leakage flux is strongest where the pole-to-pole flux crosses the crack near 90 degrees."
+      },
+      {
+        "id": "indicateC",
+        "label": "Find crack C to complete the set",
+        "hint": "Crack C lies at a third orientation — keep sweeping the yoke around the plate."
+      }
+    ]
+  },
+  "mt1-1-2": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: Run your first complete magnetizing shots",
+    "intro": "Walk the heart of the MT sequence you just outlined — magnetize, apply the particle bath, inspect, evaluate — twice on the same steel bar: once with a head shot and once with a coil shot. Finish with the kind of which-field-finds-which question your qualification exams will ask.",
+    "params": {
+      "bathMs": 1000,
+      "quizLockMs": 1500
+    },
+    "tasks": [
+      {
+        "id": "revealTransverse",
+        "label": "Coil shot: energize, bathe, reveal the transverse crack",
+        "hint": "The encircling coil drives flux along the bar, so it crosses cracks running around the bar."
+      },
+      {
+        "id": "revealLongitudinal",
+        "label": "Head shot: reveal the longitudinal crack",
+        "hint": "Current through the bar makes circular flux, which crosses cracks running along its length."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Pass the check: which field finds which crack?",
+        "hint": "Flux must cross a crack to reveal it — match each field to the crack it cuts across."
+      }
+    ]
+  },
+  "mt1-1-3": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: Prove that direction decides detection",
+    "intro": "Every crack on this plate is real, yet at the starting yoke angle none of them indicates — the flux runs too close to parallel to each one. Rotate the yoke to make each crack appear and prove the limitation yourself: absence of an indication is not absence of a discontinuity, so full coverage demands two roughly perpendicular magnetizations.",
+    "params": {
+      "crackAngles": [0, 45, 90],
+      "indicationThresholdDeg": 55,
+      "startAngleDeg": 45
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Rotate the yoke until silent crack A indicates",
+        "hint": "At the start the flux is only 45 degrees off crack A — swing the yoke until it crosses A nearly square."
+      },
+      {
+        "id": "indicateB",
+        "label": "Find the second window: indicate crack B",
+        "hint": "B's normal sits 45 degrees beyond A's — keep rotating past the angle where A appeared."
+      },
+      {
+        "id": "indicateC",
+        "label": "Indicate crack C and watch A stay dark",
+        "hint": "C only shows when flux runs nearly parallel to A — no single shot can cover both, hence two magnetizations."
+      }
+    ]
+  }
+}

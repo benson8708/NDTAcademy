@@ -1,0 +1,102 @@
+{
+  "ut2-1-1": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: dial in wavelength with λ = v/f",
+    "intro": "Put λ = v/f under your fingers: sweep the probe frequency and jump between steel, aluminum, and water while the crest spacing and near-field readout respond live. This is the same velocity-and-wavelength reasoning this review expects you to run on every Level II problem.",
+    "params": {
+      "materials": ["steel", "aluminum", "water"],
+      "startMaterial": "steel",
+      "frequencyMHz": 2,
+      "probeDiameterMm": 10
+    },
+    "tasks": [
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Push λ in steel below 1 mm",
+        "hint": "λ = v/f: with steel's 5920 m/s you need roughly 6 MHz or more."
+      },
+      {
+        "id": "compareMaterials",
+        "label": "Fire the pulse in steel, aluminum, and water",
+        "hint": "Switch materials and watch crest spacing track velocity — slow water squeezes λ tightest."
+      }
+    ]
+  },
+  "ut2-1-2": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: read the A-scan on a stepped block",
+    "intro": "Each probe position paints one A-scan — amplitude against time. Drag the 0° probe across the stepped block, read the backwall echo's time of flight as thickness, and notice how sweeping positions along a line is exactly how a B-scan gets stacked.",
+    "params": {
+      "stepsMm": [10, 20, 40, 80],
+      "velocityMps": 5920,
+      "material": "Carbon steel"
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Record thickness readings on three different steps",
+        "hint": "Doubling the thickness doubles the echo's time of flight — watch the backwall echo slide right."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Call the thinnest step from the A-scan alone",
+        "hint": "Earliest backwall echo = shortest sound path."
+      }
+    ]
+  },
+  "ut2-1-3": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: angle-beam technique on a one-sided weld",
+    "intro": "You have one accessible surface over a welded plate — a textbook case for the contact angle-beam technique. Slide the 70° wedge along the scan line and mark every hidden side-drilled hole, keeping coverage honest from first flaw to last.",
+    "params": {
+      "refractedAngleDeg": 70,
+      "plateThicknessMm": 20,
+      "flawCount": 3,
+      "depthsMm": [8, 14, 11],
+      "scanLengthMm": 220
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Mark the first SDH echo as you scan the lane",
+        "hint": "Slide steadily and press Mark within ±4 mm of where the echo peaks."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Keep scanning and mark the second hidden hole",
+        "hint": "One hit is not coverage — the technique demands you sweep the full lane."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Sweep to the end and mark the third flaw",
+        "hint": "The shear beam only answers when its centreline crosses a hole — mark at the peak, not the first rise."
+      }
+    ]
+  },
+  "ut2-1-4": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: prove the distance scale on known steps",
+    "intro": "Standardization starts with the distance scale: prove it on references of known thickness before trusting anything the screen tells you. Read the 25, 50, 75, and 100 mm steps and confirm each backwall echo lands exactly where the scale says it should.",
+    "params": {
+      "stepsMm": [25, 50, 75, 100],
+      "velocityMps": 5920,
+      "material": "Carbon steel"
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Verify readings on three known reference steps",
+        "hint": "On a standardized scale the 25/50/75/100 mm references must read true and evenly spaced."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Identify the 25 mm reference step",
+        "hint": "The thinnest reference returns the earliest backwall echo."
+      }
+    ]
+  }
+}

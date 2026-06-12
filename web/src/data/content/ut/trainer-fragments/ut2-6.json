@@ -1,0 +1,110 @@
+{
+  "ut2-6-1": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: shrink the wavelength to catch small flaws",
+    "intro": "Detection starts with the wave itself: sweep the probe frequency in a transparent slab and watch wavelength stretch and shrink as lambda = v/f. Make lambda short enough to catch a 1 mm reflector in steel, then see how aluminum and water rewrite it at the same frequency.",
+    "params": {
+      "materials": ["steel", "aluminum", "water"],
+      "startMaterial": "steel",
+      "frequencyMHz": 1,
+      "probeDiameterMm": 10
+    },
+    "tasks": [
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Raise frequency until lambda in steel drops below 1 mm",
+        "hint": "Lambda = v/f. At 5920 m/s in steel you need roughly 6 MHz or more before a 1 mm reflector becomes a strong scatterer."
+      },
+      {
+        "id": "compareMaterials",
+        "label": "Pulse steel, aluminum, and water at one frequency",
+        "hint": "Hold frequency fixed and switch materials: slower water (about 1480 m/s) packs the crests far closer together than steel."
+      }
+    ]
+  },
+  "ut2-6-2": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: resolve near-equal steps on a fine block",
+    "intro": "These steps differ by as little as 2.5 mm, so their backwall echoes arrive only microseconds apart — separating and calling them is resolution plus operator discrimination. Gauge three steps, then commit to which one is thinnest.",
+    "params": {
+      "stepsMm": [5, 7.5, 10, 15],
+      "stepWidthMm": 26,
+      "velocityMps": 5920,
+      "material": "Carbon steel"
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Record thickness readings on three close steps",
+        "hint": "Seat the 0-degree probe fully on one step at a time; the backwall echo's time of flight is your thickness reading."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Discriminate and pick the thinnest step",
+        "hint": "Compare echo arrival times, not heights — the earliest backwall return marks the thinnest section."
+      }
+    ]
+  },
+  "ut2-6-3": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: peak each echo to size by probe motion",
+    "intro": "Echo height alone is not size — what counts is how amplitude changes as the transducer moves. Sweep the 45-degree wedge across three side-drilled holes and mark each echo exactly at its peak, the same probe-motion discipline behind 6 dB-drop sizing.",
+    "params": {
+      "flawCount": 3,
+      "plateThicknessMm": 25,
+      "depthsMm": [8, 16, 12],
+      "refractedAngleDeg": 45,
+      "scanLengthMm": 200
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Walk the beam over hole 1 and mark its echo peak",
+        "hint": "Amplitude maximizes when the beam centreline hits the hole; mark within 4 mm of that peak."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Peak hole 2 as amplitude rises, crests, then falls",
+        "hint": "Overshoot on purpose once — watching the echo drop past the peak is exactly what the 6 dB-drop method exploits."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Peak and mark hole 3 to finish the sizing scan",
+        "hint": "Small probe steps near the crest separate the true peak from its shoulders."
+      }
+    ]
+  },
+  "ut2-6-4": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: locate three hidden holes with a 60-degree wedge",
+    "intro": "Turn sweep time into position: each echo's soundpath plus the 60-degree wedge geometry fixes the reflector's depth and surface distance. Search the scan line systematically and mark all three hidden holes where their echoes peak.",
+    "params": {
+      "flawCount": 3,
+      "plateThicknessMm": 30,
+      "depthsMm": [10, 22, 16],
+      "refractedAngleDeg": 60,
+      "scanLengthMm": 240
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Sweep the line and mark flaw 1 at maximum echo",
+        "hint": "Move steadily until an echo appears, then jockey the wedge to peak it before pressing Mark."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Locate flaw 2 and read its depth from soundpath",
+        "hint": "At 60 degrees, depth = soundpath x cos 60 — exactly half the soundpath on the first leg."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Locate flaw 3 to complete the position map",
+        "hint": "Surface distance = soundpath x sin 60; a longer sweep time means a farther, deeper reflector on leg one."
+      }
+    ]
+  }
+}

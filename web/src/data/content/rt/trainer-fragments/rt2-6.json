@@ -1,0 +1,56 @@
+{
+  "rt2-6-1": {
+    "engine": "rs",
+    "mode": "tds",
+    "title": "Hands-on: Time, Distance, Shielding vs the Dose Budget",
+    "intro": "Run the lesson's three ALARA levers on a live 52 Ci Ir-192 bay (the ~25 R/h-at-1-m source from the worked example): prove inverse square with your feet, shield the door post to 2 mR/h, then plan a shot that stays inside the 8 mrem shift budget.",
+    "params": {
+      "isotope": "Ir-192",
+      "curies": 52,
+      "boundaryLimit": 2,
+      "doseLimit": 8,
+      "minWorkMin": 10
+    },
+    "tasks": [
+      {
+        "id": "distanceHalf",
+        "label": "Double your distance and watch the rate fall 4x",
+        "hint": "Keep slabs at zero; inverse square means 2x the distance = 1/4 the rate."
+      },
+      {
+        "id": "shieldToLimit",
+        "label": "Stack HVL slabs until the door post reads under 2 mR/h",
+        "hint": "The post starts near 150 mR/h and each 4.8 mm lead slab halves it - count the halvings."
+      },
+      {
+        "id": "planExposure",
+        "label": "Plan a 10+ minute job that stays under 8 mrem",
+        "hint": "Dose = rate x hours. Cut the rate with distance and slabs first, then set the time slider."
+      }
+    ]
+  },
+  "rt2-6-2": {
+    "engine": "rs",
+    "mode": "survey",
+    "title": "Hands-on: Boundary Survey Around the Projector",
+    "intro": "Walk the survey meter around a shielded exposure device the way the lesson requires after every exposure: hold for a stable reading at each stake (ion chambers respond slowly), record all three, then fix the boundary where the numbers say it belongs.",
+    "params": {
+      "isotope": "Ir-192",
+      "curies": 40,
+      "deviceFactor": 0.01,
+      "limit": 2
+    },
+    "tasks": [
+      {
+        "id": "surveyAll",
+        "label": "Record stable readings at stakes A, B and C",
+        "hint": "Hold the meter still until the reading settles - Record rejects a jumpy needle."
+      },
+      {
+        "id": "postBoundary",
+        "label": "Drag stake B out until it reads the 2 mR/h limit",
+        "hint": "Rate falls as 1/d squared; ease B outward and stop just under 2 mR/h (-15%/+5% is accepted)."
+      }
+    ]
+  }
+}

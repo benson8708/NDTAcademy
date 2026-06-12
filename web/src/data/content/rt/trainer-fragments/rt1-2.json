@@ -1,0 +1,83 @@
+{
+  "rt1-2-2": {
+    "engine": "rt",
+    "mode": "exposure",
+    "title": "Hands-on: beat Ir-192 decay with exposure time",
+    "intro": "Expose film with a fresh 40 Ci Ir-192 source until density lands in the 2.0-3.0 window, then jump 30 days ahead: activity has fallen along A = A0 x 2^(-t/73.8), so you must stretch the exposure time to win the density back - the same half-life math as this lesson's decay tables.",
+    "params": {
+      "isotope": "Ir-192",
+      "halfLifeDays": 73.8,
+      "curies": 40,
+      "targetDmin": 2.0,
+      "targetDmax": 3.0,
+      "maxTimeMin": 20
+    },
+    "tasks": [
+      {
+        "id": "hitDensity",
+        "label": "Expose film into the 2.0-3.0 density window",
+        "hint": "Density tracks total exposure E = activity x time - nudge the time slider and watch the density readout climb."
+      },
+      {
+        "id": "compensateDecay",
+        "label": "After 30 days of decay, recover the density",
+        "hint": "30 days is about 0.4 half-lives: activity is down to ~75%, so exposure time must grow by roughly a third."
+      }
+    ]
+  },
+  "rt1-2-3": {
+    "engine": "rs",
+    "mode": "tds",
+    "title": "Hands-on: time, distance, shielding vs gamma photons",
+    "intro": "Gamma photons cross the whole bay and no shield stops them all - lead only thins the field. Work the three defenses this lesson ends on: back away (inverse square), stack half-value layers, and cap the time you spend in the field.",
+    "params": {
+      "curies": 30,
+      "isotope": "Ir-192",
+      "boundaryLimit": 2,
+      "doseLimit": 20,
+      "minWorkMin": 10
+    },
+    "tasks": [
+      {
+        "id": "distanceHalf",
+        "label": "Double your distance and watch the rate fall 4x",
+        "hint": "Photons spread over a sphere, so intensity goes as 1/d-squared: twice the distance means one quarter the rate."
+      },
+      {
+        "id": "shieldToLimit",
+        "label": "Stack lead until the boundary reads under 2 mR/h",
+        "hint": "Each half-value layer halves the rate - count the halvings needed to get from ~86 mR/h down below 2."
+      },
+      {
+        "id": "planExposure",
+        "label": "Plan a 10-minute job under the 20 mrem budget",
+        "hint": "Dose = rate x time; if the plan busts the budget, lower the rate first with distance or another slab."
+      }
+    ]
+  },
+  "rt1-2-4": {
+    "engine": "rs",
+    "mode": "tds",
+    "title": "Hands-on: Co-60 - when the nucleus sets the energy",
+    "intro": "Swap the bay's source for Co-60. Its 1.17 and 1.33 MeV lines are nuclear constants - no kV or mA knob - so the HUD's output (1.32 R-m2/Ci-h vs Ir-192's 0.48) and 12.5 mm lead HVL are simply what you must work around: shield the boundary, then budget your dose.",
+    "params": {
+      "curies": 15,
+      "isotope": "Co-60",
+      "boundaryLimit": 2,
+      "doseLimit": 20,
+      "minWorkMin": 15
+    },
+    "tasks": [
+      {
+        "id": "shieldToLimit",
+        "label": "Shield the boundary - count the HVLs Co-60 costs",
+        "hint": "At Co-60 energy one half-value layer is 12.5 mm of lead; expect about six slabs to get under 2 mR/h."
+      },
+      {
+        "id": "planExposure",
+        "label": "Budget a 15-minute shot under 20 mrem",
+        "hint": "Output is activity, not a dial: dose = rate x time, so buy your margin with distance and lead before adding minutes."
+      }
+    ]
+  }
+}

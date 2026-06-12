@@ -1,0 +1,108 @@
+{
+  "mt1-4-1": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: Head shot — circular flux finds the seam",
+    "intro": "Energize the head shot so current flows through the bar and circular flux wraps it — the right-hand rule made visible. Watch which crack indicates, then prove what circular magnetization can and cannot find.",
+    "params": {
+      "bathMs": 800,
+      "quizLockMs": 1500
+    },
+    "tasks": [
+      {
+        "id": "revealLongitudinal",
+        "label": "Energize the head shot; dust to reveal the lengthwise seam",
+        "hint": "Current through the bar makes flux circle it, and that flux crosses cracks running along the bar at nearly 90 degrees."
+      },
+      {
+        "id": "revealTransverse",
+        "label": "Coil shot: reveal the crack the head shot missed",
+        "hint": "The transverse crack lies parallel to circular flux, so it never leaks — only the encircling coil's longitudinal flux crosses it."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Answer: which field indicates which crack?",
+        "hint": "Flux must cross a crack near perpendicular to leak; circular flux runs around the bar, so it crosses lengthwise flaws."
+      }
+    ]
+  },
+  "mt1-4-2": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: Orient the yoke's longitudinal flux",
+    "intro": "An AC yoke drives a local longitudinal field pole-to-pole through the plate — the same flux a coil shot puts down a part's axis. Rotate it so the flux crosses each crack within about 45 degrees of perpendicular, the indication-geometry rule for every longitudinal field.",
+    "params": {
+      "crackAngles": [0, 90, 135],
+      "indicationThresholdDeg": 45,
+      "startAngleDeg": 20
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Rotate the yoke to indicate crack A",
+        "hint": "Flux runs pole to pole between the legs — set that leg-to-leg axis roughly perpendicular to the crack."
+      },
+      {
+        "id": "indicateB",
+        "label": "Re-orient about 90 degrees and indicate crack B",
+        "hint": "A crack parallel to the flux leaks nothing; B lies at right angles to A, so it needs the perpendicular placement."
+      },
+      {
+        "id": "indicateC",
+        "label": "Catch oblique crack C with a third placement",
+        "hint": "Anything within about 45 degrees of perpendicular still leaks — split the difference between your first two placements."
+      }
+    ]
+  },
+  "mt1-4-3": {
+    "engine": "et",
+    "mode": "skin-depth",
+    "title": "Hands-on: Skin effect — why AC stays at the surface",
+    "intro": "AC's reversing current pins its field to a thin surface skin while DC fills the cross-section — the same skin-effect physics this eddy-current cutaway lets you drive directly. Sweep the frequency high to mimic AC's shallow skin, then head toward DC and watch penetration open up.",
+    "params": {
+      "material": "stainless",
+      "shallowTargetMm": 0.6,
+      "deepTargetMm": 3,
+      "holdMs": 800
+    },
+    "tasks": [
+      {
+        "id": "setShallow",
+        "label": "Pin the field into a thin AC-like skin (depth ≤ 0.6 mm)",
+        "hint": "Faster reversals mean a shallower skin — slide the frequency up toward 1 MHz and hold."
+      },
+      {
+        "id": "setDeep",
+        "label": "Head toward DC: drive penetration past 3 mm",
+        "hint": "Lower the frequency — DC is the zero-frequency limit where the field fills the part, which is why FWDC finds subsurface flaws."
+      }
+    ]
+  },
+  "mt1-4-4": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: Pick the shot that crosses the crack",
+    "intro": "Run the full decision chain on the bench: predict each crack's orientation, choose the head shot (circular) or coil shot (longitudinal) so the flux crosses it, then prove your reasoning in the which-field-finds-which check.",
+    "params": {
+      "bathMs": 500,
+      "quizLockMs": 2500
+    },
+    "tasks": [
+      {
+        "id": "revealTransverse",
+        "label": "Choose the shot that finds the transverse crack",
+        "hint": "A transverse crack needs flux running along the bar to cross it — that is the coil (longitudinal) shot."
+      },
+      {
+        "id": "revealLongitudinal",
+        "label": "Now find the lengthwise seam with the other shot",
+        "hint": "A seam along the bar needs flux wrapping around it — head shot, current straight through the part."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Pass the which-field-finds-which check",
+        "hint": "Flux only indicates what it crosses at 45-90 degrees; match each field to the crack lying perpendicular to it."
+      }
+    ]
+  }
+}

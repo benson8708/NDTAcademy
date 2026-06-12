@@ -1,0 +1,80 @@
+{
+  "vt1-3-1": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: reveal cracks in all three orientations",
+    "intro": "This lesson's weld-crack set runs longitudinal along the joint, transverse across it, and angled in the heat-affected zone. Rotate the yoke over a plate with cracks at 0°, 90°, and 45° and prove that no single orientation of look catches them all — origin predicts orientation, and orientation drives detection.",
+    "params": {
+      "crackAngles": [0, 90, 45],
+      "indicationThresholdDeg": 45,
+      "startAngleDeg": 25
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Indicate the longitudinal crack (0°)",
+        "hint": "Rotate the yoke so flux runs near 90° — perpendicular to a crack lying along the weld axis."
+      },
+      {
+        "id": "indicateB",
+        "label": "Indicate the transverse crack (90°)",
+        "hint": "Swing the yoke back toward 0° so flux crosses the across-the-weld crack head-on."
+      },
+      {
+        "id": "indicateC",
+        "label": "Indicate the 45° heat-affected-zone crack",
+        "hint": "Set the yoke near 135° so the pole-to-pole flux crosses the angled crack squarely, then dust."
+      }
+    ]
+  },
+  "vt1-3-2": {
+    "engine": "pt",
+    "mode": "process",
+    "title": "Hands-on: run an inspection to the written procedure",
+    "intro": "This penetrant bench works exactly like the lesson's VT procedure: six stations in a fixed order, with a timed dwell that behaves like a hold point. Execute it as written — a skipped step or a cut-short dwell voids the examination, the same way an unmet lighting or angle parameter voids a visual one.",
+    "params": {
+      "dwellSec": 12,
+      "wipeCoverage": 0.85,
+      "crackSeed": 4117
+    },
+    "tasks": [
+      {
+        "id": "fullSequence",
+        "label": "Work all six stations in the procedure's order",
+        "hint": "Pre-clean first, inspect last — out-of-order steps reset the part, like blowing through a checkpoint."
+      },
+      {
+        "id": "properDwell",
+        "label": "Let the dwell hold point run to zero",
+        "hint": "Dwell time is a selected parameter, not a suggestion — wait for the timer ring to close before removal."
+      },
+      {
+        "id": "findIndication",
+        "label": "Inspect under UV-A and click the bleedout",
+        "hint": "Only a procedure executed in full earns the indication — scan the plate and click the glow."
+      }
+    ]
+  },
+  "vt1-3-3": {
+    "engine": "et",
+    "mode": "crack-scan",
+    "title": "Hands-on: interpret the indication, log its location",
+    "intro": "Scan the 90 mm lane, mark the crack's exact position, then pick the relevant signal out of the flat lift-off noise. It is the lesson's chain in miniature: interpret before you evaluate, and record a location a stranger could relocate — not 'near the top'.",
+    "params": {
+      "markToleranceMm": 3,
+      "crackDepthMm": 1.2
+    },
+    "tasks": [
+      {
+        "id": "findCrack",
+        "label": "Mark the crack's position within ±3 mm",
+        "hint": "The crack kicks the dot steeply as you cross it — mark where that kick peaks, like dimensioning from a datum."
+      },
+      {
+        "id": "distinguish",
+        "label": "Pick the recorded signal that was the crack",
+        "hint": "Lift-off noise slides flat and horizontal; the relevant indication rises at a steep phase angle."
+      }
+    ]
+  }
+}

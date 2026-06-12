@@ -1,0 +1,111 @@
+{
+  "ut2-7-1": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: verify a certified calibration standard",
+    "intro": "An echo means nothing until it is compared with a calibrated standard. Verify this serialized block's certified step thicknesses with your own probe — same block, same setup, same answer — so every reading stays traceable to the certificate.",
+    "params": {
+      "stepsMm": [12.5, 25, 50, 75],
+      "velocityMps": 5920,
+      "material": "Carbon steel — block S/N CB-417",
+      "stepWidthMm": 32
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Verify certified thickness on three different steps",
+        "hint": "Seat the 0° probe fully on a step and read the backwall echo — a certified 25 mm step must answer 25 mm on your screen too."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Confirm the standard: pick the thinnest certified step",
+        "hint": "Compare backwall arrival times across steps, never echo heights — the earliest return marks the thinnest section."
+      }
+    ]
+  },
+  "ut2-7-2": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: peak the T/4, T/2, 3T/4 DAC reflector set",
+    "intro": "A DAC curve is the same reference reflector peaked at increasing soundpaths. Slide the 60° wedge and peak the side-drilled holes at T/4, T/2, and 3T/4 of this 32 mm plate — the three points every distance-amplitude correction is drawn through.",
+    "params": {
+      "flawCount": 3,
+      "plateThicknessMm": 32,
+      "depthsMm": [8, 16, 24],
+      "refractedAngleDeg": 60,
+      "scanLengthMm": 240,
+      "flawXsMm": [-70, 0, 70]
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Peak the T/4 reference hole — first DAC point",
+        "hint": "Slide until amplitude crests, then press Mark within ±4 mm — the shortest soundpath anchors the top of the curve."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Peak the T/2 hole — the curve falls with distance",
+        "hint": "Same reflector, longer soundpath: beam spread alone costs an SDH roughly 9 dB per doubling of distance."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Peak the 3T/4 hole to finish the DAC ladder",
+        "hint": "Its echo sits latest on the sweep — and every future indication is judged against the curve at its own soundpath."
+      }
+    ]
+  },
+  "ut2-7-3": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: corrosion survey — find the minimum wall",
+    "intro": "Two identical readings can earn opposite verdicts, because significance lives in the object. Service corrosion has thinned this nominal 25 mm wall unevenly: survey it and find the governing minimum — the number engineering weighs against the part's history and intended use.",
+    "params": {
+      "stepsMm": [22, 25, 12.5, 19],
+      "velocityMps": 5920,
+      "material": "Carbon steel — in-service wall",
+      "stepWidthMm": 32
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Log remaining wall at three survey locations",
+        "hint": "Drag the 0° probe from zone to zone — corrosion loss shows up as a backwall echo arriving earlier than nominal 25 mm."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Call the governing minimum wall for appraisal",
+        "hint": "The thinnest reading rules the verdict — fitness depends on what duty the wall must still survive, not on the screen."
+      }
+    ]
+  },
+  "ut2-7-4": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: locate every indication for disposition",
+    "intro": "No acceptance clause applies until the flaw has an address. Scan this 20 mm plate with the 60° wedge — the lesson's worked geometry — and mark every hidden indication at its echo peak so each can be located, classified, and judged to code.",
+    "params": {
+      "flawCount": 3,
+      "plateThicknessMm": 20,
+      "depthsMm": [12.5, 7.5, 10],
+      "refractedAngleDeg": 60,
+      "scanLengthMm": 220
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Peak indication 1 and mark its address for the report",
+        "hint": "Depth = SP·cos 60° and surface distance = SP·sin 60° — the lesson's worked triangle, now live on the sweep."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Locate indication 2 — no clause applies without it",
+        "hint": "Acceptance tables key on type AND location: jockey the wedge to the amplitude crest, then Mark within ±4 mm."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Complete the record: mark the last indication",
+        "hint": "A defensible report lists every recordable indication with datum, depth, and surface distance — leave none unlogged."
+      }
+    ]
+  }
+}

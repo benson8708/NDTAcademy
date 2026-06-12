@@ -1,0 +1,99 @@
+{
+  "ut1-2-1": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: ride a pulse through three materials",
+    "intro": "Fire a probe pulse and watch the crest packet — alternating zones of particle squeeze and stretch — travel the slab. Switch materials to prove velocity belongs to the medium, not the probe.",
+    "params": {
+      "frequencyMHz": 1,
+      "startMaterial": "steel"
+    },
+    "tasks": [
+      {
+        "id": "compareMaterials",
+        "label": "Send the pulse through steel, aluminium, and water",
+        "hint": "Use the material buttons and watch the crest speed change — the probe never changed, the medium did."
+      },
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Pack the crests under 1 mm apart in steel",
+        "hint": "Raise the frequency — each crest is a compression zone, and they sit exactly λ = v/f apart."
+      }
+    ]
+  },
+  "ut1-2-2": {
+    "engine": "ut",
+    "mode": "wave-basics",
+    "title": "Hands-on: drive λ = v ÷ f with the frequency slider",
+    "intro": "Work the slider lab from this lesson: tune frequency and swap materials while the λ readout tracks v ÷ f. Every move you make is the field trade between sensitivity and penetration.",
+    "params": {
+      "frequencyMHz": 2,
+      "startMaterial": "steel",
+      "probeDiameterMm": 10
+    },
+    "tasks": [
+      {
+        "id": "setLambdaUnder1mm",
+        "label": "Shrink λ below 1 mm in steel for small-flaw sensitivity",
+        "hint": "Field shortcut: λ(mm) ≈ 5.92 ÷ f(MHz) in steel, so you need roughly 6 MHz or more."
+      },
+      {
+        "id": "compareMaterials",
+        "label": "Hold f fixed and compare λ in steel, aluminium, water",
+        "hint": "Frequency belongs to the probe and never changes — only v changes, so λ stretches or shrinks with it."
+      }
+    ]
+  },
+  "ut1-2-3": {
+    "engine": "ut",
+    "mode": "thickness",
+    "title": "Hands-on: harvest echoes from the steel–air mirror",
+    "intro": "Slide a 0° probe across a stepped block: every back-wall echo exists because the steel–air interface reflects essentially 100% of the sound. Read each echo's round-trip time as metal path via d = v × t ÷ 2.",
+    "params": {
+      "stepsMm": [10, 20, 40, 80],
+      "velocityMps": 5920,
+      "material": "Carbon steel"
+    },
+    "tasks": [
+      {
+        "id": "measure3",
+        "label": "Record the back-wall echo on three different steps",
+        "hint": "These steps double each time — watch the echo's round-trip time double with the thickness."
+      },
+      {
+        "id": "identifyThinnest",
+        "label": "Identify the step with the earliest echo",
+        "hint": "Least metal means the shortest round trip: pick the step whose echo sits closest to the initial pulse."
+      }
+    ]
+  },
+  "ut1-2-4": {
+    "engine": "ut",
+    "mode": "angle-flaw",
+    "title": "Hands-on: hunt holes with a 60° refracted shear beam",
+    "intro": "Slide the wedge along the welded plate — its incident angle sits between the two critical angles, so Snell's law puts a single 60° shear wave into the steel. Mark each hidden side-drilled hole where its echo peaks.",
+    "params": {
+      "flawCount": 3,
+      "depthsMm": [8, 14, 19],
+      "plateThicknessMm": 25,
+      "refractedAngleDeg": 60
+    },
+    "tasks": [
+      {
+        "id": "findFlaw1",
+        "label": "Mark the first hole at its echo peak",
+        "hint": "Watch the A-scan while you slide: press Mark within ±4 mm of the position where the echo stands tallest."
+      },
+      {
+        "id": "findFlaw2",
+        "label": "Mark the second hole — deeper means a longer sound path",
+        "hint": "A deeper hole returns its echo later along the first-leg path; keep sliding until a fresh peak rises."
+      },
+      {
+        "id": "findFlaw3",
+        "label": "Mark the third hole to clear the whole weld",
+        "hint": "A hole only answers when the refracted beam centreline actually crosses it — sweep the full scan line."
+      }
+    ]
+  }
+}

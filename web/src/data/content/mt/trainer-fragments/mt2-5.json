@@ -1,0 +1,135 @@
+{
+  "mt2-5-1": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: Pick the shot for each product-form flaw",
+    "intro": "Wrought bar carries its ingot ancestry: surface blowholes rolled into tight longitudinal seams, plus service cracks running across the axis. Energize the head shot and the coil shot to reveal each flaw and confirm the orientation rule that sorts almost everything.",
+    "params": {
+      "bathMs": 800,
+      "quizLockMs": 1500
+    },
+    "tasks": [
+      {
+        "id": "revealLongitudinal",
+        "label": "Reveal the seam-like longitudinal flaw",
+        "hint": "Seams run with the bar axis - the classic circular-magnetization target, so put current through the bar with the head shot."
+      },
+      {
+        "id": "revealTransverse",
+        "label": "Reveal the transverse crack with the other shot",
+        "hint": "Transverse flaws need longitudinal flux: the encircling coil drives it straight down the bar."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Pass the orientation-rule check",
+        "hint": "Leakage is strongest with flux 45-90 degrees to the flaw: circular finds longitudinal, longitudinal finds transverse."
+      }
+    ]
+  },
+  "mt2-5-2": {
+    "engine": "et",
+    "mode": "crack-scan",
+    "title": "Hands-on: Call it relevant or nonrelevant",
+    "intro": "Detection, interpretation, and evaluation are three different acts in every method. Scan the lane and log what you see, then disposition the record: the crack's steep kick is the relevant indication, the lift-off wobble is nonrelevant background.",
+    "params": {
+      "crackDepthMm": 0.9,
+      "markToleranceMm": 4
+    },
+    "tasks": [
+      {
+        "id": "findCrack",
+        "label": "Scan the lane and mark where the indication forms",
+        "hint": "Detection comes first: a real flaw kicks the dot at a steep phase angle, unlike the flat lift-off noise."
+      },
+      {
+        "id": "distinguish",
+        "label": "Interpret the record: pick the relevant signal",
+        "hint": "Interpretation means deciding the cause - the steep-phase kick is relevant; horizontal probe-wobble traces are nonrelevant."
+      }
+    ]
+  },
+  "mt2-5-3": {
+    "engine": "mt",
+    "mode": "yoke-orientation",
+    "title": "Hands-on: Validate the technique before you write it",
+    "intro": "Formulas get you onto the bench; validation is proof. Rotate the yoke over three known cracks and demonstrate which shot angles the written technique must specify - inside its 50-degree crossing window - to catch every orientation.",
+    "params": {
+      "crackAngles": [15, 70, 125],
+      "indicationThresholdDeg": 50,
+      "startAngleDeg": 15
+    },
+    "tasks": [
+      {
+        "id": "indicateA",
+        "label": "Demonstrate the technique catches crack A",
+        "hint": "Validation starts at worst case: the flux begins parallel to A, so nothing leaks until you swing the yoke well off it."
+      },
+      {
+        "id": "indicateB",
+        "label": "Qualify a yoke angle that develops crack B",
+        "hint": "Qualified values are demonstrated, then written down with tolerances - note the angle where B blooms and holds."
+      },
+      {
+        "id": "indicateC",
+        "label": "Prove full coverage by indicating crack C",
+        "hint": "No single shot covers all three orientations - that is why the procedure specifies two shots about 90 degrees apart."
+      }
+    ]
+  },
+  "mt2-5-4": {
+    "engine": "mt",
+    "mode": "field-direction",
+    "title": "Hands-on: Known-defect system performance check",
+    "intro": "Meters drift and baths exhaust invisibly, so process control ends with a known-defect check. Energize both shots on a reference bar and verify each field still develops the flaw it should - the same proof a QQI shim or test ring writes into the QC log.",
+    "params": {
+      "bathMs": 1500,
+      "quizLockMs": 2000
+    },
+    "tasks": [
+      {
+        "id": "revealTransverse",
+        "label": "Verify the coil shot develops the known transverse flaw",
+        "hint": "System checks use known defects: give the bath time to work, and if the bloom never comes, the bench fails QC."
+      },
+      {
+        "id": "revealLongitudinal",
+        "label": "Verify the head shot develops the longitudinal flaw",
+        "hint": "Like a QQI shim, a known defect proves field strength AND direction together - not just an ammeter reading."
+      },
+      {
+        "id": "explainCheck",
+        "label": "Confirm the principle your pie gauge reads",
+        "hint": "Field validation devices work because flux must cross a flaw to leak - circular finds longitudinal, longitudinal finds transverse."
+      }
+    ]
+  },
+  "mt2-5-5": {
+    "engine": "pt",
+    "mode": "process",
+    "title": "Hands-on: Run the written sequence like a stranger",
+    "intro": "A procedure passes the stranger test when a technician who has never seen the part can run its numbered steps and reach the same result. Execute a six-station surface-method sequence exactly as written - out-of-order moves and cut-short dwells reset the job.",
+    "params": {
+      "dwellSec": 10,
+      "wipeCoverage": 0.85,
+      "crackSeed": 425,
+      "bleedSec": 3
+    },
+    "tasks": [
+      {
+        "id": "fullSequence",
+        "label": "Execute all six stations in the written order",
+        "hint": "Detailed instructions are numbered, imperative, one action per step - jumping ahead violates the sequence and resets the part."
+      },
+      {
+        "id": "properDwell",
+        "label": "Hold the dwell for its full specified time",
+        "hint": "A sound step carries a verifiable value: the timer ring is the 'minimum dwell' number written into the instruction."
+      },
+      {
+        "id": "findIndication",
+        "label": "Record the indication that closes out the run",
+        "hint": "The final required section turns findings into a record - click the bleedout under UV-A to log the result."
+      }
+    ]
+  }
+}
