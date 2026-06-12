@@ -603,31 +603,38 @@ function resampleTrack(raw, N){
 const coasterTrack = resampleTrack(coasterRaw, 256);
 
 const SHAPES = [
-/* 0 — WELD BEAD ON PLATE (side profile) */
-{ name:'Weld bead', cap:'⚡ WELDS', accentFrac:.10, defect:{x:252, y:160},
-  draw(c){
-    const y0 = 176, th = 42;
-    c.fillRect(20, y0, 186, th);                                    // left plate
-    c.fillRect(274, y0, 186, th);                                   // right plate
-    c.fillRect(206, y0, 68, th);                                    // fused joint
-    c.beginPath();                                                  // convex rippled cap
-    c.moveTo(176, y0+2);
-    for (let k = 0; k <= 30; k++){
-      const t = k/30, x = 176 + t*128;
-      const bulge = Math.sin(t*Math.PI) * 36 + Math.sin(t*Math.PI*7) * 4.5;
-      c.lineTo(x, y0+2 - Math.max(0, bulge));
-    }
-    c.lineTo(304, y0+2); c.closePath(); c.fill();
-    c.beginPath();                                                  // root reinforcement below
-    c.moveTo(208, y0+th); c.quadraticCurveTo(240, y0+th+20, 272, y0+th); c.closePath(); c.fill();
+/* 0 — WELD IN PROGRESS: two plates, torch laying a rippled bead along the joint.
+      Torch + bead + molten pool are live-animated main particles (see animWeld);
+      sparks come from the shared accent pool. drawStatic = plates only. */
+{ name:'Weld in progress', cap:'⚡ WELDS', accentFrac:0, defect:{x:336, y:214},
+  draw(c){                                                          // montage: plates + partial bead + torch
+    this.drawStatic(c);
+    const tx = 258, oldFill = c.fillStyle;
+    c.beginPath();                                                  // rippled bead, laid 46 -> tx
+    c.moveTo(46, 178);
+    for (let x = 46; x <= tx; x += 4) c.lineTo(x, 178 - (10.5 + 3.2*Math.sin(x*.42)));
+    for (let x = tx; x >= 46; x -= 4) c.lineTo(x, 178 + (10.5 + 3.2*Math.sin(x*.42)));
+    c.closePath(); c.fill();
+    c.beginPath(); c.ellipse(tx+4, 178, 11, 10, 0, 0, 7); c.fill(); // molten pool at the leading edge
+    const A = -64*Math.PI/180, ux = Math.cos(A), uy = Math.sin(A);  // torch, steep, pokes above the plate
+    const A2 = A + .62;
+    const px = l => tx+2 + ux*l, py = l => 174 + uy*l;
+    const seg = (l0, l1, lw) => { c.lineWidth = lw; c.beginPath(); c.moveTo(px(l0), py(l0)); c.lineTo(px(l1), py(l1)); c.stroke(); };
+    const hseg = lw => { c.lineWidth = lw; c.beginPath(); c.moveTo(px(66), py(66));
+      c.lineTo(px(66) + Math.cos(A2)*24, py(66) + Math.sin(A2)*24); c.stroke(); };
+    c.strokeStyle = '#091a33';                                      // dark keyline so the torch reads on the plate
+    seg(4, 20, 16); seg(18, 66, 23); hseg(20);
+    c.strokeStyle = c.fillStyle = oldFill;
+    seg(4, 20, 7); seg(18, 66, 14); hseg(11);
   },
-  accent(c){                                                        // UT scan line + bead ripples
-    c.fillRect(237, 124, 7, 112);
-    c.lineWidth = 4;
-    for (let k = 0; k < 4; k++){
-      const xx = 205 + k*24;
-      c.beginPath(); c.arc(xx, 184, 17, Math.PI*1.12, Math.PI*1.88); c.stroke();
-    }
+  drawStatic(c){                                                    // sampled part (plates only)
+    c.fillRect(40, 116, 400, 50);                                   // top plate
+    c.fillRect(40, 190, 400, 50);                                   // bottom plate
+  },
+  accent(c){                                                        // montage-only (accentFrac 0): arc + sparks
+    c.beginPath(); c.arc(259, 177, 7, 0, 7); c.fill();
+    [[284,152],[302,170],[296,196],[320,184],[278,208],[312,150],[332,200],[290,132]]
+      .forEach(([x,y], i) => { c.beginPath(); c.arc(x, y, 3.2 - (i%2), 0, 7); c.fill(); });
   }},
 /* 1 — FLANGED PIPE RUN WITH ELBOW */
 { name:'Pipe run', cap:'🔧 PIPELINES', accentFrac:.07, defect:{x:368, y:142},
@@ -635,7 +642,13 @@ const SHAPES = [
     c.lineWidth = 50;
     c.beginPath(); c.moveTo(56, 118); c.lineTo(296, 118);
     c.quadraticCurveTo(362, 118, 362, 186); c.lineTo(362, 262); c.stroke();
-    c.fillRect(40, 80, 22, 76);                                     // end flange
+    const op = c.globalCompositeOperation;                          // hollow the bore: the live fluid
+    c.globalCompositeOperation = 'destination-out';                 // stream reads THROUGH the run
+    c.lineWidth = 24;
+    c.beginPath(); c.moveTo(56, 118); c.lineTo(296, 118);
+    c.quadraticCurveTo(362, 118, 362, 186); c.lineTo(362, 254); c.stroke();
+    c.globalCompositeOperation = op;
+    c.fillRect(40, 80, 22, 76);                                     // end flange (solid, after the carve)
     c.fillRect(160, 80, 17, 76); c.fillRect(185, 80, 17, 76);       // flange pair (bolted joint)
     c.fillRect(330, 252, 66, 20);                                   // bottom flange
   },
@@ -708,7 +721,7 @@ const SHAPES = [
     c.moveTo(46, 198); c.lineTo(446, 198); c.lineTo(404, 256); c.lineTo(96, 256);
     c.lineTo(60, 198); c.closePath(); c.fill();
     c.fillRect(74, 130, 48, 68);                                    // superstructure
-    c.fillRect(82, 112, 32, 18); c.fillRect(95, 92, 5, 20);         // bridge cab + mast
+    c.fillRect(82, 112, 32, 18); c.fillRect(88, 86, 18, 26);        // bridge cab + funnel stack
     for (let r = 0; r < 3; r++)                                      // container stacks
       for (let x = 0; x < 9; x++)
         c.fillRect(140 + x*29, 172 - r*26, 25, 22);
@@ -742,8 +755,8 @@ const SHAPES = [
       c.beginPath(); c.arc(x, y-8, 7, 0, 7); c.fill();
     }
   }},
-/* 7 — ROCKET */
-{ name:'Rocket', cap:'🚀 ROCKETS', accentFrac:.10,
+/* 7 — ROCKET (takeoff: live flame jet + ground smoke from the pool; rise + vibration in frame()) */
+{ name:'Rocket', cap:'🚀 ROCKETS', accentFrac:.05, accentColor:'#ffc977',
   draw(c){
     c.beginPath();                                                  // nose cone
     c.moveTo(216, 112); c.quadraticCurveTo(240, 18, 264, 112); c.closePath(); c.fill();
@@ -755,24 +768,27 @@ const SHAPES = [
     c.beginPath();                                                  // nozzle
     c.moveTo(226, 228); c.lineTo(254, 228); c.lineTo(262, 248); c.lineTo(218, 248); c.closePath(); c.fill();
   },
-  accent(c){                                                        // exhaust plume
-    const pts = [[240,262],[232,274],[249,272],[240,286],[226,284],[254,283],[244,296],[235,295],[224,270],[256,268],[240,275],[248,290]];
-    pts.forEach(([x,y],i) => { c.beginPath(); c.arc(x, y, 4.5 - (i%3), 0, 7); c.fill(); });
+  accent(c){                                                        // porthole + flame core (live jet rides on top)
     c.beginPath(); c.arc(240, 150, 11, 0, 7); c.fill();             // porthole
+    c.beginPath(); c.moveTo(228, 252); c.lineTo(252, 252); c.lineTo(240, 288); c.closePath(); c.fill();
   }},
-/* 8 — JET ENGINE FRONT FAN */
+/* 8 — JET ENGINE FRONT FAN (blades are live-rotated particles; sampling skips them) */
 { name:'Jet engine fan', cap:'⚙ JET ENGINES', accentFrac:.06,
-  draw(c){
+  draw(c){                                                          // full silhouette (montage)
     const cx = 240, cy = 152;
-    c.lineWidth = 17;
-    c.beginPath(); c.arc(cx, cy, 106, 0, 7); c.stroke();            // nacelle ring
+    this.drawStatic(c);
     for (let k = 0; k < 18; k++){                                   // fan blades w/ twist
       const a = k/18*Math.PI*2;
       c.beginPath();
-      const p = (r, da, w) => [cx + Math.cos(a+da)*r, cy + Math.sin(a+da)*r];
+      const p = (r, da) => [cx + Math.cos(a+da)*r, cy + Math.sin(a+da)*r];
       const [x1,y1] = p(22, -0.06), [x2,y2] = p(92, 0.16), [x3,y3] = p(92, 0.30), [x4,y4] = p(22, 0.08);
       c.moveTo(x1,y1); c.lineTo(x2,y2); c.lineTo(x3,y3); c.lineTo(x4,y4); c.closePath(); c.fill();
     }
+  },
+  drawStatic(c){                                                    // sampled part (no blades)
+    const cx = 240, cy = 152;
+    c.lineWidth = 17;
+    c.beginPath(); c.arc(cx, cy, 106, 0, 7); c.stroke();            // nacelle ring
     c.beginPath(); c.arc(cx, cy, 17, 0, 7); c.fill();               // spinner
   },
   accent(c){                                                        // spinner swirl
@@ -914,14 +930,6 @@ function buildShape(def, gi){
 }
 SHAPES.forEach((s, i) => buildShape(s, i));
 
-/* exhaust gets a warm tint on the rocket */
-{
-  const r = SHAPES[7], usable = COUNT - DEF_TOTAL;
-  const accN = Math.min(Math.round(COUNT * r.accentFrac), usable >> 2);
-  const warm = new THREE.Color('#ffd28a');
-  for (let i = usable - accN; i < usable; i++){ r.colors[i*3] = warm.r; r.colors[i*3+1] = warm.g; r.colors[i*3+2] = warm.b; }
-}
-
 /* ================================================================
    LIVE SHAPE ANIMATIONS — turbine blades rotate, bridge cars drive,
    coaster train rides. All indices + hub-relative coords precomputed;
@@ -1048,6 +1056,224 @@ for (let i = 0; i < COUNT; i++){
 for (let i = COUNT - DEF_TOTAL; i < COUNT; i++) SZ[i] = 2.1 + R4[i*4]*.9;   // defect cracks read bigger
 for (let k = 0; k < CAR_N*CAR_P; k++) SZ[carIdx[k]] = 1.8 + (k % 3)*.35;    // bridge cars pop
 for (let k = 0; k < TRN_C*TRN_P; k++) SZ[trnIdx[k]] = 1.8 + (k % 3)*.35;    // coaster train pops
+
+/* ================================================================
+   SHARED ACCENT POOL + PER-SHAPE DYNAMIC EFFECTS (owner round 2)
+   One pre-allocated set of particle indices (strided across the main
+   range) is recycled per shape: weld sparks, pipe fluid, airliner
+   contrails, ship water + funnel smoke, rocket flame + smoke cloud.
+   While unused, pool particles simply keep their silhouette targets.
+   All writers are stateless functions of t — zero allocations.
+   ================================================================ */
+const POOLN = LOWPOWER ? 500 : 1200;
+const poolIdx = new Uint32Array(POOLN);
+const isPool = new Uint8Array(USABLE);
+for (let k = 0; k < POOLN; k++){ const i = (k*USABLE/POOLN)|0; poolIdx[k] = i; isPool[i] = 1; }
+function PL(k, x, y, z, r, g, b, dy){                       // canvas px -> pool particle k target
+  const i3 = poolIdx[k]*3;
+  const lx = (x - SW/2)*SC, ly = -(y - SH/2)*SC + (dy || 0);
+  if (Math.abs(lx - TL[i3]) + Math.abs(ly - TL[i3+1]) > 1.6){   // cycle wrap: teleport, never streak back
+    P[i3] = lx*fs + fox + vibX; P[i3+1] = ly*fs + foy + bobW + riseW; P[i3+2] = z*fs;
+    V[i3] = V[i3+1] = V[i3+2] = 0;
+  }
+  TL[i3] = lx; TL[i3+1] = ly; TL[i3+2] = z;
+  CT[i3] = r; CT[i3+1] = g; CT[i3+2] = b;
+}
+
+/* --- weld: torch travels the joint, rippled bead extends behind it,
+       molten pool feeds the leading edge, sparks fly off the arc. --- */
+const WELD_X0 = 46, WELD_X1 = 414, WELD_Y = 178, WELD_PERIOD = 11, WELD_T0 = 4.6;
+const WELD_TORCH_N = LOWPOWER ? 70 : 140, ARC_N = 22, WELD_BEAD_N = LOWPOWER ? 260 : 520;
+const SPARK_N = LOWPOWER ? 90 : 220;
+const weldIdx = new Uint32Array(WELD_TORCH_N + WELD_BEAD_N);
+const torchOffX = new Float32Array(WELD_TORCH_N), torchOffY = new Float32Array(WELD_TORCH_N);
+{
+  const def = SHAPES[0], mN = mainCountOf(def), nSel = weldIdx.length, step = mN / nSel;
+  for (let k = 0; k < nSel; k++){
+    let i = Math.min(mN - 1, (k*step)|0);
+    while (isPool[i] && i < mN - 1) i++;                    // sparks own the pool; stay disjoint
+    weldIdx[k] = i;
+  }
+  const A = -64*Math.PI/180, ux = Math.cos(A), uy = Math.sin(A), A2 = A + .62;
+  for (let k = 0; k < WELD_TORCH_N; k++){
+    const i4 = weldIdx[k]*4;
+    if (k < ARC_N){                                          // white-hot arc cluster at the tip
+      torchOffX[k] = 2 + (R4[i4]-.5)*7; torchOffY[k] = -2 + (R4[i4+1]-.5)*7;
+    } else if (k < WELD_TORCH_N*.72){                        // nozzle + body
+      const l = 4 + R4[i4]*62, hw = l < 20 ? 2.5 + l*.15 : 7;
+      torchOffX[k] = 2 + ux*l - uy*(R4[i4+1]-.5)*2*hw;
+      torchOffY[k] = -4 + uy*l + ux*(R4[i4+1]-.5)*2*hw;
+    } else {                                                 // bent handle
+      const l = R4[i4]*24, bx = 2 + ux*66, by = -4 + uy*66;
+      torchOffX[k] = bx + Math.cos(A2)*l - Math.sin(A2)*(R4[i4+1]-.5)*11;
+      torchOffY[k] = by + Math.sin(A2)*l + Math.cos(A2)*(R4[i4+1]-.5)*11;
+    }
+    SZ[weldIdx[k]] = k < ARC_N ? 2.2 + R4[i4+2] : 1.5 + R4[i4+2]*.6;
+  }
+  for (let k = 0; k < WELD_BEAD_N; k++){                     // bead particles render chunky (molten metal)
+    const i = weldIdx[WELD_TORCH_N + k];
+    SZ[i] = 1.7 + R4[i*4+3]*.7;
+  }
+}
+function weldTorchX(phase){
+  return WELD_X0 + 10 + ((phase % WELD_PERIOD)/WELD_PERIOD) * (WELD_X1 - WELD_X0 - 10);
+}
+function animWeld(phase, t, A, C, live){
+  const tx = weldTorchX(phase);
+  for (let k = 0; k < WELD_TORCH_N; k++){                    // rigid torch + flickering arc
+    const i = weldIdx[k], i3 = i*3, i4 = i*4;
+    A[i3] = (tx + torchOffX[k] - SW/2)*SC; A[i3+1] = -(WELD_Y - 2 + torchOffY[k] - SH/2)*SC; A[i3+2] = .3;
+    if (k < ARC_N){
+      const f = 1.5 + (live ? .8*Math.sin(t*47 + R4[i4]*40) : 0) + R4[i4+1]*.3;
+      C[i3] = f; C[i3+1] = f*.93; C[i3+2] = f*.72;
+    } else { C[i3] = 1.0; C[i3+1] = .76; C[i3+2] = .38; }    // bronze torch body (reads over the blue plates)
+  }
+  for (let k = 0; k < WELD_BEAD_N; k++){                     // bead: laid ripple behind / molten pool ahead
+    const i = weldIdx[WELD_TORCH_N + k], i3 = i*3, i4 = i*4;
+    const bx = WELD_X0 + ((k + .5)/WELD_BEAD_N)*(WELD_X1 - WELD_X0);
+    if (bx <= tx){                                           // laid: static rippled bead, cooling
+      const h = 10.5 + 3.2*Math.sin(bx*.42);
+      A[i3] = (bx - SW/2)*SC; A[i3+1] = -(WELD_Y + (R4[i4+2]*2-1)*h - SH/2)*SC; A[i3+2] = .2;
+      const hot = Math.max(0, 1 - (tx - bx)/96), rip = .85 + .45*Math.sin(bx*.42);
+      C[i3] = .62*rip + hot*1.25; C[i3+1] = 1.05*rip + hot*.35; C[i3+2] = Math.max(.12, 1.3*rip - hot*.6);
+    } else {                                                 // not laid yet: lives in the molten pool
+      const a = R4[i4]*6.283, r = Math.sqrt(R4[i4+1])*9.5;
+      A[i3] = (tx + 3 + Math.cos(a)*r - SW/2)*SC; A[i3+1] = -(WELD_Y + Math.sin(a)*r*.8 - SH/2)*SC; A[i3+2] = .32;
+      const f = 1.3 + (live ? .5*Math.sin(t*23 + R4[i4+3]*30) : .2);
+      C[i3] = f; C[i3+1] = f*.82; C[i3+2] = f*.5;
+    }
+  }
+  if (!live) return;
+  for (let k = 0; k < SPARK_N; k++){                         // sparks: little parabolas, fading as they fall
+    const i4 = poolIdx[k]*4;
+    const Tk = .5 + R4[i4]*.65;
+    const age = (t + R4[i4+1]*37) % Tk;
+    const x = tx + 3 + (R4[i4+2]-.5)*270*age;
+    const y = WELD_Y - 3 - (40 + R4[i4+3]*220)*age + 480*age*age;
+    const u = age/Tk, b = (1-u)*(1-u)*Math.min(1, u*8)*(1.15 + R4[i4+2]*.6);
+    PL(k, x, y, .45, b*1.3, b*.95, b*.4);
+  }
+}
+animWeld(WELD_T0, 0, SHAPES[0].targets, SHAPES[0].colors, false);  // bake mid-weld pose (morph target + reduced-motion)
+
+/* --- jet fan: blades as hub-relative particles, spun per frame (~2x turbine) --- */
+const JET_HX = 0, JET_HY = -(152 - SH/2)*SC, JET_OMEGA = 1.1;
+let jbN = 0, jbIdx, jbX0, jbY0;
+{
+  const def = SHAPES[8], mN = mainCountOf(def);
+  jbN = (mN*.42)|0;
+  jbIdx = new Uint32Array(jbN); jbX0 = new Float32Array(jbN); jbY0 = new Float32Array(jbN);
+  const step = mN/jbN;
+  for (let k = 0; k < jbN; k++){
+    const i = Math.min(mN-1, (k*step)|0), i4 = i*4;
+    jbIdx[k] = i;
+    const r = Math.sqrt(484 + (8464-484)*R4[i4]);            // uniform area density, r 22..92
+    const u = (r-22)/70;                                     // 0..1 along the blade (twist)
+    const a = (k%18)/18*Math.PI*2 + (-0.06 + u*.22) + R4[i4+1]*.14;
+    jbX0[k] = Math.cos(a)*r*SC; jbY0[k] = -Math.sin(a)*r*SC;
+    def.targets[i*3] = JET_HX + jbX0[k]; def.targets[i*3+1] = JET_HY + jbY0[k];
+    def.targets[i*3+2] = (R4[i4+2]-.5)*.5;
+  }
+}
+function animJet(t, A){
+  const ang = t*JET_OMEGA, ca = Math.cos(ang), sa = Math.sin(ang);
+  for (let k = 0; k < jbN; k++){
+    const i3 = jbIdx[k]*3;
+    A[i3]   = JET_HX + jbX0[k]*ca - jbY0[k]*sa;
+    A[i3+1] = JET_HY + jbX0[k]*sa + jbY0[k]*ca;
+  }
+}
+
+/* --- pipe: bright fluid stream along the centerline, through the elbow --- */
+const pipePath = resampleTrack((() => {
+  const p = [];
+  for (let k = 0; k <= 24; k++) p.push(56 + k/24*240, 118);                 // straight run
+  for (let k = 1; k <= 20; k++){ const u = k/20, a = 1-u;                   // elbow (matches the quad curve)
+    p.push(a*a*296 + 2*a*u*362 + u*u*362, a*a*118 + 2*a*u*118 + u*u*186); }
+  for (let k = 1; k <= 10; k++) p.push(362, 186 + k/10*76);                 // drop to the bottom flange
+  return p;
+})(), 140);
+const FLUID_N = LOWPOWER ? 180 : 420, FLUID_SPD = 150, SLUG_N = 7;
+function animFluid(t){
+  const {pts, len, n} = pipePath;
+  const per = FLUID_N/SLUG_N;
+  for (let k = 0; k < FLUID_N; k++){                         // white-hot comet slugs: bright head, tapering tail
+    const i4 = poolIdx[k]*4;
+    const slug = (k/per)|0;
+    const tail = R4[i4]*R4[i4];                              // 0 = head (dense), 1 = tail tip
+    const s = (((slug/SLUG_N)*len + t*FLUID_SPD - tail*60) % len + len) % len;
+    const f = s/len*(n-1), i0 = Math.min(n-2, Math.max(0, f|0)), fu = f - i0;
+    const x = pts[i0*2] + (pts[i0*2+2]-pts[i0*2])*fu, y = pts[i0*2+1] + (pts[i0*2+3]-pts[i0*2+1])*fu;
+    const dx = pts[i0*2+2]-pts[i0*2], dy = pts[i0*2+3]-pts[i0*2+1];
+    const m = Math.hypot(dx, dy) || 1, off = (R4[i4+2]-.5)*(4 + tail*7);   // stays inside the bore
+    const b = (1 + .3*Math.sin(t*7 + R4[i4+3]*6.28)) * (1.5 - tail*1.25);
+    PL(k, x - dy/m*off, y + dx/m*off, .6, 1.3*b, 1.5*b, 1.6*b);
+  }
+}
+
+/* --- airliner: contrails streaming back off both engines --- */
+const TRAIL_N = LOWPOWER ? 200 : 480, TRAIL_LEN = 260, TRAIL_SPD = .55;
+function animContrails(t){
+  for (let k = 0; k < TRAIL_N; k++){
+    const i4 = poolIdx[k]*4, e = k & 1;
+    const u = (R4[i4] + t*TRAIL_SPD*(.8 + R4[i4+1]*.4)) % 1;
+    const x = (e ? 304 : 232) + u*TRAIL_LEN;                 // nose points left -> trails stream right
+    const y = (e ? 208 : 190) + u*10 + (R4[i4+2]-.5)*(3 + u*30) + Math.sin(t*2 + R4[i4+3]*6.28 + u*9)*1.8;
+    const b = (1-u)*(.85 + R4[i4+3]*.55);                    // linear fade: the tail still reads
+    PL(k, x, y, .35, b*1.05, b*1.15, b*1.3);
+  }
+}
+
+/* --- ship: ocean drifting past the hull (implied headway) + funnel smoke --- */
+const WATER_N = LOWPOWER ? 210 : 520, SMOKESHIP_N = LOWPOWER ? 85 : 200, WATER_SPD = 64;
+function animShip(t, bob){
+  const cb = -bob/fs;                                        // water doesn't ride the hull bob
+  for (let k = 0; k < WATER_N; k++){
+    const i4 = poolIdx[k]*4;
+    const x = (((R4[i4]*660 - t*WATER_SPD*(.7 + R4[i4+1]*.6)) % 660) + 660) % 660 - 90;
+    const y = 252 + R4[i4+2]*22 + Math.sin(t*1.7 + R4[i4+3]*6.28 + x*.05)*2.6;
+    const b = .55 + R4[i4+3]*.55 + .3*Math.sin(t*2.3 + R4[i4]*9);
+    PL(k, x, y, .15, .2*b, .68*b, .92*b, cb);
+  }
+  for (let k = 0; k < SMOKESHIP_N; k++){                     // pale smoke: rises, drifts aft, disperses
+    const kk = WATER_N + k, i4 = poolIdx[kk]*4;
+    const Tk = 2.4 + R4[i4]*1.6;
+    const a = ((t*(.8 + R4[i4+1]*.4) + R4[i4+2]*23) % Tk)/Tk;
+    const x = 97 - a*58*(.7 + R4[i4+1]*.6) + (R4[i4+3]-.5)*(4 + a*30) + Math.sin(t*1.1 + R4[i4]*6.28)*2*a;
+    const y = 84 - a*66;
+    const b = (1-a)*(.42 + R4[i4+2]*.34)*Math.min(1, a*8);
+    PL(kk, x, y, .3, .72*b, .75*b, .8*b);
+  }
+}
+
+/* --- rocket: flickering flame jet + ground smoke cloud mushrooming out --- */
+const FLAME_N = LOWPOWER ? 150 : 360, RSMOKE_N = LOWPOWER ? 260 : 640, ROCKET_PERIOD = 8;
+function animRocket(t, rise){
+  const gapPx = rise/(fs*SC);                                // flame stretches to the pad as it lifts
+  for (let k = 0; k < FLAME_N; k++){
+    const i4 = poolIdx[k]*4;
+    const Tk = .16 + R4[i4]*.22;
+    const a = ((t + R4[i4+1]*9) % Tk)/Tk;
+    const flick = .72 + .45*Math.sin(t*41 + R4[i4+2]*40);
+    const len = (54 + R4[i4+2]*26)*flick + gapPx*.7;
+    const x = 240 + (R4[i4+3]-.5)*(7 + a*24);
+    const y = 252 + a*len;
+    const b = (1-a)*(1.05 + R4[i4]*.7)*flick;
+    PL(k, x, y, .5, b*1.35, b*(1 - a*.3), b*(.55 - a*.3));
+  }
+  const cb = -rise/fs;                                       // smoke stays at the pad
+  for (let k = 0; k < RSMOKE_N; k++){                        // billowing mushroom cloud
+    const kk = FLAME_N + k, i4 = poolIdx[kk]*4;
+    const Tk = 1.5 + R4[i4]*1.3;
+    const a = ((t + R4[i4+1]*31) % Tk)/Tk;
+    const dir = R4[i4+2] > .5 ? 1 : -1;
+    const x = 240 + dir*(12 + a*(140 + R4[i4+3]*130));
+    const y = 290 - Math.sin(a*Math.PI)*(16 + R4[i4]*34) + a*12;
+    const b = (1-a)*(.58 + R4[i4+3]*.36)*Math.min(1, a*7);
+    PL(kk, x, y, .35, .78*b, .72*b, .68*b, cb);
+  }
+}
+
 const posAttr = new THREE.BufferAttribute(P, 3);  posAttr.setUsage(THREE.DynamicDrawUsage);
 const colAttr = new THREE.BufferAttribute(CL, 3); colAttr.setUsage(THREE.DynamicDrawUsage);
 geo.setAttribute('position', posAttr);
@@ -1143,7 +1369,7 @@ const SND = (() => {
   const sndBtn = document.getElementById('sndToggle');
   if (reduced){
     if (sndBtn) sndBtn.style.display = 'none';
-    return {init(){}, swoosh(){}, chime(){}, pop(){}, toggle(){},
+    return {init(){}, swoosh(){}, chime(){}, pop(){}, toggle(){}, crackle(){}, rumble(){},
       get created(){ return false; }, get enabled(){ return false; }, get masterGain(){ return 0; }};
   }
   let ctx = null, master = null, noiseBuf = null, lastSwoosh = -9;
@@ -1224,6 +1450,35 @@ const SND = (() => {
     o.connect(og); og.connect(master);
     o.start(now); o.stop(now + .35);
   }
+  function crackle(){                                        // weld arc: tiny randomized spark tick
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    const src = ctx.createBufferSource(); src.buffer = noiseBuf;
+    src.playbackRate.value = 1.5 + Math.random()*1.2;
+    const hp = ctx.createBiquadFilter(); hp.type = 'highpass';
+    hp.frequency.value = 2400 + Math.random()*1800;
+    const g = ctx.createGain();
+    const dur = .025 + Math.random()*.05;
+    g.gain.setValueAtTime(.0001, now);
+    g.gain.exponentialRampToValueAtTime(.09 + Math.random()*.07, now + .006);
+    g.gain.exponentialRampToValueAtTime(.0001, now + dur);
+    src.connect(hp); hp.connect(g); g.connect(master);
+    src.start(now); src.stop(now + dur + .02);
+  }
+  function rumble(){                                         // rocket: soft overlapping low-pass puffs
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    const src = ctx.createBufferSource(); src.buffer = noiseBuf;
+    src.playbackRate.value = .3 + Math.random()*.15;
+    const lp = ctx.createBiquadFilter(); lp.type = 'lowpass';
+    lp.frequency.value = 110 + Math.random()*70;
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(.0001, now);
+    g.gain.linearRampToValueAtTime(.15 + Math.random()*.07, now + .12);
+    g.gain.exponentialRampToValueAtTime(.0001, now + .55);
+    src.connect(lp); lp.connect(g); g.connect(master);
+    src.start(now); src.stop(now + .6);
+  }
   function toggle(){
     enabled = !enabled;
     localStorage.setItem('forgeSound', enabled ? 'on' : 'off');
@@ -1233,7 +1488,7 @@ const SND = (() => {
   addEventListener('pointerdown', init, {passive:true});     // gesture-gated: silent until then
   addEventListener('keydown', init);
   if (sndBtn) sndBtn.addEventListener('click', () => { init(); toggle(); });
-  return {init, swoosh, chime, pop, toggle,
+  return {init, swoosh, chime, pop, toggle, crackle, rumble,
     get created(){ return !!ctx; },
     get enabled(){ return enabled; },
     get masterGain(){ return master ? master.gain.value : 0; }};
@@ -1247,6 +1502,9 @@ const MODE = {HERO:0, STREAM:1, STORY:2, RING:3, STATS:4, SEAL:5, ARROW:6, FIREW
 let mode = MODE.HERO, formationKey = -1;
 let fs = 1, fox = 0, foy = 0, fsT = 1, foxT = 0, foyT = 0;  // formation transform (lerped)
 let heroIdx = 0, heroT = 0, storyIdx = 0;
+let shapeClock = 0;                                         // time since the current formation applied
+let bobW = 0, riseW = 0, vibX = 0;                          // per-shape whole-formation offsets (world units)
+let fxSndClock = 0;                                         // weld-crackle / rocket-rumble scheduler
 let scrollVel = 0, lastScroll = scrollY, streak = 0;
 let fireworkDone = false, fireworkT = 0;
 const found = [false, false, false];
@@ -1283,6 +1541,7 @@ let curShapeIdx = -1, curDef = null;                        // which silhouette 
 function writeFormation(def, scale, ox, oy, kick){
   TL.set(def.targets); CT.set(def.colors);
   curShapeIdx = SHAPES.indexOf(def); curDef = def;
+  shapeClock = 0; bobW = 0; riseW = 0; vibX = 0;            // fresh per-shape effect clock
   const usable = COUNT - DEF_TOTAL;
   for (let g = 0; g < 3; g++){                              // recolor found defects green
     if (def.defect && DEFECT_SHAPES[g] === curShapeIdx && found[g]){
@@ -1639,10 +1898,31 @@ function frame(){
     foyT = worldY(r.top + r.height/2);
   }
 
-  /* live silhouette animations: turbine blades / bridge cars / coaster train */
-  if (curShapeIdx === 2) animTurbine(t, TL);
+  /* live silhouette animations + per-shape dynamic effects (active formation only) */
+  shapeClock += dt;
+  bobW = 0; riseW = 0; vibX = 0;
+  if (curShapeIdx === 0) animWeld(shapeClock + WELD_T0, t, TL, CT, true);
+  else if (curShapeIdx === 1) animFluid(t);
+  else if (curShapeIdx === 2) animTurbine(t, TL);
+  else if (curShapeIdx === 3){ animContrails(t); bobW = Math.sin(t*1.25)*.07; }
   else if (curShapeIdx === 4) animCars(t, TL);
+  else if (curShapeIdx === 5){ bobW = Math.sin(t*.8)*.085; animShip(t, bobW); }
   else if (curShapeIdx === 6) animTrain(t, TL);
+  else if (curShapeIdx === 7){                              // takeoff: slow rise, vibration, then reset
+    const rn = (shapeClock % ROCKET_PERIOD)/ROCKET_PERIOD;
+    riseW = rn*rn*2.4;
+    vibX = Math.sin(t*43)*(.015 + rn*.05) + Math.sin(t*29)*.012;
+    animRocket(t, riseW);
+  }
+  else if (curShapeIdx === 8) animJet(t, TL);
+
+  /* faint spark crackle / launch rumble (optional flavor, ≤ master gain) */
+  fxSndClock -= dt;
+  if (fxSndClock <= 0){
+    if (curShapeIdx === 0 && mode === MODE.HERO){ SND.crackle(); fxSndClock = .07 + Math.random()*.24; }
+    else if (curShapeIdx === 7 && mode === MODE.HERO){ SND.rumble(); fxSndClock = .24 + Math.random()*.16; }
+    else fxSndClock = .5;
+  }
 
   /* defect reveal: hovered crack tightens into the sharp glyph + glows */
   let hovBase = COUNT + 1, hovEnd = COUNT + 1;
@@ -1702,12 +1982,13 @@ function frame(){
   const grav = fireworkT > 0 ? 7.5*dt : 0;
   const mActive = mx !== 999;
   const colK = Math.min(1, dt*2.6);
+  const foxE = fox + vibX, foyE = foy + bobW + riseW;        // hull bob / rocket rise+vibe
   for (let i = 0; i < COUNT; i++){
     const i3 = i*3, i4 = i*4;
     const isHov = i >= hovBase && i < hovEnd;                // hovered defect particles
     let px = P[i3], py = P[i3+1], pz = P[i3+2];
     let vx = V[i3], vy = V[i3+1], vz = V[i3+2];
-    const txx = TL[i3]*fs + fox, tyy = TL[i3+1]*fs + foy, tzz = TL[i3+2]*fs;
+    const txx = TL[i3]*fs + foxE, tyy = TL[i3+1]*fs + foyE, tzz = TL[i3+2]*fs;
     const sk = isHov ? hovSeek : seek;
     vx += (txx - px)*sk; vy += (tyy - py)*sk; vz += (tzz - pz)*sk;
     if (!isHov){
@@ -1780,6 +2061,25 @@ window.__forgeDebug = {
   },
   get trainArc(){ return Math.round((uni.uTime.value*TRN_SPEED) % coasterTrack.len); },
   get turbineDeg(){ return Math.round((uni.uTime.value*TURB_OMEGA*180/Math.PI) % 360); },
+  setShape(n, hold){                                         // force a formation by name/index (validation)
+    const si = typeof n === 'string'
+      ? SHAPES.findIndex(s => s.name.toLowerCase().includes(String(n).toLowerCase())) : n;
+    const hi = HERO_CYCLE.indexOf(si);
+    if (hi < 0) return false;
+    setHeroShape(hi, true); formationKey = MODE.HERO*100;
+    heroT = hold === false ? 0 : -1e9;                       // pinned by default
+    return true;
+  },
+  get jetDeg(){ return Math.round((uni.uTime.value*JET_OMEGA*180/Math.PI) % 360); },
+  get weldTorchX(){ return Math.round(weldTorchX(shapeClock + WELD_T0)); },
+  get sparkCount(){ return curShapeIdx === 0 ? SPARK_N : 0; },
+  get fluidPhase(){ return +((uni.uTime.value*FLUID_SPD) % pipePath.len).toFixed(1); },
+  get contrailHead(){ const i3 = poolIdx[0]*3; return [+TL[i3].toFixed(3), +TL[i3+1].toFixed(3)]; },
+  get shipDrift(){ return +((uni.uTime.value*WATER_SPD) % 580).toFixed(1); },
+  get smokePhase(){ const i3 = poolIdx[FLAME_N]*3; return [+TL[i3].toFixed(3), +TL[i3+1].toFixed(3)]; },
+  get rocketRise(){ return +riseW.toFixed(3); },
+  get poolInfo(){ return {poolN: POOLN, sparks: SPARK_N, fluid: FLUID_N, contrail: TRAIL_N,
+    water: WATER_N, shipSmoke: SMOKESHIP_N, flame: FLAME_N, rocketSmoke: RSMOKE_N}; },
   montage(){
     const COLS = 3, ROWS = 4, CW = SW, CH = SH + 44;
     const m = document.createElement('canvas'); m.width = COLS*CW; m.height = ROWS*CH;
@@ -1787,15 +2087,18 @@ window.__forgeDebug = {
     g.fillStyle = '#091a33'; g.fillRect(0, 0, m.width, m.height);
     SHAPES.forEach((def, i) => {
       const cx = (i % COLS)*CW, cy = ((i/COLS)|0)*CH;
+      const tile = document.createElement('canvas'); tile.width = CW; tile.height = CH;
+      const tg = tile.getContext('2d');                       // own layer: carve ops stay inside the tile
+      tg.fillStyle = tg.strokeStyle = '#e8f0f8'; tg.lineCap = tg.lineJoin = 'round'; tg.setLineDash([]);
+      def.draw(tg);
+      if (def.accent){ tg.fillStyle = tg.strokeStyle = '#5fe0ff'; tg.setLineDash([]); def.accent(tg); }
+      if (def.defect){
+        tg.fillStyle = '#ff4d5e';
+        tg.beginPath(); tg.arc(def.defect.x, def.defect.y, 5, 0, 7); tg.fill();
+      }
       g.save(); g.translate(cx, cy);
       g.strokeStyle = 'rgba(95,224,255,.25)'; g.lineWidth = 1; g.strokeRect(.5, .5, CW-1, CH-1);
-      g.fillStyle = g.strokeStyle = '#e8f0f8'; g.lineCap = g.lineJoin = 'round'; g.setLineDash([]);
-      def.draw(g);
-      if (def.accent){ g.fillStyle = g.strokeStyle = '#5fe0ff'; g.setLineDash([]); def.accent(g); }
-      if (def.defect){
-        g.fillStyle = '#ff4d5e';
-        g.beginPath(); g.arc(def.defect.x, def.defect.y, 5, 0, 7); g.fill();
-      }
+      g.drawImage(tile, 0, 0);
       g.fillStyle = '#5fe0ff'; g.font = '600 19px Manrope, sans-serif'; g.textAlign = 'center'; g.setLineDash([]);
       g.fillText(`${i}: ${def.name}`, CW/2, SH + 30);
       g.restore();
