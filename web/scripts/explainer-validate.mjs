@@ -22,6 +22,65 @@ const ids = process.argv.slice(2).length
   : readdirSync(SPECS).filter((f) => f.endsWith(".json")).map((f) => f.replace(".json", "")).sort();
 
 const wc = (s) => String(s ?? "").split(/\s+/).filter(Boolean).length;
+
+// ---- Chrome filter-region collapse check (static) ----
+// An element with a zero-extent bbox (perfectly horizontal/vertical line) that
+// references a filter with a default objectBoundingBox percentage region renders
+// NOTHING in Chrome: the region collapses to zero. Such filters must declare
+// filterUnits="userSpaceOnUse". Precise/auto-fix tooling: scripts/audit-svg-filters.mjs
+// + scripts/fix-svg-filters.mjs.
+const pathExtent = (d) => {
+  if (/[csqtaCSQTA]/.test(d)) return null; // curves/arcs have 2-D extent; skip
+  const xs = [], ys = [];
+  let x = 0, y = 0, cmd = null;
+  const toks = d.match(/[mlhvzMLHVZ]|-?[\d.]+(?:e-?\d+)?/g) ?? [];
+  for (let i = 0; i < toks.length; ) {
+    const t = toks[i];
+    if (/[a-zA-Z]/.test(t)) { cmd = t; i++; if (cmd.toLowerCase() === "z") continue; }
+    if (cmd == null || i >= toks.length) break;
+    const rel = cmd === cmd.toLowerCase();
+    const c = cmd.toLowerCase();
+    if (c === "h") { x = rel ? x + +toks[i] : +toks[i]; i += 1; }
+    else if (c === "v") { y = rel ? y + +toks[i] : +toks[i]; i += 1; }
+    else { x = rel ? x + +toks[i] : +toks[i]; y = rel ? y + +toks[i + 1] : +toks[i + 1]; i += 2; }
+    xs.push(x); ys.push(y);
+  }
+  if (!xs.length) return null;
+  return { w: Math.max(...xs) - Math.min(...xs), h: Math.max(...ys) - Math.min(...ys) };
+};
+const assetBugCache = new Map();
+const assetFilterBugs = (name) => {
+  if (assetBugCache.has(name)) return assetBugCache.get(name);
+  const svg = readFileSync(join(ASSETS, `${name}.svg`), "utf8");
+  const pctFilters = new Set();
+  for (const m of svg.matchAll(/<filter\s+([^>]*)>/g)) {
+    const attrs = m[1];
+    if (/filterUnits\s*=\s*"userSpaceOnUse"/.test(attrs)) continue;
+    const id = /id\s*=\s*"([^"]+)"/.exec(attrs)?.[1];
+    if (id) pctFilters.add(id);
+  }
+  const bugs = [];
+  if (pctFilters.size) {
+    for (const m of svg.matchAll(/<(line|path)\b[^>]*>/g)) {
+      const tag = m[1], el = m[0];
+      const fid = /filter\s*=\s*"url\(#([^)"']+)\)"/.exec(el)?.[1];
+      if (!fid || !pctFilters.has(fid)) continue;
+      let zero = false;
+      if (tag === "line") {
+        const a = (n) => parseFloat(new RegExp(`\\b${n}="([^"]+)"`).exec(el)?.[1] ?? "0");
+        zero = a("x1") === a("x2") || a("y1") === a("y2");
+      } else {
+        const d = /\bd="([^"]+)"/.exec(el)?.[1];
+        const ext = d ? pathExtent(d) : null;
+        zero = !!ext && (ext.w === 0 || ext.h === 0);
+      }
+      if (zero) bugs.push(`${tag}${/\bid="([^"]+)"/.exec(el) ? "#" + /\bid="([^"]+)"/.exec(el)[1] : ""} -> filter #${fid} (percentage region collapses on zero-extent bbox; set filterUnits="userSpaceOnUse")`);
+    }
+  }
+  assetBugCache.set(name, bugs);
+  return bugs;
+};
+
 let bad = 0;
 for (const id of ids) {
   const errs = [], warns = [];
@@ -49,6 +108,7 @@ for (const id of ids) {
       if (usedAssets.has(asset)) errs.push(`asset ${asset} used twice`);
       usedAssets.add(asset);
       if (!existsSync(join(ASSETS, `${asset}.svg`))) warns.push(`beat${i + 1}: asset "${asset}" not designed yet`);
+      else for (const bug of assetFilterBugs(asset)) errs.push(`beat${i + 1}: asset "${asset}" INVISIBLE-IN-CHROME ${bug}`);
     }
     if (b.type === "tiles") {
       const n = (p.tiles ?? []).length;
