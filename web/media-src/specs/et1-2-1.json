@@ -1,0 +1,64 @@
+{
+  "lessonId": "et1-2-1",
+  "displayTitle": "A Field That Never Holds Still",
+  "anchorAfterSection": 4,
+  "kicker": "ET LEVEL I // GENERATING EDDY CURRENTS",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Eddy current testing starts with a coil and alternating current. Drive that coil, and you build a magnetic field that never holds still.",
+      "payload": {
+        "title": "GENERATING EDDY CURRENTS",
+        "sub": "An AC coil makes a field that never stops moving.",
+        "panel": "pipe-scan",
+        "panelLabel": "ET PROBE // AC COIL"
+      }
+    },
+    {
+      "type": "list",
+      "narration": "Direct current builds a strong but static field that induces nothing. Alternating current expands, collapses, and reverses every cycle, so the flux is always changing.",
+      "payload": {
+        "heading": "Why alternating current",
+        "chips": [
+          { "icon": "x", "t": "DC: static field", "s": "Constant flux induces nothing" },
+          { "icon": "wave-sine", "t": "AC: always changing", "s": "Expands, collapses, reverses" },
+          { "icon": "chart-line", "t": "Faraday's law", "s": "Voltage tracks rate of change" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Bring a conductive part into that field and induction is automatic. The induced voltage drives electrons around closed loops. Those are eddy currents.",
+      "payload": {
+        "heading": "From AC coil to eddy currents",
+        "asset": "eddy-current-generation",
+        "note": "AC COIL → CHANGING FLUX → INDUCED EMF → EDDY CURRENTS",
+        "noteAt": 8.5
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "The part acts as a transformer's shorted secondary. Faraday sets the current's size; Lenz sets its direction, opposite the coil, coupled across an air gap.",
+      "payload": {
+        "heading": "Coil and part as a transformer",
+        "tiles": [
+          { "icon": "magnet", "t": "Primary", "s": "The driven coil" },
+          { "icon": "refresh", "t": "Secondary", "s": "Part as a shorted turn" },
+          { "icon": "wave-sine", "t": "Lenz", "s": "Loops oppose the coil" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "Three conditions, no exceptions: a changing field, a conductive part, and coupling between them. Remove any one and the eddy currents vanish.",
+      "payload": {
+        "lines": [
+          { "t": "CHANGING FIELD." },
+          { "t": "CONDUCTIVE PART." },
+          { "t": "CLOSE COUPLING." }
+        ],
+        "sub": "Remove any one and the eddy currents vanish."
+      }
+    }
+  ]
+}

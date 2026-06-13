@@ -33,6 +33,21 @@ export async function middleware(request: NextRequest) {
 
   const path = request.nextUrl.pathname;
 
+  // Home page: logged-in students go straight to their dashboard; everyone
+  // else gets the particle landing experience, served as a standalone static
+  // document (its own importmap + ES-module three.js, outside the app shell).
+  if (path === "/") {
+    if (user) {
+      const url = request.nextUrl.clone();
+      url.pathname = "/dashboard";
+      url.search = "";
+      return NextResponse.redirect(url);
+    }
+    const url = request.nextUrl.clone();
+    url.pathname = "/landing/particle-forge.html";
+    return NextResponse.rewrite(url);
+  }
+
   if (!user && PROTECTED.some((p) => path.startsWith(p))) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
@@ -51,5 +66,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/dashboard/:path*", "/learn/:path*", "/login", "/signup", "/api/:path*"],
+  matcher: ["/", "/dashboard/:path*", "/learn/:path*", "/login", "/signup", "/api/:path*"],
 };

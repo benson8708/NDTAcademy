@@ -1,0 +1,65 @@
+{
+  "lessonId": "rt1-7-2",
+  "displayTitle": "Exposure Math: Chart, Square, Divide",
+  "anchorAfterSection": 7,
+  "kicker": "RT LEVEL I // EXPOSURE ARITHMETIC",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Every radiograph aims at one number: film density inside the code window. Exposure arithmetic is how you hit it on the first shot.",
+      "payload": {
+        "title": "EXPOSURE MATH",
+        "sub": "Land the film inside the density window.",
+        "panel": "film-density-window",
+        "panelLabel": "TARGET // DENSITY WINDOW"
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "Exposure is intensity times time. Milliampere minutes for X-ray, curie hours for gamma. Reciprocity: only the product matters, not the pieces.",
+      "payload": {
+        "heading": "Exposure is intensity × time",
+        "tiles": [
+          { "icon": "bolt", "t": "mA·min", "s": "X-ray: mA × minutes" },
+          { "icon": "radioactive", "t": "Ci·hr", "s": "Gamma: curies × hours" },
+          { "icon": "scale", "t": "Product", "s": "Only the product matters" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "One machine, one chart. Enter at the part thickness, rise to your kilovoltage line, read across to the exposure. Valid only for the printed conditions.",
+      "payload": {
+        "heading": "Reading an X-ray exposure chart",
+        "asset": "xray-exposure-chart",
+        "note": "VALID ONLY FOR ITS PRINTED CONDITIONS",
+        "noteAt": 8.2
+      }
+    },
+    {
+      "type": "list",
+      "narration": "Gamma is division: chart value eighty curie hours, source forty curies — two hours. Moved back? Square the distance ratio. Decayed? Use today's curies.",
+      "payload": {
+        "heading": "Time = curie·hours ÷ today's curies",
+        "chips": [
+          { "icon": "chart-line", "t": "Chart value: 80 curie·hours", "s": "At the part thickness" },
+          { "icon": "gauge", "t": "÷ 40 curies → 2 hours", "s": "Time = Ci·hr ÷ activity" },
+          { "icon": "arrows-maximize", "t": "Moved back? Square the ratio", "s": "(36 ÷ 24)² = 2.25×" },
+          { "icon": "history", "t": "Decayed? Use today's curies", "s": "Ir-192: half every ~74 days" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "That's the whole game, every shot: read the chart value, square the distance ratio, divide by today's curies. Chart. Square. Divide.",
+      "payload": {
+        "lines": [
+          { "t": "CHART." },
+          { "t": "SQUARE." },
+          { "t": "DIVIDE." }
+        ],
+        "sub": "Chart value × ratio² ÷ today's curies"
+      }
+    }
+  ]
+}

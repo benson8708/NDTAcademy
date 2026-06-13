@@ -1,0 +1,64 @@
+{
+  "lessonId": "et1-6-1",
+  "displayTitle": "The First Knob You Set",
+  "anchorAfterSection": 1,
+  "kicker": "ET LEVEL I // TEST FREQUENCY SELECTION",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Frequency, drive, gain, filtering — every eddy current technique fixes all four. But frequency comes first, because it alone changes the physics inside the part.",
+      "payload": {
+        "title": "TEST FREQUENCY SELECTION",
+        "sub": "The one setting that changes what happens inside the metal.",
+        "panel": "coil-shot",
+        "panelLabel": "ET PROBE // FREQUENCY"
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Frequency sets the depth window. Standard depth shrinks as one over the square root of frequency, and detection ends near three standard depths.",
+      "payload": {
+        "heading": "Frequency sets the depth window",
+        "asset": "skin-depth-decay",
+        "note": "δ ∝ 1/√f · 1δ = 37% · 3δ ≈ 5% EFFECTIVE LIMIT",
+        "noteAt": 9.0
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "Place the deepest flaw you must find inside that window, ideally near one standard depth. Gain cannot create current where none flows.",
+      "payload": {
+        "heading": "Aim the window at the flaw",
+        "tiles": [
+          { "icon": "target", "t": "Aim near 1δ", "s": "37% of current still flows" },
+          { "icon": "ruler-2", "t": "Bound at 3δ", "s": "Deeper than this is blind" },
+          { "icon": "x", "t": "Not gain", "s": "It can't make missing current" }
+        ]
+      }
+    },
+    {
+      "type": "list",
+      "narration": "Frequency also sets phase, spreading flaw depths apart and separating lift-off from flaws. Surface work runs high; subsurface and layered work runs low.",
+      "payload": {
+        "heading": "High for surface, low for depth",
+        "chips": [
+          { "icon": "arrow-bar-to-up", "t": "Surface cracks: go high", "s": "Hundreds of kHz to a few MHz" },
+          { "icon": "layers-intersect", "t": "Subsurface, layers: go low", "s": "Single-digit kHz in aluminum" },
+          { "icon": "wave-sine", "t": "Tubing: the f-ninety rule", "s": "ID and OD about 90° apart" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "So select for the flaw the procedure names, prove the response on the reference standard, and never change frequency without re-standardizing.",
+      "payload": {
+        "lines": [
+          { "t": "SET THE NUMBER." },
+          { "t": "PROVE IT." },
+          { "t": "NEVER DRIFT." }
+        ],
+        "sub": "Change frequency and standardization is void — re-standardize first."
+      }
+    }
+  ]
+}

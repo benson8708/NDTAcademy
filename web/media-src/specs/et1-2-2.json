@@ -1,0 +1,64 @@
+{
+  "lessonId": "et1-2-2",
+  "displayTitle": "When the Part Answers Back",
+  "anchorAfterSection": 2,
+  "kicker": "ET LEVEL I // SECONDARY FIELD & IMPEDANCE",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Last lesson your coil planted eddy currents in the part. Now the part answers back, and everything the instrument reads starts right here.",
+      "payload": {
+        "title": "THE PART ANSWERS BACK",
+        "sub": "Secondary field, reflected load, impedance.",
+        "panel": "pipe-scan",
+        "panelLabel": "ET PROBE // TUBE SCAN"
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Eddy currents are real currents, so by Lenz's law their secondary field opposes the coil's. That drops reactance, raises resistance, and the impedance point moves.",
+      "payload": {
+        "heading": "The secondary field loads the coil",
+        "asset": "coil-impedance-shift",
+        "note": "SECONDARY FIELD OPPOSES (LENZ) -> XL DOWN, R UP",
+        "noteAt": 9.0
+      }
+    },
+    {
+      "type": "list",
+      "narration": "Think transformer: coil is the primary, the part a one-turn shorted secondary. Its load reflects back two ways every cycle.",
+      "payload": {
+        "heading": "Reflected load, two effects",
+        "chips": [
+          { "icon": "wave-sine", "t": "XL falls", "s": "Cancelled flux lowers inductance" },
+          { "icon": "flame", "t": "R rises", "s": "Eddy current heat drains the coil" },
+          { "icon": "magnet", "t": "Mutual inductance", "s": "Couples coil to part across the gap" }
+        ]
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "The coil opposes alternating current two ways, ninety degrees apart. Resistance burns energy; reactance equals two pi f L. Their vector sum is impedance.",
+      "payload": {
+        "heading": "R, XL, and their vector sum Z",
+        "tiles": [
+          { "icon": "flame", "t": "R", "s": "In phase, burns energy" },
+          { "icon": "wave-sine", "t": "XL", "s": "2 pi f L, 90 deg out" },
+          { "icon": "target", "t": "Z", "s": "Square root R squared + XL squared" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "Conductivity, lift-off, a crack: every variable bends the eddy currents, the secondary field, and the coil's impedance. Reading that change is the whole method.",
+      "payload": {
+        "lines": [
+          { "t": "VARIABLE BENDS" },
+          { "t": "THE EDDIES," },
+          { "t": "Z TELLS YOU." }
+        ],
+        "sub": "Watch one coil's impedance — that is eddy current testing."
+      }
+    }
+  ]
+}

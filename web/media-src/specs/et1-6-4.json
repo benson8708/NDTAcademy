@@ -1,0 +1,64 @@
+{
+  "lessonId": "et1-6-4",
+  "displayTitle": "The Filter That Throws Away a Real Flaw",
+  "anchorAfterSection": 1,
+  "kicker": "ET LEVEL I // FILTERING & THRESHOLDS",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Frequency, drive, and gain are set. Two lines remain — filters and thresholds — and they decide what the instrument keeps and what it calls.",
+      "payload": {
+        "title": "FILTERING & THRESHOLDS",
+        "sub": "Clean the signal, then automate the accept-reject call.",
+        "panel": "pipe-scan",
+        "panelLabel": "ET LINE // LAST TWO SETTINGS"
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "First, the trap. Filters never touch the test frequency. They act on the signal frequency motion creates — roughly scan speed over the probe's response width.",
+      "payload": {
+        "heading": "Speed makes the signal frequency",
+        "tiles": [
+          { "icon": "hand-finger", "t": "Hand scan", "s": "~25 mm/s gives about 5 Hz" },
+          { "icon": "refresh", "t": "Tubing line", "s": "1 m/s gives about 200 Hz" },
+          { "icon": "wave-saw-tool", "t": "Bolt-hole", "s": "1500 rpm, a few hundred Hz" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "High-pass strips slow drift below the flaw band; low-pass strips fast grass above it. The band-pass works only because the flaw rides inside.",
+      "payload": {
+        "heading": "One scan, the band-pass at work",
+        "asset": "band-pass-filtering",
+        "note": "HIGH-PASS BELOW · FLAW BAND · LOW-PASS ABOVE",
+        "noteAt": 8.5
+      }
+    },
+    {
+      "type": "list",
+      "narration": "So filters belong to a scan speed. Slow down and the flaw drops below the high-pass — gradual wall thinning vanishes like drift.",
+      "payload": {
+        "heading": "Change speed, change the filters",
+        "chips": [
+          { "icon": "alert-triangle", "t": "Too slow", "s": "Flaw falls below the high-pass, masked" },
+          { "icon": "alert-triangle", "t": "Too fast", "s": "Pulse rounds off below the low-pass" },
+          { "icon": "clipboard-check", "t": "Standardize at speed", "s": "Run the reference at production speed" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "The threshold draws the alarm line. Prove it dynamically — the reference notch must trip every pass. Never raise it to quiet a noisy line.",
+      "payload": {
+        "lines": [
+          { "t": "SET FROM THE" },
+          { "t": "REFERENCE NOTCH." },
+          { "t": "NOT FROM NOISE." }
+        ],
+        "sub": "A flaw under the line is an escape no one re-makes."
+      }
+    }
+  ]
+}

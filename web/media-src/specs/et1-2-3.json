@@ -1,0 +1,63 @@
+{
+  "lessonId": "et1-2-3",
+  "displayTitle": "Turning an Invisible Impedance Shift Into a Signal",
+  "anchorAfterSection": 5,
+  "kicker": "ET LEVEL I // IMPEDANCE TO INSTRUMENT",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "The part shifts your coil's impedance, but the change is invisible — for a fine crack, often under one percent of the total.",
+      "payload": {
+        "title": "IMPEDANCE TO SIGNAL",
+        "sub": "A change too small to see, turned into a moving dot.",
+        "panel": "coil-shot",
+        "panelLabel": "TEST COIL // <1% SHIFT"
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "Ohm's law for AC carries it. Hold the drive current constant, and voltage across the coil equals current times impedance.",
+      "payload": {
+        "lines": [
+          { "t": "V = I × Z." },
+          { "t": "I HELD CONSTANT." },
+          { "t": "Z BECOMES V." }
+        ],
+        "sub": "Constant current makes coil voltage a faithful copy of impedance."
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Every instrument runs the same chain. Oscillator drives the coil; balance nulls the standing voltage; the amplifier boosts the tiny difference; the phase detector splits it.",
+      "payload": {
+        "heading": "The signal chain every instrument shares",
+        "asset": "eddy-signal-chain",
+        "note": "OSCILLATOR → BALANCE → AMPLIFIER → PHASE DETECTOR → DISPLAY",
+        "noteAt": 9.0
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "The phase detector resolves the signal into horizontal and vertical. That pair moves one dot, carrying two channels at once.",
+      "payload": {
+        "heading": "One dot, two channels",
+        "tiles": [
+          { "icon": "arrows-maximize", "t": "Amplitude", "s": "How big the change is" },
+          { "icon": "adjustments", "t": "Phase", "s": "What kind of change" },
+          { "icon": "target", "t": "The dot", "s": "Carries both at once" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "Same setup, same signal — so signals become evidence. Amplitude tells you how big; phase tells you what kind, unlocking the impedance plane next.",
+      "payload": {
+        "lines": [
+          { "t": "AMPLITUDE: SIZE." },
+          { "t": "PHASE: KIND." }
+        ],
+        "sub": "The pair of ideas that unlocks the impedance plane."
+      }
+    }
+  ]
+}

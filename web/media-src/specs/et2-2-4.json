@@ -1,0 +1,62 @@
+{
+  "lessonId": "et2-2-4",
+  "displayTitle": "The Coil Is a Test Parameter",
+  "anchorAfterSection": 2,
+  "kicker": "ET LEVEL II // COIL SHAPE & HALL ELEMENTS",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "You tuned the part and the settings. One factor is left, and it is the one most often treated as furniture: the test coil itself.",
+      "payload": {
+        "title": "THE COIL IS A PARAMETER",
+        "sub": "Geometry sets the baseline everything moves around."
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "Geometry writes the empty-coil inductance, and the impedance plane is referenced to it. Double the turns and inductance quadruples.",
+      "payload": {
+        "heading": "Geometry positions the operating point",
+        "tiles": [
+          { "icon": "refresh", "t": "Turns²", "s": "L scales with N squared" },
+          { "icon": "magnet", "t": "Ferrite core", "s": "Gathers more flux per turn" },
+          { "icon": "gauge", "t": "Q ratio", "s": "ωL/R sets resolution" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Eddy currents mirror the winding: zero on the axis, peaking in a ring beneath the copper. Footprint follows diameter.",
+      "payload": {
+        "heading": "What the coil actually illuminates",
+        "asset": "coil-footprint-map",
+        "note": "ZERO ON AXIS · PEAK UNDER WINDINGS · DEPTH ~ COIL RADIUS",
+        "noteAt": 8.4
+      }
+    },
+    {
+      "type": "list",
+      "narration": "Signal follows the fraction of field disturbed. A small coil makes a crack loud; a large coil averages for conductivity sorting.",
+      "payload": {
+        "heading": "Match the footprint to the question",
+        "chips": [
+          { "icon": "search", "t": "Small shielded", "s": "Crack fills a big share of a tight field" },
+          { "icon": "circles", "t": "Large air-core", "s": "Averages roughness for %IACS sorting" },
+          { "icon": "wave-sine", "t": "Encircling coil", "s": "Catches axial flaws, misses circumferential" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "And the Hall element reads flux density itself — flat to DC, where a coil's output collapses. Match shape and detector to the requirement.",
+      "payload": {
+        "lines": [
+          { "t": "COIL: dΦ/dt." },
+          { "t": "HALL READS B." },
+          { "t": "FLAT TO DC." }
+        ],
+        "sub": "Below the crossover, the Hall element wins."
+      }
+    }
+  ]
+}

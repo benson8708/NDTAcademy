@@ -1,0 +1,64 @@
+{
+  "lessonId": "et1-5-2",
+  "displayTitle": "Same Probe, Two Different Pictures",
+  "anchorAfterSection": 4,
+  "kicker": "ET LEVEL I // MODES OF OPERATION",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Last lesson you picked a coil arrangement. Now wire it. The mode of operation decides what your instrument can and cannot see.",
+      "payload": {
+        "title": "MODES OF OPERATION",
+        "sub": "Absolute, differential, hybrid — a wiring choice.",
+        "panel": "pipe-scan",
+        "panelLabel": "ET PROBE // TUBE SCAN"
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "Arrangement is geometry — how the coil faces the part. Mode is wiring — how the coils are connected and referenced. The same bobbin body becomes either.",
+      "payload": {
+        "heading": "Wiring, not shape",
+        "tiles": [
+          { "icon": "magnet", "t": "Absolute", "s": "One coil vs fixed reference" },
+          { "icon": "refresh", "t": "Differential", "s": "Two coils, opposed" },
+          { "icon": "layers-intersect", "t": "Hybrid", "s": "Drive and sense split" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Run one scan, two channels. Absolute follows the gradual taper and the sharp pit. Differential cancels the taper to null, popping only at the pit.",
+      "payload": {
+        "heading": "Absolute versus differential",
+        "asset": "absolute-vs-differential-trace",
+        "note": "ABSOLUTE FOLLOWS ALL · DIFFERENTIAL CANCELS COMMON CHANGE",
+        "noteAt": 8.5
+      }
+    },
+    {
+      "type": "list",
+      "narration": "That cancellation is power and trap. Differential rejects thermal drift and runs fast. But a flaw longer than the coil spacing shows only its ends.",
+      "payload": {
+        "heading": "The cancellation rule",
+        "chips": [
+          { "icon": "check", "t": "Rejects drift", "s": "Common changes cancel" },
+          { "icon": "bolt", "t": "Runs fast", "s": "High gain, planted baseline" },
+          { "icon": "alert-triangle", "t": "Blind to long flaws", "s": "Only entry and exit show" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "Hybrids split the job — a driver excites, separate pickups sense. Learn what each mode hides, not just what it shows.",
+      "payload": {
+        "lines": [
+          { "t": "ABSOLUTE: ALL." },
+          { "t": "DIFFERENTIAL." },
+          { "t": "HYBRID SPLITS." }
+        ],
+        "sub": "Know what each mode hides, not just what it shows."
+      }
+    }
+  ]
+}

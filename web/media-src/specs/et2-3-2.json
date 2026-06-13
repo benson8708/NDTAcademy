@@ -1,0 +1,64 @@
+{
+  "lessonId": "et2-3-2",
+  "displayTitle": "Detection Is a Ratio, and Gain Can't Buy It",
+  "anchorAfterSection": 1,
+  "kicker": "ET LEVEL II // SIGNAL-TO-NOISE",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "In eddy current, a flaw is detectable only when its response stands clearly above everything else the coil reports. Detection is a ratio.",
+      "payload": {
+        "title": "SIGNAL OVER NOISE",
+        "sub": "The number that decides if a flaw is findable.",
+        "panel": "pipe-scan",
+        "panelLabel": "ET // DEMONSTRATE THE RATIO FIRST"
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "Measure both peak-to-peak, same channel, same settings. Procedures set a floor, commonly three to one, on the smallest required flaw.",
+      "payload": {
+        "heading": "What SNR actually means",
+        "tiles": [
+          { "icon": "gauge", "t": "Signal", "s": "Flaw response, peak-to-peak" },
+          { "icon": "wave-sine", "t": "Noise", "s": "Free-span baseline, same channel" },
+          { "icon": "target", "t": "Floor", "s": "Often 3:1 minimum to start" }
+        ]
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "Here's the trap most never escape. Eddy current noise enters through the coil with the signal, so gain lifts both equally.",
+      "payload": {
+        "heading": "Why gain can't buy SNR",
+        "tiles": [
+          { "icon": "bolt", "t": "Add gain", "s": "Signal and noise both double" },
+          { "icon": "magnet", "t": "Ratio held", "s": "2:1 stays 2:1, just bigger" },
+          { "icon": "alert-triangle", "t": "Lower alarm", "s": "Just makes false calls" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Most ET noise is real impedance response, so it carries phase. Rotate lift-off horizontal and a crack breaks upward, clear of the wobble.",
+      "payload": {
+        "heading": "Noise has direction: separate it by phase",
+        "asset": "liftoff-phase-rotation",
+        "note": "LIFT-OFF HORIZONTAL · CRACK BREAKS UPWARD · GATE THE VERTICAL",
+        "noteAt": 8.6
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "So when the ratio is marginal, never raise the threshold. Fix something real: frequency, probe, filtering, fixturing, surface. Change the physics, not the picture.",
+      "payload": {
+        "lines": [
+          { "t": "MARGINAL RATIO?" },
+          { "t": "FIX THE SETUP." },
+          { "t": "NEVER THE LINE." }
+        ],
+        "sub": "Gain enlarges the picture; setup changes the ratio."
+      }
+    }
+  ]
+}

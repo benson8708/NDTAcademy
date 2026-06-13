@@ -1,0 +1,65 @@
+{
+  "lessonId": "et2-8-1",
+  "displayTitle": "Flaw or Defect: The Last Link in the Chain",
+  "anchorAfterSection": 1,
+  "kicker": "ET LEVEL II // ACCEPT / REJECT",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Your system can balance, filter, and display perfectly, and the test still fails if the disposition is wrong. The output is a decision.",
+      "payload": {
+        "title": "FLAW OR DEFECT?",
+        "sub": "The last link is the call you make from the signal.",
+        "panel": "pipe-scan",
+        "panelLabel": "ET BOBBIN // DISPOSITION PENDING"
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "These words carry contractual weight. An indication you interpret. A discontinuity you find. A flaw is detectable but not necessarily rejectable. Only one term means reject.",
+      "payload": {
+        "heading": "The disposition ladder",
+        "asset": "indication-ladder",
+        "note": "INDICATION → DISCONTINUITY → FLAW → DEFECT (REJECTABLE)",
+        "noteAt": 8.5
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "Only one thing turns a flaw into a defect: written acceptance criteria. They come from the code, never from you, translated into instrument terms.",
+      "payload": {
+        "heading": "Criteria, in instrument terms",
+        "tiles": [
+          { "icon": "chart-line", "t": "Amplitude", "s": "Versus a reference notch" },
+          { "icon": "refresh", "t": "Phase depth", "s": "Percent through-wall" },
+          { "icon": "scale", "t": "Windows", "s": "%IACS, dimensions" }
+        ]
+      }
+    },
+    {
+      "type": "list",
+      "narration": "Classify before you dispose. Repeat it, place it, read phase, read amplitude, match the signature. Then go-no-go gates one threshold; sorting holds two-sided windows.",
+      "payload": {
+        "heading": "Classify, then dispose",
+        "chips": [
+          { "icon": "refresh", "t": "Repeats?", "s": "If not, it is noise" },
+          { "icon": "point", "t": "Position?", "s": "Edge or support is nonrelevant" },
+          { "icon": "target", "t": "Phase and volts", "s": "Origin, depth, severity" },
+          { "icon": "list-check", "t": "Gate or window", "s": "Anything between goes to hold" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "A flaw is detectable; a defect fails the criteria. Record the numbers that prove it. A reject you cannot reconstruct cannot be defended.",
+      "payload": {
+        "lines": [
+          { "t": "FLAW: FOUND." },
+          { "t": "DEFECT: FAILS." },
+          { "t": "RECORD PROOF." }
+        ],
+        "sub": "Phase, volts, percent through-wall, location — every call traces to the criteria."
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "lessonId": "et2-2-2",
+  "displayTitle": "Mass, Homogeneity, and the Level II Call",
+  "anchorAfterSection": 3,
+  "kicker": "ET LEVEL II // TEST-PART FACTORS",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "A coil never tests a point. It samples a volume of metal, and two part factors move the signal before any flaw does.",
+      "payload": {
+        "title": "MASS AND HOMOGENEITY",
+        "sub": "What the part itself does to your eddy current signal.",
+        "panel": "pipe-scan",
+        "panelLabel": "ET PROBE // PART SCAN"
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "The mass effect is how much conductive metal sits in the field. Thicker than three delta looks infinite; thinner, and wall thickness becomes a variable.",
+      "payload": {
+        "heading": "Mass: metal inside the field",
+        "tiles": [
+          { "icon": "box", "t": "Volume", "s": "A ring reaching about 3 delta" },
+          { "icon": "layers-intersect", "t": "Thin wall", "s": "Below 3 delta, thickness signals" },
+          { "icon": "arrows-maximize", "t": "Edges", "s": "Less metal, huge swing" }
+        ]
+      }
+    },
+    {
+      "type": "list",
+      "narration": "Homogeneity is the second factor. Segregation, heat treatment, hardness, grain — they all shift local conductivity and drift the dot along the conductivity locus.",
+      "payload": {
+        "heading": "Homogeneity: the material itself varies",
+        "chips": [
+          { "icon": "adjustments", "t": "Segregation", "s": "Composition banding" },
+          { "icon": "flame", "t": "Heat treatment", "s": "Temper sets conductivity" },
+          { "icon": "activity", "t": "Hardness, grain", "s": "The material noise floor" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "On the impedance plane each writes a signature. Conductivity drifts ride the locus, thinning unwinds toward air, and a crack cuts across, phase-separated from lift-off.",
+      "payload": {
+        "heading": "Every effect has a direction",
+        "asset": "impedance-signal-directions",
+        "note": "DRIFT ALONG LOCUS = MATERIAL · CUT ACROSS = FLAW",
+        "noteAt": 9.0
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "Material varying, or metal missing? Gradual along the locus is a zone. Abrupt, footprint-wide, phase-separated is the flaw. That call is the lesson.",
+      "payload": {
+        "lines": [
+          { "t": "BROAD = ZONE" },
+          { "t": "ABRUPT = FLAW" },
+          { "t": "MAKE THE CALL" }
+        ],
+        "sub": "Discriminate by onset, direction, and phase."
+      }
+    }
+  ]
+}

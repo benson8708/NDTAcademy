@@ -1,0 +1,67 @@
+{
+  "lessonId": "ut1-4-2",
+  "displayTitle": "Mapping the Beam: Near Field to Far Field",
+  "anchorAfterSection": 1,
+  "kicker": "LEVEL I // BEAM PHYSICS",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Forget the tidy flashlight cone. Your ultrasonic beam splits into a turbulent near field and a predictable far field. Position decides echo height.",
+      "payload": {
+        "title": "THE SOUND BEAM",
+        "sub": "Where echo amplitude tells the truth — and where it lies.",
+        "chips": [
+          { "icon": "wave-sine", "t": "Near field" },
+          { "icon": "chart-line", "t": "Far field" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "The element vibrates as thousands of sources, and their wavelets interfere. Inside the near field, amplitude swings wildly. Beyond N it decays predictably.",
+      "payload": {
+        "heading": "Two zones, one boundary: N",
+        "asset": "beam-profile",
+        "note": "AMPLITUDE SWINGS INSIDE N · SETTLES BEYOND",
+        "noteAt": 8.2
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "N is D squared over four wavelengths. The half angle's sine: one point two two lambda over D. Raise diameter or frequency: longer, narrower beam.",
+      "payload": {
+        "heading": "Two formulas, one trade-off",
+        "tiles": [
+          { "icon": "ruler-2", "t": "Near field", "s": "N = D² ÷ 4λ" },
+          { "icon": "arrows-maximize", "t": "Spread", "s": "sin γ = 1.22 λ ÷ D" },
+          { "icon": "settings", "t": "Raise D, f", "s": "Longer N, narrower beam" }
+        ]
+      }
+    },
+    {
+      "type": "list",
+      "narration": "In practice: evaluate beyond the near field, peak the echo before judging, and overlap each pass; the beam edge reads half.",
+      "payload": {
+        "heading": "Beam discipline on the job",
+        "chips": [
+          { "icon": "zoom-scan", "t": "Evaluate beyond the near field" },
+          { "icon": "arrow-bar-to-up", "t": "Peak the echo before judging" },
+          { "icon": "layers-intersect", "t": "Overlap each scan pass" },
+          { "icon": "alert-triangle", "t": "The beam edge reads half" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "Here's the rule: amplitude is only trustworthy beyond N, on axis. Calculate your beam before the job, and the echoes make sense.",
+      "payload": {
+        "lines": [
+          { "t": "BEYOND N." },
+          { "t": "ON AXIS." },
+          { "t": "THEN TRUST IT." }
+        ],
+        "sub": "Calculate N and the spread before the probe touches the part."
+      }
+    }
+  ]
+}

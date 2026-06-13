@@ -1,0 +1,64 @@
+{
+  "lessonId": "et1-8-1",
+  "displayTitle": "A Notch Going in Circles",
+  "anchorAfterSection": 2,
+  "kicker": "ET LEVEL I // FILTER LAB",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Spin a bolt-hole probe at three thousand RPM and the notch, the wobble, and the grass arrive on a strict schedule. Filters pull them apart.",
+      "payload": {
+        "title": "A NOTCH GOING IN CIRCLES",
+        "sub": "Filters separate signals by how fast the trace wiggles.",
+        "panel": "coil-shot",
+        "panelLabel": "BOLT-HOLE PROBE // 3,000 RPM"
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Filters never touch the two-hundred-kilohertz carrier. They work on motion frequency: wobble at fifty hertz, the millisecond notch near five hundred, grass everywhere.",
+      "payload": {
+        "heading": "Motion sets the signal frequency",
+        "asset": "signal-frequency-band",
+        "note": "WOBBLE 50 Hz · NOTCH ~500 Hz · GRASS BROADBAND",
+        "noteAt": 8.5
+      }
+    },
+    {
+      "type": "list",
+      "narration": "So bracket the notch. Raise the high-pass until the wobble dies, lower the low-pass until the grass dies, leaving the notch at full height.",
+      "payload": {
+        "heading": "Bracket the notch band",
+        "chips": [
+          { "icon": "arrow-bar-to-up", "t": "Raise high-pass", "s": "Until the 50 Hz wobble dies" },
+          { "icon": "wave-saw-tool", "t": "Lower low-pass", "s": "Until the grass clears" },
+          { "icon": "target", "t": "Notch untouched", "s": "Full height, sharp, in phase" }
+        ]
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "Push past that point and you over-filter. The notch shrinks, goes bipolar, rotates in phase, while the screen looks beautifully clean. Prove it.",
+      "payload": {
+        "heading": "Over-filtering hides",
+        "tiles": [
+          { "icon": "chart-line", "t": "Shrinks", "s": "Amplitude drops" },
+          { "icon": "wave-sine", "t": "Bipolar", "s": "Overshoot tails" },
+          { "icon": "refresh", "t": "Phase spins", "s": "Reads false" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "Then drop to fifteen hundred RPM and the clean setup fails: signal frequency rides on speed. Re-optimize, verify on the notch, re-standardize.",
+      "payload": {
+        "lines": [
+          { "t": "SPEED MOVES IT." },
+          { "t": "FILTERS DON'T." },
+          { "t": "RE-STANDARDIZE." }
+        ],
+        "sub": "Filters are valid only at the speed where you set them."
+      }
+    }
+  ]
+}

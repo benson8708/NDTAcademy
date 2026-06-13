@@ -1,0 +1,2658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NDTAcademy.com — You've trusted NDT your whole life</title>
+<meta name="description" content="Advance your career as a Nondestructive Testing technician. VT Level I & II — completely free for a limited time.">
+<link rel="canonical" href="https://ndtacademy.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ndtacademy.com/">
+<meta property="og:title" content="NDTAcademy.com — Advance your career as an NDT technician">
+<meta property="og:description" content="VT Level I & II training, NAS410 / SNT-TC-1A aligned. Completely free for a limited time.">
+<meta property="og:image" content="https://ndtacademy.com/opengraph-image">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NDTAcademy.com — Advance your career as an NDT technician">
+<meta name="twitter:description" content="VT Level I & II training, NAS410 / SNT-TC-1A aligned. Free for a limited time.">
+<meta name="twitter:image" content="https://ndtacademy.com/opengraph-image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}</script>
+<style>
+  :root{
+    --navy:#0B1F3A; --deep:#08152b; --blue:#1E66F5; --cyan:#5fe0ff; --ink:#E8F0F8;
+    --ink-dim:rgba(232,240,248,.68); --ink-faint:rgba(232,240,248,.45);
+    --card:rgba(20,44,84,.42); --line:rgba(95,224,255,.16); --red:#ff4d5e;
+    --disp:'Clash Display','Sora',sans-serif; --body:'Manrope',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body); color:var(--ink); background:var(--deep);
+    background:
+      radial-gradient(1200px 700px at 75% -10%, rgba(30,102,245,.22), transparent 60%),
+      radial-gradient(900px 600px at 10% 110%, rgba(95,224,255,.07), transparent 55%),
+      linear-gradient(180deg,#08152b 0%,#0B1F3A 55%,#08152b 100%);
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--blue);color:#fff}
+  a{color:inherit;text-decoration:none}
+  section{scroll-margin-top:84px}
+
+  /* the one fixed particle stage behind/over everything */
+  #stage{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:4;pointer-events:none}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 5vw;transition:background .35s,box-shadow .35s,padding .35s;
+  }
+  nav.scrolled{background:rgba(8,21,43,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    box-shadow:0 1px 0 rgba(95,224,255,.12),0 12px 40px rgba(0,0,0,.35);padding:12px 5vw}
+  .wordmark{font-family:var(--disp);font-weight:600;font-size:19px;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+  .wordmark .dot{width:14px;height:14px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%,var(--cyan),var(--blue));
+    box-shadow:0 0 14px rgba(95,224,255,.8);animation:pulse 2.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 8px rgba(95,224,255,.6)}50%{box-shadow:0 0 20px rgba(95,224,255,1)}}
+  .wordmark em{font-style:normal;color:var(--cyan)}
+  .navlinks{display:flex;gap:30px;font-weight:500;font-size:15px;color:var(--ink-dim)}
+  .navlinks a{position:relative;transition:color .25s}
+  .navlinks a::after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:2px;border-radius:2px;
+    background:linear-gradient(90deg,var(--cyan),var(--blue));transition:width .3s}
+  .navlinks a:hover{color:var(--ink)} .navlinks a:hover::after{width:100%}
+  .nav-cta{display:flex;align-items:center;gap:12px}
+  .btn-signin{font-weight:600;font-size:14.5px;padding:10px 22px;border-radius:999px;border:1.5px solid rgba(95,224,255,.4);
+    color:var(--ink);transition:.25s;background:rgba(95,224,255,.04)}
+  .btn-signin:hover{border-color:var(--cyan);background:rgba(95,224,255,.12);transform:translateY(-1px)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+  .hero-fallback{position:absolute;inset:0;z-index:0;opacity:.7;pointer-events:none;
+    background:
+      radial-gradient(420px 420px at 72% 46%, rgba(95,224,255,.16), transparent 65%),
+      radial-gradient(640px 520px at 78% 55%, rgba(30,102,245,.20), transparent 70%);}
+  .hero-inner{position:relative;z-index:2;width:100%;padding:120px 6vw 80px;pointer-events:none}
+  .hero-inner a,.hero-inner .chip{pointer-events:auto}
+  .hero-copy{max-width:700px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:13.5px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--cyan);border:1px solid var(--line);border-radius:999px;
+    padding:9px 18px;background:rgba(95,224,255,.06);backdrop-filter:blur(6px);
+    animation:chipIn .8s cubic-bezier(.2,1.6,.4,1) .1s backwards}
+  .eyebrow .spark{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);
+    animation:pulse 1.8s ease-in-out infinite}
+  h1{font-family:var(--disp);font-weight:700;font-size:clamp(34px,4.5vw,64px);line-height:1.06;
+    letter-spacing:-.015em;margin:26px 0 22px;text-wrap:balance}
+  h1 .k{display:inline-block;animation:kIn .85s cubic-bezier(.2,1.5,.35,1) backwards;
+    animation-delay:calc(var(--i)*.022s + .25s);transition:transform .3s,color .3s;cursor:default}
+  h1 .k:hover{transform:translateY(-9px) rotate(-5deg);color:var(--cyan)}
+  @keyframes kIn{0%{opacity:0;transform:translateY(70px) rotate(9deg) scale(.6)}
+    70%{opacity:1;transform:translateY(-7px) rotate(-2deg) scale(1.04)}100%{opacity:1;transform:none}}
+  .grad{background:linear-gradient(92deg,var(--cyan) 10%,var(--blue) 90%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+  .hero-sub{font-size:clamp(16px,1.35vw,19px);line-height:1.65;color:var(--ink-dim);max-width:560px;
+    animation:fadeUp .9s ease .75s backwards}
+  .hero-sub strong{color:var(--ink);font-weight:600}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;margin-top:34px;animation:fadeUp .9s ease .9s backwards}
+  .btn-primary{position:relative;overflow:hidden;font-family:var(--body);font-weight:700;font-size:16.5px;
+    color:#fff;padding:17px 34px;border-radius:999px;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;
+    background:linear-gradient(95deg,var(--blue),#3f8bff 60%,var(--cyan));background-size:160% 100%;
+    box-shadow:0 8px 32px rgba(30,102,245,.45),0 0 0 1px rgba(95,224,255,.25) inset;
+    transition:transform .25s cubic-bezier(.2,1.6,.4,1),box-shadow .3s,background-position .4s}
+  .btn-primary:hover{transform:translateY(-3px) scale(1.03);background-position:90% 0;
+    box-shadow:0 14px 44px rgba(30,102,245,.65),0 0 0 1px rgba(95,224,255,.4) inset}
+  .btn-primary::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;
+    background:linear-gradient(105deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:left .5s}
+  .btn-primary:hover::after{left:130%}
+  .btn-primary .arr{transition:transform .25s}
+  .btn-primary:hover .arr{transform:translateX(4px)}
+  .btn-ghost{font-weight:600;font-size:16px;color:var(--ink);padding:16px 30px;border-radius:999px;
+    border:1.5px solid rgba(95,224,255,.35);background:rgba(11,31,58,.4);backdrop-filter:blur(8px);
+    display:inline-flex;align-items:center;gap:10px;transition:.25s}
+  .btn-ghost:hover{border-color:var(--cyan);background:rgba(95,224,255,.1);transform:translateY(-3px)}
+  .btn-ghost .play{width:10px;height:12px;background:var(--cyan);
+    clip-path:polygon(0 0,100% 50%,0 100%);transition:transform .25s}
+  .btn-ghost:hover .play{transform:scale(1.25)}
+  .chip-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:38px}
+  .chip{font-size:13.5px;font-weight:600;color:var(--ink-dim);padding:9px 17px;border-radius:999px;
+    border:1px solid var(--line);background:rgba(20,44,84,.45);backdrop-filter:blur(6px);
+    display:inline-flex;align-items:center;gap:8px;transition:.25s;
+    animation:chipIn .7s cubic-bezier(.2,1.8,.4,1) backwards}
+  .chip:nth-child(1){animation-delay:1.05s}.chip:nth-child(2){animation-delay:1.18s}
+  .chip:nth-child(3){animation-delay:1.31s}.chip:nth-child(4){animation-delay:1.44s}
+  .chip:hover{transform:translateY(-4px) rotate(-1deg);border-color:rgba(95,224,255,.5);color:var(--ink)}
+  .chip i{width:7px;height:7px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--blue));flex:none}
+  @keyframes chipIn{0%{opacity:0;transform:translateY(26px) scale(.7)}
+    65%{opacity:1;transform:translateY(-5px) scale(1.06)}100%{opacity:1;transform:none}}
+
+  /* shape caption HUD */
+  .shape-hud{position:absolute;z-index:6;right:6vw;bottom:11vh;display:flex;flex-direction:column;align-items:center;gap:9px;
+    animation:fadeUp 1s ease 1.4s backwards;transition:opacity .45s;pointer-events:none}
+  .shape-hud.off{opacity:0}
+  .hud-top{font-weight:700;font-size:11.5px;letter-spacing:.26em;color:var(--ink-faint);text-transform:uppercase}
+  .shape-label{font-family:var(--disp);font-weight:700;font-size:15px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--cyan);padding:11px 26px;border-radius:999px;border:1px solid var(--line);
+    background:rgba(8,21,43,.6);backdrop-filter:blur(10px);min-width:280px;text-align:center;transition:opacity .25s,transform .25s}
+  .shape-label.swap{opacity:0;transform:translateY(8px)}
+  .scroll-hint{position:absolute;z-index:3;left:50%;bottom:26px;transform:translateX(-50%);
+    color:var(--ink-faint);font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
+    display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeUp 1s ease 1.8s backwards}
+  .scroll-hint::after{content:'';width:1.5px;height:34px;background:linear-gradient(180deg,var(--cyan),transparent);
+    animation:drip 1.6s ease-in-out infinite}
+  @keyframes drip{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}
+    51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+  /* ---------- DEFECT GAME UI ---------- */
+  .def-wrap{position:fixed;z-index:55;top:86px;right:5vw;display:flex;flex-direction:column;align-items:flex-end;gap:7px;
+    transition:opacity .6s}
+  .def-wrap[hidden]{display:none}
+  .def-chip{font-family:var(--disp);font-weight:600;font-size:12.5px;
+    letter-spacing:.16em;color:var(--ink);padding:11px 20px;border-radius:999px;border:1px solid rgba(255,77,94,.55);
+    background:rgba(28,10,20,.72);backdrop-filter:blur(10px);box-shadow:0 0 24px rgba(255,77,94,.25);
+    display:flex;align-items:center;gap:10px;transition:opacity .4s,transform .4s}
+  .def-chip b{color:var(--red)}
+  .def-chip .ddot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red);animation:pulse 1.4s infinite}
+  .def-chip.pop{animation:chipIn .5s cubic-bezier(.2,1.8,.4,1)}
+  .def-hint{font-size:12px;font-weight:500;letter-spacing:.08em;color:rgba(232,240,248,.34);padding-right:10px;
+    transition:opacity .5s}
+  .def-hint.gone{opacity:0}
+  .def-ring{position:fixed;z-index:54;width:104px;height:104px;margin:-52px 0 0 -52px;border-radius:50%;
+    border:1.5px solid rgba(255,77,94,.7);box-shadow:0 0 22px rgba(255,77,94,.35),inset 0 0 16px rgba(255,77,94,.16);
+    pointer-events:none;opacity:0;transform:scale(.65);transition:opacity .25s,transform .3s cubic-bezier(.2,1.5,.4,1)}
+  .def-ring.on{opacity:1;transform:scale(1)}
+  .btn-snd{width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(95,224,255,.35);background:rgba(95,224,255,.05);
+    color:var(--ink);font-size:15px;line-height:1;cursor:pointer;transition:.25s;
+    display:inline-flex;align-items:center;justify-content:center;padding:0}
+  .btn-snd:hover{border-color:var(--cyan);background:rgba(95,224,255,.12);transform:translateY(-1px)}
+  .btn-snd.off{opacity:.5}
+  .toast{position:fixed;z-index:60;left:50%;bottom:34px;transform:translateX(-50%) translateY(10px);
+    max-width:min(92vw,560px);text-align:center;font-size:15.5px;font-weight:600;line-height:1.5;color:var(--ink);
+    padding:16px 26px;border-radius:18px;border:1px solid rgba(95,224,255,.4);background:rgba(8,21,43,.92);
+    backdrop-filter:blur(14px);box-shadow:0 18px 60px rgba(0,0,0,.5),0 0 40px rgba(95,224,255,.15);
+    opacity:0;pointer-events:none;transition:opacity .45s,transform .45s}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
+  .toast a{color:var(--cyan);border-bottom:1px solid rgba(95,224,255,.5)}
+  .toast a:hover{color:#fff;border-color:#fff}
+  .ping{position:fixed;z-index:54;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;
+    border:2px solid var(--red);pointer-events:none;animation:pingAnim .9s ease-out forwards}
+  .ping.good{border-color:#7dffb0}
+  @keyframes pingAnim{0%{transform:scale(.6);opacity:1}100%{transform:scale(7);opacity:0}}
+
+  /* ---------- SHARED SECTION BITS ---------- */
+  .wrap{max-width:1180px;margin:0 auto;padding:0 5vw}
+  .sec{padding:110px 0;position:relative;z-index:2}
+  .sec-eyebrow{font-weight:700;font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan);
+    display:flex;align-items:center;gap:14px}
+  .sec-eyebrow::before{content:'';width:34px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--cyan),var(--blue))}
+  h2{font-family:var(--disp);font-weight:600;font-size:clamp(30px,3.9vw,52px);line-height:1.12;margin:18px 0 16px;
+    letter-spacing:-.012em;text-wrap:balance}
+  .sec-sub{color:var(--ink-dim);font-size:17.5px;line-height:1.7;max-width:640px}
+  .reveal{opacity:0;transform:translateY(34px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- INSPECTION VIGNETTES (scroll-scrubbed stories) ---------- */
+  .vig{position:relative;z-index:2;height:calc(var(--svh,220)*1vh)}
+  .vig-pin{position:sticky;top:0;height:100vh;overflow:hidden;pointer-events:none}
+  .tag{font-family:var(--disp);font-weight:700;font-size:11.5px;letter-spacing:.22em;color:var(--cyan);
+    display:inline-flex;padding:8px 16px;border-radius:999px;background:rgba(95,224,255,.08);
+    border:1px solid var(--line)}
+  .vig-head{position:absolute;top:96px;left:5vw;z-index:6;max-width:400px;pointer-events:auto}
+  .vig-head h3{font-family:var(--disp);font-weight:700;font-size:clamp(18px,1.8vw,25px);line-height:1.32;
+    margin-top:14px;text-shadow:0 2px 18px rgba(4,10,24,.85)}
+  .vig-cap{position:absolute;left:50%;bottom:40px;transform:translateX(-50%);z-index:6;
+    display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;
+    max-width:min(92vw,660px);pointer-events:auto;transition:opacity .25s}
+  .vig-cap.swap{opacity:0}
+  .vig-chips{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center}
+  .mchip{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:11.5px;font-weight:600;
+    letter-spacing:.14em;color:var(--cyan);padding:7px 14px;border-radius:8px;border:1px solid var(--line);
+    background:rgba(8,21,43,.78);backdrop-filter:blur(8px)}
+  .mchip[hidden]{display:none}
+  .mchip.alert{color:#ff8d98;border-color:rgba(255,77,94,.5);background:rgba(28,10,20,.82);
+    opacity:0;transform:translateY(5px);transition:opacity .3s,transform .3s}
+  .mchip.alert.on{opacity:1;transform:none}
+  .vig-story{font-size:15.5px;font-weight:500;line-height:1.55;color:var(--ink);
+    text-shadow:0 2px 14px rgba(4,10,24,.95);padding:0 10px;min-height:24px}
+  .vig-learn{font-size:13.5px;font-weight:700;letter-spacing:.06em;color:var(--cyan);
+    border-bottom:1px solid rgba(95,224,255,.4);transition:.2s}
+  .vig-learn:hover{color:#fff;border-color:#fff}
+  .vig-learn[hidden]{display:none}
+  .vig-bar{width:min(40vw,300px);height:2px;border-radius:2px;background:rgba(95,224,255,.14);
+    overflow:hidden;margin-top:2px}
+  .vig-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--blue))}
+  .story-wide{border-radius:24px;padding:34px 30px;background:var(--card);border:1px solid var(--line);margin-top:30px;
+    display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+  .story-wide h3{font-family:var(--disp);font-weight:700;font-size:19px;line-height:1.4;max-width:520px}
+  .story-wide p{color:var(--ink-dim);font-size:15.5px;line-height:1.65;max-width:440px}
+  .story-wide p strong{color:var(--ink)}
+
+  /* ---------- VIDEO ---------- */
+  .video-sec{position:relative}
+  .video-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap}
+  .vframe{position:relative;margin-top:48px;border-radius:28px;padding:10px;
+    background:linear-gradient(135deg,rgba(95,224,255,.45),rgba(30,102,245,.15) 40%,rgba(30,102,245,.55));
+    box-shadow:0 30px 90px rgba(4,10,24,.7),0 0 80px rgba(30,102,245,.18);
+    transition:transform .45s cubic-bezier(.2,1.2,.4,1),box-shadow .45s}
+  .vframe:hover{transform:translateY(-6px) scale(1.005);box-shadow:0 40px 110px rgba(4,10,24,.8),0 0 110px rgba(30,102,245,.3)}
+  .vframe .vinner{position:relative;border-radius:20px;overflow:hidden;background:#04101f}
+  .vframe video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+  .vbar{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;background:linear-gradient(180deg,transparent,rgba(4,12,26,.85))}
+  .vlive{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--cyan)}
+  .vlive i{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);
+    animation:pulse 1.6s infinite}
+  .btn-sound{font-family:var(--body);font-weight:600;font-size:13.5px;color:var(--ink);cursor:pointer;
+    padding:9px 18px;border-radius:999px;border:1px solid rgba(95,224,255,.45);background:rgba(8,21,43,.7);
+    backdrop-filter:blur(8px);transition:.25s;display:inline-flex;gap:8px;align-items:center;position:relative;z-index:6}
+  .btn-sound:hover{background:rgba(95,224,255,.15);transform:scale(1.05)}
+  .btn-sound .sicon{width:0;height:0;border:6px solid transparent;border-left:9px solid var(--cyan);border-right:0;
+    margin-right:-2px;transition:.25s}
+  .btn-sound.live .sicon{border-left-color:#7dffb0}
+  .vcaption{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;align-items:center}
+  .vcaption .cap{color:var(--ink-faint);font-size:14.5px;margin-right:8px}
+
+  /* ---------- STATS ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:90px}
+  .stat{border-radius:24px;padding:34px 26px;text-align:center;background:var(--card);border:1px solid var(--line);
+    transition:transform .35s cubic-bezier(.2,1.5,.4,1),border-color .3s,background .3s;cursor:default}
+  .stat:hover{transform:translateY(-7px) scale(1.025);border-color:rgba(95,224,255,.45);background:rgba(24,52,98,.55)}
+  .stat .big{font-family:var(--disp);font-weight:700;font-size:clamp(32px,3.2vw,46px);
+    background:linear-gradient(110deg,var(--cyan),var(--blue));-webkit-background-clip:text;background-clip:text;
+    -webkit-text-fill-color:transparent;line-height:1.1}
+  .stat .lbl{margin-top:10px;color:var(--ink-dim);font-size:14.5px;font-weight:500;line-height:1.45}
+
+  /* ---------- FINAL CTA ---------- */
+  .band{position:relative;overflow:hidden;border-radius:36px;padding:84px 8vw;text-align:center;
+    background:
+      radial-gradient(700px 320px at 50% -40%, rgba(95,224,255,.22), transparent 70%),
+      linear-gradient(135deg,#0d2654,#16489f 60%,#0c2f7e);
+    border:1px solid rgba(95,224,255,.3);box-shadow:0 40px 100px rgba(4,10,24,.7)}
+  .band::before{content:'';position:absolute;inset:0;opacity:.4;pointer-events:none;
+    background-image:radial-gradient(rgba(232,240,248,.35) 1px,transparent 1.5px);background-size:26px 26px;
+    mask-image:radial-gradient(closest-side at 50% 40%,#000,transparent)}
+  .band h2{font-size:clamp(34px,4.6vw,62px);margin:0 0 14px}
+  .band p{color:rgba(232,240,248,.85);font-size:18px;line-height:1.65;max-width:580px;margin:0 auto 36px}
+  .band .btn-primary{background:linear-gradient(95deg,#fff,#dff5ff);color:var(--navy);font-size:17.5px;padding:19px 42px;
+    box-shadow:0 14px 44px rgba(4,10,24,.45)}
+  .band .btn-primary:hover{box-shadow:0 20px 60px rgba(4,10,24,.6)}
+  .band .micro{margin-top:20px;font-size:13.5px;color:rgba(232,240,248,.6);letter-spacing:.04em}
+
+  footer{padding:54px 5vw 64px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    color:var(--ink-faint);font-size:14px;border-top:1px solid rgba(95,224,255,.08);margin-top:40px;position:relative;z-index:2}
+  footer .navlinks{font-size:14px}
+
+  @media (max-width:920px){
+    .navlinks{display:none}
+    .stats{grid-template-columns:1fr 1fr}
+    .vig-head{top:84px;max-width:74vw}
+    .vig-head h3{font-size:17px}
+    .vig-cap{bottom:24px;gap:8px}
+    .vig-story{font-size:13.5px}
+    .mchip{font-size:10.5px;padding:6px 11px}
+    .shape-hud{right:50%;transform:translateX(50%);bottom:7vh}
+    .shape-label{min-width:230px;font-size:13px}
+    .hero-inner{padding-top:130px}
+    .def-wrap{top:auto;bottom:148px;right:4vw}
+  }
+  @media (max-width:560px){
+    .stats{grid-template-columns:1fr}
+    nav{padding:14px 4vw}
+    .wordmark{font-size:15.5px;gap:7px}
+    .wordmark .dot{width:11px;height:11px}
+    .btn-signin{padding:9px 16px;font-size:13px;white-space:nowrap}
+    .btn-snd{width:33px;height:33px;font-size:13px}
+    .nav-cta{gap:8px}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+    .reveal{opacity:1;transform:none}
+    .scroll-hint::after{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a class="wordmark" href="#top">
+    <span class="dot"></span>NDTAcademy<em>.com</em>
+  </a>
+  <div class="navlinks">
+    <a href="#future">Why Now</a>
+    <a href="#watch">Watch</a>
+    <a href="#methods">Methods</a>
+  </div>
+  <div class="nav-cta">
+    <button class="btn-snd" id="sndToggle" aria-label="Toggle sound effects" title="Sound effects">&#128266;</button>
+    <a class="btn-signin" href="/login">Sign In</a>
+  </div>
+</nav>
+
+<canvas id="stage" aria-hidden="true"></canvas>
+
+<!-- defect mini-game UI -->
+<div class="def-wrap" id="defWrap" hidden>
+  <div class="def-chip" id="defChip"><span class="ddot"></span>DEFECTS FOUND <b id="defCount">0/3</b></div>
+  <div class="def-hint" id="defHint">click the red cracks</div>
+</div>
+<div class="def-ring" id="defRing"></div>
+<div class="toast" id="toast"></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="hero-fallback"></div>
+
+  <div class="hero-inner">
+    <div class="hero-copy" id="heroCopy">
+      <span class="eyebrow"><span class="spark"></span>VT Level I &amp; II — completely free for a limited time</span>
+      <h1><span data-kinetic>You've trusted NDT</span> <span data-kinetic>your whole life.</span><br>
+          <span class="grad" data-kinetic>Now get paid for it.</span></h1>
+      <p class="hero-sub">Every plane you've boarded, bridge you've crossed, and coaster you've ridden was signed off by an <strong>NDT inspector</strong>. Become one — start your certification today.</p>
+      <div class="cta-row">
+        <a class="btn-primary" id="ctaMain" href="/signup">Start Free VT Certification <span class="arr">→</span></a>
+        <a class="btn-ghost" href="#watch"><span class="play"></span>Watch: The Future of NDT</a>
+      </div>
+      <div class="chip-row">
+        <span class="chip"><i></i>SNT-TC-1A 2024</span>
+        <span class="chip"><i></i>NAS410</span>
+        <span class="chip"><i></i>ASNT Level III oversight</span>
+        <span class="chip"><i></i>8 hrs to first certificate</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="shape-hud" id="shapeHud">
+    <div class="hud-top">They all get inspected</div>
+    <div class="shape-label" id="shapeLabel">⚡ WELDS</div>
+  </div>
+
+  <div class="scroll-hint">Scroll</div>
+</header>
+
+<!-- ============ WHY NOW / INDUSTRY FLYTHROUGH ============ -->
+<section class="sec" id="future">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-eyebrow">Why now</div>
+      <h2>Everything you trust gets inspected by <span class="grad">certified eyes</span>.</h2>
+      <p class="sec-sub">Nondestructive Testing is how the modern world stays trustworthy. The hardware is evolving fast — the people who can certify it are the bottleneck. That's your opening. Watch the particles — they know where they're needed.</p>
+    </div>
+  </div>
+  <!-- scroll-scrubbed inspection vignettes: scroll position drives each story -->
+  <section class="vig" data-vig="0" style="--svh:260">
+    <div class="vig-pin">
+      <div class="vig-head"><span class="tag">Infrastructure</span>
+        <h3>Bridges don't get to fail.</h3></div>
+      <div class="vig-cap">
+        <div class="vig-chips"><span class="mchip" data-method hidden></span><span class="mchip alert" data-alert></span></div>
+        <p class="vig-story" data-story></p>
+        <a class="vig-learn" data-learn href="/courses" hidden></a>
+        <div class="vig-bar"><i data-bar></i></div>
+      </div>
+    </div>
+  </section>
+  <section class="vig" data-vig="1" style="--svh:240">
+    <div class="vig-pin">
+      <div class="vig-head"><span class="tag">Energy</span>
+        <h3>The wind never stops. Neither does inspection.</h3></div>
+      <div class="vig-cap">
+        <div class="vig-chips"><span class="mchip" data-method hidden></span><span class="mchip alert" data-alert></span></div>
+        <p class="vig-story" data-story></p>
+        <a class="vig-learn" data-learn href="/courses" hidden></a>
+        <div class="vig-bar"><i data-bar></i></div>
+      </div>
+    </div>
+  </section>
+  <section class="vig" data-vig="2" style="--svh:240">
+    <div class="vig-pin">
+      <div class="vig-head"><span class="tag">Aerospace</span>
+        <h3>Every flight you've ever taken was signed off first.</h3></div>
+      <div class="vig-cap">
+        <div class="vig-chips"><span class="mchip" data-method hidden></span><span class="mchip alert" data-alert></span></div>
+        <p class="vig-story" data-story></p>
+        <a class="vig-learn" data-learn href="/courses" hidden></a>
+        <div class="vig-bar"><i data-bar></i></div>
+      </div>
+    </div>
+  </section>
+  <section class="vig" data-vig="3" style="--svh:240">
+    <div class="vig-pin">
+      <div class="vig-head"><span class="tag">Pipelines</span>
+        <h3>Pressure inside. Proof outside.</h3></div>
+      <div class="vig-cap">
+        <div class="vig-chips"><span class="mchip" data-method hidden></span><span class="mchip alert" data-alert></span></div>
+        <p class="vig-story" data-story></p>
+        <a class="vig-learn" data-learn href="/courses" hidden></a>
+        <div class="vig-bar"><i data-bar></i></div>
+      </div>
+    </div>
+  </section>
+  <section class="vig" data-vig="4" style="--svh:240">
+    <div class="vig-pin">
+      <div class="vig-head"><span class="tag">Thrill rides</span>
+        <h3>The scariest ride is the one nobody inspected.</h3></div>
+      <div class="vig-cap">
+        <div class="vig-chips"><span class="mchip" data-method hidden></span><span class="mchip alert" data-alert></span></div>
+        <p class="vig-story" data-story></p>
+        <a class="vig-learn" data-learn href="/courses" hidden></a>
+        <div class="vig-bar"><i data-bar></i></div>
+      </div>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="story-wide reveal">
+      <h3>Learn under <span class="grad">ASNT Level IIIs</span> from day one.</h3>
+      <p>Founded by two multi-certified <strong>ASNT Level IIIs</strong> — every student gets Level III oversight. Training structured to <strong>SNT-TC-1A 2024</strong> and <strong>NAS410</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIDEO ============ -->
+<section class="sec video-sec" id="watch">
+  <div class="wrap">
+    <div class="video-head reveal" id="videoHead">
+      <div>
+        <div class="sec-eyebrow">See a real lesson</div>
+        <h2>The future of NDT <span class="grad">looks like this</span>.</h2>
+        <p class="sec-sub">This isn't a stock-footage promo — it's an actual lesson from our free VT Level I course, playing live. Narrated, tracked, audit-ready.</p>
+      </div>
+    </div>
+    <div class="vframe reveal" id="vframe" style="transition-delay:.1s">
+      <div class="vinner">
+        <video id="lessonVid" src="https://vamjeecpssxhzeyiqqsc.supabase.co/storage/v1/object/public/vt-media/demo/modern-vt1-1-1-v5.mp4"
+               muted loop autoplay playsinline preload="metadata"></video>
+        <div class="vbar">
+          <span class="vlive"><i></i>Live course preview</span>
+          <button class="btn-sound" id="soundBtn"><span class="sicon"></span><span id="soundTxt">Sound on</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="vcaption reveal" style="transition-delay:.2s">
+      <span class="cap">From VT Level I, Lesson 1 —</span>
+      <span class="chip"><i></i>Narrated lessons</span>
+      <span class="chip"><i></i>Progress tracked</span>
+      <span class="chip"><i></i>Audit-ready records</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="sec" id="methods">
+  <div class="wrap">
+    <div class="reveal" id="statsHead">
+      <div class="sec-eyebrow">The fast path</div>
+      <h2>From zero to <span class="grad">certificate-holder</span>, the modern way.</h2>
+    </div>
+    <div class="stats" id="statsGrid">
+      <div class="stat reveal" style="transition-delay:.0s"><div class="big">6</div><div class="lbl">NDT methods on the platform</div></div>
+      <div class="stat reveal" style="transition-delay:.1s"><div class="big">I–III</div><div class="lbl">Certification paths, Level III oversight</div></div>
+      <div class="stat reveal" style="transition-delay:.2s"><div class="big">8 hrs</div><div class="lbl">Formal training to your first certificate — tracked, narrated, audit-ready</div></div>
+      <div class="stat reveal" style="transition-delay:.3s"><div class="big">Free</div><div class="lbl">VT Level I &amp; II — for a limited time</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="sec" id="start" style="padding-top:300px">
+  <div class="wrap">
+    <div class="band reveal" id="band">
+      <div id="bandCopy">
+        <h2>Take the first step.</h2>
+        <p>8 formal training hours to your first certificate. Tracked, narrated, audit-ready — and VT Level I &amp; II are completely free for a limited time.</p>
+        <a class="btn-primary" id="bandBtn" href="/signup">Start Free VT Certification <span class="arr">→</span></a>
+        <div class="micro">Structured to SNT-TC-1A 2024 &amp; NAS410 · Every student gets ASNT Level III oversight</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a class="wordmark" href="#top" style="font-size:15px"><span class="dot" style="width:11px;height:11px"></span>NDTAcademy<em>.com</em></a>
+  <div class="navlinks" style="display:flex">
+    <a href="#future">Why Now</a><a href="#watch">Watch</a><a href="/signup">Start Free</a>
+  </div>
+  <span>Founded by two multi-certified ASNT Level IIIs.</span>
+</footer>
+
+<script>
+/* ---------- page micro-interactions ---------- */
+const nav = document.getElementById('nav');
+addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 30), {passive:true});
+
+/* kinetic headline: split into letters */
+document.querySelectorAll('[data-kinetic]').forEach(el => {
+  const words = el.textContent.split(' '); el.textContent = '';
+  let i = window.__kIdx || 0;
+  words.forEach((word, wi) => {
+    const w = document.createElement('span');
+    w.style.cssText = 'display:inline-block;white-space:nowrap';
+    for (const ch of word) {
+      const s = document.createElement('span');
+      s.className = 'k'; s.style.setProperty('--i', i++); s.textContent = ch;
+      w.appendChild(s);
+    }
+    el.appendChild(w);
+    if (wi < words.length - 1) el.appendChild(document.createTextNode(' '));
+  });
+  window.__kIdx = i;
+});
+
+/* reveal on scroll */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), {threshold:.18});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* video sound toggle */
+const vid = document.getElementById('lessonVid'), sBtn = document.getElementById('soundBtn');
+sBtn.addEventListener('click', () => {
+  vid.muted = !vid.muted;
+  if (!vid.muted) vid.play();
+  document.getElementById('soundTxt').textContent = vid.muted ? 'Sound on' : 'Sound off';
+  sBtn.classList.toggle('live', !vid.muted);
+  window.__videoEngaged = !vid.muted;
+});
+</script>
+
+<script type="module">
+import * as THREE from 'three';
+
+/* ================================================================
+   PARTICLE FORGE v2 — one fixed stage, twelve shapes, full-page
+   scroll choreography + the "find the defects" mini-game.
+   ================================================================ */
+const LOWPOWER = matchMedia('(max-width:768px)').matches || (navigator.deviceMemory || 8) <= 4;
+const COUNT = LOWPOWER ? 7000 : 14000;
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const canvas = document.getElementById('stage');
+
+let renderer;
+try {
+  renderer = new THREE.WebGLRenderer({canvas, antialias:false, alpha:true, powerPreference:'high-performance'});
+} catch(e) {
+  document.querySelector('.hero-fallback').style.opacity = '1';
+  throw e;
+}
+renderer.setPixelRatio(Math.min(devicePixelRatio, 1.5));
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(50, 1, .1, 100);
+camera.position.set(0, 0, 16);
+
+let W = innerWidth, H = innerHeight;
+let visH = 2 * 16 * Math.tan(THREE.MathUtils.degToRad(25)), visW = visH;
+function px2w(){ return visH / H; }                       // pixels -> world scalar
+function worldX(px){ return (px - W/2) * px2w(); }
+function worldY(py){ return (H/2 - py) * px2w(); }
+
+/* ================================================================
+   PART 1 — THE SHAPE LIBRARY
+   Each silhouette drawn as filled 2D paths on a 480x300 canvas,
+   sampled to a point cloud. Accent layer = brighter particles.
+   ================================================================ */
+const SW = 480, SH = 300, SC = 10.6 / SW;                 // shape world width ~10.6
+const scv = document.createElement('canvas'); scv.width = SW; scv.height = SH;
+const sx = scv.getContext('2d', {willReadFrequently:true});
+
+function blade(c, cx, cy, ang, len, w0, w1){              // tapered quad from (cx,cy)
+  const ca = Math.cos(ang), sa = Math.sin(ang), nx = -sa, ny = ca;
+  c.beginPath();
+  c.moveTo(cx + nx*w0, cy + ny*w0);
+  c.lineTo(cx + ca*len + nx*w1, cy + sa*len + ny*w1);
+  c.lineTo(cx + ca*len - nx*w1, cy + sa*len - ny*w1);
+  c.lineTo(cx - nx*w0, cy - ny*w0);
+  c.closePath(); c.fill();
+}
+
+/* ---- roller-coaster track centerline (canvas px), shared by the
+       silhouette drawing AND the live particle car-train ---- */
+const coasterRaw = (() => {
+  const p = [], lerp = (a,b,u)=>a+(b-a)*u;
+  for (let k = 0; k <= 40; k++){ const u = k/40;                       // big lift hill, left
+    p.push(8 + u*168, lerp(266,248,u) - 112*Math.sin(Math.PI*u)); }
+  for (let k = 1; k <= 8; k++){ const u = k/8;                          // dip into the loop
+    p.push(lerp(176,217,u), lerp(248,234,u)); }
+  const lcx = 252, lcy = 158, lr = 72;                                  // the loop (slightly >360°)
+  const aIn = Math.atan2(234-lcy, 217-lcx), aOut = Math.atan2(234-lcy, (252+35)-lcx) - Math.PI*2;
+  for (let k = 1; k <= 78; k++){ const a = aIn + (aOut-aIn)*(k/78);
+    p.push(lcx + Math.cos(a)*lr, lcy + Math.sin(a)*lr); }
+  for (let k = 1; k <= 6; k++){ const u = k/6;                          // exit ramp
+    p.push(lerp(287,312,u), lerp(234,247,u)); }
+  for (let k = 1; k <= 32; k++){ const u = k/32;                        // second hill, right
+    p.push(lerp(312,474,u), lerp(247,266,u) - 58*Math.sin(Math.PI*u)); }
+  return p;
+})();
+function coasterNormal(i){                                  // unit normal at raw point i (canvas)
+  const n = coasterRaw.length/2, j = Math.min(n-2, Math.max(0, i));
+  const dx = coasterRaw[(j+1)*2] - coasterRaw[j*2], dy = coasterRaw[(j+1)*2+1] - coasterRaw[j*2+1];
+  const m = Math.hypot(dx, dy) || 1;
+  return [-dy/m, dx/m];
+}
+function strokeTrack(c, off, lw){                           // rail at normal offset `off`
+  c.lineWidth = lw; c.beginPath();
+  for (let i = 0; i < coasterRaw.length/2; i++){
+    const [nx, ny] = off ? coasterNormal(i) : [0,0];
+    const x = coasterRaw[i*2] + nx*off, y = coasterRaw[i*2+1] + ny*off;
+    i ? c.lineTo(x, y) : c.moveTo(x, y);
+  }
+  c.stroke();
+}
+/* uniform-arc-length resample (for constant-speed train travel) */
+function resampleTrack(raw, N){
+  const n = raw.length/2, cum = new Float32Array(n);
+  for (let i = 1; i < n; i++)
+    cum[i] = cum[i-1] + Math.hypot(raw[i*2]-raw[i*2-2], raw[i*2+1]-raw[i*2-1]);
+  const L = cum[n-1], out = new Float32Array(N*2);
+  let j = 0;
+  for (let k = 0; k < N; k++){
+    const s = k/(N-1)*L;
+    while (j < n-2 && cum[j+1] < s) j++;
+    const seg = cum[j+1]-cum[j] || 1, u = (s-cum[j])/seg;
+    out[k*2]   = raw[j*2]   + (raw[j*2+2]-raw[j*2])*u;
+    out[k*2+1] = raw[j*2+1] + (raw[j*2+3]-raw[j*2+1])*u;
+  }
+  return {pts: out, len: L, n: N};
+}
+const coasterTrack = resampleTrack(coasterRaw, 256);
+
+const SHAPES = [
+/* 0 — WELD IN PROGRESS: two plates, torch laying a rippled bead along the joint.
+      Torch + bead + molten pool are live-animated main particles (see animWeld);
+      sparks come from the shared accent pool. drawStatic = plates only. */
+{ name:'Weld in progress', cap:'⚡ WELDS', accentFrac:0, defect:{x:336, y:214},
+  draw(c){                                                          // montage: plates + partial bead + torch
+    this.drawStatic(c);
+    const tx = 258, oldFill = c.fillStyle;
+    c.beginPath();                                                  // rippled bead, laid 46 -> tx
+    c.moveTo(46, 178);
+    for (let x = 46; x <= tx; x += 4) c.lineTo(x, 178 - (10.5 + 3.2*Math.sin(x*.42)));
+    for (let x = tx; x >= 46; x -= 4) c.lineTo(x, 178 + (10.5 + 3.2*Math.sin(x*.42)));
+    c.closePath(); c.fill();
+    c.beginPath(); c.ellipse(tx+4, 178, 11, 10, 0, 0, 7); c.fill(); // molten pool at the leading edge
+    const A = -64*Math.PI/180, ux = Math.cos(A), uy = Math.sin(A);  // torch, steep, pokes above the plate
+    const A2 = A + .62;
+    const px = l => tx+2 + ux*l, py = l => 174 + uy*l;
+    const seg = (l0, l1, lw) => { c.lineWidth = lw; c.beginPath(); c.moveTo(px(l0), py(l0)); c.lineTo(px(l1), py(l1)); c.stroke(); };
+    const hseg = lw => { c.lineWidth = lw; c.beginPath(); c.moveTo(px(66), py(66));
+      c.lineTo(px(66) + Math.cos(A2)*24, py(66) + Math.sin(A2)*24); c.stroke(); };
+    c.strokeStyle = '#091a33';                                      // dark keyline so the torch reads on the plate
+    seg(4, 20, 16); seg(18, 66, 23); hseg(20);
+    c.strokeStyle = c.fillStyle = oldFill;
+    seg(4, 20, 7); seg(18, 66, 14); hseg(11);
+  },
+  drawStatic(c){                                                    // sampled part (plates only)
+    c.fillRect(40, 116, 400, 50);                                   // top plate
+    c.fillRect(40, 190, 400, 50);                                   // bottom plate
+  },
+  accent(c){                                                        // montage-only (accentFrac 0): arc + sparks
+    c.beginPath(); c.arc(259, 177, 7, 0, 7); c.fill();
+    [[284,152],[302,170],[296,196],[320,184],[278,208],[312,150],[332,200],[290,132]]
+      .forEach(([x,y], i) => { c.beginPath(); c.arc(x, y, 3.2 - (i%2), 0, 7); c.fill(); });
+  }},
+/* 1 — FLANGED PIPE RUN WITH ELBOW */
+{ name:'Pipe run', cap:'🔧 PIPELINES', accentFrac:.07, defect:{x:368, y:142},
+  draw(c){
+    c.lineWidth = 50;
+    c.beginPath(); c.moveTo(56, 118); c.lineTo(296, 118);
+    c.quadraticCurveTo(362, 118, 362, 186); c.lineTo(362, 262); c.stroke();
+    const op = c.globalCompositeOperation;                          // hollow the bore: the live fluid
+    c.globalCompositeOperation = 'destination-out';                 // stream reads THROUGH the run
+    c.lineWidth = 24;
+    c.beginPath(); c.moveTo(56, 118); c.lineTo(296, 118);
+    c.quadraticCurveTo(362, 118, 362, 186); c.lineTo(362, 254); c.stroke();
+    c.globalCompositeOperation = op;
+    c.fillRect(40, 80, 22, 76);                                     // end flange (solid, after the carve)
+    c.fillRect(160, 80, 17, 76); c.fillRect(185, 80, 17, 76);       // flange pair (bolted joint)
+    c.fillRect(330, 252, 66, 20);                                   // bottom flange
+  },
+  accent(c){
+    c.lineWidth = 6;
+    c.beginPath(); c.moveTo(262, 90); c.lineTo(262, 146); c.stroke();   // weld seam ring
+    c.beginPath(); c.moveTo(338, 196); c.lineTo(388, 196); c.stroke();  // weld seam ring
+  }},
+/* 2 — WIND TURBINE (blades are live-rotated particles; sampling skips them) */
+{ name:'Wind turbine', cap:'🌬 WIND TURBINES', accentFrac:.05,
+  draw(c){                                                          // full silhouette (montage)
+    const hx = 240, hy = 124;
+    this.drawStatic(c);
+    [90, 210, 330].forEach(a => blade(c, hx, hy, (a-90)*Math.PI/180 - Math.PI/2, 96, 7, 2.5));
+  },
+  drawStatic(c){                                                    // sampled part (no blades)
+    const hx = 240, hy = 124;
+    c.beginPath(); c.moveTo(228, 282); c.lineTo(252, 282);          // tapered tower
+    c.lineTo(245, 138); c.lineTo(235, 138); c.closePath(); c.fill();
+    c.fillRect(220, 110, 44, 26);                                   // nacelle
+    c.beginPath(); c.arc(hx, hy, 11, 0, 7); c.fill();               // hub
+    c.fillRect(150, 282, 180, 8);                                   // ground
+  },
+  accent(c){ c.beginPath(); c.arc(240, 124, 16, 0, 7); c.lineWidth = 5; c.stroke(); }},
+/* 3 — AIRLINER (side profile) */
+{ name:'Airliner', cap:'✈ AIRLINERS', accentFrac:.08, defect:{x:236, y:176},
+  draw(c){
+    c.beginPath();                                                  // fuselage
+    c.moveTo(46, 158);
+    c.quadraticCurveTo(58, 134, 104, 130); c.lineTo(330, 130);
+    c.quadraticCurveTo(378, 132, 412, 142); c.lineTo(434, 146);     // tail taper top
+    c.lineTo(436, 154); c.quadraticCurveTo(390, 172, 320, 176);
+    c.lineTo(110, 178); c.quadraticCurveTo(60, 176, 46, 158);
+    c.closePath(); c.fill();
+    c.beginPath();                                                  // vertical stabilizer
+    c.moveTo(376, 140); c.lineTo(412, 70); c.lineTo(438, 70); c.lineTo(420, 148); c.closePath(); c.fill();
+    c.beginPath();                                                  // horizontal stabilizer
+    c.moveTo(398, 150); c.lineTo(454, 128); c.lineTo(460, 136); c.lineTo(412, 156); c.closePath(); c.fill();
+    c.beginPath();                                                  // wing (swept, going down-back)
+    c.moveTo(196, 166); c.lineTo(244, 166); c.lineTo(310, 224); c.lineTo(276, 230); c.closePath(); c.fill();
+    c.beginPath(); c.ellipse(206, 190, 26, 13, 0, 0, 7); c.fill();  // engine pod
+    c.beginPath(); c.ellipse(282, 208, 20, 10, -0.35, 0, 7); c.fill(); // engine 2
+  },
+  accent(c){
+    for (let x = 108; x <= 332; x += 16){ c.beginPath(); c.arc(x, 146, 2.6, 0, 7); c.fill(); } // windows
+    c.beginPath(); c.moveTo(58, 146); c.lineTo(84, 138); c.lineTo(88, 148); c.closePath(); c.fill(); // windshield
+  }},
+/* 4 — TRUSS BRIDGE SECTION */
+{ name:'Truss bridge', cap:'🌉 BRIDGES', accentFrac:.06,
+  draw(c){
+    c.lineWidth = 11;
+    c.beginPath(); c.moveTo(28, 212); c.lineTo(452, 212); c.stroke();   // bottom chord / deck
+    c.lineWidth = 9;
+    c.beginPath(); c.moveTo(86, 112); c.lineTo(394, 112); c.stroke();   // top chord
+    c.lineWidth = 8;
+    [86, 148, 210, 272, 334, 394].forEach(x => {                        // verticals
+      c.beginPath(); c.moveTo(x, 112); c.lineTo(x, 212); c.stroke();
+    });
+    [[28,212,86,112],[86,212,148,112],[148,212,210,112],                // diagonals (Pratt)
+     [452,212,394,112],[394,212,334,112],[334,212,272,112]].forEach(([a,b,d,e])=>{
+      c.beginPath(); c.moveTo(a, b); c.lineTo(d, e); c.stroke();
+    });
+    c.fillRect(100, 212, 26, 56); c.fillRect(354, 212, 26, 56);         // piers
+  },
+  accent(c){ c.fillRect(28, 206, 424, 5); }},                           // deck accent line
+/* 5 — CONTAINER SHIP */
+{ name:'Container ship', cap:'🚢 SHIPS', accentFrac:.07,
+  draw(c){
+    c.beginPath();                                                  // hull (bow right)
+    c.moveTo(46, 198); c.lineTo(446, 198); c.lineTo(404, 256); c.lineTo(96, 256);
+    c.lineTo(60, 198); c.closePath(); c.fill();
+    c.fillRect(74, 130, 48, 68);                                    // superstructure
+    c.fillRect(82, 112, 32, 18); c.fillRect(88, 86, 18, 26);        // bridge cab + funnel stack
+    for (let r = 0; r < 3; r++)                                      // container stacks
+      for (let x = 0; x < 9; x++)
+        c.fillRect(140 + x*29, 172 - r*26, 25, 22);
+  },
+  accent(c){ c.fillRect(70, 236, 360, 7); }},                       // waterline stripe
+/* 6 — ROLLER COASTER: lift hill + loop + second hill, struts, live train */
+{ name:'Roller coaster', cap:'🎢 ROLLER COASTERS', accentFrac:.07,
+  draw(c){
+    strokeTrack(c, 0, 7);                                           // main rail
+    strokeTrack(c, 7, 3.5);                                         // lower rail
+    c.lineWidth = 3;                                                // cross ties
+    c.beginPath();
+    for (let i = 2; i < coasterRaw.length/2 - 2; i += 4){
+      const [nx, ny] = coasterNormal(i);
+      c.moveTo(coasterRaw[i*2] - nx*1, coasterRaw[i*2+1] - ny*1);
+      c.lineTo(coasterRaw[i*2] + nx*9, coasterRaw[i*2+1] + ny*9);
+    }
+    c.stroke();
+    c.lineWidth = 5;                                                // support struts -> ground
+    [[46,189],[88,146],[132,167],[350,213],[394,199],[438,225]].forEach(([x,y]) => {
+      c.beginPath(); c.moveTo(x, y+5); c.lineTo(x, 283); c.stroke();
+    });
+    c.beginPath(); c.moveTo(196, 205); c.lineTo(174, 283); c.stroke();  // loop legs
+    c.beginPath(); c.moveTo(308, 205); c.lineTo(330, 283); c.stroke();
+    c.lineWidth = 6;                                                // ground line
+    c.beginPath(); c.moveTo(6, 283); c.lineTo(474, 283); c.stroke();
+  },
+  accent(c){                                                        // static train (montage only;
+    for (let j = 0; j < 3; j++){                                    //  live one is animated)
+      const k = 26 - j*5, x = coasterTrack.pts[k*2], y = coasterTrack.pts[k*2+1];
+      c.beginPath(); c.arc(x, y-8, 7, 0, 7); c.fill();
+    }
+  }},
+/* 7 — ROCKET (takeoff: live flame jet + ground smoke from the pool; rise + vibration in frame()) */
+{ name:'Rocket', cap:'🚀 ROCKETS', accentFrac:.05, accentColor:'#ffc977',
+  draw(c){
+    c.beginPath();                                                  // nose cone
+    c.moveTo(216, 112); c.quadraticCurveTo(240, 18, 264, 112); c.closePath(); c.fill();
+    c.fillRect(216, 108, 48, 120);                                  // body
+    c.beginPath();                                                  // left fin
+    c.moveTo(216, 188); c.lineTo(216, 234); c.lineTo(182, 252); c.lineTo(196, 196); c.closePath(); c.fill();
+    c.beginPath();                                                  // right fin
+    c.moveTo(264, 188); c.lineTo(264, 234); c.lineTo(298, 252); c.lineTo(284, 196); c.closePath(); c.fill();
+    c.beginPath();                                                  // nozzle
+    c.moveTo(226, 228); c.lineTo(254, 228); c.lineTo(262, 248); c.lineTo(218, 248); c.closePath(); c.fill();
+  },
+  accent(c){                                                        // porthole + flame core (live jet rides on top)
+    c.beginPath(); c.arc(240, 150, 11, 0, 7); c.fill();             // porthole
+    c.beginPath(); c.moveTo(228, 252); c.lineTo(252, 252); c.lineTo(240, 288); c.closePath(); c.fill();
+  }},
+/* 8 — JET ENGINE FRONT FAN (blades are live-rotated particles; sampling skips them) */
+{ name:'Jet engine fan', cap:'⚙ JET ENGINES', accentFrac:.06,
+  draw(c){                                                          // full silhouette (montage)
+    const cx = 240, cy = 152;
+    this.drawStatic(c);
+    for (let k = 0; k < 18; k++){                                   // fan blades w/ twist
+      const a = k/18*Math.PI*2;
+      c.beginPath();
+      const p = (r, da) => [cx + Math.cos(a+da)*r, cy + Math.sin(a+da)*r];
+      const [x1,y1] = p(22, -0.06), [x2,y2] = p(92, 0.16), [x3,y3] = p(92, 0.30), [x4,y4] = p(22, 0.08);
+      c.moveTo(x1,y1); c.lineTo(x2,y2); c.lineTo(x3,y3); c.lineTo(x4,y4); c.closePath(); c.fill();
+    }
+  },
+  drawStatic(c){                                                    // sampled part (no blades)
+    const cx = 240, cy = 152;
+    c.lineWidth = 17;
+    c.beginPath(); c.arc(cx, cy, 106, 0, 7); c.stroke();            // nacelle ring
+    c.beginPath(); c.arc(cx, cy, 17, 0, 7); c.fill();               // spinner
+  },
+  accent(c){                                                        // spinner swirl
+    c.lineWidth = 5; c.beginPath(); c.arc(240, 152, 9, .6, 3.6); c.stroke();
+  }},
+/* 9 — NDT LETTERS */
+{ name:'NDT', cap:'…ALL INSPECTED BY NDT TECHS', accentFrac:0,
+  draw(c){
+    c.font = '900 148px "Arial Black", Arial, sans-serif';
+    c.textAlign = 'center'; c.textBaseline = 'middle';
+    c.fillText('NDT', SW/2, SH/2 + 6);
+    c.lineWidth = 8; c.strokeText('NDT', SW/2, SH/2 + 6);
+  }},
+/* 10 — DIPLOMA: landscape certificate sheet + ribbon rosette (finale, not in hero cycle) */
+{ name:'Diploma', cap:'CERTIFIED', accentFrac:.10,
+  draw(c){
+    c.lineWidth = 10; c.strokeRect(62, 44, 356, 216);               // sheet
+    c.lineWidth = 3;  c.strokeRect(80, 62, 320, 180);               // inner frame
+    c.fillRect(138, 86, 204, 15);                                   // title bar
+    c.fillRect(118, 124, 244, 8);                                   // text lines
+    c.fillRect(132, 146, 216, 8);
+    c.fillRect(150, 168, 180, 8);
+    c.fillRect(102, 216, 100, 5);                                   // signature rule
+    c.setLineDash([10, 7]); c.lineWidth = 10;
+    c.beginPath(); c.arc(338, 204, 29, 0, 7); c.stroke();           // rosette edge
+    c.setLineDash([]);
+    c.beginPath(); c.arc(338, 204, 13, 0, 7); c.fill();             // rosette center
+    c.lineWidth = 11;                                               // ribbon tails
+    c.beginPath(); c.moveTo(328, 230); c.lineTo(315, 268); c.stroke();
+    c.beginPath(); c.moveTo(348, 230); c.lineTo(361, 268); c.stroke();
+  },
+  accent(c){
+    c.lineWidth = 4;                                                // signature squiggle
+    c.beginPath(); c.moveTo(106, 210); c.quadraticCurveTo(124, 194, 138, 208);
+    c.quadraticCurveTo(152, 220, 172, 202); c.stroke();
+    c.lineWidth = 6;                                                // check in the rosette
+    c.beginPath(); c.moveTo(329, 203); c.lineTo(336, 211); c.lineTo(349, 195); c.stroke();
+  }},
+/* 11 — ARROW (points right, at the CTA button) */
+{ name:'Arrow', cap:'', accentFrac:0,
+  draw(c){
+    c.fillRect(48, 128, 252, 46);
+    c.beginPath(); c.moveTo(300, 92); c.lineTo(300, 210); c.lineTo(420, 151); c.closePath(); c.fill();
+  }},
+];
+const HERO_CYCLE = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const SEAL = 10, ARROW = 11;
+const DEFECT_SHAPES = [0, 1, 3];        // weld, pipe, airliner carry the 3 hidden cracks
+const DEF_N = 36, DEF_TOTAL = 108;      // 3 groups x 36 particles, reserved tail indices
+
+/* ---- sampling: filled pixels -> evenly-strided point cloud ---- */
+function samplePixels(drawFn){
+  sx.clearRect(0, 0, SW, SH);
+  sx.fillStyle = sx.strokeStyle = '#fff';
+  sx.lineCap = sx.lineJoin = 'round'; sx.setLineDash([]);
+  drawFn(sx);
+  const d = sx.getImageData(0, 0, SW, SH).data, pts = [];
+  for (let y = 0; y < SH; y++) for (let x = 0; x < SW; x++)
+    if (d[(y*SW + x)*4 + 3] > 110) pts.push(x, y);
+  return pts;
+}
+const colA = new THREE.Color('#5fe0ff'), colB = new THREE.Color('#1E66F5'), tmpC = new THREE.Color();
+const RED = new THREE.Color('#ff5563'), GREEN = new THREE.Color('#7dffb0');
+const REDHOT = new THREE.Color('#ff6671').multiplyScalar(1.8); // hover-revealed crack: blooms hot red
+const crackOff = [];                                       // jagged crack offsets, idle (world units)
+for (let k = 0; k < DEF_N; k++){
+  const t = k/(DEF_N-1);
+  crackOff.push((t*18-9 + (k%3-1)*1.5) * SC, ((k%2 ? 2.8 : -2.8) + Math.sin(t*9)*2) * SC);
+}
+/* hover state: particles TIGHTEN into this sharp lightning-crack glyph.
+   Points are sampled evenly ALONG jagged polylines so the crack reads as
+   a connected fracture, not scattered sparks. */
+function samplePolyline(verts, n, out, off){
+  const m = verts.length/2, cum = [0];
+  for (let i = 1; i < m; i++)
+    cum[i] = cum[i-1] + Math.hypot(verts[i*2]-verts[i*2-2], verts[i*2+1]-verts[i*2-1]);
+  const L = cum[m-1];
+  for (let k = 0; k < n; k++){
+    const s = k/(n-1)*L; let j = 0;
+    while (j < m-2 && cum[j+1] < s) j++;
+    const u = (s - cum[j]) / ((cum[j+1]-cum[j]) || 1);
+    out[(off+k)*2]   = verts[j*2]   + (verts[j*2+2]-verts[j*2])*u;
+    out[(off+k)*2+1] = verts[j*2+1] + (verts[j*2+3]-verts[j*2+1])*u;
+  }
+}
+const crackTightPx = new Float32Array(DEF_N*2);
+samplePolyline([-32,0, -24,6, -17,-5, -9,3, -2,-6, 5,5, 12,-3, 20,6, 32,-2], 24, crackTightPx, 0);  // main fracture
+samplePolyline([-6,-3, -13,-11, -21,-17], 6, crackTightPx, 24);                                     // upper branch
+samplePolyline([4,3, 12,11, 19,18], 6, crackTightPx, 30);                                           // lower branch
+const crackTight = new Float32Array(DEF_N*2);
+for (let k = 0; k < DEF_N; k++){
+  crackTight[k*2]   =  crackTightPx[k*2]   * SC * 1.25;
+  crackTight[k*2+1] = -crackTightPx[k*2+1] * SC * 1.25;
+}
+function buildShape(def, gi){
+  const pts = samplePixels(c => (def.drawStatic || def.draw).call(def, c));
+  const acc = def.accent ? samplePixels(c => def.accent(c)) : [];
+  const usable = COUNT - DEF_TOTAL;
+  const accN = acc.length ? Math.min(Math.round(COUNT * def.accentFrac), usable >> 2) : 0;
+  const mainN = usable - accN;
+  const T = new Float32Array(COUNT*3), C = new Float32Array(COUNT*3);
+  const nP = pts.length/2, nA = acc.length/2;
+  const put = (i, px, py, col) => {
+    T[i*3]   = (px - SW/2 + (Math.random()-.5)*1.7) * SC;
+    T[i*3+1] = -(py - SH/2 + (Math.random()-.5)*1.7) * SC;
+    T[i*3+2] = (Math.random()-.5) * .6;
+    C[i*3] = col.r; C[i*3+1] = col.g; C[i*3+2] = col.b;
+  };
+  for (let i = 0; i < mainN; i++){
+    const j = ((i * nP / mainN) | 0) * 2;
+    tmpC.copy(colA).lerp(colB, Math.random());
+    if (Math.random() < .05) tmpC.addScalar(.55);          // sparkle minority
+    put(i, pts[j], pts[j+1], tmpC);
+  }
+  const accCol = new THREE.Color(def.accentColor || '#d8fbff');
+  for (let i = 0; i < accN; i++){
+    const j = ((i * nA / accN) | 0) * 2;
+    put(mainN + i, acc[j], acc[j+1], accCol);
+  }
+  for (let g = 0; g < 3; g++){                              // defect-reserved tail
+    const base = usable + g*DEF_N;
+    if (def.defect && DEFECT_SHAPES[g] === gi){
+      const dx = (def.defect.x - SW/2) * SC, dy = -(def.defect.y - SH/2) * SC;
+      for (let k = 0; k < DEF_N; k++){
+        const i = base + k;
+        T[i*3] = dx + crackOff[k*2]; T[i*3+1] = dy + crackOff[k*2+1]; T[i*3+2] = .42;
+        C[i*3] = RED.r; C[i*3+1] = RED.g; C[i*3+2] = RED.b;
+      }
+      def.defectLocal = {x: dx, y: dy};
+    } else {
+      for (let k = 0; k < DEF_N; k++){
+        const j = (((g*DEF_N+k) * 997) % nP) * 2;
+        tmpC.copy(colA).lerp(colB, Math.random());
+        put(base + k, pts[j], pts[j+1], tmpC);
+      }
+    }
+  }
+  def.targets = T; def.colors = C;
+}
+SHAPES.forEach((s, i) => buildShape(s, i));
+
+/* ================================================================
+   LIVE SHAPE ANIMATIONS — turbine blades rotate, bridge cars drive,
+   coaster train rides. All indices + hub-relative coords precomputed;
+   per-frame work is a tiny TL overwrite (no allocations).
+   ================================================================ */
+const USABLE = COUNT - DEF_TOTAL;
+function mainCountOf(def){
+  const accN = def.accent ? Math.min(Math.round(COUNT * def.accentFrac), USABLE >> 2) : 0;
+  return USABLE - accN;
+}
+const WARM = new THREE.Color('#ffb054').multiplyScalar(1.55); // hot amber pop for cars/train
+const cl2w = (x, y) => [(x - SW/2) * SC, -(y - SH/2) * SC]; // canvas px -> formation-local
+
+/* --- turbine: blades as hub-relative particles, rotated per frame --- */
+const HUB_LX = 0, HUB_LY = -(124 - SH/2) * SC;              // hub local coords
+const TURB_OMEGA = -0.5;                                    // rad/s (clockwise, ~12.5 s/rev)
+let tbN = 0, tbIdx, tbX0, tbY0;
+{
+  const def = SHAPES[2], mN = mainCountOf(def);
+  tbN = (mN * .34) | 0;                                     // ~1/3 of particles form the blades
+  tbIdx = new Uint32Array(tbN); tbX0 = new Float32Array(tbN); tbY0 = new Float32Array(tbN);
+  const step = mN / tbN, perBlade = Math.ceil(tbN / 3);
+  const baseAng = [Math.PI/2, Math.PI/2 + 2.0944, Math.PI/2 - 2.0944];
+  for (let k = 0; k < tbN; k++){
+    const i = Math.min(mN - 1, (k * step) | 0);
+    tbIdx[k] = i;
+    const b = k % 3, u = ((k / 3) | 0) / perBlade;          // 0..1 along the blade
+    const d = 14 + u * 97;                                  // radial dist (px)
+    const halfW = 7 - 4.5 * u;                              // taper 7 -> 2.5 px
+    const p = (Math.random() - .5) * 2 * halfW;
+    const r = Math.hypot(d, p) * SC, a = baseAng[b] + Math.atan2(p, d);
+    tbX0[k] = Math.cos(a) * r; tbY0[k] = Math.sin(a) * r;
+    def.targets[i*3] = HUB_LX + tbX0[k];                    // bake t=0 pose into targets
+    def.targets[i*3+1] = HUB_LY + tbY0[k];
+  }
+}
+function animTurbine(ang, A){
+  const ca = Math.cos(ang), sa = Math.sin(ang);
+  for (let k = 0; k < tbN; k++){
+    const i3 = tbIdx[k] * 3;
+    A[i3]   = HUB_LX + tbX0[k]*ca - tbY0[k]*sa;
+    A[i3+1] = HUB_LY + tbX0[k]*sa + tbY0[k]*ca;
+  }
+}
+
+/* --- bridge: 4 little particle cars crossing the deck, looping --- */
+const CAR_N = 4, CAR_P = 9;
+const carIdx = new Uint32Array(CAR_N * CAR_P);
+const carShape = [-9,-2, -4,-8, 4,-8, 9,-2, -6,1, 0,0, 6,1, 0,-4, -1,-8];  // px offsets (canvas, y down)
+const carSpd = [.115, .145, .095, .13], carPh = [0, .31, .55, .78];
+const CAR_Y = 199, CAR_X0 = 36, CAR_SPAN = 408;
+{
+  const def = SHAPES[4], mN = mainCountOf(def), step = mN / (CAR_N * CAR_P);
+  for (let k = 0; k < CAR_N * CAR_P; k++){
+    const i = Math.min(mN - 1, ((k + .5) * step) | 0);
+    carIdx[k] = i;
+    def.colors[i*3] = WARM.r; def.colors[i*3+1] = WARM.g; def.colors[i*3+2] = WARM.b;
+    const u = carPh[(k / CAR_P) | 0], p = (k % CAR_P);
+    const [lx, ly] = cl2w(CAR_X0 + u*CAR_SPAN + carShape[p*2], CAR_Y + carShape[p*2+1]);
+    def.targets[i*3] = lx; def.targets[i*3+1] = ly; def.targets[i*3+2] = .3;
+  }
+}
+function animCars(t, A){
+  for (let c = 0; c < CAR_N; c++){
+    const u = (t * carSpd[c] + carPh[c]) % 1;
+    const cx = CAR_X0 + u * CAR_SPAN;
+    for (let p = 0; p < CAR_P; p++){
+      const i3 = carIdx[c*CAR_P + p] * 3;
+      A[i3]   = (cx + carShape[p*2] - SW/2) * SC;
+      A[i3+1] = -(CAR_Y + carShape[p*2+1] - SH/2) * SC;
+      A[i3+2] = .3;
+    }
+  }
+}
+
+/* --- coaster: 3-car particle train riding the track path --- */
+const TRN_C = 3, TRN_P = 6, TRN_GAP = 24, TRN_SPEED = 95;   // px arc-gap, px/s
+const trnIdx = new Uint32Array(TRN_C * TRN_P);
+const trnAlong = [-6, 0, 6], trnPerp = [-4, -9];            // 3 x 2 grid per car (above rail)
+{
+  const def = SHAPES[6], mN = mainCountOf(def), step = mN / (TRN_C * TRN_P);
+  for (let k = 0; k < TRN_C * TRN_P; k++){
+    const i = Math.min(mN - 1, ((k + .5) * step) | 0);
+    trnIdx[k] = i;
+    def.colors[i*3] = WARM.r; def.colors[i*3+1] = WARM.g; def.colors[i*3+2] = WARM.b;
+  }
+}
+function animTrain(t, A){ trainAt(t * TRN_SPEED, A); }
+function trainAt(sHead, A){                                  // train at an absolute arc position
+  const {pts, len, n} = coasterTrack;
+  for (let c = 0; c < TRN_C; c++){
+    const s = (((sHead - c * TRN_GAP) % len) + len) % len;
+    const f = s / len * (n - 1), i0 = Math.min(n - 2, f | 0), fu = f - i0;
+    const x = pts[i0*2] + (pts[i0*2+2] - pts[i0*2]) * fu;
+    const y = pts[i0*2+1] + (pts[i0*2+3] - pts[i0*2+1]) * fu;
+    let tx = pts[i0*2+2] - pts[i0*2], ty = pts[i0*2+3] - pts[i0*2+1];
+    const m = Math.hypot(tx, ty) || 1; tx /= m; ty /= m;
+    const nx = -ty, ny = tx;                                // canvas normal (below track)
+    for (let p = 0; p < TRN_P; p++){
+      const al = trnAlong[p % 3], pe = trnPerp[(p / 3) | 0];
+      const cxp = x + tx*al + nx*pe, cyp = y + ty*al + ny*pe;
+      const i3 = trnIdx[c*TRN_P + p] * 3;
+      A[i3] = (cxp - SW/2) * SC; A[i3+1] = -(cyp - SH/2) * SC; A[i3+2] = .35;
+    }
+  }
+}
+animTrain(0, SHAPES[6].targets);                            // bake t=0 pose so the morph lands on it
+
+/* ================================================================
+   PARTICLE SYSTEM — one Points, CPU-simulated targets
+   ================================================================ */
+const geo = new THREE.BufferGeometry();
+const P  = new Float32Array(COUNT*3);                      // positions (the attribute)
+const CL = new Float32Array(COUNT*3);                      // colors (the attribute)
+const V  = new Float32Array(COUNT*3);
+const TL = new Float32Array(COUNT*3);                      // target, formation-local
+const CT = new Float32Array(COUNT*3);                      // color target
+const R4 = new Float32Array(COUNT*4);                      // per-particle randoms
+const SZ = new Float32Array(COUNT);
+for (let i = 0; i < COUNT; i++){
+  R4[i*4] = Math.random(); R4[i*4+1] = Math.random(); R4[i*4+2] = Math.random(); R4[i*4+3] = Math.random();
+  SZ[i] = .6 + R4[i*4]*1.35;
+  P[i*3] = (Math.random()-.5)*visW*1.4; P[i*3+1] = (Math.random()-.5)*visH*1.4; P[i*3+2] = (Math.random()-.5)*4;
+}
+for (let i = COUNT - DEF_TOTAL; i < COUNT; i++) SZ[i] = 2.1 + R4[i*4]*.9;   // defect cracks read bigger
+for (let k = 0; k < CAR_N*CAR_P; k++) SZ[carIdx[k]] = 1.8 + (k % 3)*.35;    // bridge cars pop
+for (let k = 0; k < TRN_C*TRN_P; k++) SZ[trnIdx[k]] = 1.8 + (k % 3)*.35;    // coaster train pops
+
+/* ================================================================
+   SHARED ACCENT POOL + PER-SHAPE DYNAMIC EFFECTS (owner round 2)
+   One pre-allocated set of particle indices (strided across the main
+   range) is recycled per shape: weld sparks, pipe fluid, airliner
+   contrails, ship water + funnel smoke, rocket flame + smoke cloud.
+   While unused, pool particles simply keep their silhouette targets.
+   All writers are stateless functions of t — zero allocations.
+   ================================================================ */
+const POOLN = LOWPOWER ? 500 : 1200;
+const poolIdx = new Uint32Array(POOLN);
+const isPool = new Uint8Array(USABLE);
+for (let k = 0; k < POOLN; k++){ const i = (k*USABLE/POOLN)|0; poolIdx[k] = i; isPool[i] = 1;
+  if (SZ[i] < 1.75) SZ[i] = 1.5 + R4[i*4]*.85; }                 // glyph-duty particles read solid
+function PL(k, x, y, z, r, g, b, dy){                       // canvas px -> pool particle k target
+  const i3 = poolIdx[k]*3;
+  const lx = (x - SW/2)*SC, ly = -(y - SH/2)*SC + (dy || 0);
+  if (Math.abs(lx - TL[i3]) + Math.abs(ly - TL[i3+1]) > 1.6){   // cycle wrap: teleport, never streak back
+    P[i3] = lx*fs + fox + vibX; P[i3+1] = ly*fs + foy + bobW + riseW; P[i3+2] = z*fs;
+    V[i3] = V[i3+1] = V[i3+2] = 0;
+  }
+  TL[i3] = lx; TL[i3+1] = ly; TL[i3+2] = z;
+  CT[i3] = r; CT[i3+1] = g; CT[i3+2] = b;
+}
+
+/* --- weld: torch travels the joint, rippled bead extends behind it,
+       molten pool feeds the leading edge, sparks fly off the arc. --- */
+const WELD_X0 = 46, WELD_X1 = 414, WELD_Y = 178, WELD_PERIOD = 11, WELD_T0 = 4.6;
+const WELD_TORCH_N = LOWPOWER ? 70 : 140, ARC_N = 22, WELD_BEAD_N = LOWPOWER ? 260 : 520;
+const SPARK_N = LOWPOWER ? 90 : 220;
+const weldIdx = new Uint32Array(WELD_TORCH_N + WELD_BEAD_N);
+const torchOffX = new Float32Array(WELD_TORCH_N), torchOffY = new Float32Array(WELD_TORCH_N);
+{
+  const def = SHAPES[0], mN = mainCountOf(def), nSel = weldIdx.length, step = mN / nSel;
+  for (let k = 0; k < nSel; k++){
+    let i = Math.min(mN - 1, (k*step)|0);
+    while (isPool[i] && i < mN - 1) i++;                    // sparks own the pool; stay disjoint
+    weldIdx[k] = i;
+  }
+  const A = -64*Math.PI/180, ux = Math.cos(A), uy = Math.sin(A), A2 = A + .62;
+  for (let k = 0; k < WELD_TORCH_N; k++){
+    const i4 = weldIdx[k]*4;
+    if (k < ARC_N){                                          // white-hot arc cluster at the tip
+      torchOffX[k] = 2 + (R4[i4]-.5)*7; torchOffY[k] = -2 + (R4[i4+1]-.5)*7;
+    } else if (k < WELD_TORCH_N*.72){                        // nozzle + body
+      const l = 4 + R4[i4]*62, hw = l < 20 ? 2.5 + l*.15 : 7;
+      torchOffX[k] = 2 + ux*l - uy*(R4[i4+1]-.5)*2*hw;
+      torchOffY[k] = -4 + uy*l + ux*(R4[i4+1]-.5)*2*hw;
+    } else {                                                 // bent handle
+      const l = R4[i4]*24, bx = 2 + ux*66, by = -4 + uy*66;
+      torchOffX[k] = bx + Math.cos(A2)*l - Math.sin(A2)*(R4[i4+1]-.5)*11;
+      torchOffY[k] = by + Math.sin(A2)*l + Math.cos(A2)*(R4[i4+1]-.5)*11;
+    }
+    SZ[weldIdx[k]] = k < ARC_N ? 2.2 + R4[i4+2] : 1.5 + R4[i4+2]*.6;
+  }
+  for (let k = 0; k < WELD_BEAD_N; k++){                     // bead particles render chunky (molten metal)
+    const i = weldIdx[WELD_TORCH_N + k];
+    SZ[i] = 1.7 + R4[i*4+3]*.7;
+  }
+}
+function weldTorchX(phase){
+  return WELD_X0 + 10 + ((phase % WELD_PERIOD)/WELD_PERIOD) * (WELD_X1 - WELD_X0 - 10);
+}
+function animWeld(phase, t, A, C, live){
+  const tx = weldTorchX(phase);
+  for (let k = 0; k < WELD_TORCH_N; k++){                    // rigid torch + flickering arc
+    const i = weldIdx[k], i3 = i*3, i4 = i*4;
+    A[i3] = (tx + torchOffX[k] - SW/2)*SC; A[i3+1] = -(WELD_Y - 2 + torchOffY[k] - SH/2)*SC; A[i3+2] = .3;
+    if (k < ARC_N){
+      const f = 1.5 + (live ? .8*Math.sin(t*47 + R4[i4]*40) : 0) + R4[i4+1]*.3;
+      C[i3] = f; C[i3+1] = f*.93; C[i3+2] = f*.72;
+    } else { C[i3] = 1.0; C[i3+1] = .76; C[i3+2] = .38; }    // bronze torch body (reads over the blue plates)
+  }
+  for (let k = 0; k < WELD_BEAD_N; k++){                     // bead: laid ripple behind / molten pool ahead
+    const i = weldIdx[WELD_TORCH_N + k], i3 = i*3, i4 = i*4;
+    const bx = WELD_X0 + ((k + .5)/WELD_BEAD_N)*(WELD_X1 - WELD_X0);
+    if (bx <= tx){                                           // laid: static rippled bead, cooling
+      const h = 10.5 + 3.2*Math.sin(bx*.42);
+      A[i3] = (bx - SW/2)*SC; A[i3+1] = -(WELD_Y + (R4[i4+2]*2-1)*h - SH/2)*SC; A[i3+2] = .2;
+      const hot = Math.max(0, 1 - (tx - bx)/96), rip = .85 + .45*Math.sin(bx*.42);
+      C[i3] = .62*rip + hot*1.25; C[i3+1] = 1.05*rip + hot*.35; C[i3+2] = Math.max(.12, 1.3*rip - hot*.6);
+    } else {                                                 // not laid yet: lives in the molten pool
+      const a = R4[i4]*6.283, r = Math.sqrt(R4[i4+1])*9.5;
+      A[i3] = (tx + 3 + Math.cos(a)*r - SW/2)*SC; A[i3+1] = -(WELD_Y + Math.sin(a)*r*.8 - SH/2)*SC; A[i3+2] = .32;
+      const f = 1.3 + (live ? .5*Math.sin(t*23 + R4[i4+3]*30) : .2);
+      C[i3] = f; C[i3+1] = f*.82; C[i3+2] = f*.5;
+    }
+  }
+  if (!live) return;
+  for (let k = 0; k < SPARK_N; k++){                         // sparks: little parabolas, fading as they fall
+    const i4 = poolIdx[k]*4;
+    const Tk = .5 + R4[i4]*.65;
+    const age = (t + R4[i4+1]*37) % Tk;
+    const x = tx + 3 + (R4[i4+2]-.5)*270*age;
+    const y = WELD_Y - 3 - (40 + R4[i4+3]*220)*age + 480*age*age;
+    const u = age/Tk, b = (1-u)*(1-u)*Math.min(1, u*8)*(1.15 + R4[i4+2]*.6);
+    PL(k, x, y, .45, b*1.3, b*.95, b*.4);
+  }
+}
+animWeld(WELD_T0, 0, SHAPES[0].targets, SHAPES[0].colors, false);  // bake mid-weld pose (morph target + reduced-motion)
+
+/* --- jet fan: blades as hub-relative particles, spun per frame (~2x turbine) --- */
+const JET_HX = 0, JET_HY = -(152 - SH/2)*SC, JET_OMEGA = 1.1;
+let jbN = 0, jbIdx, jbX0, jbY0;
+{
+  const def = SHAPES[8], mN = mainCountOf(def);
+  jbN = (mN*.42)|0;
+  jbIdx = new Uint32Array(jbN); jbX0 = new Float32Array(jbN); jbY0 = new Float32Array(jbN);
+  const step = mN/jbN;
+  for (let k = 0; k < jbN; k++){
+    const i = Math.min(mN-1, (k*step)|0), i4 = i*4;
+    jbIdx[k] = i;
+    const r = Math.sqrt(484 + (8464-484)*R4[i4]);            // uniform area density, r 22..92
+    const u = (r-22)/70;                                     // 0..1 along the blade (twist)
+    const a = (k%18)/18*Math.PI*2 + (-0.06 + u*.22) + R4[i4+1]*.14;
+    jbX0[k] = Math.cos(a)*r*SC; jbY0[k] = -Math.sin(a)*r*SC;
+    def.targets[i*3] = JET_HX + jbX0[k]; def.targets[i*3+1] = JET_HY + jbY0[k];
+    def.targets[i*3+2] = (R4[i4+2]-.5)*.5;
+  }
+}
+function animJet(t, A){
+  const ang = t*JET_OMEGA, ca = Math.cos(ang), sa = Math.sin(ang);
+  for (let k = 0; k < jbN; k++){
+    const i3 = jbIdx[k]*3;
+    A[i3]   = JET_HX + jbX0[k]*ca - jbY0[k]*sa;
+    A[i3+1] = JET_HY + jbX0[k]*sa + jbY0[k]*ca;
+  }
+}
+
+/* --- pipe: bright fluid stream along the centerline, through the elbow --- */
+const pipePath = resampleTrack((() => {
+  const p = [];
+  for (let k = 0; k <= 24; k++) p.push(56 + k/24*240, 118);                 // straight run
+  for (let k = 1; k <= 20; k++){ const u = k/20, a = 1-u;                   // elbow (matches the quad curve)
+    p.push(a*a*296 + 2*a*u*362 + u*u*362, a*a*118 + 2*a*u*118 + u*u*186); }
+  for (let k = 1; k <= 10; k++) p.push(362, 186 + k/10*76);                 // drop to the bottom flange
+  return p;
+})(), 140);
+const FLUID_N = LOWPOWER ? 180 : 420, FLUID_SPD = 150, SLUG_N = 7;
+function animFluid(t){
+  const {pts, len, n} = pipePath;
+  const per = FLUID_N/SLUG_N;
+  for (let k = 0; k < FLUID_N; k++){                         // white-hot comet slugs: bright head, tapering tail
+    const i4 = poolIdx[k]*4;
+    const slug = (k/per)|0;
+    const tail = R4[i4]*R4[i4];                              // 0 = head (dense), 1 = tail tip
+    const s = (((slug/SLUG_N)*len + t*FLUID_SPD - tail*60) % len + len) % len;
+    const f = s/len*(n-1), i0 = Math.min(n-2, Math.max(0, f|0)), fu = f - i0;
+    const x = pts[i0*2] + (pts[i0*2+2]-pts[i0*2])*fu, y = pts[i0*2+1] + (pts[i0*2+3]-pts[i0*2+1])*fu;
+    const dx = pts[i0*2+2]-pts[i0*2], dy = pts[i0*2+3]-pts[i0*2+1];
+    const m = Math.hypot(dx, dy) || 1, off = (R4[i4+2]-.5)*(4 + tail*7);   // stays inside the bore
+    const b = (1 + .3*Math.sin(t*7 + R4[i4+3]*6.28)) * (1.5 - tail*1.25);
+    PL(k, x - dy/m*off, y + dx/m*off, .6, 1.3*b, 1.5*b, 1.6*b);
+  }
+}
+
+/* --- airliner: contrails streaming back off both engines --- */
+const TRAIL_N = LOWPOWER ? 200 : 480, TRAIL_LEN = 260, TRAIL_SPD = .55;
+let ctrFade = 1;                                             // failure vignette cuts the contrails
+function animContrails(t){
+  for (let k = 0; k < TRAIL_N; k++){
+    const i4 = poolIdx[k]*4, e = k & 1;
+    const u = (R4[i4] + t*TRAIL_SPD*(.8 + R4[i4+1]*.4)) % 1;
+    const x = (e ? 304 : 232) + u*TRAIL_LEN;                 // nose points left -> trails stream right
+    const y = (e ? 208 : 190) + u*10 + (R4[i4+2]-.5)*(3 + u*30) + Math.sin(t*2 + R4[i4+3]*6.28 + u*9)*1.8;
+    const b = (1-u)*(.85 + R4[i4+3]*.55)*ctrFade;            // linear fade: the tail still reads
+    PL(k, x, y, .35, b*1.05, b*1.15, b*1.3);
+  }
+}
+
+/* --- ship: ocean drifting past the hull (implied headway) + funnel smoke --- */
+const WATER_N = LOWPOWER ? 210 : 520, SMOKESHIP_N = LOWPOWER ? 85 : 200, WATER_SPD = 64;
+function animShip(t, bob){
+  const cb = -bob/fs;                                        // water doesn't ride the hull bob
+  for (let k = 0; k < WATER_N; k++){
+    const i4 = poolIdx[k]*4;
+    const x = (((R4[i4]*660 - t*WATER_SPD*(.7 + R4[i4+1]*.6)) % 660) + 660) % 660 - 90;
+    const y = 252 + R4[i4+2]*22 + Math.sin(t*1.7 + R4[i4+3]*6.28 + x*.05)*2.6;
+    const b = .55 + R4[i4+3]*.55 + .3*Math.sin(t*2.3 + R4[i4]*9);
+    PL(k, x, y, .15, .2*b, .68*b, .92*b, cb);
+  }
+  for (let k = 0; k < SMOKESHIP_N; k++){                     // pale smoke: rises, drifts aft, disperses
+    const kk = WATER_N + k, i4 = poolIdx[kk]*4;
+    const Tk = 2.4 + R4[i4]*1.6;
+    const a = ((t*(.8 + R4[i4+1]*.4) + R4[i4+2]*23) % Tk)/Tk;
+    const x = 97 - a*58*(.7 + R4[i4+1]*.6) + (R4[i4+3]-.5)*(4 + a*30) + Math.sin(t*1.1 + R4[i4]*6.28)*2*a;
+    const y = 84 - a*66;
+    const b = (1-a)*(.42 + R4[i4+2]*.34)*Math.min(1, a*8);
+    PL(kk, x, y, .3, .72*b, .75*b, .8*b);
+  }
+}
+
+/* --- rocket: flickering flame jet + ground smoke cloud mushrooming out --- */
+const FLAME_N = LOWPOWER ? 150 : 360, RSMOKE_N = LOWPOWER ? 260 : 640, ROCKET_PERIOD = 8;
+function animRocket(t, rise){
+  const gapPx = rise/(fs*SC);                                // flame stretches to the pad as it lifts
+  for (let k = 0; k < FLAME_N; k++){
+    const i4 = poolIdx[k]*4;
+    const Tk = .16 + R4[i4]*.22;
+    const a = ((t + R4[i4+1]*9) % Tk)/Tk;
+    const flick = .72 + .45*Math.sin(t*41 + R4[i4+2]*40);
+    const len = (54 + R4[i4+2]*26)*flick + gapPx*.7;
+    const x = 240 + (R4[i4+3]-.5)*(7 + a*24);
+    const y = 252 + a*len;
+    const b = (1-a)*(1.05 + R4[i4]*.7)*flick;
+    PL(k, x, y, .5, b*1.35, b*(1 - a*.3), b*(.55 - a*.3));
+  }
+  const cb = -rise/fs;                                       // smoke stays at the pad
+  for (let k = 0; k < RSMOKE_N; k++){                        // billowing mushroom cloud
+    const kk = FLAME_N + k, i4 = poolIdx[kk]*4;
+    const Tk = 1.5 + R4[i4]*1.3;
+    const a = ((t + R4[i4+1]*31) % Tk)/Tk;
+    const dir = R4[i4+2] > .5 ? 1 : -1;
+    const x = 240 + dir*(12 + a*(140 + R4[i4+3]*130));
+    const y = 290 - Math.sin(a*Math.PI)*(16 + R4[i4]*34) + a*12;
+    const b = (1-a)*(.58 + R4[i4+3]*.36)*Math.min(1, a*7);
+    PL(kk, x, y, .35, .78*b, .72*b, .68*b, cb);
+  }
+}
+
+/* ================================================================
+   INDUSTRY FAILURE STORIES (owner round 4) — scroll-SCRUBBED three-
+   beat vignettes. No inspection gear: ZOOM to one spot, a red FLAW
+   glows and grows there (pool-particle crack + pulsing glow ring),
+   then the structure FAILS with precomputed per-particle break
+   ballistics. The scrub is fully reversible — scrolling back up
+   rebuilds the structure. Payoff caption: the method that catches it.
+   ================================================================ */
+const ease = u => u <= 0 ? 0 : u >= 1 ? 1 : u*u*(3-2*u);
+const bu = (p, a, b) => ease((p - a) / (b - a));            // beat-local progress
+const gss = (x, c, s) => Math.exp(-((x-c)*(x-c))/(2*s*s));
+
+/* shared beat windows (scrub progress p) — same rhythm in all five */
+const ZOOM_A = .14, ZOOM_B = .34;                           // camera travels in
+const GROW_A = .36, GROW_B = .54;                           // crack glows + grows
+const FAIL_A = .58, FAIL_B = .84;                           // structure lets go
+const PAYOFF = .86;                                         // quiet method caption
+
+/* crack + glow-ring overlay budgets (shared accent pool) */
+const CRK_N = LOWPOWER ? 60 : 140, RING_N = LOWPOWER ? 40 : 90;
+function crackPts(verts){                                   // jagged flaw polyline -> CRK_N points
+  const out = new Float32Array(CRK_N*2);
+  samplePolyline(verts, CRK_N, out, 0);
+  return out;
+}
+
+/* ---- pool parking (unused slots rejoin the silhouette) ---- */
+function park(k0, k1){                                       // unused pool slots rejoin the silhouette
+  const def = curDef; if (!def) return;
+  for (let k = k0; k < k1; k++){
+    const i3 = poolIdx[k]*3;
+    TL[i3] = def.targets[i3]; TL[i3+1] = def.targets[i3+1]; TL[i3+2] = def.targets[i3+2];
+    CT[i3] = def.colors[i3]; CT[i3+1] = def.colors[i3+1]; CT[i3+2] = def.colors[i3+2];
+  }
+}
+const _v3v = new THREE.Vector3();
+function vigScreen(cx, cy){                                  // canvas px -> screen px (for DOM pings)
+  _v3v.set((cx - SW/2)*SC*fs + fox, -(cy - SH/2)*SC*fs + foy, .4);
+  _v3v.project(camera);
+  return {x: (_v3v.x*.5+.5)*W, y: (1-(_v3v.y*.5+.5))*H};
+}
+
+/* ---- vignette config: shape, flaw spot + crack polyline, beats
+   (captions), transform keys [p, zoom (xbase), focusX, focusY] ---- */
+const VIGS = [
+{ shape:4, key:.55, flaw:{x:270, y:110},                    // BRIDGE — gusset weld toe, panel point 3
+  crack: crackPts([252,106, 259,113, 265,105, 271,113, 277,106, 284,113, 291,107]),
+  beats:[
+    {p:0,      s:'Morning rush. Forty-year-old steel. Every weld up there is somebody’s responsibility.'},
+    {p:ZOOM_A, s:'Closing in — the gusset weld at panel point three.'},
+    {p:GROW_A, a:'FATIGUE CRACK · GUSSET WELD TOE', s:'There it is. And every truck that crosses grows it a little more.'},
+    {p:FAIL_A, a:'GUSSET SEVERED', s:'Uncaught, there’s only one ending — the gusset lets go, and the span follows.'},
+    {p:PAYOFF, m:'UT · MT', l:'UT', s:'UT finds this crack before it ever grows.'}],
+  keys:[[0,1,240,168],[ZOOM_A,1,240,168],[ZOOM_B,5.4,270,112],[FAIL_A,5.4,270,112],[.72,1.12,240,176],[1,1.12,240,176]] },
+{ shape:2, key:.55, flaw:{x:251, y:110},                    // TURBINE — blade root (parked blade 0)
+  crack: crackPts([237,99, 245,105, 242,111, 252,112, 250,118, 259,117, 257,124, 265,121]),
+  beats:[
+    {p:0,      s:'A hundred meters up, the blades carry storms for a living.'},
+    {p:ZOOM_A, s:'Closing in — the root of blade one, where every load concentrates.'},
+    {p:GROW_A, a:'FATIGUE CRACK · BLADE ROOT', s:'A crack at the root, working deeper with every revolution.'},
+    {p:FAIL_A, a:'BLADE LIBERATED', s:'It lets go mid-swing — the blade sails clear, the tower shudders.'},
+    {p:PAYOFF, m:'UT · VT', l:'UT', s:'UT finds this crack before it ever grows.'}],
+  keys:[[0,1,240,155],[ZOOM_A,1,240,155],[ZOOM_B,5.0,251,110],[FAIL_A,5.0,251,110],[.72,1.02,260,150],[1,1.02,260,150]] },
+{ shape:3, key:.55, flaw:{x:336, y:153},                    // AIRLINER — aft fuselage rivet line
+  crack: crackPts([333,131, 338,140, 333,148, 339,155, 334,163, 340,170, 336,176]),
+  beats:[
+    {p:0,      s:'Every flight pressurizes the skin. Every rivet takes the strain.'},
+    {p:ZOOM_A, s:'Closing in — the aft lap joint, one rivet line out of thousands.'},
+    {p:GROW_A, a:'FATIGUE CRACK · RIVET LINE', s:'A crack running rivet to rivet, opening a little on every cycle.'},
+    {p:FAIL_A, a:'STRUCTURAL SEPARATION', s:'At altitude, the rivet line unzips — and the tail section tears away.'},
+    {p:PAYOFF, m:'ET', l:'ET', s:'ET finds this crack before it ever grows.'}],
+  keys:[[0,1,240,160],[ZOOM_A,1,240,160],[ZOOM_B,5.0,336,153],[FAIL_A,5.0,336,153],[.72,1.02,265,160],[1,1.02,265,160]] },
+{ shape:1, key:.55, flaw:{x:262, y:118},                    // PIPELINE — girth weld
+  crack: crackPts([259,95, 264,104, 258,112, 265,120, 259,129, 266,137, 261,142]),
+  beats:[
+    {p:0,      s:'Product never stops moving. One girth weld holds it all in.'},
+    {p:ZOOM_A, s:'Closing in — the girth weld, under pressure day and night.'},
+    {p:GROW_A, a:'CRACK · GIRTH WELD', s:'A crack in the weld root — and the pressure has found it.'},
+    {p:FAIL_A, a:'RUPTURE', s:'The wall lets go — and everything inside wants out at once.'},
+    {p:PAYOFF, m:'RT', l:'RT', s:'RT finds this crack before it ever grows.'}],
+  keys:[[0,1,240,165],[ZOOM_A,1,240,165],[ZOOM_B,5.4,262,118],[FAIL_A,5.4,262,118],[.72,1.18,250,158],[1,1.18,250,158]] },
+{ shape:6, key:.55, flaw:{x:252, y:86},                     // COASTER — rail weld, top of the loop
+  crack: crackPts([234,84, 242,89, 249,83, 256,89, 263,84, 270,89, 277,85]),
+  beats:[
+    {p:0,      s:'Three g’s at the bottom of the loop, every ride, all summer long.'},
+    {p:ZOOM_A, s:'Closing in — the rail weld at the top of the loop.'},
+    {p:GROW_A, a:'FATIGUE CRACK · LOOP RAIL WELD', s:'A crack in the rail weld, flexing open with every train.'},
+    {p:FAIL_A, a:'RAIL FAILURE', s:'The loop gives way — track falls. The train holds on the lift hill.'},
+    {p:PAYOFF, m:'PT · MT', l:'PT', s:'PT finds this crack before it ever grows.'}],
+  keys:[[0,1,240,160],[ZOOM_A,1,240,160],[ZOOM_B,5.0,252,92],[FAIL_A,5.0,252,92],[.72,1.05,245,168],[1,1.05,245,168]] },
+];
+
+/* ================================================================
+   FAILURE PLANS — per-particle break ballistics, precomputed ONCE.
+   Pieces are rigid chunks: each particle stores its piece pivot,
+   offset, launch velocity, spin, cascade delay, gravity + ground.
+   failWrite() is a pure function of scrub q -> fully reversible.
+   ================================================================ */
+const TURB_POSE = -0.66;                                     // parked rotor: blade 0 up-right
+function makeFail(si, exclude, classify, pieceParam){
+  const def = SHAPES[si], sel = [];
+  for (let i = 0; i < COUNT; i++){
+    if (i < USABLE && isPool[i]) continue;                  // pool slots belong to the overlays
+    if (exclude && exclude.has(i)) continue;                // cars / train handled separately
+    const x = def.targets[i*3]/SC + SW/2, y = SH/2 - def.targets[i*3+1]/SC;
+    const pk = classify(x, y, i);
+    if (pk >= 0) sel.push(i, x, y, pk);
+  }
+  const n = sel.length/4;
+  const F = {n, idx:new Uint32Array(n), dxp:new Float32Array(n), dyp:new Float32Array(n),
+    pivx:new Float32Array(n), pivy:new Float32Array(n), vx:new Float32Array(n), vy:new Float32Array(n),
+    sp:new Float32Array(n), dly:new Float32Array(n), g:new Float32Array(n), grnd:new Float32Array(n)};
+  const cent = new Map();
+  for (let k = 0; k < n; k++){
+    const pk = sel[k*4+3], c = cent.get(pk) || [0,0,0];
+    c[0] += sel[k*4+1]; c[1] += sel[k*4+2]; c[2]++; cent.set(pk, c);
+  }
+  const prm = new Map();
+  cent.forEach((c, pk) => prm.set(pk, pieceParam(pk, c[0]/c[2], c[1]/c[2])));
+  for (let k = 0; k < n; k++){
+    const i = sel[k*4], x = sel[k*4+1], y = sel[k*4+2], pk = sel[k*4+3];
+    const c = cent.get(pk), pp = prm.get(pk);
+    F.idx[k] = i; F.dxp[k] = x - c[0]/c[2]; F.dyp[k] = y - c[1]/c[2];
+    F.pivx[k] = c[0]/c[2]; F.pivy[k] = c[1]/c[2];
+    F.vx[k] = pp[0]; F.vy[k] = pp[1]; F.sp[k] = pp[2]; F.dly[k] = pp[3]; F.g[k] = pp[4]; F.grnd[k] = pp[5];
+  }
+  return F;
+}
+function failWrite(F, q, TMAX, sagA, sagC, sagS, snapAt){    // q-driven, scrub-reversible
+  const sQ = sagA ? ease(Math.min(1, q/(snapAt || .3))) : 0;
+  const fQ = snapAt ? Math.max(0, (q - snapAt)/(1 - snapAt)) : q;
+  for (let k = 0; k < F.n; k++){
+    const T = Math.max(0, fQ - F.dly[k])/(1 - F.dly[k]) * TMAX;
+    const a = F.sp[k]*T, ca = Math.cos(a), sa = Math.sin(a);
+    const x = F.pivx[k] + F.vx[k]*T + F.dxp[k]*ca - F.dyp[k]*sa;
+    let y = F.pivy[k] + (sagA ? sagA*gss(F.pivx[k], sagC, sagS)*sQ : 0)
+          + F.vy[k]*T + .5*F.g[k]*T*T + F.dxp[k]*sa + F.dyp[k]*ca;
+    if (y > F.grnd[k]) y = F.grnd[k];
+    const i3 = F.idx[k]*3;
+    TL[i3] = (x - SW/2)*SC; TL[i3+1] = -(y - SH/2)*SC;
+  }
+}
+const carSet = new Set(carIdx), trnSet = new Set(trnIdx);
+const F_BRIDGE = makeFail(4, carSet,
+  (x, y) => (x > 150 && x < 332 && y < 272) ? Math.min(5, ((x-150)/31)|0) + (y < 165 ? 0 : 6) : -1,
+  (pk, cx, cy) => [ (cx-270)*.45 + (Math.random()-.5)*36, -30 + Math.random()*44,
+    (Math.random()-.5)*4.4, Math.min(.3, Math.abs(cx-270)/620), 540, 1e9 ]);
+const F_PLANE = makeFail(3, null,
+  (x, y) => x > 334 ? 0 : -1,
+  () => [46, 16, .4, 0, 22, 1e9]);
+const F_PIPE = makeFail(1, null,
+  (x, y, i) => (x > 234 && x < 290 && y > 91 && y < 145) ? i : -1,   // per-particle shrapnel
+  (pk, cx, cy) => { const r = Math.random(), top = cy < 118;
+    return [ (cx-262)*2.0 + (r-.5)*50, top ? -(150 + r*130) : (120 + r*90),
+      (Math.random()-.5)*6, Math.min(.45, Math.abs(cx-262)/120), 190, 1e9 ]; });
+const F_COASTER = makeFail(6, trnSet,
+  (x, y) => { const d = Math.hypot(x-252, y-158);
+    return (d > 54 && d < 92 && y < 210) ? (((Math.atan2(y-158, x-252) + Math.PI)/(Math.PI/4))|0) : -1; },
+  (pk, cx, cy) => { const rx = cx-252, ry = cy-158, m = Math.hypot(rx, ry) || 1;
+    const r = Math.random(), r2 = Math.random();
+    return [ rx/m*(40 + r*60) + (r2-.5)*44, ry/m*(35 + r2*50) - 20 - r*30,
+      (r-.5)*5.5, r*.3, 420, 272 + r*8 ]; });
+const F_TURB = (() => {                                      // blade 0, parked pose, rigid piece
+  const ca = Math.cos(TURB_POSE), sa = Math.sin(TURB_POSE);
+  const ks = [];
+  for (let k = 0; k < tbN; k++) if (k % 3 === 0) ks.push(k);
+  const n = ks.length;
+  const F = {n, idx:new Uint32Array(n), dxp:new Float32Array(n), dyp:new Float32Array(n),
+    pivx:new Float32Array(n), pivy:new Float32Array(n), vx:new Float32Array(n), vy:new Float32Array(n),
+    sp:new Float32Array(n), dly:new Float32Array(n), g:new Float32Array(n), grnd:new Float32Array(n)};
+  const dirx = Math.cos(.91), diry = -Math.sin(.91);        // parked blade dir (canvas, up-right)
+  const cx = 240 + dirx*52, cy = 124 + diry*52;             // piece pivot ~ blade centroid
+  for (let q = 0; q < n; q++){
+    const k = ks[q];
+    const lx = HUB_LX + tbX0[k]*ca - tbY0[k]*sa, ly = HUB_LY + tbX0[k]*sa + tbY0[k]*ca;
+    const px = lx/SC + SW/2, py = SH/2 - ly/SC;
+    F.idx[q] = tbIdx[k];
+    F.dxp[q] = px - cx; F.dyp[q] = py - cy; F.pivx[q] = cx; F.pivy[q] = cy;
+    F.vx[q] = 165; F.vy[q] = -95; F.sp[q] = 2.6; F.dly[q] = 0; F.g[q] = 210; F.grnd[q] = 1e9;
+  }
+  return F;
+})();
+
+const vigSecs = [...document.querySelectorAll('.vig')];
+const vigEls = vigSecs.map(sec => ({sec,
+  cap: sec.querySelector('.vig-cap'), head: sec.querySelector('.vig-head'),
+  m: sec.querySelector('[data-method]'), a: sec.querySelector('[data-alert]'),
+  s: sec.querySelector('[data-story]'), l: sec.querySelector('[data-learn]'),
+  bar: sec.querySelector('[data-bar]'), timer: 0, _bw: -1}));
+
+let vigIdx = 0, vigBeat = -1, vigP = 0;
+let vigGrow = 0, vigQ = 0, vigLastQ = 0;                     // crack growth / failure progress (scrubbed)
+let vsReveal = false, vsThud = false;                        // one-shot gates: flaw ping, failure thud
+let turbAng = 0;                                             // turbine blade angle (vig parks it)
+const vigDbg = {vi:-1, beat:-1, p:0, grow:0, failQ:0};
+
+function vigTransform(vi, p){
+  const base = Math.min(1.0, (W > 920 ? visW*.6 : visW*.92)/10.6);
+  const ks = VIGS[vi].keys;
+  let s = ks[0][1], cx = ks[0][2], cy = ks[0][3];
+  for (let i = 0; i < ks.length-1; i++){
+    const a = ks[i], b = ks[i+1];
+    if (p >= a[0]){
+      const u = ease((p - a[0]) / Math.max(1e-4, b[0] - a[0]));
+      s = a[1] + (b[1]-a[1])*u; cx = a[2] + (b[2]-a[2])*u; cy = a[3] + (b[3]-a[3])*u;
+    }
+  }
+  if (W <= 920) s = 1 + (s - 1)*.55;                         // mobile: same beats, smaller zoom
+  const fsv = base*s;
+  return [fsv, -(cx - SW/2)*SC*fsv, (cy - SH/2)*SC*fsv + .4];
+}
+function setVigCaption(vi, bi){
+  const v = vigEls[vi], cfg = VIGS[vi].beats[bi];
+  clearTimeout(v.timer);
+  v.cap.classList.add('swap');
+  v.timer = setTimeout(() => {
+    v.m.hidden = !cfg.m; v.m.textContent = cfg.m || '';
+    v.a.textContent = cfg.a || ''; v.a.classList.remove('on');
+    v.s.textContent = cfg.s || '';
+    v.l.hidden = !cfg.l; if (cfg.l) v.l.textContent = 'Learn ' + cfg.l + ' →';
+    v.cap.classList.remove('swap');
+  }, 160);
+}
+function muteVigDefects(si){                                 // hero-game cracks stay quiet in vignettes
+  const def = SHAPES[si];
+  for (let g = 0; g < 3; g++) if (DEFECT_SHAPES[g] === si && def.defect){
+    const base = (COUNT - DEF_TOTAL) + g*DEF_N;
+    for (let k2 = 0; k2 < DEF_N; k2++){
+      const j = (base + k2)*3;
+      CT[j] = .25; CT[j+1] = .55; CT[j+2] = .9;
+    }
+  }
+}
+function setVigAlert(vi, on){
+  const a = vigEls[vi].a;
+  if (a.classList.contains('on') !== !!on) a.classList.toggle('on', !!on);
+}
+
+/* ---- failure-story writers (pool overlays + ballistic scrub) ---- */
+function stampCrack(vi, B, t){                               // crack glyph + pulsing glow ring
+  const Vg = VIGS[vi];
+  park(B, B + CRK_N + RING_N);
+  if (vigGrow <= 0) return;
+  const fade = Math.max(.15, 1 - vigQ*.85);                  // hands off to the failure, fades to a mark
+  const vis = Math.max(2, (vigGrow*CRK_N)|0);
+  for (let q = 0; q < vis; q++){
+    const i4 = poolIdx[B+q]*4;
+    const tip = q >= vis-3 && vigGrow < 1 ? 1.8 : 1;         // growing tip burns brightest
+    const b = fade*(1.15 + .65*Math.sin(t*6 + q*.21))*tip;
+    PL(B+q, Vg.crack[q*2] + (R4[i4]-.5)*1.6, Vg.crack[q*2+1] + (R4[i4+1]-.5)*2.4, .6,
+       b*1.8, b*.3, b*.32);
+  }
+  const rb = Math.max(0, 1 - vigQ*2)*Math.min(1, vigGrow*2.5);   // ring hands off to the failure fast
+  const R0 = 26*(1 + .16*Math.sin(t*3.4));
+  for (let q = 0; q < RING_N; q++){                          // pulsing glow ring around the flaw
+    const i4 = poolIdx[B+CRK_N+q]*4;
+    const a = q/RING_N*6.2832 + t*.5;
+    const b = rb*(.55 + .4*Math.sin(t*4.2 + q*.6))*(.8 + R4[i4]*.4);
+    PL(B+CRK_N+q, Vg.flaw.x + Math.cos(a)*R0, Vg.flaw.y + Math.sin(a)*R0*.92, .55,
+       b*1.5, b*.34, b*.4);
+  }
+}
+const CAR_PARK = [150, 128, 106, 84];                        // cars queue short of the gap
+function parkCars(t, m){
+  if (m <= 0) return;
+  for (let c = 0; c < CAR_N; c++){
+    const u = (t*carSpd[c] + carPh[c]) % 1;
+    const lx = CAR_X0 + u*CAR_SPAN;
+    const x = lx + (Math.min(lx, CAR_PARK[c]) - lx)*m;
+    for (let p = 0; p < CAR_P; p++){
+      const i3 = carIdx[c*CAR_P + p]*3;
+      TL[i3]   = (x + carShape[p*2] - SW/2)*SC;
+      TL[i3+1] = -(CAR_Y + carShape[p*2+1] - SH/2)*SC;
+    }
+  }
+}
+const COASTER_PARK_S = coasterTrack.len*.10;                 // mid-climb on the lift hill
+function sprayFluid(q, t){                                   // burst: slugs erupt from the breach
+  for (let k = 0; k < FLUID_N; k++){
+    const i4 = poolIdx[k]*4;
+    const Tk = .5 + R4[i4]*.7;
+    const a0 = -Math.PI/2 + (R4[i4+1]-.5)*1.9;               // upward fan out of the split
+    const cyc = ((t*(.9 + R4[i4+2]*.6) + R4[i4+3]*7) % Tk)/Tk;
+    const spd = (90 + R4[i4]*220)*q;
+    const x = 262 + Math.cos(a0)*spd*cyc*Tk + (R4[i4+2]-.5)*8;
+    const y = 112 + Math.sin(a0)*spd*cyc*Tk + 160*cyc*cyc*Tk*Tk*q;
+    const b = q*(1-cyc)*(1.1 + R4[i4+1]*.6);
+    PL(k, x, y, .5, .5*b, 1.05*b, 1.25*b);
+  }
+}
+
+/* the per-frame failure pass — runs AFTER the live shape effects so
+   break displacement + overlays win over the idle animations */
+function vigApply(vi, p, t, dt){
+  const q = vigQ;
+  if (q > 0 || vigLastQ > 0){                                // ballistic break (+ rebuild on rewind)
+    if (vi === 0)      failWrite(F_BRIDGE, q, 1.6, 34, 270, 85, .18);
+    else if (vi === 1){ if (q > 0) failWrite(F_TURB, q, 1.9, 0, 0, 0, 0); }
+    else if (vi === 2) failWrite(F_PLANE, q, 1.8, 0, 0, 0, 0);
+    else if (vi === 3) failWrite(F_PIPE, q, 1.1, 0, 0, 0, 0);
+    else               failWrite(F_COASTER, q, 1.3, 0, 0, 0, 0);
+  }
+  vigLastQ = q;
+  if (vi === 0) parkCars(t, Math.min(1, q*6));               // traffic stops short of the gap
+  else if (vi === 1) vibX = Math.sin(t*57)*.16*gss(q, .1, .07);   // tower shudder at the release
+  else if (vi === 2) bobW = 0;                               // hold the frame steady for the tear
+  else if (vi === 3){ if (q > .02) sprayFluid(q, t); vibX = Math.sin(t*61)*.1*gss(q, .08, .05); }
+  else if (vi === 4){ trainAt(COASTER_PARK_S, TL); vibX = Math.sin(t*53)*.1*gss(q, .1, .06); }
+  stampCrack(vi, vi === 2 ? TRAIL_N : vi === 3 ? FLUID_N : 0, t);
+  if (vigGrow > .5 && !vsReveal){ vsReveal = true; SND.blip();
+    if (!reduced){ const sp = vigScreen(VIGS[vi].flaw.x, VIGS[vi].flaw.y); spawnPing(sp.x, sp.y, false); } }
+  else if (vigGrow < .1) vsReveal = false;
+  if (q > .04 && !vsThud){ vsThud = true; SND.thud(); }      // deep failure thud
+  else if (q < .015) vsThud = false;
+  setVigAlert(vi, (vigBeat === 2 && vigGrow > .2) || vigBeat === 3);
+  vigDbg.grow = +vigGrow.toFixed(3); vigDbg.failQ = +q.toFixed(3);
+}
+function vigFrame(vi, p, t, dt){
+  vigP = p; vigDbg.vi = vi; vigDbg.p = +p.toFixed(4);
+  const beats = VIGS[vi].beats;
+  let bi = 0;
+  for (let i = 0; i < beats.length; i++) if (p >= beats[i].p) bi = i;
+  if (bi !== vigBeat){ vigBeat = bi; setVigCaption(vi, bi); }
+  vigDbg.beat = bi;
+  vigGrow = ease(bu(p, GROW_A, GROW_B));                     // crack growth (scrubbed)
+  vigQ = ease(bu(p, FAIL_A, FAIL_B));                        // failure progress (scrubbed)
+  if (vi === 1){                                             // rotor eases to a stop for the reveal
+    const fz = ease(bu(p, .10, .26));
+    turbAng += TURB_OMEGA * dt * (1 - fz);
+    if (fz > 0){
+      const dlt = ((TURB_POSE - turbAng) % 6.2832 + 9.42478) % 6.2832 - 3.14159;
+      turbAng += dlt * Math.min(1, (dt || .016)*4) * fz;
+    }
+  }
+  const tr = vigTransform(vi, p);
+  fsT = tr[0]; foxT = tr[1]; foyT = tr[2];
+  const bw = (p*100)|0;
+  if (vigEls[vi]._bw !== bw){ vigEls[vi]._bw = bw; vigEls[vi].bar.style.width = bw + '%'; }
+}
+
+const posAttr = new THREE.BufferAttribute(P, 3);  posAttr.setUsage(THREE.DynamicDrawUsage);
+const colAttr = new THREE.BufferAttribute(CL, 3); colAttr.setUsage(THREE.DynamicDrawUsage);
+geo.setAttribute('position', posAttr);
+geo.setAttribute('aColor', colAttr);
+geo.setAttribute('aSize', new THREE.BufferAttribute(SZ, 1));
+geo.setAttribute('aRand', new THREE.BufferAttribute(R4, 4));
+geo.boundingSphere = new THREE.Sphere(new THREE.Vector3(), 80);
+
+const SIZE0 = LOWPOWER ? 2.6 : 2.15;
+const uni = {
+  uTime:  {value: 0},
+  uPR:    {value: Math.min(devicePixelRatio, 1.5)},
+  uSize:  {value: SIZE0},
+  uStreak:{value: 0},
+  uAlpha: {value: 1},
+  uRes:   {value: new THREE.Vector2(W, H)},
+  uRectA: {value: new THREE.Vector4(0,0,-1,-1)},
+  uRectB: {value: new THREE.Vector4(0,0,-1,-1)},
+};
+const mat = new THREE.ShaderMaterial({
+  uniforms: uni, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+  vertexShader: /* glsl */`
+    attribute vec3 aColor; attribute float aSize; attribute vec4 aRand;
+    uniform float uTime, uPR, uSize, uStreak, uAlpha;
+    uniform vec2 uRes; uniform vec4 uRectA, uRectB;
+    varying vec3 vCol; varying float vA;
+    float rdim(vec2 sp, vec4 r){
+      if (r.z <= r.x) return 1.0;
+      float dx = max(r.x - sp.x, sp.x - r.z);
+      float dy = max(r.y - sp.y, sp.y - r.w);
+      return mix(0.10, 1.0, smoothstep(-12.0, 72.0, max(dx, dy)));
+    }
+    void main(){
+      vec4 mv = modelViewMatrix * vec4(position, 1.0);
+      gl_Position = projectionMatrix * mv;
+      vec2 ndc = gl_Position.xy / gl_Position.w;
+      vec2 sp = vec2((ndc.x*0.5+0.5)*uRes.x, (1.0-(ndc.y*0.5+0.5))*uRes.y);
+      float dim = rdim(sp, uRectA) * rdim(sp, uRectB);
+      gl_PointSize = aSize * uSize * uPR * (16.0 / -mv.z) * (1.0 + uStreak*(0.5+aRand.y));
+      float tw = 0.62 + 0.38 * sin(uTime*2.2 + aRand.x*40.0);
+      vA = dim * tw * uAlpha * (1.0 - uStreak*0.2);
+      vCol = aColor + uStreak * 0.25;
+    }`,
+  fragmentShader: /* glsl */`
+    varying vec3 vCol; varying float vA;
+    void main(){
+      vec2 uv = gl_PointCoord - 0.5;
+      float d = length(uv);
+      float a = smoothstep(0.5, 0.07, d);
+      if (a < 0.012) discard;
+      vec3 col = vCol + (1.0 - smoothstep(0.0, 0.16, d)) * 0.6;
+      gl_FragColor = vec4(col, a * vA * 0.85);
+    }`,
+});
+const points = new THREE.Points(geo, mat);
+points.frustumCulled = false;
+scene.add(points);
+
+/* ambient dust */
+const dustGeo = new THREE.BufferGeometry();
+const dustPos = new Float32Array(420*3);
+for (let i = 0; i < 420; i++){
+  dustPos[i*3] = (Math.random()-.5)*36; dustPos[i*3+1] = (Math.random()-.5)*18; dustPos[i*3+2] = (Math.random()-.5)*8-2;
+}
+dustGeo.setAttribute('position', new THREE.BufferAttribute(dustPos, 3));
+const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({
+  color: 0x1E66F5, size: .07, transparent: true, opacity: .5, blending: THREE.AdditiveBlending, depthWrite: false,
+}));
+scene.add(dust);
+
+/* analytic color palettes */
+const streamCols = new Float32Array(COUNT*3), ringCols = new Float32Array(COUNT*3), statCols = new Float32Array(COUNT*3);
+for (let i = 0; i < COUNT; i++){
+  tmpC.copy(colA).lerp(colB, R4[i*4]).addScalar(R4[i*4+1]*.3);
+  streamCols.set([tmpC.r, tmpC.g, tmpC.b], i*3);
+  tmpC.copy(colA).lerp(colB, R4[i*4+2]);
+  ringCols.set([tmpC.r, tmpC.g, tmpC.b], i*3);
+  tmpC.copy(colB).lerp(colA, R4[i*4+3]*.8);
+  statCols.set([tmpC.r, tmpC.g, tmpC.b], i*3);
+}
+const statOff = new Float32Array(COUNT*2);                  // gaussian-ish cluster offsets
+for (let i = 0; i < COUNT; i++){
+  const a = Math.random()*Math.PI*2, r = (Math.random()+Math.random()+Math.random())/3 * 1.5;
+  statOff[i*2] = Math.cos(a)*r*1.5; statOff[i*2+1] = Math.sin(a)*r*.8;
+}
+
+/* ================================================================
+   SOUND — synthesized, whisper-quiet, gesture-gated (autoplay safe).
+   Filtered-noise swooshes on morphs/ignite, 2-note chime on defect
+   found, soft pop on the finale. Master gain hard-capped at 0.055.
+   Disabled entirely under prefers-reduced-motion.
+   ================================================================ */
+const SND = (() => {
+  const sndBtn = document.getElementById('sndToggle');
+  if (reduced){
+    if (sndBtn) sndBtn.style.display = 'none';
+    return {init(){}, swoosh(){}, chime(){}, pop(){}, toggle(){}, crackle(){}, rumble(){},
+      blip(){}, thud(){},
+      get created(){ return false; }, get enabled(){ return false; }, get masterGain(){ return 0; }};
+  }
+  let ctx = null, master = null, noiseBuf = null, lastSwoosh = -9;
+  let enabled = localStorage.getItem('forgeSound') !== 'off';
+  const MASTER = .055;                                       // ≤ .06, per the brief
+  function paintBtn(){
+    if (!sndBtn) return;
+    sndBtn.innerHTML = enabled ? '&#128266;' : '&#128263;';
+    sndBtn.classList.toggle('off', !enabled);
+  }
+  paintBtn();
+  function init(){
+    if (ctx) return;
+    try { ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e){ return; }
+    master = ctx.createGain();
+    master.gain.value = enabled ? MASTER : 0;
+    master.connect(ctx.destination);
+    const len = (ctx.sampleRate * 1.2) | 0;
+    noiseBuf = ctx.createBuffer(1, len, ctx.sampleRate);
+    const d = noiseBuf.getChannelData(0);
+    for (let i = 0; i < len; i++) d[i] = Math.random()*2 - 1;
+    if (ctx.state === 'suspended') ctx.resume();
+  }
+  const ready = () => ctx && enabled && !document.hidden;
+  function swoosh(strong){
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    if (now - lastSwoosh < .25) return;                      // never machine-gun
+    lastSwoosh = now;
+    const src = ctx.createBufferSource(); src.buffer = noiseBuf;
+    src.playbackRate.value = .75 + Math.random()*.5;
+    const bp = ctx.createBiquadFilter(); bp.type = 'bandpass';
+    const f0 = 200 + Math.random()*150;
+    bp.frequency.setValueAtTime(f0, now);
+    bp.frequency.exponentialRampToValueAtTime((strong ? 1500 : 900) + Math.random()*350, now + .26);
+    bp.frequency.exponentialRampToValueAtTime(f0*1.5, now + .62);
+    bp.Q.value = 1.1 + Math.random()*.6;
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0, now);
+    g.gain.linearRampToValueAtTime(strong ? .8 : .5, now + .09);
+    g.gain.exponentialRampToValueAtTime(.001, now + .55 + Math.random()*.2);
+    src.connect(bp); bp.connect(g); g.connect(master);
+    src.start(now); src.stop(now + .9);
+  }
+  function chime(){
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    [784, 1175].forEach((f, i) => {                          // G5 -> D6, soft fifth
+      const o = ctx.createOscillator(); o.type = 'sine';
+      o.frequency.value = f * (1 + (Math.random()-.5)*.012);
+      const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 2600;
+      const g = ctx.createGain(); const t0 = now + i*.13;
+      g.gain.setValueAtTime(0, t0);
+      g.gain.linearRampToValueAtTime(.45, t0 + .02);
+      g.gain.exponentialRampToValueAtTime(.001, t0 + .7);
+      o.connect(lp); lp.connect(g); g.connect(master);
+      o.start(t0); o.stop(t0 + .8);
+    });
+  }
+  function pop(){
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    const src = ctx.createBufferSource(); src.buffer = noiseBuf;
+    const lp = ctx.createBiquadFilter(); lp.type = 'lowpass';
+    lp.frequency.setValueAtTime(900 + Math.random()*250, now);
+    lp.frequency.exponentialRampToValueAtTime(140, now + .32);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(.85, now);
+    g.gain.exponentialRampToValueAtTime(.001, now + .4);
+    src.connect(lp); lp.connect(g); g.connect(master);
+    src.start(now); src.stop(now + .45);
+    const o = ctx.createOscillator(); o.type = 'sine';       // low thump under the noise
+    o.frequency.setValueAtTime(150 * (1 + (Math.random()-.5)*.1), now);
+    o.frequency.exponentialRampToValueAtTime(52, now + .28);
+    const og = ctx.createGain();
+    og.gain.setValueAtTime(.6, now);
+    og.gain.exponentialRampToValueAtTime(.001, now + .32);
+    o.connect(og); og.connect(master);
+    o.start(now); o.stop(now + .35);
+  }
+  function crackle(){                                        // weld arc: tiny randomized spark tick
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    const src = ctx.createBufferSource(); src.buffer = noiseBuf;
+    src.playbackRate.value = 1.5 + Math.random()*1.2;
+    const hp = ctx.createBiquadFilter(); hp.type = 'highpass';
+    hp.frequency.value = 2400 + Math.random()*1800;
+    const g = ctx.createGain();
+    const dur = .025 + Math.random()*.05;
+    g.gain.setValueAtTime(.0001, now);
+    g.gain.exponentialRampToValueAtTime(.09 + Math.random()*.07, now + .006);
+    g.gain.exponentialRampToValueAtTime(.0001, now + dur);
+    src.connect(hp); hp.connect(g); g.connect(master);
+    src.start(now); src.stop(now + dur + .02);
+  }
+  function rumble(){                                         // rocket: soft overlapping low-pass puffs
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    const src = ctx.createBufferSource(); src.buffer = noiseBuf;
+    src.playbackRate.value = .3 + Math.random()*.15;
+    const lp = ctx.createBiquadFilter(); lp.type = 'lowpass';
+    lp.frequency.value = 110 + Math.random()*70;
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(.0001, now);
+    g.gain.linearRampToValueAtTime(.15 + Math.random()*.07, now + .12);
+    g.gain.exponentialRampToValueAtTime(.0001, now + .55);
+    src.connect(lp); lp.connect(g); g.connect(master);
+    src.start(now); src.stop(now + .6);
+  }
+  function blip(){                                           // A-scan flaw echo: faint sonar ping
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    const o = ctx.createOscillator(); o.type = 'sine';
+    o.frequency.setValueAtTime(1240, now);
+    o.frequency.exponentialRampToValueAtTime(870, now + .15);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0, now);
+    g.gain.linearRampToValueAtTime(.3, now + .012);
+    g.gain.exponentialRampToValueAtTime(.001, now + .24);
+    o.connect(g); g.connect(master);
+    o.start(now); o.stop(now + .28);
+  }
+  function thud(){                                           // deep structural-failure thud
+    if (!ready()) return;
+    const now = ctx.currentTime;
+    const o = ctx.createOscillator(); o.type = 'sine';
+    o.frequency.setValueAtTime(96, now);
+    o.frequency.exponentialRampToValueAtTime(30, now + .45);
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(.9, now);
+    g.gain.exponentialRampToValueAtTime(.001, now + .6);
+    o.connect(g); g.connect(master);
+    o.start(now); o.stop(now + .65);
+    const src = ctx.createBufferSource(); src.buffer = noiseBuf;
+    src.playbackRate.value = .4;
+    const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 240;
+    const ng = ctx.createGain();
+    ng.gain.setValueAtTime(.5, now);
+    ng.gain.exponentialRampToValueAtTime(.001, now + .35);
+    src.connect(lp); lp.connect(ng); ng.connect(master);
+    src.start(now); src.stop(now + .4);
+  }
+  function toggle(){
+    enabled = !enabled;
+    localStorage.setItem('forgeSound', enabled ? 'on' : 'off');
+    if (master) master.gain.value = enabled ? MASTER : 0;
+    paintBtn();
+  }
+  addEventListener('pointerdown', init, {passive:true});     // gesture-gated: silent until then
+  addEventListener('keydown', init);
+  if (sndBtn) sndBtn.addEventListener('click', () => { init(); toggle(); });
+  return {init, swoosh, chime, pop, toggle, crackle, rumble, blip, thud,
+    get created(){ return !!ctx; },
+    get enabled(){ return enabled; },
+    get masterGain(){ return master ? master.gain.value : 0; }};
+})();
+window.__forgeAudio = SND;
+
+/* ================================================================
+   CHOREOGRAPHY — modes, formations, scroll logic
+   ================================================================ */
+const MODE = {HERO:0, STREAM:1, VIG:2, RING:3, STATS:4, SEAL:5, ARROW:6, FIREWORK:7};
+let mode = MODE.HERO, formationKey = -1;
+let fs = 1, fox = 0, foy = 0, fsT = 1, foxT = 0, foyT = 0;  // formation transform (lerped)
+let heroIdx = 0, heroT = 0;
+let shapeClock = 0;                                         // time since the current formation applied
+let bobW = 0, riseW = 0, vibX = 0;                          // per-shape whole-formation offsets (world units)
+let fxSndClock = 0;                                         // weld-crackle / rocket-rumble scheduler
+let scrollVel = 0, lastScroll = scrollY, streak = 0;
+let fireworkDone = false, fireworkT = 0;
+const found = [false, false, false];
+let foundCount = 0;
+
+const els = {
+  hero: document.getElementById('top'),
+  heroCopy: document.getElementById('heroCopy'),
+  hud: document.getElementById('shapeHud'),
+  label: document.getElementById('shapeLabel'),
+  vframe: document.getElementById('vframe'),
+  videoHead: document.getElementById('videoHead'),
+  statsGrid: document.getElementById('statsGrid'),
+  statTiles: [...document.querySelectorAll('.stat')],
+  statsHead: document.getElementById('statsHead'),
+  band: document.getElementById('band'),
+  bandCopy: document.getElementById('bandCopy'),
+  bandBtn: document.getElementById('bandBtn'),
+  defWrap: document.getElementById('defWrap'),
+  defChip: document.getElementById('defChip'),
+  defCount: document.getElementById('defCount'),
+  defHint: document.getElementById('defHint'),
+  defRing: document.getElementById('defRing'),
+  toast: document.getElementById('toast'),
+};
+
+function setLabel(txt){
+  els.label.classList.add('swap');
+  setTimeout(() => { els.label.textContent = txt; els.label.classList.remove('swap'); }, 220);
+}
+let curShapeIdx = -1, curDef = null;                        // which silhouette is formed right now
+function writeFormation(def, scale, ox, oy, kick){
+  TL.set(def.targets); CT.set(def.colors);
+  curShapeIdx = SHAPES.indexOf(def); curDef = def;
+  shapeClock = 0; bobW = 0; riseW = 0; vibX = 0;            // fresh per-shape effect clock
+  const usable = COUNT - DEF_TOTAL;
+  for (let g = 0; g < 3; g++){                              // recolor found defects green
+    if (def.defect && DEFECT_SHAPES[g] === curShapeIdx && found[g]){
+      const base = usable + g*DEF_N;
+      for (let k = 0; k < DEF_N; k++){
+        CT[(base+k)*3] = GREEN.r; CT[(base+k)*3+1] = GREEN.g; CT[(base+k)*3+2] = GREEN.b;
+      }
+    }
+  }
+  fsT = scale; foxT = ox; foyT = oy;
+  if (kick){
+    for (let i = 0; i < COUNT; i += 2){
+      V[i*3] += (R4[i*4]-.5)*7; V[i*3+1] += (R4[i*4+1]-.5)*7; V[i*3+2] += (R4[i*4+2]-.5)*3;
+    }
+    SND.swoosh(false);                                      // subtle morph swoosh
+  }
+}
+function heroTransform(){
+  const wide = W > 920;
+  const maxW = wide ? visW*.52 : visW*.94;
+  const s = Math.min(1, maxW / 10.6);
+  return [s, wide ? visW*.235 : 0, wide ? .25 : -visH*.27];
+}
+function setHeroShape(i, kick){
+  heroIdx = i;
+  const [s, ox, oy] = heroTransform();
+  writeFormation(SHAPES[HERO_CYCLE[i]], s, ox, oy, kick);
+  setLabel(SHAPES[HERO_CYCLE[i]].cap);
+}
+
+/* shocks: radial waves from clicks / defect pings */
+const shocks = new Float32Array(5*4);                       // x, y, age, strength
+function addShock(wx, wy, str){
+  for (let s = 0; s < 5; s++) if (shocks[s*4+2] >= 1.3 || shocks[s*4+3] === 0){
+    shocks[s*4] = wx; shocks[s*4+1] = wy; shocks[s*4+2] = 0; shocks[s*4+3] = str || 22; return;
+  }
+}
+function impulse(wx, wy, n, spd, up){                       // confetti / celebration burst
+  const step = Math.max(1, (COUNT/n)|0);
+  for (let i = 0; i < COUNT; i += step){
+    const a = R4[i*4]*Math.PI*2, m = (R4[i*4+1]+.3)*spd;
+    V[i*3] += Math.cos(a)*m; V[i*3+1] += Math.abs(Math.sin(a))*m*(up?1:.4) + (up?spd*.35:0); V[i*3+2] += (R4[i*4+2]-.5)*m*.5;
+  }
+}
+
+/* mouse in world coords */
+let mx = 999, my = 999, mxT = 999, myT = 999, pointerDirty = false;
+addEventListener('pointermove', e => {
+  mxT = worldX(e.clientX); myT = worldY(e.clientY); pointerDirty = true;
+  updateDefectHover(e.clientX, e.clientY);                  // hover only REVEALS
+}, {passive:true});
+addEventListener('pointerleave', () => { mxT = 999; myT = 999; setHover(-1); });
+addEventListener('pointerdown', e => {
+  addShock(worldX(e.clientX), worldY(e.clientY));
+  tryClickDefect(e.clientX, e.clientY);                     // click is what COUNTS
+  heroIdle = 0;
+});
+
+/* ---------- DEFECT MINI-GAME ----------
+   Hover within reach: that defect's particles tighten into a bright
+   jagged crack glyph + a glow ring (reveal). Only a click/tap on the
+   revealed crack registers it as found. */
+let heroIdle = 0, defWrapShown = false, hoverDefect = -1, glintClock = 3.2;
+const HOVER_R = 72, CLICK_R = 58;
+const _v3 = new THREE.Vector3();
+function defectScreenPos(g){
+  const def = SHAPES[DEFECT_SHAPES[g]];
+  if (!def.defectLocal) return null;
+  _v3.set(def.defectLocal.x*fs + fox, def.defectLocal.y*fs + foy, .4);
+  _v3.project(camera);
+  return {x: (_v3.x*.5+.5)*W, y: (1-(_v3.y*.5+.5))*H};
+}
+function activeDefect(){
+  if (mode !== MODE.HERO) return -1;
+  const g = DEFECT_SHAPES.indexOf(HERO_CYCLE[heroIdx]);
+  return (g >= 0 && !found[g]) ? g : -1;
+}
+function setHover(h){
+  if (h === hoverDefect) return;
+  if (hoverDefect >= 0 && curDef){                          // un-tighten: restore baked crack + colors
+    const b3 = ((COUNT - DEF_TOTAL) + hoverDefect*DEF_N) * 3;
+    for (let k = 0; k < DEF_N*3; k++){
+      TL[b3+k] = curDef.targets[b3+k]; CT[b3+k] = curDef.colors[b3+k];
+    }
+  }
+  hoverDefect = h;
+  els.defRing.classList.toggle('on', h >= 0);
+}
+function updateDefectHover(cx, cy){
+  const g = activeDefect();
+  let h = -1;
+  if (g >= 0){
+    const sp = defectScreenPos(g);
+    if (sp){ const dx = cx - sp.x, dy = cy - sp.y; if (dx*dx + dy*dy < HOVER_R*HOVER_R) h = g; }
+  }
+  setHover(h);
+}
+function tryClickDefect(cx, cy){
+  const g = activeDefect();
+  if (g < 0) return;
+  const sp = defectScreenPos(g);
+  if (!sp) return;
+  const dx = cx - sp.x, dy = cy - sp.y;
+  if (dx*dx + dy*dy < CLICK_R*CLICK_R) pingDefect(g);
+}
+function spawnPing(x, y, good){
+  const p = document.createElement('div');
+  p.className = 'ping' + (good ? ' good' : '');
+  p.style.left = x + 'px'; p.style.top = y + 'px';
+  document.body.appendChild(p);
+  setTimeout(() => p.remove(), 950);
+}
+function pingDefect(g){
+  if (found[g]) return;
+  if (hoverDefect === g) setHover(-1);                      // release the reveal first
+  found[g] = true; foundCount++;
+  const sp = defectScreenPos(g);
+  if (sp){ spawnPing(sp.x, sp.y, true); addShock(worldX(sp.x), worldY(sp.y), 30); }
+  els.defWrap.hidden = false; defWrapShown = true;
+  els.defChip.classList.remove('pop'); void els.defChip.offsetWidth;
+  els.defChip.classList.add('pop');
+  els.defCount.textContent = foundCount + '/3';
+  const base = (COUNT - DEF_TOTAL) + g*DEF_N;               // recolor live
+  for (let k = 0; k < DEF_N; k++){
+    CT[(base+k)*3] = GREEN.r; CT[(base+k)*3+1] = GREEN.g; CT[(base+k)*3+2] = GREEN.b;
+  }
+  SND.chime();
+  if (foundCount >= 3){
+    els.defHint.classList.add('gone');
+    impulse(0, 0, 6000, 9, true);
+    showToast(`You're a natural inspector. <a href="/signup">VT certification is free right now →</a>`, 12000);
+  } else {
+    showToast(`Crack confirmed. ${3-foundCount} more hiding in the shapes…`, 3500);
+  }
+}
+let toastTimer = null;
+function showToast(html, ms){
+  els.toast.innerHTML = html;
+  els.toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => els.toast.classList.remove('show'), ms || 5000);
+}
+
+/* confetti pulse on CTA hover */
+[document.getElementById('ctaMain'), els.bandBtn].forEach(btn => {
+  btn.addEventListener('mouseenter', () => {
+    const r = btn.getBoundingClientRect();
+    const wx = worldX(r.left + r.width/2), wy = worldY(r.top);
+    addShock(wx, wy, 16);
+    const step = Math.max(1, (COUNT/2400)|0);
+    for (let i = 0; i < COUNT; i += step){
+      const a = (R4[i*4]-.5)*2.2;
+      V[i*3] += Math.sin(a)*6*R4[i*4+1]; V[i*3+1] += (3+R4[i*4+2]*8); V[i*3+2] += (R4[i*4+3]-.5)*3;
+    }
+  });
+});
+
+/* ---------- exclusion rects (keep copy readable) ---------- */
+function setRect(u, el, pad){
+  if (!el){ u.value.set(0,0,-1,-1); return; }
+  const r = el.getBoundingClientRect();
+  if (r.bottom < -40 || r.top > H+40){ u.value.set(0,0,-1,-1); return; }
+  const p = pad || 0;
+  u.value.set(r.left-p, r.top-p, r.right+p, r.bottom+p);
+}
+
+/* ---------- per-frame target writers (analytic modes) ---------- */
+function writeStream(t){
+  const top = visH/2 + 3, span = visH + 6;
+  const railL = -visW*.36, railR = visW*.36;
+  const flow = t*.085 + scrollY*.00021;
+  for (let i = 0; i < COUNT; i++){
+    const i3 = i*3, i4 = i*4;
+    const u = (R4[i4] + flow * (0.6 + R4[i4+1]*.8)) % 1;
+    const rail = R4[i4+2] > .5 ? railR : railL;
+    TL[i3]   = rail + Math.sin(u*9.42 + R4[i4+1]*6.28 + t*.7) * (1.0 + R4[i4+3]*2.2);
+    TL[i3+1] = top - u*span;
+    TL[i3+2] = (R4[i4+3]-.5)*2.2;
+  }
+}
+let ringCx = 0, ringCy = 0, ringRx = 8, ringRy = 5;
+function writeRing(t){
+  const disperse = window.__videoEngaged ? 1.8 : 0;
+  for (let i = 0; i < COUNT; i++){
+    const i3 = i*3, i4 = i*4;
+    const ang = R4[i4]*6.2832 + t*(.16 + R4[i4+1]*.1);
+    const wob = (R4[i4+2]-.5)*(0.42 + disperse) + Math.sin(t*.9 + R4[i4+3]*6.28)*.14;
+    TL[i3]   = ringCx + Math.cos(ang)*(ringRx + wob);
+    TL[i3+1] = ringCy + Math.sin(ang)*(ringRy + wob*.7);
+    TL[i3+2] = (R4[i4+3]-.5)*1.6;
+  }
+}
+const clusterX = [0,0,0,0], clusterY = [0,0,0,0];
+function writeStats(t){
+  for (let c = 0; c < 4; c++){
+    const tile = els.statTiles[c];
+    if (tile){
+      const r = tile.getBoundingClientRect();
+      clusterX[c] = worldX(r.left + r.width/2);
+      clusterY[c] = worldY(r.top - 46);
+    }
+  }
+  for (let i = 0; i < COUNT; i++){
+    const i3 = i*3, i4 = i*4, c = i & 3;
+    const bob = Math.sin(t*1.1 + R4[i4]*6.28);
+    TL[i3]   = clusterX[c] + statOff[i*2]*(1 + bob*.06);
+    TL[i3+1] = clusterY[c] + statOff[i*2+1] + bob*.28;
+    TL[i3+2] = (R4[i4+3]-.5)*1.8;
+  }
+}
+
+/* ---------- mode controller ---------- */
+function pickMode(){
+  if (fireworkT > 0) return;                                 // firework overrides briefly
+  const vh = H, mid = vh/2;
+  let best = -1, bestD = 1e9, bestKind = null, bestSub = 0;
+  const consider = (el, kind, sub, dy) => {
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    const d = Math.abs((r.top + r.bottom)/2 + (dy || 0) - mid);
+    if (d < bestD){ bestD = d; bestKind = kind; bestSub = sub || 0; }
+  };
+  consider(els.hero, 'hero');
+  consider(els.vframe, 'ring');
+  consider(els.statsGrid, 'stats');
+  consider(els.band, 'cta', 0, -150);
+
+  const docH = document.documentElement.scrollHeight;
+  const atBottom = scrollY + vh >= docH - 6;
+  if (atBottom && !fireworkDone){
+    fireworkDone = true; fireworkT = 1.7;
+    impulse(0, 0, COUNT, 13, false);
+    uni.uStreak.value = 1;
+    SND.pop();
+    showToast(`You inspect every corner. We like that. — <a href="/signup">Start free</a>`, 8000);
+    return;
+  }
+  /* story sections own the stage outright — no comet stream inside,
+     the failure scrub is the only motion (readability, round 4) */
+  for (let v = 0; v < vigSecs.length; v++){
+    const r = vigSecs[v].getBoundingClientRect();
+    if (r.top <= vh*.5 && r.bottom >= vh*.5){
+      applyMode(MODE.VIG, v);
+      return;
+    }
+  }
+  /* a hard fling ignites the comet stream no matter where we are */
+  if (Math.abs(scrollVel) > 1150 || bestD > vh*.62){ applyMode(MODE.STREAM, 0); return; }
+  switch (bestKind){
+    case 'hero':  applyMode(MODE.HERO, 0); break;
+    case 'ring':  applyMode(MODE.RING, 0); break;
+    case 'stats': applyMode(MODE.STATS, 0); break;
+    case 'cta':   applyMode((W > 920 && (atBottom || scrollY + vh > docH - vh*.22)) ? MODE.ARROW : MODE.SEAL, 0); break;
+  }
+}
+function applyMode(m, sub){
+  const key = m*100 + sub;
+  if (key === formationKey) return;
+  formationKey = key;
+  const prev = mode; mode = m;
+  els.hud.classList.toggle('off', m !== MODE.HERO);
+  if (m === MODE.HERO){
+    setHeroShape(heroIdx, prev !== MODE.HERO);
+    heroT = 0;
+  } else if (m === MODE.VIG){
+    vigIdx = sub; vigBeat = -1;
+    vsReveal = vsThud = false; vigGrow = vigQ = vigLastQ = 0;
+    const sec = vigSecs[sub], r = sec.getBoundingClientRect();
+    const p = Math.max(0, Math.min(1, -r.top / Math.max(1, sec.offsetHeight - H)));
+    const tr = vigTransform(sub, p);
+    writeFormation(SHAPES[VIGS[sub].shape], tr[0], tr[1], tr[2], true);
+    muteVigDefects(VIGS[sub].shape);
+  } else if (m === MODE.STREAM){
+    CT.set(streamCols); fsT = 1; foxT = 0; foyT = 0; fs = 1; fox = 0; foy = 0;
+    curShapeIdx = -1; curDef = null;
+    SND.swoosh(true);                                       // scroll-ignite whoosh
+  } else if (m === MODE.RING){
+    CT.set(ringCols); fsT = 1; foxT = 0; foyT = 0; fs = 1; fox = 0; foy = 0;
+    curShapeIdx = -1; curDef = null;
+  } else if (m === MODE.STATS){
+    CT.set(statCols); fsT = 1; foxT = 0; foyT = 0; fs = 1; fox = 0; foy = 0;
+    curShapeIdx = -1; curDef = null;
+  } else if (m === MODE.SEAL){
+    writeFormation(SHAPES[SEAL], Math.min(1.4, visH*.52/6.6), 0, 0, true);
+    for (let i = 0; i < COUNT; i += 3){                      // tangential kick -> spiral in
+      const dx = P[i*3]-fox, dy = P[i*3+1];
+      V[i*3] += -dy*.55; V[i*3+1] += dx*.55;
+    }
+  } else if (m === MODE.ARROW){
+    const r = els.bandBtn.getBoundingClientRect();
+    const s = .62;
+    const tipLocal = (420 - SW/2) * SC * s;
+    writeFormation(SHAPES[ARROW], s, worldX(r.left - 22) - tipLocal, worldY(r.top + r.height/2), true);
+  }
+}
+
+/* hero shape auto-cycle (HOLD + travel ≈ 7 s — unhurried per owner) */
+const HOLD = 7.0;
+function heroCycle(dt){
+  heroT += dt;
+  if (heroT >= HOLD){
+    heroT = 0;
+    setHeroShape((heroIdx + 1) % HERO_CYCLE.length, true);
+    formationKey = MODE.HERO*100;                            // stays hero
+  }
+}
+
+/* ---------- resize ---------- */
+function resize(){
+  W = innerWidth; H = innerHeight;
+  renderer.setSize(W, H, false);
+  camera.aspect = W / H; camera.updateProjectionMatrix();
+  visW = visH * camera.aspect;
+  uni.uRes.value.set(W, H);
+  formationKey = -1;                                          // re-apply formation
+}
+addEventListener('resize', resize); resize();
+
+/* ---------- main loop ---------- */
+const clock = new THREE.Clock();
+let raf = null;
+
+function frame(){
+  raf = requestAnimationFrame(frame);
+  const dt = Math.min(clock.getDelta(), .05);
+  const t = uni.uTime.value += dt;
+
+  /* scroll velocity -> streak */
+  const sv = (scrollY - lastScroll) / Math.max(dt, .008);
+  lastScroll = scrollY;
+  scrollVel += (sv - scrollVel) * Math.min(1, dt*8);
+  const stkT = mode === MODE.VIG ? 0 : Math.min(1, Math.abs(scrollVel)/2600);   // stories stay calm
+  streak += (stkT - streak) * Math.min(1, dt*5);
+  if (fireworkT > 0){ fireworkT -= dt; uni.uStreak.value = Math.max(streak, fireworkT/1.7); }
+  else uni.uStreak.value = streak;
+
+  pickMode();
+  if (mode === MODE.HERO) heroCycle(dt);
+
+  /* analytic targets */
+  if (mode === MODE.STREAM) writeStream(t);
+  else if (mode === MODE.RING){
+    const r = els.vframe.getBoundingClientRect();
+    ringCx = worldX(r.left + r.width/2); ringCy = worldY(r.top + r.height/2);
+    ringRx = (r.width/2 + 42) * px2w(); ringRy = (r.height/2 + 42) * px2w();
+    writeRing(t);
+  }
+  else if (mode === MODE.STATS) writeStats(t);
+  else if (mode === MODE.VIG){
+    const sec = vigSecs[vigIdx], r = sec.getBoundingClientRect();
+    const p = Math.max(0, Math.min(1, -r.top / Math.max(1, sec.offsetHeight - H)));
+    vigFrame(vigIdx, p, t, dt);
+  }
+  else if (mode === MODE.SEAL){
+    const r = els.band.getBoundingClientRect();
+    foyT = worldY(Math.max(180, Math.min(r.top, H) - 265));
+  }
+  else if (mode === MODE.ARROW){
+    const r = els.bandBtn.getBoundingClientRect();
+    foxT = worldX(r.left - 22) - (420 - SW/2)*SC*fsT;
+    foyT = worldY(r.top + r.height/2);
+  }
+
+  /* live silhouette animations + per-shape dynamic effects (active formation only) */
+  shapeClock += dt;
+  bobW = 0; riseW = 0; vibX = 0;
+  ctrFade = (mode === MODE.VIG && vigIdx === 2)              // calm the zoom, cut out at the tear
+    ? Math.max(0, (1 - ease(bu(vigP, ZOOM_A, ZOOM_B))*.8) * (1 - vigQ*1.5)) : 1;
+  if (curShapeIdx === 0) animWeld(shapeClock + WELD_T0, t, TL, CT, true);
+  else if (curShapeIdx === 1) animFluid(t);
+  else if (curShapeIdx === 2){
+    if (!(mode === MODE.VIG && vigIdx === 1)) turbAng += TURB_OMEGA*dt;   // vig 1 scrubs/freezes the blades
+    animTurbine(turbAng, TL);
+  }
+  else if (curShapeIdx === 3){ animContrails(t); bobW = Math.sin(t*1.25)*.07; }
+  else if (curShapeIdx === 4) animCars(t, TL);
+  else if (curShapeIdx === 5){ bobW = Math.sin(t*.8)*.085; animShip(t, bobW); }
+  else if (curShapeIdx === 6) animTrain(t, TL);
+  else if (curShapeIdx === 7){                              // takeoff: slow rise, vibration, then reset
+    const rn = (shapeClock % ROCKET_PERIOD)/ROCKET_PERIOD;
+    riseW = rn*rn*2.4;
+    vibX = Math.sin(t*43)*(.015 + rn*.05) + Math.sin(t*29)*.012;
+    animRocket(t, riseW);
+  }
+  else if (curShapeIdx === 8) animJet(t, TL);
+
+  /* failure-story pass: break ballistics + crack/ring overlays must
+     win over the idle animations above */
+  if (mode === MODE.VIG) vigApply(vigIdx, vigP, t, dt);
+
+  /* faint spark crackle / launch rumble (optional flavor, ≤ master gain) */
+  fxSndClock -= dt;
+  if (fxSndClock <= 0){
+    if (curShapeIdx === 0 && mode === MODE.HERO){ SND.crackle(); fxSndClock = .07 + Math.random()*.24; }
+    else if (curShapeIdx === 7 && mode === MODE.HERO){ SND.rumble(); fxSndClock = .24 + Math.random()*.16; }
+    else fxSndClock = .5;
+  }
+
+  /* defect reveal: hovered crack tightens into the sharp glyph + glows */
+  let hovBase = COUNT + 1, hovEnd = COUNT + 1;
+  if (hoverDefect >= 0 && activeDefect() !== hoverDefect) setHover(-1);
+  if (hoverDefect >= 0){
+    const dl = SHAPES[DEFECT_SHAPES[hoverDefect]].defectLocal;
+    hovBase = (COUNT - DEF_TOTAL) + hoverDefect*DEF_N; hovEnd = hovBase + DEF_N;
+    for (let k = 0; k < DEF_N; k++){
+      const j = (hovBase + k)*3;
+      TL[j] = dl.x + crackTight[k*2]; TL[j+1] = dl.y + crackTight[k*2+1]; TL[j+2] = .5;
+      CT[j] = REDHOT.r; CT[j+1] = REDHOT.g; CT[j+2] = REDHOT.b;
+    }
+    const sp = defectScreenPos(hoverDefect);
+    if (sp){ els.defRing.style.left = sp.x + 'px'; els.defRing.style.top = sp.y + 'px'; }
+  } else {
+    /* occasional faint red glint on the live defect (the understated hint) */
+    const g = activeDefect();
+    if (g >= 0){
+      glintClock -= dt;
+      if (glintClock <= 0) glintClock = 5 + Math.random()*2.5;
+      const pulse = glintClock < .9 ? Math.sin((0.9 - glintClock)/.9 * Math.PI) * .55 : 0;
+      const base = (COUNT - DEF_TOTAL) + g*DEF_N;
+      for (let k = 0; k < DEF_N; k++){
+        const j = (base + k)*3;
+        CT[j] = RED.r + pulse; CT[j+1] = RED.g + pulse*.5; CT[j+2] = RED.b + pulse*.5;
+      }
+    }
+  }
+
+  /* formation transform smoothing (a touch slower = silkier morphs) */
+  const fk = Math.min(1, dt*3.4);
+  fs += (fsT - fs)*fk; fox += (foxT - fox)*fk; foy += (foyT - foy)*fk;
+  uni.uSize.value = SIZE0 * (1 + Math.max(0, fs - 1) * .38); // points thicken as vignettes zoom in
+
+  /* exclusion rects per mode */
+  if (mode === MODE.HERO){ setRect(uni.uRectA, els.heroCopy, 10); uni.uRectB.value.set(0,0,-1,-1); }
+  else if (mode === MODE.VIG){ setRect(uni.uRectA, vigEls[vigIdx].cap, 8); setRect(uni.uRectB, vigEls[vigIdx].head, 6); }
+  else if (mode === MODE.RING){ setRect(uni.uRectA, els.vframe, -4); setRect(uni.uRectB, els.videoHead, 6); }
+  else if (mode === MODE.STATS){ setRect(uni.uRectA, els.statsHead, 8); uni.uRectB.value.set(0,0,-1,-1); }
+  else if (mode === MODE.SEAL){ setRect(uni.uRectA, els.bandCopy, 4); uni.uRectB.value.set(0,0,-1,-1); }
+  else if (mode === MODE.ARROW){ setRect(uni.uRectA, els.bandBtn, 10); uni.uRectB.value.set(0,0,-1,-1); }
+  else { setRect(uni.uRectA, null); setRect(uni.uRectB, null); }
+  uni.uAlpha.value += (1 - uni.uAlpha.value) * Math.min(1, dt*4);
+
+  /* mouse smoothing */
+  mx = mxT === 999 ? 999 : mx === 999 ? mxT : mx + (mxT - mx)*.2;
+  my = myT === 999 ? 999 : my === 999 ? myT : my + (myT - my)*.2;
+
+  /* shocks age */
+  for (let s = 0; s < 5; s++) if (shocks[s*4+3] > 0 && shocks[s*4+2] < 1.3) shocks[s*4+2] += dt;
+
+  /* ---------- integrate (the only hot loop) ---------- */
+  const seekS = (mode === MODE.STREAM ? 11 : mode === MODE.HERO ? 8.5 : 13) * dt;  // hero: longer, silkier ease
+  const seek = fireworkT > 0 ? 0 : seekS;
+  const hovSeek = 30 * dt;                                   // revealed crack snaps tight fast
+  const damp = Math.exp(-(fireworkT > 0 ? 1.6 : 4.4) * dt);
+  const noiseA = (mode === MODE.STREAM ? 2.4 : mode === MODE.HERO ? .55 : .8) * dt;
+  const grav = fireworkT > 0 ? 7.5*dt : 0;
+  const mActive = mx !== 999;
+  const colK = Math.min(1, dt*2.6);
+  const foxE = fox + vibX, foyE = foy + bobW + riseW;        // hull bob / rocket rise+vibe
+  for (let i = 0; i < COUNT; i++){
+    const i3 = i*3, i4 = i*4;
+    const isHov = i >= hovBase && i < hovEnd;                // hovered defect particles
+    let px = P[i3], py = P[i3+1], pz = P[i3+2];
+    let vx = V[i3], vy = V[i3+1], vz = V[i3+2];
+    const txx = TL[i3]*fs + foxE, tyy = TL[i3+1]*fs + foyE, tzz = TL[i3+2]*fs;
+    const sk = isHov ? hovSeek : seek;
+    vx += (txx - px)*sk; vy += (tyy - py)*sk; vz += (tzz - pz)*sk;
+    if (!isHov){
+      vx += Math.sin(t*1.2 + R4[i4+3]*6.28 + py*.5) * noiseA;
+      vy += Math.cos(t*1.4 + R4[i4]*6.28 + px*.45) * noiseA;
+    }
+    vy -= grav;
+    if (mActive && !isHov){                                  // cursor never scatters the reveal
+      const dx = px - mx, dy = py - my, d2 = dx*dx + dy*dy;
+      if (d2 < 5.3 && d2 > 1e-5){
+        const d = Math.sqrt(d2), f = (1 - d/2.3);
+        if (f > 0){ const g = f*f*34*dt/d; vx += dx*g; vy += dy*g; }
+      }
+    }
+    if (!isHov) for (let s = 0; s < 5; s++){
+      const age = shocks[s*4+2];
+      if (shocks[s*4+3] <= 0 || age >= 1.3) continue;
+      const dx = px - shocks[s*4], dy = py - shocks[s*4+1];
+      const d = Math.sqrt(dx*dx + dy*dy) + 1e-4;
+      const band = 1 - Math.abs(d - age*10) * .55;
+      if (band > 0){
+        const g = band * (1 - age/1.3) * shocks[s*4+3] * dt / d;
+        vx += dx*g; vy += dy*g;
+      }
+    }
+    vx *= damp; vy *= damp; vz *= damp;
+    P[i3] = px + vx*dt; P[i3+1] = py + vy*dt; P[i3+2] = pz + vz*dt;
+    V[i3] = vx; V[i3+1] = vy; V[i3+2] = vz;
+    CL[i3] += (CT[i3]-CL[i3])*colK; CL[i3+1] += (CT[i3+1]-CL[i3+1])*colK; CL[i3+2] += (CT[i3+2]-CL[i3+2])*colK;
+  }
+  posAttr.needsUpdate = true; colAttr.needsUpdate = true;
+
+  /* subtle game prompt: counter chip + low-key hint fade in after a beat,
+     anchored off-canvas-center (never covers the particles) */
+  if (!defWrapShown && mode === MODE.HERO && foundCount < 3){
+    heroIdle += dt;
+    if (heroIdle > 4){ els.defWrap.hidden = false; defWrapShown = true; }
+  }
+
+  /* camera sway only matters in hero (keeps DOM-aligned modes exact) */
+  const swayAmp = mode === MODE.HERO ? 1 : 0;
+  camera.position.x += ((mActive ? mx*.012 : 0)*swayAmp - camera.position.x) * .04;
+  camera.position.y += ((mActive ? my*.01 : 0)*swayAmp - camera.position.y) * .04;
+  camera.lookAt(0, 0, 0);
+
+  if (mode !== MODE.VIG){                                    // ambient dust freezes inside the stories
+    dust.rotation.y += dt*.008;
+    dust.position.y = Math.sin(t*.3)*.25 + scrollY*.0003;
+  }
+  renderer.render(scene, camera);
+}
+
+/* ---------- debug hook (kept in production, harmless) ---------- */
+window.__forgeDebug = {
+  get state(){ return {mode, heroShape: HERO_CYCLE[heroIdx], heroIdx, vigIdx, vigBeat, found: [...found], foundCount,
+    hoverDefect, hold: HOLD, curShapeIdx, count: COUNT, fireworkDone}; },
+  get vig(){ return {...vigDbg}; },                          // live story telemetry
+  vigProgress(vi){                                           // scrub progress of a section (0..1)
+    const sec = vigSecs[vi], r = sec.getBoundingClientRect();
+    return +Math.max(0, Math.min(1, -r.top / Math.max(1, sec.offsetHeight - H))).toFixed(4);
+  },
+  vigY(vi, p){                                               // scrollY that lands a section at progress p
+    const sec = vigSecs[vi];
+    return Math.round(sec.getBoundingClientRect().top + scrollY + (sec.offsetHeight - H)*p);
+  },
+  sectionBeat(vi){                                           // current beat index of a section
+    const p = this.vigProgress(vi), bs = VIGS[vi].beats;
+    let bi = 0;
+    for (let i = 0; i < bs.length; i++) if (p >= bs[i].p) bi = i;
+    return bi;
+  },
+  failureProgress(vi){ return +ease(bu(this.vigProgress(vi), FAIL_A, FAIL_B)).toFixed(4); },
+  setSectionScrub(vi, t){ scrollTo(0, this.vigY(vi, t)); },  // land section vi at scrub t
+  get failInfo(){ return [F_BRIDGE, F_TURB, F_PLANE, F_PIPE, F_COASTER].map(F => F.n); },
+  get defectScreenPositions(){
+    return [0,1,2].map(g => {
+      const sp = defectScreenPos(g) || {x:-1, y:-1};
+      return {g, shape: DEFECT_SHAPES[g], x: sp.x, y: sp.y, found: found[g], active: activeDefect() === g};
+    });
+  },
+  ping: pingDefect,                                          // counts (the click action)
+  hover: g => setHover(g),                                   // reveals only (never counts)
+  setHeroShape: i => { heroT = 0; setHeroShape(i, true); },
+  get carXs(){                                               // bridge car screen x's (movement proof)
+    const t = uni.uTime.value;
+    return carSpd.map((sp, c) => {
+      const u = (t*sp + carPh[c]) % 1;
+      return Math.round(((CAR_X0 + u*CAR_SPAN - SW/2)*SC*fs + fox)/px2w() + W/2);
+    });
+  },
+  get trainArc(){ return Math.round((uni.uTime.value*TRN_SPEED) % coasterTrack.len); },
+  get turbineDeg(){ return Math.round((turbAng*180/Math.PI) % 360); },
+  setShape(n, hold){                                         // force a formation by name/index (validation)
+    const si = typeof n === 'string'
+      ? SHAPES.findIndex(s => s.name.toLowerCase().includes(String(n).toLowerCase())) : n;
+    const hi = HERO_CYCLE.indexOf(si);
+    if (hi < 0) return false;
+    setHeroShape(hi, true); formationKey = MODE.HERO*100;
+    heroT = hold === false ? 0 : -1e9;                       // pinned by default
+    return true;
+  },
+  get jetDeg(){ return Math.round((uni.uTime.value*JET_OMEGA*180/Math.PI) % 360); },
+  get weldTorchX(){ return Math.round(weldTorchX(shapeClock + WELD_T0)); },
+  get sparkCount(){ return curShapeIdx === 0 ? SPARK_N : 0; },
+  get fluidPhase(){ return +((uni.uTime.value*FLUID_SPD) % pipePath.len).toFixed(1); },
+  get contrailHead(){ const i3 = poolIdx[0]*3; return [+TL[i3].toFixed(3), +TL[i3+1].toFixed(3)]; },
+  get shipDrift(){ return +((uni.uTime.value*WATER_SPD) % 580).toFixed(1); },
+  get smokePhase(){ const i3 = poolIdx[FLAME_N]*3; return [+TL[i3].toFixed(3), +TL[i3+1].toFixed(3)]; },
+  get rocketRise(){ return +riseW.toFixed(3); },
+  get poolInfo(){ return {poolN: POOLN, sparks: SPARK_N, fluid: FLUID_N, contrail: TRAIL_N,
+    water: WATER_N, shipSmoke: SMOKESHIP_N, flame: FLAME_N, rocketSmoke: RSMOKE_N}; },
+  get xform(){ return {fs: +fs.toFixed(3), fox: +fox.toFixed(3), foy: +foy.toFixed(3)}; },
+  poolSlot(k){                                               // inspect a pool particle (vignette debugging)
+    const i3 = poolIdx[k]*3;
+    return {i: poolIdx[k], tl: [+TL[i3].toFixed(3), +TL[i3+1].toFixed(3)],
+      p: [+P[i3].toFixed(2), +P[i3+1].toFixed(2)],
+      ct: [+CT[i3].toFixed(2), +CT[i3+1].toFixed(2), +CT[i3+2].toFixed(2)]};
+  },
+  montage(){
+    const COLS = 3, ROWS = 4, CW = SW, CH = SH + 44;
+    const m = document.createElement('canvas'); m.width = COLS*CW; m.height = ROWS*CH;
+    const g = m.getContext('2d');
+    g.fillStyle = '#091a33'; g.fillRect(0, 0, m.width, m.height);
+    SHAPES.forEach((def, i) => {
+      const cx = (i % COLS)*CW, cy = ((i/COLS)|0)*CH;
+      const tile = document.createElement('canvas'); tile.width = CW; tile.height = CH;
+      const tg = tile.getContext('2d');                       // own layer: carve ops stay inside the tile
+      tg.fillStyle = tg.strokeStyle = '#e8f0f8'; tg.lineCap = tg.lineJoin = 'round'; tg.setLineDash([]);
+      def.draw(tg);
+      if (def.accent){ tg.fillStyle = tg.strokeStyle = '#5fe0ff'; tg.setLineDash([]); def.accent(tg); }
+      if (def.defect){
+        tg.fillStyle = '#ff4d5e';
+        tg.beginPath(); tg.arc(def.defect.x, def.defect.y, 5, 0, 7); tg.fill();
+      }
+      g.save(); g.translate(cx, cy);
+      g.strokeStyle = 'rgba(95,224,255,.25)'; g.lineWidth = 1; g.strokeRect(.5, .5, CW-1, CH-1);
+      g.drawImage(tile, 0, 0);
+      g.fillStyle = '#5fe0ff'; g.font = '600 19px Manrope, sans-serif'; g.textAlign = 'center'; g.setLineDash([]);
+      g.fillText(`${i}: ${def.name}`, CW/2, SH + 30);
+      g.restore();
+    });
+    return m.toDataURL('image/png');
+  },
+};
+
+/* ---------- boot ---------- */
+if (reduced){
+  const snap = () => {                                       // freeze particles onto their targets
+    uni.uSize.value = SIZE0 * (1 + Math.max(0, fs - 1) * .38);
+    for (let i = 0; i < COUNT; i++){
+      P[i*3] = TL[i*3]*fs + fox; P[i*3+1] = TL[i*3+1]*fs + foy; P[i*3+2] = TL[i*3+2]*fs;
+      CL[i*3] = CT[i*3]; CL[i*3+1] = CT[i*3+1]; CL[i*3+2] = CT[i*3+2];
+    }
+    posAttr.needsUpdate = true; colAttr.needsUpdate = true;
+    renderer.render(scene, camera);
+  };
+  setHeroShape(0, false);
+  fs = fsT; fox = foxT; foy = foyT;
+  setRect(uni.uRectA, els.heroCopy, 10);
+  els.label.textContent = SHAPES[0].cap;
+  snap();
+  /* stories: pin captions + alert to each section's key beat, statically */
+  VIGS.forEach((v, vi) => {
+    let bi = 0; v.beats.forEach((b, i) => { if (v.key >= b.p) bi = i; });
+    const cfg = v.beats[bi], e = vigEls[vi];
+    e.m.hidden = !cfg.m; e.m.textContent = cfg.m || '';
+    e.a.textContent = cfg.a || ''; if (cfg.a) e.a.classList.add('on');
+    e.s.textContent = cfg.s || '';
+    e.l.hidden = !cfg.l; if (cfg.l) e.l.textContent = 'Learn ' + cfg.l + ' →';
+    e.bar.style.width = (v.key*100) + '%';
+  });
+  /* each section shows one static flaw-revealed keyframe (no failure) */
+  let staticVi = -1;
+  const renderStatic = () => {
+    let vi = -1;
+    vigSecs.forEach((s, i) => {
+      const r = s.getBoundingClientRect();
+      if (r.top <= H*.5 && r.bottom >= H*.5) vi = i;
+    });
+    if (vi === staticVi) return;
+    staticVi = vi;
+    if (vi < 0){
+      setHeroShape(0, false);
+      fs = fsT; fox = foxT; foy = foyT;
+      setRect(uni.uRectA, els.heroCopy, 10); uni.uRectB.value.set(0,0,-1,-1);
+      snap(); return;
+    }
+    vigIdx = vi; vigBeat = -1;
+    const kp = VIGS[vi].key;
+    let bi = 0; VIGS[vi].beats.forEach((b, i) => { if (kp >= b.p) bi = i; });
+    vigBeat = bi;
+    const tr = vigTransform(vi, kp);
+    writeFormation(SHAPES[VIGS[vi].shape], tr[0], tr[1], tr[2], false);
+    muteVigDefects(VIGS[vi].shape);
+    fs = tr[0]; fox = tr[1]; foy = tr[2];
+    vigGrow = 1; vigQ = 0; vigLastQ = 0;                     // crack fully revealed, structure intact
+    if (vi === 4) trainAt(COASTER_PARK_S, TL);
+    stampCrack(vi, vi === 2 ? TRAIL_N : vi === 3 ? FLUID_N : 0, 1.0);
+    setRect(uni.uRectA, vigEls[vi].cap, 8); setRect(uni.uRectB, vigEls[vi].head, 6);
+    snap();
+  };
+  addEventListener('scroll', renderStatic, {passive:true});
+  addEventListener('resize', () => { resize(); staticVi = -2; renderStatic(); snap(); });
+} else {
+  setHeroShape(0, false);
+  formationKey = MODE.HERO*100;
+  frame();
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden && raf){ cancelAnimationFrame(raf); raf = null; clock.stop(); }
+    else if (!document.hidden && !raf){ clock.start(); frame(); }
+  });
+}
+</script>
+</body>
+</html>

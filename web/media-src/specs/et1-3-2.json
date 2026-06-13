@@ -1,0 +1,64 @@
+{
+  "lessonId": "et1-3-2",
+  "displayTitle": "Strength, Timing, Orientation",
+  "anchorAfterSection": 3,
+  "kicker": "ET LEVEL I // WHAT CONTROLS THE CURRENTS",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Every eddy current has three working properties — strength, timing, and orientation — each one set jointly by your test system and the part.",
+      "payload": {
+        "title": "STRENGTH · TIMING · ORIENTATION",
+        "sub": "Three properties, set by system and part.",
+        "panel": "pipe-scan",
+        "panelLabel": "ET SCAN // TUBE WALL"
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "Strength starts with Faraday. More ampere-turns, higher frequency, and tighter coupling drive stronger currents; conductivity and permeability decide what the part does.",
+      "payload": {
+        "heading": "Strength: what sets the magnitude",
+        "tiles": [
+          { "icon": "magnet", "t": "Ampere-turns", "s": "Drive × turns sets the field" },
+          { "icon": "wave-sine", "t": "Frequency", "s": "Faster change, stronger surface" },
+          { "icon": "bolt", "t": "Conductivity", "s": "Plus permeability, on the part" }
+        ]
+      }
+    },
+    {
+      "type": "list",
+      "narration": "Timing comes from induction. Eddy currents alternate at your test frequency, oppose the change that made them — that's Lenz — and lag deeper down.",
+      "payload": {
+        "heading": "Timing: same beat, growing lag",
+        "chips": [
+          { "icon": "refresh", "t": "Same frequency", "s": "Reverses every half cycle" },
+          { "icon": "x", "t": "Opposed direction", "s": "Lenz's law bucks the coil" },
+          { "icon": "arrow-bar-to-up", "t": "Lag grows with depth", "s": "Deeper means later" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Orientation mirrors the coil. A surface probe drives loops parallel to the surface; an encircling coil drives them around. A flaw shows only where it cuts loops.",
+      "payload": {
+        "heading": "Orientation: the flaw must interrupt",
+        "asset": "eddy-orientation-detectability",
+        "note": "CRACK ACROSS LOOPS = SIGNAL · ALONG LOOPS = HIDDEN",
+        "noteAt": 9.0
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "And the currents are tiny — the part is a one-turn secondary at a fraction of a watt. Everything on screen is their field nudging coil impedance.",
+      "payload": {
+        "lines": [
+          { "t": "ONE-TURN PART" },
+          { "t": "TINY CURRENTS" },
+          { "t": "IMPEDANCE SHIFT" }
+        ],
+        "sub": "No heating, no direct measurement — read at the coil."
+      }
+    }
+  ]
+}

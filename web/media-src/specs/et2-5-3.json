@@ -1,0 +1,64 @@
+{
+  "lessonId": "et2-5-3",
+  "displayTitle": "Switch Steel's Permeability Off",
+  "anchorAfterSection": 1,
+  "kicker": "ET LEVEL II // FIELD STRENGTH",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "You set the magnetizing field H through ampere-turns; the part answers with flux density B. Their ratio is permeability — and in steel it runs wild.",
+      "payload": {
+        "title": "B = μH",
+        "sub": "You set H. The part's permeability decides everything else.",
+        "panel": "coil-shot",
+        "panelLabel": "ET COIL // H IN, B OUT"
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Permeability is the slope of the B-H curve. At low bias it's huge and unstable; drive to the flat saturated top and it collapses to one.",
+      "payload": {
+        "heading": "The slope the coil actually feels",
+        "asset": "bh-saturation-slope",
+        "note": "LOW BIAS: LARGE, METALLURGY-DEPENDENT ΔB  ·  SATURATED TOP: μΔ ≈ μ₀ (μᵣ ≈ 1)",
+        "noteAt": 9.0
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "Unsaturated steel fails twice. Chemistry, hardness, and stress move the dot exactly like flaws, and permeability collapses penetration to hundredths of a millimeter.",
+      "payload": {
+        "heading": "Why raw steel is unreadable",
+        "tiles": [
+          { "icon": "wave-sine", "t": "Mimics flaws", "s": "μ shifts move the dot" },
+          { "icon": "layers-intersect", "t": "Buries depth", "s": "δ ≈ 0.066 mm" },
+          { "icon": "history", "t": "Remembers", "s": "Hysteretic, drifts" }
+        ]
+      }
+    },
+    {
+      "type": "list",
+      "narration": "Saturation is the cure. A strong DC field parks steel on that flat top, so the AC test field sees permeability one.",
+      "payload": {
+        "heading": "What saturation buys back",
+        "chips": [
+          { "icon": "magnet", "t": "Noise dies", "s": "Every region one slope" },
+          { "icon": "chart-line", "t": "Depth returns", "s": "Grows by √μᵣ" },
+          { "icon": "target", "t": "Plane is back", "s": "Tests like a conductor" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "So prove it, don't assume it. Raise the DC field until the reference signal stops changing, then hold it constant through the run.",
+      "payload": {
+        "lines": [
+          { "t": "SATURATE STEEL." },
+          { "t": "PROVE IT QUIET." },
+          { "t": "HOLD DC ON." }
+        ],
+        "sub": "If the DC sags, the bias slides back and the noise returns."
+      }
+    }
+  ]
+}
