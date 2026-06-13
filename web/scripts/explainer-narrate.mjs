@@ -16,7 +16,11 @@ const AUDIO = join(webRoot, "media-build", "explainer-audio");
 
 const env = (n) => {
   if (process.env[n]) return process.env[n];
-  const line = readFileSync(join(webRoot, ".env.local"), "utf8").split("\n").find((l) => l.startsWith(`${n}=`));
+  // .env.local is optional — env vars alone (e.g. ELEVENLABS_API_KEY in the
+  // shell) must work in a clean checkout where the file is absent.
+  const envPath = join(webRoot, ".env.local");
+  if (!existsSync(envPath)) return undefined;
+  const line = readFileSync(envPath, "utf8").split("\n").find((l) => l.startsWith(`${n}=`));
   return line ? line.slice(n.length + 1).trim() : undefined;
 };
 const KEY = env("ELEVENLABS_API_KEY");
