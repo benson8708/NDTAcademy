@@ -1,0 +1,65 @@
+{
+  "lessonId": "ut1-2-2",
+  "displayTitle": "Frequency: Penetration vs. Sensitivity",
+  "anchorAfterSection": 6,
+  "kicker": "LEVEL I // WAVE PHYSICS",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Three numbers run every ultrasonic setup: velocity, frequency, wavelength. One equation chains them, and one quiet enemy, attenuation, decides what survives.",
+      "payload": {
+        "title": "THREE NUMBERS",
+        "sub": "One equation chains them. Attenuation taxes the trip.",
+        "chips": [
+          { "icon": "gauge", "t": "Velocity" },
+          { "icon": "wave-sine", "t": "Frequency" },
+          { "icon": "ruler-2", "t": "Wavelength" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Wavelength equals velocity divided by frequency. In steel at 2.25 megahertz, that's 5.92 over 2.25, about 2.63 millimeters. Reflectors under half a wavelength are unreliable.",
+      "payload": {
+        "heading": "Wavelength = velocity ÷ frequency",
+        "asset": "wave-equation",
+        "note": "RULE OF THUMB: BELOW λ/2 IS UNRELIABLE",
+        "noteAt": 8.2
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Attenuation is signal lost along the path. Absorption turns vibration into heat. Scattering bounces energy off grain boundaries, spraying back as grass.",
+      "payload": {
+        "heading": "Attenuation: absorption + scattering",
+        "asset": "attenuation-grains",
+        "note": "GRASS = SCATTERED ENERGY BACK AT THE PROBE",
+        "noteAt": 7.2
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "High frequency finds smaller flaws. Low frequency penetrates coarse grain. When grains are much smaller than the wavelength, doubling frequency multiplies scattering about sixteen times.",
+      "payload": {
+        "heading": "The trade on every job",
+        "tiles": [
+          { "icon": "target", "t": "High f", "s": "Finds smaller flaws" },
+          { "icon": "arrows-maximize", "t": "Low f", "s": "Penetrates coarse grain" },
+          { "icon": "alert-triangle", "t": "Double f", "s": "About 16× the scattering" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "So when grass swallows the back wall, more gain just lifts the noise too. Change the frequency, not the gain.",
+      "payload": {
+        "lines": [
+          { "t": "CHANGE THE" },
+          { "t": "FREQUENCY," },
+          { "t": "NOT THE GAIN." }
+        ],
+        "sub": "Gain amplifies grass exactly as much as signal."
+      }
+    }
+  ]
+}

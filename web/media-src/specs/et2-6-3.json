@@ -1,0 +1,64 @@
+{
+  "lessonId": "et2-6-3",
+  "displayTitle": "Differentiation and Filtering",
+  "anchorAfterSection": 1,
+  "kicker": "ET LEVEL II // FILTERING & DIFFERENTIATION",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "After the amplifier and detector, one stage decides what reaches the display: the filters. And they read in hertz, not your dial's kilohertz.",
+      "payload": {
+        "title": "THE LAST GATE",
+        "sub": "Filters shape probe motion, not test frequency.",
+        "panel": "pipe-scan",
+        "panelLabel": "ET BOBBIN // FILTERED CHANNEL"
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "Here is why. Demodulation strips the carrier, leaving slow voltages whose frequency comes from probe motion. Filters shape that motion signal, never the eddy currents.",
+      "payload": {
+        "heading": "Two domains, one display",
+        "tiles": [
+          { "icon": "wave-sine", "t": "Carrier gone", "s": "Demodulation strips it" },
+          { "icon": "refresh", "t": "Motion band", "s": "DC to a few kHz" },
+          { "icon": "adjustments", "t": "Hertz dial", "s": "Not test frequency" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "A flaw gets its frequency from the scan. Drift crawls below it, noise screams above. Bracket the flaw with a band-pass window and both neighbors die.",
+      "payload": {
+        "heading": "Build a window around the flaw",
+        "asset": "filter-bandpass-window",
+        "note": "DRIFT < HP CORNER · FLAW BAND · LP CORNER < NOISE",
+        "noteAt": 8.8
+      }
+    },
+    {
+      "type": "list",
+      "narration": "But the window moves with your wrist. Double the scan speed, double the band. Slow down to look close, and high-pass eats the signal.",
+      "payload": {
+        "heading": "The band rides on scan speed",
+        "chips": [
+          { "icon": "gauge", "t": "Faster = wider", "s": "Push the low-pass up" },
+          { "icon": "x", "t": "Slow = vanish", "s": "Drops below high-pass" },
+          { "icon": "alert-triangle", "t": "Slow flaws lost", "s": "Thinning reads as drift" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "Push high-pass to its limit and you get differentiation: rate of change only. Superb on sharp flaws, blind to anything slow. So standardize at production speed.",
+      "payload": {
+        "lines": [
+          { "t": "DIFFERENTIATE" },
+          { "t": "= RATE OF CHANGE" },
+          { "t": "STANDARDIZE" }
+        ],
+        "sub": "A filter setting is a scan-speed setting."
+      }
+    }
+  ]
+}

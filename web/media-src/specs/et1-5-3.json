@@ -1,0 +1,63 @@
+{
+  "lessonId": "et1-5-3",
+  "displayTitle": "The Sensor That Reads the Field Itself",
+  "anchorAfterSection": 4,
+  "kicker": "ET LEVEL I // HALL EFFECT SENSORS",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Every coil senses a field by induction, so it reads nothing unless the flux is changing. The Hall element breaks that rule.",
+      "payload": {
+        "title": "TWO WAYS TO LISTEN",
+        "sub": "A coil hears the field change. A Hall element hears the field itself.",
+        "panel": "coil-shot",
+        "panelLabel": "INDUCTION COIL // dФ/dt ONLY"
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Drive a steady current through a thin semiconductor chip in a perpendicular field. The Lorentz force shoves carriers sideways until a transverse Hall voltage appears.",
+      "payload": {
+        "heading": "How the Hall voltage forms",
+        "asset": "hall-effect-mechanism",
+        "note": "Vₕ = I·B / (n·q·t) — PROPORTIONAL TO B",
+        "noteAt": 9.0
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "That voltage tracks flux density at any frequency, so a Hall element reads a static DC field with polarity, telling north from south.",
+      "payload": {
+        "heading": "What a Hall element gives you",
+        "tiles": [
+          { "icon": "gauge", "t": "Reads B itself", "s": "Output tracks flux density" },
+          { "icon": "wave-sine", "t": "DC to 100 kHz", "s": "Flat sensitivity, no falloff" },
+          { "icon": "magnet", "t": "Reads polarity", "s": "Knows north from south" }
+        ]
+      }
+    },
+    {
+      "type": "list",
+      "narration": "A coil's output falls with frequency and dies at DC, so the two trade places at a crossover. Below it, Hall wins.",
+      "payload": {
+        "heading": "Where the Hall element earns its place",
+        "chips": [
+          { "icon": "arrow-bar-to-up", "t": "Low-frequency, deep tests", "s": "Coil output collapses; Hall stays flat" },
+          { "icon": "ruler-2", "t": "Flux leakage scanning", "s": "Reading is independent of scan speed" },
+          { "icon": "magnet", "t": "Static field metering", "s": "The heart of every gaussmeter" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "One line carries the lesson. A coil measures the rate of change of flux; a Hall element measures the flux itself.",
+      "payload": {
+        "lines": [
+          { "t": "COIL: RATE OF CHANGE." },
+          { "t": "HALL: THE FLUX ITSELF." }
+        ],
+        "sub": "It still replaces the detector, not the excitation coil."
+      }
+    }
+  ]
+}

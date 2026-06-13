@@ -1,0 +1,64 @@
+{
+  "lessonId": "et2-5-1",
+  "displayTitle": "How Much of the Coil the Part Fills",
+  "anchorAfterSection": 1,
+  "kicker": "ET LEVEL II // COUPLING",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Encircling and bobbin coils have no lift-off to chase. Their coupling is pure geometry, and one number captures it: fill factor.",
+      "payload": {
+        "title": "FILL FACTOR",
+        "sub": "How much of the coil's field actually reaches the part.",
+        "panel": "pipe-scan",
+        "panelLabel": "ET // FEED-THROUGH COIL"
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Fill factor is an area ratio, so it collapses to diameter ratio squared. A nineteen-millimeter bar in a twenty-one-millimeter coil gives zero point eight two.",
+      "payload": {
+        "heading": "Diameter ratio, squared",
+        "asset": "fill-factor-geometry",
+        "note": "ENCIRCLING: (d/D)²  ·  BOBBIN: (probe/tube ID)²  ·  AIR ANNULUS = LOST COUPLING",
+        "noteAt": 9.0
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "Two habits separate a Level Two from a guess: use the effective coil diameter, and for bobbins use tube inside diameter — never the outside.",
+      "payload": {
+        "heading": "Calculate it both ways",
+        "tiles": [
+          { "icon": "circles", "t": "Encircling", "s": "Part OD over coil ID" },
+          { "icon": "ruler-2", "t": "Bobbin", "s": "Probe over tube ID" },
+          { "icon": "percentage", "t": "Squared", "s": "1% size moves η ~2%" }
+        ]
+      }
+    },
+    {
+      "type": "list",
+      "narration": "Amplitude rides on fill factor. On the impedance plane, falling coupling slides the dot straight toward the air point — the feed-through twin of the lift-off line.",
+      "payload": {
+        "heading": "What lower fill factor costs you",
+        "chips": [
+          { "icon": "wave-sine", "t": "Less signal", "s": "Amplitude tracks η" },
+          { "icon": "target", "t": "Toward air", "s": "Straight fill-factor line" },
+          { "icon": "magnet", "t": "Steel caveat", "s": "Saturate to restore it" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "So specify the snuggest coil the product can safely feed — about point seven-five to point nine — and whenever coil or probe size changes, re-standardize.",
+      "payload": {
+        "lines": [
+          { "t": "RUN IT SNUG." },
+          { "t": "0.75 TO 0.90." },
+          { "t": "RE-STANDARDIZE." }
+        ],
+        "sub": "New geometry means new coupling — and a new setup."
+      }
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "lessonId": "et1-3-3",
+  "displayTitle": "How Deep Can the Probe See",
+  "anchorAfterSection": 4,
+  "kicker": "ET LEVEL I // FREQUENCY, PHASE & DEPTH",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Eddy currents never fill a part evenly. They crowd the surface and fade with depth, and how deep your probe sees is computable.",
+      "payload": {
+        "title": "DEPTH OF PENETRATION",
+        "sub": "The skin effect, as one solvable number.",
+        "panel": "pipe-scan",
+        "panelLabel": "ET SCAN // TUBE WALL"
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "The fade is exponential, measured in standard depths. At one standard depth, current density is thirty-seven percent of the surface; by three, just five.",
+      "payload": {
+        "heading": "The current fades by the numbers",
+        "tiles": [
+          { "icon": "layers-intersect", "t": "1δ", "s": "37% of surface density" },
+          { "icon": "chart-line", "t": "2δ", "s": "13.5% remains" },
+          { "icon": "target", "t": "3δ", "s": "5% — effective limit" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Beyond three standard depths, too little current crosses a flaw to disturb the coil. Three standard depths is the accepted effective depth of detection.",
+      "payload": {
+        "heading": "Where the current runs out",
+        "asset": "skin-depth-decay",
+        "note": "1δ = 37% · 2δ = 13.5% · 3δ = 5% (EFFECTIVE DEPTH)",
+        "noteAt": 8.5
+      }
+    },
+    {
+      "type": "list",
+      "narration": "Depth follows one over the square root of frequency, conductivity, and permeability. Frequency is the only term you control, and quadrupling it halves the depth.",
+      "payload": {
+        "heading": "Frequency is the one knob you turn",
+        "chips": [
+          { "icon": "wave-sine", "t": "δ ∝ 1/√(f·μ·σ)", "s": "Quadruple f, depth halves" },
+          { "icon": "magnet", "t": "Steel collapses δ", "s": "High μ makes ET surface-only" },
+          { "icon": "refresh", "t": "Depth lags in phase", "s": "About 57° per standard depth" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "So the call is simple. Raise the frequency for surface cracks, lower it to reach second layers, and verify every choice on your reference standard.",
+      "payload": {
+        "lines": [
+          { "t": "HIGH → SURFACE." },
+          { "t": "LOW → DEPTH." },
+          { "t": "VERIFY ON STD." }
+        ],
+        "sub": "Gain cannot create current where none flows."
+      }
+    }
+  ]
+}

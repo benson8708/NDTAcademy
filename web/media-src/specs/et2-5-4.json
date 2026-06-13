@@ -1,0 +1,65 @@
+{
+  "lessonId": "et2-5-4",
+  "displayTitle": "Drive Bends the Rules on Steel",
+  "anchorAfterSection": 1,
+  "kicker": "ET LEVEL II // AC FIELD STRENGTH",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Drive sets the AC field strength your coil pushes into the part. On nonmagnetic metal it scales cleanly. On steel it can break the test.",
+      "payload": {
+        "title": "DRIVE BENDS THE RULES ON STEEL",
+        "sub": "One knob, two completely different physics.",
+        "panel": "coil-shot",
+        "panelLabel": "AC FIELD STRENGTH AT THE COIL"
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "On aluminum or titanium the system is linear. Double the drive and every signal rises six decibels — but the impedance point, phase, and depth stay parked.",
+      "payload": {
+        "heading": "Linear territory: nonmagnetic alloys",
+        "tiles": [
+          { "icon": "chart-line", "t": "+6 dB", "s": "Per doubling of drive" },
+          { "icon": "target", "t": "Point fixed", "s": "Impedance, phase parked" },
+          { "icon": "wave-sine", "t": "Depth held", "s": "No field term in delta" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "On steel, permeability tracks field strength. A strong drive sweeps a fat minor hysteresis loop, so a clean sine returns peaked — built of odd harmonics.",
+      "payload": {
+        "heading": "Steel adds the B–H curve to the circuit",
+        "asset": "minor-loop-harmonics",
+        "note": "LOW DRIVE: LENS LOOP · HIGH DRIVE: FAT LOOP, 3RD HARMONIC",
+        "noteAt": 11.5
+      }
+    },
+    {
+      "type": "list",
+      "narration": "Too much field on steel shows five ways. Learn them as diagnostics — bump the drive one step, and watch what moves.",
+      "payload": {
+        "heading": "Symptoms of excessive drive on steel",
+        "chips": [
+          { "icon": "wave-saw-tool", "t": "Harmonics grow", "s": "Third above all" },
+          { "icon": "chart-line", "t": "Amplitude drifts", "s": "Stops tracking drive" },
+          { "icon": "refresh", "t": "Shape and phase", "s": "Move, not just size" },
+          { "icon": "magnet", "t": "Permeability noise", "s": "Wider swing, louder" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "So classify the metal first. Run nonmagnetic high, run unsaturated steel low, record the setting, and re-standardize after any change.",
+      "payload": {
+        "lines": [
+          { "t": "NONMAG: HIGH." },
+          { "t": "STEEL: LOW." },
+          { "t": "LOG. RE-PROVE." }
+        ],
+        "sub": "Drive is an essential variable — change it, re-prove it."
+      }
+    }
+  ]
+}

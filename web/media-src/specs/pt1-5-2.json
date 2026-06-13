@@ -1,0 +1,65 @@
+{
+  "lessonId": "pt1-5-2",
+  "displayTitle": "Two Numbers Rule the Booth",
+  "anchorAfterSection": 1,
+  "kicker": "PT LEVEL I // LIGHTING & LIGHT METERS",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "Fluorescent penetrant works in the dark for a reason. A speck of dye glows under ultraviolet light, fighting every stray lumen in the booth.",
+      "payload": {
+        "title": "LIGHTING IS DATA",
+        "sub": "In fluorescent PT, light is a measured process variable.",
+        "panel": "uv-lamp-fluorescent",
+        "panelLabel": "PT // FLUORESCENT BOOTH"
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "So two numbers govern Type One work. UV-A at the surface, at least a thousand microwatts per square centimeter. Ambient white light, two footcandles or less.",
+      "payload": {
+        "heading": "Two numbers, both must pass",
+        "tiles": [
+          { "icon": "bolt", "t": "UV-A high", "s": "≥ 1,000 µW/cm² at surface" },
+          { "icon": "sun", "t": "White low", "s": "≤ 2 fc (~20 lux) ambient" },
+          { "icon": "contrast-2", "t": "Type II", "s": "≥ 100 fc, visible dye" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Prove it with calibrated meters. The sensor sits at the surface, facing the lamp, at the working distance. Intensity falls roughly with the square.",
+      "payload": {
+        "heading": "Measure where you inspect",
+        "asset": "radiometer-check",
+        "note": "SENSOR AT SURFACE · WORKING DISTANCE · ~1/d²",
+        "noteAt": 8.5
+      }
+    },
+    {
+      "type": "list",
+      "narration": "Know your source. Mercury vapor needs warm-up to steady. LED runs cooler but must be certified. A cracked filter leaks hazardous UV, retire it.",
+      "payload": {
+        "heading": "The hardware behind the glow",
+        "chips": [
+          { "icon": "history", "t": "Mercury: warm up 5–10 min", "s": "Never read a cold arc" },
+          { "icon": "bolt", "t": "LED: fast, but certified", "s": "Procedure names the models" },
+          { "icon": "alert-triangle", "t": "Cracked filter = out of service", "s": "Leaks short-wave UV" },
+          { "icon": "eye", "t": "Clear UV-absorbing glasses", "s": "No photochromic lenses" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "So treat every reading as data. Measure at the surface, write it down, and if it is below minimum, stop and fix the light.",
+      "payload": {
+        "lines": [
+          { "t": "MEASURE." },
+          { "t": "RECORD." },
+          { "t": "BELOW MIN? STOP." }
+        ],
+        "sub": "You never inspect your way past a failed light check."
+      }
+    }
+  ]
+}

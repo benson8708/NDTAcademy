@@ -1,0 +1,65 @@
+{
+  "lessonId": "et2-6-1",
+  "displayTitle": "Null First, Then Spend the Gain",
+  "anchorAfterSection": 1,
+  "kicker": "ET LEVEL II // AMPLIFICATION",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "A fatigue crack shifts the coil voltage by a fraction of one percent. To reach the screen, that whisper needs amplifying a hundred thousand times.",
+      "payload": {
+        "title": "GAIN MOVES MOUNTAINS",
+        "sub": "Microvolt changes ride a carrier hundreds of times larger.",
+        "panel": "coil-shot",
+        "panelLabel": "ET CHAIN // WHY AMPLIFY"
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "But never amplify the carrier itself. Null the standing signal first, so the amplifier spends its whole range on the flaw, not the steady voltage.",
+      "payload": {
+        "heading": "Null first, then amplify",
+        "tiles": [
+          { "icon": "wave-sine", "t": "Standing", "s": "Volts of carrier you don't need" },
+          { "icon": "adjustments", "t": "Null it", "s": "Balance subtracts the steady signal" },
+          { "icon": "arrow-bar-to-up", "t": "Amplify", "s": "Range spent on changes only" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "Gain is a multiplier, written in decibels. Burn in the anchor: plus six decibels doubles an unclipped signal. That doubling is your field linearity check.",
+      "payload": {
+        "heading": "Plus six decibels doubles it",
+        "asset": "amplitude-linearity",
+        "note": "dB = 20·log₁₀(V₂/V₁)   ·   +6 dB → ×2",
+        "noteAt": 9.0
+      }
+    },
+    {
+      "type": "list",
+      "narration": "Push past the linear range and peaks clip. Watch for it: flat tops, signals pinned at the edge, a reference that won't double on plus six.",
+      "payload": {
+        "heading": "Saturation, caught on sight",
+        "chips": [
+          { "icon": "alert-triangle", "t": "Flat tops", "s": "Clipped peaks, lost amplitude" },
+          { "icon": "x", "t": "Pinned at the edge", "s": "Output stuck at full scale" },
+          { "icon": "scale", "t": "Won't double on +6", "s": "Linearity check has failed" },
+          { "icon": "target", "t": "Big and small read alike", "s": "Amplitude no longer tracks severity" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "Gain makes signals bigger, never cleaner. When it saturates, the fix never changes: reduce gain, re-null, then re-standardize.",
+      "payload": {
+        "lines": [
+          { "t": "REDUCE GAIN." },
+          { "t": "RE-NULL." },
+          { "t": "RE-STANDARDIZE." }
+        ],
+        "sub": "Bigger is not cleaner — SNR is won elsewhere."
+      }
+    }
+  ]
+}

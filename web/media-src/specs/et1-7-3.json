@@ -1,0 +1,64 @@
+{
+  "lessonId": "et1-7-3",
+  "displayTitle": "When the Alarm Has to Touch the Part",
+  "anchorAfterSection": 2,
+  "kicker": "ET LEVEL I // MARKING, SORTING, CUTOFF",
+  "beats": [
+    {
+      "type": "title",
+      "narration": "On a production line nobody reads a screen. Product flies through the coil; the alarm gate has milliseconds to act.",
+      "payload": {
+        "title": "ALARM TO ACTION",
+        "sub": "On an automated line, the output is a decision on the product.",
+        "panel": "coil-shot",
+        "panelLabel": "ENCIRCLING COIL // METERS PER SECOND"
+      }
+    },
+    {
+      "type": "tiles",
+      "narration": "The relay drives hardware that acts on the product itself. Three families: mark the flaw, sort whole pieces, or cut the bad section.",
+      "payload": {
+        "heading": "Three ways to disposition",
+        "tiles": [
+          { "icon": "droplet", "t": "Marking", "s": "Paint or ink on the flaw" },
+          { "icon": "refresh", "t": "Sorting", "s": "Divert each whole piece" },
+          { "icon": "tool", "t": "Cutoff", "s": "Crop continuous product" }
+        ]
+      }
+    },
+    {
+      "type": "diagram",
+      "narration": "It all hangs on transport delay. The device sits downstream, so output fires after distance divided by line speed. An encoder keeps timing honest.",
+      "payload": {
+        "heading": "Coil to action, one travel distance later",
+        "asset": "automated-line-transport-delay",
+        "note": "DELAY = DISTANCE ÷ LINE SPEED · ENCODER TRACKS TRAVEL",
+        "noteAt": 9.0
+      }
+    },
+    {
+      "type": "list",
+      "narration": "A proper sorter fails safe: losing air or power can never wave a part into the accept bin. Prove the chain dynamically at line speed.",
+      "payload": {
+        "heading": "The rules that back every output",
+        "chips": [
+          { "icon": "shield-check", "t": "Fail to reject", "s": "De-energized state never accepts" },
+          { "icon": "target", "t": "Dynamic check", "s": "Reference standard at line speed" },
+          { "icon": "history", "t": "Retest rule", "s": "One miss sends everything back" }
+        ]
+      }
+    },
+    {
+      "type": "kinetic",
+      "narration": "The deliverable is not a clean screen. It is correct disposition: every bad section marked, diverted, or removed, every good piece untouched.",
+      "payload": {
+        "lines": [
+          { "t": "MARK IT." },
+          { "t": "SORT IT." },
+          { "t": "CUT IT OUT." }
+        ],
+        "sub": "Correct disposition, not a clean screen."
+      }
+    }
+  ]
+}
